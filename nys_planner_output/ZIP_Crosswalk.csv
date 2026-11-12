@@ -1,0 +1,219 @@
+ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (from L2),Notes
+12901,Clinton,Plattsburgh,,,,
+12903,Clinton,Plattsburgh,,,,
+12910,Clinton,Altona,,,,
+12911,Clinton,Keeseville,,,,Multi-county ZIP: Clinton ~87% of addresses; also Essex ~13%
+12912,Clinton,Au Sable Forks,,,,Multi-county ZIP: Clinton ~60% of addresses; also Essex ~39%; Franklin ~1%
+12918,Clinton,Cadyville,,,,
+12919,Clinton,Champlain,,,,
+12921,Clinton,Chazy,,,,
+12923,Clinton,Churubusco,,,,
+12924,Clinton,Keeseville,,,,
+12929,Clinton,Dannemora,,,,
+12933,Clinton,Ellenburg,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+12934,Clinton,Ellenburg Center,,,,
+12935,Clinton,Ellenburg Depot,,,,
+12952,Clinton,Lyon Mountain,,,,
+12955,Clinton,Lyon Mountain,,,,Multi-county ZIP: Clinton ~90% of addresses; also Franklin ~10%
+12958,Clinton,Mooers,,,,
+12959,Clinton,Mooers Forks,,,,
+12962,Clinton,Morrisonville,,,,
+12972,Clinton,Peru,,,,Multi-county ZIP: Clinton ~99% of addresses; also Essex ~1%
+12978,Clinton,Redford,,,,
+12979,Clinton,Rouses Point,,,,
+12981,Clinton,Saranac,,,,Multi-county ZIP: Clinton ~99% of addresses; also Franklin ~1%
+12985,Clinton,Schuyler Falls,,,,
+12992,Clinton,West Chazy,,,,
+12851,Essex,Minerva,,,,
+12852,Essex,Newcomb,,,,
+12855,Essex,North Hudson,,,,
+12857,Essex,Olmstedville,,,,Multi-county ZIP: Essex ~89% of addresses; also Warren ~11%
+12858,Essex,Paradox,,,,
+12870,Essex,Schroon Lake,,,,Multi-county ZIP: Essex ~98% of addresses; also Warren ~2%
+12872,Essex,Severance,,,,
+12879,Essex,Newcomb,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12883,Essex,Ticonderoga,,,,Multi-county ZIP: Essex ~98% of addresses; also Washington ~2%
+12913,Essex,Bloomingdale,,,,Multi-county ZIP: Essex ~77% of addresses; also Franklin ~22%; Clinton ~<1%
+12928,Essex,Crown Point,,,,
+12932,Essex,Elizabethtown,,,,
+12936,Essex,Essex,,,,
+12941,Essex,Jay,,,,
+12942,Essex,Keene,,,,
+12943,Essex,Keene Valley,,,,
+12944,Essex,Keeseville,,,,Multi-county ZIP: Essex ~56% of addresses; also Clinton ~44%
+12946,Essex,Lake Placid,,,,
+12950,Essex,Lewis,,,,
+12956,Essex,Mineville,,,,
+12960,Essex,Moriah,,,,
+12961,Essex,Moriah Center,,,,
+12964,Essex,New Russia,,,,
+12974,Essex,Port Henry,,,,
+12975,Essex,Port Kent,,,,
+12977,Essex,Ray Brook,,,,
+12987,Essex,Upper Jay,,,,
+12993,Essex,Westport,,,,
+12996,Essex,Willsboro,,,,
+12997,Essex,Wilmington,,,,Multi-county ZIP: Essex ~99% of addresses; also Clinton ~1%
+12998,Essex,Witherbee,,,,
+12914,Franklin,Bombay,,,,Multi-county ZIP: Franklin ~90% of addresses; also St. Lawrence ~10%
+12915,Franklin,Brainardsville,,,,
+12916,Franklin,Brushton,,,,
+12917,Franklin,Burke,,,,
+12920,Franklin,Chateaugay,,,,Multi-county ZIP: Franklin ~97% of addresses; also Clinton ~3%
+12926,Franklin,Constable,,,,
+12930,Franklin,Dickinson Center,,,,Multi-county ZIP: Franklin ~99% of addresses; also St. Lawrence ~1%
+12937,Franklin,Fort Covington,,,,
+12939,Franklin,Gabriels,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+12945,Franklin,Lake Clear,,,,
+12953,Franklin,Malone,,,,
+12957,Franklin,Moira,,,,
+12966,Franklin,North Bangor,,,,
+12969,Franklin,Owls Head,,,,
+12970,Franklin,Paul Smiths,,,,
+12976,Franklin,Rainbow Lake,,,,
+12980,Franklin,Saint Regis Falls,,,,Multi-county ZIP: Franklin ~74% of addresses; also St. Lawrence ~26%
+12983,Franklin,Saranac Lake,,,,Multi-county ZIP: Franklin ~71% of addresses; also Essex ~29%
+12986,Franklin,Tupper Lake,,,,Multi-county ZIP: Franklin ~97% of addresses; also St. Lawrence ~3%
+12989,Franklin,Vermontville,,,,Multi-county ZIP: Franklin ~98% of addresses; also Essex ~2%
+12995,Franklin,Whippleville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13655,Franklin,Hogansburg,,,,
+13683,Franklin,Rooseveltown,,,,
+12025,Fulton,Broadalbin,,,,Multi-county ZIP: Fulton ~89% of addresses; also Saratoga ~11%
+12032,Fulton,Caroga Lake,,,,Multi-county ZIP: Fulton ~96% of addresses; also Hamilton ~4%
+12078,Fulton,Gloversville,,,,
+12095,Fulton,Johnstown,,,,Multi-county ZIP: Fulton ~97% of addresses; also Montgomery ~3%
+12117,Fulton,Mayfield,,,,
+12134,Fulton,Northville,,,,Multi-county ZIP: Fulton ~52% of addresses; also Saratoga ~34%; Hamilton ~15%
+13470,Fulton,Stratford,,,,Multi-county ZIP: Fulton ~82% of addresses; also Herkimer ~18%
+12108,Hamilton,Lake Pleasant,,,,
+12139,Hamilton,Piseco,,,,
+12164,Hamilton,Speculator,,,,
+12190,Hamilton,Wells,,,,
+12812,Hamilton,Blue Mountain Lake,,,,
+12842,Hamilton,Indian Lake,,,,
+12847,Hamilton,Long Lake,,,,
+12864,Hamilton,Sabael,,,,
+13353,Hamilton,Hoffmeister,,,,
+13360,Hamilton,Inlet,,,,Multi-county ZIP: Hamilton ~100% of addresses; also Herkimer ~<1%
+13436,Hamilton,Raquette Lake,,,,
+13324,Herkimer,Cold Brook,,,,
+13329,Herkimer,Dolgeville,,,,Multi-county ZIP: Herkimer ~74% of addresses; also Fulton ~26%
+13331,Herkimer,Eagle Bay,,,,Multi-county ZIP: Herkimer ~100% of addresses; also Hamilton ~<1%
+13340,Herkimer,Frankfort,,,,
+13350,Herkimer,Herkimer,,,,
+13357,Herkimer,Ilion,,,,
+13361,Herkimer,Jordanville,,,,Multi-county ZIP: Herkimer ~75% of addresses; also Otsego ~25%
+13365,Herkimer,Little Falls,,,,
+13406,Herkimer,Middleville,,,,
+13407,Herkimer,Mohawk,,,,
+13416,Herkimer,Newport,,,,
+13420,Herkimer,Old Forge,,,,
+13431,Herkimer,Poland,,,,Multi-county ZIP: Herkimer ~89% of addresses; also Oneida ~11%
+13454,Herkimer,Salisbury Center,,,,Multi-county ZIP: Herkimer ~99% of addresses; also Fulton ~1%
+13472,Herkimer,Thendara,,,,
+13475,Herkimer,Van Hornesville,,,,Multi-county ZIP: Herkimer ~97% of addresses; also Otsego ~3%
+13491,Herkimer,West Winfield,,,,Multi-county ZIP: Herkimer ~54% of addresses; also Otsego ~34%; Madison ~11%; Oneida ~1%
+13601,Jefferson,Watertown,,,,Multi-county ZIP: Jefferson ~100% of addresses; also Lewis ~<1%
+13602,Jefferson,Fort Drum,,,,
+13603,Jefferson,Watertown,,,,
+13605,Jefferson,Adams,,,,
+13606,Jefferson,Adams Center,,,,
+13607,Jefferson,Alexandria Bay,,,,
+13608,Jefferson,Antwerp,,,,Multi-county ZIP: Jefferson ~82% of addresses; also St. Lawrence ~18%
+13611,Jefferson,Belleville,,,,
+13612,Jefferson,Black River,,,,
+13615,Jefferson,Brownville,,,,
+13616,Jefferson,Calcium,,,,
+13618,Jefferson,Cape Vincent,,,,
+13619,Jefferson,Carthage,,,,Multi-county ZIP: Jefferson ~90% of addresses; also Lewis ~10%
+13622,Jefferson,Chaumont,,,,
+13624,Jefferson,Clayton,,,,
+13628,Jefferson,Deferiet,,,,
+13631,Jefferson,Denmark,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13632,Jefferson,Depauville,,,,
+13634,Jefferson,Dexter,,,,
+13636,Jefferson,Ellisburg,,,,
+13637,Jefferson,Evans Mills,,,,
+13638,Jefferson,Felts Mills,,,,
+13640,Jefferson,Wellesley Island,,,,
+13641,Jefferson,Fishers Landing,,,,
+13643,Jefferson,Great Bend,,,,
+13650,Jefferson,Henderson,,,,
+13651,Jefferson,Henderson Harbor,,,,
+13656,Jefferson,La Fargeville,,,,
+13657,Jefferson,Limerick,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13659,Jefferson,Lorraine,,,,
+13661,Jefferson,Mannsville,,,,Multi-county ZIP: Jefferson ~89% of addresses; also Oswego ~11%
+13665,Jefferson,Natural Bridge,,,,Multi-county ZIP: Jefferson ~57% of addresses; also Lewis ~43%
+13671,Jefferson,Oxbow,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13673,Jefferson,Philadelphia,,,,
+13674,Jefferson,Pierrepont Manor,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13675,Jefferson,Plessis,,,,
+13679,Jefferson,Redwood,,,,Multi-county ZIP: Jefferson ~88% of addresses; also St. Lawrence ~12%
+13682,Jefferson,Rodman,,,,Multi-county ZIP: Jefferson ~98% of addresses; also Lewis ~2%
+13685,Jefferson,Sackets Harbor,,,,
+13691,Jefferson,Theresa,,,,Multi-county ZIP: Jefferson ~99% of addresses; also St. Lawrence ~1%
+13692,Jefferson,Thousand Island Park,,,,
+13693,Jefferson,Three Mile Bay,,,,
+13305,Lewis,Beaver Falls,,,,
+13312,Lewis,Brantingham,,,,
+13325,Lewis,Constableville,,,,
+13327,Lewis,Croghan,,,,
+13343,Lewis,Glenfield,,,,
+13345,Lewis,Greig,,,,
+13367,Lewis,Lowville,,,,Multi-county ZIP: Lewis ~99% of addresses; also Herkimer ~1%
+13368,Lewis,Lyons Falls,,,,
+13404,Lewis,Martinsburg,,,,
+13433,Lewis,Port Leyden,,,,
+13473,Lewis,Turin,,,,
+13489,Lewis,West Leyden,,,,Multi-county ZIP: Lewis ~92% of addresses; also Oneida ~8%
+13620,Lewis,Castorland,,,,
+13626,Lewis,Copenhagen,,,,Multi-county ZIP: Lewis ~83% of addresses; also Jefferson ~17%
+13627,Lewis,Deer River,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13648,Lewis,Harrisville,,,,Multi-county ZIP: Lewis ~59% of addresses; also St. Lawrence ~41%
+12922,St. Lawrence,Childwold,,,,
+12927,St. Lawrence,Cranberry Lake,,,,
+12949,St. Lawrence,Lawrenceville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12965,St. Lawrence,Nicholville,,,,
+12967,St. Lawrence,North Lawrence,,,,Multi-county ZIP: St. Lawrence ~96% of addresses; also Franklin ~4%
+12973,St. Lawrence,Piercefield,,,,
+13613,St. Lawrence,Brasher Falls,,,,
+13614,St. Lawrence,Brier Hill,,,,
+13617,St. Lawrence,Canton,,,,
+13621,St. Lawrence,Chase Mills,,,,
+13623,St. Lawrence,Chippewa Bay,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13625,St. Lawrence,Colton,,,,
+13630,St. Lawrence,De Kalb Junction,,,,
+13633,St. Lawrence,De Peyster,,,,
+13635,St. Lawrence,Edwards,,,,
+13639,St. Lawrence,Fine,,,,
+13642,St. Lawrence,Gouverneur,,,,Multi-county ZIP: St. Lawrence ~99% of addresses; also Jefferson ~1%
+13645,St. Lawrence,Hailesboro,,,,
+13646,St. Lawrence,Hammond,,,,Multi-county ZIP: St. Lawrence ~99% of addresses; also Jefferson ~1%
+13647,St. Lawrence,Hannawa Falls,,,,
+13649,St. Lawrence,Helena,,,,
+13652,St. Lawrence,Hermon,,,,
+13654,St. Lawrence,Heuvelton,,,,
+13658,St. Lawrence,Lisbon,,,,
+13660,St. Lawrence,Madrid,,,,
+13662,St. Lawrence,Massena,,,,
+13664,St. Lawrence,Morristown,,,,
+13666,St. Lawrence,Newton Falls,,,,
+13667,St. Lawrence,Norfolk,,,,
+13668,St. Lawrence,Norwood,,,,
+13669,St. Lawrence,Ogdensburg,,,,
+13670,St. Lawrence,Oswegatchie,,,,
+13672,St. Lawrence,Parishville,,,,
+13676,St. Lawrence,Potsdam,,,,
+13677,St. Lawrence,Pyrites,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13678,St. Lawrence,Raymondville,,,,
+13680,St. Lawrence,Rensselaer Falls,,,,
+13681,St. Lawrence,Richville,,,,
+13684,St. Lawrence,Russell,,,,
+13687,St. Lawrence,South Colton,,,,
+13690,St. Lawrence,Star Lake,,,,
+13694,St. Lawrence,Waddington,,,,
+13695,St. Lawrence,Wanakena,,,,
+13696,St. Lawrence,West Stockholm,,,,
+13697,St. Lawrence,Winthrop,,,,
+13699,St. Lawrence,Potsdam,,,,No residential delivery addresses in HUD data (business/PO Box use only)
