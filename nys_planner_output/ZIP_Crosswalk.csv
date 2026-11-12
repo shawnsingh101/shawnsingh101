@@ -1,4 +1,20 @@
 ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (from L2),Notes
+14814,Chemung,Big Flats,,,,Multi-county ZIP: Chemung ~91% of addresses; also Steuben ~9%
+14816,Chemung,Breesport,,,,
+14825,Chemung,Chemung,,,,
+14838,Chemung,Erin,,,,Multi-county ZIP: Chemung ~99% of addresses; also Schuyler ~1%
+14845,Chemung,Horseheads,,,,Multi-county ZIP: Chemung ~100% of addresses; also Schuyler ~<1%
+14861,Chemung,Lowman,,,,
+14864,Chemung,Millport,,,,Multi-county ZIP: Chemung ~87% of addresses; also Schuyler ~13%
+14871,Chemung,Pine City,,,,Multi-county ZIP: Chemung ~91% of addresses; also Steuben ~9%
+14872,Chemung,Pine Valley,,,,
+14889,Chemung,Van Etten,,,,Multi-county ZIP: Chemung ~97% of addresses; also Tioga ~2%; Schuyler ~<1%
+14894,Chemung,Wellsburg,,,,
+14901,Chemung,Elmira,,,,
+14902,Chemung,Elmira,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14903,Chemung,Elmira,,,,
+14904,Chemung,Elmira,,,,
+14905,Chemung,Elmira,,,,
 12901,Clinton,Plattsburgh,,,,
 12903,Clinton,Plattsburgh,,,,
 12910,Clinton,Altona,,,,
@@ -171,6 +187,135 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 13626,Lewis,Copenhagen,,,,Multi-county ZIP: Lewis ~83% of addresses; also Jefferson ~17%
 13627,Lewis,Deer River,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
 13648,Lewis,Harrisville,,,,Multi-county ZIP: Lewis ~59% of addresses; also St. Lawrence ~41%
+14414,Livingston,Avon,,,,Multi-county ZIP: Livingston ~100% of addresses; also Monroe ~<1%
+14423,Livingston,Caledonia,,,,Multi-county ZIP: Livingston ~100% of addresses; also Monroe ~<1%
+14435,Livingston,Conesus,,,,
+14437,Livingston,Dansville,,,,Multi-county ZIP: Livingston ~91% of addresses; also Steuben ~9%; Allegany ~<1%
+14454,Livingston,Geneseo,,,,
+14462,Livingston,Groveland,,,,
+14480,Livingston,Lakeville,,,,
+14481,Livingston,Leicester,,,,Multi-county ZIP: Livingston ~100% of addresses; also Wyoming ~<1%
+14485,Livingston,Lima,,,,Multi-county ZIP: Livingston ~94% of addresses; also Ontario ~6%
+14486,Livingston,Linwood,,,,
+14487,Livingston,Livonia,,,,Multi-county ZIP: Livingston ~94% of addresses; also Ontario ~6%
+14488,Livingston,Livonia Center,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14510,Livingston,Mount Morris,,,,
+14517,Livingston,Nunda,,,,
+14533,Livingston,Piffard,,,,Multi-county ZIP: Livingston ~100% of addresses; also Wyoming ~<1%
+14539,Livingston,Retsof,,,,
+14545,Livingston,Scottsburg,,,,
+14556,Livingston,Sonyea,,,,
+14558,Livingston,South Lima,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14560,Livingston,Springwater,,,,Multi-county ZIP: Livingston ~51% of addresses; also Ontario ~49%
+14592,Livingston,York,,,,
+14836,Livingston,Dalton,,,,Multi-county ZIP: Livingston ~72% of addresses; also Allegany ~28%
+14846,Livingston,Hunt,,,,Multi-county ZIP: Livingston ~72% of addresses; also Allegany ~28%
+14410,Monroe,Adams Basin,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14420,Monroe,Brockport,,,,Multi-county ZIP: Monroe ~98% of addresses; also Orleans ~2%
+14428,Monroe,Churchville,,,,Multi-county ZIP: Monroe ~100% of addresses; also Genesee ~<1%
+14430,Monroe,Clarkson,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14445,Monroe,East Rochester,,,,
+14450,Monroe,Fairport,,,,Multi-county ZIP: Monroe ~100% of addresses; also Ontario ~<1%; Wayne ~<1%
+14464,Monroe,Hamlin,,,,Multi-county ZIP: Monroe ~88% of addresses; also Orleans ~12%
+14467,Monroe,Henrietta,,,,
+14468,Monroe,Hilton,,,,
+14472,Monroe,Honeoye Falls,,,,Multi-county ZIP: Monroe ~91% of addresses; also Livingston ~5%; Ontario ~3%
+14506,Monroe,Mendon,,,,
+14508,Monroe,Morton,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14511,Monroe,Mumford,,,,
+14514,Monroe,North Chili,,,,
+14515,Monroe,North Greece,,,,
+14526,Monroe,Penfield,,,,
+14534,Monroe,Pittsford,,,,Multi-county ZIP: Monroe ~99% of addresses; also Ontario ~1%
+14543,Monroe,Rush,,,,
+14546,Monroe,Scottsville,,,,Multi-county ZIP: Monroe ~99% of addresses; also Livingston ~1%
+14559,Monroe,Spencerport,,,,
+14580,Monroe,Webster,,,,Multi-county ZIP: Monroe ~100% of addresses; also Wayne ~<1%
+14586,Monroe,West Henrietta,,,,
+14602,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14603,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14604,Monroe,Rochester,,,,
+14605,Monroe,Rochester,,,,
+14606,Monroe,Rochester,,,,
+14607,Monroe,Rochester,,,,
+14608,Monroe,Rochester,,,,
+14609,Monroe,Rochester,,,,
+14610,Monroe,Rochester,,,,
+14611,Monroe,Rochester,,,,
+14612,Monroe,Rochester,,,,
+14613,Monroe,Rochester,,,,
+14614,Monroe,Rochester,,,,
+14615,Monroe,Rochester,,,,
+14616,Monroe,Rochester,,,,
+14617,Monroe,Rochester,,,,
+14618,Monroe,Rochester,,,,
+14619,Monroe,Rochester,,,,
+14620,Monroe,Rochester,,,,
+14621,Monroe,Rochester,,,,
+14622,Monroe,Rochester,,,,
+14623,Monroe,Rochester,,,,
+14624,Monroe,Rochester,,,,
+14625,Monroe,Rochester,,,,
+14626,Monroe,Rochester,,,,
+14627,Monroe,Rochester,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14638,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14639,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14642,Monroe,Rochester,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14643,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14644,Monroe,Rochester,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+14646,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14647,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14649,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14650,Monroe,Rochester,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+14651,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14652,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14653,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14692,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14694,Monroe,Rochester,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+14424,Ontario,Canandaigua,,,,Multi-county ZIP: Ontario ~100% of addresses; also Yates ~<1%
+14425,Ontario,Farmington,,,,
+14432,Ontario,Clifton Springs,,,,Multi-county ZIP: Ontario ~100% of addresses; also Wayne ~<1%
+14443,Ontario,East Bloomfield,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+14453,Ontario,Fishers,,,,
+14456,Ontario,Geneva,,,,Multi-county ZIP: Ontario ~95% of addresses; also Seneca ~5%; Yates ~<1%
+14461,Ontario,Gorham,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14463,Ontario,Hall,,,,
+14466,Ontario,Hemlock,,,,Multi-county ZIP: Ontario ~55% of addresses; also Livingston ~45%
+14469,Ontario,Bloomfield,,,,
+14471,Ontario,Honeoye,,,,Multi-county ZIP: Ontario ~100% of addresses; also Livingston ~<1%
+14475,Ontario,Ionia,,,,Multi-county ZIP: Ontario ~96% of addresses; also Monroe ~4%
+14504,Ontario,Manchester,,,,
+14512,Ontario,Naples,,,,Multi-county ZIP: Ontario ~77% of addresses; also Yates ~17%; Steuben ~5%; Livingston ~1%
+14518,Ontario,Oaks Corners,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14532,Ontario,Phelps,,,,Multi-county ZIP: Ontario ~95% of addresses; also Seneca ~5%
+14537,Ontario,Port Gibson,,,,
+14547,Ontario,Seneca Castle,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14548,Ontario,Shortsville,,,,
+14561,Ontario,Stanley,,,,Multi-county ZIP: Ontario ~98% of addresses; also Yates ~2%
+14564,Ontario,Victor,,,,Multi-county ZIP: Ontario ~97% of addresses; also Monroe ~3%
+14585,Ontario,West Bloomfield,,,,
+14805,Schuyler,Alpine,,,,Multi-county ZIP: Schuyler ~96% of addresses; also Chemung ~4%
+14812,Schuyler,Beaver Dams,,,,Multi-county ZIP: Schuyler ~50% of addresses; also Chemung ~30%; Steuben ~20%
+14815,Schuyler,Bradford,,,,Multi-county ZIP: Schuyler ~75% of addresses; also Steuben ~25%
+14818,Schuyler,Burdett,,,,
+14824,Schuyler,Cayuta,,,,Multi-county ZIP: Schuyler ~69% of addresses; also Chemung ~31%
+14841,Schuyler,Hector,,,,Multi-county ZIP: Schuyler ~90% of addresses; also Seneca ~10%
+14863,Schuyler,Mecklenburg,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14865,Schuyler,Montour Falls,,,,
+14869,Schuyler,Odessa,,,,
+14876,Schuyler,Reading Center,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14878,Schuyler,Rock Stream,,,,Multi-county ZIP: Schuyler ~72% of addresses; also Yates ~28%
+14887,Schuyler,Tyrone,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14891,Schuyler,Watkins Glen,,,,
+14893,Schuyler,Wayne,,,,
+13065,Seneca,Fayette,,,,
+13148,Seneca,Seneca Falls,,,,Multi-county ZIP: Seneca ~100% of addresses; also Wayne ~<1%
+13165,Seneca,Waterloo,,,,Multi-county ZIP: Seneca ~100% of addresses; also Wayne ~<1%
+14521,Seneca,Ovid,,,,
+14541,Seneca,Romulus,,,,
+14588,Seneca,Willard,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14847,Seneca,Interlaken,,,,
+14860,Seneca,Lodi,,,,
 12922,St. Lawrence,Childwold,,,,
 12927,St. Lawrence,Cranberry Lake,,,,
 12949,St. Lawrence,Lawrenceville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
@@ -217,3 +362,78 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 13696,St. Lawrence,West Stockholm,,,,
 13697,St. Lawrence,Winthrop,,,,
 13699,St. Lawrence,Potsdam,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14529,Steuben,Perkinsville,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14572,Steuben,Wayland,,,,Multi-county ZIP: Steuben ~80% of addresses; also Livingston ~20%
+14801,Steuben,Addison,,,,
+14807,Steuben,Arkport,,,,Multi-county ZIP: Steuben ~81% of addresses; also Allegany ~19%
+14808,Steuben,Atlanta,,,,
+14809,Steuben,Avoca,,,,
+14810,Steuben,Bath,,,,
+14819,Steuben,Cameron,,,,
+14820,Steuben,Cameron Mills,,,,
+14821,Steuben,Campbell,,,,
+14823,Steuben,Canisteo,,,,
+14826,Steuben,Cohocton,,,,
+14827,Steuben,Coopers Plains,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14830,Steuben,Corning,,,,Multi-county ZIP: Steuben ~99% of addresses; also Chemung ~1%
+14831,Steuben,Corning,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+14839,Steuben,Greenwood,,,,
+14840,Steuben,Hammondsport,,,,Multi-county ZIP: Steuben ~98% of addresses; also Schuyler ~2%
+14843,Steuben,Hornell,,,,Multi-county ZIP: Steuben ~99% of addresses; also Allegany ~1%
+14855,Steuben,Jasper,,,,
+14856,Steuben,Kanona,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14858,Steuben,Lindley,,,,
+14870,Steuben,Painted Post,,,,Multi-county ZIP: Steuben ~98% of addresses; also Schuyler ~2%
+14873,Steuben,Prattsburgh,,,,Multi-county ZIP: Steuben ~100% of addresses; also Yates ~<1%
+14874,Steuben,Pulteney,,,,
+14877,Steuben,Rexville,,,,
+14879,Steuben,Savona,,,,
+14885,Steuben,Troupsburg,,,,
+14898,Steuben,Woodhull,,,,
+13053,Tompkins,Dryden,,,,Multi-county ZIP: Tompkins ~87% of addresses; also Cortland ~13%
+13062,Tompkins,Etna,,,,
+13068,Tompkins,Freeville,,,,
+13073,Tompkins,Groton,,,,Multi-county ZIP: Tompkins ~97% of addresses; also Cayuga ~2%; Cortland ~<1%
+13102,Tompkins,Mc Lean,,,,
+14817,Tompkins,Brooktondale,,,,Multi-county ZIP: Tompkins ~97% of addresses; also Tioga ~3%
+14850,Tompkins,Ithaca,,,,
+14851,Tompkins,Ithaca,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14852,Tompkins,Ithaca,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14853,Tompkins,Ithaca,,,,
+14854,Tompkins,Jacksonville,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14867,Tompkins,Newfield,,,,Multi-county ZIP: Tompkins ~100% of addresses; also Chemung ~<1%; Schuyler ~<1%
+14881,Tompkins,Slaterville Springs,,,,
+14882,Tompkins,Lansing,,,,Multi-county ZIP: Tompkins ~100% of addresses; also Cayuga ~<1%
+14886,Tompkins,Trumansburg,,,,Multi-county ZIP: Tompkins ~62% of addresses; also Schuyler ~26%; Seneca ~11%
+13143,Wayne,Red Creek,,,,Multi-county ZIP: Wayne ~66% of addresses; also Cayuga ~34%
+13146,Wayne,Savannah,,,,Multi-county ZIP: Wayne ~92% of addresses; also Seneca ~7%; Cayuga ~1%
+13154,Wayne,South Butler,,,,
+14413,Wayne,Alton,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14433,Wayne,Clyde,,,,Multi-county ZIP: Wayne ~94% of addresses; also Seneca ~6%
+14449,Wayne,East Williamson,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14489,Wayne,Lyons,,,,Multi-county ZIP: Wayne ~97% of addresses; also Ontario ~1%; Seneca ~1%
+14502,Wayne,Macedon,,,,Multi-county ZIP: Wayne ~98% of addresses; also Monroe ~2%
+14505,Wayne,Marion,,,,
+14513,Wayne,Newark,,,,Multi-county ZIP: Wayne ~98% of addresses; also Ontario ~2%
+14516,Wayne,North Rose,,,,
+14519,Wayne,Ontario,,,,Multi-county ZIP: Wayne ~97% of addresses; also Monroe ~3%
+14520,Wayne,Ontario Center,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14522,Wayne,Palmyra,,,,Multi-county ZIP: Wayne ~89% of addresses; also Ontario ~11%
+14538,Wayne,Pultneyville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14542,Wayne,Rose,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14551,Wayne,Sodus,,,,
+14555,Wayne,Sodus Point,,,,
+14563,Wayne,Union Hill,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14568,Wayne,Walworth,,,,
+14589,Wayne,Williamson,,,,
+14590,Wayne,Wolcott,,,,
+14415,Yates,Bellona,,,,
+14418,Yates,Branchport,,,,Multi-county ZIP: Yates ~82% of addresses; also Steuben ~18%
+14441,Yates,Dresden,,,,
+14478,Yates,Keuka Park,,,,
+14507,Yates,Middlesex,,,,
+14527,Yates,Penn Yan,,,,
+14544,Yates,Rushville,,,,Multi-county ZIP: Yates ~56% of addresses; also Ontario ~44%
+14837,Yates,Dundee,,,,Multi-county ZIP: Yates ~77% of addresses; also Schuyler ~19%; Steuben ~4%
+14842,Yates,Himrod,,,,
+14857,Yates,Lakemont,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)

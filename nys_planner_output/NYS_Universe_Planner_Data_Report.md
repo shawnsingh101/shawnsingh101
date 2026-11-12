@@ -1,10 +1,10 @@
 # NYS Universe Planner - Data Report
 
-**Groups completed:** Sue Merrell  
+**Groups completed:** Sue Merrell, Austin Ponce  
 **Generated:** 2026-11-12  
 **Output route:** `NYS_Universe_Planner_FILLED.xlsx` was written directly. An automated check confirmed that every formula, dropdown, conditional format, named range and every other tab is unchanged. Backup CSVs (`ZIP_Crosswalk.csv`, `Venues.csv`) in exact workbook column order are included too.
 
-**Totals so far:** 218 ZIP rows, 204 venue rows (Library 107, College Campus 10, Senior Center 61, Veterans Hall 26).
+**Totals so far:** 438 ZIP rows, 424 venue rows (Library 211, College Campus 35, Senior Center 119, Veterans Hall 59).
 
 ## ZIP Crosswalk method
 
@@ -17,6 +17,7 @@
 
 | County | Director | Library | College Campus | Senior Center | Veterans Hall | Total |
 |---|---|---:|---:|---:|---:|---:|
+| Chemung | Austin Ponce | 5 | 2 | 10 | 1 | 18 |
 | Clinton | Sue Merrell | 9 | 2 | 8 | 4 | 23 |
 | Essex | Sue Merrell | 16 | 1 | 10 | 1 | 28 |
 | Franklin | Sue Merrell | 5 | 1 | 11 | 3 | 20 |
@@ -25,32 +26,63 @@
 | Herkimer | Sue Merrell | 13 | 1 | 1 | 2 | 17 |
 | Jefferson | Sue Merrell | 25 | 1 | 2 | 6 | 34 |
 | Lewis | Sue Merrell | 10 | 0 | 6 | 2 | 18 |
+| Livingston | Austin Ponce | 8 | 2 | 5 | 3 | 18 |
+| Monroe | Austin Ponce | 31 | 12 | 22 | 5 | 70 |
+| Ontario | Austin Ponce | 12 | 3 | 3 | 3 | 21 |
+| Schuyler | Austin Ponce | 3 | 0 | 2 | 0 | 5 |
+| Seneca | Austin Ponce | 5 | 1 | 2 | 2 | 10 |
 | St. Lawrence | Sue Merrell | 21 | 4 | 7 | 7 | 39 |
-| **Total** | | **107** | **10** | **61** | **26** | **204** |
+| Steuben | Austin Ponce | 16 | 1 | 3 | 8 | 28 |
+| Tompkins | Austin Ponce | 6 | 3 | 5 | 3 | 17 |
+| Wayne | Austin Ponce | 13 | 0 | 5 | 6 | 24 |
+| Yates | Austin Ponce | 5 | 1 | 1 | 2 | 9 |
+| **Total** | | **211** | **35** | **119** | **59** | **424** |
 
 **In-scope counties with zero venues of any type:** none (in the completed groups)
 
-**County/type gaps (zero of that type):** Fulton - College Campus; Hamilton - College Campus; Hamilton - Veterans Hall; Lewis - College Campus
+**County/type gaps (zero of that type):** Fulton - College Campus; Hamilton - College Campus; Hamilton - Veterans Hall; Lewis - College Campus; Schuyler - College Campus; Schuyler - Veterans Hall; Wayne - College Campus
 
-## 2. Dropped records (135)
+## 2. Dropped records (287)
 
 | Reason | Count |
 |---|---:|
-| PO Box-only address | 60 |
-| Auxiliary / district / affiliated group - not a post with its own hall | 43 |
-| Looks residential: IRS address is in care of an individual and no other veterans org shares it | 26 |
-| Not degree-granting | 4 |
+| PO Box-only address | 103 |
+| Auxiliary / district / affiliated group - not a post with its own hall | 103 |
+| Looks residential: IRS address is in care of an individual and no other veterans org shares it | 52 |
+| Not degree-granting | 12 |
+| Duplicate of 'AMVETS Post 245' | 3 |
+| Bookmobile / books-by-mail outlet | 2 |
 | Duplicate of 'American Legion Post 162 - Lowville Memorial' | 1 |
 | Duplicate of 'AMVETS Post 4' | 1 |
+| Superseded: Monroe County's current list has Sweden Senior Center at 4927 Lake Rd S, Brockport | 1 |
+| Superseded: Monroe County's current list has Chili Senior Center at 3237 Chili Ave | 1 |
+| Catering kitchen address | 1 |
+| Superseded: Monroe County's current list has Irondequoit Senior Center at 450 Skyview Centre Pkwy | 1 |
+| Superseded: Monroe County's current list has Gates Senior Center at 1605 Buffalo Rd | 1 |
+| Superseded: Monroe County's current list has Pittsford Senior Center at 35 Lincoln Ave | 1 |
+| Duplicate of 'Vietnam Veterans of America Chapter 377 - Finger Lakes Chapter' | 1 |
+| Duplicate of 'VFW Post 16' | 1 |
+| Duplicate of 'VFW Post 2250' | 1 |
+| Duplicate of 'American Legion Post 468 - Greece' | 1 |
 
 Full list:
 
 | Type | Name | Address (as in source) | County | Reason |
 |---|---|---|---|---|
+| College Campus | Schuyler Steuben Chemung Tioga Allegany BOCES | 459 Philo Road | Chemung | Not degree-granting (IPEDS DEGGRANT=2) |
 | College Campus | CVPH Medical Center School of Radiologic Technology | 75 Beekman St | Clinton | Not degree-granting (IPEDS DEGGRANT=2) |
 | College Campus | Clinton Essex Warren Washington BOCES | 1585 Military Turnpike | Clinton | Not degree-granting (IPEDS DEGGRANT=2) |
 | College Campus | Herkimer County BOCES-Practical Nursing Program | 420 East German Street | Herkimer | Not degree-granting (IPEDS DEGGRANT=2) |
 | College Campus | Jefferson Lewis BOCES-Practical Nursing Program | 20104 State Route 3 | Jefferson | Not degree-granting (IPEDS DEGGRANT=2) |
+| College Campus | Continental School of Beauty Culture-Rochester | 633 Jefferson Rd | Monroe | Not degree-granting (IPEDS DEGGRANT=2) |
+| College Campus | Empire Beauty School-Rochester | 340 Elmridge Center Drive | Monroe | Not degree-granting (IPEDS DEGGRANT=2) |
+| College Campus | Isabella Graham Hart School of Practical Nursing | 470 Skyview Centre Pkwy | Monroe | Not degree-granting (IPEDS DEGGRANT=2) |
+| College Campus | Sharp Edgez Barber Institute | 398 West Ridge Road | Monroe | Not degree-granting (IPEDS DEGGRANT=2) |
+| College Campus | Shear Ego International School of Hair Design | 525 Titus Avenue | Monroe | Not degree-granting (IPEDS DEGGRANT=2) |
+| College Campus | Marion S Whelan School of Nursing of Geneva General Hospital | 196 North St | Ontario | Not degree-granting (IPEDS DEGGRANT=2) |
+| College Campus | Wayne Finger Lakes BOCES-Practical Nursing Program | 131 Drumlin Ct | Wayne | Not degree-granting (IPEDS DEGGRANT=2) |
+| Library | Bookmobile Service | 101 EAST CHURCH STREET | Chemung | Bookmobile / books-by-mail outlet (C_OUT_TY=BS) |
+| Library | Bookmobile | 47 CAYUGA STREET | Seneca | Bookmobile / books-by-mail outlet (C_OUT_TY=BS) |
 | Senior Center | Ausable Forks Nutrition Site | PO Box 848, Elizabethtown | Essex | PO Box-only address (NYSOFA directory) |
 | Senior Center | Elizabethtown Senior Center | P.O. Box 848, Elizabethtown | Essex | PO Box-only address (NYSOFA directory) |
 | Senior Center | Essex/Willsboro Senior Center | P.O. Box 848, Elizabethtown | Essex | PO Box-only address (NYSOFA directory) |
@@ -65,11 +97,28 @@ Full list:
 | Senior Center | Ticonderoga Senior Center | P.O. Box 848, Elizabethtown | Essex | PO Box-only address (NYSOFA directory) |
 | Senior Center | Wilmington Senior Center | P.O. Box 848, Elizabethtown | Essex | PO Box-only address (NYSOFA directory) |
 | Senior Center | Indian Lake Senior Center | PO Box 635, Indian Lake | Hamilton | PO Box-only address (NYSOFA directory) |
+| Senior Center | Association for the Blind/Goodwill Industries | 422 South Clinton Avenue - Catering, Rochester | Monroe | Catering kitchen address ('422 South Clinton Avenue - Catering'), not a senior center venue (NYSOFA 2021 directory) |
+| Senior Center | Lifetime Assistance - Sweden Senior Center | 133 State Street, Brockport | Monroe | Superseded: Monroe County's current list has Sweden Senior Center at 4927 Lake Rd S, Brockport (NYSOFA 2021 directory) |
+| Senior Center | Town of Chili Senior Center | 3235 Chili Avenue, Rochester | Monroe | Superseded: Monroe County's current list has Chili Senior Center at 3237 Chili Ave (NYSOFA 2021 directory) |
+| Senior Center | Town of Gates Senior Center | 160 Buffalo Road, Gates | Monroe | Superseded: Monroe County's current list has Gates Senior Center at 1605 Buffalo Rd (NYSOFA 2021 directory) |
+| Senior Center | Town of Irondequoit Senior Center | 154 Pinegrove Avenue, Rochester | Monroe | Superseded: Monroe County's current list has Irondequoit Senior Center at 450 Skyview Centre Pkwy (NYSOFA 2021 directory) |
+| Senior Center | Town of Pittsford Senior Center | 3750 Monroe Avenue, Pittsford | Monroe | Superseded: Monroe County's current list has Pittsford Senior Center at 35 Lincoln Ave (NYSOFA 2021 directory) |
+| Veterans Hall | American Legion Auxiliary / 1612 Skinner-Ernest | 45 OLCOTT RD S | Chemung | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 166018485) |
+| Veterans Hall | American Legion Post 154 - Captain Clarence R Oliver | 236 SCOTTWOOD AVE | Chemung | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 160712197) |
+| Veterans Hall | American Legion Post 1612 - Skinner Ernest | PO BOX 166 | Chemung | PO Box-only address (IRS EIN 166093987) |
+| Veterans Hall | American Legion Post 1627 - Olive Memorial | PO BOX 1522 | Chemung | PO Box-only address (IRS EIN 146046297) |
+| Veterans Hall | American Legion Post 442 - Bentley Trumble | PO BOX 420 | Chemung | PO Box-only address (IRS EIN 160720963) |
+| Veterans Hall | Department of New York VFW Auxiliary / Rex Field Post 901 | 113 KEEFE ST # 115 | Chemung | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 743241723) |
+| Veterans Hall | Department of New York VFW Auxiliary / Van Etten-Spencer Post 8139 | 3936 WYNCOOP CREEK RD | Chemung | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 611556089) |
+| Veterans Hall | Marine Corps League Detachment - Dept of New York | PO BOX 444 | Chemung | PO Box-only address (IRS EIN 133660427) |
+| Veterans Hall | Marine Corps League Detachment 1493 - Empire State Leathernecks | PO BOX 444 | Chemung | PO Box-only address (IRS EIN 931837620) |
+| Veterans Hall | Marine Corps League Detachment 458 - Edward J Brewer | PO BOX 236 | Chemung | PO Box-only address (IRS EIN 510252058) |
+| Veterans Hall | Vietnam Veterans of America Chapter 803 - Chapter | 1200 DAVIS ST | Chemung | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 161553640) |
 | Veterans Hall | AMVETS Post 8793 | PO BOX 147 | Clinton | PO Box-only address (IRS EIN 320267351) |
 | Veterans Hall | American Legion Auxiliary / 0912 Montgomery | PO BOX 63 | Clinton | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 204484696) |
 | Veterans Hall | American Legion Post 1618 - Saranac | 275 WILSON RD | Clinton | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 146046324) |
 | Veterans Hall | American Legion Post 20 | 162 QUARRY RD | Clinton | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 141514851) |
-| Veterans Hall | American Legion Post 504 - Medos a Nelson | 11 MCCREA STREET | Clinton | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 146046443) |
+| Veterans Hall | American Legion Post 504 - Medos A Nelson | 11 MCCREA STREET | Clinton | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 146046443) |
 | Veterans Hall | American Legion Post 769 - Russell B Childs | PO BOX 226 | Clinton | PO Box-only address (IRS EIN 146046403) |
 | Veterans Hall | American Legion Post 912 - Montgomery | PO BOX 63 | Clinton | PO Box-only address (IRS EIN 141287665) |
 | Veterans Hall | DAV Chapter 179 - Pfc R Lafountain | PO BOX 744 | Clinton | PO Box-only address (IRS EIN 141671314) |
@@ -95,8 +144,8 @@ Full list:
 | Veterans Hall | American Legion Post 875 - John E Harrica | PO BOX 79 | Franklin | PO Box-only address (IRS EIN 166093954) |
 | Veterans Hall | American Legion Post 939 - Brushton Moira | PO BOX 52 | Franklin | PO Box-only address (IRS EIN 166094084) |
 | Veterans Hall | Brushton-Moira American Legion Auxiliary / 939 Brushton | PO BOX 72 | Franklin | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 800312141) |
-| Veterans Hall | DAV Chapter 182 - Ssgt Earl a Robinson Chapter | PO BOX 11 | Franklin | PO Box-only address (IRS EIN 310898167) |
-| Veterans Hall | Department of New York VFW Auxiliary / Albert a Gonyea Memorial Post 3357 | 202 BROADWAY | Franklin | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 510675597) |
+| Veterans Hall | DAV Chapter 182 - Ssgt Earl A Robinson Chapter | PO BOX 11 | Franklin | PO Box-only address (IRS EIN 310898167) |
+| Veterans Hall | Department of New York VFW Auxiliary / Albert A Gonyea Memorial Post 3357 | 202 BROADWAY | Franklin | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 510675597) |
 | Veterans Hall | VFW Post 3120 | 196 PARK ST | Franklin | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 237332260) |
 | Veterans Hall | American Legion Auxiliary Unit 137 /  | 200 N MAIN ST | Fulton | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 862815166) |
 | Veterans Hall | American Legion Post 1076 | PO BOX 973 | Fulton | PO Box-only address (IRS EIN 311620412) |
@@ -116,8 +165,8 @@ Full list:
 | Veterans Hall | Department of New York VFW Auxiliary / Llion Frankfort Memorial Post 502 | 4274 ACME RD | Herkimer | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 262416379) |
 | Veterans Hall | Department of New York VFW Auxiliary / Michael S Pliseck Post 4915 | 131 MOHAWK ST | Herkimer | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 161557683) |
 | Veterans Hall | Marine Corps League / 368 NY Pack Pound | 178 2ND ST | Herkimer | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 475038272) |
-| Veterans Hall | Marine Corps League Detachment - Herkimer County Unit | 178 2ND ST | Herkimer | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 161584683) |
 | Veterans Hall | Marine Corps League Detachment 227 - Herkimer County | 2103 ALBANY RD | Herkimer | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 161257017) |
+| Veterans Hall | Marine Corps League Detachment 368 - NY Pack Pound | 178 2ND ST | Herkimer | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 161584683) |
 | Veterans Hall | VFW Post 2338 | 752 US HIGHWAY 20 | Herkimer | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 223147319) |
 | Veterans Hall | VFW Post 4612 | PO BOX 145 | Herkimer | PO Box-only address (IRS EIN 150516870) |
 | Veterans Hall | VFW Post 4915 - Michael S Pliseck | PO BOX 26 | Herkimer | PO Box-only address (IRS EIN 150525601) |
@@ -149,6 +198,81 @@ Full list:
 | Veterans Hall | American Legion Post 723 - Floyd Lyng | 6703 OLD STATE RD | Lewis | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166094032) |
 | Veterans Hall | Department of New York VFW Auxiliary / Lewis County Memorial Post 6912 | 7150 STATE ROUTE 26 | Lewis | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 611509921) |
 | Veterans Hall | Marine Corps League Detachment 754 - Lewis County | PO BOX 164 | Lewis | PO Box-only address (IRS EIN 161575298) |
+| Veterans Hall | American Legion Auxiliary / 0255 Mathew Cleary Unit | CHURCH STREET | Livingston | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 300517136) |
+| Veterans Hall | American Legion Auxiliary / 87 Daniel Goho | 16 LEONARD ST | Livingston | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 161306038) |
+| Veterans Hall | American Legion Auxiliary / Unit of Seager Werner American Legi | PO BOX 55 | Livingston | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 393942627) |
+| Veterans Hall | American Legion Post 1341 - Hally Allen | PO BOX 135 | Livingston | PO Box-only address (IRS EIN 166094230) |
+| Veterans Hall | American Legion Post 1569 - Arland Kelley | PO BOX 95 | Livingston | PO Box-only address (IRS EIN 900628878) |
+| Veterans Hall | American Legion Post 271 - J Livingston Wadsworth | PO BOX 388 | Livingston | PO Box-only address (IRS EIN 166094220) |
+| Veterans Hall | American Legion Post 282 - Francis M Dalton | PO BOX 311 | Livingston | PO Box-only address (IRS EIN 166094253) |
+| Veterans Hall | American Legion Post 283 - Harrison Lee | PO BOX 214 | Livingston | PO Box-only address (IRS EIN 166094254) |
+| Veterans Hall | American Legion Post 294 - Joseph Gallipeau | PO BOX 132 | Livingston | PO Box-only address (IRS EIN 166094051) |
+| Veterans Hall | American Legion Post 333 - Seager Werner | PO BOX 55 | Livingston | PO Box-only address (IRS EIN 166094038) |
+| Veterans Hall | American Legion Post 87 - Daniel Goho | 34 ELIZABETH ST | Livingston | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 160809313) |
+| Veterans Hall | American Legion Post 905 - Kern Robinson | PO BOX 100 | Livingston | PO Box-only address (IRS EIN 166093841) |
+| Veterans Hall | Department of New York VFW Auxiliary / Duryea-Kleinhenz-Lathrop Post 8961 | 32 N STATE ST | Livingston | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 010918487) |
+| Veterans Hall | Department of New York VFW Auxiliary / Frank J Casbolt Memorial Post 6780 | 145 MAIN ST | Livingston | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 161360206) |
+| Veterans Hall | Department of New York VFW Auxiliary / Lt Boyd and Sgt Parker Post 547 | 3 ELM ST | Livingston | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 262278643) |
+| Veterans Hall | VFW Post 547 | PO BOX 414 | Livingston | PO Box-only address (IRS EIN 237335018) |
+| Veterans Hall | American Legion Auxiliary / 0468 Greece | 344 DORSEY RD | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 611569788) |
+| Veterans Hall | American Legion Auxiliary / 1830 Chili | 450 CHILI-SCOTTSVILLE ROAD | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 222506384) |
+| Veterans Hall | American Legion Auxiliary / 330 Unit | FERRIS GOODRIDGE AUXILIARY UNIT 330 | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 364848693) |
+| Veterans Hall | American Legion Auxiliary / 367 Smith-Warren | 61 MAIN ST | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 166052028) |
+| Veterans Hall | American Legion Auxiliary / 942 Cottreall Warner | 818 RIDGE RD | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 263461791) |
+| Veterans Hall | American Legion Auxiliary / 954 Harvey C Noone | PO BOX 3 | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 166053362) |
+| Veterans Hall | American Legion Auxiliary / New York Monroe County Committee | 93 FREEDOM POND LN | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 161214899) |
+| Veterans Hall | American Legion Post | 933 UNIVERSITY AVE STE A | Monroe | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 200302749) |
+| Veterans Hall | American Legion Post 1151 - Ely Fagan | PO BOX 72 | Monroe | PO Box-only address (IRS EIN 166093875) |
+| Veterans Hall | American Legion Post 1229 - Braman | PO BOX 4 | Monroe | PO Box-only address (IRS EIN 166094092) |
+| Veterans Hall | American Legion Post 1229 - Braman | PO BOX 4 | Monroe | PO Box-only address (IRS EIN 932605013) |
+| Veterans Hall | American Legion Post 134 - Irondequoit | 222 OAKLAWN DR | Monroe | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166093829) |
+| Veterans Hall | American Legion Post 1830 - Chili | 450 CHILI SCOTTSVILLE ROAD | Monroe | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 161074268) |
+| Veterans Hall | American Legion Post 330 - Ferris Goodridge | PO BOX 113 | Monroe | PO Box-only address (IRS EIN 166093844) |
+| Veterans Hall | American Legion Post 468 - Greece | 344 Dorsey Rd | Monroe | Duplicate of 'American Legion Post 468 - Greece' (same address and type) |
+| Veterans Hall | American Legion Post 474 - Ira J Jacobson | 90 SAINT JOHNS PARK | Monroe | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 160871272) |
+| Veterans Hall | American Legion Post 899 - Rayson Miller | 21 N MAIN ST | Monroe | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166094290) |
+| Veterans Hall | American Legion Post 954 - Harvey C Noone | PO BOX 3 | Monroe | PO Box-only address (IRS EIN 166094207) |
+| Veterans Hall | American Legion Post 98 - William W Doud | PO BOX 24679 | Monroe | PO Box-only address (IRS EIN 510243700) |
+| Veterans Hall | DAV Chapter 15 - Monroe Powers | 2125 PINNACLE RD | Monroe | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 116101243) |
+| Veterans Hall | Department of New York VFW Auxiliary / Chili Memorial Post 412 | 32 ALFRED AVE | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 800321242) |
+| Veterans Hall | Department of New York VFW Auxiliary / Frances E Hibbard Post 4658 | 344 DORSEY RD | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 510659557) |
+| Veterans Hall | Department of New York VFW Auxiliary / Hamlin Post 6703 | 1739 LAKE RD | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 510648192) |
+| Veterans Hall | Department of New York VFW Auxiliary / Pennington-Moye Post 9251 | 74 MULCAHY BLVD | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 743245639) |
+| Veterans Hall | Department of New York VFW Auxiliary / Perinton Memorial Post 8495 | 300 MACEDON CENTER RD | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 134366587) |
+| Veterans Hall | Department of New York VFW Auxiliary to District 8 /  | 40 GROTON PKWY | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 753259925) |
+| Veterans Hall | Disabled American Veterans Auxiliary Inc / 15 Monroe Powers Unit | 1239 UNIVERSITY AVE SUITE 4 | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 882807225) |
+| Veterans Hall | Jewish War Veterans Post 41 - David J Kaufman | PO BOX 18184 | Monroe | PO Box-only address (IRS EIN 166054125) |
+| Veterans Hall | Jewish War Veterans of USA Memorial Foundation Inc / David J Kauffman Post 41 Jwv | 255 EAST AVE STE 201 | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 161363822) |
+| Veterans Hall | Marine Corps League Detachment 223 - Genesee Valley | 1805 BLOSSOM RD | Monroe | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166089744) |
+| Veterans Hall | Monroe County American Legion Honor Guard Inc /  | PO BOX 15493 | Monroe | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 822441116) |
+| Veterans Hall | VFW Post 8495 | PO BOX 92 | Monroe | PO Box-only address (IRS EIN 237334568) |
+| Veterans Hall | VFW Post 9251 | 200 West Ave | Monroe | Duplicate of 'VFW Post 16' (same address and type) |
+| Veterans Hall | VFW Post 9483 - Sean P Miller Adm | PO BOX 1140 | Monroe | PO Box-only address (IRS EIN 237303600) |
+| Veterans Hall | Vietnam Veterans of America Chapter 20 - Chapter | PO BOX 12580 | Monroe | PO Box-only address (IRS EIN 161185365) |
+| Veterans Hall | AMVETS Post 332 | PO BOX 25291 | Ontario | PO Box-only address (IRS EIN 473592467) |
+| Veterans Hall | American Legion Auxiliary / 0396 Winnek Unit | 1011 ROUTES 5 AND 20 | Ontario | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 450594837) |
+| Veterans Hall | American Legion Auxiliary / 457 Seeley B Parish | 1345 STATE ROUTE 96 | Ontario | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 222485315) |
+| Veterans Hall | American Legion Post 1278 - Honedye Hemlock | 4931 COUNTY ROAD 36 | Ontario | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166094241) |
+| Veterans Hall | American Legion Post 34 - Turner Schrader | PO BOX 234 | Ontario | PO Box-only address (IRS EIN 160782304) |
+| Veterans Hall | American Legion Post 396 - Winnek | 1101 ROUTES 5 20 | Ontario | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166094221) |
+| Veterans Hall | American Legion Post 457 - Seeley B Parish | 1346 ROUTE 96 | Ontario | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166094093) |
+| Veterans Hall | American Legion Post 931 - James Cooke | PO BOX 131 | Ontario | PO Box-only address (IRS EIN 166093718) |
+| Veterans Hall | Department of New York VFW Auxiliary / Canandaigua Memorial Post 7414 | 93 S MAIN ST | Ontario | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 510657849) |
+| Veterans Hall | VFW Post 44 | PO BOX 149 | Ontario | PO Box-only address (IRS EIN 237333008) |
+| Veterans Hall | VFW Post 8726 | PO BOX 146 | Ontario | PO Box-only address (IRS EIN 510208593) |
+| Veterans Hall | American Legion Post 1208 - Meade Price | PO BOX 101 | Schuyler | PO Box-only address (IRS EIN 166094224) |
+| Veterans Hall | American Legion Post 555 - Seneca | 3404 WEDGEWOOD RD | Schuyler | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166093709) |
+| Veterans Hall | American Legion Post 676 - Cole Hansenberger Deland | 2532 STEAM MILL ROAD | Schuyler | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166093811) |
+| Veterans Hall | DAV Chapter 7 - Kimble Kowalski | 3221 STATE ROUTE 414 | Schuyler | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 116101242) |
+| Veterans Hall | American Legion Auxiliary / 0435 Warner-Van Riper Unit | 585 W RIVER RD | Seneca | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 800248271) |
+| Veterans Hall | American Legion Post 366 | 48 STATE ST | Seneca | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 150521606) |
+| Veterans Hall | American Legion Post 435 | 7 E WILLIAMS ST | Seneca | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 150509709) |
+| Veterans Hall | American Legion Post 463 - Manning Lilla | PO BOX 401 | Seneca | PO Box-only address (IRS EIN 166093698) |
+| Veterans Hall | Department of New York VFW Auxiliary / Arthur G Depew Post 2600 | PO BOX 1 | Seneca | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 450582120) |
+| Veterans Hall | Department of New York VFW Auxiliary / Jeannette Lichter | PO BOX 181 | Seneca | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 263414128) |
+| Veterans Hall | Department of New York VFW Auxiliiary / Waterloo Memorial Post 6433 | 29 W ELISHA ST | Seneca | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 260803337) |
+| Veterans Hall | VFW Post 1323 | PO BOX 181 | Seneca | PO Box-only address (IRS EIN 150519261) |
+| Veterans Hall | Veterans of Foreign Wars of the US Dept of NY- District 8 / Wl Campbell | 36 INSLEE ST | Seneca | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 161430861) |
 | Veterans Hall | AMVETS / 265 Ladies Auxilliary | 5 CATHERINE STREET | St. Lawrence | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 100000719) |
 | Veterans Hall | AMVETS Post 1997 | PO BOX 580 | St. Lawrence | PO Box-only address (IRS EIN 161529284) |
 | Veterans Hall | AMVETS Post 1997 | PO BOX 580 | St. Lawrence | PO Box-only address (IRS EIN 161543507) |
@@ -182,6 +306,56 @@ Full list:
 | Veterans Hall | Sons of AMVETS Squadron 265 / NY 265 | PO BOX 212 | St. Lawrence | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 010563346) |
 | Veterans Hall | VFW Post | 1112 CHAMPLAIN ST | St. Lawrence | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 150507630) |
 | Veterans Hall | VFW Post 6338 | 100 W MAIN ST | St. Lawrence | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 150527116) |
+| Veterans Hall | AMVETS Post 245 | 28 Broadway Mall | Steuben | Duplicate of 'AMVETS Post 245' (same address and type) |
+| Veterans Hall | AMVETS Post 245 | 28 Broadway Mall | Steuben | Duplicate of 'AMVETS Post 245' (same address and type) |
+| Veterans Hall | AMVETS Post 245 | 28 Broadway Mall | Steuben | Duplicate of 'AMVETS Post 245' (same address and type) |
+| Veterans Hall | American Legion Auxiliary / 1248 Arkport Memorial | PO BOX 292 | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 222488608) |
+| Veterans Hall | American Legion Auxiliary / 1279 Robert N Austin | 8458 COUNTY ROUTE 333 | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 133336969) |
+| Veterans Hall | American Legion Auxiliary / 1425 Birmingham-Burd | PO BOX 741 | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 300620845) |
+| Veterans Hall | American Legion Auxiliary / 173 Charles E Wescott | 14 W WILLIAM ST | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 222488830) |
+| Veterans Hall | American Legion Auxiliary / 440 Arthur J Cunningham Unit | 72 SENECA ST | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 262920484) |
+| Veterans Hall | American Legion Auxiliary / 746 John P Eaton | 60 BISSELL AVE | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 222486826) |
+| Veterans Hall | American Legion Auxiliary / Canisteo Legion Auxiliary | 61 W MAIN ST | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 264013674) |
+| Veterans Hall | American Legion Auxiliary / New York Steuben County | 110 CROSBY ST | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 222505248) |
+| Veterans Hall | American Legion Auxiliary Unit of Theo R Vantassel Post No 402 /  | 102 N MAIN ST | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 800567618) |
+| Veterans Hall | American Legion Post 1248 - Arkport Memorial | PO BOX 475 | Steuben | PO Box-only address (IRS EIN 166093797) |
+| Veterans Hall | American Legion Post 1428 - Birmingham Burd | PO BOX 734 | Steuben | PO Box-only address (IRS EIN 166093963) |
+| Veterans Hall | American Legion Post 1740 - Woodhull Memorial | PO BOX 140 | Steuben | PO Box-only address (IRS EIN 166093692) |
+| Veterans Hall | American Legion Post 407 - Roswell Mcdaniels | PO BOX 544 | Steuben | PO Box-only address (IRS EIN 161074620) |
+| Veterans Hall | American Legion Post 730 - Williams Greengrass | 85 MAPLE STREET 85 MAPLE STREET | Steuben | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 160864999) |
+| Veterans Hall | American Legion Post 805 - Ouderkirk Cragg | 6 WILCOX ST | Steuben | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 161216874) |
+| Veterans Hall | Department of New York VFW Auxiliary / Corporal Jj Mooney Post 2250 | 245 CANISTEO ST | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 412249698) |
+| Veterans Hall | Department of New York VFW Auxiliary / Crystal City Post 524 | 281 BAKER ST | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 364691976) |
+| Veterans Hall | Department of New York VFW Auxiliary / Webster-Hill-Conklin Post 1470 | PO BOX 527 | Steuben | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 800334373) |
+| Veterans Hall | Marine Corps League Detachment 461 - Raider | 245 Canisteo St | Steuben | Duplicate of 'VFW Post 2250' (same address and type) |
+| Veterans Hall | VFW Post 1470 - Webster Hill Conklim | PO BOX 527 | Steuben | PO Box-only address (IRS EIN 262039269) |
+| Veterans Hall | American Legion Auxiliary / 0221 Ithaca Unit | 119 COMPTON RD | Tompkins | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 161399055) |
+| Veterans Hall | American Legion Auxiliary / 1134 Leonard T Spaulding | 2272 DRYDEN RD | Tompkins | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 161264386) |
+| Veterans Hall | American Legion Auxiliary / 800 Carrington Fuller Post | 307 MAIN ST | Tompkins | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 237008634) |
+| Veterans Hall | American Legion Auxiliary / Tompkins County | 119 COMPTON RD | Tompkins | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 166179230) |
+| Veterans Hall | American Legion Post 1134 - Leonard T Spaulding | 2272 Dryden Rd | Tompkins | Duplicate of 'Vietnam Veterans of America Chapter 377 - Finger Lakes Chapter' (same address and type) |
+| Veterans Hall | American Legion Post 221 - Ithaca | 1231 DANBY RD | Tompkins | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 150504561) |
+| Veterans Hall | VFW Post 961 | 423 W STATE ST | Tompkins | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 150479696) |
+| Veterans Hall | American Legion Auxiliary / 120 James R Hickey | 132 CUYLER ST | Wayne | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 222484780) |
+| Veterans Hall | American Legion Auxiliary / 1430 Marion Memorial | 4141 WITHERDEN RD | Wayne | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 222547393) |
+| Veterans Hall | American Legion Auxiliary / 286 August Mauer | 200 E UNION ST | Wayne | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 943451015) |
+| Veterans Hall | American Legion Auxiliary / 394 Williamson | PO BIX 196 | Wayne | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 237197058) |
+| Veterans Hall | American Legion Auxiliary / 428 Meyers-Ingraham | 6959 MUD LN | Wayne | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 222485158) |
+| Veterans Hall | American Legion Auxiliary / 494 Philip Steiger | 521 WILKINSON RD | Wayne | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 800296898) |
+| Veterans Hall | American Legion Post 1343 - Arthur T Meehan | 544 WILEY RD | Wayne | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166093864) |
+| Veterans Hall | American Legion Post 394 | PO BOX 158 | Wayne | PO Box-only address (IRS EIN 166093697) |
+| Veterans Hall | American Legion Post 428 - Meyers Ingraham | PO BOX 428 | Wayne | PO Box-only address (IRS EIN 166094037) |
+| Veterans Hall | American Legion Post 436 - Peterson Hall | PO BOX 19 | Wayne | PO Box-only address (IRS EIN 364620077) |
+| Veterans Hall | American Legion Post 494 - Phillip Steiger | 76 W MAIN ST | Wayne | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 166094070) |
+| Veterans Hall | Department of New York VFW Auxiliary / Charles W Hall Post 7147 | 10675 RIDGE RD | Wayne | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 300475842) |
+| Veterans Hall | Department of New York VFW Auxiliary / Lyons Memorial Post 5092 | PO BOX 286 | Wayne | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 300508545) |
+| Veterans Hall | Department of New York VFW Auxiliary / Palmyra Memorial Post 6778 | 4306 ROUTE 31 | Wayne | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 510677020) |
+| Veterans Hall | Marine Corps League / 37 Weny Pound Modd | 2921 PILGRINPORT RD | Wayne | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 421758542) |
+| Veterans Hall | Marine Corps League Detachment 468 - Memorial Day | 245 W GENESEE ST | Wayne | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 431978009) |
+| Veterans Hall | VFW Post 5092 | 202 GENEVA ST | Wayne | Looks residential: IRS address is in care of an individual and no other veterans org shares it (IRS EIN 150560790) |
+| Veterans Hall | American Legion Auxiliary / 355 Johnson-Costello | 2001 HIMROD RD | Yates | Auxiliary / district / affiliated group - not a post with its own hall (IRS EIN 900388108) |
+| Veterans Hall | VFW Post 745 - Yates County | PO BOX 652 | Yates | PO Box-only address (IRS EIN 160723908) |
+| Veterans Hall | VFW Post 8649 - Goodrich Smith | PO BOX 206 | Yates | PO Box-only address (IRS EIN 237334560) |
 
 ## 3. Records with missing ZIP, county or street address
 
@@ -208,16 +382,22 @@ Full list:
 | NCES IPEDS Institutional Characteristics HD2024 | https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip | 2026-11-12 | Federal data - public domain |
 | NYSOFA Directory of Multi-Purpose Senior Centers (data.ny.gov t4ba-giyx; last updated 2021-10-27) | https://data.ny.gov/api/views/t4ba-giyx/rows.csv?accessType=DOWNLOAD | 2026-11-12 | Open NY Terms of Use (free reuse) |
 | NYSOFA Directory of Area Agency on Aging Service Providers (data.ny.gov t8nk-j66w) | https://data.ny.gov/api/views/t8nk-j66w/rows.csv?accessType=DOWNLOAD | 2026-11-12 | Open NY Terms of Use (free reuse) |
-| Essex County / ACAP Senior Centers and Nutrition Sites 2026 (PDF) | https://essexcountyny.gov/wp-content/uploads/Senior-Centers-and-Nutrition-Sites-2026.pdf | 2026-11-12 | Public government page; robots.txt allows |
-| Clinton County OFA - Nutrition Sites | https://www.clintoncountyny.gov/aging/snapshots/nutrition-sites | 2026-11-12 | Public government page; robots.txt allows |
-| St. Lawrence County OFA page (+ July 2025 menu PDF for cross-check) | https://stlawco.gov/node/285 | 2026-11-12 | Public government page; robots.txt allows |
-| Lewis County OFA - Food and Meals | https://lewiscountyny.gov/departments/office-for-the-aging/food-and-meals/ | 2026-11-12 | Public government page; robots.txt allows |
-| Fulton County Office for Aging - Services | https://www.fcofa.org/services.html | 2026-11-12 | Public county agency page; no robots restrictions found |
-| Warren/Hamilton Counties OFA Summer 2026 newsletter (PDF) | https://www.warrencountyny.gov/sites/default/files/ofa/docs/news/2026/summer.pdf | 2026-11-12 | Public government page; robots.txt allows |
-| Herkimer County OFA documents (checked; no site addresses published) | https://herkimercountyny.gov/download/document.php?docid=4501 | 2026-11-12 | Public government page |
-| Jefferson County OFA nutrition page (checked; site list empty on page) | https://www.jeffersoncountyny.gov/nutrition-program | 2026-11-12 | Public government page |
 | IRS Exempt Organizations Business Master File Extract - NY | https://www.irs.gov/pub/irs-soi/eo_ny.csv | 2026-11-12 | IRS public data - public domain |
 | U.S. Census Geocoder (ZIP fill for county-list addresses; spot-check) | https://geocoding.geo.census.gov/geocoder/ | 2026-11-12 | U.S. Census Bureau - public; rate-limited to ~1 request/sec |
+| Essex County / ACAP Senior Centers and Nutrition Sites 2026 (PDF) [Sue Merrell] | https://essexcountyny.gov/wp-content/uploads/Senior-Centers-and-Nutrition-Sites-2026.pdf | 2026-11-12 | Public government page; robots.txt allows |
+| Clinton County OFA - Nutrition Sites [Sue Merrell] | https://www.clintoncountyny.gov/aging/snapshots/nutrition-sites | 2026-11-12 | Public government page; robots.txt allows |
+| St. Lawrence County OFA page (+ July 2025 menu PDF for cross-check) [Sue Merrell] | https://stlawco.gov/node/285 | 2026-11-12 | Public government page; robots.txt allows |
+| Lewis County OFA - Food and Meals [Sue Merrell] | https://lewiscountyny.gov/departments/office-for-the-aging/food-and-meals/ | 2026-11-12 | Public government page; robots.txt allows |
+| Fulton County Office for Aging - Services [Sue Merrell] | https://www.fcofa.org/services.html | 2026-11-12 | Public county agency page; no robots restrictions found |
+| Warren/Hamilton Counties OFA Summer 2026 newsletter (PDF) [Sue Merrell] | https://www.warrencountyny.gov/sites/default/files/ofa/docs/news/2026/summer.pdf | 2026-11-12 | Public government page; robots.txt allows |
+| Herkimer County OFA documents (checked; no site addresses published) [Sue Merrell] | https://herkimercountyny.gov/download/document.php?docid=4501 | 2026-11-12 | Public government page |
+| Jefferson County OFA nutrition page (checked; site list empty on page) [Sue Merrell] | https://www.jeffersoncountyny.gov/nutrition-program | 2026-11-12 | Public government page |
+| Monroe County OFA - Lunch Club / Senior Center Meal Sites [Austin Ponce] | https://www.monroecounty.gov/aging-centers | 2026-11-12 | Public government page; robots.txt has no restrictions |
+| Livingston County OFA - Senior Sites [Austin Ponce] | https://www.livingstoncountyny.gov/590/Senior-Sites | 2026-11-12 | Public government page; robots.txt blocks only Baidu/Yandex crawlers |
+| Chemung County Eat Well Live Well flyer (PDF, modified 2025-10-20) [Austin Ponce] | https://www.chemungcountyny.gov/DocumentCenter/View/18866 | 2026-11-12 | Public government document; robots.txt blocks only Baidu/Yandex |
+| Foodnet Meals on Wheels community dining (Tompkins County OFA contractor) [Austin Ponce] | https://www.foodnet.org/senior-community-dining | 2026-11-12 | Public nonprofit page; robots.txt allows; Tompkins County's own page returned 403 to automated access, so not used |
+| Steuben County OFA directory page [Austin Ponce] | https://www.steubencountyny.gov/Directory.aspx?DID=36 | 2026-11-12 | Public government page; robots.txt blocks only Baidu/Yandex |
+| 211 Lifeline directory - Wayne County Dept of Aging & Youth senior centers (LOW CONFIDENCE, third-party; read via web search only, not crawled; staff names not copied) [Austin Ponce] | https://211lifeline.org/detail.php?id=7334183 | 2026-11-12 | Public nonprofit 211 directory; used only because Wayne County publishes no site list found |
 
 **Sources checked and NOT used:**
 - **American Legion post locator (legion.org):** Terms of Use prohibit "any robot, spider, scraper or other automated means to access the Services for any purpose without our express written permission". Not used.
@@ -228,7 +408,7 @@ Full list:
 
 ## 5. Spot-check
 
-Random sample of 25 of 204 venue records (about 12%, minimum 25), stratified by type (seed 20261112): 11 libraries, 7 senior centers, 5 veterans halls, 2 colleges. Each was checked with the Census Geocoder (address exists, ZIP, county) and a second source: the venue's own or official website where one was found, otherwise public directories.
+Per group: a random sample of 25 venue records (about 10% of each group, minimum 25), stratified by type: 11 libraries, 7 senior centers, 5 veterans halls, 2 colleges. Total 50 of 424 records (12%). Each was checked with the Census Geocoder (address exists, ZIP, county) and a second source: the venue's own or official website where one was found, otherwise public directories.
 
 | ID | Type | Name | Address in workbook | Second source | Result |
 |---|---|---|---|---|---|
@@ -257,18 +437,52 @@ Random sample of 25 of 204 venue records (about 12%, minimum 25), stratified by 
 | V-0112 | Veterans Hall | American Legion Post 31 - Little Falls | 100 W Main St, Little Falls 13365 | Census Geocoder; IRS 990 summaries | Match (address) |
 | V-0011 | College Campus | State University of New York at Plattsburgh | 101 Broad St, Plattsburgh 12901 | Official plattsburgh.edu contact page | Match (address, phone); geocoder no match (campus address) |
 | V-0189 | College Campus | Clarkson University | 8 Clarkson Ave, Potsdam 13699 | Official clarkson.edu | Match (address, phone); geocoder no match (campus address) |
+| V-0250 | Library | Penfield Public Library | 1985 Baird Rd, Penfield 14526 | Census Geocoder; directories | Match (address, phone) |
+| V-0207 | Library | West Elmira Library | 1231 W Water St, Elmira 14905 | Census Geocoder; chemunglibraries.org | Match (address, phone) |
+| V-0244 | Library | Fairport Public Library | 1 Village Landing, Fairport 14450 | Directories; library listings | Match (1 Fairport Village Landing, phone); geocoder matched wrong street |
+| V-0313 | Library | Bristol Library | 6750 County Road 32, Canandaigua 14424 | Census Geocoder; directories | Match (address, phone) |
+| V-0376 | Library | Groton Public Library | 112 E Cortland St, Groton 13073 | FLLS annual reports; directories | Match (112 E Cortland St, phone); geocoder wrongly matched W Cortland St |
+| V-0206 | Library | Steele Memorial Library | 101 E Church St, Elmira 14901 | Census Geocoder; chemunglibraries.org | Match (address, phone) |
+| V-0334 | Library | Watkins Glen Cen Sch Dis Free Pub Lib | 610 S Decatur St, Watkins Glen 14891 | Census Geocoder; library website | Match (address, phone) |
+| V-0226 | Library | Wadsworth Library | 24 Center St, Geneseo 14454 | Census Geocoder; directories | Match (address, phone) |
+| V-0348 | Library | Arkport Public Library | 2 East Ave, Arkport 14807 | Census Geocoder; Village of Arkport | Match (address); phone not confirmed |
+| V-0230 | Library | Bell Memorial Library | 16 East St, Nunda 14517 | Census Geocoder; directories | Match (address, phone) |
+| V-0224 | Library | Caledonia Library Association | 3108 Main St, Caledonia 14423 | Census Geocoder; town site | Match (address, phone) |
+| V-0294 | Senior Center | Ibero American Action League | 817 E Main St, Rochester 14605 | Hispanic Federation; 211 Lifeline | MISMATCH: 817 E Main St is Ibero's office; its senior center is Centro de Oro (already listed) |
+| V-0215 | Senior Center | George Bragg Towers Meal Site | 115 Dewitt Ave, Elmira 14901 | Census Geocoder; county inspection records | Match (congregate nutrition program at 115 Dewitt Ave) |
+| V-0304 | Senior Center | Ogden Senior Center | 200 S Union St, Spencerport 14559 | Census Geocoder; Town of Ogden site | Match (address, phone) |
+| V-0219 | Senior Center | North County Senior Center | 800 W Broad St, Horseheads 14845 | Chemung County centers list (via search); senior living listing | MISMATCH: North County Senior Center now listed at Appleridge, 168 Miller St, Horseheads |
+| V-0327 | Senior Center | Salvation Army (Golden Spot Senior Center) | 110 Saltonstall St, Canandaigua 14424 | Census Geocoder; Salvation Army site | Match (address) |
+| V-0288 | Senior Center | Brighton - Brookside Community Center | 220 Idlewood Rd, Rochester 14610 | Town of Brighton site; Census Geocoder | MISMATCH: 220 Idlewood Rd is mail-only; ZIP 14618 not 14610; property sold, center's future uncertain |
+| V-0213 | Senior Center | Chemung County Family Fitness Center | 425 Pennsylvania Ave, Elmira 14904 | Census Geocoder; county listings | Match (county facility with senior programs) |
+| V-0372 | Veterans Hall | American Legion Post 440 - Arthur H Cunningham | 72 Seneca St, Hornell 14843 | Census Geocoder; IRS-based directories | Match (address) |
+| V-0423 | Veterans Hall | American Legion Post 660 - Bradley Jessop | 10 Spring St, Dundee 14837 | Census Geocoder; directories | Match (address) |
+| V-0222 | Veterans Hall | VFW Post 6083 | 246 Horseheads Blvd, Elmira Hts 14903 | Census Geocoder; county inspection report | Match (address) |
+| V-0424 | Veterans Hall | American Legion Post 355 - Johnson Costello | 2001 Himrod Rd, Penn Yan 14527 | Yates County Chamber listing | Match (address; phone (315) 536-8222 not added); geocoder no match |
+| V-0412 | Veterans Hall | American Legion Post 286 - August Mauer | 200 E Union St, Newark 14513 | Census Geocoder; directories | Match (address) |
+| V-0276 | College Campus | Nazareth University | 4245 East Ave, Rochester 14618 | Census Geocoder; directories | Match (address, phone) |
+| V-0211 | College Campus | Elmira College | One Park Pl, Elmira 14901 | Directories | Match (address, phone); geocoder no match (campus address) |
 
-**9 of 25 sampled records had a mismatch or could not be confirmed** (6 substantive, the rest minor street-name differences). Every mismatch was added to that record's Notes. In short: OFA and IRS-sourced records need more staff verification than the library and college records do.
+**12 of 50 sampled records had a mismatch or could not be confirmed** (9 substantive, the rest minor street-name differences). Every mismatch was added to that record's Notes. In short: OFA and IRS-sourced records need more staff verification than the library and college records do.
 
 ## 6. Incomplete or uncertain
 
-- **Hours (J)** are filled only where a county OFA source published them (30 senior-center rows). IMLS and IPEDS publish no weekly schedules (IMLS has annual hours only, which were not used).
+
+**Sue Merrell group:**
+
+- **Hours (J)** are filled only where a county OFA source published them (34 senior-center rows). IMLS and IPEDS publish no weekly schedules (IMLS has annual hours only, which were not used).
 - **Library websites** are blank: IMLS outlet data has no web address, and the NYS Library directory could not be reached (TLS error).
-- **Veterans halls:** IRS addresses are the address of record, not a confirmed hall. 26 records that looked residential were dropped as you instructed: care of a named individual with no other veterans group at the same address, or an apartment/unit/lot address. 60 PO Box records were dropped too. As a result, many posts are missing (e.g., several Legion posts in Hamilton, Essex and Franklin use PO Boxes). Phone numbers are blank because the IRS file has none.
+- **Veterans halls:** IRS addresses are the address of record, not a confirmed hall. 26 records that looked residential were dropped as you instructed: care of a named individual with no other veterans group at the same address, or an apartment/unit/lot address. 60 PO Box records were dropped too, so many posts are missing (e.g., several Legion posts in Hamilton, Essex and Franklin use PO Boxes). Phone numbers are blank because the IRS file has none.
 - **Senior centers:** Franklin and Jefferson rely on the NYSOFA 2021 directory (Jefferson County's web page lists no sites). Herkimer County says it runs 5 congregate sites at senior housing (Dolgeville, Little Falls, Herkimer, Ilion, West Winfield) but publishes no addresses, so only the Herkimer OFA office is listed. Essex sites in the NYSOFA 2021 directory all used the OFA PO Box and were dropped; the 2026 county list replaced them.
 - **Office for the Aging offices** are included as Type 'Senior Center' (the closest allowed type), with a note that they are administrative offices. Warren/Hamilton's joint OFA office is in Lake George (Warren County), so it will appear with Buck Bobbin's group.
 - **College branch campuses** not separately reported to IPEDS are missing, e.g., North Country Community College's Malone and Ticonderoga campuses and Jefferson CC's Fort Drum site. IPEDS also shows North Country CC's main campus in Essex County although its Saranac Lake ZIP (12983) is mainly Franklin; the source county was kept and the conflict noted.
-- **Name cleaning:** veterans post names were built from IRS name fields (e.g., 'American Legion Post 61 - Watertown Army & Navy'). IRS truncates long names, so a few post names may be cut short.
-- **Date Verified (N)** is the date the data was pulled, 2026-11-12. No staff verification yet; every row has 'Verified by Staff?' = No.
-- %
-- TODAY
+- **Name cleaning:** veterans post names were built from IRS name fields (e.g., 'American Legion Post 61 - Watertown Army & Navy'). IRS truncates long names, so a few post names may be cut short. Where a post's own IRS record had no post number, the number was taken from an affiliated record (e.g., its auxiliary) at the same address, and this is noted.
+
+**Austin Ponce group:**
+
+- **Monroe** senior centers come from the county's current Lunch Club list (19 centers with hours). Five NYSOFA 2021 entries at older addresses (Sweden, Pittsford, Irondequoit, Chili, Gates) were dropped as superseded. Town senior centers that are not OFA Lunch Club sites (e.g., Penfield, Perinton, East Rochester) are NOT in any public source used and are missing.
+- **Ontario, Seneca, Schuyler and Yates** have no current county site lists online, so they rely on the NYSOFA 2021 directory plus the OFA office. Ontario County says it runs 8 dining sites but publishes no list. A September 2026 news report said Seneca County OFA had cancelled all meal services, including meals at gathering sites; no reopening date was found. Yates' only site list found is from 2012 and was not used.
+- **Wayne** senior centers (4) come from the 211 Lifeline directory and are marked LOW CONFIDENCE.
+- **Tompkins:** the county's own nutrition page blocked automated access (HTTP 403), so the 3 dining sites come from Foodnet Meals on Wheels, the county's contracted meal provider.
+- **Veterans halls:** only 33 survived in this group, with only 5 in Monroe County. Most Monroe posts list PO Boxes or care-of-individual addresses in the IRS file. This category is the least complete.
+- **Colleges:** 25 from IPEDS. University of Rochester's IPEDS address ('Wilson Blvd - Wallis Hall') has no street number, and Cornell's ('300 Day Hall') is an administrative building. Both were kept as reported. Wells College (Aurora) closed in 2024 and correctly does not appear.
