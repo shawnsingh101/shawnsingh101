@@ -1,4 +1,231 @@
 ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (from L2),Notes
+12007,Albany,Alcove,,,,
+12009,Albany,Altamont,,,,Multi-county ZIP: Albany ~99% of addresses; also Schenectady ~1%
+12023,Albany,Berne,,,,Multi-county ZIP: Albany ~81% of addresses; also Schoharie ~19%
+12041,Albany,Clarksville,,,,
+12045,Albany,Coeymans,,,,
+12046,Albany,Coeymans Hollow,,,,Multi-county ZIP: Albany ~91% of addresses; also Greene ~9%
+12047,Albany,Cohoes,,,,
+12054,Albany,Delmar,,,,
+12055,Albany,Dormansville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12059,Albany,East Berne,,,,
+12067,Albany,Feura Bush,,,,
+12077,Albany,Glenmont,,,,
+12084,Albany,Guilderland,,,,
+12085,Albany,Guilderland Center,,,,
+12107,Albany,Knox,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12110,Albany,Latham,,,,
+12120,Albany,Medusa,,,,Multi-county ZIP: Albany ~99% of addresses; also Greene ~1%
+12128,Albany,Newtonville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12143,Albany,Ravena,,,,Multi-county ZIP: Albany ~94% of addresses; also Greene ~6%
+12147,Albany,Rensselaerville,,,,
+12158,Albany,Selkirk,,,,
+12159,Albany,Slingerlands,,,,
+12161,Albany,South Bethlehem,,,,
+12183,Albany,Troy,,,,
+12186,Albany,Voorheesville,,,,
+12189,Albany,Watervliet,,,,
+12193,Albany,Westerlo,,,,
+12201,Albany,Albany,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12202,Albany,Albany,,,,
+12203,Albany,Albany,,,,
+12204,Albany,Albany,,,,
+12205,Albany,Albany,,,,
+12206,Albany,Albany,,,,
+12207,Albany,Albany,,,,
+12208,Albany,Albany,,,,
+12209,Albany,Albany,,,,
+12210,Albany,Albany,,,,
+12211,Albany,Albany,,,,
+12212,Albany,Albany,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12214,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12220,Albany,Albany,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12222,Albany,Albany,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+12223,Albany,Albany,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12224,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12225,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12226,Albany,Albany,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+12227,Albany,Albany,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12228,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12229,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12230,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12231,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12232,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12233,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12234,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12235,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12236,Albany,Albany,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12237,Albany,Albany,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12238,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12239,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12240,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12241,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12242,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12243,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12244,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12245,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12246,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12247,Albany,Albany,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12248,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12249,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12250,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12252,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12255,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12256,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12257,Albany,Albany,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+12260,Albany,Albany,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12261,Albany,Albany,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12288,Albany,Albany,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12469,Albany,Preston Hollow,,,,Multi-county ZIP: Albany ~72% of addresses; also Schoharie ~22%; Greene ~7%
+14029,Allegany,Centerville,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14707,Allegany,Allentown,,,,
+14708,Allegany,Alma,,,,
+14709,Allegany,Angelica,,,,
+14711,Allegany,Belfast,,,,
+14714,Allegany,Black Creek,,,,
+14715,Allegany,Bolivar,,,,
+14717,Allegany,Caneadea,,,,
+14721,Allegany,Ceres,,,,
+14727,Allegany,Cuba,,,,Multi-county ZIP: Allegany ~76% of addresses; also Cattaraugus ~24%
+14735,Allegany,Fillmore,,,,Multi-county ZIP: Allegany ~100% of addresses; also Wyoming ~<1%
+14739,Allegany,Friendship,,,,
+14744,Allegany,Houghton,,,,
+14745,Allegany,Hume,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14754,Allegany,Little Genesee,,,,
+14774,Allegany,Richburg,,,,
+14777,Allegany,Rushford,,,,
+14786,Allegany,West Clarksville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14802,Allegany,Alfred,,,,
+14803,Allegany,Alfred Station,,,,Multi-county ZIP: Allegany ~93% of addresses; also Steuben ~7%
+14804,Allegany,Almond,,,,Multi-county ZIP: Allegany ~98% of addresses; also Steuben ~2%
+14806,Allegany,Andover,,,,Multi-county ZIP: Allegany ~89% of addresses; also Steuben ~11%
+14813,Allegany,Belmont,,,,
+14822,Allegany,Canaseraga,,,,Multi-county ZIP: Allegany ~93% of addresses; also Livingston ~7%
+14880,Allegany,Scio,,,,
+14884,Allegany,Swain,,,,Multi-county ZIP: Allegany ~99% of addresses; also Livingston ~1%
+14895,Allegany,Wellsville,,,,
+14897,Allegany,Whitesville,,,,Multi-county ZIP: Allegany ~98% of addresses; also Steuben ~2%
+13737,Broome,Bible School Park,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13744,Broome,Castle Creek,,,,
+13745,Broome,Chenango Bridge,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13746,Broome,Chenango Forks,,,,Multi-county ZIP: Broome ~74% of addresses; also Chenango ~26%
+13748,Broome,Conklin,,,,
+13749,Broome,Corbettsville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13754,Broome,Deposit,,,,Multi-county ZIP: Broome ~61% of addresses; also Delaware ~39%
+13760,Broome,Endicott,,,,Multi-county ZIP: Broome ~94% of addresses; also Tioga ~6%
+13761,Broome,Endicott,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13762,Broome,Endwell,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13763,Broome,Endicott,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13777,Broome,Glen Aubrey,,,,
+13787,Broome,Harpursville,,,,Multi-county ZIP: Broome ~80% of addresses; also Chenango ~20%
+13790,Broome,Johnson City,,,,
+13794,Broome,Killawog,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13795,Broome,Kirkwood,,,,
+13797,Broome,Lisle,,,,
+13802,Broome,Maine,,,,
+13813,Broome,Nineveh,,,,Multi-county ZIP: Broome ~81% of addresses; also Chenango ~19%
+13826,Broome,Ouaquaga,,,,
+13833,Broome,Port Crane,,,,
+13848,Broome,Tunnel,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13850,Broome,Vestal,,,,Multi-county ZIP: Broome ~100% of addresses; also Tioga ~<1%
+13851,Broome,Vestal,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13862,Broome,Whitney Point,,,,Multi-county ZIP: Broome ~99% of addresses; also Cortland ~1%
+13865,Broome,Windsor,,,,
+13901,Broome,Binghamton,,,,
+13902,Broome,Binghamton,,,,
+13903,Broome,Binghamton,,,,
+13904,Broome,Binghamton,,,,
+13905,Broome,Binghamton,,,,
+14041,Cattaraugus,Dayton,,,,
+14042,Cattaraugus,Delevan,,,,Multi-county ZIP: Cattaraugus ~100% of addresses; also Wyoming ~<1%
+14060,Cattaraugus,Farmersville Station,,,,Multi-county ZIP: Cattaraugus ~52% of addresses; also Allegany ~48%
+14065,Cattaraugus,Freedom,,,,Multi-county ZIP: Cattaraugus ~79% of addresses; also Allegany ~21%
+14070,Cattaraugus,Gowanda,,,,Multi-county ZIP: Cattaraugus ~56% of addresses; also Erie ~44%
+14101,Cattaraugus,Machias,,,,
+14129,Cattaraugus,Perrysburg,,,,Multi-county ZIP: Cattaraugus ~100% of addresses; also Erie ~<1%
+14133,Cattaraugus,Sandusky,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+14138,Cattaraugus,South Dayton,,,,Multi-county ZIP: Cattaraugus ~71% of addresses; also Chautauqua ~29%
+14168,Cattaraugus,Versailles,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14171,Cattaraugus,West Valley,,,,
+14173,Cattaraugus,Yorkshire,,,,Multi-county ZIP: Cattaraugus ~100% of addresses; also Erie ~<1%; No residential delivery addresses in HUD data (business/PO Box use only)
+14706,Cattaraugus,Allegany,,,,
+14719,Cattaraugus,Cattaraugus,,,,
+14726,Cattaraugus,Conewango Valley,,,,Multi-county ZIP: Cattaraugus ~83% of addresses; also Chautauqua ~17%
+14729,Cattaraugus,East Otto,,,,
+14730,Cattaraugus,East Randolph,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14731,Cattaraugus,Ellicottville,,,,
+14737,Cattaraugus,Franklinville,,,,Multi-county ZIP: Cattaraugus ~100% of addresses; also Allegany ~<1%
+14741,Cattaraugus,Great Valley,,,,
+14743,Cattaraugus,Hinsdale,,,,
+14748,Cattaraugus,Kill Buck,,,,
+14751,Cattaraugus,Leon,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14753,Cattaraugus,Limestone,,,,
+14755,Cattaraugus,Little Valley,,,,
+14760,Cattaraugus,Olean,,,,
+14766,Cattaraugus,Otto,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14770,Cattaraugus,Portville,,,,Multi-county ZIP: Cattaraugus ~73% of addresses; also Allegany ~27%
+14772,Cattaraugus,Randolph,,,,
+14778,Cattaraugus,Saint Bonaventure,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14779,Cattaraugus,Salamanca,,,,
+14783,Cattaraugus,Steamburg,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14788,Cattaraugus,Westons Mills,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13021,Cayuga,Auburn,,,,Multi-county ZIP: Cayuga ~100% of addresses; also Onondaga ~<1%
+13022,Cayuga,Auburn,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13024,Cayuga,Auburn,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13026,Cayuga,Aurora,,,,
+13033,Cayuga,Cato,,,,Multi-county ZIP: Cayuga ~100% of addresses; also Onondaga ~<1%; Oswego ~<1%
+13034,Cayuga,Cayuga,,,,
+13064,Cayuga,Fair Haven,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13071,Cayuga,Genoa,,,,
+13081,Cayuga,King Ferry,,,,Multi-county ZIP: Cayuga ~100% of addresses; also Tompkins ~<1%
+13092,Cayuga,Locke,,,,Multi-county ZIP: Cayuga ~90% of addresses; also Tompkins ~10%
+13111,Cayuga,Martville,,,,Multi-county ZIP: Cayuga ~81% of addresses; also Oswego ~19%
+13113,Cayuga,Meridian,,,,
+13117,Cayuga,Montezuma,,,,
+13118,Cayuga,Moravia,,,,
+13139,Cayuga,Poplar Ridge,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13140,Cayuga,Port Byron,,,,
+13147,Cayuga,Scipio Center,,,,
+13156,Cayuga,Sterling,,,,Multi-county ZIP: Cayuga ~95% of addresses; also Wayne ~5%; Oswego ~<1%
+13160,Cayuga,Union Springs,,,,
+13166,Cayuga,Weedsport,,,,Multi-county ZIP: Cayuga ~98% of addresses; also Onondaga ~2%
+14048,Chautauqua,Dunkirk,,,,
+14062,Chautauqua,Forestville,,,,Multi-county ZIP: Chautauqua ~99% of addresses; also Cattaraugus ~1%
+14063,Chautauqua,Fredonia,,,,
+14135,Chautauqua,Sheridan,,,,
+14136,Chautauqua,Silver Creek,,,,
+14166,Chautauqua,Van Buren Point,,,,
+14701,Chautauqua,Jamestown,,,,
+14702,Chautauqua,Jamestown,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14710,Chautauqua,Ashville,,,,
+14712,Chautauqua,Bemus Point,,,,
+14716,Chautauqua,Brocton,,,,
+14718,Chautauqua,Cassadaga,,,,
+14720,Chautauqua,Celoron,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14722,Chautauqua,Chautauqua,,,,
+14723,Chautauqua,Cherry Creek,,,,
+14724,Chautauqua,Clymer,,,,
+14728,Chautauqua,Dewittville,,,,
+14732,Chautauqua,Ellington,,,,
+14733,Chautauqua,Falconer,,,,
+14736,Chautauqua,Findley Lake,,,,
+14738,Chautauqua,Frewsburg,,,,Multi-county ZIP: Chautauqua ~92% of addresses; also Cattaraugus ~8%
+14740,Chautauqua,Gerry,,,,
+14742,Chautauqua,Greenhurst,,,,
+14747,Chautauqua,Kennedy,,,,Multi-county ZIP: Chautauqua ~89% of addresses; also Cattaraugus ~11%
+14750,Chautauqua,Lakewood,,,,
+14752,Chautauqua,Lily Dale,,,,
+14756,Chautauqua,Maple Springs,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+14757,Chautauqua,Mayville,,,,
+14758,Chautauqua,Niobe,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14767,Chautauqua,Panama,,,,
+14769,Chautauqua,Portland,,,,
+14775,Chautauqua,Ripley,,,,
+14781,Chautauqua,Sherman,,,,
+14782,Chautauqua,Sinclairville,,,,
+14784,Chautauqua,Stockton,,,,
+14785,Chautauqua,Stow,,,,
+14787,Chautauqua,Westfield,,,,
 14814,Chemung,Big Flats,,,,Multi-county ZIP: Chemung ~91% of addresses; also Steuben ~9%
 14816,Chemung,Breesport,,,,
 14825,Chemung,Chemung,,,,
@@ -15,6 +242,26 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 14903,Chemung,Elmira,,,,
 14904,Chemung,Elmira,,,,
 14905,Chemung,Elmira,,,,
+13124,Chenango,North Pitcher,,,,
+13136,Chenango,Pitcher,,,,
+13155,Chenango,South Otselic,,,,
+13411,Chenango,New Berlin,,,,Multi-county ZIP: Chenango ~57% of addresses; also Otsego ~43%
+13460,Chenango,Sherburne,,,,Multi-county ZIP: Chenango ~100% of addresses; also Madison ~<1%
+13464,Chenango,Smyrna,,,,Multi-county ZIP: Chenango ~99% of addresses; also Madison ~1%
+13730,Chenango,Afton,,,,Multi-county ZIP: Chenango ~96% of addresses; also Broome ~4%
+13733,Chenango,Bainbridge,,,,Multi-county ZIP: Chenango ~94% of addresses; also Otsego ~4%; Delaware ~3%
+13758,Chenango,East Pharsalia,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13778,Chenango,Greene,,,,Multi-county ZIP: Chenango ~98% of addresses; also Broome ~2%
+13780,Chenango,Guilford,,,,
+13801,Chenango,Mc Donough,,,,
+13809,Chenango,Mount Upton,,,,Multi-county ZIP: Chenango ~62% of addresses; also Otsego ~38%
+13814,Chenango,North Norwich,,,,
+13815,Chenango,Norwich,,,,
+13830,Chenango,Oxford,,,,
+13832,Chenango,Plymouth,,,,
+13841,Chenango,Smithville Flats,,,,Multi-county ZIP: Chenango ~83% of addresses; also Cortland ~17%
+13843,Chenango,South New Berlin,,,,Multi-county ZIP: Chenango ~54% of addresses; also Otsego ~46%
+13844,Chenango,South Plymouth,,,,
 12901,Clinton,Plattsburgh,,,,
 12903,Clinton,Plattsburgh,,,,
 12910,Clinton,Altona,,,,
@@ -40,6 +287,213 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 12981,Clinton,Saranac,,,,Multi-county ZIP: Clinton ~99% of addresses; also Franklin ~1%
 12985,Clinton,Schuyler Falls,,,,
 12992,Clinton,West Chazy,,,,
+12017,Columbia,Austerlitz,,,,
+12024,Columbia,Brainard,,,,Multi-county ZIP: Columbia ~89% of addresses; also Rensselaer ~11%
+12029,Columbia,Canaan,,,,
+12037,Columbia,Chatham,,,,
+12050,Columbia,Columbiaville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12060,Columbia,East Chatham,,,,
+12075,Columbia,Ghent,,,,
+12106,Columbia,Kinderhook,,,,
+12115,Columbia,Malden Bridge,,,,
+12125,Columbia,New Lebanon,,,,
+12130,Columbia,Niverville,,,,
+12132,Columbia,North Chatham,,,,
+12136,Columbia,Old Chatham,,,,
+12165,Columbia,Spencertown,,,,
+12172,Columbia,Stottville,,,,
+12173,Columbia,Stuyvesant,,,,
+12174,Columbia,Stuyvesant Falls,,,,
+12184,Columbia,Valatie,,,,Multi-county ZIP: Columbia ~97% of addresses; also Rensselaer ~3%
+12195,Columbia,West Lebanon,,,,
+12502,Columbia,Ancram,,,,
+12503,Columbia,Ancramdale,,,,
+12513,Columbia,Claverack,,,,
+12516,Columbia,Copake,,,,
+12517,Columbia,Copake Falls,,,,
+12521,Columbia,Craryville,,,,
+12523,Columbia,Elizaville,,,,
+12526,Columbia,Germantown,,,,
+12529,Columbia,Hillsdale,,,,
+12530,Columbia,Hollowville,,,,
+12534,Columbia,Hudson,,,,
+12541,Columbia,Livingston,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12544,Columbia,Mellenville,,,,
+12565,Columbia,Philmont,,,,
+13040,Cortland,Cincinnatus,,,,Multi-county ZIP: Cortland ~92% of addresses; also Chenango ~8%
+13045,Cortland,Cortland,,,,Multi-county ZIP: Cortland ~97% of addresses; also Cayuga ~2%; Tompkins ~1%
+13056,Cortland,East Homer,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13077,Cortland,Homer,,,,Multi-county ZIP: Cortland ~95% of addresses; also Onondaga ~3%; Cayuga ~2%
+13087,Cortland,Little York,,,,
+13101,Cortland,Mc Graw,,,,
+13141,Cortland,Preble,,,,Multi-county ZIP: Cortland ~73% of addresses; also Onondaga ~27%
+13158,Cortland,Truxton,,,,Multi-county ZIP: Cortland ~97% of addresses; also Onondaga ~3%
+13738,Cortland,Blodgett Mills,,,,
+13784,Cortland,Harford,,,,
+13803,Cortland,Marathon,,,,Multi-county ZIP: Cortland ~91% of addresses; also Broome ~9%
+13863,Cortland,Willet,,,,Multi-county ZIP: Cortland ~98% of addresses; also Broome ~2%
+12167,Delaware,Stamford,,,,Multi-county ZIP: Delaware ~70% of addresses; also Schoharie ~30%
+12406,Delaware,Arkville,,,,Multi-county ZIP: Delaware ~65% of addresses; also Ulster ~35%
+12421,Delaware,Denver,,,,
+12430,Delaware,Fleischmanns,,,,Multi-county ZIP: Delaware ~64% of addresses; also Greene ~36%
+12434,Delaware,Grand Gorge,,,,Multi-county ZIP: Delaware ~98% of addresses; also Schoharie ~2%
+12438,Delaware,Halcottsville,,,,
+12455,Delaware,Margaretville,,,,Multi-county ZIP: Delaware ~97% of addresses; also Ulster ~3%
+12459,Delaware,New Kingston,,,,
+12474,Delaware,Roxbury,,,,
+12760,Delaware,Long Eddy,,,,Multi-county ZIP: Delaware ~62% of addresses; also Sullivan ~38%
+13731,Delaware,Andes,,,,Multi-county ZIP: Delaware ~100% of addresses; also Ulster ~<1%
+13739,Delaware,Bloomville,,,,
+13740,Delaware,Bovina Center,,,,
+13750,Delaware,Davenport,,,,Multi-county ZIP: Delaware ~97% of addresses; also Otsego ~3%
+13751,Delaware,Davenport Center,,,,
+13752,Delaware,Delancey,,,,
+13753,Delaware,Delhi,,,,
+13755,Delaware,Downsville,,,,
+13756,Delaware,East Branch,,,,
+13757,Delaware,East Meredith,,,,
+13774,Delaware,Fishs Eddy,,,,
+13775,Delaware,Franklin,,,,Multi-county ZIP: Delaware ~99% of addresses; also Otsego ~1%
+13782,Delaware,Hamden,,,,
+13783,Delaware,Hancock,,,,Multi-county ZIP: Delaware ~99% of addresses; also Broome ~1%
+13786,Delaware,Harpersfield,,,,
+13788,Delaware,Hobart,,,,
+13804,Delaware,Masonville,,,,
+13806,Delaware,Meridale,,,,
+13838,Delaware,Sidney,,,,Multi-county ZIP: Delaware ~96% of addresses; also Otsego ~4%
+13839,Delaware,Sidney Center,,,,
+13842,Delaware,South Kortright,,,,
+13846,Delaware,Treadwell,,,,
+13847,Delaware,Trout Creek,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13856,Delaware,Walton,,,,
+13860,Delaware,West Davenport,,,,
+12501,Dutchess,Amenia,,,,
+12504,Dutchess,Annandale on Hudson,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+12506,Dutchess,Bangall,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12507,Dutchess,Barrytown,,,,
+12508,Dutchess,Beacon,,,,
+12510,Dutchess,Billings,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12511,Dutchess,Castle Point,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12512,Dutchess,Chelsea,,,,
+12514,Dutchess,Clinton Corners,,,,
+12522,Dutchess,Dover Plains,,,,
+12524,Dutchess,Fishkill,,,,Multi-county ZIP: Dutchess ~100% of addresses; also Putnam ~<1%
+12527,Dutchess,Glenham,,,,
+12531,Dutchess,Holmes,,,,Multi-county ZIP: Dutchess ~77% of addresses; also Putnam ~23%
+12533,Dutchess,Hopewell Junction,,,,Multi-county ZIP: Dutchess ~99% of addresses; also Putnam ~1%
+12537,Dutchess,Hughsonville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12538,Dutchess,Hyde Park,,,,
+12540,Dutchess,Lagrangeville,,,,
+12545,Dutchess,Millbrook,,,,
+12546,Dutchess,Millerton,,,,Multi-county ZIP: Dutchess ~93% of addresses; also Columbia ~7%
+12564,Dutchess,Pawling,,,,Multi-county ZIP: Dutchess ~100% of addresses; also Putnam ~<1%
+12567,Dutchess,Pine Plains,,,,Multi-county ZIP: Dutchess ~85% of addresses; also Columbia ~15%
+12569,Dutchess,Pleasant Valley,,,,
+12570,Dutchess,Poughquag,,,,
+12571,Dutchess,Red Hook,,,,Multi-county ZIP: Dutchess ~94% of addresses; also Columbia ~6%
+12572,Dutchess,Rhinebeck,,,,
+12574,Dutchess,Rhinecliff,,,,
+12578,Dutchess,Salt Point,,,,
+12580,Dutchess,Staatsburg,,,,
+12581,Dutchess,Stanfordville,,,,
+12582,Dutchess,Stormville,,,,Multi-county ZIP: Dutchess ~98% of addresses; also Putnam ~2%
+12583,Dutchess,Tivoli,,,,Multi-county ZIP: Dutchess ~65% of addresses; also Columbia ~35%
+12585,Dutchess,Verbank,,,,
+12590,Dutchess,Wappingers Falls,,,,
+12592,Dutchess,Wassaic,,,,
+12594,Dutchess,Wingdale,,,,
+12601,Dutchess,Poughkeepsie,,,,
+12602,Dutchess,Poughkeepsie,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12603,Dutchess,Poughkeepsie,,,,
+12604,Dutchess,Poughkeepsie,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14001,Erie,Akron,,,,Multi-county ZIP: Erie ~87% of addresses; also Genesee ~8%; Niagara ~5%
+14004,Erie,Alden,,,,Multi-county ZIP: Erie ~94% of addresses; also Wyoming ~5%; Genesee ~1%
+14006,Erie,Angola,,,,
+14010,Erie,Athol Springs,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14025,Erie,Boston,,,,
+14026,Erie,Bowmansville,,,,
+14027,Erie,Brant,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14030,Erie,Chaffee,,,,Multi-county ZIP: Erie ~80% of addresses; also Cattaraugus ~18%; Wyoming ~2%
+14031,Erie,Clarence,,,,
+14032,Erie,Clarence Center,,,,Multi-county ZIP: Erie ~100% of addresses; also Niagara ~<1%
+14033,Erie,Colden,,,,
+14034,Erie,Collins,,,,
+14035,Erie,Collins Center,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14038,Erie,Crittenden,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14043,Erie,Depew,,,,
+14047,Erie,Derby,,,,
+14051,Erie,East Amherst,,,,
+14052,Erie,East Aurora,,,,Multi-county ZIP: Erie ~100% of addresses; also Wyoming ~<1%
+14055,Erie,East Concord,,,,
+14057,Erie,Eden,,,,
+14059,Erie,Elma,,,,
+14061,Erie,Farnham,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14068,Erie,Getzville,,,,
+14069,Erie,Glenwood,,,,
+14072,Erie,Grand Island,,,,
+14075,Erie,Hamburg,,,,
+14080,Erie,Holland,,,,
+14081,Erie,Irving,,,,Multi-county ZIP: Erie ~68% of addresses; also Chautauqua ~30%; Cattaraugus ~1%
+14085,Erie,Lake View,,,,
+14086,Erie,Lancaster,,,,
+14091,Erie,Lawtons,,,,
+14102,Erie,Marilla,,,,
+14110,Erie,North Boston,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14111,Erie,North Collins,,,,
+14112,Erie,North Evans,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14127,Erie,Orchard Park,,,,
+14134,Erie,Sardinia,,,,Multi-county ZIP: Erie ~91% of addresses; also Cattaraugus ~9%
+14139,Erie,South Wales,,,,
+14140,Erie,Spring Brook,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14141,Erie,Springville,,,,Multi-county ZIP: Erie ~95% of addresses; also Cattaraugus ~5%
+14150,Erie,Tonawanda,,,,
+14151,Erie,Tonawanda,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14169,Erie,Wales Center,,,,
+14170,Erie,West Falls,,,,
+14201,Erie,Buffalo,,,,
+14202,Erie,Buffalo,,,,
+14203,Erie,Buffalo,,,,
+14204,Erie,Buffalo,,,,
+14205,Erie,Buffalo,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14206,Erie,Buffalo,,,,
+14207,Erie,Buffalo,,,,
+14208,Erie,Buffalo,,,,
+14209,Erie,Buffalo,,,,
+14210,Erie,Buffalo,,,,
+14211,Erie,Buffalo,,,,
+14212,Erie,Buffalo,,,,
+14213,Erie,Buffalo,,,,
+14214,Erie,Buffalo,,,,
+14215,Erie,Buffalo,,,,
+14216,Erie,Buffalo,,,,
+14217,Erie,Buffalo,,,,
+14218,Erie,Buffalo,,,,
+14219,Erie,Buffalo,,,,
+14220,Erie,Buffalo,,,,
+14221,Erie,Buffalo,,,,
+14222,Erie,Buffalo,,,,
+14223,Erie,Buffalo,,,,
+14224,Erie,Buffalo,,,,
+14225,Erie,Buffalo,,,,
+14226,Erie,Buffalo,,,,
+14227,Erie,Buffalo,,,,
+14228,Erie,Buffalo,,,,
+14231,Erie,Buffalo,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14233,Erie,Buffalo,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14240,Erie,Buffalo,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14241,Erie,Buffalo,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+14260,Erie,Buffalo,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+14261,Erie,Buffalo,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+14263,Erie,Buffalo,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14264,Erie,Buffalo,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+14265,Erie,Buffalo,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+14267,Erie,Buffalo,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+14269,Erie,Buffalo,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+14270,Erie,Buffalo,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+14272,Erie,Buffalo,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14273,Erie,Buffalo,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14276,Erie,Buffalo,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+14280,Erie,Buffalo,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
 12851,Essex,Minerva,,,,
 12852,Essex,Newcomb,,,,
 12855,Essex,North Hudson,,,,
@@ -101,6 +555,58 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 12117,Fulton,Mayfield,,,,
 12134,Fulton,Northville,,,,Multi-county ZIP: Fulton ~52% of addresses; also Saratoga ~34%; Hamilton ~15%
 13470,Fulton,Stratford,,,,Multi-county ZIP: Fulton ~82% of addresses; also Herkimer ~18%
+14005,Genesee,Alexander,,,,
+14013,Genesee,Basom,,,,Multi-county ZIP: Genesee ~99% of addresses; also Erie ~1%
+14020,Genesee,Batavia,,,,
+14021,Genesee,Batavia,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14036,Genesee,Corfu,,,,Multi-county ZIP: Genesee ~99% of addresses; also Erie ~1%
+14040,Genesee,Darien Center,,,,Multi-county ZIP: Genesee ~84% of addresses; also Wyoming ~16%
+14054,Genesee,East Bethany,,,,Multi-county ZIP: Genesee ~97% of addresses; also Wyoming ~3%
+14056,Genesee,East Pembroke,,,,
+14058,Genesee,Elba,,,,Multi-county ZIP: Genesee ~96% of addresses; also Orleans ~4%
+14125,Genesee,Oakfield,,,,Multi-county ZIP: Genesee ~99% of addresses; also Orleans ~1%
+14143,Genesee,Stafford,,,,
+14416,Genesee,Bergen,,,,Multi-county ZIP: Genesee ~94% of addresses; also Monroe ~6%; Orleans ~<1%
+14422,Genesee,Byron,,,,Multi-county ZIP: Genesee ~98% of addresses; also Orleans ~2%
+14482,Genesee,Le Roy,,,,Multi-county ZIP: Genesee ~97% of addresses; also Livingston ~2%; Monroe ~1%
+14525,Genesee,Pavilion,,,,Multi-county ZIP: Genesee ~65% of addresses; also Wyoming ~31%; Livingston ~4%
+14557,Genesee,South Byron,,,,
+12015,Greene,Athens,,,,
+12042,Greene,Climax,,,,
+12051,Greene,Coxsackie,,,,
+12058,Greene,Earlton,,,,
+12083,Greene,Greenville,,,,Multi-county ZIP: Greene ~67% of addresses; also Albany ~33%
+12087,Greene,Hannacroix,,,,Multi-county ZIP: Greene ~88% of addresses; also Albany ~12%
+12124,Greene,New Baltimore,,,,
+12176,Greene,Surprise,,,,
+12192,Greene,West Coxsackie,,,,
+12405,Greene,Acra,,,,
+12407,Greene,Ashland,,,,
+12413,Greene,Cairo,,,,
+12414,Greene,Catskill,,,,Multi-county ZIP: Greene ~100% of addresses; also Ulster ~<1%
+12418,Greene,Cornwallville,,,,
+12422,Greene,Durham,,,,
+12423,Greene,East Durham,,,,
+12424,Greene,East Jewett,,,,
+12427,Greene,Elka Park,,,,
+12431,Greene,Freehold,,,,
+12436,Greene,Haines Falls,,,,
+12439,Greene,Hensonville,,,,
+12442,Greene,Hunter,,,,
+12444,Greene,Jewett,,,,
+12450,Greene,Lanesville,,,,
+12451,Greene,Leeds,,,,
+12452,Greene,Lexington,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+12454,Greene,Maplecrest,,,,
+12460,Greene,Oak Hill,,,,Multi-county ZIP: Greene ~69% of addresses; also Albany ~31%
+12463,Greene,Palenville,,,,Multi-county ZIP: Greene ~94% of addresses; also Ulster ~6%
+12468,Greene,Prattsville,,,,Multi-county ZIP: Greene ~93% of addresses; also Delaware ~7%
+12470,Greene,Purling,,,,
+12473,Greene,Round Top,,,,
+12482,Greene,South Cairo,,,,
+12485,Greene,Tannersville,,,,
+12492,Greene,West Kill,,,,
+12496,Greene,Windham,,,,
 12108,Hamilton,Lake Pleasant,,,,
 12139,Hamilton,Piseco,,,,
 12164,Hamilton,Speculator,,,,
@@ -210,6 +716,33 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 14592,Livingston,York,,,,
 14836,Livingston,Dalton,,,,Multi-county ZIP: Livingston ~72% of addresses; also Allegany ~28%
 14846,Livingston,Hunt,,,,Multi-county ZIP: Livingston ~72% of addresses; also Allegany ~28%
+13030,Madison,Bridgeport,,,,Multi-county ZIP: Madison ~55% of addresses; also Onondaga ~45%
+13032,Madison,Canastota,,,,Multi-county ZIP: Madison ~99% of addresses; also Oneida ~1%
+13035,Madison,Cazenovia,,,,Multi-county ZIP: Madison ~97% of addresses; also Onondaga ~3%
+13037,Madison,Chittenango,,,,Multi-county ZIP: Madison ~95% of addresses; also Onondaga ~5%
+13043,Madison,Clockville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13052,Madison,De Ruyter,,,,Multi-county ZIP: Madison ~62% of addresses; also Cortland ~20%; Chenango ~15%; Onondaga ~3%
+13061,Madison,Erieville,,,,
+13072,Madison,Georgetown,,,,Multi-county ZIP: Madison ~66% of addresses; also Chenango ~34%
+13082,Madison,Kirkville,,,,Multi-county ZIP: Madison ~58% of addresses; also Onondaga ~42%
+13122,Madison,New Woodstock,,,,Multi-county ZIP: Madison ~81% of addresses; also Onondaga ~19%
+13134,Madison,Peterboro,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13163,Madison,Wampsville,,,,
+13310,Madison,Bouckville,,,,
+13314,Madison,Brookfield,,,,
+13332,Madison,Earlville,,,,Multi-county ZIP: Madison ~75% of addresses; also Chenango ~25%
+13334,Madison,Eaton,,,,
+13346,Madison,Hamilton,,,,
+13355,Madison,Hubbardsville,,,,
+13364,Madison,Leonardsville,,,,Multi-county ZIP: Madison ~83% of addresses; also Otsego ~17%
+13402,Madison,Madison,,,,Multi-county ZIP: Madison ~98% of addresses; also Oneida ~2%
+13408,Madison,Morrisville,,,,
+13409,Madison,Munnsville,,,,Multi-county ZIP: Madison ~95% of addresses; also Oneida ~5%
+13418,Madison,North Brookfield,,,,
+13421,Madison,Oneida,,,,Multi-county ZIP: Madison ~84% of addresses; also Oneida ~16%
+13465,Madison,Solsville,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13484,Madison,West Eaton,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13485,Madison,West Edmeston,,,,Multi-county ZIP: Madison ~71% of addresses; also Otsego ~19%; Chenango ~10%
 14410,Monroe,Adams Basin,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
 14420,Monroe,Brockport,,,,Multi-county ZIP: Monroe ~98% of addresses; also Orleans ~2%
 14428,Monroe,Churchville,,,,Multi-county ZIP: Monroe ~100% of addresses; also Genesee ~<1%
@@ -272,6 +805,250 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 14653,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
 14692,Monroe,Rochester,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
 14694,Monroe,Rochester,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12010,Montgomery,Amsterdam,,,,Multi-county ZIP: Montgomery ~85% of addresses; also Fulton ~11%; Saratoga ~2%; Schenectady ~1%
+12016,Montgomery,Auriesville,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12068,Montgomery,Fonda,,,,Multi-county ZIP: Montgomery ~99% of addresses; also Fulton ~1%
+12069,Montgomery,Fort Hunter,,,,
+12070,Montgomery,Fort Johnson,,,,Multi-county ZIP: Montgomery ~65% of addresses; also Fulton ~35%
+12072,Montgomery,Fultonville,,,,
+12086,Montgomery,Hagaman,,,,Multi-county ZIP: Montgomery ~70% of addresses; also Saratoga ~16%; Fulton ~14%
+12166,Montgomery,Sprakers,,,,Multi-county ZIP: Montgomery ~99% of addresses; also Schoharie ~1%
+12177,Montgomery,Tribes Hill,,,,
+13317,Montgomery,Canajoharie,,,,Multi-county ZIP: Montgomery ~99% of addresses; also Otsego ~1%
+13339,Montgomery,Fort Plain,,,,Multi-county ZIP: Montgomery ~85% of addresses; also Herkimer ~9%; Fulton ~6%
+13410,Montgomery,Nelliston,,,,
+13428,Montgomery,Palatine Bridge,,,,
+13452,Montgomery,Saint Johnsville,,,,Multi-county ZIP: Montgomery ~58% of addresses; also Fulton ~42%
+11001,Nassau,Floral Park,,,,Multi-county ZIP: Nassau ~85% of addresses; also Queens ~15%
+11002,Nassau,Floral Park,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+11003,Nassau,Elmont,,,,
+11010,Nassau,Franklin Square,,,,
+11020,Nassau,Great Neck,,,,Multi-county ZIP: Nassau ~99% of addresses; also Queens ~1%
+11021,Nassau,Great Neck,,,,
+11022,Nassau,Great Neck,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+11023,Nassau,Great Neck,,,,
+11024,Nassau,Great Neck,,,,
+11026,Nassau,Great Neck,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11027,Nassau,Great Neck,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11030,Nassau,Manhasset,,,,
+11040,Nassau,New Hyde Park,,,,Multi-county ZIP: Nassau ~95% of addresses; also Queens ~5%
+11042,Nassau,New Hyde Park,,,,
+11050,Nassau,Port Washington,,,,
+11051,Nassau,Port Washington,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11052,Nassau,Port Washington,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11053,Nassau,Port Washington,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11054,Nassau,Port Washington,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11055,Nassau,Port Washington,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11096,Nassau,Inwood,,,,
+11501,Nassau,Mineola,,,,
+11507,Nassau,Albertson,,,,
+11509,Nassau,Atlantic Beach,,,,
+11510,Nassau,Baldwin,,,,
+11514,Nassau,Carle Place,,,,
+11516,Nassau,Cedarhurst,,,,
+11518,Nassau,East Rockaway,,,,
+11520,Nassau,Freeport,,,,
+11530,Nassau,Garden City,,,,
+11531,Nassau,Garden City,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+11542,Nassau,Glen Cove,,,,
+11545,Nassau,Glen Head,,,,
+11547,Nassau,Glenwood Landing,,,,
+11548,Nassau,Greenvale,,,,
+11549,Nassau,Hempstead,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+11550,Nassau,Hempstead,,,,
+11551,Nassau,Hempstead,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+11552,Nassau,West Hempstead,,,,
+11553,Nassau,Uniondale,,,,
+11554,Nassau,East Meadow,,,,
+11555,Nassau,Uniondale,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11556,Nassau,Uniondale,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+11557,Nassau,Hewlett,,,,
+11558,Nassau,Island Park,,,,
+11559,Nassau,Lawrence,,,,Multi-county ZIP: Nassau ~100% of addresses; also Queens ~<1%
+11560,Nassau,Locust Valley,,,,
+11561,Nassau,Long Beach,,,,
+11563,Nassau,Lynbrook,,,,
+11565,Nassau,Malverne,,,,
+11566,Nassau,Merrick,,,,
+11568,Nassau,Old Westbury,,,,
+11569,Nassau,Point Lookout,,,,
+11570,Nassau,Rockville Centre,,,,
+11571,Nassau,Rockville Centre,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+11572,Nassau,Oceanside,,,,
+11575,Nassau,Roosevelt,,,,
+11576,Nassau,Roslyn,,,,
+11577,Nassau,Roslyn Heights,,,,
+11579,Nassau,Sea Cliff,,,,
+11580,Nassau,Valley Stream,,,,Multi-county ZIP: Nassau ~100% of addresses; also Queens ~<1%
+11581,Nassau,Valley Stream,,,,
+11582,Nassau,Valley Stream,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+11590,Nassau,Westbury,,,,
+11596,Nassau,Williston Park,,,,
+11598,Nassau,Woodmere,,,,
+11599,Nassau,Garden City,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+11709,Nassau,Bayville,,,,
+11710,Nassau,Bellmore,,,,
+11714,Nassau,Bethpage,,,,
+11732,Nassau,East Norwich,,,,
+11735,Nassau,Farmingdale,,,,Multi-county ZIP: Nassau ~70% of addresses; also Suffolk ~30%
+11737,Nassau,Farmingdale,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11753,Nassau,Jericho,,,,
+11756,Nassau,Levittown,,,,
+11758,Nassau,Massapequa,,,,Multi-county ZIP: Nassau ~100% of addresses; also Suffolk ~<1%
+11762,Nassau,Massapequa Park,,,,
+11765,Nassau,Mill Neck,,,,
+11771,Nassau,Oyster Bay,,,,
+11773,Nassau,Melville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+11783,Nassau,Seaford,,,,
+11791,Nassau,Syosset,,,,
+11793,Nassau,Wantagh,,,,
+11797,Nassau,Woodbury,,,,Multi-county ZIP: Nassau ~100% of addresses; also Suffolk ~<1%
+11801,Nassau,Hicksville,,,,
+11802,Nassau,Hicksville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+11803,Nassau,Plainview,,,,
+11804,Nassau,Old Bethpage,,,,
+11815,Nassau,Hicksville,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+11819,Nassau,Hicksville,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11853,Nassau,Jericho,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+14008,Niagara,Appleton,,,,
+14012,Niagara,Barker,,,,Multi-county ZIP: Niagara ~98% of addresses; also Orleans ~2%
+14028,Niagara,Burt,,,,
+14067,Niagara,Gasport,,,,
+14092,Niagara,Lewiston,,,,
+14094,Niagara,Lockport,,,,
+14095,Niagara,Lockport,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14105,Niagara,Middleport,,,,Multi-county ZIP: Niagara ~95% of addresses; also Orleans ~4%; Genesee ~<1%
+14107,Niagara,Model City,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14108,Niagara,Newfane,,,,
+14109,Niagara,Niagara University,,,,
+14120,Niagara,North Tonawanda,,,,
+14126,Niagara,Olcott,,,,
+14131,Niagara,Ransomville,,,,
+14132,Niagara,Sanborn,,,,
+14144,Niagara,Stella Niagara,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14172,Niagara,Wilson,,,,
+14174,Niagara,Youngstown,,,,
+14301,Niagara,Niagara Falls,,,,
+14302,Niagara,Niagara Falls,,,,
+14303,Niagara,Niagara Falls,,,,
+14304,Niagara,Niagara Falls,,,,
+14305,Niagara,Niagara Falls,,,,
+13042,Oneida,Cleveland,,,,Multi-county ZIP: Oneida ~57% of addresses; also Oswego ~43%
+13054,Oneida,Durhamville,,,,
+13123,Oneida,North Bay,,,,
+13157,Oneida,Sylvan Beach,,,,
+13162,Oneida,Verona Beach,,,,
+13301,Oneida,Alder Creek,,,,
+13303,Oneida,Ava,,,,
+13304,Oneida,Barneveld,,,,Multi-county ZIP: Oneida ~95% of addresses; also Herkimer ~5%
+13308,Oneida,Blossvale,,,,
+13309,Oneida,Boonville,,,,Multi-county ZIP: Oneida ~83% of addresses; also Lewis ~17%
+13313,Oneida,Bridgewater,,,,
+13316,Oneida,Camden,,,,Multi-county ZIP: Oneida ~92% of addresses; also Lewis ~6%; Oswego ~2%
+13318,Oneida,Cassville,,,,
+13319,Oneida,Chadwicks,,,,
+13321,Oneida,Clark Mills,,,,
+13322,Oneida,Clayville,,,,Multi-county ZIP: Oneida ~52% of addresses; also Herkimer ~48%
+13323,Oneida,Clinton,,,,
+13328,Oneida,Deansboro,,,,
+13338,Oneida,Forestport,,,,Multi-county ZIP: Oneida ~90% of addresses; also Herkimer ~10%
+13341,Oneida,Franklin Springs,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13352,Oneida,Hinckley,,,,
+13354,Oneida,Holland Patent,,,,
+13362,Oneida,Knoxboro,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13363,Oneida,Lee Center,,,,
+13401,Oneida,Mc Connellsville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13403,Oneida,Marcy,,,,
+13413,Oneida,New Hartford,,,,Multi-county ZIP: Oneida ~99% of addresses; also Herkimer ~1%
+13417,Oneida,New York Mills,,,,
+13424,Oneida,Oriskany,,,,
+13425,Oneida,Oriskany Falls,,,,Multi-county ZIP: Oneida ~92% of addresses; also Madison ~8%
+13435,Oneida,Prospect,,,,
+13438,Oneida,Remsen,,,,Multi-county ZIP: Oneida ~86% of addresses; also Herkimer ~14%
+13440,Oneida,Rome,,,,
+13441,Oneida,Rome,,,,
+13442,Oneida,Rome,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13449,Oneida,Rome,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13455,Oneida,Sangerfield,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13456,Oneida,Sauquoit,,,,Multi-county ZIP: Oneida ~93% of addresses; also Herkimer ~7%
+13461,Oneida,Sherrill,,,,
+13469,Oneida,Stittville,,,,
+13471,Oneida,Taberg,,,,Multi-county ZIP: Oneida ~99% of addresses; also Lewis ~1%
+13476,Oneida,Vernon,,,,
+13477,Oneida,Vernon Center,,,,
+13478,Oneida,Verona,,,,
+13479,Oneida,Washington Mills,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13480,Oneida,Waterville,,,,Multi-county ZIP: Oneida ~97% of addresses; also Madison ~3%
+13483,Oneida,Westdale,,,,Multi-county ZIP: Oneida ~92% of addresses; also Oswego ~8%
+13486,Oneida,Westernville,,,,
+13490,Oneida,Westmoreland,,,,
+13492,Oneida,Whitesboro,,,,
+13494,Oneida,Woodgate,,,,
+13495,Oneida,Yorkville,,,,
+13501,Oneida,Utica,,,,Multi-county ZIP: Oneida ~100% of addresses; also Herkimer ~<1%
+13502,Oneida,Utica,,,,Multi-county ZIP: Oneida ~94% of addresses; also Herkimer ~6%
+13503,Oneida,Utica,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13504,Oneida,Utica,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13505,Oneida,Utica,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13599,Oneida,Utica,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13020,Onondaga,Apulia Station,,,,
+13027,Onondaga,Baldwinsville,,,,Multi-county ZIP: Onondaga ~100% of addresses; also Cayuga ~<1%
+13029,Onondaga,Brewerton,,,,
+13031,Onondaga,Camillus,,,,
+13039,Onondaga,Cicero,,,,
+13041,Onondaga,Clay,,,,
+13051,Onondaga,Delphi Falls,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13057,Onondaga,East Syracuse,,,,
+13060,Onondaga,Elbridge,,,,Multi-county ZIP: Onondaga ~100% of addresses; also Cayuga ~<1%
+13063,Onondaga,Fabius,,,,
+13066,Onondaga,Fayetteville,,,,
+13078,Onondaga,Jamesville,,,,
+13080,Onondaga,Jordan,,,,Multi-county ZIP: Onondaga ~71% of addresses; also Cayuga ~29%
+13084,Onondaga,La Fayette,,,,
+13088,Onondaga,Liverpool,,,,
+13089,Onondaga,Liverpool,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13090,Onondaga,Liverpool,,,,
+13104,Onondaga,Manlius,,,,Multi-county ZIP: Onondaga ~99% of addresses; also Madison ~1%
+13108,Onondaga,Marcellus,,,,
+13110,Onondaga,Marietta,,,,
+13112,Onondaga,Memphis,,,,
+13116,Onondaga,Minoa,,,,
+13119,Onondaga,Mottville,,,,
+13120,Onondaga,Nedrow,,,,
+13137,Onondaga,Plainville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13138,Onondaga,Pompey,,,,
+13152,Onondaga,Skaneateles,,,,Multi-county ZIP: Onondaga ~94% of addresses; also Cayuga ~6%
+13153,Onondaga,Skaneateles Falls,,,,
+13159,Onondaga,Tully,,,,Multi-county ZIP: Onondaga ~81% of addresses; also Cortland ~19%
+13164,Onondaga,Warners,,,,
+13201,Onondaga,Syracuse,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13202,Onondaga,Syracuse,,,,
+13203,Onondaga,Syracuse,,,,
+13204,Onondaga,Syracuse,,,,
+13205,Onondaga,Syracuse,,,,
+13206,Onondaga,Syracuse,,,,
+13207,Onondaga,Syracuse,,,,
+13208,Onondaga,Syracuse,,,,
+13209,Onondaga,Syracuse,,,,
+13210,Onondaga,Syracuse,,,,
+13211,Onondaga,Syracuse,,,,
+13212,Onondaga,Syracuse,,,,
+13214,Onondaga,Syracuse,,,,
+13215,Onondaga,Syracuse,,,,
+13217,Onondaga,Syracuse,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13218,Onondaga,Syracuse,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13219,Onondaga,Syracuse,,,,
+13220,Onondaga,Syracuse,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13221,Onondaga,Syracuse,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13224,Onondaga,Syracuse,,,,
+13225,Onondaga,Syracuse,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13235,Onondaga,Syracuse,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13244,Onondaga,Syracuse,,,,
+13250,Onondaga,Syracuse,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13251,Onondaga,Syracuse,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13252,Onondaga,Syracuse,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+13261,Onondaga,Syracuse,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13290,Onondaga,Syracuse,,,,
 14424,Ontario,Canandaigua,,,,Multi-county ZIP: Ontario ~100% of addresses; also Yates ~<1%
 14425,Ontario,Farmington,,,,
 14432,Ontario,Clifton Springs,,,,Multi-county ZIP: Ontario ~100% of addresses; also Wayne ~<1%
@@ -294,6 +1071,252 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 14561,Ontario,Stanley,,,,Multi-county ZIP: Ontario ~98% of addresses; also Yates ~2%
 14564,Ontario,Victor,,,,Multi-county ZIP: Ontario ~97% of addresses; also Monroe ~3%
 14585,Ontario,West Bloomfield,,,,
+10910,Orange,Arden,,,,
+10912,Orange,Bellvale,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+10914,Orange,Blooming Grove,,,,
+10915,Orange,Bullville,,,,
+10916,Orange,Campbell Hall,,,,
+10917,Orange,Central Valley,,,,
+10918,Orange,Chester,,,,
+10919,Orange,Circleville,,,,
+10921,Orange,Florida,,,,
+10922,Orange,Fort Montgomery,,,,
+10924,Orange,Goshen,,,,
+10925,Orange,Greenwood Lake,,,,
+10926,Orange,Harriman,,,,
+10928,Orange,Highland Falls,,,,
+10930,Orange,Highland Mills,,,,
+10932,Orange,Howells,,,,
+10933,Orange,Johnson,,,,
+10940,Orange,Middletown,,,,Multi-county ZIP: Orange ~99% of addresses; also Sullivan ~1%
+10941,Orange,Middletown,,,,
+10949,Orange,Monroe,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+10950,Orange,Monroe,,,,
+10953,Orange,Mountainville,,,,
+10958,Orange,New Hampton,,,,
+10959,Orange,New Milford,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+10963,Orange,Otisville,,,,Multi-county ZIP: Orange ~99% of addresses; also Sullivan ~1%
+10969,Orange,Pine Island,,,,
+10973,Orange,Slate Hill,,,,
+10975,Orange,Southfields,,,,
+10979,Orange,Sterling Forest,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+10981,Orange,Sugar Loaf,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+10985,Orange,Thompson Ridge,,,,
+10987,Orange,Tuxedo Park,,,,Multi-county ZIP: Orange ~100% of addresses; also Rockland ~<1%
+10988,Orange,Unionville,,,,
+10990,Orange,Warwick,,,,
+10992,Orange,Washingtonville,,,,
+10996,Orange,West Point,,,,
+10997,Orange,West Point,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+10998,Orange,Westtown,,,,
+12518,Orange,Cornwall,,,,
+12520,Orange,Cornwall on Hudson,,,,
+12543,Orange,Maybrook,,,,
+12549,Orange,Montgomery,,,,
+12550,Orange,Newburgh,,,,
+12551,Orange,Newburgh,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12552,Orange,Newburgh,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12553,Orange,New Windsor,,,,
+12555,Orange,Newburgh,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12575,Orange,Rock Tavern,,,,
+12577,Orange,Salisbury Mills,,,,
+12584,Orange,Vails Gate,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12586,Orange,Walden,,,,Multi-county ZIP: Orange ~100% of addresses; also Ulster ~<1%
+12729,Orange,Cuddebackville,,,,Multi-county ZIP: Orange ~92% of addresses; also Sullivan ~8%
+12746,Orange,Huguenot,,,,
+12771,Orange,Port Jervis,,,,
+12780,Orange,Sparrow Bush,,,,Multi-county ZIP: Orange ~97% of addresses; also Sullivan ~3%
+12785,Orange,Westbrookville,,,,
+14098,Orleans,Lyndonville,,,,Multi-county ZIP: Orleans ~99% of addresses; also Niagara ~1%
+14103,Orleans,Medina,,,,Multi-county ZIP: Orleans ~100% of addresses; also Niagara ~<1%; Genesee ~<1%
+14411,Orleans,Albion,,,,
+14429,Orleans,Clarendon,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14452,Orleans,Fancher,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+14470,Orleans,Holley,,,,Multi-county ZIP: Orleans ~98% of addresses; also Monroe ~2%
+14476,Orleans,Kendall,,,,Multi-county ZIP: Orleans ~92% of addresses; also Monroe ~8%
+14477,Orleans,Kent,,,,
+14479,Orleans,Knowlesville,,,,
+14571,Orleans,Waterport,,,,
+13028,Oswego,Bernhards Bay,,,,
+13036,Oswego,Central Square,,,,Multi-county ZIP: Oswego ~100% of addresses; also Onondaga ~<1%
+13044,Oswego,Constantia,,,,
+13069,Oswego,Fulton,,,,Multi-county ZIP: Oswego ~100% of addresses; also Onondaga ~<1%
+13074,Oswego,Hannibal,,,,Multi-county ZIP: Oswego ~97% of addresses; also Cayuga ~3%
+13076,Oswego,Hastings,,,,
+13083,Oswego,Lacona,,,,Multi-county ZIP: Oswego ~98% of addresses; also Jefferson ~2%
+13093,Oswego,Lycoming,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13103,Oswego,Mallory,,,,
+13107,Oswego,Maple View,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+13114,Oswego,Mexico,,,,
+13115,Oswego,Minetto,,,,
+13121,Oswego,New Haven,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13126,Oswego,Oswego,,,,Multi-county ZIP: Oswego ~100% of addresses; also Cayuga ~<1%
+13131,Oswego,Parish,,,,
+13132,Oswego,Pennellville,,,,
+13135,Oswego,Phoenix,,,,Multi-county ZIP: Oswego ~79% of addresses; also Onondaga ~21%
+13142,Oswego,Pulaski,,,,
+13144,Oswego,Richland,,,,
+13145,Oswego,Sandy Creek,,,,Multi-county ZIP: Oswego ~100% of addresses; also Jefferson ~<1%
+13167,Oswego,West Monroe,,,,
+13302,Oswego,Altmar,,,,
+13426,Oswego,Orwell,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13437,Oswego,Redfield,,,,Multi-county ZIP: Oswego ~83% of addresses; also Lewis ~17%
+13493,Oswego,Williamstown,,,,Multi-county ZIP: Oswego ~100% of addresses; also Lewis ~<1%
+12064,Otsego,East Worcester,,,,Multi-county ZIP: Otsego ~70% of addresses; also Schoharie ~30%
+12116,Otsego,Maryland,,,,
+12155,Otsego,Schenevus,,,,Multi-county ZIP: Otsego ~89% of addresses; also Delaware ~11%
+12197,Otsego,Worcester,,,,Multi-county ZIP: Otsego ~100% of addresses; also Schoharie ~<1%
+13315,Otsego,Burlington Flats,,,,
+13320,Otsego,Cherry Valley,,,,Multi-county ZIP: Otsego ~98% of addresses; also Montgomery ~2%; Schoharie ~<1%
+13326,Otsego,Cooperstown,,,,
+13333,Otsego,East Springfield,,,,
+13335,Otsego,Edmeston,,,,
+13337,Otsego,Fly Creek,,,,
+13342,Otsego,Garrattsville,,,,
+13348,Otsego,Hartwick,,,,
+13415,Otsego,New Lisbon,,,,
+13439,Otsego,Richfield Springs,,,,Multi-county ZIP: Otsego ~77% of addresses; also Herkimer ~23%
+13450,Otsego,Roseboom,,,,
+13457,Otsego,Schuyler Lake,,,,
+13468,Otsego,Springfield Center,,,,
+13482,Otsego,West Burlington,,,,
+13488,Otsego,Westford,,,,
+13747,Otsego,Colliersville,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+13776,Otsego,Gilbertsville,,,,
+13796,Otsego,Laurens,,,,
+13807,Otsego,Milford,,,,
+13808,Otsego,Morris,,,,
+13810,Otsego,Mount Vision,,,,
+13820,Otsego,Oneonta,,,,Multi-county ZIP: Otsego ~91% of addresses; also Delaware ~9%
+13825,Otsego,Otego,,,,Multi-county ZIP: Otsego ~98% of addresses; also Delaware ~2%
+13834,Otsego,Portlandville,,,,
+13849,Otsego,Unadilla,,,,Multi-county ZIP: Otsego ~75% of addresses; also Delaware ~25%
+13859,Otsego,Wells Bridge,,,,
+13861,Otsego,West Oneonta,,,,
+10505,Putnam,Baldwin Place,,,,Multi-county ZIP: Putnam ~59% of addresses; also Westchester ~41%
+10509,Putnam,Brewster,,,,Multi-county ZIP: Putnam ~99% of addresses; also Westchester ~1%
+10512,Putnam,Carmel,,,,
+10516,Putnam,Cold Spring,,,,
+10524,Putnam,Garrison,,,,
+10537,Putnam,Lake Peekskill,,,,Multi-county ZIP: Putnam ~95% of addresses; also Westchester ~5%
+10541,Putnam,Mahopac,,,,Multi-county ZIP: Putnam ~96% of addresses; also Westchester ~4%
+10542,Putnam,Mahopac Falls,,,,
+10579,Putnam,Putnam Valley,,,,
+12563,Putnam,Patterson,,,,
+12018,Rensselaer,Averill Park,,,,
+12022,Rensselaer,Berlin,,,,
+12028,Rensselaer,Buskirk,,,,Multi-county ZIP: Rensselaer ~57% of addresses; also Washington ~43%
+12033,Rensselaer,Castleton on Hudson,,,,
+12040,Rensselaer,Cherry Plain,,,,
+12052,Rensselaer,Cropseyville,,,,
+12061,Rensselaer,East Greenbush,,,,
+12062,Rensselaer,East Nassau,,,,Multi-county ZIP: Rensselaer ~84% of addresses; also Columbia ~16%
+12063,Rensselaer,East Schodack,,,,
+12082,Rensselaer,Grafton,,,,
+12089,Rensselaer,Hoosick,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12090,Rensselaer,Hoosick Falls,,,,Multi-county ZIP: Rensselaer ~97% of addresses; also Washington ~3%
+12094,Rensselaer,Johnsonville,,,,Multi-county ZIP: Rensselaer ~94% of addresses; also Washington ~6%
+12121,Rensselaer,Melrose,,,,
+12123,Rensselaer,Nassau,,,,Multi-county ZIP: Rensselaer ~98% of addresses; also Columbia ~2%
+12133,Rensselaer,North Hoosick,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12138,Rensselaer,Petersburg,,,,
+12140,Rensselaer,Poestenkill,,,,
+12144,Rensselaer,Rensselaer,,,,
+12153,Rensselaer,Sand Lake,,,,
+12154,Rensselaer,Schaghticoke,,,,Multi-county ZIP: Rensselaer ~79% of addresses; also Washington ~21%
+12156,Rensselaer,Schodack Landing,,,,Multi-county ZIP: Rensselaer ~80% of addresses; also Columbia ~20%
+12168,Rensselaer,Stephentown,,,,Multi-county ZIP: Rensselaer ~100% of addresses; also Columbia ~<1%
+12169,Rensselaer,Stephentown,,,,
+12180,Rensselaer,Troy,,,,
+12181,Rensselaer,Troy,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12182,Rensselaer,Troy,,,,
+12185,Rensselaer,Valley Falls,,,,Multi-county ZIP: Rensselaer ~87% of addresses; also Washington ~13%
+12196,Rensselaer,West Sand Lake,,,,
+12198,Rensselaer,Wynantskill,,,,
+10901,Rockland,Suffern,,,,
+10911,Rockland,Bear Mountain,,,,
+10913,Rockland,Blauvelt,,,,
+10920,Rockland,Congers,,,,
+10923,Rockland,Garnerville,,,,
+10927,Rockland,Haverstraw,,,,
+10931,Rockland,Hillburn,,,,
+10952,Rockland,Monsey,,,,
+10954,Rockland,Nanuet,,,,
+10956,Rockland,New City,,,,
+10960,Rockland,Nyack,,,,
+10962,Rockland,Orangeburg,,,,
+10964,Rockland,Palisades,,,,
+10965,Rockland,Pearl River,,,,
+10968,Rockland,Piermont,,,,
+10970,Rockland,Pomona,,,,
+10974,Rockland,Sloatsburg,,,,Multi-county ZIP: Rockland ~100% of addresses; also Orange ~<1%
+10976,Rockland,Sparkill,,,,
+10977,Rockland,Spring Valley,,,,
+10980,Rockland,Stony Point,,,,
+10982,Rockland,Tallman,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+10983,Rockland,Tappan,,,,
+10984,Rockland,Thiells,,,,
+10986,Rockland,Tomkins Cove,,,,
+10989,Rockland,Valley Cottage,,,,
+10993,Rockland,West Haverstraw,,,,
+10994,Rockland,West Nyack,,,,
+12019,Saratoga,Ballston Lake,,,,Multi-county ZIP: Saratoga ~97% of addresses; also Schenectady ~3%
+12020,Saratoga,Ballston Spa,,,,
+12027,Saratoga,Burnt Hills,,,,Multi-county ZIP: Saratoga ~89% of addresses; also Schenectady ~11%
+12065,Saratoga,Clifton Park,,,,
+12074,Saratoga,Galway,,,,
+12118,Saratoga,Mechanicville,,,,Multi-county ZIP: Saratoga ~97% of addresses; also Rensselaer ~3%
+12148,Saratoga,Rexford,,,,
+12151,Saratoga,Round Lake,,,,
+12170,Saratoga,Stillwater,,,,
+12188,Saratoga,Waterford,,,,
+12803,Saratoga,South Glens Falls,,,,
+12822,Saratoga,Corinth,,,,
+12831,Saratoga,Gansevoort,,,,
+12833,Saratoga,Greenfield Center,,,,
+12835,Saratoga,Hadley,,,,
+12850,Saratoga,Middle Grove,,,,
+12859,Saratoga,Porter Corners,,,,
+12863,Saratoga,Rock City Falls,,,,
+12866,Saratoga,Saratoga Springs,,,,
+12871,Saratoga,Schuylerville,,,,
+12884,Saratoga,Victory Mills,,,,
+12008,Schenectady,Alplaus,,,,
+12053,Schenectady,Delanson,,,,Multi-county ZIP: Schenectady ~75% of addresses; also Albany ~12%; Schoharie ~11%; Montgomery ~2%
+12056,Schenectady,Duanesburg,,,,
+12137,Schenectady,Pattersonville,,,,Multi-county ZIP: Schenectady ~77% of addresses; also Montgomery ~23%
+12141,Schenectady,Quaker Street,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12150,Schenectady,Rotterdam Junction,,,,
+12301,Schenectady,Schenectady,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12302,Schenectady,Schenectady,,,,Multi-county ZIP: Schenectady ~98% of addresses; also Saratoga ~2%
+12303,Schenectady,Schenectady,,,,Multi-county ZIP: Schenectady ~68% of addresses; also Albany ~32%
+12304,Schenectady,Schenectady,,,,Multi-county ZIP: Schenectady ~88% of addresses; also Albany ~12%
+12305,Schenectady,Schenectady,,,,
+12306,Schenectady,Schenectady,,,,Multi-county ZIP: Schenectady ~98% of addresses; also Albany ~2%
+12307,Schenectady,Schenectady,,,,
+12308,Schenectady,Schenectady,,,,
+12309,Schenectady,Schenectady,,,,Multi-county ZIP: Schenectady ~87% of addresses; also Albany ~13%
+12325,Schenectady,Schenectady,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12345,Schenectady,Schenectady,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12031,Schoharie,Carlisle,,,,
+12035,Schoharie,Central Bridge,,,,
+12036,Schoharie,Charlotteville,,,,Multi-county ZIP: Schoharie ~81% of addresses; also Otsego ~19%
+12043,Schoharie,Cobleskill,,,,Multi-county ZIP: Schoharie ~100% of addresses; also Otsego ~<1%
+12066,Schoharie,Esperance,,,,Multi-county ZIP: Schoharie ~47% of addresses; also Montgomery ~33%; Schenectady ~20%
+12071,Schoharie,Fultonham,,,,
+12073,Schoharie,Gallupville,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12076,Schoharie,Gilboa,,,,
+12092,Schoharie,Howes Cave,,,,
+12093,Schoharie,Jefferson,,,,Multi-county ZIP: Schoharie ~77% of addresses; also Delaware ~23%
+12122,Schoharie,Middleburgh,,,,Multi-county ZIP: Schoharie ~94% of addresses; also Albany ~6%
+12131,Schoharie,North Blenheim,,,,
+12149,Schoharie,Richmondville,,,,Multi-county ZIP: Schoharie ~97% of addresses; also Otsego ~3%
+12157,Schoharie,Schoharie,,,,Multi-county ZIP: Schoharie ~99% of addresses; also Schenectady ~<1%; Albany ~<1%
+12160,Schoharie,Sloansville,,,,Multi-county ZIP: Schoharie ~92% of addresses; also Montgomery ~8%
+12175,Schoharie,Summit,,,,
+12187,Schoharie,Warnerville,,,,
+12194,Schoharie,West Fulton,,,,
+13459,Schoharie,Sharon Springs,,,,Multi-county ZIP: Schoharie ~96% of addresses; also Montgomery ~4%; Otsego ~1%
 14805,Schuyler,Alpine,,,,Multi-county ZIP: Schuyler ~96% of addresses; also Chemung ~4%
 14812,Schuyler,Beaver Dams,,,,Multi-county ZIP: Schuyler ~50% of addresses; also Chemung ~30%; Steuben ~20%
 14815,Schuyler,Bradford,,,,Multi-county ZIP: Schuyler ~75% of addresses; also Steuben ~25%
@@ -390,6 +1413,186 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 14879,Steuben,Savona,,,,
 14885,Steuben,Troupsburg,,,,
 14898,Steuben,Woodhull,,,,
+00501,Suffolk,Holtsville,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+00544,Suffolk,Holtsville,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+06390,Suffolk,Fishers Island,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+11701,Suffolk,Amityville,,,,Multi-county ZIP: Suffolk ~100% of addresses; also Nassau ~<1%
+11702,Suffolk,Babylon,,,,
+11703,Suffolk,North Babylon,,,,
+11704,Suffolk,West Babylon,,,,
+11705,Suffolk,Bayport,,,,
+11706,Suffolk,Bay Shore,,,,
+11707,Suffolk,West Babylon,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11713,Suffolk,Bellport,,,,
+11715,Suffolk,Blue Point,,,,
+11716,Suffolk,Bohemia,,,,
+11717,Suffolk,Brentwood,,,,
+11718,Suffolk,Brightwaters,,,,
+11719,Suffolk,Brookhaven,,,,
+11720,Suffolk,Centereach,,,,
+11721,Suffolk,Centerport,,,,
+11722,Suffolk,Central Islip,,,,
+11724,Suffolk,Cold Spring Harbor,,,,Multi-county ZIP: Suffolk ~99% of addresses; also Nassau ~1%
+11725,Suffolk,Commack,,,,
+11726,Suffolk,Copiague,,,,
+11727,Suffolk,Coram,,,,
+11729,Suffolk,Deer Park,,,,
+11730,Suffolk,East Islip,,,,
+11731,Suffolk,East Northport,,,,
+11733,Suffolk,East Setauket,,,,
+11738,Suffolk,Farmingville,,,,
+11739,Suffolk,Great River,,,,
+11740,Suffolk,Greenlawn,,,,
+11741,Suffolk,Holbrook,,,,
+11742,Suffolk,Holtsville,,,,
+11743,Suffolk,Huntington,,,,Multi-county ZIP: Suffolk ~100% of addresses; also Nassau ~<1%
+11746,Suffolk,Huntington Station,,,,
+11747,Suffolk,Melville,,,,
+11749,Suffolk,Islandia,,,,
+11751,Suffolk,Islip,,,,
+11752,Suffolk,Islip Terrace,,,,
+11754,Suffolk,Kings Park,,,,
+11755,Suffolk,Lake Grove,,,,
+11757,Suffolk,Lindenhurst,,,,
+11760,Suffolk,Melville,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11763,Suffolk,Medford,,,,
+11764,Suffolk,Miller Place,,,,
+11766,Suffolk,Mount Sinai,,,,
+11767,Suffolk,Nesconset,,,,
+11768,Suffolk,Northport,,,,
+11769,Suffolk,Oakdale,,,,
+11770,Suffolk,Ocean Beach,,,,
+11772,Suffolk,Patchogue,,,,
+11775,Suffolk,Melville,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+11776,Suffolk,Port Jefferson Station,,,,
+11777,Suffolk,Port Jefferson,,,,
+11778,Suffolk,Rocky Point,,,,
+11779,Suffolk,Ronkonkoma,,,,
+11780,Suffolk,Saint James,,,,
+11782,Suffolk,Sayville,,,,
+11784,Suffolk,Selden,,,,
+11786,Suffolk,Shoreham,,,,
+11787,Suffolk,Smithtown,,,,
+11788,Suffolk,Hauppauge,,,,
+11789,Suffolk,Sound Beach,,,,
+11790,Suffolk,Stony Brook,,,,
+11792,Suffolk,Wading River,,,,
+11794,Suffolk,Stony Brook,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+11795,Suffolk,West Islip,,,,
+11796,Suffolk,West Sayville,,,,
+11798,Suffolk,Wyandanch,,,,
+11901,Suffolk,Riverhead,,,,
+11930,Suffolk,Amagansett,,,,
+11931,Suffolk,Aquebogue,,,,
+11932,Suffolk,Bridgehampton,,,,
+11933,Suffolk,Calverton,,,,
+11934,Suffolk,Center Moriches,,,,
+11935,Suffolk,Cutchogue,,,,
+11937,Suffolk,East Hampton,,,,
+11939,Suffolk,East Marion,,,,
+11940,Suffolk,East Moriches,,,,
+11941,Suffolk,Eastport,,,,
+11942,Suffolk,East Quogue,,,,
+11944,Suffolk,Greenport,,,,
+11946,Suffolk,Hampton Bays,,,,
+11947,Suffolk,Jamesport,,,,
+11948,Suffolk,Laurel,,,,
+11949,Suffolk,Manorville,,,,
+11950,Suffolk,Mastic,,,,
+11951,Suffolk,Mastic Beach,,,,
+11952,Suffolk,Mattituck,,,,
+11953,Suffolk,Middle Island,,,,
+11954,Suffolk,Montauk,,,,
+11955,Suffolk,Moriches,,,,
+11956,Suffolk,New Suffolk,,,,
+11957,Suffolk,Orient,,,,
+11958,Suffolk,Peconic,,,,
+11959,Suffolk,Quogue,,,,
+11960,Suffolk,Remsenburg,,,,
+11961,Suffolk,Ridge,,,,
+11962,Suffolk,Sagaponack,,,,
+11963,Suffolk,Sag Harbor,,,,
+11964,Suffolk,Shelter Island,,,,
+11965,Suffolk,Shelter Island Heights,,,,
+11967,Suffolk,Shirley,,,,
+11968,Suffolk,Southampton,,,,
+11969,Suffolk,Southampton,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+11970,Suffolk,South Jamesport,,,,
+11971,Suffolk,Southold,,,,
+11972,Suffolk,Speonk,,,,
+11973,Suffolk,Upton,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+11975,Suffolk,Wainscott,,,,
+11976,Suffolk,Water Mill,,,,
+11977,Suffolk,Westhampton,,,,
+11978,Suffolk,Westhampton Beach,,,,
+11980,Suffolk,Yaphank,,,,
+12701,Sullivan,Monticello,,,,
+12719,Sullivan,Barryville,,,,
+12720,Sullivan,Bethel,,,,
+12721,Sullivan,Bloomingburg,,,,Multi-county ZIP: Sullivan ~82% of addresses; also Orange ~18%
+12722,Sullivan,Burlingham,,,,
+12723,Sullivan,Callicoon,,,,
+12724,Sullivan,Callicoon Center,,,,
+12726,Sullivan,Cochecton,,,,
+12727,Sullivan,Cochecton Center,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+12732,Sullivan,Eldred,,,,
+12733,Sullivan,Fallsburg,,,,
+12734,Sullivan,Ferndale,,,,
+12736,Sullivan,Fremont Center,,,,
+12737,Sullivan,Glen Spey,,,,
+12738,Sullivan,Glen Wild,,,,
+12740,Sullivan,Grahamsville,,,,Multi-county ZIP: Sullivan ~76% of addresses; also Ulster ~24%
+12741,Sullivan,Hankins,,,,
+12742,Sullivan,Harris,,,,
+12743,Sullivan,Highland Lake,,,,
+12745,Sullivan,Hortonville,,,,
+12747,Sullivan,Hurleyville,,,,
+12748,Sullivan,Jeffersonville,,,,
+12749,Sullivan,Kauneonga Lake,,,,
+12750,Sullivan,Kenoza Lake,,,,
+12751,Sullivan,Kiamesha Lake,,,,
+12752,Sullivan,Lake Huntington,,,,
+12754,Sullivan,Liberty,,,,
+12758,Sullivan,Livingston Manor,,,,Multi-county ZIP: Sullivan ~97% of addresses; also Ulster ~3%; Delaware ~<1%
+12759,Sullivan,Loch Sheldrake,,,,
+12762,Sullivan,Mongaup Valley,,,,
+12763,Sullivan,Mountain Dale,,,,Multi-county ZIP: Sullivan ~95% of addresses; also Ulster ~5%
+12764,Sullivan,Narrowsburg,,,,
+12765,Sullivan,Neversink,,,,
+12766,Sullivan,North Branch,,,,
+12767,Sullivan,Obernburg,,,,
+12768,Sullivan,Parksville,,,,
+12769,Sullivan,Phillipsport,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+12770,Sullivan,Pond Eddy,,,,
+12775,Sullivan,Rock Hill,,,,
+12776,Sullivan,Roscoe,,,,Multi-county ZIP: Sullivan ~60% of addresses; also Delaware ~40%
+12777,Sullivan,Forestburgh,,,,
+12778,Sullivan,Smallwood,,,,
+12779,Sullivan,South Fallsburg,,,,
+12781,Sullivan,Summitville,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+12783,Sullivan,SWAN Lake,,,,
+12784,Sullivan,Thompsonville,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+12786,Sullivan,White Lake,,,,
+12787,Sullivan,White Sulphur Springs,,,,
+12788,Sullivan,Woodbourne,,,,
+12789,Sullivan,Woodridge,,,,Multi-county ZIP: Sullivan ~98% of addresses; also Ulster ~2%
+12790,Sullivan,Wurtsboro,,,,
+12791,Sullivan,Youngsville,,,,
+12792,Sullivan,Yulan,,,,
+13732,Tioga,Apalachin,,,,
+13734,Tioga,Barton,,,,
+13736,Tioga,Berkshire,,,,Multi-county ZIP: Tioga ~83% of addresses; also Tompkins ~13%; Broome ~3%
+13743,Tioga,Candor,,,,
+13811,Tioga,Newark Valley,,,,Multi-county ZIP: Tioga ~93% of addresses; also Broome ~7%
+13812,Tioga,Nichols,,,,
+13827,Tioga,Owego,,,,
+13835,Tioga,Richford,,,,Multi-county ZIP: Tioga ~55% of addresses; also Broome ~26%; Cortland ~19%
+13840,Tioga,Smithboro,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13845,Tioga,Tioga Center,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+13864,Tioga,Willseyville,,,,Multi-county ZIP: Tioga ~72% of addresses; also Tompkins ~28%
+14859,Tioga,Lockwood,,,,Multi-county ZIP: Tioga ~61% of addresses; also Chemung ~39%
+14883,Tioga,Spencer,,,,Multi-county ZIP: Tioga ~78% of addresses; also Tompkins ~22%; Chemung ~<1%
+14892,Tioga,Waverly,,,,Multi-county ZIP: Tioga ~90% of addresses; also Chemung ~10%
 13053,Tompkins,Dryden,,,,Multi-county ZIP: Tompkins ~87% of addresses; also Cortland ~13%
 13062,Tompkins,Etna,,,,
 13068,Tompkins,Freeville,,,,
@@ -405,6 +1608,109 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 14881,Tompkins,Slaterville Springs,,,,
 14882,Tompkins,Lansing,,,,Multi-county ZIP: Tompkins ~100% of addresses; also Cayuga ~<1%
 14886,Tompkins,Trumansburg,,,,Multi-county ZIP: Tompkins ~62% of addresses; also Schuyler ~26%; Seneca ~11%
+12401,Ulster,Kingston,,,,
+12402,Ulster,Kingston,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12404,Ulster,Accord,,,,
+12409,Ulster,Bearsville,,,,
+12410,Ulster,Big Indian,,,,
+12411,Ulster,Bloomington,,,,
+12412,Ulster,Boiceville,,,,
+12416,Ulster,Chichester,,,,
+12417,Ulster,Connelly,,,,
+12419,Ulster,Cottekill,,,,
+12420,Ulster,Cragsmoor,,,,
+12428,Ulster,Ellenville,,,,
+12429,Ulster,Esopus,,,,
+12432,Ulster,Glasco,,,,
+12433,Ulster,Glenford,,,,
+12435,Ulster,Greenfield Park,,,,Multi-county ZIP: Ulster ~99% of addresses; also Sullivan ~1%
+12440,Ulster,High Falls,,,,
+12441,Ulster,Highmount,,,,
+12443,Ulster,Hurley,,,,
+12446,Ulster,Kerhonkson,,,,
+12448,Ulster,Lake Hill,,,,
+12449,Ulster,Lake Katrine,,,,
+12453,Ulster,Malden on Hudson,,,,
+12456,Ulster,Mount Marion,,,,
+12457,Ulster,Mount Tremper,,,,
+12458,Ulster,Napanoch,,,,Multi-county ZIP: Ulster ~93% of addresses; also Sullivan ~7%
+12461,Ulster,Olivebridge,,,,
+12464,Ulster,Phoenicia,,,,
+12465,Ulster,Pine Hill,,,,Multi-county ZIP: Ulster ~91% of addresses; also Delaware ~9%
+12466,Ulster,Port Ewen,,,,
+12471,Ulster,Rifton,,,,
+12472,Ulster,Rosendale,,,,
+12475,Ulster,Ruby,,,,
+12477,Ulster,Saugerties,,,,Multi-county ZIP: Ulster ~100% of addresses; also Greene ~<1%
+12480,Ulster,Shandaken,,,,Multi-county ZIP: Ulster ~84% of addresses; also Greene ~16%
+12481,Ulster,Shokan,,,,
+12483,Ulster,Spring Glen,,,,
+12484,Ulster,Stone Ridge,,,,
+12486,Ulster,Tillson,,,,
+12487,Ulster,Ulster Park,,,,
+12489,Ulster,Wawarsing,,,,
+12490,Ulster,West Camp,,,,
+12491,Ulster,West Hurley,,,,
+12493,Ulster,West Park,,,,
+12494,Ulster,West Shokan,,,,
+12495,Ulster,Willow,,,,
+12498,Ulster,Woodstock,,,,
+12515,Ulster,Clintondale,,,,
+12525,Ulster,Gardiner,,,,
+12528,Ulster,Highland,,,,
+12542,Ulster,Marlboro,,,,Multi-county ZIP: Ulster ~98% of addresses; also Orange ~2%
+12547,Ulster,Milton,,,,
+12548,Ulster,Modena,,,,
+12561,Ulster,New Paltz,,,,
+12566,Ulster,Pine Bush,,,,Multi-county ZIP: Ulster ~49% of addresses; also Orange ~44%; Sullivan ~6%
+12568,Ulster,Plattekill,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12588,Ulster,Walker Valley,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12589,Ulster,Wallkill,,,,Multi-county ZIP: Ulster ~76% of addresses; also Orange ~24%
+12725,Ulster,Claryville,,,,Multi-county ZIP: Ulster ~64% of addresses; also Sullivan ~36%
+12801,Warren,Glens Falls,,,,
+12804,Warren,Queensbury,,,,Multi-county ZIP: Warren ~99% of addresses; also Washington ~1%
+12808,Warren,Adirondack,,,,
+12810,Warren,Athol,,,,
+12811,Warren,Bakers Mills,,,,
+12814,Warren,Bolton Landing,,,,
+12815,Warren,Brant Lake,,,,
+12817,Warren,Chestertown,,,,
+12820,Warren,Cleverdale,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+12824,Warren,Diamond Point,,,,
+12836,Warren,Hague,,,,Multi-county ZIP: Warren ~98% of addresses; also Essex ~2%
+12843,Warren,Johnsburg,,,,
+12845,Warren,Lake George,,,,
+12846,Warren,Lake Luzerne,,,,
+12853,Warren,North Creek,,,,Multi-county ZIP: Warren ~97% of addresses; also Essex ~3%
+12856,Warren,North River,,,,
+12860,Warren,Pottersville,,,,
+12862,Warren,Riparius,,,,
+12874,Warren,Silver Bay,,,,
+12878,Warren,Stony Creek,,,,
+12885,Warren,Warrensburg,,,,
+12886,Warren,Wevertown,,,,
+12057,Washington,Eagle Bridge,,,,Multi-county ZIP: Washington ~76% of addresses; also Rensselaer ~24%
+12809,Washington,Argyle,,,,
+12816,Washington,Cambridge,,,,
+12819,Washington,Clemons,,,,
+12821,Washington,Comstock,,,,
+12823,Washington,Cossayuna,,,,
+12827,Washington,Fort Ann,,,,
+12828,Washington,Fort Edward,,,,Multi-county ZIP: Washington ~58% of addresses; also Saratoga ~42%
+12832,Washington,Granville,,,,
+12834,Washington,Greenwich,,,,
+12837,Washington,Hampton,,,,
+12838,Washington,Hartford,,,,
+12839,Washington,Hudson Falls,,,,Multi-county ZIP: Washington ~99% of addresses; also Warren ~1%
+12841,Washington,Huletts Landing,,,,
+12844,Washington,Kattskill Bay,,,,Multi-county ZIP: Washington ~72% of addresses; also Warren ~28%
+12848,Washington,Middle Falls,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+12849,Washington,Middle Granville,,,,
+12854,Washington,North Granville,,,,
+12861,Washington,Putnam Station,,,,Multi-county ZIP: Washington ~97% of addresses; also Essex ~3%
+12865,Washington,Salem,,,,
+12873,Washington,Shushan,,,,
+12887,Washington,Whitehall,,,,
 13143,Wayne,Red Creek,,,,Multi-county ZIP: Wayne ~66% of addresses; also Cayuga ~34%
 13146,Wayne,Savannah,,,,Multi-county ZIP: Wayne ~92% of addresses; also Seneca ~7%; Cayuga ~1%
 13154,Wayne,South Butler,,,,
@@ -427,6 +1733,105 @@ ZIP,County,Municipality (primary),Director (auto),Universe ID,Email Records (fro
 14568,Wayne,Walworth,,,,
 14589,Wayne,Williamson,,,,
 14590,Wayne,Wolcott,,,,
+10501,Westchester,Amawalk,,,,
+10502,Westchester,Ardsley,,,,
+10503,Westchester,Ardsley on Hudson,,,,
+10504,Westchester,Armonk,,,,
+10506,Westchester,Bedford,,,,
+10507,Westchester,Bedford Hills,,,,
+10510,Westchester,Briarcliff Manor,,,,
+10511,Westchester,Buchanan,,,,
+10514,Westchester,Chappaqua,,,,
+10517,Westchester,Crompond,,,,
+10518,Westchester,Cross River,,,,
+10519,Westchester,Croton Falls,,,,
+10520,Westchester,Croton on Hudson,,,,
+10521,Westchester,Croton on Hudson,,,,"Not in HUD 2026Q2 crosswalk (no active delivery addresses); county and city from GeoNames only - may be retired, PO Box-only or unique ZIP"
+10522,Westchester,Dobbs Ferry,,,,
+10523,Westchester,Elmsford,,,,
+10526,Westchester,Goldens Bridge,,,,
+10527,Westchester,Granite Springs,,,,
+10528,Westchester,Harrison,,,,
+10530,Westchester,Hartsdale,,,,
+10532,Westchester,Hawthorne,,,,
+10533,Westchester,Irvington,,,,
+10535,Westchester,Jefferson Valley,,,,
+10536,Westchester,Katonah,,,,
+10538,Westchester,Larchmont,,,,
+10540,Westchester,Lincolndale,,,,
+10543,Westchester,Mamaroneck,,,,
+10545,Westchester,Maryknoll,,,,No residential delivery addresses in HUD data (business/PO Box use only)
+10546,Westchester,Millwood,,,,
+10547,Westchester,Mohegan Lake,,,,
+10548,Westchester,Montrose,,,,
+10549,Westchester,Mount Kisco,,,,
+10550,Westchester,Mount Vernon,,,,Multi-county ZIP: Westchester ~100% of addresses; also Bronx ~<1%
+10551,Westchester,Mount Vernon,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+10552,Westchester,Mount Vernon,,,,
+10553,Westchester,Mount Vernon,,,,
+10560,Westchester,North Salem,,,,Multi-county ZIP: Westchester ~100% of addresses; also Putnam ~<1%
+10562,Westchester,Ossining,,,,
+10566,Westchester,Peekskill,,,,
+10567,Westchester,Cortlandt Manor,,,,Multi-county ZIP: Westchester ~100% of addresses; also Putnam ~<1%
+10570,Westchester,Pleasantville,,,,
+10573,Westchester,Port Chester,,,,
+10576,Westchester,Pound Ridge,,,,
+10577,Westchester,Purchase,,,,
+10578,Westchester,Purdys,,,,
+10580,Westchester,Rye,,,,
+10583,Westchester,Scarsdale,,,,
+10587,Westchester,Shenorock,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+10588,Westchester,Shrub Oak,,,,Multi-county ZIP: Westchester ~100% of addresses; also Putnam ~<1%
+10589,Westchester,Somers,,,,
+10590,Westchester,South Salem,,,,
+10591,Westchester,Tarrytown,,,,
+10594,Westchester,Thornwood,,,,
+10595,Westchester,Valhalla,,,,
+10596,Westchester,Verplanck,,,,
+10597,Westchester,Waccabuc,,,,
+10598,Westchester,Yorktown Heights,,,,
+10601,Westchester,White Plains,,,,
+10602,Westchester,White Plains,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+10603,Westchester,White Plains,,,,
+10604,Westchester,West Harrison,,,,
+10605,Westchester,White Plains,,,,
+10606,Westchester,White Plains,,,,
+10607,Westchester,White Plains,,,,
+10610,Westchester,White Plains,,,,No Census ZCTA and no residential addresses: likely a unique (single-organization) ZIP (inferred)
+10701,Westchester,Yonkers,,,,
+10702,Westchester,Yonkers,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+10703,Westchester,Yonkers,,,,
+10704,Westchester,Yonkers,,,,Multi-county ZIP: Westchester ~100% of addresses; also Bronx ~<1%
+10705,Westchester,Yonkers,,,,Multi-county ZIP: Westchester ~100% of addresses; also Bronx ~<1%
+10706,Westchester,Hastings on Hudson,,,,
+10707,Westchester,Tuckahoe,,,,
+10708,Westchester,Bronxville,,,,
+10709,Westchester,Eastchester,,,,
+10710,Westchester,Yonkers,,,,
+10801,Westchester,New Rochelle,,,,
+10802,Westchester,New Rochelle,,,,No Census ZCTA: likely a PO Box-only ZIP (inferred)
+10803,Westchester,Pelham,,,,Multi-county ZIP: Westchester ~100% of addresses; also Bronx ~<1%
+10804,Westchester,New Rochelle,,,,
+10805,Westchester,New Rochelle,,,,
+14009,Wyoming,Arcade,,,,Multi-county ZIP: Wyoming ~92% of addresses; also Cattaraugus ~8%; Erie ~<1%
+14011,Wyoming,Attica,,,,Multi-county ZIP: Wyoming ~90% of addresses; also Genesee ~10%
+14024,Wyoming,Bliss,,,,Multi-county ZIP: Wyoming ~96% of addresses; also Allegany ~4%
+14037,Wyoming,Cowlesville,,,,Multi-county ZIP: Wyoming ~87% of addresses; also Erie ~13%
+14039,Wyoming,Dale,,,,
+14066,Wyoming,Gainesville,,,,
+14082,Wyoming,Java Center,,,,
+14083,Wyoming,Java Village,,,,
+14113,Wyoming,North Java,,,,
+14130,Wyoming,Pike,,,,
+14145,Wyoming,Strykersville,,,,Multi-county ZIP: Wyoming ~95% of addresses; also Erie ~5%
+14167,Wyoming,Varysburg,,,,
+14427,Wyoming,Castile,,,,
+14530,Wyoming,Perry,,,,Multi-county ZIP: Wyoming ~100% of addresses; also Livingston ~<1%
+14536,Wyoming,Portageville,,,,Multi-county ZIP: Wyoming ~77% of addresses; also Allegany ~23%
+14549,Wyoming,Silver Lake,,,,
+14550,Wyoming,Silver Springs,,,,
+14569,Wyoming,Warsaw,,,,
+14591,Wyoming,Wyoming,,,,Multi-county ZIP: Wyoming ~92% of addresses; also Genesee ~8%
 14415,Yates,Bellona,,,,
 14418,Yates,Branchport,,,,Multi-county ZIP: Yates ~82% of addresses; also Steuben ~18%
 14441,Yates,Dresden,,,,
