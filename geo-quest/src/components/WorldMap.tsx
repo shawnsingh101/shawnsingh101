@@ -3,6 +3,8 @@ import { geoEqualEarth, geoPath, geoGraticule10 } from 'd3-geo';
 import { feature } from 'topojson-client';
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom';
 import { select } from 'd3-selection';
+import 'd3-transition';
+import { easeCubicOut } from 'd3-ease';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry } from 'geojson';
 import type { Dataset, Layer } from '../types';
@@ -31,7 +33,7 @@ interface Props {
   labels?: Record<string, string>;
   pins?: Pin[];
   target?: { id: string; status?: 'right' | 'wrong' } | null; // "lock-on" brackets around the place in question
-  focus?: { ids: string[]; key: string; pad?: number } | null; // pad: share of the screen the focus should fill (default .85)
+  focus?: { ids: string[]; key: string; pad?: number; keepCenter?: boolean } | null; // keepCenter: zoom without re-centring (so it can animate) // pad: share of the screen the focus should fill (default .85)
   dim?: (placeId: string) => boolean;   // fade places outside the current question's region
   onTap?: (hit: MapHit) => void;
   onHover?: (hit: MapHit | null, x: number, y: number) => void; // mouse only
@@ -91,7 +93,6 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const [size, setSize] = useState({ w: 0, h: 0 });
   const [topos, setTopos] = useState<Partial<Record<Layer, Topology>>>({});
   const [t, setT] = useState<ZoomTransform>(zoomIdentity);
-  const [animating, setAnimating] = useState(false);
 
   const wanted: Layer[] = ['country', ...layers];
   useEffect(() => {
@@ -151,7 +152,6 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
     const k0 = fitScale(size);
     const z = zoom<SVGSVGElement, unknown>().scaleExtent([k0 * 0.9, k0 * 80])
       .translateExtent([[-W * 0.1, -H * 0.1], [W * 1.1, H * 1.1]])
-      .on('start', ev => { if (ev.sourceEvent) setAnimating(false); })
       .on('zoom', ev => setT(ev.transform));
     zoomRef.current = z;
     select(svgRef.current).call(z).on('dblclick.zoom', null);
@@ -163,7 +163,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const ready = !!shapes.country && layers.every(l => shapes[l]);
   useEffect(() => {
     if (!ready || !svgRef.current || !zoomRef.current || !size.w) return;
-    if (recenter) {
+    if (recenter && !focus?.keepCenter) {
       const lons = (focus?.ids ?? []).map(id => ds.byId.get(id)?.lon).filter((l): l is number => l != null);
       const want = focus ? meanLon(lons) : lambda;
       if (want !== lambda) { recentered.current = true; setLambda(want); return; } // re-runs once the map is re-drawn
@@ -189,12 +189,13 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
       }
     }
     // Right after re-centring, jump straight there (the map fades in) instead of flying from the old view.
+    // Otherwise a quick "fly-to" (d3's smooth zoom path: eases out and keeps the target in view).
     const jump = recentered.current;
     recentered.current = false;
-    setAnimating(!jump);
-    select(svgRef.current).call(zoomRef.current.transform, target);
-    const tm = setTimeout(() => setAnimating(false), 700);
-    return () => clearTimeout(tm);
+    const sel = select(svgRef.current);
+    sel.interrupt();
+    if (jump) sel.call(zoomRef.current.transform, target);
+    else sel.transition().duration(520).ease(easeCubicOut).call(zoomRef.current.transform, target);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focus?.key, ready, size.w, size.h, lambda]);
 
@@ -233,7 +234,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   return (
     <div ref={wrap} className={'worldmap ' + (className ?? '')}>
       <svg ref={svgRef} width={size.w} height={size.h} role="img" aria-label="World map">
-        <g key={lambda} className="map-g" style={{ transform: `translate(${t.x}px, ${t.y}px) scale(${k})`, transformOrigin: '0 0', transition: animating ? 'transform 650ms cubic-bezier(.3,.7,.2,1)' : 'none' }}>
+        <g key={lambda} className="map-g" style={{ transform: `translate(${t.x}px, ${t.y}px) scale(${k})`, transformOrigin: '0 0' }}>
           <path d={path({ type: 'Sphere' }) ?? ''} className="ocean" />
           {shapes.water && layers.includes('water') && shapes.water.map(s => shapeEl(s, 'water'))}
           <path d={path(geoGraticule10()) ?? ''} className="graticule" />

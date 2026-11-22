@@ -1,7 +1,7 @@
 {
   "name": "geo-quest",
   "private": true,
-  "version": "0.8.0",
+  "version": "0.8.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,8 +10,10 @@
     "sync": "node scripts/sync-wikidata.mjs"
   },
   "dependencies": {
+    "d3-ease": "^3.0.2",
     "d3-geo": "^3.1.2",
     "d3-selection": "^3.0.1",
+    "d3-transition": "^3.0.2",
     "d3-zoom": "^3.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -20,8 +22,10 @@
     "world-atlas": "^2.0.2"
   },
   "devDependencies": {
+    "@types/d3-ease": "^3.0.2",
     "@types/d3-geo": "^3.1.1",
     "@types/d3-selection": "^3.0.12",
+    "@types/d3-transition": "^3.0.9",
     "@types/d3-zoom": "^3.0.9",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",

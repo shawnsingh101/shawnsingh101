@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '0.8.1', notes: 'Quick, smooth fly-to zoom when you reveal where something is' },
   { version: '0.8.0', notes: 'Home screen with a spinning globe · lock-on target brackets with ✓ / ✗' },
   { version: '0.7.0', notes: 'Flip or skip map questions · “I don’t know” · compact skill tree' },
   { version: '0.6.0', notes: 'Forgiving taps · centred rivers · undo · local names for rivers & lakes' },

@@ -129,7 +129,7 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
   const focus = useMemo(() => {
     if (!item || !f || f.map === 'none') return null;
     // Flipped map card, now revealed: fly to the answer.
-    if (flipped && revealed) return { ids: c!.layer === 'country' || c!.layer === 'cn' ? [c!.id] : [c!.id], key: item.ref.id + ':r', pad: c!.layer === 'lake' ? 0.3 : c!.layer === 'river' ? 0.55 : 0.5 };
+    if (flipped && revealed) return { ids: [c!.id], key: item.ref.id + ':r', keepCenter: true, pad: c!.layer === 'lake' ? 0.3 : c!.layer === 'river' ? 0.55 : 0.5 };
     // Seas are small inside a big region: zoom right to them. Countries/provinces show their neighbourhood.
     // Rivers & lakes: centred, with some surroundings so you can get your bearings.
     if (f.map === 'highlight') return ['water', 'river', 'lake'].includes(c!.layer)
