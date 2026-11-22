@@ -12,7 +12,7 @@ export interface Capital {
 }
 
 export type Status = 'un' | 'observer' | 'disputed';
-export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site';
+export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site' | 'peak' | 'range';
 
 /** Anything you can learn on the map: a country, a sea, a province… keyed by Wikidata id. */
 export interface Place {
@@ -44,7 +44,8 @@ export interface Place {
   label?: string; state?: string; stateName?: string; rank?: 'senior' | 'junior';
   party?: string; partyLong?: string; since?: string; termEnd?: string; roles?: string[]; photo?: string;
   topic?: 'senate' | 'governors' | 'leaders';   // which kind of office a seat is
-  whsId?: string; country?: string; countryName?: string; // World Heritage Sites
+  whsId?: string; country?: string; countryName?: string; // World Heritage Sites (and peaks)
+  elevation?: number;      // peaks, metres
   sovereign?: string; sovereignName?: string; terrStatus?: string | null; // territories: which country they belong to
   place?: string; placeName?: string;           // the state/country the office belongs to
   office?: string; rolePrefix?: string;         // "President of France", "President of"

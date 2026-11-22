@@ -161,4 +161,16 @@ const small = tFeature(w10, w10.objects.countries).features
   .map(f => ({ type: 'Feature', geometry: f.geometry, properties: { id: String(f.id) } }));
 writeFileSync(join(ROOT, 'public/data/shapes-small.json'), JSON.stringify(build(small, 0.2)));
 
-console.log(`Wrote ${water.length} water, ${cn.length} China, ${lakes.length} lake, ${rivers.length} river, ${us.length} US state, ${terr.length} territory and ${small.length} small-country features.`);
+// ---- mountain ranges (Natural Earth regions, matched by Wikidata id; Antarctica left out) ----
+const regions = await get('ne_50m_geography_regions_polys.geojson');
+const ranges = regions.features.filter(f => f.properties.FEATURECLA === 'Range/mtn' && f.properties.WIKIDATAID && f.properties.REGION !== 'Antarctica')
+  .map(f => ({ type: 'Feature', geometry: f.geometry, properties: { id: f.properties.WIKIDATAID, rank: f.properties.SCALERANK } }));
+writeFileSync(join(ROOT, 'public/data/shapes-range.json'), JSON.stringify(build(ranges, 0.35)));
+
+// ---- notable peaks: Natural Earth's elevation points (no shapes — written as a list for the sync to enrich) ----
+const elev = await get('ne_10m_geography_regions_elevation_points.geojson');
+const peakPts = elev.features.filter(f => f.properties.featurecla === 'mountain' && f.properties.wikidataid)
+  .map(f => ({ id: f.properties.wikidataid, rank: f.properties.scalerank, elevation: f.properties.elevation, lon: f.geometry.coordinates[0], lat: f.geometry.coordinates[1] }));
+writeFileSync(join(ROOT, 'data/peaks-ne.json'), JSON.stringify(peakPts));
+
+console.log(`Wrote ${water.length} water, ${cn.length} China, ${lakes.length} lake, ${rivers.length} river, ${us.length} US state, ${terr.length} territory, ${small.length} small-country, ${ranges.length} range features and ${peakPts.length} peaks.`);

@@ -106,7 +106,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     // A tap on a different kind of thing (a country while looking for a river) is a slip, not an answer.
     const hitLayer = hit.countryId ? ds.byId.get(hit.countryId)?.layer : 'country';
     if (hitLayer !== mp!.layer) {
-      setNudge(`Tap a ${{ country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site' }[mp!.layer]}`);
+      setNudge(`Tap a ${{ country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range' }[mp!.layer]}`);
       setTimeout(() => setNudge(null), 1400);
       return;
     }
@@ -146,8 +146,8 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     if (flipped && revealed) return { ids: [mp!.id], key: item.ref.id + ':r', keepCenter: true, pad: c!.layer === 'lake' ? 0.3 : c!.layer === 'river' ? 0.55 : 0.5 };
     // Seas are small inside a big region: zoom right to them. Countries/provinces show their neighbourhood.
     // Rivers & lakes: centred, with some surroundings so you can get your bearings.
-    if (f.map === 'highlight') return ['water', 'river', 'lake'].includes(c!.layer)
-      ? { ids: [c!.id], key: item.ref.id + ':h', pad: c!.layer === 'water' ? 0.85 : c!.layer === 'river' ? 0.55 : 0.3 }
+    if (f.map === 'highlight') return ['water', 'river', 'lake', 'range'].includes(c!.layer)
+      ? { ids: [c!.id], key: item.ref.id + ':h', pad: c!.layer === 'water' ? 0.85 : c!.layer === 'river' || c!.layer === 'range' ? 0.55 : 0.3 }
       : { ids: [mp!.id, ...regionIds], key: item.ref.id + ':h' };
     return { ids: regionIds, key: group!.id };
   }, [item, f, c, mp, regionIds, wideIds, group, flipped, revealed]);
@@ -245,7 +245,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
       {nudge && <div className="nudge">{nudge}</div>}
 
       {showMap && (<div className="map-wrap">
-        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
+        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra === 'peak' ? ['range', 'peak'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
           dim={id => group?.layer === m.layer && !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
           {(f.map === 'highlight' || revealed || tapResult) && (m.layer === 'country' || m.layer === 'terr') && (
             <Inset place={m} label={revealed || tapResult ? m.name : 'Close-up'} />

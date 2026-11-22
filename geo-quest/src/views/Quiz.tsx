@@ -76,6 +76,10 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
           <Chip s="sec:World Heritage" label="All World Heritage" />
           {GROUPS.filter(g => g.layer === 'site').map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.id === 'u-icons' ? 'Heritage icons' : g.name} />)}
         </div>
+        <div className="picks">
+          <Chip s="sec:Mountains" label="All mountains" />
+          {GROUPS.filter(g => g.section === 'Mountains').map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.name} />)}
+        </div>
         <div className="picks"><Chip s="grp:cn" label="China's provinces" /></div>
       </section>
 

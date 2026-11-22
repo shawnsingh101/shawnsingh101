@@ -538,3 +538,12 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .dot .vis.site { fill: var(--gold); stroke: var(--ink); }
 .prompt-picture { margin: -.3rem 0 .9rem; }
 .prompt-picture .gallery { margin: 0; }
+
+/* ---- mountains ---- */
+:root { --peak: #8a6a4f; } :root[data-theme="dark"] { --peak: #c9a27e; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --peak: #c9a27e; } }
+.dot .vis.peak { fill: var(--peak); stroke: var(--bg); stroke-width: 1; }
+.range { fill: color-mix(in srgb, var(--peak) 22%, transparent); stroke: color-mix(in srgb, var(--peak) 55%, transparent); stroke-width: .5; vector-effect: non-scaling-stroke; transition: fill .3s; }
+.range.place:hover { fill: color-mix(in srgb, var(--peak) 38%, transparent); }
+.range.dim { opacity: .6; }
+.tone-accent.range { fill: color-mix(in srgb, var(--accent) 60%, transparent) !important; } .tone-right.range { fill: color-mix(in srgb, var(--right) 60%, transparent) !important; } .tone-wrong.range { fill: color-mix(in srgb, var(--wrong) 60%, transparent) !important; }

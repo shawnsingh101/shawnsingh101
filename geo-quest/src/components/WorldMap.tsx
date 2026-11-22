@@ -44,7 +44,7 @@ interface Props {
 }
 
 interface Shape { key: string; name: string; placeId: string | null; layer: Layer; d: string; bounds: [[number, number], [number, number]]; centroid: [number, number] }
-interface Dot { placeId: string; x: number; y: number; site?: boolean }
+interface Dot { placeId: string; x: number; y: number; site?: boolean; peak?: boolean }
 
 // The map's centre line can move: studying China re-centres the map on ~105°E so the
 // region sits upright in the middle instead of slanting at the edge of the world.
@@ -105,7 +105,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
 
   const wanted: Layer[] = ['country', ...layers];
   useEffect(() => {
-    for (const l of wanted) if (l !== 'site' && !topos[l]) loadLayer(l).then(tp => setTopos(prev => ({ ...prev, [l]: tp })));
+    for (const l of wanted) if (l !== 'site' && l !== 'peak' && !topos[l]) loadLayer(l).then(tp => setTopos(prev => ({ ...prev, [l]: tp })));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wanted.join()]);
 
@@ -134,7 +134,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const shapes = useMemo(() => {
     const out: Partial<Record<Layer, Shape[]>> = {};
     if (topos.country) out.country = toShapes(topos.country, 'country', path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
-    for (const l of ['water', 'cn', 'us', 'terr', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
+    for (const l of ['water', 'cn', 'us', 'terr', 'range', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
     return out;
   }, [topos, shapeToCountry, ds, path]);
 
@@ -153,10 +153,10 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
       if (p && isFinite(p[0])) out.push({ placeId: c.id, x: p[0], y: p[1] });
     }
     // World Heritage Sites are points: a small diamond marker each (only the ones in play)
-    if (layers.includes('site')) for (const c of ds.places) {
-      if (c.layer !== 'site' || c.lon == null || (hide?.(c.id) && !tones[c.id])) continue;
+    for (const c of ds.places) {
+      if ((c.layer !== 'site' && c.layer !== 'peak') || !layers.includes(c.layer) || c.lon == null || (hide?.(c.id) && !tones[c.id])) continue;
       const p = projection([c.lon, c.lat!]);
-      if (p && isFinite(p[0])) out.push({ placeId: c.id, x: p[0], y: p[1], site: true });
+      if (p && isFinite(p[0])) out.push({ placeId: c.id, x: p[0], y: p[1], site: c.layer === 'site', peak: c.layer === 'peak' });
     }
     return out;
   }, [visible, ds, layers.join(), projection, hide, tones]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -175,7 +175,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const home = () => { const k0 = fitScale(size); return zoomIdentity.translate((size.w - W * k0) / 2, (size.h - H * k0) / 2).scale(k0); };
 
   // Fly to whatever the current question is about.
-  const ready = !!shapes.country && layers.every(l => l === 'site' || shapes[l]);
+  const ready = !!shapes.country && layers.every(l => l === 'site' || l === 'peak' || shapes[l]);
   useEffect(() => {
     if (!ready || !svgRef.current || !zoomRef.current || !size.w) return;
     if (recenter) {
@@ -233,7 +233,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
     if (!s.placeId) return false;
     if (tones[s.placeId] || labels[s.placeId]) return true;
     if (hide?.(s.placeId)) return false;
-    if (detailByZoom && !/-great$/.test(ds.byId.get(s.placeId)?.group ?? '') && k < k0 * 2.5) return false;
+    if (detailByZoom && !/-great$|^m-ranges$/.test(ds.byId.get(s.placeId)?.group ?? '') && k < k0 * 2.5) return false;
     return true;
   };
   const riverEl = (s: Shape) => {
@@ -261,12 +261,15 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {shapes.cn && layers.includes('cn') && shapes.cn.map(s => shapeEl(s, 'land sub'))}
           {shapes.us && layers.includes('us') && shapes.us.map(s => shapeEl(s, 'land sub'))}
           {shapes.terr && layers.includes('terr') && shapes.terr.map(s => shapeEl(s, 'land sub terr'))}
+          {shapes.range && layers.includes('range') && shapes.range.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'range') : null))}
           {shapes.lake && layers.includes('lake') && shapes.lake.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'lake') : <path key={s.key} d={s.d} className="lake other" />))}
           {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(riverEl)}
           {dots.map(d => (
             <g key={d.placeId} className={'dot' + cls(d.placeId)} {...events({ countryId: d.placeId, name: ds.byId.get(d.placeId)!.name })}>
               <circle cx={d.x} cy={d.y} r={13 / k} className="hit" />
-              {d.site
+              {d.peak
+                ? <path d={`M${d.x} ${d.y - 6 / k}l${6 / k} ${10 / k}h${-12 / k}z`} className="vis peak" style={style(d.placeId)} />
+                : d.site
                 ? <path d={`M${d.x} ${d.y - 5.5 / k}l${5.5 / k} ${5.5 / k}l${-5.5 / k} ${5.5 / k}l${-5.5 / k} ${-5.5 / k}z`} className="vis site" style={style(d.placeId)} />
                 : <circle cx={d.x} cy={d.y} r={4 / k} className="vis" style={style(d.placeId)} />}
             </g>
