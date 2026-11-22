@@ -14,7 +14,7 @@ interface Row { id: string; name: string; unit?: string; missing?: boolean; valu
 interface Partner { name: string; value: number; share: number | null }
 interface TradeCountry { iso3: string; name: string; year?: number; missing?: boolean; note?: string; exports?: Partner[]; imports?: Partner[]; oilFrom?: Partner[]; oilTo?: Partner[] }
 interface Section { id: string; title: string; mode?: 'pct' | 'pp'; kind?: 'yoy' | 'monthly' | 'table' | 'pending' | 'policy' | 'petroleum' | 'trade' | 'population' | 'unemployment' | 'companies'; source: string; note?: string; rows?: Row[];
-  world?: { population: Wb; gdp: Wb } & { value?: number; year?: string; growth?: number | null }; weekly?: Row[]; imports?: { period: string; total: number | null; countries: Partner[] }; exports?: { period: string; total: number | null; countries: Partner[] }; countries?: TradeCountry[] }
+  world?: { population: Wb; gdp: Wb; usFederal?: { date: string; total: number; public: number; intragov: number; yearAgo: number; yearAgoDate: string } | null } & { value?: number; year?: string; growth?: number | null }; weekly?: Row[]; imports?: { period: string; total: number | null; countries: Partner[] }; exports?: { period: string; total: number | null; countries: Partner[] }; countries?: TradeCountry[] }
 interface Company { name: string; country: string | null; values: Record<string, number>; ranks: Record<string, number> }
 interface Dash { updated: string; sections: (Section & { quarters?: string[]; latest?: string; asOf?: string | null; companies?: Company[] })[] }
 
@@ -74,25 +74,47 @@ const WORLD_METRICS: { id: string; name: string; get: (r: Row) => number | null 
   { id: 'pc', name: 'GDP per person', get: r => r.gdpPerCapita?.value, fmt: v => `$${num(v, 0)}` },
   { id: 'pop', name: 'Population', get: r => r.population?.value, fmt: people },
   { id: 'un', name: 'Unemployment', get: r => r.unemployment?.value, fmt: v => `${num(v, 1)}%` },
-  { id: 'total', name: 'Total debt', get: r => (r.totalDebt ? r.totalDebt.government + r.totalDebt.households + r.totalDebt.companies : null), fmt: big },
-  { id: 'totalgdp', name: 'Total debt % GDP', get: r => (r.totalDebt ? r.totalDebt.governmentPct + r.totalDebt.householdsPct + r.totalDebt.companiesPct : null), fmt: v => `${num(v, 0)}%` },
+  { id: 'total', name: 'Debt', get: r => (r.totalDebt ? r.totalDebt.government + r.totalDebt.households + r.totalDebt.companies : null), fmt: big },
+  { id: 'totalgdp', name: 'Debt % GDP', get: r => (r.totalDebt ? r.totalDebt.governmentPct + r.totalDebt.householdsPct + r.totalDebt.companiesPct : null), fmt: v => `${num(v, 0)}%` },
   { id: 'debt', name: 'External debt', get: r => r.externalDebt?.value, fmt: big },
   { id: 'debtgdp', name: 'Ext. debt % GDP', get: r => r.debtToGdp, fmt: v => `${num(v, 0)}%` },
 ];
 
+const DEBT_PARTS = [{ key: 'government', name: 'Government', color: 1 }, { key: 'households', name: 'Households', color: 2 }, { key: 'companies', name: 'Companies', color: 3 }] as const;
+
 function WorldCard({ s }: { s: Section }) {
   const [metric, setMetric] = useState('gdp');
+  // Which parts of total debt to add up. Government alone is closest to the headline "national debt".
+  const [debtOn, setDebtOn] = useState<Set<string>>(new Set(['government']));
+  const fed = s.world?.usFederal;
   const m = WORLD_METRICS.find(x => x.id === metric)!;
   const items = s.rows!.map(r => ({ label: r.name, value: m.get(r) ?? 0, ok: m.get(r) != null })).filter(x => x.ok).sort((a, b) => b.value - a.value);
   return <>
     {s.world?.population && <p className="small">World population <b>{people(s.world.population.value)}</b> ({s.world.population.year}){s.world.gdp ? <> · world GDP <b>{big(s.world.gdp.value)}</b></> : null}</p>}
     <div className="segmented small wrap">{WORLD_METRICS.map(x => <button key={x.id} className={metric === x.id ? 'on' : ''} onClick={() => setMetric(x.id)}>{x.name}</button>)}</div>
-    {metric === 'total' || metric === 'totalgdp'
-      ? <StackedBarChart format={m.fmt} parts={[{ name: 'Government', color: 1 }, { name: 'Households', color: 2 }, { name: 'Companies', color: 3 }]}
-          items={s.rows!.filter(r => r.totalDebt).map(r => { const d = r.totalDebt!; return { label: r.name, values: metric === 'total' ? [d.government, d.households, d.companies] : [d.governmentPct, d.householdsPct, d.companiesPct] }; })
+    {metric === 'total' || metric === 'totalgdp' ? (() => {
+      const parts = DEBT_PARTS.filter(p => debtOn.has(p.key));
+      return <>
+        <div className="chart-toggles" role="group" aria-label="Debt of">
+          {DEBT_PARTS.map(p => (
+            <button key={p.key} className={'chart-chip' + (debtOn.has(p.key) ? ' on' : '')} aria-pressed={debtOn.has(p.key)}
+              onClick={() => { const n = new Set(debtOn); if (n.has(p.key)) { if (n.size > 1) n.delete(p.key); } else n.add(p.key); setDebtOn(n); }}>
+              <i style={{ background: `var(--series-${p.color})` }} />{p.name}
+            </button>
+          ))}
+        </div>
+        <StackedBarChart format={m.fmt} legend={false} parts={parts}
+          items={s.rows!.filter(r => r.totalDebt).map(r => { const d = r.totalDebt!; return { label: r.name, values: parts.map(p => metric === 'total' ? d[p.key] : d[`${p.key}Pct` as 'governmentPct']) }; })
             .sort((a, b) => b.values.reduce((x, y) => x + y, 0) - a.values.reduce((x, y) => x + y, 0))} />
+        {fed && metric === 'total' && <p className="small fed-debt">
+          <b>US federal debt</b> (Treasury, {day(fed.date)}): <b>{big(fed.total)}</b> = {big(fed.public)} held by the public + {big(fed.intragov)} owed to its own trust funds (Social Security and others)
+          {fed.yearAgo ? <span className="muted"> · {fed.total >= fed.yearAgo ? '+' : '−'}{big(Math.abs(fed.total - fed.yearAgo))} in a year</span> : null}.
+          <span className="muted"> The Government bar counts federal, state and local debt but not what the government owes itself, so it's lower than the headline number.</span>
+        </p>}
+      </>;
+    })()
       : <BarChart items={items} format={m.fmt} />}
-    {(metric === 'total' || metric === 'totalgdp') && <p className="muted tiny">Total debt = what the government, households and non-financial companies owe, to anyone at home or abroad (BIS total credit, {s.rows!.find(r => r.totalDebt)?.totalDebt?.quarter}). Banks' own debts aren't included.</p>}
+    {(metric === 'total' || metric === 'totalgdp') && <p className="muted tiny">Tap the chips to add or remove a part. Together: what the government, households and non-financial companies owe, to anyone at home or abroad (BIS total credit, {s.rows!.find(r => r.totalDebt)?.totalDebt?.quarter}). Banks' own debts aren't included.</p>}
     {(metric === 'debt' || metric === 'debtgdp') && <p className="muted tiny">External debt = what everyone in the country (government, banks, companies, households) owes to lenders abroad. It overlaps with total debt rather than adding to it, and includes banks.</p>}
     <details className="table-view"><summary>Table</summary><div className="table-scroll"><table>
       <thead><tr><th>Country</th><th>GDP</th><th>GDP per person</th><th>Population</th><th>Unemployment</th><th>Total debt</th><th>% of GDP</th><th>Gross external debt</th><th>% of GDP</th></tr></thead>

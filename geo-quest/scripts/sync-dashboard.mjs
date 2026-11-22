@@ -147,8 +147,16 @@ console.log('World Bank…');
     return [k, { quarter: parts[0].usd.q, government: parts[0].usd.v * 1e9, households: parts[1].usd.v * 1e9, companies: parts[2].usd.v * 1e9,
       governmentPct: parts[0].pct.v, householdsPct: parts[1].pct.v, companiesPct: parts[2].pct.v }];
   }));
+  // The US federal debt as the Treasury reports it daily ("Debt to the Penny"): the headline ~$40 trillion figure.
+  let usFederal = null;
+  {
+    const from = back(iso(today), { years: 1, days: 7 });
+    const j = await get(`https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?filter=record_date:gte:${from}&sort=record_date&page[size]=400`, 'json');
+    const d = (j?.data ?? []).map(x => ({ date: x.record_date, total: +x.tot_pub_debt_out_amt, public: +x.debt_held_public_amt, intragov: +x.intragov_hold_amt }));
+    if (d.length) { const last = d.at(-1); usFederal = { ...last, yearAgo: d[0].total, yearAgoDate: d[0].date }; }
+  }
   sections.push({ id: 'world', title: "The world's 10 largest economies", kind: 'table', source: 'World Bank (World Development Indicators; Quarterly External Debt Statistics); total debt: BIS total credit statistics; unemployment is the ILO modelled estimate',
-    world: { population: pop.WLD ?? null, gdp: gdp.WLD ?? null },
+    world: { population: pop.WLD ?? null, gdp: gdp.WLD ?? null }, usFederal,
     rows: top.map(k => ({ iso3: k, name: PARTNER[gdp[k].name] ?? gdp[k].name, gdp: gdp[k], gdpPerCapita: pc[k] ?? null, population: pop[k] ?? null, unemployment: un[k] ?? null,
       externalDebt: debt[k] ?? null, totalDebt: totalDebt[k] ?? null, debtToGdp: debt[k] ? +((100 * debt[k].value) / gdp[k].value).toFixed(0) : null })) });
   // Population: the world and the 10 most populous countries (with annual growth).

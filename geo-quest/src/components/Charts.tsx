@@ -130,11 +130,11 @@ export function BarChart({ items, format, color = 1 }: { items: { label: string;
 }
 
 /** Stacked horizontal bars: each row split into parts (government / households / companies), total at the end. */
-export function StackedBarChart({ items, parts, format }: { items: { label: string; values: number[] }[]; parts: { name: string; color: number }[]; format: (v: number) => string }) {
+export function StackedBarChart({ items, parts, format, legend = true }: { items: { label: string; values: number[] }[]; parts: { name: string; color: number }[]; format: (v: number) => string; legend?: boolean }) {
   const max = Math.max(...items.map(i => i.values.reduce((a, b) => a + b, 0)), 0) || 1;
   const [hover, setHover] = useState<number | null>(null);
   return <>
-    <div className="chart-legend">{parts.map(p => <span key={p.name}><i style={{ background: `var(--series-${p.color})` }} />{p.name}</span>)}</div>
+    {legend && <div className="chart-legend">{parts.map(p => <span key={p.name}><i style={{ background: `var(--series-${p.color})` }} />{p.name}</span>)}</div>}
     <div className="bars" role="list">
       {items.map((it, i) => {
         const total = it.values.reduce((a, b) => a + b, 0);
