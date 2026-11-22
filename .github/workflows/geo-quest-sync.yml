@@ -26,6 +26,11 @@ jobs:
           cache-dependency-path: geo-quest/package-lock.json
       - run: npm ci
       - run: npm run sync
+      - name: Refresh the dashboard (markets, rates, inflation, World Bank)
+        run: node scripts/sync-dashboard.mjs
+        continue-on-error: true   # a flaky source shouldn't stop the facts from being saved
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
       - name: Commit if the world changed
         run: |
           if git diff --quiet -- public/data data/audio-cache.json; then echo "No changes."; exit 0; fi

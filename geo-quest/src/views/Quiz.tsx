@@ -13,7 +13,7 @@ interface Subject { id: string; name: string; icon: IconName; sections: string[]
 const THEME_ICON: Record<string, IconName> = { Territories: 'pin', 'World Heritage': 'temple', Mountains: 'mountain', 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop' };
 const subjects = (): Subject[] => [
   { id: 'countries', name: 'Countries', icon: 'globe', sections: CONTINENTS },
-  ...childSections(null).filter(s => !CONTINENTS.includes(s)).map(s => ({ id: s, name: s, sections: [s], icon: THEME_ICON[s] ?? 'globe' })),
+  ...childSections(null).filter(s => !CONTINENTS.includes(s)).map(s => ({ id: s, name: s, sections: [s], icon: THEME_ICON[s] ?? 'book' })),
 ];
 const sectionOf = (scope: Scope) => (scope === 'world' ? null : scope.startsWith('sec:') ? scope.slice(4) : GROUPS.find(g => g.id === scope.slice(4))!.section);
 const subjectOf = (scope: Scope) => { const sec = sectionOf(scope); const top = sec ? sectionChain(sec)[0] : CONTINENTS[0]; return subjects().find(s => s.sections.includes(top))!; };

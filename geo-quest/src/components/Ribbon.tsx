@@ -4,8 +4,8 @@ import { Icon, type IconName } from './Icons';
 import { VERSION } from '../views/Landing';
 import { QuestionTypes } from './QuestionTypes';
 
-export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas';
-const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Skills', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['atlas', 'Atlas', 'book']];
+export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas' | 'dash';
+const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Library', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['atlas', 'Atlas', 'book'], ['dash', 'Dashboard', 'chart']];
 const TOGGLE_ICON: Record<'sound' | 'gamify' | 'pictures' | 'locks', IconName> = { sound: 'sound', gamify: 'star', pictures: 'image', locks: 'lock' };
 
 export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTab: (t: Tab) => void; menu: boolean; setMenu: (v: boolean) => void; goHome: () => void }) {

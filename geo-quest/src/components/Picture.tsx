@@ -5,7 +5,7 @@ import { commonsUrl, wikiGallery, wikiUrl, type Photo } from '../data';
  * Photos of a place: the Wikipedia article's infobox collage as a swipeable strip,
  * falling back to the single Wikidata image if the article has no photos.
  */
-export function Picture({ file, wiki, caption, hideCaption }: { file?: string | null; wiki?: string | null; caption: string; hideCaption?: boolean }) {
+export function Picture({ file, wiki, url, caption, hideCaption }: { file?: string | null; wiki?: string | null; url?: string | null; caption: string; hideCaption?: boolean }) {
   const [photos, setPhotos] = useState<Photo[] | null>(null);
   const [idx, setIdx] = useState(0);
   const strip = useRef<HTMLDivElement>(null);
@@ -13,11 +13,11 @@ export function Picture({ file, wiki, caption, hideCaption }: { file?: string | 
   useEffect(() => {
     let live = true;
     setPhotos(null); setIdx(0);
-    const fallback = file ? [{ src: commonsUrl(file, 800), caption }] : [];
+    const fallback = file ? [{ src: commonsUrl(file, 800), caption }] : url ? [{ src: url, caption }] : [];
     if (!wiki) { setPhotos(fallback); return; }
     wikiGallery(wiki).then(g => { if (live) setPhotos(g.length ? g : fallback); });
     return () => { live = false; };
-  }, [file, wiki, caption]);
+  }, [file, wiki, url, caption]);
 
   if (!photos?.length) return photos === null ? <div className="gallery loading" /> : null;
   const go = (i: number) => { const el = strip.current; if (el) el.scrollTo({ left: i * el.clientWidth, behavior: 'smooth' }); };

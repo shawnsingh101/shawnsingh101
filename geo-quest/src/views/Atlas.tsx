@@ -7,6 +7,7 @@ import { Icon } from '../components/Icons';
 import { wikiUrl } from '../data';
 import { LocalName } from '../components/Native';
 import { PartyPill, PersonPhoto } from '../components/Portrait';
+import { isGeography } from '../subjects';
 
 const LEVEL = ['not started', 'learning', 'known', 'mastered'];
 const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -81,7 +82,7 @@ export function Atlas({ ds }: { ds: Dataset }) {
         {sec && sectionChain(sec).map(s => <button key={s} className="crumb" onClick={() => { setSec(s); setGroup(null); }}>{s}</button>)}
         {group && <span className="crumb">{GROUPS.find(x => x.id === group)!.name}</span>}
       </nav>
-      {!sec && <div className="tiles">{childSections(null).map(s => (
+      {!sec && <div className="tiles">{childSections(null).filter(isGeography).map(s => (
         <button key={s} className={'tile cont-' + s.toLowerCase().replace(/[^a-z]/g, '')} onClick={() => setSec(s)}>
           <b>{s}</b><small>{sectionPlaces(s).length} {nounOf(s)}</small>
         </button>))}</div>}

@@ -160,7 +160,12 @@ export function buildQueue(ds: Dataset, p: Progress, nodes?: string[]): { due: C
   const lists: CardRef[][] = [];
   for (const node of decks) {
     if (!isUnlocked(ds, p, node)) continue;
-    const unseen = cardsForNode(ds, node).filter(c => (!p.cards[c.id] || p.cards[c.id].c.state === State.New) && !skipped(p, c.kind));
+    let unseen = cardsForNode(ds, node).filter(c => (!p.cards[c.id] || p.cards[c.id].c.state === State.New) && !skipped(p, c.kind));
+    // Note cards from the same topic (three blanks in one Negroni line) are spread out, not shown back to back.
+    if (unseen.some(c => c.kind === 'note')) {
+      const nth = new Map<string, number>();
+      unseen = unseen.map((c, i) => { const k = c.country.name; const r = nth.get(k) ?? 0; nth.set(k, r + 1); return { c, r, i }; }).sort((a, b) => a.r - b.r || a.i - b.i).map(x => x.c);
+    }
     const kinds = [...new Set(unseen.map(c => c.kind))];
     kinds.forEach((k, j) => {
       const l = unseen.filter(c => c.kind === k);

@@ -54,7 +54,7 @@ export function quizTitle(scope: Scope, topics: Topic[], countryName?: string | 
   const names = scopeTopics(scope).filter(t => topics.includes(t.id)).map(t => t.name.toLowerCase());
   const list = names.length > 1 ? names.slice(0, -1).join(', ') + ' & ' + names[names.length - 1] : names[0];
   const name = scopeName(scope);
-  const base = name.toLowerCase().includes(list) || list === 'oceans & seas' && scope.startsWith('grp:w-') ? name : `${name}: ${list}`;
+  const base = list === 'cards' || name.toLowerCase().includes(list) || list === 'oceans & seas' && scope.startsWith('grp:w-') ? name : `${name}: ${list}`;
   return countryName ? `${base} · ${countryName}` : base;
 }
 

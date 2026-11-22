@@ -1,0 +1,605 @@
+{
+ "updated": "2026-11-22T16:40:12.370Z",
+ "sections": [
+  {
+   "id": "markets",
+   "title": "Markets",
+   "mode": "pct",
+   "source": "FRED (S&P Dow Jones Indices, Nasdaq, Cboe)",
+   "rows": [
+    {
+     "id": "SP500",
+     "name": "S&P 500",
+     "unit": "",
+     "value": 7175.83,
+     "asOf": "2026-11-19",
+     "d1": -2.02,
+     "m1": -6.7,
+     "m3": -6.9,
+     "ytd": 4.83,
+     "y1": 8.03,
+     "y5": 52.74
+    },
+    {
+     "id": "DJIA",
+     "name": "Dow Jones",
+     "unit": "",
+     "value": 48147.33,
+     "asOf": "2026-11-20",
+     "d1": -1.93,
+     "m1": -8.28,
+     "m3": -8.74,
+     "ytd": 0.17,
+     "y1": 5.23,
+     "y5": 35.24
+    },
+    {
+     "id": "NASDAQCOM",
+     "name": "Nasdaq",
+     "unit": "",
+     "value": 23879.2,
+     "asOf": "2026-11-19",
+     "d1": -2.25,
+     "m1": -9.65,
+     "m3": -9.31,
+     "ytd": 2.74,
+     "y1": 5.83,
+     "y5": 48.71
+    },
+    {
+     "id": "VIXCLS",
+     "name": "VIX",
+     "unit": "",
+     "value": 28.44,
+     "asOf": "2026-11-19",
+     "d1": 15.8,
+     "m1": 54.23,
+     "m3": 91,
+     "ytd": 90.23,
+     "y1": 20.2,
+     "y5": 58.79
+    }
+   ]
+  },
+  {
+   "id": "oil",
+   "title": "Oil",
+   "mode": "pct",
+   "source": "FRED (US Energy Information Administration)",
+   "rows": [
+    {
+     "id": "DCOILWTICO",
+     "name": "WTI crude",
+     "unit": "$/barrel",
+     "value": 89.53,
+     "asOf": "2026-11-17",
+     "d1": 0.32,
+     "m1": -17.26,
+     "m3": 4.06,
+     "ytd": 56.36,
+     "y1": 47.59,
+     "y5": 14.31
+    },
+    {
+     "id": "DCOILBRENTEU",
+     "name": "Brent crude",
+     "unit": "$/barrel",
+     "value": 92.94,
+     "asOf": "2026-11-17",
+     "d1": 0.04,
+     "m1": -22.12,
+     "m3": 0.55,
+     "ytd": 51.49,
+     "y1": 47.15,
+     "y5": 15.21
+    }
+   ]
+  },
+  {
+   "id": "treasury",
+   "title": "US Treasury yields",
+   "mode": "pp",
+   "source": "FRED (US Treasury)",
+   "note": "Changes are in percentage points.",
+   "rows": [
+    {
+     "id": "DGS1MO",
+     "name": "1 month",
+     "unit": "%",
+     "value": 4.2,
+     "asOf": "2026-11-19",
+     "d1": 0.1,
+     "m1": 0.09,
+     "m3": 0.43,
+     "ytd": 0.46,
+     "y1": 0.19,
+     "y5": 4.09
+    },
+    {
+     "id": "DGS1",
+     "name": "1 year",
+     "unit": "%",
+     "value": 4.62,
+     "asOf": "2026-11-19",
+     "d1": 0,
+     "m1": 0.12,
+     "m3": 0.62,
+     "ytd": 1.14,
+     "y1": 0.94,
+     "y5": 4.44
+    },
+    {
+     "id": "DGS2",
+     "name": "2 years",
+     "unit": "%",
+     "value": 4.76,
+     "asOf": "2026-11-19",
+     "d1": -0.04,
+     "m1": -0.01,
+     "m3": 0.57,
+     "ytd": 1.29,
+     "y1": 1.18,
+     "y5": 4.24
+    },
+    {
+     "id": "DGS5",
+     "name": "5 years",
+     "unit": "%",
+     "value": 4.86,
+     "asOf": "2026-11-19",
+     "d1": -0.03,
+     "m1": -0.08,
+     "m3": 0.51,
+     "ytd": 1.13,
+     "y1": 1.15,
+     "y5": 3.64
+    },
+    {
+     "id": "DGS10",
+     "name": "10 years",
+     "unit": "%",
+     "value": 5.04,
+     "asOf": "2026-11-19",
+     "d1": -0.03,
+     "m1": -0.11,
+     "m3": 0.39,
+     "ytd": 0.86,
+     "y1": 0.91,
+     "y5": 3.5
+    },
+    {
+     "id": "DGS30",
+     "name": "30 years",
+     "unit": "%",
+     "value": 5.4,
+     "asOf": "2026-11-19",
+     "d1": -0.01,
+     "m1": -0.08,
+     "m3": 0.21,
+     "ytd": 0.56,
+     "y1": 0.65,
+     "y5": 3.49
+    }
+   ]
+  },
+  {
+   "id": "rates",
+   "title": "Policy & money-market rates",
+   "mode": "pp",
+   "source": "FRED (Federal Reserve, NY Fed, ECB)",
+   "note": "Changes are in percentage points.",
+   "rows": [
+    {
+     "id": "DFF",
+     "name": "Fed funds (effective)",
+     "unit": "%",
+     "value": 3.88,
+     "asOf": "2026-11-19",
+     "d1": 0,
+     "m1": 0,
+     "m3": 0.25,
+     "ytd": 0.24,
+     "y1": 0,
+     "y5": 3.8
+    },
+    {
+     "id": "SOFR",
+     "name": "SOFR",
+     "unit": "%",
+     "value": 3.91,
+     "asOf": "2026-11-19",
+     "d1": 0.01,
+     "m1": 0.04,
+     "m3": 0.29,
+     "ytd": 0.04,
+     "y1": 0,
+     "y5": 3.86
+    },
+    {
+     "id": "ECBDFR",
+     "name": "ECB deposit rate",
+     "unit": "%",
+     "value": 2.5,
+     "asOf": "2026-11-20",
+     "d1": 0,
+     "m1": 0,
+     "m3": 0.25,
+     "ytd": 0.5,
+     "y1": 0.5,
+     "y5": 3
+    },
+    {
+     "id": "ECBMRRFR",
+     "name": "ECB main refi rate",
+     "unit": "%",
+     "value": 2.65,
+     "asOf": "2026-11-20",
+     "d1": 0,
+     "m1": 0,
+     "m3": 0.25,
+     "ytd": 0.5,
+     "y1": 0.5,
+     "y5": 2.65
+    },
+    {
+     "id": "MORTGAGE30US",
+     "name": "30-year mortgage",
+     "unit": "%",
+     "value": 7.28,
+     "asOf": "2026-11-19",
+     "d1": 0.17,
+     "m1": -0.12,
+     "m3": 0.61,
+     "ytd": 1.13,
+     "y1": 1.04,
+     "y5": 4.18
+    },
+    {
+     "id": "MORTGAGE15US",
+     "name": "15-year mortgage",
+     "unit": "%",
+     "value": 6.66,
+     "asOf": "2026-11-19",
+     "d1": 0.21,
+     "m1": -0.05,
+     "m3": 0.7,
+     "ytd": 1.22,
+     "y1": 1.17,
+     "y5": 4.27
+    }
+   ]
+  },
+  {
+   "id": "inflation",
+   "title": "US inflation",
+   "kind": "yoy",
+   "source": "FRED (BLS, BEA)",
+   "rows": [
+    {
+     "id": "CPIAUCSL",
+     "name": "CPI (headline)",
+     "unit": "% y/y",
+     "value": 4.1,
+     "prev": 3.7,
+     "asOf": "2026-10-01"
+    },
+    {
+     "id": "CPILFESL",
+     "name": "Core CPI (excl. food & energy)",
+     "unit": "% y/y",
+     "value": 2.9,
+     "prev": 2.6,
+     "asOf": "2026-10-01"
+    },
+    {
+     "id": "PCEPI",
+     "name": "PCE prices (headline)",
+     "unit": "% y/y",
+     "value": 3.6,
+     "prev": 3.4,
+     "asOf": "2026-09-01"
+    },
+    {
+     "id": "PCEPILFE",
+     "name": "Core PCE (the Fed's 2% target)",
+     "unit": "% y/y",
+     "value": 3.1,
+     "prev": 3,
+     "asOf": "2026-09-01"
+    }
+   ]
+  },
+  {
+   "id": "jobs",
+   "title": "US jobs",
+   "kind": "monthly",
+   "source": "FRED (BLS)",
+   "rows": [
+    {
+     "id": "UNRATE",
+     "name": "Unemployment rate",
+     "unit": "%",
+     "value": 4.1,
+     "prev": 4.2,
+     "asOf": "2026-10-01"
+    },
+    {
+     "id": "CES0500000003",
+     "name": "Average hourly earnings, total private",
+     "unit": "$",
+     "value": 38,
+     "prev": 37.86,
+     "asOf": "2026-10-01",
+     "yoy": 3.1
+    }
+   ]
+  },
+  {
+   "id": "world",
+   "title": "The world's 10 largest economies",
+   "kind": "table",
+   "source": "World Bank (World Development Indicators); unemployment is the ILO modelled estimate",
+   "world": {
+    "population": {
+     "value": 8215424893,
+     "year": "2025",
+     "name": "World"
+    },
+    "gdp": {
+     "value": 118350166039396,
+     "year": "2025",
+     "name": "World"
+    }
+   },
+   "rows": [
+    {
+     "iso3": "USA",
+     "name": "United States",
+     "gdp": {
+      "value": 30769700000000,
+      "year": "2025",
+      "name": "United States"
+     },
+     "gdpPerCapita": {
+      "value": 90026.5163005744,
+      "year": "2025",
+      "name": "United States"
+     },
+     "population": {
+      "value": 341784857,
+      "year": "2025",
+      "name": "United States"
+     },
+     "unemployment": {
+      "value": 4.198,
+      "year": "2025",
+      "name": "United States"
+     }
+    },
+    {
+     "iso3": "CHN",
+     "name": "China",
+     "gdp": {
+      "value": 19498039388042.6,
+      "year": "2025",
+      "name": "China"
+     },
+     "gdpPerCapita": {
+      "value": 13861.970224368,
+      "year": "2025",
+      "name": "China"
+     },
+     "population": {
+      "value": 1406585000,
+      "year": "2025",
+      "name": "China"
+     },
+     "unemployment": {
+      "value": 4.615,
+      "year": "2025",
+      "name": "China"
+     }
+    },
+    {
+     "iso3": "DEU",
+     "name": "Germany",
+     "gdp": {
+      "value": 5050922925047.05,
+      "year": "2025",
+      "name": "Germany"
+     },
+     "gdpPerCapita": {
+      "value": 60496.4350820414,
+      "year": "2025",
+      "name": "Germany"
+     },
+     "population": {
+      "value": 83491249,
+      "year": "2025",
+      "name": "Germany"
+     },
+     "unemployment": {
+      "value": 3.711,
+      "year": "2025",
+      "name": "Germany"
+     }
+    },
+    {
+     "iso3": "JPN",
+     "name": "Japan",
+     "gdp": {
+      "value": 4435162999976.94,
+      "year": "2025",
+      "name": "Japan"
+     },
+     "gdpPerCapita": {
+      "value": 35951.0449549304,
+      "year": "2025",
+      "name": "Japan"
+     },
+     "population": {
+      "value": 123366734,
+      "year": "2025",
+      "name": "Japan"
+     },
+     "unemployment": {
+      "value": 2.451,
+      "year": "2025",
+      "name": "Japan"
+     }
+    },
+    {
+     "iso3": "GBR",
+     "name": "United Kingdom",
+     "gdp": {
+      "value": 4002587541846.01,
+      "year": "2025",
+      "name": "United Kingdom"
+     },
+     "gdpPerCapita": {
+      "value": 57601.9621201954,
+      "year": "2025",
+      "name": "United Kingdom"
+     },
+     "population": {
+      "value": 69487000,
+      "year": "2025",
+      "name": "United Kingdom"
+     },
+     "unemployment": {
+      "value": 4.746,
+      "year": "2025",
+      "name": "United Kingdom"
+     }
+    },
+    {
+     "iso3": "IND",
+     "name": "India",
+     "gdp": {
+      "value": 3956067115771.63,
+      "year": "2025",
+      "name": "India"
+     },
+     "gdpPerCapita": {
+      "value": 2702.47987141553,
+      "year": "2025",
+      "name": "India"
+     },
+     "population": {
+      "value": 1463865525,
+      "year": "2025",
+      "name": "India"
+     },
+     "unemployment": {
+      "value": 4.219,
+      "year": "2025",
+      "name": "India"
+     }
+    },
+    {
+     "iso3": "FRA",
+     "name": "France",
+     "gdp": {
+      "value": 3366315927447.33,
+      "year": "2025",
+      "name": "France"
+     },
+     "gdpPerCapita": {
+      "value": 48985.7307807924,
+      "year": "2025",
+      "name": "France"
+     },
+     "population": {
+      "value": 68720337,
+      "year": "2025",
+      "name": "France"
+     },
+     "unemployment": {
+      "value": 7.542,
+      "year": "2025",
+      "name": "France"
+     }
+    },
+    {
+     "iso3": "RUS",
+     "name": "Russian Federation",
+     "gdp": {
+      "value": 2561310169358.74,
+      "year": "2025",
+      "name": "Russian Federation"
+     },
+     "gdpPerCapita": {
+      "value": 17546.609375,
+      "year": "2025",
+      "name": "Russian Federation"
+     },
+     "population": {
+      "value": 143513328,
+      "year": "2025",
+      "name": "Russian Federation"
+     },
+     "unemployment": {
+      "value": 2.133,
+      "year": "2025",
+      "name": "Russian Federation"
+     }
+    },
+    {
+     "iso3": "ITA",
+     "name": "Italy",
+     "gdp": {
+      "value": 2551556954100.35,
+      "year": "2025",
+      "name": "Italy"
+     },
+     "gdpPerCapita": {
+      "value": 43308.6403060733,
+      "year": "2025",
+      "name": "Italy"
+     },
+     "population": {
+      "value": 58915656,
+      "year": "2025",
+      "name": "Italy"
+     },
+     "unemployment": {
+      "value": 6.391,
+      "year": "2025",
+      "name": "Italy"
+     }
+    },
+    {
+     "iso3": "CAN",
+     "name": "Canada",
+     "gdp": {
+      "value": 2319899772425.92,
+      "year": "2025",
+      "name": "Canada"
+     },
+     "gdpPerCapita": {
+      "value": 55697.6639660837,
+      "year": "2025",
+      "name": "Canada"
+     },
+     "population": {
+      "value": 41651653,
+      "year": "2025",
+      "name": "Canada"
+     },
+     "unemployment": {
+      "value": 6.907,
+      "year": "2025",
+      "name": "Canada"
+     }
+    }
+   ]
+  },
+  {
+   "id": "petroleum",
+   "title": "US petroleum trade",
+   "kind": "pending",
+   "source": "US Energy Information Administration",
+   "note": "Needs a free EIA API key (eia.gov/opendata), saved as the EIA_API_KEY secret for the nightly job."
+  }
+ ]
+}
