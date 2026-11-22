@@ -1,6 +1,6 @@
 import { createEmptyCard, fsrs, generatorParameters, Rating, State, type Card, type Grade } from 'ts-fsrs';
 import { useSyncExternalStore } from 'react';
-import { cardsForNode, fingerprint, groupById, kindApplies, parseNode, refFromId, slotOf, nodeId, nodeOfCard, TAP_KINDS, type CardRef } from './cards';
+import { GROUPS, cardsForNode, fingerprint, groupById, kindApplies, parseNode, refFromId, slotOf, nodeId, nodeOfCard, TAP_KINDS, type CardRef } from './cards';
 import type { Dataset } from './types';
 
 export { Rating, State };
@@ -44,7 +44,10 @@ function revive(p: Progress): Progress {
     r.c.due = new Date(r.c.due);
     if (r.c.last_review) r.c.last_review = new Date(r.c.last_review);
   }
-  return { ...DEFAULT, ...p, quizBest: p.quizBest ?? {}, settings: { ...DEFAULT.settings, ...p.settings, kindsOff: p.settings?.kindsOff ?? [], sessionNodes: p.settings?.sessionNodes ?? null } };
+  // Drop skills that no longer exist (a renamed group), so old saves can't break the app.
+  const valid = new Set(GROUPS.flatMap(g => g.topics.map(t => nodeId(g.id, t.id))));
+  const ok = (n: string) => valid.has(n);
+  return { ...DEFAULT, ...p, active: (p.active ?? []).filter(ok), quizBest: p.quizBest ?? {}, settings: { ...DEFAULT.settings, ...p.settings, kindsOff: p.settings?.kindsOff ?? [], sessionNodes: p.settings?.sessionNodes ? p.settings.sessionNodes.filter(ok) : null } };
 }
 
 function load(): Progress {

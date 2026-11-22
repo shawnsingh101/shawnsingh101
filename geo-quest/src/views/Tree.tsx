@@ -115,7 +115,12 @@ export function Tree({ ds, startQuiz, startStudy }: { ds: Dataset; startQuiz: (q
                               <svg viewBox="0 0 36 36" className="ring"><circle cx="18" cy="18" r="15" className="track" /><circle cx="18" cy="18" r="15" className="val" style={{ strokeDasharray: `${pct * 94.2} 94.2` }} /></svg>
                               <Icon name={unlocked ? t.icon : 'lock'} size={15} />
                             </span>
-                            <span className="skill-text"><span className="label">{t.name}</span><small>{st.known}/{st.total}{st.due ? ` · ${st.due} due` : ''}</small></span>
+                            <span className="label">{t.name}</span>
+                            <span className="skill-meta">
+                              {active && <i className="learning-dot" title="Learning" />}
+                              {st.due > 0 && <b className="due-pill">{st.due} due</b>}
+                              <small>{st.known}/{st.total}</small>
+                            </span>
                           </button>
                         );
                       })}

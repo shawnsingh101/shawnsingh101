@@ -1,4 +1,4 @@
-import { cardsForNode, GROUPS, nodeId, SECTIONS, shuffle, type Group, type Topic } from './cards';
+import { cardsForNode, GROUPS, LAYER_NOUN, nodeId, SECTIONS, shuffle, type Group, type Topic } from './cards';
 import type { QuizSpec } from './components/Study';
 import { getProgress, skipped } from './srs';
 import type { Dataset } from './types';
@@ -20,10 +20,16 @@ export function scopeName(scope: Scope) {
 }
 
 /** Topics on offer for a scope, with the names used in that scope. */
+const cap = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
+
 export function scopeTopics(scope: Scope) {
-  const seen = new Map<Topic, string>();
-  for (const g of scopeGroups(scope)) for (const t of g.topics) if (!seen.has(t.id)) seen.set(t.id, t.id === 'places' && g.layer === 'water' ? 'Oceans & seas' : t.name);
-  return [...seen].map(([id, name]) => ({ id, name }));
+  const seen = new Map<Topic, Set<string>>(), layer = new Map<Topic, string>();
+  for (const g of scopeGroups(scope)) for (const t of g.topics) {
+    if (!seen.has(t.id)) { seen.set(t.id, new Set()); layer.set(t.id, g.layer); }
+    seen.get(t.id)!.add(t.id === 'places' && g.layer === 'water' ? 'Oceans & seas' : t.name);
+  }
+  // Groups can name the same topic differently ("Great rivers", "Rivers"): then use the plain noun.
+  return [...seen].map(([id, names]) => ({ id, name: names.size === 1 ? [...names][0] : cap(LAYER_NOUN[layer.get(id) as keyof typeof LAYER_NOUN]) }));
 }
 
 export function quizPool(ds: Dataset, scope: Scope, topics: Topic[]) {

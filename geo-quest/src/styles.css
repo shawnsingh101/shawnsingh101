@@ -398,24 +398,23 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .tree .groups { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .6rem; }
 .tree .group { box-shadow: none; background: var(--bg); padding: .65rem .7rem; }
 .tree .group-head { margin-bottom: .45rem; }
-.skills { display: flex; flex-wrap: wrap; gap: .4rem; }
-.tree .skill { flex-direction: row; align-items: center; gap: .5rem; padding: .35rem .65rem .35rem .4rem; border-radius: 12px; background: var(--surface); flex: 1 1 0; min-width: 0; }
+.skills { display: grid; gap: .3rem; }
+/* One line per skill: ring · name · progress. (A row of five tiles got too crowded once regions had five skills.) */
+.tree .skill { flex-direction: row; align-items: center; gap: .6rem; padding: .3rem .7rem .3rem .35rem; border-radius: 10px; background: var(--surface); min-width: 0; width: 100%; text-align: left; }
 .tree .skill:hover:not(:disabled) { transform: none; border-color: color-mix(in srgb, var(--ink) 30%, var(--line)); }
-.ring-wrap { position: relative; width: 32px; height: 32px; display: grid; place-items: center; flex: none; }
-.ring-wrap .ring { position: absolute; inset: 0; width: 32px; height: 32px; }
+.tree .skill.active::after { content: none; }
+.tree .skill.active .label { color: var(--accent); }
+.ring-wrap { position: relative; width: 30px; height: 30px; display: grid; place-items: center; flex: none; }
+.ring-wrap .ring { position: absolute; inset: 0; width: 30px; height: 30px; }
 .skill.active .ring-wrap .icon { color: var(--accent); }
-.skill-text { display: flex; flex-direction: column; min-width: 0; text-align: left; }
-.tree .skill .label { font-size: .85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tree .skill small { font-size: .72rem; }
-.tree .skill.active::after { top: -.5rem; right: .4rem; font-size: .55rem; }
-@media (max-width: 760px) { .jumpbar { top: 104px; } .tree .continent { scroll-margin-top: 160px; } }
-@media (max-width: 760px) {
-  .tree .skill { padding: .3rem .45rem .3rem .3rem; gap: .35rem; }
-  .ring-wrap, .ring-wrap .ring { width: 26px; height: 26px; }
-  .ring-wrap .icon { width: 13px; height: 13px; }
-  .tree .skill .label { font-size: .78rem; overflow: visible; text-overflow: clip; }
-  .tree .group { padding: .55rem; }
-}
+.tree .skill .label { flex: 1; min-width: 0; font-size: .88rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.skill-meta { display: flex; align-items: center; gap: .45rem; flex: none; }
+.tree .skill small { font-size: .75rem; font-variant-numeric: tabular-nums; }
+.learning-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.due-pill { font-size: .68rem; font-weight: 650; padding: .05rem .45rem; border-radius: 999px; background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--accent); }
+.tree .skill-key { display: flex; gap: .9rem; font-size: .75rem; color: var(--muted); align-items: center; }
+.tree .skill-key i { display: inline-block; margin-right: .3rem; vertical-align: middle; }
+@media (max-width: 760px) { .jumpbar { top: 104px; } .tree .continent { scroll-margin-top: 160px; } .tree .group { padding: .55rem; } }
 
 /* ---- lock-on target brackets ---- */
 .target { pointer-events: none; --t: var(--accent); }
@@ -550,3 +549,31 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 
 .pinlabel { fill: var(--ink); font-weight: 650; paint-order: stroke; stroke: var(--bg); stroke-linejoin: round; pointer-events: none; }
 .admin1 { fill: none; stroke: color-mix(in srgb, var(--ink) 26%, var(--land)); stroke-width: .5; stroke-dasharray: 3 2; vector-effect: non-scaling-stroke; pointer-events: none; }
+
+/* ---- quiz builder: subject → area → questions, with a sticky start bar ---- */
+.quiz-step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: .9rem 1rem 1rem; display: grid; gap: .6rem; margin-top: .7rem; }
+.quiz-step h3 { margin: 0; display: flex; align-items: center; gap: .5rem; font-size: 1rem; }
+.quiz-step h3 small { font-weight: 400; font-size: .78rem; }
+.step { width: 22px; height: 22px; border-radius: 50%; display: inline-grid; place-items: center; background: var(--ink); color: var(--bg); font-size: .75rem; font-family: var(--sans, inherit); }
+.subjects { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: .45rem; }
+.subject { display: flex; flex-direction: column; align-items: center; gap: .3rem; padding: .7rem .4rem; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); font-size: .85rem; font-weight: 600; text-align: center; color: var(--ink); }
+.subject .icon { color: var(--muted); }
+.subject.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.subject.on .icon { color: var(--accent); }
+.pick.small { font-size: .84rem; padding: .3rem .7rem; }
+.picks.sub { align-items: center; border-left: 2px solid var(--line); padding-left: .7rem; margin-left: .3rem; }
+.pick.check .box { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid currentColor; display: inline-grid; place-items: center; opacity: .6; }
+.pick.check.on .box { opacity: 1; }
+.len-row { display: flex; align-items: center; gap: .7rem; flex-wrap: wrap; margin-top: .2rem; }
+.segmented { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.segmented button { border: 0; background: var(--bg); padding: .35rem .85rem; font-size: .88rem; color: var(--ink); }
+.segmented button + button { border-left: 1px solid var(--line); }
+.segmented button.on { background: var(--ink); color: var(--bg); }
+.quiz-bar { position: sticky; bottom: .6rem; z-index: 5; margin-top: .8rem; display: flex; align-items: center; gap: .8rem; padding: .7rem .8rem .7rem 1rem; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--accent); box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+.quiz-bar .grow { display: flex; flex-direction: column; min-width: 0; }
+.quiz-bar b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.records { margin-top: 1.2rem; }
+.records li { padding: 0; }
+.records li button { all: unset; box-sizing: border-box; cursor: pointer; display: flex; gap: .6rem; align-items: center; width: 100%; padding: .5rem .8rem; }
+.records h3 small { font-weight: 400; font-size: .78rem; }
+@media (max-width: 760px) { .quiz-bar { bottom: calc(4.4rem + env(safe-area-inset-bottom)); } }

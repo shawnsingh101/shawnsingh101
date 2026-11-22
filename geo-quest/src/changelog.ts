@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.4.1', notes: 'Cleaner skill tree (one line per skill) · Quiz page in three steps: subject, area, questions · tap a record to set it up again' },
   { version: '1.4.0', notes: 'Highest point of each country · state & province borders when you zoom in · banknote pictures for currencies · fairer mountain cards · senator photo fallback · labels no longer overlap · Michigan’s lakes · data fixes' },
   { version: '1.3.0', notes: 'Mountains: famous peaks, peaks by continent, and the great mountain ranges' },
   { version: '1.2.0', notes: 'UNESCO World Heritage Sites · Territories · close-up insets for small islands · maps on capital cards · flag look-alikes · Again/Hard/Good/Easy in quizzes · more real pronunciations' },
