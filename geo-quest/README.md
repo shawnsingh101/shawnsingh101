@@ -22,6 +22,16 @@ world map fill in as you master it.
   `world-countries` dataset; capitals' native names from Wikidata. `nativeLangs` in `data/overrides.json`
   sets which language comes first where it matters (e.g. Hebrew before Arabic for Israel).
 
+## v0.4
+
+- **Map re-centres on what you're studying** (e.g. ~105°E for China), so regions far from Europe sit upright
+  instead of slanting at the edge of the world; the Pacific is no longer split. Big shapes (Arctic, Southern Ocean) frame whole.
+- **Photo galleries**: the photos at the top of each Wikipedia article (the infobox collage), read live from
+  Wikipedia's media list, swipeable. Falls back to the Wikidata image.
+- **Pronunciation**: a speaker button on each local-language name. Plays a native-speaker recording from
+  Wikidata (P443, mostly Lingua Libre) when there is one, otherwise the device's text-to-speech voice.
+- Keyboard hints on the answer buttons (1–4; in quizzes 1 = missed, 2/space = knew it).
+
 ## What was in v0.1
 
 - **203 countries**: all 193 UN members, the 2 UN observer states (Vatican City, Palestine),

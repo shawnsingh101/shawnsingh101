@@ -69,7 +69,7 @@ export function Atlas({ ds }: { ds: Dataset }) {
       {g && <div className="country-list">{placesIn(ds, g).sort((a, b) => a.name.localeCompare(b.name)).map(c => (
         <button key={c.id} className="country-row" onClick={() => setPlace(c.id)}>
           {c.layer === 'country' ? <Flag file={c.flag ?? null} name={c.name} size={80} /> : <span className="row-glyph"><Icon name={c.layer === 'water' ? 'wave' : 'map'} /></span>}
-          <span className="grow"><b>{c.name} <span className="local inline"><LocalName place={c} /></span></b><small>{c.capitalAnswer ? (c.capitalAnswer.length < 40 ? c.capitalAnswer : c.capitals.map(x => x.name).join(' / ')) : c.type ? cap1(c.type) : ''}</small></span>
+          <span className="grow"><b>{c.name} <span className="local inline"><LocalName place={c} voice={false} /></span></b><small>{c.capitalAnswer ? (c.capitalAnswer.length < 40 ? c.capitalAnswer : c.capitals.map(x => x.name).join(' / ')) : c.type ? cap1(c.type) : ''}</small></span>
           {c.status && c.status !== 'un' && <span className="tag">{c.status}</span>}
         </button>))}</div>}
       {place && <PlaceSheet ds={ds} id={place} onClose={() => setPlace(null)} />}

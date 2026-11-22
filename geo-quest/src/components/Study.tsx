@@ -117,7 +117,7 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
           <p className="score">{score} / {results.length} <span>({pct}%)</span></p>
           {best && <p className="muted">Best: {best.best}/{best.total} ({Math.round((100 * best.best) / best.total)}%){pct >= 90 ? ' · medal earned' : ' · 90% earns a medal'}</p>}
           {missed.length > 0 && (
-            <div className="missed">
+            <div className="missed-list">
               <b>To review</b>
               <ul>{missed.map(m => { const mf = face(m.ref); return <li key={m.ref.id}>{mf.pre}<b>{mf.answerFlag ? m.ref.country.name + "'s flag" : mf.mode === 'tap' ? m.ref.country.name : mf.answer}</b>{mf.post}</li>; })}</ul>
             </div>
@@ -169,7 +169,7 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
       </div>
 
       {showMap && (
-        <WorldMap ds={ds} className="study-map" layers={extra ? [extra] : []} tones={tones} labels={labels} pins={pins} focus={focus}
+        <WorldMap ds={ds} className="study-map" recenter layers={extra ? [extra] : []} tones={tones} labels={labels} pins={pins} focus={focus}
           dim={id => !regionIds.includes(id) && ds.byId.get(id)?.layer === c.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
       )}
 
@@ -198,33 +198,33 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
           {revealed && f.note && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
           {revealed && s.pictures && f.picture && <Picture {...f.picture} />}
           {revealed && !f.picture && c.flag && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}
-          {!revealed && f.mode === 'reveal' && <p className="hint">Tap the card (or press space) to reveal</p>}
+          {!revealed && f.mode === 'reveal' && <p className="hint">Tap the card to reveal<span className="kbd-only"> (or press space)</span></p>}
           {!revealed && f.mode === 'tap' && <p className="hint">Tap the right place on the map{regionIds.length > 1 ? ` — zoomed to ${group?.name}` : ''}</p>}
         </article>
 
         {revealed && f.mode === 'reveal' && !quiz && pv && (
           <div className="grades">
             {([[Rating.Again, 'Again'], [Rating.Hard, 'Hard'], [Rating.Good, 'Good'], [Rating.Easy, 'Easy']] as [Grade, string][]).map(([g, label]) => (
-              <button key={g} className={'grade g' + g} onClick={() => next(g)}><b>{label}</b><small>{pv[g]}</small></button>
+              <button key={g} className={'grade g' + g} onClick={() => next(g)}><b>{label}</b><small>{pv[g]}</small><kbd>{g}</kbd></button>
             ))}
           </div>
         )}
         {revealed && f.mode === 'reveal' && quiz && (
           <div className="grades two">
-            <button className="grade g1" onClick={() => next(Rating.Again)}><b>Missed it</b></button>
-            <button className="grade g3" onClick={() => next(Rating.Good)}><b>Knew it</b></button>
+            <button className="grade g1" onClick={() => next(Rating.Again)}><b>Missed it</b><kbd>1</kbd></button>
+            <button className="grade g3" onClick={() => next(Rating.Good)}><b>Knew it</b><kbd>2 · space</kbd></button>
           </div>
         )}
         {revealed && f.mode === 'tap' && (
           <div className="grades">
             {tapResult?.ok
               ? (quiz
-                  ? <button className="grade g3 full" onClick={() => next(Rating.Good)}><b>Correct — next</b></button>
+                  ? <button className="grade g3 full" onClick={() => next(Rating.Good)}><b>Correct — next</b><kbd>space</kbd></button>
                   : <>
-                      <button className="grade g3 wide" onClick={() => next(Rating.Good)}><b>Correct — next</b><small>{pv?.[Rating.Good]}</small></button>
+                      <button className="grade g3 wide" onClick={() => next(Rating.Good)}><b>Correct — next</b><small>{pv?.[Rating.Good]}</small><kbd>space</kbd></button>
                       <button className="grade g4" onClick={() => next(Rating.Easy)}><b>Too easy</b><small>{pv?.[Rating.Easy]}</small></button>
                     </>)
-              : <button className="grade g1 full" onClick={() => next(Rating.Again)}><b>Got it — next</b><small>{quiz ? 'counted as missed' : 'see again soon'}</small></button>}
+              : <button className="grade g1 full" onClick={() => next(Rating.Again)}><b>Got it — next</b><small>{quiz ? 'counted as missed' : 'see again soon'}</small><kbd>space</kbd></button>}
           </div>
         )}
       </div>

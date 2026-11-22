@@ -1,4 +1,6 @@
-export interface NativeName { name: string; lang: string }
+export interface NativeName { name: string; lang: string; code?: string }
+/** Pronunciation recordings by language code → [mp3, original] */
+export type Audio = Record<string, string[]>;
 export interface Chinese { han: string; pinyin: string }
 
 export interface Capital {
@@ -6,6 +8,7 @@ export interface Capital {
   image: string | null; lon?: number; lat?: number; wiki: string | null;
   native?: NativeName[];   // the city's name in the country's own language(s)
   zh?: Chinese | null;     // for China's provincial capitals
+  audio?: Audio;
 }
 
 export type Status = 'un' | 'observer' | 'disputed';
@@ -33,6 +36,7 @@ export interface Place {
   capitalNote?: string | null;
   native?: NativeName[];   // e.g. Deutschland (German), 日本 (Japanese)
   zh?: Chinese | null;     // China's provinces: 山西 Shānxī
+  audio?: Audio;
 }
 export type Country = Place;
 
