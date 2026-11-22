@@ -33,6 +33,18 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.6: Library, note decks, Dashboard
+
+- **Library** (the old Skills tab): one card per subject. Geography is built in; every other subject comes from
+  **note decks**: Markdown files in [`decks/`](decks/README.md) (folder = subject, sub-folders = sections, file = deck).
+  Cards are cloze (`{{answer}}`) or `front :: back` (`:::` both ways), with optional pictures and notes. They schedule,
+  quiz and review exactly like geography cards, and Today mixes everything. Cards from the same topic are spread out.
+- **Dashboard** (view only): `scripts/sync-dashboard.mjs` writes `public/data/dashboard.json` nightly. Markets (S&P 500,
+  Dow, Nasdaq, VIX), WTI/Brent, Treasury yields 1M–30Y, fed funds, SOFR, ECB rates, mortgages (1D/1M/3M/YTD/1Y/5Y
+  changes), CPI/PCE headline & core y/y, unemployment and hourly earnings from FRED's public CSV (no key); the 10 largest
+  economies' GDP, GDP per person, population and unemployment from the World Bank. Petroleum trade waits for an
+  `EIA_API_KEY` repository secret.
+
 ## v1.5: drill-down and regions inside countries
 
 - **Sections form a tree** (`SECTION_PARENT` in `src/cards.ts`): United States sits inside Americas, China and Japan

@@ -106,7 +106,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     // A tap on a different kind of thing (a country while looking for a river) is a slip, not an answer.
     const hitLayer = hit.countryId ? ds.byId.get(hit.countryId)?.layer : 'country';
     if (hitLayer !== mp!.layer) {
-      setNudge(`Tap a ${{ sub: c?.noun ?? 'region', country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range' }[mp!.layer]}`);
+      setNudge(`Tap a ${{ note: 'card', sub: c?.noun ?? 'region', country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range' }[mp!.layer]}`);
       setTimeout(() => setNudge(null), 1400);
       return;
     }
@@ -176,7 +176,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
           {missed.length > 0 && (
             <div className="missed-list">
               <b>To review</b>
-              <ul>{missed.map(m => { const mf = face(m.ref); return <li key={m.ref.id}>{mf.pre}<b>{mf.answerFlag ? m.ref.country.name + "'s flag" : mf.mode === 'tap' ? m.ref.country.name : mf.answer}</b>{mf.post}</li>; })}</ul>
+              <ul>{missed.map(m => { const mf = face(m.ref); return <li key={m.ref.id}>{mf.pre}{mf.frontBack ? ' → ' : ''}<b>{mf.answerFlag ? m.ref.country.name + "'s flag" : mf.mode === 'tap' ? m.ref.country.name : mf.answer}</b>{mf.post}</li>; })}</ul>
             </div>
           )}
           <div className="row">
@@ -257,19 +257,22 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
       <div className="card-wrap">
         <article className={'card' + (revealed ? ' revealed' : '')} onClick={() => f.mode === 'reveal' && reveal()}>
           <div className="card-meta">
-            {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{KIND_LABEL[item.ref.kind]}</span>{item.isNew && <span className="new">new</span>}
+            {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : KIND_LABEL[item.ref.kind]}</span>{item.isNew && <span className="new">new</span>}
           </div>
           {f.promptPicture && f.picture && <div className="prompt-picture"><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} /></div>}
           {f.promptFlag && <Flag file={c.flag ?? null} name="?" className="prompt-flag" size={480} eager />}
           {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
-          <p className="cloze">
+          {f.frontBack ? <>
+            <p className="cloze front">{f.pre}</p>
+            {revealed && <p className="back">{f.answer}</p>}
+          </> : <p className="cloze">
             {f.pre}
             {f.answerFlag
               ? (revealed ? <span className="fill"><Flag file={c.flag ?? null} name={c.name} className="answer-flag" eager /></span> : <span className="blank">{f.blank}</span>)
               : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}>{f.answer}</span> : <span className="blank">{f.blank}</span>)}
             {f.hidePostUntilReveal && !revealed ? '.' : f.post}
-          </p>
-          {revealed && !/^(currency|largestCity|senator)/.test(item.ref.kind) && (
+          </p>}
+          {revealed && !/^(currency|largestCity|senator|note)/.test(item.ref.kind) && (
             <div className="local">
               {item.ref.kind.startsWith('capital') && cap ? <>
                 <LocalName place={c} capital={cap} showLang />
@@ -282,7 +285,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
           {revealed && f.note && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
           {revealed && s.pictures && f.picture && !f.promptPicture && <Picture {...f.picture} />}
-          {revealed && !f.picture && c.flag && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}
+          {revealed && !f.picture && c.flag && c.layer !== 'note' && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}
           {!revealed && f.mode === 'reveal' && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
           {!revealed && f.mode === 'tap' && <div className="tap-hint">
             <p className="hint">Tap the right place on the map{regionIds.length > 1 ? ` — zoomed to ${group?.name}` : ''}</p>

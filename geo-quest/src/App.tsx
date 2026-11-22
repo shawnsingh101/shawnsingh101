@@ -12,6 +12,7 @@ import { Home } from './views/Home';
 import { Tree } from './views/Tree';
 import { MapView } from './views/MapView';
 import { Atlas } from './views/Atlas';
+import { Dashboard } from './views/Dashboard';
 
 export function App() {
   const [ds, setDs] = useState<Dataset | null>(null);
@@ -38,7 +39,7 @@ export function App() {
 
   if (err) return <div className="splash">Couldn't load the data: {err}</div>;
   if (!ds) return <div className="splash">Loading the world…</div>;
-  if (landing) return <Landing ds={ds} onStart={() => { setLanding(false); setMenu(false); }} onSettings={() => { setLanding(false); setMenu(true); }} />;
+  if (landing) return <Landing ds={ds} onStart={() => { setLanding(false); setMenu(false); if (!p.active.length) setTab('tree'); }} onSettings={() => { setLanding(false); setMenu(true); }} />;
   if (session) return <Study key={session.quiz?.key ?? 'srs'} ds={ds} quiz={session.quiz} nodes={session.nodes} onExit={() => setSession(null)} goQuiz={() => { setSession(null); setTab('quiz'); }} />;
   const startQuiz = (quiz: QuizSpec) => setSession({ quiz });
   const startStudy = (nodes?: string[]) => setSession({ nodes });
@@ -48,10 +49,11 @@ export function App() {
       <Ribbon tab={tab} setTab={setTab} menu={menu} setMenu={setMenu} goHome={() => setLanding(true)} />
       <main className={'tab-' + tab}>
         {tab === 'home' && <Home ds={ds} onStudy={() => startStudy()} goTree={() => setTab('tree')} goQuiz={() => setTab('quiz')} />}
-        {tab === 'tree' && <Tree ds={ds} startQuiz={startQuiz} startStudy={startStudy} />}
+        {tab === 'tree' && <Tree ds={ds} startQuiz={startQuiz} startStudy={startStudy} goDashboard={() => setTab('dash')} />}
         {tab === 'quiz' && <Quiz ds={ds} start={startQuiz} />}
         {tab === 'map' && <MapView ds={ds} />}
         {tab === 'atlas' && <Atlas ds={ds} />}
+        {tab === 'dash' && <Dashboard />}
       </main>
     </div>
   );

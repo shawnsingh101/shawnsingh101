@@ -6,6 +6,7 @@ import { sounds } from '../sound';
 import { Icon, type IconName } from '../components/Icons';
 import type { QuizSpec } from '../components/Study';
 import type { Dataset } from '../types';
+import { SUBJECTS } from '../subjects';
 
 function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; node: string; onClose: () => void; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void }) {
   const p = useProgress();
@@ -47,9 +48,15 @@ const SECTION_ICON: Record<string, IconName> = { 'Oceans & Seas': 'wave', Rivers
 const OPEN_KEY = 'geoquest:tree-open';
 const secKey = (sec: string) => 'sec-' + sec.replace(/\W/g, '');
 
-export function Tree({ ds, startQuiz, startStudy }: { ds: Dataset; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void }) {
+const SUBJECT_KEY = 'geoquest:subject';
+
+export function Tree({ ds, startQuiz, startStudy, goDashboard }: { ds: Dataset; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void; goDashboard?: () => void }) {
   const p = useProgress();
   const [sel, setSel] = useState<string | null>(null);
+  // Library → subject: which subject's tree is open (remembered per device; none = the Library itself).
+  const [subjectId, setSubjectId] = useState<string | null>(() => { try { return localStorage.getItem(SUBJECT_KEY); } catch { return null; } });
+  const openSubject = (id: string | null) => { setSubjectId(id); try { if (id) localStorage.setItem(SUBJECT_KEY, id); else localStorage.removeItem(SUBJECT_KEY); } catch { /* ignore */ } window.scrollTo({ top: 0 }); };
+  const subject = SUBJECTS.find(s => s.id === subjectId) ?? null;
   // Which sections are expanded: remembered per device; by default the ones you're learning in (and their parents).
   const [open, setOpen] = useState<Set<string>>(() => {
     try { const v = localStorage.getItem(OPEN_KEY); if (v) return new Set(JSON.parse(v)); } catch { /* ignore */ }
@@ -97,20 +104,23 @@ export function Tree({ ds, startQuiz, startStudy }: { ds: Dataset; startQuiz: (q
     const base = groups.map(g => nodeId(g.id, g.topics[0].id));
     const allOn = base.length > 0 && base.every(n => p.active.includes(n));
     const kids = childSections(sec);
-    const isOpen = open.has(sec);
+    const geo = subject?.id === 'geography';
+    // Geography sections start closed (there are many); note-deck sections start open (the set then lists closed ones).
+    const isOpen = geo ? open.has(sec) : !open.has(sec);
+    const bare = !geo && depth === 0; // a notes subject's own section: the page title already names it
     const noun = groups[0] ? LAYER_NOUN[groups[0].layer] : 'places';
     return (
-      <section key={sec} id={secKey(sec)} className={(depth ? 'subsection' : 'continent') + (isOpen ? ' open' : '')}>
-        <button className="section-row" onClick={() => toggleSection(sec)} aria-expanded={isOpen}>
-          <span className="node-icon"><Icon name={SECTION_ICON[sec] ?? (depth ? 'map' : 'globe')} /></span>
+      <section key={sec} id={secKey(sec)} className={(bare ? 'bare' : depth ? 'subsection' : 'continent') + (isOpen || bare ? ' open' : '')}>
+        {!bare && <button className="section-row" onClick={() => toggleSection(sec)} aria-expanded={isOpen}>
+          <span className="node-icon"><Icon name={SECTION_ICON[sec] ?? (!geo ? 'book' : depth ? 'map' : 'globe')} /></span>
           <span className="grow">
             <b>{sec}</b>
             <span className="section-sub">{all.length > 1 ? `${all.length} groups · ` : ''}{tot.known}/{tot.total} known{learning ? ` · ${learning} learning` : ''}{tot.due ? ` · ${tot.due} due` : ''}</span>
             <span className="mini-bar"><i style={{ width: `${(tot.known / Math.max(1, tot.total)) * 100}%` }} /></span>
           </span>
           <span className={'chev' + (isOpen ? ' up' : '')}>›</span>
-        </button>
-        {isOpen && <div className="section-body">
+        </button>}
+        {(isOpen || bare) && <div className="section-body">
           {groups.length > 0 && <div className="section-actions">
             <button className="btn small" onClick={() => update(x => { x.active = allOn ? x.active.filter(a => !base.includes(a)) : [...new Set([...x.active, ...base])]; })}>
               {allOn ? 'Stop all' : `Learn all ${groups[0].topics[0].name.toLowerCase()}`}
@@ -129,7 +139,7 @@ export function Tree({ ds, startQuiz, startStudy }: { ds: Dataset; startQuiz: (q
             ))}
           </div>}
           {kids.length > 0 && <div className="in-depth">
-            <h4 className="muted small">In depth</h4>
+            <h4 className="muted small">{geo ? 'In depth' : 'Topics'}</h4>
             {kids.map(k => section(k, depth + 1))}
           </div>}
         </div>}
@@ -137,14 +147,51 @@ export function Tree({ ds, startQuiz, startStudy }: { ds: Dataset; startQuiz: (q
     );
   };
 
-  const top = childSections(null);
+  const statsOf = (secs: string[]) => {
+    const nodes = secs.flatMap(sectionAndDescendants).flatMap(x => GROUPS.filter(g => g.section === x)).flatMap(g => g.topics.map(t => nodeId(g.id, t.id)));
+    return nodes.reduce((a, n) => { const st = nodeStats(ds, p, n); return { known: a.known + st.known, total: a.total + st.total, due: a.due + st.due, learning: a.learning + (p.active.includes(n) ? 1 : 0) }; }, { known: 0, total: 0, due: 0, learning: 0 });
+  };
+
+  if (!subject) return (
+    <div className="tree library">
+      <h1>Library</h1>
+      <p className="muted">Everything you're learning, by subject. Reviews from all of them come together on <b>Today</b>.</p>
+      <div className="subject-cards">
+        {SUBJECTS.map(sub => {
+          const st = statsOf(sub.sections());
+          return (
+            <button key={sub.id} className="subject-card" onClick={() => openSubject(sub.id)}>
+              <span className="node-icon big"><Icon name={sub.icon} size={26} /></span>
+              <b>{sub.name}</b>
+              <small className="muted">{sub.blurb}</small>
+              <span className="subject-stats">{st.known}/{st.total} known{st.learning ? ` · ${st.learning} learning` : ''}{st.due ? ` · ${st.due} due` : ''}</span>
+              <span className="mini-bar"><i style={{ width: `${(st.known / Math.max(1, st.total)) * 100}%` }} /></span>
+            </button>
+          );
+        })}
+        {goDashboard && <button className="subject-card dash" onClick={goDashboard}>
+          <span className="node-icon big"><Icon name="chart" size={26} /></span>
+          <b>Dashboard</b>
+          <small className="muted">Markets, rates, inflation and the world's biggest economies, refreshed every night</small>
+        </button>}
+      </div>
+      <p className="muted small">New subjects come from note decks: plain files in <code>geo-quest/decks/</code> (see the README there).</p>
+      {sel && <NodeSheet ds={ds} node={sel} onClose={() => setSel(null)} startQuiz={q => { setSel(null); startQuiz(q); }} startStudy={n => { setSel(null); startStudy(n); }} />}
+    </div>
+  );
+
+  const top = subject.sections();
+  const isGeo = subject.id === 'geography';
   return (
     <div className="tree">
-      <h1>Skill tree</h1>
-      <p className="muted">Tap a skill to start learning it, practise it, or learn more today. <b>Capitals</b> and <b>Flags</b> unlock once you know half of a region's places{p.settings.locks ? '' : ' (locks are currently off)'}. Countries and states you can study in depth sit inside their continent, under <b>In depth</b>.</p>
-      <nav className="jumpbar">
+      <button className="crumb back" onClick={() => openSubject(null)}>‹ Library</button>
+      <h1>{subject.name}</h1>
+      {isGeo
+        ? <p className="muted">Tap a skill to start learning it, practise it, or learn more today. <b>Capitals</b> and <b>Flags</b> unlock once you know half of a region's places{p.settings.locks ? '' : ' (locks are currently off)'}. Countries and states you can study in depth sit inside their continent, under <b>In depth</b>.</p>
+        : <p className="muted">Tap a deck to start learning it. These cards come from the note files in <code>geo-quest/decks/{subject.name}/</code>.</p>}
+      {top.length > 1 && <nav className="jumpbar">
         {top.map(sec => <button key={sec} className={'pick' + (open.has(sec) ? ' on' : '')} onClick={() => jump(sec)}><Icon name={SECTION_ICON[sec] ?? 'globe'} size={14} />{sec}</button>)}
-      </nav>
+      </nav>}
       {top.map(sec => section(sec, 0))}
       {sel && <NodeSheet ds={ds} node={sel} onClose={() => setSel(null)} startQuiz={q => { setSel(null); startQuiz(q); }} startStudy={n => { setSel(null); startStudy(n); }} />}
     </div>
