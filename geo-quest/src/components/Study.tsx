@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { face, groupOf, placesIn, KIND_LABEL, layerFor, type CardRef } from '../cards';
-import { answer, buildQueue, getProgress, learnMore, previews, Rating, recordQuiz, State, unseenCount, useProgress, type Grade } from '../srs';
+import { answer, buildQueue, getProgress, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
 import { sounds } from '../sound';
 import type { Dataset } from '../types';
 import { WorldMap, type MapHit, type Tone } from './WorldMap';
@@ -34,16 +34,24 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
   const [sessionXp, setSessionXp] = useState(0);
   const [results, setResults] = useState<{ ref: CardRef; ok: boolean }[]>([]);
   const [saved, setSaved] = useState(false);
+  const [nudge, setNudge] = useState<string | null>(null);
+  // Undo: a snapshot of the session (and your progress) before each answer.
+  const history = useRef<{ queue: Item[]; done: number; results: typeof results; sessionXp: number; progress: Progress }[]>([]);
+  const [canUndo, setCanUndo] = useState(false);
   const item = queue[0];
   const f = item ? face(item.ref) : null;
   const c = item?.ref.country;
 
   const restart = (items: Item[]) => {
+    history.current = []; setCanUndo(false);
     setQueue(items); setTotal(items.length); setDone(0); setResults([]); setSaved(false); setRevealed(false); setTapResult(null);
   };
 
   const next = useCallback((grade: Grade) => {
     if (!item) return;
+    history.current.push({ queue, done, results, sessionXp, progress: getProgress() });
+    if (history.current.length > 30) history.current.shift();
+    setCanUndo(true);
     setRevealed(false); setTapResult(null); setDone(d => d + 1);
     if (quiz) {
       setResults(r => [...r, { ref: item.ref, ok: grade >= Rating.Good }]);
@@ -62,12 +70,30 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
       }
       return rest;
     });
-  }, [item, quiz]);
+  }, [item, quiz, queue, done, results, sessionXp]);
+
+  const undo = useCallback(() => {
+    // First undo a map tap that hasn't been graded yet; otherwise go back one answer.
+    if (tapResult) { setTapResult(null); setRevealed(false); return; }
+    const h = history.current.pop();
+    if (!h) return;
+    restoreProgress(h.progress);
+    setQueue(h.queue); setDone(h.done); setResults(h.results); setSessionXp(h.sessionXp); setSaved(false);
+    setRevealed(false); setTapResult(null);
+    setCanUndo(history.current.length > 0);
+  }, [tapResult]);
 
   const reveal = useCallback(() => { if (!revealed) { setRevealed(true); if (s.sound) sounds.flip(); } }, [revealed, s.sound]);
 
   const onTap = (hit: MapHit) => {
     if (!f || f.mode !== 'tap' || tapResult) return;
+    // A tap on a different kind of thing (a country while looking for a river) is a slip, not an answer.
+    const hitLayer = hit.countryId ? ds.byId.get(hit.countryId)?.layer : 'country';
+    if (hitLayer !== c!.layer) {
+      setNudge(`Tap a ${{ country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province' }[c!.layer]}`);
+      setTimeout(() => setNudge(null), 1400);
+      return;
+    }
     const ok = hit.countryId === c!.id;
     setTapResult({ ok, hit }); setRevealed(true);
     if (s.sound) (ok ? sounds.right : sounds.wrong)();
@@ -76,6 +102,7 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
   // Keyboard: space/enter to reveal, 1-4 to grade.
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); undo(); return; }
       if (!f) return;
       if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'reveal') { e.preventDefault(); reveal(); }
       else if (revealed && !quiz && ['1', '2', '3', '4'].includes(e.key)) next(+e.key as Grade);
@@ -84,14 +111,17 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
     };
     window.addEventListener('keydown', h);
     return () => window.removeEventListener('keydown', h);
-  }, [f, revealed, reveal, next, tapResult, quiz]);
+  }, [f, revealed, reveal, next, tapResult, quiz, undo]);
 
   const group = c ? groupOf(c) : null;
   const regionIds = useMemo(() => (group ? placesIn(ds, group.id).map(x => x.id) : []), [ds, group]);
   const focus = useMemo(() => {
     if (!item || !f || f.map === 'none') return null;
     // Seas are small inside a big region: zoom right to them. Countries/provinces show their neighbourhood.
-    if (f.map === 'highlight') return { ids: c!.layer === 'water' ? [c!.id] : [c!.id, ...regionIds], key: item.ref.id + ':h' };
+    // Rivers & lakes: centred, with some surroundings so you can get your bearings.
+    if (f.map === 'highlight') return ['water', 'river', 'lake'].includes(c!.layer)
+      ? { ids: [c!.id], key: item.ref.id + ':h', pad: c!.layer === 'water' ? 0.85 : c!.layer === 'river' ? 0.55 : 0.3 }
+      : { ids: [c!.id, ...regionIds], key: item.ref.id + ':h' };
     return { ids: regionIds, key: group!.id };
   }, [item, f, c, regionIds, group]);
 
@@ -166,7 +196,9 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
         <button className="btn ghost icon-btn" onClick={onExit} aria-label="End session"><Icon name="x" /></button>
         <div className="bar"><div style={{ width: `${(done / Math.max(1, done + queue.length)) * 100}%` }} /></div>
         <span className="count">{quiz ? `${done + 1} / ${total}` : `${queue.length} left`}</span>
+        {(canUndo || tapResult) && <button className="btn ghost small undo" onClick={undo} title="Undo (⌘Z / Ctrl+Z)"><Icon name="undo" size={15} /> Undo</button>}
       </div>
+      {nudge && <div className="nudge">{nudge}</div>}
 
       {showMap && (
         <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} focus={focus}

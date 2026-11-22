@@ -30,7 +30,7 @@ interface Props {
   tones?: Record<string, Tone>;
   labels?: Record<string, string>;
   pins?: Pin[];
-  focus?: { ids: string[]; key: string } | null;
+  focus?: { ids: string[]; key: string; pad?: number } | null; // pad: share of the screen the focus should fill (default .85)
   dim?: (placeId: string) => boolean;   // fade places outside the current question's region
   onTap?: (hit: MapHit) => void;
   onHover?: (hit: MapHit | null, x: number, y: number) => void; // mouse only
@@ -182,7 +182,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
       if (isFinite(x0)) {
         const minSpan = W * (focus.ids.length === 1 ? 0.035 : 0.05);
         const bw = Math.max(x1 - x0, minSpan), bh = Math.max(y1 - y0, minSpan * 0.6);
-        const k = Math.min(k0 * 40, Math.max(k0, 0.85 * Math.min(size.w / bw, size.h / bh)));
+        const k = Math.min(k0 * 40, Math.max(k0, (focus.pad ?? 0.85) * Math.min(size.w / bw, size.h / bh)));
         const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
         target = zoomIdentity.translate(size.w / 2 - k * cx, size.h / 2 - k * cy).scale(k);
       }

@@ -357,6 +357,46 @@ console.log('Querying Wikidata for rivers & lakes…');
 const rivers = await waterways('river');
 const lakes = await waterways('lake');
 
+// Local names for rivers & lakes: the label in the main language of each country they touch
+// (Danube → Donau, Dunărea, Duna…). Chinese ones get characters + pinyin like the provinces.
+{
+  const items = [...rivers, ...lakes];
+  const codeOf = cid => {
+    const n = countries.get(cid)?.native?.[0];
+    if (!n) return null;
+    return n.code === 'bar' ? { code: 'de', lang: 'German' } : { code: n.code, lang: n.lang }; // Austria's dataset entry is Austro-Bavarian
+  };
+  const wanted = new Set();
+  for (const p of items) {
+    p._langs = [];
+    for (const cid of p.countries ?? []) {
+      if (cid === 'Q148') { if (!p._langs.some(l => l.code === 'zh-hans')) p._langs.push({ code: 'zh-hans', lang: 'Chinese' }); continue; }
+      const l = codeOf(cid);
+      if (l?.code && !p._langs.some(x => x.code === l.code)) p._langs.push(l);
+    }
+    p._langs = p._langs.slice(0, 3);
+    p._langs.forEach(l => wanted.add(l.code));
+  }
+  const labels = {};
+  const ids = items.map(p => p.id);
+  for (let i = 0; i < ids.length; i += 100) {
+    for (const b of await sparql(`SELECT ?p ?l WHERE { VALUES ?p { ${ids.slice(i, i + 100).map(q => `wd:${q}`).join(' ')} } ?p rdfs:label ?l FILTER(lang(?l) IN (${[...wanted].map(x => `"${x}"`).join(',')})) }`)) {
+      (labels[qid(v(b, 'p'))] ??= {})[b.l['xml:lang']] = v(b, 'l');
+    }
+  }
+  for (const p of items) {
+    const native = [];
+    for (const l of p._langs) {
+      const name = labels[p.id]?.[l.code];
+      if (!name) continue;
+      if (l.code === 'zh-hans') { p.zh = { han: name, pinyin: toPinyin(name) }; continue; }
+      if (name.toLowerCase() !== p.name.toLowerCase() && !native.some(n => n.name === name)) native.push({ name, lang: l.lang, code: l.code });
+    }
+    if (native.length) p.native = native;
+    delete p._langs;
+  }
+}
+
 // ---- pronunciation recordings (Wikidata P443, mostly native speakers via Lingua Libre) ----
 // Stored as { languageCode: [mp3 transcode, original] }; the app falls back to the
 // device's own text-to-speech voice when there's no recording.
@@ -380,7 +420,7 @@ async function attachAudio(items) {
   }
 }
 console.log('Querying Wikidata for pronunciations…');
-await attachAudio([...countries.values(), ...[...countries.values()].flatMap(c => c.capitals), ...cn.values(), ...[...cn.values()].flatMap(p => p.capitals)]);
+await attachAudio([...countries.values(), ...[...countries.values()].flatMap(c => c.capitals), ...cn.values(), ...[...cn.values()].flatMap(p => p.capitals), ...rivers, ...lakes]);
 // Keep only the languages the app shows (the local-language names, Mandarin for China).
 const base = code => code.split('-')[0];
 const keep = (item, codes) => {
@@ -394,6 +434,7 @@ for (const c of countries.values()) {
   for (const cap of c.capitals) keep(cap, (cap.native ?? []).map(n => n.code).filter(Boolean));
 }
 for (const p of cn.values()) { keep(p, ['zh']); for (const cap of p.capitals) keep(cap, ['zh']); }
+for (const p of [...rivers, ...lakes]) keep(p, [...(p.native ?? []).map(n => n.code), ...(p.zh ? ['zh'] : [])]);
 
 // ---- diff against previous snapshots ------------------------------------------------
 const today = new Date().toISOString().slice(0, 10);
