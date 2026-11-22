@@ -1337,11 +1337,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mahamat%20D%C3%A9by.jpg?width=450",
-   "party": "independent politician",
-   "partyLong": "independent politician",
+   "party": "Patriotic Salvation Movement",
+   "partyLong": "Patriotic Salvation Movement",
    "wikidata": "Q16206405",
    "noFace": false,
-   "facts": "President of Chad · Independent politician"
+   "facts": "President of Chad · Patriotic Salvation Movement"
   },
   {
    "id": "L-Q657-prime-minister",
@@ -2173,11 +2173,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Prime%20Minister%20of%20Ethiopia%20Abiy%20Ahmed%20Ali%20(cropped).jpg?width=450",
-   "party": "Oromo Democratic Party",
-   "partyLong": "Oromo Democratic Party",
+   "party": "Ethiopian People's Revolutionary Democratic Front",
+   "partyLong": "Ethiopian People's Revolutionary Democratic Front",
    "wikidata": "Q50365049",
    "noFace": false,
-   "facts": "Prime Minister of Ethiopia · Oromo Democratic Party"
+   "facts": "Prime Minister of Ethiopia · Ethiopian People's Revolutionary Democratic Front"
   },
   {
    "id": "L-Q712-president",
@@ -4173,11 +4173,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Claudia%20Sheinbaum%20Argentina%20v%20Spain%2019%20July%202026-283.jpg?width=450",
-   "party": "Party of the Democratic Revolution",
-   "partyLong": "Party of the Democratic Revolution",
+   "party": "Morena",
+   "partyLong": "Morena",
    "wikidata": "Q5771800",
    "noFace": false,
-   "facts": "President of Mexico · Party of the Democratic Revolution"
+   "facts": "President of Mexico · Morena"
   },
   {
    "id": "L-Q702-president",
@@ -4525,11 +4525,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/President%20Ram%20Chandra%20Poudel%2C%20Official%20portrait%20(January%202024).jpg?width=450",
-   "party": "independent politician",
-   "partyLong": "independent politician",
+   "party": "Nepali Congress",
+   "partyLong": "Nepali Congress",
    "wikidata": "Q3183124",
    "noFace": false,
-   "facts": "President of Nepal · Independent politician"
+   "facts": "President of Nepal · Nepali Congress"
   },
   {
    "id": "L-Q837-prime-minister",
@@ -6856,11 +6856,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Yamand%C3%BA%20Orsi.jpg?width=450",
-   "party": "Broad Front",
-   "partyLong": "Broad Front",
+   "party": "Movement of Popular Participation",
+   "partyLong": "Movement of Popular Participation",
    "wikidata": "Q19946921",
    "noFace": false,
-   "facts": "President of Uruguay · Broad Front"
+   "facts": "President of Uruguay · Movement of Popular Participation"
   },
   {
    "id": "L-Q265-president",

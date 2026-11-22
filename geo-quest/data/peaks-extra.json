@@ -1,0 +1,7 @@
+{
+ "_readme": "Famous mountains that Natural Earth's peak list leaves out, by English Wikipedia article. The sync looks up each one's Wikidata item (following redirects) for height, location, country and photos.",
+ "peaks": ["Matterhorn", "Mount Fuji", "Mount Olympus", "Mount Vesuvius", "Mount Etna", "Table Mountain", "Mount Rainier", "Mount St. Helens", "Mount Sinai", "Ben Nevis",
+  "Mauna Kea", "Annapurna", "Kangchenjunga", "Lhotse", "Makalu", "Nanga Parbat", "Mount Ararat", "Popocatépetl", "Pico de Orizaba", "Cotopaxi",
+  "Krakatoa", "Aoraki / Mount Cook", "Eiger", "Zugspitze", "Mount Teide", "Mount Pinatubo", "Mount Erebus", "Grossglockner", "Mount Logan", "Sugarloaf Mountain",
+  "Mount Kosciuszko", "Mount Elbrus", "Puncak Jaya", "Mount Vinson", "Mount Kilimanjaro", "Denali", "Aconcagua", "Mount Everest", "K2", "Mont Blanc"]
+}

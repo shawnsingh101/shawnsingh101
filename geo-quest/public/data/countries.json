@@ -11575,13 +11575,13 @@
     "isCapital": false
    },
    "audio": {
-    "it": [
-     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav/LL-Q652_(ita)-Francyskus-Svizzera.wav.mp3",
-     "https://upload.wikimedia.org/wikipedia/commons/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav"
-    ],
     "fr": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/72/Fr-us-Suisse.oga/Fr-us-Suisse.oga.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/7/72/Fr-us-Suisse.oga"
+    ],
+    "it": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav/LL-Q652_(ita)-Francyskus-Svizzera.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav"
     ]
    }
   },

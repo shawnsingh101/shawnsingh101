@@ -33,6 +33,13 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.3: mountains
+
+- **Peaks** (165): Natural Earth's notable peaks plus a short list of famous extras (`data/peaks-extra.json`, by Wikipedia
+  article), ranked by Wikipedia coverage: 40 famous peaks, then 25 per continent. Height, range and countries from Wikidata.
+  Triangle markers; photo → name, find it, which country.
+- **Ranges** (70): Natural Earth range outlines with Wikidata ids — 24 great ranges, then more. Shaded areas; find it / name it.
+
 ## v1.2: World Heritage, territories, insets, look-alikes
 
 - **UNESCO World Heritage Sites** (241): from Wikidata (designation + UNESCO id). Ranked by how many Wikipedia

@@ -25,8 +25,8 @@
    "group": "t-atl",
    "sovereign": "Q33",
    "sovereignName": "Finland",
-   "terrStatus": "autonomous region",
-   "facts": "Autonomous region · Part of Finland"
+   "terrStatus": "region of Finland",
+   "facts": "Region of Finland · Part of Finland"
   },
   {
    "id": "Q16641",
@@ -819,16 +819,6 @@
    "wiki": "Montserrat",
    "capitals": [
     {
-     "id": "Q31006",
-     "name": "Brades",
-     "preferred": false,
-     "role": null,
-     "image": "WelcomeCenterBrades.jpg",
-     "lon": -62.211,
-     "lat": 16.793,
-     "wiki": "Brades"
-    },
-    {
      "id": "Q30990",
      "name": "Plymouth",
      "preferred": false,
@@ -837,9 +827,19 @@
      "lon": -62.216,
      "lat": 16.706,
      "wiki": "Plymouth,_Montserrat"
+    },
+    {
+     "id": "Q31006",
+     "name": "Brades",
+     "preferred": false,
+     "role": null,
+     "image": "WelcomeCenterBrades.jpg",
+     "lon": -62.211,
+     "lat": 16.793,
+     "wiki": "Brades"
     }
    ],
-   "capitalAnswer": "Brades and Plymouth",
+   "capitalAnswer": "Plymouth and Brades",
    "group": "t-car",
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",

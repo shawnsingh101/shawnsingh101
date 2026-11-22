@@ -685,6 +685,76 @@ const sites = [];
   });
 }
 
+// ---- mountains: peaks (Natural Earth elevation points + a few famous extras) and ranges (Natural Earth) ----
+// Fame = Wikipedia language editions (sitelinks): the 40 best-known peaks are "Famous peaks"; then the
+// best-known 25 per continent. Ranges: the major ones (Natural Earth rank 1–2) first, then the rest.
+console.log('Querying Wikidata for mountains…');
+const peaks = [], mranges = [];
+{
+  const ne = JSON.parse(readFileSync(join(ROOT, 'data/peaks-ne.json'), 'utf8'));
+  const extraTitles = JSON.parse(readFileSync(join(ROOT, 'data/peaks-extra.json'), 'utf8')).peaks;
+  // Wikipedia title → Wikidata id (follows redirects)
+  const extraIds = [];
+  for (let i = 0; i < extraTitles.length; i += 50) {
+    const u = `https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=pageprops&ppprop=wikibase_item&titles=${encodeURIComponent(extraTitles.slice(i, i + 50).join('|'))}`;
+    for (let attempt = 1; attempt <= 4; attempt++) {
+      try { const j = await (await fetch(u, { headers: { 'User-Agent': UA } })).json(); for (const pg of Object.values(j.query.pages)) if (pg.pageprops?.wikibase_item) extraIds.push(pg.pageprops.wikibase_item); break; }
+      catch { await new Promise(res => setTimeout(res, 10000 * attempt)); }
+    }
+  }
+  const neById = Object.fromEntries(ne.map(p => [p.id, p]));
+  const ids = [...new Set([...ne.map(p => p.id), ...extraIds])];
+  const info = {};
+  for (let i = 0; i < ids.length; i += 150) {
+    for (const b of await sparql(`SELECT ?m ?mLabel ?links ?elev ?coord ?country ?img ?article ?rangeLabel WHERE {
+        VALUES ?m { ${ids.slice(i, i + 150).map(x => `wd:${x}`).join(' ')} } ?m wikibase:sitelinks ?links .
+        OPTIONAL { ?m wdt:P2044 ?elev } OPTIONAL { ?m wdt:P625 ?coord } OPTIONAL { ?m wdt:P17 ?country } OPTIONAL { ?m wdt:P18 ?img }
+        OPTIONAL { ?m wdt:P4552 ?range . ?range rdfs:label ?rangeLabel FILTER(lang(?rangeLabel) = "en") }
+        OPTIONAL { ?article schema:about ?m ; schema:isPartOf <https://en.wikipedia.org/> }
+        SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`)) {
+      const id = qid(v(b, 'm'));
+      const o = (info[id] ??= { id, name: v(b, 'mLabel'), links: +v(b, 'links'), elev: null, coord: null, countries: [], img: null, wiki: null, range: null });
+      o.elev = Math.max(o.elev ?? 0, +(v(b, 'elev') ?? 0)) || null; o.coord ??= v(b, 'coord') ?? null; o.img ??= file(v(b, 'img')) || null;
+      o.wiki ??= v(b, 'article') ? decodeURIComponent(v(b, 'article').split('/wiki/')[1]) : null; o.range ??= v(b, 'rangeLabel') ?? null;
+      if (v(b, 'country') && !o.countries.includes(qid(v(b, 'country')))) o.countries.push(qid(v(b, 'country')));
+    }
+  }
+  const all = Object.values(info).map(o => {
+    const n = neById[o.id];
+    const pt = o.coord ? point(o.coord) : n ? { lon: +n.lon.toFixed(3), lat: +n.lat.toFixed(3) } : {};
+    return { ...o, ...pt, elev: o.elev ?? n?.elevation ?? null, countries: o.countries.filter(c => countries.has(c)) };
+  }).filter(o => o.lon != null && o.elev && !/^Q\d+$/.test(o.name) && o.countries.length).sort((a, b) => b.links - a.links);
+  const perCont = {};
+  all.forEach((o, i) => {
+    let group;
+    if (i < 40) group = 'm-icons';
+    else {
+      group = `m-${({ Europe: 'eu', Asia: 'as', Africa: 'af', Americas: 'am', Oceania: 'oc' })[mainRegion(o.countries, o.lon)] ?? 'as'}`;
+      if ((perCont[group] = (perCont[group] ?? 0) + 1) > 25) return;
+    }
+    const where = o.countries.map(c => countries.get(c).name);
+    peaks.push({ id: o.id, layer: 'peak', name: o.name, group, lon: o.lon, lat: o.lat, image: o.img, wiki: o.wiki, elevation: Math.round(o.elev),
+      country: o.countries[0], countryName: where[0], capitals: [], capitalAnswer: null,
+      facts: [`${Math.round(o.elev).toLocaleString('en-US')} m`, o.range, where.join(', ')].filter(Boolean).join(' · ') });
+  });
+
+  // Ranges
+  const rshapes = JSON.parse(readFileSync(join(ROOT, 'public/data/shapes-range.json'), 'utf8')).objects.places.geometries.map(g => g.properties);
+  const rankOf = Object.fromEntries(rshapes.map(r => [r.id, r.rank]));
+  const rinfo = await fetchPlaces(rshapes.map(r => r.id), 'range', () => ({}));
+  const rlinks = {}, rcountries = {};
+  for (const b of await sparql(`SELECT ?m ?links ?country WHERE { VALUES ?m { ${rshapes.map(r => `wd:${r.id}`).join(' ')} } ?m wikibase:sitelinks ?links . OPTIONAL { ?m wdt:P17 ?country } }`)) {
+    rlinks[qid(v(b, 'm'))] = +v(b, 'links');
+    if (v(b, 'country')) (rcountries[qid(v(b, 'm'))] ??= new Set()).add(qid(v(b, 'country')));
+  }
+  [...rinfo.values()].filter(r => !/^Q\d+$/.test(r.name)).sort((a, b) => (rankOf[a.id] - rankOf[b.id]) || (rlinks[b.id] ?? 0) - (rlinks[a.id] ?? 0)).forEach((r, i) => {
+    if (i >= 70) return;
+    const where = [...(rcountries[r.id] ?? [])].map(c => countries.get(c)?.name).filter(Boolean);
+    mranges.push({ ...r, group: rankOf[r.id] <= 2 && i < 30 ? 'm-ranges' : 'm-ranges2', nameThe: /^(the )?/i.test(r.name) ? `the ${r.name}` : r.name,
+      facts: where.length ? where.slice(0, 5).join(', ') + (where.length > 5 ? '…' : '') : null, capitals: [], capitalAnswer: null });
+  });
+}
+
 // ---- election results: who takes over in January (Wikipedia race-summary tables) ----
 // Rows like:  ! [[… election in Alaska|Alaska]]  | {{sortname|Dan|Sullivan}}  …  {{aye}} '''[[Mary Peltola]]''' (Democratic)
 function raceRows(text) {
@@ -915,13 +985,15 @@ const writers = [
   diffAndWrite(join(ROOT, 'public/data/leaders.json'), leaders, ['name']),
   diffAndWrite(join(ROOT, 'public/data/territories.json'), territories, ['name', 'capitalAnswer', 'sovereignName']),
   diffAndWrite(join(ROOT, 'public/data/sites.json'), sites, ['name']),
+  diffAndWrite(join(ROOT, 'public/data/peaks.json'), peaks, ['name']),
+  diffAndWrite(join(ROOT, 'public/data/ranges.json'), mranges, ['name']),
   diffAndWrite(join(ROOT, 'public/data/lakes.json'), lakes, ['name', 'group']),
   diffAndWrite(join(ROOT, 'public/data/cn.json'), [...cn.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'zhHan']),
 ];
 
 warnings.forEach(w => console.warn('⚠ ' + w));
 changes.forEach(ch => console.log(`Δ ${ch.name}: ${ch.field} ${JSON.stringify(ch.from)} → ${JSON.stringify(ch.to)}`));
-console.log(`${list.length} countries, ${states.size} US states, ${senate.length} senators, ${governors.length} governors, ${leaders.length} world leaders, ${territories.length} territories, ${sites.length} World Heritage Sites, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
+console.log(`${list.length} countries, ${states.size} US states, ${senate.length} senators, ${governors.length} governors, ${leaders.length} world leaders, ${territories.length} territories, ${sites.length} World Heritage Sites, ${peaks.length} peaks, ${mranges.length} ranges, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
 
 if (!DRY) {
   writers.forEach(w => w());
