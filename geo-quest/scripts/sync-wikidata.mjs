@@ -109,7 +109,7 @@ for (const b of rows) {
     region: ex?.region || wcc?.region || null,
     subregion: ex?.subregion || wcc?.subregion || null,
     topo: (v(b, 'isoNum') && topoByNum.has(v(b, 'isoNum'))) ? { id: v(b, 'isoNum') } : (ex?.topoName && topoByName.has(ex.topoName) ? { name: ex.topoName } : null),
-    flag: file(v(b, 'flag')) || null,
+    flag: file(v(b, 'flag')) || ex?.flag || null, // an override only fills a missing flag
     ...point(v(b, 'coord')),
     wiki: v(b, 'article') ? decodeURIComponent(v(b, 'article').split('/wiki/')[1]) : null,
     capitals: [],
@@ -282,7 +282,7 @@ for (const p of cn.values()) {
   const o = overrides[p.id];
   if (o?.name) p.name = o.name;
   const pref = p.capitals.filter(x => x.preferred);
-  const main = pref.length ? pref : p.capitals;
+  const main = (pref.length ? pref : p.capitals).sort((a, b) => a.name.localeCompare(b.name)); // a fixed order, so nightly runs don't report a change
   p.capitals = main;
   p.capitalAnswer = main.length ? main.map(x => x.name).reduce(andJoin, '') : null;
   if (!p.capitalAnswer && (p.type === 'province' || p.type === 'autonomous region')) warnings.push(`${p.name}: no capital in Wikidata`);
@@ -429,7 +429,7 @@ for (const b of await sparql(`SELECT ?p ?flag WHERE { VALUES ?p { ${[...states.k
 }
 for (const st of states.values()) {
   const pref = st.capitals.filter(x => x.preferred);
-  st.capitals = pref.length ? pref : st.capitals;
+  st.capitals = (pref.length ? pref : st.capitals).sort((a, b) => a.name.localeCompare(b.name)); // a fixed order, so nightly runs don't report a change
   st.capitalAnswer = st.capitals.map(x => x.name).reduce(andJoin, '') || null;
   if (!st.capitalAnswer) warnings.push(`${st.name}: no capital`);
   if (!st.flag) warnings.push(`${st.name}: no flag`);
@@ -466,6 +466,11 @@ for (const L of legislators) {
   });
 }
 senate.sort((a, b) => a.stateName.localeCompare(b.stateName) || (a.rank === 'senior' ? -1 : 1));
+// New senators often have no official portrait yet: drop the link so the app goes straight to the Wikipedia photo.
+for (let i = 0; i < senate.length; i += 10) await Promise.all(senate.slice(i, i + 10).map(async x => {
+  const r = await fetch(x.photo, { method: 'HEAD' }).catch(() => null);
+  if (r && r.status === 404) x.photo = null;
+}));
 if (senate.length !== 100) warnings.push(`Expected 100 senators, found ${senate.length} (a seat may be vacant)`);
 
 // ---- people in office: governors and heads of state/government ----
@@ -490,14 +495,23 @@ async function peopleInfo(titles) {
   const ts = [...new Set(titles.filter(Boolean))];
   for (let i = 0; i < ts.length; i += 100) {
     const vals = ts.slice(i, i + 100).map(t => `<https://en.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_')).replace(/%2F/g, '/').replace(/%3A/g, ':').replace(/%2C/g, ',').replace(/%27/g, "'").replace(/%28/g, '(').replace(/%29/g, ')')}>`);
-    for (const b of await sparql(`SELECT ?a ?p ?img ?partyLabel WHERE { VALUES ?a { ${vals.join(' ')} } ?a schema:about ?p .
+    for (const b of await sparql(`SELECT ?a ?p ?img ?partyLabel ?prank ?pstart WHERE { VALUES ?a { ${vals.join(' ')} } ?a schema:about ?p .
         OPTIONAL { ?p wdt:P18 ?img }
-        OPTIONAL { ?p p:P102 ?ps . ?ps ps:P102 ?party . FILTER NOT EXISTS { ?ps pq:P582 [] } ?party rdfs:label ?partyLabel FILTER(lang(?partyLabel) = "en") } }`)) {
+        OPTIONAL { ?p p:P102 ?ps . ?ps ps:P102 ?party ; wikibase:rank ?prank . FILTER NOT EXISTS { ?ps pq:P582 [] } FILTER(?prank != wikibase:DeprecatedRank)
+          OPTIONAL { ?ps pq:P580 ?pstart } OPTIONAL { ?party wdt:P576 ?dissolved } FILTER(!BOUND(?dissolved))
+          ?party rdfs:label ?partyLabel FILTER(lang(?partyLabel) = "en") } }`)) {
       const t = decodeURIComponent(v(b, 'a').split('/wiki/')[1]).replace(/_/g, ' ');
-      const o = (out[t] ??= { id: qid(v(b, 'p')), img: null, party: null });
-      o.img ??= file(v(b, 'img')) || null; o.party ??= v(b, 'partyLabel') ?? null;
+      const o = (out[t] ??= { id: qid(v(b, 'p')), img: null, party: null, _score: -Infinity });
+      o.img ??= file(v(b, 'img')) || null;
+      // Several open-ended party statements (Hun Sen: the CPP and, unclosed, the Khmer Rouge): prefer the preferred one,
+      // then the most recent start; dissolved parties are skipped.
+      if (v(b, 'partyLabel')) {
+        const score = (v(b, 'prank')?.endsWith('PreferredRank') ? 1e13 : 0) + (v(b, 'pstart') ? Date.parse(v(b, 'pstart')) || 0 : -1e12);
+        if (score > o._score) { o.party = v(b, 'partyLabel'); o._score = score; }
+      }
     }
   }
+  for (const o of Object.values(out)) delete o._score;
   return out;
 }
 
@@ -568,25 +582,36 @@ const leaders = [];
       pairRe.lastIndex = 0;
       let m;
       while ((m = pairRe.exec(cell))) {
-        const title = cap1s((m[2] ?? m[3] ?? m[4]).replace(/\{\{.*?\}\}/g, '').trim());
+        let title = cap1s((m[2] ?? m[3] ?? m[4]).replace(/\{\{.*?\}\}/g, '').trim()).replace(/^Co-presidents$/i, 'Co-President');
+        const slugTitle = title;
+        // Some rows name the ruling body instead of a job ("People's Party", "National Council for the Safeguard
+        // of the Homeland", "Houthis"): ask for the country's leader and keep the body as a note.
+        let body = null;
+        if (/\b(Movement|Party|Dream|Council|Army|Houthis|Presidium|Junta|Committee)\b/.test(title) && !/^(President|Chairman|Chair|Chairperson|General Secretary|First Secretary|Secretary|Leader|Head)\b/.test(title)) { body = title; title = 'Leader'; }
         if (/governor-general|members|representative/i.test(title)) continue; // represents someone else; not a separate leader
         const target = m[1] ?? m[3] ?? '';
         let office;
-        if (/^(Pope)$/.test(title)) office = title;
+        if (body) office = `Leader of the ${body.replace(/^the /i, '')}`;
+        else if (/^(Pope)$/.test(title)) office = title;
         else if (target.toLowerCase().startsWith(title.toLowerCase() + ' of')) office = target;
         else if (/ of /.test(title)) office = title;
         else { const k = target.lastIndexOf(' of '); office = k > 0 ? `${title}${target.slice(k)}` : `${title} of ${c.name}`; }
-        const tail = office.slice(title.length).trim();
-        const rolePrefix = office === title ? `${title} of` : `${title} ${tail.startsWith('of the ') ? 'of the' : 'of'}`;
+        // "<title> of" + the country's own name ("the" is added by the app where English needs it).
+        const rolePrefix = body ? `${office} in` : `${title} of`; // "Hun Sen is the Leader of the People's Party in Cambodia"
         const wiki = m[5].trim();
         const name = (m[6] ?? m[5]).replace(/\s*\(.*\)$/, '').trim();
-        const id = `L-${c.id}-${slug(title)}`;
+        const id = `L-${c.id}-${slug(slugTitle)}`;
         if (leaders.some(l => l.id === id)) continue;
         leaders.push({ id, topic: 'leaders', layer: 'senate', label: office,
           name, wiki, place: c.id, placeName: c.name, office, rolePrefix, lon: c.lon, lat: c.lat, capitals: [], capitalAnswer: null,
-          role: combined ? 'Head of state and government' : idx === 0 ? 'Head of state' : 'Head of government' });
+          body, role: combined ? 'Head of state and government' : idx === 0 ? 'Head of state' : 'Head of government' });
       }
     });
+  }
+  // A row naming a ruling body for someone who is also listed under a real title (Libya's Presidential Council chair): keep the title.
+  for (let i = leaders.length - 1; i >= 0; i--) {
+    const l = leaders[i];
+    if (l.topic === 'leaders' && l.body && leaders.some(o => o !== l && !o.body && o.place === l.place && o.wiki === l.wiki)) leaders.splice(i, 1);
   }
   // Photos & parties from Wikidata (via each person's Wikipedia article)
   const info = await peopleInfo(leaders.map(l => l.wiki));
@@ -596,7 +621,7 @@ const leaders = [];
     l.photo = commonsThumb(i.img); l.party = i.party ?? null; l.partyLong = l.party; l.wikidata = i.id ?? null;
     l.noFace = seenFace.has(l.name); seenFace.add(l.name); // e.g. Charles III heads 15 realms: one "who is this?" card
     l.facts = [l.office, l.party && cap1s(l.party)].filter(Boolean).join(' · ');
-    delete l.role;
+    delete l.role; delete l.body;
   }
   const missing = list.filter(c => !leaders.some(l => l.place === c.id)).map(c => c.name);
   if (missing.length) console.log('  (no individual leader listed for: ' + missing.join(', ') + ')');
@@ -632,7 +657,7 @@ const territories = [];
     const sov = sovOf(sh.sov);
     if (!t || !sov) { warnings.push(`Territory ${sh.id} (${sh.sov}): missing facts or sovereign`); continue; }
     const pref = t.capitals.filter(x => x.preferred);
-    t.capitals = pref.length ? pref : t.capitals;
+    t.capitals = (pref.length ? pref : t.capitals).sort((a, b) => a.name.localeCompare(b.name)); // a fixed order, so nightly runs don't report a change
     t.capitalAnswer = t.capitals.map(x => x.name).reduce(andJoin, '') || null;
     const st = (status[sh.id] ?? []).sort((a, b) => a.length - b.length)[0] ?? null;
     territories.push({ ...t, group: GROUP_OVERRIDE[sh.id] ?? GROUP_OF_SUB[sh.sub] ?? 't-atl', sovereign: sov.id, sovereignName: sov.name,
@@ -670,7 +695,7 @@ const sites = [];
   }
   const all = Object.values(byListing).filter(x => x.coord && !/^Q\d+$/.test(x.name)).map(x => ({ ...x, ...point(x.coord), countries: [...x.countries].filter(c => countries.has(c)) }))
     .filter(x => x.countries.length).sort((a, b) => b.links - a.links)
-    .filter((x, i, arr) => arr.findIndex(y => y.id === x.id) === i); // one item can hold two listings (Drottningholm)
+    .filter((x, i, arr) => arr.findIndex(y => y.id === x.id || y.name === x.name) === i); // one item can hold two listings (Drottningholm); two items one name (Kakadu)
   const perCont = {};
   all.forEach((x, i) => {
     const region = mainRegion(x.countries, x.lon);
@@ -697,13 +722,23 @@ const peaks = [], mranges = [];
   const extraTitles = JSON.parse(readFileSync(join(ROOT, 'data/peaks-extra.json'), 'utf8')).peaks;
   // Wikipedia title → Wikidata id (follows redirects)
   const extraIds = [];
+  let lookupFailed = false;
   for (let i = 0; i < extraTitles.length; i += 50) {
     const u = `https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=pageprops&ppprop=wikibase_item&titles=${encodeURIComponent(extraTitles.slice(i, i + 50).join('|'))}`;
-    for (let attempt = 1; attempt <= 4; attempt++) {
-      try { const j = await (await fetch(u, { headers: { 'User-Agent': UA } })).json(); for (const pg of Object.values(j.query.pages)) if (pg.pageprops?.wikibase_item) extraIds.push(pg.pageprops.wikibase_item); break; }
-      catch { await new Promise(res => setTimeout(res, 10000 * attempt)); }
+    let ok = false;
+    for (let attempt = 1; attempt <= 6 && !ok; attempt++) {
+      try { const j = await (await fetch(u, { headers: { 'User-Agent': UA } })).json(); for (const pg of Object.values(j.query.pages)) if (pg.pageprops?.wikibase_item) extraIds.push(pg.pageprops.wikibase_item); ok = true; }
+      catch { await new Promise(res => setTimeout(res, 15000 * attempt)); }
     }
+    if (!ok) lookupFailed = true;
   }
+  // If Wikipedia couldn't be reached for some titles, keep last run's peaks as candidates rather than dropping them.
+  if (lookupFailed) {
+    console.warn('  peak title lookup failed for some titles; keeping last run\'s peaks');
+    try { for (const pk of JSON.parse(readFileSync(join(ROOT, 'public/data/peaks.json'), 'utf8')).places) extraIds.push(pk.id); } catch { /* none */ }
+  }
+  const prevPeaks = new Set();
+  try { for (const pk of JSON.parse(readFileSync(join(ROOT, 'public/data/peaks.json'), 'utf8')).places) prevPeaks.add(pk.id); } catch { /* first run */ }
   const neById = Object.fromEntries(ne.map(p => [p.id, p]));
   const ids = [...new Set([...ne.map(p => p.id), ...extraIds])];
   const info = {};
@@ -725,7 +760,9 @@ const peaks = [], mranges = [];
     const n = neById[o.id];
     const pt = o.coord ? point(o.coord) : n ? { lon: +n.lon.toFixed(3), lat: +n.lat.toFixed(3) } : {};
     return { ...o, ...pt, elev: o.elev ?? n?.elevation ?? null, countries: o.countries.filter(c => countries.has(c)) };
-  }).filter(o => o.lon != null && o.elev && !/^Q\d+$/.test(o.name) && o.countries.length).sort((a, b) => b.links - a.links);
+  }).filter(o => o.lon != null && o.elev && !/^Q\d+$/.test(o.name) && o.countries.length)
+    // Rank by Wikipedia coverage; last run's peaks get a small head start so borderline ones don't come and go nightly.
+    .sort((a, b) => (b.links + (prevPeaks.has(b.id) ? 3 : 0)) - (a.links + (prevPeaks.has(a.id) ? 3 : 0)) || a.id.localeCompare(b.id));
   const perCont = {};
   all.forEach((o, i) => {
     let group;
@@ -781,6 +818,8 @@ console.log('Querying Wikidata for highest points…');
     OPTIONAL { ?hp p:P2044 ?es . ?es a wikibase:BestRank ; psn:P2044/wikibase:quantityAmount ?elev } OPTIONAL { ?hp wdt:P625 ?coord } OPTIONAL { ?hp wdt:P18 ?img }  # psn = converted to metres
     OPTIONAL { ?article schema:about ?hp ; schema:isPartOf <https://en.wikipedia.org/> }
     SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
+  const prevHighest = {};
+  try { for (const pc of JSON.parse(readFileSync(OUT, 'utf8')).countries) if (pc.highest) prevHighest[pc.id] = pc.highest.id; } catch { /* first run */ }
   const best = {};
   for (const b of rows) {
     const c = qid(v(b, 'c'));
@@ -788,7 +827,9 @@ console.log('Querying Wikidata for highest points…');
       image: file(v(b, 'img')) || null, wiki: v(b, 'article') ? decodeURIComponent(v(b, 'article').split('/wiki/')[1]) : null,
       preferred: v(b, 'rank').endsWith('PreferredRank') };
     const cur = best[c];
-    if (!cur || (cand.preferred && !cur.preferred) || (cand.preferred === cur.preferred && (cand.elevation ?? 0) > (cur.elevation ?? 0))) best[c] = { ...cand, image: cand.image ?? cur?.image ?? null };
+    // Same rank and height (Colombia's two 5,730 m peaks): keep last run's choice so it doesn't flip nightly.
+    const tieWin = cur && cand.preferred === cur.preferred && (cand.elevation ?? 0) === (cur.elevation ?? 0) && cand.id !== cur.id && prevHighest[c] === cand.id;
+    if (!cur || tieWin || (cand.preferred && !cur.preferred) || (cand.preferred === cur.preferred && (cand.elevation ?? 0) > (cur.elevation ?? 0))) best[c] = { ...cand, image: cand.image ?? cur?.image ?? null };
   }
   for (const c of list) {
     const h = best[c.id];
@@ -869,29 +910,82 @@ console.log('Querying Wikidata for currencies…');
   // A picture of the money itself: the currency infobox's images, banknotes before coins.
   const curTitles = [...new Set(list.flatMap(c => c.currency ?? []).map(x => x.wiki).filter(Boolean))];
   const curImg = {};
+  const prevCurImg = {};
+  try { for (const pc of JSON.parse(readFileSync(OUT, 'utf8')).countries) for (const x of pc.currency ?? []) if (x.image) prevCurImg[x.id] = x.image; } catch { /* first run */ }
   for (let i = 0; i < curTitles.length; i += 40) {
+    if (i) await new Promise(res => setTimeout(res, 1500)); // be gentle: Wikipedia rate-limits bursts
     const batch = curTitles.slice(i, i + 40);
-    for (let attempt = 1; attempt <= 4; attempt++) {
+    for (let attempt = 1; attempt <= 6; attempt++) {
       try {
         const r = await fetch(`https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=revisions&rvprop=content&rvslots=main&rvsection=0&titles=${encodeURIComponent(batch.join('|'))}`, { headers: { 'User-Agent': UA } });
         const j = JSON.parse(await r.text());
         const back = {}; for (const m of [...(j.query.normalized ?? []), ...(j.query.redirects ?? [])]) back[m.to] = back[m.from] ?? m.from;
         for (const pg of Object.values(j.query.pages)) {
           const t = pg.revisions?.[0]?.slots?.main?.['*'] ?? '';
-          const field = n => (t.match(new RegExp(`\\|\\s*${n}\\s*=\\s*([^\\n|]*)`)) ?? [])[1]?.trim().replace(/^(File|Image):/i, '');
+          const field = n => (t.match(new RegExp(`\\|\\s*${n}\\s*=\\s*([^\\n|]*)`)) ?? [])[1]?.trim().replace(/^\[\[/, '').replace(/^(File|Image):/i, '').replace(/\]\]$/, '');
           const imgs = [1, 2, 3].map(n => ({ file: field('image_' + n), title: field('image_title_' + n) ?? '' })).filter(x => x.file && /\.(png|jpe?g|svg|webp|gif|tiff?)$/i.test(x.file));
           if (!imgs.length && field('image')) imgs.push({ file: field('image').replace(/^(File|Image):/i, ''), title: '' });
           const isNote = x => /bank ?note|\bnotes?\b|\bbills?\b|paper/i.test(x.file + ' ' + x.title) && !/coin/i.test(x.file + ' ' + x.title);
-          const pick = imgs.find(isNote) ?? imgs.find(x => !/coin/i.test(x.file + ' ' + x.title)) ?? imgs[0];
+          const ranked = [...imgs.filter(isNote), ...imgs.filter(x => !isNote(x) && !/coin/i.test(x.file + ' ' + x.title)), ...imgs.filter(x => /coin/i.test(x.file + ' ' + x.title))];
           let title = pg.title; while (back[title]) title = back[title];
-          if (pick) curImg[title.replace(/ /g, '_')] = pick.file;
+          if (ranked.length) curImg[title.replace(/ /g, '_')] = ranked.map(x => x.file);
         }
         break;
-      } catch { await new Promise(res => setTimeout(res, 10000 * attempt)); }
+      } catch { await new Promise(res => setTimeout(res, 15000 * attempt)); }
     }
   }
-  for (const c of list) for (const x of c.currency ?? []) x.image = curImg[x.wiki?.replace(/ /g, '_')] ?? null;
-  console.log(`  money pictures for ${Object.keys(curImg).length}/${curTitles.length} currencies`);
+  // No usable infobox picture? Look through the article's other images for a banknote (then a coin).
+  const noPic = curTitles.filter(t => !curImg[t.replace(/ /g, '_')]?.length);
+  for (let i = 0; i < noPic.length; i += 20) {
+    await new Promise(res => setTimeout(res, 1500));
+    for (let attempt = 1; attempt <= 6; attempt++) {
+      try {
+        const r = await fetch(`https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=images&imlimit=max&titles=${encodeURIComponent(noPic.slice(i, i + 20).join('|'))}`, { headers: { 'User-Agent': UA } });
+        const j = JSON.parse(await r.text());
+        const back = {}; for (const m of [...(j.query.normalized ?? []), ...(j.query.redirects ?? [])]) back[m.to] = back[m.from] ?? m.from;
+        for (const pg of Object.values(j.query.pages)) {
+          // Only files named after this currency ("naira", "Nigerian…"): shared boxes put e.g. a US penny on many pages.
+          const plain = x => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/gi, 'd').toLowerCase();
+          const keys = plain(pg.title).split(/[^a-z]+/).filter(w => w.length >= 4 && !/^(dollars?|pounds?|francs?|dinars?|pesos?|rupees?|shillings?|riyals?|rials?|dirhams?|liras?|reals?|rubles?|roubles?|kronas?|krones?|korunas?|centavos?|coins?|sovereign|new|united|states)$/.test(w)).map(w => w.slice(0, 5));
+          const names = (pg.images ?? []).map(x => x.title.replace(/^File:/, '')).filter(f => /\.(png|jpe?g|webp)$/i.test(f) && !/flag|map|logo|symbol|sign|icon|graph|chart|exchange/i.test(f) && keys.some(k => plain(f).includes(k)));
+          const notes = names.filter(f => /bank ?note|\bnotes?\b|obverse|front|\d+[ _-]?[a-z]*[ _-]?(note|bill)/i.test(f) && !/coin/i.test(f));
+          const coins = names.filter(f => /coin/i.test(f));
+          let title = pg.title; while (back[title]) title = back[title];
+          if (notes.length || coins.length) curImg[title.replace(/ /g, '_')] = [...notes, ...coins];
+        }
+        break;
+      } catch { await new Promise(res => setTimeout(res, 15000 * attempt)); }
+    }
+  }
+  // Check every candidate exists. Banknotes are often copyrighted, so many live on English Wikipedia
+  // ("local", fair use) rather than Wikimedia Commons; those are stored as "en:<file>" for the app.
+  const files = [...new Set(Object.values(curImg).flat())];
+  const where = {};
+  for (let i = 0; i < files.length; i += 45) {
+    if (i) await new Promise(res => setTimeout(res, 1500));
+    for (let attempt = 1; attempt <= 6; attempt++) {
+      try {
+        const r = await fetch(`https://en.wikipedia.org/w/api.php?action=query&format=json&prop=imageinfo&titles=${encodeURIComponent(files.slice(i, i + 45).map(f => 'File:' + f).join('|'))}`, { headers: { 'User-Agent': UA } });
+        const j = JSON.parse(await r.text());
+        const back = {}; for (const m of j.query.normalized ?? []) back[m.to] = m.from;
+        for (const pg of Object.values(j.query.pages)) {
+          const asked = (back[pg.title] ?? pg.title).replace(/^File:/, '');
+          where[asked] = pg.missing !== undefined && pg.imagerepository !== 'shared' ? null : pg.imagerepository === 'local' ? 'local' : 'commons';
+        }
+        break;
+      } catch { await new Promise(res => setTimeout(res, 15000 * attempt)); }
+    }
+  }
+  for (const c of list) for (const x of c.currency ?? []) {
+    const cands = curImg[x.wiki?.replace(/ /g, '_')];
+    const f = (cands ?? []).find(f => where[f]);
+    // If Wikipedia couldn't be asked this time (rate limits), keep last run's picture rather than dropping it.
+    const unchecked = !cands || cands.some(f => where[f] === undefined);
+    x.image = f ? (where[f] === 'local' ? 'en:' : '') + f.replace(/_/g, ' ') : unchecked ? prevCurImg[x.id] ?? null : null;
+  }
+  const missing = files.filter(f => where[f] === null);
+  if (missing.length) console.log(`  ${missing.length} currency images named in infoboxes don't exist: ${missing.slice(0, 5).join(', ')}`);
+  console.log(`  money pictures for ${list.flatMap(c => c.currency ?? []).filter((x, i, a) => x.image && a.findIndex(y => y.id === x.id) === i).length}/${curTitles.length} currencies`);
 }
 
 // ---- largest city (GeoNames cities of 15,000+, linked to Wikidata via the GeoNames id) ----

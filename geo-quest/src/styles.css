@@ -577,3 +577,11 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .records li button { all: unset; box-sizing: border-box; cursor: pointer; display: flex; gap: .6rem; align-items: center; width: 100%; padding: .5rem .8rem; }
 .records h3 small { font-weight: 400; font-size: .78rem; }
 @media (max-width: 760px) { .quiz-bar { bottom: calc(4.4rem + env(safe-area-inset-bottom)); } }
+/* Atlas on phones: two tiles per row instead of one tall card each */
+@media (max-width: 760px) {
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem; }
+  .tile { min-height: 92px; padding: .85rem; border-radius: 16px; }
+  .tile b { font-size: 1.05rem; }
+  .tile small { font-size: .78rem; }
+  .tile-flags .flag { width: 22px; }
+}

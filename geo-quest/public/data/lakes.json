@@ -1338,6 +1338,22 @@
    ]
   },
   {
+   "id": "Q304933",
+   "layer": "lake",
+   "name": "Lake Abaya",
+   "image": "Lake Abaya.jpg",
+   "lon": 37.832,
+   "lat": 6.236,
+   "wiki": "Lake_Abaya",
+   "countries": [
+    "Q115"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Abaya",
+   "facts": "1,250 km² · Ethiopia",
+   "size": 1250
+  },
+  {
    "id": "Q1315765",
    "layer": "lake",
    "name": "Vygozero",
@@ -1359,22 +1375,6 @@
      "code": "ru"
     }
    ]
-  },
-  {
-   "id": "Q304933",
-   "layer": "lake",
-   "name": "Lake Abaya",
-   "image": "Lake Abaya.jpg",
-   "lon": 37.832,
-   "lat": 6.236,
-   "wiki": "Lake_Abaya",
-   "countries": [
-    "Q115"
-   ],
-   "group": "l-af",
-   "nameThe": "Lake Abaya",
-   "facts": "1,250 km² · Ethiopia",
-   "size": 1250
   },
   {
    "id": "Q770141",

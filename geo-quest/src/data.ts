@@ -17,14 +17,19 @@ export async function loadDataset(): Promise<Dataset> {
   const hp = new Map<string, number>();
   for (const c of countries) if (c.highest) hp.set(c.highest.id, (hp.get(c.highest.id) ?? 0) + 1);
   for (const c of countries) if (c.highest && (hp.get(c.highest.id) ?? 0) > 1) c.highestShared = true;
+  // One person can hold an office in several countries (Charles III is King of 15): "tap the country" would have many answers.
+  const holders = new Map<string, number>();
+  for (const p of places) if (p.topic === 'leaders') holders.set(p.name, (holders.get(p.name) ?? 0) + 1);
+  for (const p of places) if (p.topic === 'leaders' && (holders.get(p.name) ?? 0) > 1) p.manyPlaces = true;
   // World leaders learn alongside their country's region (e.g. Western Europe → Leaders).
   const byIdTmp = new Map(places.map(x => [x.id, x]));
   for (const p of places) if (p.topic === 'leaders') { const c = byIdTmp.get(p.place!); if (c) p.group = groupOf(c).id; }
   return { countries, places, byId: new Map(places.map(x => [x.id, x])), changes: ch as Change[], lookalikes: la.groups };
 }
 
-/** Commons file → resized image URL (Commons does the resizing for us). */
+/** A Wikimedia image. "en:<file>" means a file kept on English Wikipedia itself (e.g. banknotes), not on Commons. */
 export function commonsUrl(file: string, width = 640) {
+  if (file.startsWith('en:')) return `https://en.wikipedia.org/wiki/Special:FilePath/${encodeURIComponent(file.slice(3))}?width=${width}`;
   return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=${width}`;
 }
 
@@ -38,7 +43,7 @@ export function wikiThumb(title: string): Promise<string | null> {
   if (!summaryCache.has(title)) {
     summaryCache.set(title, fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`)
       .then(r => (r.ok ? r.json() : null))
-      .then(j => j?.originalimage?.source ?? j?.thumbnail?.source ?? null)
+      .then(j => j?.thumbnail?.source ?? j?.originalimage?.source ?? null) // the thumbnail: originals can be many MB
       .catch(() => null));
   }
   return summaryCache.get(title)!;

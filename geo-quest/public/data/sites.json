@@ -3762,22 +3762,6 @@
    "facts": "UNESCO World Heritage Site #1131 · Australia"
   },
   {
-   "id": "Q65096742",
-   "layer": "site",
-   "name": "Kakadu National Park",
-   "group": "u-oc",
-   "lon": 132.519,
-   "lat": -13.005,
-   "image": "Kakadu (AU), Kakadu National Park, Nadap Lookout -- 2019 -- 4200.jpg",
-   "wiki": null,
-   "whsId": "147",
-   "country": "Q408",
-   "countryName": "Australia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #147 · Australia"
-  },
-  {
    "id": "Q38167074",
    "layer": "site",
    "name": "Shark Bay",

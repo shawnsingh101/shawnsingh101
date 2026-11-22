@@ -478,20 +478,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q207692",
-   "layer": "range",
-   "name": "Wuyi Mountains",
-   "image": "Wuyi Mountains Sea of clouds 4.jpg",
-   "lon": 117.683,
-   "lat": 27.717,
-   "wiki": "Wuyi_Mountains",
-   "group": "m-ranges2",
-   "nameThe": "the Wuyi Mountains",
-   "facts": "China",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q155322",
    "layer": "range",
    "name": "Sikhote-Alin",
@@ -502,6 +488,20 @@
    "group": "m-ranges2",
    "nameThe": "the Sikhote-Alin",
    "facts": "Russia",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q207692",
+   "layer": "range",
+   "name": "Wuyi Mountains",
+   "image": "Wuyi Mountains Sea of clouds 4.jpg",
+   "lon": 117.683,
+   "lat": 27.717,
+   "wiki": "Wuyi_Mountains",
+   "group": "m-ranges2",
+   "nameThe": "the Wuyi Mountains",
+   "facts": "China",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -548,20 +548,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q660304",
-   "layer": "range",
-   "name": "Pacific Coast Ranges",
-   "image": "Canadian Coast Range.jpg",
-   "lon": -125.25,
-   "lat": 51.383,
-   "wiki": "Pacific_Coast_Ranges",
-   "group": "m-ranges2",
-   "nameThe": "the Pacific Coast Ranges",
-   "facts": "Canada, United States, Mexico",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q584279",
    "layer": "range",
    "name": "High Atlas",
@@ -572,6 +558,20 @@
    "group": "m-ranges2",
    "nameThe": "the High Atlas",
    "facts": "Morocco",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q660304",
+   "layer": "range",
+   "name": "Pacific Coast Ranges",
+   "image": "Canadian Coast Range.jpg",
+   "lon": -125.25,
+   "lat": 51.383,
+   "wiki": "Pacific_Coast_Ranges",
+   "group": "m-ranges2",
+   "nameThe": "the Pacific Coast Ranges",
+   "facts": "Canada, United States, Mexico",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -590,16 +590,16 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q682334",
+   "id": "Q1124584",
    "layer": "range",
-   "name": "Altyn-Tagh",
-   "image": "Altyn Tagh grassland and snow.jpg",
-   "lon": 89,
-   "lat": 38.6,
-   "wiki": "Altyn-Tagh",
+   "name": "Sierra Madre Occidental",
+   "image": "Sierra Madre Occidental.jpg",
+   "lon": -108.058,
+   "lat": 26.746,
+   "wiki": "Sierra_Madre_Occidental",
    "group": "m-ranges2",
-   "nameThe": "the Altyn-Tagh",
-   "facts": "China",
+   "nameThe": "the Sierra Madre Occidental",
+   "facts": "Mexico",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -618,16 +618,16 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q1124584",
+   "id": "Q682334",
    "layer": "range",
-   "name": "Sierra Madre Occidental",
-   "image": "Sierra Madre Occidental.jpg",
-   "lon": -108.058,
-   "lat": 26.746,
-   "wiki": "Sierra_Madre_Occidental",
+   "name": "Altyn-Tagh",
+   "image": "Altyn Tagh grassland and snow.jpg",
+   "lon": 89,
+   "lat": 38.6,
+   "wiki": "Altyn-Tagh",
    "group": "m-ranges2",
-   "nameThe": "the Sierra Madre Occidental",
-   "facts": "Mexico",
+   "nameThe": "the Altyn-Tagh",
+   "facts": "China",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -716,20 +716,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q1817102",
-   "layer": "range",
-   "name": "Mackenzie Mountains",
-   "image": "Keelepeak.jpg",
-   "lon": -132,
-   "lat": 64.667,
-   "wiki": "Mackenzie_Mountains",
-   "group": "m-ranges2",
-   "nameThe": "the Mackenzie Mountains",
-   "facts": "Canada",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q1132302",
    "layer": "range",
    "name": "Cordillera Real",
@@ -740,6 +726,20 @@
    "group": "m-ranges2",
    "nameThe": "the Cordillera Real",
    "facts": "Bolivia",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q1817102",
+   "layer": "range",
+   "name": "Mackenzie Mountains",
+   "image": "Keelepeak.jpg",
+   "lon": -132,
+   "lat": 64.667,
+   "wiki": "Mackenzie_Mountains",
+   "group": "m-ranges2",
+   "nameThe": "the Mackenzie Mountains",
+   "facts": "Canada",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -926,20 +926,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q519263",
-   "layer": "range",
-   "name": "Pontic Mountains",
-   "image": "Sumela Showing Location.JPG",
-   "lon": 41.159,
-   "lat": 40.837,
-   "wiki": "Pontic_Mountains",
-   "group": "m-ranges2",
-   "nameThe": "the Pontic Mountains",
-   "facts": "Türkiye",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q189915",
    "layer": "range",
    "name": "Dinaric Alps",
@@ -950,6 +936,20 @@
    "group": "m-ranges2",
    "nameThe": "the Dinaric Alps",
    "facts": "Slovenia, Albania, Croatia, Bosnia and Herzegovina, Montenegro…",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q519263",
+   "layer": "range",
+   "name": "Pontic Mountains",
+   "image": "Sumela Showing Location.JPG",
+   "lon": 41.159,
+   "lat": 40.837,
+   "wiki": "Pontic_Mountains",
+   "group": "m-ranges2",
+   "nameThe": "the Pontic Mountains",
+   "facts": "Türkiye",
    "capitals": [],
    "capitalAnswer": null
   },

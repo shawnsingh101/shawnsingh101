@@ -40,11 +40,16 @@ export const KIND_LABEL: Record<Kind, string> = {
 export function fingerprint(kind: Kind, c: Place) {
   if (kind.startsWith('capital')) return `${c.name}|${c.capitalAnswer}`;
   if (kind.startsWith('flag')) return `${c.name}|${c.flag}`;
-  if (kind.startsWith('senator')) return `${c.name}|${c.party}|${c.rank ?? c.office}`; // a new person in the seat re-queues it
+  if (kind.startsWith('senator')) return `${c.name}|${c.rank ?? c.office}`; // a new person in the seat re-queues it (not a party label)
   if (kind.startsWith('currency')) return `${c.name}|${c.currency?.map(x => x.name).join('/')}`;
   if (kind.startsWith('largestCity')) return `${c.name}|${c.largestCity?.name}`;
   if (kind.startsWith('highest')) return `${c.name}|${c.highest?.name}`;
   return c.name;
+}
+
+/** Fingerprints written by older versions that still count as unchanged. */
+export function legacyFingerprints(kind: Kind, c: Place): string[] {
+  return kind.startsWith('senator') ? [`${c.name}|${c.party}|${c.rank ?? c.office}`] : [];
 }
 
 // ---- Skill tree -----------------------------------------------------------------
@@ -163,9 +168,13 @@ export interface CardRef { id: string; kind: Kind; country: Place }
 export const cardId = (placeId: string, kind: Kind) => `${placeId}:${kind}`;
 
 /** Some card types only make sense for some places. */
+/** How many countries a site or peak is listed in. */
+const countryCount = (c: Place) => (c.countryName ? c.countryName.split(/, | and /).length : 0);
 export function kindApplies(k: Kind, c: Place) {
   if (k === 'senatorFace') return !c.noFace && !!(c.photo || c.wiki);
   if (k === 'sitePhoto') return c.layer === 'site' && !!c.image; // a mountain from a photo alone is too hard to be fair
+  if (k === 'senatorLocate' && c.manyPlaces) return false;
+  if (k === 'siteCountry' && countryCount(c) > 3) return false; // "in Moldova, Ukraine, Latvia… and Norway" isn't a fair question
   if (k === 'highestReverse') return !!c.highest && !c.highestShared;
   if (k === 'currencyReverse') return !!c.currency?.some(x => x.shared === 1); // "the euro is the currency of…" has 20 answers
   return true;
@@ -174,7 +183,7 @@ const cur1 = (c: Place) => c.currency?.find(x => x.shared === 1) ?? c.currency?.
 const curText = (x: NonNullable<Place['currency']>[number]) => `${x.name}${x.code ? ` (${[x.code, x.symbol].filter(Boolean).join(' ')})` : ''}`;
 const fmtPop = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)} million` : `${Math.round(n / 1000)},000`);
 /** "the Netherlands", "the United States" — country names that take "the" mid-sentence. */
-export const theName = (c: Place) => (/^(Netherlands|United States|United Kingdom|United Arab Emirates|Philippines|Bahamas|Gambia|Maldives|Comoros|Marshall Islands|Solomon Islands|Central African Republic|Dominican Republic|Czech Republic|Seychelles|Vatican City|DR Congo|Republic of the Congo|Sahrawi)/.test(c.name) ? `the ${c.name}` : c.name);
+export const theName = (c: Place) => (/^(Netherlands|United States|United Kingdom|United Arab Emirates|Philippines|Bahamas|Gambia|Maldives|Comoros|Marshall Islands|Solomon Islands|Central African Republic|Dominican Republic|Czech Republic|Seychelles|DR Congo|Republic of the Congo|Sahrawi)/.test(c.name) ? `the ${c.name}` : c.name);
 
 export function cardsForNode(ds: Dataset, node: string): CardRef[] {
   const { groupId, topic } = parseNode(node);
@@ -233,7 +242,7 @@ export interface CardFace {
 const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const noun = (p: Place) => ({ country: 'country', water: 'body of water', river: 'river', lake: 'lake', cn: p.type ?? 'region', us: 'state', senate: 'senator', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range' })[p.layer];
 
-export function face(ref: CardRef): CardFace {
+function rawFace(ref: CardRef): CardFace {
   const c = ref.country;
   const cap = c.capitals[0];
   const capPic = cap ? { file: cap.image, wiki: cap.wiki, caption: cap.name } : undefined;
@@ -294,7 +303,7 @@ export function face(ref: CardRef): CardFace {
       return { mode: 'reveal', pre: c.layer === 'peak' ? 'This mountain is ' : 'This World Heritage Site is ', blank: 'what?', post: '.', answer: c.name, map: 'reveal', note: c.facts,
         picture: { file: c.image, wiki: c.wiki, caption: c.name }, promptPicture: true };
     case 'siteLocate':
-      return { mode: 'tap', pre: `${c.name} is `, blank: 'where? tap the map', post: '.', answer: c.countryName ? `in ${c.countryName}` : 'right here', map: 'tap', note: c.facts,
+      return { mode: 'tap', pre: `${c.name} is `, blank: 'where? tap the map', post: '.', answer: !c.countryName ? 'right here' : countryCount(c) > 3 ? `in ${countryCount(c)} countries` : `in ${c.countryName}`, map: 'tap', note: c.facts,
         picture: { file: c.image, wiki: c.wiki, caption: c.name } };
     case 'siteCountry':
       return { mode: 'reveal', pre: `${c.name} is in `, blank: 'which country?', post: '.', answer: c.countryName!, map: 'reveal', note: c.facts,
@@ -312,6 +321,24 @@ export function face(ref: CardRef): CardFace {
     case 'flagReverse':
       return { mode: 'reveal', pre: `The flag of ${c.name} looks like `, blank: 'what?', post: '', answer: '', answerFlag: true, map: 'none', note };
   }
+}
+
+// Names that take "the" mid-sentence ("the capital of the Netherlands", "Yellowstone is in the United States").
+const THE_NAMES = /\b(United States Virgin Islands|United States|United Kingdom|United Arab Emirates|Netherlands|Philippines|Bahamas|Gambia|Maldives|Comoros|Marshall Islands|Solomon Islands|Central African Republic|Dominican Republic|Czech Republic|Seychelles|Democratic Republic of the Congo|Republic of the Congo|Falkland Islands|Faroe Islands|Cayman Islands|British Virgin Islands|Cook Islands|Northern Mariana Islands|Turks and Caicos Islands|Canary Islands|Azores|Balearic Islands|Pitcairn Islands|Cocos \(Keeling\) Islands|British Indian Ocean Territory|Sahrawi Arab Democratic Republic|Caribbean Netherlands)\b/g;
+export function withThe(text: string) {
+  return text.replace(THE_NAMES, (m, _g, offset: number) => {
+    const prev = /(\S+)\s+$/.exec(text.slice(0, offset))?.[1];
+    // Skip if "the" is already there, or the name is part of a longer one ("Caribbean Netherlands").
+    if (prev && (/^the$/i.test(prev) || /^[A-Z]/.test(prev))) return m;
+    return 'the ' + m;
+  });
+}
+/** What a card shows, with "the" added where English wants it. */
+export function face(ref: CardRef): CardFace {
+  const f = rawFace(ref);
+  // Island groups are plural: "The Faroe Islands are part of Denmark".
+  const pre = cap1(withThe(f.pre)).replace(/^((?:The )?(?:[A-Z][\w'-]*\s)*(?:Islands|Isles|Azores)) is /, '$1 are ');
+  return { ...f, pre, answer: withThe(f.answer), post: withThe(f.post), note: f.note ? withThe(f.note) : f.note };
 }
 
 /** Which extra map layer a card needs. */

@@ -14,7 +14,7 @@ export function placeMastery(p: ReturnType<typeof useProgress>, place: Place) {
   const ks = kindsFor(place);
   let sum = 0;
   for (const k of ks) sum += level(p, cardId(place.id, k));
-  return sum / ks.length;
+  return ks.length ? sum / ks.length : 0;
 }
 
 type MapKey = 'mapNames' | 'mapCapitals' | 'mapWater' | 'mapRivers' | 'mapLakes' | 'mapCn' | 'mapUs' | 'mapTerr' | 'mapSites' | 'mapMountains';

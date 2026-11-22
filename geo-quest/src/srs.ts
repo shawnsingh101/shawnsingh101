@@ -1,6 +1,6 @@
 import { createEmptyCard, fsrs, generatorParameters, Rating, State, type Card, type Grade } from 'ts-fsrs';
 import { useSyncExternalStore } from 'react';
-import { GROUPS, cardsForNode, fingerprint, groupById, kindApplies, parseNode, refFromId, slotOf, nodeId, nodeOfCard, TAP_KINDS, type CardRef } from './cards';
+import { GROUPS, cardsForNode, fingerprint, legacyFingerprints, groupById, kindApplies, parseNode, refFromId, slotOf, nodeId, nodeOfCard, TAP_KINDS, type CardRef } from './cards';
 import type { Dataset } from './types';
 
 export { Rating, State };
@@ -76,7 +76,7 @@ export function reconcile(ds: Dataset) {
   for (const [id, rec] of Object.entries(state.cards)) {
     const ref = refFromId(ds, id);
     if (!ref) continue;
-    if (rec.fp !== fingerprint(ref.kind, ref.country)) stale.push(id);
+    if (rec.fp !== fingerprint(ref.kind, ref.country) && !legacyFingerprints(ref.kind, ref.country).includes(rec.fp)) stale.push(id);
   }
   if (!stale.length) return;
   update(p => {
@@ -120,11 +120,11 @@ export function isUnlocked(ds: Dataset, p: Progress, node: string) {
   if (!p.settings.locks) return true;
   const { groupId } = parseNode(node);
   const g = groupById(groupId);
-  if (g.requires) { const r = nodeStats(ds, p, g.requires); if (r.known / r.total < 0.5) return false; }
+  if (g.requires) { const r = nodeStats(ds, p, g.requires); if (r.total && r.known / r.total < 0.5) return false; }
   const req = slotOf(node).requires;
   if (!req) return true;
   const s = nodeStats(ds, p, nodeId(groupId, req));
-  return s.known / s.total >= 0.5;
+  return !s.total || s.known / s.total >= 0.5; // an empty prerequisite never locks a skill for good
 }
 
 // ---- building a study session ---------------------------------------------------

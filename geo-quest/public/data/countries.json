@@ -12,7 +12,7 @@
    "region": "Asia",
    "subregion": "Western Asia",
    "topo": null,
-   "flag": null,
+   "flag": "en:Flag of Abkhazia.svg",
    "lon": 41,
    "lat": 43.15,
    "wiki": "Abkhazia_(region)",
@@ -261,7 +261,7 @@
      "symbol": "DA",
      "wiki": "Algerian_dinar",
      "shared": 1,
-     "image": null
+     "image": "en:Scan of 4 Algerian coins.jpg"
     }
    ],
    "largestCity": {
@@ -523,7 +523,7 @@
      "symbol": "$",
      "wiki": "Argentine_peso",
      "shared": 1,
-     "image": "Argentina Currency.png"
+     "image": "en:Argentina Currency.png"
     }
    ],
    "largestCity": {
@@ -675,7 +675,7 @@
      "symbol": "AU$",
      "wiki": "Australian_dollar",
      "shared": 2,
-     "image": "2018 Australian fifty dollar note obverse.jpg"
+     "image": "en:2018 Australian fifty dollar note obverse.jpg"
     }
    ],
    "largestCity": {
@@ -1091,7 +1091,7 @@
      "symbol": "৳",
      "wiki": "Bangladeshi_taka",
      "shared": 1,
-     "image": "Taka_Banknotes_specimen.jpg"
+     "image": "Taka Banknotes specimen.jpg"
     }
    ],
    "largestCity": {
@@ -1453,7 +1453,7 @@
      "symbol": "Bz$",
      "wiki": "Belize_dollar",
      "shared": 1,
-     "image": "Belize dollar $2 banknote 2025 issue, front.jpg"
+     "image": "en:Belize dollar $2 banknote 2025 issue, front.jpg"
     }
    ],
    "largestCity": {
@@ -1623,7 +1623,7 @@
      "symbol": "Nu",
      "wiki": "Bhutanese_ngultrum",
      "shared": 1,
-     "image": null
+     "image": "500 Ngultrum banknote 1st series (A).png"
     }
    ],
    "largestCity": {
@@ -1877,7 +1877,7 @@
      "symbol": "P",
      "wiki": "Botswana_pula",
      "shared": 1,
-     "image": "Botswana 2-pula banknote (1980s).png"
+     "image": "en:Botswana 2-pula banknote (1980s).png"
     }
    ],
    "largestCity": {
@@ -2023,7 +2023,7 @@
      "symbol": "B$",
      "wiki": "Brunei_dollar",
      "shared": 1,
-     "image": "1 Brunei dollar (BND) note, front (fair use).jpg"
+     "image": "en:1 Brunei dollar (BND) note, front (fair use).jpg"
     }
    ],
    "largestCity": {
@@ -2321,7 +2321,7 @@
      "symbol": "៛",
      "wiki": "Cambodian_riel",
      "shared": 1,
-     "image": null
+     "image": "100 riel 2001 obverse.jpg"
     }
    ],
    "largestCity": {
@@ -2391,7 +2391,7 @@
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
      "shared": 6,
-     "image": "CFA.jpg"
+     "image": "en:CFA.jpg"
     }
    ],
    "largestCity": {
@@ -2461,7 +2461,7 @@
      "symbol": "C$",
      "wiki": "Canadian_dollar",
      "shared": 1,
-     "image": "Canadian Frontier Banknotes faces.png"
+     "image": "en:Canadian Frontier Banknotes faces.png"
     }
    ],
    "largestCity": {
@@ -2618,7 +2618,7 @@
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
      "shared": 6,
-     "image": "CFA.jpg"
+     "image": "en:CFA.jpg"
     }
    ],
    "largestCity": {
@@ -2710,7 +2710,7 @@
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
      "shared": 6,
-     "image": "CFA.jpg"
+     "image": "en:CFA.jpg"
     }
    ],
    "largestCity": {
@@ -2784,7 +2784,7 @@
      "symbol": "CLP$",
      "wiki": "Chilean_peso",
      "shared": 1,
-     "image": "Billetes de Chile.png"
+     "image": "en:Billetes de Chile.png"
     }
    ],
    "largestCity": {
@@ -2936,7 +2936,7 @@
      "symbol": "COL$",
      "wiki": "Colombian_peso",
      "shared": 1,
-     "image": "Colombia Currency.png"
+     "image": "en:Colombia Currency.png"
     }
    ],
    "largestCity": {
@@ -3409,7 +3409,7 @@
      "symbol": "Kč",
      "wiki": "Czech_koruna",
      "shared": 1,
-     "image": "CZK_Banknotes_2014.png"
+     "image": "CZK Banknotes 2014.png"
     }
    ],
    "largestCity": {
@@ -3497,7 +3497,7 @@
      "symbol": "kr",
      "wiki": "Danish_krone",
      "shared": 1,
-     "image": "DKK 500 obverse (2009).jpg"
+     "image": "en:DKK 500 obverse (2009).jpg"
     }
    ],
    "largestCity": {
@@ -3579,7 +3579,7 @@
      "symbol": "Fdj",
      "wiki": "Djiboutian_franc",
      "shared": 1,
-     "image": "[[File:5 djiboutian francs.jpg"
+     "image": "5 djiboutian francs.jpg"
     }
    ],
    "largestCity": {
@@ -3713,7 +3713,7 @@
      "symbol": "RD$",
      "wiki": "Dominican_peso",
      "shared": 1,
-     "image": "Dop2014notes 2000 front.png"
+     "image": "en:Dop2014notes 2000 front.png"
     }
    ],
    "largestCity": {
@@ -3810,7 +3810,7 @@
      "symbol": "CF",
      "wiki": "Congolese_franc",
      "shared": 1,
-     "image": null
+     "image": "Obverse and Reverse of an 1887 Belgian Congo 1 Franc coin.png"
     }
    ],
    "largestCity": {
@@ -4106,7 +4106,7 @@
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
      "shared": 6,
-     "image": "CFA.jpg"
+     "image": "en:CFA.jpg"
     }
    ],
    "largestCity": {
@@ -4420,7 +4420,7 @@
      "symbol": "Br",
      "wiki": "Ethiopian_birr",
      "shared": 1,
-     "image": "Ethiopia 1Birr Reverse.jpg"
+     "image": "en:Ethiopia 1Birr Reverse.jpg"
     }
    ],
    "largestCity": {
@@ -4495,7 +4495,7 @@
      "symbol": "FJ$",
      "wiki": "Fijian_dollar",
      "shared": 1,
-     "image": "New5fijidollar.png"
+     "image": "en:New5fijidollar.png"
     }
    ],
    "largestCity": {
@@ -4699,7 +4699,7 @@
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
      "shared": 6,
-     "image": "CFA.jpg"
+     "image": "en:CFA.jpg"
     }
    ],
    "largestCity": {
@@ -4981,7 +4981,7 @@
      "symbol": "₵",
      "wiki": "Ghanaian_cedi",
      "shared": 1,
-     "image": "Ghana Cedi banknotes.jpg"
+     "image": "en:Ghana Cedi banknotes.jpg"
     }
    ],
    "largestCity": {
@@ -5407,7 +5407,7 @@
      "symbol": "GY$",
      "wiki": "Guyanese_dollar",
      "shared": 1,
-     "image": "GYDnotes.png"
+     "image": "en:GYDnotes.png"
     }
    ],
    "largestCity": {
@@ -6046,7 +6046,7 @@
      "symbol": "د.ع",
      "wiki": "Iraqi_dinar",
      "shared": 1,
-     "image": "Dinar-25000.jpg"
+     "image": "en:Dinar-25000.jpg"
     }
    ],
    "largestCity": {
@@ -6788,7 +6788,7 @@
      "symbol": "Ksh",
      "wiki": "Kenyan_shilling",
      "shared": 1,
-     "image": "New-Generation-100-Shillings-Observe.png"
+     "image": "en:New-Generation-100-Shillings-Observe.png"
     }
    ],
    "largestCity": {
@@ -6992,7 +6992,7 @@
      "symbol": "د.ك",
      "wiki": "Kuwaiti_dinar",
      "shared": 1,
-     "image": null
+     "image": "100 Kuwaitian fils in 2012 Obverse.jpg"
     }
    ],
    "largestCity": {
@@ -7177,7 +7177,7 @@
      "symbol": "₭",
      "wiki": "Lao_kip",
      "shared": 1,
-     "image": "[[File:1000 Laotian kip in 2003 Obverse.jpg"
+     "image": "1000 Laotian kip in 2003 Obverse.jpg"
     }
    ],
    "largestCity": {
@@ -7367,7 +7367,7 @@
      "symbol": "ل.ل.",
      "wiki": "Lebanese_pound",
      "shared": 1,
-     "image": null
+     "image": "250 Lebanese Pounds - Front.jpg"
     }
    ],
    "largestCity": {
@@ -8051,7 +8051,7 @@
      "symbol": "RM",
      "wiki": "Malaysian_ringgit",
      "shared": 1,
-     "image": "New Malaysian Currency Design.jpg"
+     "image": "en:New Malaysian Currency Design.jpg"
     }
    ],
    "largestCity": {
@@ -8133,7 +8133,7 @@
      "symbol": "Rf",
      "wiki": "Maldivian_rufiyaa",
      "shared": 1,
-     "image": "1 Maldivian rufiyaa coin.jpg"
+     "image": "en:1 Maldivian rufiyaa coin.jpg"
     }
    ],
    "largestCity": {
@@ -8588,7 +8588,7 @@
      "symbol": "$",
      "wiki": "Mexican_peso",
      "shared": 1,
-     "image": "Mexican Currency.png"
+     "image": "en:Mexican Currency.png"
     }
    ],
    "largestCity": {
@@ -8722,7 +8722,7 @@
      "symbol": "L",
      "wiki": "Moldovan_leu",
      "shared": 1,
-     "image": "MD_100_lei_av.jpg"
+     "image": "MD 100 lei av.jpg"
     }
    ],
    "largestCity": {
@@ -9030,7 +9030,7 @@
      "symbol": "DH",
      "wiki": "Moroccan_dirham",
      "shared": 1,
-     "image": "100_dirham.jpg"
+     "image": "100 dirham.jpg"
     }
    ],
    "largestCity": {
@@ -9106,7 +9106,7 @@
      "symbol": "MT",
      "wiki": "Mozambican_metical",
      "shared": 1,
-     "image": null
+     "image": "20000 meticals Mozambique.jpg"
     }
    ],
    "largestCity": {
@@ -9328,7 +9328,7 @@
      "symbol": "AU$",
      "wiki": "Australian_dollar",
      "shared": 2,
-     "image": "2018 Australian fifty dollar note obverse.jpg"
+     "image": "en:2018 Australian fifty dollar note obverse.jpg"
     }
    ],
    "largestCity": {
@@ -9404,7 +9404,7 @@
      "symbol": "N₨",
      "wiki": "Nepalese_rupee",
      "shared": 1,
-     "image": "NPR 1000 (obverse).jpg"
+     "image": "en:NPR 1000 (obverse).jpg"
     }
    ],
    "largestCity": {
@@ -9550,7 +9550,7 @@
      "symbol": "NZ$",
      "wiki": "New_Zealand_dollar",
      "shared": 1,
-     "image": "New Zealand one hundred-dollar banknote, Series 7.jpg"
+     "image": "en:New Zealand one hundred-dollar banknote, Series 7.jpg"
     }
    ],
    "largestCity": {
@@ -9742,7 +9742,7 @@
      "symbol": "₦",
      "wiki": "Nigerian_naira",
      "shared": 1,
-     "image": null
+     "image": "Old nigerian currencies.jpg"
     }
    ],
    "largestCity": {
@@ -10023,7 +10023,7 @@
      "symbol": "kr",
      "wiki": "Norwegian_krone",
      "shared": 1,
-     "image": "500_kroner_observe.jpg"
+     "image": "en:500 kroner observe.jpg"
     }
    ],
    "largestCity": {
@@ -10181,7 +10181,7 @@
      "symbol": "₨",
      "wiki": "Pakistani_rupee",
      "shared": 1,
-     "image": "Pakistani Rupee.jpg"
+     "image": "en:Pakistani Rupee.jpg"
     }
    ],
    "largestCity": {
@@ -10513,7 +10513,7 @@
      "symbol": "K",
      "wiki": "Papua_New_Guinean_kina",
      "shared": 1,
-     "image": "K50back.jpg"
+     "image": "en:K50back.jpg"
     }
    ],
    "largestCity": {
@@ -10664,7 +10664,7 @@
      "symbol": "S/",
      "wiki": "Peruvian_sol",
      "shared": 1,
-     "image": "Peru Currency.png"
+     "image": "en:Peru Currency.png"
     }
    ],
    "largestCity": {
@@ -10821,7 +10821,7 @@
      "symbol": "zł",
      "wiki": "Polish_złoty",
      "shared": 1,
-     "image": "Polish 5-Zloty coin (1994).gif"
+     "image": "en:Polish 5-Zloty coin (1994).gif"
     }
    ],
    "largestCity": {
@@ -11053,7 +11053,7 @@
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
      "shared": 6,
-     "image": "CFA.jpg"
+     "image": "en:CFA.jpg"
     }
    ],
    "largestCity": {
@@ -11293,7 +11293,7 @@
      "symbol": "R₣",
      "wiki": "Rwandan_franc",
      "shared": 1,
-     "image": "Rwanda francs.jpg"
+     "image": "en:Rwanda francs.jpg"
     }
    ],
    "largestCity": {
@@ -11359,7 +11359,7 @@
      "symbol": null,
      "wiki": "Sahrawi_peseta",
      "shared": 1,
-     "image": null
+     "image": "1 Peseta Sahara.jpg"
     }
    ]
   },
@@ -11833,7 +11833,7 @@
      "symbol": "SR",
      "wiki": "Saudi_riyal",
      "shared": 1,
-     "image": "Saudi Riyal 6th Domination.png"
+     "image": "en:Saudi Riyal 6th Domination.png"
     }
    ],
    "largestCity": {
@@ -11987,7 +11987,7 @@
      "symbol": "дин",
      "wiki": "Serbian_dinar",
      "shared": 1,
-     "image": "1000RSD note obverse.jpg"
+     "image": "en:1000RSD note obverse.jpg"
     }
    ],
    "largestCity": {
@@ -12231,7 +12231,7 @@
      "symbol": "S$",
      "wiki": "Singapore_dollar",
      "shared": 1,
-     "image": "SGD 10000 Paper f.jpg"
+     "image": "en:SGD 10000 Paper f.jpg"
     }
    ],
    "largestCity": {
@@ -12727,7 +12727,7 @@
      "symbol": "R",
      "wiki": "South_African_rand",
      "shared": 1,
-     "image": "South African rand - 2023 banknotes.jpg"
+     "image": "en:South African rand - 2023 banknotes.jpg"
     }
    ],
    "largestCity": {
@@ -13116,7 +13116,7 @@
      "symbol": "Rs",
      "wiki": "Sri_Lankan_rupee",
      "shared": 1,
-     "image": "Raja (elephant) in Sri Lankan Rupee bank notes.JPG"
+     "image": "en:Raja (elephant) in Sri Lankan Rupee bank notes.JPG"
     }
    ],
    "largestCity": {
@@ -13338,7 +13338,7 @@
      "symbol": "kr",
      "wiki": "Swedish_krona",
      "shared": 1,
-     "image": "Collage SEK.png"
+     "image": "en:Collage SEK.png"
     }
    ],
    "largestCity": {
@@ -13537,7 +13537,7 @@
      "symbol": "LS",
      "wiki": "Syrian_pound",
      "shared": 1,
-     "image": null
+     "image": "1-Livre-syria-1957.jpg"
     }
    ],
    "largestCity": {
@@ -13850,7 +13850,7 @@
      "symbol": "฿",
      "wiki": "Thai_baht",
      "shared": 1,
-     "image": "Thai money.jpg"
+     "image": "en:Thai money.jpg"
     }
    ],
    "largestCity": {
@@ -14154,7 +14154,7 @@
      "symbol": "TT$",
      "wiki": "Trinidad_and_Tobago_dollar",
      "shared": 1,
-     "image": "Series 2020 TTD Polymer Design.png"
+     "image": "en:Series 2020 TTD Polymer Design.png"
     }
    ],
    "largestCity": {
@@ -14524,7 +14524,7 @@
      "symbol": "Ush",
      "wiki": "Ugandan_shilling",
      "shared": 1,
-     "image": "UgandanShillings1000.jpg"
+     "image": "en:UgandanShillings1000.jpg"
     }
    ],
    "largestCity": {
@@ -14764,7 +14764,7 @@
      "symbol": "£",
      "wiki": "Pound_sterling",
      "shared": 1,
-     "image": "Bank of England £50 Series G II obverse.jpg"
+     "image": "en:Bank of England £50 Series G II obverse.jpg"
     }
    ],
    "largestCity": {
@@ -15292,7 +15292,7 @@
      "symbol": "₫",
      "wiki": "Vietnamese_đồng",
      "shared": 1,
-     "image": null
+     "image": "2 Đồng - North Vietnam (1946) 02.jpg"
     }
    ],
    "largestCity": {
@@ -15538,7 +15538,7 @@
      "symbol": null,
      "wiki": "Zimbabwe_Gold",
      "shared": 1,
-     "image": "Zimbabwe Gold coins.jpg"
+     "image": "en:Zimbabwe Gold coins.jpg"
     }
    ],
    "largestCity": {
