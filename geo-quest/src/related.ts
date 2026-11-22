@@ -47,6 +47,10 @@ export function relatedFor(ds: Dataset, c: Place): RelLink[] {
       for (const n of (c.countryName ?? '').split(/, | and /).filter(Boolean)) add(named(ds, n));
       if (c.layer === 'peak') { const range = (c.facts ?? '').split(' · ')[1]; if (range && !/^\d/.test(range)) add(named(ds, range)); }
       break;
+    case 'art':
+      place(c.country);
+      if (c.artists?.[0]) add({ label: c.artists[0], wiki: c.artists[0].replace(/ /g, '_') });
+      break;
     case 'senate': place(c.place ?? c.state); break;                  // a senator, governor or leader → their state or country
     case 'terr': place(c.sovereign); break;
     case 'sub': place(c.parent); break;

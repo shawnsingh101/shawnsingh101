@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.11.0', notes: 'Art: 43 famous works from around the world (picture, artist, where to see it) · photos on the cocktail, religion and philosophy cards · maps open faster (about half the work for New Jersey) and are reused between cards' },
   { version: '1.10.0', notes: 'Punjab: 23 districts in its 5 divisions, with headquarters · local names in their own script for regions and capitals (ਗੁਰਮੁਖੀ, 漢字, Oʻzbek, हिन्दी) · Karnataka & Maharashtra capitals fixed' },
   { version: '1.9.1', notes: 'Clearer maps: darker country borders; when studying a country’s regions, its outline is bold and its regions have solid lines' },
   { version: '1.9.0', notes: 'Rivers drill down like places: Rivers › Rivers of the Americas › Rivers of the United States · US rivers list the states they run through · rivers show where they start and end' },

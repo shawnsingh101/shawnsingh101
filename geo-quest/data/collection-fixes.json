@@ -1,0 +1,183 @@
+{
+ "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district.",
+ "_cities": {
+  "Saint-Germain-l'Auxerrois": "Paris",
+  "Greater London": "London",
+  "Miguel Hidalgo": "Mexico City",
+  "Australian Capital Territory": "Canberra",
+  "Giza Governorate": "Giza",
+  "Shaanxi": "Xi'an",
+  "Hase": "Kamakura"
+ },
+ "Q12418": {
+  "nameThe": "the Mona Lisa"
+ },
+ "Q151952": {
+  "culture": "ancient Greeks"
+ },
+ "Q18003128": {
+  "artists": [
+   "Auguste Rodin"
+  ],
+  "nameThe": "The Thinker"
+ },
+ "Q219831": {
+  "museum": "Rijksmuseum",
+  "city": "Amsterdam",
+  "lon": 4.885,
+  "lat": 52.36
+ },
+ "Q26082": {
+  "culture": "Babylonians",
+  "nameThe": "the Ishtar Gate"
+ },
+ "Q93304": {
+  "culture": "Babylonians",
+  "year": -1754,
+  "museum": "Louvre Museum",
+  "city": "Paris",
+  "country": "Q142",
+  "countryName": "France",
+  "lon": 2.336,
+  "lat": 48.861,
+  "nameThe": "the Code of Hammurabi"
+ },
+ "Q524447": {
+  "culture": "Sumerians",
+  "year": -2600,
+  "nameThe": "the Standard of Ur"
+ },
+ "Q9048095": {
+  "culture": "ancient Egyptians",
+  "nameThe": "the Mask of Tutankhamun"
+ },
+ "Q582172": {
+  "nameThe": "the Nefertiti Bust"
+ },
+ "Q130958": {
+  "culture": "ancient Egyptians",
+  "nameThe": "the Great Sphinx of Giza"
+ },
+ "Q248101": {
+  "culture": "Edo people of the Kingdom of Benin",
+  "museum": null,
+  "country": null,
+  "countryName": null,
+  "lon": null,
+  "lat": null,
+  "nameThe": "the Benin Bronzes",
+  "plural": true
+ },
+ "Q18385381": {
+  "culture": "Edo people of the Kingdom of Benin",
+  "nameThe": "the Benin ivory mask"
+ },
+ "Q17008494": {
+  "culture": "Indus Valley Civilisation",
+  "year": -2300,
+  "museum": "National Museum",
+  "city": "New Delhi",
+  "country": "Q668",
+  "countryName": "India",
+  "lon": 77.219,
+  "lat": 28.611,
+  "nameThe": "the Dancing Girl"
+ },
+ "Q3595955": {
+  "culture": "Maurya Empire",
+  "museum": "Sarnath Museum",
+  "city": "Sarnath",
+  "lon": 83.025,
+  "lat": 25.379,
+  "nameThe": "the Lion Capital of Ashoka"
+ },
+ "Q184427": {
+  "culture": "Buddhist monks",
+  "museum": null,
+  "city": "Maharashtra",
+  "nameThe": "the Ajanta Caves",
+  "plural": true
+ },
+ "Q252485": {
+  "museum": null,
+  "city": null,
+  "country": null,
+  "countryName": null,
+  "lon": null,
+  "lat": null,
+  "nameThe": "The Great Wave off Kanagawa"
+ },
+ "Q714802": {
+  "nameThe": "Along the River During the Qingming Festival"
+ },
+ "Q47672": {
+  "museum": "Mausoleum of the First Qin Emperor",
+  "city": "Xi'an",
+  "nameThe": "the Terracotta Army"
+ },
+ "Q12366269": {
+  "museum": "Kōtoku-in temple",
+  "city": "Kamakura",
+  "nameThe": "the Great Buddha of Kamakura"
+ },
+ "Q1532165": {
+  "name": "Pensive Bodhisattva",
+  "nameThe": "the Pensive Bodhisattva",
+  "culture": "Three Kingdoms of Korea",
+  "museum": "National Museum of Korea",
+  "city": "Seoul",
+  "country": "Q884",
+  "countryName": "South Korea",
+  "lon": 126.98,
+  "lat": 37.524
+ },
+ "Q509806": {
+  "name": "Washington Crossing the Delaware",
+  "artists": [
+   "Emanuel Leutze"
+  ],
+  "year": 1851,
+  "museum": "Metropolitan Museum of Art",
+  "city": "New York City",
+  "country": "Q30",
+  "countryName": "United States",
+  "lon": -73.963,
+  "lat": 40.779
+ },
+ "Q786806": {
+  "artists": [],
+  "culture": "Aztecs (Mexica)",
+  "city": "Mexico City",
+  "nameThe": "the Aztec sun stone"
+ },
+ "Q3232010": {
+  "city": "Mexico City"
+ },
+ "Q3062269": {
+  "artists": [],
+  "culture": "Olmecs",
+  "museum": null,
+  "country": "Q96",
+  "countryName": "Mexico",
+  "nameThe": "the Olmec colossal heads",
+  "year": -1200,
+  "plural": true
+ },
+ "Q79961": {
+  "artists": [
+   "Paul Landowski"
+  ],
+  "museum": "Corcovado mountain"
+ },
+ "Q20350": {
+  "culture": "Rapa Nui people",
+  "city": "Easter Island",
+  "lon": -109.35,
+  "lat": -27.12,
+  "nameThe": "the moai of Easter Island",
+  "plural": true
+ },
+ "Q2040958": {
+  "culture": "Rapa Nui people"
+ }
+}

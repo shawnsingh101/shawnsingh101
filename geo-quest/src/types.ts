@@ -12,7 +12,7 @@ export interface Capital {
 }
 
 export type Status = 'un' | 'observer' | 'disputed';
-export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site' | 'peak' | 'range' | 'sub' | 'note';
+export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site' | 'peak' | 'range' | 'sub' | 'note' | 'art';
 
 /** Anything you can learn on the map: a country, a sea, a province… keyed by Wikidata id. */
 export interface Place {
@@ -68,6 +68,12 @@ export interface Place {
   parentName?: string;
   highestShared?: boolean; // another country shares the same highest point (Everest: Nepal & China)
   manyPlaces?: boolean;    // a leader who holds the same office in several countries
+  artists?: string[];      // artworks: who made it…
+  culture?: string | null; // …or, for ancient work, which culture
+  year?: number | null;    // when (negative = BC)
+  museum?: string | null;  // where it is now: "Louvre, Paris"
+  plural?: boolean;        // "the moai were…"
+  origin?: string | null;  // where it comes from (the heading in the list): "Europe", "East Asia"
   highest?: { id: string; name: string; elevation: number | null; lat: number; lon: number; image: string | null; wiki: string | null; note: string | null };
   largestCity?: { name: string; population: number; lat: number; lon: number; image: string | null; wiki: string | null; isCapital: boolean };
 }
