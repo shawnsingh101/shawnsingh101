@@ -138,9 +138,11 @@ writeFileSync(join(ROOT, 'public/data/shapes-us.json'), JSON.stringify(build(us,
 // Natural Earth "map units" split these out of their sovereign country, with Wikidata ids.
 const units = await get('ne_50m_admin_0_map_units.geojson');
 const SKIP_UNITS = new Set(['England', 'Scotland', 'Wales', 'Northern Ireland', 'France', 'Portugal', 'Hong Kong S.A.R.', 'Macao S.A.R', 'Ashmore and Cartier Islands', 'Heard Island and McDonald Islands']);
+// Not territories: a country's own main islands, internal regions/entities, and areas the source mislabels as part of Israel
+const SKIP_IDS = new Set(["Q316390", "Q238752", "Q240", "Q1118", "Q39760", "Q11196", "Q1122", "Q36678"]);
 const terr = units.features.filter(f => {
   const p = f.properties;
-  return p.WIKIDATAID && p.SOVEREIGNT !== p.GEOUNIT && !SKIP_UNITS.has(p.GEOUNIT)
+  return p.WIKIDATAID && !SKIP_IDS.has(p.WIKIDATAID) && p.SOVEREIGNT !== p.GEOUNIT && !SKIP_UNITS.has(p.GEOUNIT)
     && ['Dependency', 'Country', 'Geo unit', 'Disputed'].includes(p.TYPE)
     && !['Kosovo', 'Somaliland', 'Northern Cyprus', 'Western Sahara', 'Siachen Glacier'].includes(p.GEOUNIT);
 }).map(f => ({ type: 'Feature', geometry: f.geometry, properties: { id: f.properties.WIKIDATAID, sov: f.properties.SOVEREIGNT, sub: f.properties.SUBREGION } }));

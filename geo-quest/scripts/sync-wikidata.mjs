@@ -856,7 +856,7 @@ for (const p of [...rivers, ...lakes]) keep(p, [...(p.native ?? []).map(n => n.c
     if (!iso3 || !word) return null;
     const key = `${iso3}|${word}`;
     if (cache[key] && (cache[key].file || !stale(cache[key].date))) return cache[key].file;
-    if (asked >= 150) return null; // spread the first big run over a few nights
+    if (asked >= 150 || process.env.NO_AUDIO_SEARCH) return null; // spread the first big run over a few nights
     asked++;
     const u = `https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=50&format=json&srsearch=${encodeURIComponent(`intitle:"${word}" filetype:audio`)}`;
     let titles = [];

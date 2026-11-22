@@ -33,7 +33,11 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
-## v1.2: territories, insets, look-alikes
+## v1.2: World Heritage, territories, insets, look-alikes
+
+- **UNESCO World Heritage Sites** (241): from Wikidata (designation + UNESCO id). Ranked by how many Wikipedia
+  language editions cover them: 50 icons first, then the best-known 40 per continent. Gold diamond markers on the map;
+  photo → name, find it, site → country.
 
 - **Territories** (60): overseas regions, dependencies and autonomous territories — Martinique, Puerto Rico,
   Greenland, New Caledonia… — with "part of which country?" cards. Shapes: Natural Earth map units; facts: Wikidata.

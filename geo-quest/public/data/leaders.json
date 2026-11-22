@@ -1337,11 +1337,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mahamat%20D%C3%A9by.jpg?width=450",
-   "party": "Patriotic Salvation Movement",
-   "partyLong": "Patriotic Salvation Movement",
+   "party": "independent politician",
+   "partyLong": "independent politician",
    "wikidata": "Q16206405",
    "noFace": false,
-   "facts": "President of Chad · Patriotic Salvation Movement"
+   "facts": "President of Chad · Independent politician"
   },
   {
    "id": "L-Q657-prime-minister",
@@ -2173,11 +2173,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Prime%20Minister%20of%20Ethiopia%20Abiy%20Ahmed%20Ali%20(cropped).jpg?width=450",
-   "party": "Ethiopian People's Revolutionary Democratic Front",
-   "partyLong": "Ethiopian People's Revolutionary Democratic Front",
+   "party": "Oromo Democratic Party",
+   "partyLong": "Oromo Democratic Party",
    "wikidata": "Q50365049",
    "noFace": false,
-   "facts": "Prime Minister of Ethiopia · Ethiopian People's Revolutionary Democratic Front"
+   "facts": "Prime Minister of Ethiopia · Oromo Democratic Party"
   },
   {
    "id": "L-Q712-president",
@@ -3317,11 +3317,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Tokayev%20Address%20to%20the%20Nation%20(cropped).jpg?width=450",
-   "party": "Nur Otan",
-   "partyLong": "Nur Otan",
+   "party": "Amanat",
+   "partyLong": "Amanat",
    "wikidata": "Q200881",
    "noFace": false,
-   "facts": "President of Kazakhstan · Nur Otan"
+   "facts": "President of Kazakhstan · Amanat"
   },
   {
    "id": "L-Q232-prime-minister",
@@ -4085,11 +4085,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/President%20Mohamed%20Ould%20Ghazouani%20(2026-03-26)%20(cropped).jpg?width=450",
-   "party": "Equity Party",
-   "partyLong": "Equity Party",
+   "party": "Union for the Republic",
+   "partyLong": "Union for the Republic",
    "wikidata": "Q12241106",
    "noFace": false,
-   "facts": "President of Mauritania · Equity Party"
+   "facts": "President of Mauritania · Union for the Republic"
   },
   {
    "id": "L-Q1025-prime-minister",
@@ -5558,11 +5558,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%CA%BBauli%20Leuatea%20Schmidt%20in%202023.jpg?width=450",
-   "party": "Human Rights Protection Party",
-   "partyLong": "Human Rights Protection Party",
+   "party": "Faʻatuatua i le Atua Samoa ua Tasi",
+   "partyLong": "Faʻatuatua i le Atua Samoa ua Tasi",
    "wikidata": "Q16734600",
    "noFace": false,
-   "facts": "Prime Minister of Samoa · Human Rights Protection Party"
+   "facts": "Prime Minister of Samoa · Faʻatuatua i le Atua Samoa ua Tasi"
   },
   {
    "id": "L-Q1039-president",
@@ -6130,11 +6130,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dissanayake%202026.jpg?width=450",
-   "party": "Janatha Vimukthi Peramuna",
-   "partyLong": "Janatha Vimukthi Peramuna",
+   "party": "National People's Power",
+   "partyLong": "National People's Power",
    "wikidata": "Q4777855",
    "noFace": false,
-   "facts": "President of Sri Lanka · Janatha Vimukthi Peramuna"
+   "facts": "President of Sri Lanka · National People's Power"
   },
   {
    "id": "L-Q730-president",
@@ -6856,11 +6856,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Yamand%C3%BA%20Orsi.jpg?width=450",
-   "party": "Movement of Popular Participation",
-   "partyLong": "Movement of Popular Participation",
+   "party": "Broad Front",
+   "partyLong": "Broad Front",
    "wikidata": "Q19946921",
    "noFace": false,
-   "facts": "President of Uruguay · Movement of Popular Participation"
+   "facts": "President of Uruguay · Broad Front"
   },
   {
    "id": "L-Q265-president",

@@ -1,0 +1,1314 @@
+{
+ "source": "Wikidata (CC0)",
+ "places": [
+  {
+   "id": "Q5689",
+   "layer": "terr",
+   "name": "Åland",
+   "image": "Alands flag.jpg",
+   "lon": 20,
+   "lat": 60.25,
+   "wiki": "Åland",
+   "capitals": [
+    {
+     "id": "Q48329",
+     "name": "Mariehamn",
+     "preferred": false,
+     "role": null,
+     "image": "Mariehamn.jpg",
+     "lon": 19.944,
+     "lat": 60.099,
+     "wiki": "Mariehamn"
+    }
+   ],
+   "capitalAnswer": "Mariehamn",
+   "group": "t-atl",
+   "sovereign": "Q33",
+   "sovereignName": "Finland",
+   "terrStatus": "autonomous region",
+   "facts": "Autonomous region · Part of Finland"
+  },
+  {
+   "id": "Q16641",
+   "layer": "terr",
+   "name": "American Samoa",
+   "image": "AmericanSamoa.jpg",
+   "lon": -170.708,
+   "lat": -14.296,
+   "wiki": "American_Samoa",
+   "capitals": [
+    {
+     "id": "Q51678",
+     "name": "Pago Pago",
+     "preferred": false,
+     "role": null,
+     "image": "PagoPago Harbor NPS.jpg",
+     "lon": -170.701,
+     "lat": -14.279,
+     "wiki": "Pago_Pago,_American_Samoa"
+    }
+   ],
+   "capitalAnswer": "Pago Pago",
+   "group": "t-pac",
+   "sovereign": "Q30",
+   "sovereignName": "United States",
+   "terrStatus": "territory of the United States",
+   "facts": "Territory of the United States · Part of United States"
+  },
+  {
+   "id": "Q25228",
+   "layer": "terr",
+   "name": "Anguilla",
+   "image": "Anguilla - Location Map (2013) - AIA - UNOCHA.svg",
+   "lon": -63.049,
+   "lat": 18.227,
+   "wiki": "Anguilla",
+   "capitals": [
+    {
+     "id": "Q30994",
+     "name": "The Valley",
+     "preferred": false,
+     "role": null,
+     "image": "Wallblake House, The Valley.jpg",
+     "lon": -63.052,
+     "lat": 18.221,
+     "wiki": "The_Valley,_Anguilla"
+    }
+   ],
+   "capitalAnswer": "The Valley",
+   "group": "t-car",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "British Overseas Territories",
+   "facts": "British Overseas Territories · Part of United Kingdom"
+  },
+  {
+   "id": "Q21203",
+   "layer": "terr",
+   "name": "Aruba",
+   "image": "Aruba World Wind.jpg",
+   "lon": -69.975,
+   "lat": 12.515,
+   "wiki": "Aruba",
+   "capitals": [
+    {
+     "id": "Q131243",
+     "name": "Oranjestad",
+     "preferred": false,
+     "role": null,
+     "image": "ARUBA-oranjestad-hafen-1.jpg",
+     "lon": -70.036,
+     "lat": 12.519,
+     "wiki": "Oranjestad"
+    }
+   ],
+   "capitalAnswer": "Oranjestad",
+   "group": "t-car",
+   "sovereign": "Q29999",
+   "sovereignName": "Netherlands",
+   "terrStatus": "country of the Kingdom of the Netherlands",
+   "facts": "Country of the Kingdom of the Netherlands · Part of Netherlands"
+  },
+  {
+   "id": "Q18826",
+   "layer": "terr",
+   "name": "Autonomous Region of Bougainville",
+   "image": "Bagana Volcano.jpg",
+   "lon": 155,
+   "lat": -6,
+   "wiki": "Autonomous_Region_of_Bougainville",
+   "capitals": [
+    {
+     "id": "Q2482800",
+     "name": "Buka",
+     "preferred": true,
+     "role": null,
+     "image": "Buka Town-Sohano-Island-Buka Airport.png",
+     "lon": 154.673,
+     "lat": -5.422,
+     "wiki": "Buka,_Papua_New_Guinea"
+    }
+   ],
+   "capitalAnswer": "Buka",
+   "group": "t-pac",
+   "sovereign": "Q691",
+   "sovereignName": "Papua New Guinea",
+   "terrStatus": "autonomous administrative territorial entity",
+   "facts": "Autonomous administrative territorial entity · Part of Papua New Guinea"
+  },
+  {
+   "id": "Q25263",
+   "layer": "terr",
+   "name": "Azores",
+   "image": "Açores 2010-07-19 (5047589237).jpg",
+   "lon": -28.031,
+   "lat": 38.624,
+   "wiki": "Azores",
+   "capitals": [
+    {
+     "id": "Q193677",
+     "name": "Angra do Heroísmo",
+     "preferred": false,
+     "role": null,
+     "image": "Cidade de Angra do Heroísmo, ilha Terceira, Açores.jpg",
+     "lon": -27.215,
+     "lat": 38.656,
+     "wiki": "Angra_do_Heroísmo"
+    },
+    {
+     "id": "Q208149",
+     "name": "Ponta Delgada",
+     "preferred": false,
+     "role": null,
+     "image": "Açores 452A1547 (36260769535).jpg",
+     "lon": -25.67,
+     "lat": 37.74,
+     "wiki": "Ponta_Delgada"
+    },
+    {
+     "id": "Q990385",
+     "name": "Horta",
+     "preferred": false,
+     "role": null,
+     "image": "Vista de Horta desde el mirador de Nossa Senhora da Conceição, Isla de Fayal, Azores, Portugal, 2020-07-26, DD 13.jpg",
+     "lon": -28.633,
+     "lat": 38.533,
+     "wiki": "Horta,_Azores"
+    }
+   ],
+   "capitalAnswer": "Angra do Heroísmo and Ponta Delgada and Horta",
+   "group": "t-atl",
+   "sovereign": "Q45",
+   "sovereignName": "Portugal",
+   "terrStatus": "subregion of Portugal",
+   "facts": "Subregion of Portugal · Part of Portugal"
+  },
+  {
+   "id": "Q23635",
+   "layer": "terr",
+   "name": "Bermuda",
+   "image": "ISS017-E-10695 - View of Bermuda.jpg",
+   "lon": -64.74,
+   "lat": 32.32,
+   "wiki": "Bermuda",
+   "capitals": [
+    {
+     "id": "Q30985",
+     "name": "Hamilton",
+     "preferred": false,
+     "role": null,
+     "image": "Front Street, Hamilton, Bermuda.jpg",
+     "lon": -64.783,
+     "lat": 32.295,
+     "wiki": "Hamilton,_Bermuda"
+    }
+   ],
+   "capitalAnswer": "Hamilton",
+   "group": "t-atl",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "British Overseas Territories",
+   "facts": "British Overseas Territories · Part of United Kingdom"
+  },
+  {
+   "id": "Q43448",
+   "layer": "terr",
+   "name": "British Indian Ocean Territory",
+   "image": "Biot-map.png",
+   "lon": 71.5,
+   "lat": -6,
+   "wiki": "British_Indian_Ocean_Territory",
+   "capitals": [
+    {
+     "id": "Q184851",
+     "name": "Diego Garcia",
+     "preferred": false,
+     "role": null,
+     "image": "Diegogarcia.jpg",
+     "lon": 72.411,
+     "lat": -7.313,
+     "wiki": "Diego_Garcia"
+    }
+   ],
+   "capitalAnswer": "Diego Garcia",
+   "group": "t-ind",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "British Overseas Territories",
+   "facts": "British Overseas Territories · Part of United Kingdom"
+  },
+  {
+   "id": "Q25305",
+   "layer": "terr",
+   "name": "British Virgin Islands",
+   "image": "British Virgin Islands.jpg",
+   "lon": -64.54,
+   "lat": 18.445,
+   "wiki": "British_Virgin_Islands",
+   "capitals": [
+    {
+     "id": "Q179431",
+     "name": "Road Town",
+     "preferred": false,
+     "role": null,
+     "image": "Roadtown, Tortola.jpg",
+     "lon": -64.617,
+     "lat": 18.433,
+     "wiki": "Road_Town"
+    }
+   ],
+   "capitalAnswer": "Road Town",
+   "group": "t-car",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "British Overseas Territories",
+   "facts": "British Overseas Territories · Part of United Kingdom"
+  },
+  {
+   "id": "Q27561",
+   "layer": "terr",
+   "name": "Caribbean Netherlands",
+   "image": "Bonaire (34769022732).jpg",
+   "lon": -68.233,
+   "lat": 12.183,
+   "wiki": "Caribbean_Netherlands",
+   "capitals": [],
+   "capitalAnswer": null,
+   "group": "t-car",
+   "sovereign": "Q29999",
+   "sovereignName": "Netherlands",
+   "terrStatus": null,
+   "facts": "Part of Netherlands"
+  },
+  {
+   "id": "Q5785",
+   "layer": "terr",
+   "name": "Cayman Islands",
+   "image": "ISS014-E-20406 - View of the Cayman Islands.jpg",
+   "lon": -80.5,
+   "lat": 19.5,
+   "wiki": "Cayman_Islands",
+   "capitals": [
+    {
+     "id": "Q172996",
+     "name": "George Town",
+     "preferred": false,
+     "role": null,
+     "image": "George Town, Cayman Islands - panoramio (1).jpg",
+     "lon": -81.382,
+     "lat": 19.296,
+     "wiki": "George_Town,_Cayman_Islands"
+    }
+   ],
+   "capitalAnswer": "George Town",
+   "group": "t-car",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "British Overseas Territories",
+   "facts": "British Overseas Territories · Part of United Kingdom"
+  },
+  {
+   "id": "Q31063",
+   "layer": "terr",
+   "name": "Christmas Island",
+   "image": "Crab migration extra - chris bray-1.jpg",
+   "lon": 105.627,
+   "lat": -10.49,
+   "wiki": "Christmas_Island",
+   "capitals": [
+    {
+     "id": "Q30980",
+     "name": "Flying Fish Cove",
+     "preferred": false,
+     "role": null,
+     "image": "Flying Fish Cove.jpg",
+     "lon": 105.678,
+     "lat": -10.422,
+     "wiki": "Flying_Fish_Cove"
+    }
+   ],
+   "capitalAnswer": "Flying Fish Cove",
+   "group": "t-ind",
+   "sovereign": "Q408",
+   "sovereignName": "Australia",
+   "terrStatus": "external territory of Australia",
+   "facts": "External territory of Australia · Part of Australia"
+  },
+  {
+   "id": "Q36004",
+   "layer": "terr",
+   "name": "Cocos (Keeling) Islands",
+   "image": "Cocos (Keeling) Islands (32206670676).jpg",
+   "lon": 96.895,
+   "lat": -12.117,
+   "wiki": "Cocos_(Keeling)_Islands",
+   "capitals": [
+    {
+     "id": "Q48675",
+     "name": "West Island",
+     "preferred": false,
+     "role": null,
+     "image": "Cocos (Keeling) Islands Airport - RWY33.jpg",
+     "lon": 96.828,
+     "lat": -12.187,
+     "wiki": "West_Island,_Cocos_(Keeling)_Islands"
+    }
+   ],
+   "capitalAnswer": "West Island",
+   "group": "t-ind",
+   "sovereign": "Q408",
+   "sovereignName": "Australia",
+   "terrStatus": "external territory of Australia",
+   "facts": "External territory of Australia · Part of Australia"
+  },
+  {
+   "id": "Q26988",
+   "layer": "terr",
+   "name": "Cook Islands",
+   "image": "ISS006-E-38664 - View of the Cook Islands.jpg",
+   "lon": -159.8,
+   "lat": -21.2,
+   "wiki": "Cook_Islands",
+   "capitals": [
+    {
+     "id": "Q170482",
+     "name": "Avarua",
+     "preferred": false,
+     "role": null,
+     "image": "Para o Tane Palace.jpg",
+     "lon": -159.771,
+     "lat": -21.207,
+     "wiki": "Avarua"
+    }
+   ],
+   "capitalAnswer": "Avarua",
+   "group": "t-pac",
+   "sovereign": "Q664",
+   "sovereignName": "New Zealand",
+   "terrStatus": null,
+   "facts": "Part of New Zealand"
+  },
+  {
+   "id": "Q25279",
+   "layer": "terr",
+   "name": "Curaçao",
+   "image": "Facades of Handelskade, Willemstad, Curaçao - February 2020.jpg",
+   "lon": -69,
+   "lat": 12.2,
+   "wiki": "Curaçao",
+   "capitals": [
+    {
+     "id": "Q132679",
+     "name": "Willemstad",
+     "preferred": false,
+     "role": null,
+     "image": "Handelskade in Willemstad.jpg",
+     "lon": -68.935,
+     "lat": 12.108,
+     "wiki": "Willemstad"
+    }
+   ],
+   "capitalAnswer": "Willemstad",
+   "group": "t-car",
+   "sovereign": "Q29999",
+   "sovereignName": "Netherlands",
+   "terrStatus": "country of the Kingdom of the Netherlands",
+   "facts": "Country of the Kingdom of the Netherlands · Part of Netherlands"
+  },
+  {
+   "id": "Q9648",
+   "layer": "terr",
+   "name": "Falkland Islands",
+   "image": "Falkland-Islands-Terra-2011-01-23-250m.jpg",
+   "lon": -59.22,
+   "lat": -51.73,
+   "wiki": "Falkland_Islands",
+   "capitals": [
+    {
+     "id": "Q12245",
+     "name": "Stanley",
+     "preferred": false,
+     "role": null,
+     "image": "Aerial photo Port Stanley.jpg",
+     "lon": -57.85,
+     "lat": -51.694,
+     "wiki": "Stanley,_Falkland_Islands"
+    }
+   ],
+   "capitalAnswer": "Stanley",
+   "group": "t-atl",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "British Overseas Territories",
+   "facts": "British Overseas Territories · Part of United Kingdom"
+  },
+  {
+   "id": "Q4628",
+   "layer": "terr",
+   "name": "Faroe Islands",
+   "image": "Faroe Islands by Sentinel-2.jpg",
+   "lon": -6.844,
+   "lat": 61.97,
+   "wiki": "Faroe_Islands",
+   "capitals": [
+    {
+     "id": "Q10704",
+     "name": "Tórshavn",
+     "preferred": false,
+     "role": null,
+     "image": "Tinganes 57.jpg",
+     "lon": -6.771,
+     "lat": 62.01,
+     "wiki": "Tórshavn"
+    }
+   ],
+   "capitalAnswer": "Tórshavn",
+   "group": "t-atl",
+   "sovereign": "Q35",
+   "sovereignName": "Denmark",
+   "terrStatus": "autonomous country within the Kingdom of Denmark",
+   "facts": "Autonomous country within the Kingdom of Denmark · Part of Denmark"
+  },
+  {
+   "id": "Q3769",
+   "layer": "terr",
+   "name": "French Guiana",
+   "image": "ISS009-E-21542 - View of French Guiana.jpg",
+   "lon": -53,
+   "lat": 4,
+   "wiki": "French_Guiana",
+   "capitals": [
+    {
+     "id": "Q44401",
+     "name": "Cayenne",
+     "preferred": false,
+     "role": null,
+     "image": "Cayenne av Général-de-Gaulle.jpg",
+     "lon": -52.335,
+     "lat": 4.939,
+     "wiki": "Cayenne"
+    }
+   ],
+   "capitalAnswer": "Cayenne",
+   "group": "t-atl",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "region of France",
+   "facts": "Region of France · Part of France"
+  },
+  {
+   "id": "Q30971",
+   "layer": "terr",
+   "name": "French Polynesia",
+   "image": "Archipel des Tuamotu.jpg",
+   "lon": -149.4,
+   "lat": -17.7,
+   "wiki": "French_Polynesia",
+   "capitals": [
+    {
+     "id": "Q130800",
+     "name": "Papeete",
+     "preferred": false,
+     "role": null,
+     "image": "Papeete - Marina Taina.JPG",
+     "lon": -149.569,
+     "lat": -17.54,
+     "wiki": "Papeete"
+    }
+   ],
+   "capitalAnswer": "Papeete",
+   "group": "t-pac",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "overseas collectivity of France",
+   "facts": "Overseas collectivity of France · Part of France"
+  },
+  {
+   "id": "Q129003",
+   "layer": "terr",
+   "name": "French Southern and Antarctic Lands",
+   "image": null,
+   "lon": 67,
+   "lat": -43,
+   "wiki": "French_Southern_and_Antarctic_Lands",
+   "capitals": [
+    {
+     "id": "Q839559",
+     "name": "Port-aux-Français",
+     "preferred": false,
+     "role": null,
+     "image": "Port aux Français.JPG",
+     "lon": 70.217,
+     "lat": -49.35,
+     "wiki": "Port-aux-Français"
+    }
+   ],
+   "capitalAnswer": "Port-aux-Français",
+   "group": "t-ind",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "dependent territory",
+   "facts": "Dependent territory · Part of France"
+  },
+  {
+   "id": "Q223",
+   "layer": "terr",
+   "name": "Greenland",
+   "image": "Greenland 42.74746W 71.57394N.jpg",
+   "lon": -40,
+   "lat": 72,
+   "wiki": "Greenland",
+   "capitals": [
+    {
+     "id": "Q226",
+     "name": "Nuuk",
+     "preferred": false,
+     "role": null,
+     "image": "Nuuk - capital of Greenland - panoramio.jpg",
+     "lon": -51.733,
+     "lat": 64.175,
+     "wiki": "Nuuk"
+    }
+   ],
+   "capitalAnswer": "Nuuk",
+   "group": "t-atl",
+   "sovereign": "Q35",
+   "sovereignName": "Denmark",
+   "terrStatus": "dependent territory",
+   "facts": "Dependent territory · Part of Denmark"
+  },
+  {
+   "id": "Q17012",
+   "layer": "terr",
+   "name": "Guadeloupe",
+   "image": "Pointe de la Petite-Tortue.JPG",
+   "lon": -61.5,
+   "lat": 16.25,
+   "wiki": "Guadeloupe",
+   "capitals": [
+    {
+     "id": "Q167024",
+     "name": "Basse-Terre",
+     "preferred": false,
+     "role": null,
+     "image": "Monts Caraïbes depuis le Fort Louis Delgrès à Basse-Terre.jpg",
+     "lon": -61.733,
+     "lat": 15.997,
+     "wiki": "Basse-Terre"
+    }
+   ],
+   "capitalAnswer": "Basse-Terre",
+   "group": "t-car",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "region of France",
+   "facts": "Region of France · Part of France"
+  },
+  {
+   "id": "Q16635",
+   "layer": "terr",
+   "name": "Guam",
+   "image": "Guam satellite photo map.jpg",
+   "lon": 144.8,
+   "lat": 13.5,
+   "wiki": "Guam",
+   "capitals": [
+    {
+     "id": "Q30988",
+     "name": "Hagåtña",
+     "preferred": false,
+     "role": null,
+     "image": "Hagatna from Fort Santa Agueda.JPG",
+     "lon": 144.75,
+     "lat": 13.483,
+     "wiki": "Hagåtña,_Guam"
+    }
+   ],
+   "capitalAnswer": "Hagåtña",
+   "group": "t-pac",
+   "sovereign": "Q30",
+   "sovereignName": "United States",
+   "terrStatus": "territory of the United States",
+   "facts": "Territory of the United States · Part of United States"
+  },
+  {
+   "id": "Q25230",
+   "layer": "terr",
+   "name": "Guernsey",
+   "image": "Guernsey from the air - geograph.ci - 371.jpg",
+   "lon": -2.583,
+   "lat": 49.45,
+   "wiki": "Bailiwick_of_Guernsey",
+   "capitals": [
+    {
+     "id": "Q174262",
+     "name": "Saint Peter Port",
+     "preferred": false,
+     "role": null,
+     "image": "StPeterPortSouth.jpg",
+     "lon": -2.552,
+     "lat": 49.46,
+     "wiki": "Saint_Peter_Port"
+    }
+   ],
+   "capitalAnswer": "Saint Peter Port",
+   "group": "t-atl",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "Crown Dependencies",
+   "facts": "Crown Dependencies · Part of United Kingdom"
+  },
+  {
+   "id": "Q9676",
+   "layer": "terr",
+   "name": "Isle of Man",
+   "image": "Isle of Man by Sentinel-2.jpg",
+   "lon": -4.525,
+   "lat": 54.235,
+   "wiki": "Isle_of_Man",
+   "capitals": [
+    {
+     "id": "Q18569",
+     "name": "Douglas",
+     "preferred": false,
+     "role": null,
+     "image": "The View From Douglas Head, Isle Of Man..jpg",
+     "lon": -4.478,
+     "lat": 54.15,
+     "wiki": "Douglas,_Isle_of_Man"
+    }
+   ],
+   "capitalAnswer": "Douglas",
+   "group": "t-atl",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "Crown Dependencies",
+   "facts": "Crown Dependencies · Part of United Kingdom"
+  },
+  {
+   "id": "Q14056",
+   "layer": "terr",
+   "name": "Jan Mayen",
+   "image": "Beerenberg JanMayen.JPG",
+   "lon": -8.534,
+   "lat": 70.983,
+   "wiki": "Jan_Mayen",
+   "capitals": [],
+   "capitalAnswer": null,
+   "group": "t-atl",
+   "sovereign": "Q20",
+   "sovereignName": "Norway",
+   "terrStatus": "integral overseas territory",
+   "facts": "Integral overseas territory · Part of Norway"
+  },
+  {
+   "id": "Q785",
+   "layer": "terr",
+   "name": "Jersey",
+   "image": "Jersey by Sentinel-2.jpg",
+   "lon": -2.11,
+   "lat": 49.19,
+   "wiki": "Jersey",
+   "capitals": [
+    {
+     "id": "Q147738",
+     "name": "Saint Helier",
+     "preferred": false,
+     "role": null,
+     "image": "St Helier from Fort Regent 2013.JPG",
+     "lon": -2.11,
+     "lat": 49.186,
+     "wiki": "St_Helier"
+    }
+   ],
+   "capitalAnswer": "Saint Helier",
+   "group": "t-atl",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "Crown Dependencies",
+   "facts": "Crown Dependencies · Part of United Kingdom"
+  },
+  {
+   "id": "Q26253",
+   "layer": "terr",
+   "name": "Madeira",
+   "image": "Madeira 71.jpg",
+   "lon": -17,
+   "lat": 32.75,
+   "wiki": "Madeira",
+   "capitals": [
+    {
+     "id": "Q25444",
+     "name": "Funchal",
+     "preferred": false,
+     "role": null,
+     "image": "Vista de Funchal desde Pico dos Barcelos, Madeira, Portugal, 2019-05-29, DD 37-44 PAN.jpg",
+     "lon": -16.917,
+     "lat": 32.65,
+     "wiki": "Funchal"
+    }
+   ],
+   "capitalAnswer": "Funchal",
+   "group": "t-atl",
+   "sovereign": "Q45",
+   "sovereignName": "Portugal",
+   "terrStatus": "subregion of Portugal",
+   "facts": "Subregion of Portugal · Part of Portugal"
+  },
+  {
+   "id": "Q17054",
+   "layer": "terr",
+   "name": "Martinique",
+   "image": "Martinique 14.6346N 61.0051W Landsat7.jpg",
+   "lon": -61.015,
+   "lat": 14.65,
+   "wiki": "Martinique",
+   "capitals": [
+    {
+     "id": "Q81621",
+     "name": "Fort-de-France",
+     "preferred": false,
+     "role": null,
+     "image": "Fort-de-france-harbor.jpg",
+     "lon": -61.067,
+     "lat": 14.6,
+     "wiki": "Fort-de-France"
+    }
+   ],
+   "capitalAnswer": "Fort-de-France",
+   "group": "t-car",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "region of France",
+   "facts": "Region of France · Part of France"
+  },
+  {
+   "id": "Q17063",
+   "layer": "terr",
+   "name": "Mayotte",
+   "image": "Mayotte, vue par Sentinel 2 (cropped).jpg",
+   "lon": 45.138,
+   "lat": -12.843,
+   "wiki": "Mayotte",
+   "capitals": [
+    {
+     "id": "Q132676",
+     "name": "Mamoudzou",
+     "preferred": false,
+     "role": null,
+     "image": "Mamoudzou (10029936275).jpg",
+     "lon": 45.232,
+     "lat": -12.781,
+     "wiki": "Mamoudzou"
+    }
+   ],
+   "capitalAnswer": "Mamoudzou",
+   "group": "t-ind",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "region of France",
+   "facts": "Region of France · Part of France"
+  },
+  {
+   "id": "Q13353",
+   "layer": "terr",
+   "name": "Montserrat",
+   "image": "From Garibaldi Hill (5809292121) (2).jpg",
+   "lon": -62.2,
+   "lat": 16.75,
+   "wiki": "Montserrat",
+   "capitals": [
+    {
+     "id": "Q31006",
+     "name": "Brades",
+     "preferred": false,
+     "role": null,
+     "image": "WelcomeCenterBrades.jpg",
+     "lon": -62.211,
+     "lat": 16.793,
+     "wiki": "Brades"
+    },
+    {
+     "id": "Q30990",
+     "name": "Plymouth",
+     "preferred": false,
+     "role": null,
+     "image": "Plymouth Montserrat Heli.jpg",
+     "lon": -62.216,
+     "lat": 16.706,
+     "wiki": "Plymouth,_Montserrat"
+    }
+   ],
+   "capitalAnswer": "Brades and Plymouth",
+   "group": "t-car",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "British Overseas Territories",
+   "facts": "British Overseas Territories · Part of United Kingdom"
+  },
+  {
+   "id": "Q33788",
+   "layer": "terr",
+   "name": "New Caledonia",
+   "image": "New Caledonia after the passage of tropical cyclone Niran.jpg",
+   "lon": 165.3,
+   "lat": -21.25,
+   "wiki": "New_Caledonia",
+   "capitals": [
+    {
+     "id": "Q9733",
+     "name": "Nouméa",
+     "preferred": false,
+     "role": null,
+     "image": "NouméaCentre.jpg",
+     "lon": 166.45,
+     "lat": -22.267,
+     "wiki": "Nouméa"
+    }
+   ],
+   "capitalAnswer": "Nouméa",
+   "group": "t-pac",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "dependent territory",
+   "facts": "Dependent territory · Part of France"
+  },
+  {
+   "id": "Q34020",
+   "layer": "terr",
+   "name": "Niue",
+   "image": "Niue ISS004.jpg",
+   "lon": -169.917,
+   "lat": -19.05,
+   "wiki": "Niue",
+   "capitals": [
+    {
+     "id": "Q30966",
+     "name": "Alofi",
+     "preferred": false,
+     "role": null,
+     "image": "Main street of Alofi.jpg",
+     "lon": -169.921,
+     "lat": -19.056,
+     "wiki": "Alofi"
+    }
+   ],
+   "capitalAnswer": "Alofi",
+   "group": "t-pac",
+   "sovereign": "Q664",
+   "sovereignName": "New Zealand",
+   "terrStatus": null,
+   "facts": "Part of New Zealand"
+  },
+  {
+   "id": "Q31057",
+   "layer": "terr",
+   "name": "Norfolk Island",
+   "image": "Dusk on Norfolk Island.jpg",
+   "lon": 167.95,
+   "lat": -29.033,
+   "wiki": "Norfolk_Island",
+   "capitals": [
+    {
+     "id": "Q30963",
+     "name": "Kingston",
+     "preferred": false,
+     "role": null,
+     "image": "Norfolk Island jail1.jpg",
+     "lon": 167.967,
+     "lat": -29.05,
+     "wiki": "Kingston,_Norfolk_Island"
+    }
+   ],
+   "capitalAnswer": "Kingston",
+   "group": "t-pac",
+   "sovereign": "Q408",
+   "sovereignName": "Australia",
+   "terrStatus": "territory of Australia",
+   "facts": "Territory of Australia · Part of Australia"
+  },
+  {
+   "id": "Q16644",
+   "layer": "terr",
+   "name": "Northern Mariana Islands",
+   "image": null,
+   "lon": 145.78,
+   "lat": 16.705,
+   "wiki": "Northern_Mariana_Islands",
+   "capitals": [
+    {
+     "id": "Q49755159",
+     "name": "Saipan",
+     "preferred": false,
+     "role": null,
+     "image": null,
+     "lon": 145.755,
+     "lat": 15.212,
+     "wiki": null
+    }
+   ],
+   "capitalAnswer": "Saipan",
+   "group": "t-pac",
+   "sovereign": "Q30",
+   "sovereignName": "United States",
+   "terrStatus": "commonwealth",
+   "facts": "Commonwealth · Part of United States"
+  },
+  {
+   "id": "Q35672",
+   "layer": "terr",
+   "name": "Pitcairn Islands",
+   "image": "Stpaulspoint.jpg",
+   "lon": -130.105,
+   "lat": -25.068,
+   "wiki": "Pitcairn_Islands",
+   "capitals": [
+    {
+     "id": "Q48273",
+     "name": "Adamstown",
+     "preferred": false,
+     "role": null,
+     "image": "Adamstown1.jpg",
+     "lon": -130.1,
+     "lat": -25.067,
+     "wiki": "Adamstown,_Pitcairn_Islands"
+    }
+   ],
+   "capitalAnswer": "Adamstown",
+   "group": "t-pac",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "British Overseas Territories",
+   "facts": "British Overseas Territories · Part of United Kingdom"
+  },
+  {
+   "id": "Q1183",
+   "layer": "terr",
+   "name": "Puerto Rico",
+   "image": null,
+   "lon": -66.5,
+   "lat": 18.25,
+   "wiki": "Puerto_Rico",
+   "capitals": [
+    {
+     "id": "Q41211",
+     "name": "San Juan",
+     "preferred": false,
+     "role": null,
+     "image": "San Juan, Puerto Rico (2529298606).jpg",
+     "lon": -66.117,
+     "lat": 18.465,
+     "wiki": "San_Juan,_Puerto_Rico"
+    }
+   ],
+   "capitalAnswer": "San Juan",
+   "group": "t-car",
+   "sovereign": "Q30",
+   "sovereignName": "United States",
+   "terrStatus": "commonwealth",
+   "facts": "Commonwealth · Part of United States"
+  },
+  {
+   "id": "Q17070",
+   "layer": "terr",
+   "name": "Réunion",
+   "image": "L'île de la Réunion vue par le satellite Sentinel-2 (cropped).jpg",
+   "lon": 55.532,
+   "lat": -21.114,
+   "wiki": "Réunion",
+   "capitals": [
+    {
+     "id": "Q47045",
+     "name": "Saint-Denis",
+     "preferred": false,
+     "role": null,
+     "image": "SaintDenisReunion002.jpg",
+     "lon": 55.448,
+     "lat": -20.879,
+     "wiki": "Saint-Denis,_Réunion"
+    }
+   ],
+   "capitalAnswer": "Saint-Denis",
+   "group": "t-ind",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "region of France",
+   "facts": "Region of France · Part of France"
+  },
+  {
+   "id": "Q25362",
+   "layer": "terr",
+   "name": "Saint Barthélemy",
+   "image": "Saint Barth - Vue panoramique - Octobre 2009.jpg",
+   "lon": -62.834,
+   "lat": 17.898,
+   "wiki": "Saint_Barthélemy",
+   "capitals": [
+    {
+     "id": "Q34112",
+     "name": "Gustavia",
+     "preferred": false,
+     "role": null,
+     "image": "Gustavia Harbor, Saint-Barthélemy.jpg",
+     "lon": -62.849,
+     "lat": 17.899,
+     "wiki": "Gustavia"
+    }
+   ],
+   "capitalAnswer": "Gustavia",
+   "group": "t-car",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "overseas collectivity of France",
+   "facts": "Overseas collectivity of France · Part of France"
+  },
+  {
+   "id": "Q34497",
+   "layer": "terr",
+   "name": "Saint Helena",
+   "image": "Saint Helena Island.jpg",
+   "lon": -5.715,
+   "lat": -15.965,
+   "wiki": "Saint_Helena",
+   "capitals": [],
+   "capitalAnswer": null,
+   "group": "t-atl",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "crown colony",
+   "facts": "Crown colony · Part of United Kingdom"
+  },
+  {
+   "id": "Q34617",
+   "layer": "terr",
+   "name": "Saint Pierre and Miquelon",
+   "image": "Saint-PierreEtMiquelonFromTheISS.jpg",
+   "lon": -56.3,
+   "lat": 46.85,
+   "wiki": "Saint_Pierre_and_Miquelon",
+   "capitals": [
+    {
+     "id": "Q185678",
+     "name": "Saint-Pierre",
+     "preferred": false,
+     "role": null,
+     "image": "3dansleportdestpierre2.jpg",
+     "lon": -56.178,
+     "lat": 46.778,
+     "wiki": "Saint-Pierre,_Saint_Pierre_and_Miquelon"
+    }
+   ],
+   "capitalAnswer": "Saint-Pierre",
+   "group": "t-atl",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "overseas collectivity of France",
+   "facts": "Overseas collectivity of France · Part of France"
+  },
+  {
+   "id": "Q126125",
+   "layer": "terr",
+   "name": "Saint-Martin",
+   "image": null,
+   "lon": -63.06,
+   "lat": 18.075,
+   "wiki": "Collectivity_of_Saint_Martin",
+   "capitals": [
+    {
+     "id": "Q200605",
+     "name": "Marigot",
+     "preferred": false,
+     "role": null,
+     "image": "Marigot 2.jpg",
+     "lon": -63.085,
+     "lat": 18.067,
+     "wiki": "Marigot,_Saint_Martin"
+    }
+   ],
+   "capitalAnswer": "Marigot",
+   "group": "t-car",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "overseas collectivity of France",
+   "facts": "Overseas collectivity of France · Part of France"
+  },
+  {
+   "id": "Q26273",
+   "layer": "terr",
+   "name": "Sint Maarten",
+   "image": "Philipsburg and the Great Bay, Sint Maarten, Caribbean.jpg",
+   "lon": -63.068,
+   "lat": 18.032,
+   "wiki": "Sint_Maarten",
+   "capitals": [
+    {
+     "id": "Q30958",
+     "name": "Philipsburg",
+     "preferred": false,
+     "role": null,
+     "image": "St. Maarten Philipsburg Great Bay Beach.jpg",
+     "lon": -63.043,
+     "lat": 18.024,
+     "wiki": "Philipsburg,_Sint_Maarten"
+    }
+   ],
+   "capitalAnswer": "Philipsburg",
+   "group": "t-car",
+   "sovereign": "Q29999",
+   "sovereignName": "Netherlands",
+   "terrStatus": "country of the Kingdom of the Netherlands",
+   "facts": "Country of the Kingdom of the Netherlands · Part of Netherlands"
+  },
+  {
+   "id": "Q35086",
+   "layer": "terr",
+   "name": "South Georgia and the South Sandwich Islands",
+   "image": "South Georgia Island as seen by Sentinel-2.jpg",
+   "lon": -36.75,
+   "lat": -54.25,
+   "wiki": "South_Georgia_and_the_South_Sandwich_Islands",
+   "capitals": [
+    {
+     "id": "Q393878",
+     "name": "King Edward Point",
+     "preferred": true,
+     "role": null,
+     "image": "King Edward Point on South Georgia (5663012751).jpg",
+     "lon": -36.487,
+     "lat": -54.282,
+     "wiki": "King_Edward_Point"
+    }
+   ],
+   "capitalAnswer": "King Edward Point",
+   "group": "t-atl",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "disputed territory",
+   "facts": "Disputed territory · Part of United Kingdom"
+  },
+  {
+   "id": "Q25231",
+   "layer": "terr",
+   "name": "Svalbard",
+   "image": "Svalbard (MODIS).jpg",
+   "lon": 15.864,
+   "lat": 78.157,
+   "wiki": "Svalbard",
+   "capitals": [
+    {
+     "id": "Q25923",
+     "name": "Longyearbyen",
+     "preferred": false,
+     "role": null,
+     "image": "Longyearbyen colourful homes.jpg",
+     "lon": 15.633,
+     "lat": 78.217,
+     "wiki": "Longyearbyen"
+    }
+   ],
+   "capitalAnswer": "Longyearbyen",
+   "group": "t-atl",
+   "sovereign": "Q20",
+   "sovereignName": "Norway",
+   "terrStatus": "integral overseas territory",
+   "facts": "Integral overseas territory · Part of Norway"
+  },
+  {
+   "id": "Q36823",
+   "layer": "terr",
+   "name": "Tokelau",
+   "image": "Landscape-tokelau-2011-photo-new-zealand-ministry-of-foreign-affairs-and-trade 12779814375 o.jpg",
+   "lon": -171.833,
+   "lat": -9.167,
+   "wiki": "Tokelau",
+   "capitals": [],
+   "capitalAnswer": null,
+   "group": "t-pac",
+   "sovereign": "Q664",
+   "sovereignName": "New Zealand",
+   "terrStatus": "dependent territory",
+   "facts": "Dependent territory · Part of New Zealand"
+  },
+  {
+   "id": "Q18221",
+   "layer": "terr",
+   "name": "Turks and Caicos Islands",
+   "image": "Turks & Caicos (12173672765).jpg",
+   "lon": -71.8,
+   "lat": 21.78,
+   "wiki": "Turks_and_Caicos_Islands",
+   "capitals": [
+    {
+     "id": "Q34205",
+     "name": "Cockburn Town",
+     "preferred": false,
+     "role": null,
+     "image": "TC-grand-turk-cockburn-strand.jpg",
+     "lon": -71.141,
+     "lat": 21.46,
+     "wiki": "Cockburn_Town"
+    }
+   ],
+   "capitalAnswer": "Cockburn Town",
+   "group": "t-car",
+   "sovereign": "Q145",
+   "sovereignName": "United Kingdom",
+   "terrStatus": "British Overseas Territories",
+   "facts": "British Overseas Territories · Part of United Kingdom"
+  },
+  {
+   "id": "Q11703",
+   "layer": "terr",
+   "name": "United States Virgin Islands",
+   "image": "St. John, U.S. Virgin Islands.jpg",
+   "lon": -64.833,
+   "lat": 18.333,
+   "wiki": "United_States_Virgin_Islands",
+   "capitals": [
+    {
+     "id": "Q51681",
+     "name": "Charlotte Amalie",
+     "preferred": false,
+     "role": null,
+     "image": "View of St. Thomas.jpg",
+     "lon": -64.95,
+     "lat": 18.35,
+     "wiki": "Charlotte_Amalie,_U.S._Virgin_Islands"
+    }
+   ],
+   "capitalAnswer": "Charlotte Amalie",
+   "group": "t-car",
+   "sovereign": "Q30",
+   "sovereignName": "United States",
+   "terrStatus": "territory of the United States",
+   "facts": "Territory of the United States · Part of United States"
+  },
+  {
+   "id": "Q35555",
+   "layer": "terr",
+   "name": "Wallis and Futuna",
+   "image": null,
+   "lon": -178.109,
+   "lat": -14.302,
+   "wiki": "Wallis_and_Futuna",
+   "capitals": [
+    {
+     "id": "Q31002",
+     "name": "Mata-Utu",
+     "preferred": false,
+     "role": null,
+     "image": "Mata-Utu seen from a drone (Wallis and Futuna).png",
+     "lon": -176.174,
+     "lat": -13.283,
+     "wiki": "Mata_Utu"
+    }
+   ],
+   "capitalAnswer": "Mata-Utu",
+   "group": "t-pac",
+   "sovereign": "Q142",
+   "sovereignName": "France",
+   "terrStatus": "overseas collectivity of France",
+   "facts": "Overseas collectivity of France · Part of France"
+  }
+ ]
+}
