@@ -192,3 +192,22 @@ export function shuffle<T>(a: T[]): T[] {
 /** Plural noun and icon for a layer, for headings and lists. */
 export const LAYER_NOUN: Record<Place['layer'], string> = { country: 'countries', water: 'waters', river: 'rivers', lake: 'lakes', cn: 'divisions' };
 export const LAYER_ICON: Record<Place['layer'], IconName> = { country: 'globe', water: 'wave', river: 'river', lake: 'drop', cn: 'map' };
+
+// ---- question directions ------------------------------------------------------------
+/** "What is this?" — you're shown the place/flag/capital and name it.
+ *  "Where / what is it?" — you're given the name and find it, or name its capital/flag. */
+export const DIRECTIONS: { id: 'recognise' | 'recall'; name: string; hint: string; kinds: Kind[] }[] = [
+  { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse'] },
+  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse'] },
+];
+export const KIND_SHORT: Record<Kind, string> = {
+  identify: 'Map → name', flag: 'Flag → country', capitalReverse: 'Capital → country',
+  locate: 'Name → map', capitalLocate: 'Capital → map', capital: 'Country → capital', flagReverse: 'Country → flag',
+};
+
+/** The skill-tree node a card belongs to. */
+export function nodeOfCard(ref: CardRef): string {
+  const g = groupOf(ref.country);
+  const topic: Topic = ref.kind.startsWith('capital') ? 'capitals' : ref.kind.startsWith('flag') ? 'flags' : g.layer === 'country' ? 'countries' : 'places';
+  return nodeId(g.id, topic);
+}

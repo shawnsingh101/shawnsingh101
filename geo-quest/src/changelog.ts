@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '0.9.0', notes: '“Start learning” launches that deck · pick decks per session · question directions on/off' },
   { version: '0.8.3', notes: 'Places near the map’s edge (like the Yukon) no longer get split in two when revealed' },
   { version: '0.8.2', notes: 'Fly-to zoom a little slower (0.8s)' },
   { version: '0.8.1', notes: 'Quick, smooth fly-to zoom when you reveal where something is' },

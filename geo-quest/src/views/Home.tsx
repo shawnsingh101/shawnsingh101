@@ -1,6 +1,8 @@
-import { buildQueue, learnMore, streak, today, unseenCount, useProgress, nodeStats, update } from '../srs';
+import { buildQueue, learnMore, sessionDecks, streak, today, unseenCount, useProgress, nodeStats, update } from '../srs';
 import { groupById, nodeId, parseNode, slotOf } from '../cards';
 import { Icon } from '../components/Icons';
+import { QuestionTypes } from '../components/QuestionTypes';
+import { useState } from 'react';
 import type { Dataset } from '../types';
 
 export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: () => void; goTree: () => void; goQuiz: () => void }) {
@@ -11,6 +13,16 @@ export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: ()
   const nothingActive = p.active.length === 0;
   const more = unseenCount(ds, p);
   const caughtUp = !q.due.length && !q.fresh.length;
+  const [showTypes, setShowTypes] = useState(false);
+  // Which decks this session covers (ticked in "Learning now"); null = all of them.
+  const picked = new Set(sessionDecks(p));
+  const partial = p.settings.sessionNodes !== null && picked.size < p.active.length;
+  const pick = (n: string) => update(x => {
+    const cur = new Set(sessionDecks(x));
+    if (cur.has(n)) cur.delete(n); else cur.add(n);
+    x.settings.sessionNodes = cur.size === x.active.length ? null : [...cur];
+  });
+  const kindsOff = p.settings.kindsOff.length;
 
   return (
     <div className="home">
@@ -34,31 +46,42 @@ export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: ()
         <div className="row">
           {nothingActive
             ? <button className="btn primary big" onClick={goTree}>Choose what to learn →</button>
+            : picked.size === 0
+              ? <span className="caught-up muted">Tick at least one deck below</span>
             : caughtUp
               ? <>
                   <span className="caught-up"><Icon name="check" /> All caught up</span>
                   {more > 0 && <button className="btn primary" onClick={() => { learnMore(10); onStudy(); }}><Icon name="plus" /> Learn {Math.min(10, more)} more</button>}
                 </>
-              : <button className="btn primary big" onClick={onStudy}><Icon name="play" /> Start studying</button>}
+              : <button className="btn primary big" onClick={onStudy}><Icon name="play" /> Start studying{partial ? ` (${picked.size} deck${picked.size === 1 ? '' : 's'})` : ''}</button>}
           <button className="btn" onClick={goQuiz}><Icon name="target" /> Practice quiz</button>
+          <button className={'btn' + (showTypes ? ' on' : '')} onClick={() => setShowTypes(!showTypes)}><Icon name="sliders" /> Question types{kindsOff ? ` · ${kindsOff} off` : ''}</button>
         </div>
+        {showTypes && <div className="types-panel"><QuestionTypes /></div>}
       </section>
 
       {!nothingActive && (
         <section>
-          <h2>Learning now</h2>
+          <div className="learning-head">
+            <h2>Learning now</h2>
+            <span className="muted small">Tick the decks for this session ·{' '}
+              <button className="linkish" onClick={() => update(x => { x.settings.sessionNodes = null; })}>All</button>{' · '}
+              <button className="linkish" onClick={() => update(x => { x.settings.sessionNodes = []; })}>None</button>
+            </span>
+          </div>
           <div className="active-list">
             {p.active.map(n => {
               const g = groupById(parseNode(n).groupId);
               const t = slotOf(n);
               const s = nodeStats(ds, p, n);
               return (
-                <div key={n} className="active-item">
+                <div key={n} className={'active-item' + (picked.has(n) ? ' picked' : '')} onClick={() => pick(n)} role="checkbox" aria-checked={picked.has(n)}>
+                  <span className="tick">{picked.has(n) && <Icon name="check" size={14} />}</span>
                   <span className="node-icon"><Icon name={t.icon} /></span>
                   <div className="grow"><b>{g.name}</b> · {t.name}
                     <div className="mini-bar"><i style={{ width: `${(s.known / s.total) * 100}%` }} /><em style={{ width: `${(s.mastered / s.total) * 100}%` }} /></div>
                   </div>
-                  <small>{s.known}/{s.total}</small>
+                  <small>{s.known}/{s.total}{s.due ? ` · ${s.due} due` : ''}</small>
                 </div>
               );
             })}

@@ -444,3 +444,22 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .ghost-light { background: color-mix(in srgb, var(--surface) 70%, transparent); }
 .landing-due { margin: 1rem 0 0; font-size: .88rem; color: var(--muted); }
 .landing-version { position: absolute; z-index: 2; bottom: calc(.9rem + env(safe-area-inset-bottom)); left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: .15rem; font-size: .75rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink); opacity: .75; padding: 0 1rem; text-align: center; }
+
+/* ---- session decks & question types ---- */
+.learning-head { display: flex; align-items: baseline; justify-content: space-between; gap: .6rem; flex-wrap: wrap; }
+.linkish { border: 0; background: none; padding: 0; color: var(--accent); font-size: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.active-item { cursor: pointer; transition: opacity .2s, border-color .2s; user-select: none; }
+.active-item:not(.picked) { opacity: .5; }
+.active-item.picked { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.tick { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--line); display: grid; place-items: center; flex: none; color: #fff; }
+.active-item.picked .tick { background: var(--accent); border-color: var(--accent); }
+.btn.on { border-color: var(--ink); }
+.types-panel { margin-top: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; max-width: 640px; }
+.qtypes { display: grid; gap: .8rem; }
+.qdir-head { display: flex; gap: .6rem; align-items: flex-start; border: 0; background: none; padding: 0; text-align: left; }
+.qdir-head b { display: block; } .qdir-head small { color: var(--muted); }
+.qdir .box { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--line); display: grid; place-items: center; flex: none; margin-top: .1rem; color: #fff; font-weight: 700; }
+.qdir.on .box, .qdir.some .box { background: var(--ink); border-color: var(--ink); }
+.qkinds { display: flex; flex-wrap: wrap; gap: .35rem; margin: .45rem 0 0 1.85rem; }
+.qkinds .pick { font-size: .82rem; padding: .25rem .65rem; }
+.menu-row.column { flex-direction: column; align-items: stretch; }
