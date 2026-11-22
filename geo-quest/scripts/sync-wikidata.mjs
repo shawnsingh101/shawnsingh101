@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { pinyin } from 'pinyin-pro';
+import YAML from 'yaml';
 import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -43,7 +44,15 @@ async function sparql(query) {
 const qid = uri => uri && uri.split('/').pop();
 const file = uri => uri && decodeURIComponent(uri.split('/').pop());
 const point = wkt => { const m = wkt && /Point\(([-\d.eE]+) ([-\d.eE]+)\)/.exec(wkt); return m ? { lon: +(+m[1]).toFixed(3), lat: +(+m[2]).toFixed(3) } : {}; };
-const v = (b, k) => b[k]?.value;
+const v = (b, k) => {
+  const x = b[k]?.value;
+  // When Wikidata has no English label the label service returns the bare id ("Q29445"); fall back to the article title.
+  if (k.endsWith('Label') && x && /^Q\d+$/.test(x)) {
+    const art = b[k.replace('Label', 'Article')]?.value ?? b.article?.value;
+    if (art) return decodeURIComponent(art.split('/wiki/')[1]).replace(/_/g, ' ').replace(/ \(.*\)$/, '').replace(/, .*$/, ''); // "Juneau, Alaska" → "Juneau"
+  }
+  return x;
+};
 
 const extraValues = Object.keys(extras).map(q => `wd:${q}`).join(' ');
 
@@ -397,6 +406,64 @@ const lakes = await waterways('lake');
   }
 }
 
+// ---- United States: states (Wikidata) & senators (@unitedstates/congress-legislators) ----
+const usShapes = JSON.parse(readFileSync(join(ROOT, 'public/data/shapes-us.json'), 'utf8')).objects.places.geometries.map(g => g.properties);
+const regionOfCode = Object.fromEntries(Object.entries(places.us.regions).flatMap(([g, codes]) => codes.map(c => [c, g])));
+console.log('Querying Wikidata for US states…');
+const states = await fetchPlaces(usShapes.map(s => s.id), 'us', id => {
+  const code = usShapes.find(s => s.id === id).code;
+  return { code, group: regionOfCode[code], capitals: [] };
+});
+for (const b of await sparql(CAPITAL_Q.replace('%IDS%', [...states.keys()].map(q => `wd:${q}`).join(' ')))) {
+  const st = states.get(qid(v(b, 'c')));
+  const capId = qid(v(b, 'cap'));
+  if (st.capitals.some(x => x.id === capId)) continue;
+  st.capitals.push({ id: capId, name: v(b, 'capLabel'), preferred: v(b, 'rank').endsWith('PreferredRank'), role: null,
+    image: file(v(b, 'capImg')) || null, ...point(v(b, 'capCoord')),
+    wiki: v(b, 'capArticle') ? decodeURIComponent(v(b, 'capArticle').split('/wiki/')[1]) : null });
+}
+for (const b of await sparql(`SELECT ?p ?flag WHERE { VALUES ?p { ${[...states.keys()].map(q => `wd:${q}`).join(' ')} } ?p wdt:P41 ?flag }`)) {
+  states.get(qid(v(b, 'p'))).flag ??= file(v(b, 'flag'));
+}
+for (const st of states.values()) {
+  const pref = st.capitals.filter(x => x.preferred);
+  st.capitals = pref.length ? pref : st.capitals;
+  st.capitalAnswer = st.capitals.map(x => x.name).join(' and ') || null;
+  if (!st.capitalAnswer) warnings.push(`${st.name}: no capital`);
+  if (!st.flag) warnings.push(`${st.name}: no flag`);
+}
+const stateByCode = Object.fromEntries([...states.values()].map(s => [s.code, s]));
+
+console.log('Downloading the current Congress (@unitedstates/congress-legislators)…');
+const legRes = await fetch('https://raw.githubusercontent.com/unitedstates/congress-legislators/main/legislators-current.yaml');
+if (!legRes.ok) throw new Error('congress-legislators: ' + legRes.status);
+const legislators = YAML.parse(await legRes.text());
+const year = d => d.slice(0, 4);
+const monthYear = d => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+const senate = [];
+for (const L of legislators) {
+  const t = L.terms.at(-1);
+  if (t.type !== 'sen') continue;
+  const st = stateByCode[t.state];
+  if (!st) { warnings.push(`Senator from unknown state ${t.state}`); continue; }
+  const name = (L.id.wikipedia ?? `${L.name.nickname ?? L.name.first} ${L.name.last}`).replace(/ \(.*\)$/, '');
+  const since = L.terms.find(x => x.type === 'sen').start;
+  const roles = (L.leadership_roles ?? []).filter(r => r.chamber === 'senate' && !r.end).map(r => r.title);
+  const party = t.party === 'Independent' && t.caucus ? `Independent (caucuses with the ${t.caucus}s)` : t.party;
+  senate.push({
+    id: `S-${t.state}-${t.state_rank}`,             // the seat, not the person: a new senator re-queues the card
+    label: `${t.state_rank === 'senior' ? 'Senior' : 'Junior'} senator from ${st.name}`,
+    layer: 'senate', name, group: st.group, state: st.id, stateName: st.name, rank: t.state_rank,
+    party: t.party, partyLong: party, since, termEnd: t.end, roles,
+    photo: `https://raw.githubusercontent.com/unitedstates/images/gh-pages/congress/450x550/${L.id.bioguide}.jpg`,
+    wiki: L.id.wikipedia ?? null, wikidata: L.id.wikidata ?? null, lon: st.lon, lat: st.lat,
+    capitals: [], capitalAnswer: null,
+    facts: [party, `Senator since ${monthYear(since)}`, roles.join(' · '), `Term ends ${year(t.end)}`].filter(Boolean).join(' · '),
+  });
+}
+senate.sort((a, b) => a.stateName.localeCompare(b.stateName) || (a.rank === 'senior' ? -1 : 1));
+if (senate.length !== 100) warnings.push(`Expected 100 senators, found ${senate.length} (a seat may be vacant)`);
+
 // ---- pronunciation recordings (Wikidata P443, mostly native speakers via Lingua Libre) ----
 // Stored as { languageCode: [mp3 transcode, original] }; the app falls back to the
 // device's own text-to-speech voice when there's no recording.
@@ -446,9 +513,9 @@ function diffAndWrite(path, list, fields) {
     const ids = new Set(list.map(c => c.id));
     for (const c of list) {
       const p = prevById[c.id];
-      if (!p) { changes.push({ date: today, id: c.id, name: c.name, field: 'added', from: null, to: c.name }); continue; }
+      if (!p) { changes.push({ date: today, id: c.id, name: c.label ?? c.name, field: 'added', from: null, to: c.name }); continue; }
       const val = (x, f) => (f === 'zhHan' ? x.zh?.han : x[f]);
-      for (const f of fields) if (val(p, f) !== val(c, f)) changes.push({ date: today, id: c.id, name: c.name, field: f === 'zhHan' ? 'Chinese name' : f, from: val(p, f) ?? null, to: val(c, f) ?? null });
+      for (const f of fields) if (val(p, f) !== val(c, f)) changes.push({ date: today, id: c.id, name: c.label ?? c.name, field: f === 'zhHan' ? 'Chinese name' : f, from: val(p, f) ?? null, to: val(c, f) ?? null });
     }
     for (const p of prev) if (!ids.has(p.id)) changes.push({ date: today, id: p.id, name: p.name, field: 'removed', from: p.name, to: null });
   }
@@ -458,13 +525,15 @@ const writers = [
   diffAndWrite(OUT, list, ['name', 'capitalAnswer', 'flag']),
   diffAndWrite(join(ROOT, 'public/data/water.json'), [...water.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name']),
   diffAndWrite(join(ROOT, 'public/data/rivers.json'), rivers, ['name', 'group']),
+  diffAndWrite(join(ROOT, 'public/data/us.json'), [...states.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'flag']),
+  diffAndWrite(join(ROOT, 'public/data/senate.json'), senate, ['name', 'party']),
   diffAndWrite(join(ROOT, 'public/data/lakes.json'), lakes, ['name', 'group']),
   diffAndWrite(join(ROOT, 'public/data/cn.json'), [...cn.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'zhHan']),
 ];
 
 warnings.forEach(w => console.warn('⚠ ' + w));
 changes.forEach(ch => console.log(`Δ ${ch.name}: ${ch.field} ${JSON.stringify(ch.from)} → ${JSON.stringify(ch.to)}`));
-console.log(`${list.length} countries, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
+console.log(`${list.length} countries, ${states.size} US states, ${senate.length} senators, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
 
 if (!DRY) {
   writers.forEach(w => w());

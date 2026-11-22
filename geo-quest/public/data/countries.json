@@ -258,7 +258,7 @@
    "capitals": [
     {
      "id": "Q36262",
-     "name": "Q36262",
+     "name": "St. John's",
      "preferred": false,
      "role": null,
      "image": "St Johns Antigua 2012.jpg",
@@ -269,7 +269,7 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Q36262"
+   "capitalAnswer": "St. John's"
   },
   {
    "id": "Q414",

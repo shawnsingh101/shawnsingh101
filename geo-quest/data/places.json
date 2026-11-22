@@ -1,15 +1,185 @@
 {
  "_readme": "Curated lists of non-country places. Shapes come from Natural Earth (matched by Wikidata id); names, photos and capitals come from Wikidata via scripts/sync-wikidata.mjs.",
  "water": [
-  { "id": "w-oc", "name": "The five oceans", "members": ["Q98", "Q97", "Q1239", "Q7354", "Q788"] },
-  { "id": "w-eu", "name": "Europe & the Mediterranean", "members": ["Q4918", "Q166", "Q5484", "Q545", "Q1693", "Q47545", "Q41735", "Q41573", "Q34640", "Q13924", "Q34575", "Q38882", "Q37495", "Q122574", "Q44133", "Q36124"] },
-  { "id": "w-am", "name": "The Americas", "members": ["Q1247", "Q12630", "Q3040", "Q184189", "Q37040", "Q180531", "Q44725", "Q169274", "Q132811", "Q169523", "Q35827", "Q645012", "Q232912"] },
-  { "id": "w-in", "name": "Indian Ocean & Africa", "members": ["Q58705", "Q23406", "Q34675", "Q38684", "Q47632", "Q544914", "Q165100", "Q41837", "Q79948", "Q41430"] },
-  { "id": "w-ap", "name": "Asia-Pacific", "members": ["Q37660", "Q45341", "Q37960", "Q27092", "Q41602", "Q159183", "Q19270", "Q160194", "Q49364", "Q171510", "Q128880", "Q131418", "Q82931", "Q33254", "Q131217", "Q48359", "Q127031", "Q181969", "Q212428", "Q186733", "Q180844"] },
-  { "id": "w-po", "name": "Polar seas", "members": ["Q173343", "Q164466", "Q72154", "Q183455", "Q204703", "Q131274", "Q159252", "Q33629", "Q7988", "Q45823", "Q132868", "Q81136"] }
+  {
+   "id": "w-oc",
+   "name": "The five oceans",
+   "members": [
+    "Q98",
+    "Q97",
+    "Q1239",
+    "Q7354",
+    "Q788"
+   ]
+  },
+  {
+   "id": "w-eu",
+   "name": "Europe & the Mediterranean",
+   "members": [
+    "Q4918",
+    "Q166",
+    "Q5484",
+    "Q545",
+    "Q1693",
+    "Q47545",
+    "Q41735",
+    "Q41573",
+    "Q34640",
+    "Q13924",
+    "Q34575",
+    "Q38882",
+    "Q37495",
+    "Q122574",
+    "Q44133",
+    "Q36124"
+   ]
+  },
+  {
+   "id": "w-am",
+   "name": "The Americas",
+   "members": [
+    "Q1247",
+    "Q12630",
+    "Q3040",
+    "Q184189",
+    "Q37040",
+    "Q180531",
+    "Q44725",
+    "Q169274",
+    "Q132811",
+    "Q169523",
+    "Q35827",
+    "Q645012",
+    "Q232912"
+   ]
+  },
+  {
+   "id": "w-in",
+   "name": "Indian Ocean & Africa",
+   "members": [
+    "Q58705",
+    "Q23406",
+    "Q34675",
+    "Q38684",
+    "Q47632",
+    "Q544914",
+    "Q165100",
+    "Q41837",
+    "Q79948",
+    "Q41430"
+   ]
+  },
+  {
+   "id": "w-ap",
+   "name": "Asia-Pacific",
+   "members": [
+    "Q37660",
+    "Q45341",
+    "Q37960",
+    "Q27092",
+    "Q41602",
+    "Q159183",
+    "Q19270",
+    "Q160194",
+    "Q49364",
+    "Q171510",
+    "Q128880",
+    "Q131418",
+    "Q82931",
+    "Q33254",
+    "Q131217",
+    "Q48359",
+    "Q127031",
+    "Q181969",
+    "Q212428",
+    "Q186733",
+    "Q180844"
+   ]
+  },
+  {
+   "id": "w-po",
+   "name": "Polar seas",
+   "members": [
+    "Q173343",
+    "Q164466",
+    "Q72154",
+    "Q183455",
+    "Q204703",
+    "Q131274",
+    "Q159252",
+    "Q33629",
+    "Q7988",
+    "Q45823",
+    "Q132868",
+    "Q81136"
+   ]
+  }
  ],
  "cn": {
   "hongKong": "Q8646",
   "note": "The People's Republic of China also claims Taiwan as a province; Taiwan is covered under countries."
+ },
+ "us": {
+  "_readme": "US Census Bureau regions, used to split the 50 states (and their senators) into learnable groups.",
+  "regions": {
+   "us-ne": [
+    "CT",
+    "ME",
+    "MA",
+    "NH",
+    "RI",
+    "VT",
+    "NJ",
+    "NY",
+    "PA"
+   ],
+   "us-mw": [
+    "IL",
+    "IN",
+    "MI",
+    "OH",
+    "WI",
+    "IA",
+    "KS",
+    "MN",
+    "MO",
+    "NE",
+    "ND",
+    "SD"
+   ],
+   "us-s": [
+    "DE",
+    "FL",
+    "GA",
+    "MD",
+    "NC",
+    "SC",
+    "VA",
+    "WV",
+    "AL",
+    "KY",
+    "MS",
+    "TN",
+    "AR",
+    "LA",
+    "OK",
+    "TX"
+   ],
+   "us-w": [
+    "AZ",
+    "CO",
+    "ID",
+    "MT",
+    "NV",
+    "NM",
+    "UT",
+    "WY",
+    "AK",
+    "CA",
+    "HI",
+    "OR",
+    "WA"
+   ]
+  }
  }
 }

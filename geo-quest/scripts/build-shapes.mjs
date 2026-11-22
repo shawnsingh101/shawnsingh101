@@ -5,7 +5,7 @@
 //
 //   node scripts/build-shapes.mjs
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { topology } from 'topojson-server';
@@ -18,6 +18,8 @@ const NE = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/maste
 const places = JSON.parse(readFileSync(join(ROOT, 'data/places.json'), 'utf8'));
 
 async function get(file) {
+  // NE_DIR=/path reuses already-downloaded Natural Earth files (they're big).
+  if (process.env.NE_DIR && existsSync(join(process.env.NE_DIR, file))) return JSON.parse(readFileSync(join(process.env.NE_DIR, file), 'utf8'));
   console.log('Downloading', file);
   const r = await fetch(NE + file);
   if (!r.ok) throw new Error(`${file}: ${r.status}`);
@@ -96,7 +98,14 @@ const qidOf = {};
 for (let i = 0; i < curated.length; i += 50) {
   const batch = curated.slice(i, i + 50).map(r => r.wiki);
   const u = `https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=pageprops&ppprop=wikibase_item&titles=${encodeURIComponent(batch.join('|'))}`;
-  const j = await (await fetch(u, { headers: { 'User-Agent': 'GeoQuestStudyApp/0.1 (personal flashcard app)' } })).json();
+  let j;
+  for (let attempt = 1; ; attempt++) { // Wikipedia asks us to slow down sometimes — wait and retry
+    const r = await fetch(u, { headers: { 'User-Agent': 'GeoQuestStudyApp/0.1 (personal flashcard app)' } });
+    const text = await r.text();
+    try { j = JSON.parse(text); break; } catch { if (attempt >= 5) throw new Error('Wikipedia: ' + text.slice(0, 80)); }
+    console.warn(`Wikipedia busy, retrying in ${10 * attempt}s`);
+    await new Promise(res => setTimeout(res, 10000 * attempt));
+  }
   const alias = {};
   for (const n of j.query.normalized ?? []) alias[n.to] = n.from;
   for (const r of j.query.redirects ?? []) alias[r.to] = alias[r.from] ?? r.from;
@@ -118,4 +127,10 @@ for (const r of curated) {
 }
 writeFileSync(join(ROOT, 'public/data/shapes-river.json'), JSON.stringify(build(rivers, 0.1)));
 
-console.log(`Wrote ${water.length} water, ${cn.length} China, ${lakes.length} lake and ${rivers.length} river features.`);
+// ---- US states (50; DC is not a state) ----
+const us = admin1.features
+  .filter(f => f.properties.adm0_a3 === 'USA' && f.properties.type_en === 'State' && f.properties.wikidataid)
+  .map(f => ({ type: 'Feature', geometry: f.geometry, properties: { id: f.properties.wikidataid, code: (f.properties.iso_3166_2 ?? '').replace('US-', '') } }));
+writeFileSync(join(ROOT, 'public/data/shapes-us.json'), JSON.stringify(build(us, 0.12)));
+
+console.log(`Wrote ${water.length} water, ${cn.length} China, ${lakes.length} lake, ${rivers.length} river and ${us.length} US state features.`);

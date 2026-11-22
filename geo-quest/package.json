@@ -1,7 +1,7 @@
 {
   "name": "geo-quest",
   "private": true,
-  "version": "0.9.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -39,6 +39,7 @@
     "topojson-simplify": "^3.0.3",
     "typescript": "^7.0.2",
     "vite": "^5.4.21",
-    "world-countries": "^5.1.0"
+    "world-countries": "^5.1.0",
+    "yaml": "^2.9.1"
   }
 }

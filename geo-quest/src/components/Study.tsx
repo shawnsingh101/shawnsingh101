@@ -7,6 +7,7 @@ import { WorldMap, type MapHit, type Tone } from './WorldMap';
 import { Flag, Picture } from './Picture';
 import { Icon } from './Icons';
 import { LocalName } from './Native';
+import { Portrait } from './Portrait';
 
 interface Item { ref: CardRef; isNew: boolean }
 
@@ -99,12 +100,12 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     if (!f || f.mode !== 'tap' || tapResult) return;
     // A tap on a different kind of thing (a country while looking for a river) is a slip, not an answer.
     const hitLayer = hit.countryId ? ds.byId.get(hit.countryId)?.layer : 'country';
-    if (hitLayer !== c!.layer) {
-      setNudge(`Tap a ${{ country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province' }[c!.layer]}`);
+    if (hitLayer !== mp!.layer) {
+      setNudge(`Tap a ${{ country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state' }[mp!.layer]}`);
       setTimeout(() => setNudge(null), 1400);
       return;
     }
-    const ok = hit.countryId === c!.id;
+    const ok = hit.countryId === mp!.id;
     setTapResult({ ok, hit }); setRevealed(true);
     if (s.sound) (ok ? sounds.right : sounds.wrong)();
   };
@@ -124,19 +125,21 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     return () => window.removeEventListener('keydown', h);
   }, [f, revealed, reveal, next, tapResult, quiz, undo]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // The place shown on the map: itself, or for a senator, their state.
+  const mp = c ? (c.layer === 'senate' ? ds.byId.get(c.state!) ?? c : c) : null;
   const group = c ? groupOf(c) : null;
   const regionIds = useMemo(() => (group ? placesIn(ds, group.id).map(x => x.id) : []), [ds, group]);
   const focus = useMemo(() => {
     if (!item || !f || f.map === 'none') return null;
     // Flipped map card, now revealed: fly to the answer.
-    if (flipped && revealed) return { ids: [c!.id], key: item.ref.id + ':r', keepCenter: true, pad: c!.layer === 'lake' ? 0.3 : c!.layer === 'river' ? 0.55 : 0.5 };
+    if (flipped && revealed) return { ids: [mp!.id], key: item.ref.id + ':r', keepCenter: true, pad: c!.layer === 'lake' ? 0.3 : c!.layer === 'river' ? 0.55 : 0.5 };
     // Seas are small inside a big region: zoom right to them. Countries/provinces show their neighbourhood.
     // Rivers & lakes: centred, with some surroundings so you can get your bearings.
     if (f.map === 'highlight') return ['water', 'river', 'lake'].includes(c!.layer)
       ? { ids: [c!.id], key: item.ref.id + ':h', pad: c!.layer === 'water' ? 0.85 : c!.layer === 'river' ? 0.55 : 0.3 }
-      : { ids: [c!.id, ...regionIds], key: item.ref.id + ':h' };
+      : { ids: [mp!.id, ...regionIds], key: item.ref.id + ':h' };
     return { ids: regionIds, key: group!.id };
-  }, [item, f, c, regionIds, group, flipped, revealed]);
+  }, [item, f, c, mp, regionIds, group, flipped, revealed]);
 
   // Save the quiz score once, when the last card is answered.
   useEffect(() => {
@@ -195,16 +198,17 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
 
   const tones: Record<string, Tone> = {};
   const labels: Record<string, string> = {};
-  if (f.map === 'highlight') { tones[c.id] = 'accent'; if (revealed) labels[c.id] = c.name; }
-  if (flipped && revealed) { tones[c.id] = 'right'; labels[c.id] = c.name; }
+  const m = mp!;
+  if (f.map === 'highlight') { tones[m.id] = 'accent'; if (revealed) labels[m.id] = m.name; }
+  if (flipped && revealed) { tones[m.id] = 'right'; labels[m.id] = m.name; }
   if (tapResult) {
-    tones[c.id] = 'right'; labels[c.id] = c.name;
+    tones[m.id] = 'right'; labels[m.id] = m.name;
     if (!tapResult.ok && tapResult.hit.countryId) { tones[tapResult.hit.countryId] = 'wrong'; labels[tapResult.hit.countryId] = tapResult.hit.name; }
   }
   // Lock-on brackets: around the place being asked about, then ✓ / ✗ once you've answered on the map.
   const target = !s.targetBox ? null
-    : tapResult ? { id: c.id, status: tapResult.ok ? 'right' as const : 'wrong' as const }
-    : f.map === 'highlight' || (flipped && revealed) ? { id: c.id } : null;
+    : tapResult ? { id: m.id, status: tapResult.ok ? 'right' as const : 'wrong' as const }
+    : f.map === 'highlight' || (flipped && revealed) ? { id: m.id } : null;
   const cap = c.capitals[0];
   const pins = revealed && item.ref.kind.startsWith('capital') && cap?.lon != null ? [{ lon: cap.lon, lat: cap.lat!, label: cap.name }] : [];
 
@@ -226,7 +230,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
 
       {showMap && (
         <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
-          dim={id => !regionIds.includes(id) && ds.byId.get(id)?.layer === c.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
+          dim={id => !regionIds.includes(id) && ds.byId.get(id)?.layer === m.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
       )}
 
       <div className="card-wrap">
@@ -235,12 +239,13 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
             {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{KIND_LABEL[item.ref.kind]}</span>{item.isNew && <span className="new">new</span>}
           </div>
           {f.promptFlag && <Flag file={c.flag ?? null} name="?" className="prompt-flag" size={480} eager />}
+          {f.person && <Portrait photo={f.person.photo} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
           <p className="cloze">
             {f.pre}
             {f.answerFlag
               ? (revealed ? <span className="fill"><Flag file={c.flag ?? null} name={c.name} className="answer-flag" eager /></span> : <span className="blank">{f.blank}</span>)
               : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}>{f.answer}</span> : <span className="blank">{f.blank}</span>)}
-            {f.post}
+            {f.hidePostUntilReveal && !revealed ? '.' : f.post}
           </p>
           {revealed && (
             <div className="local">

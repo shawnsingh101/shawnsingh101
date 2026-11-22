@@ -125,7 +125,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const shapes = useMemo(() => {
     const out: Partial<Record<Layer, Shape[]>> = {};
     if (topos.country) out.country = toShapes(topos.country, 'country', path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
-    for (const l of ['water', 'cn', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
+    for (const l of ['water', 'cn', 'us', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
     return out;
   }, [topos, shapeToCountry, ds, path]);
 
@@ -135,10 +135,10 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const dots = useMemo(() => {
     const out: Dot[] = [];
     const byPlace = new Map(visible.filter(s => s.placeId).map(s => [s.placeId!, s]));
-    const candidates = [...ds.countries, ...ds.places.filter(p => p.layer === 'cn' && layers.includes('cn'))];
+    const candidates = [...ds.countries, ...ds.places.filter(p => (p.layer === 'cn' || p.layer === 'us') && layers.includes(p.layer))];
     for (const c of candidates) {
       const s = byPlace.get(c.id);
-      const tiny = !s || Math.max(s.bounds[1][0] - s.bounds[0][0], s.bounds[1][1] - s.bounds[0][1]) < (c.layer === 'cn' ? 1.5 : 4);
+      const tiny = !s || Math.max(s.bounds[1][0] - s.bounds[0][0], s.bounds[1][1] - s.bounds[0][1]) < (c.layer === 'cn' || c.layer === 'us' ? 1.5 : 4);
       if (!tiny || (!s && c.layer !== 'country')) continue;
       const p = s ? s.centroid : c.lon != null ? projection([c.lon, c.lat!]) : null;
       if (p && isFinite(p[0])) out.push({ placeId: c.id, x: p[0], y: p[1] });
@@ -244,6 +244,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           <path d={path(geoGraticule10()) ?? ''} className="graticule" />
           {shapes.country?.map(s => shapeEl(s, 'land' + (s.placeId ? ' country' : '')))}
           {shapes.cn && layers.includes('cn') && shapes.cn.map(s => shapeEl(s, 'land sub'))}
+          {shapes.us && layers.includes('us') && shapes.us.map(s => shapeEl(s, 'land sub'))}
           {shapes.lake && layers.includes('lake') && shapes.lake.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'lake') : <path key={s.key} d={s.d} className="lake other" />))}
           {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(riverEl)}
           {dots.map(d => (

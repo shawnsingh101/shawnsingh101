@@ -17,7 +17,7 @@ export function placeMastery(p: ReturnType<typeof useProgress>, place: Place) {
   return sum / ks.length;
 }
 
-type MapKey = 'mapNames' | 'mapCapitals' | 'mapWater' | 'mapRivers' | 'mapLakes' | 'mapCn';
+type MapKey = 'mapNames' | 'mapCapitals' | 'mapWater' | 'mapRivers' | 'mapLakes' | 'mapCn' | 'mapUs';
 const TOGGLES: { k: MapKey; label: string; icon: IconName; kind: 'label' | 'layer' }[] = [
   { k: 'mapNames', label: 'Names', icon: 'tag', kind: 'label' },
   { k: 'mapCapitals', label: 'Capitals', icon: 'landmark', kind: 'label' },
@@ -25,6 +25,7 @@ const TOGGLES: { k: MapKey; label: string; icon: IconName; kind: 'label' | 'laye
   { k: 'mapRivers', label: 'Rivers', icon: 'river', kind: 'layer' },
   { k: 'mapLakes', label: 'Lakes', icon: 'drop', kind: 'layer' },
   { k: 'mapCn', label: 'China provinces', icon: 'layers', kind: 'layer' },
+  { k: 'mapUs', label: 'US states', icon: 'layers', kind: 'layer' },
 ];
 
 export function MapView({ ds }: { ds: Dataset }) {
@@ -49,7 +50,7 @@ export function MapView({ ds }: { ds: Dataset }) {
   ds.countries.forEach(c => { const m = mastery.get(c.id) ?? 0; counts[m === 0 ? 0 : m < 1.5 ? 1 : m < 2.5 ? 2 : 3]++; });
   const set = (k: keyof Settings, v: boolean) => update(x => { (x.settings as unknown as Record<string, boolean>)[k] = v; });
   const labelsOn = s.mapNames || s.mapCapitals;
-  const layers = [...(s.mapWater ? ['water' as const] : []), ...(s.mapCn ? ['cn' as const] : []), ...(s.mapLakes ? ['lake' as const] : []), ...(s.mapRivers ? ['river' as const] : [])];
+  const layers = [...(s.mapWater ? ['water' as const] : []), ...(s.mapCn ? ['cn' as const] : []), ...(s.mapUs ? ['us' as const] : []), ...(s.mapLakes ? ['lake' as const] : []), ...(s.mapRivers ? ['river' as const] : [])];
 
   const onTap = (h: MapHit) => {
     if (!h.countryId) return;
