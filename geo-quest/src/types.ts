@@ -12,7 +12,7 @@ export interface Capital {
 }
 
 export type Status = 'un' | 'observer' | 'disputed';
-export type Layer = 'country' | 'water' | 'cn';
+export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake';
 
 /** Anything you can learn on the map: a country, a sea, a province… keyed by Wikidata id. */
 export interface Place {
@@ -37,6 +37,8 @@ export interface Place {
   native?: NativeName[];   // e.g. Deutschland (German), 日本 (Japanese)
   zh?: Chinese | null;     // China's provinces: 山西 Shānxī
   audio?: Audio;
+  facts?: string;          // rivers & lakes: "6,650 km long · flows into the Mediterranean Sea"
+  size?: number;           // km (rivers) or km² (lakes)
 }
 export type Country = Place;
 

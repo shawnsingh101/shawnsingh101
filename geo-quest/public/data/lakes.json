@@ -1,0 +1,1494 @@
+{
+ "source": "Wikidata (CC0)",
+ "places": [
+  {
+   "id": "Q1066",
+   "layer": "lake",
+   "name": "Lake Superior",
+   "image": "Lake Superior, ISS.jpg",
+   "lon": -87.76,
+   "lat": 47.529,
+   "wiki": "Lake_Superior",
+   "countries": [
+    "Q16",
+    "Q30"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Superior",
+   "facts": "82,350 km² · Canada, United States",
+   "size": 82350
+  },
+  {
+   "id": "Q5505",
+   "layer": "lake",
+   "name": "Lake Victoria",
+   "image": "Getting out to fish at dusk.jpg",
+   "lon": 33,
+   "lat": -1,
+   "wiki": "Lake_Victoria",
+   "countries": [
+    "Q114",
+    "Q924",
+    "Q1036"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Victoria",
+   "facts": "68,100 km² · Kenya, Tanzania, Uganda",
+   "size": 68100
+  },
+  {
+   "id": "Q1383",
+   "layer": "lake",
+   "name": "Lake Huron",
+   "image": "Lake Huron in winter.jpg",
+   "lon": -82.756,
+   "lat": 44.593,
+   "wiki": "Lake_Huron",
+   "countries": [
+    "Q16",
+    "Q30"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Huron",
+   "facts": "59,600 km² · Canada, United States",
+   "size": 59600
+  },
+  {
+   "id": "Q1169",
+   "layer": "lake",
+   "name": "Lake Michigan",
+   "image": "Lake Michigan in true color.jpg",
+   "lon": -86.756,
+   "lat": 44.008,
+   "wiki": "Lake_Michigan",
+   "countries": [
+    "Q30"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Michigan",
+   "facts": "57,750 km² · United States",
+   "size": 57750
+  },
+  {
+   "id": "Q5511",
+   "layer": "lake",
+   "name": "Lake Tanganyika",
+   "image": "Lake Tanganyika.jpg",
+   "lon": 29.5,
+   "lat": -6.1,
+   "wiki": "Lake_Tanganyika",
+   "countries": [
+    "Q924",
+    "Q953",
+    "Q967",
+    "Q974"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Tanganyika",
+   "facts": "32,900 km² · Tanzania, Zambia, Burundi, DR Congo",
+   "size": 32900
+  },
+  {
+   "id": "Q5513",
+   "layer": "lake",
+   "name": "Lake Baikal",
+   "image": "Olkhon Island and Lake Baikal.jpg",
+   "lon": 108.005,
+   "lat": 53.303,
+   "wiki": "Lake_Baikal",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Baikal",
+   "facts": "31,722 km² · Russia",
+   "size": 31722
+  },
+  {
+   "id": "Q5525",
+   "layer": "lake",
+   "name": "Great Bear Lake",
+   "image": "Great Bear Lake.jpg",
+   "lon": -121,
+   "lat": 66,
+   "wiki": "Great_Bear_Lake",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-great",
+   "nameThe": "the Great Bear Lake",
+   "facts": "31,153 km² · Canada",
+   "size": 31153
+  },
+  {
+   "id": "Q5532",
+   "layer": "lake",
+   "name": "Lake Malawi",
+   "image": "Cape McLear, Malawi (2498445835).jpg",
+   "lon": 34.367,
+   "lat": -12.183,
+   "wiki": "Lake_Malawi",
+   "countries": [
+    "Q924",
+    "Q1020",
+    "Q1029"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Malawi",
+   "facts": "29,600 km² · Tanzania, Malawi, Mozambique",
+   "size": 29600
+  },
+  {
+   "id": "Q5539",
+   "layer": "lake",
+   "name": "Great Slave Lake",
+   "image": "UtsingiPoint-GreatSlaveLake.JPG",
+   "lon": -114,
+   "lat": 61.667,
+   "wiki": "Great_Slave_Lake",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-great",
+   "nameThe": "the Great Slave Lake",
+   "facts": "27,209 km² · Canada",
+   "size": 27209
+  },
+  {
+   "id": "Q5492",
+   "layer": "lake",
+   "name": "Lake Erie",
+   "image": "A1.23188.1851.LakeErie.143.250m.jpg",
+   "lon": -81,
+   "lat": 42.25,
+   "wiki": "Lake_Erie",
+   "countries": [
+    "Q16",
+    "Q30"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Erie",
+   "facts": "25,744 km² · Canada, United States",
+   "size": 25744
+  },
+  {
+   "id": "Q3272",
+   "layer": "lake",
+   "name": "Lake Winnipeg",
+   "image": "Lake winnipeg in july.jpg",
+   "lon": -97.25,
+   "lat": 52.117,
+   "wiki": "Lake_Winnipeg",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Winnipeg",
+   "facts": "24,400 km² · Canada",
+   "size": 24400
+  },
+  {
+   "id": "Q134485",
+   "layer": "lake",
+   "name": "Lake Balkhash",
+   "image": "STS039-085-00E Lake Balkhash, Kazakhstan April 1991.jpg",
+   "lon": 74.879,
+   "lat": 46.541,
+   "wiki": "Lake_Balkhash",
+   "countries": [
+    "Q232"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Balkhash",
+   "facts": "18,740 km² · Kazakhstan",
+   "size": 18740
+  },
+  {
+   "id": "Q1062",
+   "layer": "lake",
+   "name": "Lake Ontario",
+   "image": "ISS-36 Lake Ontario (horizontal).jpg",
+   "lon": -78.106,
+   "lat": 43.729,
+   "wiki": "Lake_Ontario",
+   "countries": [
+    "Q16",
+    "Q30"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Ontario",
+   "facts": "18,529 km² · Canada, United States",
+   "size": 18529
+  },
+  {
+   "id": "Q15288",
+   "layer": "lake",
+   "name": "Lake Ladoga",
+   "image": "Sortavalan saaristoa.jpg",
+   "lon": 31.46,
+   "lat": 60.843,
+   "wiki": "Lake_Ladoga",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Ladoga",
+   "facts": "17,700 km² · Russia",
+   "size": 17700
+  },
+  {
+   "id": "Q276776",
+   "layer": "lake",
+   "name": "South Aral Sea",
+   "image": "Aralsea tmo 2014231 lrg.jpg",
+   "lon": 58.5,
+   "lat": 45,
+   "wiki": "South_Aral_Sea",
+   "countries": [
+    "Q232",
+    "Q265"
+   ],
+   "group": "l-great",
+   "nameThe": "the South Aral Sea",
+   "facts": "10,780 km² · Kazakhstan, Uzbekistan",
+   "size": 10780
+  },
+  {
+   "id": "Q673169",
+   "layer": "lake",
+   "name": "Lake Bangweulu",
+   "image": "Lake Bangweulu.jpg",
+   "lon": 29.75,
+   "lat": -11.083,
+   "wiki": "Lake_Bangweulu",
+   "countries": [
+    "Q953"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Bangweulu",
+   "facts": "9,840 km² · Zambia",
+   "size": 9840
+  },
+  {
+   "id": "Q166162",
+   "layer": "lake",
+   "name": "Lake Onega",
+   "image": "2 июля 2011. Отдых на Янигубе. - panoramio (2).jpg",
+   "lon": 35.656,
+   "lat": 61.691,
+   "wiki": "Lake_Onega",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Onega",
+   "facts": "9,800 km² · Russia",
+   "size": 9800
+  },
+  {
+   "id": "Q35342",
+   "layer": "lake",
+   "name": "Titicaca",
+   "image": "Isla Taquile, 2023 (038).jpg",
+   "lon": -69.325,
+   "lat": -15.825,
+   "wiki": "Lake_Titicaca",
+   "countries": [
+    "Q419",
+    "Q750"
+   ],
+   "group": "l-great",
+   "nameThe": "Titicaca",
+   "facts": "8,562 km² · Peru, Bolivia",
+   "size": 8562
+  },
+  {
+   "id": "Q201679",
+   "layer": "lake",
+   "name": "Lake Volta",
+   "image": "Volta lake.jpg",
+   "lon": 0.2,
+   "lat": 7.4,
+   "wiki": "Lake_Volta",
+   "countries": [
+    "Q117"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Volta",
+   "facts": "8,502 km² · Ghana",
+   "size": 8502
+  },
+  {
+   "id": "Q173862",
+   "layer": "lake",
+   "name": "Lake Nicaragua",
+   "image": "ISS066-E-103300 - View of Nicaragua.jpg",
+   "lon": -85.356,
+   "lat": 11.574,
+   "wiki": "Lake_Nicaragua",
+   "countries": [
+    "Q811"
+   ],
+   "group": "l-great",
+   "nameThe": "Lake Nicaragua",
+   "facts": "8,264 km² · Nicaragua",
+   "size": 8264
+  },
+  {
+   "id": "Q272463",
+   "layer": "lake",
+   "name": "Lake Athabasca",
+   "image": "Lake Athabasca, Canada.jpg",
+   "lon": -109.45,
+   "lat": 59.267,
+   "wiki": "Lake_Athabasca",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-am",
+   "nameThe": "Lake Athabasca",
+   "facts": "7,850 km² · Canada",
+   "size": 7850
+  },
+  {
+   "id": "Q1134446",
+   "layer": "lake",
+   "name": "Reindeer Lake",
+   "image": "Canada.A2002236.1810.721.250m NASA.jpg",
+   "lon": -102.25,
+   "lat": 57.25,
+   "wiki": "Reindeer_Lake",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-am",
+   "nameThe": "Reindeer Lake",
+   "facts": "6,500 km² · Canada",
+   "size": 6500
+  },
+  {
+   "id": "Q182719",
+   "layer": "lake",
+   "name": "Lake Turkana",
+   "image": "LakeTurkanaSouthIsland.jpg",
+   "lon": 36.017,
+   "lat": 4.05,
+   "wiki": "Lake_Turkana",
+   "countries": [
+    "Q114",
+    "Q115"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Turkana",
+   "facts": "6,405 km² · Kenya, Ethiopia",
+   "size": 6405
+  },
+  {
+   "id": "Q42191",
+   "layer": "lake",
+   "name": "Issyk-Kul",
+   "image": "Issyk Kul.jpg",
+   "lon": 77.25,
+   "lat": 42.417,
+   "wiki": "Issyk-Kul",
+   "countries": [
+    "Q813"
+   ],
+   "group": "l-as",
+   "nameThe": "Issyk-Kul",
+   "facts": "6,236 km² · Kyrgyzstan",
+   "size": 6236
+  },
+  {
+   "id": "Q163855",
+   "layer": "lake",
+   "name": "Lake Torrens",
+   "image": "E. C. Frome - First view of the salt desert - called Lake Torrens - Google Art Project.jpg",
+   "lon": 137.86,
+   "lat": -31.044,
+   "wiki": "Lake_Torrens",
+   "countries": [
+    "Q408"
+   ],
+   "group": "l-as",
+   "nameThe": "Lake Torrens",
+   "facts": "5,700 km² · Australia",
+   "size": 5700
+  },
+  {
+   "id": "Q173596",
+   "layer": "lake",
+   "name": "Vänern",
+   "image": "Vänern by Sentinel-2.jpg",
+   "lon": 13.5,
+   "lat": 58.917,
+   "wiki": "Vänern",
+   "countries": [
+    "Q34"
+   ],
+   "group": "l-eu",
+   "nameThe": "Vänern",
+   "facts": "5,650 km² · Sweden",
+   "size": 5650
+  },
+  {
+   "id": "Q1047206",
+   "layer": "lake",
+   "name": "Lake Kariba",
+   "image": "Kariba, Zimbabwe 04.JPG",
+   "lon": 28,
+   "lat": -16.9,
+   "wiki": "Lake_Kariba",
+   "countries": [
+    "Q953",
+    "Q954"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Kariba",
+   "facts": "5,400 km² · Zambia, Zimbabwe",
+   "size": 5400
+  },
+  {
+   "id": "Q125888",
+   "layer": "lake",
+   "name": "Lake Albert",
+   "image": "Lac Albert 2.jpg",
+   "lon": 30.917,
+   "lat": 1.683,
+   "wiki": "Lake_Albert_(Africa)",
+   "countries": [
+    "Q974",
+    "Q1036"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Albert",
+   "facts": "5,270 km² · DR Congo, Uganda",
+   "size": 5270
+  },
+  {
+   "id": "Q182796",
+   "layer": "lake",
+   "name": "Lake Nasser",
+   "image": "Abu Simbel, Nefertari Temple, Lake Nasser, Egypt, Oct 2004.jpg",
+   "lon": 31.86,
+   "lat": 22.5,
+   "wiki": "Lake_Nasser",
+   "countries": [
+    "Q79",
+    "Q1049"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Nasser",
+   "facts": "5,250 km² · Egypt, Sudan",
+   "size": 5250
+  },
+  {
+   "id": "Q199551",
+   "layer": "lake",
+   "name": "Urmia Lake",
+   "image": "Lake urmia 1984.jpg",
+   "lon": 45.405,
+   "lat": 37.662,
+   "wiki": "Lake_Urmia",
+   "countries": [
+    "Q794"
+   ],
+   "group": "l-as",
+   "nameThe": "Urmia Lake",
+   "facts": "5,200 km² · Iran",
+   "size": 5200
+  },
+  {
+   "id": "Q934638",
+   "layer": "lake",
+   "name": "Lake Winnipegosis",
+   "image": "WinnipegosisBeach.JPG",
+   "lon": -100,
+   "lat": 52.5,
+   "wiki": "Lake_Winnipegosis",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-am",
+   "nameThe": "Lake Winnipegosis",
+   "facts": "5,164 km² · Canada",
+   "size": 5164
+  },
+  {
+   "id": "Q207690",
+   "layer": "lake",
+   "name": "Poyang Lake",
+   "image": "Satelites image of Lake Poyang.png",
+   "lon": 116.383,
+   "lat": 29.067,
+   "wiki": "Poyang_Lake",
+   "countries": [
+    "Q148"
+   ],
+   "group": "l-as",
+   "nameThe": "Poyang Lake",
+   "facts": "5,100 km² · China",
+   "size": 5100
+  },
+  {
+   "id": "Q1132211",
+   "layer": "lake",
+   "name": "Nettilling Lake",
+   "image": "Nettilling Lake 2019-08-21 Sentinel-2 L2A Highlight Optimized Natural Color.jpg",
+   "lon": -70.333,
+   "lat": 66.483,
+   "wiki": "Nettilling_Lake",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-am",
+   "nameThe": "Nettilling Lake",
+   "facts": "5,051 km² · Canada",
+   "size": 5051
+  },
+  {
+   "id": "Q122184",
+   "layer": "lake",
+   "name": "Lake Nipigon",
+   "image": "Lake Nipigon 431 751enh pan 2048 (27010849382).jpg",
+   "lon": -88.5,
+   "lat": 49.833,
+   "wiki": "Lake_Nipigon",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-am",
+   "nameThe": "Lake Nipigon",
+   "facts": "4,848 km² · Canada",
+   "size": 4848
+  },
+  {
+   "id": "Q1074063",
+   "layer": "lake",
+   "name": "Lake Mackay",
+   "image": "Lac Mackay vu par Sentinel 2 (cropped).jpg",
+   "lon": 128.583,
+   "lat": -22.5,
+   "wiki": "Lake_Mackay",
+   "countries": [
+    "Q408"
+   ],
+   "group": "l-as",
+   "nameThe": "Lake Mackay",
+   "facts": "4,737 km² · Australia",
+   "size": 4737
+  },
+  {
+   "id": "Q504433",
+   "layer": "lake",
+   "name": "Lake Mweru",
+   "image": "Lake Mweru Sentinel-2.png",
+   "lon": 28.5,
+   "lat": -9.167,
+   "wiki": "Lake_Mweru",
+   "countries": [
+    "Q953",
+    "Q974"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Mweru",
+   "facts": "4,650 km² · Zambia, DR Congo",
+   "size": 4650
+  },
+  {
+   "id": "Q645901",
+   "layer": "lake",
+   "name": "Lake Manitoba",
+   "image": "Lake Winnipeg map NL.png",
+   "lon": -98.762,
+   "lat": 50.996,
+   "wiki": "Lake_Manitoba",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-am",
+   "nameThe": "Lake Manitoba",
+   "facts": "4,624 km² · Canada",
+   "size": 4624
+  },
+  {
+   "id": "Q845868",
+   "layer": "lake",
+   "name": "Taymyr",
+   "image": "Lake Taymyr 2017-07-20 Sentinel-2 L2A Highlight Optimized Natural Color.jpg",
+   "lon": 101.633,
+   "lat": 74.533,
+   "wiki": "Lake_Taymyr",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-as",
+   "nameThe": "Taymyr",
+   "facts": "4,560 km² · Russia",
+   "size": 4560
+  },
+  {
+   "id": "Q178741",
+   "layer": "lake",
+   "name": "Great Salt Lake",
+   "image": "Great Salt Lake by Sentinel-2.jpg",
+   "lon": -112.583,
+   "lat": 41.167,
+   "wiki": "Great_Salt_Lake",
+   "countries": [
+    "Q30"
+   ],
+   "group": "l-am",
+   "nameThe": "the Great Salt Lake",
+   "facts": "4,400 km² · United States",
+   "size": 4400
+  },
+  {
+   "id": "Q201294",
+   "layer": "lake",
+   "name": "Qinghai Lake",
+   "image": "青海湖航拍.jpg",
+   "lon": 100,
+   "lat": 37,
+   "wiki": "Qinghai_Lake",
+   "countries": [
+    "Q148"
+   ],
+   "group": "l-as",
+   "nameThe": "Qinghai Lake",
+   "facts": "4,400 km² · China",
+   "size": 4400
+  },
+  {
+   "id": "Q192770",
+   "layer": "lake",
+   "name": "Saimaa",
+   "image": "Luonteri Neitvuori.jpg",
+   "lon": 28.25,
+   "lat": 61.25,
+   "wiki": "Saimaa",
+   "countries": [
+    "Q33"
+   ],
+   "group": "l-eu",
+   "nameThe": "Saimaa",
+   "facts": "4,400 km² · Finland",
+   "size": 4400
+  },
+  {
+   "id": "Q845876",
+   "layer": "lake",
+   "name": "Lake of the Woods",
+   "image": "Lake of the Woods by Sentinel-2.jpg",
+   "lon": -94.75,
+   "lat": 49.25,
+   "wiki": "Lake_of_the_Woods",
+   "countries": [
+    "Q16",
+    "Q30"
+   ],
+   "group": "l-am",
+   "nameThe": "Lake of the Woods",
+   "facts": "4,350 km² · Canada, United States",
+   "size": 4350
+  },
+  {
+   "id": "Q965973",
+   "layer": "lake",
+   "name": "Lake Gairdner",
+   "image": "Lake Gairdner.jpg",
+   "lon": 136,
+   "lat": -31.567,
+   "wiki": "Lake_Gairdner",
+   "countries": [
+    "Q408"
+   ],
+   "group": "l-as",
+   "nameThe": "Lake Gairdner",
+   "facts": "4,350 km² · Australia",
+   "size": 4350
+  },
+  {
+   "id": "Q201843",
+   "layer": "lake",
+   "name": "Khanka",
+   "image": "Lake Khanka Landsat 7 2001-09-25.jpg",
+   "lon": 132.417,
+   "lat": 45.017,
+   "wiki": "Lake_Khanka",
+   "countries": [
+    "Q148",
+    "Q159"
+   ],
+   "group": "l-as",
+   "nameThe": "Khanka",
+   "facts": "4,190 km² · China, Russia",
+   "size": 4190
+  },
+  {
+   "id": "Q876280",
+   "layer": "lake",
+   "name": "Lagoa Mirim",
+   "image": "Lake Merin.jpg",
+   "lon": -52.833,
+   "lat": -32.75,
+   "wiki": "Lagoon_Mirim",
+   "countries": [
+    "Q77",
+    "Q155"
+   ],
+   "group": "l-am",
+   "nameThe": "Lagoa Mirim",
+   "facts": "3,994 km² · Uruguay, Brazil",
+   "size": 3994
+  },
+  {
+   "id": "Q257416",
+   "layer": "lake",
+   "name": "Sarygamysh Lake",
+   "image": "Sarykamysh02.jpg",
+   "lon": 57.333,
+   "lat": 42,
+   "wiki": "Sarygamysh_Lake",
+   "countries": [
+    "Q265",
+    "Q874"
+   ],
+   "group": "l-as",
+   "nameThe": "Sarygamysh Lake",
+   "facts": "3,955 km² · Uzbekistan, Turkmenistan",
+   "size": 3955
+  },
+  {
+   "id": "Q1262967",
+   "layer": "lake",
+   "name": "Dubawnt Lake",
+   "image": "Dubawnt Lake.jpg",
+   "lon": -101.533,
+   "lat": 63.1,
+   "wiki": "Dubawnt_Lake",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-am",
+   "nameThe": "Dubawnt Lake",
+   "facts": "3,833 km² · Canada",
+   "size": 3833
+  },
+  {
+   "id": "Q126307",
+   "layer": "lake",
+   "name": "Lake Van",
+   "image": "Lakevanlandsat.jpeg",
+   "lon": 42.817,
+   "lat": 38.633,
+   "wiki": "Lake_Van",
+   "countries": [
+    "Q43"
+   ],
+   "group": "l-as",
+   "nameThe": "Lake Van",
+   "facts": "3,755 km² · Türkiye",
+   "size": 3755
+  },
+  {
+   "id": "Q116685",
+   "layer": "lake",
+   "name": "Lake Tana",
+   "image": "ET Amhara asv2018-02 img040 Lake Tana at Gorgora.jpg",
+   "lon": 37.25,
+   "lat": 12,
+   "wiki": "Lake_Tana",
+   "countries": [
+    "Q115"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Tana",
+   "facts": "3,600 km² · Ethiopia",
+   "size": 3600
+  },
+  {
+   "id": "Q19253",
+   "layer": "lake",
+   "name": "Lake Peipus",
+   "image": "Lake Peipus, LandSat-8, 2016-10-20.jpg",
+   "lon": 27.492,
+   "lat": 58.677,
+   "wiki": "Lake_Peipus",
+   "countries": [
+    "Q159",
+    "Q191"
+   ],
+   "group": "l-eu",
+   "nameThe": "Lake Peipus",
+   "facts": "3,543 km² · Russia, Estonia",
+   "size": 3543
+  },
+  {
+   "id": "Q81150",
+   "layer": "lake",
+   "name": "Uvs Lake",
+   "image": "Uvs núr.JPG",
+   "lon": 92.7,
+   "lat": 50.3,
+   "wiki": "Uvs_Lake",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-as",
+   "nameThe": "Uvs Lake",
+   "facts": "3,350 km² · Russia",
+   "size": 3350
+  },
+  {
+   "id": "Q3358037",
+   "layer": "lake",
+   "name": "North Aral Sea",
+   "image": "AralSea ComparisonApr2005-06.jpg",
+   "lon": 60.7,
+   "lat": 46.5,
+   "wiki": "North_Aral_Sea",
+   "countries": [
+    "Q232"
+   ],
+   "group": "l-as",
+   "nameThe": "the North Aral Sea",
+   "facts": "3,300 km² · Kazakhstan",
+   "size": 3300
+  },
+  {
+   "id": "Q452088",
+   "layer": "lake",
+   "name": "Amadjuak Lake",
+   "image": "Amadjuak Lake 2022-07-26 Sentinel-2 L2A Highlight Optimized Natural Color.jpg",
+   "lon": -71.183,
+   "lat": 64.983,
+   "wiki": "Amadjuak_Lake",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-am",
+   "nameThe": "Amadjuak Lake",
+   "facts": "3,115 km² · Canada",
+   "size": 3115
+  },
+  {
+   "id": "Q3215567",
+   "layer": "lake",
+   "name": "Lago Tucuruí",
+   "image": null,
+   "lon": -49.572,
+   "lat": -4.314,
+   "wiki": "Lago_Tucuruí",
+   "countries": [
+    "Q155"
+   ],
+   "group": "l-am",
+   "nameThe": "Lago Tucuruí",
+   "facts": "2,850 km² · Brazil",
+   "size": 2850
+  },
+  {
+   "id": "Q192215",
+   "layer": "lake",
+   "name": "Khövsgöl Lake",
+   "image": "Hovsgol.jpg",
+   "lon": 100.5,
+   "lat": 51.1,
+   "wiki": "Lake_Khövsgöl",
+   "countries": [
+    "Q711"
+   ],
+   "group": "l-as",
+   "nameThe": "Khövsgöl Lake",
+   "facts": "2,760 km² · Mongolia",
+   "size": 2760
+  },
+  {
+   "id": "Q1640519",
+   "layer": "lake",
+   "name": "Lake Tharthar",
+   "image": "04 metu Buhayrat 300 2.jpg",
+   "lon": 43.183,
+   "lat": 33.967,
+   "wiki": "Lake_Tharthar",
+   "countries": [
+    "Q796"
+   ],
+   "group": "l-as",
+   "nameThe": "Lake Tharthar",
+   "facts": "2,710 km² · Iraq",
+   "size": 2710
+  },
+  {
+   "id": "Q125912",
+   "layer": "lake",
+   "name": "Lake Kivu",
+   "image": "Rwanda Scenic View.jpg",
+   "lon": 29.135,
+   "lat": -1.853,
+   "wiki": "Lake_Kivu",
+   "countries": [
+    "Q974",
+    "Q1037"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Kivu",
+   "facts": "2,700 km² · DR Congo, Rwanda",
+   "size": 2700
+  },
+  {
+   "id": "Q199938",
+   "layer": "lake",
+   "name": "Tonle Sap",
+   "image": "Tonlesap.jpg",
+   "lon": 104.067,
+   "lat": 12.883,
+   "wiki": "Tonle_Sap",
+   "countries": [
+    "Q424"
+   ],
+   "group": "l-as",
+   "nameThe": "Tonle Sap",
+   "facts": "2,700 km² · Cambodia",
+   "size": 2700
+  },
+  {
+   "id": "Q310547",
+   "layer": "lake",
+   "name": "Lake Alakol",
+   "image": "Озеро Алаколь возле Кабанбай (Жарбулак) сверху-1.jpg",
+   "lon": 81.764,
+   "lat": 46.081,
+   "wiki": "Lake_Alakol",
+   "countries": [
+    "Q232"
+   ],
+   "group": "l-as",
+   "nameThe": "Lake Alakol",
+   "facts": "2,650 km² · Kazakhstan",
+   "size": 2650
+  },
+  {
+   "id": "Q965436",
+   "layer": "lake",
+   "name": "Iliamna Lake",
+   "image": "LakeIliamna.jpg",
+   "lon": -155.024,
+   "lat": 59.536,
+   "wiki": "Iliamna_Lake",
+   "countries": [
+    "Q30"
+   ],
+   "group": "l-am",
+   "nameThe": "Iliamna Lake",
+   "facts": "2,622 km² · United States",
+   "size": 2622
+  },
+  {
+   "id": "Q1143935",
+   "layer": "lake",
+   "name": "Lake Rukwa",
+   "image": "Lake Rukwa.png",
+   "lon": 32.35,
+   "lat": -8,
+   "wiki": "Lake_Rukwa",
+   "countries": [
+    "Q924"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Rukwa",
+   "facts": "2,600 km² · Tanzania",
+   "size": 2600
+  },
+  {
+   "id": "Q1458051",
+   "layer": "lake",
+   "name": "Lake Mistassini",
+   "image": "Lac Mistassini et Albanel.jpg",
+   "lon": -73.617,
+   "lat": 51.002,
+   "wiki": "Lake_Mistassini",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-am",
+   "nameThe": "Lake Mistassini",
+   "facts": "2,335 km² · Canada",
+   "size": 2335
+  },
+  {
+   "id": "Q1640500",
+   "layer": "lake",
+   "name": "Wollaston Lake",
+   "image": "Wollaston Lake, Saskatchewan.jpg",
+   "lon": -103.251,
+   "lat": 58.25,
+   "wiki": "Wollaston_Lake",
+   "countries": [
+    "Q16"
+   ],
+   "group": "l-am",
+   "nameThe": "Wollaston Lake",
+   "facts": "2,286 km² · Canada",
+   "size": 2286
+  },
+  {
+   "id": "Q140712",
+   "layer": "lake",
+   "name": "Lake Tai",
+   "image": "Lake Tai, China ESA21456724.jpeg",
+   "lon": 120.15,
+   "lat": 31.167,
+   "wiki": "Taihu",
+   "countries": [
+    "Q148"
+   ],
+   "group": "l-as",
+   "nameThe": "Lake Tai",
+   "facts": "2,250 km² · China",
+   "size": 2250
+  },
+  {
+   "id": "Q125211",
+   "layer": "lake",
+   "name": "Lake Edward",
+   "image": "Lake edward sentinel-2.jpg",
+   "lon": 29.6,
+   "lat": -0.333,
+   "wiki": "Lake_Edward",
+   "countries": [
+    "Q974",
+    "Q1036"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Edward",
+   "facts": "2,150 km² · DR Congo, Uganda",
+   "size": 2150
+  },
+  {
+   "id": "Q188195",
+   "layer": "lake",
+   "name": "Vättern",
+   "image": "Vättern by Sentinel-2.jpg",
+   "lon": 14.6,
+   "lat": 58.4,
+   "wiki": "Vättern",
+   "countries": [
+    "Q34"
+   ],
+   "group": "l-eu",
+   "nameThe": "Vättern",
+   "facts": "1,893 km² · Sweden",
+   "size": 1893
+  },
+  {
+   "id": "Q124978",
+   "layer": "lake",
+   "name": "Lake Kyoga",
+   "image": "Lake Kyoga-8.jpg",
+   "lon": 33,
+   "lat": 1.5,
+   "wiki": "Lake_Kyoga",
+   "countries": [
+    "Q1036"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Kyoga",
+   "facts": "1,720 km² · Uganda",
+   "size": 1720
+  },
+  {
+   "id": "Q125309",
+   "layer": "lake",
+   "name": "Lake Chad",
+   "image": "LakeChadCameroonTown.jpg",
+   "lon": 14.534,
+   "lat": 13.098,
+   "wiki": "Lake_Chad",
+   "countries": [
+    "Q657",
+    "Q1009",
+    "Q1032",
+    "Q1033"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Chad",
+   "facts": "1,540 km² · Chad, Cameroon, Niger, Nigeria",
+   "size": 1540
+  },
+  {
+   "id": "Q304933",
+   "layer": "lake",
+   "name": "Lake Abaya",
+   "image": "Lake Abaya.jpg",
+   "lon": 37.832,
+   "lat": 6.236,
+   "wiki": "Lake_Abaya",
+   "countries": [
+    "Q115"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Abaya",
+   "facts": "1,250 km² · Ethiopia",
+   "size": 1250
+  },
+  {
+   "id": "Q1315765",
+   "layer": "lake",
+   "name": "Vygozero",
+   "image": "Vygozero02.JPG",
+   "lon": 34.7,
+   "lat": 63.617,
+   "wiki": "Lake_Vygozero",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-eu",
+   "nameThe": "Vygozero",
+   "facts": "1,250 km² · Russia",
+   "size": 1250
+  },
+  {
+   "id": "Q770141",
+   "layer": "lake",
+   "name": "Kainji Lake",
+   "image": "Kainji Lake National Park located at Niger and Kwara state Nigeri.jpg",
+   "lon": 4.564,
+   "lat": 10.406,
+   "wiki": "Kainji_Lake",
+   "countries": [
+    "Q1033"
+   ],
+   "group": "l-af",
+   "nameThe": "Kainji Lake",
+   "facts": "1,150 km² · Nigeria",
+   "size": 1150
+  },
+  {
+   "id": "Q953140",
+   "layer": "lake",
+   "name": "Beloye Lake",
+   "image": "Белое озеро Вологодская область.jpg",
+   "lon": 37.633,
+   "lat": 60.167,
+   "wiki": "Lake_Beloye_(Vologda_Oblast)",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-eu",
+   "nameThe": "Beloye Lake",
+   "facts": "1,130 km² · Russia",
+   "size": 1130
+  },
+  {
+   "id": "Q213769",
+   "layer": "lake",
+   "name": "Päijänne",
+   "image": "Päijänne aerial 2.jpg",
+   "lon": 25.379,
+   "lat": 61.508,
+   "wiki": "Päijänne",
+   "countries": [
+    "Q33"
+   ],
+   "group": "l-eu",
+   "nameThe": "Päijänne",
+   "facts": "1,083 km² · Finland",
+   "size": 1083
+  },
+  {
+   "id": "Q203137",
+   "layer": "lake",
+   "name": "Lake Inari",
+   "image": "BoatInari1.jpg",
+   "lon": 27.602,
+   "lat": 68.96,
+   "wiki": "Lake_Inari",
+   "countries": [
+    "Q33"
+   ],
+   "group": "l-eu",
+   "nameThe": "Lake Inari",
+   "facts": "1,082 km² · Finland",
+   "size": 1082
+  },
+  {
+   "id": "Q184492",
+   "layer": "lake",
+   "name": "Mälaren",
+   "image": "Mälaren Slagsta 2009.jpg",
+   "lon": 17.2,
+   "lat": 59.5,
+   "wiki": "Mälaren",
+   "countries": [
+    "Q34"
+   ],
+   "group": "l-eu",
+   "nameThe": "Mälaren",
+   "facts": "1,072 km² · Sweden",
+   "size": 1072
+  },
+  {
+   "id": "Q23883",
+   "layer": "lake",
+   "name": "Dead Sea",
+   "image": "Dead Sea by David Shankbone.jpg",
+   "lon": 35.484,
+   "lat": 31.521,
+   "wiki": "Dead_Sea",
+   "countries": [
+    "Q801",
+    "Q810",
+    "Q219060"
+   ],
+   "group": "l-as",
+   "nameThe": "the Dead Sea",
+   "facts": "1,050 km² · Israel, Jordan, Palestine",
+   "size": 1050
+  },
+  {
+   "id": "Q709323",
+   "layer": "lake",
+   "name": "Topozero",
+   "image": "Топозеро-залив Ламбашгуба - panoramio.jpg",
+   "lon": 32,
+   "lat": 65.65,
+   "wiki": "Lake_Topozero",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-eu",
+   "nameThe": "Topozero",
+   "facts": "986 km² · Russia",
+   "size": 986
+  },
+  {
+   "id": "Q203462",
+   "layer": "lake",
+   "name": "Ilmen",
+   "image": "Ilmen Lake.JPG",
+   "lon": 31.283,
+   "lat": 58.267,
+   "wiki": "Lake_Ilmen",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-eu",
+   "nameThe": "Ilmen",
+   "facts": "982 km² · Russia",
+   "size": 982
+  },
+  {
+   "id": "Q1416209",
+   "layer": "lake",
+   "name": "Segozero",
+   "image": "Се́гозеро-остров Макконшари - panoramio (1).jpg",
+   "lon": 33.75,
+   "lat": 63.3,
+   "wiki": "Lake_Segozero",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-eu",
+   "nameThe": "Segozero",
+   "facts": "906 km² · Russia",
+   "size": 906
+  },
+  {
+   "id": "Q845891",
+   "layer": "lake",
+   "name": "Pielinen",
+   "image": "Pielinen-SU.jpg",
+   "lon": 29.699,
+   "lat": 63.251,
+   "wiki": "Pielinen",
+   "countries": [
+    "Q33"
+   ],
+   "group": "l-eu",
+   "nameThe": "Pielinen",
+   "facts": "894 km² · Finland",
+   "size": 894
+  },
+  {
+   "id": "Q580019",
+   "layer": "lake",
+   "name": "Oulujärvi",
+   "image": "Paltaselkä.JPG",
+   "lon": 27.25,
+   "lat": 64.333,
+   "wiki": "Oulujärvi",
+   "countries": [
+    "Q33"
+   ],
+   "group": "l-eu",
+   "nameThe": "Oulujärvi",
+   "facts": "887 km² · Finland",
+   "size": 887
+  },
+  {
+   "id": "Q1144905",
+   "layer": "lake",
+   "name": "Lake Pihkva",
+   "image": "Lüübnitsa.JPG",
+   "lon": 28.012,
+   "lat": 58.005,
+   "wiki": "Lake_Pihkva",
+   "countries": [
+    "Q159"
+   ],
+   "group": "l-eu",
+   "nameThe": "Lake Pihkva",
+   "facts": "708 km² · Russia",
+   "size": 708
+  },
+  {
+   "id": "Q6383",
+   "layer": "lake",
+   "name": "Lake Balaton",
+   "image": "Balatonlelle, Balaton, 49.jpg",
+   "lon": 17.72,
+   "lat": 46.85,
+   "wiki": "Lake_Balaton",
+   "countries": [
+    "Q28"
+   ],
+   "group": "l-eu",
+   "nameThe": "Lake Balaton",
+   "facts": "592 km² · Hungary",
+   "size": 592
+  },
+  {
+   "id": "Q6403",
+   "layer": "lake",
+   "name": "Lake Geneva",
+   "image": "Lake Geneva aerial.jpg",
+   "lon": 6.55,
+   "lat": 46.45,
+   "wiki": "Lake_Geneva",
+   "countries": [
+    "Q39",
+    "Q142"
+   ],
+   "group": "l-eu",
+   "nameThe": "Lake Geneva",
+   "facts": "581 km² · Switzerland, France",
+   "size": 581
+  },
+  {
+   "id": "Q4127",
+   "layer": "lake",
+   "name": "Lake Constance",
+   "image": "Vorfrühling am Bodensee.jpg",
+   "lon": 9.317,
+   "lat": 47.65,
+   "wiki": "Lake_Constance",
+   "countries": [
+    "Q39",
+    "Q40",
+    "Q183"
+   ],
+   "group": "l-eu",
+   "nameThe": "Lake Constance",
+   "facts": "536 km² · Switzerland, Austria, Germany",
+   "size": 536
+  },
+  {
+   "id": "Q169962",
+   "layer": "lake",
+   "name": "Lake Tahoe",
+   "image": "Tahoe North Shore from the East Shore.jpg",
+   "lon": -120.033,
+   "lat": 39.083,
+   "wiki": "Lake_Tahoe",
+   "countries": [
+    "Q30"
+   ],
+   "group": "l-am",
+   "nameThe": "Lake Tahoe",
+   "facts": "502 km² · United States",
+   "size": 502
+  },
+  {
+   "id": "Q1324212",
+   "layer": "lake",
+   "name": "Lake Tumba",
+   "image": "Lake Tumba NASA.jpg",
+   "lon": 18,
+   "lat": -0.833,
+   "wiki": "Lake_Tumba",
+   "countries": [
+    "Q974"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Tumba",
+   "facts": "500 km² · DR Congo",
+   "size": 500
+  },
+  {
+   "id": "Q206942",
+   "layer": "lake",
+   "name": "Lough Neagh",
+   "image": "Ducks on Lough Neagh - geograph.org.uk - 267285.jpg",
+   "lon": -6.395,
+   "lat": 54.618,
+   "wiki": "Lough_Neagh",
+   "countries": [
+    "Q145"
+   ],
+   "group": "l-eu",
+   "nameThe": "Lough Neagh",
+   "facts": "392 km² · United Kingdom",
+   "size": 392
+  },
+  {
+   "id": "Q577148",
+   "layer": "lake",
+   "name": "Lake Manyara",
+   "image": "Lake Manyara.jpg",
+   "lon": 35.833,
+   "lat": -3.583,
+   "wiki": "Lake_Manyara",
+   "countries": [
+    "Q924"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Manyara",
+   "facts": "230 km² · Tanzania",
+   "size": 230
+  },
+  {
+   "id": "Q126982",
+   "layer": "lake",
+   "name": "Sea of Galilee",
+   "image": "Lake Tiberias (Sea of Galilee), Northern Israel.jpg",
+   "lon": 35.59,
+   "lat": 32.819,
+   "wiki": "Sea_of_Galilee",
+   "countries": [
+    "Q801"
+   ],
+   "group": "l-as",
+   "nameThe": "Sea of Galilee",
+   "facts": "168 km² · Israel",
+   "size": 168
+  },
+  {
+   "id": "Q81239",
+   "layer": "lake",
+   "name": "Lake Assal",
+   "image": "Lake Assal NASA.jpg",
+   "lon": 42.417,
+   "lat": 11.65,
+   "wiki": "Lake_Assal_(Djibouti)",
+   "countries": [
+    "Q977"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Assal",
+   "facts": "54 km² · Djibouti",
+   "size": 54
+  }
+ ]
+}

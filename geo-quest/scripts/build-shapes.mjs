@@ -36,7 +36,7 @@ function rewind(geometry) {
 
 /** Build a topology where all features sharing an id are merged into one shape. */
 function build(features, keep) {
-  features = features.map(f => ({ ...f, geometry: rewind(f.geometry) }));
+  features = features.map(f => ({ ...f, geometry: /Polygon/.test(f.geometry.type) ? rewind(f.geometry) : f.geometry }));
   let topo = topology({ f: { type: 'FeatureCollection', features } }, 1e5);
   topo = presimplify(topo);
   topo = simplify(topo, quantile(topo, keep));
@@ -66,4 +66,40 @@ const cn = admin1.features
     return { type: 'Feature', geometry: f.geometry, properties: { id: p.adm0_a3 === 'HKG' ? places.cn.hongKong : p.wikidataid, type } };
   });
 writeFileSync(join(ROOT, 'public/data/shapes-cn.json'), JSON.stringify(build(cn, 0.12)));
-console.log(`Wrote ${water.length} water features and ${cn.length} China features.`);
+
+// ---- lakes: every Natural Earth 1:50m lake that has a Wikidata id (the sync picks which to teach, by area) ----
+const lakesNE = await get('ne_50m_lakes.geojson');
+const lakes = lakesNE.features.filter(f => /^Q\d+$/.test(f.properties.wikidataid ?? '') && !waterIds.has(f.properties.wikidataid))
+  .map(f => ({ type: 'Feature', geometry: f.geometry, properties: { id: f.properties.wikidataid } }));
+writeFileSync(join(ROOT, 'public/data/shapes-lake.json'), JSON.stringify(build(lakes, 0.3)));
+
+// ---- rivers: curated in data/rivers.json (Natural Earth rivers carry no Wikidata id) ----
+const curated = JSON.parse(readFileSync(join(ROOT, 'data/rivers.json'), 'utf8')).rivers;
+// Resolve article titles → Wikidata ids via Wikipedia itself (follows redirects, so renamed articles keep working).
+const qidOf = {};
+for (let i = 0; i < curated.length; i += 50) {
+  const batch = curated.slice(i, i + 50).map(r => r.wiki);
+  const u = `https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=pageprops&ppprop=wikibase_item&titles=${encodeURIComponent(batch.join('|'))}`;
+  const j = await (await fetch(u, { headers: { 'User-Agent': 'GeoQuestStudyApp/0.1 (personal flashcard app)' } })).json();
+  const alias = {};
+  for (const n of j.query.normalized ?? []) alias[n.to] = n.from;
+  for (const r of j.query.redirects ?? []) alias[r.to] = alias[r.from] ?? r.from;
+  for (const pg of Object.values(j.query.pages)) {
+    const q = pg.pageprops?.wikibase_item;
+    if (q) { qidOf[pg.title] = q; if (alias[pg.title]) qidOf[alias[pg.title]] = q; }
+  }
+}
+const riversNE = await get('ne_10m_rivers_lake_centerlines.geojson');
+const lines = g => (!g ? [] : g.type === 'LineString' ? [g.coordinates] : g.type === 'MultiLineString' ? g.coordinates : []);
+const inBox = (ls, b) => !b || ls.some(l => l.some(([x, y]) => x >= b[0] && x <= b[2] && y >= b[1] && y <= b[3]));
+const rivers = [];
+for (const r of curated) {
+  const id = qidOf[r.wiki];
+  if (!id) { console.warn('No Wikidata item for', r.wiki); continue; }
+  const segs = riversNE.features.filter(f => (f.properties.featurecla === 'River' || f.properties.featurecla === 'Lake Centerline') && (r.ne.includes(f.properties.name_en) || r.ne.includes(f.properties.name)) && inBox(lines(f.geometry), r.bbox));
+  if (!segs.length) { console.warn('No shape for', r.wiki); continue; }
+  rivers.push({ type: 'Feature', geometry: { type: 'MultiLineString', coordinates: segs.flatMap(f => lines(f.geometry)) }, properties: { id } });
+}
+writeFileSync(join(ROOT, 'public/data/shapes-river.json'), JSON.stringify(build(rivers, 0.1)));
+
+console.log(`Wrote ${water.length} water, ${cn.length} China, ${lakes.length} lake and ${rivers.length} river features.`);

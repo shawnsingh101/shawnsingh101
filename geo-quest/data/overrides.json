@@ -1,6 +1,8 @@
 {
  "_readme": "Hand-written wording that Wikidata can't express well. A capital override is only used while Wikidata still lists exactly the capitals in capitalsSeen; if Wikidata changes, the sync script ignores the override and warns, so this file can never silently go stale.",
 
+ "_lakesAlways": ["Q23883", "Q126982", "Q6403", "Q4127", "Q6383", "Q199938", "Q169962", "Q140712", "Q42191", "Q125309", "Q206942"],
+
  "_extras": {
   "Q35":     { "status": "un", "note": null, "_why": "the UN seat belongs to the Kingdom of Denmark (Q756617), which has no ISO code" },
   "Q237":    { "status": "observer", "note": "UN observer state" },

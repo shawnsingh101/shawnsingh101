@@ -1,0 +1,1649 @@
+{
+ "source": "Wikidata (CC0)",
+ "places": [
+  {
+   "id": "Q3783",
+   "layer": "river",
+   "name": "Amazon River",
+   "image": "Amazon River - 2018.jpg",
+   "lon": -50.089,
+   "lat": 0.708,
+   "wiki": "Amazon_River",
+   "countries": [
+    "Q155",
+    "Q419",
+    "Q739"
+   ],
+   "group": "r-great",
+   "nameThe": "the Amazon River",
+   "facts": "6,992 km long · flows into the Atlantic Ocean · Brazil, Peru, Colombia",
+   "size": 6992
+  },
+  {
+   "id": "Q3392",
+   "layer": "river",
+   "name": "Nile",
+   "image": "Cairo skyline, Panoramic view, Egypt.jpg",
+   "lon": 30.367,
+   "lat": 31.465,
+   "wiki": "Nile",
+   "countries": [
+    "Q79",
+    "Q115",
+    "Q958",
+    "Q967",
+    "Q1036",
+    "Q1037",
+    "Q1049"
+   ],
+   "group": "r-great",
+   "nameThe": "the Nile",
+   "facts": "6,650 km long · flows into the Mediterranean Sea · Egypt, Ethiopia, South Sudan, Burundi…",
+   "size": 6650
+  },
+  {
+   "id": "Q5413",
+   "layer": "river",
+   "name": "Yangtze River",
+   "image": "Qutang Gorge on Changjiang.jpg",
+   "lon": 91.183,
+   "lat": 33.429,
+   "wiki": "Yangtze",
+   "countries": [
+    "Q148"
+   ],
+   "group": "r-great",
+   "nameThe": "the Yangtze River",
+   "facts": "6,300 km long · flows into the East China Sea · China",
+   "size": 6300
+  },
+  {
+   "id": "Q7355",
+   "layer": "river",
+   "name": "Yellow River",
+   "image": "Yellow River - panoramio.jpg",
+   "lon": 116.098,
+   "lat": 36.124,
+   "wiki": "Yellow_River",
+   "countries": [
+    "Q148"
+   ],
+   "group": "r-great",
+   "nameThe": "the Yellow River",
+   "facts": "5,464 km long · flows into the Bohai Sea · China",
+   "size": 5464
+  },
+  {
+   "id": "Q127892",
+   "layer": "river",
+   "name": "Paraná River",
+   "image": "City of Posadas.jpg",
+   "lon": -51.001,
+   "lat": -20.085,
+   "wiki": "Paraná_River",
+   "countries": [
+    "Q155",
+    "Q414",
+    "Q733"
+   ],
+   "group": "r-great",
+   "nameThe": "the Paraná River",
+   "facts": "4,880 km long · flows into the Río de la Plata · Brazil, Argentina, Paraguay",
+   "size": 4880
+  },
+  {
+   "id": "Q3503",
+   "layer": "river",
+   "name": "Congo River",
+   "image": "Sunrise near Mossaka (Congo).JPG",
+   "lon": 12.45,
+   "lat": -6.075,
+   "wiki": "Congo_River",
+   "countries": [
+    "Q916",
+    "Q953",
+    "Q971",
+    "Q974"
+   ],
+   "group": "r-great",
+   "nameThe": "the Congo River",
+   "facts": "4,700 km long · flows into the Atlantic Ocean · Angola, Zambia, Republic of the Congo, DR Congo",
+   "size": 4700
+  },
+  {
+   "id": "Q41179",
+   "layer": "river",
+   "name": "Mekong River",
+   "image": "Chiang Saen, Mekong River, Thailand.jpg",
+   "lon": 106.75,
+   "lat": 10.19,
+   "wiki": "Mekong",
+   "countries": [
+    "Q148",
+    "Q424",
+    "Q819",
+    "Q836",
+    "Q869",
+    "Q881"
+   ],
+   "group": "r-great",
+   "nameThe": "the Mekong River",
+   "facts": "4,350 km long · flows into the South China Sea · China, Cambodia, Laos, Myanmar…",
+   "size": 4350
+  },
+  {
+   "id": "Q46841",
+   "layer": "river",
+   "name": "Lena River",
+   "image": "Lena 2007 (synchroswimr).jpg",
+   "lon": 126.685,
+   "lat": 72.412,
+   "wiki": "Lena_River",
+   "countries": [
+    "Q159"
+   ],
+   "group": "r-great",
+   "nameThe": "the Lena River",
+   "facts": "4,294 km long · flows into the Laptev Sea · Russia",
+   "size": 4294
+  },
+  {
+   "id": "Q128102",
+   "layer": "river",
+   "name": "Irtysh",
+   "image": "Irtish v Omsk.JPG",
+   "lon": 68.831,
+   "lat": 61.081,
+   "wiki": "Irtysh",
+   "countries": [
+    "Q148",
+    "Q159",
+    "Q232"
+   ],
+   "group": "r-great",
+   "nameThe": "the Irtysh",
+   "facts": "4,248 km long · flows into the Ob · China, Russia, Kazakhstan",
+   "size": 4248
+  },
+  {
+   "id": "Q3542",
+   "layer": "river",
+   "name": "Niger River",
+   "image": "Niger River View, Djenne (6861797).jpg",
+   "lon": 6.469,
+   "lat": 5.322,
+   "wiki": "Niger_River",
+   "countries": [
+    "Q912",
+    "Q962",
+    "Q1006",
+    "Q1032",
+    "Q1033"
+   ],
+   "group": "r-great",
+   "nameThe": "the Niger River",
+   "facts": "4,180 km long · flows into the Gulf of Guinea · Mali, Benin, Guinea, Niger…",
+   "size": 4180
+  },
+  {
+   "id": "Q1497",
+   "layer": "river",
+   "name": "Mississippi River",
+   "image": "Efmo View from Fire Point.jpg",
+   "lon": -89.251,
+   "lat": 29.154,
+   "wiki": "Mississippi_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-great",
+   "nameThe": "the Mississippi River",
+   "facts": "3,766 km long · flows into the Gulf of Mexico · United States",
+   "size": 3766
+  },
+  {
+   "id": "Q5419",
+   "layer": "river",
+   "name": "Missouri River",
+   "image": "St Joseph Missouri River.jpg",
+   "lon": -90.12,
+   "lat": 38.814,
+   "wiki": "Missouri_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-great",
+   "nameThe": "the Missouri River",
+   "facts": "3,726 km long · flows into the Mississippi River · United States",
+   "size": 3726
+  },
+  {
+   "id": "Q973",
+   "layer": "river",
+   "name": "Ob",
+   "image": "Ob u Barnaulu.jpg",
+   "lon": 71.779,
+   "lat": 66.38,
+   "wiki": "Ob",
+   "countries": [
+    "Q159"
+   ],
+   "group": "r-great",
+   "nameThe": "the Ob",
+   "facts": "3,650 km long · flows into the Kara Sea · Russia",
+   "size": 3650
+  },
+  {
+   "id": "Q626",
+   "layer": "river",
+   "name": "Volga",
+   "image": "Вид на Кинешемский мост из села Воздвиженье.JPG",
+   "lon": 47.898,
+   "lat": 45.695,
+   "wiki": "Volga",
+   "countries": [
+    "Q159"
+   ],
+   "group": "r-great",
+   "nameThe": "the Volga",
+   "facts": "3,530 km long · flows into the Caspian Sea · Russia",
+   "size": 3530
+  },
+  {
+   "id": "Q78707",
+   "layer": "river",
+   "name": "Yenisei",
+   "image": "Yenisei River near Krasnoyarsk (2026-03-05) - 2.jpg",
+   "lon": 82.716,
+   "lat": 71.83,
+   "wiki": "Yenisei",
+   "countries": [
+    "Q159"
+   ],
+   "group": "r-great",
+   "nameThe": "the Yenisei",
+   "facts": "3,487 km long · flows into the Kara Sea · Russia",
+   "size": 3487
+  },
+  {
+   "id": "Q104437",
+   "layer": "river",
+   "name": "Yukon River",
+   "image": "Yukon River, Whitehorse (16209595096).jpg",
+   "lon": -134.519,
+   "lat": 60.542,
+   "wiki": "Yukon_River",
+   "countries": [
+    "Q16",
+    "Q30"
+   ],
+   "group": "r-great",
+   "nameThe": "the Yukon River",
+   "facts": "3,190 km long · flows into the Bering Sea · Canada, United States",
+   "size": 3190
+  },
+  {
+   "id": "Q7348",
+   "layer": "river",
+   "name": "Indus River",
+   "image": "Indus near Skardu.jpg",
+   "lon": 81.768,
+   "lat": 31.242,
+   "wiki": "Indus_River",
+   "countries": [
+    "Q148",
+    "Q668",
+    "Q843"
+   ],
+   "group": "r-great",
+   "nameThe": "the Indus River",
+   "facts": "3,180 km long · flows into the Arabian Sea · China, India, Pakistan",
+   "size": 3180
+  },
+  {
+   "id": "Q134750",
+   "layer": "river",
+   "name": "St. Lawrence River",
+   "image": "Pont de l'ile 2.JPG",
+   "lon": -64.5,
+   "lat": 49.667,
+   "wiki": "St._Lawrence_River",
+   "countries": [
+    "Q16",
+    "Q30"
+   ],
+   "group": "r-great",
+   "nameThe": "the St. Lawrence River",
+   "facts": "3,058 km long · flows into the Gulf of Saint Lawrence · Canada, United States",
+   "size": 3058
+  },
+  {
+   "id": "Q160636",
+   "layer": "river",
+   "name": "Rio Grande",
+   "image": "Rio Grande White Rock Overlook Park View 2006 09 05.jpg",
+   "lon": -107.538,
+   "lat": 37.798,
+   "wiki": "Rio_Grande",
+   "countries": [
+    "Q30",
+    "Q96"
+   ],
+   "group": "r-great",
+   "nameThe": "the Rio Grande",
+   "facts": "3,051 km long · flows into the Gulf of Mexico · United States, Mexico",
+   "size": 3051
+  },
+  {
+   "id": "Q45403",
+   "layer": "river",
+   "name": "Brahmaputra River",
+   "image": "Brahmaputra River Homeward bound.jpg",
+   "lon": 91.747,
+   "lat": 26.201,
+   "wiki": "Brahmaputra_River",
+   "countries": [
+    "Q148",
+    "Q668",
+    "Q837",
+    "Q902"
+   ],
+   "group": "r-great",
+   "nameThe": "the Brahmaputra River",
+   "facts": "2,900 km long · flows into the Ganges · China, India, Nepal, Bangladesh",
+   "size": 2900
+  },
+  {
+   "id": "Q1653",
+   "layer": "river",
+   "name": "Danube",
+   "image": "Budapest from Gellert Hill.jpg",
+   "lon": 29.743,
+   "lat": 45.222,
+   "wiki": "Danube",
+   "countries": [
+    "Q28",
+    "Q40",
+    "Q183",
+    "Q214",
+    "Q217",
+    "Q218",
+    "Q219",
+    "Q224",
+    "Q403"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Danube",
+   "facts": "2,850 km long · flows into the Black Sea · Hungary, Austria, Germany, Slovakia…",
+   "size": 2850
+  },
+  {
+   "id": "Q6862",
+   "layer": "river",
+   "name": "Amur River",
+   "image": "Heilongjiang (Amur) shore.jpg",
+   "lon": 141.047,
+   "lat": 52.991,
+   "wiki": "Amur",
+   "countries": [
+    "Q148",
+    "Q159"
+   ],
+   "group": "r-as",
+   "nameThe": "the Amur River",
+   "facts": "2,824 km long · flows into the Sea of Okhotsk · China, Russia",
+   "size": 2824
+  },
+  {
+   "id": "Q26422",
+   "layer": "river",
+   "name": "Salween River",
+   "image": "怒江福贡段 - 航拍 - 2024-06-01 05.jpg",
+   "lon": 91.535,
+   "lat": 31.845,
+   "wiki": "Salween_River",
+   "countries": [
+    "Q148",
+    "Q836",
+    "Q869"
+   ],
+   "group": "r-as",
+   "nameThe": "the Salween River",
+   "facts": "2,815 km long · flows into the Andaman Sea · China, Myanmar, Thailand",
+   "size": 2815
+  },
+  {
+   "id": "Q142148",
+   "layer": "river",
+   "name": "São Francisco River",
+   "image": "Canindé de São Francisco-002.jpg",
+   "lon": -36.394,
+   "lat": -10.504,
+   "wiki": "São_Francisco_River",
+   "countries": [
+    "Q155"
+   ],
+   "group": "r-am",
+   "nameThe": "the São Francisco River",
+   "facts": "2,814 km long · flows into the Atlantic Ocean · Brazil",
+   "size": 2814
+  },
+  {
+   "id": "Q34589",
+   "layer": "river",
+   "name": "Euphrates",
+   "image": "Fırat River Gaziantep.IMG 1474.jpg",
+   "lon": 40.257,
+   "lat": 39.728,
+   "wiki": "Euphrates",
+   "countries": [
+    "Q43",
+    "Q796",
+    "Q858"
+   ],
+   "group": "r-as",
+   "nameThe": "the Euphrates",
+   "facts": "2,800 km long · flows into the Shatt al-Arab · Türkiye, Iraq, Syria",
+   "size": 2800
+  },
+  {
+   "id": "Q269710",
+   "layer": "river",
+   "name": "Fraser River",
+   "image": "Confluence of the Fraser and Thompson rivers.jpg",
+   "lon": -118.317,
+   "lat": 52.518,
+   "wiki": "Fraser_River",
+   "countries": [
+    "Q16"
+   ],
+   "group": "r-am",
+   "nameThe": "the Fraser River",
+   "facts": "2,657 km long · flows into the Strait of Georgia · Canada",
+   "size": 2657
+  },
+  {
+   "id": "Q8493",
+   "layer": "river",
+   "name": "Amu Darya",
+   "image": "Amudarya by Nukus, Uzbekistan (Амударья рядом города Нукус).jpg",
+   "lon": 59.681,
+   "lat": 44.108,
+   "wiki": "Amu_Darya",
+   "countries": [
+    "Q265",
+    "Q863",
+    "Q874",
+    "Q889"
+   ],
+   "group": "r-as",
+   "nameThe": "the Amu Darya",
+   "facts": "2,620 km long · flows into the South Aral Sea · Uzbekistan, Tajikistan, Turkmenistan, Afghanistan",
+   "size": 2620
+  },
+  {
+   "id": "Q43106",
+   "layer": "river",
+   "name": "Zambezi River",
+   "image": "Río Zambeze, Zambia-Zimbabue, 2018-07-27, DD 25.jpg",
+   "lon": 36.47,
+   "lat": -18.571,
+   "wiki": "Zambezi",
+   "countries": [
+    "Q916",
+    "Q953",
+    "Q954",
+    "Q1029",
+    "Q1030"
+   ],
+   "group": "r-af",
+   "nameThe": "the Zambezi River",
+   "facts": "2,574 km long · flows into the Indian Ocean · Angola, Zambia, Zimbabwe, Mozambique…",
+   "size": 2574
+  },
+  {
+   "id": "Q183078",
+   "layer": "river",
+   "name": "Murray River",
+   "image": "Murray River at Boundary Bend.jpg",
+   "lon": 148.194,
+   "lat": -36.796,
+   "wiki": "Murray_River",
+   "countries": [
+    "Q408"
+   ],
+   "group": "r-as",
+   "nameThe": "the Murray River",
+   "facts": "2,530 km long · flows into the Indian Ocean · Australia",
+   "size": 2530
+  },
+  {
+   "id": "Q5089",
+   "layer": "river",
+   "name": "Ganges",
+   "image": "View of Ghats across the Ganges, Varanasi.jpg",
+   "lon": 90.9,
+   "lat": 22,
+   "wiki": "Ganges",
+   "countries": [
+    "Q668"
+   ],
+   "group": "r-as",
+   "nameThe": "the Ganges",
+   "facts": "2,525 km long · flows into the Bay of Bengal · India",
+   "size": 2525
+  },
+  {
+   "id": "Q156054",
+   "layer": "river",
+   "name": "Tocantins River",
+   "image": "Ponte Imperatriz.jpg",
+   "lon": -49.176,
+   "lat": -1.729,
+   "wiki": "Tocantins_River",
+   "countries": [
+    "Q155"
+   ],
+   "group": "r-am",
+   "nameThe": "the Tocantins River",
+   "facts": "2,450 km long · flows into the Marajó Bay · Brazil",
+   "size": 2450
+  },
+  {
+   "id": "Q80240",
+   "layer": "river",
+   "name": "Ural",
+   "image": "Ural river.jpg",
+   "lon": 59.417,
+   "lat": 54.701,
+   "wiki": "Ural_(river)",
+   "countries": [
+    "Q159",
+    "Q232"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Ural",
+   "facts": "2,428 km long · flows into the Caspian Sea · Russia, Kazakhstan",
+   "size": 2428
+  },
+  {
+   "id": "Q8319",
+   "layer": "river",
+   "name": "Arkansas River",
+   "image": "AR Arkansas River.jpg",
+   "lon": -106.344,
+   "lat": 39.258,
+   "wiki": "Arkansas_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-am",
+   "nameThe": "the Arkansas River",
+   "facts": "2,364 km long · flows into the Mississippi River · United States",
+   "size": 2364
+  },
+  {
+   "id": "Q1265",
+   "layer": "river",
+   "name": "Colorado River",
+   "image": "Grand Canyon Horseshoe Bend (crop 2).jpg",
+   "lon": -105.826,
+   "lat": 40.472,
+   "wiki": "Colorado_River",
+   "countries": [
+    "Q30",
+    "Q96"
+   ],
+   "group": "r-am",
+   "nameThe": "the Colorado River",
+   "facts": "2,334 km long · flows into the Gulf of California · United States, Mexico",
+   "size": 2334
+  },
+  {
+   "id": "Q40855",
+   "layer": "river",
+   "name": "Dnieper",
+   "image": "Dniepras.png",
+   "lon": 33.724,
+   "lat": 55.872,
+   "wiki": "Dnieper",
+   "countries": [
+    "Q159",
+    "Q184",
+    "Q212"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Dnieper",
+   "facts": "2,285 km long · flows into the Dnieper Estuary · Russia, Belarus, Ukraine",
+   "size": 2285
+  },
+  {
+   "id": "Q186541",
+   "layer": "river",
+   "name": "Kasai River",
+   "image": "Sankuru River entering Kasai River NASA.jpg",
+   "lon": 19.316,
+   "lat": -10.96,
+   "wiki": "Kasai_River",
+   "countries": [
+    "Q916",
+    "Q974"
+   ],
+   "group": "r-af",
+   "nameThe": "the Kasai River",
+   "facts": "2,272 km long · flows into the Congo River · Angola, DR Congo",
+   "size": 2272
+  },
+  {
+   "id": "Q483159",
+   "layer": "river",
+   "name": "Syr Darya",
+   "image": "Syr Darya river.jpg",
+   "lon": 71.758,
+   "lat": 40.901,
+   "wiki": "Syr_Darya",
+   "countries": [
+    "Q232",
+    "Q265",
+    "Q813",
+    "Q863"
+   ],
+   "group": "r-as",
+   "nameThe": "the Syr Darya",
+   "facts": "2,212 km long · flows into the North Aral Sea · Kazakhstan, Uzbekistan, Kyrgyzstan, Tajikistan",
+   "size": 2212
+  },
+  {
+   "id": "Q181475",
+   "layer": "river",
+   "name": "Orange River",
+   "image": "Údolí řeky Orange - panoramio.jpg",
+   "lon": 29.018,
+   "lat": -28.897,
+   "wiki": "Orange_River",
+   "countries": [
+    "Q258",
+    "Q1013",
+    "Q1030"
+   ],
+   "group": "r-af",
+   "nameThe": "the Orange River",
+   "facts": "2,200 km long · flows into the Atlantic Ocean · South Africa, Lesotho, Namibia",
+   "size": 2200
+  },
+  {
+   "id": "Q216941",
+   "layer": "river",
+   "name": "Xi River",
+   "image": "Xijiang Zhaoqing.JPG",
+   "lon": 113.05,
+   "lat": 22.8,
+   "wiki": "Xi_River",
+   "countries": [
+    "Q148"
+   ],
+   "group": "r-as",
+   "nameThe": "the Xi River",
+   "facts": "2,197 km long · flows into the Pearl River · China",
+   "size": 2197
+  },
+  {
+   "id": "Q26076",
+   "layer": "river",
+   "name": "Irrawaddy River",
+   "image": "Sagaing, Myanmar.jpg",
+   "lon": 97.499,
+   "lat": 25.71,
+   "wiki": "Irrawaddy_River",
+   "countries": [
+    "Q836"
+   ],
+   "group": "r-as",
+   "nameThe": "the Irrawaddy River",
+   "facts": "2,170 km long · flows into the Andaman Sea · Myanmar",
+   "size": 2170
+  },
+  {
+   "id": "Q131792",
+   "layer": "river",
+   "name": "Orinoco River",
+   "image": "Ciudad Bolívar historical zone.jpg",
+   "lon": -60.5,
+   "lat": 8.56,
+   "wiki": "Orinoco",
+   "countries": [
+    "Q717",
+    "Q739"
+   ],
+   "group": "r-am",
+   "nameThe": "the Orinoco River",
+   "facts": "2,140 km long · flows into the Atlantic Ocean · Venezuela, Colombia",
+   "size": 2140
+  },
+  {
+   "id": "Q78879",
+   "layer": "river",
+   "name": "Kolyma",
+   "image": "Колыма.jpg",
+   "lon": 161.364,
+   "lat": 69.551,
+   "wiki": "Kolyma_(river)",
+   "countries": [
+    "Q159"
+   ],
+   "group": "r-as",
+   "nameThe": "the Kolyma",
+   "facts": "2,129 km long · flows into the East Siberian Sea · Russia",
+   "size": 2129
+  },
+  {
+   "id": "Q237901",
+   "layer": "river",
+   "name": "Tarim River",
+   "image": "Wfm tarim basin.jpg",
+   "lon": 86.667,
+   "lat": 41.083,
+   "wiki": "Tarim_River",
+   "countries": [
+    "Q148"
+   ],
+   "group": "r-as",
+   "nameThe": "the Tarim River",
+   "facts": "2,030 km long · flows into the Tarim Basin · China",
+   "size": 2030
+  },
+  {
+   "id": "Q2251",
+   "layer": "river",
+   "name": "Columbia River",
+   "image": "ColumbiarivergorgeJRH.jpg",
+   "lon": -115.85,
+   "lat": 50.217,
+   "wiki": "Columbia_River",
+   "countries": [
+    "Q16",
+    "Q30"
+   ],
+   "group": "r-am",
+   "nameThe": "the Columbia River",
+   "facts": "2,000 km long · flows into the Pacific Ocean · Canada, United States",
+   "size": 2000
+  },
+  {
+   "id": "Q171847",
+   "layer": "river",
+   "name": "Araguaia River",
+   "image": "Rio araguaia.jpg",
+   "lon": -48.719,
+   "lat": -5.376,
+   "wiki": "Araguaia_River",
+   "countries": [
+    "Q155"
+   ],
+   "group": "r-am",
+   "nameThe": "the Araguaia River",
+   "facts": "1,910 km long · flows into the Tocantins River · Brazil",
+   "size": 1910
+  },
+  {
+   "id": "Q1229",
+   "layer": "river",
+   "name": "Don",
+   "image": "Don (Voronezh Oblast).jpg",
+   "lon": 38.278,
+   "lat": 54.012,
+   "wiki": "Don_(river)",
+   "countries": [
+    "Q159"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Don",
+   "facts": "1,870 km long · flows into the Sea of Azov · Russia",
+   "size": 1870
+  },
+  {
+   "id": "Q35591",
+   "layer": "river",
+   "name": "Tigris",
+   "image": "Tigris 2015.jpg",
+   "lon": 39.506,
+   "lat": 38.503,
+   "wiki": "Tigris",
+   "countries": [
+    "Q43",
+    "Q796",
+    "Q858"
+   ],
+   "group": "r-as",
+   "nameThe": "the Tigris",
+   "facts": "1,850 km long · flows into the Shatt al-Arab · Türkiye, Iraq, Syria",
+   "size": 1850
+  },
+  {
+   "id": "Q8168",
+   "layer": "river",
+   "name": "Pechora",
+   "image": "Вид на реку Печора.jpg",
+   "lon": 54.417,
+   "lat": 68.308,
+   "wiki": "Pechora_(river)",
+   "countries": [
+    "Q159"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Pechora",
+   "facts": "1,809 km long · flows into the Pechora Sea · Russia",
+   "size": 1809
+  },
+  {
+   "id": "Q18278",
+   "layer": "river",
+   "name": "Uruguay River",
+   "image": "Rio Uruguai.JPG",
+   "lon": -51.456,
+   "lat": -27.608,
+   "wiki": "Uruguay_River",
+   "countries": [
+    "Q77",
+    "Q155",
+    "Q414"
+   ],
+   "group": "r-am",
+   "nameThe": "the Uruguay River",
+   "facts": "1,790 km long · flows into the Río de la Plata · Uruguay, Brazil, Argentina",
+   "size": 1790
+  },
+  {
+   "id": "Q882739",
+   "layer": "river",
+   "name": "Blue Nile",
+   "image": "ET Bahir Dar asv2018-02 img17 Tis Issat.jpg",
+   "lon": 37.408,
+   "lat": 11.621,
+   "wiki": "Blue_Nile",
+   "countries": [
+    "Q115",
+    "Q1049"
+   ],
+   "group": "r-af",
+   "nameThe": "the Blue Nile",
+   "facts": "1,783 km long · flows into the Nile · Ethiopia, Sudan",
+   "size": 1783
+  },
+  {
+   "id": "Q162737",
+   "layer": "river",
+   "name": "Angara",
+   "image": "Glazkovsky bridge (September 2025) - 0 2.jpg",
+   "lon": 104.819,
+   "lat": 51.867,
+   "wiki": "Angara",
+   "countries": [
+    "Q159"
+   ],
+   "group": "r-as",
+   "nameThe": "the Angara",
+   "facts": "1,779 km long · flows into the Yenisei · Russia",
+   "size": 1779
+  },
+  {
+   "id": "Q173017",
+   "layer": "river",
+   "name": "Limpopo River",
+   "image": "Limpopo.jpg",
+   "lon": 33.515,
+   "lat": -25.203,
+   "wiki": "Limpopo_River",
+   "countries": [
+    "Q258",
+    "Q954",
+    "Q963",
+    "Q1029"
+   ],
+   "group": "r-af",
+   "nameThe": "the Limpopo River",
+   "facts": "1,750 km long · flows into the Indian Ocean · South Africa, Zimbabwe, Botswana, Mozambique",
+   "size": 1750
+  },
+  {
+   "id": "Q3411",
+   "layer": "river",
+   "name": "Mackenzie River",
+   "image": "Mackenzie River drainage basin.PNG",
+   "lon": -135.022,
+   "lat": 69.198,
+   "wiki": "Mackenzie_River",
+   "countries": [
+    "Q16"
+   ],
+   "group": "r-am",
+   "nameThe": "the Mackenzie River",
+   "facts": "1,738 km long · flows into the Beaufort Sea · Canada",
+   "size": 1738
+  },
+  {
+   "id": "Q272074",
+   "layer": "river",
+   "name": "Snake River",
+   "image": "U.S. Highway 93 bridge from within Snake River Canyon.jpeg",
+   "lon": -110.219,
+   "lat": 44.13,
+   "wiki": "Snake_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-am",
+   "nameThe": "the Snake River",
+   "facts": "1,735 km long · flows into the Columbia River · United States",
+   "size": 1735
+  },
+  {
+   "id": "Q49544",
+   "layer": "river",
+   "name": "Xingu River",
+   "image": "AMAZONIA REAL ALDEIA SAO FRANCISCO SOUZEL PEDROSA NETO-437 (49594456486).jpg",
+   "lon": -51.867,
+   "lat": -1.524,
+   "wiki": "Xingu_River",
+   "countries": [
+    "Q155"
+   ],
+   "group": "r-am",
+   "nameThe": "the Xingu River",
+   "facts": "1,640 km long · flows into the Amazon River · Brazil",
+   "size": 1640
+  },
+  {
+   "id": "Q188773",
+   "layer": "river",
+   "name": "Okavango River",
+   "image": "Okavangolodge.jpg",
+   "lon": 16.127,
+   "lat": -12.654,
+   "wiki": "Okavango_River",
+   "countries": [
+    "Q916",
+    "Q963",
+    "Q1030"
+   ],
+   "group": "r-af",
+   "nameThe": "the Okavango River",
+   "facts": "1,600 km long · flows into the Okavango Delta · Angola, Botswana, Namibia",
+   "size": 1600
+  },
+  {
+   "id": "Q4915",
+   "layer": "river",
+   "name": "Ohio River",
+   "image": "Ohio Falls Bridge 2025j.jpg",
+   "lon": -80.017,
+   "lat": 40.443,
+   "wiki": "Ohio_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-am",
+   "nameThe": "the Ohio River",
+   "facts": "1,579 km long · flows into the Mississippi River · United States",
+   "size": 1579
+  },
+  {
+   "id": "Q191829",
+   "layer": "river",
+   "name": "Magdalena River",
+   "image": "Rio Magdalena, Colombia 01.jpg",
+   "lon": -74.851,
+   "lat": 11.103,
+   "wiki": "Magdalena_River",
+   "countries": [
+    "Q739"
+   ],
+   "group": "r-am",
+   "nameThe": "the Magdalena River",
+   "facts": "1,528 km long · flows into the Caribbean Sea · Colombia",
+   "size": 1528
+  },
+  {
+   "id": "Q192415",
+   "layer": "river",
+   "name": "Volta River",
+   "image": "VoltaRiverWithAdombeBridge183-1-.jpg",
+   "lon": 0.672,
+   "lat": 5.774,
+   "wiki": "Volta_River",
+   "countries": [
+    "Q117",
+    "Q965"
+   ],
+   "group": "r-af",
+   "nameThe": "the Volta River",
+   "facts": "1,500 km long · flows into the Gulf of Guinea · Ghana, Burkina Faso",
+   "size": 1500
+  },
+  {
+   "id": "Q181482",
+   "layer": "river",
+   "name": "Darling River",
+   "image": "Darling-near-Bourke.jpg",
+   "lon": 146.308,
+   "lat": -29.958,
+   "wiki": "Darling_River",
+   "countries": [
+    "Q408"
+   ],
+   "group": "r-as",
+   "nameThe": "the Darling River",
+   "facts": "1,472 km long · flows into the Murray River · Australia",
+   "size": 1472
+  },
+  {
+   "id": "Q191314",
+   "layer": "river",
+   "name": "Godavari River",
+   "image": "Godavari river.jpg",
+   "lon": 73.528,
+   "lat": 19.93,
+   "wiki": "Godavari_River",
+   "countries": [
+    "Q668"
+   ],
+   "group": "r-as",
+   "nameThe": "the Godavari River",
+   "facts": "1,465 km long · flows into the Bay of Bengal · India",
+   "size": 1465
+  },
+  {
+   "id": "Q118251",
+   "layer": "river",
+   "name": "Madeira River",
+   "image": "Rio Madeira 09072007.jpg",
+   "lon": -58.751,
+   "lat": -3.369,
+   "wiki": "Madeira_River",
+   "countries": [
+    "Q155",
+    "Q750"
+   ],
+   "group": "r-am",
+   "nameThe": "the Madeira River",
+   "facts": "1,450 km long · flows into the Amazon River · Brazil, Bolivia",
+   "size": 1450
+  },
+  {
+   "id": "Q193499",
+   "layer": "river",
+   "name": "Krishna River",
+   "image": "Soutěska řeky Kršny u Šríšajlamu.jpg",
+   "lon": 73.66,
+   "lat": 17.924,
+   "wiki": "Krishna_River",
+   "countries": [
+    "Q668"
+   ],
+   "group": "r-as",
+   "nameThe": "the Krishna River",
+   "facts": "1,400 km long · flows into the Bay of Bengal · India",
+   "size": 1400
+  },
+  {
+   "id": "Q132726",
+   "layer": "river",
+   "name": "Yamuna",
+   "image": "Taj Majal y rio Yamuna.JPG",
+   "lon": 78.455,
+   "lat": 31.023,
+   "wiki": "Yamuna",
+   "countries": [
+    "Q668"
+   ],
+   "group": "r-as",
+   "nameThe": "the Yamuna",
+   "facts": "1,376 km long · flows into the Ganges · India",
+   "size": 1376
+  },
+  {
+   "id": "Q204806",
+   "layer": "river",
+   "name": "Benue River",
+   "image": "River Benue (in Makurdi showing OLD Bridge).jpg",
+   "lon": 6.767,
+   "lat": 7.783,
+   "wiki": "Benue_River",
+   "countries": [
+    "Q1009",
+    "Q1033"
+   ],
+   "group": "r-af",
+   "nameThe": "the Benue River",
+   "facts": "1,370 km long · flows into the Niger River · Cameroon, Nigeria",
+   "size": 1370
+  },
+  {
+   "id": "Q903306",
+   "layer": "river",
+   "name": "Brazos River",
+   "image": "Brazos River railroad bridge Waco TX.jpg",
+   "lon": -100.01,
+   "lat": 33.269,
+   "wiki": "Brazos_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-am",
+   "nameThe": "the Brazos River",
+   "facts": "1,352 km long · flows into the Gulf of Mexico · United States",
+   "size": 1352
+  },
+  {
+   "id": "Q131210",
+   "layer": "river",
+   "name": "Dniester",
+   "image": "19-01-18-Prednistrowien-RalfR-18.jpg",
+   "lon": 30.233,
+   "lat": 46.35,
+   "wiki": "Dniester",
+   "countries": [
+    "Q212",
+    "Q217",
+    "Q907112"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Dniester",
+   "facts": "1,352 km long · flows into the Dniester Lyman · Ukraine, Moldova, Transnistria",
+   "size": 1352
+  },
+  {
+   "id": "Q234004",
+   "layer": "river",
+   "name": "Narmada",
+   "image": "Omkareshwar1.JPG",
+   "lon": 81.75,
+   "lat": 22.667,
+   "wiki": "Narmada_River",
+   "countries": [
+    "Q668"
+   ],
+   "group": "r-as",
+   "nameThe": "the Narmada",
+   "facts": "1,315 km long · flows into the Arabian Sea · India",
+   "size": 1315
+  },
+  {
+   "id": "Q584",
+   "layer": "river",
+   "name": "Rhine",
+   "image": "Loreleyblick Maria Ruh 2025.jpg",
+   "lon": 4.093,
+   "lat": 51.981,
+   "wiki": "Rhine",
+   "countries": [
+    "Q39",
+    "Q40",
+    "Q55",
+    "Q142",
+    "Q183",
+    "Q347"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Rhine",
+   "facts": "1,233 km long · flows into the North Sea · Switzerland, Austria, France, Germany…",
+   "size": 1233
+  },
+  {
+   "id": "Q8510",
+   "layer": "river",
+   "name": "Helmand River",
+   "image": "Aerial photograph of Helmand River at Gereshk in 2011.jpg",
+   "lon": 68.684,
+   "lat": 34.653,
+   "wiki": "Helmand_River",
+   "countries": [
+    "Q794",
+    "Q889"
+   ],
+   "group": "r-as",
+   "nameThe": "the Helmand River",
+   "facts": "1,150 km long · flows into the Hamun-e Helmand · Iran, Afghanistan",
+   "size": 1150
+  },
+  {
+   "id": "Q206850",
+   "layer": "river",
+   "name": "Red River",
+   "image": "Yuanyang-to-honghe-1.jpg",
+   "lon": 106.563,
+   "lat": 20.271,
+   "wiki": "Red_River_(Asia)",
+   "countries": [
+    "Q148",
+    "Q881"
+   ],
+   "group": "r-as",
+   "nameThe": "the Red River",
+   "facts": "1,149 km long · flows into the South China Sea · China, Vietnam",
+   "size": 1149
+  },
+  {
+   "id": "Q213576",
+   "layer": "river",
+   "name": "Huai River",
+   "image": "201806 Bengbu and Huai River.jpg",
+   "lon": 118.63,
+   "lat": 33.22,
+   "wiki": "Huai_River",
+   "countries": [
+    "Q148"
+   ],
+   "group": "r-as",
+   "nameThe": "the Huai River",
+   "facts": "1,110 km long · flows into the Hongze Lake · China",
+   "size": 1110
+  },
+  {
+   "id": "Q1644",
+   "layer": "river",
+   "name": "Elbe",
+   "image": "Labe udoli.jpg",
+   "lon": 8.722,
+   "lat": 53.922,
+   "wiki": "Elbe",
+   "countries": [
+    "Q183",
+    "Q213"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Elbe",
+   "facts": "1,094 km long · flows into the North Sea · Germany, Czechia",
+   "size": 1094
+  },
+  {
+   "id": "Q171649",
+   "layer": "river",
+   "name": "Ubangi River",
+   "image": "Ubangi 21.43546E 4.35078N.jpg",
+   "lon": 22.435,
+   "lat": 4.123,
+   "wiki": "Ubangi_River",
+   "countries": [
+    "Q929",
+    "Q971",
+    "Q974"
+   ],
+   "group": "r-af",
+   "nameThe": "the Ubangi River",
+   "facts": "1,060 km long · flows into the Congo River · Central African Republic, Republic of the Congo, DR Congo",
+   "size": 1060
+  },
+  {
+   "id": "Q3569",
+   "layer": "river",
+   "name": "Senegal River",
+   "image": "Fluss Senegal.jpg",
+   "lon": -10.83,
+   "lat": 13.814,
+   "wiki": "Senegal_River",
+   "countries": [
+    "Q912",
+    "Q1025",
+    "Q1041"
+   ],
+   "group": "r-af",
+   "nameThe": "the Senegal River",
+   "facts": "1,050 km long · flows into the Atlantic Ocean · Mali, Mauritania, Senegal",
+   "size": 1050
+  },
+  {
+   "id": "Q193737",
+   "layer": "river",
+   "name": "Tennessee River",
+   "image": "Tn River Bridge Natchez Trace.jpg",
+   "lon": -83.85,
+   "lat": 35.959,
+   "wiki": "Tennessee_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-am",
+   "nameThe": "the Tennessee River",
+   "facts": "1,049 km long · flows into the Ohio River · United States",
+   "size": 1049
+  },
+  {
+   "id": "Q548",
+   "layer": "river",
+   "name": "Vistula",
+   "image": "Boat on the Vistula River in Kraków, Poland.jpg",
+   "lon": 18.952,
+   "lat": 54.362,
+   "wiki": "Vistula",
+   "countries": [
+    "Q36"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Vistula",
+   "facts": "1,047 km long · flows into the Gdańsk Bay · Poland",
+   "size": 1047
+  },
+  {
+   "id": "Q75745",
+   "layer": "river",
+   "name": "Selenga",
+   "image": "Selenga von oben.jpg",
+   "lon": 106.272,
+   "lat": 52.276,
+   "wiki": "Selenga",
+   "countries": [
+    "Q159",
+    "Q711"
+   ],
+   "group": "r-as",
+   "nameThe": "the Selenga",
+   "facts": "1,024 km long · flows into Lake Baikal · Russia, Mongolia",
+   "size": 1024
+  },
+  {
+   "id": "Q8197",
+   "layer": "river",
+   "name": "Daugava",
+   "image": "Belarus-Dzvina River-6.jpg",
+   "lon": 32.542,
+   "lat": 56.856,
+   "wiki": "Daugava",
+   "countries": [
+    "Q159",
+    "Q184",
+    "Q211"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Daugava",
+   "facts": "1,020 km long · flows into the Gulf of Riga · Russia, Belarus, Latvia",
+   "size": 1020
+  },
+  {
+   "id": "Q14294",
+   "layer": "river",
+   "name": "Tagus",
+   "image": "Castelo de Rodao.jpg",
+   "lon": -1.698,
+   "lat": 40.32,
+   "wiki": "Tagus",
+   "countries": [
+    "Q29",
+    "Q45"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Tagus",
+   "facts": "1,007 km long · flows into the Atlantic Ocean · Spain, Portugal",
+   "size": 1007
+  },
+  {
+   "id": "Q1469",
+   "layer": "river",
+   "name": "Loire",
+   "image": "Loire à Bréhémont2.JPG",
+   "lon": 4.219,
+   "lat": 44.842,
+   "wiki": "Loire",
+   "countries": [
+    "Q142"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Loire",
+   "facts": "1,006 km long · flows into the Bay of Biscay · France",
+   "size": 1006
+  },
+  {
+   "id": "Q14383",
+   "layer": "river",
+   "name": "Sava",
+   "image": "Belgrad aus der Luft 02.jpg",
+   "lon": 20.45,
+   "lat": 44.832,
+   "wiki": "Sava",
+   "countries": [
+    "Q215",
+    "Q224",
+    "Q225",
+    "Q403"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Sava",
+   "facts": "945 km long · flows into the Danube · Slovenia, Croatia, Bosnia and Herzegovina, Serbia",
+   "size": 945
+  },
+  {
+   "id": "Q10965",
+   "layer": "river",
+   "name": "Ebro",
+   "image": "Zaragoza shel.JPG",
+   "lon": 0.869,
+   "lat": 40.729,
+   "wiki": "Ebro",
+   "countries": [
+    "Q29"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Ebro",
+   "facts": "910 km long · flows into the Mediterranean Sea · Spain",
+   "size": 910
+  },
+  {
+   "id": "Q14299",
+   "layer": "river",
+   "name": "Douro",
+   "image": "Vila Nova de Foz Coa rio Douro (14282784962).jpg",
+   "lon": -2.9,
+   "lat": 41.983,
+   "wiki": "Douro",
+   "countries": [
+    "Q29",
+    "Q45"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Douro",
+   "facts": "897 km long · flows into the Atlantic Ocean · Spain, Portugal",
+   "size": 897
+  },
+  {
+   "id": "Q552",
+   "layer": "river",
+   "name": "Oder",
+   "image": "WyspaRedzinska-GK.JPG",
+   "lon": 14.59,
+   "lat": 53.602,
+   "wiki": "Oder",
+   "countries": [
+    "Q36",
+    "Q183",
+    "Q213"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Oder",
+   "facts": "854 km long · flows into the Baltic Sea · Poland, Germany, Czechia",
+   "size": 854
+  },
+  {
+   "id": "Q602",
+   "layer": "river",
+   "name": "Rhône",
+   "image": "Saint-benezet in southeastern France.jpg",
+   "lon": 8.38,
+   "lat": 46.574,
+   "wiki": "Rhône",
+   "countries": [
+    "Q39",
+    "Q142"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Rhône",
+   "facts": "812 km long · flows into the Mediterranean Sea · Switzerland, France",
+   "size": 812
+  },
+  {
+   "id": "Q1471",
+   "layer": "river",
+   "name": "Seine",
+   "image": "The Seine as seen from the Eiffel Tower, June 2002.jpg",
+   "lon": 0.117,
+   "lat": 49.435,
+   "wiki": "Seine",
+   "countries": [
+    "Q142"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Seine",
+   "facts": "777 km long · flows into the English Channel · France",
+   "size": 777
+  },
+  {
+   "id": "Q8187",
+   "layer": "river",
+   "name": "Northern Dvina",
+   "image": "Arkhangelsk bridge.jpg",
+   "lon": 46.33,
+   "lat": 60.732,
+   "wiki": "Northern_Dvina",
+   "countries": [
+    "Q159"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Northern Dvina",
+   "facts": "744 km long · flows into the Dvina Bay · Russia",
+   "size": 744
+  },
+  {
+   "id": "Q643",
+   "layer": "river",
+   "name": "Po",
+   "image": "Po bei Mantova.jpg",
+   "lon": 12.547,
+   "lat": 44.97,
+   "wiki": "Po_(river)",
+   "countries": [
+    "Q38"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Po",
+   "facts": "652 km long · flows into the Adriatic Sea · Italy",
+   "size": 652
+  },
+  {
+   "id": "Q5077",
+   "layer": "river",
+   "name": "Garonne",
+   "image": "Le Pont-Neuf de Toulouse.jpg",
+   "lon": 0.969,
+   "lat": 42.618,
+   "wiki": "Garonne",
+   "countries": [
+    "Q29",
+    "Q142"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Garonne",
+   "facts": "647 km long · flows into the Gironde estuary · Spain, France",
+   "size": 647
+  },
+  {
+   "id": "Q55500",
+   "layer": "river",
+   "name": "Han River",
+   "image": "Seoul-Han.River.at.night-01.jpg",
+   "lon": 127.311,
+   "lat": 37.527,
+   "wiki": "Han_River_(Korea)",
+   "countries": [
+    "Q423",
+    "Q884"
+   ],
+   "group": "r-as",
+   "nameThe": "the Han River",
+   "facts": "514 km long · flows into the Yellow Sea · North Korea, South Korea",
+   "size": 514
+  },
+  {
+   "id": "Q3140",
+   "layer": "river",
+   "name": "Hudson River",
+   "image": "Hudson river sailboat.jpg",
+   "lon": -74.042,
+   "lat": 40.6,
+   "wiki": "Hudson_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-am",
+   "nameThe": "the Hudson River",
+   "facts": "492 km long · flows into the Upper New York Bay · United States",
+   "size": 492
+  },
+  {
+   "id": "Q13712",
+   "layer": "river",
+   "name": "Tiber",
+   "image": "StAngelo Bridge Rome.jpg",
+   "lon": 12.078,
+   "lat": 43.787,
+   "wiki": "Tiber",
+   "countries": [
+    "Q38"
+   ],
+   "group": "r-eu",
+   "nameThe": "the Tiber",
+   "facts": "405 km long · flows into the Tyrrhenian Sea · Italy",
+   "size": 405
+  },
+  {
+   "id": "Q118850",
+   "layer": "river",
+   "name": "Chao Phraya River",
+   "image": "Lunch at Rongros, Bangkok (Jan 2021) - img 06.jpg",
+   "lon": 100.141,
+   "lat": 15.701,
+   "wiki": "Chao_Phraya_River",
+   "countries": [
+    "Q869"
+   ],
+   "group": "r-as",
+   "nameThe": "the Chao Phraya River",
+   "facts": "372 km long · flows into the Gulf of Thailand · Thailand",
+   "size": 372
+  },
+  {
+   "id": "Q19686",
+   "layer": "river",
+   "name": "River Thames",
+   "image": "River thames oxford.jpg",
+   "lon": 0.61,
+   "lat": 51.5,
+   "wiki": "River_Thames",
+   "countries": [
+    "Q145"
+   ],
+   "group": "r-eu",
+   "nameThe": "the River Thames",
+   "facts": "334 km long · flows into the North Sea · United Kingdom",
+   "size": 334
+  },
+  {
+   "id": "Q40059",
+   "layer": "river",
+   "name": "Jordan River",
+   "image": "Aerial jordan.jpg",
+   "lon": 35.619,
+   "lat": 33.187,
+   "wiki": "Jordan_River",
+   "countries": [
+    "Q801",
+    "Q810",
+    "Q822",
+    "Q858",
+    "Q219060"
+   ],
+   "group": "r-as",
+   "nameThe": "the Jordan River",
+   "facts": "252 km long · flows into the Dead Sea · Israel, Jordan, Lebanon, Syria…",
+   "size": 252
+  }
+ ]
+}

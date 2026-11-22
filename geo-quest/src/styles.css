@@ -346,3 +346,24 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .grade { position: relative; }
 .grade kbd { font: 600 .62rem/1 var(--font); opacity: .75; margin-top: .25rem; border: 1px solid rgba(255,255,255,.5); border-radius: 4px; padding: .12rem .3rem; }
 @media (hover: none), (pointer: coarse) { .grade kbd, .kbd-only { display: none; } }
+
+/* ---- rivers & lakes ---- */
+:root { --river: #5b9cc4; } :root[data-theme="dark"] { --river: #6fb3dd; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --river: #6fb3dd; } }
+.lake { fill: color-mix(in srgb, var(--river) 45%, var(--ocean)); stroke: color-mix(in srgb, var(--river) 70%, var(--ocean)); stroke-width: .4; vector-effect: non-scaling-stroke; transition: fill .3s; }
+.lake.other { pointer-events: none; opacity: .7; }
+.lake.place:hover { fill: color-mix(in srgb, var(--river) 70%, var(--ocean)); }
+.tone-accent.lake { fill: var(--accent) !important; } .tone-right.lake { fill: var(--right) !important; } .tone-wrong.lake { fill: var(--wrong) !important; }
+.river path { fill: none; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+.river .hit { stroke: transparent; stroke-width: 16px; }
+.river .vis { stroke: var(--river); stroke-width: 1.1px; transition: stroke .2s, stroke-width .2s; pointer-events: none; }
+.river.great .vis { stroke-width: 1.8px; }
+.river:hover .vis { stroke-width: 3px; }
+.river.dim .vis { opacity: .35; }
+.river.tone-accent .vis { stroke: var(--accent); stroke-width: 3.5px; }
+.river.tone-right .vis { stroke: var(--right); stroke-width: 3.5px; }
+.river.tone-wrong .vis { stroke: var(--wrong); stroke-width: 3.5px; }
+
+.map-tip .tip-facts { font-size: .78rem; opacity: .85; }
+.cont-rivers { background: linear-gradient(140deg, #d5e8f0, var(--surface) 70%); }
+.cont-lakes { background: linear-gradient(140deg, #d9eee9, var(--surface) 70%); }

@@ -169,7 +169,7 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
       </div>
 
       {showMap && (
-        <WorldMap ds={ds} className="study-map" recenter layers={extra ? [extra] : []} tones={tones} labels={labels} pins={pins} focus={focus}
+        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} focus={focus}
           dim={id => !regionIds.includes(id) && ds.byId.get(id)?.layer === c.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
       )}
 

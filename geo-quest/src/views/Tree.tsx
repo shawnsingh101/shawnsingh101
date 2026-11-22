@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GROUPS, nodeId, parseNode, placesIn, SECTIONS, slotOf, groupById } from '../cards';
+import { GROUPS, nodeId, parseNode, placesIn, SECTIONS, slotOf, groupById, LAYER_NOUN } from '../cards';
 import { isUnlocked, learnMore, nodeStats, update, useProgress } from '../srs';
 import { makeQuiz, type Scope } from '../quiz';
 import { sounds } from '../sound';
@@ -31,7 +31,7 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
       </div>
       <div className="mini-bar"><i style={{ width: `${(s.known / s.total) * 100}%` }} /><em style={{ width: `${(s.mastered / s.total) * 100}%` }} /></div>
       <p className="muted small">{s.total} cards · {placesIn(ds, groupId).map(c => c.name).join(' · ')}</p>
-      {!unlocked && <p className="note"><Icon name="lock" size={15} /> Know half of {g.name}'s {g.topics[0].name.toLowerCase()} to unlock this (or turn skill locks off in the ribbon). You can still practise it as a quiz.</p>}
+      {!unlocked && <p className="note"><Icon name="lock" size={15} /> {g.requires ? `Know half of “${groupById(parseNode(g.requires).groupId).name}” to unlock this` : `Know half of ${g.name}'s ${g.topics[0].name.toLowerCase()} to unlock this`} (or turn skill locks off in the ribbon). You can still practise it as a quiz.</p>}
       <div className="sheet-actions">
         {unlocked && <button className={'btn' + (active ? '' : ' primary')} onClick={toggle}>{active ? 'Stop learning' : 'Start learning'}</button>}
         {active && s.started < s.total && <button className="btn" onClick={() => { learnMore(10); startStudy(); }}><Icon name="plus" /> Learn 10 more now</button>}
@@ -70,7 +70,7 @@ export function Tree({ ds, startQuiz, startStudy }: { ds: Dataset; startQuiz: (q
             <div className="groups">
               {groups.map(g => (
                 <div key={g.id} className="group">
-                  <div className="group-head"><b>{g.name}</b><small>{placesIn(ds, g.id).length} {g.layer === 'water' ? 'waters' : g.layer === 'cn' ? 'divisions' : 'countries'}</small></div>
+                  <div className="group-head"><b>{g.name}</b><small>{placesIn(ds, g.id).length} {LAYER_NOUN[g.layer]}</small></div>
                   <div className={'branch n' + g.topics.length}>
                     {g.topics.map(t => {
                       const id = nodeId(g.id, t.id);

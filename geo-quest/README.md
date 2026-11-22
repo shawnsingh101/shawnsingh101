@@ -22,6 +22,17 @@ world map fill in as you master it.
   `world-countries` dataset; capitals' native names from Wikidata. `nativeLangs` in `data/overrides.json`
   sets which language comes first where it matters (e.g. Hebrew before Arabic for Israel).
 
+## v0.5: rivers & lakes
+
+- **96 rivers** and **91 lakes**, each with find-it / name-it cards, length or area, where it flows, and its countries.
+- **Tiers keep it manageable**: the 20 longest rivers / 20 largest lakes (ranked live from Wikidata) come first;
+  each continent's rivers and lakes unlock once you know half of that tier. A few small-but-famous lakes
+  (Dead Sea, Lake Geneva…) are always included (`_lakesAlways` in `data/overrides.json`).
+- **On the map**: rivers are thin lines with a wide invisible tap area; the great rivers always show, smaller ones
+  appear as you zoom in. During a question only that group's rivers are drawn.
+- Rivers come from Natural Earth 1:10m, mapped to Wikidata via `data/rivers.json` (Natural Earth river segments
+  have local names and no ids); lakes are matched by Wikidata id automatically.
+
 ## v0.4
 
 - **Map re-centres on what you're studying** (e.g. ~105°E for China), so regions far from Europe sit upright

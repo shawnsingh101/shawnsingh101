@@ -17,11 +17,13 @@ export function placeMastery(p: ReturnType<typeof useProgress>, place: Place) {
   return sum / ks.length;
 }
 
-type MapKey = 'mapNames' | 'mapCapitals' | 'mapWater' | 'mapCn';
+type MapKey = 'mapNames' | 'mapCapitals' | 'mapWater' | 'mapRivers' | 'mapLakes' | 'mapCn';
 const TOGGLES: { k: MapKey; label: string; icon: IconName; kind: 'label' | 'layer' }[] = [
   { k: 'mapNames', label: 'Names', icon: 'tag', kind: 'label' },
   { k: 'mapCapitals', label: 'Capitals', icon: 'landmark', kind: 'label' },
   { k: 'mapWater', label: 'Oceans & seas', icon: 'wave', kind: 'layer' },
+  { k: 'mapRivers', label: 'Rivers', icon: 'river', kind: 'layer' },
+  { k: 'mapLakes', label: 'Lakes', icon: 'drop', kind: 'layer' },
   { k: 'mapCn', label: 'China provinces', icon: 'layers', kind: 'layer' },
 ];
 
@@ -47,7 +49,7 @@ export function MapView({ ds }: { ds: Dataset }) {
   ds.countries.forEach(c => { const m = mastery.get(c.id) ?? 0; counts[m === 0 ? 0 : m < 1.5 ? 1 : m < 2.5 ? 2 : 3]++; });
   const set = (k: keyof Settings, v: boolean) => update(x => { (x.settings as unknown as Record<string, boolean>)[k] = v; });
   const labelsOn = s.mapNames || s.mapCapitals;
-  const layers = [...(s.mapWater ? ['water' as const] : []), ...(s.mapCn ? ['cn' as const] : [])];
+  const layers = [...(s.mapWater ? ['water' as const] : []), ...(s.mapCn ? ['cn' as const] : []), ...(s.mapLakes ? ['lake' as const] : []), ...(s.mapRivers ? ['river' as const] : [])];
 
   const onTap = (h: MapHit) => {
     if (!h.countryId) return;
@@ -59,6 +61,7 @@ export function MapView({ ds }: { ds: Dataset }) {
   const tipBody = (pl: Place | null | undefined, name: string) => (
     <>
       {s.mapNames && <b>{pl?.name ?? name}</b>}
+      {pl?.facts && <span className="tip-facts">{pl.facts}</span>}
       {s.mapNames && pl && <span className="local"><LocalName place={pl} voice={!!tip?.touch} /></span>}
       {s.mapCapitals && pl?.capitalAnswer && <span><Icon name="landmark" size={13} /> {pl.capitals.map(c => c.name).join(' / ')} {pl.capitals[0] && <span className="local inline"><LocalName place={pl} capital={pl.capitals[0]} voice={!!tip?.touch} /></span>}</span>}
       {s.mapCapitals && !s.mapNames && !pl?.capitalAnswer && <span className="muted">{pl?.name ?? name}</span>}
@@ -67,7 +70,7 @@ export function MapView({ ds }: { ds: Dataset }) {
 
   return (
     <div className="mapview">
-      <WorldMap ds={ds} className="full-map" layers={layers} fill={fill} tones={sel ? { [sel]: 'accent' } : tip?.touch && tip.id ? { [tip.id]: 'accent' } : {}}
+      <WorldMap ds={ds} className="full-map" layers={layers} detailByZoom fill={fill} tones={sel ? { [sel]: 'accent' } : tip?.touch && tip.id ? { [tip.id]: 'accent' } : {}}
         focus={sel ? { ids: [sel], key: sel } : null} onTap={onTap}
         onHover={labelsOn ? (h, x, y) => setTip(h ? { id: h.countryId, name: h.name, x, y } : null) : undefined} />
 

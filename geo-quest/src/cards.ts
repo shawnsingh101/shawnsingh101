@@ -33,6 +33,7 @@ export interface TopicSlot { id: Topic; name: string; icon: IconName; requires?:
 export interface Group {
   id: string; section: string; name: string; layer: Place['layer'];
   subregions?: string[]; topics: TopicSlot[]; note?: string;
+  requires?: string;   // a node from another group that must be half-known first (e.g. great rivers → more rivers)
 }
 
 const COUNTRY_TOPICS: TopicSlot[] = [
@@ -72,12 +73,20 @@ export const GROUPS: Group[] = [
   wg('w-in', 'Indian Ocean & Africa'),
   wg('w-ap', 'Asia-Pacific'),
   wg('w-po', 'Polar seas'),
+  { id: 'r-great', section: 'Rivers', name: 'Great rivers of the world', layer: 'river', topics: [{ id: 'places', name: 'Great rivers', icon: 'river' }],
+    note: "The world's 20 longest rivers (from Wikidata) come first; know half of them to unlock each continent's rivers." },
+  ...([['r-eu', 'Rivers of Europe'], ['r-as', 'Rivers of Asia & Oceania'], ['r-af', 'Rivers of Africa'], ['r-am', 'Rivers of the Americas']] as const)
+    .map(([id, name]): Group => ({ id, section: 'Rivers', name, layer: 'river', requires: 'r-great/places', topics: [{ id: 'places', name: 'Rivers', icon: 'river' }] })),
+  { id: 'l-great', section: 'Lakes', name: "The world's largest lakes", layer: 'lake', topics: [{ id: 'places', name: 'Largest lakes', icon: 'drop' }],
+    note: 'The 20 largest lakes by area come first; know half of them to unlock each continent’s lakes.' },
+  ...([['l-eu', 'Lakes of Europe'], ['l-as', 'Lakes of Asia & Oceania'], ['l-af', 'Lakes of Africa'], ['l-am', 'Lakes of the Americas']] as const)
+    .map(([id, name]): Group => ({ id, section: 'Lakes', name, layer: 'lake', requires: 'l-great/places', topics: [{ id: 'places', name: 'Lakes', icon: 'drop' }] })),
   { id: 'cn', section: 'China', name: "China's provinces", layer: 'cn',
     note: 'Provinces, autonomous regions, municipalities and the two special administrative regions. The PRC also claims Taiwan as a province; Taiwan is covered under countries.',
     topics: [{ id: 'places', name: 'Provinces', icon: 'map' }, { id: 'capitals', name: 'Capitals', icon: 'landmark', requires: 'places' }] },
 ];
 
-export const SECTIONS = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania', 'Oceans & Seas', 'China'];
+export const SECTIONS = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania', 'Oceans & Seas', 'Rivers', 'Lakes', 'China'];
 export const CONTINENTS = SECTIONS.slice(0, 5);
 
 export function groupOf(c: Place): Group {
@@ -139,14 +148,14 @@ export interface CardFace {
 }
 
 const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-const noun = (p: Place) => (p.layer === 'country' ? 'country' : p.layer === 'water' ? 'body of water' : p.type ?? 'region');
+const noun = (p: Place) => ({ country: 'country', water: 'body of water', river: 'river', lake: 'lake', cn: p.type ?? 'region' })[p.layer];
 
 export function face(ref: CardRef): CardFace {
   const c = ref.country;
   const cap = c.capitals[0];
   const capPic = cap ? { file: cap.image, wiki: cap.wiki, caption: cap.name } : undefined;
   const ownPic = c.image || (c.layer !== 'country' && c.wiki) ? { file: c.image, wiki: c.wiki, caption: c.name } : undefined;
-  const note = c.layer === 'country' ? (c.status !== 'un' ? c.statusNote : null) : c.layer === 'cn' ? cap1(c.type ?? '') : null;
+  const note = c.layer === 'country' ? (c.status !== 'un' ? c.statusNote : null) : c.layer === 'cn' ? cap1(c.type ?? '') : c.facts ?? null;
   const title = c.nameThe ? cap1(c.nameThe) : c.name;
   const capWord = c.capitals.length > 1 ? 'a capital' : 'the capital';
   const whichNoun = c.layer === 'cn' ? 'which province?' : 'which country?';
@@ -176,3 +185,7 @@ export function shuffle<T>(a: T[]): T[] {
   for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; }
   return b;
 }
+
+/** Plural noun and icon for a layer, for headings and lists. */
+export const LAYER_NOUN: Record<Place['layer'], string> = { country: 'countries', water: 'waters', river: 'rivers', lake: 'lakes', cn: 'divisions' };
+export const LAYER_ICON: Record<Place['layer'], IconName> = { country: 'globe', water: 'wave', river: 'river', lake: 'drop', cn: 'map' };
