@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.12.0', notes: 'Names in their own language for artworks (La Gioconda, De Nachtwacht, 清明上河圖 Qīngmíng Shànghé Tú), mountain ranges (Alpi, Alpes) and territories (Kalaallit Nunaat) · everything Chinese now shows pinyin with tone marks (中国 Zhōngguó, 泰山 Tàishān, 珠穆朗玛峰 Zhūmùlǎngmǎ Fēng)' },
   { version: '1.11.1', notes: 'Artworks are shown whole (no more cropped Mona Lisa) · tap any picture to see it full screen · art cards link to the museum and city where you can see them' },
   { version: '1.11.0', notes: 'Art: 43 famous works from around the world (picture, artist, where to see it) · photos on the cocktail, religion and philosophy cards · maps open faster (about half the work for New Jersey) and are reused between cards' },
   { version: '1.10.0', notes: 'Punjab: 23 districts in its 5 divisions, with headquarters · local names in their own script for regions and capitals (ਗੁਰਮੁਖੀ, 漢字, Oʻzbek, हिन्दी) · Karnataka & Maharashtra capitals fixed' },

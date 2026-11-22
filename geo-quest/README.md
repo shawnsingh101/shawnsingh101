@@ -33,6 +33,23 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.12: names in their own language, pinyin everywhere
+
+The rule: anything you learn shows its name in its own language too (with the speaker button: a recording where Wikidata
+has one, else the device voice), and anything Chinese shows characters with Hanyu Pinyin.
+- **Artworks**: the name in the language of where the work comes from (country of origin, else the artist's country,
+  else where it stands; never the museum's): *La Gioconda*, *De Nachtwacht*, *Der Kuss*, *神奈川沖浪裏*, *清明上河圖
+  Qīngmíng Shànghé Tú*. Set by hand with `native` in `data/collection-fixes.json` (`[]` for none).
+- **Mountain ranges** (the languages of the countries they cross: Alpi, Alpes…; 天山山脉 Tiānshān Shānmài) and
+  **territories** (their own official languages: Kalaallit Nunaat, Føroyar, Kòrsou, Guåhan): `scripts/lib/local-names.mjs`,
+  run by the nightly sync (or on its own to patch the data files).
+- **Pinyin for every Chinese name**, not just China's provinces: China, Taiwan, Singapore and their capitals, World
+  Heritage Sites, peaks, rivers, lakes, ranges, artworks. `scripts/lib/chinese.mjs` writes words apart and capitalised like
+  map names (*Zhōnghuá Rénmín Gònghéguó*, *Kūnlún Shānmài*, *Zhūmùlǎngmǎ Fēng*), keeps sound-spelled foreign names whole
+  (*Bùlāmǎpǔtèlā Hé*), and reads tones from the whole name. `node scripts/lib/chinese.mjs --refresh public/data/*.json`
+  re-spells existing data after a rule change.
+- A place with a Chinese name *and* others (a river through China and Laos) now shows both.
+
 ## v1.11.1: whole pictures, full screen, museum links
 
 - Artwork pictures are shown whole (`object-fit: contain` on a dark backdrop), never cropped to a strip.

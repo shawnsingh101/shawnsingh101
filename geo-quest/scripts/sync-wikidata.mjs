@@ -9,7 +9,7 @@
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
-import { pinyin } from 'pinyin-pro';
+import { toPinyin, addChinese } from './lib/chinese.mjs';
 import YAML from 'yaml';
 import { unzipSync, strFromU8 } from 'fflate';
 import { createHash } from 'node:crypto';
@@ -259,13 +259,6 @@ for (const b of await sparql(CAPITAL_Q.replace('%IDS%', [...cn.keys()].map(q => 
 }
 // Chinese characters (Wikidata) + Hanyu Pinyin with tone marks (generated from the characters).
 const shortHan = h => h.replace(/(维吾尔|壮族|回族)?自治区$|特别行政区$|省$|市$/, '');
-const PINYIN_FIX = { 内蒙古: 'Nèi Měnggǔ' };
-const toPinyin = h => {
-  if (PINYIN_FIX[h]) return PINYIN_FIX[h];
-  const syl = pinyin(h, { type: 'array' });
-  const s = syl.map((x, i) => (i && /^[aoeāáǎàōóǒòēéěè]/.test(x) ? "'" : '') + x).join('');
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
 const hanIds = [...cn.keys(), ...[...cn.values()].flatMap(p => p.capitals.map(c => c.id))];
 const han = {};
 for (const b of await sparql(`SELECT ?p ?l WHERE { VALUES ?p { ${hanIds.map(q => `wd:${q}`).join(' ')} } ?p rdfs:label ?l FILTER(lang(?l) IN ("zh-hans","zh-cn","zh")) }`)) {
@@ -1091,6 +1084,15 @@ console.log('Querying Wikidata for local names of cities, peaks and sites…');
   }
 }
 
+// Mountain ranges (the languages of the countries they cross) and territories (their own official languages).
+{
+  const { addLocalNames, officialLanguages, rangeLangs } = await import('./lib/local-names.mjs');
+  const byName = new Map([...countries.values()].map(c => [c.name, c]));
+  await addLocalNames(mranges, r => rangeLangs(r, byName), sparql);
+  const tl = await officialLanguages(territories.map(t => t.id), sparql);
+  await addLocalNames(territories, t => tl.get(t.id) ?? [], sparql);
+}
+
 console.log('Querying Wikidata for pronunciations…');
 await attachAudio([...countries.values(), ...[...countries.values()].flatMap(c => c.capitals), ...cn.values(), ...[...cn.values()].flatMap(p => p.capitals), ...rivers, ...lakes,
   ...[...countries.values()].map(c => c.largestCity).filter(x => x?.id && x.native), ...sites.filter(x => x.native), ...peaks.filter(x => x.native)]);
@@ -1176,7 +1178,7 @@ function diffAndWrite(path, list, fields, extra = {}) {
     }
     for (const p of prev) if (!ids.has(p.id)) changes.push({ date: today, id: p.id, name: p.name, field: 'removed', from: p.name, to: null });
   }
-  return () => writeFileSync(path, JSON.stringify(path === OUT ? { source: 'Wikidata (CC0)', countries: list } : { source: 'Wikidata (CC0)', ...extra, places: list }, null, 1) + '\n');
+  return () => writeFileSync(path, JSON.stringify(addChinese(path === OUT ? { source: 'Wikidata (CC0)', countries: list } : { source: 'Wikidata (CC0)', ...extra, places: list }), null, 1) + '\n'); // any Chinese local name also gets pinyin
 }
 // ---- rivers: where each one rises (Wikidata P885), and the US states a US river runs through (from the map) ----
 console.log('River sources and US states…');

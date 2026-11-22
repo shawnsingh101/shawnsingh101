@@ -1825,7 +1825,11 @@
    "admin1Ids": [
     "Q43407"
    ],
-   "admin1": "Shandong"
+   "admin1": "Shandong",
+   "zh": {
+    "han": "泰山",
+    "pinyin": "Tàishān"
+   }
   },
   {
    "id": "Q3125051",
@@ -1900,7 +1904,11 @@
    "admin1Ids": [
     "Q956"
    ],
-   "admin1": "Beijing"
+   "admin1": "Beijing",
+   "zh": {
+    "han": "天坛",
+    "pinyin": "Tiāntán"
+   }
   },
   {
    "id": "Q193325",
@@ -2204,7 +2212,11 @@
      "lang": "Chinese",
      "code": "zh-hans"
     }
-   ]
+   ],
+   "zh": {
+    "han": "大运河",
+    "pinyin": "Dàyùnhé"
+   }
   },
   {
    "id": "Q188938",
@@ -2520,7 +2532,11 @@
    "admin1Ids": [
     "Q40956"
    ],
-   "admin1": "Anhui"
+   "admin1": "Anhui",
+   "zh": {
+    "han": "黄山",
+    "pinyin": "Huángshān"
+   }
   },
   {
    "id": "Q46650",
@@ -2740,7 +2756,11 @@
    "admin1Ids": [
     "Q42392"
    ],
-   "admin1": "Gansu"
+   "admin1": "Gansu",
+   "zh": {
+    "han": "莫高窟",
+    "pinyin": "Mògāo Kū"
+   }
   },
   {
    "id": "Q192243",
@@ -3137,7 +3157,11 @@
    "admin1Ids": [
     "Q956"
    ],
-   "admin1": "Beijing"
+   "admin1": "Beijing",
+   "zh": {
+    "han": "颐和园",
+    "pinyin": "Yíhéyuán"
+   }
   },
   {
    "id": "Q107370",

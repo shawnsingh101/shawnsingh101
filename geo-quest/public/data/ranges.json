@@ -13,7 +13,24 @@
    "nameThe": "the Alps",
    "facts": "Hungary, Italy, Switzerland, Austria, France…",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Alpok",
+     "lang": "Hungarian",
+     "code": "hu"
+    },
+    {
+     "name": "Alpi",
+     "lang": "Italian",
+     "code": "it"
+    },
+    {
+     "name": "Alpes",
+     "lang": "French",
+     "code": "fr"
+    }
+   ]
   },
   {
    "id": "Q5451",
@@ -27,7 +44,28 @@
    "nameThe": "the Himalayas",
    "facts": "China, India, Myanmar, Nepal, Pakistan…",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "喜马拉雅山脉",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    },
+    {
+     "name": "हिमालय",
+     "lang": "Hindi",
+     "code": "hi"
+    },
+    {
+     "name": "ဟိမဝန္တာ တောင်တန်း",
+     "lang": "Burmese",
+     "code": "my"
+    }
+   ],
+   "zh": {
+    "han": "喜马拉雅山脉",
+    "pinyin": "Xǐmǎlāyǎ Shānmài"
+   }
   },
   {
    "id": "Q5456",
@@ -69,7 +107,14 @@
    "nameThe": "the Ural Mountains",
    "facts": "Russia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Уральские горы",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q5477",
@@ -83,7 +128,14 @@
    "nameThe": "the Caucasus Mountains",
    "facts": "Russia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Кавказские горы",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q5474",
@@ -97,7 +149,28 @@
    "nameThe": "the Tianshan Mountains",
    "facts": "China, Kazakhstan, Uzbekistan, Kyrgyzstan",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "天山山脉",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    },
+    {
+     "name": "Алатау",
+     "lang": "Kazakh",
+     "code": "kk"
+    },
+    {
+     "name": "Тянь-Шань",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ],
+   "zh": {
+    "han": "天山山脉",
+    "pinyin": "Tiānshān Shānmài"
+   }
   },
   {
    "id": "Q192583",
@@ -125,7 +198,14 @@
    "nameThe": "the Hindu Kush",
    "facts": "Pakistan, Afghanistan",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "سلسلہ کوہ ہندوکش",
+     "lang": "Urdu",
+     "code": "ur"
+    }
+   ]
   },
   {
    "id": "Q5469",
@@ -139,7 +219,28 @@
    "nameThe": "the Karakoram",
    "facts": "China, India, Pakistan, Tajikistan, Afghanistan",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "喀喇昆仑山脉",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    },
+    {
+     "name": "काराकोरम",
+     "lang": "Hindi",
+     "code": "hi"
+    },
+    {
+     "name": "سلسلہ کوہ قراقرم",
+     "lang": "Urdu",
+     "code": "ur"
+    }
+   ],
+   "zh": {
+    "han": "喀喇昆仑山脉",
+    "pinyin": "Kālā Kūnlún Shānmài"
+   }
   },
   {
    "id": "Q130135",
@@ -153,7 +254,14 @@
    "nameThe": "the Atlas Mountains",
    "facts": "Algeria, Tunisia, Morocco",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "جبال الأطلس",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q93332",
@@ -181,7 +289,28 @@
    "nameThe": "the Pamir Mountains",
    "facts": "China, India, Kyrgyzstan, Pakistan, Tajikistan…",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "帕米尔高原",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    },
+    {
+     "name": "पामीर पर्वतमाला",
+     "lang": "Hindi",
+     "code": "hi"
+    },
+    {
+     "name": "Памир тоолору",
+     "lang": "Kyrgyz",
+     "code": "ky"
+    }
+   ],
+   "zh": {
+    "han": "帕米尔高原",
+    "pinyin": "Pàmǐ'ěr Gāoyuán"
+   }
   },
   {
    "id": "Q5955",
@@ -195,7 +324,28 @@
    "nameThe": "the Altai Mountains",
    "facts": "China, Russia, Kazakhstan, Mongolia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "阿尔泰山脉",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    },
+    {
+     "name": "Алтайские горы",
+     "lang": "Russian",
+     "code": "ru"
+    },
+    {
+     "name": "Алтай таулары",
+     "lang": "Kazakh",
+     "code": "kk"
+    }
+   ],
+   "zh": {
+    "han": "阿尔泰山脉",
+    "pinyin": "Ā'ěrtài Shānmài"
+   }
   },
   {
    "id": "Q167021",
@@ -209,7 +359,19 @@
    "nameThe": "the Zagros Mountains",
    "facts": "Türkiye, Iran, Iraq",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "زاگرس",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    },
+    {
+     "name": "زاغروس",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q187871",
@@ -223,7 +385,18 @@
    "nameThe": "the Kunlun Mountains",
    "facts": "China",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "昆仑山脉",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "zh": {
+    "han": "昆仑山脉",
+    "pinyin": "Kūnlún Shānmài"
+   }
   },
   {
    "id": "Q4558",
@@ -279,7 +452,14 @@
    "nameThe": "the Stanovoy Range",
    "facts": "Russia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Становой хребет",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q293713",
@@ -293,7 +473,18 @@
    "nameThe": "the Greater Khingan",
    "facts": "China",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "大兴安岭",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "zh": {
+    "han": "大兴安岭",
+    "pinyin": "Dà Xīng'ān Lǐng"
+   }
   },
   {
    "id": "Q842139",
@@ -307,7 +498,19 @@
    "nameThe": "the Annamite Range",
    "facts": "Cambodia, Laos, Vietnam",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "ជួរភ្នំអាណ្ណាម",
+     "lang": "Khmer",
+     "code": "km"
+    },
+    {
+     "name": "Dãy Trường Sơn",
+     "lang": "Vietnamese",
+     "code": "vi"
+    }
+   ]
   },
   {
    "id": "Q920070",
@@ -349,7 +552,14 @@
    "nameThe": "the Pyrenees",
    "facts": "Spain, France, Andorra",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Pirineos",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ]
   },
   {
    "id": "Q1288",
@@ -363,7 +573,24 @@
    "nameThe": "the Carpathians",
    "facts": "Hungary, Poland, Austria, Ukraine, Czechia…",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Kárpátok",
+     "lang": "Hungarian",
+     "code": "hu"
+    },
+    {
+     "name": "Karpaty",
+     "lang": "Polish",
+     "code": "pl"
+    },
+    {
+     "name": "Karpaten",
+     "lang": "German",
+     "code": "de"
+    }
+   ]
   },
   {
    "id": "Q4527",
@@ -377,7 +604,14 @@
    "nameThe": "the Western Ghats",
    "facts": "India",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "पश्चिमी घाट",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ]
   },
   {
    "id": "Q26777",
@@ -405,7 +639,14 @@
    "nameThe": "the Alborz",
    "facts": "Iran",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "البرز",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ]
   },
   {
    "id": "Q183295",
@@ -419,7 +660,14 @@
    "nameThe": "the Drakensberg",
    "facts": "South Africa, Lesotho",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Ukhahlamba",
+     "lang": "Zulu",
+     "code": "zu"
+    }
+   ]
   },
   {
    "id": "Q206650",
@@ -433,7 +681,14 @@
    "nameThe": "the Southern Alps / Kā Tiritiri o te Moana",
    "facts": "New Zealand",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Kā Tiritiri o te Moana",
+     "lang": "Māori",
+     "code": "mi"
+    }
+   ]
   },
   {
    "id": "Q186547",
@@ -447,7 +702,24 @@
    "nameThe": "the Scandinavian Mountains",
    "facts": "Norway, Finland, Sweden",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Dei skandinaviske fjella",
+     "lang": "Norwegian Nynorsk",
+     "code": "nn"
+    },
+    {
+     "name": "Skandit",
+     "lang": "Finnish",
+     "code": "fi"
+    },
+    {
+     "name": "Skanderna",
+     "lang": "Swedish",
+     "code": "sv"
+    }
+   ]
   },
   {
    "id": "Q465055",
@@ -461,7 +733,14 @@
    "nameThe": "the Eastern Ghats",
    "facts": "India",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "पूर्वी घाट",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ]
   },
   {
    "id": "Q170383",
@@ -489,7 +768,18 @@
    "nameThe": "the Wuyi Mountains",
    "facts": "China",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "武夷山",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "zh": {
+    "han": "武夷山",
+    "pinyin": "Wǔyí Shān"
+   }
   },
   {
    "id": "Q155322",
@@ -503,7 +793,14 @@
    "nameThe": "the Sikhote-Alin",
    "facts": "Russia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Сихотэ-Алинь",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q215917",
@@ -517,7 +814,14 @@
    "nameThe": "the Verkhoyansk Range",
    "facts": "Russia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Верхоянский хребет",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q271435",
@@ -531,7 +835,14 @@
    "nameThe": "the Vindhya Range",
    "facts": "India",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "विन्ध्याचल पर्वत शृंखला",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ]
   },
   {
    "id": "Q309104",
@@ -545,7 +856,14 @@
    "nameThe": "the Tibesti Mountains",
    "facts": "Chad, Libya",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "جبال تيبستي",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q660304",
@@ -559,7 +877,14 @@
    "nameThe": "the Pacific Coast Ranges",
    "facts": "Canada, United States, Mexico",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Cadena costera del Pacífico",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ]
   },
   {
    "id": "Q584279",
@@ -573,7 +898,14 @@
    "nameThe": "the High Atlas",
    "facts": "Morocco",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "الأطلس الكبير",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q201678",
@@ -587,7 +919,14 @@
    "nameThe": "the Yablonoi Mountains",
    "facts": "Russia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Яблоновый хребет",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q1124584",
@@ -615,7 +954,18 @@
    "nameThe": "the Altyn-Tagh",
    "facts": "China",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "阿尔金山脉",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "zh": {
+    "han": "阿尔金山脉",
+    "pinyin": "Ā'ěrjīn Shānmài"
+   }
   },
   {
    "id": "Q1898305",
@@ -629,7 +979,14 @@
    "nameThe": "the Saharan Atlas",
    "facts": "Algeria",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "الأطلس الصحراوي",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q804330",
@@ -671,7 +1028,18 @@
    "nameThe": "the Qilian Mountains",
    "facts": "China",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "祁连山",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "zh": {
+    "han": "祁连山",
+    "pinyin": "Qílián Shān"
+   }
   },
   {
    "id": "Q404600",
@@ -685,7 +1053,14 @@
    "nameThe": "the Lesser Khingan",
    "facts": "Russia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Малый Хинган",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q1029702",
@@ -755,7 +1130,23 @@
    "nameThe": "the Tarbagatai Mountains",
    "facts": "China, Kazakhstan",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "塔尔巴哈台山",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    },
+    {
+     "name": "Тарбағатай жотасы",
+     "lang": "Kazakh",
+     "code": "kk"
+    }
+   ],
+   "zh": {
+    "han": "塔尔巴哈台山",
+    "pinyin": "Tǎ'ěrbāhātái Shān"
+   }
   },
   {
    "id": "Q143014",
@@ -783,7 +1174,18 @@
    "nameThe": "the Nanling Mountains",
    "facts": "China",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "南岭",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "zh": {
+    "han": "南岭",
+    "pinyin": "Nánlǐng"
+   }
   },
   {
    "id": "Q730673",
@@ -797,7 +1199,14 @@
    "nameThe": "the Asir Mountains",
    "facts": "Saudi Arabia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "جبال عسير",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q1156557",
@@ -811,7 +1220,18 @@
    "nameThe": "the Dabie Mountains",
    "facts": "China",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "大别山",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "zh": {
+    "han": "大别山",
+    "pinyin": "Dàbié Shān"
+   }
   },
   {
    "id": "Q377264",
@@ -825,7 +1245,14 @@
    "nameThe": "the Ligurian Apennines",
    "facts": "Italy",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Appennino ligure",
+     "lang": "Italian",
+     "code": "it"
+    }
+   ]
   },
   {
    "id": "Q4794486",
@@ -867,7 +1294,14 @@
    "nameThe": "the Crystal Mountain",
    "facts": "Egypt",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "جبل الكريستال",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q23836082",
@@ -895,7 +1329,14 @@
    "nameThe": "the Balkan Mountains",
    "facts": "Bulgaria, Serbia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Стара планина",
+     "lang": "Bulgarian",
+     "code": "bg"
+    }
+   ]
   },
   {
    "id": "Q216593",
@@ -909,7 +1350,24 @@
    "nameThe": "the Lesser Caucasus",
    "facts": "Azerbaijan, Georgia, Armenia",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Kiçik Qafqaz",
+     "lang": "Azerbaijani",
+     "code": "az"
+    },
+    {
+     "name": "მცირე კავკასიონი",
+     "lang": "Georgian",
+     "code": "ka"
+    },
+    {
+     "name": "Փոքր Կովկաս",
+     "lang": "Armenian",
+     "code": "hy"
+    }
+   ]
   },
   {
    "id": "Q26955",
@@ -923,7 +1381,14 @@
    "nameThe": "the Sierra Nevada (Spain)",
    "facts": "Spain",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Sierra Nevada",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ]
   },
   {
    "id": "Q189915",
@@ -937,7 +1402,24 @@
    "nameThe": "the Dinaric Alps",
    "facts": "Slovenia, Albania, Croatia, Bosnia and Herzegovina, Montenegro…",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Dinarsko gorovje",
+     "lang": "Slovene",
+     "code": "sl"
+    },
+    {
+     "name": "Alpet Dinarike",
+     "lang": "Albanian",
+     "code": "sq"
+    },
+    {
+     "name": "Dinaridi",
+     "lang": "Croatian",
+     "code": "hr"
+    }
+   ]
   },
   {
    "id": "Q519263",
@@ -965,7 +1447,14 @@
    "nameThe": "the Cantabrian Mountains",
    "facts": "Spain",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Cordillera Cantábrica",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ]
   },
   {
    "id": "Q559784",

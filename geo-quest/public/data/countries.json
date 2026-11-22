@@ -2940,6 +2940,10 @@
        "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/81/LL-Q9192_(cmn)-Luilui6666-%E5%8C%97%E4%BA%AC.wav/LL-Q9192_(cmn)-Luilui6666-%E5%8C%97%E4%BA%AC.wav.mp3",
        "https://upload.wikimedia.org/wikipedia/commons/8/81/LL-Q9192_(cmn)-Luilui6666-%E5%8C%97%E4%BA%AC.wav"
       ]
+     },
+     "zh": {
+      "han": "北京",
+      "pinyin": "Běijīng"
      }
     }
    ],
@@ -2987,7 +2991,11 @@
       "lang": "Chinese",
       "code": "zh-hans"
      }
-    ]
+    ],
+    "zh": {
+     "han": "上海",
+     "pinyin": "Shànghǎi"
+    }
    },
    "audio": {
     "zh-hans": [
@@ -2996,7 +3004,11 @@
     ]
    },
    "population": 1404890000,
-   "populationYear": 2025
+   "populationYear": 2025,
+   "zh": {
+    "han": "中国",
+    "pinyin": "Zhōngguó"
+   }
   },
   {
    "id": "Q739",
@@ -12621,6 +12633,10 @@
        "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d6/LL-Q9192_(cmn)-Luilui6666-%E6%96%B0%E5%8A%A0%E5%9D%A1.wav/LL-Q9192_(cmn)-Luilui6666-%E6%96%B0%E5%8A%A0%E5%9D%A1.wav.mp3",
        "https://upload.wikimedia.org/wikipedia/commons/d/d6/LL-Q9192_(cmn)-Luilui6666-%E6%96%B0%E5%8A%A0%E5%9D%A1.wav"
       ]
+     },
+     "zh": {
+      "han": "新加坡",
+      "pinyin": "Xīnjiāpō"
      }
     }
    ],
@@ -12688,7 +12704,11 @@
     ]
    },
    "population": 5866139,
-   "populationYear": 2021
+   "populationYear": 2021,
+   "zh": {
+    "han": "新加坡",
+    "pinyin": "Xīnjiāpō"
+   }
   },
   {
    "id": "Q214",
@@ -14059,7 +14079,11 @@
        "lang": "Chinese",
        "code": "zh-hant"
       }
-     ]
+     ],
+     "zh": {
+      "han": "臺北",
+      "pinyin": "Táiběi"
+     }
     }
    ],
    "native": [
@@ -14112,7 +14136,11 @@
     ]
    },
    "population": 23262544,
-   "populationYear": 2026
+   "populationYear": 2026,
+   "zh": {
+    "han": "台灣",
+    "pinyin": "Táiwān"
+   }
   },
   {
    "id": "Q863",
