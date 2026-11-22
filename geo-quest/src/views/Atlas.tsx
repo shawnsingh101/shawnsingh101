@@ -28,6 +28,7 @@ export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClo
           {c.type && <p className="muted small">{cap1(c.type)} of China</p>}
           {(c.layer === 'water' || c.layer === 'river' || c.layer === 'lake') && <p className="muted small">{GROUPS.find(g => g.id === c.group)?.name}</p>}
           {c.facts && <p>{c.facts}</p>}
+          {c.layer === 'terr' && <p>Part of <b>{c.sovereignName}</b>{c.terrStatus ? <span className="muted"> · {c.terrStatus}</span> : null}</p>}
           {c.capitalAnswer && <p>Capital: <b>{c.capitalAnswer}</b>{cap && <span className="local inline"> <LocalName place={c} capital={cap} /></span>}</p>}
           {c.statusNote && <p className="note"><Icon name="info" size={15} /> {c.statusNote}</p>}
           {c.capitalNote && <p className="note"><Icon name="info" size={15} /> {c.capitalNote}</p>}

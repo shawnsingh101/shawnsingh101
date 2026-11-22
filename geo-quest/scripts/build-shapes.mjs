@@ -61,6 +61,7 @@ function build(features, keep) {
   for (const f of feature(topo, topo.objects.places).features) {
     const size = /Line/.test(f.geometry?.type ?? '') ? 1 : geoArea(f);
     if (!(size > 0)) console.warn('⚠ shape collapsed for', f.properties.id);
+    if (size > 2 * Math.PI) console.warn('⚠ shape inside out (the app flips it back) for', f.properties.id);
   }
   return topo;
 }
@@ -133,4 +134,29 @@ const us = admin1.features
   .map(f => ({ type: 'Feature', geometry: f.geometry, properties: { id: f.properties.wikidataid, code: (f.properties.iso_3166_2 ?? '').replace('US-', '') } }));
 writeFileSync(join(ROOT, 'public/data/shapes-us.json'), JSON.stringify(build(us, 0.12)));
 
-console.log(`Wrote ${water.length} water, ${cn.length} China, ${lakes.length} lake, ${rivers.length} river and ${us.length} US state features.`);
+// ---- territories: overseas regions & dependencies (Martinique, Puerto Rico, Greenland…) ----
+// Natural Earth "map units" split these out of their sovereign country, with Wikidata ids.
+const units = await get('ne_50m_admin_0_map_units.geojson');
+const SKIP_UNITS = new Set(['England', 'Scotland', 'Wales', 'Northern Ireland', 'France', 'Portugal', 'Hong Kong S.A.R.', 'Macao S.A.R', 'Ashmore and Cartier Islands', 'Heard Island and McDonald Islands']);
+const terr = units.features.filter(f => {
+  const p = f.properties;
+  return p.WIKIDATAID && p.SOVEREIGNT !== p.GEOUNIT && !SKIP_UNITS.has(p.GEOUNIT)
+    && ['Dependency', 'Country', 'Geo unit', 'Disputed'].includes(p.TYPE)
+    && !['Kosovo', 'Somaliland', 'Northern Cyprus', 'Western Sahara', 'Siachen Glacier'].includes(p.GEOUNIT);
+}).map(f => ({ type: 'Feature', geometry: f.geometry, properties: { id: f.properties.WIKIDATAID, sov: f.properties.SOVEREIGNT, sub: f.properties.SUBREGION } }));
+writeFileSync(join(ROOT, 'public/data/shapes-terr.json'), JSON.stringify(build(terr, 0.5)));
+
+// ---- detailed outlines for small island countries (for the close-up inset on the study map) ----
+// The world map uses 1:50m shapes, where Kiribati or Tuvalu are just dots; the inset uses 1:10m.
+const { geoArea: gArea } = await import('d3-geo');
+const { feature: tFeature } = await import('topojson-client');
+const w10 = JSON.parse(readFileSync(join(ROOT, 'node_modules/world-atlas/countries-10m.json'), 'utf8'));
+const islandRegions = new Set(['Caribbean', 'Melanesia', 'Micronesia', 'Polynesia']);
+const wc = JSON.parse(readFileSync(join(ROOT, 'node_modules/world-countries/countries.json'), 'utf8'));
+const subOfNum = Object.fromEntries(wc.map(c => [c.ccn3, c.subregion]));
+const small = tFeature(w10, w10.objects.countries).features
+  .filter(f => f.id && (islandRegions.has(subOfNum[f.id]) || gArea(f) < 5e-4))
+  .map(f => ({ type: 'Feature', geometry: f.geometry, properties: { id: String(f.id) } }));
+writeFileSync(join(ROOT, 'public/data/shapes-small.json'), JSON.stringify(build(small, 0.2)));
+
+console.log(`Wrote ${water.length} water, ${cn.length} China, ${lakes.length} lake, ${rivers.length} river, ${us.length} US state, ${terr.length} territory and ${small.length} small-country features.`);

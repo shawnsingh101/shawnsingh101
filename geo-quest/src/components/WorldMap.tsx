@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { geoEqualEarth, geoPath, geoGraticule10 } from 'd3-geo';
+import { geoArea, geoEqualEarth, geoPath, geoGraticule10 } from 'd3-geo';
 import { feature } from 'topojson-client';
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom';
 import { select } from 'd3-selection';
@@ -53,11 +53,20 @@ type Proj = ReturnType<typeof makeProjection>;
 
 type Feat = Feature<Geometry, Record<string, string>>;
 const featCache = new WeakMap<Topology, Feat[]>();
+/** Safety net: a polygon wound the wrong way covers the whole globe (once Maryland turned the world orange). Flip it back. */
+function fixWinding(f: Feat): Feat {
+  const g = f.geometry;
+  const fix = (rings: number[][][]) => (geoArea({ type: 'Polygon', coordinates: rings }) > 2 * Math.PI ? rings.map(r => [...r].reverse()) : rings);
+  if (g?.type === 'Polygon') return { ...f, geometry: { ...g, coordinates: fix(g.coordinates) } };
+  if (g?.type === 'MultiPolygon') return { ...f, geometry: { ...g, coordinates: g.coordinates.map(fix) } };
+  return f;
+}
+
 function features(topo: Topology): Feat[] {
   if (!featCache.has(topo)) {
     const objName = Object.keys(topo.objects)[0];
     featCache.set(topo, (feature(topo, topo.objects[objName] as GeometryCollection) as unknown as { features: Feat[] }).features
-      .filter(f => f.properties?.name !== 'Antarctica'));
+      .filter(f => f.properties?.name !== 'Antarctica').map(fixWinding));
   }
   return featCache.get(topo)!;
 }
@@ -125,7 +134,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const shapes = useMemo(() => {
     const out: Partial<Record<Layer, Shape[]>> = {};
     if (topos.country) out.country = toShapes(topos.country, 'country', path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
-    for (const l of ['water', 'cn', 'us', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
+    for (const l of ['water', 'cn', 'us', 'terr', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
     return out;
   }, [topos, shapeToCountry, ds, path]);
 
@@ -135,7 +144,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const dots = useMemo(() => {
     const out: Dot[] = [];
     const byPlace = new Map(visible.filter(s => s.placeId).map(s => [s.placeId!, s]));
-    const candidates = [...ds.countries, ...ds.places.filter(p => (p.layer === 'cn' || p.layer === 'us') && layers.includes(p.layer))];
+    const candidates = [...ds.countries, ...ds.places.filter(p => (p.layer === 'cn' || p.layer === 'us' || p.layer === 'terr') && layers.includes(p.layer))];
     for (const c of candidates) {
       const s = byPlace.get(c.id);
       const tiny = !s || Math.max(s.bounds[1][0] - s.bounds[0][0], s.bounds[1][1] - s.bounds[0][1]) < (c.layer === 'cn' || c.layer === 'us' ? 1.5 : 4);
@@ -245,6 +254,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {shapes.country?.map(s => shapeEl(s, 'land' + (s.placeId ? ' country' : '')))}
           {shapes.cn && layers.includes('cn') && shapes.cn.map(s => shapeEl(s, 'land sub'))}
           {shapes.us && layers.includes('us') && shapes.us.map(s => shapeEl(s, 'land sub'))}
+          {shapes.terr && layers.includes('terr') && shapes.terr.map(s => shapeEl(s, 'land sub terr'))}
           {shapes.lake && layers.includes('lake') && shapes.lake.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'lake') : <path key={s.key} d={s.d} className="lake other" />))}
           {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(riverEl)}
           {dots.map(d => (

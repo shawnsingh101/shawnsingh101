@@ -33,6 +33,19 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.2: territories, insets, look-alikes
+
+- **Territories** (60): overseas regions, dependencies and autonomous territories — Martinique, Puerto Rico,
+  Greenland, New Caledonia… — with "part of which country?" cards. Shapes: Natural Earth map units; facts: Wikidata.
+- **Close-up insets** for small places: the 1:10m island outlines (`shapes-small.json`), a dashed hull showing how far
+  an island group spreads, and a scale bar. (The hull is the spread of the islands, not the legal maritime zone.)
+- **Maps on capital & city cards**: start wide (all states / the continent), zoom and lock on when flipped.
+- **Flag look-alikes** (`public/data/flag-lookalikes.json`, hand-curated): shown after a flag card with a tip.
+- **Again / Hard / Good / Easy** everywhere (1–4, space = Good); quiz answers on cards you're learning count as reviews.
+- **More real pronunciations**: the sync searches Wikimedia Commons for Lingua Libre / Wiktionary recordings of each
+  local name (cached in `data/audio-cache.json`); the device voice now prefers the best installed voice.
+- Fix: a polygon wound inside-out (Maryland) covered the map; the app now flips such shapes back.
+
 ## v1.1: leaders, currencies, largest cities
 
 - **Governors** (all 50) and **heads of state / government** (349 offices in 200 countries) from Wikipedia's closely

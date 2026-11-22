@@ -12,7 +12,7 @@ export const scheduler = fsrs(generatorParameters({ enable_fuzz: true, request_r
 export interface Settings {
   sound: boolean; gamify: boolean; pictures: boolean; locks: boolean;
   theme: 'auto' | 'light' | 'dark'; newPerDay: number;
-  mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean; mapRivers: boolean; mapLakes: boolean; mapUs: boolean;
+  mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean; mapRivers: boolean; mapLakes: boolean; mapUs: boolean; mapTerr: boolean;
   nativeNames: boolean;
   mapMode: 'tap' | 'flip' | 'skip';
   kindsOff: string[];                 // question types switched off (they wait until switched back on)
@@ -36,7 +36,7 @@ export interface Progress {
 const KEY = 'geoquest:v1';
 const DEFAULT: Progress = {
   v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {},
-  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, mapUs: false, nativeNames: true, mapMode: 'tap', targetBox: true, kindsOff: [], sessionNodes: null },
+  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, mapUs: false, mapTerr: false, nativeNames: true, mapMode: 'tap', targetBox: true, kindsOff: [], sessionNodes: null },
 };
 
 function revive(p: Progress): Progress {

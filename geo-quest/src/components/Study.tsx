@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { face, groupOf, placesIn, KIND_LABEL, layerFor, type CardRef } from '../cards';
+import { face, groupOf, placesIn, GROUPS, KIND_LABEL, layerFor, type CardRef } from '../cards';
 import { answer, buildQueue, getProgress, update, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
 import { sounds } from '../sound';
 import type { Dataset } from '../types';
@@ -8,6 +8,8 @@ import { Flag, Picture } from './Picture';
 import { Icon } from './Icons';
 import { LocalName } from './Native';
 import { Portrait, Incoming } from './Portrait';
+import { Lookalikes } from './Lookalikes';
+import { Inset } from './Inset';
 
 interface Item { ref: CardRef; isNew: boolean }
 
@@ -58,8 +60,11 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     setCanUndo(true);
     setRevealed(false); setTapResult(null); setDone(d => d + 1);
     if (quiz) {
-      setResults(r => [...r, { ref: item.ref, ok: grade >= Rating.Good }]);
+      setResults(r => [...r, { ref: item.ref, ok: grade >= Rating.Hard }]);
       setQueue(q => q.slice(1));
+      // A quiz answer also counts as a review for cards you're already learning (it never adds new cards).
+      const rec = getProgress().cards[item.ref.id];
+      if (rec && rec.c.state !== State.New) answer(item.ref, grade, false);
       return;
     }
     const before = getProgress().xp;
@@ -101,7 +106,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     // A tap on a different kind of thing (a country while looking for a river) is a slip, not an answer.
     const hitLayer = hit.countryId ? ds.byId.get(hit.countryId)?.layer : 'country';
     if (hitLayer !== mp!.layer) {
-      setNudge(`Tap a ${{ country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state' }[mp!.layer]}`);
+      setNudge(`Tap a ${{ country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory' }[mp!.layer]}`);
       setTimeout(() => setNudge(null), 1400);
       return;
     }
@@ -117,8 +122,8 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
       if (!f) return;
       if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'reveal') { e.preventDefault(); reveal(); }
       else if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'tap') { e.preventDefault(); dontKnow(); }
-      else if (revealed && !quiz && ['1', '2', '3', '4'].includes(e.key)) next(+e.key as Grade);
-      else if (revealed && quiz && (e.key === '1' || e.key === '2')) next(e.key === '1' ? Rating.Again : Rating.Good);
+      // 1 Again · 2 Hard · 3 Good · 4 Easy (space = Good), like Anki. A missed map tap can only be "Again".
+      else if (revealed && ['1', '2', '3', '4'].includes(e.key)) next((tapResult && !tapResult.ok ? Rating.Again : +e.key) as Grade);
       else if (revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); next(tapResult ? (tapResult.ok ? Rating.Good : Rating.Again) : Rating.Good); }
     };
     window.addEventListener('keydown', h);
@@ -129,8 +134,14 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
   const mp = c ? (c.layer === 'senate' ? ds.byId.get(c.place ?? c.state!) ?? c : c) : null;
   const group = c ? groupOf(c) : null;
   const regionIds = useMemo(() => (group ? placesIn(ds, group.id).map(x => x.id) : []), [ds, group]);
+  // For "reveal" map cards (capitals, cities) start wider than the region so the map doesn't give it away:
+  // all 50 states, or the whole continent.
+  const wideIds = useMemo(() => (group ? GROUPS.filter(g => g.section === group.section && g.layer === group.layer).flatMap(g => placesIn(ds, g.id).map(x => x.id)) : []), [ds, group]);
   const focus = useMemo(() => {
     if (!item || !f || f.map === 'none') return null;
+    if (f.map === 'reveal') return revealed
+      ? { ids: [mp!.id], key: item.ref.id + ':r', keepCenter: true, pad: 0.5 }
+      : { ids: wideIds, key: (group?.section ?? '') + ':wide' };
     // Flipped map card, now revealed: fly to the answer.
     if (flipped && revealed) return { ids: [mp!.id], key: item.ref.id + ':r', keepCenter: true, pad: c!.layer === 'lake' ? 0.3 : c!.layer === 'river' ? 0.55 : 0.5 };
     // Seas are small inside a big region: zoom right to them. Countries/provinces show their neighbourhood.
@@ -139,7 +150,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
       ? { ids: [c!.id], key: item.ref.id + ':h', pad: c!.layer === 'water' ? 0.85 : c!.layer === 'river' ? 0.55 : 0.3 }
       : { ids: [mp!.id, ...regionIds], key: item.ref.id + ':h' };
     return { ids: regionIds, key: group!.id };
-  }, [item, f, c, mp, regionIds, group, flipped, revealed]);
+  }, [item, f, c, mp, regionIds, wideIds, group, flipped, revealed]);
 
   // Save the quiz score once, when the last card is answered.
   useEffect(() => {
@@ -172,7 +183,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
             <button className="btn" onClick={() => restart(quiz.draw().map(ref => ({ ref, isNew: false })))}>Try again</button>
             <button className="btn primary" onClick={onExit}>Done</button>
           </div>
-          <p className="muted small">Practice quizzes don't change your review schedule.</p>
+          <p className="muted small">Quizzes don't add new cards to your schedule; answers on cards you're already learning count as reviews.</p>
         </div>
       );
     }
@@ -191,7 +202,9 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     );
   }
 
-  const pv = revealed && !quiz ? previews(item.ref) : null;
+  const pv = revealed ? previews(item.ref) : null;
+  // Intervals only mean something for cards in your schedule (a quiz on unseen cards doesn't schedule them).
+  const showIntervals = !quiz || (getProgress().cards[item.ref.id]?.c.state ?? State.New) !== State.New;
   const showMap = f.map !== 'none';
   const wrongName = tapResult && !tapResult.ok ? tapResult.hit.name : null;
   const extra = layerFor(c);
@@ -201,6 +214,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
   const m = mp!;
   if (f.map === 'highlight') { tones[m.id] = 'accent'; if (revealed) labels[m.id] = m.name; }
   if (flipped && revealed) { tones[m.id] = 'right'; labels[m.id] = m.name; }
+  if (f.map === 'reveal' && revealed) { tones[m.id] = 'accent'; labels[m.id] = m.name; }
   if (tapResult) {
     tones[m.id] = 'right'; labels[m.id] = m.name;
     if (!tapResult.ok && tapResult.hit.countryId) { tones[tapResult.hit.countryId] = 'wrong'; labels[tapResult.hit.countryId] = tapResult.hit.name; }
@@ -208,7 +222,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
   // Lock-on brackets: around the place being asked about, then ✓ / ✗ once you've answered on the map.
   const target = !s.targetBox ? null
     : tapResult ? { id: m.id, status: tapResult.ok ? 'right' as const : 'wrong' as const }
-    : f.map === 'highlight' || (flipped && revealed) ? { id: m.id } : null;
+    : f.map === 'highlight' || (flipped && revealed) || (f.map === 'reveal' && revealed) ? { id: m.id } : null;
   const cap = c.capitals[0];
   const pins = revealed && item.ref.kind.startsWith('capital') && cap?.lon != null ? [{ lon: cap.lon, lat: cap.lat!, label: cap.name }]
     : revealed && item.ref.kind.startsWith('largestCity') && c.largestCity ? [{ lon: c.largestCity.lon, lat: c.largestCity.lat, label: c.largestCity.name }] : [];
@@ -229,9 +243,13 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
       </div>
       {nudge && <div className="nudge">{nudge}</div>}
 
-      {showMap && (
+      {showMap && (<div className="map-wrap">
         <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
-          dim={id => !regionIds.includes(id) && ds.byId.get(id)?.layer === m.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
+          dim={id => !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
+          {(f.map === 'highlight' || revealed || tapResult) && (m.layer === 'country' || m.layer === 'terr') && (
+            <Inset place={m} label={revealed || tapResult ? m.name : 'Close-up'} />
+          )}
+        </div>
       )}
 
       <div className="card-wrap">
@@ -257,6 +275,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
             </div>
           )}
           {revealed && c.incoming && <Incoming inc={c.incoming} current={c.name} />}
+          {revealed && item.ref.kind.startsWith('flag') && <Lookalikes ds={ds} place={c} />}
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
           {revealed && f.note && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
           {revealed && s.pictures && f.picture && <Picture {...f.picture} />}
@@ -268,27 +287,27 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
           </div>}
         </article>
 
-        {revealed && f.mode === 'reveal' && !quiz && pv && (
+        {revealed && f.mode === 'reveal' && (!quiz || pv) && pv && (
           <div className="grades">
             {([[Rating.Again, 'Again'], [Rating.Hard, 'Hard'], [Rating.Good, 'Good'], [Rating.Easy, 'Easy']] as [Grade, string][]).map(([g, label]) => (
-              <button key={g} className={'grade g' + g} onClick={() => next(g)}><b>{label}</b><small>{pv[g]}</small><kbd>{g}</kbd></button>
+              <button key={g} className={'grade g' + g} onClick={() => next(g)}><b>{label}</b>{showIntervals && <small>{pv[g]}</small>}<kbd>{g === Rating.Good ? '3 · space' : g}</kbd></button>
             ))}
           </div>
         )}
-        {revealed && f.mode === 'reveal' && quiz && (
-          <div className="grades two">
-            <button className="grade g1" onClick={() => next(Rating.Again)}><b>Missed it</b><kbd>1</kbd></button>
-            <button className="grade g3" onClick={() => next(Rating.Good)}><b>Knew it</b><kbd>2 · space</kbd></button>
-          </div>
-        )}
+
         {revealed && f.mode === 'tap' && (
           <div className="grades">
             {tapResult?.ok
               ? (quiz
-                  ? <button className="grade g3 full" onClick={() => next(Rating.Good)}><b>Correct — next</b><kbd>space</kbd></button>
+                  ? <>
+                      <button className="grade g2" onClick={() => next(Rating.Hard)}><b>Hard</b><kbd>2</kbd></button>
+                      <button className="grade g3 wide2" onClick={() => next(Rating.Good)}><b>Correct</b><kbd>3 · space</kbd></button>
+                      <button className="grade g4" onClick={() => next(Rating.Easy)}><b>Easy</b><kbd>4</kbd></button>
+                    </>
                   : <>
-                      <button className="grade g3 wide" onClick={() => next(Rating.Good)}><b>Correct — next</b><small>{pv?.[Rating.Good]}</small><kbd>space</kbd></button>
-                      <button className="grade g4" onClick={() => next(Rating.Easy)}><b>Too easy</b><small>{pv?.[Rating.Easy]}</small></button>
+                      <button className="grade g2" onClick={() => next(Rating.Hard)}><b>Hard</b><small>{pv?.[Rating.Hard]}</small><kbd>2</kbd></button>
+                      <button className="grade g3 wide2" onClick={() => next(Rating.Good)}><b>Correct</b><small>{pv?.[Rating.Good]}</small><kbd>3 · space</kbd></button>
+                      <button className="grade g4" onClick={() => next(Rating.Easy)}><b>Easy</b><small>{pv?.[Rating.Easy]}</small><kbd>4</kbd></button>
                     </>)
               : <button className="grade g1 full" onClick={() => next(Rating.Again)}><b>Got it — next</b><small>{quiz ? 'counted as missed' : 'see again soon'}</small><kbd>space</kbd></button>}
           </div>

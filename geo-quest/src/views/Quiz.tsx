@@ -38,7 +38,7 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
   return (
     <div className="quiz">
       <h1>Quiz</h1>
-      <p className="muted">Test yourself on any mix — a region, a continent, or the whole world. Quizzes are practice: they don't change your review schedule. Score 90% or more to earn a medal; a good path is regions → continents → the world.</p>
+      <p className="muted">Test yourself on any mix — a region, a continent, or the whole world. Quizzes don't add new cards to your schedule, but answers on cards you're already learning count as reviews. Score 90% or more to earn a medal; a good path is regions → continents → the world.</p>
 
       <section className="quiz-block">
         <h3>Where</h3>
@@ -67,6 +67,10 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
         <div className="picks">
           <Chip s="sec:United States" label="All 50 states" />
           {GROUPS.filter(g => g.layer === 'us').map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.name} />)}
+        </div>
+        <div className="picks">
+          <Chip s="sec:Territories" label="All territories" />
+          {GROUPS.filter(g => g.layer === 'terr').map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.name.replace(' territories', '')} />)}
         </div>
         <div className="picks"><Chip s="grp:cn" label="China's provinces" /></div>
       </section>
