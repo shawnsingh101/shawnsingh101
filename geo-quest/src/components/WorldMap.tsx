@@ -41,6 +41,7 @@ interface Props {
   dim?: (placeId: string) => boolean;   // fade places outside the current question's region
   strong?: (placeId: string) => boolean; // regions being studied: solid, darker borders (Uzbekistan's regions in an Uzbekistan quiz)
   outline?: string[];                    // places drawn with a bold outline on top (the country those regions belong to)
+  subFilter?: (placeId: string) => boolean; // which regions-inside-a-country to draw (one level at a time: Punjab's districts, not also India's states)
   onTap?: (hit: MapHit) => void;
   onHover?: (hit: MapHit | null, x: number, y: number) => void; // mouse only
   className?: string;
@@ -101,7 +102,7 @@ function toShapes(topo: Topology, layer: Layer, path: ReturnType<typeof geoPath>
   });
 }
 
-export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], target, focus, dim, strong, outline = [], onTap, onHover, className, recenter = false, hide, detailByZoom = false }: Props) {
+export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], target, focus, dim, strong, outline = [], subFilter, onTap, onHover, className, recenter = false, hide, detailByZoom = false }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown>>();
@@ -140,7 +141,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const shapes = useMemo(() => {
     const out: Partial<Record<Layer, Shape[]>> = {};
     if (topos.country) out.country = toShapes(topos.country, 'country', path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
-    for (const l of ['water', 'cn', 'us', 'terr', 'sub', 'range', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
+    for (const l of ['water', 'cn', 'us', 'terr', 'sub', 'range', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) || /-outline$/.test(f.properties.id ?? '') ? f.properties.id : null));
     return out;
   }, [topos, shapeToCountry, ds, path]);
 
@@ -155,7 +156,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const dots = useMemo(() => {
     const out: Dot[] = [];
     const byPlace = new Map(visible.filter(s => s.placeId).map(s => [s.placeId!, s]));
-    const candidates = [...ds.countries, ...ds.places.filter(p => (p.layer === 'cn' || p.layer === 'us' || p.layer === 'terr' || p.layer === 'sub') && layers.includes(p.layer))];
+    const candidates = [...ds.countries, ...ds.places.filter(p => (p.layer === 'cn' || p.layer === 'us' || p.layer === 'terr' || p.layer === 'sub') && layers.includes(p.layer) && (p.layer !== 'sub' || !subFilter || subFilter(p.id)))];
     for (const c of candidates) {
       const s = byPlace.get(c.id);
       const tiny = !s || Math.max(s.bounds[1][0] - s.bounds[0][0], s.bounds[1][1] - s.bounds[0][1]) < (c.layer === 'sub' ? 0.25 : c.layer === 'cn' || c.layer === 'us' ? 1.5 : 4);
@@ -298,11 +299,16 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {shapes.cn && layers.includes('cn') && shapes.cn.map(s => shapeEl(s, 'land sub'))}
           {shapes.us && layers.includes('us') && shapes.us.map(s => shapeEl(s, 'land sub'))}
           {shapes.terr && layers.includes('terr') && shapes.terr.map(s => shapeEl(s, 'land sub terr'))}
-          {shapes.sub && layers.includes('sub') && shapes.sub.map(s => shapeEl(s, 'land sub'))}
+          {shapes.sub && layers.includes('sub') && shapes.sub.filter(s => !!s.placeId && !/-outline$/.test(s.placeId) && (!subFilter || subFilter(s.placeId))).map(s => shapeEl(s, 'land sub'))}
           {shapes.range && layers.includes('range') && shapes.range.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'range') : null))}
           {shapes.lake && layers.includes('lake') && shapes.lake.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'lake') : <path key={s.key} d={s.d} className="lake other" />))}
           {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(riverEl)}
-          {outline.map(id => visible.filter(s => s.placeId === id).map(s => <path key={'o' + s.key} d={s.d} className="focus-outline" />))}
+          {outline.map(id => {
+            // Prefer an outline built from the regions themselves (Punjab from its districts), so the edges line up.
+            const all = Object.values(shapes).flat() as Shape[];
+            const own = all.filter(s => s.placeId === `${id}-outline`);
+            return (own.length ? own : all.filter(s => s.placeId === id)).map(s => <path key={'o' + s.key} d={s.d} className="focus-outline" />);
+          })}
           {dots.map(d => (
             <g key={d.placeId} className={'dot' + cls(d.placeId)} {...events({ countryId: d.placeId, name: ds.byId.get(d.placeId)!.name })}>
               <circle cx={d.x} cy={d.y} r={13 / k} className="hit" />

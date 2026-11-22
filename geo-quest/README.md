@@ -33,6 +33,19 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.10: Punjab's districts, local scripts for regions
+
+- **Punjab (India) › 23 districts in 5 divisions** (Jalandhar, Patiala, Firozpur, Faridkot, Rupnagar), nested under
+  India. Borders from **OpenStreetMap** (new `osm` source in `data/subdivisions.json`: Overpass, by bounding box and
+  admin level; `groups[].ids` assigns districts to divisions; `OSM_FILE` reuses a saved response). Ways are stitched
+  into rings and rounded to ~500 m. A merged `<parent>-outline` shape gives a bold outline that matches the districts.
+  Headquarters cards appear where the town's name differs from the district's (Mohali, Nawanshahr, Tarn Taran Sahib).
+- A quiz draws one level of regions at a time (Punjab's districts *or* India's states), so they never cover each other.
+- **Local names for regions and their capitals** in each country's script (`nativeLangs`): Gurmukhi for Punjab, kanji for
+  Japan, Uzbek, Hindi for India's states; recordings where Wikidata has them, else the device voice.
+- `capitalKeep` override (Karnataka → Bengaluru, Maharashtra → Mumbai) with notes; notes for real two-capital states.
+- Empty skills / question types are hidden (Punjab divisions whose headquarters all share the district's name).
+
 ## v1.9: river drill-down, states and sources
 
 - **Rivers form a tree** like places: Rivers › Rivers of Europe / Asia & Oceania / Africa / the Americas, and

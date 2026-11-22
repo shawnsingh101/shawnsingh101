@@ -72,6 +72,37 @@
    ]
   },
   {
+   "id": "pb",
+   "section": "Punjab",
+   "parent": "India",
+   "country": "Q22424",
+   "noun": "district",
+   "nouns": "districts",
+   "capital": "headquarters",
+   "groups": [
+    {
+     "id": "pb-jal",
+     "name": "Jalandhar division"
+    },
+    {
+     "id": "pb-pat",
+     "name": "Patiala division"
+    },
+    {
+     "id": "pb-fzr",
+     "name": "Firozpur division"
+    },
+    {
+     "id": "pb-fdk",
+     "name": "Faridkot division"
+    },
+    {
+     "id": "pb-rpr",
+     "name": "Rupnagar division"
+    }
+   ]
+  },
+  {
    "id": "uz",
    "section": "Uzbekistan",
    "parent": "Asia",
@@ -124,12 +155,26 @@
      "image": "Japan Nagoya.png",
      "lon": 136.906,
      "lat": 35.181,
-     "wiki": "Nagoya"
+     "wiki": "Nagoya",
+     "native": [
+      {
+       "name": "名古屋",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Nagoya",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūbu",
+   "native": [
+    {
+     "name": "愛知県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 7521192,
    "populationYear": 2021
   },
@@ -154,14 +199,72 @@
      "image": "Akita City Hall main building 20190114.jpg",
      "lon": 140.103,
      "lat": 39.72,
-     "wiki": "Akita_(city)"
+     "wiki": "Akita_(city)",
+     "native": [
+      {
+       "name": "秋田",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Akita",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Hokkaidō & Tōhoku",
+   "native": [
+    {
+     "name": "秋田県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 946380,
    "populationYear": 2021
+  },
+  {
+   "id": "Q202822",
+   "layer": "sub",
+   "name": "Amritsar district",
+   "image": "PunjabAmritsar.png",
+   "lon": 74.983,
+   "lat": 31.583,
+   "wiki": "Amritsar_district",
+   "group": "pb-jal",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q48403",
+     "name": "Amritsar",
+     "preferred": false,
+     "role": null,
+     "image": "Amritsar-header.jpg",
+     "lon": 74.877,
+     "lat": 31.627,
+     "wiki": "Amritsar",
+     "native": [
+      {
+       "name": "ਅੰਮ੍ਰਿਤਸਰ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Amritsar",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Jalandhar division",
+   "native": [
+    {
+     "name": "ਅੰਮ੍ਰਿਤਸਰ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 2490656,
+   "populationYear": 2011
   },
   {
    "id": "Q40888",
@@ -184,12 +287,26 @@
      "image": "Port blair1.jpg",
      "lon": 92.75,
      "lat": 11.667,
-     "wiki": "Port_Blair"
+     "wiki": "Port_Blair",
+     "native": [
+      {
+       "name": "श्री विजयपुरम",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Srivijayapuram",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · North India",
+   "native": [
+    {
+     "name": "अण्डमान और निकोबार द्वीपसमूह",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 356152,
    "populationYear": 2005
   },
@@ -214,12 +331,26 @@
      "image": "Highcourt of AP.jpg",
      "lon": 80.516,
      "lat": 16.513,
-     "wiki": "Amaravati"
+     "wiki": "Amaravati",
+     "native": [
+      {
+       "name": "अमरावती, आन्ध्र प्रदेश",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Amaravati",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · South India",
+   "native": [
+    {
+     "name": "आन्ध्र प्रदेश",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 53586000,
    "populationYear": 2025
   },
@@ -244,12 +375,26 @@
      "image": "Devonaboy Jome Mosque in Andijan.jpg",
      "lon": 72.351,
      "lat": 40.783,
-     "wiki": "Andijan"
+     "wiki": "Andijan",
+     "native": [
+      {
+       "name": "Andijon",
+       "lang": "Uzbek",
+       "code": "uz"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Andijan",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Andijon",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 1899500,
    "populationYear": 2005
   },
@@ -274,12 +419,26 @@
      "image": "Sceanery of the Aomori Waterfront 20200621.jpg",
      "lon": 140.747,
      "lat": 40.823,
-     "wiki": "Aomori"
+     "wiki": "Aomori",
+     "native": [
+      {
+       "name": "青森",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Aomori",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Hokkaidō & Tōhoku",
+   "native": [
+    {
+     "name": "青森県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1232303,
    "populationYear": 2021
   },
@@ -304,12 +463,26 @@
      "image": "Itanagar town 01.jpg",
      "lon": 93.62,
      "lat": 27.1,
-     "wiki": "Itanagar"
+     "wiki": "Itanagar",
+     "native": [
+      {
+       "name": "ईटानगर",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Itanagar",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Northeast India",
+   "native": [
+    {
+     "name": "अरुणाचल प्रदेश",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 1382611,
    "populationYear": 2011
   },
@@ -334,12 +507,26 @@
      "image": "Assam Secretariat, Dispur, August, 2008.jpg",
      "lon": 91.77,
      "lat": 26.15,
-     "wiki": "Dispur"
+     "wiki": "Dispur",
+     "native": [
+      {
+       "name": "दिसपुर",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Dispur",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Northeast India",
+   "native": [
+    {
+     "name": "असम",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 31205576,
    "populationYear": 2011
   },
@@ -372,6 +559,94 @@
    "facts": "County of New Jersey",
    "population": 274534,
    "populationYear": 2020
+  },
+  {
+   "id": "Q2353293",
+   "layer": "sub",
+   "name": "Barnala district",
+   "image": "Gurdwara tap asthan bibi pardhan Kaur sarovar pictures.jpg",
+   "lon": 75.55,
+   "lat": 30.383,
+   "wiki": "Barnala_district",
+   "group": "pb-pat",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q711996",
+     "name": "Barnala",
+     "preferred": false,
+     "role": null,
+     "image": null,
+     "lon": 75.54,
+     "lat": 30.37,
+     "wiki": "Barnala",
+     "native": [
+      {
+       "name": "ਬਰਨਾਲਾ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Barnala",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Patiala division",
+   "native": [
+    {
+     "name": "ਬਰਨਾਲਾ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 595527,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q172488",
+   "layer": "sub",
+   "name": "Bathinda district",
+   "image": "Bathinda fort view.jpg",
+   "lon": 74.94,
+   "lat": 30.21,
+   "wiki": "Bathinda_district",
+   "group": "pb-fdk",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q709319",
+     "name": "Bathinda",
+     "preferred": false,
+     "role": null,
+     "image": "The City of Lakes-Bathinda.jpg",
+     "lon": 74.952,
+     "lat": 30.213,
+     "wiki": "Bathinda",
+     "native": [
+      {
+       "name": "ਬਠਿੰਡਾ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Bathinda",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Faridkot division",
+   "native": [
+    {
+     "name": "ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 1388525,
+   "populationYear": 2011
   },
   {
    "id": "Q112915",
@@ -424,12 +699,26 @@
      "image": "Aerial view, Patna (314731093).jpg",
      "lon": 85.141,
      "lat": 25.61,
-     "wiki": "Patna"
+     "wiki": "Patna",
+     "native": [
+      {
+       "name": "पटना",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Patna",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · East India",
+   "native": [
+    {
+     "name": "बिहार",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 103804637,
    "populationYear": 2011
   },
@@ -454,12 +743,26 @@
      "image": "Kalon-Ensemble Buchara.jpg",
      "lon": 64.429,
      "lat": 39.775,
-     "wiki": "Bukhara"
+     "wiki": "Bukhara",
+     "native": [
+      {
+       "name": "Buxoro",
+       "lang": "Uzbek",
+       "code": "uz"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Bukhara",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Buxoro viloyati",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 1543900,
    "populationYear": 2009
   },
@@ -568,7 +871,14 @@
    "capitals": [],
    "capitalAnswer": null,
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · North India",
+   "native": [
+    {
+     "name": "चण्डीगढ़",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 1055450,
    "populationYear": 2011
   },
@@ -593,12 +903,26 @@
      "image": "TempioRaipur.jpg",
      "lon": 81.634,
      "lat": 21.238,
-     "wiki": "Raipur"
+     "wiki": "Raipur",
+     "native": [
+      {
+       "name": "रायपुर",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Raipur",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Central India",
+   "native": [
+    {
+     "name": "छत्तीसगढ़",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 29436231,
    "populationYear": 2020
   },
@@ -623,12 +947,26 @@
      "image": "Chiba City montage.jpg",
      "lon": 140.106,
      "lat": 35.607,
-     "wiki": "Chiba_(city)"
+     "wiki": "Chiba_(city)",
+     "native": [
+      {
+       "name": "千葉",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Chiba",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kantō",
+   "native": [
+    {
+     "name": "千葉県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 6279002,
    "populationYear": 2021
   },
@@ -683,12 +1021,26 @@
      "image": "Gateway of Moti Daman.jpg",
      "lon": 72.834,
      "lat": 20.417,
-     "wiki": "Daman,_India"
+     "wiki": "Daman,_India",
+     "native": [
+      {
+       "name": "दमन",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Daman",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · West India",
+   "native": [
+    {
+     "name": "दादरा और नगर हवेली और दमन और दीव",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 585764,
    "populationYear": 2011
   },
@@ -713,12 +1065,26 @@
      "lat": 28.614,
      "lon": 77.209,
      "preferred": false,
-     "role": null
+     "role": null,
+     "native": [
+      {
+       "name": "नई दिल्ली",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "New Delhi",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Central India",
+   "native": [
+    {
+     "name": "दिल्ली",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 26495000,
    "populationYear": 2016
   },
@@ -743,12 +1109,26 @@
      "image": "Matsuyama (14074874872).jpg",
      "lon": 132.766,
      "lat": 33.839,
-     "wiki": "Matsuyama"
+     "wiki": "Matsuyama",
+     "native": [
+      {
+       "name": "松山",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Matsuyama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūgoku & Shikoku",
+   "native": [
+    {
+     "name": "愛媛県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1321580,
    "populationYear": 2021
   },
@@ -783,6 +1163,138 @@
    "populationYear": 2020
   },
   {
+   "id": "Q172494",
+   "layer": "sub",
+   "name": "Faridkot district",
+   "image": null,
+   "lon": 74.76,
+   "lat": 30.67,
+   "wiki": "Faridkot_district",
+   "group": "pb-fdk",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q1780350",
+     "name": "Faridkot",
+     "preferred": false,
+     "role": null,
+     "image": "Punjab district map.png",
+     "lon": 74.76,
+     "lat": 30.67,
+     "wiki": "Faridkot,_India",
+     "native": [
+      {
+       "name": "ਫ਼ਰੀਦਕੋਟ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Faridkot",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Faridkot division",
+   "native": [
+    {
+     "name": "ਫ਼ਰੀਦਕੋਟ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 617508,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q172485",
+   "layer": "sub",
+   "name": "Fatehgarh Sahib district",
+   "image": "Aam khas Bag, Sirhind, Fatehgarh Sahib district, Punjab, India , Entrence.JPG",
+   "lon": 76.23,
+   "lat": 30.38,
+   "wiki": "Fatehgarh_Sahib_district",
+   "group": "pb-pat",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q2765075",
+     "name": "Fatehgarh Sahib",
+     "preferred": false,
+     "role": null,
+     "image": "Gurdwara Fatehgarh.jpg",
+     "lon": 76.397,
+     "lat": 30.644,
+     "wiki": "Fatehgarh_Sahib",
+     "native": [
+      {
+       "name": "ਫ਼ਤਹਿਗੜ੍ਹ ਸਾਹਿਬ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Fatehgarh Sahib",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Patiala division",
+   "native": [
+    {
+     "name": "ਫ਼ਤਹਿਗੜ੍ਹ ਸਾਹਿਬ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 600163,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q188702",
+   "layer": "sub",
+   "name": "Fazilka district",
+   "image": null,
+   "lon": 74.025,
+   "lat": 30.403,
+   "wiki": "Fazilka_district",
+   "group": "pb-fzr",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q1525269",
+     "name": "Fazilka",
+     "preferred": false,
+     "role": null,
+     "image": "Fazilka city beautiful.jpg",
+     "lon": 74.025,
+     "lat": 30.403,
+     "wiki": "Fazilka",
+     "native": [
+      {
+       "name": "ਫ਼ਾਜ਼ਿਲਕਾ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Fazilka",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Firozpur division",
+   "native": [
+    {
+     "name": "ਫ਼ਾਜ਼ਿਲਕਾ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 1027143,
+   "populationYear": 2011
+  },
+  {
    "id": "Q487089",
    "layer": "sub",
    "name": "Fergana Region",
@@ -803,14 +1315,72 @@
      "image": "Фергана аллея.jpg",
      "lon": 71.786,
      "lat": 40.386,
-     "wiki": "Fergana"
+     "wiki": "Fergana",
+     "native": [
+      {
+       "name": "Fargʻona",
+       "lang": "Uzbek",
+       "code": "uz"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Fergana",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Fargʻona viloyati",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 3564800,
    "populationYear": 2017
+  },
+  {
+   "id": "Q172385",
+   "layer": "sub",
+   "name": "Firozpur district",
+   "image": null,
+   "lon": 74.62,
+   "lat": 30.94,
+   "wiki": "Firozpur_district",
+   "group": "pb-fzr",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q652098",
+     "name": "Firozpur",
+     "preferred": false,
+     "role": null,
+     "image": "National Martyrs Memorial Hussainiwala closeup.jpg",
+     "lon": 74.6,
+     "lat": 30.917,
+     "wiki": "Firozpur",
+     "native": [
+      {
+       "name": "ਫਿਰੋਜ਼ਪੁਰ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Firozpur",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Firozpur division",
+   "native": [
+    {
+     "name": "ਫਿਰੋਜ਼ਪੁਰ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 2029074,
+   "populationYear": 2011
   },
   {
    "id": "Q133879",
@@ -833,12 +1403,26 @@
      "image": "Fukui montage.jpg",
      "lon": 136.22,
      "lat": 36.064,
-     "wiki": "Fukui_(city)"
+     "wiki": "Fukui_(city)",
+     "native": [
+      {
+       "name": "福井",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Fukui",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūbu",
+   "native": [
+    {
+     "name": "福井県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 764533,
    "populationYear": 2021
   },
@@ -863,12 +1447,26 @@
      "image": "Hakata Port from Fukuoka Tower.jpg",
      "lon": 130.402,
      "lat": 33.59,
-     "wiki": "Fukuoka"
+     "wiki": "Fukuoka",
+     "native": [
+      {
+       "name": "福岡",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Fukuoka",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kyūshū & Okinawa",
+   "native": [
+    {
+     "name": "福岡県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 5108038,
    "populationYear": 2020
   },
@@ -893,12 +1491,26 @@
      "image": "Fukushima City with a view of Fukushima Station.jpg",
      "lon": 140.475,
      "lat": 37.761,
-     "wiki": "Fukushima_(city)"
+     "wiki": "Fukushima_(city)",
+     "native": [
+      {
+       "name": "福島",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Fukushima",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Hokkaidō & Tōhoku",
+   "native": [
+    {
+     "name": "福島県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1825325,
    "populationYear": 2021
   },
@@ -923,12 +1535,26 @@
      "image": "Gifu City Tower 43 and Gifu Sky Wing 37 from Twinarch138.jpg",
      "lon": 136.759,
      "lat": 35.426,
-     "wiki": "Gifu"
+     "wiki": "Gifu",
+     "native": [
+      {
+       "name": "岐阜",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Gifu",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūbu",
+   "native": [
+    {
+     "name": "岐阜県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1975397,
    "populationYear": 2020
   },
@@ -983,12 +1609,26 @@
      "image": "Panaji, nostra signora dell'immacolata concezione, esterno 04.jpg",
      "lon": 73.83,
      "lat": 15.48,
-     "wiki": "Panaji"
+     "wiki": "Panaji",
+     "native": [
+      {
+       "name": "पणजी",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Panaji",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · West India",
+   "native": [
+    {
+     "name": "गोवा",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 1458545,
    "populationYear": 2011
   },
@@ -1013,12 +1653,26 @@
      "image": "Akshardham Gandhinagar Gujarat.jpg",
      "lon": 72.65,
      "lat": 23.223,
-     "wiki": "Gandhinagar"
+     "wiki": "Gandhinagar",
+     "native": [
+      {
+       "name": "गाँधीनगर",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Gandhinagar",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · West India",
+   "native": [
+    {
+     "name": "गुजरात",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 60383628,
    "populationYear": 2011
   },
@@ -1043,14 +1697,72 @@
      "image": "Daido Akagi Shrine, Gunma 01.jpg",
      "lon": 139.063,
      "lat": 36.389,
-     "wiki": "Maebashi"
+     "wiki": "Maebashi",
+     "native": [
+      {
+       "name": "前橋",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Maebashi",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kantō",
+   "native": [
+    {
+     "name": "群馬県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1934920,
    "populationYear": 2021
+  },
+  {
+   "id": "Q146708",
+   "layer": "sub",
+   "name": "Gurdaspur district",
+   "image": null,
+   "lon": 75.25,
+   "lat": 31.917,
+   "wiki": "Gurdaspur_district",
+   "group": "pb-jal",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q1707629",
+     "name": "Gurdaspur",
+     "preferred": false,
+     "role": null,
+     "image": "Mechanical Engg. Block of Beant College of Engineering and Technology, Gurdaspur, Punjab, India (2006).jpg",
+     "lon": 75.4,
+     "lat": 32.033,
+     "wiki": "Gurdaspur",
+     "native": [
+      {
+       "name": "ਗੁਰਦਾਸਪੁਰ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Gurdaspur",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Jalandhar division",
+   "native": [
+    {
+     "name": "ਗੁਰਦਾਸਪੁਰ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 2298323,
+   "populationYear": 2011
   },
   {
    "id": "Q1174",
@@ -1073,12 +1785,26 @@
      "image": "Open Hand Monument and a Rose.jpeg",
      "lon": 76.78,
      "lat": 30.733,
-     "wiki": "Chandigarh"
+     "wiki": "Chandigarh",
+     "native": [
+      {
+       "name": "चण्डीगढ़",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Chandigarh",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Central India",
+   "native": [
+    {
+     "name": "हरियाणा",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 27761063,
    "populationYear": 2016
   },
@@ -1103,12 +1829,26 @@
      "image": "Shimla skyline.jpg",
      "lon": 77.172,
      "lat": 31.103,
-     "wiki": "Shimla"
+     "wiki": "Shimla",
+     "native": [
+      {
+       "name": "शिमला",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Shimla",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · North India",
+   "native": [
+    {
+     "name": "हिमाचल प्रदेश",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 6864602,
    "populationYear": 2011
   },
@@ -1133,12 +1873,26 @@
      "image": "Atomic Bomb Dome and Motoyaso River, Hiroshima, Northwest view 20190417 1.jpg",
      "lon": 132.455,
      "lat": 34.385,
-     "wiki": "Hiroshima"
+     "wiki": "Hiroshima",
+     "native": [
+      {
+       "name": "広島",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Hiroshima",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūgoku & Shikoku",
+   "native": [
+    {
+     "name": "広島県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 2790804,
    "populationYear": 2021
   },
@@ -1163,14 +1917,72 @@
      "lat": 43.062,
      "lon": 141.354,
      "preferred": false,
-     "role": null
+     "role": null,
+     "native": [
+      {
+       "name": "札幌",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Sapporo",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Hokkaidō & Tōhoku",
+   "native": [
+    {
+     "name": "北海道",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 5383579,
    "populationYear": 2015
+  },
+  {
+   "id": "Q304800",
+   "layer": "sub",
+   "name": "Hoshiarpur district",
+   "image": null,
+   "lon": 75.983,
+   "lat": 31.583,
+   "wiki": "Hoshiarpur_district",
+   "group": "pb-jal",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q928349",
+     "name": "Hoshiarpur",
+     "preferred": false,
+     "role": null,
+     "image": "Bajwara Fort Hoshiarpur.jpg",
+     "lon": 75.917,
+     "lat": 31.532,
+     "wiki": "Hoshiarpur",
+     "native": [
+      {
+       "name": "ਹੁਸ਼ਿਆਰਪੁਰ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Hoshiarpur",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Jalandhar division",
+   "native": [
+    {
+     "name": "ਹੁਸ਼ਿਆਰਪੁਰ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 1586625,
+   "populationYear": 2011
   },
   {
    "id": "Q490505",
@@ -1253,12 +2065,26 @@
      "image": "Ikuta Shrine 201208.JPG",
      "lon": 135.195,
      "lat": 34.69,
-     "wiki": "Kobe"
+     "wiki": "Kobe",
+     "native": [
+      {
+       "name": "神戸",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kobe",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kansai",
+   "native": [
+    {
+     "name": "兵庫県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 5453392,
    "populationYear": 2021
   },
@@ -1283,12 +2109,26 @@
      "image": "Kairaku-en, Ibaraki 24.jpg",
      "lon": 140.471,
      "lat": 36.366,
-     "wiki": "Mito,_Ibaraki"
+     "wiki": "Mito,_Ibaraki",
+     "native": [
+      {
+       "name": "水戸",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Mito",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kantō",
+   "native": [
+    {
+     "name": "茨城県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 2862372,
    "populationYear": 2021
   },
@@ -1313,12 +2153,26 @@
      "image": "望湖台２.jpg",
      "lon": 136.656,
      "lat": 36.561,
-     "wiki": "Kanazawa"
+     "wiki": "Kanazawa",
+     "native": [
+      {
+       "name": "金沢",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kanazawa",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūbu",
+   "native": [
+    {
+     "name": "石川県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1132497,
    "populationYear": 2020
   },
@@ -1343,14 +2197,72 @@
      "image": "Morioka and Mount Iwate and River Kitakami in May 2019.jpg",
      "lon": 141.269,
      "lat": 39.745,
-     "wiki": "Morioka"
+     "wiki": "Morioka",
+     "native": [
+      {
+       "name": "盛岡",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Morioka",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Hokkaidō & Tōhoku",
+   "native": [
+    {
+     "name": "岩手県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1205698,
    "populationYear": 2021
+  },
+  {
+   "id": "Q1817425",
+   "layer": "sub",
+   "name": "Jalandhar district",
+   "image": null,
+   "lon": 75.57,
+   "lat": 31.33,
+   "wiki": "Jalandhar_district",
+   "group": "pb-jal",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q33377",
+     "name": "Jalandhar",
+     "preferred": false,
+     "role": null,
+     "image": "Devi Talab Mandir.jpg",
+     "lon": 75.579,
+     "lat": 31.326,
+     "wiki": "Jalandhar",
+     "native": [
+      {
+       "name": "ਜਲੰਧਰ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Jalandhar",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Jalandhar division",
+   "native": [
+    {
+     "name": "ਜਲੰਧਰ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 2193590,
+   "populationYear": 2011
   },
   {
    "id": "Q66278313",
@@ -1373,7 +2285,14 @@
      "image": "Jammu city.jpg",
      "lon": 74.869,
      "lat": 32.736,
-     "wiki": "Jammu"
+     "wiki": "Jammu",
+     "native": [
+      {
+       "name": "जम्मू",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     },
     {
      "id": "Q170115",
@@ -1383,14 +2302,29 @@
      "image": "Srinagar pano.jpg",
      "lon": 74.806,
      "lat": 34.091,
-     "wiki": "Srinagar"
+     "wiki": "Srinagar",
+     "native": [
+      {
+       "name": "श्रीनगर",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Jammu and Srinagar",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · North India",
+   "native": [
+    {
+     "name": "जम्मू और कश्मीर",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 12258433,
-   "populationYear": 2011
+   "populationYear": 2011,
+   "capitalNote": "Srinagar in summer, Jammu in winter"
   },
   {
    "id": "Q1184",
@@ -1413,12 +2347,26 @@
      "image": "View From Pahari Temple.jpg",
      "lon": 85.335,
      "lat": 23.356,
-     "wiki": "Ranchi"
+     "wiki": "Ranchi",
+     "native": [
+      {
+       "name": "राँची",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Ranchi",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · East India",
+   "native": [
+    {
+     "name": "झारखण्ड",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 32988134,
    "populationYear": 2011
   },
@@ -1443,12 +2391,26 @@
      "image": "Jizzaxfountain.jpg",
      "lon": 67.85,
      "lat": 40.117,
-     "wiki": "Jizzakh"
+     "wiki": "Jizzakh",
+     "native": [
+      {
+       "name": "Jizzax",
+       "lang": "Uzbek",
+       "code": "uz"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Jizzakh",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Jizzax viloyati",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 1250100,
    "populationYear": 2015
   },
@@ -1473,12 +2435,26 @@
      "image": "香川県の風景.jpg",
      "lon": 134.047,
      "lat": 34.343,
-     "wiki": "Takamatsu"
+     "wiki": "Takamatsu",
+     "native": [
+      {
+       "name": "高松",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Takamatsu",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūgoku & Shikoku",
+   "native": [
+    {
+     "name": "香川県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 949358,
    "populationYear": 2020
   },
@@ -1503,12 +2479,26 @@
      "image": "Sakurajima -城山展望台より.jpg",
      "lon": 130.557,
      "lat": 31.597,
-     "wiki": "Kagoshima"
+     "wiki": "Kagoshima",
+     "native": [
+      {
+       "name": "鹿児島",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kagoshima",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kyūshū & Okinawa",
+   "native": [
+    {
+     "name": "鹿児島県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1586435,
    "populationYear": 2021
   },
@@ -1533,14 +2523,78 @@
      "image": "Minato-mirai from Yamashita Park at night.jpg",
      "lon": 139.634,
      "lat": 35.45,
-     "wiki": "Yokohama"
+     "wiki": "Yokohama",
+     "native": [
+      {
+       "name": "横浜",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ],
+     "audio": {
+      "ja": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e4/Ja-Yokohama.ogg/Ja-Yokohama.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/e/e4/Ja-Yokohama.ogg"
+      ]
+     }
     }
    ],
    "capitalAnswer": "Yokohama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kantō",
+   "native": [
+    {
+     "name": "神奈川県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 9216009,
    "populationYear": 2020
+  },
+  {
+   "id": "Q172363",
+   "layer": "sub",
+   "name": "Kapurthala district",
+   "image": "Punjab Kapurthala.png",
+   "lon": 75.385,
+   "lat": 31.379,
+   "wiki": "Kapurthala_district",
+   "group": "pb-jal",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q781354",
+     "name": "Kapurthala",
+     "preferred": false,
+     "role": null,
+     "image": "Kapurthala, Punjab.jpg",
+     "lon": 75.381,
+     "lat": 31.38,
+     "wiki": "Kapurthala",
+     "native": [
+      {
+       "name": "ਕਪੂਰਥਲਾ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Kapurthala",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Jalandhar division",
+   "native": [
+    {
+     "name": "ਕਪੂਰਥਲਾ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 815168,
+   "populationYear": 2011
   },
   {
    "id": "Q484245",
@@ -1569,6 +2623,13 @@
    "capitalAnswer": "Nukus",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Qoraqalpogʻiston",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 2149932,
    "populationYear": 2026
   },
@@ -1586,16 +2647,6 @@
    "parent": "Q668",
    "capitals": [
     {
-     "id": "Q270176",
-     "name": "Belgaum",
-     "preferred": false,
-     "role": null,
-     "image": "Suvarna Soudha Belagavi12.jpg",
-     "lon": 74.504,
-     "lat": 15.857,
-     "wiki": "Belgaum"
-    },
-    {
      "id": "Q1355",
      "name": "Bengaluru",
      "preferred": false,
@@ -1603,14 +2654,29 @@
      "image": "UB City.jpg",
      "lon": 77.591,
      "lat": 12.979,
-     "wiki": "Bengaluru"
+     "wiki": "Bengaluru",
+     "native": [
+      {
+       "name": "बेंगलुरु",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
-   "capitalAnswer": "Belgaum and Bengaluru",
+   "capitalAnswer": "Bengaluru",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · South India",
+   "native": [
+    {
+     "name": "कर्नाटक",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 61130704,
-   "populationYear": 2011
+   "populationYear": 2011,
+   "capitalNote": "Belagavi (Belgaum) hosts the legislature's winter session"
   },
   {
    "id": "Q1186",
@@ -1633,12 +2699,26 @@
      "image": "Thiruvananthapuram Montage.jpg",
      "lon": 76.953,
      "lat": 8.488,
-     "wiki": "Thiruvananthapuram"
+     "wiki": "Thiruvananthapuram",
+     "native": [
+      {
+       "name": "तिरुवनन्तपुरम",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Thiruvananthapuram",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · South India",
+   "native": [
+    {
+     "name": "केरल",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 34523726,
    "populationYear": 2017
   },
@@ -1663,12 +2743,26 @@
      "image": "高知城 天守からの景色3 Kochi Castle - panoramio.jpg",
      "lon": 133.531,
      "lat": 33.559,
-     "wiki": "Kōchi,_Kōchi"
+     "wiki": "Kōchi,_Kōchi",
+     "native": [
+      {
+       "name": "高知",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kōchi-shi",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūgoku & Shikoku",
+   "native": [
+    {
+     "name": "高知県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 688870,
    "populationYear": 2021
   },
@@ -1693,12 +2787,26 @@
      "image": "Kumamoto Castle and Kyūshū Shinkansen 02.jpg",
      "lon": 130.708,
      "lat": 32.803,
-     "wiki": "Kumamoto"
+     "wiki": "Kumamoto",
+     "native": [
+      {
+       "name": "熊本",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kumamoto",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kyūshū & Okinawa",
+   "native": [
+    {
+     "name": "熊本県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1732644,
    "populationYear": 2021
   },
@@ -1723,12 +2831,26 @@
      "image": "Pedestrian road with pavements, paper umbrellas and people in yukata, Higashiyama-ku, Kyoto, Japan.jpg",
      "lon": 135.768,
      "lat": 35.012,
-     "wiki": "Kyoto"
+     "wiki": "Kyoto",
+     "native": [
+      {
+       "name": "京都",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kyoto",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kansai",
+   "native": [
+    {
+     "name": "京都府",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 2563192,
    "populationYear": 2021
   },
@@ -1753,7 +2875,14 @@
      "image": "Kargil Town Panorama.jpg",
      "lon": 76.126,
      "lat": 34.559,
-     "wiki": "Kargil"
+     "wiki": "Kargil",
+     "native": [
+      {
+       "name": "कारगिल",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     },
     {
      "id": "Q230818",
@@ -1763,14 +2892,29 @@
      "image": "Leh, Ladakh, India.jpg",
      "lon": 77.585,
      "lat": 34.164,
-     "wiki": "Leh"
+     "wiki": "Leh",
+     "native": [
+      {
+       "name": "लेह",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kargil and Leh",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · North India",
+   "native": [
+    {
+     "name": "लद्दाख़",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 274289,
-   "populationYear": 2011
+   "populationYear": 2011,
+   "capitalNote": "Leh and Kargil share the role"
   },
   {
    "id": "Q26927",
@@ -1793,13 +2937,71 @@
      "image": "KAVARATTI MAIN ROAD.jpg",
      "lon": 72.639,
      "lat": 10.567,
-     "wiki": "Kavaratti"
+     "wiki": "Kavaratti",
+     "native": [
+      {
+       "name": "कवरत्ती",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kavaratti",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · South India",
+   "native": [
+    {
+     "name": "लक्षद्वीप",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 64429,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q172482",
+   "layer": "sub",
+   "name": "Ludhiana district",
+   "image": null,
+   "lon": 75.85,
+   "lat": 30.883,
+   "wiki": "Ludhiana_district",
+   "group": "pb-pat",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q200123",
+     "name": "Ludhiana",
+     "preferred": false,
+     "role": null,
+     "image": "Ghanta Ghar Ludhiana.jpg",
+     "lon": 75.849,
+     "lat": 30.908,
+     "wiki": "Ludhiana",
+     "native": [
+      {
+       "name": "ਲੁਧਿਆਣਾ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Ludhiana",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Patiala division",
+   "native": [
+    {
+     "name": "ਲੁਧਿਆਣਾ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 3498739,
    "populationYear": 2011
   },
   {
@@ -1823,12 +3025,26 @@
      "image": "Taj Mahal, Bhopal.JPG",
      "lon": 77.412,
      "lat": 23.259,
-     "wiki": "Bhopal"
+     "wiki": "Bhopal",
+     "native": [
+      {
+       "name": "भोपाल",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Bhopal",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Central India",
+   "native": [
+    {
+     "name": "मध्य प्रदेश",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 72597565,
    "populationYear": 2011
   },
@@ -1853,24 +3069,71 @@
      "image": "Panoramic view of Taj Palace Hotel and Taj Tower with the iconic Gateway of India in the background (cropped).jpg",
      "lon": 72.877,
      "lat": 19.076,
-     "wiki": "Mumbai"
-    },
-    {
-     "id": "Q1513",
-     "name": "Nagpur",
-     "preferred": false,
-     "role": null,
-     "image": "Sitabuldi Market.JPG",
-     "lon": 79.081,
-     "lat": 21.15,
-     "wiki": "Nagpur"
+     "wiki": "Mumbai",
+     "native": [
+      {
+       "name": "मुम्बई",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
-   "capitalAnswer": "Mumbai and Nagpur",
+   "capitalAnswer": "Mumbai",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · West India",
+   "native": [
+    {
+     "name": "महाराष्ट्र",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 112372972,
-   "populationYear": 2011
+   "populationYear": 2011,
+   "capitalNote": "Nagpur is the second capital, where the legislature meets in winter"
+  },
+  {
+   "id": "Q107016021",
+   "layer": "sub",
+   "name": "Malerkotla district",
+   "image": "Mubarak Manzil Palace, Malerkotla 01.jpg",
+   "lon": 75.88,
+   "lat": 30.53,
+   "wiki": "Malerkotla_district",
+   "group": "pb-pat",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q1470987",
+     "name": "Malerkotla",
+     "preferred": false,
+     "role": null,
+     "image": "Kuka Martyrs Memorial, Malerkotla 1.jpg",
+     "lon": 75.883,
+     "lat": 30.517,
+     "wiki": "Malerkotla",
+     "native": [
+      {
+       "name": "ਮਾਲੇਰਕੋਟਲਾ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Malerkotla",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Patiala division",
+   "native": [
+    {
+     "name": "ਮਾਲੇਰਕੋਟਲਾ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ]
   },
   {
    "id": "Q1193",
@@ -1893,13 +3156,71 @@
      "image": "Imphal At Dusk.jpg",
      "lon": 93.95,
      "lat": 24.82,
-     "wiki": "Imphal"
+     "wiki": "Imphal",
+     "native": [
+      {
+       "name": "इम्फाल",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Imphal",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Northeast India",
+   "native": [
+    {
+     "name": "मणिपुर",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 2855794,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q172387",
+   "layer": "sub",
+   "name": "Mansa district",
+   "image": null,
+   "lon": 75.383,
+   "lat": 29.983,
+   "wiki": "Mansa_district,_India",
+   "group": "pb-fdk",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q2573916",
+     "name": "Mansa",
+     "preferred": false,
+     "role": null,
+     "image": "Bus stand, Mansa, Punjab.jpg",
+     "lon": 75.401,
+     "lat": 29.998,
+     "wiki": "Mansa,_Punjab",
+     "native": [
+      {
+       "name": "ਮਾਨਸਾ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Mansa",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Faridkot division",
+   "native": [
+    {
+     "name": "ਮਾਨਸਾ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 769751,
    "populationYear": 2011
   },
   {
@@ -1923,12 +3244,26 @@
      "image": "Shillong.jpg",
      "lon": 91.879,
      "lat": 25.574,
-     "wiki": "Shillong"
+     "wiki": "Shillong",
+     "native": [
+      {
+       "name": "शिलांग",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Shillong",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Northeast India",
+   "native": [
+    {
+     "name": "मेघालय",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 3211000,
    "populationYear": 2014
   },
@@ -2013,12 +3348,26 @@
      "image": "Tsu City Hall.jpg",
      "lon": 136.506,
      "lat": 34.718,
-     "wiki": "Tsu,_Mie"
+     "wiki": "Tsu,_Mie",
+     "native": [
+      {
+       "name": "津市",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Tsu",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kansai",
+   "native": [
+    {
+     "name": "三重県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1768632,
    "populationYear": 2020
   },
@@ -2043,12 +3392,26 @@
      "image": "SendaiCity Skylines from Mukaiyama2018.jpg",
      "lon": 140.869,
      "lat": 38.268,
-     "wiki": "Sendai"
+     "wiki": "Sendai",
+     "native": [
+      {
+       "name": "仙台",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Sendai",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Hokkaidō & Tōhoku",
+   "native": [
+    {
+     "name": "宮城県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 2288456,
    "populationYear": 2021
   },
@@ -2073,12 +3436,26 @@
      "image": "Route220 TachibanaStreet.jpg",
      "lon": 131.42,
      "lat": 31.908,
-     "wiki": "Miyazaki_(city)"
+     "wiki": "Miyazaki_(city)",
+     "native": [
+      {
+       "name": "宮崎",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Miyazaki",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kyūshū & Okinawa",
+   "native": [
+    {
+     "name": "宮崎県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1061032,
    "populationYear": 2021
   },
@@ -2103,13 +3480,71 @@
      "image": "Aizwal, Mizoram..JPG",
      "lon": 92.717,
      "lat": 23.733,
-     "wiki": "Aizawl"
+     "wiki": "Aizawl",
+     "native": [
+      {
+       "name": "आइज़ोल",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Aizawl",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Northeast India",
+   "native": [
+    {
+     "name": "मिज़ोरम",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 1097206,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1946896",
+   "layer": "sub",
+   "name": "Moga district",
+   "image": null,
+   "lon": 75.17,
+   "lat": 30.82,
+   "wiki": "Moga_district",
+   "group": "pb-fzr",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q259030",
+     "name": "Moga",
+     "preferred": false,
+     "role": null,
+     "image": "Finlandia hotel & Fun Park,MOGA(Punjab) INDIA - panoramio.jpg",
+     "lon": 75.17,
+     "lat": 30.817,
+     "wiki": "Moga,_Punjab",
+     "native": [
+      {
+       "name": "ਮੋਗਾ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Moga",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Firozpur division",
+   "native": [
+    {
+     "name": "ਮੋਗਾ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 995746,
    "populationYear": 2011
   },
   {
@@ -2193,12 +3628,26 @@
      "image": "Kohima 24 July 2021.jpeg",
      "lon": 94.119,
      "lat": 25.667,
-     "wiki": "Kohima"
+     "wiki": "Kohima",
+     "native": [
+      {
+       "name": "कोहिमा",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kohima",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Northeast India",
+   "native": [
+    {
+     "name": "नागालैण्ड",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 1978502,
    "populationYear": 2011
   },
@@ -2223,12 +3672,26 @@
      "image": "Downtown Nagano.jpg",
      "lon": 138.195,
      "lat": 36.649,
-     "wiki": "Nagano_(city)"
+     "wiki": "Nagano_(city)",
+     "native": [
+      {
+       "name": "長野",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Nagano",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūbu",
+   "native": [
+    {
+     "name": "長野県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 2024073,
    "populationYear": 2021
   },
@@ -2253,12 +3716,26 @@
      "image": "Nagasaki City View from Glover Garden, Nagasaki 2014.jpg",
      "lon": 129.88,
      "lat": 32.75,
-     "wiki": "Nagasaki"
+     "wiki": "Nagasaki",
+     "native": [
+      {
+       "name": "長崎",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Nagasaki",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kyūshū & Okinawa",
+   "native": [
+    {
+     "name": "長崎県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1307309,
    "populationYear": 2021
   },
@@ -2289,6 +3766,13 @@
    "capitalAnswer": "Namangan",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Namangan",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 2554200,
    "populationYear": 2015
   },
@@ -2313,12 +3797,26 @@
      "image": "Sika deer in Nara 05.jpg",
      "lon": 135.805,
      "lat": 34.685,
-     "wiki": "Nara_(city)"
+     "wiki": "Nara_(city)",
+     "native": [
+      {
+       "name": "奈良",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Nara",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kansai",
+   "native": [
+    {
+     "name": "奈良県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1319305,
    "populationYear": 2021
   },
@@ -2349,6 +3847,13 @@
    "capitalAnswer": "Navoiy",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Navoiy viloyati",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 767500,
    "populationYear": 2010
   },
@@ -2373,12 +3878,26 @@
      "image": "Niigata from Bandaijima Building 20200906 P4.jpg",
      "lon": 139.036,
      "lat": 37.916,
-     "wiki": "Niigata_(city)"
+     "wiki": "Niigata_(city)",
+     "native": [
+      {
+       "name": "新潟",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Niigata",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūbu",
+   "native": [
+    {
+     "name": "新潟県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 2192319,
    "populationYear": 2021
   },
@@ -2433,12 +3952,26 @@
      "image": "Lingaraj Temple in Mansoon, 2023.jpg",
      "lon": 85.825,
      "lat": 20.295,
-     "wiki": "Bhubaneswar"
+     "wiki": "Bhubaneswar",
+     "native": [
+      {
+       "name": "भुवनेश्वर",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Bhubaneswar",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · East India",
+   "native": [
+    {
+     "name": "ओडिशा",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 41974218,
    "populationYear": 2011
   },
@@ -2463,12 +3996,26 @@
      "image": "Oita takasago.jpg",
      "lon": 131.609,
      "lat": 33.24,
-     "wiki": "Ōita_(city)"
+     "wiki": "Ōita_(city)",
+     "native": [
+      {
+       "name": "大分",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Ōita-shi",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kyūshū & Okinawa",
+   "native": [
+    {
+     "name": "大分県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1121589,
    "populationYear": 2021
   },
@@ -2493,12 +4040,26 @@
      "image": "The Okayama city office is faced from the north.JPG",
      "lon": 133.92,
      "lat": 34.655,
-     "wiki": "Okayama"
+     "wiki": "Okayama",
+     "native": [
+      {
+       "name": "岡山",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Okayama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūgoku & Shikoku",
+   "native": [
+    {
+     "name": "岡山県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1878884,
    "populationYear": 2021
   },
@@ -2523,12 +4084,26 @@
      "image": "Asahi-machi Naha Okinawa01s3s4410.jpg",
      "lon": 127.679,
      "lat": 26.212,
-     "wiki": "Naha"
+     "wiki": "Naha",
+     "native": [
+      {
+       "name": "那覇",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Naha",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kyūshū & Okinawa",
+   "native": [
+    {
+     "name": "沖縄県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1460652,
    "populationYear": 2021
   },
@@ -2553,12 +4128,26 @@
      "image": "Osaka Castle 02bs3200.jpg",
      "lon": 135.502,
      "lat": 34.694,
-     "wiki": "Osaka"
+     "wiki": "Osaka",
+     "native": [
+      {
+       "name": "大阪",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Osaka",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kansai",
+   "native": [
+    {
+     "name": "大阪府",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 8826684,
    "populationYear": 2021
   },
@@ -2593,6 +4182,94 @@
    "populationYear": 2020
   },
   {
+   "id": "Q172269",
+   "layer": "sub",
+   "name": "Pathankot district",
+   "image": "View of landscape near Dunera ,Pathankot 01.jpg",
+   "lon": 75.643,
+   "lat": 32.267,
+   "wiki": "Pathankot_district",
+   "group": "pb-jal",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q1647167",
+     "name": "Pathankot",
+     "preferred": false,
+     "role": null,
+     "image": "Pathankot City.jpg",
+     "lon": 75.65,
+     "lat": 32.269,
+     "wiki": "Pathankot",
+     "native": [
+      {
+       "name": "ਪਠਾਨਕੋਟ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Pathankot",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Jalandhar division",
+   "native": [
+    {
+     "name": "ਪਠਾਨਕੋਟ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 676598,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q172391",
+   "layer": "sub",
+   "name": "Patiala district",
+   "image": "MotiBaghPalace.jpg",
+   "lon": 76.4,
+   "lat": 30.34,
+   "wiki": "Patiala_district",
+   "group": "pb-pat",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q208162",
+     "name": "Patiala",
+     "preferred": false,
+     "role": null,
+     "image": "Patiala State Monorail System.jpg",
+     "lon": 76.633,
+     "lat": 30.567,
+     "wiki": "Patiala",
+     "native": [
+      {
+       "name": "ਪਟਿਆਲਾ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Patiala",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Patiala division",
+   "native": [
+    {
+     "name": "ਪਟਿਆਲਾ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 1895686,
+   "populationYear": 2011
+  },
+  {
    "id": "Q66743",
    "layer": "sub",
    "name": "Puducherry",
@@ -2613,12 +4290,26 @@
      "image": "Pondicherry Panorama 1.jpg",
      "lon": 79.83,
      "lat": 11.93,
-     "wiki": "Pondicherry"
+     "wiki": "Pondicherry",
+     "native": [
+      {
+       "name": "पॉन्डिचेरी",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Pondicherry",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · South India",
+   "native": [
+    {
+     "name": "पुदुचेरी",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 1394467,
    "populationYear": 2011
   },
@@ -2643,12 +4334,26 @@
      "image": "Open Hand Monument and a Rose.jpeg",
      "lon": 76.78,
      "lat": 30.733,
-     "wiki": "Chandigarh"
+     "wiki": "Chandigarh",
+     "native": [
+      {
+       "name": "चण्डीगढ़",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Chandigarh",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · North India",
+   "native": [
+    {
+     "name": "पंजाब",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 27743338,
    "populationYear": 2011
   },
@@ -2679,6 +4384,13 @@
    "capitalAnswer": "Qarshi",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Qashqadaryo viloyati",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 3088800,
    "populationYear": 2017
   },
@@ -2703,13 +4415,71 @@
      "image": "Jaipur Montage.png",
      "lon": 75.82,
      "lat": 26.915,
-     "wiki": "Jaipur"
+     "wiki": "Jaipur",
+     "native": [
+      {
+       "name": "जयपुर",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Jaipur",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Central India",
+   "native": [
+    {
+     "name": "राजस्थान",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 68548437,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q196508",
+   "layer": "sub",
+   "name": "Rupnagar district",
+   "image": "Pariwar vichhora gurudwara.jpg",
+   "lon": 76.51,
+   "lat": 30.97,
+   "wiki": "Rupnagar_district",
+   "group": "pb-rpr",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q2341875",
+     "name": "Rupnagar",
+     "preferred": false,
+     "role": null,
+     "image": "Rupnagar city, Punjab, India.jpg",
+     "lon": 76.533,
+     "lat": 30.966,
+     "wiki": "Rupnagar",
+     "native": [
+      {
+       "name": "ਰੂਪਨਗਰ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Rupnagar",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Rupnagar division",
+   "native": [
+    {
+     "name": "ਰੂਪਨਗਰ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 684627,
    "populationYear": 2011
   },
   {
@@ -2733,14 +4503,72 @@
      "image": "Hotel Ryūtōen, Saga.jpg",
      "lon": 130.301,
      "lat": 33.264,
-     "wiki": "Saga_(city)"
+     "wiki": "Saga_(city)",
+     "native": [
+      {
+       "name": "佐賀",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Saga",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kyūshū & Okinawa",
+   "native": [
+    {
+     "name": "佐賀県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 809824,
    "populationYear": 2021
+  },
+  {
+   "id": "Q2037672",
+   "layer": "sub",
+   "name": "Sahibzada Ajit Singh Nagar district",
+   "image": null,
+   "lon": 76.72,
+   "lat": 30.69,
+   "wiki": "Mohali_district",
+   "group": "pb-rpr",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q1949069",
+     "name": "Mohali",
+     "preferred": false,
+     "role": null,
+     "image": "View of Chandigarh International Airport road ,Mohali in spring season 08.jpg",
+     "lon": 76.718,
+     "lat": 30.719,
+     "wiki": "Mohali",
+     "native": [
+      {
+       "name": "ਮੋਹਾਲੀ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Mohali",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Rupnagar division",
+   "native": [
+    {
+     "name": "ਸਾਹਿਬਜ਼ਾਦਾ ਅਜੀਤ ਸਿੰਘ ਨਗਰ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 994628,
+   "populationYear": 2011
   },
   {
    "id": "Q128186",
@@ -2763,12 +4591,26 @@
      "image": "Saitama city montage.jpg",
      "lon": 139.646,
      "lat": 35.861,
-     "wiki": "Saitama_(city)"
+     "wiki": "Saitama_(city)",
+     "native": [
+      {
+       "name": "さいたま",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Saitama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kantō",
+   "native": [
+    {
+     "name": "埼玉県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 7343100,
    "populationYear": 2021
   },
@@ -2823,14 +4665,116 @@
      "image": "Sherdor madrasah 3.jpg",
      "lon": 66.976,
      "lat": 39.655,
-     "wiki": "Samarkand"
+     "wiki": "Samarkand",
+     "native": [
+      {
+       "name": "Samarqand",
+       "lang": "Uzbek",
+       "code": "uz"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Samarkand",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Samarqand viloyati",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 3444800,
    "populationYear": 2014
+  },
+  {
+   "id": "Q1945515",
+   "layer": "sub",
+   "name": "Sangrur district",
+   "image": null,
+   "lon": 75.83,
+   "lat": 30.23,
+   "wiki": "Sangrur_district",
+   "group": "pb-pat",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q2441398",
+     "name": "Sangrur",
+     "preferred": false,
+     "role": null,
+     "image": "Banasar Bagh Sangrur Image.jpg",
+     "lon": 75.833,
+     "lat": 30.233,
+     "wiki": "Sangrur",
+     "native": [
+      {
+       "name": "ਸੰਗਰੂਰ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Sangrur",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Patiala division",
+   "native": [
+    {
+     "name": "ਸੰਗਰੂਰ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 1655169,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q202710",
+   "layer": "sub",
+   "name": "Shaheed Bhagat Singh Nagar district",
+   "image": null,
+   "lon": 76.7,
+   "lat": 31.8,
+   "wiki": "Nawanshahr_district",
+   "group": "pb-rpr",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q2301731",
+     "name": "Nawanshahr",
+     "preferred": false,
+     "role": null,
+     "image": "Bus Terminal Nawashahr Punjab.jpg",
+     "lon": 76.116,
+     "lat": 31.125,
+     "wiki": "Nawanshahr",
+     "native": [
+      {
+       "name": "ਨਵਾਂਸ਼ਹਿਰ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Nawanshahr",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Rupnagar division",
+   "native": [
+    {
+     "name": "ਸ਼ਹੀਦ ਭਗਤ ਸਿੰਘ ਨਗਰ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 612310,
+   "populationYear": 2011
   },
   {
    "id": "Q131358",
@@ -2853,12 +4797,26 @@
      "image": "Otsu at the south end of Lake Biwa in Shiga prefecture.jpg",
      "lon": 135.855,
      "lat": 35.018,
-     "wiki": "Ōtsu"
+     "wiki": "Ōtsu",
+     "native": [
+      {
+       "name": "大津",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Otsu",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kansai",
+   "native": [
+    {
+     "name": "滋賀県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1411168,
    "populationYear": 2021
   },
@@ -2883,12 +4841,26 @@
      "image": "Matsue Castle-3.jpg",
      "lon": 133.049,
      "lat": 35.468,
-     "wiki": "Matsue"
+     "wiki": "Matsue",
+     "native": [
+      {
+       "name": "松江",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Matsue",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūgoku & Shikoku",
+   "native": [
+    {
+     "name": "島根県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 664539,
    "populationYear": 2021
   },
@@ -2913,12 +4885,26 @@
      "image": "Shizuoka montage.jpg",
      "lon": 138.382,
      "lat": 34.976,
-     "wiki": "Shizuoka_(city)"
+     "wiki": "Shizuoka_(city)",
+     "native": [
+      {
+       "name": "静岡",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Shizuoka",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūbu",
+   "native": [
+    {
+     "name": "静岡県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 3609465,
    "populationYear": 2021
   },
@@ -2943,12 +4929,26 @@
      "image": "Sikkim Gangtok.jpg",
      "lon": 88.62,
      "lat": 27.33,
-     "wiki": "Gangtok"
+     "wiki": "Gangtok",
+     "native": [
+      {
+       "name": "गंगटोक",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Gangtok",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · East India",
+   "native": [
+    {
+     "name": "सिक्किम",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 657876,
    "populationYear": 2011
   },
@@ -2978,7 +4978,14 @@
    ],
    "capitalAnswer": "Guliston",
    "parentName": "Uzbekistan",
-   "facts": "Region of Uzbekistan"
+   "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Sirdaryo viloyati",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ]
   },
   {
    "id": "Q502414",
@@ -3011,6 +5018,50 @@
    "populationYear": 2020
   },
   {
+   "id": "Q1947359",
+   "layer": "sub",
+   "name": "Sri Muktsar Sahib district",
+   "image": "Punjab district map.png",
+   "lon": 74.515,
+   "lat": 30.473,
+   "wiki": "Sri_Muktsar_Sahib_district",
+   "group": "pb-fzr",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q2087676",
+     "name": "Sri Muktsar Sahib",
+     "preferred": false,
+     "role": null,
+     "image": "Gurudwara Muktsar Sahib.jpg",
+     "lon": 74.515,
+     "lat": 30.475,
+     "wiki": "Sri_Muktsar_Sahib",
+     "native": [
+      {
+       "name": "ਸ੍ਰੀ ਮੁਕਤਸਰ ਸਾਹਿਬ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Sri Muktsar Sahib",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Firozpur division",
+   "native": [
+    {
+     "name": "ਸ੍ਰੀ ਮੁਕਤਸਰ ਸਾਹਿਬ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 901896,
+   "populationYear": 2011
+  },
+  {
    "id": "Q487537",
    "layer": "sub",
    "name": "Surxondaryo Region",
@@ -3031,12 +5082,26 @@
      "image": "Termez Sultan-Saodat.jpg",
      "lon": 67.278,
      "lat": 37.224,
-     "wiki": "Termez"
+     "wiki": "Termez",
+     "native": [
+      {
+       "name": "Termiz",
+       "lang": "Uzbek",
+       "code": "uz"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Termez",
    "parentName": "Uzbekistan",
-   "facts": "Region of Uzbekistan"
+   "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Surxondaryo viloyati",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ]
   },
   {
    "id": "Q495998",
@@ -3089,13 +5154,71 @@
      "image": "Ripon Building aerial view.jpg",
      "lon": 80.275,
      "lat": 13.082,
-     "wiki": "Chennai"
+     "wiki": "Chennai",
+     "native": [
+      {
+       "name": "चेन्नई",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Chennai",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · South India",
+   "native": [
+    {
+     "name": "तमिल नाडु",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 72147030,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q2298993",
+   "layer": "sub",
+   "name": "Tarn Taran district",
+   "image": null,
+   "lon": 74.93,
+   "lat": 31.46,
+   "wiki": "Tarn_Taran_district",
+   "group": "pb-jal",
+   "noun": "district",
+   "capWord": "headquarters",
+   "parent": "Q22424",
+   "capitals": [
+    {
+     "id": "Q2341728",
+     "name": "Tarn Taran Sahib",
+     "preferred": false,
+     "role": null,
+     "image": "The Sarovar besides the GurudwaraTarn Taran Sahib, Punjab, India.jpg",
+     "lon": 74.921,
+     "lat": 31.449,
+     "wiki": "Tarn_Taran_Sahib",
+     "native": [
+      {
+       "name": "ਤਰਨ ਤਾਰਨ ਸਾਹਿਬ",
+       "lang": "Punjabi",
+       "code": "pa"
+      }
+     ]
+    }
+   ],
+   "capitalAnswer": "Tarn Taran Sahib",
+   "parentName": "Punjab",
+   "facts": "District of Punjab · Jalandhar division",
+   "native": [
+    {
+     "name": "ਤਰਨ ਤਾਰਨ ਜ਼ਿਲ੍ਹਾ",
+     "lang": "Punjabi",
+     "code": "pa"
+    }
+   ],
+   "population": 1119627,
    "populationYear": 2011
   },
   {
@@ -3114,6 +5237,13 @@
    "capitalAnswer": null,
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Toshkent",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 2956384,
    "populationYear": 2023
   },
@@ -3144,6 +5274,13 @@
    "capitalAnswer": "Nurafshon",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Toshkent viloyati",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 2644400,
    "populationYear": 2011
   },
@@ -3168,12 +5305,32 @@
      "image": "Hyderabad Montage 2020.jpg",
      "lon": 78.475,
      "lat": 17.362,
-     "wiki": "Hyderabad"
+     "wiki": "Hyderabad",
+     "native": [
+      {
+       "name": "हैदराबाद",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ],
+     "audio": {
+      "hi": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b0/LL-Q1568_(hin)-Bhuvanaalla-%E0%A4%B9%E0%A5%88%E0%A4%A6%E0%A4%B0%E0%A4%BE%E0%A4%AC%E0%A4%BE%E0%A4%A6.wav/LL-Q1568_(hin)-Bhuvanaalla-%E0%A4%B9%E0%A5%88%E0%A4%A6%E0%A4%B0%E0%A4%BE%E0%A4%AC%E0%A4%BE%E0%A4%A6.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/b/b0/LL-Q1568_(hin)-Bhuvanaalla-%E0%A4%B9%E0%A5%88%E0%A4%A6%E0%A4%B0%E0%A4%BE%E0%A4%AC%E0%A4%BE%E0%A4%A6.wav"
+      ]
+     }
     }
    ],
    "capitalAnswer": "Hyderabad",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · South India",
+   "native": [
+    {
+     "name": "तेलंगाना",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 35193978,
    "populationYear": 2011
   },
@@ -3198,12 +5355,26 @@
      "image": "Tochigi-Prefectural-Road Route196 Utsunomiya-STA West.jpg",
      "lon": 139.883,
      "lat": 36.555,
-     "wiki": "Utsunomiya"
+     "wiki": "Utsunomiya",
+     "native": [
+      {
+       "name": "宇都宮",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Utsunomiya",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kantō",
+   "native": [
+    {
+     "name": "栃木県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1927754,
    "populationYear": 2021
   },
@@ -3228,12 +5399,26 @@
      "image": "Bizan Tokushima05s5.jpg",
      "lon": 134.555,
      "lat": 34.07,
-     "wiki": "Tokushima_(city)"
+     "wiki": "Tokushima_(city)",
+     "native": [
+      {
+       "name": "徳島",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Tokushima",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūgoku & Shikoku",
+   "native": [
+    {
+     "name": "徳島県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 721721,
    "populationYear": 2020
   },
@@ -3258,13 +5443,27 @@
      "image": "US Air Force photo 170903-F-PM645-1558 An aerial view of Shinjuku’s skyscraper district from a UH-1N Iroquois.jpg",
      "lon": 139.703,
      "lat": 35.694,
-     "wiki": "Shinjuku"
+     "wiki": "Shinjuku",
+     "native": [
+      {
+       "name": "新宿区",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalNote": "Tokyo is a metropolis, not one city: its government sits in Shinjuku",
    "capitalAnswer": "Shinjuku",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kantō",
+   "native": [
+    {
+     "name": "東京都",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 14264798,
    "populationYear": 2022
   },
@@ -3289,12 +5488,26 @@
      "image": "Tottori castle08 1920.jpg",
      "lon": 134.222,
      "lat": 35.494,
-     "wiki": "Tottori_(city)"
+     "wiki": "Tottori_(city)",
+     "native": [
+      {
+       "name": "鳥取",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Tottori",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūgoku & Shikoku",
+   "native": [
+    {
+     "name": "鳥取県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 549925,
    "populationYear": 2021
   },
@@ -3319,12 +5532,26 @@
      "image": "Toyama city & Alps.jpg",
      "lon": 137.214,
      "lat": 36.696,
-     "wiki": "Toyama_(city)"
+     "wiki": "Toyama_(city)",
+     "native": [
+      {
+       "name": "富山",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Toyama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūbu",
+   "native": [
+    {
+     "name": "富山県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1031262,
    "populationYear": 2021
   },
@@ -3349,12 +5576,26 @@
      "image": "Agartala-mayday152.jpg",
      "lon": 91.267,
      "lat": 23.833,
-     "wiki": "Agartala"
+     "wiki": "Agartala",
+     "native": [
+      {
+       "name": "अगरतला",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Agartala",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Northeast India",
+   "native": [
+    {
+     "name": "त्रिपुरा",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 3673917,
    "populationYear": 2011
   },
@@ -3409,12 +5650,26 @@
      "image": "Gomti river in Downtown New Lucknow.JPG",
      "lon": 80.947,
      "lat": 26.847,
-     "wiki": "Lucknow"
+     "wiki": "Lucknow",
+     "native": [
+      {
+       "name": "लखनऊ",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Lucknow",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Central India",
+   "native": [
+    {
+     "name": "उत्तर प्रदेश",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 246270000,
    "populationYear": 2025
   },
@@ -3439,7 +5694,14 @@
      "image": "Dehradun India 2006-11.JPG",
      "lon": 78.029,
      "lat": 30.318,
-     "wiki": "Dehradun"
+     "wiki": "Dehradun",
+     "native": [
+      {
+       "name": "देहरादून",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     },
     {
      "id": "Q2080796",
@@ -3449,14 +5711,29 @@
      "image": "Dudhatoli 4.jpg",
      "lon": 79.289,
      "lat": 30.055,
-     "wiki": "Gairsain"
+     "wiki": "Gairsain",
+     "native": [
+      {
+       "name": "गैरसैण",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Dehradun and Gairsain",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · Central India",
+   "native": [
+    {
+     "name": "उत्तराखण्ड",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 10086292,
-   "populationYear": 2011
+   "populationYear": 2011,
+   "capitalNote": "Dehradun is the winter capital, Gairsain the summer capital"
   },
   {
    "id": "Q131314",
@@ -3479,12 +5756,26 @@
      "image": "Wakayama Castle19nt3200.jpg",
      "lon": 135.171,
      "lat": 34.23,
-     "wiki": "Wakayama_(city)"
+     "wiki": "Wakayama_(city)",
+     "native": [
+      {
+       "name": "和歌山",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Wakayama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Kansai",
+   "native": [
+    {
+     "name": "和歌山県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 910687,
    "populationYear": 2021
   },
@@ -3539,12 +5830,26 @@
      "image": "Ketan donate4.jpg",
      "lon": 88.37,
      "lat": 22.567,
-     "wiki": "Kolkata"
+     "wiki": "Kolkata",
+     "native": [
+      {
+       "name": "कोलकाता",
+       "lang": "Hindi",
+       "code": "hi"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kolkata",
    "parentName": "India",
-   "facts": "State or territory of India",
+   "facts": "State or territory of India · East India",
+   "native": [
+    {
+     "name": "पश्चिम बंगाल",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "population": 91276115,
    "populationYear": 2011
   },
@@ -3569,12 +5874,26 @@
      "image": "Waterfront of Shavat canal in Urganch.jpg",
      "lon": 60.625,
      "lat": 41.535,
-     "wiki": "Urgench"
+     "wiki": "Urgench",
+     "native": [
+      {
+       "name": "Urganch",
+       "lang": "Uzbek",
+       "code": "uz"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Urgench",
    "parentName": "Uzbekistan",
    "facts": "Region of Uzbekistan",
+   "native": [
+    {
+     "name": "Xorazm viloyati",
+     "lang": "Uzbek",
+     "code": "uz"
+    }
+   ],
    "population": 1715600,
    "populationYear": 2015
   },
@@ -3599,12 +5918,26 @@
      "image": "Mount Gassan seen from Yamagata City.jpg",
      "lon": 140.34,
      "lat": 38.255,
-     "wiki": "Yamagata,_Yamagata"
+     "wiki": "Yamagata,_Yamagata",
+     "native": [
+      {
+       "name": "山形",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Yamagata",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Hokkaidō & Tōhoku",
+   "native": [
+    {
+     "name": "山形県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1063231,
    "populationYear": 2021
   },
@@ -3629,12 +5962,26 @@
      "image": "The cityscape of Yamaguchi 20130821.jpg",
      "lon": 131.474,
      "lat": 34.178,
-     "wiki": "Yamaguchi_(city)"
+     "wiki": "Yamaguchi_(city)",
+     "native": [
+      {
+       "name": "山口",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Yamaguchi",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūgoku & Shikoku",
+   "native": [
+    {
+     "name": "山口県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 1336522,
    "populationYear": 2021
   },
@@ -3659,12 +6006,26 @@
      "image": "Kofu montage.jpg",
      "lon": 138.568,
      "lat": 35.662,
-     "wiki": "Kōfu"
+     "wiki": "Kōfu",
+     "native": [
+      {
+       "name": "甲府",
+       "lang": "Japanese",
+       "code": "ja"
+      }
+     ]
     }
    ],
    "capitalAnswer": "Kofu",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan",
+   "facts": "Prefecture of Japan · Chūbu",
+   "native": [
+    {
+     "name": "山梨県",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "population": 803963,
    "populationYear": 2021
   }

@@ -17,6 +17,11 @@
   "Q907112": { "status": "disputed", "note": "Breakaway region of Moldova, unrecognised", "region": "Europe", "subregion": "Eastern Europe" }
  },
 
+ "Q1185": { "capitalKeep": "Q1355", "capitalNote": "Belagavi (Belgaum) hosts the legislature's winter session" },
+ "Q1191": { "capitalKeep": "Q1156", "capitalNote": "Nagpur is the second capital, where the legislature meets in winter" },
+ "Q66278313": { "capitalNote": "Srinagar in summer, Jammu in winter" },
+ "Q1499": { "capitalNote": "Dehradun is the winter capital, Gairsain the summer capital" },
+ "Q200667": { "capitalNote": "Leh and Kargil share the role" },
  "Q1353": { "capital": { "id": "Q987", "name": "New Delhi", "wiki": "New_Delhi", "image": null, "lat": 28.614, "lon": 77.209 }, "_why": "Wikidata has no capital (P36) for the National Capital Territory of Delhi" },
  "Q35581": { "capital": { "id": "Q37951", "name": "Sapporo", "wiki": "Sapporo", "image": null, "lat": 43.062, "lon": 141.354 }, "_why": "Wikidata has no capital (P36) for Hokkaidō" },
  "Q1490": { "capitalNote": "Tokyo is a metropolis, not one city: its government sits in Shinjuku" },

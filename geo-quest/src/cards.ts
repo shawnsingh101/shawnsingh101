@@ -62,7 +62,8 @@ export interface Group {
   id: string; section: string; name: string; layer: Place['layer'];
   subregions?: string[]; topics: TopicSlot[]; note?: string;
   requires?: string;   // a node from another group that must be half-known first (e.g. great rivers → more rivers)
-  alsoInSections?: string[]; // also listed in these sections (Rivers of the United States shows under Rivers too)
+  alsoInSections?: string[];
+  nouns?: string;      // what its places are called ("districts", "prefectures"), for regions inside a country // also listed in these sections (Rivers of the United States shows under Rivers too)
 }
 
 const COUNTRY_TOPICS: TopicSlot[] = [
@@ -178,7 +179,7 @@ export function registerSubdivisions(sections: SubSection[]) {
     const cap = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
     for (const g of s.groups) if (!GROUPS.some(x => x.id === g.id)) GROUPS.push({
       id: g.id, section: s.section, name: g.name, layer: 'sub',
-      topics: [{ id: 'places', name: cap(s.nouns), icon: 'map' }, { id: 'capitals', name: cap(s.capital) + 's', icon: 'landmark', requires: 'places' }],
+      nouns: s.nouns, topics: [{ id: 'places', name: cap(s.nouns), icon: 'map' }, { id: 'capitals', name: cap(s.capital) + (/s$/.test(s.capital) ? '' : 's'), icon: 'landmark', requires: 'places' }],
       note: g.id === s.groups[0].id ? `The ${s.nouns} of ${s.section} and their ${s.capital}s. Borders come from ${s.id === 'nj' ? 'the US Census' : 'Natural Earth'}; facts from Wikidata.` : undefined,
     });
   }

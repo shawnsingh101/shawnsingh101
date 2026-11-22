@@ -1,5 +1,5 @@
 {
- "_readme": "Regions inside a country (prefectures, oblasts, counties…). Each entry becomes a section under its parent in the skill tree, a quiz area and a map layer. Add one, run `NE_DIR=… node scripts/build-shapes.mjs` (shapes) and `npm run sync` (facts). source.type: 'ne-admin1' = Natural Earth 1:10m states/provinces (any country, by ISO A3); 'us-counties' = US Census counties (us-atlas), by state FIPS code. groups[].match lists Natural Earth 'region' values ('*' = everything left over).",
+ "_readme": "Regions inside a country (prefectures, oblasts, counties…). Each entry becomes a section under its parent in the skill tree, a quiz area and a map layer. Add one, run `NE_DIR=… node scripts/build-shapes.mjs` (shapes) and `npm run sync` (facts). source.type: 'ne-admin1' = Natural Earth 1:10m states/provinces (any country, by ISO A3); 'us-counties' = US Census counties (us-atlas), by state FIPS code. groups[].match lists Natural Earth 'region' values ('*' = everything left over). 'osm' = OpenStreetMap administrative boundaries (via Overpass) inside source.bbox at source.adminLevel; groups[].ids picks members by Wikidata id (OSM_FILE=/path reuses a saved Overpass response). nativeLangs: [[Wikidata language code, name], …] — local names (and pronunciation) for the regions and their capitals.",
  "sections": [
   {
    "id": "jp",
@@ -60,6 +60,12 @@
       "*"
      ]
     }
+   ],
+   "nativeLangs": [
+    [
+     "ja",
+     "Japanese"
+    ]
    ]
   },
   {
@@ -118,6 +124,92 @@
       "South"
      ]
     }
+   ],
+   "nativeLangs": [
+    [
+     "hi",
+     "Hindi"
+    ]
+   ]
+  },
+  {
+   "id": "pb",
+   "section": "Punjab",
+   "parent": "India",
+   "country": "Q22424",
+   "noun": "district",
+   "nouns": "districts",
+   "capital": "headquarters",
+   "source": {
+    "type": "osm",
+    "bbox": [
+     29.5,
+     73.8,
+     32.6,
+     77.0
+    ],
+    "adminLevel": 5
+   },
+   "groups": [
+    {
+     "id": "pb-jal",
+     "name": "Jalandhar division",
+     "ids": [
+      "Q1817425",
+      "Q202822",
+      "Q146708",
+      "Q172269",
+      "Q172363",
+      "Q304800",
+      "Q2298993"
+     ]
+    },
+    {
+     "id": "pb-pat",
+     "name": "Patiala division",
+     "ids": [
+      "Q172391",
+      "Q172482",
+      "Q1945515",
+      "Q2353293",
+      "Q172485",
+      "Q107016021"
+     ]
+    },
+    {
+     "id": "pb-fzr",
+     "name": "Firozpur division",
+     "ids": [
+      "Q172385",
+      "Q188702",
+      "Q1946896",
+      "Q1947359"
+     ]
+    },
+    {
+     "id": "pb-fdk",
+     "name": "Faridkot division",
+     "ids": [
+      "Q172494",
+      "Q172488",
+      "Q172387"
+     ]
+    },
+    {
+     "id": "pb-rpr",
+     "name": "Rupnagar division",
+     "ids": [
+      "Q196508",
+      "Q2037672",
+      "Q202710"
+     ]
+    }
+   ],
+   "nativeLangs": [
+    [
+     "pa",
+     "Punjabi"
+    ]
    ]
   },
   {
@@ -140,6 +232,12 @@
       "*"
      ]
     }
+   ],
+   "nativeLangs": [
+    [
+     "uz",
+     "Uzbek"
+    ]
    ]
   },
   {
@@ -162,7 +260,8 @@
       "*"
      ]
     }
-   ]
+   ],
+   "nativeLangs": []
   }
  ]
 }
