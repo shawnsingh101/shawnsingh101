@@ -22,6 +22,16 @@ world map fill in as you master it.
   `world-countries` dataset; capitals' native names from Wikidata. `nativeLangs` in `data/overrides.json`
   sets which language comes first where it matters (e.g. Hebrew before Arabic for Israel).
 
+## Versions
+
+The home screen shows `v<version> · build <commit> · <date>`, so you can tell when an update is live.
+With each update: bump `version` in `package.json` and add a line to `src/changelog.ts`.
+
+## v0.8
+
+- Home screen: a slowly turning globe (countries you've mastered are coloured in), Start and Settings, version line.
+- Lock-on target brackets around the place in question, with coordinates and a ✓ / ✗ badge after map answers (toggle in Settings).
+
 ## v0.5: rivers & lakes
 
 - **96 rivers** and **91 lakes**, each with find-it / name-it cards, length or area, where it flows, and its countries.

@@ -14,7 +14,8 @@ export interface Settings {
   theme: 'auto' | 'light' | 'dark'; newPerDay: number;
   mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean; mapRivers: boolean; mapLakes: boolean;
   nativeNames: boolean;
-  mapMode: 'tap' | 'flip' | 'skip';   // how "find it on the map" cards work
+  mapMode: 'tap' | 'flip' | 'skip';
+  targetBox: boolean;                 // lock-on brackets around the place in question   // how "find it on the map" cards work
 }
 interface CardRec { c: Card; fp: string }
 interface Day { reviews: number; fresh: number; correct: number; bonus?: number }
@@ -33,7 +34,7 @@ export interface Progress {
 const KEY = 'geoquest:v1';
 const DEFAULT: Progress = {
   v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {},
-  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, nativeNames: true, mapMode: 'tap' },
+  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, nativeNames: true, mapMode: 'tap', targetBox: true },
 };
 
 function revive(p: Progress): Progress {
