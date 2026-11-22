@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GROUPS, nodeId, parseNode, placesIn, SECTIONS, slotOf, groupById, LAYER_NOUN } from '../cards';
+import { GROUPS, nodeId, parseNode, placesIn, slotOf, groupById, LAYER_NOUN, childSections, sectionAndDescendants, SECTION_PARENT } from '../cards';
 import { buildQueue, isUnlocked, learnMore, nodeStats, update, useProgress } from '../srs';
 import { makeQuiz, type Scope } from '../quiz';
 import { sounds } from '../sound';
@@ -43,95 +43,109 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
   );
 }
 
-const SECTION_ICON: Record<string, IconName> = { 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop', China: 'map' };
+const SECTION_ICON: Record<string, IconName> = { 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop', China: 'map', 'United States': 'capitol', Territories: 'pin', 'World Heritage': 'temple', Mountains: 'mountain' };
 const OPEN_KEY = 'geoquest:tree-open';
+const secKey = (sec: string) => 'sec-' + sec.replace(/\W/g, '');
 
 export function Tree({ ds, startQuiz, startStudy }: { ds: Dataset; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void }) {
   const p = useProgress();
   const [sel, setSel] = useState<string | null>(null);
-  // Which sections are expanded: remembered per device; by default the ones you're learning.
+  // Which sections are expanded: remembered per device; by default the ones you're learning in (and their parents).
   const [open, setOpen] = useState<Set<string>>(() => {
     try { const v = localStorage.getItem(OPEN_KEY); if (v) return new Set(JSON.parse(v)); } catch { /* ignore */ }
-    return new Set(SECTIONS.filter(sec => p.active.some(n => groupById(parseNode(n).groupId).section === sec)));
+    const s = new Set<string>();
+    for (const n of p.active) { let sec: string | undefined = groupById(parseNode(n).groupId)?.section; while (sec) { s.add(sec); sec = SECTION_PARENT[sec]; } }
+    return s;
   });
   const setOpenSaved = (next: Set<string>) => { setOpen(next); try { localStorage.setItem(OPEN_KEY, JSON.stringify([...next])); } catch { /* ignore */ } };
   const toggleSection = (sec: string) => { const n = new Set(open); if (n.has(sec)) n.delete(sec); else n.add(sec); setOpenSaved(n); };
   const jump = (sec: string) => {
     if (!open.has(sec)) setOpenSaved(new Set([...open, sec]));
-    setTimeout(() => document.getElementById('sec-' + sec.replace(/\W/g, ''))?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30);
+    setTimeout(() => document.getElementById(secKey(sec))?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30);
   };
 
+  // Plain render functions (not components defined in a component), so React doesn't rebuild the tree on every update.
+  const skill = (id: string, t: { id: string; name: string; icon: IconName }) => {
+    const st = nodeStats(ds, p, id);
+    const unlocked = isUnlocked(ds, p, id);
+    const active = p.active.includes(id);
+    const pct = st.total ? st.known / st.total : 0;
+    const done = st.total > 0 && st.mastered === st.total;
+    return (
+      <button key={id} className={'skill' + (active ? ' active' : '') + (done ? ' done' : '') + (unlocked ? '' : ' locked')} onClick={() => setSel(id)}>
+        <span className="ring-wrap">
+          <svg viewBox="0 0 36 36" className="ring"><circle cx="18" cy="18" r="15" className="track" /><circle cx="18" cy="18" r="15" className="val" style={{ strokeDasharray: `${pct * 94.2} 94.2` }} /></svg>
+          <Icon name={unlocked ? t.icon : 'lock'} size={15} />
+        </span>
+        <span className="label">{t.name}</span>
+        <span className="skill-meta">
+          {active && <i className="learning-dot" title="Learning" />}
+          {st.due > 0 && <b className="due-pill">{st.due} due</b>}
+          <small>{st.known}/{st.total}</small>
+        </span>
+      </button>
+    );
+  };
+
+  /** One section: its own groups, then the places inside it studied in depth (each a section of its own). */
+  const section = (sec: string, depth: number): JSX.Element => {
+    const groups = GROUPS.filter(g => g.section === sec);
+    const all = sectionAndDescendants(sec).flatMap(x => GROUPS.filter(g => g.section === x));
+    const nodes = all.flatMap(g => g.topics.map(t => nodeId(g.id, t.id)));
+    const tot = nodes.reduce((a, n) => { const st = nodeStats(ds, p, n); return { known: a.known + st.known, total: a.total + st.total, due: a.due + st.due }; }, { known: 0, total: 0, due: 0 });
+    const learning = nodes.filter(n => p.active.includes(n)).length;
+    const base = groups.map(g => nodeId(g.id, g.topics[0].id));
+    const allOn = base.length > 0 && base.every(n => p.active.includes(n));
+    const kids = childSections(sec);
+    const isOpen = open.has(sec);
+    const noun = groups[0] ? LAYER_NOUN[groups[0].layer] : 'places';
+    return (
+      <section key={sec} id={secKey(sec)} className={(depth ? 'subsection' : 'continent') + (isOpen ? ' open' : '')}>
+        <button className="section-row" onClick={() => toggleSection(sec)} aria-expanded={isOpen}>
+          <span className="node-icon"><Icon name={SECTION_ICON[sec] ?? (depth ? 'map' : 'globe')} /></span>
+          <span className="grow">
+            <b>{sec}</b>
+            <span className="section-sub">{all.length > 1 ? `${all.length} groups · ` : ''}{tot.known}/{tot.total} known{learning ? ` · ${learning} learning` : ''}{tot.due ? ` · ${tot.due} due` : ''}</span>
+            <span className="mini-bar"><i style={{ width: `${(tot.known / Math.max(1, tot.total)) * 100}%` }} /></span>
+          </span>
+          <span className={'chev' + (isOpen ? ' up' : '')}>›</span>
+        </button>
+        {isOpen && <div className="section-body">
+          {groups.length > 0 && <div className="section-actions">
+            <button className="btn small" onClick={() => update(x => { x.active = allOn ? x.active.filter(a => !base.includes(a)) : [...new Set([...x.active, ...base])]; })}>
+              {allOn ? 'Stop all' : `Learn all ${groups[0].topics[0].name.toLowerCase()}`}
+            </button>
+            <button className="btn small" onClick={() => startQuiz(makeQuiz(ds, (groups.length > 1 ? `sec:${sec}` : `grp:${groups[0].id}`) as Scope, [groups[0].topics[0].id], 25))}>
+              <Icon name="target" size={15} /> Quiz
+            </button>
+          </div>}
+          {groups[0]?.note && <p className="muted small">{groups[0].note}</p>}
+          {groups.length > 0 && <div className="groups">
+            {groups.map(g => (
+              <div key={g.id} className="group">
+                <div className="group-head"><b>{g.name}</b><small>{placesIn(ds, g.id).length} {g.layer === 'sub' ? noun : LAYER_NOUN[g.layer]}</small></div>
+                <div className="skills">{g.topics.map(t => skill(nodeId(g.id, t.id), t))}</div>
+              </div>
+            ))}
+          </div>}
+          {kids.length > 0 && <div className="in-depth">
+            <h4 className="muted small">In depth</h4>
+            {kids.map(k => section(k, depth + 1))}
+          </div>}
+        </div>}
+      </section>
+    );
+  };
+
+  const top = childSections(null);
   return (
     <div className="tree">
       <h1>Skill tree</h1>
-      <p className="muted">Tap a skill to start learning it, practise it, or learn more today. <b>Capitals</b> and <b>Flags</b> unlock once you know half of a region's places{p.settings.locks ? '' : ' (locks are currently off)'}.</p>
+      <p className="muted">Tap a skill to start learning it, practise it, or learn more today. <b>Capitals</b> and <b>Flags</b> unlock once you know half of a region's places{p.settings.locks ? '' : ' (locks are currently off)'}. Countries and states you can study in depth sit inside their continent, under <b>In depth</b>.</p>
       <nav className="jumpbar">
-        {SECTIONS.map(sec => <button key={sec} className={'pick' + (open.has(sec) ? ' on' : '')} onClick={() => jump(sec)}><Icon name={SECTION_ICON[sec] ?? 'globe'} size={14} />{sec}</button>)}
+        {top.map(sec => <button key={sec} className={'pick' + (open.has(sec) ? ' on' : '')} onClick={() => jump(sec)}><Icon name={SECTION_ICON[sec] ?? 'globe'} size={14} />{sec}</button>)}
       </nav>
-      {SECTIONS.map(sec => {
-        const groups = GROUPS.filter(g => g.section === sec);
-        const base = groups.map(g => nodeId(g.id, g.topics[0].id));
-        const allOn = base.every(n => p.active.includes(n));
-        const nodes = groups.flatMap(g => g.topics.map(t => nodeId(g.id, t.id)));
-        const tot = nodes.reduce((a, n) => { const st = nodeStats(ds, p, n); return { known: a.known + st.known, total: a.total + st.total, due: a.due + st.due }; }, { known: 0, total: 0, due: 0 });
-        const learning = nodes.filter(n => p.active.includes(n)).length;
-        const isOpen = open.has(sec);
-        return (
-          <section key={sec} id={'sec-' + sec.replace(/\W/g, '')} className={'continent' + (isOpen ? ' open' : '')}>
-            <button className="section-row" onClick={() => toggleSection(sec)} aria-expanded={isOpen}>
-              <span className="node-icon"><Icon name={SECTION_ICON[sec] ?? 'globe'} /></span>
-              <span className="grow">
-                <b>{sec}</b>
-                <span className="section-sub">{groups.length > 1 ? `${groups.length} groups · ` : ''}{tot.known}/{tot.total} known{learning ? ` · ${learning} learning` : ''}{tot.due ? ` · ${tot.due} due` : ''}</span>
-                <span className="mini-bar"><i style={{ width: `${(tot.known / Math.max(1, tot.total)) * 100}%` }} /></span>
-              </span>
-              <span className={'chev' + (isOpen ? ' up' : '')}>›</span>
-            </button>
-            {isOpen && <div className="section-body">
-              <div className="section-actions">
-                <button className="btn small" onClick={() => update(x => { x.active = allOn ? x.active.filter(a => !base.includes(a)) : [...new Set([...x.active, ...base])]; })}>
-                  {allOn ? 'Stop all' : `Learn all ${groups[0].topics[0].name.toLowerCase()}`}
-                </button>
-                <button className="btn small" onClick={() => startQuiz(makeQuiz(ds, (groups.length > 1 ? `sec:${sec}` : `grp:${groups[0].id}`) as Scope, [groups[0].topics[0].id], 25))}>
-                  <Icon name="target" size={15} /> Quiz
-                </button>
-              </div>
-              {groups[0].note && <p className="muted small">{groups[0].note}</p>}
-              <div className="groups">
-                {groups.map(g => (
-                  <div key={g.id} className="group">
-                    <div className="group-head"><b>{g.name}</b><small>{placesIn(ds, g.id).length} {LAYER_NOUN[g.layer]}</small></div>
-                    <div className="skills">
-                      {g.topics.map(t => {
-                        const id = nodeId(g.id, t.id);
-                        const st = nodeStats(ds, p, id);
-                        const unlocked = isUnlocked(ds, p, id);
-                        const active = p.active.includes(id);
-                        const pct = st.total ? st.known / st.total : 0;
-                        const done = st.total > 0 && st.mastered === st.total;
-                        return (
-                          <button key={t.id} className={'skill' + (active ? ' active' : '') + (done ? ' done' : '') + (unlocked ? '' : ' locked')} onClick={() => setSel(id)}>
-                            <span className="ring-wrap">
-                              <svg viewBox="0 0 36 36" className="ring"><circle cx="18" cy="18" r="15" className="track" /><circle cx="18" cy="18" r="15" className="val" style={{ strokeDasharray: `${pct * 94.2} 94.2` }} /></svg>
-                              <Icon name={unlocked ? t.icon : 'lock'} size={15} />
-                            </span>
-                            <span className="label">{t.name}</span>
-                            <span className="skill-meta">
-                              {active && <i className="learning-dot" title="Learning" />}
-                              {st.due > 0 && <b className="due-pill">{st.due} due</b>}
-                              <small>{st.known}/{st.total}</small>
-                            </span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>}
-          </section>
-        );
-      })}
+      {top.map(sec => section(sec, 0))}
       {sel && <NodeSheet ds={ds} node={sel} onClose={() => setSel(null)} startQuiz={q => { setSel(null); startQuiz(q); }} startStudy={n => { setSel(null); startStudy(n); }} />}
     </div>
   );

@@ -1,4 +1,4 @@
-import { buildQueue, learnMore, sessionDecks, streak, today, unseenCount, useProgress, nodeStats, update } from '../srs';
+import { activeNodes, buildQueue, learnMore, sessionDecks, streak, today, unseenCount, useProgress, nodeStats, update } from '../srs';
 import { groupById, nodeId, parseNode, slotOf } from '../cards';
 import { Icon } from '../components/Icons';
 import { QuestionTypes } from '../components/QuestionTypes';
@@ -10,17 +10,18 @@ export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: ()
   const q = buildQueue(ds, p);
   const d = p.days[today()];
   const st = streak(p);
-  const nothingActive = p.active.length === 0;
+  const active = activeNodes(p);
+  const nothingActive = active.length === 0;
   const more = unseenCount(ds, p);
   const caughtUp = !q.due.length && !q.fresh.length;
   const [showTypes, setShowTypes] = useState(false);
   // Which decks this session covers (ticked in "Learning now"); null = all of them.
   const picked = new Set(sessionDecks(p));
-  const partial = p.settings.sessionNodes !== null && picked.size < p.active.length;
+  const partial = p.settings.sessionNodes !== null && picked.size < active.length;
   const pick = (n: string) => update(x => {
     const cur = new Set(sessionDecks(x));
     if (cur.has(n)) cur.delete(n); else cur.add(n);
-    x.settings.sessionNodes = cur.size === x.active.length ? null : [...cur];
+    x.settings.sessionNodes = cur.size === activeNodes(x).length ? null : [...cur];
   });
   const kindsOff = p.settings.kindsOff.length;
 
@@ -70,7 +71,7 @@ export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: ()
             </span>
           </div>
           <div className="active-list">
-            {p.active.map(n => {
+            {active.map(n => {
               const g = groupById(parseNode(n).groupId);
               const t = slotOf(n);
               const s = nodeStats(ds, p, n);

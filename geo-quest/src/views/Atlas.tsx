@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GROUPS, SECTIONS, placesIn, cardId, KIND_LABEL, kindsFor, LAYER_NOUN, LAYER_ICON } from '../cards';
+import { GROUPS, placesIn, cardId, KIND_LABEL, kindsFor, LAYER_NOUN, LAYER_ICON, childSections, sectionChain, sectionAndDescendants } from '../cards';
 import { level, useProgress } from '../srs';
 import type { Dataset } from '../types';
 import { Flag, Picture } from '../components/Picture';
@@ -29,7 +29,7 @@ export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClo
           {(c.layer === 'water' || c.layer === 'river' || c.layer === 'lake') && <p className="muted small">{GROUPS.find(g => g.id === c.group)?.name}</p>}
           {c.facts && <p>{c.facts}</p>}
           {c.layer === 'terr' && <p>Part of <b>{c.sovereignName}</b>{c.terrStatus ? <span className="muted"> · {c.terrStatus}</span> : null}</p>}
-          {c.capitalAnswer && <p>Capital: <b>{c.capitalAnswer}</b>{cap && <span className="local inline"> <LocalName place={c} capital={cap} /></span>}</p>}
+          {c.capitalAnswer && <p>{c.capWord ? cap1(c.capWord) : 'Capital'}: <b>{c.capitalAnswer}</b>{cap && <span className="local inline"> <LocalName place={c} capital={cap} /></span>}</p>}
           {c.statusNote && <p className="note"><Icon name="info" size={15} /> {c.statusNote}</p>}
           {c.capitalNote && <p className="note"><Icon name="info" size={15} /> {c.capitalNote}</p>}
         </div>
@@ -69,26 +69,34 @@ export function Atlas({ ds }: { ds: Dataset }) {
   const [sec, setSec] = useState<string | null>(null);
   const [group, setGroup] = useState<string | null>(null);
   const [place, setPlace] = useState<string | null>(null);
-  const sectionPlaces = (s: string) => GROUPS.filter(g => g.section === s).flatMap(g => placesIn(ds, g.id));
+  const sectionPlaces = (s: string) => sectionAndDescendants(s).flatMap(x => GROUPS.filter(g => g.section === x)).flatMap(g => placesIn(ds, g.id));
   const groups = sec ? GROUPS.filter(g => g.section === sec) : [];
-  const g = group ?? (groups.length === 1 ? groups[0].id : null);
+  const kids = sec ? childSections(sec) : [];
+  const g = group ?? (groups.length === 1 && !kids.length ? groups[0].id : null);
+  const nounOf = (s: string) => { const g0 = GROUPS.find(g => g.section === s); return s === 'China' ? 'provinces & regions' : g0?.layer === 'sub' ? 'regions' : g0 ? LAYER_NOUN[g0.layer] : 'places'; };
   return (
     <div className="atlas">
       <nav className="crumbs">
         <button className="crumb" onClick={() => { setSec(null); setGroup(null); }}>World</button>
-        {sec && <button className="crumb" onClick={() => setGroup(null)}>{sec}</button>}
+        {sec && sectionChain(sec).map(s => <button key={s} className="crumb" onClick={() => { setSec(s); setGroup(null); }}>{s}</button>)}
         {group && <span className="crumb">{GROUPS.find(x => x.id === group)!.name}</span>}
       </nav>
-      {!sec && <div className="tiles">{SECTIONS.map(s => (
+      {!sec && <div className="tiles">{childSections(null).map(s => (
         <button key={s} className={'tile cont-' + s.toLowerCase().replace(/[^a-z]/g, '')} onClick={() => setSec(s)}>
-          <b>{s}</b><small>{sectionPlaces(s).length} {s === 'China' ? 'provinces & regions' : LAYER_NOUN[GROUPS.find(g => g.section === s)!.layer]}</small>
+          <b>{s}</b><small>{sectionPlaces(s).length} {nounOf(s)}</small>
         </button>))}</div>}
       {sec && !g && <div className="tiles">{groups.map(gr => (
         <button key={gr.id} className="tile" onClick={() => setGroup(gr.id)}>
           {gr.layer === 'country' && <div className="tile-flags">{placesIn(ds, gr.id).slice(0, 6).map(c => <Flag key={c.id} file={c.flag ?? null} name={c.name} size={80} />)}</div>}
           {gr.layer !== 'country' && <div className="tile-glyph"><Icon name={LAYER_ICON[gr.layer]} size={28} /></div>}
-          <b>{gr.name}</b><small>{placesIn(ds, gr.id).length} {LAYER_NOUN[gr.layer]}</small>
-        </button>))}</div>}
+          <b>{gr.name}</b><small>{placesIn(ds, gr.id).length} {gr.layer === 'sub' ? nounOf(sec) : LAYER_NOUN[gr.layer]}</small>
+        </button>))}
+        {kids.map(k => (
+          <button key={k} className="tile in-depth-tile" onClick={() => { setSec(k); setGroup(null); }}>
+            <div className="tile-glyph"><Icon name="map" size={28} /></div>
+            <b>{k} ›</b><small>{sectionPlaces(k).length} {nounOf(k)} · in depth</small>
+          </button>))}
+      </div>}
       {g && <div className="country-list">{placesIn(ds, g).sort((a, b) => a.name.localeCompare(b.name)).map(c => (
         <button key={c.id} className="country-row" onClick={() => setPlace(c.id)}>
           {c.flag ? <Flag file={c.flag ?? null} name={c.name} size={80} /> : <span className="row-glyph"><Icon name={LAYER_ICON[c.layer]} /></span>}

@@ -138,7 +138,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const shapes = useMemo(() => {
     const out: Partial<Record<Layer, Shape[]>> = {};
     if (topos.country) out.country = toShapes(topos.country, 'country', path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
-    for (const l of ['water', 'cn', 'us', 'terr', 'range', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
+    for (const l of ['water', 'cn', 'us', 'terr', 'sub', 'range', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
     return out;
   }, [topos, shapeToCountry, ds, path]);
 
@@ -153,10 +153,10 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const dots = useMemo(() => {
     const out: Dot[] = [];
     const byPlace = new Map(visible.filter(s => s.placeId).map(s => [s.placeId!, s]));
-    const candidates = [...ds.countries, ...ds.places.filter(p => (p.layer === 'cn' || p.layer === 'us' || p.layer === 'terr') && layers.includes(p.layer))];
+    const candidates = [...ds.countries, ...ds.places.filter(p => (p.layer === 'cn' || p.layer === 'us' || p.layer === 'terr' || p.layer === 'sub') && layers.includes(p.layer))];
     for (const c of candidates) {
       const s = byPlace.get(c.id);
-      const tiny = !s || Math.max(s.bounds[1][0] - s.bounds[0][0], s.bounds[1][1] - s.bounds[0][1]) < (c.layer === 'cn' || c.layer === 'us' ? 1.5 : 4);
+      const tiny = !s || Math.max(s.bounds[1][0] - s.bounds[0][0], s.bounds[1][1] - s.bounds[0][1]) < (c.layer === 'sub' ? 0.25 : c.layer === 'cn' || c.layer === 'us' ? 1.5 : 4);
       if (!tiny || (!s && c.layer !== 'country')) continue;
       const p = s ? s.centroid : c.lon != null ? projection([c.lon, c.lat!]) : null;
       if (p && isFinite(p[0])) out.push({ placeId: c.id, x: p[0], y: p[1] });
@@ -174,7 +174,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   useEffect(() => {
     if (!svgRef.current || !size.w) return;
     const k0 = fitScale(size);
-    const z = zoom<SVGSVGElement, unknown>().scaleExtent([k0 * 0.9, k0 * 80])
+    const z = zoom<SVGSVGElement, unknown>().scaleExtent([k0 * 0.9, k0 * 300]) // deep enough for a county
       .translateExtent([[-W * 0.1, -H * 0.1], [W * 1.1, H * 1.1]])
       .on('zoom', ev => setT(ev.transform));
     zoomRef.current = z;
@@ -209,9 +209,11 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
         else if (c?.lon != null) { const p = projection([c.lon, c.lat!]); if (p) add(p[0], p[1]); }
       }
       if (isFinite(x0)) {
-        const minSpan = W * (focus.ids.length === 1 ? 0.035 : 0.05);
+        // Don't zoom in absurdly far on a tiny country, but let counties and prefectures fill the screen.
+        const small = focus.ids.every(id => ds.byId.get(id)?.layer === 'sub');
+        const minSpan = W * (small ? (focus.ids.length === 1 ? 0.004 : 0.006) : focus.ids.length === 1 ? 0.035 : 0.05);
         const bw = Math.max(x1 - x0, minSpan), bh = Math.max(y1 - y0, minSpan * 0.6);
-        const k = Math.min(k0 * 40, Math.max(k0, (focus.pad ?? 0.85) * Math.min(size.w / bw, size.h / bh)));
+        const k = Math.min(k0 * 200, Math.max(k0, (focus.pad ?? 0.85) * Math.min(size.w / bw, size.h / bh)));
         const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
         target = zoomIdentity.translate(size.w / 2 - k * cx, size.h / 2 - k * cy).scale(k);
       }
@@ -294,6 +296,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {shapes.cn && layers.includes('cn') && shapes.cn.map(s => shapeEl(s, 'land sub'))}
           {shapes.us && layers.includes('us') && shapes.us.map(s => shapeEl(s, 'land sub'))}
           {shapes.terr && layers.includes('terr') && shapes.terr.map(s => shapeEl(s, 'land sub terr'))}
+          {shapes.sub && layers.includes('sub') && shapes.sub.map(s => shapeEl(s, 'land sub'))}
           {shapes.range && layers.includes('range') && shapes.range.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'range') : null))}
           {shapes.lake && layers.includes('lake') && shapes.lake.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'lake') : <path key={s.key} d={s.d} className="lake other" />))}
           {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(riverEl)}

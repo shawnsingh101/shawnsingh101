@@ -1,0 +1,1962 @@
+{
+ "source": "Wikidata (CC0)",
+ "sections": [
+  {
+   "id": "jp",
+   "section": "Japan",
+   "parent": "Asia",
+   "country": "Q17",
+   "noun": "prefecture",
+   "nouns": "prefectures",
+   "capital": "capital",
+   "groups": [
+    {
+     "id": "jp-n",
+     "name": "Hokkaidō & Tōhoku"
+    },
+    {
+     "id": "jp-kanto",
+     "name": "Kantō"
+    },
+    {
+     "id": "jp-chubu",
+     "name": "Chūbu"
+    },
+    {
+     "id": "jp-kansai",
+     "name": "Kansai"
+    },
+    {
+     "id": "jp-w",
+     "name": "Chūgoku & Shikoku"
+    },
+    {
+     "id": "jp-s",
+     "name": "Kyūshū & Okinawa"
+    }
+   ]
+  },
+  {
+   "id": "nj",
+   "section": "New Jersey",
+   "parent": "United States",
+   "country": "Q1408",
+   "noun": "county",
+   "nouns": "counties",
+   "capital": "county seat",
+   "groups": [
+    {
+     "id": "nj-counties",
+     "name": "New Jersey counties"
+    }
+   ]
+  }
+ ],
+ "places": [
+  {
+   "id": "Q80434",
+   "layer": "sub",
+   "name": "Aichi Prefecture",
+   "image": "Mikawa Bay Aichi Japan SRTM.jpg",
+   "lon": 136.906,
+   "lat": 35.18,
+   "wiki": "Aichi_Prefecture",
+   "group": "jp-chubu",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q11751",
+     "name": "Nagoya",
+     "preferred": false,
+     "role": null,
+     "image": "Japan Nagoya.png",
+     "lon": 136.906,
+     "lat": 35.181,
+     "wiki": "Nagoya"
+    }
+   ],
+   "capitalAnswer": "Nagoya",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q81863",
+   "layer": "sub",
+   "name": "Akita Prefecture",
+   "image": "Akita Prefectural Government Office building No.1 20180520n.jpg",
+   "lon": 140.102,
+   "lat": 39.719,
+   "wiki": "Akita_Prefecture",
+   "group": "jp-n",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q17139",
+     "name": "Akita",
+     "preferred": false,
+     "role": null,
+     "image": "Akita City Hall main building 20190114.jpg",
+     "lon": 140.103,
+     "lat": 39.72,
+     "wiki": "Akita_(city)"
+    }
+   ],
+   "capitalAnswer": "Akita",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q71699",
+   "layer": "sub",
+   "name": "Aomori Prefecture",
+   "image": "Aomori Bay Asamushi Onsen Japan02bs5.jpg",
+   "lon": 140.741,
+   "lat": 40.825,
+   "wiki": "Aomori_Prefecture",
+   "group": "jp-n",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q146790",
+     "name": "Aomori",
+     "preferred": false,
+     "role": null,
+     "image": "Sceanery of the Aomori Waterfront 20200621.jpg",
+     "lon": 140.747,
+     "lat": 40.823,
+     "wiki": "Aomori"
+    }
+   ],
+   "capitalAnswer": "Aomori",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q497928",
+   "layer": "sub",
+   "name": "Atlantic County",
+   "image": "AtlanticCityAirport.png",
+   "lon": -74.64,
+   "lat": 39.47,
+   "wiki": "Atlantic_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q1088603",
+     "name": "Mays Landing",
+     "preferred": false,
+     "role": null,
+     "image": "6028 Main Street, Mays Landing, NJ.jpg",
+     "lon": -74.727,
+     "lat": 39.456,
+     "wiki": "Mays_Landing,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Mays Landing",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q112915",
+   "layer": "sub",
+   "name": "Bergen County",
+   "image": "Palisades Sill near Englewood Cliffs.jpg",
+   "lon": -74.07,
+   "lat": 40.96,
+   "wiki": "Bergen_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q138458",
+     "name": "Hackensack",
+     "preferred": false,
+     "role": null,
+     "image": "Bergen County Court House.jpg",
+     "lon": -74.048,
+     "lat": 40.888,
+     "wiki": "Hackensack,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Hackensack",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q138141",
+   "layer": "sub",
+   "name": "Burlington County",
+   "image": "CLARA BARTON SCHOOL IN BORDENTOWN HISTORIC DISTRICT.jpg",
+   "lon": -74.67,
+   "lat": 39.88,
+   "wiki": "Burlington_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q936639",
+     "name": "Mount Holly",
+     "preferred": false,
+     "role": null,
+     "image": "Mount Holly Historic District (2).JPG",
+     "lon": -74.787,
+     "lat": 39.995,
+     "wiki": "Mount_Holly,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Mount Holly",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q497810",
+   "layer": "sub",
+   "name": "Camden County",
+   "image": "Ru-camden-campus.jpg",
+   "lon": -74.96,
+   "lat": 39.8,
+   "wiki": "Camden_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q138367",
+     "name": "Camden",
+     "preferred": false,
+     "role": null,
+     "image": "CamdenNJ WaterfrontIndustry.jpg",
+     "lon": -75.107,
+     "lat": 39.937,
+     "wiki": "Camden,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Camden",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q497795",
+   "layer": "sub",
+   "name": "Cape May County",
+   "image": "Cape may.jpg",
+   "lon": -74.86,
+   "lat": 39.08,
+   "wiki": "Cape_May_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q1073787",
+     "name": "Middle Township",
+     "preferred": false,
+     "role": null,
+     "image": "Beesley House 1870.JPG",
+     "lon": -74.838,
+     "lat": 39.088,
+     "wiki": "Middle_Township,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Middle Township",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q80011",
+   "layer": "sub",
+   "name": "Chiba Prefecture",
+   "image": "Mt. Fuji and Keiyo petrochemical complex.JPG",
+   "lon": 140.123,
+   "lat": 35.604,
+   "wiki": "Chiba_Prefecture",
+   "group": "jp-kanto",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q170616",
+     "name": "Chiba",
+     "preferred": false,
+     "role": null,
+     "image": "Chiba City montage.jpg",
+     "lon": 140.106,
+     "lat": 35.607,
+     "wiki": "Chiba_(city)"
+    }
+   ],
+   "capitalAnswer": "Chiba",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q497845",
+   "layer": "sub",
+   "name": "Cumberland County",
+   "image": "Cumberland County Courthouse NJ.jpg",
+   "lon": -75.13,
+   "lat": 39.33,
+   "wiki": "Cumberland_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q913887",
+     "name": "Bridgeton",
+     "preferred": false,
+     "role": null,
+     "image": "Downtown Bridgeton NJ.JPG",
+     "lon": -75.228,
+     "lat": 39.428,
+     "wiki": "Bridgeton,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Bridgeton",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q123376",
+   "layer": "sub",
+   "name": "Ehime Prefecture",
+   "image": "Matsuyama Castle Keep Tower 20170123-1.jpg",
+   "lon": 132.767,
+   "lat": 33.833,
+   "wiki": "Ehime_Prefecture",
+   "group": "jp-w",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q200022",
+     "name": "Matsuyama",
+     "preferred": false,
+     "role": null,
+     "image": "Matsuyama (14074874872).jpg",
+     "lon": 132.766,
+     "lat": 33.839,
+     "wiki": "Matsuyama"
+    }
+   ],
+   "capitalAnswer": "Matsuyama",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q128077",
+   "layer": "sub",
+   "name": "Essex County",
+   "image": "South Mountain View.jpg",
+   "lon": -74.25,
+   "lat": 40.79,
+   "wiki": "Essex_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q25395",
+     "name": "Newark",
+     "preferred": false,
+     "role": null,
+     "image": "2021-09-25 10 50 38 View of downtown Newark from the intersection of Essex County Route 510 (Market Street) and Mulberry Street in Newark, Essex County, New Jersey.jpg",
+     "lon": -74.172,
+     "lat": 40.736,
+     "wiki": "Newark,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Newark",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q133879",
+   "layer": "sub",
+   "name": "Fukui Prefecture",
+   "image": "Fukui plain.jpg",
+   "lon": 136.222,
+   "lat": 36.065,
+   "wiki": "Fukui_Prefecture",
+   "group": "jp-chubu",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q201618",
+     "name": "Fukui",
+     "preferred": false,
+     "role": null,
+     "image": "Fukui montage.jpg",
+     "lon": 136.22,
+     "lat": 36.064,
+     "wiki": "Fukui_(city)"
+    }
+   ],
+   "capitalAnswer": "Fukui",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q123258",
+   "layer": "sub",
+   "name": "Fukuoka Prefecture",
+   "image": "Fukuoka Seaside Momochi Aerial Shoot.jpg",
+   "lon": 130.418,
+   "lat": 33.606,
+   "wiki": "Fukuoka_Prefecture",
+   "group": "jp-s",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q26600",
+     "name": "Fukuoka",
+     "preferred": false,
+     "role": null,
+     "image": "Hakata Port from Fukuoka Tower.jpg",
+     "lon": 130.402,
+     "lat": 33.59,
+     "wiki": "Fukuoka"
+    }
+   ],
+   "capitalAnswer": "Fukuoka",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q71707",
+   "layer": "sub",
+   "name": "Fukushima Prefecture",
+   "image": "Aizuwakamatsu Castle ac (1).jpg",
+   "lon": 140.468,
+   "lat": 37.75,
+   "wiki": "Fukushima_Prefecture",
+   "group": "jp-n",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q161176",
+     "name": "Fukushima",
+     "preferred": false,
+     "role": null,
+     "image": "Fukushima City with a view of Fukushima Station.jpg",
+     "lon": 140.475,
+     "lat": 37.761,
+     "wiki": "Fukushima_(city)"
+    }
+   ],
+   "capitalAnswer": "Fukushima",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q131277",
+   "layer": "sub",
+   "name": "Gifu Prefecture",
+   "image": "Shirakawago.jpg",
+   "lon": 136.722,
+   "lat": 35.391,
+   "wiki": "Gifu_Prefecture",
+   "group": "jp-chubu",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q45798",
+     "name": "Gifu",
+     "preferred": false,
+     "role": null,
+     "image": "Gifu City Tower 43 and Gifu Sky Wing 37 from Twinarch138.jpg",
+     "lon": 136.759,
+     "lat": 35.426,
+     "wiki": "Gifu"
+    }
+   ],
+   "capitalAnswer": "Gifu",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q502463",
+   "layer": "sub",
+   "name": "Gloucester County",
+   "image": "GLOUCESTER COUNTY COURTHOUSE, WOODBURY, NJ.jpg",
+   "lon": -75.14,
+   "lat": 39.71,
+   "wiki": "Gloucester_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q1027105",
+     "name": "Woodbury",
+     "preferred": false,
+     "role": null,
+     "image": "Christ Church Woodbury quarter view.jpg",
+     "lon": -75.153,
+     "lat": 39.838,
+     "wiki": "Woodbury,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Woodbury",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q129499",
+   "layer": "sub",
+   "name": "Gunma Prefecture",
+   "image": "草津温泉の湯畑02.jpg",
+   "lon": 139.06,
+   "lat": 36.39,
+   "wiki": "Gunma_Prefecture",
+   "group": "jp-kanto",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q201613",
+     "name": "Maebashi",
+     "preferred": false,
+     "role": null,
+     "image": "Daido Akagi Shrine, Gunma 01.jpg",
+     "lon": 139.063,
+     "lat": 36.389,
+     "wiki": "Maebashi"
+    }
+   ],
+   "capitalAnswer": "Maebashi",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q617375",
+   "layer": "sub",
+   "name": "Hiroshima Prefecture",
+   "image": "Montages of Hiroshima prefecture.jpg",
+   "lon": 132.46,
+   "lat": 34.396,
+   "wiki": "Hiroshima_Prefecture",
+   "group": "jp-w",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q34664",
+     "name": "Hiroshima",
+     "preferred": false,
+     "role": null,
+     "image": "Atomic Bomb Dome and Motoyaso River, Hiroshima, Northwest view 20190417 1.jpg",
+     "lon": 132.455,
+     "lat": 34.385,
+     "wiki": "Hiroshima"
+    }
+   ],
+   "capitalAnswer": "Hiroshima",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q35581",
+   "layer": "sub",
+   "name": "Hokkaidō",
+   "image": "140829 Ichiko of Shiretoko Goko Lakes Hokkaido Japan04s3.jpg",
+   "lon": 142.792,
+   "lat": 43.461,
+   "wiki": "Hokkaido",
+   "group": "jp-n",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q37951",
+     "name": "Sapporo",
+     "wiki": "Sapporo",
+     "image": null,
+     "lat": 43.062,
+     "lon": 141.354,
+     "preferred": false,
+     "role": null
+    }
+   ],
+   "capitalAnswer": "Sapporo",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q490505",
+   "layer": "sub",
+   "name": "Hudson County",
+   "image": "Ellis Island photo Don Ramey Logan.jpg",
+   "lon": -74.08,
+   "lat": 40.73,
+   "wiki": "Hudson_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q26339",
+     "name": "Jersey City",
+     "preferred": false,
+     "role": null,
+     "image": "Jersey City from a helicopter.jpg",
+     "lon": -74.06,
+     "lat": 40.71,
+     "wiki": "Jersey_City,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Jersey City",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q502451",
+   "layer": "sub",
+   "name": "Hunterdon County",
+   "image": "Clinton NJ Easter 2014.jpg",
+   "lon": -74.92,
+   "lat": 40.57,
+   "wiki": "Hunterdon_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q1010673",
+     "name": "Flemington",
+     "preferred": false,
+     "role": null,
+     "image": "Flemington, NJ, skyline.jpg",
+     "lon": -74.86,
+     "lat": 40.509,
+     "wiki": "Flemington,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Flemington",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q130290",
+   "layer": "sub",
+   "name": "Hyōgo Prefecture",
+   "image": "Kobe Port Tower and Maritime Museum, November 2016.jpg",
+   "lon": 135.183,
+   "lat": 34.691,
+   "wiki": "Hyōgo_Prefecture",
+   "group": "jp-kansai",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q48320",
+     "name": "Kobe",
+     "preferred": false,
+     "role": null,
+     "image": "Ikuta Shrine 201208.JPG",
+     "lon": 135.195,
+     "lat": 34.69,
+     "wiki": "Kobe"
+    }
+   ],
+   "capitalAnswer": "Kobe",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q83273",
+   "layer": "sub",
+   "name": "Ibaraki Prefecture",
+   "image": "Autumn of Fukuroda Falls, Daigo, Ibaraki; November 2016.jpg",
+   "lon": 140.447,
+   "lat": 36.342,
+   "wiki": "Ibaraki_Prefecture",
+   "group": "jp-kanto",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q204249",
+     "name": "Mito",
+     "preferred": false,
+     "role": null,
+     "image": "Kairaku-en, Ibaraki 24.jpg",
+     "lon": 140.471,
+     "lat": 36.366,
+     "wiki": "Mito,_Ibaraki"
+    }
+   ],
+   "capitalAnswer": "Mito",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q131281",
+   "layer": "sub",
+   "name": "Ishikawa Prefecture",
+   "image": "131109 Kenrokuen Kanazawa Ishikawa pref Japan05s3.jpg",
+   "lon": 136.625,
+   "lat": 36.595,
+   "wiki": "Ishikawa_Prefecture",
+   "group": "jp-chubu",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q191130",
+     "name": "Kanazawa",
+     "preferred": false,
+     "role": null,
+     "image": "望湖台２.jpg",
+     "lon": 136.656,
+     "lat": 36.561,
+     "wiki": "Kanazawa"
+    }
+   ],
+   "capitalAnswer": "Kanazawa",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q48326",
+   "layer": "sub",
+   "name": "Iwate Prefecture",
+   "image": "Kitakami river in Morioka.jpg",
+   "lon": 141.153,
+   "lat": 39.703,
+   "wiki": "Iwate_Prefecture",
+   "group": "jp-n",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q200077",
+     "name": "Morioka",
+     "preferred": false,
+     "role": null,
+     "image": "Morioka and Mount Iwate and River Kitakami in May 2019.jpg",
+     "lon": 141.269,
+     "lat": 39.745,
+     "wiki": "Morioka"
+    }
+   ],
+   "capitalAnswer": "Morioka",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q161454",
+   "layer": "sub",
+   "name": "Kagawa Prefecture",
+   "image": "香川県の風景.jpg",
+   "lon": 134.043,
+   "lat": 34.34,
+   "wiki": "Kagawa_Prefecture",
+   "group": "jp-w",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q200707",
+     "name": "Takamatsu",
+     "preferred": false,
+     "role": null,
+     "image": "香川県の風景.jpg",
+     "lon": 134.047,
+     "lat": 34.343,
+     "wiki": "Takamatsu"
+    }
+   ],
+   "capitalAnswer": "Takamatsu",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q15701",
+   "layer": "sub",
+   "name": "Kagoshima Prefecture",
+   "image": "Sakurajima Island.jpg",
+   "lon": 130.558,
+   "lat": 31.56,
+   "wiki": "Kagoshima_Prefecture",
+   "group": "jp-s",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q15674",
+     "name": "Kagoshima",
+     "preferred": false,
+     "role": null,
+     "image": "Sakurajima -城山展望台より.jpg",
+     "lon": 130.557,
+     "lat": 31.597,
+     "wiki": "Kagoshima"
+    }
+   ],
+   "capitalAnswer": "Kagoshima",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q127513",
+   "layer": "sub",
+   "name": "Kanagawa Prefecture",
+   "image": "Yokohama (52978652484).jpg",
+   "lon": 139.643,
+   "lat": 35.448,
+   "wiki": "Kanagawa_Prefecture",
+   "group": "jp-kanto",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q38283",
+     "name": "Yokohama",
+     "preferred": false,
+     "role": null,
+     "image": "Minato-mirai from Yamashita Park at night.jpg",
+     "lon": 139.634,
+     "lat": 35.45,
+     "wiki": "Yokohama"
+    }
+   ],
+   "capitalAnswer": "Yokohama",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q134093",
+   "layer": "sub",
+   "name": "Kōchi Prefecture",
+   "image": "Shimanto River And Iwama Bridge 1.jpg",
+   "lon": 133.531,
+   "lat": 33.559,
+   "wiki": "Kōchi_Prefecture",
+   "group": "jp-w",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q200251",
+     "name": "Kōchi-shi",
+     "preferred": false,
+     "role": null,
+     "image": "高知城 天守からの景色3 Kochi Castle - panoramio.jpg",
+     "lon": 133.531,
+     "lat": 33.559,
+     "wiki": "Kōchi,_Kōchi"
+    }
+   ],
+   "capitalAnswer": "Kōchi-shi",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q130308",
+   "layer": "sub",
+   "name": "Kumamoto Prefecture",
+   "image": "20140516阿蘇山広域.jpg",
+   "lon": 130.741,
+   "lat": 32.79,
+   "wiki": "Kumamoto_Prefecture",
+   "group": "jp-s",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q199889",
+     "name": "Kumamoto",
+     "preferred": false,
+     "role": null,
+     "image": "Kumamoto Castle and Kyūshū Shinkansen 02.jpg",
+     "lon": 130.708,
+     "lat": 32.803,
+     "wiki": "Kumamoto"
+    }
+   ],
+   "capitalAnswer": "Kumamoto",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q120730",
+   "layer": "sub",
+   "name": "Kyoto Prefecture",
+   "image": "RX100VII - Amanohashidate view from Kasamatsu Park - Flickr - wkc.1.jpg",
+   "lon": 135.756,
+   "lat": 35.021,
+   "wiki": "Kyoto_Prefecture",
+   "group": "jp-kansai",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q34600",
+     "name": "Kyoto",
+     "preferred": false,
+     "role": null,
+     "image": "Pedestrian road with pavements, paper umbrellas and people in yukata, Higashiyama-ku, Kyoto, Japan.jpg",
+     "lon": 135.768,
+     "lat": 35.012,
+     "wiki": "Kyoto"
+    }
+   ],
+   "capitalAnswer": "Kyoto",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q496886",
+   "layer": "sub",
+   "name": "Mercer County",
+   "image": "2014-08-30 11 07 51 View of Mercer County Court House in Trenton, New Jersey from the east.JPG",
+   "lon": -74.7,
+   "lat": 40.28,
+   "wiki": "Mercer_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q25330",
+     "name": "Trenton",
+     "preferred": false,
+     "role": null,
+     "image": "Trenton, New Jersey.jpg",
+     "lon": -74.766,
+     "lat": 40.22,
+     "wiki": "Trenton,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Trenton",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q496862",
+   "layer": "sub",
+   "name": "Middlesex County",
+   "image": "Bishop House, New Brunswick, NJ - campus gate.jpg",
+   "lon": -74.41,
+   "lat": 40.44,
+   "wiki": "Middlesex_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q138338",
+     "name": "New Brunswick",
+     "preferred": false,
+     "role": null,
+     "image": "New Brunswick NJ Skyline at Sunset.jpg",
+     "lon": -74.444,
+     "lat": 40.487,
+     "wiki": "New_Brunswick,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "New Brunswick",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q128196",
+   "layer": "sub",
+   "name": "Mie Prefecture",
+   "image": "140405 Tsu Castle Tsu MIe pref Japan01s.jpg",
+   "lon": 136.509,
+   "lat": 34.73,
+   "wiki": "Mie_Prefecture",
+   "group": "jp-kansai",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q203027",
+     "name": "Tsu",
+     "preferred": false,
+     "role": null,
+     "image": "Tsu City Hall.jpg",
+     "lon": 136.506,
+     "lat": 34.718,
+     "wiki": "Tsu,_Mie"
+    }
+   ],
+   "capitalAnswer": "Tsu",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q47896",
+   "layer": "sub",
+   "name": "Miyagi Prefecture",
+   "image": "211030 Saigyo Modoshi no Matsu Park Matsushima Miyagi pref Japan01n.jpg",
+   "lon": 140.872,
+   "lat": 38.269,
+   "wiki": "Miyagi_Prefecture",
+   "group": "jp-n",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q46747",
+     "name": "Sendai",
+     "preferred": false,
+     "role": null,
+     "image": "SendaiCity Skylines from Mukaiyama2018.jpg",
+     "lon": 140.869,
+     "lat": 38.268,
+     "wiki": "Sendai"
+    }
+   ],
+   "capitalAnswer": "Sendai",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q130300",
+   "layer": "sub",
+   "name": "Miyazaki Prefecture",
+   "image": "Takachihokyou55.jpg",
+   "lon": 131.424,
+   "lat": 31.911,
+   "wiki": "Miyazaki_Prefecture",
+   "group": "jp-s",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q204308",
+     "name": "Miyazaki",
+     "preferred": false,
+     "role": null,
+     "image": "Route220 TachibanaStreet.jpg",
+     "lon": 131.42,
+     "lat": 31.908,
+     "wiki": "Miyazaki_(city)"
+    }
+   ],
+   "capitalAnswer": "Miyazaki",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q502424",
+   "layer": "sub",
+   "name": "Monmouth County",
+   "image": "943 AP Boardwalk.JPG",
+   "lon": -74.15,
+   "lat": 40.29,
+   "wiki": "Monmouth_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q691237",
+     "name": "Freehold",
+     "preferred": false,
+     "role": null,
+     "image": "MonmouthCountyCourtHouse.jpg",
+     "lon": -74.277,
+     "lat": 40.263,
+     "wiki": "Freehold_Borough,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Freehold",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q498163",
+   "layer": "sub",
+   "name": "Morris County",
+   "image": "Morris County Courthouse, Morristown, NJ.jpg",
+   "lon": -74.55,
+   "lat": 40.87,
+   "wiki": "Morris_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q962499",
+     "name": "Morristown",
+     "preferred": false,
+     "role": null,
+     "image": "2025-08-08 18 32 47 UTC View centered on the border of Harding and Morris townships in Morris County, New Jersey (Morristown visible further in the distance) from a plane departing Newark Liberty International Airport.jpg",
+     "lon": -74.477,
+     "lat": 40.797,
+     "wiki": "Morristown,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Morristown",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q127877",
+   "layer": "sub",
+   "name": "Nagano Prefecture",
+   "image": "150920 Mt Yake-dake Kamikochi Japan01n.jpg",
+   "lon": 138.181,
+   "lat": 36.651,
+   "wiki": "Nagano_Prefecture",
+   "group": "jp-chubu",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q128849",
+     "name": "Nagano",
+     "preferred": false,
+     "role": null,
+     "image": "Downtown Nagano.jpg",
+     "lon": 138.195,
+     "lat": 36.649,
+     "wiki": "Nagano_(city)"
+    }
+   ],
+   "capitalAnswer": "Nagano",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q169376",
+   "layer": "sub",
+   "name": "Nagasaki Prefecture",
+   "image": "Nagasaki night pano from Glover Garden.jpg",
+   "lon": 129.868,
+   "lat": 32.75,
+   "wiki": "Nagasaki_Prefecture",
+   "group": "jp-s",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q38234",
+     "name": "Nagasaki",
+     "preferred": false,
+     "role": null,
+     "image": "Nagasaki City View from Glover Garden, Nagasaki 2014.jpg",
+     "lon": 129.88,
+     "lat": 32.75,
+     "wiki": "Nagasaki"
+    }
+   ],
+   "capitalAnswer": "Nagasaki",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q131287",
+   "layer": "sub",
+   "name": "Nara Prefecture",
+   "image": "181103 Heijo Palace Daigokuden Nara Japan02bs.jpg",
+   "lon": 135.833,
+   "lat": 34.685,
+   "wiki": "Nara_Prefecture",
+   "group": "jp-kansai",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q169134",
+     "name": "Nara",
+     "preferred": false,
+     "role": null,
+     "image": "Sika deer in Nara 05.jpg",
+     "lon": 135.805,
+     "lat": 34.685,
+     "wiki": "Nara_(city)"
+    }
+   ],
+   "capitalAnswer": "Nara",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q132705",
+   "layer": "sub",
+   "name": "Niigata Prefecture",
+   "image": "Niigata city night view.jpg",
+   "lon": 139.023,
+   "lat": 37.902,
+   "wiki": "Niigata_Prefecture",
+   "group": "jp-chubu",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q179691",
+     "name": "Niigata",
+     "preferred": false,
+     "role": null,
+     "image": "Niigata from Bandaijima Building 20200906 P4.jpg",
+     "lon": 139.036,
+     "lat": 37.916,
+     "wiki": "Niigata_(city)"
+    }
+   ],
+   "capitalAnswer": "Niigata",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q502564",
+   "layer": "sub",
+   "name": "Ocean County",
+   "image": "NJ LBI Lighthouse 04.JPG",
+   "lon": -74.25,
+   "lat": 39.87,
+   "wiki": "Ocean_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q1087213",
+     "name": "Toms River",
+     "preferred": false,
+     "role": null,
+     "image": "Ocean County Courthouse.jpg",
+     "lon": -74.166,
+     "lat": 39.994,
+     "wiki": "Toms_River,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Toms River",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q133924",
+   "layer": "sub",
+   "name": "Ōita Prefecture",
+   "image": "Beppu Kamado Jigoku11n4272.jpg",
+   "lon": 131.613,
+   "lat": 33.238,
+   "wiki": "Ōita_Prefecture",
+   "group": "jp-s",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q199609",
+     "name": "Ōita-shi",
+     "preferred": false,
+     "role": null,
+     "image": "Oita takasago.jpg",
+     "lon": 131.609,
+     "lat": 33.24,
+     "wiki": "Ōita_(city)"
+    }
+   ],
+   "capitalAnswer": "Ōita-shi",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q132936",
+   "layer": "sub",
+   "name": "Okayama Prefecture",
+   "image": "Okayama Castle, November 2016 -02.jpg",
+   "lon": 133.935,
+   "lat": 34.662,
+   "wiki": "Okayama_Prefecture",
+   "group": "jp-w",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q200078",
+     "name": "Okayama",
+     "preferred": false,
+     "role": null,
+     "image": "The Okayama city office is faced from the north.JPG",
+     "lon": 133.92,
+     "lat": 34.655,
+     "wiki": "Okayama"
+    }
+   ],
+   "capitalAnswer": "Okayama",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q766445",
+   "layer": "sub",
+   "name": "Okinawa Prefecture",
+   "image": "Yubu Island Okinawa Pref Japan24n4200.jpg",
+   "lon": 127.681,
+   "lat": 26.212,
+   "wiki": "Okinawa_Prefecture",
+   "group": "jp-s",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q181966",
+     "name": "Naha",
+     "preferred": false,
+     "role": null,
+     "image": "Asahi-machi Naha Okinawa01s3s4410.jpg",
+     "lon": 127.679,
+     "lat": 26.212,
+     "wiki": "Naha"
+    }
+   ],
+   "capitalAnswer": "Naha",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q122723",
+   "layer": "sub",
+   "name": "Osaka Prefecture",
+   "image": "Osaka satellite map.jpg",
+   "lon": 135.52,
+   "lat": 34.686,
+   "wiki": "Osaka_Prefecture",
+   "group": "jp-kansai",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q35765",
+     "name": "Osaka",
+     "preferred": false,
+     "role": null,
+     "image": "Osaka Castle 02bs3200.jpg",
+     "lon": 135.502,
+     "lat": 34.694,
+     "wiki": "Osaka"
+    }
+   ],
+   "capitalAnswer": "Osaka",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q495974",
+   "layer": "sub",
+   "name": "Passaic County",
+   "image": "Geat Falls-2 - Passaic River at Patterson NJ.JPG",
+   "lon": -74.3,
+   "lat": 41.03,
+   "wiki": "Passaic_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q138391",
+     "name": "Paterson",
+     "preferred": false,
+     "role": null,
+     "image": "Downtown-paterson-nj2.jpg",
+     "lon": -74.172,
+     "lat": 40.917,
+     "wiki": "Paterson,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Paterson",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q160420",
+   "layer": "sub",
+   "name": "Saga Prefecture",
+   "image": "Nijinomatsubara.jpg",
+   "lon": 130.299,
+   "lat": 33.249,
+   "wiki": "Saga_Prefecture",
+   "group": "jp-s",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q209766",
+     "name": "Saga",
+     "preferred": false,
+     "role": null,
+     "image": "Hotel Ryūtōen, Saga.jpg",
+     "lon": 130.301,
+     "lat": 33.264,
+     "wiki": "Saga_(city)"
+    }
+   ],
+   "capitalAnswer": "Saga",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q128186",
+   "layer": "sub",
+   "name": "Saitama Prefecture",
+   "image": "Aerial photograph of 2019 Typhoon Hagibis flood in Saitama prefecture - GSI 5720.jpg",
+   "lon": 139.649,
+   "lat": 35.857,
+   "wiki": "Saitama_Prefecture",
+   "group": "jp-kanto",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q134635",
+     "name": "Saitama",
+     "preferred": false,
+     "role": null,
+     "image": "Saitama city montage.jpg",
+     "lon": 139.646,
+     "lat": 35.861,
+     "wiki": "Saitama_(city)"
+    }
+   ],
+   "capitalAnswer": "Saitama",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q502587",
+   "layer": "sub",
+   "name": "Salem County",
+   "image": "Salem, New Jersey (7235297702).jpg",
+   "lon": -75.36,
+   "lat": 39.58,
+   "wiki": "Salem_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q1088317",
+     "name": "Salem",
+     "preferred": false,
+     "role": null,
+     "image": "Salem, New Jersey (7235297702).jpg",
+     "lon": -75.472,
+     "lat": 39.568,
+     "wiki": "Salem,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Salem",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q131358",
+   "layer": "sub",
+   "name": "Shiga Prefecture",
+   "image": "Mangetsuji Otsu Shiga02n4500.jpg",
+   "lon": 135.869,
+   "lat": 35.004,
+   "wiki": "Shiga_Prefecture",
+   "group": "jp-kansai",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q202907",
+     "name": "Otsu",
+     "preferred": false,
+     "role": null,
+     "image": "Otsu at the south end of Lake Biwa in Shiga prefecture.jpg",
+     "lon": 135.855,
+     "lat": 35.018,
+     "wiki": "Ōtsu"
+    }
+   ],
+   "capitalAnswer": "Otsu",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q132751",
+   "layer": "sub",
+   "name": "Shimane Prefecture",
+   "image": "Izumo-Taisha Haiden.jpg",
+   "lon": 133.05,
+   "lat": 35.472,
+   "wiki": "Shimane_Prefecture",
+   "group": "jp-w",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q207321",
+     "name": "Matsue",
+     "preferred": false,
+     "role": null,
+     "image": "Matsue Castle-3.jpg",
+     "lon": 133.049,
+     "lat": 35.468,
+     "wiki": "Matsue"
+    }
+   ],
+   "capitalAnswer": "Matsue",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q131320",
+   "layer": "sub",
+   "name": "Shizuoka Prefecture",
+   "image": "Nihondaira from shizuoka plain.JPG",
+   "lon": 138.383,
+   "lat": 34.977,
+   "wiki": "Shizuoka_Prefecture",
+   "group": "jp-chubu",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q174691",
+     "name": "Shizuoka",
+     "preferred": false,
+     "role": null,
+     "image": "Shizuoka montage.jpg",
+     "lon": 138.382,
+     "lat": 34.976,
+     "wiki": "Shizuoka_(city)"
+    }
+   ],
+   "capitalAnswer": "Shizuoka",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q502414",
+   "layer": "sub",
+   "name": "Somerset County",
+   "image": "Somerset County Courthouse, Somerville, NJ - historic, looking northeast.jpg",
+   "lon": -74.61,
+   "lat": 40.56,
+   "wiki": "Somerset_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q1088776",
+     "name": "Somerville",
+     "preferred": false,
+     "role": null,
+     "image": "DANIEL ROBERT HOUSE, SOMERVILLE, SOMERSET COUNTY.jpg",
+     "lon": -74.608,
+     "lat": 40.57,
+     "wiki": "Somerville,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Somerville",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q495998",
+   "layer": "sub",
+   "name": "Sussex County",
+   "image": "East from Kittatinny Mountain DWGNRA Walpack Twsp NJ.jpg",
+   "lon": -74.69,
+   "lat": 41.14,
+   "wiki": "Sussex_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q1089234",
+     "name": "Newton",
+     "preferred": false,
+     "role": null,
+     "image": "NewtonGreen2008.jpg",
+     "lon": -74.755,
+     "lat": 41.053,
+     "wiki": "Newton,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Newton",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q44843",
+   "layer": "sub",
+   "name": "Tochigi Prefecture",
+   "image": "Nikko Toshogu Yomeimon Gate 2024.jpg",
+   "lon": 139.884,
+   "lat": 36.566,
+   "wiki": "Tochigi_Prefecture",
+   "group": "jp-kanto",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q200589",
+     "name": "Utsunomiya",
+     "preferred": false,
+     "role": null,
+     "image": "Tochigi-Prefectural-Road Route196 Utsunomiya-STA West.jpg",
+     "lon": 139.883,
+     "lat": 36.555,
+     "wiki": "Utsunomiya"
+    }
+   ],
+   "capitalAnswer": "Utsunomiya",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q160734",
+   "layer": "sub",
+   "name": "Tokushima Prefecture",
+   "image": "Naruto whirlpools 20170609-2.jpg",
+   "lon": 134.559,
+   "lat": 34.066,
+   "wiki": "Tokushima_Prefecture",
+   "group": "jp-w",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q207309",
+     "name": "Tokushima",
+     "preferred": false,
+     "role": null,
+     "image": "Bizan Tokushima05s5.jpg",
+     "lon": 134.555,
+     "lat": 34.07,
+     "wiki": "Tokushima_(city)"
+    }
+   ],
+   "capitalAnswer": "Tokushima",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q1490",
+   "layer": "sub",
+   "name": "Tokyo",
+   "image": "Skyscrapers of Shinjuku 2009 January (revised).jpg",
+   "lon": 139.692,
+   "lat": 35.689,
+   "wiki": "Tokyo",
+   "group": "jp-kanto",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q179645",
+     "name": "Shinjuku",
+     "preferred": true,
+     "role": null,
+     "image": "US Air Force photo 170903-F-PM645-1558 An aerial view of Shinjuku’s skyscraper district from a UH-1N Iroquois.jpg",
+     "lon": 139.703,
+     "lat": 35.694,
+     "wiki": "Shinjuku"
+    }
+   ],
+   "capitalAnswer": "Shinjuku",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan",
+   "capitalNote": "Tokyo is a metropolis, not one city: its government sits in Shinjuku"
+  },
+  {
+   "id": "Q133935",
+   "layer": "sub",
+   "name": "Tottori Prefecture",
+   "image": "Tottori Sand Dunes 20170128-1.jpg",
+   "lon": 134.238,
+   "lat": 35.504,
+   "wiki": "Tottori_Prefecture",
+   "group": "jp-w",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q200731",
+     "name": "Tottori",
+     "preferred": false,
+     "role": null,
+     "image": "Tottori castle08 1920.jpg",
+     "lon": 134.222,
+     "lat": 35.494,
+     "wiki": "Tottori_(city)"
+    }
+   ],
+   "capitalAnswer": "Tottori",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q132929",
+   "layer": "sub",
+   "name": "Toyama Prefecture",
+   "image": "Mount Tate viewed from Mikurigaike.jpg",
+   "lon": 137.211,
+   "lat": 36.695,
+   "wiki": "Toyama_Prefecture",
+   "group": "jp-chubu",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q204266",
+     "name": "Toyama",
+     "preferred": false,
+     "role": null,
+     "image": "Toyama city & Alps.jpg",
+     "lon": 137.214,
+     "lat": 36.696,
+     "wiki": "Toyama_(city)"
+    }
+   ],
+   "capitalAnswer": "Toyama",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q502459",
+   "layer": "sub",
+   "name": "Union County",
+   "image": "Westfieldnj.png",
+   "lon": -74.29,
+   "lat": 40.65,
+   "wiki": "Union_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q138311",
+     "name": "Elizabeth",
+     "preferred": false,
+     "role": null,
+     "image": "35412Elizabethfromabove.jpg",
+     "lon": -74.209,
+     "lat": 40.662,
+     "wiki": "Elizabeth,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Elizabeth",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q131314",
+   "layer": "sub",
+   "name": "Wakayama Prefecture",
+   "image": "Pagoda and Nachi Falls 2017-10-12.jpg",
+   "lon": 135.167,
+   "lat": 34.226,
+   "wiki": "Wakayama_Prefecture",
+   "group": "jp-kansai",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q200747",
+     "name": "Wakayama",
+     "preferred": false,
+     "role": null,
+     "image": "Wakayama Castle19nt3200.jpg",
+     "lon": 135.171,
+     "lat": 34.23,
+     "wiki": "Wakayama_(city)"
+    }
+   ],
+   "capitalAnswer": "Wakayama",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q502468",
+   "layer": "sub",
+   "name": "Warren County",
+   "image": "Warren County Courthouse, Belvidere, NJ.jpg",
+   "lon": -75,
+   "lat": 40.9,
+   "wiki": "Warren_County,_New_Jersey",
+   "group": "nj-counties",
+   "noun": "county",
+   "capWord": "county seat",
+   "parent": "Q1408",
+   "capitals": [
+    {
+     "id": "Q816285",
+     "name": "Belvidere",
+     "preferred": false,
+     "role": null,
+     "image": "Warren County Courthouse, Belvidere, NJ - looking north.jpg",
+     "lon": -75.073,
+     "lat": 40.83,
+     "wiki": "Belvidere,_New_Jersey"
+    }
+   ],
+   "capitalAnswer": "Belvidere",
+   "parentName": "New Jersey",
+   "facts": "County of New Jersey"
+  },
+  {
+   "id": "Q125863",
+   "layer": "sub",
+   "name": "Yamagata Prefecture",
+   "image": "Evening twilight in Ginzan Onsen town January 2022 A.jpg",
+   "lon": 140.364,
+   "lat": 38.24,
+   "wiki": "Yamagata_Prefecture",
+   "group": "jp-n",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q205526",
+     "name": "Yamagata",
+     "preferred": false,
+     "role": null,
+     "image": "Mount Gassan seen from Yamagata City.jpg",
+     "lon": 140.34,
+     "lat": 38.255,
+     "wiki": "Yamagata,_Yamagata"
+    }
+   ],
+   "capitalAnswer": "Yamagata",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q127264",
+   "layer": "sub",
+   "name": "Yamaguchi Prefecture",
+   "image": "Rurikoji (Yamaguchi), tou-1.jpg",
+   "lon": 131.47,
+   "lat": 34.186,
+   "wiki": "Yamaguchi_Prefecture",
+   "group": "jp-w",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q207876",
+     "name": "Yamaguchi",
+     "preferred": false,
+     "role": null,
+     "image": "The cityscape of Yamaguchi 20130821.jpg",
+     "lon": 131.474,
+     "lat": 34.178,
+     "wiki": "Yamaguchi_(city)"
+    }
+   ],
+   "capitalAnswer": "Yamaguchi",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  },
+  {
+   "id": "Q132720",
+   "layer": "sub",
+   "name": "Yamanashi Prefecture",
+   "image": "Lake Kawaguchiko Sakura Mount Fuji 3.JPG",
+   "lon": 138.568,
+   "lat": 35.664,
+   "wiki": "Yamanashi_Prefecture",
+   "group": "jp-chubu",
+   "noun": "prefecture",
+   "capWord": "capital",
+   "parent": "Q17",
+   "capitals": [
+    {
+     "id": "Q201932",
+     "name": "Kofu",
+     "preferred": false,
+     "role": null,
+     "image": "Kofu montage.jpg",
+     "lon": 138.568,
+     "lat": 35.662,
+     "wiki": "Kōfu"
+    }
+   ],
+   "capitalAnswer": "Kofu",
+   "parentName": "Japan",
+   "facts": "Prefecture of Japan"
+  }
+ ]
+}

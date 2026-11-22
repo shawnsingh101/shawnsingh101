@@ -12,7 +12,7 @@ export const scheduler = fsrs(generatorParameters({ enable_fuzz: true, request_r
 export interface Settings {
   sound: boolean; gamify: boolean; pictures: boolean; locks: boolean;
   theme: 'auto' | 'light' | 'dark'; newPerDay: number;
-  mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean; mapRivers: boolean; mapLakes: boolean; mapUs: boolean; mapTerr: boolean; mapSites: boolean; mapMountains: boolean;
+  mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean; mapRivers: boolean; mapLakes: boolean; mapUs: boolean; mapTerr: boolean; mapSub: boolean; mapSites: boolean; mapMountains: boolean;
   nativeNames: boolean;
   mapMode: 'tap' | 'flip' | 'skip';
   kindsOff: string[];                 // question types switched off (they wait until switched back on)
@@ -36,7 +36,7 @@ export interface Progress {
 const KEY = 'geoquest:v1';
 const DEFAULT: Progress = {
   v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {},
-  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, mapUs: false, mapTerr: false, mapSites: false, mapMountains: false, nativeNames: true, mapMode: 'tap', targetBox: true, kindsOff: [], sessionNodes: null },
+  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, mapUs: false, mapTerr: false, mapSub: false, mapSites: false, mapMountains: false, nativeNames: true, mapMode: 'tap', targetBox: true, kindsOff: [], sessionNodes: null },
 };
 
 function revive(p: Progress): Progress {
@@ -44,10 +44,14 @@ function revive(p: Progress): Progress {
     r.c.due = new Date(r.c.due);
     if (r.c.last_review) r.c.last_review = new Date(r.c.last_review);
   }
-  // Drop skills that no longer exist (a renamed group), so old saves can't break the app.
+  return { ...DEFAULT, ...p, active: p.active ?? [], quizBest: p.quizBest ?? {}, settings: { ...DEFAULT.settings, ...p.settings, kindsOff: p.settings?.kindsOff ?? [], sessionNodes: p.settings?.sessionNodes ?? null } };
+}
+
+/** The skills you're learning that exist in the data loaded now. Unknown ones (a renamed group, or a data file
+ *  that failed to load) are ignored but kept in your save, so nothing is lost if they come back. */
+export function activeNodes(p: Progress) {
   const valid = new Set(GROUPS.flatMap(g => g.topics.map(t => nodeId(g.id, t.id))));
-  const ok = (n: string) => valid.has(n);
-  return { ...DEFAULT, ...p, active: (p.active ?? []).filter(ok), quizBest: p.quizBest ?? {}, settings: { ...DEFAULT.settings, ...p.settings, kindsOff: p.settings?.kindsOff ?? [], sessionNodes: p.settings?.sessionNodes ? p.settings.sessionNodes.filter(ok) : null } };
+  return p.active.filter(n => valid.has(n));
 }
 
 function load(): Progress {
@@ -134,8 +138,9 @@ export const skipped = (p: Progress, kind: string) => (p.settings.mapMode === 's
 /** The decks a session covers: the ones passed in, else the Today-screen pick, else everything you're learning. */
 export function sessionDecks(p: Progress, nodes?: string[]) {
   if (nodes) return nodes;
-  const pick = p.settings.sessionNodes?.filter(n => p.active.includes(n));
-  return pick ?? p.active;
+  const active = activeNodes(p);
+  const pick = p.settings.sessionNodes?.filter(n => active.includes(n));
+  return pick ?? active;
 }
 
 export function buildQueue(ds: Dataset, p: Progress, nodes?: string[]): { due: CardRef[]; fresh: CardRef[] } {

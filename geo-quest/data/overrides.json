@@ -17,6 +17,9 @@
   "Q907112": { "status": "disputed", "note": "Breakaway region of Moldova, unrecognised", "region": "Europe", "subregion": "Eastern Europe" }
  },
 
+ "Q35581": { "capital": { "id": "Q37951", "name": "Sapporo", "wiki": "Sapporo", "image": null, "lat": 43.062, "lon": 141.354 }, "_why": "Wikidata has no capital (P36) for Hokkaidō" },
+ "Q1490": { "capitalNote": "Tokyo is a metropolis, not one city: its government sits in Shinjuku" },
+
  "Q148": { "name": "China" },
  "Q408": { "highestNote": "On remote Heard Island, an Australian external territory — the mainland's highest is Mount Kosciuszko (2,228 m)" },
  "Q1006": { "largestCity": "Conakry", "_why": "GeoNames lists the Camayenne district of Conakry separately" },
