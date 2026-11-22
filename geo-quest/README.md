@@ -13,6 +13,15 @@ world map fill in as you master it.
 - **Map labels**: hover (or tap on a phone) for names and capitals; layer toggles for oceans and China's provinces.
 - Line icons instead of emoji; sound now works on phones (audio is unlocked on first tap; plays even with the silent switch on while Sound is enabled).
 
+## Local names (v0.3)
+
+- China's provinces and their capitals show **Chinese characters + Hanyu Pinyin** (山西 Shānxī · 太原 Tàiyuán).
+  Characters come from Wikidata; pinyin with tone marks is generated from them at sync time (`pinyin-pro`).
+- Countries and capitals show their name in the local language and script after each answer
+  (Deutschland, 日本 · 東京, Ελλάδα · Αθήνα, ישראל). Toggle in Settings. Native country names come from the
+  `world-countries` dataset; capitals' native names from Wikidata. `nativeLangs` in `data/overrides.json`
+  sets which language comes first where it matters (e.g. Hebrew before Arabic for Israel).
+
 ## What was in v0.1
 
 - **203 countries**: all 193 UN members, the 2 UN observer states (Vatican City, Palestine),

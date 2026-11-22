@@ -1,6 +1,11 @@
+export interface NativeName { name: string; lang: string }
+export interface Chinese { han: string; pinyin: string }
+
 export interface Capital {
   id: string; name: string; preferred: boolean; role: string | null;
   image: string | null; lon?: number; lat?: number; wiki: string | null;
+  native?: NativeName[];   // the city's name in the country's own language(s)
+  zh?: Chinese | null;     // for China's provincial capitals
 }
 
 export type Status = 'un' | 'observer' | 'disputed';
@@ -26,6 +31,8 @@ export interface Place {
   capitals: Capital[];
   capitalAnswer: string | null;
   capitalNote?: string | null;
+  native?: NativeName[];   // e.g. Deutschland (German), 日本 (Japanese)
+  zh?: Chinese | null;     // China's provinces: 山西 Shānxī
 }
 export type Country = Place;
 

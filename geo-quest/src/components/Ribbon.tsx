@@ -50,6 +50,10 @@ export function Ribbon({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) 
             <input type="range" min={0} max={50} step={5} value={s.newPerDay} onChange={e => set('newPerDay', +e.target.value)} />
             <b>{s.newPerDay}</b>
           </label>
+          <label className="check">
+            <input type="checkbox" checked={s.nativeNames} onChange={e => set('nativeNames', e.target.checked)} />
+            Show names in the local language (Deutschland, 日本, Ελλάδα) after each answer — Chinese characters & pinyin always show for China
+          </label>
           <div className="menu-row">
             <span>Backup / move to another device</span>
             <button className="btn small" onClick={download}>Download backup</button>

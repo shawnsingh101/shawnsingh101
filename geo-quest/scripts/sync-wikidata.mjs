@@ -9,6 +9,7 @@
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
+import { pinyin } from 'pinyin-pro';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -118,6 +119,49 @@ for (const b of await sparql(CAPITAL_Q.replace('%IDS%', ids))) {
   });
 }
 
+// ---- names in the local language & script ----------------------------------------
+// Countries: the curated native names from the world-countries dataset (e.g. Deutschland,
+// 日本, مصر). Capitals: the city's Wikidata label in those same languages.
+const native = (c, name) => {
+  const wcc = c.iso3 && byIso3[c.iso3];
+  if (!wcc?.name.native) return [];
+  const out = [];
+  // Main language first where the dataset's alphabetical order would mislead (data/overrides.json → nativeLangs).
+  const order = overrides[c.id]?.nativeLangs;
+  const entries = Object.entries(wcc.name.native).filter(([l]) => !order || order.includes(l))
+    .sort(([a], [b]) => (order ? order.indexOf(a) - order.indexOf(b) : 0));
+  for (const [lang, n] of entries) {
+    if (n.common.toLowerCase() === name.toLowerCase() || out.some(o => o.name === n.common)) continue;
+    out.push({ name: n.common, lang: wcc.languages?.[lang] ?? lang, code: lang });
+  }
+  return out.slice(0, 3);
+};
+for (const c of countries.values()) c.native = native(c, c.name);
+
+const iso3s = [...new Set([...countries.values()].flatMap(c => c.native.map(n => n.code)))];
+const langRows = await sparql(`SELECT ?iso ?code WHERE { VALUES ?iso { ${iso3s.map(x => `"${x}"`).join(' ')} } ?l wdt:P220 ?iso ; wdt:P424 ?code . }`);
+const wikiCode = {};
+for (const b of langRows) wikiCode[v(b, 'iso')] ??= v(b, 'code');
+const codeFor = (c, iso) => (iso === 'zho' ? (c.id === 'Q865' ? 'zh-hant' : 'zh-hans') : wikiCode[iso]);
+const capIds = [...new Set([...countries.values()].flatMap(c => c.capitals.map(x => x.id)))];
+const capLabels = {};
+const codes = [...new Set([...countries.values()].flatMap(c => c.native.map(n => codeFor(c, n.code))).filter(Boolean))];
+for (const b of await sparql(`SELECT ?c ?l WHERE { VALUES ?c { ${capIds.map(q => `wd:${q}`).join(' ')} } ?c rdfs:label ?l FILTER(lang(?l) IN (${codes.map(x => `"${x}"`).join(',')})) }`)) {
+  (capLabels[qid(v(b, 'c'))] ??= {})[b.l['xml:lang']] = v(b, 'l');
+}
+for (const c of countries.values()) {
+  for (const cap of c.capitals) {
+    const out = [];
+    for (const n of c.native) {
+      let l = capLabels[cap.id]?.[codeFor(c, n.code)];
+      if (l && /^(zho|jpn)$/.test(n.code) && l.length > 2) l = l.replace(/[市都]$/, ''); // 北京市 → 北京, 東京都 → 東京
+      if (l && l.toLowerCase() !== cap.name.toLowerCase() && !out.some(o => o.name === l)) out.push({ name: l, lang: n.lang });
+    }
+    cap.native = out;
+  }
+  c.native = c.native.map(({ name, lang }) => ({ name, lang }));
+}
+
 // Build the human sentence for the capital answer. Overrides only apply while
 // Wikidata still lists exactly the capitals the override was written for; if
 // Wikidata changes, the override is ignored and flagged so it never goes stale.
@@ -200,6 +244,27 @@ for (const b of await sparql(CAPITAL_Q.replace('%IDS%', [...cn.keys()].map(q => 
     image: file(v(b, 'capImg')) || null, ...point(v(b, 'capCoord')),
     wiki: v(b, 'capArticle') ? decodeURIComponent(v(b, 'capArticle').split('/wiki/')[1]) : null });
 }
+// Chinese characters (Wikidata) + Hanyu Pinyin with tone marks (generated from the characters).
+const shortHan = h => h.replace(/(维吾尔|壮族|回族)?自治区$|特别行政区$|省$|市$/, '');
+const PINYIN_FIX = { 内蒙古: 'Nèi Měnggǔ' };
+const toPinyin = h => {
+  if (PINYIN_FIX[h]) return PINYIN_FIX[h];
+  const syl = pinyin(h, { type: 'array' });
+  const s = syl.map((x, i) => (i && /^[aoeāáǎàōóǒòēéěè]/.test(x) ? "'" : '') + x).join('');
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+const hanIds = [...cn.keys(), ...[...cn.values()].flatMap(p => p.capitals.map(c => c.id))];
+const han = {};
+for (const b of await sparql(`SELECT ?p ?l WHERE { VALUES ?p { ${hanIds.map(q => `wd:${q}`).join(' ')} } ?p rdfs:label ?l FILTER(lang(?l) IN ("zh-hans","zh-cn","zh")) }`)) {
+  const id = qid(v(b, 'p')), lang = b.l['xml:lang'];
+  if (!han[id] || lang === 'zh-hans') han[id] = v(b, 'l');
+}
+const chinese = id => { if (!han[id]) return null; const h = shortHan(han[id]); return { han: h, pinyin: toPinyin(h) }; };
+for (const p of cn.values()) {
+  p.zh = chinese(p.id);
+  for (const c of p.capitals) c.zh = chinese(c.id);
+  if (!p.zh) warnings.push(`${p.name}: no Chinese label in Wikidata`);
+}
 for (const p of cn.values()) {
   const o = overrides[p.id];
   if (o?.name) p.name = o.name;
@@ -221,7 +286,8 @@ function diffAndWrite(path, list, fields) {
     for (const c of list) {
       const p = prevById[c.id];
       if (!p) { changes.push({ date: today, id: c.id, name: c.name, field: 'added', from: null, to: c.name }); continue; }
-      for (const f of fields) if (p[f] !== c[f]) changes.push({ date: today, id: c.id, name: c.name, field: f, from: p[f], to: c[f] });
+      const val = (x, f) => (f === 'zhHan' ? x.zh?.han : x[f]);
+      for (const f of fields) if (val(p, f) !== val(c, f)) changes.push({ date: today, id: c.id, name: c.name, field: f === 'zhHan' ? 'Chinese name' : f, from: val(p, f) ?? null, to: val(c, f) ?? null });
     }
     for (const p of prev) if (!ids.has(p.id)) changes.push({ date: today, id: p.id, name: p.name, field: 'removed', from: p.name, to: null });
   }
@@ -230,7 +296,7 @@ function diffAndWrite(path, list, fields) {
 const writers = [
   diffAndWrite(OUT, list, ['name', 'capitalAnswer', 'flag']),
   diffAndWrite(join(ROOT, 'public/data/water.json'), [...water.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name']),
-  diffAndWrite(join(ROOT, 'public/data/cn.json'), [...cn.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer']),
+  diffAndWrite(join(ROOT, 'public/data/cn.json'), [...cn.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'zhHan']),
 ];
 
 warnings.forEach(w => console.warn('⚠ ' + w));

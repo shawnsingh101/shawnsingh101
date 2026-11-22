@@ -30,6 +30,7 @@
     "@types/topojson-simplify": "^3.0.3",
     "@types/topojson-specification": "^1.0.5",
     "@vitejs/plugin-react": "^4.7.0",
+    "pinyin-pro": "^3.29.5",
     "topojson-server": "^3.0.1",
     "topojson-simplify": "^3.0.3",
     "typescript": "^7.0.2",

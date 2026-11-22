@@ -6,6 +6,7 @@ import type { Dataset } from '../types';
 import { WorldMap, type MapHit, type Tone } from './WorldMap';
 import { Flag, Picture } from './Picture';
 import { Icon } from './Icons';
+import { LocalName } from './Native';
 
 interface Item { ref: CardRef; isNew: boolean }
 
@@ -185,6 +186,14 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
               : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}>{f.answer}</span> : <span className="blank">{f.blank}</span>)}
             {f.post}
           </p>
+          {revealed && (
+            <div className="local">
+              {item.ref.kind.startsWith('capital') && cap ? <>
+                <LocalName place={c} capital={cap} showLang />
+                {item.ref.kind !== 'capital' && <LocalName place={c} showLang />}
+              </> : <LocalName place={c} showLang />}
+            </div>
+          )}
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
           {revealed && f.note && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
           {revealed && s.pictures && f.picture && <Picture {...f.picture} />}

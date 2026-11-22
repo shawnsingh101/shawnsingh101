@@ -16,11 +16,14 @@
  },
 
  "Q148": { "name": "China" },
+ "Q668": { "nativeLangs": ["hin"] },
+ "Q843": { "nativeLangs": ["urd"] },
+ "Q35":  { "nativeLangs": ["dan"] },
  "Q17269": { "name": "Tibet" },
  "Q29999": { "name": "Netherlands" },
 
  "Q750":  { "capitalsSeen": ["La Paz", "Sucre"], "capitalAnswer": "both La Paz (seat of government) and Sucre (constitutional capital)" },
- "Q258":  { "capitalsSeen": ["Bloemfontein", "Cape Town", "Pretoria"], "capitalAnswer": "split three ways: Pretoria (executive), Cape Town (legislative) and Bloemfontein (judicial)" },
+ "Q258":  { "nativeLangs": ["zul", "xho", "afr"], "capitalsSeen": ["Bloemfontein", "Cape Town", "Pretoria"], "capitalAnswer": "split three ways: Pretoria (executive), Cape Town (legislative) and Bloemfontein (judicial)" },
  "Q962":  { "capitalsSeen": ["Cotonou", "Porto-Novo"], "capitalAnswer": "Porto-Novo (official capital), though the government sits in Cotonou" },
  "Q1050": { "capitalsSeen": ["Lobamba", "Mbabane"], "capitalAnswer": "both Mbabane (administrative) and Lobamba (royal and legislative)" },
  "Q833":  { "capitalsSeen": ["Kuala Lumpur", "Putrajaya"], "capitalAnswer": "Kuala Lumpur (official capital), though the government sits in Putrajaya" },
@@ -28,5 +31,5 @@
  "Q805":  { "capitalsSeen": ["Aden", "Sanaa"], "capitalAnswer": "Sanaa (constitutional capital, held by the Houthis), with Aden as the recognised government's temporary capital" },
  "Q219060": { "capitalsSeen": ["East Jerusalem", "Ramallah"], "capitalAnswer": "East Jerusalem (proclaimed capital), with the government based in Ramallah" },
  "Q40362": { "capitalsSeen": ["Laayoune", "Tifariti"], "capitalAnswer": "Laayoune (claimed capital), with Tifariti as the temporary capital" },
- "Q801":  { "capitalsSeen": ["Jerusalem"], "capitalAnswer": "Jerusalem", "capitalNote": "Israel's capital status is disputed; most countries keep their embassies in Tel Aviv." }
+ "Q801":  { "nativeLangs": ["heb", "ara"], "capitalsSeen": ["Jerusalem"], "capitalAnswer": "Jerusalem", "capitalNote": "Israel's capital status is disputed; most countries keep their embassies in Tel Aviv." }
 }

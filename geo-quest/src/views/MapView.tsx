@@ -5,6 +5,7 @@ import { cardId, kindsFor } from '../cards';
 import { Icon, type IconName } from '../components/Icons';
 import type { Dataset, Place } from '../types';
 import { PlaceSheet } from './Atlas';
+import { LocalName } from '../components/Native';
 
 const SCALE = ['var(--m0)', 'var(--m1)', 'var(--m2)', 'var(--m3)'];
 
@@ -58,7 +59,8 @@ export function MapView({ ds }: { ds: Dataset }) {
   const tipBody = (pl: Place | null | undefined, name: string) => (
     <>
       {s.mapNames && <b>{pl?.name ?? name}</b>}
-      {s.mapCapitals && pl?.capitalAnswer && <span><Icon name="landmark" size={13} /> {pl.capitals.map(c => c.name).join(' / ')}</span>}
+      {s.mapNames && pl && <span className="local"><LocalName place={pl} /></span>}
+      {s.mapCapitals && pl?.capitalAnswer && <span><Icon name="landmark" size={13} /> {pl.capitals.map(c => c.name).join(' / ')} {pl.capitals[0] && <span className="local inline"><LocalName place={pl} capital={pl.capitals[0]} /></span>}</span>}
       {s.mapCapitals && !s.mapNames && !pl?.capitalAnswer && <span className="muted">{pl?.name ?? name}</span>}
     </>
   );

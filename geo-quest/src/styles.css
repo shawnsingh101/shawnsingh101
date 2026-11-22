@@ -295,3 +295,19 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
   .map-toggles { right: .75rem; }
   .node-stats b { font-size: 1.1rem; }
 }
+
+/* ---- local-language names ---- */
+.local { display: flex; flex-wrap: wrap; gap: .3rem .9rem; margin-top: .55rem; color: var(--muted); }
+.local:empty { display: none; }
+.local.inline { display: inline-flex; margin: 0 0 0 .3rem; font-weight: 400; }
+.zh { display: inline-flex; align-items: baseline; gap: .45rem; }
+.zh .han { font-size: 1.35rem; color: var(--ink); font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif; letter-spacing: .04em; }
+.zh .py { font-size: 1rem; font-style: italic; color: var(--accent); }
+.local.inline .zh .han { font-size: 1rem; } .local.inline .zh .py { font-size: .85rem; }
+.natives { display: inline-flex; flex-wrap: wrap; gap: .2rem .8rem; }
+.native { font-size: 1.05rem; color: var(--ink); opacity: .8; }
+.native small { font-size: .68rem; margin-left: .3rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.local.inline .native { font-size: .9rem; }
+.map-tip .local { margin: 0; color: inherit; } .map-tip .native, .map-tip .zh .han { color: inherit; font-size: .95rem; } .map-tip .zh .py { color: var(--gold); font-size: .85rem; }
+.menu label.check { align-items: flex-start; gap: .5rem; flex-wrap: nowrap; font-size: .9rem; }
+.menu label.check input { margin-top: .25rem; accent-color: var(--accent); }

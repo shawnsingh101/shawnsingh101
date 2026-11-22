@@ -20,9 +20,17 @@
      "image": "Hefei montage1.png",
      "lon": 117.281,
      "lat": 31.864,
-     "wiki": "Hefei"
+     "wiki": "Hefei",
+     "zh": {
+      "han": "合肥",
+      "pinyin": "Héféi"
+     }
     }
    ],
+   "zh": {
+    "han": "安徽",
+    "pinyin": "Ānhuī"
+   },
    "capitalAnswer": "Hefei"
   },
   {
@@ -36,6 +44,10 @@
    "group": "cn",
    "type": "municipality",
    "capitals": [],
+   "zh": {
+    "han": "北京",
+    "pinyin": "Běijīng"
+   },
    "capitalAnswer": null
   },
   {
@@ -49,6 +61,10 @@
    "group": "cn",
    "type": "municipality",
    "capitals": [],
+   "zh": {
+    "han": "重庆",
+    "pinyin": "Chóngqìng"
+   },
    "capitalAnswer": null
   },
   {
@@ -70,9 +86,17 @@
      "image": "Fuzhou Taixi CBD.jpg",
      "lon": 119.292,
      "lat": 26.077,
-     "wiki": "Fuzhou"
+     "wiki": "Fuzhou",
+     "zh": {
+      "han": "福州",
+      "pinyin": "Fúzhōu"
+     }
     }
    ],
+   "zh": {
+    "han": "福建",
+    "pinyin": "Fújiàn"
+   },
    "capitalAnswer": "Fuzhou"
   },
   {
@@ -94,9 +118,17 @@
      "image": "兰州皋兰山201905.jpg",
      "lon": 103.832,
      "lat": 36.062,
-     "wiki": "Lanzhou"
+     "wiki": "Lanzhou",
+     "zh": {
+      "han": "兰州",
+      "pinyin": "Lánzhōu"
+     }
     }
    ],
+   "zh": {
+    "han": "甘肃",
+    "pinyin": "Gānsù"
+   },
    "capitalAnswer": "Lanzhou"
   },
   {
@@ -118,9 +150,17 @@
      "image": "Canton Tower 20220626 (cropped).jpg",
      "lon": 113.26,
      "lat": 23.13,
-     "wiki": "Guangzhou"
+     "wiki": "Guangzhou",
+     "zh": {
+      "han": "广州",
+      "pinyin": "Guǎngzhōu"
+     }
     }
    ],
+   "zh": {
+    "han": "广东",
+    "pinyin": "Guǎngdōng"
+   },
    "capitalAnswer": "Guangzhou"
   },
   {
@@ -142,9 +182,17 @@
      "image": "Nanning Seen from Longxiang Tower.jpg",
      "lon": 108.315,
      "lat": 22.819,
-     "wiki": "Nanning"
+     "wiki": "Nanning",
+     "zh": {
+      "han": "南宁",
+      "pinyin": "Nánníng"
+     }
     }
    ],
+   "zh": {
+    "han": "广西",
+    "pinyin": "Guǎngxī"
+   },
    "capitalAnswer": "Nanning"
   },
   {
@@ -166,9 +214,17 @@
      "image": "Guiyang montage 2019.png",
      "lon": 106.708,
      "lat": 26.579,
-     "wiki": "Guiyang"
+     "wiki": "Guiyang",
+     "zh": {
+      "han": "贵阳",
+      "pinyin": "Guìyáng"
+     }
     }
    ],
+   "zh": {
+    "han": "贵州",
+    "pinyin": "Guìzhōu"
+   },
    "capitalAnswer": "Guiyang"
   },
   {
@@ -190,9 +246,17 @@
      "image": "Haikou skyline 6 - 2009 09 07.jpg",
      "lon": 110.32,
      "lat": 20.02,
-     "wiki": "Haikou"
+     "wiki": "Haikou",
+     "zh": {
+      "han": "海口",
+      "pinyin": "Hǎikǒu"
+     }
     }
    ],
+   "zh": {
+    "han": "海南",
+    "pinyin": "Hǎinán"
+   },
    "capitalAnswer": "Haikou"
   },
   {
@@ -214,9 +278,17 @@
      "image": "石家庄解放广场.jpg",
      "lon": 114.51,
      "lat": 38.042,
-     "wiki": "Shijiazhuang"
+     "wiki": "Shijiazhuang",
+     "zh": {
+      "han": "石家庄",
+      "pinyin": "Shíjiāzhuāng"
+     }
     }
    ],
+   "zh": {
+    "han": "河北",
+    "pinyin": "Héběi"
+   },
    "capitalAnswer": "Shijiazhuang"
   },
   {
@@ -238,9 +310,17 @@
      "image": "26941-Harbin (49027716202).jpg",
      "lon": 126.633,
      "lat": 45.75,
-     "wiki": "Harbin"
+     "wiki": "Harbin",
+     "zh": {
+      "han": "哈尔滨",
+      "pinyin": "Hā'ěrbīn"
+     }
     }
    ],
+   "zh": {
+    "han": "黑龙江",
+    "pinyin": "Hēilóngjiāng"
+   },
    "capitalAnswer": "Harbin"
   },
   {
@@ -262,9 +342,17 @@
      "image": "20220812 Central Business District of Zhengdong New Area.jpg",
      "lon": 113.661,
      "lat": 34.749,
-     "wiki": "Zhengzhou"
+     "wiki": "Zhengzhou",
+     "zh": {
+      "han": "郑州",
+      "pinyin": "Zhèngzhōu"
+     }
     }
    ],
+   "zh": {
+    "han": "河南",
+    "pinyin": "Hénán"
+   },
    "capitalAnswer": "Zhengzhou"
   },
   {
@@ -278,6 +366,10 @@
    "group": "cn",
    "type": "special administrative region",
    "capitals": [],
+   "zh": {
+    "han": "香港",
+    "pinyin": "Xiānggǎng"
+   },
    "capitalAnswer": null
   },
   {
@@ -299,9 +391,17 @@
      "image": "武汉黄鹤楼俯瞰.jpg",
      "lon": 114.297,
      "lat": 30.595,
-     "wiki": "Wuhan"
+     "wiki": "Wuhan",
+     "zh": {
+      "han": "武汉",
+      "pinyin": "Wǔhàn"
+     }
     }
    ],
+   "zh": {
+    "han": "湖北",
+    "pinyin": "Húběi"
+   },
    "capitalAnswer": "Wuhan"
   },
   {
@@ -323,9 +423,17 @@
      "image": "Lushan Temple.jpg",
      "lon": 112.971,
      "lat": 28.199,
-     "wiki": "Changsha"
+     "wiki": "Changsha",
+     "zh": {
+      "han": "长沙",
+      "pinyin": "Chángshā"
+     }
     }
    ],
+   "zh": {
+    "han": "湖南",
+    "pinyin": "Húnán"
+   },
    "capitalAnswer": "Changsha"
   },
   {
@@ -347,9 +455,17 @@
      "image": "Hohhot Montage.png",
      "lon": 111.663,
      "lat": 40.815,
-     "wiki": "Hohhot"
+     "wiki": "Hohhot",
+     "zh": {
+      "han": "呼和浩特",
+      "pinyin": "Hūhéhàotè"
+     }
     }
    ],
+   "zh": {
+    "han": "内蒙古",
+    "pinyin": "Nèi Měnggǔ"
+   },
    "capitalAnswer": "Hohhot"
   },
   {
@@ -371,9 +487,17 @@
      "image": "Nanjing CBD from City Wall.jpg",
      "lon": 118.779,
      "lat": 32.061,
-     "wiki": "Nanjing"
+     "wiki": "Nanjing",
+     "zh": {
+      "han": "南京",
+      "pinyin": "Nánjīng"
+     }
     }
    ],
+   "zh": {
+    "han": "江苏",
+    "pinyin": "Jiāngsū"
+   },
    "capitalAnswer": "Nanjing"
   },
   {
@@ -395,9 +519,17 @@
      "image": "Nanchang city view (July 2017).jpg",
      "lon": 115.887,
      "lat": 28.684,
-     "wiki": "Nanchang"
+     "wiki": "Nanchang",
+     "zh": {
+      "han": "南昌",
+      "pinyin": "Nánchāng"
+     }
     }
    ],
+   "zh": {
+    "han": "江西",
+    "pinyin": "Jiāngxī"
+   },
    "capitalAnswer": "Nanchang"
   },
   {
@@ -419,9 +551,17 @@
      "image": "Changchun Montage 2017.png",
      "lon": 125.323,
      "lat": 43.88,
-     "wiki": "Changchun"
+     "wiki": "Changchun",
+     "zh": {
+      "han": "长春",
+      "pinyin": "Chángchūn"
+     }
     }
    ],
+   "zh": {
+    "han": "吉林",
+    "pinyin": "Jílín"
+   },
    "capitalAnswer": "Changchun"
   },
   {
@@ -443,9 +583,17 @@
      "image": "Skyline of Shenyang 3.jpg",
      "lon": 123.428,
      "lat": 41.803,
-     "wiki": "Shenyang"
+     "wiki": "Shenyang",
+     "zh": {
+      "han": "沈阳",
+      "pinyin": "Shěnyáng"
+     }
     }
    ],
+   "zh": {
+    "han": "辽宁",
+    "pinyin": "Liáoníng"
+   },
    "capitalAnswer": "Shenyang"
   },
   {
@@ -459,6 +607,10 @@
    "group": "cn",
    "type": "special administrative region",
    "capitals": [],
+   "zh": {
+    "han": "澳门",
+    "pinyin": "Àomén"
+   },
    "capitalAnswer": null
   },
   {
@@ -480,9 +632,17 @@
      "image": "Yinchuan Montage.jpg",
      "lon": 106.225,
      "lat": 38.485,
-     "wiki": "Yinchuan"
+     "wiki": "Yinchuan",
+     "zh": {
+      "han": "银川",
+      "pinyin": "Yínchuān"
+     }
     }
    ],
+   "zh": {
+    "han": "宁夏",
+    "pinyin": "Níngxià"
+   },
    "capitalAnswer": "Yinchuan"
   },
   {
@@ -504,9 +664,17 @@
      "image": "Xining Montage.jpg",
      "lon": 101.779,
      "lat": 36.624,
-     "wiki": "Xining"
+     "wiki": "Xining",
+     "zh": {
+      "han": "西宁",
+      "pinyin": "Xīníng"
+     }
     }
    ],
+   "zh": {
+    "han": "青海",
+    "pinyin": "Qīnghǎi"
+   },
    "capitalAnswer": "Xining"
   },
   {
@@ -528,9 +696,17 @@
      "image": "西安钟楼2020 (1).jpg",
      "lon": 108.942,
      "lat": 34.261,
-     "wiki": "Xi'an"
+     "wiki": "Xi'an",
+     "zh": {
+      "han": "西安",
+      "pinyin": "Xī'ān"
+     }
     }
    ],
+   "zh": {
+    "han": "陕西",
+    "pinyin": "Shǎnxī"
+   },
    "capitalAnswer": "Xi'an"
   },
   {
@@ -552,9 +728,17 @@
      "image": "Jinanfromqianfoshan.jpg",
      "lon": 116.983,
      "lat": 36.667,
-     "wiki": "Jinan"
+     "wiki": "Jinan",
+     "zh": {
+      "han": "济南",
+      "pinyin": "Jǐnán"
+     }
     }
    ],
+   "zh": {
+    "han": "山东",
+    "pinyin": "Shāndōng"
+   },
    "capitalAnswer": "Jinan"
   },
   {
@@ -568,6 +752,10 @@
    "group": "cn",
    "type": "municipality",
    "capitals": [],
+   "zh": {
+    "han": "上海",
+    "pinyin": "Shànghǎi"
+   },
    "capitalAnswer": null
   },
   {
@@ -589,9 +777,17 @@
      "image": "J84682 TempleYongzuo 20140717-155800.22 TempleYongzuoPEst.jpg",
      "lon": 112.542,
      "lat": 37.873,
-     "wiki": "Taiyuan"
+     "wiki": "Taiyuan",
+     "zh": {
+      "han": "太原",
+      "pinyin": "Tàiyuán"
+     }
     }
    ],
+   "zh": {
+    "han": "山西",
+    "pinyin": "Shānxī"
+   },
    "capitalAnswer": "Taiyuan"
   },
   {
@@ -613,9 +809,17 @@
      "image": "雪山下的成都市天际线 Chengdu skyline with snow capped mountains.jpg",
      "lon": 104.063,
      "lat": 30.66,
-     "wiki": "Chengdu"
+     "wiki": "Chengdu",
+     "zh": {
+      "han": "成都",
+      "pinyin": "Chéngdū"
+     }
     }
    ],
+   "zh": {
+    "han": "四川",
+    "pinyin": "Sìchuān"
+   },
    "capitalAnswer": "Chengdu"
   },
   {
@@ -629,6 +833,10 @@
    "group": "cn",
    "type": "municipality",
    "capitals": [],
+   "zh": {
+    "han": "天津",
+    "pinyin": "Tiānjīn"
+   },
    "capitalAnswer": null
   },
   {
@@ -650,9 +858,17 @@
      "image": "Lhasa from Potala.JPG",
      "lon": 91.141,
      "lat": 29.646,
-     "wiki": "Lhasa_(prefecture-level_city)"
+     "wiki": "Lhasa_(prefecture-level_city)",
+     "zh": {
+      "han": "拉萨",
+      "pinyin": "Lāsà"
+     }
     }
    ],
+   "zh": {
+    "han": "西藏",
+    "pinyin": "Xīzàng"
+   },
    "capitalAnswer": "Lhasa"
   },
   {
@@ -674,9 +890,17 @@
      "image": "Urumqi Skyline July 2019.jpg",
      "lon": 87.612,
      "lat": 43.822,
-     "wiki": "Ürümqi"
+     "wiki": "Ürümqi",
+     "zh": {
+      "han": "乌鲁木齐",
+      "pinyin": "Wūlǔmùqí"
+     }
     }
    ],
+   "zh": {
+    "han": "新疆",
+    "pinyin": "Xīnjiāng"
+   },
    "capitalAnswer": "Ürümqi"
   },
   {
@@ -698,9 +922,17 @@
      "image": "五华区与盘龙区天际线 - 航拍 - 2025-05-16 03.jpg",
      "lon": 102.706,
      "lat": 25.043,
-     "wiki": "Kunming"
+     "wiki": "Kunming",
+     "zh": {
+      "han": "昆明",
+      "pinyin": "Kūnmíng"
+     }
     }
    ],
+   "zh": {
+    "han": "云南",
+    "pinyin": "Yúnnán"
+   },
    "capitalAnswer": "Kunming"
   },
   {
@@ -722,9 +954,17 @@
      "image": "Huanglong & Broken Bridge - Hangzhou City & West Lake near Broken Bridge.jpg",
      "lon": 120.168,
      "lat": 30.25,
-     "wiki": "Hangzhou"
+     "wiki": "Hangzhou",
+     "zh": {
+      "han": "杭州",
+      "pinyin": "Hángzhōu"
+     }
     }
    ],
+   "zh": {
+    "han": "浙江",
+    "pinyin": "Zhèjiāng"
+   },
    "capitalAnswer": "Hangzhou"
   }
  ]

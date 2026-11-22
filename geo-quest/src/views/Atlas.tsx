@@ -5,6 +5,7 @@ import type { Dataset } from '../types';
 import { Flag, Picture } from '../components/Picture';
 import { Icon } from '../components/Icons';
 import { wikiUrl } from '../data';
+import { LocalName } from '../components/Native';
 
 const LEVEL = ['not started', 'learning', 'known', 'mastered'];
 const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -21,10 +22,11 @@ export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClo
         {c.layer === 'country' && <Flag file={c.flag ?? null} name={c.name} size={240} className="sheet-flag" />}
         <div>
           <h2>{c.name}</h2>
+          <div className="local"><LocalName place={c} showLang /></div>
           {c.officialName && c.officialName !== c.name && <p className="muted small">{c.officialName}</p>}
           {c.type && <p className="muted small">{cap1(c.type)} of China</p>}
           {c.layer === 'water' && <p className="muted small">{GROUPS.find(g => g.id === c.group)?.name}</p>}
-          {c.capitalAnswer && <p>Capital: <b>{c.capitalAnswer}</b></p>}
+          {c.capitalAnswer && <p>Capital: <b>{c.capitalAnswer}</b>{cap && <span className="local inline"> <LocalName place={c} capital={cap} /></span>}</p>}
           {c.statusNote && <p className="note"><Icon name="info" size={15} /> {c.statusNote}</p>}
           {c.capitalNote && <p className="note"><Icon name="info" size={15} /> {c.capitalNote}</p>}
         </div>
@@ -67,7 +69,7 @@ export function Atlas({ ds }: { ds: Dataset }) {
       {g && <div className="country-list">{placesIn(ds, g).sort((a, b) => a.name.localeCompare(b.name)).map(c => (
         <button key={c.id} className="country-row" onClick={() => setPlace(c.id)}>
           {c.layer === 'country' ? <Flag file={c.flag ?? null} name={c.name} size={80} /> : <span className="row-glyph"><Icon name={c.layer === 'water' ? 'wave' : 'map'} /></span>}
-          <span className="grow"><b>{c.name}</b><small>{c.capitalAnswer ? (c.capitalAnswer.length < 40 ? c.capitalAnswer : c.capitals.map(x => x.name).join(' / ')) : c.type ? cap1(c.type) : ''}</small></span>
+          <span className="grow"><b>{c.name} <span className="local inline"><LocalName place={c} /></span></b><small>{c.capitalAnswer ? (c.capitalAnswer.length < 40 ? c.capitalAnswer : c.capitals.map(x => x.name).join(' / ')) : c.type ? cap1(c.type) : ''}</small></span>
           {c.status && c.status !== 'un' && <span className="tag">{c.status}</span>}
         </button>))}</div>}
       {place && <PlaceSheet ds={ds} id={place} onClose={() => setPlace(null)} />}

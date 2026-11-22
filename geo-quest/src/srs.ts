@@ -13,6 +13,7 @@ export interface Settings {
   sound: boolean; gamify: boolean; pictures: boolean; locks: boolean;
   theme: 'auto' | 'light' | 'dark'; newPerDay: number;
   mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean;
+  nativeNames: boolean;
 }
 interface CardRec { c: Card; fp: string }
 interface Day { reviews: number; fresh: number; correct: number; bonus?: number }
@@ -31,7 +32,7 @@ export interface Progress {
 const KEY = 'geoquest:v1';
 const DEFAULT: Progress = {
   v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {},
-  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false },
+  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, nativeNames: true },
 };
 
 function revive(p: Progress): Progress {
