@@ -266,17 +266,6 @@
    "nameThe": "the Coral Sea"
   },
   {
-   "id": "Q143650",
-   "layer": "water",
-   "name": "Drake Passage",
-   "image": "CapeHorn.jpg",
-   "lon": -62.909,
-   "lat": -58.58,
-   "wiki": "Drake_Passage",
-   "group": "w-am",
-   "nameThe": "the Drake Passage"
-  },
-  {
    "id": "Q45341",
    "layer": "water",
    "name": "East China Sea",
