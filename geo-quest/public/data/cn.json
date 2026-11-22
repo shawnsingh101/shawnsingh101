@@ -48,7 +48,13 @@
     "han": "北京",
     "pinyin": "Běijīng"
    },
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "audio": {
+    "zh": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Beijing_pronunciation.ogg/Beijing_pronunciation.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/c8/Beijing_pronunciation.ogg"
+    ]
+   }
   },
   {
    "id": "Q11725",
@@ -65,7 +71,13 @@
     "han": "重庆",
     "pinyin": "Chóngqìng"
    },
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "audio": {
+    "zh": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ed/Chongqing.ogg/Chongqing.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/e/ed/Chongqing.ogg"
+    ]
+   }
   },
   {
    "id": "Q41705",
@@ -395,6 +407,12 @@
      "zh": {
       "han": "武汉",
       "pinyin": "Wǔhàn"
+     },
+     "audio": {
+      "zh-cn": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ac/Zh-Wuhan.ogg/Zh-Wuhan.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/a/ac/Zh-Wuhan.ogg"
+      ]
      }
     }
    ],
@@ -707,7 +725,13 @@
     "han": "陕西",
     "pinyin": "Shǎnxī"
    },
-   "capitalAnswer": "Xi'an"
+   "capitalAnswer": "Xi'an",
+   "audio": {
+    "zh": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/92/Zh-Shaanxi.ogg/Zh-Shaanxi.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/9/92/Zh-Shaanxi.ogg"
+    ]
+   }
   },
   {
    "id": "Q43407",

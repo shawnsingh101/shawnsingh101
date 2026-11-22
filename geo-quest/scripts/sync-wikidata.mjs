@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { pinyin } from 'pinyin-pro';
+import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -26,15 +27,15 @@ const ENDPOINT = 'https://query.wikidata.org/sparql';
 const UA = 'GeoQuestStudyApp/0.1 (personal flashcard app)';
 
 async function sparql(query) {
-  for (let attempt = 1; attempt <= 4; attempt++) {
+  for (let attempt = 1; attempt <= 5; attempt++) {
     const res = await fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'User-Agent': UA, Accept: 'application/sparql-results+json', 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({ query }),
     });
     if (res.ok) return (await res.json()).results.bindings;
-    console.warn(`Wikidata answered ${res.status}, retry ${attempt}/4 in ${15 * attempt}s`);
-    await new Promise(r => setTimeout(r, 15000 * attempt));
+    console.warn(`Wikidata answered ${res.status}, retry ${attempt}/5 in ${30 * attempt}s`);
+    await new Promise(r => setTimeout(r, 30000 * attempt));
   }
   throw new Error('Wikidata query failed after retries');
 }
@@ -159,7 +160,8 @@ for (const c of countries.values()) {
     }
     cap.native = out;
   }
-  c.native = c.native.map(({ name, lang }) => ({ name, lang }));
+  for (const cap of c.capitals) cap.native = cap.native.map(n => ({ ...n, code: codeFor(c, c.native.find(x => x.lang === n.lang)?.code) }));
+  c.native = c.native.map(({ name, lang, code }) => ({ name, lang, code: codeFor(c, code) }));
 }
 
 // Build the human sentence for the capital answer. Overrides only apply while
@@ -274,6 +276,45 @@ for (const p of cn.values()) {
   p.capitalAnswer = main.length ? main.map(x => x.name).join(' and ') : null;
   if (!p.capitalAnswer && (p.type === 'province' || p.type === 'autonomous region')) warnings.push(`${p.name}: no capital in Wikidata`);
 }
+
+
+// ---- pronunciation recordings (Wikidata P443, mostly native speakers via Lingua Libre) ----
+// Stored as { languageCode: [mp3 transcode, original] }; the app falls back to the
+// device's own text-to-speech voice when there's no recording.
+const commonsPath = f => { const n = f.replace(/ /g, '_'); const h = createHash('md5').update(n).digest('hex'); return { n, a: h[0], ab: h.slice(0, 2) }; };
+const audioUrls = f => {
+  const { n, a, ab } = commonsPath(f);
+  const orig = `https://upload.wikimedia.org/wikipedia/commons/${a}/${ab}/${encodeURIComponent(n)}`;
+  return /\.mp3$/i.test(n) ? [orig] : [`https://upload.wikimedia.org/wikipedia/commons/transcoded/${a}/${ab}/${encodeURIComponent(n)}/${encodeURIComponent(n)}.mp3`, orig];
+};
+async function attachAudio(items) {
+  const byId = new Map(items.map(x => [x.id, x]));
+  const ids = [...byId.keys()];
+  for (let i = 0; i < ids.length; i += 250) {
+    const rows = await sparql(`SELECT ?p ?a ?code WHERE { VALUES ?p { ${ids.slice(i, i + 250).map(q => `wd:${q}`).join(' ')} }
+      ?p p:P443 ?s . ?s ps:P443 ?a . OPTIONAL { ?s pq:P407 ?l . ?l wdt:P424 ?code } }`);
+    for (const b of rows) {
+      const it = byId.get(qid(v(b, 'p')));
+      const code = (v(b, 'code') || 'und').toLowerCase();
+      (it.audio ??= {})[code] ??= audioUrls(file(v(b, 'a')));
+    }
+  }
+}
+console.log('Querying Wikidata for pronunciations…');
+await attachAudio([...countries.values(), ...[...countries.values()].flatMap(c => c.capitals), ...cn.values(), ...[...cn.values()].flatMap(p => p.capitals)]);
+// Keep only the languages the app shows (the local-language names, Mandarin for China).
+const base = code => code.split('-')[0];
+const keep = (item, codes) => {
+  if (!item.audio) return;
+  const want = new Set(codes.map(base));
+  const kept = Object.fromEntries(Object.entries(item.audio).filter(([k]) => want.has(base(k))));
+  if (Object.keys(kept).length) item.audio = kept; else delete item.audio;
+};
+for (const c of countries.values()) {
+  keep(c, c.native.map(n => n.code).filter(Boolean));
+  for (const cap of c.capitals) keep(cap, (cap.native ?? []).map(n => n.code).filter(Boolean));
+}
+for (const p of cn.values()) { keep(p, ['zh']); for (const cap of p.capitals) keep(cap, ['zh']); }
 
 // ---- diff against previous snapshots ------------------------------------------------
 const today = new Date().toISOString().slice(0, 10);

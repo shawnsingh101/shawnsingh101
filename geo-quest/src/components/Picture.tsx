@@ -1,21 +1,41 @@
-import { useEffect, useState } from 'react';
-import { commonsUrl, wikiThumb, wikiUrl } from '../data';
+import { useEffect, useRef, useState } from 'react';
+import { commonsUrl, wikiGallery, wikiUrl, type Photo } from '../data';
 
-/** A photo from Wikimedia Commons (via Wikidata), falling back to the Wikipedia article's lead image. */
+/**
+ * Photos of a place: the Wikipedia article's infobox collage as a swipeable strip,
+ * falling back to the single Wikidata image if the article has no photos.
+ */
 export function Picture({ file, wiki, caption }: { file?: string | null; wiki?: string | null; caption: string }) {
-  const [src, setSrc] = useState<string | null>(file ? commonsUrl(file, 800) : null);
-  const [loaded, setLoaded] = useState(false);
+  const [photos, setPhotos] = useState<Photo[] | null>(null);
+  const [idx, setIdx] = useState(0);
+  const strip = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    setLoaded(false);
-    if (file) setSrc(commonsUrl(file, 800));
-    else if (wiki) { setSrc(null); wikiThumb(wiki).then(setSrc); }
-    else setSrc(null);
-  }, [file, wiki]);
-  if (!src) return null;
+    let live = true;
+    setPhotos(null); setIdx(0);
+    const fallback = file ? [{ src: commonsUrl(file, 800), caption }] : [];
+    if (!wiki) { setPhotos(fallback); return; }
+    wikiGallery(wiki).then(g => { if (live) setPhotos(g.length ? g : fallback); });
+    return () => { live = false; };
+  }, [file, wiki, caption]);
+
+  if (!photos?.length) return photos === null ? <div className="gallery loading" /> : null;
+  const go = (i: number) => { const el = strip.current; if (el) el.scrollTo({ left: i * el.clientWidth, behavior: 'smooth' }); };
+
   return (
-    <figure className={'picture' + (loaded ? ' loaded' : '')}>
-      <img src={src} alt={caption} onLoad={() => setLoaded(true)} onError={() => (wiki && file ? wikiThumb(wiki).then(setSrc) : setSrc(null))} />
-      <figcaption>{caption}{wiki && <> · <a href={wikiUrl(wiki)} target="_blank" rel="noreferrer">Wikipedia ↗</a></>}</figcaption>
+    <figure className="gallery" onClick={e => e.stopPropagation()}>
+      <div className="strip" ref={strip} onScroll={e => { const el = e.currentTarget; setIdx(Math.round(el.scrollLeft / el.clientWidth)); }}>
+        {photos.map((p, i) => <img key={p.src} src={p.src} alt={p.caption} loading={i ? 'lazy' : 'eager'} onLoad={e => e.currentTarget.classList.add('loaded')} />)}
+      </div>
+      {photos.length > 1 && <>
+        <button className="nav prev" aria-label="Previous photo" disabled={idx === 0} onClick={() => go(idx - 1)}>‹</button>
+        <button className="nav next" aria-label="Next photo" disabled={idx === photos.length - 1} onClick={() => go(idx + 1)}>›</button>
+        <div className="dots">{photos.map((_, i) => <i key={i} className={i === idx ? 'on' : ''} />)}</div>
+      </>}
+      <figcaption>
+        <span className="cap">{photos[idx]?.caption || caption}</span>
+        {wiki && <a href={wikiUrl(wiki)} target="_blank" rel="noreferrer">Wikipedia ↗</a>}
+      </figcaption>
     </figure>
   );
 }

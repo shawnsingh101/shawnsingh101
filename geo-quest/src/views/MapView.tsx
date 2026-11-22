@@ -59,8 +59,8 @@ export function MapView({ ds }: { ds: Dataset }) {
   const tipBody = (pl: Place | null | undefined, name: string) => (
     <>
       {s.mapNames && <b>{pl?.name ?? name}</b>}
-      {s.mapNames && pl && <span className="local"><LocalName place={pl} /></span>}
-      {s.mapCapitals && pl?.capitalAnswer && <span><Icon name="landmark" size={13} /> {pl.capitals.map(c => c.name).join(' / ')} {pl.capitals[0] && <span className="local inline"><LocalName place={pl} capital={pl.capitals[0]} /></span>}</span>}
+      {s.mapNames && pl && <span className="local"><LocalName place={pl} voice={!!tip?.touch} /></span>}
+      {s.mapCapitals && pl?.capitalAnswer && <span><Icon name="landmark" size={13} /> {pl.capitals.map(c => c.name).join(' / ')} {pl.capitals[0] && <span className="local inline"><LocalName place={pl} capital={pl.capitals[0]} voice={!!tip?.touch} /></span>}</span>}
       {s.mapCapitals && !s.mapNames && !pl?.capitalAnswer && <span className="muted">{pl?.name ?? name}</span>}
     </>
   );

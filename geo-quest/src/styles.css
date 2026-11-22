@@ -263,8 +263,8 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .medal-big { width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); border: 1px solid var(--line); color: var(--right); margin-bottom: .4rem; }
 .medal-big.gold { color: #c9971c; border-color: #e8c66a; background: color-mix(in srgb, var(--gold) 15%, var(--surface)); }
 .score { font-family: var(--serif); font-size: 2.4rem; margin: 0; } .score span { font-size: 1.2rem; color: var(--muted); }
-.missed { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: .8rem 1rem; max-width: 520px; width: 100%; max-height: 40dvh; overflow: auto; }
-.missed ul { margin: .4rem 0 0; padding-left: 1.1rem; } .missed li { margin: .25rem 0; font-size: .92rem; }
+.missed-list { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: .8rem 1rem; max-width: 520px; width: 100%; max-height: 40dvh; overflow: auto; }
+.missed-list ul { margin: .4rem 0 0; padding-left: 1.1rem; } .missed-list li { margin: .25rem 0; font-size: .92rem; }
 .grades.two { grid-template-columns: 1fr 1fr; }
 
 .quiz { display: grid; gap: 1.2rem; }
@@ -311,3 +311,38 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .map-tip .local { margin: 0; color: inherit; } .map-tip .native, .map-tip .zh .han { color: inherit; font-size: .95rem; } .map-tip .zh .py { color: var(--gold); font-size: .85rem; }
 .menu label.check { align-items: flex-start; gap: .5rem; flex-wrap: nowrap; font-size: .9rem; }
 .menu label.check input { margin-top: .25rem; accent-color: var(--accent); }
+
+.map-g { animation: mapfade .35s ease; }
+@keyframes mapfade { from { opacity: 0; } }
+
+/* ---- photo gallery ---- */
+.gallery { position: relative; margin: 1rem 0 0; border-radius: 14px; overflow: hidden; background: var(--line); }
+.gallery.loading { height: 200px; animation: pulse 1.2s ease-in-out infinite alternate; }
+@keyframes pulse { to { opacity: .5; } }
+.gallery .strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.gallery .strip::-webkit-scrollbar { display: none; }
+.gallery img { flex: 0 0 100%; width: 100%; height: 240px; object-fit: cover; scroll-snap-align: center; opacity: 0; transition: opacity .4s; background: var(--line); }
+.gallery img.loaded { opacity: 1; }
+.gallery .nav { position: absolute; top: 120px; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; border: 0; background: rgba(0,0,0,.45); color: #fff; font-size: 1.3rem; line-height: 1; display: grid; place-items: center; }
+.gallery .nav:disabled { opacity: 0; pointer-events: none; }
+.gallery .prev { left: .5rem; } .gallery .next { right: .5rem; }
+.gallery .dots { position: absolute; top: 216px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px; pointer-events: none; }
+.gallery .dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.55); }
+.gallery .dots i.on { background: #fff; }
+.gallery figcaption { display: flex; gap: .6rem; justify-content: space-between; align-items: baseline; font-size: .78rem; color: var(--muted); padding: .45rem .7rem; background: var(--surface); }
+.gallery figcaption .cap { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gallery figcaption a { flex: none; }
+@media (max-width: 760px) {
+  .study.with-map .gallery img { height: 150px; }
+  .study.with-map .gallery .nav { top: 75px; }
+  .study.with-map .gallery .dots { top: 128px; }
+}
+
+/* ---- pronunciation & keyboard hints ---- */
+.say { border: 0; background: transparent; color: var(--muted); padding: .15rem .3rem; margin-left: .15rem; border-radius: 6px; display: inline-grid; place-items: center; vertical-align: middle; }
+.say:hover { color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.say.rec { color: var(--accent); }
+.map-tip .say { color: inherit; }
+.grade { position: relative; }
+.grade kbd { font: 600 .62rem/1 var(--font); opacity: .75; margin-top: .25rem; border: 1px solid rgba(255,255,255,.5); border-radius: 4px; padding: .12rem .3rem; }
+@media (hover: none), (pointer: coarse) { .grade kbd, .kbd-only { display: none; } }

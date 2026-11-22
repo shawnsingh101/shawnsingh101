@@ -35,19 +35,38 @@ interface Props {
   onTap?: (hit: MapHit) => void;
   onHover?: (hit: MapHit | null, x: number, y: number) => void; // mouse only
   className?: string;
+  recenter?: boolean;                   // rotate the globe so the focused region is centred
 }
 
 interface Shape { key: string; name: string; placeId: string | null; layer: Layer; d: string; bounds: [[number, number], [number, number]]; centroid: [number, number] }
 interface Dot { placeId: string; x: number; y: number }
 
-const projection = geoEqualEarth().fitSize([W, H], { type: 'Sphere' });
-const path = geoPath(projection);
+// The map's centre line can move: studying China re-centres the map on ~105°E so the
+// region sits upright in the middle instead of slanting at the edge of the world.
+const makeProjection = (lambda: number) => geoEqualEarth().rotate([-lambda, 0]).fitSize([W, H], { type: 'Sphere' });
+type Proj = ReturnType<typeof makeProjection>;
 
-function toShapes(topo: Topology, layer: Layer, resolve: (f: Feature<Geometry, Record<string, string>>) => string | null): Shape[] {
-  const objName = Object.keys(topo.objects)[0];
-  const feats = (feature(topo, topo.objects[objName] as GeometryCollection) as unknown as { features: Feature<Geometry, Record<string, string>>[] }).features
-    .filter(f => f.properties?.name !== 'Antarctica');
-  return feats.map((f, i) => {
+type Feat = Feature<Geometry, Record<string, string>>;
+const featCache = new WeakMap<Topology, Feat[]>();
+function features(topo: Topology): Feat[] {
+  if (!featCache.has(topo)) {
+    const objName = Object.keys(topo.objects)[0];
+    featCache.set(topo, (feature(topo, topo.objects[objName] as GeometryCollection) as unknown as { features: Feat[] }).features
+      .filter(f => f.properties?.name !== 'Antarctica'));
+  }
+  return featCache.get(topo)!;
+}
+
+/** Average longitude of a set of places, done on the circle so the Pacific works. */
+function meanLon(lons: number[]) {
+  if (!lons.length) return 0;
+  let x = 0, y = 0;
+  for (const l of lons) { x += Math.cos((l * Math.PI) / 180); y += Math.sin((l * Math.PI) / 180); }
+  return Math.round((Math.atan2(y, x) * 180) / Math.PI / 5) * 5; // snap to 5° so small moves don't re-draw
+}
+
+function toShapes(topo: Topology, layer: Layer, path: ReturnType<typeof geoPath>, resolve: (f: Feat) => string | null): Shape[] {
+  return features(topo).map((f, i) => {
     // Frame and label each place by its largest piece (France = mainland France, not French Guiana).
     let main: Feature<Geometry> | Geometry = f;
     if (f.geometry?.type === 'MultiPolygon') {
@@ -62,7 +81,7 @@ function toShapes(topo: Topology, layer: Layer, resolve: (f: Feature<Geometry, R
   });
 }
 
-export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], focus, dim, onTap, onHover, className }: Props) {
+export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], focus, dim, onTap, onHover, className, recenter = false }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown>>();
@@ -94,12 +113,17 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
     return m;
   }, [ds]);
 
+  const [lambda, setLambda] = useState(0);
+  const recentered = useRef(false);
+  const projection = useMemo(() => makeProjection(lambda), [lambda]);
+  const path = useMemo(() => geoPath(projection), [projection]);
+
   const shapes = useMemo(() => {
     const out: Partial<Record<Layer, Shape[]>> = {};
-    if (topos.country) out.country = toShapes(topos.country, 'country', f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
-    for (const l of ['water', 'cn'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
+    if (topos.country) out.country = toShapes(topos.country, 'country', path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
+    for (const l of ['water', 'cn'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
     return out;
-  }, [topos, shapeToCountry, ds]);
+  }, [topos, shapeToCountry, ds, path]);
 
   const visible = useMemo(() => wanted.flatMap(l => shapes[l] ?? []), [shapes, wanted.join()]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -116,7 +140,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
       if (p && isFinite(p[0])) out.push({ placeId: c.id, x: p[0], y: p[1] });
     }
     return out;
-  }, [visible, ds, layers.join()]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [visible, ds, layers.join(), projection]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Pan & pinch-zoom.
   useEffect(() => {
@@ -136,6 +160,11 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const ready = !!shapes.country && layers.every(l => shapes[l]);
   useEffect(() => {
     if (!ready || !svgRef.current || !zoomRef.current || !size.w) return;
+    if (recenter) {
+      const lons = (focus?.ids ?? []).map(id => ds.byId.get(id)?.lon).filter((l): l is number => l != null);
+      const want = focus ? meanLon(lons) : lambda;
+      if (want !== lambda) { recentered.current = true; setLambda(want); return; } // re-runs once the map is re-drawn
+    }
     const k0 = fitScale(size);
     let target = home();
     if (focus && focus.ids.length) {
@@ -144,8 +173,8 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
       for (const id of focus.ids) {
         const c = ds.byId.get(id);
         const s = visible.find(s => s.placeId === id);
-        const huge = s && s.bounds[1][0] - s.bounds[0][0] > W * 0.3; // e.g. Russia, the Pacific
-        if (s && !huge) { add(s.bounds[0][0], s.bounds[0][1]); add(s.bounds[1][0], s.bounds[1][1]); }
+        // Frame the whole shape: big things (the Arctic Ocean, Russia) simply stay zoomed out.
+        if (s) { add(s.bounds[0][0], s.bounds[0][1]); add(s.bounds[1][0], s.bounds[1][1]); }
         else if (c?.lon != null) { const p = projection([c.lon, c.lat!]); if (p) add(p[0], p[1]); }
       }
       if (isFinite(x0)) {
@@ -156,12 +185,15 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
         target = zoomIdentity.translate(size.w / 2 - k * cx, size.h / 2 - k * cy).scale(k);
       }
     }
-    setAnimating(true);
+    // Right after re-centring, jump straight there (the map fades in) instead of flying from the old view.
+    const jump = recentered.current;
+    recentered.current = false;
+    setAnimating(!jump);
     select(svgRef.current).call(zoomRef.current.transform, target);
     const tm = setTimeout(() => setAnimating(false), 700);
     return () => clearTimeout(tm);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [focus?.key, ready, size.w, size.h]);
+  }, [focus?.key, ready, size.w, size.h, lambda]);
 
   const k = t.k;
   const nameOf = (s: { placeId: string | null; name: string }) => (s.placeId ? ds.byId.get(s.placeId)!.name : s.name);
@@ -180,7 +212,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   return (
     <div ref={wrap} className={'worldmap ' + (className ?? '')}>
       <svg ref={svgRef} width={size.w} height={size.h} role="img" aria-label="World map">
-        <g style={{ transform: `translate(${t.x}px, ${t.y}px) scale(${k})`, transformOrigin: '0 0', transition: animating ? 'transform 650ms cubic-bezier(.3,.7,.2,1)' : 'none' }}>
+        <g key={lambda} className="map-g" style={{ transform: `translate(${t.x}px, ${t.y}px) scale(${k})`, transformOrigin: '0 0', transition: animating ? 'transform 650ms cubic-bezier(.3,.7,.2,1)' : 'none' }}>
           <path d={path({ type: 'Sphere' }) ?? ''} className="ocean" />
           {shapes.water && layers.includes('water') && shapes.water.map(s => shapeEl(s, 'water'))}
           <path d={path(geoGraticule10()) ?? ''} className="graticule" />

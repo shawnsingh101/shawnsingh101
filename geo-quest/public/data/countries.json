@@ -65,11 +65,13 @@
    "native": [
     {
      "name": "افغانستان",
-     "lang": "Dari"
+     "lang": "Dari",
+     "code": "fa-af"
     },
     {
      "name": "Owganystan",
-     "lang": "Turkmen"
+     "lang": "Turkmen",
+     "code": "tk"
     }
    ],
    "capitalAnswer": "Kabul"
@@ -107,7 +109,8 @@
    "native": [
     {
      "name": "Shqipëria",
-     "lang": "Albanian"
+     "lang": "Albanian",
+     "code": "sq"
     }
    ],
    "capitalAnswer": "Tirana"
@@ -142,18 +145,32 @@
      "native": [
       {
        "name": "الجزائر العاصمة",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3d/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1.wav/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/3/3d/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1.wav"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "الجزائر",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
-   "capitalAnswer": "Algiers"
+   "capitalAnswer": "Algiers",
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/78/LL-Q13955_(ara)-Spotless_Mind1988-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1.wav/LL-Q13955_(ara)-Spotless_Mind1988-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/78/LL-Q13955_(ara)-Spotless_Mind1988-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1.wav"
+    ]
+   }
   },
   {
    "id": "Q228",
@@ -317,7 +334,8 @@
      "native": [
       {
        "name": "Երևան",
-       "lang": "Armenian"
+       "lang": "Armenian",
+       "code": "hy"
       }
      ]
     }
@@ -325,7 +343,8 @@
    "native": [
     {
      "name": "Հայաստան",
-     "lang": "Armenian"
+     "lang": "Armenian",
+     "code": "hy"
     }
    ],
    "capitalAnswer": "Yerevan"
@@ -393,7 +412,8 @@
      "native": [
       {
        "name": "Wean",
-       "lang": "Austro-Bavarian German"
+       "lang": "Austro-Bavarian German",
+       "code": "bar"
       }
      ]
     }
@@ -401,7 +421,8 @@
    "native": [
     {
      "name": "Österreich",
-     "lang": "Austro-Bavarian German"
+     "lang": "Austro-Bavarian German",
+     "code": "bar"
     }
    ],
    "capitalAnswer": "Vienna"
@@ -436,11 +457,13 @@
      "native": [
       {
        "name": "Bakı",
-       "lang": "Azerbaijani"
+       "lang": "Azerbaijani",
+       "code": "az"
       },
       {
        "name": "Баку",
-       "lang": "Russian"
+       "lang": "Russian",
+       "code": "ru"
       }
      ]
     }
@@ -448,14 +471,22 @@
    "native": [
     {
      "name": "Azərbaycan",
-     "lang": "Azerbaijani"
+     "lang": "Azerbaijani",
+     "code": "az"
     },
     {
      "name": "Азербайджан",
-     "lang": "Russian"
+     "lang": "Russian",
+     "code": "ru"
     }
    ],
-   "capitalAnswer": "Baku"
+   "capitalAnswer": "Baku",
+   "audio": {
+    "az": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/35/Az-az-Az%C9%99rbaycan.ogg/Az-az-Az%C9%99rbaycan.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/3/35/Az-az-Az%C9%99rbaycan.ogg"
+    ]
+   }
   },
   {
    "id": "Q778",
@@ -520,7 +551,8 @@
      "native": [
       {
        "name": "المنامة",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -528,7 +560,8 @@
    "native": [
     {
      "name": "البحرين",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Manama"
@@ -563,15 +596,23 @@
      "native": [
       {
        "name": "ঢাকা",
-       "lang": "Bengali"
+       "lang": "Bengali",
+       "code": "bn"
       }
-     ]
+     ],
+     "audio": {
+      "bn": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/53/LL-Q9610_(ben)-Titodutta-%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE.wav/LL-Q9610_(ben)-Titodutta-%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/5/53/LL-Q9610_(ben)-Titodutta-%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE.wav"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "বাংলাদেশ",
-     "lang": "Bengali"
+     "lang": "Bengali",
+     "code": "bn"
     }
    ],
    "capitalAnswer": "Dhaka"
@@ -639,11 +680,13 @@
      "native": [
       {
        "name": "Мінск",
-       "lang": "Belarusian"
+       "lang": "Belarusian",
+       "code": "be"
       },
       {
        "name": "Минск",
-       "lang": "Russian"
+       "lang": "Russian",
+       "code": "ru"
       }
      ]
     }
@@ -651,11 +694,13 @@
    "native": [
     {
      "name": "Белару́сь",
-     "lang": "Belarusian"
+     "lang": "Belarusian",
+     "code": "be"
     },
     {
      "name": "Беларусь",
-     "lang": "Russian"
+     "lang": "Russian",
+     "code": "ru"
     }
    ],
    "capitalAnswer": "Minsk"
@@ -690,15 +735,18 @@
      "native": [
       {
        "name": "Brüssel",
-       "lang": "German"
+       "lang": "German",
+       "code": "de"
       },
       {
        "name": "Bruxelles",
-       "lang": "French"
+       "lang": "French",
+       "code": "fr"
       },
       {
        "name": "Brussel",
-       "lang": "Dutch"
+       "lang": "Dutch",
+       "code": "nl"
       }
      ]
     }
@@ -706,15 +754,18 @@
    "native": [
     {
      "name": "Belgien",
-     "lang": "German"
+     "lang": "German",
+     "code": "de"
     },
     {
      "name": "Belgique",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     },
     {
      "name": "België",
-     "lang": "Dutch"
+     "lang": "Dutch",
+     "code": "nl"
     }
    ],
    "capitalAnswer": "Brussels"
@@ -749,7 +800,8 @@
      "native": [
       {
        "name": "Belmopán",
-       "lang": "Spanish"
+       "lang": "Spanish",
+       "code": "es"
       }
      ]
     }
@@ -757,7 +809,8 @@
    "native": [
     {
      "name": "Belice",
-     "lang": "Spanish"
+     "lang": "Spanish",
+     "code": "es"
     }
    ],
    "capitalAnswer": "Belmopan"
@@ -806,7 +859,8 @@
    "native": [
     {
      "name": "Bénin",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     }
    ],
    "capitalAnswer": "Porto-Novo (official capital), though the government sits in Cotonou",
@@ -842,7 +896,8 @@
      "native": [
       {
        "name": "ཐིམ་ཕུུུུ",
-       "lang": "Dzongkha"
+       "lang": "Dzongkha",
+       "code": "dz"
       }
      ]
     }
@@ -850,7 +905,8 @@
    "native": [
     {
      "name": "འབྲུག་ཡུལ་",
-     "lang": "Dzongkha"
+     "lang": "Dzongkha",
+     "code": "dz"
     }
    ],
    "capitalAnswer": "Thimphu"
@@ -885,7 +941,8 @@
      "native": [
       {
        "name": "Chuqiyapu",
-       "lang": "Aymara"
+       "lang": "Aymara",
+       "code": "ay"
       }
      ]
     },
@@ -901,11 +958,13 @@
      "native": [
       {
        "name": "Sukri",
-       "lang": "Aymara"
+       "lang": "Aymara",
+       "code": "ay"
       },
       {
        "name": "Chuqichaka",
-       "lang": "Quechua"
+       "lang": "Quechua",
+       "code": "qu"
       }
      ]
     }
@@ -913,15 +972,18 @@
    "native": [
     {
      "name": "Wuliwya",
-     "lang": "Aymara"
+     "lang": "Aymara",
+     "code": "ay"
     },
     {
      "name": "Volívia",
-     "lang": "Guaraní"
+     "lang": "Guaraní",
+     "code": "gn"
     },
     {
      "name": "Buliwya",
-     "lang": "Quechua"
+     "lang": "Quechua",
+     "code": "qu"
     }
    ],
    "capitalAnswer": "both La Paz (seat of government) and Sucre (constitutional capital)",
@@ -957,7 +1019,8 @@
      "native": [
       {
        "name": "Сарајево",
-       "lang": "Serbian"
+       "lang": "Serbian",
+       "code": "sr"
       }
      ]
     }
@@ -965,11 +1028,13 @@
    "native": [
     {
      "name": "Bosna i Hercegovina",
-     "lang": "Bosnian"
+     "lang": "Bosnian",
+     "code": "bs"
     },
     {
      "name": "Боснa и Херцеговина",
-     "lang": "Serbian"
+     "lang": "Serbian",
+     "code": "sr"
     }
    ],
    "capitalAnswer": "Sarajevo"
@@ -1040,10 +1105,17 @@
    "native": [
     {
      "name": "Brasil",
-     "lang": "Portuguese"
+     "lang": "Portuguese",
+     "code": "pt"
     }
    ],
-   "capitalAnswer": "Brasília"
+   "capitalAnswer": "Brasília",
+   "audio": {
+    "pt-br": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b5/Pt-br-Brasil.ogg/Pt-br-Brasil.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/b/b5/Pt-br-Brasil.ogg"
+    ]
+   }
   },
   {
    "id": "Q921",
@@ -1078,7 +1150,8 @@
    "native": [
     {
      "name": "Negara Brunei Darussalam",
-     "lang": "Malay"
+     "lang": "Malay",
+     "code": "ms"
     }
    ],
    "capitalAnswer": "Bandar Seri Begawan"
@@ -1113,7 +1186,8 @@
      "native": [
       {
        "name": "София",
-       "lang": "Bulgarian"
+       "lang": "Bulgarian",
+       "code": "bg"
       }
      ]
     }
@@ -1121,7 +1195,8 @@
    "native": [
     {
      "name": "България",
-     "lang": "Bulgarian"
+     "lang": "Bulgarian",
+     "code": "bg"
     }
    ],
    "capitalAnswer": "Sofia"
@@ -1192,7 +1267,8 @@
    "native": [
     {
      "name": "Uburundi",
-     "lang": "Kirundi"
+     "lang": "Kirundi",
+     "code": "rn"
     }
    ],
    "capitalAnswer": "Gitega"
@@ -1227,7 +1303,8 @@
      "native": [
       {
        "name": "ភ្នំពេញ",
-       "lang": "Khmer"
+       "lang": "Khmer",
+       "code": "km"
       }
      ]
     }
@@ -1235,7 +1312,8 @@
    "native": [
     {
      "name": "Kâmpŭchéa",
-     "lang": "Khmer"
+     "lang": "Khmer",
+     "code": "km"
     }
    ],
    "capitalAnswer": "Phnom Penh"
@@ -1273,7 +1351,8 @@
    "native": [
     {
      "name": "Cameroun",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     }
    ],
    "capitalAnswer": "Yaoundé"
@@ -1344,7 +1423,8 @@
    "native": [
     {
      "name": "Cabo Verde",
-     "lang": "Portuguese"
+     "lang": "Portuguese",
+     "code": "pt"
     }
    ],
    "capitalAnswer": "Praia"
@@ -1379,7 +1459,8 @@
      "native": [
       {
        "name": "Kötä gbätä tî Bangî",
-       "lang": "Sango"
+       "lang": "Sango",
+       "code": "sg"
       }
      ]
     }
@@ -1387,11 +1468,13 @@
    "native": [
     {
      "name": "République centrafricaine",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     },
     {
      "name": "Bêafrîka",
-     "lang": "Sango"
+     "lang": "Sango",
+     "code": "sg"
     }
    ],
    "capitalAnswer": "Bangui"
@@ -1426,11 +1509,13 @@
      "native": [
       {
        "name": "انجمينا",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       },
       {
        "name": "N'Djaména",
-       "lang": "French"
+       "lang": "French",
+       "code": "fr"
       }
      ]
     }
@@ -1438,11 +1523,13 @@
    "native": [
     {
      "name": "تشاد",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     },
     {
      "name": "Tchad",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     }
    ],
    "capitalAnswer": "N'Djamena"
@@ -1510,7 +1597,8 @@
      "native": [
       {
        "name": "北京",
-       "lang": "Chinese"
+       "lang": "Chinese",
+       "code": "zh-hans"
       }
      ]
     }
@@ -1518,7 +1606,8 @@
    "native": [
     {
      "name": "中国",
-     "lang": "Chinese"
+     "lang": "Chinese",
+     "code": "zh-hans"
     }
    ],
    "capitalAnswer": "Beijing"
@@ -1586,7 +1675,8 @@
      "native": [
       {
        "name": "موروني",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -1594,11 +1684,13 @@
    "native": [
     {
      "name": "جزر القمر",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     },
     {
      "name": "Comores",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     },
     {
      "name": "Komori",
@@ -1673,7 +1765,8 @@
    "native": [
     {
      "name": "Hrvatska",
-     "lang": "Croatian"
+     "lang": "Croatian",
+     "code": "hr"
     }
    ],
    "capitalAnswer": "Zagreb"
@@ -1741,11 +1834,13 @@
      "native": [
       {
        "name": "Λευκωσία",
-       "lang": "Greek"
+       "lang": "Greek",
+       "code": "el"
       },
       {
        "name": "Lefkoşa",
-       "lang": "Turkish"
+       "lang": "Turkish",
+       "code": "tr"
       }
      ]
     }
@@ -1753,11 +1848,13 @@
    "native": [
     {
      "name": "Κύπρος",
-     "lang": "Greek"
+     "lang": "Greek",
+     "code": "el"
     },
     {
      "name": "Kıbrıs",
-     "lang": "Turkish"
+     "lang": "Turkish",
+     "code": "tr"
     }
    ],
    "capitalAnswer": "Nicosia"
@@ -1792,7 +1889,8 @@
      "native": [
       {
        "name": "Praha",
-       "lang": "Czech"
+       "lang": "Czech",
+       "code": "cs"
       }
      ]
     }
@@ -1800,10 +1898,17 @@
    "native": [
     {
      "name": "Česko",
-     "lang": "Czech"
+     "lang": "Czech",
+     "code": "cs"
     }
    ],
-   "capitalAnswer": "Prague"
+   "capitalAnswer": "Prague",
+   "audio": {
+    "cs": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d3/Cs-%C4%8Cesko.ogg/Cs-%C4%8Cesko.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Cs-%C4%8Cesko.ogg"
+    ]
+   }
   },
   {
    "id": "Q35",
@@ -1835,15 +1940,23 @@
      "native": [
       {
        "name": "København",
-       "lang": "Danish"
+       "lang": "Danish",
+       "code": "da"
       }
-     ]
+     ],
+     "audio": {
+      "da": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3d/Da-K%C3%B8benhavn.oga/Da-K%C3%B8benhavn.oga.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/3/3d/Da-K%C3%B8benhavn.oga"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "Danmark",
-     "lang": "Danish"
+     "lang": "Danish",
+     "code": "da"
     }
    ],
    "capitalAnswer": "Copenhagen"
@@ -1878,7 +1991,8 @@
      "native": [
       {
        "name": "جيبوتي",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -1886,7 +2000,8 @@
    "native": [
     {
      "name": "جيبوتي",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Djibouti"
@@ -1957,7 +2072,8 @@
    "native": [
     {
      "name": "República Dominicana",
-     "lang": "Spanish"
+     "lang": "Spanish",
+     "code": "es"
     }
    ],
    "capitalAnswer": "Santo Domingo"
@@ -1992,11 +2108,13 @@
      "native": [
       {
        "name": "Kinsasa",
-       "lang": "Kikongo"
+       "lang": "Kikongo",
+       "code": "kg"
       },
       {
        "name": "Kinsásá",
-       "lang": "Lingala"
+       "lang": "Lingala",
+       "code": "ln"
       }
      ]
     }
@@ -2004,15 +2122,18 @@
    "native": [
     {
      "name": "RD Congo",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     },
     {
      "name": "Repubilika ya Kongo Demokratiki",
-     "lang": "Kikongo"
+     "lang": "Kikongo",
+     "code": "kg"
     },
     {
      "name": "Republiki ya Kongó Demokratiki",
-     "lang": "Lingala"
+     "lang": "Lingala",
+     "code": "ln"
     }
    ],
    "capitalAnswer": "Kinshasa"
@@ -2080,7 +2201,8 @@
      "native": [
       {
        "name": "القاهرة",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -2088,7 +2210,8 @@
    "native": [
     {
      "name": "مصر",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Cairo"
@@ -2159,15 +2282,18 @@
    "native": [
     {
      "name": "Guinée équatoriale",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     },
     {
      "name": "Guiné Equatorial",
-     "lang": "Portuguese"
+     "lang": "Portuguese",
+     "code": "pt"
     },
     {
      "name": "Guinea Ecuatorial",
-     "lang": "Spanish"
+     "lang": "Spanish",
+     "code": "es"
     }
    ],
    "capitalAnswer": "Ciudad de la Paz"
@@ -2202,11 +2328,13 @@
      "native": [
       {
        "name": "أسمرة",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       },
       {
        "name": "ኣስመራ",
-       "lang": "Tigrinya"
+       "lang": "Tigrinya",
+       "code": "ti"
       }
      ]
     }
@@ -2214,11 +2342,13 @@
    "native": [
     {
      "name": "إريتريا",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     },
     {
      "name": "ኤርትራ",
-     "lang": "Tigrinya"
+     "lang": "Tigrinya",
+     "code": "ti"
     }
    ],
    "capitalAnswer": "Asmara"
@@ -2256,7 +2386,8 @@
    "native": [
     {
      "name": "Eesti",
-     "lang": "Estonian"
+     "lang": "Estonian",
+     "code": "et"
     }
    ],
    "capitalAnswer": "Tallinn"
@@ -2336,7 +2467,8 @@
      "native": [
       {
        "name": "አዲስ አበባ",
-       "lang": "Amharic"
+       "lang": "Amharic",
+       "code": "am"
       }
      ]
     }
@@ -2344,7 +2476,8 @@
    "native": [
     {
      "name": "ኢትዮጵያ",
-     "lang": "Amharic"
+     "lang": "Amharic",
+     "code": "am"
     }
    ],
    "capitalAnswer": "Addis Ababa"
@@ -2382,11 +2515,13 @@
    "native": [
     {
      "name": "Viti",
-     "lang": "Fijian"
+     "lang": "Fijian",
+     "code": "fj"
     },
     {
      "name": "फिजी",
-     "lang": "Fiji Hindi"
+     "lang": "Fiji Hindi",
+     "code": "hif"
     }
    ],
    "capitalAnswer": "Suva"
@@ -2424,7 +2559,8 @@
    "native": [
     {
      "name": "Suomi",
-     "lang": "Finnish"
+     "lang": "Finnish",
+     "code": "fi"
     }
    ],
    "capitalAnswer": "Helsinki"
@@ -2558,18 +2694,32 @@
      "native": [
       {
        "name": "თბილისი",
-       "lang": "Georgian"
+       "lang": "Georgian",
+       "code": "ka"
       }
-     ]
+     ],
+     "audio": {
+      "ka": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/dc/Pronunciation_audio-Tbilisi-KA.opus/Pronunciation_audio-Tbilisi-KA.opus.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/d/dc/Pronunciation_audio-Tbilisi-KA.opus"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "საქართველო",
-     "lang": "Georgian"
+     "lang": "Georgian",
+     "code": "ka"
     }
    ],
-   "capitalAnswer": "Tbilisi"
+   "capitalAnswer": "Tbilisi",
+   "audio": {
+    "ka": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2e/Pronunciation_audio-Georgia-KA.oga/Pronunciation_audio-Georgia-KA.oga.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/2/2e/Pronunciation_audio-Georgia-KA.oga"
+    ]
+   }
   },
   {
    "id": "Q183",
@@ -2604,10 +2754,17 @@
    "native": [
     {
      "name": "Deutschland",
-     "lang": "German"
+     "lang": "German",
+     "code": "de"
     }
    ],
-   "capitalAnswer": "Berlin"
+   "capitalAnswer": "Berlin",
+   "audio": {
+    "de": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/32/LL-Q188_(deu)-ENERGY_ENCHANTED-Deutschland.wav/LL-Q188_(deu)-ENERGY_ENCHANTED-Deutschland.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/3/32/LL-Q188_(deu)-ENERGY_ENCHANTED-Deutschland.wav"
+    ]
+   }
   },
   {
    "id": "Q117",
@@ -2672,7 +2829,8 @@
      "native": [
       {
        "name": "Αθήνα",
-       "lang": "Greek"
+       "lang": "Greek",
+       "code": "el"
       }
      ]
     }
@@ -2680,7 +2838,8 @@
    "native": [
     {
      "name": "Ελλάδα",
-     "lang": "Greek"
+     "lang": "Greek",
+     "code": "el"
     }
    ],
    "capitalAnswer": "Athens"
@@ -2784,7 +2943,8 @@
    "native": [
     {
      "name": "Guinée",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     }
    ],
    "capitalAnswer": "Conakry"
@@ -2822,7 +2982,8 @@
    "native": [
     {
      "name": "Guiné-Bissau",
-     "lang": "Portuguese"
+     "lang": "Portuguese",
+     "code": "pt"
     }
    ],
    "capitalAnswer": "Bissau"
@@ -2890,7 +3051,8 @@
      "native": [
       {
        "name": "Pòtoprens",
-       "lang": "Haitian Creole"
+       "lang": "Haitian Creole",
+       "code": "ht"
       }
      ]
     }
@@ -2898,11 +3060,13 @@
    "native": [
     {
      "name": "Haïti",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     },
     {
      "name": "Ayiti",
-     "lang": "Haitian Creole"
+     "lang": "Haitian Creole",
+     "code": "ht"
     }
    ],
    "capitalAnswer": "Port-au-Prince"
@@ -2973,10 +3137,17 @@
    "native": [
     {
      "name": "Magyarország",
-     "lang": "Hungarian"
+     "lang": "Hungarian",
+     "code": "hu"
     }
    ],
-   "capitalAnswer": "Budapest"
+   "capitalAnswer": "Budapest",
+   "audio": {
+    "hu": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/20/Hu-Magyarorsz%C3%A1g.ogg/Hu-Magyarorsz%C3%A1g.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/2/20/Hu-Magyarorsz%C3%A1g.ogg"
+    ]
+   }
   },
   {
    "id": "Q189",
@@ -3011,7 +3182,8 @@
    "native": [
     {
      "name": "Ísland",
-     "lang": "Icelandic"
+     "lang": "Icelandic",
+     "code": "is"
     }
    ],
    "capitalAnswer": "Reykjavík"
@@ -3046,7 +3218,8 @@
      "native": [
       {
        "name": "नई दिल्ली",
-       "lang": "Hindi"
+       "lang": "Hindi",
+       "code": "hi"
       }
      ]
     }
@@ -3054,7 +3227,8 @@
    "native": [
     {
      "name": "भारत",
-     "lang": "Hindi"
+     "lang": "Hindi",
+     "code": "hi"
     }
    ],
    "capitalAnswer": "New Delhi"
@@ -3122,18 +3296,32 @@
      "native": [
       {
        "name": "تهران",
-       "lang": "Persian (Farsi)"
+       "lang": "Persian (Farsi)",
+       "code": "fa"
       }
-     ]
+     ],
+     "audio": {
+      "fa": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e6/Fa-Teheran.ogg/Fa-Teheran.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/e/e6/Fa-Teheran.ogg"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "ایران",
-     "lang": "Persian (Farsi)"
+     "lang": "Persian (Farsi)",
+     "code": "fa"
     }
    ],
-   "capitalAnswer": "Tehran"
+   "capitalAnswer": "Tehran",
+   "audio": {
+    "fa": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/25/Fa-f-%D8%A7%D9%8A%D8%B1%D8%A7%D9%86.ogg/Fa-f-%D8%A7%D9%8A%D8%B1%D8%A7%D9%86.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/2/25/Fa-f-%D8%A7%D9%8A%D8%B1%D8%A7%D9%86.ogg"
+    ]
+   }
   },
   {
    "id": "Q796",
@@ -3165,11 +3353,13 @@
      "native": [
       {
        "name": "بغداد",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       },
       {
        "name": "بەغدا",
-       "lang": "Sorani"
+       "lang": "Sorani",
+       "code": "ckb"
       }
      ]
     }
@@ -3177,7 +3367,8 @@
    "native": [
     {
      "name": "العراق",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     },
     {
      "name": "ܩܘܼܛܢܵܐ",
@@ -3185,7 +3376,8 @@
     },
     {
      "name": "کۆماری",
-     "lang": "Sorani"
+     "lang": "Sorani",
+     "code": "ckb"
     }
    ],
    "capitalAnswer": "Baghdad"
@@ -3220,7 +3412,8 @@
      "native": [
       {
        "name": "Baile Átha Cliath",
-       "lang": "Irish"
+       "lang": "Irish",
+       "code": "ga"
       }
      ]
     }
@@ -3228,7 +3421,8 @@
    "native": [
     {
      "name": "Éire",
-     "lang": "Irish"
+     "lang": "Irish",
+     "code": "ga"
     }
    ],
    "capitalAnswer": "Dublin"
@@ -3263,11 +3457,13 @@
      "native": [
       {
        "name": "ירושלים",
-       "lang": "Hebrew"
+       "lang": "Hebrew",
+       "code": "he"
       },
       {
        "name": "القدس",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -3275,15 +3471,23 @@
    "native": [
     {
      "name": "ישראל",
-     "lang": "Hebrew"
+     "lang": "Hebrew",
+     "code": "he"
     },
     {
      "name": "إسرائيل",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Jerusalem",
-   "capitalNote": "Israel's capital status is disputed; most countries keep their embassies in Tel Aviv."
+   "capitalNote": "Israel's capital status is disputed; most countries keep their embassies in Tel Aviv.",
+   "audio": {
+    "he": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/93/He-Medinat_Israel.ogg/He-Medinat_Israel.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/9/93/He-Medinat_Israel.ogg"
+    ]
+   }
   },
   {
    "id": "Q38",
@@ -3315,7 +3519,8 @@
      "native": [
       {
        "name": "Roma",
-       "lang": "Italian"
+       "lang": "Italian",
+       "code": "it"
       }
      ]
     }
@@ -3323,10 +3528,17 @@
    "native": [
     {
      "name": "Italia",
-     "lang": "Italian"
+     "lang": "Italian",
+     "code": "it"
     }
    ],
-   "capitalAnswer": "Rome"
+   "capitalAnswer": "Rome",
+   "audio": {
+    "it": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0c/LL-Q652_(ita)-LangPao-Italia.wav/LL-Q652_(ita)-LangPao-Italia.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/0/0c/LL-Q652_(ita)-LangPao-Italia.wav"
+    ]
+   }
   },
   {
    "id": "Q1008",
@@ -3361,7 +3573,8 @@
    "native": [
     {
      "name": "Côte d'Ivoire",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     }
    ],
    "capitalAnswer": "Yamoussoukro"
@@ -3429,7 +3642,8 @@
      "native": [
       {
        "name": "東京",
-       "lang": "Japanese"
+       "lang": "Japanese",
+       "code": "ja"
       }
      ]
     }
@@ -3437,7 +3651,8 @@
    "native": [
     {
      "name": "日本",
-     "lang": "Japanese"
+     "lang": "Japanese",
+     "code": "ja"
     }
    ],
    "capitalAnswer": "Tokyo"
@@ -3472,7 +3687,8 @@
      "native": [
       {
        "name": "عَمَّان",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -3480,7 +3696,8 @@
    "native": [
     {
      "name": "الأردن",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Amman"
@@ -3515,7 +3732,8 @@
      "native": [
       {
        "name": "Астана",
-       "lang": "Kazakh"
+       "lang": "Kazakh",
+       "code": "kk"
       }
      ]
     }
@@ -3523,14 +3741,22 @@
    "native": [
     {
      "name": "Қазақстан",
-     "lang": "Kazakh"
+     "lang": "Kazakh",
+     "code": "kk"
     },
     {
      "name": "Казахстан",
-     "lang": "Russian"
+     "lang": "Russian",
+     "code": "ru"
     }
    ],
-   "capitalAnswer": "Astana"
+   "capitalAnswer": "Astana",
+   "audio": {
+    "kk": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/Kk-kazakhstan.ogg/Kk-kazakhstan.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/8/83/Kk-kazakhstan.ogg"
+    ]
+   }
   },
   {
    "id": "Q114",
@@ -3661,7 +3887,8 @@
      "native": [
       {
        "name": "مدينة الكويت",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -3669,7 +3896,8 @@
    "native": [
     {
      "name": "الكويت",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Kuwait City"
@@ -3704,22 +3932,37 @@
      "native": [
       {
        "name": "Бишкек",
-       "lang": "Kyrgyz"
+       "lang": "Kyrgyz",
+       "code": "ky"
       }
-     ]
+     ],
+     "audio": {
+      "ky": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/fe/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA.wav/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/f/fe/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA.wav"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "Кыргызстан",
-     "lang": "Kyrgyz"
+     "lang": "Kyrgyz",
+     "code": "ky"
     },
     {
      "name": "Киргизия",
-     "lang": "Russian"
+     "lang": "Russian",
+     "code": "ru"
     }
    ],
-   "capitalAnswer": "Bishkek"
+   "capitalAnswer": "Bishkek",
+   "audio": {
+    "ky": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/15/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%9A%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D1%82%D0%B0%D0%BD.wav/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%9A%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D1%82%D0%B0%D0%BD.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/15/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%9A%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D1%82%D0%B0%D0%BD.wav"
+    ]
+   }
   },
   {
    "id": "Q819",
@@ -3751,7 +3994,8 @@
      "native": [
       {
        "name": "ວຽງຈັນ",
-       "lang": "Lao"
+       "lang": "Lao",
+       "code": "lo"
       }
      ]
     }
@@ -3759,10 +4003,17 @@
    "native": [
     {
      "name": "ສປປລາວ",
-     "lang": "Lao"
+     "lang": "Lao",
+     "code": "lo"
     }
    ],
-   "capitalAnswer": "Vientiane"
+   "capitalAnswer": "Vientiane",
+   "audio": {
+    "lo": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/ca/LL-Q9211_(lao)-RenWikiLA-%E0%BA%9B%E0%BA%B0%E0%BB%80%E0%BA%97%E0%BA%94%E0%BA%A5%E0%BA%B2%E0%BA%A7.wav/LL-Q9211_(lao)-RenWikiLA-%E0%BA%9B%E0%BA%B0%E0%BB%80%E0%BA%97%E0%BA%94%E0%BA%A5%E0%BA%B2%E0%BA%A7.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/ca/LL-Q9211_(lao)-RenWikiLA-%E0%BA%9B%E0%BA%B0%E0%BB%80%E0%BA%97%E0%BA%94%E0%BA%A5%E0%BA%B2%E0%BA%A7.wav"
+    ]
+   }
   },
   {
    "id": "Q211",
@@ -3794,7 +4045,8 @@
      "native": [
       {
        "name": "Rīga",
-       "lang": "Latvian"
+       "lang": "Latvian",
+       "code": "lv"
       }
      ]
     }
@@ -3802,7 +4054,8 @@
    "native": [
     {
      "name": "Latvija",
-     "lang": "Latvian"
+     "lang": "Latvian",
+     "code": "lv"
     }
    ],
    "capitalAnswer": "Riga"
@@ -3837,11 +4090,13 @@
      "native": [
       {
        "name": "بيروت",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       },
       {
        "name": "Beyrouth",
-       "lang": "French"
+       "lang": "French",
+       "code": "fr"
       }
      ]
     }
@@ -3849,11 +4104,13 @@
    "native": [
     {
      "name": "لبنان",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     },
     {
      "name": "Liban",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     }
    ],
    "capitalAnswer": "Beirut"
@@ -3954,7 +4211,8 @@
      "native": [
       {
        "name": "طرابلس",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -3962,7 +4220,8 @@
    "native": [
     {
      "name": "ليبيا",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Tripoli"
@@ -4033,7 +4292,8 @@
    "native": [
     {
      "name": "Lietuva",
-     "lang": "Lithuanian"
+     "lang": "Lithuanian",
+     "code": "lt"
     }
    ],
    "capitalAnswer": "Vilnius"
@@ -4068,23 +4328,33 @@
      "native": [
       {
        "name": "Luxemburg",
-       "lang": "German"
+       "lang": "German",
+       "code": "de"
       },
       {
        "name": "Lëtzebuerg",
-       "lang": "Luxembourgish"
+       "lang": "Luxembourgish",
+       "code": "lb"
       }
-     ]
+     ],
+     "audio": {
+      "lb": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/42/Lb-L%C3%ABtzebuerg.ogg/Lb-L%C3%ABtzebuerg.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/4/42/Lb-L%C3%ABtzebuerg.ogg"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "Luxemburg",
-     "lang": "German"
+     "lang": "German",
+     "code": "de"
     },
     {
      "name": "Lëtzebuerg",
-     "lang": "Luxembourgish"
+     "lang": "Luxembourgish",
+     "code": "lb"
     }
    ],
    "capitalAnswer": "Luxembourg"
@@ -4122,7 +4392,8 @@
    "native": [
     {
      "name": "Madagasikara",
-     "lang": "Malagasy"
+     "lang": "Malagasy",
+     "code": "mg"
     }
    ],
    "capitalAnswer": "Antananarivo"
@@ -4160,7 +4431,8 @@
    "native": [
     {
      "name": "Malaŵi",
-     "lang": "Chewa"
+     "lang": "Chewa",
+     "code": "ny"
     }
    ],
    "capitalAnswer": "Lilongwe"
@@ -4209,11 +4481,18 @@
    "native": [
     {
      "name": "مليسيا",
-     "lang": "Malay"
+     "lang": "Malay",
+     "code": "ms"
     }
    ],
    "capitalAnswer": "Kuala Lumpur (official capital), though the government sits in Putrajaya",
-   "capitalNote": null
+   "capitalNote": null,
+   "audio": {
+    "ms": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6e/Ms-MY-Malaysia.ogg/Ms-MY-Malaysia.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/6/6e/Ms-MY-Malaysia.ogg"
+    ]
+   }
   },
   {
    "id": "Q826",
@@ -4245,7 +4524,8 @@
      "native": [
       {
        "name": "މާލެ",
-       "lang": "Maldivian"
+       "lang": "Maldivian",
+       "code": "dv"
       }
      ]
     }
@@ -4253,7 +4533,8 @@
    "native": [
     {
      "name": "ދިވެހިރާއްޖޭގެ",
-     "lang": "Maldivian"
+     "lang": "Maldivian",
+     "code": "dv"
     }
    ],
    "capitalAnswer": "Malé"
@@ -4357,7 +4638,8 @@
    "native": [
     {
      "name": "M̧ajeļ",
-     "lang": "Marshallese"
+     "lang": "Marshallese",
+     "code": "mh"
     }
    ],
    "capitalAnswer": "Majuro"
@@ -4392,7 +4674,8 @@
      "native": [
       {
        "name": "نواكشوط",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -4400,7 +4683,8 @@
    "native": [
     {
      "name": "موريتانيا",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Nouakchott"
@@ -4435,7 +4719,8 @@
      "native": [
       {
        "name": "Port-Louis",
-       "lang": "French"
+       "lang": "French",
+       "code": "fr"
       }
      ]
     }
@@ -4443,11 +4728,13 @@
    "native": [
     {
      "name": "Maurice",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     },
     {
      "name": "Moris",
-     "lang": "Mauritian Creole"
+     "lang": "Mauritian Creole",
+     "code": "mfe"
     }
    ],
    "capitalAnswer": "Port Louis"
@@ -4482,7 +4769,8 @@
      "native": [
       {
        "name": "Ciudad de México",
-       "lang": "Spanish"
+       "lang": "Spanish",
+       "code": "es"
       }
      ]
     }
@@ -4490,10 +4778,17 @@
    "native": [
     {
      "name": "México",
-     "lang": "Spanish"
+     "lang": "Spanish",
+     "code": "es"
     }
    ],
-   "capitalAnswer": "Mexico City"
+   "capitalAnswer": "Mexico City",
+   "audio": {
+    "es": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/16/Mexico_2022.wav/Mexico_2022.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/16/Mexico_2022.wav"
+    ]
+   }
   },
   {
    "id": "Q702",
@@ -4624,7 +4919,8 @@
      "native": [
       {
        "name": "Улаанбаатар",
-       "lang": "Mongolian"
+       "lang": "Mongolian",
+       "code": "mn"
       }
      ]
     }
@@ -4632,7 +4928,8 @@
    "native": [
     {
      "name": "Монгол улс",
-     "lang": "Mongolian"
+     "lang": "Mongolian",
+     "code": "mn"
     }
    ],
    "capitalAnswer": "Ulaanbaatar"
@@ -4670,10 +4967,17 @@
    "native": [
     {
      "name": "Црна Гора",
-     "lang": "Montenegrin"
+     "lang": "Montenegrin",
+     "code": "cnr"
     }
    ],
-   "capitalAnswer": "Podgorica"
+   "capitalAnswer": "Podgorica",
+   "audio": {
+    "cnr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f7/CrnaGora.ogg/CrnaGora.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/f/f7/CrnaGora.ogg"
+    ]
+   }
   },
   {
    "id": "Q1028",
@@ -4705,7 +5009,8 @@
      "native": [
       {
        "name": "الرباط",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -4713,7 +5018,8 @@
    "native": [
     {
      "name": "المغرب",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     },
     {
      "name": "ⵍⵎⴰⵖⵔⵉⴱ",
@@ -4755,7 +5061,8 @@
    "native": [
     {
      "name": "Moçambique",
-     "lang": "Portuguese"
+     "lang": "Portuguese",
+     "code": "pt"
     }
    ],
    "capitalAnswer": "Maputo"
@@ -4790,7 +5097,8 @@
      "native": [
       {
        "name": "နေပြည်တော်မြို့",
-       "lang": "Burmese"
+       "lang": "Burmese",
+       "code": "my"
       }
      ]
     }
@@ -4798,7 +5106,8 @@
    "native": [
     {
      "name": "မြန်မာ",
-     "lang": "Burmese"
+     "lang": "Burmese",
+     "code": "my"
     }
    ],
    "capitalAnswer": "Naypyidaw"
@@ -4836,7 +5145,8 @@
    "native": [
     {
      "name": "Namibië",
-     "lang": "Afrikaans"
+     "lang": "Afrikaans",
+     "code": "af"
     }
    ],
    "capitalAnswer": "Windhoek"
@@ -4904,7 +5214,8 @@
      "native": [
       {
        "name": "काठमाडौँ",
-       "lang": "Nepali"
+       "lang": "Nepali",
+       "code": "ne"
       }
      ]
     }
@@ -4912,7 +5223,8 @@
    "native": [
     {
      "name": "नेपाल",
-     "lang": "Nepali"
+     "lang": "Nepali",
+     "code": "ne"
     }
    ],
    "capitalAnswer": "Kathmandu"
@@ -4950,7 +5262,8 @@
    "native": [
     {
      "name": "Nederland",
-     "lang": "Dutch"
+     "lang": "Dutch",
+     "code": "nl"
     }
    ],
    "capitalAnswer": "Amsterdam"
@@ -4985,7 +5298,8 @@
      "native": [
       {
        "name": "Te Whanga-nui-a-Tara",
-       "lang": "Māori"
+       "lang": "Māori",
+       "code": "mi"
       }
      ]
     }
@@ -4993,7 +5307,8 @@
    "native": [
     {
      "name": "Aotearoa",
-     "lang": "Māori"
+     "lang": "Māori",
+     "code": "mi"
     }
    ],
    "capitalAnswer": "Wellington"
@@ -5127,7 +5442,8 @@
      "native": [
       {
        "name": "평양시",
-       "lang": "Korean"
+       "lang": "Korean",
+       "code": "ko"
       }
      ]
     }
@@ -5135,7 +5451,8 @@
    "native": [
     {
      "name": "조선",
-     "lang": "Korean"
+     "lang": "Korean",
+     "code": "ko"
     }
    ],
    "capitalAnswer": "Pyongyang"
@@ -5170,7 +5487,8 @@
      "native": [
       {
        "name": "Скопје",
-       "lang": "Macedonian"
+       "lang": "Macedonian",
+       "code": "mk"
       }
      ]
     }
@@ -5178,7 +5496,8 @@
    "native": [
     {
      "name": "Македонија",
-     "lang": "Macedonian"
+     "lang": "Macedonian",
+     "code": "mk"
     }
    ],
    "capitalAnswer": "Skopje"
@@ -5249,11 +5568,13 @@
    "native": [
     {
      "name": "Noreg",
-     "lang": "Norwegian Nynorsk"
+     "lang": "Norwegian Nynorsk",
+     "code": "nn"
     },
     {
      "name": "Norge",
-     "lang": "Norwegian Bokmål"
+     "lang": "Norwegian Bokmål",
+     "code": "nb"
     },
     {
      "name": "Norgga",
@@ -5292,15 +5613,23 @@
      "native": [
       {
        "name": "مسقط",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b4/Muscat-ar.wav/Muscat-ar.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/b/b4/Muscat-ar.wav"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "عمان",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Muscat"
@@ -5335,7 +5664,8 @@
      "native": [
       {
        "name": "اسلام آباد",
-       "lang": "Urdu"
+       "lang": "Urdu",
+       "code": "ur"
       }
      ]
     }
@@ -5343,7 +5673,8 @@
    "native": [
     {
      "name": "پاكستان",
-     "lang": "Urdu"
+     "lang": "Urdu",
+     "code": "ur"
     }
    ],
    "capitalAnswer": "Islamabad"
@@ -5416,7 +5747,8 @@
      "native": [
       {
        "name": "القدس الشرقية",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     },
@@ -5432,7 +5764,8 @@
      "native": [
       {
        "name": "رام الله",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -5440,7 +5773,8 @@
    "native": [
     {
      "name": "فلسطين",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "East Jerusalem (proclaimed capital), with the government based in Ramallah",
@@ -5476,7 +5810,8 @@
      "native": [
       {
        "name": "Ciudad de Panamá",
-       "lang": "Spanish"
+       "lang": "Spanish",
+       "code": "es"
       }
      ]
     }
@@ -5484,7 +5819,8 @@
    "native": [
     {
      "name": "Panamá",
-     "lang": "Spanish"
+     "lang": "Spanish",
+     "code": "es"
     }
    ],
    "capitalAnswer": "Panama City"
@@ -5519,7 +5855,8 @@
      "native": [
       {
        "name": "Pot Mosbi",
-       "lang": "Tok Pisin"
+       "lang": "Tok Pisin",
+       "code": "tpi"
       }
      ]
     }
@@ -5527,11 +5864,13 @@
    "native": [
     {
      "name": "Papua Niu Gini",
-     "lang": "Hiri Motu"
+     "lang": "Hiri Motu",
+     "code": "ho"
     },
     {
      "name": "Papua Niugini",
-     "lang": "Tok Pisin"
+     "lang": "Tok Pisin",
+     "code": "tpi"
     }
    ],
    "capitalAnswer": "Port Moresby"
@@ -5566,7 +5905,8 @@
      "native": [
       {
        "name": "Paraguay",
-       "lang": "Guaraní"
+       "lang": "Guaraní",
+       "code": "gn"
       }
      ]
     }
@@ -5574,7 +5914,8 @@
    "native": [
     {
      "name": "Paraguái",
-     "lang": "Guaraní"
+     "lang": "Guaraní",
+     "code": "gn"
     }
    ],
    "capitalAnswer": "Asunción"
@@ -5612,11 +5953,13 @@
    "native": [
     {
      "name": "Piruw",
-     "lang": "Aymara"
+     "lang": "Aymara",
+     "code": "ay"
     },
     {
      "name": "Perú",
-     "lang": "Spanish"
+     "lang": "Spanish",
+     "code": "es"
     }
    ],
    "capitalAnswer": "Lima"
@@ -5689,18 +6032,32 @@
      "native": [
       {
        "name": "Warszawa",
-       "lang": "Polish"
+       "lang": "Polish",
+       "code": "pl"
       }
-     ]
+     ],
+     "audio": {
+      "pl": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/96/Warszawa_pl.ogg/Warszawa_pl.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/9/96/Warszawa_pl.ogg"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "Polska",
-     "lang": "Polish"
+     "lang": "Polish",
+     "code": "pl"
     }
    ],
-   "capitalAnswer": "Warsaw"
+   "capitalAnswer": "Warsaw",
+   "audio": {
+    "pl": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/98/Pl-Polska.ogg/Pl-Polska.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/9/98/Pl-Polska.ogg"
+    ]
+   }
   },
   {
    "id": "Q45",
@@ -5765,7 +6122,8 @@
      "native": [
       {
        "name": "الدوحة",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -5773,7 +6131,8 @@
    "native": [
     {
      "name": "قطر",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Doha"
@@ -5808,7 +6167,8 @@
      "native": [
       {
        "name": "Mavula",
-       "lang": "Kikongo"
+       "lang": "Kikongo",
+       "code": "kg"
       }
      ]
     }
@@ -5816,15 +6176,18 @@
    "native": [
     {
      "name": "République du Congo",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     },
     {
      "name": "Repubilika ya Kongo",
-     "lang": "Kikongo"
+     "lang": "Kikongo",
+     "code": "kg"
     },
     {
      "name": "Republíki ya Kongó",
-     "lang": "Lingala"
+     "lang": "Lingala",
+     "code": "ln"
     }
    ],
    "capitalAnswer": "Brazzaville"
@@ -5859,7 +6222,8 @@
      "native": [
       {
        "name": "București",
-       "lang": "Romanian"
+       "lang": "Romanian",
+       "code": "ro"
       }
      ]
     }
@@ -5867,7 +6231,8 @@
    "native": [
     {
      "name": "România",
-     "lang": "Romanian"
+     "lang": "Romanian",
+     "code": "ro"
     }
    ],
    "capitalAnswer": "Bucharest"
@@ -5902,7 +6267,8 @@
      "native": [
       {
        "name": "Москва",
-       "lang": "Russian"
+       "lang": "Russian",
+       "code": "ru"
       }
      ]
     }
@@ -5910,7 +6276,8 @@
    "native": [
     {
      "name": "Россия",
-     "lang": "Russian"
+     "lang": "Russian",
+     "code": "ru"
     }
    ],
    "capitalAnswer": "Moscow"
@@ -6125,7 +6492,8 @@
    "native": [
     {
      "name": "Sāmoa",
-     "lang": "Samoan"
+     "lang": "Samoan",
+     "code": "sm"
     }
    ],
    "capitalAnswer": "Apia"
@@ -6196,7 +6564,8 @@
    "native": [
     {
      "name": "São Tomé e Príncipe",
-     "lang": "Portuguese"
+     "lang": "Portuguese",
+     "code": "pt"
     }
    ],
    "capitalAnswer": "São Tomé"
@@ -6231,18 +6600,32 @@
      "native": [
       {
        "name": "الرياض",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a7/%D9%86%D8%B7%D9%82_%D9%83%D9%84%D9%85%D8%A9_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6.ogg/%D9%86%D8%B7%D9%82_%D9%83%D9%84%D9%85%D8%A9_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/a/a7/%D9%86%D8%B7%D9%82_%D9%83%D9%84%D9%85%D8%A9_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6.ogg"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "السعودية",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
-   "capitalAnswer": "Riyadh"
+   "capitalAnswer": "Riyadh",
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/19/%D8%B5%D9%88%D8%AA_%D9%86%D8%B7%D9%82_%22%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%22_-_The_%22Kingdom_of_Saudi_Arabia%22_sound_in_Arabic_language.ogg/%D8%B5%D9%88%D8%AA_%D9%86%D8%B7%D9%82_%22%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%22_-_The_%22Kingdom_of_Saudi_Arabia%22_sound_in_Arabic_language.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/19/%D8%B5%D9%88%D8%AA_%D9%86%D8%B7%D9%82_%22%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%22_-_The_%22Kingdom_of_Saudi_Arabia%22_sound_in_Arabic_language.ogg"
+    ]
+   }
   },
   {
    "id": "Q1041",
@@ -6277,7 +6660,8 @@
    "native": [
     {
      "name": "Sénégal",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     }
    ],
    "capitalAnswer": "Dakar"
@@ -6312,15 +6696,23 @@
      "native": [
       {
        "name": "Beograd",
-       "lang": "Serbian"
+       "lang": "Serbian",
+       "code": "sr"
       }
-     ]
+     ],
+     "audio": {
+      "sr": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9e/Sr-beograd.ogg/Sr-beograd.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/9/9e/Sr-beograd.ogg"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "Србија",
-     "lang": "Serbian"
+     "lang": "Serbian",
+     "code": "sr"
     }
    ],
    "capitalAnswer": "Belgrade"
@@ -6358,7 +6750,8 @@
    "native": [
     {
      "name": "Sesel",
-     "lang": "Seychellois Creole"
+     "lang": "Seychellois Creole",
+     "code": "crs"
     }
    ],
    "capitalAnswer": "Victoria"
@@ -6426,15 +6819,18 @@
      "native": [
       {
        "name": "Singapura",
-       "lang": "Malay"
+       "lang": "Malay",
+       "code": "ms"
       },
       {
        "name": "சிங்கப்பூர்",
-       "lang": "Tamil"
+       "lang": "Tamil",
+       "code": "ta"
       },
       {
        "name": "新加坡",
-       "lang": "Chinese"
+       "lang": "Chinese",
+       "code": "zh-hans"
       }
      ]
     }
@@ -6442,15 +6838,18 @@
    "native": [
     {
      "name": "Singapura",
-     "lang": "Malay"
+     "lang": "Malay",
+     "code": "ms"
     },
     {
      "name": "சிங்கப்பூர்",
-     "lang": "Tamil"
+     "lang": "Tamil",
+     "code": "ta"
     },
     {
      "name": "新加坡",
-     "lang": "Chinese"
+     "lang": "Chinese",
+     "code": "zh-hans"
     }
    ],
    "capitalAnswer": "Singapore"
@@ -6488,7 +6887,8 @@
    "native": [
     {
      "name": "Slovensko",
-     "lang": "Slovak"
+     "lang": "Slovak",
+     "code": "sk"
     }
    ],
    "capitalAnswer": "Bratislava"
@@ -6526,7 +6926,8 @@
    "native": [
     {
      "name": "Slovenija",
-     "lang": "Slovene"
+     "lang": "Slovene",
+     "code": "sl"
     }
    ],
    "capitalAnswer": "Ljubljana"
@@ -6594,11 +6995,13 @@
      "native": [
       {
        "name": "مقديشو",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       },
       {
        "name": "Muqdisho",
-       "lang": "Somali"
+       "lang": "Somali",
+       "code": "so"
       }
      ]
     }
@@ -6606,14 +7009,22 @@
    "native": [
     {
      "name": "الصومال",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     },
     {
      "name": "Soomaaliya",
-     "lang": "Somali"
+     "lang": "Somali",
+     "code": "so"
     }
    ],
-   "capitalAnswer": "Mogadishu"
+   "capitalAnswer": "Mogadishu",
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6a/LL-Q22809485_(apc)-Hassan_Hassoon-%D8%A7%D9%84%D8%B5%D9%88%D9%85%D8%A7%D9%84.wav/LL-Q22809485_(apc)-Hassan_Hassoon-%D8%A7%D9%84%D8%B5%D9%88%D9%85%D8%A7%D9%84.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/6/6a/LL-Q22809485_(apc)-Hassan_Hassoon-%D8%A7%D9%84%D8%B5%D9%88%D9%85%D8%A7%D9%84.wav"
+    ]
+   }
   },
   {
    "id": "Q34754",
@@ -6678,11 +7089,13 @@
      "native": [
       {
        "name": "IBloemfontein",
-       "lang": "Zulu"
+       "lang": "Zulu",
+       "code": "zu"
       },
       {
        "name": "EBloemfontein",
-       "lang": "Xhosa"
+       "lang": "Xhosa",
+       "code": "xh"
       }
      ]
     },
@@ -6698,7 +7111,8 @@
      "native": [
       {
        "name": "IKapa",
-       "lang": "Zulu"
+       "lang": "Zulu",
+       "code": "zu"
       }
      ]
     },
@@ -6714,11 +7128,13 @@
      "native": [
       {
        "name": "IPitoli",
-       "lang": "Zulu"
+       "lang": "Zulu",
+       "code": "zu"
       },
       {
        "name": "E-Pitoli",
-       "lang": "Xhosa"
+       "lang": "Xhosa",
+       "code": "xh"
       }
      ]
     }
@@ -6726,11 +7142,13 @@
    "native": [
     {
      "name": "Ningizimu Afrika",
-     "lang": "Zulu"
+     "lang": "Zulu",
+     "code": "zu"
     },
     {
      "name": "Mzantsi Afrika",
-     "lang": "Xhosa"
+     "lang": "Xhosa",
+     "code": "xh"
     }
    ],
    "capitalAnswer": "split three ways: Pretoria (executive), Cape Town (legislative) and Bloemfontein (judicial)",
@@ -6766,7 +7184,8 @@
      "native": [
       {
        "name": "서울특별시",
-       "lang": "Korean"
+       "lang": "Korean",
+       "code": "ko"
       }
      ]
     }
@@ -6774,7 +7193,8 @@
    "native": [
     {
      "name": "한국",
-     "lang": "Korean"
+     "lang": "Korean",
+     "code": "ko"
     }
    ],
    "capitalAnswer": "Seoul"
@@ -6876,7 +7296,8 @@
    "native": [
     {
      "name": "España",
-     "lang": "Spanish"
+     "lang": "Spanish",
+     "code": "es"
     }
    ],
    "capitalAnswer": "Madrid"
@@ -6911,13 +7332,21 @@
      "native": [
       {
        "name": "කොළඹ",
-       "lang": "Sinhala"
+       "lang": "Sinhala",
+       "code": "si"
       },
       {
        "name": "கொழும்பு",
-       "lang": "Tamil"
+       "lang": "Tamil",
+       "code": "ta"
       }
-     ]
+     ],
+     "audio": {
+      "ta": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e9/LL-Q5885_(tam)-Sriveenkat-%E0%AE%95%E0%AF%8A%E0%AE%B4%E0%AF%81%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AF%81.wav/LL-Q5885_(tam)-Sriveenkat-%E0%AE%95%E0%AF%8A%E0%AE%B4%E0%AF%81%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AF%81.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/e/e9/LL-Q5885_(tam)-Sriveenkat-%E0%AE%95%E0%AF%8A%E0%AE%B4%E0%AF%81%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AF%81.wav"
+      ]
+     }
     },
     {
      "id": "Q41963",
@@ -6931,11 +7360,13 @@
      "native": [
       {
        "name": "ශ්රී ජයවර්ධනපුර කෝට්ටේ",
-       "lang": "Sinhala"
+       "lang": "Sinhala",
+       "code": "si"
       },
       {
        "name": "கோட்டே",
-       "lang": "Tamil"
+       "lang": "Tamil",
+       "code": "ta"
       }
      ]
     }
@@ -6943,11 +7374,13 @@
    "native": [
     {
      "name": "ශ්‍රී ලංකාව",
-     "lang": "Sinhala"
+     "lang": "Sinhala",
+     "code": "si"
     },
     {
      "name": "இலங்கை",
-     "lang": "Tamil"
+     "lang": "Tamil",
+     "code": "ta"
     }
    ],
    "capitalAnswer": "Sri Jayawardenepura Kotte (legislative capital), with Colombo as the executive and commercial capital",
@@ -6983,7 +7416,8 @@
      "native": [
       {
        "name": "الخرطوم",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -6991,7 +7425,8 @@
    "native": [
     {
      "name": "السودان",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Khartoum"
@@ -7062,7 +7497,8 @@
    "native": [
     {
      "name": "Sverige",
-     "lang": "Swedish"
+     "lang": "Swedish",
+     "code": "sv"
     }
    ],
    "capitalAnswer": "Stockholm"
@@ -7097,11 +7533,13 @@
      "native": [
       {
        "name": "Berne",
-       "lang": "French"
+       "lang": "French",
+       "code": "fr"
       },
       {
        "name": "Berna",
-       "lang": "Italian"
+       "lang": "Italian",
+       "code": "it"
       }
      ]
     }
@@ -7109,18 +7547,31 @@
    "native": [
     {
      "name": "Suisse",
-     "lang": "French"
+     "lang": "French",
+     "code": "fr"
     },
     {
      "name": "Schweiz",
-     "lang": "Swiss German"
+     "lang": "Swiss German",
+     "code": "als"
     },
     {
      "name": "Svizzera",
-     "lang": "Italian"
+     "lang": "Italian",
+     "code": "it"
     }
    ],
-   "capitalAnswer": "Bern"
+   "capitalAnswer": "Bern",
+   "audio": {
+    "it": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav/LL-Q652_(ita)-Francyskus-Svizzera.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav"
+    ],
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/72/Fr-us-Suisse.oga/Fr-us-Suisse.oga.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/72/Fr-us-Suisse.oga"
+    ]
+   }
   },
   {
    "id": "Q858",
@@ -7152,15 +7603,23 @@
      "native": [
       {
        "name": "دمشق",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/17/Q3766-ar.oga/Q3766-ar.oga.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/1/17/Q3766-ar.oga"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "سوريا",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Damascus"
@@ -7195,7 +7654,8 @@
      "native": [
       {
        "name": "臺北",
-       "lang": "Chinese"
+       "lang": "Chinese",
+       "code": "zh-hant"
       }
      ]
     }
@@ -7203,10 +7663,21 @@
    "native": [
     {
      "name": "台灣",
-     "lang": "Chinese"
+     "lang": "Chinese",
+     "code": "zh-hant"
     }
    ],
-   "capitalAnswer": "Taipei"
+   "capitalAnswer": "Taipei",
+   "audio": {
+    "zh": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c4/Q865_(zh)_lilauid-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B.ogg/Q865_(zh)_lilauid-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/c4/Q865_(zh)_lilauid-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B.ogg"
+    ],
+    "zh-min-nan": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d8/Q865_(nan)_lilauid-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B.ogg/Q865_(nan)_lilauid-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/d/d8/Q865_(nan)_lilauid-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B.ogg"
+    ]
+   }
   },
   {
    "id": "Q863",
@@ -7238,7 +7709,8 @@
      "native": [
       {
        "name": "Душанбе",
-       "lang": "Russian"
+       "lang": "Russian",
+       "code": "ru"
       }
      ]
     }
@@ -7246,14 +7718,22 @@
    "native": [
     {
      "name": "Таджикистан",
-     "lang": "Russian"
+     "lang": "Russian",
+     "code": "ru"
     },
     {
      "name": "Тоҷикистон",
-     "lang": "Tajik"
+     "lang": "Tajik",
+     "code": "tg"
     }
    ],
-   "capitalAnswer": "Dushanbe"
+   "capitalAnswer": "Dushanbe",
+   "audio": {
+    "tg": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4a/Tg-%D2%B6%D1%83%D0%BC%D2%B3%D1%83%D1%80%D0%B8%D0%B8_%D0%A2%D0%BE%D2%B7%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%BE%D0%BD.opus/Tg-%D2%B6%D1%83%D0%BC%D2%B3%D1%83%D1%80%D0%B8%D0%B8_%D0%A2%D0%BE%D2%B7%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%BE%D0%BD.opus.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/4/4a/Tg-%D2%B6%D1%83%D0%BC%D2%B3%D1%83%D1%80%D0%B8%D0%B8_%D0%A2%D0%BE%D2%B7%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%BE%D0%BD.opus"
+    ]
+   }
   },
   {
    "id": "Q924",
@@ -7318,7 +7798,8 @@
      "native": [
       {
        "name": "กรุงเทพมหานคร",
-       "lang": "Thai"
+       "lang": "Thai",
+       "code": "th"
       }
      ]
     }
@@ -7326,7 +7807,8 @@
    "native": [
     {
      "name": "ประเทศไทย",
-     "lang": "Thai"
+     "lang": "Thai",
+     "code": "th"
     }
    ],
    "capitalAnswer": "Bangkok"
@@ -7364,7 +7846,8 @@
    "native": [
     {
      "name": "Timór-Leste",
-     "lang": "Tetum"
+     "lang": "Tetum",
+     "code": "tet"
     }
    ],
    "capitalAnswer": "Dili"
@@ -7529,7 +8012,8 @@
      "native": [
       {
        "name": "تونس",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -7537,7 +8021,8 @@
    "native": [
     {
      "name": "تونس",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Tunis"
@@ -7605,11 +8090,13 @@
      "native": [
       {
        "name": "Ашхабад",
-       "lang": "Russian"
+       "lang": "Russian",
+       "code": "ru"
       },
       {
        "name": "Aşgabat",
-       "lang": "Turkmen"
+       "lang": "Turkmen",
+       "code": "tk"
       }
      ]
     }
@@ -7617,11 +8104,13 @@
    "native": [
     {
      "name": "Туркмения",
-     "lang": "Russian"
+     "lang": "Russian",
+     "code": "ru"
     },
     {
      "name": "Türkmenistan",
-     "lang": "Turkmen"
+     "lang": "Turkmen",
+     "code": "tk"
     }
    ],
    "capitalAnswer": "Ashgabat"
@@ -7720,7 +8209,8 @@
      "native": [
       {
        "name": "Київ",
-       "lang": "Ukrainian"
+       "lang": "Ukrainian",
+       "code": "uk"
       }
      ]
     }
@@ -7728,10 +8218,17 @@
    "native": [
     {
      "name": "Україна",
-     "lang": "Ukrainian"
+     "lang": "Ukrainian",
+     "code": "uk"
     }
    ],
-   "capitalAnswer": "Kyiv"
+   "capitalAnswer": "Kyiv",
+   "audio": {
+    "uk": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/be/Uk-%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0_(2).oga/Uk-%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0_(2).oga.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/b/be/Uk-%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0_(2).oga"
+    ]
+   }
   },
   {
    "id": "Q878",
@@ -7763,7 +8260,8 @@
      "native": [
       {
        "name": "أبو ظبي",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -7771,7 +8269,8 @@
    "native": [
     {
      "name": "الإمارات",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Abu Dhabi"
@@ -7905,11 +8404,13 @@
      "native": [
       {
        "name": "Ташкент",
-       "lang": "Russian"
+       "lang": "Russian",
+       "code": "ru"
       },
       {
        "name": "Toshkent",
-       "lang": "Uzbek"
+       "lang": "Uzbek",
+       "code": "uz"
       }
      ]
     }
@@ -7917,11 +8418,13 @@
    "native": [
     {
      "name": "Узбекистан",
-     "lang": "Russian"
+     "lang": "Russian",
+     "code": "ru"
     },
     {
      "name": "O‘zbekiston",
-     "lang": "Uzbek"
+     "lang": "Uzbek",
+     "code": "uz"
     }
    ],
    "capitalAnswer": "Tashkent"
@@ -7989,23 +8492,33 @@
      "native": [
       {
        "name": "Città del Vaticano",
-       "lang": "Italian"
+       "lang": "Italian",
+       "code": "it"
       },
       {
        "name": "Civitas Vaticana",
-       "lang": "Latin"
+       "lang": "Latin",
+       "code": "la"
       }
-     ]
+     ],
+     "audio": {
+      "it": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/78/LL-Q652_(ita)-Francyskus-Citt%C3%A0_del_Vaticano.wav/LL-Q652_(ita)-Francyskus-Citt%C3%A0_del_Vaticano.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/7/78/LL-Q652_(ita)-Francyskus-Citt%C3%A0_del_Vaticano.wav"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "Vaticano",
-     "lang": "Italian"
+     "lang": "Italian",
+     "code": "it"
     },
     {
      "name": "Vaticanæ",
-     "lang": "Latin"
+     "lang": "Latin",
+     "code": "la"
     }
    ],
    "capitalAnswer": "Vatican City"
@@ -8073,18 +8586,32 @@
      "native": [
       {
        "name": "Hà Nội",
-       "lang": "Vietnamese"
+       "lang": "Vietnamese",
+       "code": "vi"
       }
-     ]
+     ],
+     "audio": {
+      "vi": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Ha_noi.ogg/Ha_noi.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/6/6c/Ha_noi.ogg"
+      ]
+     }
     }
    ],
    "native": [
     {
      "name": "Việt Nam",
-     "lang": "Vietnamese"
+     "lang": "Vietnamese",
+     "code": "vi"
     }
    ],
-   "capitalAnswer": "Hanoi"
+   "capitalAnswer": "Hanoi",
+   "audio": {
+    "vi": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cb/Vietnam.ogg/Vietnam.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/cb/Vietnam.ogg"
+    ]
+   }
   },
   {
    "id": "Q805",
@@ -8116,7 +8643,8 @@
      "native": [
       {
        "name": "عدن",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     },
@@ -8132,7 +8660,8 @@
      "native": [
       {
        "name": "صنعاء",
-       "lang": "Arabic"
+       "lang": "Arabic",
+       "code": "ar"
       }
      ]
     }
@@ -8140,7 +8669,8 @@
    "native": [
     {
      "name": "اليمن",
-     "lang": "Arabic"
+     "lang": "Arabic",
+     "code": "ar"
     }
    ],
    "capitalAnswer": "Sanaa (constitutional capital, held by the Houthis), with Aden as the recognised government's temporary capital",

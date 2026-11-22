@@ -35,3 +35,36 @@ export function wikiThumb(title: string): Promise<string | null> {
   }
   return summaryCache.get(title)!;
 }
+
+export interface Photo { src: string; caption: string }
+const galleryCache = new Map<string, Promise<Photo[]>>();
+/**
+ * The photos at the top of a Wikipedia article — for places this is the infobox
+ * collage (e.g. Shanxi → Yanmen Pass, Yungang Grottoes, Mount Wutai …). Read live
+ * from Wikipedia, so it follows whatever the article shows today.
+ */
+export function wikiGallery(title: string, max = 6): Promise<Photo[]> {
+  if (!galleryCache.has(title)) {
+    galleryCache.set(title, fetch(`https://en.wikipedia.org/api/rest_v1/page/media-list/${encodeURIComponent(title)}`)
+      .then(r => (r.ok ? r.json() : { items: [] }))
+      .then((j: { items: { type: string; title: string; srcset?: { src: string }[]; caption?: { text?: string } }[] }) => {
+        const isPhoto = (t: string) => /\.(jpe?g|webp)$/i.test(t);
+        const items = j.items.filter(i => i.type === 'image' && i.srcset?.length);
+        const out: Photo[] = [];
+        // 1) the leading run of photos = the infobox collage
+        for (const i of items) { if (!isPhoto(i.title)) break; out.push(toPhoto(i)); }
+        // 2) too few? top up with the next photos in the article
+        for (const i of items) { if (out.length >= Math.max(3, Math.min(out.length, max))) break; if (isPhoto(i.title) && !out.some(o => o.src === toPhoto(i).src)) out.push(toPhoto(i)); }
+        return out.slice(0, max);
+      })
+      .catch(() => []));
+  }
+  return galleryCache.get(title)!;
+}
+function toPhoto(i: { title: string; srcset?: { src: string }[]; caption?: { text?: string } }): Photo {
+  const src = i.srcset![i.srcset!.length - 1].src;
+  // Use the article's caption; otherwise the file name, but only if it reads like words (not "IMG 2041" or camera ids).
+  const name = i.title.replace(/^File:/, '').replace(/\.[a-z]+$/i, '').replace(/[_-]+/g, ' ').trim();
+  const readable = !/\d{3,}|^(img|dsc|p\d)/i.test(name) && /[a-z]{3,}\s+[a-z]{3,}/i.test(name);
+  return { src: src.startsWith('//') ? 'https:' + src : src, caption: i.caption?.text?.trim() || (readable ? name : '') };
+}
