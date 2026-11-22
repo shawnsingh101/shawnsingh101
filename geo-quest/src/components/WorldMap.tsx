@@ -6,6 +6,7 @@ import { select } from 'd3-selection';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry } from 'geojson';
 import type { Dataset, Layer } from '../types';
+import { dataUrl } from '../data';
 
 // Shapes are loaded lazily: countries ship with the app, oceans and China's
 // provinces are only fetched the first time they're shown.
@@ -13,7 +14,7 @@ type Extra = Exclude<Layer, 'country'>;
 const cache: Partial<Record<Layer, Promise<Topology>>> = {};
 const loadLayer = (l: Layer) => (cache[l] ??= l === 'country'
   ? import('world-atlas/countries-50m.json').then(m => m.default as unknown as Topology)
-  : fetch(`data/shapes-${l}.json`).then(r => r.json()));
+  : fetch(dataUrl(`shapes-${l}.json`)).then(r => r.json()));
 
 const W = 1000, H = 487; // world coordinate space (Equal Earth is ~2.05:1)
 const fitScale = (s: { w: number; h: number }) => Math.min(s.w / W, s.h / H);

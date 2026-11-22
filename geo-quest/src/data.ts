@@ -1,10 +1,13 @@
 import type { Change, Dataset, Layer, Place } from './types';
 
+declare const __BUILD_ID__: string;
+export const dataUrl = (f: string) => `data/${f}?v=${__BUILD_ID__}`;
+
 export async function loadDataset(): Promise<Dataset> {
-  const get = (f: string) => fetch(f).then(r => r.json());
+  const get = (f: string) => fetch(dataUrl(f)).then(r => r.json());
   const [c, w, cn, ch] = await Promise.all([
-    get('data/countries.json'), get('data/water.json'), get('data/cn.json'),
-    get('data/changes.json').catch(() => []),
+    get('countries.json'), get('water.json'), get('cn.json'),
+    get('changes.json').catch(() => []),
   ]);
   const norm = (layer: Layer) => (p: Place) => ({ ...p, layer, capitals: p.capitals ?? [], capitalAnswer: p.capitalAnswer ?? null });
   const countries: Place[] = c.countries.filter((x: Place) => x.capitalAnswer && x.region).map(norm('country'));
