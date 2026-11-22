@@ -1,15 +1,15 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { exportProgress, importProgress, update, useProgress, type Settings } from '../srs';
 import { Icon, type IconName } from './Icons';
+import { VERSION } from '../views/Landing';
 
 export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas';
 const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Skills', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['atlas', 'Atlas', 'book']];
 const TOGGLE_ICON: Record<'sound' | 'gamify' | 'pictures' | 'locks', IconName> = { sound: 'sound', gamify: 'star', pictures: 'image', locks: 'lock' };
 
-export function Ribbon({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
+export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTab: (t: Tab) => void; menu: boolean; setMenu: (v: boolean) => void; goHome: () => void }) {
   const p = useProgress();
   const s = p.settings;
-  const [menu, setMenu] = useState(false);
   const file = useRef<HTMLInputElement>(null);
   const set = <K extends keyof Settings>(k: K, v: Settings[K]) => update(x => { x.settings[k] = v; });
   const Toggle = ({ k, label }: { k: 'sound' | 'gamify' | 'pictures' | 'locks'; label: string }) => (
@@ -27,7 +27,7 @@ export function Ribbon({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) 
   return (
     <header className="ribbon">
       <div className="ribbon-row">
-        <div className="brand">Geo<span>Quest</span></div>
+        <button className="brand" onClick={goHome} title="Home">Geo<span>Quest</span></button>
         <nav className="tabs">
           {TABS.map(([id, label, icon]) => (
             <button key={id} className={tab === id ? 'active' : ''} onClick={() => setTab(id)}><span className="tab-icon"><Icon name={icon} size={18} /></span><span>{label}</span></button>
@@ -59,6 +59,10 @@ export function Ribbon({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) 
             </div>
           </div>
           <label className="check">
+            <input type="checkbox" checked={s.targetBox} onChange={e => set('targetBox', e.target.checked)} />
+            Target brackets around the place in question, with ✓ / ✗ after map answers
+          </label>
+          <label className="check">
             <input type="checkbox" checked={s.nativeNames} onChange={e => set('nativeNames', e.target.checked)} />
             Show names in the local language (Deutschland, 日本, Ελλάδα) after each answer — Chinese characters & pinyin always show for China
           </label>
@@ -71,7 +75,7 @@ export function Ribbon({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) 
               try { importProgress(await f.text()); alert('Progress restored.'); } catch (err) { alert('That file could not be read: ' + (err as Error).message); }
             }} />
           </div>
-          <p className="muted small">Facts: <a href="https://www.wikidata.org" target="_blank" rel="noreferrer">Wikidata</a> (CC0) · Photos & flags: Wikimedia Commons · Map: Natural Earth</p>
+          <p className="muted small">GeoQuest v{VERSION.version} · build {VERSION.commit} · Facts: <a href="https://www.wikidata.org" target="_blank" rel="noreferrer">Wikidata</a> (CC0) · Photos & flags: Wikimedia Commons · Map: Natural Earth</p>
         </div>
       )}
     </header>

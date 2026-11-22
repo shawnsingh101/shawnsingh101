@@ -30,6 +30,7 @@ interface Props {
   tones?: Record<string, Tone>;
   labels?: Record<string, string>;
   pins?: Pin[];
+  target?: { id: string; status?: 'right' | 'wrong' } | null; // "lock-on" brackets around the place in question
   focus?: { ids: string[]; key: string; pad?: number } | null; // pad: share of the screen the focus should fill (default .85)
   dim?: (placeId: string) => boolean;   // fade places outside the current question's region
   onTap?: (hit: MapHit) => void;
@@ -83,7 +84,7 @@ function toShapes(topo: Topology, layer: Layer, path: ReturnType<typeof geoPath>
   });
 }
 
-export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], focus, dim, onTap, onHover, className, recenter = false, hide, detailByZoom = false }: Props) {
+export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], target, focus, dim, onTap, onHover, className, recenter = false, hide, detailByZoom = false }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown>>();
@@ -218,14 +219,14 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const riverEl = (s: Shape) => {
     const great = /-great$/.test(ds.byId.get(s.placeId!)?.group ?? '');
     return (
-      <g key={s.key} className={'river' + (great ? ' great' : '') + cls(s.placeId)} {...events({ countryId: s.placeId, name: nameOf(s) })}>
+      <g key={s.key} className={'river' + (great ? ' great' : '') + cls(s.placeId)} data-name={nameOf(s)} {...events({ countryId: s.placeId, name: nameOf(s) })}>
         <path d={s.d} className="hit" />
         <path d={s.d} className="vis" />
       </g>
     );
   };
   const shapeEl = (s: Shape, base: string) => (
-    <path key={s.key} d={s.d} className={base + (s.placeId ? ' place' : ' other') + cls(s.placeId)} style={style(s.placeId)}
+    <path key={s.key} d={s.d} className={base + (s.placeId ? ' place' : ' other') + cls(s.placeId)} style={style(s.placeId)} data-name={nameOf(s)}
       {...events({ countryId: s.placeId, name: nameOf(s) })} />
   );
 
@@ -254,6 +255,39 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
               {p.label && <text x={xy[0] + 7 / k} y={xy[1] + 4 / k} style={{ fontSize: 12 / k, strokeWidth: 3 / k }}>{p.label}</text>}
             </g>;
           })}
+          {target && (() => {
+            // Corner brackets around the target, drawn in screen-sized units so they stay crisp at any zoom.
+            const s = visible.find(x => x.placeId === target.id);
+            const d = dots.find(x => x.placeId === target.id);
+            let b: [[number, number], [number, number]] | null = s ? s.bounds : d ? [[d.x, d.y], [d.x, d.y]] : null;
+            if (!b || !isFinite(b[0][0])) return null;
+            const pad = 9 / k, minHalf = 9 / k;
+            let [[x0, y0], [x1, y1]] = b;
+            const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+            x0 = Math.min(x0 - pad, cx - minHalf); x1 = Math.max(x1 + pad, cx + minHalf);
+            y0 = Math.min(y0 - pad, cy - minHalf); y1 = Math.max(y1 + pad, cy + minHalf);
+            const L = Math.min(14 / k, (x1 - x0) / 3, (y1 - y0) / 3);
+            const pl = ds.byId.get(target.id);
+            const coord = pl?.lat != null && pl.lon != null ? `${Math.abs(pl.lat).toFixed(1)}°${pl.lat >= 0 ? 'N' : 'S'}  ${Math.abs(pl.lon).toFixed(1)}°${pl.lon >= 0 ? 'E' : 'W'}` : '';
+            const st = target.status ?? 'lock';
+            return (
+              <g key={target.id + st} className={'target t-' + st}>
+                <g className="brackets">
+                  <path d={`M${x0} ${y0 + L}V${y0}H${x0 + L} M${x1 - L} ${y0}H${x1}V${y0 + L} M${x1} ${y1 - L}V${y1}H${x1 - L} M${x0 + L} ${y1}H${x0}V${y1 - L}`} />
+                  <path className="ticks" d={`M${cx} ${y0 - 4 / k}V${y0 + 3 / k} M${cx} ${y1 - 3 / k}V${y1 + 4 / k} M${x0 - 4 / k} ${cy}H${x0 + 3 / k} M${x1 - 3 / k} ${cy}H${x1 + 4 / k}`} />
+                </g>
+                {coord && <text x={x0} y={y1 + 13 / k} style={{ fontSize: 9.5 / k, strokeWidth: 3 / k }}>{coord}</text>}
+                {target.status && (
+                  <g transform={`translate(${x1} ${y0}) scale(${1 / k})`}>
+                    <g className="badge">
+                      <circle r="10" />
+                      <path d={target.status === 'right' ? 'M-4.5 0.5l3 3 6-6.5' : 'M-4 -4l8 8M4 -4l-8 8'} />
+                    </g>
+                  </g>
+                )}
+              </g>
+            );
+          })()}
           {Object.entries(labels).map(([id, text]) => {
             const s = visible.find(s => s.placeId === id);
             const d = dots.find(d => d.placeId === id);

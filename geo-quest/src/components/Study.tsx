@@ -201,6 +201,10 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
     tones[c.id] = 'right'; labels[c.id] = c.name;
     if (!tapResult.ok && tapResult.hit.countryId) { tones[tapResult.hit.countryId] = 'wrong'; labels[tapResult.hit.countryId] = tapResult.hit.name; }
   }
+  // Lock-on brackets: around the place being asked about, then ✓ / ✗ once you've answered on the map.
+  const target = !s.targetBox ? null
+    : tapResult ? { id: c.id, status: tapResult.ok ? 'right' as const : 'wrong' as const }
+    : f.map === 'highlight' || (flipped && revealed) ? { id: c.id } : null;
   const cap = c.capitals[0];
   const pins = revealed && item.ref.kind.startsWith('capital') && cap?.lon != null ? [{ lon: cap.lon, lat: cap.lat!, label: cap.name }] : [];
 
@@ -221,7 +225,7 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
       {nudge && <div className="nudge">{nudge}</div>}
 
       {showMap && (
-        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} focus={focus}
+        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
           dim={id => !regionIds.includes(id) && ds.byId.get(id)?.layer === c.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
       )}
 
