@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GROUPS, nodeId, parseNode, placesIn, slotOf, groupById, LAYER_NOUN, childSections, sectionAndDescendants, SECTION_PARENT } from '../cards';
+import { GROUPS, groupsShownIn, nodeId, parseNode, placesIn, slotOf, groupById, LAYER_NOUN, childSections, sectionAndDescendants, SECTION_PARENT } from '../cards';
 import { buildQueue, isUnlocked, learnMore, nodeStats, update, useProgress } from '../srs';
 import { makeQuiz, type Scope } from '../quiz';
 import { sounds } from '../sound';
@@ -96,8 +96,8 @@ export function Tree({ ds, startQuiz, startStudy, goDashboard }: { ds: Dataset; 
 
   /** One section: its own groups, then the places inside it studied in depth (each a section of its own). */
   const section = (sec: string, depth: number): JSX.Element => {
-    const groups = GROUPS.filter(g => g.section === sec);
-    const all = sectionAndDescendants(sec).flatMap(x => GROUPS.filter(g => g.section === x));
+    const groups = groupsShownIn(sec);
+    const all = [...new Set(sectionAndDescendants(sec).flatMap(x => groupsShownIn(x)))];
     const nodes = all.flatMap(g => g.topics.map(t => nodeId(g.id, t.id)));
     const tot = nodes.reduce((a, n) => { const st = nodeStats(ds, p, n); return { known: a.known + st.known, total: a.total + st.total, due: a.due + st.due }; }, { known: 0, total: 0, due: 0 });
     const learning = nodes.filter(n => p.active.includes(n)).length;

@@ -62,6 +62,7 @@ export interface Group {
   id: string; section: string; name: string; layer: Place['layer'];
   subregions?: string[]; topics: TopicSlot[]; note?: string;
   requires?: string;   // a node from another group that must be half-known first (e.g. great rivers → more rivers)
+  alsoInSections?: string[]; // also listed in these sections (Rivers of the United States shows under Rivers too)
 }
 
 const COUNTRY_TOPICS: TopicSlot[] = [
@@ -124,7 +125,7 @@ export const GROUPS: Group[] = [
     ],
     note: id === 'us-ne' ? 'The 50 states by US Census region. Senators unlock once you know half a region’s states; their cards follow the seat, so when a seat changes hands the card comes back with a note.' : undefined,
   })),
-  { id: 'r-us', section: 'United States', name: 'Rivers of the United States', layer: 'river', topics: [{ id: 'places', name: 'Rivers', icon: 'river' }],
+  { id: 'r-us', section: 'United States', alsoInSections: ['Rivers'], name: 'Rivers of the United States', layer: 'river', topics: [{ id: 'places', name: 'Rivers', icon: 'river' }],
     note: 'The great US rivers plus the next tier down (the Hudson, Delaware, Susquehanna, Potomac…). Rivers shared with the world decks keep one set of progress.' },
   ...([['t-car', 'Caribbean territories'], ['t-pac', 'Pacific territories'], ['t-atl', 'Atlantic & European territories'], ['t-ind', 'Indian Ocean territories']] as const).map(([id, name]): Group => ({
     id, section: 'Territories', name, layer: 'terr',
@@ -157,6 +158,8 @@ export const CONTINENTS = SECTIONS.slice(0, 5);
 // ---- Sections form a tree -------------------------------------------------------------
 // A country (or state) studied in depth sits inside its parent: Americas › United States › New Jersey.
 // The skill tree, quiz and atlas all drill down through this, so new regions never pile up at the bottom.
+/** The groups listed in a section: its own, plus any filed elsewhere that also belong here. */
+export const groupsShownIn = (sec: string) => GROUPS.filter(g => g.section === sec || g.alsoInSections?.includes(sec));
 export const SECTION_PARENT: Record<string, string> = { 'United States': 'Americas', China: 'Asia' };
 export const childSections = (sec: string | null) => SECTIONS.filter(s => (SECTION_PARENT[s] ?? null) === sec);
 /** The section and its ancestors, outermost first: ['Americas', 'United States', 'New Jersey']. */
