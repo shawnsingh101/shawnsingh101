@@ -58,6 +58,8 @@ export function useProgress() {
   return useSyncExternalStore(cb => { listeners.add(cb); return () => listeners.delete(cb); }, () => state);
 }
 export const getProgress = () => state;
+/** Put back an earlier snapshot of progress (used by Undo). */
+export function restoreProgress(p: Progress) { state = p; save(); listeners.forEach(l => l()); }
 
 export const today = () => new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD, local time
 

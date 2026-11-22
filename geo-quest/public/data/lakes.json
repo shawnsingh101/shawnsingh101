@@ -86,7 +86,19 @@
    "group": "l-great",
    "nameThe": "Lake Tanganyika",
    "facts": "32,900 km² · Tanzania, Zambia, Burundi, DR Congo",
-   "size": 32900
+   "size": 32900,
+   "native": [
+    {
+     "name": "Tanganyika",
+     "lang": "Kirundi",
+     "code": "rn"
+    },
+    {
+     "name": "lac Tanganyika",
+     "lang": "French",
+     "code": "fr"
+    }
+   ]
   },
   {
    "id": "Q5513",
@@ -102,7 +114,14 @@
    "group": "l-great",
    "nameThe": "Lake Baikal",
    "facts": "31,722 km² · Russia",
-   "size": 31722
+   "size": 31722,
+   "native": [
+    {
+     "name": "Байкал",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q5525",
@@ -136,7 +155,14 @@
    "group": "l-great",
    "nameThe": "Lake Malawi",
    "facts": "29,600 km² · Tanzania, Malawi, Mozambique",
-   "size": 29600
+   "size": 29600,
+   "native": [
+    {
+     "name": "Lago Niassa",
+     "lang": "Portuguese",
+     "code": "pt"
+    }
+   ]
   },
   {
    "id": "Q5539",
@@ -201,7 +227,14 @@
    "group": "l-great",
    "nameThe": "Lake Balkhash",
    "facts": "18,740 km² · Kazakhstan",
-   "size": 18740
+   "size": 18740,
+   "native": [
+    {
+     "name": "Балқаш",
+     "lang": "Kazakh",
+     "code": "kk"
+    }
+   ]
   },
   {
    "id": "Q1062",
@@ -234,7 +267,14 @@
    "group": "l-great",
    "nameThe": "Lake Ladoga",
    "facts": "17,700 km² · Russia",
-   "size": 17700
+   "size": 17700,
+   "native": [
+    {
+     "name": "Ладожское озеро",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q276776",
@@ -251,7 +291,14 @@
    "group": "l-great",
    "nameThe": "the South Aral Sea",
    "facts": "10,780 km² · Kazakhstan, Uzbekistan",
-   "size": 10780
+   "size": 10780,
+   "native": [
+    {
+     "name": "Большое Аральское море",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q673169",
@@ -283,7 +330,14 @@
    "group": "l-great",
    "nameThe": "Lake Onega",
    "facts": "9,800 km² · Russia",
-   "size": 9800
+   "size": 9800,
+   "native": [
+    {
+     "name": "Онежское озеро",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q35342",
@@ -300,7 +354,14 @@
    "group": "l-great",
    "nameThe": "Titicaca",
    "facts": "8,562 km² · Peru, Bolivia",
-   "size": 8562
+   "size": 8562,
+   "native": [
+    {
+     "name": "Titiqaqa",
+     "lang": "Aymara",
+     "code": "ay"
+    }
+   ]
   },
   {
    "id": "Q201679",
@@ -397,7 +458,14 @@
    "group": "l-as",
    "nameThe": "Issyk-Kul",
    "facts": "6,236 km² · Kyrgyzstan",
-   "size": 6236
+   "size": 6236,
+   "native": [
+    {
+     "name": "Ысык-Көл",
+     "lang": "Kyrgyz",
+     "code": "ky"
+    }
+   ]
   },
   {
    "id": "Q163855",
@@ -463,7 +531,14 @@
    "group": "l-af",
    "nameThe": "Lake Albert",
    "facts": "5,270 km² · DR Congo, Uganda",
-   "size": 5270
+   "size": 5270,
+   "native": [
+    {
+     "name": "lac Albert",
+     "lang": "French",
+     "code": "fr"
+    }
+   ]
   },
   {
    "id": "Q182796",
@@ -480,7 +555,14 @@
    "group": "l-af",
    "nameThe": "Lake Nasser",
    "facts": "5,250 km² · Egypt, Sudan",
-   "size": 5250
+   "size": 5250,
+   "native": [
+    {
+     "name": "بحيرة ناصر",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q199551",
@@ -496,7 +578,14 @@
    "group": "l-as",
    "nameThe": "Urmia Lake",
    "facts": "5,200 km² · Iran",
-   "size": 5200
+   "size": 5200,
+   "native": [
+    {
+     "name": "دریاچه ارومیه",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ]
   },
   {
    "id": "Q934638",
@@ -528,7 +617,11 @@
    "group": "l-as",
    "nameThe": "Poyang Lake",
    "facts": "5,100 km² · China",
-   "size": 5100
+   "size": 5100,
+   "zh": {
+    "han": "鄱阳湖",
+    "pinyin": "Póyánghú"
+   }
   },
   {
    "id": "Q1132211",
@@ -593,7 +686,14 @@
    "group": "l-af",
    "nameThe": "Lake Mweru",
    "facts": "4,650 km² · Zambia, DR Congo",
-   "size": 4650
+   "size": 4650,
+   "native": [
+    {
+     "name": "lac Moero",
+     "lang": "French",
+     "code": "fr"
+    }
+   ]
   },
   {
    "id": "Q645901",
@@ -625,7 +725,14 @@
    "group": "l-as",
    "nameThe": "Taymyr",
    "facts": "4,560 km² · Russia",
-   "size": 4560
+   "size": 4560,
+   "native": [
+    {
+     "name": "Таймыр",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q178741",
@@ -644,22 +751,6 @@
    "size": 4400
   },
   {
-   "id": "Q201294",
-   "layer": "lake",
-   "name": "Qinghai Lake",
-   "image": "青海湖航拍.jpg",
-   "lon": 100,
-   "lat": 37,
-   "wiki": "Qinghai_Lake",
-   "countries": [
-    "Q148"
-   ],
-   "group": "l-as",
-   "nameThe": "Qinghai Lake",
-   "facts": "4,400 km² · China",
-   "size": 4400
-  },
-  {
    "id": "Q192770",
    "layer": "lake",
    "name": "Saimaa",
@@ -674,6 +765,26 @@
    "nameThe": "Saimaa",
    "facts": "4,400 km² · Finland",
    "size": 4400
+  },
+  {
+   "id": "Q201294",
+   "layer": "lake",
+   "name": "Qinghai Lake",
+   "image": "青海湖航拍.jpg",
+   "lon": 100,
+   "lat": 37,
+   "wiki": "Qinghai_Lake",
+   "countries": [
+    "Q148"
+   ],
+   "group": "l-as",
+   "nameThe": "Qinghai Lake",
+   "facts": "4,400 km² · China",
+   "size": 4400,
+   "zh": {
+    "han": "青海湖",
+    "pinyin": "Qīnghǎihú"
+   }
   },
   {
    "id": "Q845876",
@@ -723,7 +834,18 @@
    "group": "l-as",
    "nameThe": "Khanka",
    "facts": "4,190 km² · China, Russia",
-   "size": 4190
+   "size": 4190,
+   "zh": {
+    "han": "兴凯湖",
+    "pinyin": "Xīngkǎihú"
+   },
+   "native": [
+    {
+     "name": "Ханка",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q876280",
@@ -757,7 +879,14 @@
    "group": "l-as",
    "nameThe": "Sarygamysh Lake",
    "facts": "3,955 km² · Uzbekistan, Turkmenistan",
-   "size": 3955
+   "size": 3955,
+   "native": [
+    {
+     "name": "Сарыкамышское озеро",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q1262967",
@@ -805,7 +934,14 @@
    "group": "l-af",
    "nameThe": "Lake Tana",
    "facts": "3,600 km² · Ethiopia",
-   "size": 3600
+   "size": 3600,
+   "native": [
+    {
+     "name": "ጣና ሐይቅ",
+     "lang": "Amharic",
+     "code": "am"
+    }
+   ]
   },
   {
    "id": "Q19253",
@@ -822,7 +958,19 @@
    "group": "l-eu",
    "nameThe": "Lake Peipus",
    "facts": "3,543 km² · Russia, Estonia",
-   "size": 3543
+   "size": 3543,
+   "native": [
+    {
+     "name": "Чудско-Псковское озеро",
+     "lang": "Russian",
+     "code": "ru"
+    },
+    {
+     "name": "Peipsi-Pihkva järv",
+     "lang": "Estonian",
+     "code": "et"
+    }
+   ]
   },
   {
    "id": "Q81150",
@@ -838,7 +986,14 @@
    "group": "l-as",
    "nameThe": "Uvs Lake",
    "facts": "3,350 km² · Russia",
-   "size": 3350
+   "size": 3350,
+   "native": [
+    {
+     "name": "Убсу-Нур",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q3358037",
@@ -854,7 +1009,14 @@
    "group": "l-as",
    "nameThe": "the North Aral Sea",
    "facts": "3,300 km² · Kazakhstan",
-   "size": 3300
+   "size": 3300,
+   "native": [
+    {
+     "name": "Солтүстік Арал теңізі",
+     "lang": "Kazakh",
+     "code": "kk"
+    }
+   ]
   },
   {
    "id": "Q452088",
@@ -902,7 +1064,14 @@
    "group": "l-as",
    "nameThe": "Khövsgöl Lake",
    "facts": "2,760 km² · Mongolia",
-   "size": 2760
+   "size": 2760,
+   "native": [
+    {
+     "name": "Хөвсгөл нуур",
+     "lang": "Mongolian",
+     "code": "mn"
+    }
+   ]
   },
   {
    "id": "Q1640519",
@@ -918,7 +1087,14 @@
    "group": "l-as",
    "nameThe": "Lake Tharthar",
    "facts": "2,710 km² · Iraq",
-   "size": 2710
+   "size": 2710,
+   "native": [
+    {
+     "name": "منخفض الثرثار",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q125912",
@@ -935,7 +1111,14 @@
    "group": "l-af",
    "nameThe": "Lake Kivu",
    "facts": "2,700 km² · DR Congo, Rwanda",
-   "size": 2700
+   "size": 2700,
+   "native": [
+    {
+     "name": "lac Kivu",
+     "lang": "French",
+     "code": "fr"
+    }
+   ]
   },
   {
    "id": "Q199938",
@@ -951,7 +1134,14 @@
    "group": "l-as",
    "nameThe": "Tonle Sap",
    "facts": "2,700 km² · Cambodia",
-   "size": 2700
+   "size": 2700,
+   "native": [
+    {
+     "name": "បឹងទន្លេសាប",
+     "lang": "Khmer",
+     "code": "km"
+    }
+   ]
   },
   {
    "id": "Q310547",
@@ -967,7 +1157,14 @@
    "group": "l-as",
    "nameThe": "Lake Alakol",
    "facts": "2,650 km² · Kazakhstan",
-   "size": 2650
+   "size": 2650,
+   "native": [
+    {
+     "name": "Алакөл",
+     "lang": "Kazakh",
+     "code": "kk"
+    }
+   ]
   },
   {
    "id": "Q965436",
@@ -1047,7 +1244,11 @@
    "group": "l-as",
    "nameThe": "Lake Tai",
    "facts": "2,250 km² · China",
-   "size": 2250
+   "size": 2250,
+   "zh": {
+    "han": "太湖",
+    "pinyin": "Tàihú"
+   }
   },
   {
    "id": "Q125211",
@@ -1064,7 +1265,14 @@
    "group": "l-af",
    "nameThe": "Lake Edward",
    "facts": "2,150 km² · DR Congo, Uganda",
-   "size": 2150
+   "size": 2150,
+   "native": [
+    {
+     "name": "lac Édouard",
+     "lang": "French",
+     "code": "fr"
+    }
+   ]
   },
   {
    "id": "Q188195",
@@ -1115,7 +1323,19 @@
    "group": "l-af",
    "nameThe": "Lake Chad",
    "facts": "1,540 km² · Chad, Cameroon, Niger, Nigeria",
-   "size": 1540
+   "size": 1540,
+   "native": [
+    {
+     "name": "بحيرة تشاد",
+     "lang": "Arabic",
+     "code": "ar"
+    },
+    {
+     "name": "lac Tchad",
+     "lang": "French",
+     "code": "fr"
+    }
+   ]
   },
   {
    "id": "Q304933",
@@ -1147,7 +1367,14 @@
    "group": "l-eu",
    "nameThe": "Vygozero",
    "facts": "1,250 km² · Russia",
-   "size": 1250
+   "size": 1250,
+   "native": [
+    {
+     "name": "Выгозеро",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q770141",
@@ -1179,7 +1406,14 @@
    "group": "l-eu",
    "nameThe": "Beloye Lake",
    "facts": "1,130 km² · Russia",
-   "size": 1130
+   "size": 1130,
+   "native": [
+    {
+     "name": "Белое озеро",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q213769",
@@ -1211,7 +1445,14 @@
    "group": "l-eu",
    "nameThe": "Lake Inari",
    "facts": "1,082 km² · Finland",
-   "size": 1082
+   "size": 1082,
+   "native": [
+    {
+     "name": "Inarijärvi",
+     "lang": "Finnish",
+     "code": "fi"
+    }
+   ]
   },
   {
    "id": "Q184492",
@@ -1245,7 +1486,25 @@
    "group": "l-as",
    "nameThe": "the Dead Sea",
    "facts": "1,050 km² · Israel, Jordan, Palestine",
-   "size": 1050
+   "size": 1050,
+   "native": [
+    {
+     "name": "ים המלח",
+     "lang": "Hebrew",
+     "code": "he"
+    },
+    {
+     "name": "البحر الميت",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
+   "audio": {
+    "he": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/89/He-%D7%99%D6%B8%D7%9D_%D7%94%D6%B7%D7%9E%D6%B6%D6%BC%D7%9C%D6%B7%D7%97.oga/He-%D7%99%D6%B8%D7%9D_%D7%94%D6%B7%D7%9E%D6%B6%D6%BC%D7%9C%D6%B7%D7%97.oga.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/8/89/He-%D7%99%D6%B8%D7%9D_%D7%94%D6%B7%D7%9E%D6%B6%D6%BC%D7%9C%D6%B7%D7%97.oga"
+    ]
+   }
   },
   {
    "id": "Q709323",
@@ -1261,7 +1520,14 @@
    "group": "l-eu",
    "nameThe": "Topozero",
    "facts": "986 km² · Russia",
-   "size": 986
+   "size": 986,
+   "native": [
+    {
+     "name": "Топозеро",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q203462",
@@ -1277,7 +1543,14 @@
    "group": "l-eu",
    "nameThe": "Ilmen",
    "facts": "982 km² · Russia",
-   "size": 982
+   "size": 982,
+   "native": [
+    {
+     "name": "Ильмень",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q1416209",
@@ -1293,7 +1566,14 @@
    "group": "l-eu",
    "nameThe": "Segozero",
    "facts": "906 km² · Russia",
-   "size": 906
+   "size": 906,
+   "native": [
+    {
+     "name": "Сегозеро",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q845891",
@@ -1341,7 +1621,14 @@
    "group": "l-eu",
    "nameThe": "Lake Pihkva",
    "facts": "708 km² · Russia",
-   "size": 708
+   "size": 708,
+   "native": [
+    {
+     "name": "Псковское озеро",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q6383",
@@ -1357,7 +1644,14 @@
    "group": "l-eu",
    "nameThe": "Lake Balaton",
    "facts": "592 km² · Hungary",
-   "size": 592
+   "size": 592,
+   "native": [
+    {
+     "name": "Balaton",
+     "lang": "Hungarian",
+     "code": "hu"
+    }
+   ]
   },
   {
    "id": "Q6403",
@@ -1374,7 +1668,20 @@
    "group": "l-eu",
    "nameThe": "Lake Geneva",
    "facts": "581 km² · Switzerland, France",
-   "size": 581
+   "size": 581,
+   "native": [
+    {
+     "name": "Léman",
+     "lang": "French",
+     "code": "fr"
+    }
+   ],
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/31/LL-Q150_(fra)-Eihel-L%C3%A9man.wav/LL-Q150_(fra)-Eihel-L%C3%A9man.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/3/31/LL-Q150_(fra)-Eihel-L%C3%A9man.wav"
+    ]
+   }
   },
   {
    "id": "Q4127",
@@ -1392,7 +1699,19 @@
    "group": "l-eu",
    "nameThe": "Lake Constance",
    "facts": "536 km² · Switzerland, Austria, Germany",
-   "size": 536
+   "size": 536,
+   "native": [
+    {
+     "name": "lac de Constance",
+     "lang": "French",
+     "code": "fr"
+    },
+    {
+     "name": "Bodensee",
+     "lang": "German",
+     "code": "de"
+    }
+   ]
   },
   {
    "id": "Q169962",
@@ -1424,7 +1743,14 @@
    "group": "l-af",
    "nameThe": "Lake Tumba",
    "facts": "500 km² · DR Congo",
-   "size": 500
+   "size": 500,
+   "native": [
+    {
+     "name": "lac Tumba",
+     "lang": "French",
+     "code": "fr"
+    }
+   ]
   },
   {
    "id": "Q206942",
@@ -1472,7 +1798,14 @@
    "group": "l-as",
    "nameThe": "Sea of Galilee",
    "facts": "168 km² · Israel",
-   "size": 168
+   "size": 168,
+   "native": [
+    {
+     "name": "הכנרת",
+     "lang": "Hebrew",
+     "code": "he"
+    }
+   ]
   },
   {
    "id": "Q81239",
@@ -1488,7 +1821,14 @@
    "group": "l-af",
    "nameThe": "Lake Assal",
    "facts": "54 km² · Djibouti",
-   "size": 54
+   "size": 54,
+   "native": [
+    {
+     "name": "بحيرة عسل",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   }
  ]
 }

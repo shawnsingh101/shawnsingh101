@@ -367,3 +367,8 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .map-tip .tip-facts { font-size: .78rem; opacity: .85; }
 .cont-rivers { background: linear-gradient(140deg, #d5e8f0, var(--surface) 70%); }
 .cont-lakes { background: linear-gradient(140deg, #d9eee9, var(--surface) 70%); }
+
+/* ---- undo & nudges ---- */
+.study-top .undo { color: var(--muted); }
+.study { position: relative; }
+.nudge { position: absolute; z-index: 30; left: 50%; top: 4rem; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: .45rem .9rem; border-radius: 999px; font-size: .9rem; animation: rise .2s ease; pointer-events: none; }
