@@ -163,10 +163,14 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const ready = !!shapes.country && layers.every(l => shapes[l]);
   useEffect(() => {
     if (!ready || !svgRef.current || !zoomRef.current || !size.w) return;
-    if (recenter && !focus?.keepCenter) {
+    if (recenter) {
       const lons = (focus?.ids ?? []).map(id => ds.byId.get(id)?.lon).filter((l): l is number => l != null);
       const want = focus ? meanLon(lons) : lambda;
-      if (want !== lambda) { recentered.current = true; setLambda(want); return; } // re-runs once the map is re-drawn
+      // keepCenter zooms smoothly without re-centring — unless the target sits near the map's edge,
+      // where it could be split across both sides (e.g. the Yukon when the map is centred on 46°E).
+      const fromCentre = (l: number) => Math.abs((((l - lambda) % 360) + 540) % 360 - 180);
+      const nearEdge = lons.some(l => fromCentre(l) > 110);
+      if (want !== lambda && (!focus?.keepCenter || nearEdge)) { recentered.current = true; setLambda(want); return; } // re-runs once the map is re-drawn
     }
     const k0 = fitScale(size);
     let target = home();
