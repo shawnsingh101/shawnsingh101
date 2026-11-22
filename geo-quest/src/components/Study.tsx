@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { face, groupOf, placesIn, KIND_LABEL, layerFor, type CardRef } from '../cards';
-import { answer, buildQueue, getProgress, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
+import { answer, buildQueue, getProgress, update, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
 import { sounds } from '../sound';
 import type { Dataset } from '../types';
 import { WorldMap, type MapHit, type Tone } from './WorldMap';
@@ -39,7 +39,10 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
   const history = useRef<{ queue: Item[]; done: number; results: typeof results; sessionXp: number; progress: Progress }[]>([]);
   const [canUndo, setCanUndo] = useState(false);
   const item = queue[0];
-  const f = item ? face(item.ref) : null;
+  // "Find it on the map" cards can be flipped like flashcards instead of tapped (Settings → map questions).
+  const rawFace = item ? face(item.ref) : null;
+  const flipped = !!rawFace && rawFace.mode === 'tap' && s.mapMode !== 'tap';
+  const f = rawFace && flipped ? { ...rawFace, mode: 'reveal' as const, blank: 'where?', answer: 'here' } : rawFace;
   const c = item?.ref.country;
 
   const restart = (items: Item[]) => {
@@ -85,6 +88,13 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
 
   const reveal = useCallback(() => { if (!revealed) { setRevealed(true); if (s.sound) sounds.flip(); } }, [revealed, s.sound]);
 
+  /** "I don't know" on a map question: show where it is, counted as missed. */
+  const dontKnow = () => {
+    if (!f || f.mode !== 'tap' || tapResult) return;
+    setTapResult({ ok: false, hit: { countryId: null, name: '' } }); setRevealed(true);
+    if (s.sound) sounds.flip();
+  };
+
   const onTap = (hit: MapHit) => {
     if (!f || f.mode !== 'tap' || tapResult) return;
     // A tap on a different kind of thing (a country while looking for a river) is a slip, not an answer.
@@ -105,25 +115,28 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); undo(); return; }
       if (!f) return;
       if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'reveal') { e.preventDefault(); reveal(); }
+      else if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'tap') { e.preventDefault(); dontKnow(); }
       else if (revealed && !quiz && ['1', '2', '3', '4'].includes(e.key)) next(+e.key as Grade);
       else if (revealed && quiz && (e.key === '1' || e.key === '2')) next(e.key === '1' ? Rating.Again : Rating.Good);
       else if (revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); next(tapResult ? (tapResult.ok ? Rating.Good : Rating.Again) : Rating.Good); }
     };
     window.addEventListener('keydown', h);
     return () => window.removeEventListener('keydown', h);
-  }, [f, revealed, reveal, next, tapResult, quiz, undo]);
+  }, [f, revealed, reveal, next, tapResult, quiz, undo]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const group = c ? groupOf(c) : null;
   const regionIds = useMemo(() => (group ? placesIn(ds, group.id).map(x => x.id) : []), [ds, group]);
   const focus = useMemo(() => {
     if (!item || !f || f.map === 'none') return null;
+    // Flipped map card, now revealed: fly to the answer.
+    if (flipped && revealed) return { ids: c!.layer === 'country' || c!.layer === 'cn' ? [c!.id] : [c!.id], key: item.ref.id + ':r', pad: c!.layer === 'lake' ? 0.3 : c!.layer === 'river' ? 0.55 : 0.5 };
     // Seas are small inside a big region: zoom right to them. Countries/provinces show their neighbourhood.
     // Rivers & lakes: centred, with some surroundings so you can get your bearings.
     if (f.map === 'highlight') return ['water', 'river', 'lake'].includes(c!.layer)
       ? { ids: [c!.id], key: item.ref.id + ':h', pad: c!.layer === 'water' ? 0.85 : c!.layer === 'river' ? 0.55 : 0.3 }
       : { ids: [c!.id, ...regionIds], key: item.ref.id + ':h' };
     return { ids: regionIds, key: group!.id };
-  }, [item, f, c, regionIds, group]);
+  }, [item, f, c, regionIds, group, flipped, revealed]);
 
   // Save the quiz score once, when the last card is answered.
   useEffect(() => {
@@ -183,6 +196,7 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
   const tones: Record<string, Tone> = {};
   const labels: Record<string, string> = {};
   if (f.map === 'highlight') { tones[c.id] = 'accent'; if (revealed) labels[c.id] = c.name; }
+  if (flipped && revealed) { tones[c.id] = 'right'; labels[c.id] = c.name; }
   if (tapResult) {
     tones[c.id] = 'right'; labels[c.id] = c.name;
     if (!tapResult.ok && tapResult.hit.countryId) { tones[tapResult.hit.countryId] = 'wrong'; labels[tapResult.hit.countryId] = tapResult.hit.name; }
@@ -196,6 +210,12 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
         <button className="btn ghost icon-btn" onClick={onExit} aria-label="End session"><Icon name="x" /></button>
         <div className="bar"><div style={{ width: `${(done / Math.max(1, done + queue.length)) * 100}%` }} /></div>
         <span className="count">{quiz ? `${done + 1} / ${total}` : `${queue.length} left`}</span>
+        {rawFace?.mode === 'tap' && (
+          <button className="btn ghost small mode-toggle" title="How map questions work (also in Settings)"
+            onClick={() => { update(x => { x.settings.mapMode = x.settings.mapMode === 'tap' ? 'flip' : 'tap'; }); setTapResult(null); setRevealed(false); }}>
+            <Icon name={s.mapMode === 'tap' ? 'pin' : 'book'} size={15} /> {s.mapMode === 'tap' ? 'Tap mode' : 'Flip mode'}
+          </button>
+        )}
         {(canUndo || tapResult) && <button className="btn ghost small undo" onClick={undo} title="Undo (⌘Z / Ctrl+Z)"><Icon name="undo" size={15} /> Undo</button>}
       </div>
       {nudge && <div className="nudge">{nudge}</div>}
@@ -230,8 +250,11 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
           {revealed && f.note && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
           {revealed && s.pictures && f.picture && <Picture {...f.picture} />}
           {revealed && !f.picture && c.flag && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}
-          {!revealed && f.mode === 'reveal' && <p className="hint">Tap the card to reveal<span className="kbd-only"> (or press space)</span></p>}
-          {!revealed && f.mode === 'tap' && <p className="hint">Tap the right place on the map{regionIds.length > 1 ? ` — zoomed to ${group?.name}` : ''}</p>}
+          {!revealed && f.mode === 'reveal' && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
+          {!revealed && f.mode === 'tap' && <div className="tap-hint">
+            <p className="hint">Tap the right place on the map{regionIds.length > 1 ? ` — zoomed to ${group?.name}` : ''}</p>
+            <button className="btn small" onClick={e => { e.stopPropagation(); dontKnow(); }}>I don't know<kbd className="kbd-only">space</kbd></button>
+          </div>}
         </article>
 
         {revealed && f.mode === 'reveal' && !quiz && pv && (

@@ -372,3 +372,47 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .study-top .undo { color: var(--muted); }
 .study { position: relative; }
 .nudge { position: absolute; z-index: 30; left: 50%; top: 4rem; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: .45rem .9rem; border-radius: 999px; font-size: .9rem; animation: rise .2s ease; pointer-events: none; }
+
+/* ---- map-question modes ---- */
+.tap-hint { display: flex; align-items: center; justify-content: space-between; gap: .6rem; flex-wrap: wrap; margin-top: 1rem; }
+.tap-hint .hint { margin: 0; }
+.tap-hint .btn kbd { font: 600 .62rem/1 var(--font); border: 1px solid var(--line); border-radius: 4px; padding: .1rem .3rem; margin-left: .45rem; color: var(--muted); }
+.mode-toggle { color: var(--muted); white-space: nowrap; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.seg button { border: 0; background: transparent; padding: .35rem .8rem; font-size: .85rem; color: var(--muted); }
+.seg button.on { background: var(--ink); color: var(--bg); }
+@media (max-width: 760px) { .mode-toggle { padding: .3rem .5rem; font-size: .8rem; } }
+
+/* ---- compact skill tree ---- */
+.jumpbar { position: sticky; top: 58px; z-index: 10; display: flex; gap: .35rem; overflow-x: auto; scrollbar-width: none; padding: .5rem 0; margin: .5rem 0 .25rem; background: var(--bg); }
+.jumpbar .pick { white-space: nowrap; font-size: .85rem; padding: .3rem .7rem; }
+.tree .continent { margin-top: .6rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); scroll-margin-top: 120px; }
+.section-row { width: 100%; display: flex; align-items: center; gap: .8rem; border: 0; background: transparent; padding: .8rem 1rem; text-align: left; }
+.section-row b { font-family: var(--serif); font-size: 1.15rem; display: block; }
+.section-sub { display: block; font-size: .8rem; color: var(--muted); }
+.section-row .mini-bar { display: block; max-width: 260px; }
+.chev { font-size: 1.5rem; color: var(--muted); transform: rotate(90deg); transition: transform .2s; line-height: 1; }
+.chev.up { transform: rotate(-90deg); }
+.section-body { padding: 0 1rem 1rem; display: grid; gap: .6rem; }
+.section-body .section-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
+.tree .groups { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .6rem; }
+.tree .group { box-shadow: none; background: var(--bg); padding: .65rem .7rem; }
+.tree .group-head { margin-bottom: .45rem; }
+.skills { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tree .skill { flex-direction: row; align-items: center; gap: .5rem; padding: .35rem .65rem .35rem .4rem; border-radius: 12px; background: var(--surface); flex: 1 1 0; min-width: 0; }
+.tree .skill:hover:not(:disabled) { transform: none; border-color: color-mix(in srgb, var(--ink) 30%, var(--line)); }
+.ring-wrap { position: relative; width: 32px; height: 32px; display: grid; place-items: center; flex: none; }
+.ring-wrap .ring { position: absolute; inset: 0; width: 32px; height: 32px; }
+.skill.active .ring-wrap .icon { color: var(--accent); }
+.skill-text { display: flex; flex-direction: column; min-width: 0; text-align: left; }
+.tree .skill .label { font-size: .85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tree .skill small { font-size: .72rem; }
+.tree .skill.active::after { top: -.5rem; right: .4rem; font-size: .55rem; }
+@media (max-width: 760px) { .jumpbar { top: 104px; } .tree .continent { scroll-margin-top: 160px; } }
+@media (max-width: 760px) {
+  .tree .skill { padding: .3rem .45rem .3rem .3rem; gap: .35rem; }
+  .ring-wrap, .ring-wrap .ring { width: 26px; height: 26px; }
+  .ring-wrap .icon { width: 13px; height: 13px; }
+  .tree .skill .label { font-size: .78rem; overflow: visible; text-overflow: clip; }
+  .tree .group { padding: .55rem; }
+}

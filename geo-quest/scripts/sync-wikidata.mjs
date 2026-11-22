@@ -342,7 +342,7 @@ async function waterways(kind) {
       if (kind === 'lake' && !famous && (perContinent[g] = (perContinent[g] ?? 0) + 1) > 15) return; // keep the 15 largest lakes per continent
       p.group = g;
     }
-    p.nameThe = kind === 'river' ? (o?.nameThe ?? `the ${p.name}`) : (o?.nameThe ?? (/ Sea$|^Great /.test(p.name) ? `the ${p.name}` : p.name));
+    p.nameThe = kind === 'river' ? (o?.nameThe ?? `the ${p.name}`) : (o?.nameThe ?? (/ Sea$|^Great Salt/.test(p.name) ? `the ${p.name}` : p.name));
     const where = countryNames(p.countries);
     p.facts = kind === 'river'
       ? [`${fmt(p.len / 1000)} km long`, p.mouth && `flows into ${/^(the |Lake )/i.test(p.mouth) ? p.mouth : 'the ' + p.mouth}`, where.length && where.slice(0, 4).join(', ') + (where.length > 4 ? '…' : '')].filter(Boolean).join(' · ')
