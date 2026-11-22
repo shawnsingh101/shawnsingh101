@@ -585,3 +585,16 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
   .tile small { font-size: .78rem; }
   .tile-flags .flag { width: 22px; }
 }
+
+/* ---- skill tree drill-down: countries/states studied in depth, inside their continent ---- */
+.in-depth { display: grid; gap: .5rem; }
+.in-depth h4 { margin: .3rem 0 0; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; font-size: .72rem; }
+.tree .subsection { border: 1px solid var(--line); border-radius: 14px; background: var(--bg); scroll-margin-top: 120px; }
+.tree .subsection .section-row { padding: .6rem .8rem; }
+.tree .subsection .section-row b { font-size: 1rem; }
+.tree .subsection .node-icon { width: 30px; height: 30px; border-radius: 8px; }
+.tree .subsection .section-body { padding: 0 .8rem .8rem; }
+.tree .subsection .group { background: var(--surface); }
+.tree .subsection .skill { background: var(--bg); }
+.country-filter { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; margin-top: .2rem; }
+.country-filter select { font: inherit; font-size: .9rem; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: .35rem .8rem; max-width: 100%; }

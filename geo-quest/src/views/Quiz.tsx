@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { CONTINENTS, GROUPS, SECTIONS, placesIn, type Topic } from '../cards';
-import { makeQuiz, quizKey, quizPool, quizTitle, scopeTopics, type Scope } from '../quiz';
+import { CONTINENTS, GROUPS, placesIn, childSections, sectionChain, type Topic } from '../cards';
+import { COUNTRY_FILTER_LAYERS, makeQuiz, placeCountries, quizKey, quizPool, quizTitle, scopeGroups, scopeTopics, type Scope } from '../quiz';
 import { skipped, useProgress } from '../srs';
 import { Icon, type IconName } from '../components/Icons';
 import type { QuizSpec } from '../components/Study';
@@ -8,18 +8,18 @@ import type { Dataset } from '../types';
 
 const LENGTHS: (number | 'all')[] = [10, 25, 50, 'all'];
 
-/** Step 1 is "what subject"; every scope belongs to exactly one subject. */
+/** Step 1 is "what subject": Countries (continents, and the countries/states studied in depth inside them), or a theme. */
 interface Subject { id: string; name: string; icon: IconName; sections: string[] }
-const SUBJECTS: Subject[] = [
+const THEME_ICON: Record<string, IconName> = { Territories: 'pin', 'World Heritage': 'temple', Mountains: 'mountain', 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop' };
+const subjects = (): Subject[] => [
   { id: 'countries', name: 'Countries', icon: 'globe', sections: CONTINENTS },
-  ...SECTIONS.filter(s => !CONTINENTS.includes(s)).map(s => ({
-    id: s, name: s === 'China' ? "China's provinces" : s, sections: [s],
-    icon: ({ 'United States': 'capitol', Territories: 'pin', 'World Heritage': 'temple', Mountains: 'mountain', 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop', China: 'map' } as Record<string, IconName>)[s] ?? 'globe',
-  })),
+  ...childSections(null).filter(s => !CONTINENTS.includes(s)).map(s => ({ id: s, name: s, sections: [s], icon: THEME_ICON[s] ?? 'globe' })),
 ];
-const sectionOf = (scope: Scope) => (scope === 'world' ? CONTINENTS[0] : scope.startsWith('sec:') ? scope.slice(4) : GROUPS.find(g => g.id === scope.slice(4))!.section);
-const subjectOf = (scope: Scope) => SUBJECTS.find(s => s.sections.includes(sectionOf(scope)))!;
-const allScope = (sub: Subject): Scope => (sub.id === 'countries' ? 'world' : GROUPS.filter(g => g.section === sub.sections[0]).length > 1 ? `sec:${sub.sections[0]}` : `grp:${GROUPS.find(g => g.section === sub.sections[0])!.id}`);
+const sectionOf = (scope: Scope) => (scope === 'world' ? null : scope.startsWith('sec:') ? scope.slice(4) : GROUPS.find(g => g.id === scope.slice(4))!.section);
+const subjectOf = (scope: Scope) => { const sec = sectionOf(scope); const top = sec ? sectionChain(sec)[0] : CONTINENTS[0]; return subjects().find(s => s.sections.includes(top))!; };
+/** The scope covering a whole section: all its groups, or its only group. */
+const allOf = (sec: string): Scope => { const gs = GROUPS.filter(g => g.section === sec); return gs.length === 1 ? `grp:${gs[0].id}` : `sec:${sec}`; };
+const allScope = (sub: Subject): Scope => (sub.id === 'countries' ? 'world' : allOf(sub.sections[0]));
 const shortName = (name: string) => name.replace(/^(Rivers|Lakes) of /, '').replace(/ territories$/, '').replace(/^the /, '').replace(/^./, c => c.toUpperCase());
 const SAVED = 'geoquest:quiz-setup';
 
@@ -30,6 +30,7 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
   const [scope, setScope] = useState<Scope>(saved?.scope ?? 'sec:Europe');
   const [picked, setTopics] = useState<Topic[]>(saved?.topics ?? ['countries']);
   const [len, setLen] = useState<number | 'all'>(saved?.len ?? 25);
+  const [pickedCountry, setCountry] = useState<string | null>(saved?.country ?? null);
   const subject = subjectOf(scope);
 
   const offered = scopeTopics(scope);
@@ -37,8 +38,15 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
   const valid = picked.filter(t => offered.some(o => o.id === t));
   const topics: Topic[] = valid.length ? valid : offered.length ? [offered[0].id] : [];
 
-  const pool = quizPool(ds, scope, topics).filter(c => !skipped(p, c.kind)).length; // same filter the quiz itself uses
-  const best = p.quizBest[quizKey(scope, topics)];
+  // Optional "just one country" filter for World Heritage, mountains, rivers and lakes.
+  const filterable = scopeGroups(scope).some(g => COUNTRY_FILTER_LAYERS.includes(g.layer));
+  const countryCounts = new Map<string, number>();
+  if (filterable) for (const c of quizPool(ds, scope, topics)) for (const id of new Set(placeCountries(ds, c.country))) countryCounts.set(id, (countryCounts.get(id) ?? 0) + 1);
+  const country = pickedCountry && countryCounts.has(pickedCountry) ? pickedCountry : null;
+  const countryOptions = [...countryCounts].map(([id, n]) => ({ id, n, name: ds.byId.get(id)?.name ?? id })).sort((a, b) => a.name.localeCompare(b.name));
+
+  const pool = quizPool(ds, scope, topics, country).filter(c => !skipped(p, c.kind)).length; // same filter the quiz itself uses
+  const best = p.quizBest[quizKey(scope, topics, country)];
   const pct = (b: { best: number; total: number }) => Math.round((100 * b.best) / b.total);
   const toggle = (t: Topic) => setTopics(topics.includes(t) ? (topics.length > 1 ? topics.filter(x => x !== t) : topics) : [...topics, t]);
   const medal = (s: Scope) => Object.entries(p.quizBest).some(([k, b]) => k.startsWith(s + '|') && pct(b) >= 90);
@@ -46,13 +54,15 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
     <button className={'pick' + (sub ? ' small' : '') + (scope === s ? ' on' : '')} onClick={() => setScope(s)}>{medal(s) && <Icon name="medal" size={14} className="gold" />}{label}</button>
   );
   const go = () => {
-    try { localStorage.setItem(SAVED, JSON.stringify({ scope, topics, len })); } catch { /* ignore */ }
-    start(makeQuiz(ds, scope, topics, len));
+    try { localStorage.setItem(SAVED, JSON.stringify({ scope, topics, len, country })); } catch { /* ignore */ }
+    start(makeQuiz(ds, scope, topics, len, country));
   };
 
-  // Countries: whole world → continent → region. Others: all → group.
-  const cont = subject.id === 'countries' && scope !== 'world' ? sectionOf(scope) : null;
+  // Area: one row per level, e.g. Americas › United States › New Jersey. Each row offers that level's groups
+  // and the places inside it studied in depth, so the list can keep growing downwards.
   const groupsOf = (sec: string) => GROUPS.filter(g => g.section === sec);
+  const cur = sectionOf(scope);
+  const chain = cur ? sectionChain(cur) : [];
   const records = Object.entries(p.quizBest).sort((a, b) => pct(b[1]) - pct(a[1]));
   const n = Math.min(pool, len === 'all' ? pool : len);
 
@@ -64,7 +74,7 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
       <section className="quiz-step">
         <h3><span className="step">1</span> Subject</h3>
         <div className="subjects">
-          {SUBJECTS.map(sub => (
+          {subjects().map(sub => (
             <button key={sub.id} className={'subject' + (subject.id === sub.id ? ' on' : '')} onClick={() => subject.id !== sub.id && setScope(sub.id === 'countries' ? 'sec:Europe' : allScope(sub))}>
               <Icon name={sub.icon} size={20} /><span>{sub.name}</span>
             </button>
@@ -74,21 +84,33 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
 
       <section className="quiz-step">
         <h3><span className="step">2</span> Area</h3>
-        {subject.id === 'countries' ? <>
-          <div className="picks">
-            <Chip s="world" label="Whole world" />
-            {CONTINENTS.map(c => <Chip key={c} s={`sec:${c}`} label={c} />)}
-          </div>
-          {cont && <div className="picks sub">
-            <span className="muted small">Or one region:</span>
-            {groupsOf(cont).map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.name} sub />)}
-          </div>}
-        </> : groupsOf(subject.sections[0]).length > 1 ? (
-          <div className="picks">
-            <Chip s={allScope(subject)} label={`All ${subject.name.toLowerCase().replace('united states', '50 states')}`} />
-            {groupsOf(subject.sections[0]).map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.id === 'u-icons' ? 'Heritage icons' : shortName(g.name)} />)}
-          </div>
-        ) : <p className="muted small">All {placesIn(ds, groupsOf(subject.sections[0])[0].id).length} of them.</p>}
+        {subject.id === 'countries' && <div className="picks">
+          <Chip s="world" label="Whole world" />
+          {CONTINENTS.map(c => <Chip key={c} s={`sec:${c}`} label={c} />)}
+        </div>}
+        {chain.map((sec, i) => {
+          const gs = groupsOf(sec), kids = childSections(sec);
+          const showAll = !(subject.id === 'countries' && i === 0) && gs.length > 1;
+          if (!showAll && gs.length <= 1 && !kids.length) return null; // a single-group level (New Jersey counties) needs no row
+          return (
+            <div key={sec} className={'picks' + (i > 0 || subject.id === 'countries' ? ' sub' : '')}>
+              {(i > 0 || subject.id === 'countries') && <span className="muted small">{i === 0 ? 'Or one region:' : `${sec}:`}</span>}
+              {showAll && <Chip s={`sec:${sec}`} label={i === 0 && subject.id !== 'countries' ? `All ${sec.toLowerCase()}` : 'All'} sub={i > 0} />}
+              {gs.length > 1 && gs.map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.id === 'u-icons' ? 'Heritage icons' : shortName(g.name)} sub={i > 0 || subject.id === 'countries'} />)}
+              {kids.map(k => <Chip key={k} s={allOf(k)} label={`${k} ›`} sub />)}
+            </div>
+          );
+        })}
+        {subject.id !== 'countries' && groupsOf(subject.sections[0]).length === 1 && !childSections(subject.sections[0]).length && <p className="muted small">All {placesIn(ds, groupsOf(subject.sections[0])[0].id).length} of them.</p>}
+        {filterable && countryOptions.length > 1 && (
+          <label className="country-filter">
+            <span className="muted small">Just one country</span>
+            <select value={country ?? ''} onChange={e => setCountry(e.target.value || null)}>
+              <option value="">All countries ({countryOptions.length})</option>
+              {countryOptions.map(o => <option key={o.id} value={o.id}>{o.name} ({o.n})</option>)}
+            </select>
+          </label>
+        )}
       </section>
 
       <section className="quiz-step">
@@ -110,7 +132,7 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
 
       <div className="quiz-bar">
         <div className="grow">
-          <b>{quizTitle(scope, topics)}</b>
+          <b>{quizTitle(scope, topics, country ? ds.byId.get(country)?.name : null)}</b>
           <span className="muted small">{n} card{n === 1 ? '' : 's'}{best ? ` · your best ${pct(best)}%` : ''}</span>
         </div>
         <button className="btn primary" disabled={!pool} onClick={go}><Icon name="play" /> Start</button>
@@ -121,10 +143,11 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
           <h3>Your records <small className="muted">tap one to set it up again</small></h3>
           <ul>
             {records.map(([k, b]) => {
-              const [s, t] = k.split('|');
-              return <li key={k}><button onClick={() => { setScope(s as Scope); setTopics(t.split('+') as Topic[]); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              const [s, t, cty] = k.split('|');
+              if (s !== 'world' && !(s.startsWith('sec:') || GROUPS.some(g => g.id === s.slice(4)))) return null; // a quiz from a deck that no longer exists
+              return <li key={k}><button onClick={() => { setScope(s as Scope); setTopics(t.split('+') as Topic[]); setCountry(cty ?? null); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                 {pct(b) >= 90 ? <Icon name="medal" className="gold" /> : <Icon name="target" />}
-                <span className="grow">{quizTitle(s as Scope, t.split('+') as Topic[])}</span><b>{pct(b)}%</b><small>{b.best}/{b.total}</small></button></li>;
+                <span className="grow">{quizTitle(s as Scope, t.split('+') as Topic[], cty ? ds.byId.get(cty)?.name : null)}</span><b>{pct(b)}%</b><small>{b.best}/{b.total}</small></button></li>;
             })}
           </ul>
         </section>

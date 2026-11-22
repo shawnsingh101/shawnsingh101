@@ -1124,7 +1124,7 @@ for (const p of [...rivers, ...lakes]) keep(p, [...(p.native ?? []).map(n => n.c
 // ---- diff against previous snapshots ------------------------------------------------
 const today = new Date().toISOString().slice(0, 10);
 const changes = [];
-function diffAndWrite(path, list, fields) {
+function diffAndWrite(path, list, fields, extra = {}) {
   const prev = existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')).places ?? JSON.parse(readFileSync(path, 'utf8')).countries : null;
   if (prev) {
     const prevById = Object.fromEntries(prev.map(c => [c.id, c]));
@@ -1137,8 +1137,40 @@ function diffAndWrite(path, list, fields) {
     }
     for (const p of prev) if (!ids.has(p.id)) changes.push({ date: today, id: p.id, name: p.name, field: 'removed', from: p.name, to: null });
   }
-  return () => writeFileSync(path, JSON.stringify(path === OUT ? { source: 'Wikidata (CC0)', countries: list } : { source: 'Wikidata (CC0)', places: list }, null, 1) + '\n');
+  return () => writeFileSync(path, JSON.stringify(path === OUT ? { source: 'Wikidata (CC0)', countries: list } : { source: 'Wikidata (CC0)', ...extra, places: list }, null, 1) + '\n');
 }
+// ---- regions inside a country (data/subdivisions.json): prefectures, counties… ----
+console.log('Querying Wikidata for regions inside countries…');
+const subCfg = JSON.parse(readFileSync(join(ROOT, 'data/subdivisions.json'), 'utf8')).sections;
+const subShapes = JSON.parse(readFileSync(join(ROOT, 'public/data/shapes-sub.json'), 'utf8')).objects.places.geometries.map(g => g.properties);
+const subGroupCfg = Object.fromEntries(subCfg.flatMap(cfg => cfg.groups.map(g => [g.id, cfg])));
+const subs = await fetchPlaces(subShapes.map(x => x.id), 'sub', id => {
+  const grp = subShapes.find(x => x.id === id).group, cfg = subGroupCfg[grp];
+  return { group: grp, noun: cfg.noun, capWord: cfg.capital, parent: cfg.country, capitals: [] };
+});
+for (const b of await sparql(CAPITAL_Q.replace('%IDS%', [...subs.keys()].map(q => `wd:${q}`).join(' ')))) {
+  const p = subs.get(qid(v(b, 'c')));
+  const capId = qid(v(b, 'cap'));
+  if (!p || p.capitals.some(x => x.id === capId) || /^Q\d+$/.test(v(b, 'capLabel'))) continue;
+  p.capitals.push({ id: capId, name: v(b, 'capLabel'), preferred: v(b, 'rank').endsWith('PreferredRank'), role: null,
+    image: file(v(b, 'capImg')) || null, ...point(v(b, 'capCoord')),
+    wiki: v(b, 'capArticle') ? decodeURIComponent(v(b, 'capArticle').split('/wiki/')[1]) : null });
+}
+const parentName = id => countries.get(id)?.name ?? states.get(id)?.name ?? null;
+for (const p of subs.values()) {
+  const o = overrides[p.id];
+  if (o?.name) p.name = o.name;
+  if (!p.capitals.length && o?.capital) p.capitals.push({ ...o.capital, preferred: false, role: null }); // only fills a gap in Wikidata
+  if (o?.capitalNote) p.capitalNote = o.capitalNote;
+  const pref = p.capitals.filter(x => x.preferred);
+  p.capitals = (pref.length ? pref : p.capitals).sort((a, b) => a.name.localeCompare(b.name));
+  p.capitalAnswer = p.capitals.map(x => x.name).reduce(andJoin, '') || null;
+  p.parentName = parentName(p.parent);
+  p.facts = `${p.noun.charAt(0).toUpperCase() + p.noun.slice(1)} of ${p.parentName}`;
+  if (!p.capitalAnswer) warnings.push(`${p.name}: no ${p.capWord} in Wikidata`);
+}
+const subMeta = subCfg.map(({ source, _readme, groups, ...cfg }) => ({ ...cfg, groups: groups.map(({ id, name }) => ({ id, name })) }));
+
 // A place is one card set: a site that's also a country, lake, range or peak (Vatican City, Lake Baikal, Western Ghats)
 // stays in its own layer, otherwise the two would share card ids.
 {
@@ -1161,6 +1193,7 @@ const writers = [
   diffAndWrite(join(ROOT, 'public/data/peaks.json'), peaks, ['name']),
   diffAndWrite(join(ROOT, 'public/data/ranges.json'), mranges, ['name']),
   diffAndWrite(join(ROOT, 'public/data/lakes.json'), lakes, ['name', 'group']),
+  diffAndWrite(join(ROOT, 'public/data/subdivisions.json'), [...subs.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer'], { sections: subMeta }),
   diffAndWrite(join(ROOT, 'public/data/cn.json'), [...cn.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'zhHan']),
 ];
 

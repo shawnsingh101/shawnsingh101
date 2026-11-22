@@ -1,0 +1,24 @@
+{
+ "_readme": "Regions inside a country (prefectures, oblasts, counties…). Each entry becomes a section under its parent in the skill tree, a quiz area and a map layer. Add one, run `NE_DIR=… node scripts/build-shapes.mjs` (shapes) and `npm run sync` (facts). source.type: 'ne-admin1' = Natural Earth 1:10m states/provinces (any country, by ISO A3); 'us-counties' = US Census counties (us-atlas), by state FIPS code. groups[].match lists Natural Earth 'region' values ('*' = everything left over).",
+ "sections": [
+  {
+   "id": "jp", "section": "Japan", "parent": "Asia", "country": "Q17",
+   "noun": "prefecture", "nouns": "prefectures", "capital": "capital",
+   "source": { "type": "ne-admin1", "adm0": "JPN" },
+   "groups": [
+    { "id": "jp-n", "name": "Hokkaidō & Tōhoku", "match": ["Hokkaido", "Tohoku"] },
+    { "id": "jp-kanto", "name": "Kantō", "match": ["Kanto"] },
+    { "id": "jp-chubu", "name": "Chūbu", "match": ["Chubu"] },
+    { "id": "jp-kansai", "name": "Kansai", "match": ["Kinki"] },
+    { "id": "jp-w", "name": "Chūgoku & Shikoku", "match": ["Chugoku", "Shikoku"] },
+    { "id": "jp-s", "name": "Kyūshū & Okinawa", "match": ["Kyushu", "Okinawa", "*"] }
+   ]
+  },
+  {
+   "id": "nj", "section": "New Jersey", "parent": "United States", "country": "Q1408",
+   "noun": "county", "nouns": "counties", "capital": "county seat",
+   "source": { "type": "us-counties", "stateFips": "34" },
+   "groups": [ { "id": "nj-counties", "name": "New Jersey counties", "match": ["*"] } ]
+  }
+ ]
+}

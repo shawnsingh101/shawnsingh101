@@ -17,7 +17,7 @@ export function placeMastery(p: ReturnType<typeof useProgress>, place: Place) {
   return ks.length ? sum / ks.length : 0;
 }
 
-type MapKey = 'mapNames' | 'mapCapitals' | 'mapWater' | 'mapRivers' | 'mapLakes' | 'mapCn' | 'mapUs' | 'mapTerr' | 'mapSites' | 'mapMountains';
+type MapKey = 'mapNames' | 'mapCapitals' | 'mapWater' | 'mapRivers' | 'mapLakes' | 'mapCn' | 'mapUs' | 'mapTerr' | 'mapSub' | 'mapSites' | 'mapMountains';
 const TOGGLES: { k: MapKey; label: string; icon: IconName; kind: 'label' | 'layer' }[] = [
   { k: 'mapNames', label: 'Names', icon: 'tag', kind: 'label' },
   { k: 'mapCapitals', label: 'Capitals', icon: 'landmark', kind: 'label' },
@@ -27,6 +27,7 @@ const TOGGLES: { k: MapKey; label: string; icon: IconName; kind: 'label' | 'laye
   { k: 'mapCn', label: 'China provinces', icon: 'layers', kind: 'layer' },
   { k: 'mapUs', label: 'US states', icon: 'layers', kind: 'layer' },
   { k: 'mapTerr', label: 'Territories', icon: 'pin', kind: 'layer' },
+  { k: 'mapSub', label: 'Prefectures & counties', icon: 'map', kind: 'layer' },
   { k: 'mapSites', label: 'World Heritage', icon: 'temple', kind: 'layer' },
   { k: 'mapMountains', label: 'Mountains', icon: 'mountain', kind: 'layer' },
 ];
@@ -53,7 +54,7 @@ export function MapView({ ds }: { ds: Dataset }) {
   ds.countries.forEach(c => { const m = mastery.get(c.id) ?? 0; counts[m === 0 ? 0 : m < 1.5 ? 1 : m < 2.5 ? 2 : 3]++; });
   const set = (k: keyof Settings, v: boolean) => update(x => { (x.settings as unknown as Record<string, boolean>)[k] = v; });
   const labelsOn = s.mapNames || s.mapCapitals;
-  const layers = [...(s.mapWater ? ['water' as const] : []), ...(s.mapCn ? ['cn' as const] : []), ...(s.mapUs ? ['us' as const] : []), ...(s.mapUs && !s.mapLakes ? ['lake' as const] : []), ...(s.mapTerr ? ['terr' as const] : []), ...(s.mapSites ? ['site' as const] : []), ...(s.mapMountains ? ['range' as const, 'peak' as const] : []), ...(s.mapLakes ? ['lake' as const] : []), ...(s.mapRivers ? ['river' as const] : [])];
+  const layers = [...(s.mapWater ? ['water' as const] : []), ...(s.mapCn ? ['cn' as const] : []), ...(s.mapUs ? ['us' as const] : []), ...(s.mapUs && !s.mapLakes ? ['lake' as const] : []), ...(s.mapTerr ? ['terr' as const] : []), ...(s.mapSub ? ['sub' as const] : []), ...(s.mapSites ? ['site' as const] : []), ...(s.mapMountains ? ['range' as const, 'peak' as const] : []), ...(s.mapLakes ? ['lake' as const] : []), ...(s.mapRivers ? ['river' as const] : [])];
 
   const onTap = (h: MapHit) => {
     if (!h.countryId) return;

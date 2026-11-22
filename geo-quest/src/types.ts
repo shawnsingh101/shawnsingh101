@@ -12,7 +12,7 @@ export interface Capital {
 }
 
 export type Status = 'un' | 'observer' | 'disputed';
-export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site' | 'peak' | 'range';
+export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site' | 'peak' | 'range' | 'sub';
 
 /** Anything you can learn on the map: a country, a sea, a province… keyed by Wikidata id. */
 export interface Place {
@@ -52,6 +52,10 @@ export interface Place {
   noFace?: boolean;                             // same person already has a "who is this?" card (e.g. Charles III)
   incoming?: { name: string; party: string | null; wiki: string | null; from: string }; // election winner taking over
   currency?: { id: string; name: string; code: string | null; symbol: string | null; wiki: string | null; shared: number; image?: string | null }[];
+  noun?: string;            // regions inside a country ('sub'): "prefecture", "county"
+  capWord?: string;         // …and what their capital is called: "capital", "county seat"
+  parent?: string;          // …and the country / state they belong to
+  parentName?: string;
   highestShared?: boolean; // another country shares the same highest point (Everest: Nepal & China)
   manyPlaces?: boolean;    // a leader who holds the same office in several countries
   highest?: { id: string; name: string; elevation: number | null; lat: number; lon: number; image: string | null; wiki: string | null; note: string | null };

@@ -141,13 +141,38 @@ export const GROUPS: Group[] = [
     .map(([id, name]): Group => ({ id, section: 'Mountains', name, layer: 'peak', requires: 'm-icons/peaks', topics: [{ id: 'peaks', name: 'Peaks', icon: 'mountain' }] })),
   { id: 'm-ranges', section: 'Mountains', name: 'Great mountain ranges', layer: 'range', topics: [{ id: 'places', name: 'Ranges', icon: 'layers' }] },
   { id: 'm-ranges2', section: 'Mountains', name: 'More mountain ranges', layer: 'range', requires: 'm-ranges/places', topics: [{ id: 'places', name: 'Ranges', icon: 'layers' }] },
-  { id: 'cn', section: 'China', name: "China's provinces", layer: 'cn',
+  { id: 'cn', section: 'China', name: 'Provinces & regions', layer: 'cn',
     note: 'Provinces, autonomous regions, municipalities and the two special administrative regions. The PRC also claims Taiwan as a province; Taiwan is covered under countries.',
     topics: [{ id: 'places', name: 'Provinces', icon: 'map' }, { id: 'capitals', name: 'Capitals', icon: 'landmark', requires: 'places' }] },
 ];
 
 export const SECTIONS = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania', 'United States', 'Territories', 'World Heritage', 'Mountains', 'Oceans & Seas', 'Rivers', 'Lakes', 'China'];
 export const CONTINENTS = SECTIONS.slice(0, 5);
+
+// ---- Sections form a tree -------------------------------------------------------------
+// A country (or state) studied in depth sits inside its parent: Americas › United States › New Jersey.
+// The skill tree, quiz and atlas all drill down through this, so new regions never pile up at the bottom.
+export const SECTION_PARENT: Record<string, string> = { 'United States': 'Americas', China: 'Asia' };
+export const childSections = (sec: string | null) => SECTIONS.filter(s => (SECTION_PARENT[s] ?? null) === sec);
+/** The section and its ancestors, outermost first: ['Americas', 'United States', 'New Jersey']. */
+export function sectionChain(sec: string): string[] { const out = [sec]; while (SECTION_PARENT[out[0]]) out.unshift(SECTION_PARENT[out[0]]); return out; }
+/** A section and everything nested inside it. */
+export const sectionAndDescendants = (sec: string): string[] => [sec, ...childSections(sec).flatMap(sectionAndDescendants)];
+
+/** Regions inside a country (public/data/subdivisions.json): each entry becomes a section, groups and two skills. */
+export interface SubSection { id: string; section: string; parent: string; noun: string; nouns: string; capital: string; groups: { id: string; name: string }[] }
+export function registerSubdivisions(sections: SubSection[]) {
+  for (const s of sections) {
+    if (!SECTIONS.includes(s.section)) SECTIONS.push(s.section);
+    SECTION_PARENT[s.section] = s.parent;
+    const cap = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
+    for (const g of s.groups) if (!GROUPS.some(x => x.id === g.id)) GROUPS.push({
+      id: g.id, section: s.section, name: g.name, layer: 'sub',
+      topics: [{ id: 'places', name: cap(s.nouns), icon: 'map' }, { id: 'capitals', name: cap(s.capital) + 's', icon: 'landmark', requires: 'places' }],
+      note: g.id === s.groups[0].id ? `The ${s.nouns} of ${s.section} and their ${s.capital}s. Borders come from ${s.id === 'nj' ? 'the US Census' : 'Natural Earth'}; facts from Wikidata.` : undefined,
+    });
+  }
+}
 
 export function groupOf(c: Place): Group {
   if (c.layer === 'country') return GROUPS.find(g => g.subregions?.includes(c.subregion!))!;
@@ -167,13 +192,15 @@ export const slotOf = (node: string) => { const { groupId, topic } = parseNode(n
 export interface CardRef { id: string; kind: Kind; country: Place }
 export const cardId = (placeId: string, kind: Kind) => `${placeId}:${kind}`;
 
-/** Some card types only make sense for some places. */
 /** How many countries a site or peak is listed in. */
 const countryCount = (c: Place) => (c.countryName ? c.countryName.split(/, | and /).length : 0);
+/** Some card types only make sense for some places. */
 export function kindApplies(k: Kind, c: Place) {
   if (k === 'senatorFace') return !c.noFace && !!(c.photo || c.wiki);
   if (k === 'sitePhoto') return c.layer === 'site' && !!c.image; // a mountain from a photo alone is too hard to be fair
   if (k === 'senatorLocate' && c.manyPlaces) return false;
+  // "The capital of Hiroshima Prefecture is Hiroshima" gives itself away: skip those for regions inside a country.
+  if (k.startsWith('capital') && c.layer === 'sub' && c.capitals[0] && c.name.startsWith(c.capitals[0].name)) return false;
   if (k === 'siteCountry' && countryCount(c) > 3) return false; // "in Moldova, Ukraine, Latvia… and Norway" isn't a fair question
   if (k === 'highestReverse') return !!c.highest && !c.highestShared;
   if (k === 'currencyReverse') return !!c.currency?.some(x => x.shared === 1); // "the euro is the currency of…" has 20 answers
@@ -206,7 +233,7 @@ export function kindsFor(p: Place): Kind[] {
   if (p.layer === 'senate') return TOPIC_KINDS.senate.filter(k => kindApplies(k, p));
   if (p.layer === 'site' || p.layer === 'peak') return TOPIC_KINDS.sites.filter(k => kindApplies(k, p));
   const ks: Kind[] = ['locate', 'identify'];
-  if (p.capitalAnswer) ks.push(...TOPIC_KINDS.capitals);
+  if (p.capitalAnswer) ks.push(...TOPIC_KINDS.capitals.filter(k => kindApplies(k, p)));
   if (p.layer === 'terr') ks.push('belongsTo');
   if (p.flag && p.layer !== 'terr') ks.push(...TOPIC_KINDS.flags);
   if (p.currency?.length) ks.push(...TOPIC_KINDS.currency.filter(k => kindApplies(k, p)));
@@ -240,28 +267,30 @@ export interface CardFace {
 }
 
 const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-const noun = (p: Place) => ({ country: 'country', water: 'body of water', river: 'river', lake: 'lake', cn: p.type ?? 'region', us: 'state', senate: 'senator', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range' })[p.layer];
+const noun = (p: Place) => ({ country: 'country', water: 'body of water', river: 'river', lake: 'lake', cn: p.type ?? 'region', us: 'state', senate: 'senator', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range', sub: p.noun ?? 'region' })[p.layer];
 
 function rawFace(ref: CardRef): CardFace {
   const c = ref.country;
   const cap = c.capitals[0];
   const capPic = cap ? { file: cap.image, wiki: cap.wiki, caption: cap.name } : undefined;
   const ownPic = c.image || (c.layer !== 'country' && c.wiki) ? { file: c.image, wiki: c.wiki, caption: c.name } : undefined;
-  const note = c.layer === 'country' ? (c.status !== 'un' ? c.statusNote : null) : c.layer === 'cn' ? cap1(c.type ?? '') : c.layer === 'terr' ? null : c.facts ?? null;
+  const note = c.layer === 'country' ? (c.status !== 'un' ? c.statusNote : null) : c.layer === 'cn' ? cap1(c.type ?? '') : c.facts ?? null; // territories: "Overseas region · Part of France", shown once the card is flipped
   const title = c.nameThe ? cap1(c.nameThe) : c.name;
-  const capWord = c.capitals.length > 1 ? 'a capital' : 'the capital';
-  const whichNoun = c.layer === 'cn' ? 'which province?' : c.layer === 'us' ? 'which state?' : c.layer === 'terr' ? 'which territory?' : 'which country?';
+  const capNoun = c.capWord ?? 'capital'; // "county seat" for counties
+  const capWord = c.capitals.length > 1 ? `a ${capNoun}` : `the ${capNoun}`;
+  const placeNoun = c.layer === 'cn' ? 'province' : c.layer === 'us' ? 'state' : c.layer === 'terr' ? 'territory' : c.layer === 'sub' ? noun(c) : 'country';
+  const whichNoun = `which ${placeNoun}?`;
   switch (ref.kind) {
     case 'locate':
       return { mode: 'tap', pre: `${title} ${c.layer === 'range' && /s$/.test(c.name) ? 'are' : 'is'} `, blank: 'where? tap the map', post: '.', answer: 'right here', map: 'tap', note, picture: c.layer !== 'country' ? ownPic ?? capPic : undefined };
     case 'identify':
       return { mode: 'reveal', pre: `The highlighted ${c.layer === 'cn' ? 'part of China' : noun(c)} ${c.layer === 'range' ? 'is' : 'is'} `, blank: 'what?', post: '.', answer: c.nameThe ?? c.name, map: 'highlight', note, picture: c.layer !== 'country' ? ownPic ?? capPic : undefined };
     case 'capital':
-      return { mode: 'reveal', pre: `The capital of ${c.name} is `, blank: 'what?', post: '.', answer: c.capitalAnswer!, map: 'reveal', picture: capPic, note: c.capitalNote ?? note };
+      return { mode: 'reveal', pre: `The ${capNoun} of ${c.name} is `, blank: 'what?', post: '.', answer: c.capitalAnswer!, map: 'reveal', picture: capPic, note: c.capitalNote ?? note };
     case 'capitalReverse':
       return { mode: 'reveal', pre: `${cap?.name} is ${capWord} of `, blank: whichNoun, post: '.', answer: c.name, map: 'reveal', picture: capPic, note: c.capitalNote ?? note };
     case 'capitalLocate':
-      return { mode: 'tap', pre: `${cap?.name} is ${capWord} of `, blank: c.layer === 'cn' ? 'tap the province' : c.layer === 'us' ? 'tap the state' : c.layer === 'terr' ? 'tap the territory' : 'tap the country', post: '.', answer: c.name, map: 'tap', picture: capPic, note: c.capitalNote ?? note };
+      return { mode: 'tap', pre: `${cap?.name} is ${capWord} of `, blank: `tap the ${placeNoun}`, post: '.', answer: c.name, map: 'tap', picture: capPic, note: c.capitalNote ?? note };
     case 'flag':
       return { mode: 'reveal', pre: 'This is the flag of ', blank: whichNoun, post: '.', answer: c.name, promptFlag: true, map: 'none', note };
     // People in office (senators, governors, world leaders): the card follows the office, not the person.
@@ -351,8 +380,8 @@ export function shuffle<T>(a: T[]): T[] {
 }
 
 /** Plural noun and icon for a layer, for headings and lists. */
-export const LAYER_NOUN: Record<Place['layer'], string> = { country: 'countries', water: 'waters', river: 'rivers', lake: 'lakes', cn: 'divisions', us: 'states', senate: 'senators', terr: 'territories', site: 'sites', peak: 'peaks', range: 'ranges' };
-export const LAYER_ICON: Record<Place['layer'], IconName> = { country: 'globe', water: 'wave', river: 'river', lake: 'drop', cn: 'map', us: 'map', senate: 'person', terr: 'pin', site: 'temple', peak: 'mountain', range: 'layers' };
+export const LAYER_NOUN: Record<Place['layer'], string> = { sub: 'regions', country: 'countries', water: 'waters', river: 'rivers', lake: 'lakes', cn: 'divisions', us: 'states', senate: 'senators', terr: 'territories', site: 'sites', peak: 'peaks', range: 'ranges' };
+export const LAYER_ICON: Record<Place['layer'], IconName> = { sub: 'map', country: 'globe', water: 'wave', river: 'river', lake: 'drop', cn: 'map', us: 'map', senate: 'person', terr: 'pin', site: 'temple', peak: 'mountain', range: 'layers' };
 
 // ---- question directions ------------------------------------------------------------
 /** "What is this?" — you're shown the place/flag/capital and name it.

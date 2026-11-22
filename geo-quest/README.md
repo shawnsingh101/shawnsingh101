@@ -33,6 +33,21 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.5: drill-down and regions inside countries
+
+- **Sections form a tree** (`SECTION_PARENT` in `src/cards.ts`): United States sits inside Americas, China and Japan
+  inside Asia, New Jersey inside United States. The skill tree, quiz (Area step) and atlas all drill down through it.
+- **Regions inside a country** are one generic layer (`sub`), configured in `data/subdivisions.json`:
+  - `ne-admin1`: any country's states/provinces from Natural Earth 1:10m (Japan's 47 prefectures, grouped by region);
+  - `us-counties`: US Census counties via us-atlas, matched to Wikidata by FIPS code (New Jersey's 21 counties).
+  To add one (Ukraine's oblasts, Russia's regions, another state's counties), add an entry, run
+  `NE_DIR=… US_ATLAS=… node scripts/build-shapes.mjs` and `npm run sync`. Cards: find it / name it and
+  capitals ("county seat" for counties); capital cards that give themselves away (Hiroshima → Hiroshima) are skipped.
+  Overrides can fill a missing capital (`"capital": {…}`) or add a `capitalNote`.
+- **Quiz by country**: World Heritage, mountains, rivers and lakes can be narrowed to one country (e.g. Asia → China).
+- Territory cards show "Part of France" (and the territory's status) once flipped.
+- Plan for subjects beyond geography: [`docs/SUBJECTS-PLAN.md`](docs/SUBJECTS-PLAN.md).
+
 ## v1.4.2: review sweep
 
 - Currency pictures can be files kept on English Wikipedia itself (most banknotes are copyrighted, so they aren't on

@@ -183,4 +183,29 @@ writeFileSync(join(ROOT, 'data/peaks-ne.json'), JSON.stringify(peakPts));
   writeFileSync(join(ROOT, 'public/data/shapes-admin1.json'), JSON.stringify(topology({ b: lines }, 1e4)));
 }
 
-console.log(`Wrote ${water.length} water, ${cn.length} China, ${lakes.length} lake, ${rivers.length} river, ${us.length} US state, ${terr.length} territory, ${small.length} small-country, ${ranges.length} range features and ${peakPts.length} peaks.`);
+// ---- regions inside a country (data/subdivisions.json): prefectures, counties… one layer, 'sub' ----
+const subCfg = JSON.parse(readFileSync(join(ROOT, 'data/subdivisions.json'), 'utf8')).sections;
+const subs = [];
+for (const cfg of subCfg) {
+  const groupOf = region => (cfg.groups.find(g => g.match.includes(region)) ?? cfg.groups.find(g => g.match.includes('*')))?.id;
+  if (cfg.source.type === 'ne-admin1') {
+    for (const f of admin1.features.filter(f => f.properties.adm0_a3 === cfg.source.adm0 && f.properties.wikidataid))
+      subs.push({ type: 'Feature', geometry: f.geometry, properties: { id: f.properties.wikidataid, group: groupOf(f.properties.region) } });
+  } else if (cfg.source.type === 'us-counties') {
+    // US Census counties via us-atlas (lon/lat TopoJSON); US_ATLAS=/path/counties-10m.json reuses a download.
+    const usa = process.env.US_ATLAS && existsSync(process.env.US_ATLAS) ? JSON.parse(readFileSync(process.env.US_ATLAS, 'utf8'))
+      : await (await fetch('https://unpkg.com/us-atlas@3.0.1/counties-10m.json')).json();
+    const geoms = feature(usa, usa.objects.counties).features.filter(f => String(f.id).startsWith(cfg.source.stateFips));
+    // County FIPS code → Wikidata id (P882)
+    const q = `SELECT ?c ?fips WHERE { ?c wdt:P882 ?fips . FILTER(STRSTARTS(?fips, "${cfg.source.stateFips}")) FILTER(STRLEN(?fips) = 5) }`;
+    const r = await fetch('https://query.wikidata.org/sparql', { method: 'POST', headers: { 'User-Agent': 'GeoQuestStudyApp/0.1 (personal flashcard app)', Accept: 'application/sparql-results+json', 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ query: q }) });
+    const byFips = Object.fromEntries((await r.json()).results.bindings.map(b => [b.fips.value, b.c.value.split('/').pop()]));
+    for (const f of geoms) {
+      if (!byFips[f.id]) { console.warn(`  ${cfg.section}: no Wikidata id for FIPS ${f.id} (${f.properties.name})`); continue; }
+      subs.push({ type: 'Feature', geometry: f.geometry, properties: { id: byFips[f.id], group: groupOf(null) } });
+    }
+  }
+}
+writeFileSync(join(ROOT, 'public/data/shapes-sub.json'), JSON.stringify(build(subs, 0.3)));
+
+console.log(`Wrote ${water.length} water, ${cn.length} China, ${lakes.length} lake, ${rivers.length} river, ${us.length} US state, ${terr.length} territory, ${small.length} small-country, ${ranges.length} range, ${subs.length} region features and ${peakPts.length} peaks.`);

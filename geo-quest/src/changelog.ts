@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.5.0', notes: 'Drill-down: countries and states studied in depth sit inside their continent (Americas › United States › New Jersey) · New Jersey counties & county seats · Japan’s prefectures · quiz by country for World Heritage, mountains, rivers & lakes · territory cards say who they belong to' },
   { version: '1.4.2', notes: 'Review sweep: banknote pictures for most currencies (Danish krone, Swedish krona…) · “the Netherlands”, “the Faroe Islands are” · fixed leader titles · fairer multi-country sites · home-screen icon on iPhone · many small fixes' },
   { version: '1.4.1', notes: 'Cleaner skill tree (one line per skill) · Quiz page in three steps: subject, area, questions · tap a record to set it up again' },
   { version: '1.4.0', notes: 'Highest point of each country · state & province borders when you zoom in · banknote pictures for currencies · fairer mountain cards · senator photo fallback · labels no longer overlap · Michigan’s lakes · data fixes' },

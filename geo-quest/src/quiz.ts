@@ -1,7 +1,7 @@
-import { cardsForNode, GROUPS, LAYER_NOUN, nodeId, SECTIONS, shuffle, type Group, type Topic } from './cards';
+import { cardsForNode, GROUPS, LAYER_NOUN, SECTION_PARENT, nodeId, SECTIONS, shuffle, type Group, type Topic } from './cards';
 import type { QuizSpec } from './components/Study';
 import { getProgress, skipped } from './srs';
-import type { Dataset } from './types';
+import type { Dataset, Place } from './types';
 
 /** A quiz scope: the whole world, a section ("Europe", "Oceans & Seas", "China") or one group. */
 export type Scope = 'world' | `sec:${string}` | `grp:${string}`;
@@ -16,7 +16,9 @@ export function scopeName(scope: Scope) {
   if (scope === 'world') return 'World';
   if (scope === 'sec:Oceans & Seas') return 'All oceans & seas';
   if (scope.startsWith('sec:')) return scope.slice(4);
-  return GROUPS.find(g => g.id === scope.slice(4))!.name;
+  const g = GROUPS.find(g => g.id === scope.slice(4))!;
+  // Regions inside a country studied in depth say which country: "Japan · Kantō", "United States · Northeast".
+  return SECTION_PARENT[g.section] && !g.name.includes(g.section) ? `${g.section} · ${g.name}` : g.name;
 }
 
 /** Topics on offer for a scope, with the names used in that scope. */
@@ -32,23 +34,35 @@ export function scopeTopics(scope: Scope) {
   return [...seen].map(([id, names]) => ({ id, name: names.size === 1 ? [...names][0] : cap(LAYER_NOUN[layer.get(id) as keyof typeof LAYER_NOUN]) }));
 }
 
-export function quizPool(ds: Dataset, scope: Scope, topics: Topic[]) {
-  return scopeGroups(scope).flatMap(g => g.topics.filter(t => topics.includes(t.id)).flatMap(t => cardsForNode(ds, nodeId(g.id, t.id))));
+/** Countries a site, peak, range, river or lake is in (from its country list / facts), as country ids. */
+export function placeCountries(ds: Dataset, p: Place): string[] {
+  const list = p.layer === 'site' || p.layer === 'peak' ? p.countryName ?? '' : (p.facts ?? '').split(' · ').pop() ?? '';
+  const byName = new Map(ds.countries.map(c => [c.name, c.id]));
+  return list.replace(/…$/, '').split(/, | and /).map(n => byName.get(n.trim())).filter((x): x is string => !!x);
+}
+/** Layers where "just one country" makes sense as a filter (World Heritage in China, peaks in Nepal…). */
+export const COUNTRY_FILTER_LAYERS = ['site', 'peak', 'range', 'river', 'lake'];
+
+export function quizPool(ds: Dataset, scope: Scope, topics: Topic[], country?: string | null) {
+  const cards = scopeGroups(scope).flatMap(g => g.topics.filter(t => topics.includes(t.id)).flatMap(t => cardsForNode(ds, nodeId(g.id, t.id))));
+  return country ? cards.filter(c => placeCountries(ds, c.country).includes(country)) : cards;
 }
 
-export const quizKey = (scope: Scope, topics: Topic[]) => `${scope}|${[...topics].sort().join('+')}`;
+export const quizKey = (scope: Scope, topics: Topic[], country?: string | null) => `${scope}|${[...topics].sort().join('+')}${country ? `|${country}` : ''}`;
 
-export function quizTitle(scope: Scope, topics: Topic[]) {
+export function quizTitle(scope: Scope, topics: Topic[], countryName?: string | null) {
   const names = scopeTopics(scope).filter(t => topics.includes(t.id)).map(t => t.name.toLowerCase());
   const list = names.length > 1 ? names.slice(0, -1).join(', ') + ' & ' + names[names.length - 1] : names[0];
   const name = scopeName(scope);
-  return name.toLowerCase().includes(list) || list === 'oceans & seas' && scope.startsWith('grp:w-') ? name : `${name}: ${list}`;
+  const base = name.toLowerCase().includes(list) || list === 'oceans & seas' && scope.startsWith('grp:w-') ? name : `${name}: ${list}`;
+  return countryName ? `${base} · ${countryName}` : base;
 }
 
-export function makeQuiz(ds: Dataset, scope: Scope, topics: Topic[], length: number | 'all'): QuizSpec {
+export function makeQuiz(ds: Dataset, scope: Scope, topics: Topic[], length: number | 'all', country?: string | null): QuizSpec {
+  const countryName = country ? ds.byId.get(country)?.name ?? null : null;
   return {
-    key: quizKey(scope, topics), title: quizTitle(scope, topics),
-    draw: () => { const pool = shuffle(quizPool(ds, scope, topics).filter(c => !skipped(getProgress(), c.kind))); return length === 'all' ? pool : pool.slice(0, length); },
+    key: quizKey(scope, topics, country), title: quizTitle(scope, topics, countryName),
+    draw: () => { const pool = shuffle(quizPool(ds, scope, topics, country).filter(c => !skipped(getProgress(), c.kind))); return length === 'all' ? pool : pool.slice(0, length); },
   };
 }
 

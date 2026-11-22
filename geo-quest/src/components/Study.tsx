@@ -106,7 +106,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     // A tap on a different kind of thing (a country while looking for a river) is a slip, not an answer.
     const hitLayer = hit.countryId ? ds.byId.get(hit.countryId)?.layer : 'country';
     if (hitLayer !== mp!.layer) {
-      setNudge(`Tap a ${{ country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range' }[mp!.layer]}`);
+      setNudge(`Tap a ${{ sub: c?.noun ?? 'region', country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range' }[mp!.layer]}`);
       setTimeout(() => setNudge(null), 1400);
       return;
     }
@@ -246,7 +246,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
       {nudge && <div className="nudge">{nudge}</div>}
 
       {showMap && (<div className="map-wrap">
-        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra === 'peak' ? ['range', 'peak'] : extra === 'us' ? ['us', 'lake'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
+        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra === 'peak' ? ['range', 'peak'] : extra === 'us' ? ['us', 'lake'] : extra === 'sub' && ds.byId.get(c.parent ?? '')?.layer === 'us' ? ['us', 'sub'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
           dim={id => group?.layer === m.layer && !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
           {(f.map === 'highlight' || revealed || tapResult) && (m.layer === 'country' || m.layer === 'terr') && (
             <Inset place={m} label={revealed || tapResult ? m.name : 'Close-up'} />
