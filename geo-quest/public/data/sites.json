@@ -15,7 +15,11 @@
    "countryName": "Brazil",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #445 · Brazil"
+   "facts": "UNESCO World Heritage Site #445 · Federal District, Brazil",
+   "admin1Ids": [
+    "Q119158"
+   ],
+   "admin1": "Federal District"
   },
   {
    "id": "Q3551",
@@ -31,7 +35,11 @@
    "countryName": "Morocco",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1401 · Morocco"
+   "facts": "UNESCO World Heritage Site #1401 · Rabat-Salé-Kénitra, Morocco",
+   "admin1Ids": [
+    "Q19951239"
+   ],
+   "admin1": "Rabat-Salé-Kénitra"
   },
   {
    "id": "Q9141",
@@ -47,7 +55,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #252 · India"
+   "facts": "UNESCO World Heritage Site #252 · Uttar Pradesh, India",
+   "admin1Ids": [
+    "Q1498"
+   ],
+   "admin1": "Uttar Pradesh"
   },
   {
    "id": "Q23800",
@@ -63,7 +75,11 @@
    "countryName": "Malta",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #131 · Malta"
+   "facts": "UNESCO World Heritage Site #131 · Port Region, Malta",
+   "admin1Ids": [
+    "Q120512566"
+   ],
+   "admin1": "Port Region"
   },
   {
    "id": "Q7343",
@@ -79,7 +95,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #154 · Australia"
+   "facts": "UNESCO World Heritage Site #154 · Queensland, Australia",
+   "admin1Ids": [
+    "Q36074"
+   ],
+   "admin1": "Queensland"
   },
   {
    "id": "Q66485",
@@ -95,7 +115,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1605 · India"
+   "facts": "UNESCO World Heritage Site #1605 · Rajasthan, India",
+   "admin1Ids": [
+    "Q1437"
+   ],
+   "admin1": "Rajasthan"
   },
   {
    "id": "Q2028",
@@ -111,7 +135,11 @@
    "countryName": "Italy",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #797 · Italy"
+   "facts": "UNESCO World Heritage Site #797 · Veneto, Italy",
+   "admin1Ids": [
+    "Q1243"
+   ],
+   "admin1": "Veneto"
   },
   {
    "id": "Q39671",
@@ -127,7 +155,11 @@
    "countryName": "United Kingdom",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #373 · United Kingdom"
+   "facts": "UNESCO World Heritage Site #373 · England, United Kingdom",
+   "admin1Ids": [
+    "Q21"
+   ],
+   "admin1": "England"
   },
   {
    "id": "Q38095",
@@ -143,7 +175,11 @@
    "countryName": "Ecuador",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1 · Ecuador"
+   "facts": "UNESCO World Heritage Site #1 · Galápagos Province, Ecuador",
+   "admin1Ids": [
+    "Q475038"
+   ],
+   "admin1": "Galápagos Province"
   },
   {
    "id": "Q9427",
@@ -159,7 +195,11 @@
    "countryName": "Mali",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #119 · Mali"
+   "facts": "UNESCO World Heritage Site #119 · Timbuktu Region, Mali",
+   "admin1Ids": [
+    "Q339462"
+   ],
+   "admin1": "Timbuktu Region"
   },
   {
    "id": "Q7341",
@@ -175,7 +215,11 @@
    "countryName": "Poland",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #31 · Poland"
+   "facts": "UNESCO World Heritage Site #31 · Lesser Poland Voivodeship, Poland",
+   "admin1Ids": [
+    "Q54159"
+   ],
+   "admin1": "Lesser Poland Voivodeship"
   },
   {
    "id": "Q23513",
@@ -191,7 +235,11 @@
    "countryName": "Vietnam",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #951 · Vietnam"
+   "facts": "UNESCO World Heritage Site #951 · Quảng Bình, Vietnam",
+   "admin1Ids": [
+    "Q23533"
+   ],
+   "admin1": "Quảng Bình"
   },
   {
    "id": "Q22647",
@@ -207,7 +255,11 @@
    "countryName": "Türkiye",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #849 · Türkiye"
+   "facts": "UNESCO World Heritage Site #849 · Çanakkale Province, Türkiye",
+   "admin1Ids": [
+    "Q47813"
+   ],
+   "admin1": "Çanakkale Province"
   },
   {
    "id": "Q5582862",
@@ -223,7 +275,11 @@
    "countryName": "Peru",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #273 · Peru"
+   "facts": "UNESCO World Heritage Site #273 · Cusco Department, Peru",
+   "admin1Ids": [
+    "Q205057"
+   ],
+   "admin1": "Cusco Department"
   },
   {
    "id": "Q5788",
@@ -239,7 +295,11 @@
    "countryName": "Jordan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #326 · Jordan"
+   "facts": "UNESCO World Heritage Site #326 · Ma'an Governorate, Jordan",
+   "admin1Ids": [
+    "Q606340"
+   ],
+   "admin1": "Ma'an Governorate"
   },
   {
    "id": "Q351",
@@ -271,7 +331,11 @@
    "countryName": "United Kingdom",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #428 · United Kingdom"
+   "facts": "UNESCO World Heritage Site #428 · England, United Kingdom",
+   "admin1Ids": [
+    "Q21"
+   ],
+   "admin1": "England"
   },
   {
    "id": "Q5859",
@@ -287,7 +351,11 @@
    "countryName": "Mexico",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #483 · Mexico"
+   "facts": "UNESCO World Heritage Site #483 · Yucatán, Mexico",
+   "admin1Ids": [
+    "Q60176"
+   ],
+   "admin1": "Yucatán"
   },
   {
    "id": "Q2946",
@@ -303,7 +371,11 @@
    "countryName": "France",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #83 · France"
+   "facts": "UNESCO World Heritage Site #83 · Île-de-France, France",
+   "admin1Ids": [
+    "Q13917"
+   ],
+   "admin1": "Île-de-France"
   },
   {
    "id": "Q5747",
@@ -319,7 +391,11 @@
    "countryName": "Syria",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #23 · Syria"
+   "facts": "UNESCO World Heritage Site #23 · Homs Governorate, Syria",
+   "admin1Ids": [
+    "Q214094"
+   ],
+   "admin1": "Homs Governorate"
   },
   {
    "id": "Q129072",
@@ -335,7 +411,11 @@
    "countryName": "Iran",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #114 · Iran"
+   "facts": "UNESCO World Heritage Site #114 · Fars Province, Iran",
+   "admin1Ids": [
+    "Q1004666"
+   ],
+   "admin1": "Fars Province"
   },
   {
    "id": "Q126084",
@@ -351,7 +431,11 @@
    "countryName": "Israel",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1042 · Israel"
+   "facts": "UNESCO World Heritage Site #1042 · Northern District, Israel",
+   "admin1Ids": [
+    "Q189942"
+   ],
+   "admin1": "Northern District"
   },
   {
    "id": "Q5725",
@@ -367,7 +451,11 @@
    "countryName": "Pakistan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #138 · Pakistan"
+   "facts": "UNESCO World Heritage Site #138 · Sindh, Pakistan",
+   "admin1Ids": [
+    "Q37211"
+   ],
+   "admin1": "Sindh"
   },
   {
    "id": "Q45178",
@@ -383,7 +471,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #166 · Australia"
+   "facts": "UNESCO World Heritage Site #166 · New South Wales, Australia",
+   "admin1Ids": [
+    "Q3224"
+   ],
+   "admin1": "New South Wales"
   },
   {
    "id": "Q131013",
@@ -399,7 +491,11 @@
    "countryName": "Greece",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #404 · Greece"
+   "facts": "UNESCO World Heritage Site #404 · Attica, Greece",
+   "admin1Ids": [
+    "Q758056"
+   ],
+   "admin1": "Attica"
   },
   {
    "id": "Q131198",
@@ -431,7 +527,11 @@
    "countryName": "Iraq",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #276 · Iraq"
+   "facts": "UNESCO World Heritage Site #276 · Saladin Governorate, Iraq",
+   "admin1Ids": [
+    "Q190131"
+   ],
+   "admin1": "Saladin Governorate"
   },
   {
    "id": "Q38888",
@@ -447,7 +547,11 @@
    "countryName": "Greece",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #517 · Greece"
+   "facts": "UNESCO World Heritage Site #517 · Western Greece, Greece",
+   "admin1Ids": [
+    "Q170291"
+   ],
+   "admin1": "Western Greece"
   },
   {
    "id": "Q5832",
@@ -463,7 +567,11 @@
    "countryName": "Ethiopia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #15 · Ethiopia"
+   "facts": "UNESCO World Heritage Site #15 · Tigray Region, Ethiopia",
+   "admin1Ids": [
+    "Q200127"
+   ],
+   "admin1": "Tigray Region"
   },
   {
    "id": "Q203197",
@@ -479,7 +587,11 @@
    "countryName": "Sri Lanka",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #450 · Sri Lanka"
+   "facts": "UNESCO World Heritage Site #450 · Central Province, Sri Lanka",
+   "admin1Ids": [
+    "Q190716"
+   ],
+   "admin1": "Central Province"
   },
   {
    "id": "Q190165",
@@ -495,7 +607,11 @@
    "countryName": "Laos",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #479 · Laos"
+   "facts": "UNESCO World Heritage Site #479 · Luang Prabang Province, Laos",
+   "admin1Ids": [
+    "Q747881"
+   ],
+   "admin1": "Luang Prabang Province"
   },
   {
    "id": "Q62378",
@@ -511,7 +627,11 @@
    "countryName": "United Kingdom",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #488 · United Kingdom"
+   "facts": "UNESCO World Heritage Site #488 · England, United Kingdom",
+   "admin1Ids": [
+    "Q21"
+   ],
+   "admin1": "England"
   },
   {
    "id": "Q178835",
@@ -527,7 +647,11 @@
    "countryName": "Lebanon",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #294 · Lebanon"
+   "facts": "UNESCO World Heritage Site #294 · Baalbek-Hermel Governorate, Lebanon",
+   "admin1Ids": [
+    "Q787753"
+   ],
+   "admin1": "Baalbek-Hermel Governorate"
   },
   {
    "id": "Q180402",
@@ -543,7 +667,11 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #308 · United States"
+   "facts": "UNESCO World Heritage Site #308 · California, United States",
+   "admin1Ids": [
+    "Q99"
+   ],
+   "admin1": "California"
   },
   {
    "id": "Q54898",
@@ -559,7 +687,11 @@
    "countryName": "Spain",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #929 · Spain"
+   "facts": "UNESCO World Heritage Site #929 · Canary Islands, Spain",
+   "admin1Ids": [
+    "Q5813"
+   ],
+   "admin1": "Canary Islands"
   },
   {
    "id": "Q179046",
@@ -575,7 +707,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #255 · India"
+   "facts": "UNESCO World Heritage Site #255 · Uttar Pradesh, India",
+   "admin1Ids": [
+    "Q1498"
+   ],
+   "admin1": "Uttar Pradesh"
   },
   {
    "id": "Q4176",
@@ -591,7 +727,11 @@
    "countryName": "Germany",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #292 · Germany"
+   "facts": "UNESCO World Heritage Site #292 · North Rhine-Westphalia, Germany",
+   "admin1Ids": [
+    "Q1198"
+   ],
+   "admin1": "North Rhine-Westphalia"
   },
   {
    "id": "Q172697",
@@ -607,7 +747,11 @@
    "countryName": "France",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1707 · France"
+   "facts": "UNESCO World Heritage Site #1707 · French Polynesia, France",
+   "admin1Ids": [
+    "Q30971"
+   ],
+   "admin1": "French Polynesia"
   },
   {
    "id": "Q35045",
@@ -623,7 +767,11 @@
    "countryName": "Bolivia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #420 · Bolivia"
+   "facts": "UNESCO World Heritage Site #420 · Potosí Department, Bolivia",
+   "admin1Ids": [
+    "Q238079"
+   ],
+   "admin1": "Potosí Department"
   },
   {
    "id": "Q190128",
@@ -655,7 +803,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #242 · India"
+   "facts": "UNESCO World Heritage Site #242 · Maharashtra, India",
+   "admin1Ids": [
+    "Q1191"
+   ],
+   "admin1": "Maharashtra"
   },
   {
    "id": "Q173532",
@@ -671,7 +823,11 @@
    "countryName": "Lebanon",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #295 · Lebanon"
+   "facts": "UNESCO World Heritage Site #295 · Keserwan-Jbeil Governorate, Lebanon",
+   "admin1Ids": [
+    "Q56345291"
+   ],
+   "admin1": "Keserwan-Jbeil Governorate"
   },
   {
    "id": "Q57357",
@@ -687,7 +843,11 @@
    "countryName": "United Kingdom",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #430-001 · United Kingdom"
+   "facts": "UNESCO World Heritage Site #430-001 · England, United Kingdom",
+   "admin1Ids": [
+    "Q21"
+   ],
+   "admin1": "England"
   },
   {
    "id": "Q5724",
@@ -703,7 +863,11 @@
    "countryName": "Sri Lanka",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #200 · Sri Lanka"
+   "facts": "UNESCO World Heritage Site #200 · North Central Province, Sri Lanka",
+   "admin1Ids": [
+    "Q1057124"
+   ],
+   "admin1": "North Central Province"
   },
   {
    "id": "Q179570",
@@ -719,7 +883,11 @@
    "countryName": "Tunisia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #499 · Tunisia"
+   "facts": "UNESCO World Heritage Site #499 · Kairouan Governorate, Tunisia",
+   "admin1Ids": [
+    "Q276574"
+   ],
+   "admin1": "Kairouan Governorate"
   },
   {
    "id": "Q569766",
@@ -735,7 +903,11 @@
    "countryName": "Uzbekistan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #885 · Uzbekistan"
+   "facts": "UNESCO World Heritage Site #885 · Qashqadaryo Region, Uzbekistan",
+   "admin1Ids": [
+    "Q487577"
+   ],
+   "admin1": "Qashqadaryo Region"
   },
   {
    "id": "Q173148",
@@ -751,7 +923,11 @@
    "countryName": "Greece",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #530 · Greece"
+   "facts": "UNESCO World Heritage Site #530 · South Aegean, Greece",
+   "admin1Ids": [
+    "Q173616"
+   ],
+   "admin1": "South Aegean"
   },
   {
    "id": "Q223589",
@@ -767,7 +943,12 @@
    "countryName": "DR Congo",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #63 · DR Congo"
+   "facts": "UNESCO World Heritage Site #63 · North Kivu, Orientale Province, DR Congo",
+   "admin1Ids": [
+    "Q130625",
+    "Q831370"
+   ],
+   "admin1": "North Kivu, Orientale Province"
   },
   {
    "id": "Q172613",
@@ -783,7 +964,11 @@
    "countryName": "Mexico",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #414 · Mexico"
+   "facts": "UNESCO World Heritage Site #414 · State of Mexico, Mexico",
+   "admin1Ids": [
+    "Q82112"
+   ],
+   "admin1": "State of Mexico"
   },
   {
    "id": "Q200200",
@@ -799,7 +984,11 @@
    "countryName": "Iraq",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1130 · Iraq"
+   "facts": "UNESCO World Heritage Site #1130 · Saladin Governorate, Iraq",
+   "admin1Ids": [
+    "Q190131"
+   ],
+   "admin1": "Saladin Governorate"
   },
   {
    "id": "Q180773",
@@ -815,7 +1004,11 @@
    "countryName": "Iran",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1455 · Iran"
+   "facts": "UNESCO World Heritage Site #1455 · Khuzestan Province, Iran",
+   "admin1Ids": [
+    "Q241119"
+   ],
+   "admin1": "Khuzestan Province"
   },
   {
    "id": "Q214944",
@@ -831,7 +1024,11 @@
    "countryName": "Türkiye",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1572 · Türkiye"
+   "facts": "UNESCO World Heritage Site #1572 · Şanlıurfa Province, Türkiye",
+   "admin1Ids": [
+    "Q388469"
+   ],
+   "admin1": "Şanlıurfa Province"
   },
   {
    "id": "Q29317",
@@ -847,7 +1044,11 @@
    "countryName": "Myanmar",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1588 · Myanmar"
+   "facts": "UNESCO World Heritage Site #1588 · Mandalay Region, Myanmar",
+   "admin1Ids": [
+    "Q119494"
+   ],
+   "admin1": "Mandalay Region"
   },
   {
    "id": "Q171857",
@@ -863,7 +1064,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #251 · India"
+   "facts": "UNESCO World Heritage Site #251 · Uttar Pradesh, India",
+   "admin1Ids": [
+    "Q1498"
+   ],
+   "admin1": "Uttar Pradesh"
   },
   {
    "id": "Q11812902",
@@ -879,7 +1084,12 @@
    "countryName": "Tanzania",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #156 · Tanzania"
+   "facts": "UNESCO World Heritage Site #156 · Mara Region, Simiyu Region, Tanzania",
+   "admin1Ids": [
+    "Q458406",
+    "Q2787568"
+   ],
+   "admin1": "Mara Region, Simiyu Region"
   },
   {
    "id": "Q9213",
@@ -895,7 +1105,11 @@
    "countryName": "Nepal",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #666 · Nepal"
+   "facts": "UNESCO World Heritage Site #666 · Lumbini Province, Nepal",
+   "admin1Ids": [
+    "Q25104014"
+   ],
+   "admin1": "Lumbini Province"
   },
   {
    "id": "Q45957",
@@ -911,7 +1125,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #231 · India"
+   "facts": "UNESCO World Heritage Site #231 · National Capital Territory of Delhi, India",
+   "admin1Ids": [
+    "Q9357528"
+   ],
+   "admin1": "National Capital Territory of Delhi"
   },
   {
    "id": "Q189616",
@@ -927,7 +1145,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #243 · India"
+   "facts": "UNESCO World Heritage Site #243 · Maharashtra, India",
+   "admin1Ids": [
+    "Q1191"
+   ],
+   "admin1": "Maharashtra"
   },
   {
    "id": "Q192764",
@@ -943,7 +1165,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #337 · India"
+   "facts": "UNESCO World Heritage Site #337 · Assam, India",
+   "admin1Ids": [
+    "Q1164"
+   ],
+   "admin1": "Assam"
   },
   {
    "id": "Q188754",
@@ -959,7 +1185,11 @@
    "countryName": "Japan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #661 · Japan"
+   "facts": "UNESCO World Heritage Site #661 · Hyōgo Prefecture, Japan",
+   "admin1Ids": [
+    "Q130290"
+   ],
+   "admin1": "Hyōgo Prefecture"
   },
   {
    "id": "Q156093",
@@ -975,7 +1205,11 @@
    "countryName": "Pakistan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #139 · Pakistan"
+   "facts": "UNESCO World Heritage Site #139 · Punjab, Pakistan",
+   "admin1Ids": [
+    "Q4478"
+   ],
+   "admin1": "Punjab"
   },
   {
    "id": "Q44112",
@@ -991,7 +1225,11 @@
    "countryName": "Libya",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #190 · Libya"
+   "facts": "UNESCO World Heritage Site #190 · Jabal al Akhdar, Libya",
+   "admin1Ids": [
+    "Q32841"
+   ],
+   "admin1": "Jabal al Akhdar"
   },
   {
    "id": "Q209217",
@@ -1007,7 +1245,11 @@
    "countryName": "Zimbabwe",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #364 · Zimbabwe"
+   "facts": "UNESCO World Heritage Site #364 · Masvingo Province, Zimbabwe",
+   "admin1Ids": [
+    "Q498351"
+   ],
+   "admin1": "Masvingo Province"
   },
   {
    "id": "Q106187",
@@ -1023,7 +1265,11 @@
    "countryName": "United Kingdom",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #369 · United Kingdom"
+   "facts": "UNESCO World Heritage Site #369 · Northern Ireland, United Kingdom",
+   "admin1Ids": [
+    "Q26"
+   ],
+   "admin1": "Northern Ireland"
   },
   {
    "id": "Q179883",
@@ -1039,7 +1285,11 @@
    "countryName": "Italy",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #908 · Italy"
+   "facts": "UNESCO World Heritage Site #908 · Sicily, Italy",
+   "admin1Ids": [
+    "Q1460"
+   ],
+   "admin1": "Sicily"
   },
   {
    "id": "Q180274",
@@ -1055,7 +1305,11 @@
    "countryName": "France",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #81 · France"
+   "facts": "UNESCO World Heritage Site #81 · Centre-Val de Loire, France",
+   "admin1Ids": [
+    "Q13947"
+   ],
+   "admin1": "Centre-Val de Loire"
   },
   {
    "id": "Q47721",
@@ -1071,7 +1325,12 @@
    "countryName": "Indonesia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #642 · Indonesia"
+   "facts": "UNESCO World Heritage Site #642 · Central Java, Yogyakarta, Indonesia",
+   "admin1Ids": [
+    "Q3557",
+    "Q3741"
+   ],
+   "admin1": "Central Java, Yogyakarta"
   },
   {
    "id": "Q231140",
@@ -1087,7 +1346,11 @@
    "countryName": "Japan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #775 · Japan"
+   "facts": "UNESCO World Heritage Site #775 · Hiroshima Prefecture, Japan",
+   "admin1Ids": [
+    "Q617375"
+   ],
+   "admin1": "Hiroshima Prefecture"
   },
   {
    "id": "Q192493",
@@ -1103,7 +1366,11 @@
    "countryName": "South Africa",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #916 · South Africa"
+   "facts": "UNESCO World Heritage Site #916 · Western Cape, South Africa",
+   "admin1Ids": [
+    "Q127167"
+   ],
+   "admin1": "Western Cape"
   },
   {
    "id": "Q216243",
@@ -1119,7 +1386,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1502 · India"
+   "facts": "UNESCO World Heritage Site #1502 · Bihar, India",
+   "admin1Ids": [
+    "Q1165"
+   ],
+   "admin1": "Bihar"
   },
   {
    "id": "Q189849",
@@ -1135,7 +1406,12 @@
    "countryName": "Croatia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #98 · Croatia"
+   "facts": "UNESCO World Heritage Site #98 · Karlovac County, Lika-Senj County, Croatia",
+   "admin1Ids": [
+    "Q57071",
+    "Q58081"
+   ],
+   "admin1": "Karlovac County, Lika-Senj County"
   },
   {
    "id": "Q216059",
@@ -1151,7 +1427,11 @@
    "countryName": "China",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #437 · China"
+   "facts": "UNESCO World Heritage Site #437 · Shandong, China",
+   "admin1Ids": [
+    "Q43407"
+   ],
+   "admin1": "Shandong"
   },
   {
    "id": "Q3125051",
@@ -1167,7 +1447,11 @@
    "countryName": "Greece",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #455 · Greece"
+   "facts": "UNESCO World Heritage Site #455 · Thessaly, Greece",
+   "admin1Ids": [
+    "Q22807284"
+   ],
+   "admin1": "Thessaly"
   },
   {
    "id": "Q157603",
@@ -1183,7 +1467,12 @@
    "countryName": "Bolivia, Paraguay and Brazil",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #999 · Bolivia, Paraguay, Brazil"
+   "facts": "UNESCO World Heritage Site #999 · Bolivia, Paraguay, Brazil",
+   "admin1Ids": [
+    "Q42824",
+    "Q43319"
+   ],
+   "admin1": "Mato Grosso, Mato Grosso do Sul"
   },
   {
    "id": "Q186312",
@@ -1199,7 +1488,11 @@
    "countryName": "Israel",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1040 · Israel"
+   "facts": "UNESCO World Heritage Site #1040 · Southern District, Israel",
+   "admin1Ids": [
+    "Q188781"
+   ],
+   "admin1": "Southern District"
   },
   {
    "id": "Q192522",
@@ -1215,7 +1508,11 @@
    "countryName": "Türkiye",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1405 · Türkiye"
+   "facts": "UNESCO World Heritage Site #1405 · Konya Province, Türkiye",
+   "admin1Ids": [
+    "Q81551"
+   ],
+   "admin1": "Konya Province"
   },
   {
    "id": "Q274131",
@@ -1231,7 +1528,11 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #76 · United States"
+   "facts": "UNESCO World Heritage Site #76 · Florida, United States",
+   "admin1Ids": [
+    "Q812"
+   ],
+   "admin1": "Florida"
   },
   {
    "id": "Q190048",
@@ -1247,7 +1548,12 @@
    "countryName": "Algeria",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #179 · Algeria"
+   "facts": "UNESCO World Heritage Site #179 · Illizi Province, Djanet Province, Algeria",
+   "admin1Ids": [
+    "Q233659",
+    "Q77101547"
+   ],
+   "admin1": "Illizi Province, Djanet Province"
   },
   {
    "id": "Q189648",
@@ -1263,7 +1569,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #232 · India"
+   "facts": "UNESCO World Heritage Site #232 · National Capital Territory of Delhi, India",
+   "admin1Ids": [
+    "Q9357528"
+   ],
+   "admin1": "National Capital Territory of Delhi"
   },
   {
    "id": "Q26732",
@@ -1279,7 +1589,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #241 · India"
+   "facts": "UNESCO World Heritage Site #241 · Karnataka, India",
+   "admin1Ids": [
+    "Q1185"
+   ],
+   "admin1": "Karnataka"
   },
   {
    "id": "Q235004",
@@ -1295,7 +1609,12 @@
    "countryName": "Philippines",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #502 · Philippines"
+   "facts": "UNESCO World Heritage Site #502 · Ilocos Sur, Ilocos Region, Philippines",
+   "admin1Ids": [
+    "Q12741",
+    "Q12933"
+   ],
+   "admin1": "Ilocos Sur, Ilocos Region"
   },
   {
    "id": "Q61750",
@@ -1311,7 +1630,11 @@
    "countryName": "Bolivia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #567 · Bolivia"
+   "facts": "UNESCO World Heritage Site #567 · La Paz Department, Bolivia",
+   "admin1Ids": [
+    "Q272784"
+   ],
+   "admin1": "La Paz Department"
   },
   {
    "id": "Q191763",
@@ -1327,7 +1650,11 @@
    "countryName": "Japan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #776 · Japan"
+   "facts": "UNESCO World Heritage Site #776 · Hiroshima Prefecture, Japan",
+   "admin1Ids": [
+    "Q617375"
+   ],
+   "admin1": "Hiroshima Prefecture"
   },
   {
    "id": "Q125445",
@@ -1343,7 +1670,11 @@
    "countryName": "China",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #881 · China"
+   "facts": "UNESCO World Heritage Site #881 · Beijing, China",
+   "admin1Ids": [
+    "Q956"
+   ],
+   "admin1": "Beijing"
   },
   {
    "id": "Q193325",
@@ -1359,7 +1690,11 @@
    "countryName": "Turkmenistan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #886 · Turkmenistan"
+   "facts": "UNESCO World Heritage Site #886 · Mary Region, Turkmenistan",
+   "admin1Ids": [
+    "Q487401"
+   ],
+   "admin1": "Mary Region"
   },
   {
    "id": "Q4513",
@@ -1375,7 +1710,11 @@
    "countryName": "India",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1056 · India"
+   "facts": "UNESCO World Heritage Site #1056 · Bihar, India",
+   "admin1Ids": [
+    "Q1165"
+   ],
+   "admin1": "Bihar"
   },
   {
    "id": "Q31347",
@@ -1407,7 +1746,11 @@
    "countryName": "Tunisia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1640 · Tunisia"
+   "facts": "UNESCO World Heritage Site #1640 · Medenine Governorate, Tunisia",
+   "admin1Ids": [
+    "Q327087"
+   ],
+   "admin1": "Medenine Governorate"
   },
   {
    "id": "Q191504",
@@ -1423,7 +1766,11 @@
    "countryName": "Libya",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #183 · Libya"
+   "facts": "UNESCO World Heritage Site #183 · Murqub, Libya",
+   "admin1Ids": [
+    "Q209778"
+   ],
+   "admin1": "Murqub"
   },
   {
    "id": "Q192518",
@@ -1439,7 +1786,11 @@
    "countryName": "Yemen",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #192 · Yemen"
+   "facts": "UNESCO World Heritage Site #192 · Hadhramaut Governorate, Yemen",
+   "admin1Ids": [
+    "Q241135"
+   ],
+   "admin1": "Hadhramaut Governorate"
   },
   {
    "id": "Q1217726",
@@ -1455,7 +1806,11 @@
    "countryName": "Tanzania",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #39 · Tanzania"
+   "facts": "UNESCO World Heritage Site #39 · Arusha Region, Tanzania",
+   "admin1Ids": [
+    "Q329261"
+   ],
+   "admin1": "Arusha Region"
   },
   {
    "id": "Q970717",
@@ -1471,7 +1826,11 @@
    "countryName": "Nepal",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #121 · Nepal"
+   "facts": "UNESCO World Heritage Site #121 · Bagmati Province, Nepal",
+   "admin1Ids": [
+    "Q25104015"
+   ],
+   "admin1": "Bagmati Province"
   },
   {
    "id": "Q309436",
@@ -1487,7 +1846,11 @@
    "countryName": "Morocco",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #444 · Morocco"
+   "facts": "UNESCO World Heritage Site #444 · Drâa-Tafilalet, Morocco",
+   "admin1Ids": [
+    "Q19950954"
+   ],
+   "admin1": "Drâa-Tafilalet"
   },
   {
    "id": "Q184429",
@@ -1503,7 +1866,12 @@
    "countryName": "Romania and Ukraine",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #588 · Romania, Ukraine"
+   "facts": "UNESCO World Heritage Site #588 · Romania, Ukraine",
+   "admin1Ids": [
+    "Q191078",
+    "Q171852"
+   ],
+   "admin1": "Tulcea County, Odesa Oblast"
   },
   {
    "id": "Q2620036",
@@ -1519,7 +1887,11 @@
    "countryName": "Peru",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #700 · Peru"
+   "facts": "UNESCO World Heritage Site #700 · Ica Department, Peru",
+   "admin1Ids": [
+    "Q208186"
+   ],
+   "admin1": "Ica Department"
   },
   {
    "id": "Q4523",
@@ -1535,7 +1907,11 @@
    "countryName": "Iran",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #113 · Iran"
+   "facts": "UNESCO World Heritage Site #113 · Khuzestan Province, Iran",
+   "admin1Ids": [
+    "Q241119"
+   ],
+   "admin1": "Khuzestan Province"
   },
   {
    "id": "Q4519",
@@ -1551,7 +1927,11 @@
    "countryName": "Iran",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #115 · Iran"
+   "facts": "UNESCO World Heritage Site #115 · Isfahan Province, Iran",
+   "admin1Ids": [
+    "Q1367759"
+   ],
+   "admin1": "Isfahan Province"
   },
   {
    "id": "Q181427",
@@ -1567,7 +1947,11 @@
    "countryName": "Mexico",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #411 · Mexico"
+   "facts": "UNESCO World Heritage Site #411 · Chiapas, Mexico",
+   "admin1Ids": [
+    "Q60123"
+   ],
+   "admin1": "Chiapas"
   },
   {
    "id": "Q36034",
@@ -1583,7 +1967,11 @@
    "countryName": "China",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #547 · China"
+   "facts": "UNESCO World Heritage Site #547 · Anhui, China",
+   "admin1Ids": [
+    "Q40956"
+   ],
+   "admin1": "Anhui"
   },
   {
    "id": "Q46650",
@@ -1615,7 +2003,11 @@
    "countryName": "Russia and Lithuania",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #994 · Russia, Lithuania"
+   "facts": "UNESCO World Heritage Site #994 · Russia, Lithuania",
+   "admin1Ids": [
+    "Q1749"
+   ],
+   "admin1": "Kaliningrad Oblast"
   },
   {
    "id": "Q230025",
@@ -1631,7 +2023,11 @@
    "countryName": "Iran",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1106 · Iran"
+   "facts": "UNESCO World Heritage Site #1106 · Fars Province, Iran",
+   "admin1Ids": [
+    "Q1004666"
+   ],
+   "admin1": "Fars Province"
   },
   {
    "id": "Q106636",
@@ -1647,7 +2043,11 @@
    "countryName": "Iran",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1208 · Iran"
+   "facts": "UNESCO World Heritage Site #1208 · Kerman Province, Iran",
+   "admin1Ids": [
+    "Q165352"
+   ],
+   "admin1": "Kerman Province"
   },
   {
    "id": "Q184534",
@@ -1663,7 +2063,11 @@
    "countryName": "Türkiye",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1366 · Türkiye"
+   "facts": "UNESCO World Heritage Site #1366 · Edirne Province, Türkiye",
+   "admin1Ids": [
+    "Q83102"
+   ],
+   "admin1": "Edirne Province"
   },
   {
    "id": "Q650872",
@@ -1679,7 +2083,11 @@
    "countryName": "Botswana",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1432 · Botswana"
+   "facts": "UNESCO World Heritage Site #1432 · North-West District, Botswana",
+   "admin1Ids": [
+    "Q57617"
+   ],
+   "admin1": "North-West District"
   },
   {
    "id": "Q4520",
@@ -1695,7 +2103,11 @@
    "countryName": "Indonesia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #609 · Indonesia"
+   "facts": "UNESCO World Heritage Site #609 · East Nusa Tenggara, Indonesia",
+   "admin1Ids": [
+    "Q5061"
+   ],
+   "admin1": "East Nusa Tenggara"
   },
   {
    "id": "Q152225",
@@ -1727,7 +2139,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #147quater-001 · Australia"
+   "facts": "UNESCO World Heritage Site #147quater-001 · Northern Territory, Australia",
+   "admin1Ids": [
+    "Q3235"
+   ],
+   "admin1": "Northern Territory"
   },
   {
    "id": "Q43286",
@@ -1743,7 +2159,11 @@
    "countryName": "China",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #440 · China"
+   "facts": "UNESCO World Heritage Site #440 · Gansu, China",
+   "admin1Ids": [
+    "Q42392"
+   ],
+   "admin1": "Gansu"
   },
   {
    "id": "Q192243",
@@ -1775,7 +2195,11 @@
    "countryName": "Germany",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #3 · Germany"
+   "facts": "UNESCO World Heritage Site #3 · North Rhine-Westphalia, Germany",
+   "admin1Ids": [
+    "Q1198"
+   ],
+   "admin1": "North Rhine-Westphalia"
   },
   {
    "id": "Q272153",
@@ -1791,7 +2215,11 @@
    "countryName": "Sri Lanka",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #202 · Sri Lanka"
+   "facts": "UNESCO World Heritage Site #202 · Central Province, Sri Lanka",
+   "admin1Ids": [
+    "Q190716"
+   ],
+   "admin1": "Central Province"
   },
   {
    "id": "Q767128",
@@ -1839,7 +2267,11 @@
    "countryName": "Belarus and Poland",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #33 · Belarus, Poland"
+   "facts": "UNESCO World Heritage Site #33 · Belarus, Poland",
+   "admin1Ids": [
+    "Q54177"
+   ],
+   "admin1": "Podlaskie Voivodeship"
   },
   {
    "id": "Q9278",
@@ -1855,7 +2287,11 @@
    "countryName": "Egypt",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #90 · Egypt"
+   "facts": "UNESCO World Heritage Site #90 · Alexandria Governorate, Egypt",
+   "admin1Ids": [
+    "Q29943"
+   ],
+   "admin1": "Alexandria Governorate"
   },
   {
    "id": "Q178124",
@@ -1871,7 +2307,11 @@
    "countryName": "Iceland",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1267 · Iceland"
+   "facts": "UNESCO World Heritage Site #1267 · Southern Region, Iceland",
+   "admin1Ids": [
+    "Q204796"
+   ],
+   "admin1": "Southern Region"
   },
   {
    "id": "Q189417",
@@ -1887,7 +2327,12 @@
    "countryName": "Italy",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1708 · Italy"
+   "facts": "UNESCO World Heritage Site #1708 · Apulia, Lazio, Italy",
+   "admin1Ids": [
+    "Q1447",
+    "Q1282"
+   ],
+   "admin1": "Apulia, Lazio"
   },
   {
    "id": "Q220289",
@@ -1919,7 +2364,11 @@
    "countryName": "Iraq",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #277 · Iraq"
+   "facts": "UNESCO World Heritage Site #277 · Nineveh Governorate, Iraq",
+   "admin1Ids": [
+    "Q189352"
+   ],
+   "admin1": "Nineveh Governorate"
   },
   {
    "id": "Q188694",
@@ -1935,7 +2384,11 @@
    "countryName": "Albania",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #570 · Albania"
+   "facts": "UNESCO World Heritage Site #570 · Vlorë County, Albania",
+   "admin1Ids": [
+    "Q192849"
+   ],
+   "admin1": "Vlorë County"
   },
   {
    "id": "Q134905",
@@ -1951,7 +2404,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #630 · Australia"
+   "facts": "UNESCO World Heritage Site #630 · Queensland, Australia",
+   "admin1Ids": [
+    "Q36074"
+   ],
+   "admin1": "Queensland"
   },
   {
    "id": "Q457304",
@@ -1967,7 +2424,11 @@
    "countryName": "DR Congo",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #718 · DR Congo"
+   "facts": "UNESCO World Heritage Site #718 · Ituri Province, DR Congo",
+   "admin1Ids": [
+    "Q24909562"
+   ],
+   "admin1": "Ituri Province"
   },
   {
    "id": "Q4132",
@@ -1983,7 +2444,11 @@
    "countryName": "China",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #880 · China"
+   "facts": "UNESCO World Heritage Site #880 · Beijing, China",
+   "admin1Ids": [
+    "Q956"
+   ],
+   "admin1": "Beijing"
   },
   {
    "id": "Q4516",
@@ -1999,7 +2464,11 @@
    "countryName": "Indonesia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #955 · Indonesia"
+   "facts": "UNESCO World Heritage Site #955 · Papua, Indonesia",
+   "admin1Ids": [
+    "Q5095"
+   ],
+   "admin1": "Papua"
   },
   {
    "id": "Q107370",
@@ -2015,7 +2484,11 @@
    "countryName": "Iceland",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1152 · Iceland"
+   "facts": "UNESCO World Heritage Site #1152 · Southern Region, Iceland",
+   "admin1Ids": [
+    "Q204796"
+   ],
+   "admin1": "Southern Region"
   },
   {
    "id": "Q273456",
@@ -2031,7 +2504,11 @@
    "countryName": "Ethiopia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #17 · Ethiopia"
+   "facts": "UNESCO World Heritage Site #17 · Southern Nations, Nationalities, and Peoples' Region, Ethiopia",
+   "admin1Ids": [
+    "Q203193"
+   ],
+   "admin1": "Southern Nations, Nationalities, and Peoples' Region"
   },
   {
    "id": "Q215992",
@@ -2047,7 +2524,11 @@
    "countryName": "Argentina",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #145 · Argentina"
+   "facts": "UNESCO World Heritage Site #145 · Santa Cruz Province, Argentina",
+   "admin1Ids": [
+    "Q44821"
+   ],
+   "admin1": "Santa Cruz Province"
   },
   {
    "id": "Q715124",
@@ -2063,7 +2544,11 @@
    "countryName": "Spain",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1258 · Spain"
+   "facts": "UNESCO World Heritage Site #1258 · Canary Islands, Spain",
+   "admin1Ids": [
+    "Q5813"
+   ],
+   "admin1": "Canary Islands"
   },
   {
    "id": "Q237128",
@@ -2079,7 +2564,11 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #27 · United States"
+   "facts": "UNESCO World Heritage Site #27 · Colorado, United States",
+   "admin1Ids": [
+    "Q1261"
+   ],
+   "admin1": "Colorado"
   },
   {
    "id": "Q308893",
@@ -2095,7 +2584,11 @@
    "countryName": "DR Congo",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #136 · DR Congo"
+   "facts": "UNESCO World Heritage Site #136 · Orientale Province, DR Congo",
+   "admin1Ids": [
+    "Q831370"
+   ],
+   "admin1": "Orientale Province"
   },
   {
    "id": "Q679891",
@@ -2111,7 +2604,12 @@
    "countryName": "Senegal",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #153 · Senegal"
+   "facts": "UNESCO World Heritage Site #153 · Tambacounda Region, Kedougou Region, Senegal",
+   "admin1Ids": [
+    "Q848554",
+    "Q1046666"
+   ],
+   "admin1": "Tambacounda Region, Kedougou Region"
   },
   {
    "id": "Q500189",
@@ -2127,7 +2625,11 @@
    "countryName": "Angola",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1511 · Angola"
+   "facts": "UNESCO World Heritage Site #1511 · Zaire Province, Angola",
+   "admin1Ids": [
+    "Q196674"
+   ],
+   "admin1": "Zaire Province"
   },
   {
    "id": "Q244347",
@@ -2143,7 +2645,11 @@
    "countryName": "Senegal",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #26 · Senegal"
+   "facts": "UNESCO World Heritage Site #26 · Dakar, Senegal",
+   "admin1Ids": [
+    "Q856268"
+   ],
+   "admin1": "Dakar"
   },
   {
    "id": "Q459629",
@@ -2159,7 +2665,11 @@
    "countryName": "Algeria",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #194 · Algeria"
+   "facts": "UNESCO World Heritage Site #194 · Batna Province, Algeria",
+   "admin1Ids": [
+    "Q215452"
+   ],
+   "admin1": "Batna Province"
   },
   {
    "id": "Q501344",
@@ -2175,7 +2685,12 @@
    "countryName": "Ivory Coast",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #227 · Ivory Coast"
+   "facts": "UNESCO World Heritage Site #227 · Savanes District, Zanzan District, Ivory Coast",
+   "admin1Ids": [
+    "Q21002161",
+    "Q21003689"
+   ],
+   "admin1": "Savanes District, Zanzan District"
   },
   {
    "id": "Q189764",
@@ -2191,7 +2706,11 @@
    "countryName": "France",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #344 · France"
+   "facts": "UNESCO World Heritage Site #344 · Occitania, France",
+   "admin1Ids": [
+    "Q18678265"
+   ],
+   "admin1": "Occitania"
   },
   {
    "id": "Q211778",
@@ -2207,7 +2726,11 @@
    "countryName": "United Kingdom",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #422 · United Kingdom"
+   "facts": "UNESCO World Heritage Site #422 · England, United Kingdom",
+   "admin1Ids": [
+    "Q21"
+   ],
+   "admin1": "England"
   },
   {
    "id": "Q208559",
@@ -2223,7 +2746,11 @@
    "countryName": "Sweden",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #559 · Sweden"
+   "facts": "UNESCO World Heritage Site #559 · Stockholm County, Sweden",
+   "admin1Ids": [
+    "Q104231"
+   ],
+   "admin1": "Stockholm County"
   },
   {
    "id": "Q331099",
@@ -2239,7 +2766,11 @@
    "countryName": "Mozambique",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #599 · Mozambique"
+   "facts": "UNESCO World Heritage Site #599 · Nampula Province, Mozambique",
+   "admin1Ids": [
+    "Q622794"
+   ],
+   "admin1": "Nampula Province"
   },
   {
    "id": "Q374096",
@@ -2255,7 +2786,11 @@
    "countryName": "France",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1426 · France"
+   "facts": "UNESCO World Heritage Site #1426 · Auvergne-Rhône-Alpes, France",
+   "admin1Ids": [
+    "Q18338206"
+   ],
+   "admin1": "Auvergne-Rhône-Alpes"
   },
   {
    "id": "Q328488",
@@ -2287,7 +2822,11 @@
    "countryName": "Italy",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #398 · Italy"
+   "facts": "UNESCO World Heritage Site #398 · Apulia, Italy",
+   "admin1Ids": [
+    "Q1447"
+   ],
+   "admin1": "Apulia"
   },
   {
    "id": "Q205711",
@@ -2303,7 +2842,11 @@
    "countryName": "Russia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #632 · Russia"
+   "facts": "UNESCO World Heritage Site #632 · Arkhangelsk Oblast, Russia",
+   "admin1Ids": [
+    "Q1875"
+   ],
+   "admin1": "Arkhangelsk Oblast"
   },
   {
    "id": "Q202494",
@@ -2319,7 +2862,11 @@
    "countryName": "France",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #770 · France"
+   "facts": "UNESCO World Heritage Site #770 · Occitania, France",
+   "admin1Ids": [
+    "Q18678265"
+   ],
+   "admin1": "Occitania"
   },
   {
    "id": "Q212214",
@@ -2335,7 +2882,11 @@
    "countryName": "Italy",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #830 · Italy"
+   "facts": "UNESCO World Heritage Site #830 · Campania, Italy",
+   "admin1Ids": [
+    "Q1438"
+   ],
+   "admin1": "Campania"
   },
   {
    "id": "Q71279",
@@ -2351,7 +2902,11 @@
    "countryName": "Poland",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #847 · Poland"
+   "facts": "UNESCO World Heritage Site #847 · Pomeranian Voivodeship, Poland",
+   "admin1Ids": [
+    "Q54180"
+   ],
+   "admin1": "Pomeranian Voivodeship"
   },
   {
    "id": "Q151963",
@@ -2367,7 +2922,11 @@
    "countryName": "Germany",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #896 · Germany"
+   "facts": "UNESCO World Heritage Site #896 · Berlin, Germany",
+   "admin1Ids": [
+    "Q64"
+   ],
+   "admin1": "Berlin"
   },
   {
    "id": "Q151545",
@@ -2383,7 +2942,11 @@
    "countryName": "Germany",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #897 · Germany"
+   "facts": "UNESCO World Heritage Site #897 · Thuringia, Germany",
+   "admin1Ids": [
+    "Q1205"
+   ],
+   "admin1": "Thuringia"
   },
   {
    "id": "Q213237",
@@ -2399,7 +2962,11 @@
    "countryName": "Argentina",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #937 · Argentina"
+   "facts": "UNESCO World Heritage Site #937 · Chubut Province, Argentina",
+   "admin1Ids": [
+    "Q45007"
+   ],
+   "admin1": "Chubut Province"
   },
   {
    "id": "Q214827",
@@ -2415,7 +2982,11 @@
    "countryName": "Honduras",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #129 · Honduras"
+   "facts": "UNESCO World Heritage Site #129 · Copán Department, Honduras",
+   "admin1Ids": [
+    "Q843984"
+   ],
+   "admin1": "Copán Department"
   },
   {
    "id": "Q106934",
@@ -2431,7 +3002,11 @@
    "countryName": "France",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #162 · France"
+   "facts": "UNESCO World Heritage Site #162 · Hauts-de-France, France",
+   "admin1Ids": [
+    "Q18677767"
+   ],
+   "admin1": "Hauts-de-France"
   },
   {
    "id": "Q22720",
@@ -2447,7 +3022,11 @@
    "countryName": "Germany",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #168 · Germany"
+   "facts": "UNESCO World Heritage Site #168 · Rhineland-Palatinate, Germany",
+   "admin1Ids": [
+    "Q1200"
+   ],
+   "admin1": "Rhineland-Palatinate"
   },
   {
    "id": "Q319821",
@@ -2463,7 +3042,11 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #307 · United States"
+   "facts": "UNESCO World Heritage Site #307 · New York, United States",
+   "admin1Ids": [
+    "Q1384"
+   ],
+   "admin1": "New York"
   },
   {
    "id": "Q1244337",
@@ -2479,7 +3062,11 @@
    "countryName": "Venezuela",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #701 · Venezuela"
+   "facts": "UNESCO World Heritage Site #701 · Bolívar, Venezuela",
+   "admin1Ids": [
+    "Q191164"
+   ],
+   "admin1": "Bolívar"
   },
   {
    "id": "Q192201",
@@ -2495,7 +3082,11 @@
    "countryName": "Austria",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #970 · Austria"
+   "facts": "UNESCO World Heritage Site #970 · Lower Austria, Austria",
+   "admin1Ids": [
+    "Q42497"
+   ],
+   "admin1": "Lower Austria"
   },
   {
    "id": "Q309426",
@@ -2511,7 +3102,11 @@
    "countryName": "Uganda",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1022 · Uganda"
+   "facts": "UNESCO World Heritage Site #1022 · Central Region, Uganda",
+   "admin1Ids": [
+    "Q429685"
+   ],
+   "admin1": "Central Region"
   },
   {
    "id": "Q457324",
@@ -2527,7 +3122,11 @@
    "countryName": "DR Congo",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #137 · DR Congo"
+   "facts": "UNESCO World Heritage Site #137 · South Kivu, DR Congo",
+   "admin1Ids": [
+    "Q488326"
+   ],
+   "admin1": "South Kivu"
   },
   {
    "id": "Q201428",
@@ -2543,7 +3142,11 @@
    "countryName": "France",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #160 · France"
+   "facts": "UNESCO World Heritage Site #160 · Île-de-France, France",
+   "admin1Ids": [
+    "Q13917"
+   ],
+   "admin1": "Île-de-France"
   },
   {
    "id": "Q457362",
@@ -2559,7 +3162,11 @@
    "countryName": "Algeria",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #191 · Algeria"
+   "facts": "UNESCO World Heritage Site #191 · Sétif Province, Algeria",
+   "admin1Ids": [
+    "Q237164"
+   ],
+   "admin1": "Sétif Province"
   },
   {
    "id": "Q2268839",
@@ -2575,7 +3182,11 @@
    "countryName": "Tanzania",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #199 · Tanzania"
+   "facts": "UNESCO World Heritage Site #199 · Lindi Region, Tanzania",
+   "admin1Ids": [
+    "Q309339"
+   ],
+   "admin1": "Lindi Region"
   },
   {
    "id": "Q215429",
@@ -2623,7 +3234,11 @@
    "countryName": "Bosnia and Herzegovina, Croatia, Albania, North Macedonia, Bulgaria, Romania, Slovenia, Slovakia, Czechia, Ukraine, Germany, France, Austria, Switzerland, Italy, Poland, Belgium and Spain",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1133 · Bosnia and Herzegovina, Croatia, Albania, North Macedonia, Bulgaria, Romania, Slovenia, Slovakia, Czechia, Ukraine, Germany, France, Austria, Switzerland, Italy, Poland, Belgium, Spain"
+   "facts": "UNESCO World Heritage Site #1133 · Bosnia and Herzegovina, Croatia, Albania, North Macedonia, Bulgaria, Romania, Slovenia, Slovakia, Czechia, Ukraine, Germany, France, Austria, Switzerland, Italy, Poland, Belgium, Spain",
+   "admin1Ids": [
+    "Q54175"
+   ],
+   "admin1": "Podkarpackie Voivodeship"
   },
   {
    "id": "Q189113",
@@ -2639,7 +3254,11 @@
    "countryName": "Canada",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #4 · Canada"
+   "facts": "UNESCO World Heritage Site #4 · Newfoundland and Labrador, Canada",
+   "admin1Ids": [
+    "Q2003"
+   ],
+   "admin1": "Newfoundland and Labrador"
   },
   {
    "id": "Q504315",
@@ -2655,7 +3274,11 @@
    "countryName": "Ethiopia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #9 · Ethiopia"
+   "facts": "UNESCO World Heritage Site #9 · Amhara Region, Ethiopia",
+   "admin1Ids": [
+    "Q203009"
+   ],
+   "admin1": "Amhara Region"
   },
   {
    "id": "Q244952",
@@ -2671,7 +3294,11 @@
    "countryName": "Italy",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #93 · Italy"
+   "facts": "UNESCO World Heritage Site #93 · Lombardy, Italy",
+   "admin1Ids": [
+    "Q1210"
+   ],
+   "admin1": "Lombardy"
   },
   {
    "id": "Q372093",
@@ -2687,7 +3314,11 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #151 · United States"
+   "facts": "UNESCO World Heritage Site #151 · Washington, United States",
+   "admin1Ids": [
+    "Q1223"
+   ],
+   "admin1": "Washington"
   },
   {
    "id": "Q844417",
@@ -2703,7 +3334,11 @@
    "countryName": "Tanzania",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #173 · Tanzania"
+   "facts": "UNESCO World Heritage Site #173 · Mjini Magharibi Region, Tanzania",
+   "admin1Ids": [
+    "Q180822"
+   ],
+   "admin1": "Mjini Magharibi Region"
   },
   {
    "id": "Q308807",
@@ -2719,7 +3354,11 @@
    "countryName": "Libya",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #287 · Libya"
+   "facts": "UNESCO World Heritage Site #287 · Ghat District, Libya",
+   "admin1Ids": [
+    "Q48236"
+   ],
+   "admin1": "Ghat District"
   },
   {
    "id": "Q744420",
@@ -2735,7 +3374,11 @@
    "countryName": "Spain",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #316 · Spain"
+   "facts": "UNESCO World Heritage Site #316 · Castile and León, Spain",
+   "admin1Ids": [
+    "Q5739"
+   ],
+   "admin1": "Castile and León"
   },
   {
    "id": "Q205952",
@@ -2751,7 +3394,11 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #409 · United States"
+   "facts": "UNESCO World Heritage Site #409 · Hawaii, United States",
+   "admin1Ids": [
+    "Q782"
+   ],
+   "admin1": "Hawaii"
   },
   {
    "id": "Q503835",
@@ -2767,7 +3414,11 @@
    "countryName": "Central African Republic",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #475 · Central African Republic"
+   "facts": "UNESCO World Heritage Site #475 · Bamingui-Bangoran Prefecture, Central African Republic",
+   "admin1Ids": [
+    "Q741025"
+   ],
+   "admin1": "Bamingui-Bangoran Prefecture"
   },
   {
    "id": "Q189358",
@@ -2783,7 +3434,11 @@
    "countryName": "Denmark",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #696 · Denmark"
+   "facts": "UNESCO World Heritage Site #696 · Capital Region of Denmark, Denmark",
+   "admin1Ids": [
+    "Q26073"
+   ],
+   "admin1": "Capital Region of Denmark"
   },
   {
    "id": "Q503823",
@@ -2799,7 +3454,11 @@
    "countryName": "Mali",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1139 · Mali"
+   "facts": "UNESCO World Heritage Site #1139 · Gao Region, Mali",
+   "admin1Ids": [
+    "Q332392"
+   ],
+   "admin1": "Gao Region"
   },
   {
    "id": "Q275",
@@ -2815,7 +3474,11 @@
    "countryName": "United Kingdom",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1485 · United Kingdom"
+   "facts": "UNESCO World Heritage Site #1485 · Scotland, United Kingdom",
+   "admin1Ids": [
+    "Q22"
+   ],
+   "admin1": "Scotland"
   },
   {
    "id": "Q242681",
@@ -2831,7 +3494,11 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #150 · United States"
+   "facts": "UNESCO World Heritage Site #150 · Kentucky, United States",
+   "admin1Ids": [
+    "Q1603"
+   ],
+   "admin1": "Kentucky"
   },
   {
    "id": "Q333661",
@@ -2847,7 +3514,11 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #198 · United States"
+   "facts": "UNESCO World Heritage Site #198 · Illinois, United States",
+   "admin1Ids": [
+    "Q1204"
+   ],
+   "admin1": "Illinois"
   },
   {
    "id": "Q464942",
@@ -2863,7 +3534,11 @@
    "countryName": "Spain",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #380 · Spain"
+   "facts": "UNESCO World Heritage Site #380 · Canary Islands, Spain",
+   "admin1Ids": [
+    "Q5813"
+   ],
+   "admin1": "Canary Islands"
   },
   {
    "id": "Q61757",
@@ -2879,7 +3554,11 @@
    "countryName": "Hungary",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #474 · Hungary"
+   "facts": "UNESCO World Heritage Site #474 · Hajdú-Bihar County, Hungary",
+   "admin1Ids": [
+    "Q185368"
+   ],
+   "admin1": "Hajdú-Bihar County"
   },
   {
    "id": "Q19053",
@@ -2895,7 +3574,11 @@
    "countryName": "Greece",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #511 · Greece"
+   "facts": "UNESCO World Heritage Site #511 · Peloponnese, Greece",
+   "admin1Ids": [
+    "Q202484"
+   ],
+   "admin1": "Peloponnese"
   },
   {
    "id": "Q464913",
@@ -2911,7 +3594,11 @@
    "countryName": "Cape Verde",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1310 · Cape Verde"
+   "facts": "UNESCO World Heritage Site #1310 · Sotavento Islands, Cape Verde",
+   "admin1Ids": [
+    "Q500453"
+   ],
+   "admin1": "Sotavento Islands"
   },
   {
    "id": "Q391338",
@@ -2927,7 +3614,12 @@
    "countryName": "Canada",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #256 · Canada"
+   "facts": "UNESCO World Heritage Site #256 · Northwest Territories, Alberta, Canada",
+   "admin1Ids": [
+    "Q2007",
+    "Q1951"
+   ],
+   "admin1": "Northwest Territories, Alberta"
   },
   {
    "id": "Q277540",
@@ -2943,7 +3635,11 @@
    "countryName": "Peru",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #366 · Peru"
+   "facts": "UNESCO World Heritage Site #366 · La Libertad Department, Peru",
+   "admin1Ids": [
+    "Q205126"
+   ],
+   "admin1": "La Libertad Department"
   },
   {
    "id": "Q391215",
@@ -2959,7 +3655,11 @@
    "countryName": "Morocco",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #836 · Morocco"
+   "facts": "UNESCO World Heritage Site #836 · Fès-Meknès, Morocco",
+   "admin1Ids": [
+    "Q19951027"
+   ],
+   "admin1": "Fès-Meknès"
   },
   {
    "id": "Q214007",
@@ -2975,7 +3675,11 @@
    "countryName": "Botswana",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1021 · Botswana"
+   "facts": "UNESCO World Heritage Site #1021 · North-West District, Botswana",
+   "admin1Ids": [
+    "Q57617"
+   ],
+   "admin1": "North-West District"
   },
   {
    "id": "Q272771",
@@ -2991,7 +3695,11 @@
    "countryName": "Mexico",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1061 · Mexico"
+   "facts": "UNESCO World Heritage Site #1061 · Campeche, Mexico",
+   "admin1Ids": [
+    "Q80908"
+   ],
+   "admin1": "Campeche"
   },
   {
    "id": "Q846967",
@@ -3007,7 +3715,11 @@
    "countryName": "Micronesia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1503 · Micronesia"
+   "facts": "UNESCO World Heritage Site #1503 · Pohnpei State, Micronesia",
+   "admin1Ids": [
+    "Q7771127"
+   ],
+   "admin1": "Pohnpei State"
   },
   {
    "id": "Q272768",
@@ -3039,7 +3751,12 @@
    "countryName": "Ivory Coast",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #195 · Ivory Coast"
+   "facts": "UNESCO World Heritage Site #195 · Bas-Sassandra District, Montagnes District, Ivory Coast",
+   "admin1Ids": [
+    "Q20980352",
+    "Q20980366"
+   ],
+   "admin1": "Bas-Sassandra District, Montagnes District"
   },
   {
    "id": "Q241074",
@@ -3055,7 +3772,11 @@
    "countryName": "Brazil",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1000 · Brazil"
+   "facts": "UNESCO World Heritage Site #1000 · Rio Grande do Norte, Brazil",
+   "admin1Ids": [
+    "Q43255"
+   ],
+   "admin1": "Rio Grande do Norte"
   },
   {
    "id": "Q330095",
@@ -3071,7 +3792,12 @@
    "countryName": "South Africa",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1162 · South Africa"
+   "facts": "UNESCO World Heritage Site #1162 · Free State, North West, South Africa",
+   "admin1Ids": [
+    "Q160284",
+    "Q165956"
+   ],
+   "admin1": "Free State, North West"
   },
   {
    "id": "Q500367",
@@ -3087,7 +3813,11 @@
    "countryName": "Algeria",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #102 · Algeria"
+   "facts": "UNESCO World Heritage Site #102 · M'Sila Province, Algeria",
+   "admin1Ids": [
+    "Q240870"
+   ],
+   "admin1": "M'Sila Province"
   },
   {
    "id": "Q318422",
@@ -3103,7 +3833,11 @@
    "countryName": "Guatemala",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #149 · Guatemala"
+   "facts": "UNESCO World Heritage Site #149 · Izabal Department, Guatemala",
+   "admin1Ids": [
+    "Q693658"
+   ],
+   "admin1": "Izabal Department"
   },
   {
    "id": "Q464004",
@@ -3119,7 +3853,12 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #259 · United States"
+   "facts": "UNESCO World Heritage Site #259 · Tennessee, North Carolina, United States",
+   "admin1Ids": [
+    "Q1509",
+    "Q1454"
+   ],
+   "admin1": "Tennessee, North Carolina"
   },
   {
    "id": "Q273195",
@@ -3135,7 +3874,11 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #721 · United States"
+   "facts": "UNESCO World Heritage Site #721 · New Mexico, United States",
+   "admin1Ids": [
+    "Q1522"
+   ],
+   "admin1": "New Mexico"
   },
   {
    "id": "Q948975",
@@ -3167,7 +3910,11 @@
    "countryName": "Mauritania",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #506 · Mauritania"
+   "facts": "UNESCO World Heritage Site #506 · Dakhlet Nouadhibou, Mauritania",
+   "admin1Ids": [
+    "Q859573"
+   ],
+   "admin1": "Dakhlet Nouadhibou"
   },
   {
    "id": "Q1130112",
@@ -3199,7 +3946,11 @@
    "countryName": "Argentina",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1116 · Argentina"
+   "facts": "UNESCO World Heritage Site #1116 · Jujuy Province, Argentina",
+   "admin1Ids": [
+    "Q44764"
+   ],
+   "admin1": "Jujuy Province"
   },
   {
    "id": "Q202845",
@@ -3215,7 +3966,11 @@
    "countryName": "New Zealand",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #421 · New Zealand"
+   "facts": "UNESCO World Heritage Site #421 · Manawatū-Whanganui Region, New Zealand",
+   "admin1Ids": [
+    "Q139907"
+   ],
+   "admin1": "Manawatū-Whanganui Region"
   },
   {
    "id": "Q679568",
@@ -3231,7 +3986,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1094 · Australia"
+   "facts": "UNESCO World Heritage Site #1094 · Western Australia, Australia",
+   "admin1Ids": [
+    "Q3206"
+   ],
+   "admin1": "Western Australia"
   },
   {
    "id": "Q647777",
@@ -3247,7 +4006,11 @@
    "countryName": "Brazil",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1611 · Brazil"
+   "facts": "UNESCO World Heritage Site #1611 · Maranhão, Brazil",
+   "admin1Ids": [
+    "Q42362"
+   ],
+   "admin1": "Maranhão"
   },
   {
    "id": "Q391391",
@@ -3263,7 +4026,11 @@
    "countryName": "Canada",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #24 · Canada"
+   "facts": "UNESCO World Heritage Site #24 · Northwest Territories, Canada",
+   "admin1Ids": [
+    "Q2007"
+   ],
+   "admin1": "Northwest Territories"
   },
   {
    "id": "Q390028",
@@ -3279,7 +4046,11 @@
    "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #78 · United States"
+   "facts": "UNESCO World Heritage Site #78 · Pennsylvania, United States",
+   "admin1Ids": [
+    "Q1400"
+   ],
+   "admin1": "Pennsylvania"
   },
   {
    "id": "Q390264",
@@ -3295,7 +4066,12 @@
    "countryName": "Peru",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #402 · Peru"
+   "facts": "UNESCO World Heritage Site #402 · Cusco Department, Madre de Dios Department, Peru",
+   "admin1Ids": [
+    "Q205057",
+    "Q210896"
+   ],
+   "admin1": "Cusco Department, Madre de Dios Department"
   },
   {
    "id": "Q251999",
@@ -3311,7 +4087,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #447 · Australia"
+   "facts": "UNESCO World Heritage Site #447 · Northern Territory, Australia",
+   "admin1Ids": [
+    "Q3235"
+   ],
+   "admin1": "Northern Territory"
   },
   {
    "id": "Q267394",
@@ -3327,7 +4107,11 @@
    "countryName": "Brazil",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #606 · Brazil"
+   "facts": "UNESCO World Heritage Site #606 · Piauí, Brazil",
+   "admin1Ids": [
+    "Q42722"
+   ],
+   "admin1": "Piauí"
   },
   {
    "id": "Q28361",
@@ -3359,7 +4143,11 @@
    "countryName": "Peru",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1269 · Peru"
+   "facts": "UNESCO World Heritage Site #1269 · Lima Department, Peru",
+   "admin1Ids": [
+    "Q211795"
+   ],
+   "admin1": "Lima Department"
   },
   {
    "id": "Q138170",
@@ -3375,7 +4163,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #181 · Australia"
+   "facts": "UNESCO World Heritage Site #181 · Tasmania, Australia",
+   "admin1Ids": [
+    "Q34366"
+   ],
+   "admin1": "Tasmania"
   },
   {
    "id": "Q752181",
@@ -3391,7 +4183,11 @@
    "countryName": "Honduras",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #196 · Honduras"
+   "facts": "UNESCO World Heritage Site #196 · Gracias a Dios Department, Honduras",
+   "admin1Ids": [
+    "Q867112"
+   ],
+   "admin1": "Gracias a Dios Department"
   },
   {
    "id": "Q839603",
@@ -3423,7 +4219,11 @@
    "countryName": "Canada",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #419 · Canada"
+   "facts": "UNESCO World Heritage Site #419 · Newfoundland and Labrador, Canada",
+   "admin1Ids": [
+    "Q2003"
+   ],
+   "admin1": "Newfoundland and Labrador"
   },
   {
    "id": "Q27985",
@@ -3439,7 +4239,11 @@
    "countryName": "El Salvador",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #675 · El Salvador"
+   "facts": "UNESCO World Heritage Site #675 · La Libertad Department, El Salvador",
+   "admin1Ids": [
+    "Q930820"
+   ],
+   "admin1": "La Libertad Department"
   },
   {
    "id": "Q740288",
@@ -3455,7 +4259,11 @@
    "countryName": "Colombia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #742 · Colombia"
+   "facts": "UNESCO World Heritage Site #742 · Bolívar Department, Colombia",
+   "admin1Ids": [
+    "Q230597"
+   ],
+   "admin1": "Bolívar Department"
   },
   {
    "id": "Q643063",
@@ -3471,7 +4279,12 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #368 · Australia"
+   "facts": "UNESCO World Heritage Site #368 · New South Wales, Queensland, Australia",
+   "admin1Ids": [
+    "Q3224",
+    "Q36074"
+   ],
+   "admin1": "New South Wales, Queensland"
   },
   {
    "id": "Q747875",
@@ -3487,7 +4300,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #167 · Australia"
+   "facts": "UNESCO World Heritage Site #167 · New South Wales, Australia",
+   "admin1Ids": [
+    "Q3224"
+   ],
+   "admin1": "New South Wales"
   },
   {
    "id": "Q575398",
@@ -3503,7 +4320,11 @@
    "countryName": "New Zealand",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #551 · New Zealand"
+   "facts": "UNESCO World Heritage Site #551 · Southland Region, New Zealand",
+   "admin1Ids": [
+    "Q864971"
+   ],
+   "admin1": "Southland Region"
   },
   {
    "id": "Q46275",
@@ -3551,7 +4372,11 @@
    "countryName": "Solomon Islands",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #854 · Solomon Islands"
+   "facts": "UNESCO World Heritage Site #854 · Rennell and Bellona Province, Solomon Islands",
+   "admin1Ids": [
+    "Q1051475"
+   ],
+   "admin1": "Rennell and Bellona Province"
   },
   {
    "id": "Q1541665",
@@ -3567,7 +4392,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1369 · Australia"
+   "facts": "UNESCO World Heritage Site #1369 · Western Australia, Australia",
+   "admin1Ids": [
+    "Q3206"
+   ],
+   "admin1": "Western Australia"
   },
   {
    "id": "Q1135808",
@@ -3583,7 +4412,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #486 · Australia"
+   "facts": "UNESCO World Heritage Site #486 · Queensland, Australia",
+   "admin1Ids": [
+    "Q36074"
+   ],
+   "admin1": "Queensland"
   },
   {
    "id": "Q1165562",
@@ -3599,7 +4432,11 @@
    "countryName": "Papua New Guinea",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #887 · Papua New Guinea"
+   "facts": "UNESCO World Heritage Site #887 · Western Highlands Province, Papua New Guinea",
+   "admin1Ids": [
+    "Q849807"
+   ],
+   "admin1": "Western Highlands Province"
   },
   {
    "id": "Q934627",
@@ -3615,7 +4452,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #917 · Australia"
+   "facts": "UNESCO World Heritage Site #917 · New South Wales, Australia",
+   "admin1Ids": [
+    "Q3224"
+   ],
+   "admin1": "New South Wales"
   },
   {
    "id": "Q863815",
@@ -3647,7 +4488,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1577 · Australia"
+   "facts": "UNESCO World Heritage Site #1577 · Victoria, Australia",
+   "admin1Ids": [
+    "Q36687"
+   ],
+   "admin1": "Victoria"
   },
   {
    "id": "Q1072369",
@@ -3663,7 +4508,11 @@
    "countryName": "Vanuatu",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1280 · Vanuatu"
+   "facts": "UNESCO World Heritage Site #1280 · Shefa, Vanuatu",
+   "admin1Ids": [
+    "Q650617"
+   ],
+   "admin1": "Shefa"
   },
   {
    "id": "Q25386203",
@@ -3679,7 +4528,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1709 · Australia"
+   "facts": "UNESCO World Heritage Site #1709 · Western Australia, Australia",
+   "admin1Ids": [
+    "Q3206"
+   ],
+   "admin1": "Western Australia"
   },
   {
    "id": "Q15933552",
@@ -3695,7 +4548,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #698 · Australia"
+   "facts": "UNESCO World Heritage Site #698 · Queensland, Australia",
+   "admin1Ids": [
+    "Q36074"
+   ],
+   "admin1": "Queensland"
   },
   {
    "id": "Q1869866",
@@ -3711,7 +4568,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #186 · Australia"
+   "facts": "UNESCO World Heritage Site #186 · New South Wales, Australia",
+   "admin1Ids": [
+    "Q3224"
+   ],
+   "admin1": "New South Wales"
   },
   {
    "id": "Q17215490",
@@ -3727,7 +4588,11 @@
    "countryName": "Palau",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1386 · Palau"
+   "facts": "UNESCO World Heritage Site #1386 · Koror, Palau",
+   "admin1Ids": [
+    "Q189426"
+   ],
+   "admin1": "Koror"
   },
   {
    "id": "Q17304996",
@@ -3743,7 +4608,11 @@
    "countryName": "Fiji",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1399 · Fiji"
+   "facts": "UNESCO World Heritage Site #1399 · Eastern Division, Fiji",
+   "admin1Ids": [
+    "Q182169"
+   ],
+   "admin1": "Eastern Division"
   },
   {
    "id": "Q15278460",
@@ -3759,7 +4628,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1131 · Australia"
+   "facts": "UNESCO World Heritage Site #1131 · Victoria, Australia",
+   "admin1Ids": [
+    "Q36687"
+   ],
+   "admin1": "Victoria"
   },
   {
    "id": "Q38167074",
@@ -3775,7 +4648,11 @@
    "countryName": "Australia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #578 · Australia"
+   "facts": "UNESCO World Heritage Site #578 · Western Australia, Australia",
+   "admin1Ids": [
+    "Q3206"
+   ],
+   "admin1": "Western Australia"
   }
  ]
 }

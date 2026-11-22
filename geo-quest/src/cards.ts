@@ -344,7 +344,7 @@ function rawFace(ref: CardRef): CardFace {
       return { mode: 'reveal', pre: c.layer === 'peak' ? 'This mountain is ' : 'This World Heritage Site is ', blank: 'what?', post: '.', answer: c.name, map: 'reveal', note: c.facts,
         picture: { file: c.image, wiki: c.wiki, caption: c.name }, promptPicture: true };
     case 'siteLocate':
-      return { mode: 'tap', pre: `${c.name} is `, blank: 'where? tap the map', post: '.', answer: !c.countryName ? 'right here' : countryCount(c) > 3 ? `in ${countryCount(c)} countries` : `in ${c.countryName}`, map: 'tap', note: c.facts,
+      return { mode: 'tap', pre: `${c.name} is `, blank: 'where? tap the map', post: '.', answer: !c.countryName ? 'right here' : countryCount(c) > 3 ? `in ${countryCount(c)} countries` : c.admin1 && countryCount(c) === 1 ? `in ${c.admin1}, ${c.countryName}` : `in ${c.countryName}`, map: 'tap', note: c.facts,
         picture: { file: c.image, wiki: c.wiki, caption: c.name } };
     case 'siteCountry':
       return { mode: 'reveal', pre: `${c.name} is in `, blank: 'which country?', post: '.', answer: c.countryName!, map: 'reveal', note: c.facts,

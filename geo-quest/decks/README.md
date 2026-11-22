@@ -23,6 +23,7 @@ path: Cocktails / Stirred         (optional: sections inside the subject)
 A line before the first heading is the deck's description.
 
 ## Negroni
+related: Italy, Florence
 ![A Negroni](commons:Negroni served in Vintage Cocktail Glass.jpg)
 - Equal parts {{gin}}, {{Campari}} and {{sweet vermouth}}.
 - Garnish :: an orange peel
@@ -34,6 +35,9 @@ A line before the first heading is the deck's description.
 - **`- … {{answer}} …`**: a fill-in-the-blank card. Several `{{…}}` in one line make one card per blank.
 - **`- front :: back`**: a question-and-answer card. **`:::`** makes cards in both directions.
 - **`> text`**: a note shown after the answer of the card above it.
+- **`related: A, B, C`** (anywhere under a heading): links shown on those cards after you flip them. A name the app
+  teaches (a country, state, prefecture, World Heritage Site, river…) opens its sheet; anything else opens Wikipedia.
+  That place's sheet then lists the card under "Also in your decks". Countries named in a card are linked automatically.
 - **`![caption](commons:File name.jpg)`**: a picture from Wikimedia Commons for the cards under that heading
   (or a full `https://…` image address).
 - A bullet with no `{{…}}` and no `::` is just a note to yourself and makes no card.
