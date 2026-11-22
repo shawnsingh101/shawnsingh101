@@ -1,0 +1,6400 @@
+{
+ "source": "Wikidata (CC0)",
+ "countries": [
+  {
+   "id": "Q23334",
+   "name": "Abkhazia",
+   "officialName": "Abkhazia",
+   "iso2": null,
+   "iso3": null,
+   "status": "disputed",
+   "statusNote": "Breakaway region of Georgia, recognised by Russia and a few others",
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": null,
+   "flag": null,
+   "lon": 41,
+   "lat": 43.15,
+   "wiki": "Abkhazia_(region)",
+   "capitals": [
+    {
+     "id": "Q40811",
+     "name": "Sokhumi",
+     "preferred": false,
+     "role": null,
+     "image": "Sokhumi Collage.jpg",
+     "lon": 41.019,
+     "lat": 43.004,
+     "wiki": "Sukhumi"
+    }
+   ],
+   "capitalAnswer": "Sokhumi"
+  },
+  {
+   "id": "Q889",
+   "name": "Afghanistan",
+   "officialName": "Afghanistan",
+   "iso2": "AF",
+   "iso3": "AFG",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Southern Asia",
+   "topo": {
+    "id": "004"
+   },
+   "flag": "Flag of the Taliban.svg",
+   "lon": 66,
+   "lat": 33,
+   "wiki": "Afghanistan",
+   "capitals": [
+    {
+     "id": "Q5838",
+     "name": "Kabul",
+     "preferred": false,
+     "role": null,
+     "image": "Kabul TV Hill view.jpg",
+     "lon": 69.166,
+     "lat": 34.533,
+     "wiki": "Kabul"
+    }
+   ],
+   "capitalAnswer": "Kabul"
+  },
+  {
+   "id": "Q222",
+   "name": "Albania",
+   "officialName": "Albania",
+   "iso2": "AL",
+   "iso3": "ALB",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southeast Europe",
+   "topo": {
+    "id": "008"
+   },
+   "flag": "Flag of Albania.svg",
+   "lon": 20,
+   "lat": 41,
+   "wiki": "Albania",
+   "capitals": [
+    {
+     "id": "Q19689",
+     "name": "Tirana",
+     "preferred": false,
+     "role": null,
+     "image": "Tirana from South.jpg",
+     "lon": 19.818,
+     "lat": 41.328,
+     "wiki": "Tirana"
+    }
+   ],
+   "capitalAnswer": "Tirana"
+  },
+  {
+   "id": "Q262",
+   "name": "Algeria",
+   "officialName": "Algeria",
+   "iso2": "DZ",
+   "iso3": "DZA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Northern Africa",
+   "topo": {
+    "id": "012"
+   },
+   "flag": "Flag of Algeria.svg",
+   "lon": 1,
+   "lat": 28,
+   "wiki": "Algeria",
+   "capitals": [
+    {
+     "id": "Q3561",
+     "name": "Algiers",
+     "preferred": false,
+     "role": null,
+     "image": "Argel 3.jpg",
+     "lon": 3.059,
+     "lat": 36.776,
+     "wiki": "Algiers"
+    }
+   ],
+   "capitalAnswer": "Algiers"
+  },
+  {
+   "id": "Q228",
+   "name": "Andorra",
+   "officialName": "Andorra",
+   "iso2": "AD",
+   "iso3": "AND",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southern Europe",
+   "topo": {
+    "id": "020"
+   },
+   "flag": "Flag of Andorra.svg",
+   "lon": 1.6,
+   "lat": 42.542,
+   "wiki": "Andorra",
+   "capitals": [
+    {
+     "id": "Q1863",
+     "name": "Andorra la Vella",
+     "preferred": false,
+     "role": null,
+     "image": "Andorra la Vella - view2.jpg",
+     "lon": 1.522,
+     "lat": 42.507,
+     "wiki": "Andorra_la_Vella"
+    }
+   ],
+   "capitalAnswer": "Andorra la Vella"
+  },
+  {
+   "id": "Q916",
+   "name": "Angola",
+   "officialName": "Angola",
+   "iso2": "AO",
+   "iso3": "AGO",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Middle Africa",
+   "topo": {
+    "id": "024"
+   },
+   "flag": "Flag of Angola.svg",
+   "lon": 17.35,
+   "lat": -12.35,
+   "wiki": "Angola",
+   "capitals": [
+    {
+     "id": "Q3897",
+     "name": "Luanda",
+     "preferred": false,
+     "role": null,
+     "image": "Luanda feb09 ost01.jpg",
+     "lon": 13.23,
+     "lat": -8.815,
+     "wiki": "Luanda"
+    }
+   ],
+   "capitalAnswer": "Luanda"
+  },
+  {
+   "id": "Q781",
+   "name": "Antigua and Barbuda",
+   "officialName": "Antigua and Barbuda",
+   "iso2": "AG",
+   "iso3": "ATG",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "028"
+   },
+   "flag": "Flag of Antigua and Barbuda.svg",
+   "lon": -61.85,
+   "lat": 17.117,
+   "wiki": "Antigua_and_Barbuda",
+   "capitals": [
+    {
+     "id": "Q36262",
+     "name": "Q36262",
+     "preferred": false,
+     "role": null,
+     "image": "St Johns Antigua 2012.jpg",
+     "lon": -61.845,
+     "lat": 17.121,
+     "wiki": "St._John's,_Antigua_and_Barbuda"
+    }
+   ],
+   "capitalAnswer": "Q36262"
+  },
+  {
+   "id": "Q414",
+   "name": "Argentina",
+   "officialName": "Argentina",
+   "iso2": "AR",
+   "iso3": "ARG",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "032"
+   },
+   "flag": "Flag of Argentina.svg",
+   "lon": -64,
+   "lat": -34,
+   "wiki": "Argentina",
+   "capitals": [
+    {
+     "id": "Q1486",
+     "name": "Buenos Aires",
+     "preferred": false,
+     "role": null,
+     "image": "Vista aérea de la Plaza del Congreso 10.jpg",
+     "lon": -58.382,
+     "lat": -34.6,
+     "wiki": "Buenos_Aires"
+    }
+   ],
+   "capitalAnswer": "Buenos Aires"
+  },
+  {
+   "id": "Q399",
+   "name": "Armenia",
+   "officialName": "Armenia",
+   "iso2": "AM",
+   "iso3": "ARM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "051"
+   },
+   "flag": "Flag of Armenia.svg",
+   "lon": 44.95,
+   "lat": 40.383,
+   "wiki": "Armenia",
+   "capitals": [
+    {
+     "id": "Q1953",
+     "name": "Yerevan",
+     "preferred": false,
+     "role": null,
+     "image": "Mount Ararat and the Yerevan skyline in spring (28mm).jpg",
+     "lon": 44.514,
+     "lat": 40.181,
+     "wiki": "Yerevan"
+    }
+   ],
+   "capitalAnswer": "Yerevan"
+  },
+  {
+   "id": "Q408",
+   "name": "Australia",
+   "officialName": "Australia",
+   "iso2": "AU",
+   "iso3": "AUS",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Australia and New Zealand",
+   "topo": {
+    "id": "036"
+   },
+   "flag": "Flag of Australia (converted).svg",
+   "lon": 133,
+   "lat": -25,
+   "wiki": "Australia",
+   "capitals": [
+    {
+     "id": "Q3114",
+     "name": "Canberra",
+     "preferred": true,
+     "role": null,
+     "image": "Canberra from Mt Ainslie (5642431515).jpg",
+     "lon": 149.127,
+     "lat": -35.293,
+     "wiki": "Canberra"
+    }
+   ],
+   "capitalAnswer": "Canberra"
+  },
+  {
+   "id": "Q40",
+   "name": "Austria",
+   "officialName": "Austria",
+   "iso2": "AT",
+   "iso3": "AUT",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Central Europe",
+   "topo": {
+    "id": "040"
+   },
+   "flag": "Flag of Austria.svg",
+   "lon": 14,
+   "lat": 48,
+   "wiki": "Austria",
+   "capitals": [
+    {
+     "id": "Q1741",
+     "name": "Vienna",
+     "preferred": false,
+     "role": null,
+     "image": "Wien katedra sw Szczepana widok z wiezy 6.jpg",
+     "lon": 16.372,
+     "lat": 48.208,
+     "wiki": "Vienna"
+    }
+   ],
+   "capitalAnswer": "Vienna"
+  },
+  {
+   "id": "Q227",
+   "name": "Azerbaijan",
+   "officialName": "Azerbaijan",
+   "iso2": "AZ",
+   "iso3": "AZE",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "031"
+   },
+   "flag": "Flag of Azerbaijan.svg",
+   "lon": 47.7,
+   "lat": 40.3,
+   "wiki": "Azerbaijan",
+   "capitals": [
+    {
+     "id": "Q9248",
+     "name": "Baku",
+     "preferred": false,
+     "role": null,
+     "image": "Baku 004 1953c.jpg",
+     "lon": 49.835,
+     "lat": 40.367,
+     "wiki": "Baku"
+    }
+   ],
+   "capitalAnswer": "Baku"
+  },
+  {
+   "id": "Q778",
+   "name": "Bahamas",
+   "officialName": "The Bahamas",
+   "iso2": "BS",
+   "iso3": "BHS",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "044"
+   },
+   "flag": "Flag of the Bahamas.svg",
+   "lon": -77.4,
+   "lat": 25,
+   "wiki": "The_Bahamas",
+   "capitals": [
+    {
+     "id": "Q2467",
+     "name": "Nassau",
+     "preferred": false,
+     "role": null,
+     "image": "BHA Nassau, Paradise Island, Atlantis Bridge 001.jpg",
+     "lon": -77.339,
+     "lat": 25.078,
+     "wiki": "Nassau,_Bahamas"
+    }
+   ],
+   "capitalAnswer": "Nassau"
+  },
+  {
+   "id": "Q398",
+   "name": "Bahrain",
+   "officialName": "Bahrain",
+   "iso2": "BH",
+   "iso3": "BHR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "048"
+   },
+   "flag": "Flag of Bahrain.svg",
+   "lon": 50.551,
+   "lat": 26.067,
+   "wiki": "Bahrain",
+   "capitals": [
+    {
+     "id": "Q3882",
+     "name": "Manama",
+     "preferred": false,
+     "role": null,
+     "image": "Bahrain World trade Center .jpg",
+     "lon": 50.583,
+     "lat": 26.217,
+     "wiki": "Manama"
+    }
+   ],
+   "capitalAnswer": "Manama"
+  },
+  {
+   "id": "Q902",
+   "name": "Bangladesh",
+   "officialName": "Bangladesh",
+   "iso2": "BD",
+   "iso3": "BGD",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Southern Asia",
+   "topo": {
+    "id": "050"
+   },
+   "flag": "Flag of Bangladesh.svg",
+   "lon": 89.867,
+   "lat": 24.017,
+   "wiki": "Bangladesh",
+   "capitals": [
+    {
+     "id": "Q1354",
+     "name": "Dhaka",
+     "preferred": false,
+     "role": null,
+     "image": "Dhaka skyline1.jpg",
+     "lon": 90.394,
+     "lat": 23.729,
+     "wiki": "Dhaka"
+    }
+   ],
+   "capitalAnswer": "Dhaka"
+  },
+  {
+   "id": "Q244",
+   "name": "Barbados",
+   "officialName": "Barbados",
+   "iso2": "BB",
+   "iso3": "BRB",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "052"
+   },
+   "flag": "Flag of Barbados.svg",
+   "lon": -59.553,
+   "lat": 13.17,
+   "wiki": "Barbados",
+   "capitals": [
+    {
+     "id": "Q36168",
+     "name": "Bridgetown",
+     "preferred": false,
+     "role": null,
+     "image": "Bridgetown aerial.JPG",
+     "lon": -59.617,
+     "lat": 13.098,
+     "wiki": "Bridgetown"
+    }
+   ],
+   "capitalAnswer": "Bridgetown"
+  },
+  {
+   "id": "Q184",
+   "name": "Belarus",
+   "officialName": "Belarus",
+   "iso2": "BY",
+   "iso3": "BLR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Eastern Europe",
+   "topo": {
+    "id": "112"
+   },
+   "flag": "Flag of Belarus.svg",
+   "lon": 28.047,
+   "lat": 53.528,
+   "wiki": "Belarus",
+   "capitals": [
+    {
+     "id": "Q2280",
+     "name": "Minsk",
+     "preferred": false,
+     "role": null,
+     "image": "Мінск. Сквер па плошчы Незалежнасці.jpg",
+     "lon": 27.562,
+     "lat": 53.902,
+     "wiki": "Minsk"
+    }
+   ],
+   "capitalAnswer": "Minsk"
+  },
+  {
+   "id": "Q31",
+   "name": "Belgium",
+   "officialName": "Belgium",
+   "iso2": "BE",
+   "iso3": "BEL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Western Europe",
+   "topo": {
+    "id": "056"
+   },
+   "flag": "Flag of Belgium.svg",
+   "lon": 4.668,
+   "lat": 50.641,
+   "wiki": "Belgium",
+   "capitals": [
+    {
+     "id": "Q239",
+     "name": "Brussels",
+     "preferred": false,
+     "role": null,
+     "image": "Brussels view from Mont des Arts, Brussels, Belgium (cropped).jpg",
+     "lon": 4.352,
+     "lat": 50.847,
+     "wiki": "City_of_Brussels"
+    }
+   ],
+   "capitalAnswer": "Brussels"
+  },
+  {
+   "id": "Q242",
+   "name": "Belize",
+   "officialName": "Belize",
+   "iso2": "BZ",
+   "iso3": "BLZ",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Central America",
+   "topo": {
+    "id": "084"
+   },
+   "flag": "Flag of Belize.svg",
+   "lon": -88.7,
+   "lat": 17.067,
+   "wiki": "Belize",
+   "capitals": [
+    {
+     "id": "Q3043",
+     "name": "Belmopan",
+     "preferred": false,
+     "role": null,
+     "image": "Belmopan Parliament.jpg",
+     "lon": -88.767,
+     "lat": 17.25,
+     "wiki": "Belmopan"
+    }
+   ],
+   "capitalAnswer": "Belmopan"
+  },
+  {
+   "id": "Q962",
+   "name": "Benin",
+   "officialName": "Benin",
+   "iso2": "BJ",
+   "iso3": "BEN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "204"
+   },
+   "flag": "Flag of Benin.svg",
+   "lon": 2.183,
+   "lat": 8.833,
+   "wiki": "Benin",
+   "capitals": [
+    {
+     "id": "Q3799",
+     "name": "Porto-Novo",
+     "preferred": true,
+     "role": null,
+     "image": "Porto-Novo vue.jpg",
+     "lon": 2.617,
+     "lat": 6.483,
+     "wiki": "Porto-Novo"
+    },
+    {
+     "id": "Q43595",
+     "name": "Cotonou",
+     "preferred": false,
+     "role": "seat of government",
+     "image": "Vue panoramique quartier cadjéhoun-Cotonou au Bénin 1.jpg",
+     "lon": 2.417,
+     "lat": 6.367,
+     "wiki": "Cotonou"
+    }
+   ],
+   "capitalAnswer": "Porto-Novo (official capital), though the government sits in Cotonou",
+   "capitalNote": null
+  },
+  {
+   "id": "Q917",
+   "name": "Bhutan",
+   "officialName": "Bhutan",
+   "iso2": "BT",
+   "iso3": "BTN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Southern Asia",
+   "topo": {
+    "id": "064"
+   },
+   "flag": "Flag of Bhutan.svg",
+   "lon": 90.5,
+   "lat": 27.45,
+   "wiki": "Bhutan",
+   "capitals": [
+    {
+     "id": "Q9270",
+     "name": "Thimphu",
+     "preferred": false,
+     "role": null,
+     "image": "Thimphu-12-vom Buddha Dordenma-2015-gje.jpg",
+     "lon": 89.634,
+     "lat": 27.471,
+     "wiki": "Thimphu"
+    }
+   ],
+   "capitalAnswer": "Thimphu"
+  },
+  {
+   "id": "Q750",
+   "name": "Bolivia",
+   "officialName": "Bolivia",
+   "iso2": "BO",
+   "iso3": "BOL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "068"
+   },
+   "flag": "Flag of Bolivia.svg",
+   "lon": -64.991,
+   "lat": -17.057,
+   "wiki": "Bolivia",
+   "capitals": [
+    {
+     "id": "Q1491",
+     "name": "La Paz",
+     "preferred": false,
+     "role": null,
+     "image": "La Paz-center.jpg",
+     "lon": -68.133,
+     "lat": -16.496,
+     "wiki": "La_Paz"
+    },
+    {
+     "id": "Q2907",
+     "name": "Sucre",
+     "preferred": false,
+     "role": null,
+     "image": "Sucre Square.jpg",
+     "lon": -65.26,
+     "lat": -19.047,
+     "wiki": "Sucre"
+    }
+   ],
+   "capitalAnswer": "both La Paz (seat of government) and Sucre (constitutional capital)",
+   "capitalNote": null
+  },
+  {
+   "id": "Q225",
+   "name": "Bosnia and Herzegovina",
+   "officialName": "Bosnia and Herzegovina",
+   "iso2": "BA",
+   "iso3": "BIH",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southeast Europe",
+   "topo": {
+    "id": "070"
+   },
+   "flag": "Flag of Bosnia and Herzegovina.svg",
+   "lon": 18,
+   "lat": 44,
+   "wiki": "Bosnia_and_Herzegovina",
+   "capitals": [
+    {
+     "id": "Q11194",
+     "name": "Sarajevo",
+     "preferred": false,
+     "role": null,
+     "image": "Sarajevo City Panorama.JPG",
+     "lon": 18.413,
+     "lat": 43.856,
+     "wiki": "Sarajevo"
+    }
+   ],
+   "capitalAnswer": "Sarajevo"
+  },
+  {
+   "id": "Q963",
+   "name": "Botswana",
+   "officialName": "Botswana",
+   "iso2": "BW",
+   "iso3": "BWA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Southern Africa",
+   "topo": {
+    "id": "072"
+   },
+   "flag": "Flag of Botswana.svg",
+   "lon": 23.7,
+   "lat": -22.2,
+   "wiki": "Botswana",
+   "capitals": [
+    {
+     "id": "Q3919",
+     "name": "Gaborone",
+     "preferred": false,
+     "role": null,
+     "image": "Gaborone skyline.JPG",
+     "lon": 25.909,
+     "lat": -24.657,
+     "wiki": "Gaborone"
+    }
+   ],
+   "capitalAnswer": "Gaborone"
+  },
+  {
+   "id": "Q155",
+   "name": "Brazil",
+   "officialName": "Brazil",
+   "iso2": "BR",
+   "iso3": "BRA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "076"
+   },
+   "flag": "Flag of Brazil.svg",
+   "lon": -53,
+   "lat": -14,
+   "wiki": "Brazil",
+   "capitals": [
+    {
+     "id": "Q2844",
+     "name": "Brasília",
+     "preferred": true,
+     "role": null,
+     "image": "Planalto Central (cropped).jpg",
+     "lon": -47.883,
+     "lat": -15.794,
+     "wiki": "Brasília"
+    }
+   ],
+   "capitalAnswer": "Brasília"
+  },
+  {
+   "id": "Q921",
+   "name": "Brunei",
+   "officialName": "Brunei",
+   "iso2": "BN",
+   "iso3": "BRN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "096"
+   },
+   "flag": "Flag of Brunei.svg",
+   "lon": 114.567,
+   "lat": 4.4,
+   "wiki": "Brunei",
+   "capitals": [
+    {
+     "id": "Q9279",
+     "name": "Bandar Seri Begawan",
+     "preferred": false,
+     "role": null,
+     "image": "Sultan Omar Ali Saifuddin Mosque 02.jpg",
+     "lon": 114.917,
+     "lat": 4.917,
+     "wiki": "Bandar_Seri_Begawan"
+    }
+   ],
+   "capitalAnswer": "Bandar Seri Begawan"
+  },
+  {
+   "id": "Q219",
+   "name": "Bulgaria",
+   "officialName": "Bulgaria",
+   "iso2": "BG",
+   "iso3": "BGR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southeast Europe",
+   "topo": {
+    "id": "100"
+   },
+   "flag": "Flag of Bulgaria.svg",
+   "lon": 25.5,
+   "lat": 42.75,
+   "wiki": "Bulgaria",
+   "capitals": [
+    {
+     "id": "Q472",
+     "name": "Sofia",
+     "preferred": false,
+     "role": null,
+     "image": "Panoramic view over central Sofia and the Vitosha Mountain 2017-10-08.jpg",
+     "lon": 23.322,
+     "lat": 42.698,
+     "wiki": "Sofia"
+    }
+   ],
+   "capitalAnswer": "Sofia"
+  },
+  {
+   "id": "Q965",
+   "name": "Burkina Faso",
+   "officialName": "Burkina Faso",
+   "iso2": "BF",
+   "iso3": "BFA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "854"
+   },
+   "flag": "Flag of Burkina Faso.svg",
+   "lon": -2.067,
+   "lat": 12.267,
+   "wiki": "Burkina_Faso",
+   "capitals": [
+    {
+     "id": "Q3777",
+     "name": "Ouagadougou",
+     "preferred": false,
+     "role": null,
+     "image": "Monument aux héros nationaux - Ouagadougou - 2024.jpg",
+     "lon": -1.528,
+     "lat": 12.369,
+     "wiki": "Ouagadougou"
+    }
+   ],
+   "capitalAnswer": "Ouagadougou"
+  },
+  {
+   "id": "Q967",
+   "name": "Burundi",
+   "officialName": "Burundi",
+   "iso2": "BI",
+   "iso3": "BDI",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "108"
+   },
+   "flag": "Flag of Burundi.svg",
+   "lon": 29.817,
+   "lat": -3.667,
+   "wiki": "Burundi",
+   "capitals": [
+    {
+     "id": "Q167551",
+     "name": "Gitega",
+     "preferred": true,
+     "role": null,
+     "image": "Gitega.JPG",
+     "lon": 29.925,
+     "lat": -3.428,
+     "wiki": "Gitega"
+    }
+   ],
+   "capitalAnswer": "Gitega"
+  },
+  {
+   "id": "Q424",
+   "name": "Cambodia",
+   "officialName": "Cambodia",
+   "iso2": "KH",
+   "iso3": "KHM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "116"
+   },
+   "flag": "Flag of Cambodia.svg",
+   "lon": 105,
+   "lat": 12.5,
+   "wiki": "Cambodia",
+   "capitals": [
+    {
+     "id": "Q1850",
+     "name": "Phnom Penh",
+     "preferred": false,
+     "role": null,
+     "image": "Phnom Penh aerial.jpg",
+     "lon": 104.921,
+     "lat": 11.57,
+     "wiki": "Phnom_Penh"
+    }
+   ],
+   "capitalAnswer": "Phnom Penh"
+  },
+  {
+   "id": "Q1009",
+   "name": "Cameroon",
+   "officialName": "Cameroon",
+   "iso2": "CM",
+   "iso3": "CMR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Middle Africa",
+   "topo": {
+    "id": "120"
+   },
+   "flag": "Flag of Cameroon.svg",
+   "lon": 12.65,
+   "lat": 5.133,
+   "wiki": "Cameroon",
+   "capitals": [
+    {
+     "id": "Q3808",
+     "name": "Yaoundé",
+     "preferred": false,
+     "role": null,
+     "image": "Yaoundé view from central market (2014).JPG",
+     "lon": 11.518,
+     "lat": 3.858,
+     "wiki": "Yaoundé"
+    }
+   ],
+   "capitalAnswer": "Yaoundé"
+  },
+  {
+   "id": "Q16",
+   "name": "Canada",
+   "officialName": "Canada",
+   "iso2": "CA",
+   "iso3": "CAN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "North America",
+   "topo": {
+    "id": "124"
+   },
+   "flag": "Flag of Canada (Pantone).svg",
+   "lon": -109,
+   "lat": 56,
+   "wiki": "Canada",
+   "capitals": [
+    {
+     "id": "Q1930",
+     "name": "Ottawa",
+     "preferred": false,
+     "role": null,
+     "image": "Ottawa Montage 2020.jpg",
+     "lon": -75.695,
+     "lat": 45.425,
+     "wiki": "Ottawa"
+    }
+   ],
+   "capitalAnswer": "Ottawa"
+  },
+  {
+   "id": "Q1011",
+   "name": "Cape Verde",
+   "officialName": "Cape Verde",
+   "iso2": "CV",
+   "iso3": "CPV",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "132"
+   },
+   "flag": "Flag of Cape Verde (10-17).svg",
+   "lon": -23.7,
+   "lat": 15.3,
+   "wiki": "Cape_Verde",
+   "capitals": [
+    {
+     "id": "Q3751",
+     "name": "Praia",
+     "preferred": false,
+     "role": null,
+     "image": "Praia Harbor.jpg",
+     "lon": -23.509,
+     "lat": 14.918,
+     "wiki": "Praia"
+    }
+   ],
+   "capitalAnswer": "Praia"
+  },
+  {
+   "id": "Q929",
+   "name": "Central African Republic",
+   "officialName": "Central African Republic",
+   "iso2": "CF",
+   "iso3": "CAF",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Middle Africa",
+   "topo": {
+    "id": "140"
+   },
+   "flag": "Flag of the Central African Republic.svg",
+   "lon": 20.9,
+   "lat": 6.7,
+   "wiki": "Central_African_Republic",
+   "capitals": [
+    {
+     "id": "Q3832",
+     "name": "Bangui",
+     "preferred": false,
+     "role": null,
+     "image": "Bangui City Centre.jpg",
+     "lon": 18.563,
+     "lat": 4.373,
+     "wiki": "Bangui"
+    }
+   ],
+   "capitalAnswer": "Bangui"
+  },
+  {
+   "id": "Q657",
+   "name": "Chad",
+   "officialName": "Chad",
+   "iso2": "TD",
+   "iso3": "TCD",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Middle Africa",
+   "topo": {
+    "id": "148"
+   },
+   "flag": "Flag of Chad.svg",
+   "lon": 19.4,
+   "lat": 15.467,
+   "wiki": "Chad",
+   "capitals": [
+    {
+     "id": "Q3659",
+     "name": "N'Djamena",
+     "preferred": false,
+     "role": null,
+     "image": "Place de la nation4 (Tchad).jpg",
+     "lon": 15.05,
+     "lat": 12.11,
+     "wiki": "N'Djamena"
+    }
+   ],
+   "capitalAnswer": "N'Djamena"
+  },
+  {
+   "id": "Q298",
+   "name": "Chile",
+   "officialName": "Chile",
+   "iso2": "CL",
+   "iso3": "CHL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "152"
+   },
+   "flag": "Flag of Chile.svg",
+   "lon": -71,
+   "lat": -33,
+   "wiki": "Chile",
+   "capitals": [
+    {
+     "id": "Q2887",
+     "name": "Santiago",
+     "preferred": false,
+     "role": null,
+     "image": "Santiago de Chile, Desde Cerro San Cristóbal (cropped).jpg",
+     "lon": -70.65,
+     "lat": -33.438,
+     "wiki": "Santiago"
+    }
+   ],
+   "capitalAnswer": "Santiago"
+  },
+  {
+   "id": "Q148",
+   "name": "China",
+   "officialName": "People's Republic of China",
+   "iso2": "CN",
+   "iso3": "CHN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Eastern Asia",
+   "topo": {
+    "id": "156"
+   },
+   "flag": "Flag of the People's Republic of China.svg",
+   "lon": 103.452,
+   "lat": 35.845,
+   "wiki": "China",
+   "capitals": [
+    {
+     "id": "Q956",
+     "name": "Beijing",
+     "preferred": false,
+     "role": null,
+     "image": "Skyline of Beijing CBD with B-5906 approaching (20211016171955).jpg",
+     "lon": 116.408,
+     "lat": 39.904,
+     "wiki": "Beijing"
+    }
+   ],
+   "capitalAnswer": "Beijing"
+  },
+  {
+   "id": "Q739",
+   "name": "Colombia",
+   "officialName": "Colombia",
+   "iso2": "CO",
+   "iso3": "COL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "170"
+   },
+   "flag": "Flag of Colombia.svg",
+   "lon": -73.25,
+   "lat": 4,
+   "wiki": "Colombia",
+   "capitals": [
+    {
+     "id": "Q2841",
+     "name": "Bogotá",
+     "preferred": false,
+     "role": null,
+     "image": "Centro internacional.JPG",
+     "lon": -74.082,
+     "lat": 4.61,
+     "wiki": "Bogotá"
+    }
+   ],
+   "capitalAnswer": "Bogotá"
+  },
+  {
+   "id": "Q970",
+   "name": "Comoros",
+   "officialName": "Comoros",
+   "iso2": "KM",
+   "iso3": "COM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "174"
+   },
+   "flag": "Flag of the Comoros.svg",
+   "lon": 43.7,
+   "lat": -12.3,
+   "wiki": "Comoros",
+   "capitals": [
+    {
+     "id": "Q3901",
+     "name": "Moroni",
+     "preferred": false,
+     "role": null,
+     "image": "Moroni harbour (2).jpg",
+     "lon": 43.254,
+     "lat": -11.704,
+     "wiki": "Moroni,_Comoros"
+    }
+   ],
+   "capitalAnswer": "Moroni"
+  },
+  {
+   "id": "Q800",
+   "name": "Costa Rica",
+   "officialName": "Costa Rica",
+   "iso2": "CR",
+   "iso3": "CRI",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Central America",
+   "topo": {
+    "id": "188"
+   },
+   "flag": "Flag of Costa Rica.svg",
+   "lon": -84,
+   "lat": 10,
+   "wiki": "Costa_Rica",
+   "capitals": [
+    {
+     "id": "Q3070",
+     "name": "San José",
+     "preferred": false,
+     "role": null,
+     "image": "Cityscape of San José, Costa Rica (253552473).jpg",
+     "lon": -84.08,
+     "lat": 9.933,
+     "wiki": "San_José,_Costa_Rica"
+    }
+   ],
+   "capitalAnswer": "San José"
+  },
+  {
+   "id": "Q224",
+   "name": "Croatia",
+   "officialName": "Croatia",
+   "iso2": "HR",
+   "iso3": "HRV",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southeast Europe",
+   "topo": {
+    "id": "191"
+   },
+   "flag": "Flag of Croatia.svg",
+   "lon": 15.467,
+   "lat": 45.25,
+   "wiki": "Croatia",
+   "capitals": [
+    {
+     "id": "Q1435",
+     "name": "Zagreb",
+     "preferred": false,
+     "role": null,
+     "image": "Zagreb (29255640143).jpg",
+     "lon": 15.977,
+     "lat": 45.813,
+     "wiki": "Zagreb"
+    }
+   ],
+   "capitalAnswer": "Zagreb"
+  },
+  {
+   "id": "Q241",
+   "name": "Cuba",
+   "officialName": "Cuba",
+   "iso2": "CU",
+   "iso3": "CUB",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "192"
+   },
+   "flag": "Flag of Cuba.svg",
+   "lon": -79.5,
+   "lat": 22,
+   "wiki": "Cuba",
+   "capitals": [
+    {
+     "id": "Q1563",
+     "name": "Havana",
+     "preferred": false,
+     "role": null,
+     "image": "Cuba libre (6941395159).jpg",
+     "lon": -82.359,
+     "lat": 23.137,
+     "wiki": "Havana"
+    }
+   ],
+   "capitalAnswer": "Havana"
+  },
+  {
+   "id": "Q229",
+   "name": "Cyprus",
+   "officialName": "Cyprus",
+   "iso2": "CY",
+   "iso3": "CYP",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southern Europe",
+   "topo": {
+    "id": "196"
+   },
+   "flag": "Flag of Cyprus.svg",
+   "lon": 33,
+   "lat": 35,
+   "wiki": "Cyprus",
+   "capitals": [
+    {
+     "id": "Q3856",
+     "name": "Nicosia",
+     "preferred": false,
+     "role": null,
+     "image": "Nicosia 01-2017 img23 View from Shacolas Tower.jpg",
+     "lon": 33.365,
+     "lat": 35.172,
+     "wiki": "Nicosia"
+    }
+   ],
+   "capitalAnswer": "Nicosia"
+  },
+  {
+   "id": "Q213",
+   "name": "Czechia",
+   "officialName": "Czech Republic",
+   "iso2": "CZ",
+   "iso3": "CZE",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Central Europe",
+   "topo": {
+    "id": "203"
+   },
+   "flag": "Flag of the Czech Republic.svg",
+   "lon": 15,
+   "lat": 50,
+   "wiki": "Czech_Republic",
+   "capitals": [
+    {
+     "id": "Q1085",
+     "name": "Prague",
+     "preferred": false,
+     "role": null,
+     "image": "Petřín Tower View IMG 3020.JPG",
+     "lon": 14.421,
+     "lat": 50.087,
+     "wiki": "Prague"
+    }
+   ],
+   "capitalAnswer": "Prague"
+  },
+  {
+   "id": "Q35",
+   "name": "Denmark",
+   "officialName": "Denmark",
+   "iso2": "DK",
+   "iso3": "DNK",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Northern Europe",
+   "topo": {
+    "id": "208"
+   },
+   "flag": "Flag of Denmark.svg",
+   "lon": 10,
+   "lat": 56,
+   "wiki": "Denmark",
+   "capitals": [
+    {
+     "id": "Q1748",
+     "name": "Copenhagen",
+     "preferred": false,
+     "role": null,
+     "image": "Copenhagen - view from Christiansborg castle.jpg",
+     "lon": 12.569,
+     "lat": 55.676,
+     "wiki": "Copenhagen"
+    }
+   ],
+   "capitalAnswer": "Copenhagen"
+  },
+  {
+   "id": "Q977",
+   "name": "Djibouti",
+   "officialName": "Djibouti",
+   "iso2": "DJ",
+   "iso3": "DJI",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "262"
+   },
+   "flag": "Flag of Djibouti.svg",
+   "lon": 42.433,
+   "lat": 11.8,
+   "wiki": "Djibouti",
+   "capitals": [
+    {
+     "id": "Q3604",
+     "name": "Djibouti",
+     "preferred": false,
+     "role": null,
+     "image": "Djibouti City.jpg",
+     "lon": 43.148,
+     "lat": 11.595,
+     "wiki": "Djibouti_City"
+    }
+   ],
+   "capitalAnswer": "Djibouti"
+  },
+  {
+   "id": "Q784",
+   "name": "Dominica",
+   "officialName": "Dominica",
+   "iso2": "DM",
+   "iso3": "DMA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "212"
+   },
+   "flag": "Flag of Dominica.svg",
+   "lon": -61.333,
+   "lat": 15.417,
+   "wiki": "Dominica",
+   "capitals": [
+    {
+     "id": "Q36281",
+     "name": "Roseau",
+     "preferred": false,
+     "role": null,
+     "image": "RoseauWide..jpg",
+     "lon": -61.383,
+     "lat": 15.3,
+     "wiki": "Roseau"
+    }
+   ],
+   "capitalAnswer": "Roseau"
+  },
+  {
+   "id": "Q786",
+   "name": "Dominican Republic",
+   "officialName": "Dominican Republic",
+   "iso2": "DO",
+   "iso3": "DOM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "214"
+   },
+   "flag": "Flag of the Dominican Republic.svg",
+   "lon": -70.2,
+   "lat": 18.8,
+   "wiki": "Dominican_Republic",
+   "capitals": [
+    {
+     "id": "Q34820",
+     "name": "Santo Domingo",
+     "preferred": false,
+     "role": null,
+     "image": "Santo Domingo (Dominican Republic) taken atop Novocentro tower viewing the city to the southwest 2010.jpg",
+     "lon": -69.936,
+     "lat": 18.462,
+     "wiki": "Santo_Domingo"
+    }
+   ],
+   "capitalAnswer": "Santo Domingo"
+  },
+  {
+   "id": "Q974",
+   "name": "DR Congo",
+   "officialName": "Democratic Republic of the Congo",
+   "iso2": "CD",
+   "iso3": "COD",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Middle Africa",
+   "topo": {
+    "id": "180"
+   },
+   "flag": "Flag of the Democratic Republic of the Congo.svg",
+   "lon": 23.656,
+   "lat": -2.88,
+   "wiki": "Democratic_Republic_of_the_Congo",
+   "capitals": [
+    {
+     "id": "Q3838",
+     "name": "Kinshasa",
+     "preferred": false,
+     "role": null,
+     "image": "Vue Kinshasa.jpg",
+     "lon": 15.312,
+     "lat": -4.322,
+     "wiki": "Kinshasa"
+    }
+   ],
+   "capitalAnswer": "Kinshasa"
+  },
+  {
+   "id": "Q736",
+   "name": "Ecuador",
+   "officialName": "Ecuador",
+   "iso2": "EC",
+   "iso3": "ECU",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "218"
+   },
+   "flag": "Flag of Ecuador.svg",
+   "lon": -78,
+   "lat": -1,
+   "wiki": "Ecuador",
+   "capitals": [
+    {
+     "id": "Q2900",
+     "name": "Quito",
+     "preferred": false,
+     "role": null,
+     "image": "FACHADA ASAMBLEA NACIONAL. QUITO, 20 DE FEBRERO 2020. 01.jpg",
+     "lon": -78.513,
+     "lat": -0.22,
+     "wiki": "Quito"
+    }
+   ],
+   "capitalAnswer": "Quito"
+  },
+  {
+   "id": "Q79",
+   "name": "Egypt",
+   "officialName": "Egypt",
+   "iso2": "EG",
+   "iso3": "EGY",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Northern Africa",
+   "topo": {
+    "id": "818"
+   },
+   "flag": "Flag of Egypt.svg",
+   "lon": 29,
+   "lat": 27,
+   "wiki": "Egypt",
+   "capitals": [
+    {
+     "id": "Q85",
+     "name": "Cairo",
+     "preferred": true,
+     "role": null,
+     "image": "Cairo Skyline (2020).jpg",
+     "lon": 31.236,
+     "lat": 30.044,
+     "wiki": "Cairo"
+    }
+   ],
+   "capitalAnswer": "Cairo"
+  },
+  {
+   "id": "Q792",
+   "name": "El Salvador",
+   "officialName": "El Salvador",
+   "iso2": "SV",
+   "iso3": "SLV",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Central America",
+   "topo": {
+    "id": "222"
+   },
+   "flag": "Flag of El Salvador.svg",
+   "lon": -88.866,
+   "lat": 13.669,
+   "wiki": "El_Salvador",
+   "capitals": [
+    {
+     "id": "Q3110",
+     "name": "San Salvador",
+     "preferred": false,
+     "role": null,
+     "image": null,
+     "lon": -89.191,
+     "lat": 13.698,
+     "wiki": "San_Salvador"
+    }
+   ],
+   "capitalAnswer": "San Salvador"
+  },
+  {
+   "id": "Q983",
+   "name": "Equatorial Guinea",
+   "officialName": "Equatorial Guinea",
+   "iso2": "GQ",
+   "iso3": "GNQ",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Middle Africa",
+   "topo": {
+    "id": "226"
+   },
+   "flag": "Flag of Equatorial Guinea.svg",
+   "lon": 10,
+   "lat": 1.5,
+   "wiki": "Equatorial_Guinea",
+   "capitals": [
+    {
+     "id": "Q1140136",
+     "name": "Ciudad de la Paz",
+     "preferred": true,
+     "role": null,
+     "image": "Autobahnbau in Oyala.JPG",
+     "lon": 10.822,
+     "lat": 1.592,
+     "wiki": "Ciudad_de_la_Paz"
+    }
+   ],
+   "capitalAnswer": "Ciudad de la Paz"
+  },
+  {
+   "id": "Q986",
+   "name": "Eritrea",
+   "officialName": "Eritrea",
+   "iso2": "ER",
+   "iso3": "ERI",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "232"
+   },
+   "flag": "Flag of Eritrea.svg",
+   "lon": 38.25,
+   "lat": 15.483,
+   "wiki": "Eritrea",
+   "capitals": [
+    {
+     "id": "Q3642",
+     "name": "Asmara",
+     "preferred": false,
+     "role": null,
+     "image": "Fiat tagliero, 09.JPG",
+     "lon": 38.917,
+     "lat": 15.333,
+     "wiki": "Asmara"
+    }
+   ],
+   "capitalAnswer": "Asmara"
+  },
+  {
+   "id": "Q191",
+   "name": "Estonia",
+   "officialName": "Estonia",
+   "iso2": "EE",
+   "iso3": "EST",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Northern Europe",
+   "topo": {
+    "id": "233"
+   },
+   "flag": "Flag of Estonia.svg",
+   "lon": 26,
+   "lat": 59,
+   "wiki": "Estonia",
+   "capitals": [
+    {
+     "id": "Q1770",
+     "name": "Tallinn",
+     "preferred": false,
+     "role": null,
+     "image": "Tallinna vanalinn 2015.jpg",
+     "lon": 24.745,
+     "lat": 59.437,
+     "wiki": "Tallinn"
+    }
+   ],
+   "capitalAnswer": "Tallinn"
+  },
+  {
+   "id": "Q1050",
+   "name": "Eswatini",
+   "officialName": "Eswatini",
+   "iso2": "SZ",
+   "iso3": "SWZ",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Southern Africa",
+   "topo": {
+    "id": "748"
+   },
+   "flag": "Flag of Eswatini.svg",
+   "lon": 31.433,
+   "lat": -26.483,
+   "wiki": "Eswatini",
+   "capitals": [
+    {
+     "id": "Q101418",
+     "name": "Lobamba",
+     "preferred": false,
+     "role": null,
+     "image": "Parliament building of Eswatini, Lobamba.jpg",
+     "lon": 31.206,
+     "lat": -26.446,
+     "wiki": "Lobamba"
+    },
+    {
+     "id": "Q3904",
+     "name": "Mbabane",
+     "preferred": false,
+     "role": null,
+     "image": "Mbabane (6035476964).jpg",
+     "lon": 31.133,
+     "lat": -26.317,
+     "wiki": "Mbabane"
+    }
+   ],
+   "capitalAnswer": "both Mbabane (administrative) and Lobamba (royal and legislative)",
+   "capitalNote": null
+  },
+  {
+   "id": "Q115",
+   "name": "Ethiopia",
+   "officialName": "Ethiopia",
+   "iso2": "ET",
+   "iso3": "ETH",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "231"
+   },
+   "flag": "Flag of Ethiopia.svg",
+   "lon": 40,
+   "lat": 9,
+   "wiki": "Ethiopia",
+   "capitals": [
+    {
+     "id": "Q3624",
+     "name": "Addis Ababa",
+     "preferred": false,
+     "role": null,
+     "image": "AddisView.jpg",
+     "lon": 38.752,
+     "lat": 9.036,
+     "wiki": "Addis_Ababa"
+    }
+   ],
+   "capitalAnswer": "Addis Ababa"
+  },
+  {
+   "id": "Q712",
+   "name": "Fiji",
+   "officialName": "Fiji",
+   "iso2": "FJ",
+   "iso3": "FJI",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Melanesia",
+   "topo": {
+    "id": "242"
+   },
+   "flag": "Flag of Fiji.svg",
+   "lon": 178,
+   "lat": -18,
+   "wiki": "Fiji",
+   "capitals": [
+    {
+     "id": "Q38807",
+     "name": "Suva",
+     "preferred": false,
+     "role": null,
+     "image": "Suva, Fiji 52.jpg",
+     "lon": 178.44,
+     "lat": -18.127,
+     "wiki": "Suva"
+    }
+   ],
+   "capitalAnswer": "Suva"
+  },
+  {
+   "id": "Q33",
+   "name": "Finland",
+   "officialName": "Finland",
+   "iso2": "FI",
+   "iso3": "FIN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Northern Europe",
+   "topo": {
+    "id": "246"
+   },
+   "flag": "Flag of Finland.svg",
+   "lon": 27,
+   "lat": 65,
+   "wiki": "Finland",
+   "capitals": [
+    {
+     "id": "Q1757",
+     "name": "Helsinki",
+     "preferred": true,
+     "role": null,
+     "image": "Helsinki Lutheran Cathedral (panoraamanäköala)-2 (säätö).jpg",
+     "lon": 24.938,
+     "lat": 60.171,
+     "wiki": "Helsinki"
+    }
+   ],
+   "capitalAnswer": "Helsinki"
+  },
+  {
+   "id": "Q142",
+   "name": "France",
+   "officialName": "France",
+   "iso2": "FR",
+   "iso3": "FRA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Western Europe",
+   "topo": {
+    "id": "250"
+   },
+   "flag": "Flag of France.svg",
+   "lon": 2,
+   "lat": 47,
+   "wiki": "France",
+   "capitals": [
+    {
+     "id": "Q90",
+     "name": "Paris",
+     "preferred": true,
+     "role": null,
+     "image": "La Tour Eiffel vue de la Tour Saint-Jacques, Paris août 2014 (2).jpg",
+     "lon": 2.352,
+     "lat": 48.857,
+     "wiki": "Paris"
+    }
+   ],
+   "capitalAnswer": "Paris"
+  },
+  {
+   "id": "Q1000",
+   "name": "Gabon",
+   "officialName": "Gabon",
+   "iso2": "GA",
+   "iso3": "GAB",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Middle Africa",
+   "topo": {
+    "id": "266"
+   },
+   "flag": "Flag of Gabon.svg",
+   "lon": 11.5,
+   "lat": -0.683,
+   "wiki": "Gabon",
+   "capitals": [
+    {
+     "id": "Q3825",
+     "name": "Libreville",
+     "preferred": false,
+     "role": null,
+     "image": "Libreville1.jpg",
+     "lon": 9.44,
+     "lat": 0.408,
+     "wiki": "Libreville"
+    }
+   ],
+   "capitalAnswer": "Libreville"
+  },
+  {
+   "id": "Q1005",
+   "name": "Gambia",
+   "officialName": "The Gambia",
+   "iso2": "GM",
+   "iso3": "GMB",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "270"
+   },
+   "flag": "Flag of The Gambia.svg",
+   "lon": -15.5,
+   "lat": 13.5,
+   "wiki": "The_Gambia",
+   "capitals": [
+    {
+     "id": "Q3726",
+     "name": "Banjul",
+     "preferred": false,
+     "role": null,
+     "image": "Banjul Gambia skyline.jpg",
+     "lon": -16.578,
+     "lat": 13.453,
+     "wiki": "Banjul"
+    }
+   ],
+   "capitalAnswer": "Banjul"
+  },
+  {
+   "id": "Q230",
+   "name": "Georgia",
+   "officialName": "Georgia",
+   "iso2": "GE",
+   "iso3": "GEO",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "268"
+   },
+   "flag": "Flag of Georgia.svg",
+   "lon": 44,
+   "lat": 42,
+   "wiki": "Georgia_(country)",
+   "capitals": [
+    {
+     "id": "Q994",
+     "name": "Tbilisi",
+     "preferred": true,
+     "role": null,
+     "image": "View of Tbilisi from Tabori Church 2023-10-08-2.jpg",
+     "lon": 44.792,
+     "lat": 41.722,
+     "wiki": "Tbilisi"
+    }
+   ],
+   "capitalAnswer": "Tbilisi"
+  },
+  {
+   "id": "Q183",
+   "name": "Germany",
+   "officialName": "Germany",
+   "iso2": "DE",
+   "iso3": "DEU",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Western Europe",
+   "topo": {
+    "id": "276"
+   },
+   "flag": "Flag of Germany.svg",
+   "lon": 10,
+   "lat": 51,
+   "wiki": "Germany",
+   "capitals": [
+    {
+     "id": "Q64",
+     "name": "Berlin",
+     "preferred": true,
+     "role": null,
+     "image": "Cityscape Berlin.jpg",
+     "lon": 13.383,
+     "lat": 52.517,
+     "wiki": "Berlin"
+    }
+   ],
+   "capitalAnswer": "Berlin"
+  },
+  {
+   "id": "Q117",
+   "name": "Ghana",
+   "officialName": "Ghana",
+   "iso2": "GH",
+   "iso3": "GHA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "288"
+   },
+   "flag": "Flag of Ghana.svg",
+   "lon": -1.023,
+   "lat": 7.947,
+   "wiki": "Ghana",
+   "capitals": [
+    {
+     "id": "Q3761",
+     "name": "Accra",
+     "preferred": false,
+     "role": null,
+     "image": "Accra town.jpg",
+     "lon": -0.197,
+     "lat": 5.556,
+     "wiki": "Accra"
+    }
+   ],
+   "capitalAnswer": "Accra"
+  },
+  {
+   "id": "Q41",
+   "name": "Greece",
+   "officialName": "Greece",
+   "iso2": "GR",
+   "iso3": "GRC",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southern Europe",
+   "topo": {
+    "id": "300"
+   },
+   "flag": "Flag of Greece.svg",
+   "lon": 23,
+   "lat": 38.5,
+   "wiki": "Greece",
+   "capitals": [
+    {
+     "id": "Q1524",
+     "name": "Athens",
+     "preferred": true,
+     "role": null,
+     "image": "Akropolis 2015.jpg",
+     "lon": 23.728,
+     "lat": 37.984,
+     "wiki": "Athens"
+    }
+   ],
+   "capitalAnswer": "Athens"
+  },
+  {
+   "id": "Q769",
+   "name": "Grenada",
+   "officialName": "Grenada",
+   "iso2": "GD",
+   "iso3": "GRD",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "308"
+   },
+   "flag": "Flag of Grenada.svg",
+   "lon": -61.7,
+   "lat": 12.1,
+   "wiki": "Grenada",
+   "capitals": [
+    {
+     "id": "Q41547",
+     "name": "St. George's",
+     "preferred": false,
+     "role": null,
+     "image": "Grenada - St. George.jpg",
+     "lon": -61.753,
+     "lat": 12.053,
+     "wiki": "St._George's,_Grenada"
+    }
+   ],
+   "capitalAnswer": "St. George's"
+  },
+  {
+   "id": "Q774",
+   "name": "Guatemala",
+   "officialName": "Guatemala",
+   "iso2": "GT",
+   "iso3": "GTM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Central America",
+   "topo": {
+    "id": "320"
+   },
+   "flag": "Flag of Guatemala.svg",
+   "lon": -90.25,
+   "lat": 15.5,
+   "wiki": "Guatemala",
+   "capitals": [
+    {
+     "id": "Q1555",
+     "name": "Guatemala City",
+     "preferred": false,
+     "role": null,
+     "image": "Buildings in Guatemala City.jpg",
+     "lon": -90.513,
+     "lat": 14.642,
+     "wiki": "Guatemala_City"
+    }
+   ],
+   "capitalAnswer": "Guatemala City"
+  },
+  {
+   "id": "Q1006",
+   "name": "Guinea",
+   "officialName": "Guinea",
+   "iso2": "GN",
+   "iso3": "GIN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "324"
+   },
+   "flag": "Flag of Guinea.svg",
+   "lon": -11,
+   "lat": 10,
+   "wiki": "Guinea",
+   "capitals": [
+    {
+     "id": "Q3733",
+     "name": "Conakry",
+     "preferred": false,
+     "role": null,
+     "image": "Un aperçu de la ville de conakry.jpg",
+     "lon": -13.712,
+     "lat": 9.509,
+     "wiki": "Conakry"
+    }
+   ],
+   "capitalAnswer": "Conakry"
+  },
+  {
+   "id": "Q1007",
+   "name": "Guinea-Bissau",
+   "officialName": "Guinea-Bissau",
+   "iso2": "GW",
+   "iso3": "GNB",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "624"
+   },
+   "flag": "Flag of Guinea-Bissau.svg",
+   "lon": -15,
+   "lat": 12,
+   "wiki": "Guinea-Bissau",
+   "capitals": [
+    {
+     "id": "Q3739",
+     "name": "Bissau",
+     "preferred": false,
+     "role": null,
+     "image": "20130610 - Monumento aos Heróis da Independência.jpg",
+     "lon": -15.583,
+     "lat": 11.86,
+     "wiki": "Bissau"
+    }
+   ],
+   "capitalAnswer": "Bissau"
+  },
+  {
+   "id": "Q734",
+   "name": "Guyana",
+   "officialName": "Guyana",
+   "iso2": "GY",
+   "iso3": "GUY",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "328"
+   },
+   "flag": "Flag of Guyana.svg",
+   "lon": -59.317,
+   "lat": 5.733,
+   "wiki": "Guyana",
+   "capitals": [
+    {
+     "id": "Q10717",
+     "name": "Georgetown",
+     "preferred": false,
+     "role": null,
+     "image": "St George's Cathedral.jpg",
+     "lon": -58.151,
+     "lat": 6.806,
+     "wiki": "Georgetown,_Guyana"
+    }
+   ],
+   "capitalAnswer": "Georgetown"
+  },
+  {
+   "id": "Q790",
+   "name": "Haiti",
+   "officialName": "Haiti",
+   "iso2": "HT",
+   "iso3": "HTI",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "332"
+   },
+   "flag": "Flag of Haiti.svg",
+   "lon": -72.8,
+   "lat": 19,
+   "wiki": "Haiti",
+   "capitals": [
+    {
+     "id": "Q34261",
+     "name": "Port-au-Prince",
+     "preferred": false,
+     "role": null,
+     "image": "US Navy 100221-N-5787K-002 An aerial view of the logistical area near the port in Port-au-Prince (cropped).jpg",
+     "lon": -72.34,
+     "lat": 18.547,
+     "wiki": "Port-au-Prince"
+    }
+   ],
+   "capitalAnswer": "Port-au-Prince"
+  },
+  {
+   "id": "Q783",
+   "name": "Honduras",
+   "officialName": "Honduras",
+   "iso2": "HN",
+   "iso3": "HND",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Central America",
+   "topo": {
+    "id": "340"
+   },
+   "flag": "Flag of Honduras (1949–2022, 2026–present).svg",
+   "lon": -86.817,
+   "lat": 14.633,
+   "wiki": "Honduras",
+   "capitals": [
+    {
+     "id": "Q3238",
+     "name": "Tegucigalpa",
+     "preferred": false,
+     "role": null,
+     "image": "Centro historico de Tegucigalpa y Comayagüela.jpg",
+     "lon": -87.205,
+     "lat": 14.106,
+     "wiki": "Tegucigalpa"
+    }
+   ],
+   "capitalAnswer": "Tegucigalpa"
+  },
+  {
+   "id": "Q28",
+   "name": "Hungary",
+   "officialName": "Hungary",
+   "iso2": "HU",
+   "iso3": "HUN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Central Europe",
+   "topo": {
+    "id": "348"
+   },
+   "flag": "Flag of Hungary.svg",
+   "lon": 19,
+   "lat": 47,
+   "wiki": "Hungary",
+   "capitals": [
+    {
+     "id": "Q1781",
+     "name": "Budapest",
+     "preferred": false,
+     "role": null,
+     "image": "Budapest, Hungary (explored) (14995308504).jpg",
+     "lon": 19.041,
+     "lat": 47.498,
+     "wiki": "Budapest"
+    }
+   ],
+   "capitalAnswer": "Budapest"
+  },
+  {
+   "id": "Q189",
+   "name": "Iceland",
+   "officialName": "Iceland",
+   "iso2": "IS",
+   "iso3": "ISL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Northern Europe",
+   "topo": {
+    "id": "352"
+   },
+   "flag": "Flag of Iceland.svg",
+   "lon": -19,
+   "lat": 65,
+   "wiki": "Iceland",
+   "capitals": [
+    {
+     "id": "Q1764",
+     "name": "Reykjavík",
+     "preferred": false,
+     "role": null,
+     "image": "Reykjavík 5545 (cropped).JPG",
+     "lon": -21.935,
+     "lat": 64.147,
+     "wiki": "Reykjavík"
+    }
+   ],
+   "capitalAnswer": "Reykjavík"
+  },
+  {
+   "id": "Q668",
+   "name": "India",
+   "officialName": "India",
+   "iso2": "IN",
+   "iso3": "IND",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Southern Asia",
+   "topo": {
+    "id": "356"
+   },
+   "flag": "Flag of India.svg",
+   "lon": 83,
+   "lat": 22.8,
+   "wiki": "India",
+   "capitals": [
+    {
+     "id": "Q987",
+     "name": "New Delhi",
+     "preferred": false,
+     "role": null,
+     "image": "India Gate Legendary Saga Of Supreme Sacrifice.jpg",
+     "lon": 77.209,
+     "lat": 28.614,
+     "wiki": "New_Delhi"
+    }
+   ],
+   "capitalAnswer": "New Delhi"
+  },
+  {
+   "id": "Q252",
+   "name": "Indonesia",
+   "officialName": "Indonesia",
+   "iso2": "ID",
+   "iso3": "IDN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "360"
+   },
+   "flag": "Flag of Indonesia.svg",
+   "lon": 118,
+   "lat": -2,
+   "wiki": "Indonesia",
+   "capitals": [
+    {
+     "id": "Q3630",
+     "name": "Jakarta",
+     "preferred": true,
+     "role": null,
+     "image": "Jakarta.jpg",
+     "lon": 106.827,
+     "lat": -6.175,
+     "wiki": "Jakarta"
+    }
+   ],
+   "capitalAnswer": "Jakarta"
+  },
+  {
+   "id": "Q794",
+   "name": "Iran",
+   "officialName": "Iran",
+   "iso2": "IR",
+   "iso3": "IRN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Southern Asia",
+   "topo": {
+    "id": "364"
+   },
+   "flag": "Flag of Iran.svg",
+   "lon": 53,
+   "lat": 32,
+   "wiki": "Iran",
+   "capitals": [
+    {
+     "id": "Q3616",
+     "name": "Tehran",
+     "preferred": false,
+     "role": null,
+     "image": "North of tehran.jpg",
+     "lon": 51.39,
+     "lat": 35.689,
+     "wiki": "Tehran"
+    }
+   ],
+   "capitalAnswer": "Tehran"
+  },
+  {
+   "id": "Q796",
+   "name": "Iraq",
+   "officialName": "Iraq",
+   "iso2": "IQ",
+   "iso3": "IRQ",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "368"
+   },
+   "flag": "Flag of Iraq.svg",
+   "lon": 43,
+   "lat": 33,
+   "wiki": "Iraq",
+   "capitals": [
+    {
+     "id": "Q1530",
+     "name": "Baghdad",
+     "preferred": false,
+     "role": null,
+     "image": null,
+     "lon": 44.366,
+     "lat": 33.315,
+     "wiki": "Baghdad"
+    }
+   ],
+   "capitalAnswer": "Baghdad"
+  },
+  {
+   "id": "Q27",
+   "name": "Ireland",
+   "officialName": "Ireland",
+   "iso2": "IE",
+   "iso3": "IRL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Northern Europe",
+   "topo": {
+    "id": "372"
+   },
+   "flag": "Flag of Ireland.svg",
+   "lon": -8,
+   "lat": 53,
+   "wiki": "Republic_of_Ireland",
+   "capitals": [
+    {
+     "id": "Q1761",
+     "name": "Dublin",
+     "preferred": false,
+     "role": null,
+     "image": "Dublin - aerial - 2025-07-07 01.jpg",
+     "lon": -6.26,
+     "lat": 53.35,
+     "wiki": "Dublin"
+    }
+   ],
+   "capitalAnswer": "Dublin"
+  },
+  {
+   "id": "Q801",
+   "name": "Israel",
+   "officialName": "Israel",
+   "iso2": "IL",
+   "iso3": "ISR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "376"
+   },
+   "flag": "Flag of Israel.svg",
+   "lon": 35,
+   "lat": 31,
+   "wiki": "Israel",
+   "capitals": [
+    {
+     "id": "Q1218",
+     "name": "Jerusalem",
+     "preferred": false,
+     "role": null,
+     "image": "Dome of the Rock seen from the Mount of Olives (12395649153) (cropped).jpg",
+     "lon": 35.234,
+     "lat": 31.777,
+     "wiki": "Jerusalem"
+    }
+   ],
+   "capitalAnswer": "Jerusalem",
+   "capitalNote": "Israel's capital status is disputed; most countries keep their embassies in Tel Aviv."
+  },
+  {
+   "id": "Q38",
+   "name": "Italy",
+   "officialName": "Italy",
+   "iso2": "IT",
+   "iso3": "ITA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southern Europe",
+   "topo": {
+    "id": "380"
+   },
+   "flag": "Flag of Italy.svg",
+   "lon": 12.5,
+   "lat": 42.5,
+   "wiki": "Italy",
+   "capitals": [
+    {
+     "id": "Q220",
+     "name": "Rome",
+     "preferred": true,
+     "role": null,
+     "image": "Rome Skyline (8012016319).jpg",
+     "lon": 12.483,
+     "lat": 41.893,
+     "wiki": "Rome"
+    }
+   ],
+   "capitalAnswer": "Rome"
+  },
+  {
+   "id": "Q1008",
+   "name": "Ivory Coast",
+   "officialName": "Ivory Coast",
+   "iso2": "CI",
+   "iso3": "CIV",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "384"
+   },
+   "flag": "Flag of Côte d'Ivoire.svg",
+   "lon": -6,
+   "lat": 8,
+   "wiki": "Ivory_Coast",
+   "capitals": [
+    {
+     "id": "Q3768",
+     "name": "Yamoussoukro",
+     "preferred": true,
+     "role": null,
+     "image": "Inphb de Yamoussoukro (Bosson).jpg",
+     "lon": -5.274,
+     "lat": 6.816,
+     "wiki": "Yamoussoukro"
+    }
+   ],
+   "capitalAnswer": "Yamoussoukro"
+  },
+  {
+   "id": "Q766",
+   "name": "Jamaica",
+   "officialName": "Jamaica",
+   "iso2": "JM",
+   "iso3": "JAM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "388"
+   },
+   "flag": "Flag of Jamaica.svg",
+   "lon": -77.4,
+   "lat": 18.18,
+   "wiki": "Jamaica",
+   "capitals": [
+    {
+     "id": "Q34692",
+     "name": "Kingston",
+     "preferred": false,
+     "role": null,
+     "image": "PortofKingston.jpg",
+     "lon": -76.793,
+     "lat": 17.971,
+     "wiki": "Kingston,_Jamaica"
+    }
+   ],
+   "capitalAnswer": "Kingston"
+  },
+  {
+   "id": "Q17",
+   "name": "Japan",
+   "officialName": "Japan",
+   "iso2": "JP",
+   "iso3": "JPN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Eastern Asia",
+   "topo": {
+    "id": "392"
+   },
+   "flag": "Flag of Japan.svg",
+   "lon": 136,
+   "lat": 35,
+   "wiki": "Japan",
+   "capitals": [
+    {
+     "id": "Q1490",
+     "name": "Tokyo",
+     "preferred": true,
+     "role": null,
+     "image": "Skyscrapers of Shinjuku 2009 January (revised).jpg",
+     "lon": 139.692,
+     "lat": 35.689,
+     "wiki": "Tokyo"
+    }
+   ],
+   "capitalAnswer": "Tokyo"
+  },
+  {
+   "id": "Q810",
+   "name": "Jordan",
+   "officialName": "Jordan",
+   "iso2": "JO",
+   "iso3": "JOR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "400"
+   },
+   "flag": "Flag of Jordan.svg",
+   "lon": 36.5,
+   "lat": 31.2,
+   "wiki": "Jordan",
+   "capitals": [
+    {
+     "id": "Q3805",
+     "name": "Amman",
+     "preferred": false,
+     "role": null,
+     "image": "Amman.jpg",
+     "lon": 35.933,
+     "lat": 31.95,
+     "wiki": "Amman"
+    }
+   ],
+   "capitalAnswer": "Amman"
+  },
+  {
+   "id": "Q232",
+   "name": "Kazakhstan",
+   "officialName": "Kazakhstan",
+   "iso2": "KZ",
+   "iso3": "KAZ",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Central Asia",
+   "topo": {
+    "id": "398"
+   },
+   "flag": "Flag of Kazakhstan.svg",
+   "lon": 68,
+   "lat": 48,
+   "wiki": "Kazakhstan",
+   "capitals": [
+    {
+     "id": "Q1520",
+     "name": "Astana",
+     "preferred": true,
+     "role": null,
+     "image": "Trip to Astana (2015-10-24) 01.jpg",
+     "lon": 71.433,
+     "lat": 51.133,
+     "wiki": "Astana"
+    }
+   ],
+   "capitalAnswer": "Astana"
+  },
+  {
+   "id": "Q114",
+   "name": "Kenya",
+   "officialName": "Kenya",
+   "iso2": "KE",
+   "iso3": "KEN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "404"
+   },
+   "flag": "Flag of Kenya.svg",
+   "lon": 38,
+   "lat": 0.1,
+   "wiki": "Kenya",
+   "capitals": [
+    {
+     "id": "Q3870",
+     "name": "Nairobi",
+     "preferred": false,
+     "role": null,
+     "image": "Nairobi, view from KICC.JPG",
+     "lon": 36.817,
+     "lat": -1.286,
+     "wiki": "Nairobi"
+    }
+   ],
+   "capitalAnswer": "Nairobi"
+  },
+  {
+   "id": "Q710",
+   "name": "Kiribati",
+   "officialName": "Kiribati",
+   "iso2": "KI",
+   "iso3": "KIR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Micronesia",
+   "topo": {
+    "id": "296"
+   },
+   "flag": "Flag of Kiribati.svg",
+   "lon": 173.033,
+   "lat": 1.467,
+   "wiki": "Kiribati",
+   "capitals": [
+    {
+     "id": "Q131233",
+     "name": "South Tarawa",
+     "preferred": false,
+     "role": null,
+     "image": "South Tarawa from the air.jpg",
+     "lon": 172.967,
+     "lat": 1.333,
+     "wiki": "South_Tarawa"
+    }
+   ],
+   "capitalAnswer": "South Tarawa"
+  },
+  {
+   "id": "Q1246",
+   "name": "Kosovo",
+   "officialName": "Kosovo",
+   "iso2": "XK",
+   "iso3": "XKS",
+   "status": "disputed",
+   "statusNote": "Declared independence from Serbia in 2008; recognised by about half of UN members",
+   "region": "Europe",
+   "subregion": "Southeast Europe",
+   "topo": {
+    "name": "Kosovo"
+   },
+   "flag": "Flag of Kosovo.svg",
+   "lon": 20.833,
+   "lat": 42.55,
+   "wiki": "Kosovo",
+   "capitals": [
+    {
+     "id": "Q25270",
+     "name": "Pristina",
+     "preferred": false,
+     "role": null,
+     "image": "PRISHTINA 2013 (13).jpg",
+     "lon": 21.167,
+     "lat": 42.667,
+     "wiki": "Pristina"
+    }
+   ],
+   "capitalAnswer": "Pristina"
+  },
+  {
+   "id": "Q817",
+   "name": "Kuwait",
+   "officialName": "Kuwait",
+   "iso2": "KW",
+   "iso3": "KWT",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "414"
+   },
+   "flag": "Flag of Kuwait.svg",
+   "lon": 47.6,
+   "lat": 29.167,
+   "wiki": "Kuwait",
+   "capitals": [
+    {
+     "id": "Q35178",
+     "name": "Kuwait City",
+     "preferred": false,
+     "role": null,
+     "image": "LiberationTower.jpg",
+     "lon": 47.98,
+     "lat": 29.375,
+     "wiki": "Kuwait_City"
+    }
+   ],
+   "capitalAnswer": "Kuwait City"
+  },
+  {
+   "id": "Q813",
+   "name": "Kyrgyzstan",
+   "officialName": "Kyrgyzstan",
+   "iso2": "KG",
+   "iso3": "KGZ",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Central Asia",
+   "topo": {
+    "id": "417"
+   },
+   "flag": "Flag of Kyrgyzstan.svg",
+   "lon": 75,
+   "lat": 41,
+   "wiki": "Kyrgyzstan",
+   "capitals": [
+    {
+     "id": "Q9361",
+     "name": "Bishkek",
+     "preferred": false,
+     "role": null,
+     "image": "Bishkek City's business center.jpg",
+     "lon": 74.567,
+     "lat": 42.867,
+     "wiki": "Bishkek"
+    }
+   ],
+   "capitalAnswer": "Bishkek"
+  },
+  {
+   "id": "Q819",
+   "name": "Laos",
+   "officialName": "Laos",
+   "iso2": "LA",
+   "iso3": "LAO",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "418"
+   },
+   "flag": "Flag of Laos.svg",
+   "lon": 104.1,
+   "lat": 18.2,
+   "wiki": "Laos",
+   "capitals": [
+    {
+     "id": "Q9326",
+     "name": "Vientiane",
+     "preferred": false,
+     "role": null,
+     "image": "20171118 Vientiane 3220 DxO.jpg",
+     "lon": 102.63,
+     "lat": 17.98,
+     "wiki": "Vientiane"
+    }
+   ],
+   "capitalAnswer": "Vientiane"
+  },
+  {
+   "id": "Q211",
+   "name": "Latvia",
+   "officialName": "Latvia",
+   "iso2": "LV",
+   "iso3": "LVA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Northern Europe",
+   "topo": {
+    "id": "428"
+   },
+   "flag": "Flag of Latvia.svg",
+   "lon": 25,
+   "lat": 57,
+   "wiki": "Latvia",
+   "capitals": [
+    {
+     "id": "Q1773",
+     "name": "Riga",
+     "preferred": false,
+     "role": null,
+     "image": "Vistas desde la iglesia de San Pedro, Riga, Letonia, 2012-08-07, DD 12.JPG",
+     "lon": 24.107,
+     "lat": 56.947,
+     "wiki": "Riga"
+    }
+   ],
+   "capitalAnswer": "Riga"
+  },
+  {
+   "id": "Q822",
+   "name": "Lebanon",
+   "officialName": "Lebanon",
+   "iso2": "LB",
+   "iso3": "LBN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "422"
+   },
+   "flag": "Flag of Lebanon.svg",
+   "lon": 35.767,
+   "lat": 33.833,
+   "wiki": "Lebanon",
+   "capitals": [
+    {
+     "id": "Q3820",
+     "name": "Beirut",
+     "preferred": false,
+     "role": null,
+     "image": "Beirutcity.jpg",
+     "lon": 35.513,
+     "lat": 33.887,
+     "wiki": "Beirut"
+    }
+   ],
+   "capitalAnswer": "Beirut"
+  },
+  {
+   "id": "Q1013",
+   "name": "Lesotho",
+   "officialName": "Lesotho",
+   "iso2": "LS",
+   "iso3": "LSO",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Southern Africa",
+   "topo": {
+    "id": "426"
+   },
+   "flag": "Flag of Lesotho.svg",
+   "lon": 28.25,
+   "lat": -29.55,
+   "wiki": "Lesotho",
+   "capitals": [
+    {
+     "id": "Q3909",
+     "name": "Maseru",
+     "preferred": false,
+     "role": null,
+     "image": "Maseru from Parliament Hill.jpg",
+     "lon": 27.48,
+     "lat": -29.31,
+     "wiki": "Maseru"
+    }
+   ],
+   "capitalAnswer": "Maseru"
+  },
+  {
+   "id": "Q1014",
+   "name": "Liberia",
+   "officialName": "Liberia",
+   "iso2": "LR",
+   "iso3": "LBR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "430"
+   },
+   "flag": "Flag of Liberia.svg",
+   "lon": -9.75,
+   "lat": 6.533,
+   "wiki": "Liberia",
+   "capitals": [
+    {
+     "id": "Q3748",
+     "name": "Monrovia",
+     "preferred": false,
+     "role": null,
+     "image": "Liberia, Africa - panoramio (256).jpg",
+     "lon": -10.805,
+     "lat": 6.311,
+     "wiki": "Monrovia"
+    }
+   ],
+   "capitalAnswer": "Monrovia"
+  },
+  {
+   "id": "Q1016",
+   "name": "Libya",
+   "officialName": "Libya",
+   "iso2": "LY",
+   "iso3": "LBY",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Northern Africa",
+   "topo": {
+    "id": "434"
+   },
+   "flag": "Flag of Libya.svg",
+   "lon": 17,
+   "lat": 27,
+   "wiki": "Libya",
+   "capitals": [
+    {
+     "id": "Q3579",
+     "name": "Tripoli",
+     "preferred": false,
+     "role": null,
+     "image": "Marcus Aurelius Arch Tripoli Libya.jpg",
+     "lon": 13.188,
+     "lat": 32.888,
+     "wiki": "Tripoli,_Libya"
+    }
+   ],
+   "capitalAnswer": "Tripoli"
+  },
+  {
+   "id": "Q347",
+   "name": "Liechtenstein",
+   "officialName": "Liechtenstein",
+   "iso2": "LI",
+   "iso3": "LIE",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Western Europe",
+   "topo": {
+    "id": "438"
+   },
+   "flag": "Flag of Liechtenstein.svg",
+   "lon": 9.554,
+   "lat": 47.145,
+   "wiki": "Liechtenstein",
+   "capitals": [
+    {
+     "id": "Q1844",
+     "name": "Vaduz",
+     "preferred": false,
+     "role": null,
+     "image": "View of Vaduz.jpg",
+     "lon": 9.522,
+     "lat": 47.141,
+     "wiki": "Vaduz"
+    }
+   ],
+   "capitalAnswer": "Vaduz"
+  },
+  {
+   "id": "Q37",
+   "name": "Lithuania",
+   "officialName": "Lithuania",
+   "iso2": "LT",
+   "iso3": "LTU",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Northern Europe",
+   "topo": {
+    "id": "440"
+   },
+   "flag": "Flag of Lithuania.svg",
+   "lon": 24,
+   "lat": 55.2,
+   "wiki": "Lithuania",
+   "capitals": [
+    {
+     "id": "Q216",
+     "name": "Vilnius",
+     "preferred": true,
+     "role": null,
+     "image": "Gedimino pilis by Augustas Didzgalvis.jpg",
+     "lon": 25.28,
+     "lat": 54.687,
+     "wiki": "Vilnius"
+    }
+   ],
+   "capitalAnswer": "Vilnius"
+  },
+  {
+   "id": "Q32",
+   "name": "Luxembourg",
+   "officialName": "Luxembourg",
+   "iso2": "LU",
+   "iso3": "LUX",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Western Europe",
+   "topo": {
+    "id": "442"
+   },
+   "flag": "Flag of Luxembourg.svg",
+   "lon": 6.13,
+   "lat": 49.77,
+   "wiki": "Luxembourg",
+   "capitals": [
+    {
+     "id": "Q1842",
+     "name": "Luxembourg",
+     "preferred": false,
+     "role": null,
+     "image": "Luxembourg City Hall (54540726309).jpg",
+     "lon": 6.13,
+     "lat": 49.611,
+     "wiki": "Luxembourg_City"
+    }
+   ],
+   "capitalAnswer": "Luxembourg"
+  },
+  {
+   "id": "Q1019",
+   "name": "Madagascar",
+   "officialName": "Madagascar",
+   "iso2": "MG",
+   "iso3": "MDG",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "450"
+   },
+   "flag": "Flag of Madagascar.svg",
+   "lon": 47,
+   "lat": -20,
+   "wiki": "Madagascar",
+   "capitals": [
+    {
+     "id": "Q3915",
+     "name": "Antananarivo",
+     "preferred": false,
+     "role": null,
+     "image": "Lake Anosy, Central Antananarivo, Capital of Madagascar, Photo by Sascha Grabow.jpg",
+     "lon": 47.525,
+     "lat": -18.91,
+     "wiki": "Antananarivo"
+    }
+   ],
+   "capitalAnswer": "Antananarivo"
+  },
+  {
+   "id": "Q1020",
+   "name": "Malawi",
+   "officialName": "Malawi",
+   "iso2": "MW",
+   "iso3": "MWI",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "454"
+   },
+   "flag": "Flag of Malawi.svg",
+   "lon": 34,
+   "lat": -13,
+   "wiki": "Malawi",
+   "capitals": [
+    {
+     "id": "Q3876",
+     "name": "Lilongwe",
+     "preferred": true,
+     "role": null,
+     "image": "Lilongwe Area 2.jpg",
+     "lon": 33.768,
+     "lat": -13.986,
+     "wiki": "Lilongwe"
+    }
+   ],
+   "capitalAnswer": "Lilongwe"
+  },
+  {
+   "id": "Q833",
+   "name": "Malaysia",
+   "officialName": "Malaysia",
+   "iso2": "MY",
+   "iso3": "MYS",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "458"
+   },
+   "flag": "Flag of Malaysia.svg",
+   "lon": 102.314,
+   "lat": 3.781,
+   "wiki": "Malaysia",
+   "capitals": [
+    {
+     "id": "Q1865",
+     "name": "Kuala Lumpur",
+     "preferred": true,
+     "role": null,
+     "image": "Kl-skyline-at-night-2022.jpg",
+     "lon": 101.695,
+     "lat": 3.148,
+     "wiki": "Kuala_Lumpur"
+    },
+    {
+     "id": "Q182378",
+     "name": "Putrajaya",
+     "preferred": false,
+     "role": null,
+     "image": "Putrajaya Collage.jpg",
+     "lon": 101.69,
+     "lat": 2.93,
+     "wiki": "Putrajaya"
+    }
+   ],
+   "capitalAnswer": "Kuala Lumpur (official capital), though the government sits in Putrajaya",
+   "capitalNote": null
+  },
+  {
+   "id": "Q826",
+   "name": "Maldives",
+   "officialName": "Maldives",
+   "iso2": "MV",
+   "iso3": "MDV",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Southern Asia",
+   "topo": {
+    "id": "462"
+   },
+   "flag": "Flag of Maldives.svg",
+   "lon": 73.51,
+   "lat": 4.18,
+   "wiki": "Maldives",
+   "capitals": [
+    {
+     "id": "Q9347",
+     "name": "Malé",
+     "preferred": false,
+     "role": null,
+     "image": "Male-total.jpg",
+     "lon": 73.508,
+     "lat": 4.175,
+     "wiki": "Malé"
+    }
+   ],
+   "capitalAnswer": "Malé"
+  },
+  {
+   "id": "Q912",
+   "name": "Mali",
+   "officialName": "Mali",
+   "iso2": "ML",
+   "iso3": "MLI",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "466"
+   },
+   "flag": "Flag of Mali.svg",
+   "lon": -4,
+   "lat": 17,
+   "wiki": "Mali",
+   "capitals": [
+    {
+     "id": "Q3703",
+     "name": "Bamako",
+     "preferred": false,
+     "role": null,
+     "image": "Bamako ACI 2000 Aeriel.jpg",
+     "lon": -7.992,
+     "lat": 12.646,
+     "wiki": "Bamako"
+    }
+   ],
+   "capitalAnswer": "Bamako"
+  },
+  {
+   "id": "Q233",
+   "name": "Malta",
+   "officialName": "Malta",
+   "iso2": "MT",
+   "iso3": "MLT",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southern Europe",
+   "topo": {
+    "id": "470"
+   },
+   "flag": "Flag of Malta.svg",
+   "lon": 14.4,
+   "lat": 35.9,
+   "wiki": "Malta",
+   "capitals": [
+    {
+     "id": "Q23800",
+     "name": "Valletta",
+     "preferred": false,
+     "role": null,
+     "image": "Malta, 2010 - panoramio - Bengt Nyman (23).jpg",
+     "lon": 14.512,
+     "lat": 35.898,
+     "wiki": "Valletta"
+    }
+   ],
+   "capitalAnswer": "Valletta"
+  },
+  {
+   "id": "Q709",
+   "name": "Marshall Islands",
+   "officialName": "Marshall Islands",
+   "iso2": "MH",
+   "iso3": "MHL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Micronesia",
+   "topo": {
+    "id": "584"
+   },
+   "flag": "Flag of the Marshall Islands.svg",
+   "lon": 169.29,
+   "lat": 9.82,
+   "wiki": "Marshall_Islands",
+   "capitals": [
+    {
+     "id": "Q12919",
+     "name": "Majuro",
+     "preferred": false,
+     "role": null,
+     "image": "Majuro main road.jpg",
+     "lon": 171.38,
+     "lat": 7.092,
+     "wiki": "Majuro"
+    }
+   ],
+   "capitalAnswer": "Majuro"
+  },
+  {
+   "id": "Q1025",
+   "name": "Mauritania",
+   "officialName": "Mauritania",
+   "iso2": "MR",
+   "iso3": "MRT",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "478"
+   },
+   "flag": "Flag of Mauritania.svg",
+   "lon": -11,
+   "lat": 21,
+   "wiki": "Mauritania",
+   "capitals": [
+    {
+     "id": "Q3688",
+     "name": "Nouakchott",
+     "preferred": false,
+     "role": null,
+     "image": "15-Nouakchott-eH-R0058185.jpg",
+     "lon": -15.979,
+     "lat": 18.086,
+     "wiki": "Nouakchott"
+    }
+   ],
+   "capitalAnswer": "Nouakchott"
+  },
+  {
+   "id": "Q1027",
+   "name": "Mauritius",
+   "officialName": "Mauritius",
+   "iso2": "MU",
+   "iso3": "MUS",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "480"
+   },
+   "flag": "Flag of Mauritius.svg",
+   "lon": 57.5,
+   "lat": -20.2,
+   "wiki": "Mauritius",
+   "capitals": [
+    {
+     "id": "Q3929",
+     "name": "Port Louis",
+     "preferred": false,
+     "role": null,
+     "image": "Mauritius port louis.jpg",
+     "lon": 57.499,
+     "lat": -20.162,
+     "wiki": "Port_Louis"
+    }
+   ],
+   "capitalAnswer": "Port Louis"
+  },
+  {
+   "id": "Q96",
+   "name": "Mexico",
+   "officialName": "Mexico",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "North America",
+   "topo": {
+    "id": "484"
+   },
+   "flag": "Flag of Mexico.svg",
+   "lon": -102,
+   "lat": 23,
+   "wiki": "Mexico",
+   "capitals": [
+    {
+     "id": "Q1489",
+     "name": "Mexico City",
+     "preferred": false,
+     "role": null,
+     "image": "Sobrevuelos CDMX HJ2A5091 (40386338731).jpg",
+     "lon": -99.136,
+     "lat": 19.354,
+     "wiki": "Mexico_City"
+    }
+   ],
+   "capitalAnswer": "Mexico City"
+  },
+  {
+   "id": "Q702",
+   "name": "Micronesia",
+   "officialName": "Federated States of Micronesia",
+   "iso2": "FM",
+   "iso3": "FSM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Micronesia",
+   "topo": {
+    "id": "583"
+   },
+   "flag": "Flag of the Federated States of Micronesia.svg",
+   "lon": 158.183,
+   "lat": 6.917,
+   "wiki": "Federated_States_of_Micronesia",
+   "capitals": [
+    {
+     "id": "Q42751",
+     "name": "Palikir",
+     "preferred": true,
+     "role": null,
+     "image": "Palikir Government Buildings.jpg",
+     "lon": 158.185,
+     "lat": 6.918,
+     "wiki": "Palikir"
+    }
+   ],
+   "capitalAnswer": "Palikir"
+  },
+  {
+   "id": "Q217",
+   "name": "Moldova",
+   "officialName": "Moldova",
+   "iso2": "MD",
+   "iso3": "MDA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Eastern Europe",
+   "topo": {
+    "id": "498"
+   },
+   "flag": "Flag of Moldova.svg",
+   "lon": 28.517,
+   "lat": 47.25,
+   "wiki": "Moldova",
+   "capitals": [
+    {
+     "id": "Q21197",
+     "name": "Chișinău",
+     "preferred": false,
+     "role": null,
+     "image": "Arch of Triumph, Chisinau, Republic of Moldova (51160304626 cropped).jpg",
+     "lon": 28.835,
+     "lat": 47.023,
+     "wiki": "Chișinău"
+    }
+   ],
+   "capitalAnswer": "Chișinău"
+  },
+  {
+   "id": "Q235",
+   "name": "Monaco",
+   "officialName": "Monaco",
+   "iso2": "MC",
+   "iso3": "MCO",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Western Europe",
+   "topo": {
+    "id": "492"
+   },
+   "flag": "Flag of Monaco.svg",
+   "lon": 7.42,
+   "lat": 43.731,
+   "wiki": "Monaco",
+   "capitals": [
+    {
+     "id": "Q235",
+     "name": "Monaco",
+     "preferred": false,
+     "role": null,
+     "image": "Panorama von Monaco-La Turbie.jpg",
+     "lon": 7.42,
+     "lat": 43.731,
+     "wiki": "Monaco"
+    }
+   ],
+   "capitalAnswer": "Monaco"
+  },
+  {
+   "id": "Q711",
+   "name": "Mongolia",
+   "officialName": "Mongolia",
+   "iso2": "MN",
+   "iso3": "MNG",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Eastern Asia",
+   "topo": {
+    "id": "496"
+   },
+   "flag": "Flag of Mongolia.svg",
+   "lon": 105,
+   "lat": 46,
+   "wiki": "Mongolia",
+   "capitals": [
+    {
+     "id": "Q23430",
+     "name": "Ulaanbaatar",
+     "preferred": false,
+     "role": null,
+     "image": "UB downtown.jpg",
+     "lon": 106.906,
+     "lat": 47.921,
+     "wiki": "Ulaanbaatar"
+    }
+   ],
+   "capitalAnswer": "Ulaanbaatar"
+  },
+  {
+   "id": "Q236",
+   "name": "Montenegro",
+   "officialName": "Montenegro",
+   "iso2": "ME",
+   "iso3": "MNE",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southeast Europe",
+   "topo": {
+    "id": "499"
+   },
+   "flag": "Flag of Montenegro.svg",
+   "lon": 19.217,
+   "lat": 42.767,
+   "wiki": "Montenegro",
+   "capitals": [
+    {
+     "id": "Q23564",
+     "name": "Podgorica",
+     "preferred": false,
+     "role": null,
+     "image": "Titograd.jpg",
+     "lon": 19.263,
+     "lat": 42.441,
+     "wiki": "Podgorica"
+    }
+   ],
+   "capitalAnswer": "Podgorica"
+  },
+  {
+   "id": "Q1028",
+   "name": "Morocco",
+   "officialName": "Morocco",
+   "iso2": "MA",
+   "iso3": "MAR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Northern Africa",
+   "topo": {
+    "id": "504"
+   },
+   "flag": "Flag of Morocco.svg",
+   "lon": -6,
+   "lat": 32,
+   "wiki": "Morocco",
+   "capitals": [
+    {
+     "id": "Q3551",
+     "name": "Rabat",
+     "preferred": false,
+     "role": null,
+     "image": "Kasbah des Oudaias P1060356.JPG",
+     "lon": -6.841,
+     "lat": 34.021,
+     "wiki": "Rabat"
+    }
+   ],
+   "capitalAnswer": "Rabat"
+  },
+  {
+   "id": "Q1029",
+   "name": "Mozambique",
+   "officialName": "Mozambique",
+   "iso2": "MZ",
+   "iso3": "MOZ",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "508"
+   },
+   "flag": "Flag of Mozambique.svg",
+   "lon": 35,
+   "lat": -19,
+   "wiki": "Mozambique",
+   "capitals": [
+    {
+     "id": "Q3889",
+     "name": "Maputo",
+     "preferred": false,
+     "role": null,
+     "image": "Maputo seen from southeast - October 2006.jpg",
+     "lon": 32.573,
+     "lat": -25.969,
+     "wiki": "Maputo"
+    }
+   ],
+   "capitalAnswer": "Maputo"
+  },
+  {
+   "id": "Q836",
+   "name": "Myanmar",
+   "officialName": "Myanmar",
+   "iso2": "MM",
+   "iso3": "MMR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "104"
+   },
+   "flag": "Flag of Myanmar.svg",
+   "lon": 96,
+   "lat": 22,
+   "wiki": "Myanmar",
+   "capitals": [
+    {
+     "id": "Q37400",
+     "name": "Naypyidaw",
+     "preferred": true,
+     "role": null,
+     "image": "Naypyidaw -- Water Fountain Garden.JPG",
+     "lon": 96.115,
+     "lat": 19.747,
+     "wiki": "Naypyidaw"
+    }
+   ],
+   "capitalAnswer": "Naypyidaw"
+  },
+  {
+   "id": "Q1030",
+   "name": "Namibia",
+   "officialName": "Namibia",
+   "iso2": "NA",
+   "iso3": "NAM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Southern Africa",
+   "topo": {
+    "id": "516"
+   },
+   "flag": "Flag of Namibia.svg",
+   "lon": 17,
+   "lat": -23,
+   "wiki": "Namibia",
+   "capitals": [
+    {
+     "id": "Q3935",
+     "name": "Windhoek",
+     "preferred": false,
+     "role": null,
+     "image": "Windhoek-Skyline.jpg",
+     "lon": 17.084,
+     "lat": -22.57,
+     "wiki": "Windhoek"
+    }
+   ],
+   "capitalAnswer": "Windhoek"
+  },
+  {
+   "id": "Q697",
+   "name": "Nauru",
+   "officialName": "Nauru",
+   "iso2": "NR",
+   "iso3": "NRU",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Micronesia",
+   "topo": {
+    "id": "520"
+   },
+   "flag": "Flag of Nauru.svg",
+   "lon": 166.935,
+   "lat": -0.527,
+   "wiki": "Nauru",
+   "capitals": [
+    {
+     "id": "Q31026",
+     "name": "Yaren District",
+     "preferred": false,
+     "role": null,
+     "image": "Nauru-parliament.jpg",
+     "lon": 166.921,
+     "lat": -0.548,
+     "wiki": "Yaren"
+    }
+   ],
+   "capitalAnswer": "Yaren District"
+  },
+  {
+   "id": "Q837",
+   "name": "Nepal",
+   "officialName": "Nepal",
+   "iso2": "NP",
+   "iso3": "NPL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Southern Asia",
+   "topo": {
+    "id": "524"
+   },
+   "flag": "Flag of Nepal.svg",
+   "lon": 84,
+   "lat": 28,
+   "wiki": "Nepal",
+   "capitals": [
+    {
+     "id": "Q3037",
+     "name": "Kathmandu",
+     "preferred": false,
+     "role": null,
+     "image": "Kathmandu Avion 01.JPG",
+     "lon": 85.32,
+     "lat": 27.71,
+     "wiki": "Kathmandu"
+    }
+   ],
+   "capitalAnswer": "Kathmandu"
+  },
+  {
+   "id": "Q29999",
+   "name": "Netherlands",
+   "officialName": "Kingdom of the Netherlands",
+   "iso2": "NL",
+   "iso3": "NLD",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Western Europe",
+   "topo": {
+    "id": "528"
+   },
+   "flag": "Flag of the Netherlands.svg",
+   "lon": 4.883,
+   "lat": 52.367,
+   "wiki": "Kingdom_of_the_Netherlands",
+   "capitals": [
+    {
+     "id": "Q727",
+     "name": "Amsterdam",
+     "preferred": false,
+     "role": null,
+     "image": "Amsterdam airphoto.jpg",
+     "lon": 4.883,
+     "lat": 52.367,
+     "wiki": "Amsterdam"
+    }
+   ],
+   "capitalAnswer": "Amsterdam"
+  },
+  {
+   "id": "Q664",
+   "name": "New Zealand",
+   "officialName": "New Zealand",
+   "iso2": "NZ",
+   "iso3": "NZL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Australia and New Zealand",
+   "topo": {
+    "id": "554"
+   },
+   "flag": "Flag of New Zealand.svg",
+   "lon": 174,
+   "lat": -41.2,
+   "wiki": "New_Zealand",
+   "capitals": [
+    {
+     "id": "Q23661",
+     "name": "Wellington",
+     "preferred": true,
+     "role": null,
+     "image": "WellingtonPanorama.jpg",
+     "lon": 174.777,
+     "lat": -41.289,
+     "wiki": "Wellington"
+    }
+   ],
+   "capitalAnswer": "Wellington"
+  },
+  {
+   "id": "Q811",
+   "name": "Nicaragua",
+   "officialName": "Nicaragua",
+   "iso2": "NI",
+   "iso3": "NIC",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Central America",
+   "topo": {
+    "id": "558"
+   },
+   "flag": "Flag of Nicaragua.svg",
+   "lon": -85,
+   "lat": 13,
+   "wiki": "Nicaragua",
+   "capitals": [
+    {
+     "id": "Q131546626",
+     "name": "Managua",
+     "preferred": false,
+     "role": null,
+     "image": null,
+     "lon": -86.274,
+     "lat": 12.155,
+     "wiki": null
+    }
+   ],
+   "capitalAnswer": "Managua"
+  },
+  {
+   "id": "Q1032",
+   "name": "Niger",
+   "officialName": "Niger",
+   "iso2": "NE",
+   "iso3": "NER",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "562"
+   },
+   "flag": "Flag of Niger.svg",
+   "lon": 10,
+   "lat": 17,
+   "wiki": "Niger",
+   "capitals": [
+    {
+     "id": "Q3674",
+     "name": "Niamey",
+     "preferred": false,
+     "role": null,
+     "image": "Niamey from grand mosque theatre 2006.jpg",
+     "lon": 2.118,
+     "lat": 13.515,
+     "wiki": "Niamey"
+    }
+   ],
+   "capitalAnswer": "Niamey"
+  },
+  {
+   "id": "Q1033",
+   "name": "Nigeria",
+   "officialName": "Nigeria",
+   "iso2": "NG",
+   "iso3": "NGA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "566"
+   },
+   "flag": "Flag of Nigeria.svg",
+   "lon": 8,
+   "lat": 9,
+   "wiki": "Nigeria",
+   "capitals": [
+    {
+     "id": "Q3787",
+     "name": "Abuja",
+     "preferred": true,
+     "role": null,
+     "image": "The National Assembly Globe.jpg",
+     "lon": 7.491,
+     "lat": 9.056,
+     "wiki": "Abuja"
+    }
+   ],
+   "capitalAnswer": "Abuja"
+  },
+  {
+   "id": "Q423",
+   "name": "North Korea",
+   "officialName": "North Korea",
+   "iso2": "KP",
+   "iso3": "PRK",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Eastern Asia",
+   "topo": {
+    "id": "408"
+   },
+   "flag": "Flag of North Korea.svg",
+   "lon": 127,
+   "lat": 40,
+   "wiki": "North_Korea",
+   "capitals": [
+    {
+     "id": "Q18808",
+     "name": "Pyongyang",
+     "preferred": false,
+     "role": null,
+     "image": "Panoramic view from Juche Tower.jpg",
+     "lon": 125.748,
+     "lat": 39.017,
+     "wiki": "Pyongyang"
+    }
+   ],
+   "capitalAnswer": "Pyongyang"
+  },
+  {
+   "id": "Q221",
+   "name": "North Macedonia",
+   "officialName": "North Macedonia",
+   "iso2": "MK",
+   "iso3": "MKD",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southeast Europe",
+   "topo": {
+    "id": "807"
+   },
+   "flag": "Flag of North Macedonia.svg",
+   "lon": 21.717,
+   "lat": 41.65,
+   "wiki": "North_Macedonia",
+   "capitals": [
+    {
+     "id": "Q384",
+     "name": "Skopje",
+     "preferred": false,
+     "role": null,
+     "image": "Stone Bridge Skopje 4.jpg",
+     "lon": 21.432,
+     "lat": 41.996,
+     "wiki": "Skopje"
+    }
+   ],
+   "capitalAnswer": "Skopje"
+  },
+  {
+   "id": "Q23681",
+   "name": "Northern Cyprus",
+   "officialName": "Northern Cyprus",
+   "iso2": null,
+   "iso3": null,
+   "status": "disputed",
+   "statusNote": "Recognised only by Turkey",
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "name": "N. Cyprus"
+   },
+   "flag": "Flag of the Turkish Republic of Northern Cyprus.svg",
+   "lon": 33.363,
+   "lat": 35.182,
+   "wiki": "Northern_Cyprus",
+   "capitals": [
+    {
+     "id": "Q2762100",
+     "name": "North Nicosia",
+     "preferred": false,
+     "role": null,
+     "image": "Nicosia 01-2017 img22 View from Shacolas Tower.jpg",
+     "lon": 33.364,
+     "lat": 35.19,
+     "wiki": "North_Nicosia"
+    }
+   ],
+   "capitalAnswer": "North Nicosia"
+  },
+  {
+   "id": "Q20",
+   "name": "Norway",
+   "officialName": "Norway",
+   "iso2": "NO",
+   "iso3": "NOR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Northern Europe",
+   "topo": {
+    "id": "578"
+   },
+   "flag": "Flag of Norway.svg",
+   "lon": 10.683,
+   "lat": 59.933,
+   "wiki": "Norway",
+   "capitals": [
+    {
+     "id": "Q585",
+     "name": "Oslo",
+     "preferred": false,
+     "role": null,
+     "image": "Oslo newer montage 2013.png",
+     "lon": 10.739,
+     "lat": 59.913,
+     "wiki": "Oslo"
+    }
+   ],
+   "capitalAnswer": "Oslo"
+  },
+  {
+   "id": "Q842",
+   "name": "Oman",
+   "officialName": "Oman",
+   "iso2": "OM",
+   "iso3": "OMN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "512"
+   },
+   "flag": "Flag of Oman.svg",
+   "lon": 57,
+   "lat": 21,
+   "wiki": "Oman",
+   "capitals": [
+    {
+     "id": "Q3826",
+     "name": "Muscat",
+     "preferred": false,
+     "role": null,
+     "image": "Old city of Maskat.jpg",
+     "lon": 58.592,
+     "lat": 23.614,
+     "wiki": "Muscat"
+    }
+   ],
+   "capitalAnswer": "Muscat"
+  },
+  {
+   "id": "Q843",
+   "name": "Pakistan",
+   "officialName": "Pakistan",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Southern Asia",
+   "topo": {
+    "id": "586"
+   },
+   "flag": "Flag of Pakistan.svg",
+   "lon": 71,
+   "lat": 30,
+   "wiki": "Pakistan",
+   "capitals": [
+    {
+     "id": "Q1362",
+     "name": "Islamabad",
+     "preferred": true,
+     "role": null,
+     "image": "King Faisal Mosque.jpg",
+     "lon": 73.037,
+     "lat": 33.699,
+     "wiki": "Islamabad"
+    }
+   ],
+   "capitalAnswer": "Islamabad"
+  },
+  {
+   "id": "Q695",
+   "name": "Palau",
+   "officialName": "Palau",
+   "iso2": "PW",
+   "iso3": "PLW",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Micronesia",
+   "topo": {
+    "id": "585"
+   },
+   "flag": "Flag of Palau.svg",
+   "lon": 134.55,
+   "lat": 7.467,
+   "wiki": "Palau",
+   "capitals": [
+    {
+     "id": "Q515229",
+     "name": "Ngerulmud",
+     "preferred": true,
+     "role": null,
+     "image": "State of Melekeok.png",
+     "lon": 134.624,
+     "lat": 7.501,
+     "wiki": "Ngerulmud"
+    }
+   ],
+   "capitalAnswer": "Ngerulmud"
+  },
+  {
+   "id": "Q219060",
+   "name": "Palestine",
+   "officialName": "Palestine",
+   "iso2": "PS",
+   "iso3": "PSE",
+   "status": "observer",
+   "statusNote": "UN observer state; recognised by most UN members",
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "275"
+   },
+   "flag": "Flag of Palestine.svg",
+   "lon": 35.25,
+   "lat": 32,
+   "wiki": "Palestine",
+   "capitals": [
+    {
+     "id": "Q212938",
+     "name": "East Jerusalem",
+     "preferred": false,
+     "role": null,
+     "image": "Jerusalem-2013-Aerial-Temple Mount 03.jpg",
+     "lon": 35.234,
+     "lat": 31.783,
+     "wiki": "East_Jerusalem"
+    },
+    {
+     "id": "Q158119",
+     "name": "Ramallah",
+     "preferred": false,
+     "role": null,
+     "image": "Ramallah 2024.jpg",
+     "lon": 35.202,
+     "lat": 31.897,
+     "wiki": "Ramallah"
+    }
+   ],
+   "capitalAnswer": "East Jerusalem (proclaimed capital), with the government based in Ramallah",
+   "capitalNote": null
+  },
+  {
+   "id": "Q804",
+   "name": "Panama",
+   "officialName": "Panama",
+   "iso2": "PA",
+   "iso3": "PAN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Central America",
+   "topo": {
+    "id": "591"
+   },
+   "flag": "Flag of Panama.svg",
+   "lon": -80.367,
+   "lat": 8.617,
+   "wiki": "Panama",
+   "capitals": [
+    {
+     "id": "Q3306",
+     "name": "Panama City",
+     "preferred": false,
+     "role": null,
+     "image": "Panama City Skyline 1.jpg",
+     "lon": -79.535,
+     "lat": 8.971,
+     "wiki": "Panama_City"
+    }
+   ],
+   "capitalAnswer": "Panama City"
+  },
+  {
+   "id": "Q691",
+   "name": "Papua New Guinea",
+   "officialName": "Papua New Guinea",
+   "iso2": "PG",
+   "iso3": "PNG",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Melanesia",
+   "topo": {
+    "id": "598"
+   },
+   "flag": "Flag of Papua New Guinea.svg",
+   "lon": 147,
+   "lat": -6.3,
+   "wiki": "Papua_New_Guinea",
+   "capitals": [
+    {
+     "id": "Q36526",
+     "name": "Port Moresby",
+     "preferred": false,
+     "role": null,
+     "image": "Port Moresby Town2 Mschlauch.jpg",
+     "lon": 147.149,
+     "lat": -9.479,
+     "wiki": "Port_Moresby"
+    }
+   ],
+   "capitalAnswer": "Port Moresby"
+  },
+  {
+   "id": "Q733",
+   "name": "Paraguay",
+   "officialName": "Paraguay",
+   "iso2": "PY",
+   "iso3": "PRY",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "600"
+   },
+   "flag": "Flag of Paraguay.svg",
+   "lon": -58,
+   "lat": -23.5,
+   "wiki": "Paraguay",
+   "capitals": [
+    {
+     "id": "Q2933",
+     "name": "Asunción",
+     "preferred": false,
+     "role": null,
+     "image": "Asunción Paraguay.jpg",
+     "lon": -57.634,
+     "lat": -25.28,
+     "wiki": "Asunción"
+    }
+   ],
+   "capitalAnswer": "Asunción"
+  },
+  {
+   "id": "Q419",
+   "name": "Peru",
+   "officialName": "Peru",
+   "iso2": "PE",
+   "iso3": "PER",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "604"
+   },
+   "flag": "Flag of Peru.svg",
+   "lon": -76,
+   "lat": -9.4,
+   "wiki": "Peru",
+   "capitals": [
+    {
+     "id": "Q2868",
+     "name": "Lima",
+     "preferred": false,
+     "role": null,
+     "image": "Plaza Mayor de Lima-1.jpg",
+     "lon": -77.037,
+     "lat": -12.06,
+     "wiki": "Lima"
+    }
+   ],
+   "capitalAnswer": "Lima"
+  },
+  {
+   "id": "Q928",
+   "name": "Philippines",
+   "officialName": "Philippines",
+   "iso2": "PH",
+   "iso3": "PHL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "608"
+   },
+   "flag": "Flag of the Philippines.svg",
+   "lon": 123,
+   "lat": 12,
+   "wiki": "Philippines",
+   "capitals": [
+    {
+     "id": "Q1461",
+     "name": "Manila",
+     "preferred": false,
+     "role": null,
+     "image": "Big Manila.jpg",
+     "lon": 120.977,
+     "lat": 14.596,
+     "wiki": "Manila"
+    }
+   ],
+   "capitalAnswer": "Manila"
+  },
+  {
+   "id": "Q36",
+   "name": "Poland",
+   "officialName": "Poland",
+   "iso2": "PL",
+   "iso3": "POL",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Central Europe",
+   "topo": {
+    "id": "616"
+   },
+   "flag": "Flag of Poland.svg",
+   "lon": 19,
+   "lat": 52,
+   "wiki": "Poland",
+   "capitals": [
+    {
+     "id": "Q270",
+     "name": "Warsaw",
+     "preferred": true,
+     "role": null,
+     "image": "Castle Square (22346p).jpg",
+     "lon": 21.011,
+     "lat": 52.23,
+     "wiki": "Warsaw"
+    }
+   ],
+   "capitalAnswer": "Warsaw"
+  },
+  {
+   "id": "Q45",
+   "name": "Portugal",
+   "officialName": "Portugal",
+   "iso2": "PT",
+   "iso3": "PRT",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southern Europe",
+   "topo": {
+    "id": "620"
+   },
+   "flag": "Flag of Portugal (official).svg",
+   "lon": -9.183,
+   "lat": 38.7,
+   "wiki": "Portugal",
+   "capitals": [
+    {
+     "id": "Q597",
+     "name": "Lisbon",
+     "preferred": true,
+     "role": null,
+     "image": "Lisboa837.png",
+     "lon": -9.139,
+     "lat": 38.708,
+     "wiki": "Lisbon"
+    }
+   ],
+   "capitalAnswer": "Lisbon"
+  },
+  {
+   "id": "Q846",
+   "name": "Qatar",
+   "officialName": "Qatar",
+   "iso2": "QA",
+   "iso3": "QAT",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "634"
+   },
+   "flag": "Flag of Qatar.svg",
+   "lon": 51.213,
+   "lat": 25.27,
+   "wiki": "Qatar",
+   "capitals": [
+    {
+     "id": "Q3861",
+     "name": "Doha",
+     "preferred": false,
+     "role": null,
+     "image": "Doha skyline in the morning (12544910974).jpg",
+     "lon": 51.529,
+     "lat": 25.286,
+     "wiki": "Doha"
+    }
+   ],
+   "capitalAnswer": "Doha"
+  },
+  {
+   "id": "Q971",
+   "name": "Republic of the Congo",
+   "officialName": "Republic of the Congo",
+   "iso2": "CG",
+   "iso3": "COG",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Middle Africa",
+   "topo": {
+    "id": "178"
+   },
+   "flag": "Flag of the Republic of the Congo.svg",
+   "lon": 15.383,
+   "lat": -0.75,
+   "wiki": "Republic_of_the_Congo",
+   "capitals": [
+    {
+     "id": "Q3844",
+     "name": "Brazzaville",
+     "preferred": false,
+     "role": null,
+     "image": "Brazzaville (50637).jpg",
+     "lon": 15.271,
+     "lat": -4.269,
+     "wiki": "Brazzaville"
+    }
+   ],
+   "capitalAnswer": "Brazzaville"
+  },
+  {
+   "id": "Q218",
+   "name": "Romania",
+   "officialName": "Romania",
+   "iso2": "RO",
+   "iso3": "ROU",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southeast Europe",
+   "topo": {
+    "id": "642"
+   },
+   "flag": "Flag of Romania.svg",
+   "lon": 25,
+   "lat": 46,
+   "wiki": "Romania",
+   "capitals": [
+    {
+     "id": "Q19660",
+     "name": "Bucharest",
+     "preferred": false,
+     "role": null,
+     "image": "Bucharest-Skyline-01.jpg",
+     "lon": 26.098,
+     "lat": 44.413,
+     "wiki": "Bucharest"
+    }
+   ],
+   "capitalAnswer": "Bucharest"
+  },
+  {
+   "id": "Q159",
+   "name": "Russia",
+   "officialName": "Russia",
+   "iso2": "RU",
+   "iso3": "RUS",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Eastern Europe",
+   "topo": {
+    "id": "643"
+   },
+   "flag": "Flag of Russia.svg",
+   "lon": 94.25,
+   "lat": 66.417,
+   "wiki": "Russia",
+   "capitals": [
+    {
+     "id": "Q649",
+     "name": "Moscow",
+     "preferred": false,
+     "role": null,
+     "image": "Saint Basil's Cathedral and the Red Square.jpg",
+     "lon": 37.617,
+     "lat": 55.751,
+     "wiki": "Moscow"
+    }
+   ],
+   "capitalAnswer": "Moscow"
+  },
+  {
+   "id": "Q1037",
+   "name": "Rwanda",
+   "officialName": "Rwanda",
+   "iso2": "RW",
+   "iso3": "RWA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "646"
+   },
+   "flag": "Flag of Rwanda.svg",
+   "lon": 30,
+   "lat": -2,
+   "wiki": "Rwanda",
+   "capitals": [
+    {
+     "id": "Q3859",
+     "name": "Kigali",
+     "preferred": false,
+     "role": null,
+     "image": "Kigali2018Cropped.jpg",
+     "lon": 30.115,
+     "lat": -1.952,
+     "wiki": "Kigali"
+    }
+   ],
+   "capitalAnswer": "Kigali"
+  },
+  {
+   "id": "Q40362",
+   "name": "Sahrawi Republic (Western Sahara)",
+   "officialName": "Sahrawi Arab Democratic Republic",
+   "iso2": null,
+   "iso3": null,
+   "status": "disputed",
+   "statusNote": "Claims Western Sahara, most of which is controlled by Morocco",
+   "region": "Africa",
+   "subregion": "Northern Africa",
+   "topo": {
+    "name": "W. Sahara"
+   },
+   "flag": "Flag of the Sahrawi Arab Democratic Republic.svg",
+   "lon": -13,
+   "lat": 25,
+   "wiki": "Sahrawi_Arab_Democratic_Republic",
+   "capitals": [
+    {
+     "id": "Q47837",
+     "name": "Laayoune",
+     "preferred": false,
+     "role": null,
+     "image": "El Aaiún-Laâyoune Collage.png",
+     "lon": -13.2,
+     "lat": 27.15,
+     "wiki": "Laayoune"
+    },
+    {
+     "id": "Q2360337",
+     "name": "Tifariti",
+     "preferred": false,
+     "role": "temporary capital",
+     "image": "Tifariti 2005.jpg",
+     "lon": -10.567,
+     "lat": 26.158,
+     "wiki": "Tifariti"
+    }
+   ],
+   "capitalAnswer": "Laayoune (claimed capital), with Tifariti as the temporary capital",
+   "capitalNote": null
+  },
+  {
+   "id": "Q763",
+   "name": "Saint Kitts and Nevis",
+   "officialName": "Saint Kitts and Nevis",
+   "iso2": "KN",
+   "iso3": "KNA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "659"
+   },
+   "flag": "Flag of Saint Kitts and Nevis.svg",
+   "lon": -62.667,
+   "lat": 17.272,
+   "wiki": "Saint_Kitts_and_Nevis",
+   "capitals": [
+    {
+     "id": "Q41295",
+     "name": "Basseterre",
+     "preferred": false,
+     "role": null,
+     "image": "Basseterre.jpeg",
+     "lon": -62.734,
+     "lat": 17.298,
+     "wiki": "Basseterre"
+    }
+   ],
+   "capitalAnswer": "Basseterre"
+  },
+  {
+   "id": "Q760",
+   "name": "Saint Lucia",
+   "officialName": "Saint Lucia",
+   "iso2": "LC",
+   "iso3": "LCA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "662"
+   },
+   "flag": "Flag of Saint Lucia.svg",
+   "lon": -60.967,
+   "lat": 13.883,
+   "wiki": "Saint_Lucia",
+   "capitals": [
+    {
+     "id": "Q41699",
+     "name": "Castries",
+     "preferred": false,
+     "role": null,
+     "image": "CastriesStLucia.JPG",
+     "lon": -60.989,
+     "lat": 14.011,
+     "wiki": "Castries"
+    }
+   ],
+   "capitalAnswer": "Castries"
+  },
+  {
+   "id": "Q757",
+   "name": "Saint Vincent and the Grenadines",
+   "officialName": "Saint Vincent and the Grenadines",
+   "iso2": "VC",
+   "iso3": "VCT",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "670"
+   },
+   "flag": "Flag of Saint Vincent and the Grenadines.svg",
+   "lon": -61.2,
+   "lat": 13.25,
+   "wiki": "Saint_Vincent_and_the_Grenadines",
+   "capitals": [
+    {
+     "id": "Q41474",
+     "name": "Kingstown",
+     "preferred": false,
+     "role": null,
+     "image": "St. Vincent, Karibik - Kingstown City - panoramio.jpg",
+     "lon": -61.227,
+     "lat": 13.155,
+     "wiki": "Kingstown"
+    }
+   ],
+   "capitalAnswer": "Kingstown"
+  },
+  {
+   "id": "Q683",
+   "name": "Samoa",
+   "officialName": "Samoa",
+   "iso2": "WS",
+   "iso3": "WSM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Polynesia",
+   "topo": {
+    "id": "882"
+   },
+   "flag": "Flag of Samoa.svg",
+   "lon": -172.218,
+   "lat": -13.745,
+   "wiki": "Samoa",
+   "capitals": [
+    {
+     "id": "Q36260",
+     "name": "Apia",
+     "preferred": false,
+     "role": null,
+     "image": "Samoa - Apia Govt buildings.jpg",
+     "lon": -171.833,
+     "lat": -13.833,
+     "wiki": "Apia"
+    }
+   ],
+   "capitalAnswer": "Apia"
+  },
+  {
+   "id": "Q238",
+   "name": "San Marino",
+   "officialName": "San Marino",
+   "iso2": "SM",
+   "iso3": "SMR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southern Europe",
+   "topo": {
+    "id": "674"
+   },
+   "flag": "Flag of San Marino.svg",
+   "lon": 12.467,
+   "lat": 43.933,
+   "wiki": "San_Marino",
+   "capitals": [
+    {
+     "id": "Q1848",
+     "name": "San Marino",
+     "preferred": false,
+     "role": null,
+     "image": "View of Mount Titano - San Marino.jpg",
+     "lon": 12.448,
+     "lat": 43.932,
+     "wiki": "City_of_San_Marino"
+    }
+   ],
+   "capitalAnswer": "San Marino"
+  },
+  {
+   "id": "Q1039",
+   "name": "São Tomé and Príncipe",
+   "officialName": "São Tomé and Príncipe",
+   "iso2": "ST",
+   "iso3": "STP",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Middle Africa",
+   "topo": {
+    "id": "678"
+   },
+   "flag": "Flag of São Tomé and Príncipe.svg",
+   "lon": 6.6,
+   "lat": 0.317,
+   "wiki": "São_Tomé_and_Príncipe",
+   "capitals": [
+    {
+     "id": "Q3932",
+     "name": "São Tomé",
+     "preferred": false,
+     "role": null,
+     "image": "Org 4cd8129a56d8fa1d 1582100284000.jpg",
+     "lon": 6.728,
+     "lat": 0.338,
+     "wiki": "São_Tomé"
+    }
+   ],
+   "capitalAnswer": "São Tomé"
+  },
+  {
+   "id": "Q851",
+   "name": "Saudi Arabia",
+   "officialName": "Saudi Arabia",
+   "iso2": "SA",
+   "iso3": "SAU",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "682"
+   },
+   "flag": "Flag of Saudi Arabia.svg",
+   "lon": 44.117,
+   "lat": 23.717,
+   "wiki": "Saudi_Arabia",
+   "capitals": [
+    {
+     "id": "Q3692",
+     "name": "Riyadh",
+     "preferred": true,
+     "role": null,
+     "image": "Riyadh Skyline.jpg",
+     "lon": 46.715,
+     "lat": 24.638,
+     "wiki": "Riyadh"
+    }
+   ],
+   "capitalAnswer": "Riyadh"
+  },
+  {
+   "id": "Q1041",
+   "name": "Senegal",
+   "officialName": "Senegal",
+   "iso2": "SN",
+   "iso3": "SEN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "686"
+   },
+   "flag": "Flag of Senegal.svg",
+   "lon": -14.283,
+   "lat": 14.367,
+   "wiki": "Senegal",
+   "capitals": [
+    {
+     "id": "Q3718",
+     "name": "Dakar",
+     "preferred": false,
+     "role": null,
+     "image": "Pointe des Almadies - Senegal.jpg",
+     "lon": -17.432,
+     "lat": 14.673,
+     "wiki": "Dakar"
+    }
+   ],
+   "capitalAnswer": "Dakar"
+  },
+  {
+   "id": "Q403",
+   "name": "Serbia",
+   "officialName": "Serbia",
+   "iso2": "RS",
+   "iso3": "SRB",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southeast Europe",
+   "topo": {
+    "id": "688"
+   },
+   "flag": "Flag of Serbia.svg",
+   "lon": 20.933,
+   "lat": 43.95,
+   "wiki": "Serbia",
+   "capitals": [
+    {
+     "id": "Q3711",
+     "name": "Belgrade",
+     "preferred": false,
+     "role": null,
+     "image": "Beograd collage.jpg",
+     "lon": 20.457,
+     "lat": 44.818,
+     "wiki": "Belgrade"
+    }
+   ],
+   "capitalAnswer": "Belgrade"
+  },
+  {
+   "id": "Q1042",
+   "name": "Seychelles",
+   "officialName": "Seychelles",
+   "iso2": "SC",
+   "iso3": "SYC",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "690"
+   },
+   "flag": "Flag of Seychelles.svg",
+   "lon": 52.767,
+   "lat": -7.1,
+   "wiki": "Seychelles",
+   "capitals": [
+    {
+     "id": "Q3940",
+     "name": "Victoria",
+     "preferred": false,
+     "role": null,
+     "image": "Victoria view from Bel Eau asv2024-09 img3.jpg",
+     "lon": 55.454,
+     "lat": -4.624,
+     "wiki": "Victoria,_Seychelles"
+    }
+   ],
+   "capitalAnswer": "Victoria"
+  },
+  {
+   "id": "Q1044",
+   "name": "Sierra Leone",
+   "officialName": "Sierra Leone",
+   "iso2": "SL",
+   "iso3": "SLE",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "694"
+   },
+   "flag": "Flag of Sierra Leone.svg",
+   "lon": -12.1,
+   "lat": 8.5,
+   "wiki": "Sierra_Leone",
+   "capitals": [
+    {
+     "id": "Q3780",
+     "name": "Freetown",
+     "preferred": false,
+     "role": null,
+     "image": "Freetown-aerialview.jpg",
+     "lon": -13.236,
+     "lat": 8.487,
+     "wiki": "Freetown"
+    }
+   ],
+   "capitalAnswer": "Freetown"
+  },
+  {
+   "id": "Q334",
+   "name": "Singapore",
+   "officialName": "Singapore",
+   "iso2": "SG",
+   "iso3": "SGP",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "702"
+   },
+   "flag": "Flag of Singapore.svg",
+   "lon": 103.8,
+   "lat": 1.3,
+   "wiki": "Singapore",
+   "capitals": [
+    {
+     "id": "Q334",
+     "name": "Singapore",
+     "preferred": false,
+     "role": null,
+     "image": "Raffles Place.jpg",
+     "lon": 103.8,
+     "lat": 1.3,
+     "wiki": "Singapore"
+    }
+   ],
+   "capitalAnswer": "Singapore"
+  },
+  {
+   "id": "Q214",
+   "name": "Slovakia",
+   "officialName": "Slovakia",
+   "iso2": "SK",
+   "iso3": "SVK",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Central Europe",
+   "topo": {
+    "id": "703"
+   },
+   "flag": "Flag of Slovakia.svg",
+   "lon": 19.7,
+   "lat": 48.7,
+   "wiki": "Slovakia",
+   "capitals": [
+    {
+     "id": "Q1780",
+     "name": "Bratislava",
+     "preferred": false,
+     "role": null,
+     "image": "Hlavné Namestie (35096533142).jpg",
+     "lon": 17.109,
+     "lat": 48.152,
+     "wiki": "Bratislava"
+    }
+   ],
+   "capitalAnswer": "Bratislava"
+  },
+  {
+   "id": "Q215",
+   "name": "Slovenia",
+   "officialName": "Slovenia",
+   "iso2": "SI",
+   "iso3": "SVN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Central Europe",
+   "topo": {
+    "id": "705"
+   },
+   "flag": "Flag of Slovenia.svg",
+   "lon": 15,
+   "lat": 46,
+   "wiki": "Slovenia",
+   "capitals": [
+    {
+     "id": "Q437",
+     "name": "Ljubljana",
+     "preferred": false,
+     "role": null,
+     "image": "2021-07-28 Ljubljana-0881.jpg",
+     "lon": 14.506,
+     "lat": 46.051,
+     "wiki": "Ljubljana"
+    }
+   ],
+   "capitalAnswer": "Ljubljana"
+  },
+  {
+   "id": "Q685",
+   "name": "Solomon Islands",
+   "officialName": "Solomon Islands",
+   "iso2": "SB",
+   "iso3": "SLB",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Melanesia",
+   "topo": {
+    "id": "090"
+   },
+   "flag": "Flag of the Solomon Islands.svg",
+   "lon": 159.817,
+   "lat": -9.467,
+   "wiki": "Solomon_Islands",
+   "capitals": [
+    {
+     "id": "Q40921",
+     "name": "Honiara",
+     "preferred": false,
+     "role": null,
+     "image": "Honiara aerial crop.jpg",
+     "lon": 159.95,
+     "lat": -9.433,
+     "wiki": "Honiara"
+    }
+   ],
+   "capitalAnswer": "Honiara"
+  },
+  {
+   "id": "Q1045",
+   "name": "Somalia",
+   "officialName": "Somalia",
+   "iso2": "SO",
+   "iso3": "SOM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "706"
+   },
+   "flag": "Flag of Somalia.svg",
+   "lon": 47,
+   "lat": 6,
+   "wiki": "Somalia",
+   "capitals": [
+    {
+     "id": "Q2449",
+     "name": "Mogadishu",
+     "preferred": false,
+     "role": null,
+     "image": "Pictures from an armed convoy trip in Mogadishu.jpg",
+     "lon": 45.342,
+     "lat": 2.039,
+     "wiki": "Mogadishu"
+    }
+   ],
+   "capitalAnswer": "Mogadishu"
+  },
+  {
+   "id": "Q34754",
+   "name": "Somaliland",
+   "officialName": "Somaliland",
+   "iso2": null,
+   "iso3": null,
+   "status": "disputed",
+   "statusNote": "Self-declared state, internationally considered part of Somalia",
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "name": "Somaliland"
+   },
+   "flag": "Flag of Somaliland.svg",
+   "lon": 46.2,
+   "lat": 9.8,
+   "wiki": "Somaliland",
+   "capitals": [
+    {
+     "id": "Q168652",
+     "name": "Hargeisa",
+     "preferred": false,
+     "role": null,
+     "image": "HargeisaDrone.jpg",
+     "lon": 44.061,
+     "lat": 9.566,
+     "wiki": "Hargeisa"
+    }
+   ],
+   "capitalAnswer": "Hargeisa"
+  },
+  {
+   "id": "Q258",
+   "name": "South Africa",
+   "officialName": "South Africa",
+   "iso2": "ZA",
+   "iso3": "ZAF",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Southern Africa",
+   "topo": {
+    "id": "710"
+   },
+   "flag": "Flag of South Africa.svg",
+   "lon": 24,
+   "lat": -29,
+   "wiki": "South_Africa",
+   "capitals": [
+    {
+     "id": "Q37701",
+     "name": "Bloemfontein",
+     "preferred": false,
+     "role": null,
+     "image": "Bloemfontein, Free State, South Africa (20351086709).jpg",
+     "lon": 26.217,
+     "lat": -29.1,
+     "wiki": "Bloemfontein"
+    },
+    {
+     "id": "Q5465",
+     "name": "Cape Town",
+     "preferred": false,
+     "role": null,
+     "image": "Ciudad del Cabo desde Cabeza de León, Sudáfrica, 2018-07-22, DD 34.jpg",
+     "lon": 18.424,
+     "lat": -33.925,
+     "wiki": "Cape_Town"
+    },
+    {
+     "id": "Q3926",
+     "name": "Pretoria",
+     "preferred": false,
+     "role": null,
+     "image": "Pretoria CBD1.jpg",
+     "lon": 28.188,
+     "lat": -25.746,
+     "wiki": "Pretoria"
+    }
+   ],
+   "capitalAnswer": "split three ways: Pretoria (executive), Cape Town (legislative) and Bloemfontein (judicial)",
+   "capitalNote": null
+  },
+  {
+   "id": "Q884",
+   "name": "South Korea",
+   "officialName": "South Korea",
+   "iso2": "KR",
+   "iso3": "KOR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Eastern Asia",
+   "topo": {
+    "id": "410"
+   },
+   "flag": "Flag of South Korea.svg",
+   "lon": 128,
+   "lat": 36,
+   "wiki": "South_Korea",
+   "capitals": [
+    {
+     "id": "Q8684",
+     "name": "Seoul",
+     "preferred": false,
+     "role": null,
+     "image": "덕수궁의 가을.jpg",
+     "lon": 126.99,
+     "lat": 37.56,
+     "wiki": "Seoul"
+    }
+   ],
+   "capitalAnswer": "Seoul"
+  },
+  {
+   "id": "Q23427",
+   "name": "South Ossetia",
+   "officialName": "South Ossetia",
+   "iso2": null,
+   "iso3": null,
+   "status": "disputed",
+   "statusNote": "Breakaway region of Georgia, recognised by Russia and a few others",
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": null,
+   "flag": "Flag of South Ossetia.svg",
+   "lon": 43.97,
+   "lat": 42.225,
+   "wiki": "South_Ossetia",
+   "capitals": [
+    {
+     "id": "Q79863",
+     "name": "Tskhinvali",
+     "preferred": false,
+     "role": null,
+     "image": "Г. Цхинвал.jpg",
+     "lon": 43.97,
+     "lat": 42.226,
+     "wiki": "Tskhinvali"
+    }
+   ],
+   "capitalAnswer": "Tskhinvali"
+  },
+  {
+   "id": "Q958",
+   "name": "South Sudan",
+   "officialName": "South Sudan",
+   "iso2": "SS",
+   "iso3": "SSD",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Middle Africa",
+   "topo": {
+    "id": "728"
+   },
+   "flag": "Flag of South Sudan.svg",
+   "lon": 30,
+   "lat": 7,
+   "wiki": "South_Sudan",
+   "capitals": [
+    {
+     "id": "Q1947",
+     "name": "Juba",
+     "preferred": false,
+     "role": null,
+     "image": "Juba City.jpg",
+     "lon": 31.582,
+     "lat": 4.854,
+     "wiki": "Juba"
+    }
+   ],
+   "capitalAnswer": "Juba"
+  },
+  {
+   "id": "Q29",
+   "name": "Spain",
+   "officialName": "Spain",
+   "iso2": "ES",
+   "iso3": "ESP",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Southern Europe",
+   "topo": {
+    "id": "724"
+   },
+   "flag": "Flag of Spain.svg",
+   "lon": -3.5,
+   "lat": 40.2,
+   "wiki": "Spain",
+   "capitals": [
+    {
+     "id": "Q2807",
+     "name": "Madrid",
+     "preferred": true,
+     "role": null,
+     "image": "Madrid (38624991251).jpg",
+     "lon": -3.703,
+     "lat": 40.417,
+     "wiki": "Madrid"
+    }
+   ],
+   "capitalAnswer": "Madrid"
+  },
+  {
+   "id": "Q854",
+   "name": "Sri Lanka",
+   "officialName": "Sri Lanka",
+   "iso2": "LK",
+   "iso3": "LKA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Southern Asia",
+   "topo": {
+    "id": "144"
+   },
+   "flag": "Flag of Sri Lanka.svg",
+   "lon": 81,
+   "lat": 7,
+   "wiki": "Sri_Lanka",
+   "capitals": [
+    {
+     "id": "Q35381",
+     "name": "Colombo",
+     "preferred": false,
+     "role": null,
+     "image": "Colombo skyline 2024.jpg",
+     "lon": 79.861,
+     "lat": 6.927,
+     "wiki": "Colombo"
+    },
+    {
+     "id": "Q41963",
+     "name": "Sri Jayawardenepura Kotte",
+     "preferred": false,
+     "role": null,
+     "image": "Fountain at Diyatha Uyana.JPG",
+     "lon": 79.916,
+     "lat": 6.9,
+     "wiki": "Sri_Jayawardenepura_Kotte"
+    }
+   ],
+   "capitalAnswer": "Sri Jayawardenepura Kotte (legislative capital), with Colombo as the executive and commercial capital",
+   "capitalNote": null
+  },
+  {
+   "id": "Q1049",
+   "name": "Sudan",
+   "officialName": "Sudan",
+   "iso2": "SD",
+   "iso3": "SDN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Northern Africa",
+   "topo": {
+    "id": "729"
+   },
+   "flag": "Flag of Sudan.svg",
+   "lon": 32,
+   "lat": 15,
+   "wiki": "Sudan",
+   "capitals": [
+    {
+     "id": "Q1963",
+     "name": "Khartoum",
+     "preferred": false,
+     "role": null,
+     "image": "Elmek Nimir Bridge.jpg",
+     "lon": 32.527,
+     "lat": 15.603,
+     "wiki": "Khartoum"
+    }
+   ],
+   "capitalAnswer": "Khartoum"
+  },
+  {
+   "id": "Q730",
+   "name": "Suriname",
+   "officialName": "Suriname",
+   "iso2": "SR",
+   "iso3": "SUR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "740"
+   },
+   "flag": "Flag of Suriname.svg",
+   "lon": -56,
+   "lat": 4,
+   "wiki": "Suriname",
+   "capitals": [
+    {
+     "id": "Q3001",
+     "name": "Paramaribo",
+     "preferred": false,
+     "role": null,
+     "image": "Waterkant Paramaribo with the Unesco Heritage Buildings.jpg",
+     "lon": -55.167,
+     "lat": 5.867,
+     "wiki": "Paramaribo"
+    }
+   ],
+   "capitalAnswer": "Paramaribo"
+  },
+  {
+   "id": "Q34",
+   "name": "Sweden",
+   "officialName": "Sweden",
+   "iso2": "SE",
+   "iso3": "SWE",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Northern Europe",
+   "topo": {
+    "id": "752"
+   },
+   "flag": "Flag of Sweden.svg",
+   "lon": 15,
+   "lat": 61,
+   "wiki": "Sweden",
+   "capitals": [
+    {
+     "id": "Q1754",
+     "name": "Stockholm",
+     "preferred": false,
+     "role": null,
+     "image": "Stockholm gamlastan etc.jpg",
+     "lon": 18.069,
+     "lat": 59.329,
+     "wiki": "Stockholm"
+    }
+   ],
+   "capitalAnswer": "Stockholm"
+  },
+  {
+   "id": "Q39",
+   "name": "Switzerland",
+   "officialName": "Switzerland",
+   "iso2": "CH",
+   "iso3": "CHE",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Western Europe",
+   "topo": {
+    "id": "756"
+   },
+   "flag": "Flag of Switzerland.svg",
+   "lon": 8.232,
+   "lat": 46.799,
+   "wiki": "Switzerland",
+   "capitals": [
+    {
+     "id": "Q70",
+     "name": "Bern",
+     "preferred": true,
+     "role": null,
+     "image": "Bern luftaufnahme.png",
+     "lon": 7.447,
+     "lat": 46.948,
+     "wiki": "Bern"
+    }
+   ],
+   "capitalAnswer": "Bern"
+  },
+  {
+   "id": "Q858",
+   "name": "Syria",
+   "officialName": "Syria",
+   "iso2": "SY",
+   "iso3": "SYR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "760"
+   },
+   "flag": "Flag of Syria (2025-).svg",
+   "lon": 38.583,
+   "lat": 35.217,
+   "wiki": "Syria",
+   "capitals": [
+    {
+     "id": "Q3766",
+     "name": "Damascus",
+     "preferred": false,
+     "role": null,
+     "image": "Damascus coll.jpg",
+     "lon": 36.292,
+     "lat": 33.513,
+     "wiki": "Damascus"
+    }
+   ],
+   "capitalAnswer": "Damascus"
+  },
+  {
+   "id": "Q865",
+   "name": "Taiwan",
+   "officialName": "Taiwan",
+   "iso2": "TW",
+   "iso3": "TWN",
+   "status": "disputed",
+   "statusNote": "Governs itself; claimed by the People's Republic of China",
+   "region": "Asia",
+   "subregion": "Eastern Asia",
+   "topo": {
+    "id": "158"
+   },
+   "flag": "Flag of the Republic of China.svg",
+   "lon": 121,
+   "lat": 24,
+   "wiki": "Taiwan",
+   "capitals": [
+    {
+     "id": "Q1867",
+     "name": "Taipei",
+     "preferred": true,
+     "role": null,
+     "image": "20260204 Taipei, Taiwan Skyline.jpg",
+     "lon": 121.563,
+     "lat": 25.038,
+     "wiki": "Taipei"
+    }
+   ],
+   "capitalAnswer": "Taipei"
+  },
+  {
+   "id": "Q863",
+   "name": "Tajikistan",
+   "officialName": "Tajikistan",
+   "iso2": "TJ",
+   "iso3": "TJK",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Central Asia",
+   "topo": {
+    "id": "762"
+   },
+   "flag": "Flag of Tajikistan.svg",
+   "lon": 71.367,
+   "lat": 38.583,
+   "wiki": "Tajikistan",
+   "capitals": [
+    {
+     "id": "Q9365",
+     "name": "Dushanbe",
+     "preferred": false,
+     "role": null,
+     "image": "Tehron Street Dushanbe.jpg",
+     "lon": 68.786,
+     "lat": 38.573,
+     "wiki": "Dushanbe"
+    }
+   ],
+   "capitalAnswer": "Dushanbe"
+  },
+  {
+   "id": "Q924",
+   "name": "Tanzania",
+   "officialName": "Tanzania",
+   "iso2": "TZ",
+   "iso3": "TZA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "834"
+   },
+   "flag": "Flag of Tanzania.svg",
+   "lon": 34.854,
+   "lat": -6.307,
+   "wiki": "Tanzania",
+   "capitals": [
+    {
+     "id": "Q3866",
+     "name": "Dodoma",
+     "preferred": true,
+     "role": null,
+     "image": "Scene at Nyerere Square, Dodoma City.jpg",
+     "lon": 35.746,
+     "lat": -6.184,
+     "wiki": "Dodoma"
+    }
+   ],
+   "capitalAnswer": "Dodoma"
+  },
+  {
+   "id": "Q869",
+   "name": "Thailand",
+   "officialName": "Thailand",
+   "iso2": "TH",
+   "iso3": "THA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "764"
+   },
+   "flag": "Flag of Thailand.svg",
+   "lon": 101,
+   "lat": 14,
+   "wiki": "Thailand",
+   "capitals": [
+    {
+     "id": "Q1861",
+     "name": "Bangkok",
+     "preferred": false,
+     "role": null,
+     "image": "Temple of the Emerald of buddha or Wat Phra Kaew (cropped).jpg",
+     "lon": 100.517,
+     "lat": 13.75,
+     "wiki": "Bangkok"
+    }
+   ],
+   "capitalAnswer": "Bangkok"
+  },
+  {
+   "id": "Q574",
+   "name": "Timor-Leste",
+   "officialName": "Timor-Leste",
+   "iso2": "TL",
+   "iso3": "TLS",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "626"
+   },
+   "flag": "Flag of East Timor.svg",
+   "lon": 125.75,
+   "lat": -8.967,
+   "wiki": "Timor-Leste",
+   "capitals": [
+    {
+     "id": "Q9310",
+     "name": "Dili",
+     "preferred": false,
+     "role": null,
+     "image": "Aussenministerium und Avenida de Portugal.jpg",
+     "lon": 125.578,
+     "lat": -8.554,
+     "wiki": "Dili"
+    }
+   ],
+   "capitalAnswer": "Dili"
+  },
+  {
+   "id": "Q945",
+   "name": "Togo",
+   "officialName": "Togo",
+   "iso2": "TG",
+   "iso3": "TGO",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Western Africa",
+   "topo": {
+    "id": "768"
+   },
+   "flag": "Flag of Togo (3-2).svg",
+   "lon": 1.183,
+   "lat": 8.25,
+   "wiki": "Togo",
+   "capitals": [
+    {
+     "id": "Q3792",
+     "name": "Lomé",
+     "preferred": false,
+     "role": null,
+     "image": "Monuments de l'indépendance et Palais des congrès de Lomé.jpg",
+     "lon": 1.216,
+     "lat": 6.13,
+     "wiki": "Lomé"
+    }
+   ],
+   "capitalAnswer": "Lomé"
+  },
+  {
+   "id": "Q678",
+   "name": "Tonga",
+   "officialName": "Tonga",
+   "iso2": "TO",
+   "iso3": "TON",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Polynesia",
+   "topo": {
+    "id": "776"
+   },
+   "flag": "Flag of Tonga.svg",
+   "lon": -174.81,
+   "lat": -20.588,
+   "wiki": "Tonga",
+   "capitals": [
+    {
+     "id": "Q38834",
+     "name": "Nukuʻalofa",
+     "preferred": false,
+     "role": null,
+     "image": "Royal Palace, Nuku'alofa, Nov 18.jpg",
+     "lon": -175.202,
+     "lat": -21.134,
+     "wiki": "Nukuʻalofa"
+    }
+   ],
+   "capitalAnswer": "Nukuʻalofa"
+  },
+  {
+   "id": "Q907112",
+   "name": "Transnistria",
+   "officialName": "Transnistria",
+   "iso2": null,
+   "iso3": null,
+   "status": "disputed",
+   "statusNote": "Breakaway region of Moldova, unrecognised",
+   "region": "Europe",
+   "subregion": "Eastern Europe",
+   "topo": null,
+   "flag": "Flag of Transnistria (state).svg",
+   "lon": 29.25,
+   "lat": 47.3,
+   "wiki": "Transnistria",
+   "capitals": [
+    {
+     "id": "Q132572",
+     "name": "Tiraspol",
+     "preferred": false,
+     "role": null,
+     "image": "Площадь Суворова после парада.jpg",
+     "lon": 29.633,
+     "lat": 46.85,
+     "wiki": "Tiraspol"
+    }
+   ],
+   "capitalAnswer": "Tiraspol"
+  },
+  {
+   "id": "Q754",
+   "name": "Trinidad and Tobago",
+   "officialName": "Trinidad and Tobago",
+   "iso2": "TT",
+   "iso3": "TTO",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "Caribbean",
+   "topo": {
+    "id": "780"
+   },
+   "flag": "Flag of Trinidad and Tobago.svg",
+   "lon": -61.517,
+   "lat": 10.667,
+   "wiki": "Trinidad_and_Tobago",
+   "capitals": [
+    {
+     "id": "Q39178",
+     "name": "Port of Spain",
+     "preferred": false,
+     "role": null,
+     "image": "POS SKYLINE 2024 BEAUTIFUL EVAN-P 2024 10-8.jpg",
+     "lon": -61.517,
+     "lat": 10.667,
+     "wiki": "Port_of_Spain"
+    }
+   ],
+   "capitalAnswer": "Port of Spain"
+  },
+  {
+   "id": "Q948",
+   "name": "Tunisia",
+   "officialName": "Tunisia",
+   "iso2": "TN",
+   "iso3": "TUN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Northern Africa",
+   "topo": {
+    "id": "788"
+   },
+   "flag": "Flag of Tunisia.svg",
+   "lon": 10,
+   "lat": 34,
+   "wiki": "Tunisia",
+   "capitals": [
+    {
+     "id": "Q3572",
+     "name": "Tunis",
+     "preferred": false,
+     "role": null,
+     "image": "Panoramique du centre de Tunis (3197369985) (cropped).jpg",
+     "lon": 10.18,
+     "lat": 36.801,
+     "wiki": "Tunis"
+    }
+   ],
+   "capitalAnswer": "Tunis"
+  },
+  {
+   "id": "Q43",
+   "name": "Türkiye",
+   "officialName": "Turkey",
+   "iso2": "TR",
+   "iso3": "TUR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "792"
+   },
+   "flag": "Flag of Turkey.svg",
+   "lon": 36,
+   "lat": 39,
+   "wiki": "Turkey",
+   "capitals": [
+    {
+     "id": "Q3640",
+     "name": "Ankara",
+     "preferred": false,
+     "role": null,
+     "image": "Ankara (16290014657).jpg",
+     "lon": 32.839,
+     "lat": 39.936,
+     "wiki": "Ankara"
+    }
+   ],
+   "capitalAnswer": "Ankara"
+  },
+  {
+   "id": "Q874",
+   "name": "Turkmenistan",
+   "officialName": "Turkmenistan",
+   "iso2": "TM",
+   "iso3": "TKM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Central Asia",
+   "topo": {
+    "id": "795"
+   },
+   "flag": "Flag of Turkmenistan.svg",
+   "lon": 60,
+   "lat": 39,
+   "wiki": "Turkmenistan",
+   "capitals": [
+    {
+     "id": "Q23438",
+     "name": "Ashgabat",
+     "preferred": false,
+     "role": null,
+     "image": "Neutrality-Road-Ashgabat-2015.JPG",
+     "lon": 58.383,
+     "lat": 37.95,
+     "wiki": "Ashgabat"
+    }
+   ],
+   "capitalAnswer": "Ashgabat"
+  },
+  {
+   "id": "Q672",
+   "name": "Tuvalu",
+   "officialName": "Tuvalu",
+   "iso2": "TV",
+   "iso3": "TUV",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Polynesia",
+   "topo": null,
+   "flag": "Flag of Tuvalu.svg",
+   "lon": 178.006,
+   "lat": -7.475,
+   "wiki": "Tuvalu",
+   "capitals": [
+    {
+     "id": "Q34126",
+     "name": "Funafuti",
+     "preferred": false,
+     "role": null,
+     "image": "Funafuti township.jpg",
+     "lon": 179.117,
+     "lat": -8.505,
+     "wiki": "Funafuti"
+    }
+   ],
+   "capitalAnswer": "Funafuti"
+  },
+  {
+   "id": "Q1036",
+   "name": "Uganda",
+   "officialName": "Uganda",
+   "iso2": "UG",
+   "iso3": "UGA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "800"
+   },
+   "flag": "Flag of Uganda.svg",
+   "lon": 32.39,
+   "lat": 1.28,
+   "wiki": "Uganda",
+   "capitals": [
+    {
+     "id": "Q3894",
+     "name": "Kampala",
+     "preferred": false,
+     "role": null,
+     "image": "View from 7th floor on Crane Chambers at Kampala road - panoramio.jpg",
+     "lon": 32.581,
+     "lat": 0.314,
+     "wiki": "Kampala"
+    }
+   ],
+   "capitalAnswer": "Kampala"
+  },
+  {
+   "id": "Q212",
+   "name": "Ukraine",
+   "officialName": "Ukraine",
+   "iso2": "UA",
+   "iso3": "UKR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Eastern Europe",
+   "topo": {
+    "id": "804"
+   },
+   "flag": "Flag of Ukraine.svg",
+   "lon": 32,
+   "lat": 49,
+   "wiki": "Ukraine",
+   "capitals": [
+    {
+     "id": "Q1899",
+     "name": "Kyiv",
+     "preferred": false,
+     "role": null,
+     "image": "Kyiv (234807751).jpeg",
+     "lon": 30.524,
+     "lat": 50.45,
+     "wiki": "Kyiv"
+    }
+   ],
+   "capitalAnswer": "Kyiv"
+  },
+  {
+   "id": "Q878",
+   "name": "United Arab Emirates",
+   "officialName": "United Arab Emirates",
+   "iso2": "AE",
+   "iso3": "ARE",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "784"
+   },
+   "flag": "Flag of the United Arab Emirates.svg",
+   "lon": 54.3,
+   "lat": 24.4,
+   "wiki": "United_Arab_Emirates",
+   "capitals": [
+    {
+     "id": "Q1519",
+     "name": "Abu Dhabi",
+     "preferred": false,
+     "role": null,
+     "image": "Абу-Даби (Abu Dhabi) - panoramio (1).jpg",
+     "lon": 54.397,
+     "lat": 24.451,
+     "wiki": "Abu_Dhabi"
+    }
+   ],
+   "capitalAnswer": "Abu Dhabi"
+  },
+  {
+   "id": "Q145",
+   "name": "United Kingdom",
+   "officialName": "United Kingdom",
+   "iso2": "GB",
+   "iso3": "GBR",
+   "status": "un",
+   "statusNote": null,
+   "region": "Europe",
+   "subregion": "Northern Europe",
+   "topo": {
+    "id": "826"
+   },
+   "flag": "Flag of the United Kingdom (3-5).svg",
+   "lon": -2,
+   "lat": 54.6,
+   "wiki": "United_Kingdom",
+   "capitals": [
+    {
+     "id": "Q84",
+     "name": "London",
+     "preferred": false,
+     "role": null,
+     "image": "London Skyline (125508655).jpeg",
+     "lon": -0.128,
+     "lat": 51.507,
+     "wiki": "London"
+    }
+   ],
+   "capitalAnswer": "London"
+  },
+  {
+   "id": "Q30",
+   "name": "United States",
+   "officialName": "United States",
+   "iso2": "US",
+   "iso3": "USA",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "North America",
+   "topo": {
+    "id": "840"
+   },
+   "flag": "Flag of the United States (DDD-F-416E specifications).svg",
+   "lon": -98.579,
+   "lat": 39.828,
+   "wiki": "United_States",
+   "capitals": [
+    {
+     "id": "Q61",
+     "name": "Washington, D.C.",
+     "preferred": true,
+     "role": null,
+     "image": "Aerial view of White House and downtown, Washington, D.C LCCN2010630891.jpg",
+     "lon": -77.037,
+     "lat": 38.895,
+     "wiki": "Washington,_D.C."
+    }
+   ],
+   "capitalAnswer": "Washington, D.C."
+  },
+  {
+   "id": "Q77",
+   "name": "Uruguay",
+   "officialName": "Uruguay",
+   "iso2": "UY",
+   "iso3": "URY",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "858"
+   },
+   "flag": "Flag of Uruguay.svg",
+   "lon": -56,
+   "lat": -33,
+   "wiki": "Uruguay",
+   "capitals": [
+    {
+     "id": "Q1335",
+     "name": "Montevideo",
+     "preferred": false,
+     "role": null,
+     "image": "The City (198895997).jpeg",
+     "lon": -56.191,
+     "lat": -34.906,
+     "wiki": "Montevideo"
+    }
+   ],
+   "capitalAnswer": "Montevideo"
+  },
+  {
+   "id": "Q265",
+   "name": "Uzbekistan",
+   "officialName": "Uzbekistan",
+   "iso2": "UZ",
+   "iso3": "UZB",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Central Asia",
+   "topo": {
+    "id": "860"
+   },
+   "flag": "Flag of Uzbekistan.svg",
+   "lon": 66,
+   "lat": 41,
+   "wiki": "Uzbekistan",
+   "capitals": [
+    {
+     "id": "Q269",
+     "name": "Tashkent",
+     "preferred": false,
+     "role": null,
+     "image": "Aerial view of Tashkent, Uzbekistan.JPG",
+     "lon": 69.28,
+     "lat": 41.311,
+     "wiki": "Tashkent"
+    }
+   ],
+   "capitalAnswer": "Tashkent"
+  },
+  {
+   "id": "Q686",
+   "name": "Vanuatu",
+   "officialName": "Vanuatu",
+   "iso2": "VU",
+   "iso3": "VUT",
+   "status": "un",
+   "statusNote": null,
+   "region": "Oceania",
+   "subregion": "Melanesia",
+   "topo": {
+    "id": "548"
+   },
+   "flag": "Flag of Vanuatu.svg",
+   "lon": 168.017,
+   "lat": -16.633,
+   "wiki": "Vanuatu",
+   "capitals": [
+    {
+     "id": "Q37806",
+     "name": "Port Vila",
+     "preferred": false,
+     "role": null,
+     "image": "Port Vila aerial.jpg",
+     "lon": 168.317,
+     "lat": -17.733,
+     "wiki": "Port_Vila"
+    }
+   ],
+   "capitalAnswer": "Port Vila"
+  },
+  {
+   "id": "Q237",
+   "name": "Vatican City",
+   "officialName": "Vatican City",
+   "iso2": "VA",
+   "iso3": "VAT",
+   "status": "observer",
+   "statusNote": "UN observer state",
+   "region": "Europe",
+   "subregion": "Southern Europe",
+   "topo": {
+    "id": "336"
+   },
+   "flag": "Flag of Vatican City (2023–present).svg",
+   "lon": 12.453,
+   "lat": 41.904,
+   "wiki": "Vatican_City",
+   "capitals": [
+    {
+     "id": "Q237",
+     "name": "Vatican City",
+     "preferred": false,
+     "role": null,
+     "image": "0 Basilique Saint-Pierre - Rome (1).JPG",
+     "lon": 12.453,
+     "lat": 41.904,
+     "wiki": "Vatican_City"
+    }
+   ],
+   "capitalAnswer": "Vatican City"
+  },
+  {
+   "id": "Q717",
+   "name": "Venezuela",
+   "officialName": "Venezuela",
+   "iso2": "VE",
+   "iso3": "VEN",
+   "status": "un",
+   "statusNote": null,
+   "region": "Americas",
+   "subregion": "South America",
+   "topo": {
+    "id": "862"
+   },
+   "flag": "Flag of Venezuela.svg",
+   "lon": -67,
+   "lat": 8,
+   "wiki": "Venezuela",
+   "capitals": [
+    {
+     "id": "Q1533",
+     "name": "Caracas",
+     "preferred": false,
+     "role": null,
+     "image": "Caracas desde el ávila.jpg",
+     "lon": -66.914,
+     "lat": 10.506,
+     "wiki": "Caracas"
+    }
+   ],
+   "capitalAnswer": "Caracas"
+  },
+  {
+   "id": "Q881",
+   "name": "Vietnam",
+   "officialName": "Vietnam",
+   "iso2": "VN",
+   "iso3": "VNM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "South-Eastern Asia",
+   "topo": {
+    "id": "704"
+   },
+   "flag": "Flag of Vietnam.svg",
+   "lon": 108,
+   "lat": 16,
+   "wiki": "Vietnam",
+   "capitals": [
+    {
+     "id": "Q1858",
+     "name": "Hanoi",
+     "preferred": false,
+     "role": null,
+     "image": "Tháp Rùa - NKS.jpg",
+     "lon": 105.841,
+     "lat": 21.024,
+     "wiki": "Hanoi"
+    }
+   ],
+   "capitalAnswer": "Hanoi"
+  },
+  {
+   "id": "Q805",
+   "name": "Yemen",
+   "officialName": "Yemen",
+   "iso2": "YE",
+   "iso3": "YEM",
+   "status": "un",
+   "statusNote": null,
+   "region": "Asia",
+   "subregion": "Western Asia",
+   "topo": {
+    "id": "887"
+   },
+   "flag": "Flag of Yemen.svg",
+   "lon": 48,
+   "lat": 15.5,
+   "wiki": "Yemen",
+   "capitals": [
+    {
+     "id": "Q131694",
+     "name": "Aden",
+     "preferred": false,
+     "role": null,
+     "image": "Old Town Aden Yemen.jpg",
+     "lon": 45.033,
+     "lat": 12.8,
+     "wiki": "Aden"
+    },
+    {
+     "id": "Q2471",
+     "name": "Sanaa",
+     "preferred": false,
+     "role": null,
+     "image": "San'a03 flickr.jpg",
+     "lon": 44.2,
+     "lat": 15.35,
+     "wiki": "Sanaa"
+    }
+   ],
+   "capitalAnswer": "Sanaa (constitutional capital, held by the Houthis), with Aden as the recognised government's temporary capital",
+   "capitalNote": null
+  },
+  {
+   "id": "Q953",
+   "name": "Zambia",
+   "officialName": "Zambia",
+   "iso2": "ZM",
+   "iso3": "ZMB",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "894"
+   },
+   "flag": "Flag of Zambia.svg",
+   "lon": 28,
+   "lat": -14,
+   "wiki": "Zambia",
+   "capitals": [
+    {
+     "id": "Q3881",
+     "name": "Lusaka",
+     "preferred": false,
+     "role": null,
+     "image": "Downtown Lusaka.JPG",
+     "lon": 28.283,
+     "lat": -15.417,
+     "wiki": "Lusaka"
+    }
+   ],
+   "capitalAnswer": "Lusaka"
+  },
+  {
+   "id": "Q954",
+   "name": "Zimbabwe",
+   "officialName": "Zimbabwe",
+   "iso2": "ZW",
+   "iso3": "ZWE",
+   "status": "un",
+   "statusNote": null,
+   "region": "Africa",
+   "subregion": "Eastern Africa",
+   "topo": {
+    "id": "716"
+   },
+   "flag": "Flag of Zimbabwe.svg",
+   "lon": 30,
+   "lat": -19,
+   "wiki": "Zimbabwe",
+   "capitals": [
+    {
+     "id": "Q3921",
+     "name": "Harare",
+     "preferred": false,
+     "role": null,
+     "image": "Harare skyline.jpg",
+     "lon": 31.052,
+     "lat": -17.829,
+     "wiki": "Harare"
+    }
+   ],
+   "capitalAnswer": "Harare"
+  }
+ ]
+}

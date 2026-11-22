@@ -1,0 +1,31 @@
+{
+ "_readme": "Hand-written wording that Wikidata can't express well. A capital override is only used while Wikidata still lists exactly the capitals in capitalsSeen; if Wikidata changes, the sync script ignores the override and warns, so this file can never silently go stale.",
+
+ "_extras": {
+  "Q35":     { "status": "un", "note": null, "_why": "the UN seat belongs to the Kingdom of Denmark (Q756617), which has no ISO code" },
+  "Q237":    { "status": "observer", "note": "UN observer state" },
+  "Q219060": { "status": "observer", "note": "UN observer state; recognised by most UN members" },
+  "Q865":    { "status": "disputed", "note": "Governs itself; claimed by the People's Republic of China", "region": "Asia", "subregion": "Eastern Asia" },
+  "Q1246":   { "status": "disputed", "note": "Declared independence from Serbia in 2008; recognised by about half of UN members", "region": "Europe", "subregion": "Southeast Europe", "topoName": "Kosovo" },
+  "Q40362":  { "status": "disputed", "name": "Sahrawi Republic (Western Sahara)", "note": "Claims Western Sahara, most of which is controlled by Morocco", "region": "Africa", "subregion": "Northern Africa", "topoName": "W. Sahara" },
+  "Q23681":  { "status": "disputed", "note": "Recognised only by Turkey", "region": "Asia", "subregion": "Western Asia", "topoName": "N. Cyprus" },
+  "Q34754":  { "status": "disputed", "note": "Self-declared state, internationally considered part of Somalia", "region": "Africa", "subregion": "Eastern Africa", "topoName": "Somaliland" },
+  "Q23427":  { "status": "disputed", "note": "Breakaway region of Georgia, recognised by Russia and a few others", "region": "Asia", "subregion": "Western Asia" },
+  "Q23334":  { "status": "disputed", "note": "Breakaway region of Georgia, recognised by Russia and a few others", "region": "Asia", "subregion": "Western Asia" },
+  "Q907112": { "status": "disputed", "note": "Breakaway region of Moldova, unrecognised", "region": "Europe", "subregion": "Eastern Europe" }
+ },
+
+ "Q148": { "name": "China" },
+ "Q29999": { "name": "Netherlands" },
+
+ "Q750":  { "capitalsSeen": ["La Paz", "Sucre"], "capitalAnswer": "both La Paz (seat of government) and Sucre (constitutional capital)" },
+ "Q258":  { "capitalsSeen": ["Bloemfontein", "Cape Town", "Pretoria"], "capitalAnswer": "split three ways: Pretoria (executive), Cape Town (legislative) and Bloemfontein (judicial)" },
+ "Q962":  { "capitalsSeen": ["Cotonou", "Porto-Novo"], "capitalAnswer": "Porto-Novo (official capital), though the government sits in Cotonou" },
+ "Q1050": { "capitalsSeen": ["Lobamba", "Mbabane"], "capitalAnswer": "both Mbabane (administrative) and Lobamba (royal and legislative)" },
+ "Q833":  { "capitalsSeen": ["Kuala Lumpur", "Putrajaya"], "capitalAnswer": "Kuala Lumpur (official capital), though the government sits in Putrajaya" },
+ "Q854":  { "capitalsSeen": ["Colombo", "Sri Jayawardenepura Kotte"], "capitalAnswer": "Sri Jayawardenepura Kotte (legislative capital), with Colombo as the executive and commercial capital" },
+ "Q805":  { "capitalsSeen": ["Aden", "Sanaa"], "capitalAnswer": "Sanaa (constitutional capital, held by the Houthis), with Aden as the recognised government's temporary capital" },
+ "Q219060": { "capitalsSeen": ["East Jerusalem", "Ramallah"], "capitalAnswer": "East Jerusalem (proclaimed capital), with the government based in Ramallah" },
+ "Q40362": { "capitalsSeen": ["Laayoune", "Tifariti"], "capitalAnswer": "Laayoune (claimed capital), with Tifariti as the temporary capital" },
+ "Q801":  { "capitalsSeen": ["Jerusalem"], "capitalAnswer": "Jerusalem", "capitalNote": "Israel's capital status is disputed; most countries keep their embassies in Tel Aviv." }
+}
