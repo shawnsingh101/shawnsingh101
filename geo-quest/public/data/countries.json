@@ -74,7 +74,27 @@
      "code": "tk"
     }
    ],
-   "capitalAnswer": "Kabul"
+   "capitalAnswer": "Kabul",
+   "currency": [
+    {
+     "id": "Q199471",
+     "name": "Afghan afghani",
+     "code": "AFN",
+     "symbol": "؋",
+     "wiki": "Afghan_afghani",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Kabul",
+    "population": 5333284,
+    "lat": 34.52813,
+    "lon": 69.17233,
+    "image": "Kabul TV Hill view.jpg",
+    "wiki": "Kabul",
+    "id": "Q5838",
+    "isCapital": true
+   }
   },
   {
    "id": "Q222",
@@ -113,7 +133,27 @@
      "code": "sq"
     }
    ],
-   "capitalAnswer": "Tirana"
+   "capitalAnswer": "Tirana",
+   "currency": [
+    {
+     "id": "Q125999",
+     "name": "Albanian lek",
+     "code": "ALL",
+     "symbol": "L",
+     "wiki": "Albanian_lek",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Tirana",
+    "population": 389323,
+    "lat": 41.32744,
+    "lon": 19.81866,
+    "image": "Tirana from South.jpg",
+    "wiki": "Tirana",
+    "id": "Q19689",
+    "isCapital": true
+   }
   },
   {
    "id": "Q262",
@@ -165,6 +205,26 @@
     }
    ],
    "capitalAnswer": "Algiers",
+   "currency": [
+    {
+     "id": "Q199674",
+     "name": "Algerian dinar",
+     "code": "DZD",
+     "symbol": "DA",
+     "wiki": "Algerian_dinar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Algiers",
+    "population": 2364230,
+    "lat": 36.73225,
+    "lon": 3.08746,
+    "image": "Argel 3.jpg",
+    "wiki": "Algiers",
+    "id": "Q3561",
+    "isCapital": true
+   },
    "audio": {
     "ar": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/78/LL-Q13955_(ara)-Spotless_Mind1988-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1.wav/LL-Q13955_(ara)-Spotless_Mind1988-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1.wav.mp3",
@@ -203,7 +263,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Andorra la Vella"
+   "capitalAnswer": "Andorra la Vella",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Andorra la Vella",
+    "population": 24042,
+    "lat": 42.50779,
+    "lon": 1.52109,
+    "image": "Andorra la Vella - view2.jpg",
+    "wiki": "Andorra_la_Vella",
+    "id": "Q1863",
+    "isCapital": true
+   }
   },
   {
    "id": "Q916",
@@ -236,7 +316,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Luanda"
+   "capitalAnswer": "Luanda",
+   "currency": [
+    {
+     "id": "Q200337",
+     "name": "Angolan kwanza",
+     "code": "AOA",
+     "symbol": "Kz",
+     "wiki": "Angolan_kwanza",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Luanda",
+    "population": 2487444,
+    "lat": -8.83682,
+    "lon": 13.23432,
+    "image": "Luanda feb09 ost01.jpg",
+    "wiki": "Luanda",
+    "id": "Q3897",
+    "isCapital": true
+   }
   },
   {
    "id": "Q781",
@@ -269,7 +369,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "St. John's"
+   "capitalAnswer": "St. John's",
+   "currency": [
+    {
+     "id": "Q26365",
+     "name": "Eastern Caribbean dollar",
+     "code": "XCD",
+     "symbol": "EC$",
+     "wiki": "Eastern_Caribbean_dollar",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "St. John's",
+    "population": 21394,
+    "lat": 17.12096,
+    "lon": -61.84329,
+    "image": "St Johns Antigua 2012.jpg",
+    "wiki": "St._John's,_Antigua_and_Barbuda",
+    "id": "Q36262",
+    "isCapital": true
+   }
   },
   {
    "id": "Q414",
@@ -302,7 +422,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Buenos Aires"
+   "capitalAnswer": "Buenos Aires",
+   "currency": [
+    {
+     "id": "Q199578",
+     "name": "Argentine peso",
+     "code": "ARS",
+     "symbol": "$",
+     "wiki": "Argentine_peso",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Buenos Aires",
+    "population": 3121707,
+    "lat": -34.61315,
+    "lon": -58.37723,
+    "image": "Vista aérea de la Plaza del Congreso 10.jpg",
+    "wiki": "Buenos_Aires",
+    "id": "Q1486",
+    "isCapital": true
+   }
   },
   {
    "id": "Q399",
@@ -347,7 +487,27 @@
      "code": "hy"
     }
    ],
-   "capitalAnswer": "Yerevan"
+   "capitalAnswer": "Yerevan",
+   "currency": [
+    {
+     "id": "Q130498",
+     "name": "Armenian dram",
+     "code": "AMD",
+     "symbol": "֏",
+     "wiki": "Armenian_dram",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Yerevan",
+    "population": 1144700,
+    "lat": 40.17765,
+    "lon": 44.5126,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": true
+   }
   },
   {
    "id": "Q408",
@@ -380,7 +540,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Canberra"
+   "capitalAnswer": "Canberra",
+   "currency": [
+    {
+     "id": "Q259502",
+     "name": "Australian dollar",
+     "code": "AUD",
+     "symbol": "AU$",
+     "wiki": "Australian_dollar",
+     "shared": 2
+    }
+   ],
+   "largestCity": {
+    "name": "Sydney",
+    "population": 5450496,
+    "lat": -33.86785,
+    "lon": 151.20732,
+    "image": "00 3178 Sydney, Australia.jpg",
+    "wiki": "Sydney",
+    "id": "Q3130",
+    "isCapital": false
+   }
   },
   {
    "id": "Q40",
@@ -425,7 +605,27 @@
      "code": "bar"
     }
    ],
-   "capitalAnswer": "Vienna"
+   "capitalAnswer": "Vienna",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Vienna",
+    "population": 2028289,
+    "lat": 48.20849,
+    "lon": 16.37208,
+    "image": "Wien katedra sw Szczepana widok z wiezy 6.jpg",
+    "wiki": "Vienna",
+    "id": "Q1741",
+    "isCapital": true
+   }
   },
   {
    "id": "Q227",
@@ -481,6 +681,26 @@
     }
    ],
    "capitalAnswer": "Baku",
+   "currency": [
+    {
+     "id": "Q483725",
+     "name": "Azerbaijani manat",
+     "code": "AZN",
+     "symbol": "₼",
+     "wiki": "Azerbaijani_manat",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Baku",
+    "population": 2351300,
+    "lat": 40.37767,
+    "lon": 49.89201,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": true
+   },
    "audio": {
     "az": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/35/Az-az-Az%C9%99rbaycan.ogg/Az-az-Az%C9%99rbaycan.ogg.mp3",
@@ -519,7 +739,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Nassau"
+   "capitalAnswer": "Nassau",
+   "currency": [
+    {
+     "id": "Q194339",
+     "name": "Bahamian dollar",
+     "code": "BSD",
+     "symbol": "B$",
+     "wiki": "Bahamian_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Nassau",
+    "population": 227940,
+    "lat": 25.05823,
+    "lon": -77.34306,
+    "image": "BHA Nassau, Paradise Island, Atlantis Bridge 001.jpg",
+    "wiki": "Nassau,_Bahamas",
+    "id": "Q2467",
+    "isCapital": true
+   }
   },
   {
    "id": "Q398",
@@ -564,7 +804,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Manama"
+   "capitalAnswer": "Manama",
+   "currency": [
+    {
+     "id": "Q201871",
+     "name": "Bahraini dinar",
+     "code": "BHD",
+     "symbol": "BD",
+     "wiki": "Bahraini_dinar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Manama",
+    "population": 297502,
+    "lat": 26.22787,
+    "lon": 50.58565,
+    "image": "Bahrain World trade Center .jpg",
+    "wiki": "Manama",
+    "id": "Q3882",
+    "isCapital": true
+   }
   },
   {
    "id": "Q902",
@@ -615,7 +875,27 @@
      "code": "bn"
     }
    ],
-   "capitalAnswer": "Dhaka"
+   "capitalAnswer": "Dhaka",
+   "currency": [
+    {
+     "id": "Q194453",
+     "name": "Bangladeshi taka",
+     "code": "BDT",
+     "symbol": "৳",
+     "wiki": "Bangladeshi_taka",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Dhaka",
+    "population": 16800000,
+    "lat": 23.7104,
+    "lon": 90.40744,
+    "image": "Dhaka skyline1.jpg",
+    "wiki": "Dhaka",
+    "id": "Q1354",
+    "isCapital": true
+   }
   },
   {
    "id": "Q244",
@@ -648,7 +928,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Bridgetown"
+   "capitalAnswer": "Bridgetown",
+   "currency": [
+    {
+     "id": "Q194351",
+     "name": "Barbadian dollar",
+     "code": "BBD",
+     "symbol": "BBD$",
+     "wiki": "Barbadian_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Bridgetown",
+    "population": 98511,
+    "lat": 13.10732,
+    "lon": -59.62021,
+    "image": "Bridgetown aerial.JPG",
+    "wiki": "Bridgetown",
+    "id": "Q36168",
+    "isCapital": true
+   }
   },
   {
    "id": "Q184",
@@ -703,7 +1003,27 @@
      "code": "ru"
     }
    ],
-   "capitalAnswer": "Minsk"
+   "capitalAnswer": "Minsk",
+   "currency": [
+    {
+     "id": "Q21531507",
+     "name": "Belarusian ruble",
+     "code": "BYN",
+     "symbol": null,
+     "wiki": "Belarusian_ruble",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Minsk",
+    "population": 1995091,
+    "lat": 53.90019,
+    "lon": 27.56653,
+    "image": "Мінск. Сквер па плошчы Незалежнасці.jpg",
+    "wiki": "Minsk",
+    "id": "Q2280",
+    "isCapital": true
+   }
   },
   {
    "id": "Q31",
@@ -768,7 +1088,27 @@
      "code": "nl"
     }
    ],
-   "capitalAnswer": "Brussels"
+   "capitalAnswer": "Brussels",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Antwerp",
+    "population": 529247,
+    "lat": 51.22047,
+    "lon": 4.40026,
+    "image": "City of Antwerp.jpg",
+    "wiki": null,
+    "id": "Q31467408",
+    "isCapital": false
+   }
   },
   {
    "id": "Q242",
@@ -813,7 +1153,27 @@
      "code": "es"
     }
    ],
-   "capitalAnswer": "Belmopan"
+   "capitalAnswer": "Belmopan",
+   "currency": [
+    {
+     "id": "Q275112",
+     "name": "Belize dollar",
+     "code": "BZD",
+     "symbol": "Bz$",
+     "wiki": "Belize_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Belize City",
+    "population": 63999,
+    "lat": 17.49952,
+    "lon": -88.19756,
+    "image": "Belize City Aerial Shots.jpg",
+    "wiki": "Belize_City",
+    "id": "Q108223",
+    "isCapital": false
+   }
   },
   {
    "id": "Q962",
@@ -864,7 +1224,27 @@
     }
    ],
    "capitalAnswer": "Porto-Novo (official capital), though the government sits in Cotonou",
-   "capitalNote": null
+   "capitalNote": null,
+   "currency": [
+    {
+     "id": "Q861690",
+     "name": "West African CFA franc",
+     "code": "XOF",
+     "symbol": "F",
+     "wiki": "West_African_CFA_franc",
+     "shared": 8
+    }
+   ],
+   "largestCity": {
+    "name": "Cotonou",
+    "population": 780000,
+    "lat": 6.36536,
+    "lon": 2.41833,
+    "image": "Vue panoramique quartier cadjéhoun-Cotonou au Bénin 1.jpg",
+    "wiki": "Cotonou",
+    "id": "Q43595",
+    "isCapital": true
+   }
   },
   {
    "id": "Q917",
@@ -909,7 +1289,27 @@
      "code": "dz"
     }
    ],
-   "capitalAnswer": "Thimphu"
+   "capitalAnswer": "Thimphu",
+   "currency": [
+    {
+     "id": "Q201799",
+     "name": "Bhutanese ngultrum",
+     "code": "BTN",
+     "symbol": "Nu",
+     "wiki": "Bhutanese_ngultrum",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Thimphu",
+    "population": 114551,
+    "lat": 27.46609,
+    "lon": 89.64191,
+    "image": "Thimphu-12-vom Buddha Dordenma-2015-gje.jpg",
+    "wiki": "Thimphu",
+    "id": "Q9270",
+    "isCapital": true
+   }
   },
   {
    "id": "Q750",
@@ -987,7 +1387,27 @@
     }
    ],
    "capitalAnswer": "both La Paz (seat of government) and Sucre (constitutional capital)",
-   "capitalNote": null
+   "capitalNote": null,
+   "currency": [
+    {
+     "id": "Q200737",
+     "name": "Bolivian boliviano",
+     "code": "BOB",
+     "symbol": "Bs",
+     "wiki": "Bolivian_boliviano",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Santa Cruz de la Sierra",
+    "population": 3122605,
+    "lat": -17.78629,
+    "lon": -63.18117,
+    "image": "Northern Skyline Santa Cruz.jpg",
+    "wiki": "Santa_Cruz_de_la_Sierra",
+    "id": "Q170688",
+    "isCapital": false
+   }
   },
   {
    "id": "Q225",
@@ -1037,7 +1457,27 @@
      "code": "sr"
     }
    ],
-   "capitalAnswer": "Sarajevo"
+   "capitalAnswer": "Sarajevo",
+   "currency": [
+    {
+     "id": "Q179620",
+     "name": "Bosnia and Herzegovina convertible mark",
+     "code": "BAM",
+     "symbol": "KM",
+     "wiki": "Bosnia_and_Herzegovina_convertible_mark",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Sarajevo",
+    "population": 275524,
+    "lat": 43.84864,
+    "lon": 18.35644,
+    "image": "Sarajevo City Panorama.JPG",
+    "wiki": "Sarajevo",
+    "id": "Q11194",
+    "isCapital": true
+   }
   },
   {
    "id": "Q963",
@@ -1070,7 +1510,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Gaborone"
+   "capitalAnswer": "Gaborone",
+   "currency": [
+    {
+     "id": "Q186794",
+     "name": "Botswana pula",
+     "code": "BWP",
+     "symbol": "P",
+     "wiki": "Botswana_pula",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Gaborone",
+    "population": 235884,
+    "lat": -24.65451,
+    "lon": 25.90859,
+    "image": "Gaborone skyline.JPG",
+    "wiki": "Gaborone",
+    "id": "Q3919",
+    "isCapital": true
+   }
   },
   {
    "id": "Q155",
@@ -1110,6 +1570,26 @@
     }
    ],
    "capitalAnswer": "Brasília",
+   "currency": [
+    {
+     "id": "Q173117",
+     "name": "Brazilian real",
+     "code": "BRL",
+     "symbol": "R$",
+     "wiki": "Brazilian_real",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "São Paulo",
+    "population": 12400232,
+    "lat": -23.5475,
+    "lon": -46.63611,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": false
+   },
    "audio": {
     "pt-br": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b5/Pt-br-Brasil.ogg/Pt-br-Brasil.ogg.mp3",
@@ -1154,7 +1634,27 @@
      "code": "ms"
     }
    ],
-   "capitalAnswer": "Bandar Seri Begawan"
+   "capitalAnswer": "Bandar Seri Begawan",
+   "currency": [
+    {
+     "id": "Q206319",
+     "name": "Brunei dollar",
+     "code": "BND",
+     "symbol": "B$",
+     "wiki": "Brunei_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Bandar Seri Begawan",
+    "population": 50000,
+    "lat": 4.89035,
+    "lon": 114.94006,
+    "image": "Sultan Omar Ali Saifuddin Mosque 02.jpg",
+    "wiki": "Bandar_Seri_Begawan",
+    "id": "Q9279",
+    "isCapital": true
+   }
   },
   {
    "id": "Q219",
@@ -1199,7 +1699,27 @@
      "code": "bg"
     }
    ],
-   "capitalAnswer": "Sofia"
+   "capitalAnswer": "Sofia",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Sofia",
+    "population": 1213134,
+    "lat": 42.69751,
+    "lon": 23.32415,
+    "image": "Panoramic view over central Sofia and the Vitosha Mountain 2017-10-08.jpg",
+    "wiki": "Sofia",
+    "id": "Q472",
+    "isCapital": true
+   }
   },
   {
    "id": "Q965",
@@ -1232,7 +1752,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Ouagadougou"
+   "capitalAnswer": "Ouagadougou",
+   "currency": [
+    {
+     "id": "Q861690",
+     "name": "West African CFA franc",
+     "code": "XOF",
+     "symbol": "F",
+     "wiki": "West_African_CFA_franc",
+     "shared": 8
+    }
+   ],
+   "largestCity": {
+    "name": "Ouagadougou",
+    "population": 2453496,
+    "lat": 12.36566,
+    "lon": -1.53388,
+    "image": "Monument aux héros nationaux - Ouagadougou - 2024.jpg",
+    "wiki": "Ouagadougou",
+    "id": "Q3777",
+    "isCapital": true
+   }
   },
   {
    "id": "Q967",
@@ -1271,7 +1811,27 @@
      "code": "rn"
     }
    ],
-   "capitalAnswer": "Gitega"
+   "capitalAnswer": "Gitega",
+   "currency": [
+    {
+     "id": "Q238007",
+     "name": "Burundian franc",
+     "code": "BIF",
+     "symbol": "FBu",
+     "wiki": "Burundian_franc",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Bujumbura",
+    "population": 658859,
+    "lat": -3.38193,
+    "lon": 29.36142,
+    "image": "BUJUMBURA MAIRIE 3.jpg",
+    "wiki": "Bujumbura",
+    "id": "Q3854",
+    "isCapital": false
+   }
   },
   {
    "id": "Q424",
@@ -1316,7 +1876,27 @@
      "code": "km"
     }
    ],
-   "capitalAnswer": "Phnom Penh"
+   "capitalAnswer": "Phnom Penh",
+   "currency": [
+    {
+     "id": "Q204737",
+     "name": "Cambodian riel",
+     "code": "KHR",
+     "symbol": "៛",
+     "wiki": "Cambodian_riel",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Phnom Penh",
+    "population": 2129371,
+    "lat": 11.56245,
+    "lon": 104.91601,
+    "image": "Phnom Penh aerial.jpg",
+    "wiki": "Phnom_Penh",
+    "id": "Q1850",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1009",
@@ -1355,7 +1935,27 @@
      "code": "fr"
     }
    ],
-   "capitalAnswer": "Yaoundé"
+   "capitalAnswer": "Yaoundé",
+   "currency": [
+    {
+     "id": "Q847739",
+     "name": "Central African CFA franc",
+     "code": "XAF",
+     "symbol": "XAF",
+     "wiki": "Central_African_CFA_franc",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "Douala",
+    "population": 2768436,
+    "lat": 4.04827,
+    "lon": 9.70428,
+    "image": "Douala.JPG",
+    "wiki": "Douala",
+    "id": "Q132830",
+    "isCapital": false
+   }
   },
   {
    "id": "Q16",
@@ -1388,7 +1988,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Ottawa"
+   "capitalAnswer": "Ottawa",
+   "currency": [
+    {
+     "id": "Q1104069",
+     "name": "Canadian dollar",
+     "code": "CAD",
+     "symbol": "C$",
+     "wiki": "Canadian_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Toronto",
+    "population": 2794356,
+    "lat": 43.65333,
+    "lon": -79.38389,
+    "image": "Sunset Toronto Skyline Panorama Crop from Snake Island.jpg",
+    "wiki": "Toronto",
+    "id": "Q172",
+    "isCapital": false
+   }
   },
   {
    "id": "Q1011",
@@ -1427,7 +2047,27 @@
      "code": "pt"
     }
    ],
-   "capitalAnswer": "Praia"
+   "capitalAnswer": "Praia",
+   "currency": [
+    {
+     "id": "Q4591",
+     "name": "Cape Verdean escudo",
+     "code": "CVE",
+     "symbol": null,
+     "wiki": "Cape_Verdean_escudo",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Praia",
+    "population": 159050,
+    "lat": 14.93152,
+    "lon": -23.51254,
+    "image": "Praia Harbor.jpg",
+    "wiki": "Praia",
+    "id": "Q3751",
+    "isCapital": true
+   }
   },
   {
    "id": "Q929",
@@ -1477,7 +2117,27 @@
      "code": "sg"
     }
    ],
-   "capitalAnswer": "Bangui"
+   "capitalAnswer": "Bangui",
+   "currency": [
+    {
+     "id": "Q847739",
+     "name": "Central African CFA franc",
+     "code": "XAF",
+     "symbol": "XAF",
+     "wiki": "Central_African_CFA_franc",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "Bangui",
+    "population": 889231,
+    "lat": 4.36122,
+    "lon": 18.55496,
+    "image": "Bangui City Centre.jpg",
+    "wiki": "Bangui",
+    "id": "Q3832",
+    "isCapital": true
+   }
   },
   {
    "id": "Q657",
@@ -1532,7 +2192,27 @@
      "code": "fr"
     }
    ],
-   "capitalAnswer": "N'Djamena"
+   "capitalAnswer": "N'Djamena",
+   "currency": [
+    {
+     "id": "Q847739",
+     "name": "Central African CFA franc",
+     "code": "XAF",
+     "symbol": "XAF",
+     "wiki": "Central_African_CFA_franc",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "N'Djamena",
+    "population": 1092066,
+    "lat": 12.10672,
+    "lon": 15.0444,
+    "image": "Place de la nation4 (Tchad).jpg",
+    "wiki": "N'Djamena",
+    "id": "Q3659",
+    "isCapital": true
+   }
   },
   {
    "id": "Q298",
@@ -1565,7 +2245,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Santiago"
+   "capitalAnswer": "Santiago",
+   "currency": [
+    {
+     "id": "Q200050",
+     "name": "Chilean peso",
+     "code": "CLP",
+     "symbol": "CLP$",
+     "wiki": "Chilean_peso",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Santiago",
+    "population": 6257516,
+    "lat": -33.45694,
+    "lon": -70.64827,
+    "image": "Santiago de Chile, Desde Cerro San Cristóbal (cropped).jpg",
+    "wiki": "Santiago",
+    "id": "Q2887",
+    "isCapital": true
+   }
   },
   {
    "id": "Q148",
@@ -1610,7 +2310,27 @@
      "code": "zh-hans"
     }
    ],
-   "capitalAnswer": "Beijing"
+   "capitalAnswer": "Beijing",
+   "currency": [
+    {
+     "id": "Q39099",
+     "name": "Renminbi",
+     "code": "CNY",
+     "symbol": "¥",
+     "wiki": "Renminbi",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Shanghai",
+    "population": 24870895,
+    "lat": 31.22222,
+    "lon": 121.45806,
+    "image": "上海·上海市·（俯拍）.jpg",
+    "wiki": "Shanghai",
+    "id": "Q8686",
+    "isCapital": false
+   }
   },
   {
    "id": "Q739",
@@ -1643,7 +2363,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Bogotá"
+   "capitalAnswer": "Bogotá",
+   "currency": [
+    {
+     "id": "Q244819",
+     "name": "Colombian peso",
+     "code": "COP",
+     "symbol": "COL$",
+     "wiki": "Colombian_peso",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Bogotá",
+    "population": 8034649,
+    "lat": 4.60971,
+    "lon": -74.08175,
+    "image": "Centro internacional.JPG",
+    "wiki": "Bogotá",
+    "id": "Q2841",
+    "isCapital": true
+   }
   },
   {
    "id": "Q970",
@@ -1697,7 +2437,27 @@
      "lang": "Comorian"
     }
    ],
-   "capitalAnswer": "Moroni"
+   "capitalAnswer": "Moroni",
+   "currency": [
+    {
+     "id": "Q267264",
+     "name": "Comorian franc",
+     "code": "KMF",
+     "symbol": "CF",
+     "wiki": "Comorian_franc",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Moroni",
+    "population": 85400,
+    "lat": -11.70216,
+    "lon": 43.25506,
+    "image": "Moroni harbour (2).jpg",
+    "wiki": "Moroni,_Comoros",
+    "id": "Q3901",
+    "isCapital": true
+   }
   },
   {
    "id": "Q800",
@@ -1730,7 +2490,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "San José"
+   "capitalAnswer": "San José",
+   "currency": [
+    {
+     "id": "Q242915",
+     "name": "Costa Rican colón",
+     "code": "CRC",
+     "symbol": "₡",
+     "wiki": "Costa_Rican_colón",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "San José",
+    "population": 335007,
+    "lat": 9.93388,
+    "lon": -84.08489,
+    "image": "Cityscape of San José, Costa Rica (253552473).jpg",
+    "wiki": "San_José,_Costa_Rica",
+    "id": "Q3070",
+    "isCapital": true
+   }
   },
   {
    "id": "Q224",
@@ -1769,7 +2549,27 @@
      "code": "hr"
     }
    ],
-   "capitalAnswer": "Zagreb"
+   "capitalAnswer": "Zagreb",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Zagreb",
+    "population": 767131,
+    "lat": 45.81444,
+    "lon": 15.97798,
+    "image": "Zagreb (29255640143).jpg",
+    "wiki": "Zagreb",
+    "id": "Q1435",
+    "isCapital": true
+   }
   },
   {
    "id": "Q241",
@@ -1802,7 +2602,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Havana"
+   "capitalAnswer": "Havana",
+   "currency": [
+    {
+     "id": "Q201505",
+     "name": "Cuban peso",
+     "code": "CUP",
+     "symbol": "$MN",
+     "wiki": "Cuban_peso",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Havana",
+    "population": 2492618,
+    "lat": 23.13302,
+    "lon": -82.38304,
+    "image": "Cuba libre (6941395159).jpg",
+    "wiki": "Havana",
+    "id": "Q1563",
+    "isCapital": true
+   }
   },
   {
    "id": "Q229",
@@ -1857,7 +2677,27 @@
      "code": "tr"
     }
    ],
-   "capitalAnswer": "Nicosia"
+   "capitalAnswer": "Nicosia",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Limassol",
+    "population": 107970,
+    "lat": 34.68406,
+    "lon": 33.03794,
+    "image": "Limassol Skyline.jpg",
+    "wiki": "Limassol",
+    "id": "Q185632",
+    "isCapital": false
+   }
   },
   {
    "id": "Q213",
@@ -1903,6 +2743,26 @@
     }
    ],
    "capitalAnswer": "Prague",
+   "currency": [
+    {
+     "id": "Q131016",
+     "name": "Czech koruna",
+     "code": "CZK",
+     "symbol": "Kč",
+     "wiki": "Czech_koruna",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Prague",
+    "population": 1397880,
+    "lat": 50.08804,
+    "lon": 14.42076,
+    "image": "Petřín Tower View IMG 3020.JPG",
+    "wiki": "Prague",
+    "id": "Q1085",
+    "isCapital": true
+   },
    "audio": {
     "cs": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d3/Cs-%C4%8Cesko.ogg/Cs-%C4%8Cesko.ogg.mp3",
@@ -1959,7 +2819,27 @@
      "code": "da"
     }
    ],
-   "capitalAnswer": "Copenhagen"
+   "capitalAnswer": "Copenhagen",
+   "currency": [
+    {
+     "id": "Q25417",
+     "name": "Danish krone",
+     "code": "DKK",
+     "symbol": "kr",
+     "wiki": "Danish_krone",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Copenhagen",
+    "population": 667099,
+    "lat": 55.67594,
+    "lon": 12.56553,
+    "image": "Copenhagen - view from Christiansborg castle.jpg",
+    "wiki": "Copenhagen",
+    "id": "Q1748",
+    "isCapital": true
+   }
   },
   {
    "id": "Q977",
@@ -2004,7 +2884,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Djibouti"
+   "capitalAnswer": "Djibouti",
+   "currency": [
+    {
+     "id": "Q4594",
+     "name": "Djiboutian franc",
+     "code": "DJF",
+     "symbol": "Fdj",
+     "wiki": "Djiboutian_franc",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Djibouti",
+    "population": 603900,
+    "lat": 11.58901,
+    "lon": 43.14503,
+    "image": "Djibouti City.jpg",
+    "wiki": "Djibouti_City",
+    "id": "Q3604",
+    "isCapital": true
+   }
   },
   {
    "id": "Q784",
@@ -2037,7 +2937,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Roseau"
+   "capitalAnswer": "Roseau",
+   "currency": [
+    {
+     "id": "Q26365",
+     "name": "Eastern Caribbean dollar",
+     "code": "XCD",
+     "symbol": "EC$",
+     "wiki": "Eastern_Caribbean_dollar",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "Roseau",
+    "population": 16571,
+    "lat": 15.30174,
+    "lon": -61.38808,
+    "image": "RoseauWide..jpg",
+    "wiki": "Roseau",
+    "id": "Q36281",
+    "isCapital": true
+   }
   },
   {
    "id": "Q786",
@@ -2076,7 +2996,27 @@
      "code": "es"
     }
    ],
-   "capitalAnswer": "Santo Domingo"
+   "capitalAnswer": "Santo Domingo",
+   "currency": [
+    {
+     "id": "Q242922",
+     "name": "Dominican peso",
+     "code": "DOP",
+     "symbol": "RD$",
+     "wiki": "Dominican_peso",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Santo Domingo",
+    "population": 2201941,
+    "lat": 18.47186,
+    "lon": -69.89232,
+    "image": "Santo Domingo (Dominican Republic) taken atop Novocentro tower viewing the city to the southwest 2010.jpg",
+    "wiki": "Santo_Domingo",
+    "id": "Q34820",
+    "isCapital": true
+   }
   },
   {
    "id": "Q974",
@@ -2136,7 +3076,27 @@
      "code": "ln"
     }
    ],
-   "capitalAnswer": "Kinshasa"
+   "capitalAnswer": "Kinshasa",
+   "currency": [
+    {
+     "id": "Q4734",
+     "name": "Congolese franc",
+     "code": "CDF",
+     "symbol": "CF",
+     "wiki": "Congolese_franc",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Kinshasa",
+    "population": 14565700,
+    "lat": -4.32758,
+    "lon": 15.31357,
+    "image": "Vue Kinshasa.jpg",
+    "wiki": "Kinshasa",
+    "id": "Q3838",
+    "isCapital": true
+   }
   },
   {
    "id": "Q736",
@@ -2169,7 +3129,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Quito"
+   "capitalAnswer": "Quito",
+   "currency": [
+    {
+     "id": "Q4917",
+     "name": "United States dollar",
+     "code": "USD",
+     "symbol": "$",
+     "wiki": "United_States_dollar",
+     "shared": 5
+    }
+   ],
+   "largestCity": {
+    "name": "Guayaquil",
+    "population": 2650288,
+    "lat": -2.19616,
+    "lon": -79.88621,
+    "image": "Gye13.jpg",
+    "wiki": "Guayaquil",
+    "id": "Q43509",
+    "isCapital": false
+   }
   },
   {
    "id": "Q79",
@@ -2214,7 +3194,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Cairo"
+   "capitalAnswer": "Cairo",
+   "currency": [
+    {
+     "id": "Q199462",
+     "name": "Egyptian pound",
+     "code": "EGP",
+     "symbol": "LE",
+     "wiki": "Egyptian_pound",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Cairo",
+    "population": 9801536,
+    "lat": 30.06263,
+    "lon": 31.24967,
+    "image": "Cairo Skyline (2020).jpg",
+    "wiki": "Cairo",
+    "id": "Q85",
+    "isCapital": true
+   }
   },
   {
    "id": "Q792",
@@ -2247,7 +3247,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "San Salvador"
+   "capitalAnswer": "San Salvador",
+   "currency": [
+    {
+     "id": "Q131723",
+     "name": "Bitcoin",
+     "code": null,
+     "symbol": "₿",
+     "wiki": "Bitcoin",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "San Salvador",
+    "population": 330543,
+    "lat": 13.68935,
+    "lon": -89.18718,
+    "image": null,
+    "wiki": "San_Salvador",
+    "id": "Q3110",
+    "isCapital": true
+   }
   },
   {
    "id": "Q983",
@@ -2296,7 +3316,27 @@
      "code": "es"
     }
    ],
-   "capitalAnswer": "Ciudad de la Paz"
+   "capitalAnswer": "Ciudad de la Paz",
+   "currency": [
+    {
+     "id": "Q847739",
+     "name": "Central African CFA franc",
+     "code": "XAF",
+     "symbol": "XAF",
+     "wiki": "Central_African_CFA_franc",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "Malabo",
+    "population": 297000,
+    "lat": 3.75578,
+    "lon": 8.78166,
+    "image": "Malabo a 13-oct-01.jpg",
+    "wiki": "Malabo",
+    "id": "Q3818",
+    "isCapital": false
+   }
   },
   {
    "id": "Q986",
@@ -2351,7 +3391,27 @@
      "code": "ti"
     }
    ],
-   "capitalAnswer": "Asmara"
+   "capitalAnswer": "Asmara",
+   "currency": [
+    {
+     "id": "Q171503",
+     "name": "Eritrean nakfa",
+     "code": "ERN",
+     "symbol": "Nfk",
+     "wiki": "Eritrean_nakfa",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Asmara",
+    "population": 963000,
+    "lat": 15.33805,
+    "lon": 38.93184,
+    "image": "Fiat tagliero, 09.JPG",
+    "wiki": "Asmara",
+    "id": "Q3642",
+    "isCapital": true
+   }
   },
   {
    "id": "Q191",
@@ -2390,7 +3450,27 @@
      "code": "et"
     }
    ],
-   "capitalAnswer": "Tallinn"
+   "capitalAnswer": "Tallinn",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Tallinn",
+    "population": 457572,
+    "lat": 59.43696,
+    "lon": 24.75353,
+    "image": "Tallinna vanalinn 2015.jpg",
+    "wiki": "Tallinn",
+    "id": "Q1770",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1050",
@@ -2435,7 +3515,27 @@
    ],
    "native": [],
    "capitalAnswer": "both Mbabane (administrative) and Lobamba (royal and legislative)",
-   "capitalNote": null
+   "capitalNote": null,
+   "currency": [
+    {
+     "id": "Q4823",
+     "name": "Swazi lilangeni",
+     "code": "SZL",
+     "symbol": "E",
+     "wiki": "Swazi_lilangeni",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Lobamba",
+    "population": 114585,
+    "lat": -26.46667,
+    "lon": 31.2,
+    "image": "Parliament building of Eswatini, Lobamba.jpg",
+    "wiki": "Lobamba",
+    "id": "Q101418",
+    "isCapital": true
+   }
   },
   {
    "id": "Q115",
@@ -2480,7 +3580,27 @@
      "code": "am"
     }
    ],
-   "capitalAnswer": "Addis Ababa"
+   "capitalAnswer": "Addis Ababa",
+   "currency": [
+    {
+     "id": "Q206243",
+     "name": "Ethiopian birr",
+     "code": "ETB",
+     "symbol": "Br",
+     "wiki": "Ethiopian_birr",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Addis Ababa",
+    "population": 5704000,
+    "lat": 9.02497,
+    "lon": 38.74689,
+    "image": "AddisView.jpg",
+    "wiki": "Addis_Ababa",
+    "id": "Q3624",
+    "isCapital": true
+   }
   },
   {
    "id": "Q712",
@@ -2524,7 +3644,27 @@
      "code": "hif"
     }
    ],
-   "capitalAnswer": "Suva"
+   "capitalAnswer": "Suva",
+   "currency": [
+    {
+     "id": "Q4592",
+     "name": "Fijian dollar",
+     "code": "FJD",
+     "symbol": "FJ$",
+     "wiki": "Fijian_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Nasinu",
+    "population": 92043,
+    "lat": -18.07051,
+    "lon": 178.51313,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": false
+   }
   },
   {
    "id": "Q33",
@@ -2563,7 +3703,27 @@
      "code": "fi"
     }
    ],
-   "capitalAnswer": "Helsinki"
+   "capitalAnswer": "Helsinki",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Helsinki",
+    "population": 694392,
+    "lat": 60.16952,
+    "lon": 24.93545,
+    "image": "Helsinki Lutheran Cathedral (panoraamanäköala)-2 (säätö).jpg",
+    "wiki": "Helsinki",
+    "id": "Q1757",
+    "isCapital": true
+   }
   },
   {
    "id": "Q142",
@@ -2596,7 +3756,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Paris"
+   "capitalAnswer": "Paris",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Paris",
+    "population": 2103778,
+    "lat": 48.85341,
+    "lon": 2.3488,
+    "image": "La Tour Eiffel vue de la Tour Saint-Jacques, Paris août 2014 (2).jpg",
+    "wiki": "Paris",
+    "id": "Q90",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1000",
@@ -2629,7 +3809,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Libreville"
+   "capitalAnswer": "Libreville",
+   "currency": [
+    {
+     "id": "Q847739",
+     "name": "Central African CFA franc",
+     "code": "XAF",
+     "symbol": "XAF",
+     "wiki": "Central_African_CFA_franc",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "Libreville",
+    "population": 899000,
+    "lat": 0.39241,
+    "lon": 9.45356,
+    "image": "Libreville1.jpg",
+    "wiki": "Libreville",
+    "id": "Q3825",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1005",
@@ -2662,7 +3862,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Banjul"
+   "capitalAnswer": "Banjul",
+   "currency": [
+    {
+     "id": "Q202885",
+     "name": "Gambian dalasi",
+     "code": "GMD",
+     "symbol": "D",
+     "wiki": "Gambian_dalasi",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Serekunda",
+    "population": 382096,
+    "lat": 13.43833,
+    "lon": -16.67806,
+    "image": "Serrakunda-mercat.jpg",
+    "wiki": "Serekunda",
+    "id": "Q217568",
+    "isCapital": false
+   }
   },
   {
    "id": "Q230",
@@ -2714,6 +3934,26 @@
     }
    ],
    "capitalAnswer": "Tbilisi",
+   "currency": [
+    {
+     "id": "Q4608",
+     "name": "Georgian lari",
+     "code": "GEL",
+     "symbol": "₾",
+     "wiki": "Georgian_lari",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Tbilisi",
+    "population": 1331485,
+    "lat": 41.69143,
+    "lon": 44.83412,
+    "image": "View of Tbilisi from Tabori Church 2023-10-08-2.jpg",
+    "wiki": "Tbilisi",
+    "id": "Q994",
+    "isCapital": true
+   },
    "audio": {
     "ka": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2e/Pronunciation_audio-Georgia-KA.oga/Pronunciation_audio-Georgia-KA.oga.mp3",
@@ -2759,6 +3999,26 @@
     }
    ],
    "capitalAnswer": "Berlin",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Berlin",
+    "population": 3700577,
+    "lat": 52.52437,
+    "lon": 13.41053,
+    "image": "Cityscape Berlin.jpg",
+    "wiki": "Berlin",
+    "id": "Q64",
+    "isCapital": true
+   },
    "audio": {
     "de": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/32/LL-Q188_(deu)-ENERGY_ENCHANTED-Deutschland.wav/LL-Q188_(deu)-ENERGY_ENCHANTED-Deutschland.wav.mp3",
@@ -2797,7 +4057,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Accra"
+   "capitalAnswer": "Accra",
+   "currency": [
+    {
+     "id": "Q183530",
+     "name": "Ghanaian cedi",
+     "code": "GHS",
+     "symbol": "₵",
+     "wiki": "Ghanaian_cedi",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Kumasi",
+    "population": 3903480,
+    "lat": 6.68848,
+    "lon": -1.62443,
+    "image": "Virginia Palmer, Ambassador of the United States to Ghana, made her first visit to Kumasi to meet local leaders from September 29 to 30, 2022 - 5.jpg",
+    "wiki": "Kumasi",
+    "id": "Q182059",
+    "isCapital": false
+   }
   },
   {
    "id": "Q41",
@@ -2842,7 +4122,27 @@
      "code": "el"
     }
    ],
-   "capitalAnswer": "Athens"
+   "capitalAnswer": "Athens",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Athens",
+    "population": 643452,
+    "lat": 37.98376,
+    "lon": 23.72784,
+    "image": "Akropolis 2015.jpg",
+    "wiki": "Athens",
+    "id": "Q1524",
+    "isCapital": true
+   }
   },
   {
    "id": "Q769",
@@ -2875,7 +4175,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "St. George's"
+   "capitalAnswer": "St. George's",
+   "currency": [
+    {
+     "id": "Q26365",
+     "name": "Eastern Caribbean dollar",
+     "code": "XCD",
+     "symbol": "EC$",
+     "wiki": "Eastern_Caribbean_dollar",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "St. George's",
+    "population": 33734,
+    "lat": 12.05288,
+    "lon": -61.75226,
+    "image": "Grenada - St. George.jpg",
+    "wiki": "St._George's,_Grenada",
+    "id": "Q41547",
+    "isCapital": true
+   }
   },
   {
    "id": "Q774",
@@ -2908,7 +4228,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Guatemala City"
+   "capitalAnswer": "Guatemala City",
+   "currency": [
+    {
+     "id": "Q207396",
+     "name": "Guatemalan quetzal",
+     "code": "GTQ",
+     "symbol": "Q",
+     "wiki": "Guatemalan_quetzal",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Guatemala City",
+    "population": 994938,
+    "lat": 14.64072,
+    "lon": -90.51327,
+    "image": null,
+    "wiki": null,
+    "id": "Q25180112",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1006",
@@ -2947,7 +4287,27 @@
      "code": "fr"
     }
    ],
-   "capitalAnswer": "Conakry"
+   "capitalAnswer": "Conakry",
+   "currency": [
+    {
+     "id": "Q213311",
+     "name": "Guinean franc",
+     "code": "GNF",
+     "symbol": "FG",
+     "wiki": "Guinean_franc",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Conakry",
+    "population": 1667864,
+    "lat": 9.53795,
+    "lon": -13.67729,
+    "image": "Un aperçu de la ville de conakry.jpg",
+    "wiki": "Conakry",
+    "id": "Q3733",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1007",
@@ -2986,7 +4346,27 @@
      "code": "pt"
     }
    ],
-   "capitalAnswer": "Bissau"
+   "capitalAnswer": "Bissau",
+   "currency": [
+    {
+     "id": "Q861690",
+     "name": "West African CFA franc",
+     "code": "XOF",
+     "symbol": "F",
+     "wiki": "West_African_CFA_franc",
+     "shared": 8
+    }
+   ],
+   "largestCity": {
+    "name": "Bissau",
+    "population": 492004,
+    "lat": 11.86357,
+    "lon": -15.59767,
+    "image": "20130610 - Monumento aos Heróis da Independência.jpg",
+    "wiki": "Bissau",
+    "id": "Q3739",
+    "isCapital": true
+   }
   },
   {
    "id": "Q734",
@@ -3019,7 +4399,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Georgetown"
+   "capitalAnswer": "Georgetown",
+   "currency": [
+    {
+     "id": "Q213005",
+     "name": "Guyanese dollar",
+     "code": "GYD",
+     "symbol": "GY$",
+     "wiki": "Guyanese_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Georgetown",
+    "population": 235017,
+    "lat": 6.80448,
+    "lon": -58.15527,
+    "image": "St George's Cathedral.jpg",
+    "wiki": "Georgetown,_Guyana",
+    "id": "Q10717",
+    "isCapital": true
+   }
   },
   {
    "id": "Q790",
@@ -3069,7 +4469,27 @@
      "code": "ht"
     }
    ],
-   "capitalAnswer": "Port-au-Prince"
+   "capitalAnswer": "Port-au-Prince",
+   "currency": [
+    {
+     "id": "Q203955",
+     "name": "Haitian gourde",
+     "code": "HTG",
+     "symbol": "Gde.",
+     "wiki": "Haitian_gourde",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Port-au-Prince",
+    "population": 1234742,
+    "lat": 18.54349,
+    "lon": -72.33881,
+    "image": null,
+    "wiki": null,
+    "id": "Q33707894",
+    "isCapital": true
+   }
   },
   {
    "id": "Q783",
@@ -3102,7 +4522,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Tegucigalpa"
+   "capitalAnswer": "Tegucigalpa",
+   "currency": [
+    {
+     "id": "Q4719",
+     "name": "Honduran lempira",
+     "code": "HNL",
+     "symbol": "L",
+     "wiki": "Honduran_lempira",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Tegucigalpa",
+    "population": 1055729,
+    "lat": 14.0818,
+    "lon": -87.20681,
+    "image": "Centro historico de Tegucigalpa y Comayagüela.jpg",
+    "wiki": "Tegucigalpa",
+    "id": "Q3238",
+    "isCapital": true
+   }
   },
   {
    "id": "Q28",
@@ -3142,6 +4582,26 @@
     }
    ],
    "capitalAnswer": "Budapest",
+   "currency": [
+    {
+     "id": "Q47190",
+     "name": "Hungarian forint",
+     "code": "HUF",
+     "symbol": "Ft",
+     "wiki": "Hungarian_forint",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Budapest",
+    "population": 1675777,
+    "lat": 47.49835,
+    "lon": 19.04045,
+    "image": "Budapest, Hungary (explored) (14995308504).jpg",
+    "wiki": "Budapest",
+    "id": "Q1781",
+    "isCapital": true
+   },
    "audio": {
     "hu": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/20/Hu-Magyarorsz%C3%A1g.ogg/Hu-Magyarorsz%C3%A1g.ogg.mp3",
@@ -3186,7 +4646,27 @@
      "code": "is"
     }
    ],
-   "capitalAnswer": "Reykjavík"
+   "capitalAnswer": "Reykjavík",
+   "currency": [
+    {
+     "id": "Q131473",
+     "name": "Icelandic króna",
+     "code": "ISK",
+     "symbol": "kr",
+     "wiki": "Icelandic_króna",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Reykjavík",
+    "population": 138772,
+    "lat": 64.13548,
+    "lon": -21.89541,
+    "image": "Reykjavík 5545 (cropped).JPG",
+    "wiki": "Reykjavík",
+    "id": "Q1764",
+    "isCapital": true
+   }
   },
   {
    "id": "Q668",
@@ -3231,7 +4711,27 @@
      "code": "hi"
     }
    ],
-   "capitalAnswer": "New Delhi"
+   "capitalAnswer": "New Delhi",
+   "currency": [
+    {
+     "id": "Q80524",
+     "name": "Indian rupee",
+     "code": "INR",
+     "symbol": "₹",
+     "wiki": "Indian_rupee",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Delhi",
+    "population": 26495000,
+    "lat": 28.65195,
+    "lon": 77.23149,
+    "image": "Red Fort in Delhi 03-2016 img3.jpg",
+    "wiki": "Delhi",
+    "id": "Q1353",
+    "isCapital": false
+   }
   },
   {
    "id": "Q252",
@@ -3264,7 +4764,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Jakarta"
+   "capitalAnswer": "Jakarta",
+   "currency": [
+    {
+     "id": "Q41588",
+     "name": "Indonesian rupiah",
+     "code": "IDR",
+     "symbol": "Rp",
+     "wiki": "Indonesian_rupiah",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Jakarta",
+    "population": 11135191,
+    "lat": -6.21462,
+    "lon": 106.84513,
+    "image": "Jakarta.jpg",
+    "wiki": "Jakarta",
+    "id": "Q3630",
+    "isCapital": true
+   }
   },
   {
    "id": "Q794",
@@ -3316,6 +4836,26 @@
     }
    ],
    "capitalAnswer": "Tehran",
+   "currency": [
+    {
+     "id": "Q188608",
+     "name": "Iranian rial",
+     "code": "IRR",
+     "symbol": "﷼",
+     "wiki": "Iranian_rial",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Tehran",
+    "population": 8693706,
+    "lat": 35.69439,
+    "lon": 51.42151,
+    "image": "North of tehran.jpg",
+    "wiki": "Tehran",
+    "id": "Q3616",
+    "isCapital": true
+   },
    "audio": {
     "fa": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/25/Fa-f-%D8%A7%D9%8A%D8%B1%D8%A7%D9%86.ogg/Fa-f-%D8%A7%D9%8A%D8%B1%D8%A7%D9%86.ogg.mp3",
@@ -3380,7 +4920,27 @@
      "code": "ckb"
     }
    ],
-   "capitalAnswer": "Baghdad"
+   "capitalAnswer": "Baghdad",
+   "currency": [
+    {
+     "id": "Q193094",
+     "name": "Iraqi dinar",
+     "code": "IQD",
+     "symbol": "د.ع",
+     "wiki": "Iraqi_dinar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Baghdad",
+    "population": 8126755,
+    "lat": 33.34058,
+    "lon": 44.40088,
+    "image": null,
+    "wiki": "Baghdad",
+    "id": "Q1530",
+    "isCapital": true
+   }
   },
   {
    "id": "Q27",
@@ -3425,7 +4985,27 @@
      "code": "ga"
     }
    ],
-   "capitalAnswer": "Dublin"
+   "capitalAnswer": "Dublin",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Dublin",
+    "population": 592713,
+    "lat": 53.33306,
+    "lon": -6.24889,
+    "image": "Dublin - aerial - 2025-07-07 01.jpg",
+    "wiki": "Dublin",
+    "id": "Q1761",
+    "isCapital": true
+   }
   },
   {
    "id": "Q801",
@@ -3482,6 +5062,26 @@
    ],
    "capitalAnswer": "Jerusalem",
    "capitalNote": "Israel's capital status is disputed; most countries keep their embassies in Tel Aviv.",
+   "currency": [
+    {
+     "id": "Q131309",
+     "name": "Israeli new shekel",
+     "code": "ILS",
+     "symbol": "₪",
+     "wiki": "Israeli_new_shekel",
+     "shared": 2
+    }
+   ],
+   "largestCity": {
+    "name": "Jerusalem",
+    "population": 1050151,
+    "lat": 31.76904,
+    "lon": 35.21633,
+    "image": "Dome of the Rock seen from the Mount of Olives (12395649153) (cropped).jpg",
+    "wiki": "Jerusalem",
+    "id": "Q1218",
+    "isCapital": true
+   },
    "audio": {
     "he": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/93/He-Medinat_Israel.ogg/He-Medinat_Israel.ogg.mp3",
@@ -3533,6 +5133,26 @@
     }
    ],
    "capitalAnswer": "Rome",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Rome",
+    "population": 2743851,
+    "lat": 41.89193,
+    "lon": 12.51133,
+    "image": "Rome Skyline (8012016319).jpg",
+    "wiki": "Rome",
+    "id": "Q220",
+    "isCapital": true
+   },
    "audio": {
     "it": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0c/LL-Q652_(ita)-LangPao-Italia.wav/LL-Q652_(ita)-LangPao-Italia.wav.mp3",
@@ -3577,7 +5197,27 @@
      "code": "fr"
     }
    ],
-   "capitalAnswer": "Yamoussoukro"
+   "capitalAnswer": "Yamoussoukro",
+   "currency": [
+    {
+     "id": "Q861690",
+     "name": "West African CFA franc",
+     "code": "XOF",
+     "symbol": "F",
+     "wiki": "West_African_CFA_franc",
+     "shared": 8
+    }
+   ],
+   "largestCity": {
+    "name": "Abidjan",
+    "population": 5616633,
+    "lat": 5.35444,
+    "lon": -4.00167,
+    "image": "Plateau 2010, Abidjan.jpg",
+    "wiki": "Abidjan",
+    "id": "Q1515",
+    "isCapital": false
+   }
   },
   {
    "id": "Q766",
@@ -3610,7 +5250,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Kingston"
+   "capitalAnswer": "Kingston",
+   "currency": [
+    {
+     "id": "Q209792",
+     "name": "Jamaican dollar",
+     "code": "JMD",
+     "symbol": "J$",
+     "wiki": "Jamaican_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Kingston",
+    "population": 937700,
+    "lat": 17.99702,
+    "lon": -76.79358,
+    "image": "PortofKingston.jpg",
+    "wiki": "Kingston,_Jamaica",
+    "id": "Q34692",
+    "isCapital": true
+   }
   },
   {
    "id": "Q17",
@@ -3655,7 +5315,27 @@
      "code": "ja"
     }
    ],
-   "capitalAnswer": "Tokyo"
+   "capitalAnswer": "Tokyo",
+   "currency": [
+    {
+     "id": "Q8146",
+     "name": "Japanese yen",
+     "code": "JPY",
+     "symbol": "¥",
+     "wiki": "Japanese_yen",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Tokyo",
+    "population": 14264798,
+    "lat": 35.6895,
+    "lon": 139.69171,
+    "image": "Skyscrapers of Shinjuku 2009 January (revised).jpg",
+    "wiki": "Tokyo",
+    "id": "Q1490",
+    "isCapital": true
+   }
   },
   {
    "id": "Q810",
@@ -3700,7 +5380,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Amman"
+   "capitalAnswer": "Amman",
+   "currency": [
+    {
+     "id": "Q203722",
+     "name": "Jordanian dinar",
+     "code": "JOD",
+     "symbol": "JD",
+     "wiki": "Jordanian_dinar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Amman",
+    "population": 4007526,
+    "lat": 31.95522,
+    "lon": 35.94503,
+    "image": "Amman.jpg",
+    "wiki": "Amman",
+    "id": "Q3805",
+    "isCapital": true
+   }
   },
   {
    "id": "Q232",
@@ -3751,6 +5451,26 @@
     }
    ],
    "capitalAnswer": "Astana",
+   "currency": [
+    {
+     "id": "Q173751",
+     "name": "Kazakhstani tenge",
+     "code": "KZT",
+     "symbol": "₸",
+     "wiki": "Kazakhstani_tenge",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Almaty",
+    "population": 2228675,
+    "lat": 43.25249,
+    "lon": 76.9115,
+    "image": "13 Вид на Алма-Ату с горы Кок Тюбе.jpg",
+    "wiki": "Almaty",
+    "id": "Q35493",
+    "isCapital": false
+   },
    "audio": {
     "kk": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/Kk-kazakhstan.ogg/Kk-kazakhstan.ogg.mp3",
@@ -3789,7 +5509,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Nairobi"
+   "capitalAnswer": "Nairobi",
+   "currency": [
+    {
+     "id": "Q202882",
+     "name": "Kenyan shilling",
+     "code": "KES",
+     "symbol": "Ksh",
+     "wiki": "Kenyan_shilling",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Nairobi",
+    "population": 5545000,
+    "lat": -1.28333,
+    "lon": 36.81667,
+    "image": "Nairobi, view from KICC.JPG",
+    "wiki": "Nairobi",
+    "id": "Q3870",
+    "isCapital": true
+   }
   },
   {
    "id": "Q710",
@@ -3822,7 +5562,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "South Tarawa"
+   "capitalAnswer": "South Tarawa",
+   "currency": [
+    {
+     "id": "Q1049963",
+     "name": "Kiribati dollar",
+     "code": null,
+     "symbol": "$",
+     "wiki": "Kiribati_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Tarawa",
+    "population": 40311,
+    "lat": 1.3278,
+    "lon": 172.97696,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": true
+   }
   },
   {
    "id": "Q1246",
@@ -3855,7 +5615,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Pristina"
+   "capitalAnswer": "Pristina",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Pristina",
+    "population": 227466,
+    "lat": 42.67272,
+    "lon": 21.16688,
+    "image": "PRISHTINA 2013 (13).jpg",
+    "wiki": "Pristina",
+    "id": "Q25270",
+    "isCapital": true
+   }
   },
   {
    "id": "Q817",
@@ -3900,7 +5680,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Kuwait City"
+   "capitalAnswer": "Kuwait City",
+   "currency": [
+    {
+     "id": "Q193098",
+     "name": "Kuwaiti dinar",
+     "code": "KWD",
+     "symbol": "د.ك",
+     "wiki": "Kuwaiti_dinar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Hawally",
+    "population": 164212,
+    "lat": 29.33278,
+    "lon": 48.02861,
+    "image": null,
+    "wiki": "Hawally,_Kuwait",
+    "id": "Q3235220",
+    "isCapital": false
+   }
   },
   {
    "id": "Q813",
@@ -3957,6 +5757,26 @@
     }
    ],
    "capitalAnswer": "Bishkek",
+   "currency": [
+    {
+     "id": "Q35881",
+     "name": "Kyrgyz som",
+     "code": "KGS",
+     "symbol": "⃀",
+     "wiki": "Kyrgyz_som",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Bishkek",
+    "population": 900000,
+    "lat": 42.87,
+    "lon": 74.59,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": true
+   },
    "audio": {
     "ky": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/15/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%9A%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D1%82%D0%B0%D0%BD.wav/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%9A%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D1%82%D0%B0%D0%BD.wav.mp3",
@@ -4008,6 +5828,26 @@
     }
    ],
    "capitalAnswer": "Vientiane",
+   "currency": [
+    {
+     "id": "Q200055",
+     "name": "Lao kip",
+     "code": "LAK",
+     "symbol": "₭",
+     "wiki": "Lao_kip",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Vientiane",
+    "population": 948487,
+    "lat": 17.96667,
+    "lon": 102.6,
+    "image": "20171118 Vientiane 3220 DxO.jpg",
+    "wiki": "Vientiane",
+    "id": "Q9326",
+    "isCapital": true
+   },
    "audio": {
     "lo": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/ca/LL-Q9211_(lao)-RenWikiLA-%E0%BA%9B%E0%BA%B0%E0%BB%80%E0%BA%97%E0%BA%94%E0%BA%A5%E0%BA%B2%E0%BA%A7.wav/LL-Q9211_(lao)-RenWikiLA-%E0%BA%9B%E0%BA%B0%E0%BB%80%E0%BA%97%E0%BA%94%E0%BA%A5%E0%BA%B2%E0%BA%A7.wav.mp3",
@@ -4058,7 +5898,27 @@
      "code": "lv"
     }
    ],
-   "capitalAnswer": "Riga"
+   "capitalAnswer": "Riga",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Riga",
+    "population": 588911,
+    "lat": 56.946,
+    "lon": 24.10589,
+    "image": "Vistas desde la iglesia de San Pedro, Riga, Letonia, 2012-08-07, DD 12.JPG",
+    "wiki": "Riga",
+    "id": "Q1773",
+    "isCapital": true
+   }
   },
   {
    "id": "Q822",
@@ -4113,7 +5973,27 @@
      "code": "fr"
     }
    ],
-   "capitalAnswer": "Beirut"
+   "capitalAnswer": "Beirut",
+   "currency": [
+    {
+     "id": "Q201880",
+     "name": "Lebanese pound",
+     "code": "LBP",
+     "symbol": "ل.ل.",
+     "wiki": "Lebanese_pound",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Beirut",
+    "population": 2421354,
+    "lat": 33.89332,
+    "lon": 35.50157,
+    "image": "Beirutcity.jpg",
+    "wiki": "Beirut",
+    "id": "Q3820",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1013",
@@ -4146,7 +6026,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Maseru"
+   "capitalAnswer": "Maseru",
+   "currency": [
+    {
+     "id": "Q208039",
+     "name": "Lesotho loti",
+     "code": "LSL",
+     "symbol": "M",
+     "wiki": "Lesotho_loti",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Maseru",
+    "population": 343541,
+    "lat": -29.31667,
+    "lon": 27.48333,
+    "image": "Maseru from Parliament Hill.jpg",
+    "wiki": "Maseru",
+    "id": "Q3909",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1014",
@@ -4179,7 +6079,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Monrovia"
+   "capitalAnswer": "Monrovia",
+   "currency": [
+    {
+     "id": "Q242988",
+     "name": "Liberian dollar",
+     "code": "LRD",
+     "symbol": "L$",
+     "wiki": "Liberian_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Monrovia",
+    "population": 1761032,
+    "lat": 6.30054,
+    "lon": -10.7969,
+    "image": "Liberia, Africa - panoramio (256).jpg",
+    "wiki": "Monrovia",
+    "id": "Q3748",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1016",
@@ -4224,7 +6144,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Tripoli"
+   "capitalAnswer": "Tripoli",
+   "currency": [
+    {
+     "id": "Q190699",
+     "name": "Libyan dinar",
+     "code": "LYD",
+     "symbol": "LD",
+     "wiki": "Libyan_dinar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Tripoli",
+    "population": 1293016,
+    "lat": 32.88743,
+    "lon": 13.18733,
+    "image": "Marcus Aurelius Arch Tripoli Libya.jpg",
+    "wiki": "Tripoli,_Libya",
+    "id": "Q3579",
+    "isCapital": true
+   }
   },
   {
    "id": "Q347",
@@ -4257,7 +6197,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Vaduz"
+   "capitalAnswer": "Vaduz",
+   "currency": [
+    {
+     "id": "Q25344",
+     "name": "Swiss franc",
+     "code": "CHF",
+     "symbol": "Fr",
+     "wiki": "Swiss_franc",
+     "shared": 2
+    }
+   ],
+   "largestCity": {
+    "name": "Vaduz",
+    "population": 5668,
+    "lat": 47.14151,
+    "lon": 9.52154,
+    "image": "View of Vaduz.jpg",
+    "wiki": "Vaduz",
+    "id": "Q1844",
+    "isCapital": true
+   }
   },
   {
    "id": "Q37",
@@ -4296,7 +6256,27 @@
      "code": "lt"
     }
    ],
-   "capitalAnswer": "Vilnius"
+   "capitalAnswer": "Vilnius",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Vilnius",
+    "population": 619405,
+    "lat": 54.68916,
+    "lon": 25.2798,
+    "image": "Gedimino pilis by Augustas Didzgalvis.jpg",
+    "wiki": "Vilnius",
+    "id": "Q216",
+    "isCapital": true
+   }
   },
   {
    "id": "Q32",
@@ -4357,7 +6337,27 @@
      "code": "lb"
     }
    ],
-   "capitalAnswer": "Luxembourg"
+   "capitalAnswer": "Luxembourg",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Luxembourg",
+    "population": 137678,
+    "lat": 49.60982,
+    "lon": 6.13268,
+    "image": "Luxembourg City Hall (54540726309).jpg",
+    "wiki": "Luxembourg_City",
+    "id": "Q1842",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1019",
@@ -4396,7 +6396,27 @@
      "code": "mg"
     }
    ],
-   "capitalAnswer": "Antananarivo"
+   "capitalAnswer": "Antananarivo",
+   "currency": [
+    {
+     "id": "Q4584",
+     "name": "Malagasy ariary",
+     "code": "MGA",
+     "symbol": "Ar",
+     "wiki": "Malagasy_ariary",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Antananarivo",
+    "population": 1275207,
+    "lat": -18.91368,
+    "lon": 47.53613,
+    "image": "Lake Anosy, Central Antananarivo, Capital of Madagascar, Photo by Sascha Grabow.jpg",
+    "wiki": "Antananarivo",
+    "id": "Q3915",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1020",
@@ -4435,7 +6455,27 @@
      "code": "ny"
     }
    ],
-   "capitalAnswer": "Lilongwe"
+   "capitalAnswer": "Lilongwe",
+   "currency": [
+    {
+     "id": "Q211694",
+     "name": "Malawian kwacha",
+     "code": "MWK",
+     "symbol": "MK",
+     "wiki": "Malawian_kwacha",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Lilongwe",
+    "population": 989318,
+    "lat": -13.96692,
+    "lon": 33.78725,
+    "image": "Lilongwe Area 2.jpg",
+    "wiki": "Lilongwe",
+    "id": "Q3876",
+    "isCapital": true
+   }
   },
   {
    "id": "Q833",
@@ -4487,6 +6527,26 @@
    ],
    "capitalAnswer": "Kuala Lumpur (official capital), though the government sits in Putrajaya",
    "capitalNote": null,
+   "currency": [
+    {
+     "id": "Q163712",
+     "name": "Malaysian ringgit",
+     "code": "MYR",
+     "symbol": "RM",
+     "wiki": "Malaysian_ringgit",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Kuala Lumpur",
+    "population": 9000280,
+    "lat": 3.1412,
+    "lon": 101.68653,
+    "image": "Kl-skyline-at-night-2022.jpg",
+    "wiki": "Kuala_Lumpur",
+    "id": "Q1865",
+    "isCapital": true
+   },
    "audio": {
     "ms": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6e/Ms-MY-Malaysia.ogg/Ms-MY-Malaysia.ogg.mp3",
@@ -4537,7 +6597,27 @@
      "code": "dv"
     }
    ],
-   "capitalAnswer": "Malé"
+   "capitalAnswer": "Malé",
+   "currency": [
+    {
+     "id": "Q206600",
+     "name": "Maldivian rufiyaa",
+     "code": "MVR",
+     "symbol": "Rf",
+     "wiki": "Maldivian_rufiyaa",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Malé",
+    "population": 133019,
+    "lat": 4.17521,
+    "lon": 73.50916,
+    "image": "Male-total.jpg",
+    "wiki": "Malé",
+    "id": "Q9347",
+    "isCapital": true
+   }
   },
   {
    "id": "Q912",
@@ -4570,7 +6650,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Bamako"
+   "capitalAnswer": "Bamako",
+   "currency": [
+    {
+     "id": "Q861690",
+     "name": "West African CFA franc",
+     "code": "XOF",
+     "symbol": "F",
+     "wiki": "West_African_CFA_franc",
+     "shared": 8
+    }
+   ],
+   "largestCity": {
+    "name": "Bamako",
+    "population": 4227569,
+    "lat": 12.60915,
+    "lon": -7.97522,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": true
+   }
   },
   {
    "id": "Q233",
@@ -4603,7 +6703,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Valletta"
+   "capitalAnswer": "Valletta",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "St. Paul's Bay",
+    "population": 32042,
+    "lat": 35.95064,
+    "lon": 14.41561,
+    "image": null,
+    "wiki": null,
+    "id": "Q54556713",
+    "isCapital": false
+   }
   },
   {
    "id": "Q709",
@@ -4642,7 +6762,27 @@
      "code": "mh"
     }
    ],
-   "capitalAnswer": "Majuro"
+   "capitalAnswer": "Majuro",
+   "currency": [
+    {
+     "id": "Q96051466",
+     "name": "SOV",
+     "code": null,
+     "symbol": null,
+     "wiki": null,
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Majuro",
+    "population": 30000,
+    "lat": 7.08971,
+    "lon": 171.38027,
+    "image": "Majuro main road.jpg",
+    "wiki": "Majuro",
+    "id": "Q12919",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1025",
@@ -4687,7 +6827,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Nouakchott"
+   "capitalAnswer": "Nouakchott",
+   "currency": [
+    {
+     "id": "Q207024",
+     "name": "Mauritanian ouguiya",
+     "code": "MRU",
+     "symbol": "UM",
+     "wiki": "Mauritanian_ouguiya",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Nouakchott",
+    "population": 1446761,
+    "lat": 18.08581,
+    "lon": -15.9785,
+    "image": "15-Nouakchott-eH-R0058185.jpg",
+    "wiki": "Nouakchott",
+    "id": "Q3688",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1027",
@@ -4737,7 +6897,27 @@
      "code": "mfe"
     }
    ],
-   "capitalAnswer": "Port Louis"
+   "capitalAnswer": "Port Louis",
+   "currency": [
+    {
+     "id": "Q212967",
+     "name": "Mauritian rupee",
+     "code": "MUR",
+     "symbol": "₨",
+     "wiki": "Mauritian_rupee",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Port Louis",
+    "population": 149194,
+    "lat": -20.16194,
+    "lon": 57.49889,
+    "image": "Mauritius port louis.jpg",
+    "wiki": "Port_Louis",
+    "id": "Q3929",
+    "isCapital": true
+   }
   },
   {
    "id": "Q96",
@@ -4783,6 +6963,26 @@
     }
    ],
    "capitalAnswer": "Mexico City",
+   "currency": [
+    {
+     "id": "Q4730",
+     "name": "Mexican peso",
+     "code": "MXN",
+     "symbol": "$",
+     "wiki": "Mexican_peso",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Mexico City",
+    "population": 9209944,
+    "lat": 19.42847,
+    "lon": -99.12766,
+    "image": "Sobrevuelos CDMX HJ2A5091 (40386338731).jpg",
+    "wiki": "Mexico_City",
+    "id": "Q1489",
+    "isCapital": true
+   },
    "audio": {
     "es": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/16/Mexico_2022.wav/Mexico_2022.wav.mp3",
@@ -4821,7 +7021,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Palikir"
+   "capitalAnswer": "Palikir",
+   "currency": [
+    {
+     "id": "Q4917",
+     "name": "United States dollar",
+     "code": "USD",
+     "symbol": "$",
+     "wiki": "United_States_dollar",
+     "shared": 5
+    }
+   ],
+   "largestCity": {
+    "name": "Palikir",
+    "population": 6227,
+    "lat": 6.92477,
+    "lon": 158.16109,
+    "image": "Palikir Government Buildings.jpg",
+    "wiki": "Palikir",
+    "id": "Q42751",
+    "isCapital": true
+   }
   },
   {
    "id": "Q217",
@@ -4854,7 +7074,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Chișinău"
+   "capitalAnswer": "Chișinău",
+   "currency": [
+    {
+     "id": "Q181129",
+     "name": "Moldovan leu",
+     "code": "MDL",
+     "symbol": "L",
+     "wiki": "Moldovan_leu",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Chișinău",
+    "population": 567038,
+    "lat": 47.00902,
+    "lon": 28.85938,
+    "image": "Arch of Triumph, Chisinau, Republic of Moldova (51160304626 cropped).jpg",
+    "wiki": "Chișinău",
+    "id": "Q21197",
+    "isCapital": true
+   }
   },
   {
    "id": "Q235",
@@ -4887,7 +7127,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Monaco"
+   "capitalAnswer": "Monaco",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Monaco",
+    "population": 32965,
+    "lat": 43.73718,
+    "lon": 7.42145,
+    "image": null,
+    "wiki": null,
+    "id": "Q49755141",
+    "isCapital": true
+   }
   },
   {
    "id": "Q711",
@@ -4932,7 +7192,27 @@
      "code": "mn"
     }
    ],
-   "capitalAnswer": "Ulaanbaatar"
+   "capitalAnswer": "Ulaanbaatar",
+   "currency": [
+    {
+     "id": "Q183435",
+     "name": "Mongolian tögrög",
+     "code": "MNT",
+     "symbol": "₮",
+     "wiki": "Mongolian_tögrög",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Ulaanbaatar",
+    "population": 1396288,
+    "lat": 47.90771,
+    "lon": 106.88324,
+    "image": "UB downtown.jpg",
+    "wiki": "Ulaanbaatar",
+    "id": "Q23430",
+    "isCapital": true
+   }
   },
   {
    "id": "Q236",
@@ -4972,6 +7252,26 @@
     }
    ],
    "capitalAnswer": "Podgorica",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Podgorica",
+    "population": 150977,
+    "lat": 42.44124,
+    "lon": 19.26309,
+    "image": "Titograd.jpg",
+    "wiki": "Podgorica",
+    "id": "Q23564",
+    "isCapital": true
+   },
    "audio": {
     "cnr": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f7/CrnaGora.ogg/CrnaGora.ogg.mp3",
@@ -5026,7 +7326,27 @@
      "lang": "Berber"
     }
    ],
-   "capitalAnswer": "Rabat"
+   "capitalAnswer": "Rabat",
+   "currency": [
+    {
+     "id": "Q200192",
+     "name": "Moroccan dirham",
+     "code": "MAD",
+     "symbol": "DH",
+     "wiki": "Moroccan_dirham",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Casablanca",
+    "population": 3215935,
+    "lat": 33.58831,
+    "lon": -7.61138,
+    "image": "Au centre de Casablanca (8177200639).jpg",
+    "wiki": "Casablanca",
+    "id": "Q7903",
+    "isCapital": false
+   }
   },
   {
    "id": "Q1029",
@@ -5065,7 +7385,27 @@
      "code": "pt"
     }
    ],
-   "capitalAnswer": "Maputo"
+   "capitalAnswer": "Maputo",
+   "currency": [
+    {
+     "id": "Q200753",
+     "name": "Mozambican metical",
+     "code": "MZN",
+     "symbol": "MT",
+     "wiki": "Mozambican_metical",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Matola",
+    "population": 1198988,
+    "lat": -25.96222,
+    "lon": 32.45889,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": false
+   }
   },
   {
    "id": "Q836",
@@ -5110,7 +7450,27 @@
      "code": "my"
     }
    ],
-   "capitalAnswer": "Naypyidaw"
+   "capitalAnswer": "Naypyidaw",
+   "currency": [
+    {
+     "id": "Q201875",
+     "name": "Myanmar kyat",
+     "code": "MMK",
+     "symbol": "K",
+     "wiki": "Myanmar_kyat",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Yangon",
+    "population": 6874000,
+    "lat": 16.80528,
+    "lon": 96.15611,
+    "image": "2016 Rangun, Dawny budynek Sądu Najwyższego (15).jpg",
+    "wiki": "Yangon",
+    "id": "Q37995",
+    "isCapital": false
+   }
   },
   {
    "id": "Q1030",
@@ -5149,7 +7509,27 @@
      "code": "af"
     }
    ],
-   "capitalAnswer": "Windhoek"
+   "capitalAnswer": "Windhoek",
+   "currency": [
+    {
+     "id": "Q202462",
+     "name": "Namibian dollar",
+     "code": "NAD",
+     "symbol": "N$",
+     "wiki": "Namibian_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Windhoek",
+    "population": 486169,
+    "lat": -22.55941,
+    "lon": 17.08323,
+    "image": "Windhoek-Skyline.jpg",
+    "wiki": "Windhoek",
+    "id": "Q3935",
+    "isCapital": true
+   }
   },
   {
    "id": "Q697",
@@ -5182,7 +7562,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Yaren District"
+   "capitalAnswer": "Yaren District",
+   "currency": [
+    {
+     "id": "Q259502",
+     "name": "Australian dollar",
+     "code": "AUD",
+     "symbol": "AU$",
+     "wiki": "Australian_dollar",
+     "shared": 2
+    }
+   ],
+   "largestCity": {
+    "name": "Yaren",
+    "population": 1100,
+    "lat": -0.55085,
+    "lon": 166.9252,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": true
+   }
   },
   {
    "id": "Q837",
@@ -5227,7 +7627,27 @@
      "code": "ne"
     }
    ],
-   "capitalAnswer": "Kathmandu"
+   "capitalAnswer": "Kathmandu",
+   "currency": [
+    {
+     "id": "Q202895",
+     "name": "Nepalese rupee",
+     "code": "NPR",
+     "symbol": "N₨",
+     "wiki": "Nepalese_rupee",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Kathmandu",
+    "population": 845767,
+    "lat": 27.70169,
+    "lon": 85.3206,
+    "image": "Kathmandu Avion 01.JPG",
+    "wiki": "Kathmandu",
+    "id": "Q3037",
+    "isCapital": true
+   }
   },
   {
    "id": "Q29999",
@@ -5266,7 +7686,51 @@
      "code": "nl"
     }
    ],
-   "capitalAnswer": "Amsterdam"
+   "capitalAnswer": "Amsterdam",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    },
+    {
+     "id": "Q4917",
+     "name": "United States dollar",
+     "code": "USD",
+     "symbol": "$",
+     "wiki": "United_States_dollar",
+     "shared": 5
+    },
+    {
+     "id": "Q232270",
+     "name": "Aruban florin",
+     "code": "AWG",
+     "symbol": "ƒ",
+     "wiki": "Aruban_florin",
+     "shared": 1
+    },
+    {
+     "id": "Q737779",
+     "name": "Caribbean guilder",
+     "code": "XCG",
+     "symbol": "Cg",
+     "wiki": "Caribbean_guilder",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Amsterdam",
+    "population": 921468,
+    "lat": 52.37403,
+    "lon": 4.88969,
+    "image": "Amsterdam airphoto.jpg",
+    "wiki": "Amsterdam",
+    "id": "Q727",
+    "isCapital": true
+   }
   },
   {
    "id": "Q664",
@@ -5311,7 +7775,27 @@
      "code": "mi"
     }
    ],
-   "capitalAnswer": "Wellington"
+   "capitalAnswer": "Wellington",
+   "currency": [
+    {
+     "id": "Q1472704",
+     "name": "New Zealand dollar",
+     "code": "NZD",
+     "symbol": "NZ$",
+     "wiki": "New_Zealand_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Auckland",
+    "population": 1470100,
+    "lat": -36.84853,
+    "lon": 174.76349,
+    "image": "Auckland CBD.jpg",
+    "wiki": "Auckland",
+    "id": "Q37100",
+    "isCapital": false
+   }
   },
   {
    "id": "Q811",
@@ -5344,7 +7828,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Managua"
+   "capitalAnswer": "Managua",
+   "currency": [
+    {
+     "id": "Q207312",
+     "name": "Nicaraguan córdoba",
+     "code": "NIO",
+     "symbol": "C$",
+     "wiki": "Nicaraguan_córdoba",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Managua",
+    "population": 973087,
+    "lat": 12.13282,
+    "lon": -86.2504,
+    "image": null,
+    "wiki": null,
+    "id": "Q131546626",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1032",
@@ -5377,7 +7881,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Niamey"
+   "capitalAnswer": "Niamey",
+   "currency": [
+    {
+     "id": "Q861690",
+     "name": "West African CFA franc",
+     "code": "XOF",
+     "symbol": "F",
+     "wiki": "West_African_CFA_franc",
+     "shared": 8
+    }
+   ],
+   "largestCity": {
+    "name": "Niamey",
+    "population": 1496260,
+    "lat": 13.51366,
+    "lon": 2.1098,
+    "image": "Niamey from grand mosque theatre 2006.jpg",
+    "wiki": "Niamey",
+    "id": "Q3674",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1033",
@@ -5410,7 +7934,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Abuja"
+   "capitalAnswer": "Abuja",
+   "currency": [
+    {
+     "id": "Q203567",
+     "name": "Nigerian naira",
+     "code": "NGN",
+     "symbol": "₦",
+     "wiki": "Nigerian_naira",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Lagos",
+    "population": 15070000,
+    "lat": 6.45407,
+    "lon": 3.39467,
+    "image": "Skywater.jpg",
+    "wiki": "Lagos",
+    "id": "Q8673",
+    "isCapital": false
+   }
   },
   {
    "id": "Q423",
@@ -5455,7 +7999,27 @@
      "code": "ko"
     }
    ],
-   "capitalAnswer": "Pyongyang"
+   "capitalAnswer": "Pyongyang",
+   "currency": [
+    {
+     "id": "Q106720",
+     "name": "North Korean won",
+     "code": "KPW",
+     "symbol": "₩",
+     "wiki": "North_Korean_won",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Pyongyang",
+    "population": 3222000,
+    "lat": 39.03385,
+    "lon": 125.75432,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": true
+   }
   },
   {
    "id": "Q221",
@@ -5500,7 +8064,27 @@
      "code": "mk"
     }
    ],
-   "capitalAnswer": "Skopje"
+   "capitalAnswer": "Skopje",
+   "currency": [
+    {
+     "id": "Q177875",
+     "name": "Macedonian denar",
+     "code": "MKD",
+     "symbol": "DEN",
+     "wiki": "Macedonian_denar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Skopje",
+    "population": 422540,
+    "lat": 41.99646,
+    "lon": 21.43141,
+    "image": "Stone Bridge Skopje 4.jpg",
+    "wiki": "Skopje",
+    "id": "Q384",
+    "isCapital": true
+   }
   },
   {
    "id": "Q23681",
@@ -5533,7 +8117,17 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "North Nicosia"
+   "capitalAnswer": "North Nicosia",
+   "currency": [
+    {
+     "id": "Q172872",
+     "name": "Turkish lira",
+     "code": "TRY",
+     "symbol": "₺",
+     "wiki": "Turkish_lira",
+     "shared": 2
+    }
+   ]
   },
   {
    "id": "Q20",
@@ -5581,7 +8175,27 @@
      "lang": "Sami"
     }
    ],
-   "capitalAnswer": "Oslo"
+   "capitalAnswer": "Oslo",
+   "currency": [
+    {
+     "id": "Q132643",
+     "name": "Norwegian krone",
+     "code": "NOK",
+     "symbol": "kr",
+     "wiki": "Norwegian_krone",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Oslo",
+    "population": 717710,
+    "lat": 59.91273,
+    "lon": 10.74609,
+    "image": "Oslo newer montage 2013.png",
+    "wiki": "Oslo",
+    "id": "Q585",
+    "isCapital": true
+   }
   },
   {
    "id": "Q842",
@@ -5632,7 +8246,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Muscat"
+   "capitalAnswer": "Muscat",
+   "currency": [
+    {
+     "id": "Q272290",
+     "name": "Omani rial",
+     "code": "OMR",
+     "symbol": "ر.ع.",
+     "wiki": "Omani_rial",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Muscat",
+    "population": 1421409,
+    "lat": 23.58413,
+    "lon": 58.40778,
+    "image": "Old city of Maskat.jpg",
+    "wiki": "Muscat",
+    "id": "Q3826",
+    "isCapital": true
+   }
   },
   {
    "id": "Q843",
@@ -5677,7 +8311,27 @@
      "code": "ur"
     }
    ],
-   "capitalAnswer": "Islamabad"
+   "capitalAnswer": "Islamabad",
+   "currency": [
+    {
+     "id": "Q188289",
+     "name": "Pakistani rupee",
+     "code": "PKR",
+     "symbol": "₨",
+     "wiki": "Pakistani_rupee",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Karachi",
+    "population": 14910352,
+    "lat": 24.8608,
+    "lon": 67.0104,
+    "image": "Karachi from above.jpg",
+    "wiki": "Karachi",
+    "id": "Q8660",
+    "isCapital": false
+   }
   },
   {
    "id": "Q695",
@@ -5715,7 +8369,27 @@
      "lang": "Palauan"
     }
    ],
-   "capitalAnswer": "Ngerulmud"
+   "capitalAnswer": "Ngerulmud",
+   "currency": [
+    {
+     "id": "Q4917",
+     "name": "United States dollar",
+     "code": "USD",
+     "symbol": "$",
+     "wiki": "United_States_dollar",
+     "shared": 5
+    }
+   ],
+   "largestCity": {
+    "name": "Ngerulmud",
+    "population": 0,
+    "lat": 7.50077,
+    "lon": 134.6238,
+    "image": "State of Melekeok.png",
+    "wiki": "Ngerulmud",
+    "id": "Q515229",
+    "isCapital": true
+   }
   },
   {
    "id": "Q219060",
@@ -5778,7 +8452,27 @@
     }
    ],
    "capitalAnswer": "East Jerusalem (proclaimed capital), with the government based in Ramallah",
-   "capitalNote": null
+   "capitalNote": null,
+   "currency": [
+    {
+     "id": "Q131309",
+     "name": "Israeli new shekel",
+     "code": "ILS",
+     "symbol": "₪",
+     "wiki": "Israeli_new_shekel",
+     "shared": 2
+    }
+   ],
+   "largestCity": {
+    "name": "Gaza City",
+    "population": 590481,
+    "lat": 31.50161,
+    "lon": 34.46672,
+    "image": "Images of war 23-25 from Gaza, by Jaber Badwen, IMG 6060.jpg",
+    "wiki": "Gaza_City",
+    "id": "Q47492",
+    "isCapital": false
+   }
   },
   {
    "id": "Q804",
@@ -5823,7 +8517,27 @@
      "code": "es"
     }
    ],
-   "capitalAnswer": "Panama City"
+   "capitalAnswer": "Panama City",
+   "currency": [
+    {
+     "id": "Q210472",
+     "name": "Panamanian balboa",
+     "code": "PAB",
+     "symbol": "B/.",
+     "wiki": "Panamanian_balboa",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Panama City",
+    "population": 1540000,
+    "lat": 8.9936,
+    "lon": -79.51973,
+    "image": "Panama City Skyline 1.jpg",
+    "wiki": "Panama_City",
+    "id": "Q3306",
+    "isCapital": true
+   }
   },
   {
    "id": "Q691",
@@ -5873,7 +8587,27 @@
      "code": "tpi"
     }
    ],
-   "capitalAnswer": "Port Moresby"
+   "capitalAnswer": "Port Moresby",
+   "currency": [
+    {
+     "id": "Q200759",
+     "name": "Papua New Guinean kina",
+     "code": "PGK",
+     "symbol": "K",
+     "wiki": "Papua_New_Guinean_kina",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Port Moresby",
+    "population": 317374,
+    "lat": -9.47723,
+    "lon": 147.15089,
+    "image": "Port Moresby Town2 Mschlauch.jpg",
+    "wiki": "Port_Moresby",
+    "id": "Q36526",
+    "isCapital": true
+   }
   },
   {
    "id": "Q733",
@@ -5918,7 +8652,27 @@
      "code": "gn"
     }
    ],
-   "capitalAnswer": "Asunción"
+   "capitalAnswer": "Asunción",
+   "currency": [
+    {
+     "id": "Q207514",
+     "name": "Paraguayan guaraní",
+     "code": "PYG",
+     "symbol": "₲",
+     "wiki": "Paraguayan_guaraní",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Asunción",
+    "population": 462241,
+    "lat": -25.28646,
+    "lon": -57.647,
+    "image": "Asunción Paraguay.jpg",
+    "wiki": "Asunción",
+    "id": "Q2933",
+    "isCapital": true
+   }
   },
   {
    "id": "Q419",
@@ -5962,7 +8716,27 @@
      "code": "es"
     }
    ],
-   "capitalAnswer": "Lima"
+   "capitalAnswer": "Lima",
+   "currency": [
+    {
+     "id": "Q204656",
+     "name": "Peruvian sol",
+     "code": "PEN",
+     "symbol": "S/",
+     "wiki": "Peruvian_sol",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Lima",
+    "population": 9943800,
+    "lat": -12.04318,
+    "lon": -77.02824,
+    "image": "Plaza Mayor de Lima-1.jpg",
+    "wiki": "Lima",
+    "id": "Q2868",
+    "isCapital": true
+   }
   },
   {
    "id": "Q928",
@@ -6000,7 +8774,27 @@
      "lang": "Filipino"
     }
    ],
-   "capitalAnswer": "Manila"
+   "capitalAnswer": "Manila",
+   "currency": [
+    {
+     "id": "Q17193",
+     "name": "Philippine peso",
+     "code": "PHP",
+     "symbol": "₱",
+     "wiki": "Philippine_peso",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Quezon City",
+    "population": 3084270,
+    "lat": 14.6488,
+    "lon": 121.0509,
+    "image": "Katipunan area with Eastwood (view from SMDC Blue) (Quezon City and Marikina)(2017-09-06).jpg",
+    "wiki": "Quezon_City",
+    "id": "Q1475",
+    "isCapital": false
+   }
   },
   {
    "id": "Q36",
@@ -6052,6 +8846,26 @@
     }
    ],
    "capitalAnswer": "Warsaw",
+   "currency": [
+    {
+     "id": "Q123213",
+     "name": "Polish złoty",
+     "code": "PLN",
+     "symbol": "zł",
+     "wiki": "Polish_złoty",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Warsaw",
+    "population": 1862402,
+    "lat": 52.22977,
+    "lon": 21.01178,
+    "image": "Castle Square (22346p).jpg",
+    "wiki": "Warsaw",
+    "id": "Q270",
+    "isCapital": true
+   },
    "audio": {
     "pl": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/98/Pl-Polska.ogg/Pl-Polska.ogg.mp3",
@@ -6090,7 +8904,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Lisbon"
+   "capitalAnswer": "Lisbon",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Lisbon",
+    "population": 545796,
+    "lat": 38.72509,
+    "lon": -9.1498,
+    "image": "Lisboa837.png",
+    "wiki": "Lisbon",
+    "id": "Q597",
+    "isCapital": true
+   }
   },
   {
    "id": "Q846",
@@ -6135,7 +8969,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Doha"
+   "capitalAnswer": "Doha",
+   "currency": [
+    {
+     "id": "Q206386",
+     "name": "Qatari riyal",
+     "code": "QAR",
+     "symbol": "QR",
+     "wiki": "Qatari_riyal",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Doha",
+    "population": 1186023,
+    "lat": 25.28545,
+    "lon": 51.53096,
+    "image": "Doha skyline in the morning (12544910974).jpg",
+    "wiki": "Doha",
+    "id": "Q3861",
+    "isCapital": true
+   }
   },
   {
    "id": "Q971",
@@ -6190,7 +9044,27 @@
      "code": "ln"
     }
    ],
-   "capitalAnswer": "Brazzaville"
+   "capitalAnswer": "Brazzaville",
+   "currency": [
+    {
+     "id": "Q847739",
+     "name": "Central African CFA franc",
+     "code": "XAF",
+     "symbol": "XAF",
+     "wiki": "Central_African_CFA_franc",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "Brazzaville",
+    "population": 2145783,
+    "lat": -4.26613,
+    "lon": 15.28318,
+    "image": "Brazzaville (50637).jpg",
+    "wiki": "Brazzaville",
+    "id": "Q3844",
+    "isCapital": true
+   }
   },
   {
    "id": "Q218",
@@ -6235,7 +9109,27 @@
      "code": "ro"
     }
    ],
-   "capitalAnswer": "Bucharest"
+   "capitalAnswer": "Bucharest",
+   "currency": [
+    {
+     "id": "Q131645",
+     "name": "Romanian leu",
+     "code": "RON",
+     "symbol": "rumen leu",
+     "wiki": "Romanian_leu",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Bucharest",
+    "population": 1716961,
+    "lat": 44.43225,
+    "lon": 26.10626,
+    "image": "Bucharest-Skyline-01.jpg",
+    "wiki": "Bucharest",
+    "id": "Q19660",
+    "isCapital": true
+   }
   },
   {
    "id": "Q159",
@@ -6280,7 +9174,27 @@
      "code": "ru"
     }
    ],
-   "capitalAnswer": "Moscow"
+   "capitalAnswer": "Moscow",
+   "currency": [
+    {
+     "id": "Q41044",
+     "name": "Russian ruble",
+     "code": "RUB",
+     "symbol": "₽",
+     "wiki": "Russian_ruble",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Moscow",
+    "population": 13274285,
+    "lat": 55.75204,
+    "lon": 37.61781,
+    "image": "Saint Basil's Cathedral and the Red Square.jpg",
+    "wiki": "Moscow",
+    "id": "Q649",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1037",
@@ -6313,7 +9227,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Kigali"
+   "capitalAnswer": "Kigali",
+   "currency": [
+    {
+     "id": "Q4741",
+     "name": "Rwandan franc",
+     "code": "RWF",
+     "symbol": "R₣",
+     "wiki": "Rwandan_franc",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Kigali",
+    "population": 1745555,
+    "lat": -1.94995,
+    "lon": 30.05885,
+    "image": "Kigali2018Cropped.jpg",
+    "wiki": "Kigali",
+    "id": "Q3859",
+    "isCapital": true
+   }
   },
   {
    "id": "Q40362",
@@ -6358,7 +9292,17 @@
    ],
    "native": [],
    "capitalAnswer": "Laayoune (claimed capital), with Tifariti as the temporary capital",
-   "capitalNote": null
+   "capitalNote": null,
+   "currency": [
+    {
+     "id": "Q2094914",
+     "name": "Sahrawi peseta",
+     "code": null,
+     "symbol": null,
+     "wiki": "Sahrawi_peseta",
+     "shared": 1
+    }
+   ]
   },
   {
    "id": "Q763",
@@ -6391,7 +9335,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Basseterre"
+   "capitalAnswer": "Basseterre",
+   "currency": [
+    {
+     "id": "Q26365",
+     "name": "Eastern Caribbean dollar",
+     "code": "XCD",
+     "symbol": "EC$",
+     "wiki": "Eastern_Caribbean_dollar",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "Basseterre",
+    "population": 12920,
+    "lat": 17.2955,
+    "lon": -62.72499,
+    "image": "Basseterre.jpeg",
+    "wiki": "Basseterre",
+    "id": "Q41295",
+    "isCapital": true
+   }
   },
   {
    "id": "Q760",
@@ -6424,7 +9388,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Castries"
+   "capitalAnswer": "Castries",
+   "currency": [
+    {
+     "id": "Q26365",
+     "name": "Eastern Caribbean dollar",
+     "code": "XCD",
+     "symbol": "EC$",
+     "wiki": "Eastern_Caribbean_dollar",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "Gros Islet",
+    "population": 21660,
+    "lat": 14.06667,
+    "lon": -60.95,
+    "image": "At the top of Pigeon Island.jpg",
+    "wiki": "Gros_Islet",
+    "id": "Q3116994",
+    "isCapital": false
+   }
   },
   {
    "id": "Q757",
@@ -6457,7 +9441,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Kingstown"
+   "capitalAnswer": "Kingstown",
+   "currency": [
+    {
+     "id": "Q26365",
+     "name": "Eastern Caribbean dollar",
+     "code": "XCD",
+     "symbol": "EC$",
+     "wiki": "Eastern_Caribbean_dollar",
+     "shared": 6
+    }
+   ],
+   "largestCity": {
+    "name": "Kingstown",
+    "population": 24518,
+    "lat": 13.15527,
+    "lon": -61.22742,
+    "image": "St. Vincent, Karibik - Kingstown City - panoramio.jpg",
+    "wiki": "Kingstown",
+    "id": "Q41474",
+    "isCapital": true
+   }
   },
   {
    "id": "Q683",
@@ -6496,7 +9500,27 @@
      "code": "sm"
     }
    ],
-   "capitalAnswer": "Apia"
+   "capitalAnswer": "Apia",
+   "currency": [
+    {
+     "id": "Q4588",
+     "name": "Samoan tālā",
+     "code": "WST",
+     "symbol": "WS$",
+     "wiki": "Samoan_tālā",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Apia",
+    "population": 37708,
+    "lat": -13.83333,
+    "lon": -171.76666,
+    "image": "Samoa - Apia Govt buildings.jpg",
+    "wiki": "Apia",
+    "id": "Q36260",
+    "isCapital": true
+   }
   },
   {
    "id": "Q238",
@@ -6529,7 +9553,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "San Marino"
+   "capitalAnswer": "San Marino",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "San Marino",
+    "population": 4040,
+    "lat": 43.93667,
+    "lon": 12.44639,
+    "image": "View of Mount Titano - San Marino.jpg",
+    "wiki": "City_of_San_Marino",
+    "id": "Q1848",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1039",
@@ -6568,7 +9612,27 @@
      "code": "pt"
     }
    ],
-   "capitalAnswer": "São Tomé"
+   "capitalAnswer": "São Tomé",
+   "currency": [
+    {
+     "id": "Q193712",
+     "name": "São Tomé and Príncipe dobra",
+     "code": "STN",
+     "symbol": "₡",
+     "wiki": "São_Tomé_and_Príncipe_dobra",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "São Tomé",
+    "population": 65468,
+    "lat": 0.33756,
+    "lon": 6.7299,
+    "image": "Org 4cd8129a56d8fa1d 1582100284000.jpg",
+    "wiki": "São_Tomé",
+    "id": "Q3932",
+    "isCapital": true
+   }
   },
   {
    "id": "Q851",
@@ -6620,6 +9684,26 @@
     }
    ],
    "capitalAnswer": "Riyadh",
+   "currency": [
+    {
+     "id": "Q199857",
+     "name": "Saudi riyal",
+     "code": "SAR",
+     "symbol": "SR",
+     "wiki": "Saudi_riyal",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Riyadh",
+    "population": 7009100,
+    "lat": 24.68773,
+    "lon": 46.72185,
+    "image": "Riyadh Skyline.jpg",
+    "wiki": "Riyadh",
+    "id": "Q3692",
+    "isCapital": true
+   },
    "audio": {
     "ar": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/19/%D8%B5%D9%88%D8%AA_%D9%86%D8%B7%D9%82_%22%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%22_-_The_%22Kingdom_of_Saudi_Arabia%22_sound_in_Arabic_language.ogg/%D8%B5%D9%88%D8%AA_%D9%86%D8%B7%D9%82_%22%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%22_-_The_%22Kingdom_of_Saudi_Arabia%22_sound_in_Arabic_language.ogg.mp3",
@@ -6664,7 +9748,27 @@
      "code": "fr"
     }
    ],
-   "capitalAnswer": "Dakar"
+   "capitalAnswer": "Dakar",
+   "currency": [
+    {
+     "id": "Q861690",
+     "name": "West African CFA franc",
+     "code": "XOF",
+     "symbol": "F",
+     "wiki": "West_African_CFA_franc",
+     "shared": 8
+    }
+   ],
+   "largestCity": {
+    "name": "Dakar",
+    "population": 1438725,
+    "lat": 14.6937,
+    "lon": -17.44406,
+    "image": "Pointe des Almadies - Senegal.jpg",
+    "wiki": "Dakar",
+    "id": "Q3718",
+    "isCapital": true
+   }
   },
   {
    "id": "Q403",
@@ -6715,7 +9819,27 @@
      "code": "sr"
     }
    ],
-   "capitalAnswer": "Belgrade"
+   "capitalAnswer": "Belgrade",
+   "currency": [
+    {
+     "id": "Q172524",
+     "name": "Serbian dinar",
+     "code": "RSD",
+     "symbol": "дин",
+     "wiki": "Serbian_dinar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Belgrade",
+    "population": 1197714,
+    "lat": 44.80401,
+    "lon": 20.46513,
+    "image": "Beograd collage.jpg",
+    "wiki": "Belgrade",
+    "id": "Q3711",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1042",
@@ -6754,7 +9878,27 @@
      "code": "crs"
     }
    ],
-   "capitalAnswer": "Victoria"
+   "capitalAnswer": "Victoria",
+   "currency": [
+    {
+     "id": "Q4595",
+     "name": "Seychellois rupee",
+     "code": "SCR",
+     "symbol": "SRe",
+     "wiki": "Seychellois_rupee",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Victoria",
+    "population": 24701,
+    "lat": -4.62001,
+    "lon": 55.45501,
+    "image": "Victoria view from Bel Eau asv2024-09 img3.jpg",
+    "wiki": "Victoria,_Seychelles",
+    "id": "Q3940",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1044",
@@ -6787,7 +9931,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Freetown"
+   "capitalAnswer": "Freetown",
+   "currency": [
+    {
+     "id": "Q4587",
+     "name": "Sierra Leonean leone",
+     "code": "SLE",
+     "symbol": "Le",
+     "wiki": "Sierra_Leonean_leone",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Freetown",
+    "population": 951000,
+    "lat": 8.48714,
+    "lon": -13.2356,
+    "image": "Freetown-aerialview.jpg",
+    "wiki": "Freetown",
+    "id": "Q3780",
+    "isCapital": true
+   }
   },
   {
    "id": "Q334",
@@ -6852,7 +10016,27 @@
      "code": "zh-hans"
     }
    ],
-   "capitalAnswer": "Singapore"
+   "capitalAnswer": "Singapore",
+   "currency": [
+    {
+     "id": "Q190951",
+     "name": "Singapore dollar",
+     "code": "SGD",
+     "symbol": "S$",
+     "wiki": "Singapore_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Singapore",
+    "population": 5638700,
+    "lat": 1.28967,
+    "lon": 103.85007,
+    "image": null,
+    "wiki": null,
+    "id": "Q49755161",
+    "isCapital": true
+   }
   },
   {
    "id": "Q214",
@@ -6891,7 +10075,27 @@
      "code": "sk"
     }
    ],
-   "capitalAnswer": "Bratislava"
+   "capitalAnswer": "Bratislava",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Bratislava",
+    "population": 480902,
+    "lat": 48.14816,
+    "lon": 17.10674,
+    "image": "Hlavné Namestie (35096533142).jpg",
+    "wiki": "Bratislava",
+    "id": "Q1780",
+    "isCapital": true
+   }
   },
   {
    "id": "Q215",
@@ -6930,7 +10134,27 @@
      "code": "sl"
     }
    ],
-   "capitalAnswer": "Ljubljana"
+   "capitalAnswer": "Ljubljana",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Ljubljana",
+    "population": 284293,
+    "lat": 46.05108,
+    "lon": 14.50513,
+    "image": "2021-07-28 Ljubljana-0881.jpg",
+    "wiki": "Ljubljana",
+    "id": "Q437",
+    "isCapital": true
+   }
   },
   {
    "id": "Q685",
@@ -6963,7 +10187,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Honiara"
+   "capitalAnswer": "Honiara",
+   "currency": [
+    {
+     "id": "Q4597",
+     "name": "Solomon Islands dollar",
+     "code": "SBD",
+     "symbol": "SI$",
+     "wiki": "Solomon_Islands_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Honiara",
+    "population": 84520,
+    "lat": -9.43333,
+    "lon": 159.95,
+    "image": "Honiara aerial crop.jpg",
+    "wiki": "Honiara",
+    "id": "Q40921",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1045",
@@ -7019,6 +10263,26 @@
     }
    ],
    "capitalAnswer": "Mogadishu",
+   "currency": [
+    {
+     "id": "Q4603",
+     "name": "Somali shilling",
+     "code": "SOS",
+     "symbol": "Sh.So.",
+     "wiki": "Somali_shilling",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Mogadishu",
+    "population": 2330708,
+    "lat": 2.03711,
+    "lon": 45.34375,
+    "image": "Pictures from an armed convoy trip in Mogadishu.jpg",
+    "wiki": "Mogadishu",
+    "id": "Q2449",
+    "isCapital": true
+   },
    "audio": {
     "ar": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6a/LL-Q22809485_(apc)-Hassan_Hassoon-%D8%A7%D9%84%D8%B5%D9%88%D9%85%D8%A7%D9%84.wav/LL-Q22809485_(apc)-Hassan_Hassoon-%D8%A7%D9%84%D8%B5%D9%88%D9%85%D8%A7%D9%84.wav.mp3",
@@ -7057,7 +10321,17 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Hargeisa"
+   "capitalAnswer": "Hargeisa",
+   "currency": [
+    {
+     "id": "Q737384",
+     "name": "Somaliland shilling",
+     "code": null,
+     "symbol": null,
+     "wiki": "Somaliland_shilling",
+     "shared": 1
+    }
+   ]
   },
   {
    "id": "Q258",
@@ -7152,7 +10426,27 @@
     }
    ],
    "capitalAnswer": "split three ways: Pretoria (executive), Cape Town (legislative) and Bloemfontein (judicial)",
-   "capitalNote": null
+   "capitalNote": null,
+   "currency": [
+    {
+     "id": "Q181907",
+     "name": "South African rand",
+     "code": "ZAR",
+     "symbol": "R",
+     "wiki": "South_African_rand",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Johannesburg",
+    "population": 4803262,
+    "lat": -26.20227,
+    "lon": 28.04363,
+    "image": "Johannesburg CBD.jpg",
+    "wiki": "Johannesburg",
+    "id": "Q34647",
+    "isCapital": false
+   }
   },
   {
    "id": "Q884",
@@ -7197,7 +10491,27 @@
      "code": "ko"
     }
    ],
-   "capitalAnswer": "Seoul"
+   "capitalAnswer": "Seoul",
+   "currency": [
+    {
+     "id": "Q202040",
+     "name": "South Korean won",
+     "code": "KRW",
+     "symbol": "₩",
+     "wiki": "South_Korean_won",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Seoul",
+    "population": 9668465,
+    "lat": 37.566,
+    "lon": 126.9784,
+    "image": "덕수궁의 가을.jpg",
+    "wiki": "Seoul",
+    "id": "Q8684",
+    "isCapital": true
+   }
   },
   {
    "id": "Q23427",
@@ -7228,7 +10542,17 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Tskhinvali"
+   "capitalAnswer": "Tskhinvali",
+   "currency": [
+    {
+     "id": "Q21663036",
+     "name": "South Ossetian zarin",
+     "code": null,
+     "symbol": null,
+     "wiki": "South_Ossetian_zarin",
+     "shared": 1
+    }
+   ]
   },
   {
    "id": "Q958",
@@ -7261,7 +10585,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Juba"
+   "capitalAnswer": "Juba",
+   "currency": [
+    {
+     "id": "Q244366",
+     "name": "South Sudanese pound",
+     "code": "SSP",
+     "symbol": "Db",
+     "wiki": "South_Sudanese_pound",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Juba",
+    "population": 500088,
+    "lat": 4.85165,
+    "lon": 31.58247,
+    "image": "Juba City.jpg",
+    "wiki": "Juba",
+    "id": "Q1947",
+    "isCapital": true
+   }
   },
   {
    "id": "Q29",
@@ -7300,7 +10644,27 @@
      "code": "es"
     }
    ],
-   "capitalAnswer": "Madrid"
+   "capitalAnswer": "Madrid",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Madrid city",
+    "population": 3332035,
+    "lat": 40.4165,
+    "lon": -3.70256,
+    "image": null,
+    "wiki": null,
+    "id": "Q116170766",
+    "isCapital": true
+   }
   },
   {
    "id": "Q854",
@@ -7384,7 +10748,27 @@
     }
    ],
    "capitalAnswer": "Sri Jayawardenepura Kotte (legislative capital), with Colombo as the executive and commercial capital",
-   "capitalNote": null
+   "capitalNote": null,
+   "currency": [
+    {
+     "id": "Q4596",
+     "name": "Sri Lankan rupee",
+     "code": "LKR",
+     "symbol": "Rs",
+     "wiki": "Sri_Lankan_rupee",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Colombo",
+    "population": 647557,
+    "lat": 6.93548,
+    "lon": 79.84868,
+    "image": "Colombo skyline 2024.jpg",
+    "wiki": "Colombo",
+    "id": "Q35381",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1049",
@@ -7429,7 +10813,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Khartoum"
+   "capitalAnswer": "Khartoum",
+   "currency": [
+    {
+     "id": "Q271206",
+     "name": "Sudanese pound",
+     "code": "SDG",
+     "symbol": "sud£",
+     "wiki": "Sudanese_pound",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Khartoum",
+    "population": 5345000,
+    "lat": 15.55177,
+    "lon": 32.53241,
+    "image": "Elmek Nimir Bridge.jpg",
+    "wiki": "Khartoum",
+    "id": "Q1963",
+    "isCapital": true
+   }
   },
   {
    "id": "Q730",
@@ -7462,7 +10866,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Paramaribo"
+   "capitalAnswer": "Paramaribo",
+   "currency": [
+    {
+     "id": "Q202036",
+     "name": "Surinamese dollar",
+     "code": "SRD",
+     "symbol": "$",
+     "wiki": "Surinamese_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Paramaribo",
+    "population": 223757,
+    "lat": 5.86638,
+    "lon": -55.16682,
+    "image": "Waterkant Paramaribo with the Unesco Heritage Buildings.jpg",
+    "wiki": "Paramaribo",
+    "id": "Q3001",
+    "isCapital": true
+   }
   },
   {
    "id": "Q34",
@@ -7501,7 +10925,27 @@
      "code": "sv"
     }
    ],
-   "capitalAnswer": "Stockholm"
+   "capitalAnswer": "Stockholm",
+   "currency": [
+    {
+     "id": "Q122922",
+     "name": "Swedish krona",
+     "code": "SEK",
+     "symbol": "kr",
+     "wiki": "Swedish_krona",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Stockholm",
+    "population": 984748,
+    "lat": 59.32938,
+    "lon": 18.06871,
+    "image": "Stockholm gamlastan etc.jpg",
+    "wiki": "Stockholm",
+    "id": "Q1754",
+    "isCapital": true
+   }
   },
   {
    "id": "Q39",
@@ -7562,14 +11006,34 @@
     }
    ],
    "capitalAnswer": "Bern",
+   "currency": [
+    {
+     "id": "Q25344",
+     "name": "Swiss franc",
+     "code": "CHF",
+     "symbol": "Fr",
+     "wiki": "Swiss_franc",
+     "shared": 2
+    }
+   ],
+   "largestCity": {
+    "name": "Zürich",
+    "population": 415367,
+    "lat": 47.36667,
+    "lon": 8.55,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": false
+   },
    "audio": {
-    "it": [
-     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav/LL-Q652_(ita)-Francyskus-Svizzera.wav.mp3",
-     "https://upload.wikimedia.org/wikipedia/commons/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav"
-    ],
     "fr": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/72/Fr-us-Suisse.oga/Fr-us-Suisse.oga.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/7/72/Fr-us-Suisse.oga"
+    ],
+    "it": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav/LL-Q652_(ita)-Francyskus-Svizzera.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav"
     ]
    }
   },
@@ -7622,7 +11086,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Damascus"
+   "capitalAnswer": "Damascus",
+   "currency": [
+    {
+     "id": "Q240468",
+     "name": "Syrian pound",
+     "code": "SYP",
+     "symbol": "LS",
+     "wiki": "Syrian_pound",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Damascus",
+    "population": 2685360,
+    "lat": 33.5102,
+    "lon": 36.29128,
+    "image": "Damascus coll.jpg",
+    "wiki": "Damascus",
+    "id": "Q3766",
+    "isCapital": true
+   }
   },
   {
    "id": "Q865",
@@ -7668,6 +11152,26 @@
     }
    ],
    "capitalAnswer": "Taipei",
+   "currency": [
+    {
+     "id": "Q208526",
+     "name": "New Taiwan dollar",
+     "code": "TWD",
+     "symbol": "NT$",
+     "wiki": "New_Taiwan_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "New Taipei City",
+    "population": 4004367,
+    "lat": 25.06199,
+    "lon": 121.45703,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": false
+   },
    "audio": {
     "zh": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c4/Q865_(zh)_lilauid-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B.ogg/Q865_(zh)_lilauid-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B.ogg.mp3",
@@ -7728,6 +11232,26 @@
     }
    ],
    "capitalAnswer": "Dushanbe",
+   "currency": [
+    {
+     "id": "Q199886",
+     "name": "Tajikistani somoni",
+     "code": "TJS",
+     "symbol": "SM",
+     "wiki": "Tajikistani_somoni",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Dushanbe",
+    "population": 679400,
+    "lat": 38.53575,
+    "lon": 68.77905,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": true
+   },
    "audio": {
     "tg": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4a/Tg-%D2%B6%D1%83%D0%BC%D2%B3%D1%83%D1%80%D0%B8%D0%B8_%D0%A2%D0%BE%D2%B7%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%BE%D0%BD.opus/Tg-%D2%B6%D1%83%D0%BC%D2%B3%D1%83%D1%80%D0%B8%D0%B8_%D0%A2%D0%BE%D2%B7%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%BE%D0%BD.opus.mp3",
@@ -7766,7 +11290,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Dodoma"
+   "capitalAnswer": "Dodoma",
+   "currency": [
+    {
+     "id": "Q4589",
+     "name": "Tanzanian shilling",
+     "code": "TZS",
+     "symbol": "TSh",
+     "wiki": "Tanzanian_shilling",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Dar es Salaam",
+    "population": 4715000,
+    "lat": -6.82349,
+    "lon": 39.26951,
+    "image": "Dar es Salaam before dusk.jpg",
+    "wiki": "Dar_es_Salaam",
+    "id": "Q1960",
+    "isCapital": false
+   }
   },
   {
    "id": "Q869",
@@ -7811,7 +11355,27 @@
      "code": "th"
     }
    ],
-   "capitalAnswer": "Bangkok"
+   "capitalAnswer": "Bangkok",
+   "currency": [
+    {
+     "id": "Q177882",
+     "name": "Thai baht",
+     "code": "THB",
+     "symbol": "฿",
+     "wiki": "Thai_baht",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Bangkok",
+    "population": 5676648,
+    "lat": 13.75398,
+    "lon": 100.50144,
+    "image": "Temple of the Emerald of buddha or Wat Phra Kaew (cropped).jpg",
+    "wiki": "Bangkok",
+    "id": "Q1861",
+    "isCapital": true
+   }
   },
   {
    "id": "Q574",
@@ -7850,7 +11414,27 @@
      "code": "tet"
     }
    ],
-   "capitalAnswer": "Dili"
+   "capitalAnswer": "Dili",
+   "currency": [
+    {
+     "id": "Q572213",
+     "name": "Timor-Leste centavo coins",
+     "code": null,
+     "symbol": null,
+     "wiki": "Timor-Leste_centavo_coins",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Dili",
+    "population": 222323,
+    "lat": -8.55861,
+    "lon": 125.57361,
+    "image": "Aussenministerium und Avenida de Portugal.jpg",
+    "wiki": "Dili",
+    "id": "Q9310",
+    "isCapital": true
+   }
   },
   {
    "id": "Q945",
@@ -7883,7 +11467,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Lomé"
+   "capitalAnswer": "Lomé",
+   "currency": [
+    {
+     "id": "Q861690",
+     "name": "West African CFA franc",
+     "code": "XOF",
+     "symbol": "F",
+     "wiki": "West_African_CFA_franc",
+     "shared": 8
+    }
+   ],
+   "largestCity": {
+    "name": "Lomé",
+    "population": 2188376,
+    "lat": 6.12874,
+    "lon": 1.22154,
+    "image": "Monuments de l'indépendance et Palais des congrès de Lomé.jpg",
+    "wiki": "Lomé",
+    "id": "Q3792",
+    "isCapital": true
+   }
   },
   {
    "id": "Q678",
@@ -7916,7 +11520,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Nukuʻalofa"
+   "capitalAnswer": "Nukuʻalofa",
+   "currency": [
+    {
+     "id": "Q4613",
+     "name": "Tongan paʻanga",
+     "code": "TOP",
+     "symbol": "T$",
+     "wiki": "Tongan_paʻanga",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Nukuʻalofa",
+    "population": 23221,
+    "lat": -21.13683,
+    "lon": -175.20114,
+    "image": "Royal Palace, Nuku'alofa, Nov 18.jpg",
+    "wiki": "Nukuʻalofa",
+    "id": "Q38834",
+    "isCapital": true
+   }
   },
   {
    "id": "Q907112",
@@ -7947,7 +11571,17 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Tiraspol"
+   "capitalAnswer": "Tiraspol",
+   "currency": [
+    {
+     "id": "Q200979",
+     "name": "Transnistrian ruble",
+     "code": null,
+     "symbol": null,
+     "wiki": "Transnistrian_ruble",
+     "shared": 1
+    }
+   ]
   },
   {
    "id": "Q754",
@@ -7980,7 +11614,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Port of Spain"
+   "capitalAnswer": "Port of Spain",
+   "currency": [
+    {
+     "id": "Q242890",
+     "name": "Trinidad and Tobago dollar",
+     "code": "TTD",
+     "symbol": "TT$",
+     "wiki": "Trinidad_and_Tobago_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Chaguanas",
+    "population": 67433,
+    "lat": 10.51667,
+    "lon": -61.41667,
+    "image": null,
+    "wiki": null,
+    "id": "Q49295401",
+    "isCapital": false
+   }
   },
   {
    "id": "Q948",
@@ -8025,7 +11679,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Tunis"
+   "capitalAnswer": "Tunis",
+   "currency": [
+    {
+     "id": "Q4602",
+     "name": "Tunisian dinar",
+     "code": "TND",
+     "symbol": "DT",
+     "wiki": "Tunisian_dinar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Tunis",
+    "population": 602560,
+    "lat": 36.81897,
+    "lon": 10.16579,
+    "image": "Panoramique du centre de Tunis (3197369985) (cropped).jpg",
+    "wiki": "Tunis",
+    "id": "Q3572",
+    "isCapital": true
+   }
   },
   {
    "id": "Q43",
@@ -8058,7 +11732,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Ankara"
+   "capitalAnswer": "Ankara",
+   "currency": [
+    {
+     "id": "Q172872",
+     "name": "Turkish lira",
+     "code": "TRY",
+     "symbol": "₺",
+     "wiki": "Turkish_lira",
+     "shared": 2
+    }
+   ],
+   "largestCity": {
+    "name": "Istanbul",
+    "population": 15655924,
+    "lat": 41.01384,
+    "lon": 28.94966,
+    "image": "Istanbul Montage 2016.png",
+    "wiki": "Istanbul",
+    "id": "Q406",
+    "isCapital": false
+   }
   },
   {
    "id": "Q874",
@@ -8113,7 +11807,27 @@
      "code": "tk"
     }
    ],
-   "capitalAnswer": "Ashgabat"
+   "capitalAnswer": "Ashgabat",
+   "currency": [
+    {
+     "id": "Q486637",
+     "name": "Turkmen manat",
+     "code": "TMT",
+     "symbol": "TMT",
+     "wiki": "Turkmen_manat",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Ashgabat",
+    "population": 1030063,
+    "lat": 37.95,
+    "lon": 58.38333,
+    "image": "Neutrality-Road-Ashgabat-2015.JPG",
+    "wiki": "Ashgabat",
+    "id": "Q23438",
+    "isCapital": true
+   }
   },
   {
    "id": "Q672",
@@ -8144,7 +11858,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Funafuti"
+   "capitalAnswer": "Funafuti",
+   "currency": [
+    {
+     "id": "Q4406",
+     "name": "Tuvaluan dollar",
+     "code": null,
+     "symbol": "TV$",
+     "wiki": "Tuvaluan_dollar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Funafuti",
+    "population": 6025,
+    "lat": -8.52425,
+    "lon": 179.19417,
+    "image": "Funafuti township.jpg",
+    "wiki": "Funafuti",
+    "id": "Q34126",
+    "isCapital": true
+   }
   },
   {
    "id": "Q1036",
@@ -8177,7 +11911,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Kampala"
+   "capitalAnswer": "Kampala",
+   "currency": [
+    {
+     "id": "Q4598",
+     "name": "Ugandan shilling",
+     "code": "UGX",
+     "symbol": "Ush",
+     "wiki": "Ugandan_shilling",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Kampala",
+    "population": 1680600,
+    "lat": 0.31628,
+    "lon": 32.58219,
+    "image": "View from 7th floor on Crane Chambers at Kampala road - panoramio.jpg",
+    "wiki": "Kampala",
+    "id": "Q3894",
+    "isCapital": true
+   }
   },
   {
    "id": "Q212",
@@ -8223,6 +11977,26 @@
     }
    ],
    "capitalAnswer": "Kyiv",
+   "currency": [
+    {
+     "id": "Q81893",
+     "name": "Ukrainian hryvnia",
+     "code": "UAH",
+     "symbol": "₴",
+     "wiki": "Ukrainian_hryvnia",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Kyiv",
+    "population": 2952301,
+    "lat": 50.45466,
+    "lon": 30.5238,
+    "image": "Kyiv (234807751).jpeg",
+    "wiki": "Kyiv",
+    "id": "Q1899",
+    "isCapital": true
+   },
    "audio": {
     "uk": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/be/Uk-%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0_(2).oga/Uk-%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0_(2).oga.mp3",
@@ -8273,7 +12047,27 @@
      "code": "ar"
     }
    ],
-   "capitalAnswer": "Abu Dhabi"
+   "capitalAnswer": "Abu Dhabi",
+   "currency": [
+    {
+     "id": "Q200294",
+     "name": "United Arab Emirates dirham",
+     "code": "AED",
+     "symbol": "⃃",
+     "wiki": "United_Arab_Emirates_dirham",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Dubai",
+    "population": 3944751,
+    "lat": 25.07725,
+    "lon": 55.30927,
+    "image": "Dubai Skyline mit Burj Khalifa (cropped).jpg",
+    "wiki": "Dubai",
+    "id": "Q612",
+    "isCapital": false
+   }
   },
   {
    "id": "Q145",
@@ -8306,7 +12100,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "London"
+   "capitalAnswer": "London",
+   "currency": [
+    {
+     "id": "Q25224",
+     "name": "Pound sterling",
+     "code": "GBP",
+     "symbol": "£",
+     "wiki": "Pound_sterling",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "London",
+    "population": 8799728,
+    "lat": 51.50853,
+    "lon": -0.12574,
+    "image": "London Skyline (125508655).jpeg",
+    "wiki": "London",
+    "id": "Q84",
+    "isCapital": true
+   }
   },
   {
    "id": "Q30",
@@ -8339,7 +12153,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Washington, D.C."
+   "capitalAnswer": "Washington, D.C.",
+   "currency": [
+    {
+     "id": "Q4917",
+     "name": "United States dollar",
+     "code": "USD",
+     "symbol": "$",
+     "wiki": "United_States_dollar",
+     "shared": 5
+    }
+   ],
+   "largestCity": {
+    "name": "New York City",
+    "population": 8804190,
+    "lat": 40.71427,
+    "lon": -74.00597,
+    "image": "NYC Downtown Manhattan Skyline seen from Paulus Hook 2019-12-20 IMG 7347 FRD (cropped).jpg",
+    "wiki": "New_York_City",
+    "id": "Q60",
+    "isCapital": false
+   }
   },
   {
    "id": "Q77",
@@ -8372,7 +12206,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Montevideo"
+   "capitalAnswer": "Montevideo",
+   "currency": [
+    {
+     "id": "Q209272",
+     "name": "Uruguayan peso",
+     "code": "UYU",
+     "symbol": "$U",
+     "wiki": "Uruguayan_peso",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Montevideo",
+    "population": 1302954,
+    "lat": -34.90328,
+    "lon": -56.18816,
+    "image": "The City (198895997).jpeg",
+    "wiki": "Montevideo",
+    "id": "Q1335",
+    "isCapital": true
+   }
   },
   {
    "id": "Q265",
@@ -8427,7 +12281,27 @@
      "code": "uz"
     }
    ],
-   "capitalAnswer": "Tashkent"
+   "capitalAnswer": "Tashkent",
+   "currency": [
+    {
+     "id": "Q487888",
+     "name": "Uzbekistani sum",
+     "code": "UZS",
+     "symbol": "Soʻm",
+     "wiki": "Uzbekistani_sum",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Tashkent",
+    "population": 2956384,
+    "lat": 41.26465,
+    "lon": 69.21627,
+    "image": "Aerial view of Tashkent, Uzbekistan.JPG",
+    "wiki": "Tashkent",
+    "id": "Q269",
+    "isCapital": true
+   }
   },
   {
    "id": "Q686",
@@ -8460,7 +12334,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Port Vila"
+   "capitalAnswer": "Port Vila",
+   "currency": [
+    {
+     "id": "Q207523",
+     "name": "Vanuatu vatu",
+     "code": "VUV",
+     "symbol": "VT",
+     "wiki": "Vanuatu_vatu",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Port Vila",
+    "population": 49034,
+    "lat": -17.73648,
+    "lon": 168.31366,
+    "image": "Port Vila aerial.jpg",
+    "wiki": "Port_Vila",
+    "id": "Q37806",
+    "isCapital": true
+   }
   },
   {
    "id": "Q237",
@@ -8521,7 +12415,27 @@
      "code": "la"
     }
    ],
-   "capitalAnswer": "Vatican City"
+   "capitalAnswer": "Vatican City",
+   "currency": [
+    {
+     "id": "Q4916",
+     "name": "Euro",
+     "code": "EUR",
+     "symbol": "€",
+     "wiki": "Euro",
+     "shared": 27
+    }
+   ],
+   "largestCity": {
+    "name": "Vatican City",
+    "population": 829,
+    "lat": 41.90268,
+    "lon": 12.45414,
+    "image": null,
+    "wiki": null,
+    "id": null,
+    "isCapital": true
+   }
   },
   {
    "id": "Q717",
@@ -8554,7 +12468,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Caracas"
+   "capitalAnswer": "Caracas",
+   "currency": [
+    {
+     "id": "Q56349362",
+     "name": "Sovereign Bolivar",
+     "code": "VES",
+     "symbol": "Bs.S",
+     "wiki": "Sovereign_Bolivar",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Caracas",
+    "population": 2245744,
+    "lat": 10.48801,
+    "lon": -66.87919,
+    "image": "Caracas desde el ávila.jpg",
+    "wiki": "Caracas",
+    "id": "Q1533",
+    "isCapital": true
+   }
   },
   {
    "id": "Q881",
@@ -8606,6 +12540,26 @@
     }
    ],
    "capitalAnswer": "Hanoi",
+   "currency": [
+    {
+     "id": "Q192090",
+     "name": "Vietnamese đồng",
+     "code": "VND",
+     "symbol": "₫",
+     "wiki": "Vietnamese_đồng",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Ho Chi Minh City",
+    "population": 14002598,
+    "lat": 10.82302,
+    "lon": 106.62965,
+    "image": "Ho Chi Minh City Skyline.jpg",
+    "wiki": "Ho_Chi_Minh_City",
+    "id": "Q1854",
+    "isCapital": false
+   },
    "audio": {
     "vi": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cb/Vietnam.ogg/Vietnam.ogg.mp3",
@@ -8674,7 +12628,27 @@
     }
    ],
    "capitalAnswer": "Sanaa (constitutional capital, held by the Houthis), with Aden as the recognised government's temporary capital",
-   "capitalNote": null
+   "capitalNote": null,
+   "currency": [
+    {
+     "id": "Q240512",
+     "name": "Yemeni rial",
+     "code": "YER",
+     "symbol": "﷼'",
+     "wiki": "Yemeni_rial",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Sanaa",
+    "population": 2957000,
+    "lat": 15.35452,
+    "lon": 44.20646,
+    "image": "San'a03 flickr.jpg",
+    "wiki": "Sanaa",
+    "id": "Q2471",
+    "isCapital": true
+   }
   },
   {
    "id": "Q953",
@@ -8707,7 +12681,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Lusaka"
+   "capitalAnswer": "Lusaka",
+   "currency": [
+    {
+     "id": "Q73408",
+     "name": "Zambian kwacha",
+     "code": "ZMW",
+     "symbol": "ZK",
+     "wiki": "Zambian_kwacha",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Lusaka",
+    "population": 2467563,
+    "lat": -15.40669,
+    "lon": 28.28713,
+    "image": "Downtown Lusaka.JPG",
+    "wiki": "Lusaka",
+    "id": "Q3881",
+    "isCapital": true
+   }
   },
   {
    "id": "Q954",
@@ -8740,7 +12734,27 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Harare"
+   "capitalAnswer": "Harare",
+   "currency": [
+    {
+     "id": "Q125352135",
+     "name": "Zimbabwe Gold",
+     "code": "ZWG",
+     "symbol": null,
+     "wiki": "Zimbabwe_Gold",
+     "shared": 1
+    }
+   ],
+   "largestCity": {
+    "name": "Harare",
+    "population": 2150000,
+    "lat": -17.82772,
+    "lon": 31.05337,
+    "image": "Harare skyline.jpg",
+    "wiki": "Harare",
+    "id": "Q3921",
+    "isCapital": true
+   }
   }
  ]
 }

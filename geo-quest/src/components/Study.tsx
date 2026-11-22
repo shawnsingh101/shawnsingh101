@@ -7,7 +7,7 @@ import { WorldMap, type MapHit, type Tone } from './WorldMap';
 import { Flag, Picture } from './Picture';
 import { Icon } from './Icons';
 import { LocalName } from './Native';
-import { Portrait } from './Portrait';
+import { Portrait, Incoming } from './Portrait';
 
 interface Item { ref: CardRef; isNew: boolean }
 
@@ -43,7 +43,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
   // "Find it on the map" cards can be flipped like flashcards instead of tapped (Settings → map questions).
   const rawFace = item ? face(item.ref) : null;
   const flipped = !!rawFace && rawFace.mode === 'tap' && s.mapMode !== 'tap';
-  const f = rawFace && flipped ? { ...rawFace, mode: 'reveal' as const, blank: 'where?', answer: 'here' } : rawFace;
+  const f = rawFace && flipped ? { ...rawFace, mode: 'reveal' as const, blank: rawFace.answer === 'right here' ? 'where?' : rawFace.blank.replace(/^tap the /, 'which ') + '?', answer: rawFace.answer === 'right here' ? 'here' : rawFace.answer } : rawFace;
   const c = item?.ref.country;
 
   const restart = (items: Item[]) => {
@@ -126,7 +126,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
   }, [f, revealed, reveal, next, tapResult, quiz, undo]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // The place shown on the map: itself, or for a senator, their state.
-  const mp = c ? (c.layer === 'senate' ? ds.byId.get(c.state!) ?? c : c) : null;
+  const mp = c ? (c.layer === 'senate' ? ds.byId.get(c.place ?? c.state!) ?? c : c) : null;
   const group = c ? groupOf(c) : null;
   const regionIds = useMemo(() => (group ? placesIn(ds, group.id).map(x => x.id) : []), [ds, group]);
   const focus = useMemo(() => {
@@ -210,7 +210,8 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     : tapResult ? { id: m.id, status: tapResult.ok ? 'right' as const : 'wrong' as const }
     : f.map === 'highlight' || (flipped && revealed) ? { id: m.id } : null;
   const cap = c.capitals[0];
-  const pins = revealed && item.ref.kind.startsWith('capital') && cap?.lon != null ? [{ lon: cap.lon, lat: cap.lat!, label: cap.name }] : [];
+  const pins = revealed && item.ref.kind.startsWith('capital') && cap?.lon != null ? [{ lon: cap.lon, lat: cap.lat!, label: cap.name }]
+    : revealed && item.ref.kind.startsWith('largestCity') && c.largestCity ? [{ lon: c.largestCity.lon, lat: c.largestCity.lat, label: c.largestCity.name }] : [];
 
   return (
     <div className={'study' + (showMap ? ' with-map' : ' no-map')}>
@@ -255,6 +256,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
               </> : <LocalName place={c} showLang />}
             </div>
           )}
+          {revealed && c.incoming && <Incoming inc={c.incoming} current={c.name} />}
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
           {revealed && f.note && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
           {revealed && s.pictures && f.picture && <Picture {...f.picture} />}

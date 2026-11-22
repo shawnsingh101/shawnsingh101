@@ -11,6 +11,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { pinyin } from 'pinyin-pro';
 import YAML from 'yaml';
+import { unzipSync, strFromU8 } from 'fflate';
 import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -452,6 +453,8 @@ for (const L of legislators) {
   const party = t.party === 'Independent' && t.caucus ? `Independent (caucuses with the ${t.caucus}s)` : t.party;
   senate.push({
     id: `S-${t.state}-${t.state_rank}`,             // the seat, not the person: a new senator re-queues the card
+    topic: 'senate', place: st.id, placeName: st.name,
+    office: `${t.state_rank} senator from ${st.name}`, rolePrefix: `${t.state_rank} senator from`,
     label: `${t.state_rank === 'senior' ? 'Senior' : 'Junior'} senator from ${st.name}`,
     layer: 'senate', name, group: st.group, state: st.id, stateName: st.name, rank: t.state_rank,
     party: t.party, partyLong: party, since, termEnd: t.end, roles,
@@ -463,6 +466,254 @@ for (const L of legislators) {
 }
 senate.sort((a, b) => a.stateName.localeCompare(b.stateName) || (a.rank === 'senior' ? -1 : 1));
 if (senate.length !== 100) warnings.push(`Expected 100 senators, found ${senate.length} (a seat may be vacant)`);
+
+// ---- people in office: governors and heads of state/government ----
+// Read from Wikipedia's closely-watched lists ("List of current United States governors",
+// "List of current heads of state and government"); Wikidata's office statements are often stale.
+const commonsThumb = f => f && `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=450`;
+async function wikitext(page) {
+  for (let attempt = 1; attempt <= 5; attempt++) {
+    const r = await fetch(`https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=wikitext&page=${encodeURIComponent(page)}`, { headers: { 'User-Agent': UA } });
+    const t = await r.text();
+    try { const j = JSON.parse(t); return j.parse ? j.parse.wikitext['*'] : null; } catch { /* rate limited — wait and retry */ }
+    await new Promise(res => setTimeout(res, 10000 * attempt));
+  }
+  return null;
+}
+const norm = x => (x ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z ]/g, '').replace(/\s+/g, ' ').trim();
+const stripRefs = t => t.replace(/<ref[^>]*\/>/g, '').replace(/<ref[\s\S]*?<\/ref>/g, '');
+const cap1s = x => x.charAt(0).toUpperCase() + x.slice(1);
+/** Photo, party and Wikidata id for people, looked up by their English Wikipedia article. */
+async function peopleInfo(titles) {
+  const out = {};
+  const ts = [...new Set(titles.filter(Boolean))];
+  for (let i = 0; i < ts.length; i += 100) {
+    const vals = ts.slice(i, i + 100).map(t => `<https://en.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_')).replace(/%2F/g, '/').replace(/%3A/g, ':').replace(/%2C/g, ',').replace(/%27/g, "'").replace(/%28/g, '(').replace(/%29/g, ')')}>`);
+    for (const b of await sparql(`SELECT ?a ?p ?img ?partyLabel WHERE { VALUES ?a { ${vals.join(' ')} } ?a schema:about ?p .
+        OPTIONAL { ?p wdt:P18 ?img }
+        OPTIONAL { ?p p:P102 ?ps . ?ps ps:P102 ?party . FILTER NOT EXISTS { ?ps pq:P582 [] } ?party rdfs:label ?partyLabel FILTER(lang(?partyLabel) = "en") } }`)) {
+      const t = decodeURIComponent(v(b, 'a').split('/wiki/')[1]).replace(/_/g, ' ');
+      const o = (out[t] ??= { id: qid(v(b, 'p')), img: null, party: null });
+      o.img ??= file(v(b, 'img')) || null; o.party ??= v(b, 'partyLabel') ?? null;
+    }
+  }
+  return out;
+}
+
+console.log('Reading current governors from Wikipedia…');
+const governors = [];
+{
+  const text = stripRefs(await wikitext('List of current United States governors') ?? '');
+  for (const row of text.split(/\n\|-/)) {
+    const st = /^\s*\|\s*\[\[Governor of ([^|\]]+)\|/m.exec(row);
+    const sn = /\{\{sortname\|([^|}]+)\|([^|}]+)(?:\|([^|}=]+))?/.exec(row);
+    const ln = /!\s*scope="row"\s*\|\s*\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/.exec(row);
+    if (!st || (!sn && !ln)) continue;
+    const state = [...states.values()].find(s => s.name === st[1].trim());
+    if (!state) continue;
+    const name = sn ? `${sn[1]} ${sn[2]}`.trim() : (ln[2] ?? ln[1]).trim();
+    const wiki = sn ? (sn[3]?.trim() || name) : ln[1].trim();
+    const img = /\[\[File:([^|\]]+)/.exec(row)?.[1] ?? null;
+    const partyM = /\|\s*\[\[[^|\]]*Party[^|\]]*\|([^\]]+)\]\]/.exec(row) ?? /\|\s*\[\[([^|\]]*Party[^|\]]*)\]\]/.exec(row);
+    const party = partyM ? (/Democrat/.test(partyM[1]) ? 'Democrat' : /Republican/.test(partyM[1]) ? 'Republican' : partyM[1]) : null;
+    const dts = /\{\{dts\|(\d{4})\|(\d{1,2})\|(\d{1,2})/.exec(row);
+    const since = dts ? `${dts[1]}-${dts[2].padStart(2, '0')}-${dts[3].padStart(2, '0')}` : null;
+    governors.push({
+      id: `G-${state.code}`, topic: 'governors', layer: 'senate', label: `Governor of ${state.name}`,
+      name, place: state.id, placeName: state.name, group: state.group, office: `Governor of ${state.name}`, rolePrefix: 'Governor of',
+      party, partyLong: party, since, photo: commonsThumb(img), wiki, lon: state.lon, lat: state.lat,
+      capitals: [], capitalAnswer: null,
+      facts: [party, since && `Governor since ${monthYear(since)}`].filter(Boolean).join(' · '),
+    });
+  }
+  if (governors.length !== 50) warnings.push(`Found ${governors.length} governors (expected 50)`);
+}
+
+console.log('Reading current heads of state and government from Wikipedia…');
+const leaders = [];
+{
+  const text = stripRefs(await wikitext('List of current heads of state and government') ?? '');
+  const byName = {};
+  for (const c of list) for (const n of [c.name, c.officialName, c.wiki?.replace(/_/g, ' ')]) if (n) byName[norm(n)] = c;
+  // Rows look like:  !scope="row" |{{flag|France}}  |[[President of France|President]] – [[Emmanuel Macron]]  |[[Prime Minister of France|Prime Minister]] – [[…]]
+  // A country can continue on sub-rows (China: General Secretary, then President + Premier), and cells may be
+  // "colspan=2" (one person is head of state and government). Footnote templates are stripped first.
+  const stripTemplates = (t, name) => { // remove {{name …}} including nested braces
+    let out = '', k = 0;
+    while (k < t.length) {
+      const m = t.indexOf('{{' + name, k);
+      if (m < 0) { out += t.slice(k); break; }
+      out += t.slice(k, m);
+      let depth = 0, e = m;
+      for (; e < t.length; e++) { if (t.startsWith('{{', e)) { depth++; e++; } else if (t.startsWith('}}', e)) { depth--; e++; if (!depth) { e++; break; } } }
+      k = e;
+    }
+    return out;
+  };
+  const clean = stripTemplates(stripTemplates(text.replace(/<!--[\s\S]*?-->/g, ''), 'efn'), 'Efn');
+  // Title as [[Office|Title]], [[Title]] or plain text, optionally closing a template (}}), then " – " and the person's link
+  const pairRe = /(?:\[\[([^|\]]+)\|([^\]]+)\]\]|\[\[([^|\]]+)\]\]|([A-Z][A-Za-z' -]{2,40}?))(?:\}\})?\s*–\s*\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+  const slug = x => norm(x).replace(/ /g, '-');
+  let country = null;
+  for (const block of clean.split(/\n\|-/)) {
+    const fl = /!\s*scope="row"[^|\n]*\|\s*\{\{flag\|([^}|]+)/.exec(block);
+    if (fl) country = byName[norm(fl[1])] ?? null;
+    else if (!/^\s*\n?\|/.test(block)) { country = null; continue; } // a heading or new table, not a sub-row
+    const c = country;
+    if (!c) continue;
+    const cells = block.split('\n').filter(l => /^\|(?!-|\})/.test(l));
+    cells.forEach((cell, idx) => {
+      const combined = /^\|\s*(rowspan=\d+\s*)?colspan=2/.test(cell);
+      pairRe.lastIndex = 0;
+      let m;
+      while ((m = pairRe.exec(cell))) {
+        const title = cap1s((m[2] ?? m[3] ?? m[4]).replace(/\{\{.*?\}\}/g, '').trim());
+        if (/governor-general|members|representative/i.test(title)) continue; // represents someone else; not a separate leader
+        const target = m[1] ?? m[3] ?? '';
+        let office;
+        if (/^(Pope)$/.test(title)) office = title;
+        else if (target.toLowerCase().startsWith(title.toLowerCase() + ' of')) office = target;
+        else if (/ of /.test(title)) office = title;
+        else { const k = target.lastIndexOf(' of '); office = k > 0 ? `${title}${target.slice(k)}` : `${title} of ${c.name}`; }
+        const tail = office.slice(title.length).trim();
+        const rolePrefix = office === title ? `${title} of` : `${title} ${tail.startsWith('of the ') ? 'of the' : 'of'}`;
+        const wiki = m[5].trim();
+        const name = (m[6] ?? m[5]).replace(/\s*\(.*\)$/, '').trim();
+        const id = `L-${c.id}-${slug(title)}`;
+        if (leaders.some(l => l.id === id)) continue;
+        leaders.push({ id, topic: 'leaders', layer: 'senate', label: office,
+          name, wiki, place: c.id, placeName: c.name, office, rolePrefix, lon: c.lon, lat: c.lat, capitals: [], capitalAnswer: null,
+          role: combined ? 'Head of state and government' : idx === 0 ? 'Head of state' : 'Head of government' });
+      }
+    });
+  }
+  // Photos & parties from Wikidata (via each person's Wikipedia article)
+  const info = await peopleInfo(leaders.map(l => l.wiki));
+  const seenFace = new Set();
+  for (const l of leaders) {
+    const i = info[l.wiki] ?? {};
+    l.photo = commonsThumb(i.img); l.party = i.party ?? null; l.partyLong = l.party; l.wikidata = i.id ?? null;
+    l.noFace = seenFace.has(l.name); seenFace.add(l.name); // e.g. Charles III heads 15 realms: one "who is this?" card
+    l.facts = [l.office, l.party && cap1s(l.party)].filter(Boolean).join(' · ');
+    delete l.role;
+  }
+  const missing = list.filter(c => !leaders.some(l => l.place === c.id)).map(c => c.name);
+  if (missing.length) console.log('  (no individual leader listed for: ' + missing.join(', ') + ')');
+}
+
+// ---- election results: who takes over in January (Wikipedia race-summary tables) ----
+// Rows like:  ! [[… election in Alaska|Alaska]]  | {{sortname|Dan|Sullivan}}  …  {{aye}} '''[[Mary Peltola]]''' (Democratic)
+function raceRows(text) {
+  const rows = [];
+  for (const row of (text ?? '').split(/\n\|-/)) {
+    const st = /^\s*!\s*\[\[[^|\]]*\|([^\]]+)\]\]/m.exec(row);
+    const aye = row.split('\n').find(l => l.includes('{{aye}}'));
+    if (!st || !aye) continue;
+    const inc = /\{\{sortname\|([^|}]+)\|([^|}]+)/.exec(row);
+    const link = /'''\[\[([^|\]]+)(?:\|([^\]]+))?\]\]'''/.exec(aye);
+    const plain = /'''([^'[\]]+)'''/.exec(aye);
+    const name = link ? (link[2] ?? link[1]) : plain?.[1];
+    const party = /\(([^)]+)\)/.exec(aye.split("'''").pop() ?? '')?.[1] ?? null;
+    if (!name) continue;
+    rows.push({ state: st[1].replace(/\s*\(.*\)$/, '').trim(), incLast: inc?.[2] ?? null,
+      winner: name.replace(/\s*\(.*\)$/, ''), wiki: link ? link[1] : null, party: /^(Democratic|DFL)$/.test(party ?? '') ? 'Democrat' : party });
+  }
+  return rows;
+}
+const ELECTION_YEAR = 2026, TAKES_OFFICE = '2027-01-03';
+if (new Date().toISOString().slice(0, 10) < '2027-02-15') { // after that the new officeholders are in the main data anyway
+  console.log('Reading election results from Wikipedia…');
+  const stateCodeByName = Object.fromEntries([...states.values()].map(st => [st.name, st.code]));
+  for (const r of raceRows(await wikitext(`${ELECTION_YEAR} United States Senate elections`))) {
+    const code = stateCodeByName[r.state];
+    const seats = senate.filter(x => x.id.startsWith(`S-${code}-`));
+    const seat = seats.find(x => r.incLast && norm(x.name).endsWith(norm(r.incLast))) ?? seats.find(x => x.termEnd === TAKES_OFFICE);
+    if (!seat || norm(seat.name) === norm(r.winner)) continue; // re-elected or already sworn in
+    seat.incoming = { name: r.winner, party: r.party, wiki: r.wiki, from: 'January 2027' };
+  }
+  for (const r of raceRows(await wikitext(`${ELECTION_YEAR} United States gubernatorial elections`))) {
+    const seat = governors.find(x => x.placeName === r.state);
+    if (!seat || norm(seat.name) === norm(r.winner)) continue;
+    seat.incoming = { name: r.winner, party: r.party, wiki: r.wiki, from: 'January 2027' };
+  }
+  console.log(`  ${senate.filter(x => x.incoming).length} Senate seats and ${governors.filter(x => x.incoming).length} governorships change hands`);
+}
+
+// ---- currencies (Wikidata P38) ----
+console.log('Querying Wikidata for currencies…');
+{
+  const rows = await sparql(`SELECT ?c ?cur ?curLabel ?code ?rank ?article (SAMPLE(?sym) AS ?symbol) (SAMPLE(?cc) AS ?local) WHERE {
+    VALUES ?c { ${list.map(c => `wd:${c.id}`).join(' ')} }
+    ?c p:P38 ?s . ?s ps:P38 ?cur ; wikibase:rank ?rank . FILTER(?rank != wikibase:DeprecatedRank) FILTER NOT EXISTS { ?s pq:P582 [] }
+    FILTER NOT EXISTS { ?cur wdt:P576 [] } FILTER NOT EXISTS { ?cur wdt:P582 [] }
+    OPTIONAL { ?cur wdt:P17 ?cc FILTER(?cc = ?c) }
+    OPTIONAL { ?cur wdt:P498 ?code } OPTIONAL { ?cur wdt:P5061 ?sym }
+    OPTIONAL { ?article schema:about ?cur ; schema:isPartOf <https://en.wikipedia.org/> }
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  } GROUP BY ?c ?cur ?curLabel ?code ?rank ?article`);
+  const by = {};
+  for (const b of rows) {
+    const wiki = v(b, 'article') ? decodeURIComponent(v(b, 'article').split('/wiki/')[1]) : null;
+    (by[qid(v(b, 'c'))] ??= []).push({ id: qid(v(b, 'cur')), name: wiki ? wiki.replace(/_/g, ' ').replace(/ \(.*\)$/, '') : v(b, 'curLabel'), code: v(b, 'code') ?? null, symbol: v(b, 'symbol') ?? null,
+      preferred: v(b, 'rank').endsWith('PreferredRank'), local: !!v(b, 'local'), wiki });
+  }
+  const users = {};
+  for (const c of list) {
+    const all = by[c.id] ?? [];
+    // Preferred statements first; otherwise the country's own currency; otherwise up to two listed ones.
+    const pref = all.filter(x => x.preferred), local = all.filter(x => x.local);
+    const cur = (pref.length ? pref : local.length ? local : all.slice(0, 2)).filter((x, i, a) => a.findIndex(y => y.id === x.id) === i);
+    if (!cur.length) { delete c.currency; continue; }
+    const only = overrides[c.id]?.currencyCodes;
+    c.currency = cur.filter(x => !only || only.includes(x.code)).map(({ preferred, local: _l, ...x }) => x);
+    for (const x of cur) (users[x.id] ??= []).push(c.id);
+  }
+  for (const c of list) if (c.currency) for (const x of c.currency) x.shared = users[x.id].length;
+}
+
+// ---- largest city (GeoNames cities of 15,000+, linked to Wikidata via the GeoNames id) ----
+console.log('Downloading GeoNames cities…');
+{
+  const zip = new Uint8Array(await (await fetch('https://download.geonames.org/export/dump/cities15000.zip')).arrayBuffer());
+  const txt = strFromU8(unzipSync(zip)['cities15000.txt']);
+  // GeoNames gives candidates; Wikidata's latest official population decides between the top few
+  // (GeoNames figures can be stale — it once had Rotterdam bigger than Amsterdam).
+  const cands = {};
+  for (const line of txt.split('\n')) {
+    const f = line.split('\t');
+    if (f.length < 15 || f[6] !== 'P' || f[7] === 'PPLX') continue; // PPLX = a section of a city (neighbourhood)
+    (cands[f[8]] ??= []).push({ gid: f[0], name: f[1], pop: +f[14], lat: +f[4], lon: +f[5], capital: f[7] === 'PPLC' });
+  }
+  for (const cc in cands) cands[cc] = cands[cc].sort((a, b) => b.pop - a.pop).slice(0, 4);
+  const ccOf = c => c.iso2 ?? { Q1246: 'XK' }[c.id];
+  const gids = [...new Set(list.flatMap(c => (cands[ccOf(c)] ?? []).map(t => t.gid)))];
+  const wd = {};
+  for (let i = 0; i < gids.length; i += 150) {
+    for (const b of await sparql(`SELECT ?g ?item ?itemLabel ?img ?article ?pop WHERE { VALUES ?g { ${gids.slice(i, i + 150).map(g => `"${g}"`).join(' ')} } ?item wdt:P1566 ?g .
+      ?item wdt:P31/wdt:P279* wd:Q486972 .  # a human settlement (not a building that shares the id)
+      FILTER NOT EXISTS { ?item wdt:P31 wd:Q123705 }  # …and not a neighbourhood
+      OPTIONAL { ?item wdt:P1082 ?pop }
+      OPTIONAL { ?item wdt:P18 ?img } OPTIONAL { ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`)) {
+      const g = v(b, 'g'), pop = +(v(b, 'pop') ?? 0);
+      if (!wd[g] || pop > wd[g].pop) wd[g] = { id: qid(v(b, 'item')), name: v(b, 'itemLabel'), pop, image: file(v(b, 'img')) || wd[g]?.image || null, wiki: v(b, 'article') ? decodeURIComponent(v(b, 'article').split('/wiki/')[1]) : null };
+    }
+  }
+  for (const c of list) {
+    const cs = cands[ccOf(c)];
+    if (!cs?.length) { delete c.largestCity; continue; }
+    const popOf = t => wd[t.gid]?.pop || t.pop;
+    // data/overrides.json can name the city when GeoNames lists a neighbourhood as a separate place (Guinea: Camayenne → Conakry)
+    const forced = overrides[c.id]?.largestCity;
+    const t = (forced && cs.find(x => norm(wd[x.gid]?.name ?? x.name) === norm(forced))) || [...cs].sort((a, b) => popOf(b) - popOf(a))[0];
+    if (forced && norm(wd[t.gid]?.name ?? t.name) !== norm(forced)) warnings.push(`${c.name}: largest-city override "${forced}" not among the candidates`);
+    t.pop = popOf(t);
+    const w = wd[t.gid];
+    const name = w?.name && !/^Q\d+$/.test(w.name) ? w.name : t.name;
+    c.largestCity = { name, population: t.pop, lat: t.lat, lon: t.lon, image: w?.image ?? null, wiki: w?.wiki ?? null, id: w?.id ?? null,
+      isCapital: t.capital || c.capitals.some(k => (w?.id && k.id === w.id) || norm(k.name) === norm(name)) };
+  }
+}
 
 // ---- pronunciation recordings (Wikidata P443, mostly native speakers via Lingua Libre) ----
 // Stored as { languageCode: [mp3 transcode, original] }; the app falls back to the
@@ -514,7 +765,7 @@ function diffAndWrite(path, list, fields) {
     for (const c of list) {
       const p = prevById[c.id];
       if (!p) { changes.push({ date: today, id: c.id, name: c.label ?? c.name, field: 'added', from: null, to: c.name }); continue; }
-      const val = (x, f) => (f === 'zhHan' ? x.zh?.han : x[f]);
+      const val = (x, f) => (f === 'zhHan' ? x.zh?.han : f === 'currencyName' ? x.currency?.map(c => c.name).join(' / ') : f === 'largestCityName' ? x.largestCity?.name : x[f]);
       for (const f of fields) if (val(p, f) !== val(c, f)) changes.push({ date: today, id: c.id, name: c.label ?? c.name, field: f === 'zhHan' ? 'Chinese name' : f, from: val(p, f) ?? null, to: val(c, f) ?? null });
     }
     for (const p of prev) if (!ids.has(p.id)) changes.push({ date: today, id: p.id, name: p.name, field: 'removed', from: p.name, to: null });
@@ -522,18 +773,19 @@ function diffAndWrite(path, list, fields) {
   return () => writeFileSync(path, JSON.stringify(path === OUT ? { source: 'Wikidata (CC0)', countries: list } : { source: 'Wikidata (CC0)', places: list }, null, 1) + '\n');
 }
 const writers = [
-  diffAndWrite(OUT, list, ['name', 'capitalAnswer', 'flag']),
+  diffAndWrite(OUT, list, ['name', 'capitalAnswer', 'flag', 'currencyName', 'largestCityName']),
   diffAndWrite(join(ROOT, 'public/data/water.json'), [...water.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name']),
   diffAndWrite(join(ROOT, 'public/data/rivers.json'), rivers, ['name', 'group']),
   diffAndWrite(join(ROOT, 'public/data/us.json'), [...states.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'flag']),
-  diffAndWrite(join(ROOT, 'public/data/senate.json'), senate, ['name', 'party']),
+  diffAndWrite(join(ROOT, 'public/data/senate.json'), [...senate, ...governors], ['name', 'party']),
+  diffAndWrite(join(ROOT, 'public/data/leaders.json'), leaders, ['name']),
   diffAndWrite(join(ROOT, 'public/data/lakes.json'), lakes, ['name', 'group']),
   diffAndWrite(join(ROOT, 'public/data/cn.json'), [...cn.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'zhHan']),
 ];
 
 warnings.forEach(w => console.warn('⚠ ' + w));
 changes.forEach(ch => console.log(`Δ ${ch.name}: ${ch.field} ${JSON.stringify(ch.from)} → ${JSON.stringify(ch.to)}`));
-console.log(`${list.length} countries, ${states.size} US states, ${senate.length} senators, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
+console.log(`${list.length} countries, ${states.size} US states, ${senate.length} senators, ${governors.length} governors, ${leaders.length} world leaders, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
 
 if (!DRY) {
   writers.forEach(w => w());

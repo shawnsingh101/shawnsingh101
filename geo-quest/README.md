@@ -33,6 +33,19 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.1: leaders, currencies, largest cities
+
+- **Governors** (all 50) and **heads of state / government** (349 offices in 200 countries) from Wikipedia's closely
+  watched lists ("List of current United States governors", "List of current heads of state and government");
+  photos & parties via Wikidata. Cards follow the office ("The President of France is…"). Countries run by a
+  council (Switzerland, Bosnia and Herzegovina, San Marino) have no single leader card.
+- **Incoming officeholders**: the 2026 Senate and governor race-summary tables on Wikipedia are read nightly; seats
+  changing hands show an "Incoming · January 2027" strip. It disappears once the winner is the current holder.
+- **Currencies** (Wikidata P38, preferring the country's own, non-discontinued currency) and **largest cities**
+  (GeoNames candidates, confirmed with Wikidata's latest population). `largestCity` / `currencyCodes` overrides in
+  `data/overrides.json` handle the odd case, and warn if they stop matching.
+- Party colour key on people cards: blue Democrat, red Republican, purple independent.
+
 ## Versions
 
 The home screen shows `v<version> · build <commit> · <date>`, so you can tell when an update is live.

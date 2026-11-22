@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.1.0', notes: 'Governors · world leaders · currencies · largest cities · incoming 2026 election winners' },
   { version: '1.0.0', notes: 'Intelligence Quest! · US states, capitals & flags · US senators' },
   { version: '0.9.0', notes: '“Start learning” launches that deck · pick decks per session · question directions on/off' },
   { version: '0.8.3', notes: 'Places near the map’s edge (like the Yukon) no longer get split in two when revealed' },

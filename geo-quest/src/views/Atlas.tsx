@@ -6,6 +6,7 @@ import { Flag, Picture } from '../components/Picture';
 import { Icon } from '../components/Icons';
 import { wikiUrl } from '../data';
 import { LocalName } from '../components/Native';
+import { PartyPill } from '../components/Portrait';
 
 const LEVEL = ['not started', 'learning', 'known', 'mastered'];
 const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -36,15 +37,24 @@ export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClo
       <ul className="card-levels">
         {kindsFor(c).map(k => { const l = level(p, cardId(c.id, k)); return <li key={k} className={'lv' + l}><span>{KIND_LABEL[k]}</span><small>{LEVEL[l]}</small></li>; })}
       </ul>
-      {c.layer === 'us' && <div className="senators">
-        <b>Senators</b>
-        {ds.places.filter(s => s.layer === 'senate' && s.state === c.id).map(s => (
-          <div key={s.id} className="senator-row">
-            <img src={s.photo} alt={s.name} loading="lazy" />
-            <div><b>{s.name}</b> <small className="muted">({s.rank})</small><p className="muted small">{s.facts}</p></div>
-          </div>
-        ))}
+      {(c.currency?.length || c.largestCity) && <div className="facts-list">
+        {c.currency?.length ? <p><Icon name="coin" size={15} /> Currency: <b>{c.currency.map(x => `${x.name}${x.code ? ` (${x.code})` : ''}`).join(', ')}</b></p> : null}
+        {c.largestCity && <p><Icon name="city" size={15} /> Largest city: <b>{c.largestCity.name}</b>{c.largestCity.isCapital ? ' (the capital)' : ''}</p>}
       </div>}
+      {(() => {
+        const people = ds.places.filter(s => s.layer === 'senate' && (s.place ?? s.state) === c.id);
+        if (!people.length) return null;
+        return <div className="senators">
+          <b>{c.layer === 'us' ? 'Governor & senators' : 'Leaders'}</b>
+          {people.map(s => (
+            <div key={s.id} className="senator-row">
+              {s.photo ? <img src={s.photo} alt={s.name} loading="lazy" /> : <span className="row-glyph"><Icon name="person" /></span>}
+              <div><b>{s.name}</b> <PartyPill party={s.party} /><p className="muted small">{s.topic === 'leaders' ? s.office : s.label}{s.facts && s.topic !== 'leaders' ? ` · ${s.facts}` : ''}</p>
+                {s.incoming && <p className="small incoming-line">→ {s.incoming.name}{s.incoming.party ? ` (${s.incoming.party})` : ''} takes office {s.incoming.from}</p>}</div>
+            </div>
+          ))}
+        </div>;
+      })()}
       <ul className="card-levels" hidden>
       </ul>
       {c.wiki && <a className="btn" href={wikiUrl(c.wiki)} target="_blank" rel="noreferrer">Read about {c.name} on Wikipedia ↗</a>}

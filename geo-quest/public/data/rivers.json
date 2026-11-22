@@ -1564,22 +1564,6 @@
    ]
   },
   {
-   "id": "Q903306",
-   "layer": "river",
-   "name": "Brazos River",
-   "image": "Brazos River railroad bridge Waco TX.jpg",
-   "lon": -100.01,
-   "lat": 33.269,
-   "wiki": "Brazos_River",
-   "countries": [
-    "Q30"
-   ],
-   "group": "r-am",
-   "nameThe": "the Brazos River",
-   "facts": "1,352 km long · flows into the Gulf of Mexico · United States",
-   "size": 1352
-  },
-  {
    "id": "Q131210",
    "layer": "river",
    "name": "Dniester",
@@ -1603,6 +1587,22 @@
      "code": "uk"
     }
    ]
+  },
+  {
+   "id": "Q903306",
+   "layer": "river",
+   "name": "Brazos River",
+   "image": "Brazos River railroad bridge Waco TX.jpg",
+   "lon": -100.01,
+   "lat": 33.269,
+   "wiki": "Brazos_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-am",
+   "nameThe": "the Brazos River",
+   "facts": "1,352 km long · flows into the Gulf of Mexico · United States",
+   "size": 1352
   },
   {
    "id": "Q234004",
