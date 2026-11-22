@@ -16,6 +16,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "8,849 m · Mahalangur Himal · China, Nepal",
+   "native": [
+    {
+     "name": "珠穆朗玛峰",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
    "admin1Ids": [
     "Q17269",
     "Q25104008"
@@ -57,6 +64,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "3,777 m · Shizuoka Prefecture, Yamanashi Prefecture, Japan",
+   "native": [
+    {
+     "name": "富士山",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "admin1Ids": [
     "Q131320",
     "Q132720"
@@ -78,6 +92,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "1,281 m · Somma-Vesuvius complex · Campania, Italy",
+   "native": [
+    {
+     "name": "Vesuvio",
+     "lang": "Italian",
+     "code": "it"
+    }
+   ],
    "admin1Ids": [
     "Q1438"
    ],
@@ -98,6 +119,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,806 m · Mont Blanc massif · Italy, France",
+   "native": [
+    {
+     "name": "Monte Bianco",
+     "lang": "Italian",
+     "code": "it"
+    }
+   ],
    "admin1Ids": [
     "Q1222",
     "Q18338206"
@@ -119,31 +147,17 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "3,357 m · Sicily, Italy",
+   "native": [
+    {
+     "name": "Etna",
+     "lang": "Italian",
+     "code": "it"
+    }
+   ],
    "admin1Ids": [
     "Q1460"
    ],
    "admin1": "Sicily"
-  },
-  {
-   "id": "Q43105",
-   "layer": "peak",
-   "name": "Mount Elbrus",
-   "group": "m-icons",
-   "lon": 42.438,
-   "lat": 43.353,
-   "image": "Mt. Elbrus in Russia.jpg",
-   "wiki": "Mount_Elbrus",
-   "elevation": 5642,
-   "country": "Q159",
-   "countryName": "Russia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "5,642 m · Bokovoy Range · Karachay-Cherkessia, Kabardino-Balkaria, Russia",
-   "admin1Ids": [
-    "Q5328",
-    "Q5267"
-   ],
-   "admin1": "Karachay-Cherkessia, Kabardino-Balkaria"
   },
   {
    "id": "Q39739",
@@ -164,6 +178,34 @@
     "Q44797"
    ],
    "admin1": "Mendoza Province"
+  },
+  {
+   "id": "Q43105",
+   "layer": "peak",
+   "name": "Mount Elbrus",
+   "group": "m-icons",
+   "lon": 42.438,
+   "lat": 43.353,
+   "image": "Mt. Elbrus in Russia.jpg",
+   "wiki": "Mount_Elbrus",
+   "elevation": 5642,
+   "country": "Q159",
+   "countryName": "Russia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "5,642 m · Bokovoy Range · Karachay-Cherkessia, Kabardino-Balkaria, Russia",
+   "native": [
+    {
+     "name": "Эльбрус",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ],
+   "admin1Ids": [
+    "Q5328",
+    "Q5267"
+   ],
+   "admin1": "Karachay-Cherkessia, Kabardino-Balkaria"
   },
   {
    "id": "Q72303",
@@ -200,6 +242,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "8,611 m · Baltoro Muztagh · Xinjiang, Pakistan",
+   "native": [
+    {
+     "name": "کے ٹو",
+     "lang": "Urdu",
+     "code": "ur"
+    }
+   ],
    "admin1Ids": [
     "Q34800"
    ],
@@ -220,6 +269,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,918 m · Central Macedonia, Thessaly, Greece",
+   "native": [
+    {
+     "name": "Όλυμπος",
+     "lang": "Greek",
+     "code": "el"
+    }
+   ],
    "admin1Ids": [
     "Q17152",
     "Q22807284"
@@ -241,6 +297,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,466 m · Greater Caucasus · Russia, Azerbaijan",
+   "native": [
+    {
+     "name": "Базардюзю",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ],
    "admin1Ids": [
     "Q5118",
     "Q386506"
@@ -282,6 +345,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "8,586 m · Himalayas · India, Nepal",
+   "native": [
+    {
+     "name": "कंचनजंघा",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1505",
     "Q25104008"
@@ -343,6 +413,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,478 m · Pennine Alps · Italy, Switzerland",
+   "native": [
+    {
+     "name": "Cervino",
+     "lang": "Italian",
+     "code": "it"
+    }
+   ],
    "admin1Ids": [
     "Q834",
     "Q1222"
@@ -384,6 +461,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "6,638 m · Gangdise Shan · Tibet Autonomous Region, China",
+   "native": [
+    {
+     "name": "冈仁波齐峰",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
    "admin1Ids": [
     "Q17269"
    ],
@@ -404,6 +488,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "8,126 m · Western Himalaya · Gilgit-Baltistan, Pakistan",
+   "native": [
+    {
+     "name": "نانگا پربت",
+     "lang": "Urdu",
+     "code": "ur"
+    }
+   ],
    "admin1Ids": [
     "Q200697"
    ],
@@ -424,10 +515,44 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "8,167 m · Dhaulagiri Himal · Gandaki Province, Nepal",
+   "native": [
+    {
+     "name": "धौलागिरी हिमाल",
+     "lang": "Nepali",
+     "code": "ne"
+    }
+   ],
    "admin1Ids": [
     "Q25104016"
    ],
    "admin1": "Gandaki Province"
+  },
+  {
+   "id": "Q169986",
+   "layer": "peak",
+   "name": "Makalu",
+   "group": "m-icons",
+   "lon": 87.089,
+   "lat": 27.889,
+   "image": "Makalu.jpg",
+   "wiki": "Makalu",
+   "elevation": 8485,
+   "country": "Q148",
+   "countryName": "China and Nepal",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "8,485 m · Mahalangur Himal · China, Nepal",
+   "native": [
+    {
+     "name": "马卡鲁峰",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "admin1Ids": [
+    "Q28576"
+   ],
+   "admin1": "Eastern Development Region"
   },
   {
    "id": "Q172070",
@@ -446,26 +571,6 @@
    "facts": "5,199 m · Mount Kilimanjaro · Kenya"
   },
   {
-   "id": "Q169986",
-   "layer": "peak",
-   "name": "Makalu",
-   "group": "m-icons",
-   "lon": 87.089,
-   "lat": 27.889,
-   "image": "Makalu.jpg",
-   "wiki": "Makalu",
-   "elevation": 8485,
-   "country": "Q148",
-   "countryName": "China and Nepal",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "8,485 m · Mahalangur Himal · China, Nepal",
-   "admin1Ids": [
-    "Q28576"
-   ],
-   "admin1": "Eastern Development Region"
-  },
-  {
    "id": "Q377485",
    "layer": "peak",
    "name": "Mount Sinai",
@@ -480,6 +585,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,287 m · Sinai mountain range · South Sinai Governorate, Egypt",
+   "native": [
+    {
+     "name": "طور سيناء",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q30815"
    ],
@@ -506,6 +618,33 @@
    "admin1": "Hawaii"
   },
   {
+   "id": "Q168702",
+   "layer": "peak",
+   "name": "Lhotse",
+   "group": "m-icons",
+   "lon": 86.933,
+   "lat": 27.962,
+   "image": "LhotseMountain.jos.500pix.jpg",
+   "wiki": "Lhotse",
+   "elevation": 8516,
+   "country": "Q148",
+   "countryName": "China and Nepal",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "8,516 m · Mahalangur Himal · China, Nepal",
+   "native": [
+    {
+     "name": "洛子峰",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "admin1Ids": [
+    "Q28576"
+   ],
+   "admin1": "Eastern Development Region"
+  },
+  {
    "id": "Q178167",
    "layer": "peak",
    "name": "Mount Kosciuszko",
@@ -524,26 +663,6 @@
     "Q3224"
    ],
    "admin1": "New South Wales"
-  },
-  {
-   "id": "Q168702",
-   "layer": "peak",
-   "name": "Lhotse",
-   "group": "m-icons",
-   "lon": 86.933,
-   "lat": 27.962,
-   "image": "LhotseMountain.jos.500pix.jpg",
-   "wiki": "Lhotse",
-   "elevation": 8516,
-   "country": "Q148",
-   "countryName": "China and Nepal",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "8,516 m · Mahalangur Himal · China, Nepal",
-   "admin1Ids": [
-    "Q28576"
-   ],
-   "admin1": "Eastern Development Region"
   },
   {
    "id": "Q14081",
@@ -600,6 +719,19 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "5,628 m · Alborz · Semnan Province, Mazandaran Province, Iran",
+   "native": [
+    {
+     "name": "قله دماوند",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ],
+   "audio": {
+    "fa": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/78/Damavand_pronounce.ogg/Damavand_pronounce.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/78/Damavand_pronounce.ogg"
+    ]
+   },
    "admin1Ids": [
     "Q168949",
     "Q308864"
@@ -627,27 +759,6 @@
    "admin1": "Scotland"
   },
   {
-   "id": "Q107635",
-   "layer": "peak",
-   "name": "Baekdu Mountain",
-   "group": "m-icons",
-   "lon": 126.83,
-   "lat": 40.94,
-   "image": "Baitou Mountain Tianchi.jpg",
-   "wiki": "Mount_Paektu",
-   "elevation": 2744,
-   "country": "Q148",
-   "countryName": "China and North Korea",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,744 m · Changbai Mountains · China, North Korea",
-   "admin1Ids": [
-    "Q110171",
-    "Q45208"
-   ],
-   "admin1": "Ryanggang Province, Jilin"
-  },
-  {
    "id": "Q1045888",
    "layer": "peak",
    "name": "Puncak Jaya",
@@ -668,6 +779,34 @@
    "admin1": "Central Papua"
   },
   {
+   "id": "Q107635",
+   "layer": "peak",
+   "name": "Baekdu Mountain",
+   "group": "m-icons",
+   "lon": 126.83,
+   "lat": 40.94,
+   "image": "Baitou Mountain Tianchi.jpg",
+   "wiki": "Mount_Paektu",
+   "elevation": 2744,
+   "country": "Q148",
+   "countryName": "China and North Korea",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,744 m · Changbai Mountains · China, North Korea",
+   "native": [
+    {
+     "name": "长白山",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "admin1Ids": [
+    "Q110171",
+    "Q45208"
+   ],
+   "admin1": "Ryanggang Province, Jilin"
+  },
+  {
    "id": "Q3375",
    "layer": "peak",
    "name": "Zugspitze",
@@ -682,6 +821,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,962 m · Wetterstein · Austria, Germany",
+   "native": [
+    {
+     "name": "Zugspitz",
+     "lang": "Austro-Bavarian German",
+     "code": "bar"
+    }
+   ],
    "admin1Ids": [
     "Q980"
    ],
@@ -728,25 +874,20 @@
    "admin1": "West Nusa Tenggara"
   },
   {
-   "id": "Q233836",
+   "id": "Q181157",
    "layer": "peak",
-   "name": "Ojos del Salado",
+   "name": "Popocatépetl",
    "group": "m-icons",
-   "lon": -68.541,
-   "lat": -27.11,
-   "image": "Ojos del Salado summit.jpg",
-   "wiki": "Ojos_del_Salado",
-   "elevation": 6893,
-   "country": "Q298",
-   "countryName": "Chile and Argentina",
+   "lon": -98.623,
+   "lat": 19.023,
+   "image": "Mexico-Popocatepetl.jpg",
+   "wiki": "Popocatépetl",
+   "elevation": 5454,
+   "country": "Q96",
+   "countryName": "Mexico",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "6,893 m · Andes · Chile, Argentina",
-   "admin1Ids": [
-    "Q44756",
-    "Q2120"
-   ],
-   "admin1": "Catamarca Province, Atacama Region"
+   "facts": "5,454 m · Trans-Mexican Volcanic Belt · Mexico"
   },
   {
    "id": "Q213360",
@@ -769,20 +910,25 @@
    "admin1": "Western Cape"
   },
   {
-   "id": "Q181157",
+   "id": "Q233836",
    "layer": "peak",
-   "name": "Popocatépetl",
+   "name": "Ojos del Salado",
    "group": "m-icons",
-   "lon": -98.623,
-   "lat": 19.023,
-   "image": "Mexico-Popocatepetl.jpg",
-   "wiki": "Popocatépetl",
-   "elevation": 5454,
-   "country": "Q96",
-   "countryName": "Mexico",
+   "lon": -68.541,
+   "lat": -27.11,
+   "image": "Ojos del Salado summit.jpg",
+   "wiki": "Ojos_del_Salado",
+   "elevation": 6893,
+   "country": "Q298",
+   "countryName": "Chile and Argentina",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "5,454 m · Trans-Mexican Volcanic Belt · Mexico"
+   "facts": "6,893 m · Andes · Chile, Argentina",
+   "admin1Ids": [
+    "Q44756",
+    "Q2120"
+   ],
+   "admin1": "Catamarca Province, Atacama Region"
   },
   {
    "id": "Q60967",
@@ -799,6 +945,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,095 m · Crocker Range · Sabah, Malaysia",
+   "native": [
+    {
+     "name": "Gunung Kinabalu",
+     "lang": "Malay",
+     "code": "ms"
+    }
+   ],
    "admin1Ids": [
     "Q179029"
    ],
@@ -825,27 +978,6 @@
    "admin1": "Central Luzon"
   },
   {
-   "id": "Q203568",
-   "layer": "peak",
-   "name": "Mount Aragats",
-   "group": "m-as",
-   "lon": 44.195,
-   "lat": 40.523,
-   "image": "Mount Aragats 2020-05-11.jpg",
-   "wiki": "Mount_Aragats",
-   "elevation": 4090,
-   "country": "Q399",
-   "countryName": "Armenia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "4,090 m · Armenian Highlands · Aragatsotn Province, Shirak Province, Armenia",
-   "admin1Ids": [
-    "Q17915",
-    "Q201063"
-   ],
-   "admin1": "Aragatsotn Province, Shirak Province"
-  },
-  {
    "id": "Q194057",
    "layer": "peak",
    "name": "Mount Rainier",
@@ -866,6 +998,34 @@
    "admin1": "Washington"
   },
   {
+   "id": "Q203568",
+   "layer": "peak",
+   "name": "Mount Aragats",
+   "group": "m-as",
+   "lon": 44.195,
+   "lat": 40.523,
+   "image": "Mount Aragats 2020-05-11.jpg",
+   "wiki": "Mount_Aragats",
+   "elevation": 4090,
+   "country": "Q399",
+   "countryName": "Armenia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "4,090 m · Armenian Highlands · Aragatsotn Province, Shirak Province, Armenia",
+   "native": [
+    {
+     "name": "Արագած",
+     "lang": "Armenian",
+     "code": "hy"
+    }
+   ],
+   "admin1Ids": [
+    "Q17915",
+    "Q201063"
+   ],
+   "admin1": "Aragatsotn Province, Shirak Province"
+  },
+  {
    "id": "Q5059",
    "layer": "peak",
    "name": "Aoraki / Mount Cook",
@@ -880,6 +1040,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "3,724 m · Southern Alps / Kā Tiritiri o te Moana · Canterbury Region, New Zealand",
+   "native": [
+    {
+     "name": "Aoraki",
+     "lang": "Māori",
+     "code": "mi"
+    }
+   ],
    "admin1Ids": [
     "Q657004"
    ],
@@ -900,6 +1067,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "5,636 m · Trans-Mexican Volcanic Belt · Veracruz, Puebla, Mexico",
+   "native": [
+    {
+     "name": "Citlaltépetl",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ],
    "admin1Ids": [
     "Q60130",
     "Q79923"
@@ -977,6 +1151,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "3,798 m · Glockner Group · Tyrol, Carinthia, Austria",
+   "native": [
+    {
+     "name": "Groaßglockner",
+     "lang": "Austro-Bavarian German",
+     "code": "bar"
+    }
+   ],
    "admin1Ids": [
     "Q42880",
     "Q37985"
@@ -998,6 +1179,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,800 m · Klyuchevskaya Volcanic Group · Kamchatka Krai, Russia",
+   "native": [
+    {
+     "name": "Ключевская Сопка",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ],
    "admin1Ids": [
     "Q7948"
    ],
@@ -1058,31 +1246,17 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,095 m · Cameroon line · Southwest, Cameroon",
+   "native": [
+    {
+     "name": "mont Cameroun",
+     "lang": "French",
+     "code": "fr"
+    }
+   ],
    "admin1Ids": [
     "Q607499"
    ],
    "admin1": "Southwest"
-  },
-  {
-   "id": "Q627508",
-   "layer": "peak",
-   "name": "Hoverla",
-   "group": "m-eu",
-   "lon": 24.5,
-   "lat": 48.16,
-   "image": "Говерла 2015.JPG",
-   "wiki": "Hoverla",
-   "elevation": 2061,
-   "country": "Q212",
-   "countryName": "Ukraine",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,061 m · Chornohora · Zakarpattia Oblast, Ivano-Frankivsk Oblast, Ukraine",
-   "admin1Ids": [
-    "Q170213",
-    "Q178269"
-   ],
-   "admin1": "Zakarpattia Oblast, Ivano-Frankivsk Oblast"
   },
   {
    "id": "Q207132",
@@ -1099,6 +1273,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "7,708 m · Hindu Kush · Khyber Pakhtunkhwa, Pakistan",
+   "native": [
+    {
+     "name": "ترچ میر",
+     "lang": "Urdu",
+     "code": "ur"
+    }
+   ],
    "admin1Ids": [
     "Q183314"
    ],
@@ -1118,28 +1299,42 @@
    "countryName": "Brazil, Venezuela and Guyana",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "2,810 m · Pakaraima Mountains · Brazil, Venezuela, Guyana"
+   "facts": "2,810 m · Pakaraima Mountains · Brazil, Venezuela, Guyana",
+   "native": [
+    {
+     "name": "Monte Roraima",
+     "lang": "Portuguese",
+     "code": "pt"
+    }
+   ]
   },
   {
-   "id": "Q617511",
+   "id": "Q627508",
    "layer": "peak",
-   "name": "Sněžka",
+   "name": "Hoverla",
    "group": "m-eu",
-   "lon": 15.74,
-   "lat": 50.736,
-   "image": "Śnieżka z zachodu.jpg",
-   "wiki": "Sněžka",
-   "elevation": 1603,
-   "country": "Q36",
-   "countryName": "Poland and Czechia",
+   "lon": 24.5,
+   "lat": 48.16,
+   "image": "Говерла 2015.JPG",
+   "wiki": "Hoverla",
+   "elevation": 2061,
+   "country": "Q212",
+   "countryName": "Ukraine",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,603 m · Giant Mountains · Poland, Czechia",
-   "admin1Ids": [
-    "Q54150",
-    "Q193295"
+   "facts": "2,061 m · Chornohora · Zakarpattia Oblast, Ivano-Frankivsk Oblast, Ukraine",
+   "native": [
+    {
+     "name": "Говерла",
+     "lang": "Ukrainian",
+     "code": "uk"
+    }
    ],
-   "admin1": "Lower Silesian Voivodeship, Hradec Králové Region"
+   "admin1Ids": [
+    "Q170213",
+    "Q178269"
+   ],
+   "admin1": "Zakarpattia Oblast, Ivano-Frankivsk Oblast"
   },
   {
    "id": "Q4425",
@@ -1162,6 +1357,34 @@
    "admin1": "Canton of Berne"
   },
   {
+   "id": "Q617511",
+   "layer": "peak",
+   "name": "Sněžka",
+   "group": "m-eu",
+   "lon": 15.74,
+   "lat": 50.736,
+   "image": "Śnieżka z zachodu.jpg",
+   "wiki": "Sněžka",
+   "elevation": 1603,
+   "country": "Q36",
+   "countryName": "Poland and Czechia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,603 m · Giant Mountains · Poland, Czechia",
+   "native": [
+    {
+     "name": "Śnieżka",
+     "lang": "Polish",
+     "code": "pl"
+    }
+   ],
+   "admin1Ids": [
+    "Q54150",
+    "Q193295"
+   ],
+   "admin1": "Lower Silesian Voivodeship, Hradec Králové Region"
+  },
+  {
    "id": "Q14668",
    "layer": "peak",
    "name": "Monte Rosa Massif",
@@ -1175,28 +1398,14 @@
    "countryName": "Italy and Switzerland",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "4,634 m · Pennine Alps · Italy, Switzerland"
-  },
-  {
-   "id": "Q271700",
-   "layer": "peak",
-   "name": "Noshaq",
-   "group": "m-as",
-   "lon": 71.828,
-   "lat": 36.432,
-   "image": "Mount Noshaq seen from the base camp (photo Louis Meunier).jpg",
-   "wiki": "Noshaq",
-   "elevation": 7492,
-   "country": "Q843",
-   "countryName": "Pakistan and Afghanistan",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "7,492 m · Hindu Kush · Pakistan, Afghanistan",
-   "admin1Ids": [
-    "Q165376",
-    "Q183314"
-   ],
-   "admin1": "Badakhshan Province, Khyber Pakhtunkhwa"
+   "facts": "4,634 m · Pennine Alps · Italy, Switzerland",
+   "native": [
+    {
+     "name": "Monte Rosa",
+     "lang": "Italian",
+     "code": "it"
+    }
+   ]
   },
   {
    "id": "Q210722",
@@ -1213,51 +1422,45 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "395 m · Rio de Janeiro, Brazil",
+   "native": [
+    {
+     "name": "Pão de Açúcar",
+     "lang": "Portuguese",
+     "code": "pt"
+    }
+   ],
    "admin1Ids": [
     "Q41428"
    ],
    "admin1": "Rio de Janeiro"
   },
   {
-   "id": "Q81213",
+   "id": "Q271700",
    "layer": "peak",
-   "name": "Gerlachovský štít",
-   "group": "m-eu",
-   "lon": 20.134,
-   "lat": 49.164,
-   "image": "Gerlachovsky stit from Velicka dolina.jpg",
-   "wiki": "Gerlachovský_štít",
-   "elevation": 2655,
-   "country": "Q214",
-   "countryName": "Slovakia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,655 m · High Tatras · Prešov Region, Slovakia",
-   "admin1Ids": [
-    "Q189001"
-   ],
-   "admin1": "Prešov Region"
-  },
-  {
-   "id": "Q332762",
-   "layer": "peak",
-   "name": "Jengish Chokusu",
+   "name": "Noshaq",
    "group": "m-as",
-   "lon": 80.129,
-   "lat": 42.035,
-   "image": "Jengish Chokusu from BC.jpg",
-   "wiki": "Jengish_Chokusu",
-   "elevation": 7439,
-   "country": "Q148",
-   "countryName": "China and Kyrgyzstan",
+   "lon": 71.828,
+   "lat": 36.432,
+   "image": "Mount Noshaq seen from the base camp (photo Louis Meunier).jpg",
+   "wiki": "Noshaq",
+   "elevation": 7492,
+   "country": "Q843",
+   "countryName": "Pakistan and Afghanistan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "7,439 m · Kakshaal Too · China, Kyrgyzstan",
-   "admin1Ids": [
-    "Q487413",
-    "Q34800"
+   "facts": "7,492 m · Hindu Kush · Pakistan, Afghanistan",
+   "native": [
+    {
+     "name": "نوشاخ",
+     "lang": "Urdu",
+     "code": "ur"
+    }
    ],
-   "admin1": "Issyk-Kul Region, Xinjiang"
+   "admin1Ids": [
+    "Q165376",
+    "Q183314"
+   ],
+   "admin1": "Badakhshan Province, Khyber Pakhtunkhwa"
   },
   {
    "id": "Q214011",
@@ -1300,20 +1503,52 @@
    "admin1": "Salta Province"
   },
   {
-   "id": "Q41413",
+   "id": "Q332762",
    "layer": "peak",
-   "name": "Ismoil Somoni Peak",
+   "name": "Jengish Chokusu",
    "group": "m-as",
-   "lon": 72.015,
-   "lat": 38.943,
-   "image": "Kommunismi pilt 6100m.jpg",
-   "wiki": "Ismoil_Somoni_Peak",
-   "elevation": 7495,
-   "country": "Q863",
-   "countryName": "Tajikistan",
+   "lon": 80.129,
+   "lat": 42.035,
+   "image": "Jengish Chokusu from BC.jpg",
+   "wiki": "Jengish_Chokusu",
+   "elevation": 7439,
+   "country": "Q148",
+   "countryName": "China and Kyrgyzstan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "7,495 m · Tajik National Academy of Sciences Range · Tajikistan"
+   "facts": "7,439 m · Kakshaal Too · China, Kyrgyzstan",
+   "native": [
+    {
+     "name": "托木尔峰",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "admin1Ids": [
+    "Q487413",
+    "Q34800"
+   ],
+   "admin1": "Issyk-Kul Region, Xinjiang"
+  },
+  {
+   "id": "Q81213",
+   "layer": "peak",
+   "name": "Gerlachovský štít",
+   "group": "m-eu",
+   "lon": 20.134,
+   "lat": 49.164,
+   "image": "Gerlachovsky stit from Velicka dolina.jpg",
+   "wiki": "Gerlachovský_štít",
+   "elevation": 2655,
+   "country": "Q214",
+   "countryName": "Slovakia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,655 m · High Tatras · Prešov Region, Slovakia",
+   "admin1Ids": [
+    "Q189001"
+   ],
+   "admin1": "Prešov Region"
   },
   {
    "id": "Q209341",
@@ -1330,10 +1565,45 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,925 m · Rila · Sofia Province, Bulgaria",
+   "native": [
+    {
+     "name": "Мусала",
+     "lang": "Bulgarian",
+     "code": "bg"
+    }
+   ],
    "admin1Ids": [
     "Q202904"
    ],
    "admin1": "Sofia Province"
+  },
+  {
+   "id": "Q41413",
+   "layer": "peak",
+   "name": "Ismoil Somoni Peak",
+   "group": "m-as",
+   "lon": 72.015,
+   "lat": 38.943,
+   "image": "Kommunismi pilt 6100m.jpg",
+   "wiki": "Ismoil_Somoni_Peak",
+   "elevation": 7495,
+   "country": "Q863",
+   "countryName": "Tajikistan",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "7,495 m · Tajik National Academy of Sciences Range · Tajikistan",
+   "native": [
+    {
+     "name": "Пик Исмоила Сомони",
+     "lang": "Russian",
+     "code": "ru"
+    },
+    {
+     "name": "Қуллаи Исмоили Сомонӣ",
+     "lang": "Tajik",
+     "code": "tg"
+    }
+   ]
   },
   {
    "id": "Q217457",
@@ -1349,7 +1619,14 @@
    "countryName": "Russia and Georgia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "5,193 m · Bezengi Wall · Russia, Georgia"
+   "facts": "5,193 m · Bezengi Wall · Russia, Georgia",
+   "native": [
+    {
+     "name": "Шхара",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q233351",
@@ -1373,26 +1650,6 @@
    "admin1": "Caldas Department, Tolima Department"
   },
   {
-   "id": "Q503433",
-   "layer": "peak",
-   "name": "Jbel Toubkal",
-   "group": "m-af",
-   "lon": -7.916,
-   "lat": 31.062,
-   "image": "Toubkal 7.90965W 31.05231N.jpg",
-   "wiki": "Toubkal",
-   "elevation": 4167,
-   "country": "Q1028",
-   "countryName": "Morocco",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "4,167 m · High Atlas · Marrakesh-Safi, Morocco",
-   "admin1Ids": [
-    "Q19951125"
-   ],
-   "admin1": "Marrakesh-Safi"
-  },
-  {
    "id": "Q158526",
    "layer": "peak",
    "name": "Monte Titano",
@@ -1413,20 +1670,31 @@
    "admin1": "San Marino"
   },
   {
-   "id": "Q500275",
+   "id": "Q503433",
    "layer": "peak",
-   "name": "Yushan Main Peak",
-   "group": "m-as",
-   "lon": 120.957,
-   "lat": 23.47,
-   "image": "Yushan Main Peak at nine o'clock in the morning.jpg",
-   "wiki": "Yushan_(mountain)",
-   "elevation": 3952,
-   "country": "Q865",
-   "countryName": "Taiwan",
+   "name": "Jbel Toubkal",
+   "group": "m-af",
+   "lon": -7.916,
+   "lat": 31.062,
+   "image": "Toubkal 7.90965W 31.05231N.jpg",
+   "wiki": "Toubkal",
+   "elevation": 4167,
+   "country": "Q1028",
+   "countryName": "Morocco",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "3,952 m · Yushan Range · Taiwan"
+   "facts": "4,167 m · High Atlas · Marrakesh-Safi, Morocco",
+   "native": [
+    {
+     "name": "توبقال",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
+   "admin1Ids": [
+    "Q19951125"
+   ],
+   "admin1": "Marrakesh-Safi"
   },
   {
    "id": "Q724367",
@@ -1442,7 +1710,14 @@
    "countryName": "Russia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "4,506 m · Katun Range · Russia"
+   "facts": "4,506 m · Katun Range · Russia",
+   "native": [
+    {
+     "name": "Белуха",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q203942",
@@ -1465,6 +1740,29 @@
    "admin1": "Innlandet"
   },
   {
+   "id": "Q207284",
+   "layer": "peak",
+   "name": "Mount Ruapehu",
+   "group": "m-oc",
+   "lon": 175.569,
+   "lat": -39.282,
+   "image": "00 1100 Ruapehu volcano.jpg",
+   "wiki": "Mount_Ruapehu",
+   "elevation": 2797,
+   "country": "Q664",
+   "countryName": "New Zealand",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,797 m · North Island Volcanic Plateau · New Zealand",
+   "native": [
+    {
+     "name": "Ruapehu",
+     "lang": "Māori",
+     "code": "mi"
+    }
+   ]
+  },
+  {
    "id": "Q208081",
    "layer": "peak",
    "name": "Aneto",
@@ -1479,6 +1777,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "3,404 m · Macizo de la Maladeta · Aragon, Spain",
+   "native": [
+    {
+     "name": "Pico Aneto",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ],
    "admin1Ids": [
     "Q4040"
    ],
@@ -1505,20 +1810,27 @@
    "admin1": "Andalusia"
   },
   {
-   "id": "Q207284",
+   "id": "Q500275",
    "layer": "peak",
-   "name": "Mount Ruapehu",
-   "group": "m-oc",
-   "lon": 175.569,
-   "lat": -39.282,
-   "image": "00 1100 Ruapehu volcano.jpg",
-   "wiki": "Mount_Ruapehu",
-   "elevation": 2797,
-   "country": "Q664",
-   "countryName": "New Zealand",
+   "name": "Yushan Main Peak",
+   "group": "m-as",
+   "lon": 120.957,
+   "lat": 23.47,
+   "image": "Yushan Main Peak at nine o'clock in the morning.jpg",
+   "wiki": "Yushan_(mountain)",
+   "elevation": 3952,
+   "country": "Q865",
+   "countryName": "Taiwan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "2,797 m · North Island Volcanic Plateau · New Zealand"
+   "facts": "3,952 m · Yushan Range · Taiwan",
+   "native": [
+    {
+     "name": "玉山主峰",
+     "lang": "Chinese",
+     "code": "zh-hant"
+    }
+   ]
   },
   {
    "id": "Q128841",
@@ -1535,30 +1847,17 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "1,117 m · Kagoshima Prefecture, Japan",
+   "native": [
+    {
+     "name": "桜島",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "admin1Ids": [
     "Q15701"
    ],
    "admin1": "Kagoshima Prefecture"
-  },
-  {
-   "id": "Q504991",
-   "layer": "peak",
-   "name": "Suur Munamägi",
-   "group": "m-eu",
-   "lon": 27.06,
-   "lat": 57.714,
-   "image": "Haanja kõrgustik.jpg",
-   "wiki": "Suur_Munamägi",
-   "elevation": 317,
-   "country": "Q191",
-   "countryName": "Estonia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "317 m · Haanja Upland · Võru County, Estonia",
-   "admin1Ids": [
-    "Q188076"
-   ],
-   "admin1": "Võru County"
   },
   {
    "id": "Q217142",
@@ -1595,10 +1894,37 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "6,542 m · Cordillera Occidental · Oruro Department, Bolivia",
+   "native": [
+    {
+     "name": "Sajama",
+     "lang": "Quechua",
+     "code": "qu"
+    }
+   ],
    "admin1Ids": [
     "Q1061368"
    ],
    "admin1": "Oruro Department"
+  },
+  {
+   "id": "Q504991",
+   "layer": "peak",
+   "name": "Suur Munamägi",
+   "group": "m-eu",
+   "lon": 27.06,
+   "lat": 57.714,
+   "image": "Haanja kõrgustik.jpg",
+   "wiki": "Suur_Munamägi",
+   "elevation": 317,
+   "country": "Q191",
+   "countryName": "Estonia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "317 m · Haanja Upland · Võru County, Estonia",
+   "admin1Ids": [
+    "Q188076"
+   ],
+   "admin1": "Võru County"
   },
   {
    "id": "Q120314",
@@ -1615,6 +1941,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "3,061 m · Shanxi, China",
+   "native": [
+    {
+     "name": "五台山",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
    "admin1Ids": [
     "Q46913"
    ],
@@ -1641,6 +1974,29 @@
    "admin1": "Áncash Department"
   },
   {
+   "id": "Q503368",
+   "layer": "peak",
+   "name": "Carrauntoohil",
+   "group": "m-eu",
+   "lon": -9.743,
+   "lat": 51.999,
+   "image": "Carrauntoohil 2016.JPG",
+   "wiki": "Carrauntoohil",
+   "elevation": 1039,
+   "country": "Q27",
+   "countryName": "Ireland",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,039 m · MacGillycuddy's Reeks · Ireland",
+   "native": [
+    {
+     "name": "Corrán Tuathail",
+     "lang": "Irish",
+     "code": "ga"
+    }
+   ]
+  },
+  {
    "id": "Q746524",
    "layer": "peak",
    "name": "Moldoveanu Peak",
@@ -1655,46 +2011,17 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,544 m · Făgăraș Mountains · Argeș County, Romania",
+   "native": [
+    {
+     "name": "Vârful Moldoveanu",
+     "lang": "Romanian",
+     "code": "ro"
+    }
+   ],
    "admin1Ids": [
     "Q179567"
    ],
    "admin1": "Argeș County"
-  },
-  {
-   "id": "Q503368",
-   "layer": "peak",
-   "name": "Carrauntoohil",
-   "group": "m-eu",
-   "lon": -9.743,
-   "lat": 51.999,
-   "image": "Carrauntoohil 2016.JPG",
-   "wiki": "Carrauntoohil",
-   "elevation": 1039,
-   "country": "Q27",
-   "countryName": "Ireland",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "1,039 m · MacGillycuddy's Reeks · Ireland"
-  },
-  {
-   "id": "Q275435",
-   "layer": "peak",
-   "name": "Ras Dashen",
-   "group": "m-af",
-   "lon": 38.373,
-   "lat": 13.237,
-   "image": "Dejen misura da cima W.jpg",
-   "wiki": "Ras_Dashen",
-   "elevation": 4533,
-   "country": "Q115",
-   "countryName": "Ethiopia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "4,533 m · Semien Mountains · Amhara Region, Ethiopia",
-   "admin1Ids": [
-    "Q203009"
-   ],
-   "admin1": "Amhara Region"
   },
   {
    "id": "Q1514176",
@@ -1711,30 +2038,17 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "1,640 m · Ural Mountains · Bashkortostan, Russia",
+   "native": [
+    {
+     "name": "Ямантау",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ],
    "admin1Ids": [
     "Q5710"
    ],
    "admin1": "Bashkortostan"
-  },
-  {
-   "id": "Q494645",
-   "layer": "peak",
-   "name": "Hallasan",
-   "group": "m-as",
-   "lon": 126.517,
-   "lat": 33.35,
-   "image": "한라산1.jpg",
-   "wiki": "Hallasan",
-   "elevation": 1947,
-   "country": "Q884",
-   "countryName": "South Korea",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "1,947 m · Jeju Province, South Korea",
-   "admin1Ids": [
-    "Q41164"
-   ],
-   "admin1": "Jeju Province"
   },
   {
    "id": "Q159860",
@@ -1751,6 +2065,80 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "322 m · Belgium, Germany"
+  },
+  {
+   "id": "Q213704",
+   "layer": "peak",
+   "name": "Pico Bolívar",
+   "group": "m-am",
+   "lon": -71.046,
+   "lat": 8.541,
+   "image": "PicoBolivarMerida.JPG",
+   "wiki": "Pico_Bolívar",
+   "elevation": 4978,
+   "country": "Q717",
+   "countryName": "Venezuela",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "4,978 m · Cordillera de Mérida · Mérida, Venezuela",
+   "admin1Ids": [
+    "Q165582"
+   ],
+   "admin1": "Mérida"
+  },
+  {
+   "id": "Q275435",
+   "layer": "peak",
+   "name": "Ras Dashen",
+   "group": "m-af",
+   "lon": 38.373,
+   "lat": 13.237,
+   "image": "Dejen misura da cima W.jpg",
+   "wiki": "Ras_Dashen",
+   "elevation": 4533,
+   "country": "Q115",
+   "countryName": "Ethiopia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "4,533 m · Semien Mountains · Amhara Region, Ethiopia",
+   "native": [
+    {
+     "name": "ራስ ዳሸን",
+     "lang": "Amharic",
+     "code": "am"
+    }
+   ],
+   "admin1Ids": [
+    "Q203009"
+   ],
+   "admin1": "Amhara Region"
+  },
+  {
+   "id": "Q494645",
+   "layer": "peak",
+   "name": "Hallasan",
+   "group": "m-as",
+   "lon": 126.517,
+   "lat": 33.35,
+   "image": "한라산1.jpg",
+   "wiki": "Hallasan",
+   "elevation": 1947,
+   "country": "Q884",
+   "countryName": "South Korea",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,947 m · Jeju Province, South Korea",
+   "native": [
+    {
+     "name": "한라산",
+     "lang": "Korean",
+     "code": "ko"
+    }
+   ],
+   "admin1Ids": [
+    "Q41164"
+   ],
+   "admin1": "Jeju Province"
   },
   {
    "id": "Q827728",
@@ -1794,26 +2182,6 @@
    "admin1": "West Nusa Tenggara"
   },
   {
-   "id": "Q213704",
-   "layer": "peak",
-   "name": "Pico Bolívar",
-   "group": "m-am",
-   "lon": -71.046,
-   "lat": 8.541,
-   "image": "PicoBolivarMerida.JPG",
-   "wiki": "Pico_Bolívar",
-   "elevation": 4978,
-   "country": "Q717",
-   "countryName": "Venezuela",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "4,978 m · Cordillera de Mérida · Mérida, Venezuela",
-   "admin1Ids": [
-    "Q165582"
-   ],
-   "admin1": "Mérida"
-  },
-  {
    "id": "Q123782",
    "layer": "peak",
    "name": "Fansipan",
@@ -1854,25 +2222,24 @@
    "admin1": "Nariño Department"
   },
   {
-   "id": "Q825347",
+   "id": "Q212836",
    "layer": "peak",
-   "name": "Colima",
-   "group": "m-am",
-   "lon": -103.618,
-   "lat": 19.511,
-   "image": "Colima Landsat image.jpg",
-   "wiki": "Volcán_de_Colima",
-   "elevation": 3850,
-   "country": "Q96",
-   "countryName": "Mexico",
+   "name": "Durmitor",
+   "group": "m-eu",
+   "lon": 19.017,
+   "lat": 43.133,
+   "image": "Durmitor national park montenegro.jpg",
+   "wiki": "Durmitor",
+   "elevation": 2523,
+   "country": "Q236",
+   "countryName": "Montenegro",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "3,850 m · Trans-Mexican Volcanic Belt · Jalisco, Colima, Mexico",
+   "facts": "2,523 m · Dinaric Alps · Žabljak Municipality, Montenegro",
    "admin1Ids": [
-    "Q13160",
-    "Q61309"
+    "Q3304454"
    ],
-   "admin1": "Jalisco, Colima"
+   "admin1": "Žabljak Municipality"
   },
   {
    "id": "Q736047",
@@ -1904,31 +2271,11 @@
    "countryName": "Hungary",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,014 m · North Hungarian Mountains · Heves County, Hungary",
+   "facts": "1,014 m · Mátra · Heves County, Hungary",
    "admin1Ids": [
     "Q191604"
    ],
    "admin1": "Heves County"
-  },
-  {
-   "id": "Q212836",
-   "layer": "peak",
-   "name": "Durmitor",
-   "group": "m-eu",
-   "lon": 19.017,
-   "lat": 43.133,
-   "image": "Durmitor national park montenegro.jpg",
-   "wiki": "Durmitor",
-   "elevation": 2523,
-   "country": "Q236",
-   "countryName": "Montenegro",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,523 m · Dinaric Alps · Žabljak Municipality, Montenegro",
-   "admin1Ids": [
-    "Q3304454"
-   ],
-   "admin1": "Žabljak Municipality"
   },
   {
    "id": "Q814113",
@@ -1951,36 +2298,32 @@
    "admin1": "Jan Mayen"
   },
   {
-   "id": "Q732838",
+   "id": "Q825347",
    "layer": "peak",
-   "name": "Mount Elgon",
-   "group": "m-af",
-   "lon": 34.526,
-   "lat": 1.119,
-   "image": "Mount elgon topo.jpg",
-   "wiki": "Mount_Elgon",
-   "elevation": 4321,
-   "country": "Q114",
-   "countryName": "Kenya and Uganda",
+   "name": "Colima",
+   "group": "m-am",
+   "lon": -103.618,
+   "lat": 19.511,
+   "image": "Colima Landsat image.jpg",
+   "wiki": "Volcán_de_Colima",
+   "elevation": 3850,
+   "country": "Q96",
+   "countryName": "Mexico",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "4,321 m · Kenya, Uganda"
-  },
-  {
-   "id": "Q221666",
-   "layer": "peak",
-   "name": "Mount Stanley",
-   "group": "m-af",
-   "lon": 29.872,
-   "lat": 0.386,
-   "image": "Mount Stanley.jpg",
-   "wiki": "Mount_Stanley",
-   "elevation": 5109,
-   "country": "Q974",
-   "countryName": "DR Congo and Uganda",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "5,109 m · Rwenzori Mountains · DR Congo, Uganda"
+   "facts": "3,850 m · Trans-Mexican Volcanic Belt · Jalisco, Colima, Mexico",
+   "native": [
+    {
+     "name": "Volcán de Colima",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ],
+   "admin1Ids": [
+    "Q13160",
+    "Q61309"
+   ],
+   "admin1": "Jalisco, Colima"
   },
   {
    "id": "Q215138",
@@ -2004,24 +2347,43 @@
    "admin1": "Magellan and the Chilean Antarctic Region, Santa Cruz Province"
   },
   {
-   "id": "Q620860",
+   "id": "Q221666",
    "layer": "peak",
-   "name": "Mount Unzen",
-   "group": "m-as",
-   "lon": 130.299,
-   "lat": 32.761,
-   "image": "Unzen pyroclastic and lahar deposits.jpg",
-   "wiki": "Mount_Unzen",
-   "elevation": 1486,
-   "country": "Q17",
-   "countryName": "Japan",
+   "name": "Mount Stanley",
+   "group": "m-af",
+   "lon": 29.872,
+   "lat": 0.386,
+   "image": "Mount Stanley.jpg",
+   "wiki": "Mount_Stanley",
+   "elevation": 5109,
+   "country": "Q974",
+   "countryName": "DR Congo and Uganda",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,486 m · Nagasaki Prefecture, Japan",
-   "admin1Ids": [
-    "Q169376"
-   ],
-   "admin1": "Nagasaki Prefecture"
+   "facts": "5,109 m · Rwenzori Mountains · DR Congo, Uganda",
+   "native": [
+    {
+     "name": "mont Stanley",
+     "lang": "French",
+     "code": "fr"
+    }
+   ]
+  },
+  {
+   "id": "Q732838",
+   "layer": "peak",
+   "name": "Mount Elgon",
+   "group": "m-af",
+   "lon": 34.526,
+   "lat": 1.119,
+   "image": "Mount elgon topo.jpg",
+   "wiki": "Mount_Elgon",
+   "elevation": 4321,
+   "country": "Q114",
+   "countryName": "Kenya and Uganda",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "4,321 m · Kenya, Uganda"
   },
   {
    "id": "Q1142817",
@@ -2038,6 +2400,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "1,895 m · Ural Mountains · Khanty-Mansi Autonomous Okrug, Tyumen Oblast, Russia",
+   "native": [
+    {
+     "name": "Народная",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ],
    "admin1Ids": [
     "Q6320",
     "Q5824"
@@ -2059,50 +2428,17 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,819 m · Annamite Range · Xiangkhouang Province, Laos",
+   "native": [
+    {
+     "name": "ພູເບ້ຍ",
+     "lang": "Lao",
+     "code": "lo"
+    }
+   ],
    "admin1Ids": [
     "Q465947"
    ],
    "admin1": "Xiangkhouang Province"
-  },
-  {
-   "id": "Q748355",
-   "layer": "peak",
-   "name": "Mount Shasta",
-   "group": "m-am",
-   "lon": -122.195,
-   "lat": 41.409,
-   "image": "North face of Mount Shasta at sunset-2175.jpg",
-   "wiki": "Mount_Shasta",
-   "elevation": 4322,
-   "country": "Q30",
-   "countryName": "United States",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "4,322 m · California Cascades · California, United States",
-   "admin1Ids": [
-    "Q99"
-   ],
-   "admin1": "California"
-  },
-  {
-   "id": "Q739484",
-   "layer": "peak",
-   "name": "Pico da Neblina",
-   "group": "m-am",
-   "lon": -66.005,
-   "lat": 0.805,
-   "image": "Pico da Neblina (FAB).jpg",
-   "wiki": "Pico_da_Neblina",
-   "elevation": 2994,
-   "country": "Q155",
-   "countryName": "Brazil and Venezuela",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,994 m · Cerro de la Neblina · Brazil, Venezuela",
-   "admin1Ids": [
-    "Q40040"
-   ],
-   "admin1": "Amazonas"
   },
   {
    "id": "Q275662",
@@ -2125,60 +2461,71 @@
    "admin1": "Oregon"
   },
   {
-   "id": "Q737859",
+   "id": "Q620860",
    "layer": "peak",
-   "name": "Mount Karisimbi",
-   "group": "m-af",
-   "lon": 29.45,
-   "lat": -1.5,
-   "image": "Karisimbi2.jpg",
-   "wiki": "Mount_Karisimbi",
-   "elevation": 4507,
-   "country": "Q974",
-   "countryName": "DR Congo and Rwanda",
+   "name": "Mount Unzen",
+   "group": "m-as",
+   "lon": 130.299,
+   "lat": 32.761,
+   "image": "Unzen pyroclastic and lahar deposits.jpg",
+   "wiki": "Mount_Unzen",
+   "elevation": 1486,
+   "country": "Q17",
+   "countryName": "Japan",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "4,507 m · Virunga Mountains · DR Congo, Rwanda"
+   "facts": "1,486 m · Nagasaki Prefecture, Japan",
+   "native": [
+    {
+     "name": "雲仙岳",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
+   "admin1Ids": [
+    "Q169376"
+   ],
+   "admin1": "Nagasaki Prefecture"
   },
   {
-   "id": "Q870063",
+   "id": "Q739484",
    "layer": "peak",
-   "name": "Hkakabo Razi",
-   "group": "m-as",
-   "lon": 97.467,
-   "lat": 28.333,
-   "image": "Hkakabo Razi Burma 29 Sept 2015 Landsat 8 ETM + Channels 654 panchromatic sharpened.jpg",
-   "wiki": "Hkakabo_Razi",
-   "elevation": 5881,
-   "country": "Q836",
-   "countryName": "Myanmar",
+   "name": "Pico da Neblina",
+   "group": "m-am",
+   "lon": -66.005,
+   "lat": 0.805,
+   "image": "Pico da Neblina (FAB).jpg",
+   "wiki": "Pico_da_Neblina",
+   "elevation": 2994,
+   "country": "Q155",
+   "countryName": "Brazil and Venezuela",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "5,881 m · Himalayas · Kachin State, Myanmar",
+   "facts": "2,994 m · Cerro de la Neblina · Brazil, Venezuela",
    "admin1Ids": [
-    "Q140646"
+    "Q40040"
    ],
-   "admin1": "Kachin State"
+   "admin1": "Amazonas"
   },
   {
-   "id": "Q540520",
+   "id": "Q748355",
    "layer": "peak",
-   "name": "Meron",
-   "group": "m-as",
-   "lon": 35.412,
-   "lat": 32.998,
-   "image": "Northern slope of Mount Meron.jpg",
-   "wiki": "Mount_Meron",
-   "elevation": 1208,
-   "country": "Q801",
-   "countryName": "Israel",
+   "name": "Mount Shasta",
+   "group": "m-am",
+   "lon": -122.195,
+   "lat": 41.409,
+   "image": "North face of Mount Shasta at sunset-2175.jpg",
+   "wiki": "Mount_Shasta",
+   "elevation": 4322,
+   "country": "Q30",
+   "countryName": "United States",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,208 m · Northern District, Israel",
+   "facts": "4,322 m · California Cascades · California, United States",
    "admin1Ids": [
-    "Q189942"
+    "Q99"
    ],
-   "admin1": "Northern District"
+   "admin1": "California"
   },
   {
    "id": "Q277441",
@@ -2197,24 +2544,113 @@
    "facts": "4,509 m · Bismarck Range · Papua New Guinea"
   },
   {
-   "id": "Q822326",
+   "id": "Q540520",
    "layer": "peak",
-   "name": "Mount Tahat",
-   "group": "m-af",
-   "lon": 5.534,
-   "lat": 23.289,
-   "image": "Tahat matin.jpg",
-   "wiki": "Mount_Tahat",
-   "elevation": 2918,
-   "country": "Q262",
-   "countryName": "Algeria",
+   "name": "Meron",
+   "group": "m-as",
+   "lon": 35.412,
+   "lat": 32.998,
+   "image": "Northern slope of Mount Meron.jpg",
+   "wiki": "Mount_Meron",
+   "elevation": 1208,
+   "country": "Q801",
+   "countryName": "Israel",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "2,918 m · Atakor · Tamanrasset Province, Algeria",
-   "admin1Ids": [
-    "Q229467"
+   "facts": "1,208 m · Northern District, Israel",
+   "native": [
+    {
+     "name": "הר מירון",
+     "lang": "Hebrew",
+     "code": "he"
+    },
+    {
+     "name": "جبل الجَرمق",
+     "lang": "Arabic",
+     "code": "ar"
+    }
    ],
-   "admin1": "Tamanrasset Province"
+   "admin1Ids": [
+    "Q189942"
+   ],
+   "admin1": "Northern District"
+  },
+  {
+   "id": "Q737859",
+   "layer": "peak",
+   "name": "Mount Karisimbi",
+   "group": "m-af",
+   "lon": 29.45,
+   "lat": -1.5,
+   "image": "Karisimbi2.jpg",
+   "wiki": "Mount_Karisimbi",
+   "elevation": 4507,
+   "country": "Q974",
+   "countryName": "DR Congo and Rwanda",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "4,507 m · Virunga Mountains · DR Congo, Rwanda",
+   "native": [
+    {
+     "name": "mont Karisimbi",
+     "lang": "French",
+     "code": "fr"
+    }
+   ]
+  },
+  {
+   "id": "Q870063",
+   "layer": "peak",
+   "name": "Hkakabo Razi",
+   "group": "m-as",
+   "lon": 97.467,
+   "lat": 28.333,
+   "image": "Hkakabo Razi Burma 29 Sept 2015 Landsat 8 ETM + Channels 654 panchromatic sharpened.jpg",
+   "wiki": "Hkakabo_Razi",
+   "elevation": 5881,
+   "country": "Q836",
+   "countryName": "Myanmar",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "5,881 m · Himalayas · Kachin State, Myanmar",
+   "native": [
+    {
+     "name": "ခါကာဘိုရာဇီ",
+     "lang": "Burmese",
+     "code": "my"
+    }
+   ],
+   "admin1Ids": [
+    "Q140646"
+   ],
+   "admin1": "Kachin State"
+  },
+  {
+   "id": "Q148521",
+   "layer": "peak",
+   "name": "Illimani",
+   "group": "m-am",
+   "lon": -67.791,
+   "lat": -16.633,
+   "image": "Bolivia illimani.png",
+   "wiki": "Illimani",
+   "elevation": 6438,
+   "country": "Q750",
+   "countryName": "Bolivia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "6,438 m · Cordillera Real · La Paz Department, Bolivia",
+   "native": [
+    {
+     "name": "Jillimani",
+     "lang": "Aymara",
+     "code": "ay"
+    }
+   ],
+   "admin1Ids": [
+    "Q272784"
+   ],
+   "admin1": "La Paz Department"
   },
   {
    "id": "Q578862",
@@ -2237,24 +2673,31 @@
    "admin1": "Magdalena Department"
   },
   {
-   "id": "Q148521",
+   "id": "Q822326",
    "layer": "peak",
-   "name": "Illimani",
-   "group": "m-am",
-   "lon": -67.791,
-   "lat": -16.633,
-   "image": "Bolivia illimani.png",
-   "wiki": "Illimani",
-   "elevation": 6438,
-   "country": "Q750",
-   "countryName": "Bolivia",
+   "name": "Mount Tahat",
+   "group": "m-af",
+   "lon": 5.534,
+   "lat": 23.289,
+   "image": "Tahat matin.jpg",
+   "wiki": "Mount_Tahat",
+   "elevation": 2918,
+   "country": "Q262",
+   "countryName": "Algeria",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "6,438 m · Cordillera Real · La Paz Department, Bolivia",
-   "admin1Ids": [
-    "Q272784"
+   "facts": "2,918 m · Atakor · Tamanrasset Province, Algeria",
+   "native": [
+    {
+     "name": "تاهات",
+     "lang": "Arabic",
+     "code": "ar"
+    }
    ],
-   "admin1": "La Paz Department"
+   "admin1Ids": [
+    "Q229467"
+   ],
+   "admin1": "Tamanrasset Province"
   },
   {
    "id": "Q594387",
@@ -2311,6 +2754,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "7,782 m · Assam Himalaya · Tibet Autonomous Region, China",
+   "native": [
+    {
+     "name": "南迦巴瓦峰",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
    "admin1Ids": [
     "Q17269"
    ],
@@ -2338,24 +2788,20 @@
    "admin1": "Charlotte Parish, Saint David Parish"
   },
   {
-   "id": "Q925688",
+   "id": "Q1048225",
    "layer": "peak",
-   "name": "Uludağ",
-   "group": "m-as",
-   "lon": 29.222,
-   "lat": 40.071,
-   "image": "Uludag.JPG",
-   "wiki": "Uludağ",
-   "elevation": 2542,
-   "country": "Q43",
-   "countryName": "Türkiye",
+   "name": "Villarrica Volcano",
+   "group": "m-am",
+   "lon": -71.939,
+   "lat": -39.42,
+   "image": "Pucon-y-su-Volcan.jpg",
+   "wiki": "Villarrica_(volcano)",
+   "elevation": 2850,
+   "country": "Q298",
+   "countryName": "Chile",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "2,542 m · Bursa Province, Türkiye",
-   "admin1Ids": [
-    "Q43690"
-   ],
-   "admin1": "Bursa Province"
+   "facts": "2,850 m · Patagonian Andes · Chile"
   },
   {
    "id": "Q112568",
@@ -2372,66 +2818,17 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,155 m · Qinling · Shaanxi, China",
+   "native": [
+    {
+     "name": "华山",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
    "admin1Ids": [
     "Q47974"
    ],
    "admin1": "Shaanxi"
-  },
-  {
-   "id": "Q756244",
-   "layer": "peak",
-   "name": "Tupungato Volcano",
-   "group": "m-am",
-   "lon": -69.77,
-   "lat": -33.359,
-   "image": "2019-10-31 13-49-02 Tupungato.jpg",
-   "wiki": "Tupungato",
-   "elevation": 6635,
-   "country": "Q414",
-   "countryName": "Argentina",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "6,635 m · Andes · Mendoza Province, Argentina",
-   "admin1Ids": [
-    "Q44797"
-   ],
-   "admin1": "Mendoza Province"
-  },
-  {
-   "id": "Q818467",
-   "layer": "peak",
-   "name": "Volcán Tajumulco",
-   "group": "m-am",
-   "lon": -91.9,
-   "lat": 15.033,
-   "image": "Tajumulco volcano 01.jpg",
-   "wiki": "Volcán_Tajumulco",
-   "elevation": 4203,
-   "country": "Q774",
-   "countryName": "Guatemala",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "4,203 m · Sierra Madre de Chiapas · San Marcos Department, Guatemala",
-   "admin1Ids": [
-    "Q883907"
-   ],
-   "admin1": "San Marcos Department"
-  },
-  {
-   "id": "Q1048225",
-   "layer": "peak",
-   "name": "Villarrica Volcano",
-   "group": "m-am",
-   "lon": -71.939,
-   "lat": -39.42,
-   "image": "Pucon-y-su-Volcan.jpg",
-   "wiki": "Villarrica_(volcano)",
-   "elevation": 2850,
-   "country": "Q298",
-   "countryName": "Chile",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,850 m · Patagonian Andes · Chile"
   },
   {
    "id": "Q1147144",
@@ -2474,25 +2871,64 @@
    "admin1": "North Carolina"
   },
   {
-   "id": "Q849129",
+   "id": "Q756244",
    "layer": "peak",
-   "name": "Mount Richard-Molard",
-   "group": "m-af",
-   "lon": -8.408,
-   "lat": 7.623,
-   "image": "Mont Nimba landscape.jpg",
-   "wiki": "Mount_Richard-Molard",
-   "elevation": 1752,
-   "country": "Q1006",
-   "countryName": "Guinea and Ivory Coast",
+   "name": "Tupungato Volcano",
+   "group": "m-am",
+   "lon": -69.77,
+   "lat": -33.359,
+   "image": "2019-10-31 13-49-02 Tupungato.jpg",
+   "wiki": "Tupungato",
+   "elevation": 6635,
+   "country": "Q414",
+   "countryName": "Argentina",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,752 m · Guinea, Ivory Coast",
+   "facts": "6,635 m · Andes · Mendoza Province, Argentina",
    "admin1Ids": [
-    "Q870146",
-    "Q20980366"
+    "Q44797"
    ],
-   "admin1": "Nzérékoré Region, Montagnes District"
+   "admin1": "Mendoza Province"
+  },
+  {
+   "id": "Q818467",
+   "layer": "peak",
+   "name": "Volcán Tajumulco",
+   "group": "m-am",
+   "lon": -91.9,
+   "lat": 15.033,
+   "image": "Tajumulco volcano 01.jpg",
+   "wiki": "Volcán_Tajumulco",
+   "elevation": 4203,
+   "country": "Q774",
+   "countryName": "Guatemala",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "4,203 m · Sierra Madre de Chiapas · San Marcos Department, Guatemala",
+   "admin1Ids": [
+    "Q883907"
+   ],
+   "admin1": "San Marcos Department"
+  },
+  {
+   "id": "Q925688",
+   "layer": "peak",
+   "name": "Uludağ",
+   "group": "m-as",
+   "lon": 29.222,
+   "lat": 40.071,
+   "image": "Uludag.JPG",
+   "wiki": "Uludağ",
+   "elevation": 2542,
+   "country": "Q43",
+   "countryName": "Türkiye",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,542 m · Bursa Province, Türkiye",
+   "admin1Ids": [
+    "Q43690"
+   ],
+   "admin1": "Bursa Province"
   },
   {
    "id": "Q1140642",
@@ -2509,10 +2945,45 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,637 m · Sinai mountain range · South Sinai Governorate, Egypt",
+   "native": [
+    {
+     "name": "جبل كاترين",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q30815"
    ],
    "admin1": "South Sinai Governorate"
+  },
+  {
+   "id": "Q849129",
+   "layer": "peak",
+   "name": "Mount Richard-Molard",
+   "group": "m-af",
+   "lon": -8.408,
+   "lat": 7.623,
+   "image": "Mont Nimba landscape.jpg",
+   "wiki": "Mount_Richard-Molard",
+   "elevation": 1752,
+   "country": "Q1006",
+   "countryName": "Guinea and Ivory Coast",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,752 m · Guinea, Ivory Coast",
+   "native": [
+    {
+     "name": "mont Nimba",
+     "lang": "French",
+     "code": "fr"
+    }
+   ],
+   "admin1Ids": [
+    "Q870146",
+    "Q20980366"
+   ],
+   "admin1": "Nzérékoré Region, Montagnes District"
   },
   {
    "id": "Q1140075",
@@ -2529,6 +3000,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,565 m · Thanon Thong Chai Range · Chiang Mai, Thailand",
+   "native": [
+    {
+     "name": "ดอยอินทนนท์",
+     "lang": "Thai",
+     "code": "th"
+    }
+   ],
    "admin1Ids": [
     "Q233588"
    ],
@@ -2553,6 +3031,26 @@
     "Q488519"
    ],
    "admin1": "Eastern Equatoria"
+  },
+  {
+   "id": "Q1542459",
+   "layer": "peak",
+   "name": "Mount Tabwemasana",
+   "group": "m-oc",
+   "lon": 166.75,
+   "lat": -15.35,
+   "image": null,
+   "wiki": "Mount_Tabwemasana",
+   "elevation": 1879,
+   "country": "Q686",
+   "countryName": "Vanuatu",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,879 m · Sanma, Vanuatu",
+   "admin1Ids": [
+    "Q740640"
+   ],
+   "admin1": "Sanma"
   },
   {
    "id": "Q733132",
@@ -2595,26 +3093,6 @@
    "admin1": "Taraba State"
   },
   {
-   "id": "Q1542459",
-   "layer": "peak",
-   "name": "Mount Tabwemasana",
-   "group": "m-oc",
-   "lon": 166.75,
-   "lat": -15.35,
-   "image": null,
-   "wiki": "Mount_Tabwemasana",
-   "elevation": 1879,
-   "country": "Q686",
-   "countryName": "Vanuatu",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "1,879 m · Sanma, Vanuatu",
-   "admin1Ids": [
-    "Q740640"
-   ],
-   "admin1": "Sanma"
-  },
-  {
    "id": "Q1471391",
    "layer": "peak",
    "name": "Pico de São Tomé",
@@ -2651,24 +3129,20 @@
    "admin1": "Afar Region"
   },
   {
-   "id": "Q897834",
+   "id": "Q1147814",
    "layer": "peak",
-   "name": "Brandberg",
-   "group": "m-af",
-   "lon": 14.578,
-   "lat": -21.149,
-   "image": "Brand hires trimmed.jpg",
-   "wiki": "Brandberg_Mountain",
-   "elevation": 2573,
-   "country": "Q1030",
-   "countryName": "Namibia",
+   "name": "Silisili",
+   "group": "m-oc",
+   "lon": -172.486,
+   "lat": -13.618,
+   "image": "Mauga Silisili.jpg",
+   "wiki": "Silisili",
+   "elevation": 1858,
+   "country": "Q683",
+   "countryName": "Samoa",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "2,573 m · Erongo Region, Namibia",
-   "admin1Ids": [
-    "Q648753"
-   ],
-   "admin1": "Erongo Region"
+   "facts": "1,858 m · Samoa"
   },
   {
    "id": "Q1232136",
@@ -2685,6 +3159,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "1,544 m · Dorsale · Kasserine Governorate, Tunisia",
+   "native": [
+    {
+     "name": "جبل الشعانبي",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q388047"
    ],
@@ -2748,20 +3229,24 @@
    "admin1": "Manicaland Province"
   },
   {
-   "id": "Q1147814",
+   "id": "Q897834",
    "layer": "peak",
-   "name": "Silisili",
-   "group": "m-oc",
-   "lon": -172.486,
-   "lat": -13.618,
-   "image": "Mauga Silisili.jpg",
-   "wiki": "Silisili",
-   "elevation": 1858,
-   "country": "Q683",
-   "countryName": "Samoa",
+   "name": "Brandberg",
+   "group": "m-af",
+   "lon": 14.578,
+   "lat": -21.149,
+   "image": "Brand hires trimmed.jpg",
+   "wiki": "Brandberg_Mountain",
+   "elevation": 2573,
+   "country": "Q1030",
+   "countryName": "Namibia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,858 m · Samoa"
+   "facts": "2,573 m · Erongo Region, Namibia",
+   "admin1Ids": [
+    "Q648753"
+   ],
+   "admin1": "Erongo Region"
   },
   {
    "id": "Q1353678",
@@ -2784,26 +3269,6 @@
    "admin1": "Manica Province"
   },
   {
-   "id": "Q1753509",
-   "layer": "peak",
-   "name": "Mount Agou",
-   "group": "m-af",
-   "lon": 0.755,
-   "lat": 6.871,
-   "image": "Mont agou.png",
-   "wiki": "Mount_Agou",
-   "elevation": 986,
-   "country": "Q945",
-   "countryName": "Togo",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "986 m · Togo Mountains · Plateaux Region, Togo",
-   "admin1Ids": [
-    "Q316306"
-   ],
-   "admin1": "Plateaux Region"
-  },
-  {
    "id": "Q1513944",
    "layer": "peak",
    "name": "Mount Tomanivi",
@@ -2818,6 +3283,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "1,324 m · Western Division, Fiji",
+   "native": [
+    {
+     "name": "Mount Victoria",
+     "lang": "Fiji Hindi",
+     "code": "hif"
+    }
+   ],
    "admin1Ids": [
     "Q1062451"
    ],
@@ -2844,40 +3316,24 @@
    "admin1": "Haʻapai district"
   },
   {
-   "id": "Q769525",
+   "id": "Q1753509",
    "layer": "peak",
-   "name": "Mount Bintumani",
+   "name": "Mount Agou",
    "group": "m-af",
-   "lon": -11.117,
-   "lat": 9.225,
-   "image": "Mountain Bintunami.jpg",
-   "wiki": "Mount_Bintumani",
-   "elevation": 1945,
-   "country": "Q1044",
-   "countryName": "Sierra Leone",
+   "lon": 0.755,
+   "lat": 6.871,
+   "image": "Mont agou.png",
+   "wiki": "Mount_Agou",
+   "elevation": 986,
+   "country": "Q945",
+   "countryName": "Togo",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,945 m · Loma Mountains · Northern Province, Sierra Leone",
+   "facts": "986 m · Togo Mountains · Plateaux Region, Togo",
    "admin1Ids": [
-    "Q912359"
+    "Q316306"
    ],
-   "admin1": "Northern Province"
-  },
-  {
-   "id": "Q886772",
-   "layer": "peak",
-   "name": "Marrah Mountains",
-   "group": "m-af",
-   "lon": 24.236,
-   "lat": 12.938,
-   "image": "Sudan Jabal Marra.jpg",
-   "wiki": "Jebel_Marra",
-   "elevation": 3042,
-   "country": "Q1049",
-   "countryName": "Sudan",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "3,042 m · Sudan"
+   "admin1": "Plateaux Region"
   },
   {
    "id": "Q1337951",
@@ -2916,6 +3372,49 @@
    "admin1": "Tasmania"
   },
   {
+   "id": "Q769525",
+   "layer": "peak",
+   "name": "Mount Bintumani",
+   "group": "m-af",
+   "lon": -11.117,
+   "lat": 9.225,
+   "image": "Mountain Bintunami.jpg",
+   "wiki": "Mount_Bintumani",
+   "elevation": 1945,
+   "country": "Q1044",
+   "countryName": "Sierra Leone",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,945 m · Loma Mountains · Northern Province, Sierra Leone",
+   "admin1Ids": [
+    "Q912359"
+   ],
+   "admin1": "Northern Province"
+  },
+  {
+   "id": "Q886772",
+   "layer": "peak",
+   "name": "Marrah Mountains",
+   "group": "m-af",
+   "lon": 24.236,
+   "lat": 12.938,
+   "image": "Sudan Jabal Marra.jpg",
+   "wiki": "Jebel_Marra",
+   "elevation": 3042,
+   "country": "Q1049",
+   "countryName": "Sudan",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "3,042 m · Sudan",
+   "native": [
+    {
+     "name": "جبل مرة",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
    "id": "Q760819",
    "layer": "peak",
    "name": "Mount Popomanaseu",
@@ -2948,26 +3447,6 @@
    "facts": "242 m · Babeldaob · Palau"
   },
   {
-   "id": "Q130217",
-   "layer": "peak",
-   "name": "Mount Bogong",
-   "group": "m-oc",
-   "lon": 147.306,
-   "lat": -36.733,
-   "image": "Mount Bogong.jpg",
-   "wiki": "Mount_Bogong",
-   "elevation": 1986,
-   "country": "Q408",
-   "countryName": "Australia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "1,986 m · Australian Alps · Victoria, Australia",
-   "admin1Ids": [
-    "Q36687"
-   ],
-   "admin1": "Victoria"
-  },
-  {
    "id": "Q1298202",
    "layer": "peak",
    "name": "Mount Balbi",
@@ -2986,6 +3465,26 @@
     "Q18826"
    ],
    "admin1": "Autonomous Region of Bougainville"
+  },
+  {
+   "id": "Q130217",
+   "layer": "peak",
+   "name": "Mount Bogong",
+   "group": "m-oc",
+   "lon": 147.306,
+   "lat": -36.733,
+   "image": "Mount Bogong.jpg",
+   "wiki": "Mount_Bogong",
+   "elevation": 1986,
+   "country": "Q408",
+   "countryName": "Australia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,986 m · Australian Alps · Victoria, Australia",
+   "admin1Ids": [
+    "Q36687"
+   ],
+   "admin1": "Victoria"
   },
   {
    "id": "Q1950830",
@@ -3088,26 +3587,6 @@
    "admin1": "Christmas Island"
   },
   {
-   "id": "Q2666968",
-   "layer": "peak",
-   "name": "Mount Victoria",
-   "group": "m-oc",
-   "lon": 147.533,
-   "lat": -8.893,
-   "image": null,
-   "wiki": "Mount_Victoria_(Papua_New_Guinea)",
-   "elevation": 4038,
-   "country": "Q691",
-   "countryName": "Papua New Guinea",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "4,038 m · Owen Stanley Range · Central Province, Papua New Guinea",
-   "admin1Ids": [
-    "Q874942"
-   ],
-   "admin1": "Central Province"
-  },
-  {
    "id": "Q2496852",
    "layer": "peak",
    "name": "Bluff Knoll",
@@ -3128,6 +3607,26 @@
    "admin1": "Western Australia"
   },
   {
+   "id": "Q2666968",
+   "layer": "peak",
+   "name": "Mount Victoria",
+   "group": "m-oc",
+   "lon": 147.533,
+   "lat": -8.893,
+   "image": null,
+   "wiki": "Mount_Victoria_(Papua_New_Guinea)",
+   "elevation": 4038,
+   "country": "Q691",
+   "countryName": "Papua New Guinea",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "4,038 m · Owen Stanley Range · Central Province, Papua New Guinea",
+   "admin1Ids": [
+    "Q874942"
+   ],
+   "admin1": "Central Province"
+  },
+  {
    "id": "Q3070397",
    "layer": "peak",
    "name": "Mount Anglem / Hananui",
@@ -3142,6 +3641,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "980 m · Southland Region, New Zealand",
+   "native": [
+    {
+     "name": "Hananui",
+     "lang": "Māori",
+     "code": "mi"
+    }
+   ],
    "admin1Ids": [
     "Q864971"
    ],

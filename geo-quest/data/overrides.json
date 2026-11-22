@@ -17,6 +17,7 @@
   "Q907112": { "status": "disputed", "note": "Breakaway region of Moldova, unrecognised", "region": "Europe", "subregion": "Eastern Europe" }
  },
 
+ "Q1353": { "capital": { "id": "Q987", "name": "New Delhi", "wiki": "New_Delhi", "image": null, "lat": 28.614, "lon": 77.209 }, "_why": "Wikidata has no capital (P36) for the National Capital Territory of Delhi" },
  "Q35581": { "capital": { "id": "Q37951", "name": "Sapporo", "wiki": "Sapporo", "image": null, "lat": 43.062, "lon": 141.354 }, "_why": "Wikidata has no capital (P36) for Hokkaidō" },
  "Q1490": { "capitalNote": "Tokyo is a metropolis, not one city: its government sits in Shinjuku" },
 

@@ -124,6 +124,8 @@ export const GROUPS: Group[] = [
     ],
     note: id === 'us-ne' ? 'The 50 states by US Census region. Senators unlock once you know half a region’s states; their cards follow the seat, so when a seat changes hands the card comes back with a note.' : undefined,
   })),
+  { id: 'r-us', section: 'United States', name: 'Rivers of the United States', layer: 'river', topics: [{ id: 'places', name: 'Rivers', icon: 'river' }],
+    note: 'The great US rivers plus the next tier down (the Hudson, Delaware, Susquehanna, Potomac…). Rivers shared with the world decks keep one set of progress.' },
   ...([['t-car', 'Caribbean territories'], ['t-pac', 'Pacific territories'], ['t-atl', 'Atlantic & European territories'], ['t-ind', 'Indian Ocean territories']] as const).map(([id, name]): Group => ({
     id, section: 'Territories', name, layer: 'terr',
     topics: [
@@ -183,7 +185,7 @@ export function groupOf(c: Place): Group {
 }
 export function placesIn(ds: Dataset, groupId: string) {
   const g = GROUPS.find(x => x.id === groupId)!;
-  return g.layer === 'country' ? ds.countries.filter(c => g.subregions!.includes(c.subregion!)) : ds.places.filter(p => p.group === g.id && p.layer === g.layer);
+  return g.layer === 'country' ? ds.countries.filter(c => g.subregions!.includes(c.subregion!)) : ds.places.filter(p => (p.group === g.id || p.alsoIn?.includes(g.id)) && p.layer === g.layer);
 }
 export const countriesIn = placesIn;
 
@@ -211,7 +213,7 @@ export function kindApplies(k: Kind, c: Place) {
 }
 const cur1 = (c: Place) => c.currency?.find(x => x.shared === 1) ?? c.currency?.[0];
 const curText = (x: NonNullable<Place['currency']>[number]) => `${x.name}${x.code ? ` (${[x.code, x.symbol].filter(Boolean).join(' ')})` : ''}`;
-const fmtPop = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)} million` : `${Math.round(n / 1000)},000`);
+const fmtPop = (n: number) => (n >= 1e9 ? `${(n / 1e9).toFixed(2)} billion` : n >= 1e6 ? `${(n / 1e6).toFixed(1)} million` : n >= 1e4 ? `${Math.round(n / 1000).toLocaleString('en-US')},000` : n.toLocaleString('en-US'));
 /** "the Netherlands", "the United States" — country names that take "the" mid-sentence. */
 export const theName = (c: Place) => (/^(Netherlands|United States|United Kingdom|United Arab Emirates|Philippines|Bahamas|Gambia|Maldives|Comoros|Marshall Islands|Solomon Islands|Central African Republic|Dominican Republic|Czech Republic|Seychelles|DR Congo|Republic of the Congo|Sahrawi)/.test(c.name) ? `the ${c.name}` : c.name);
 
@@ -287,6 +289,9 @@ function rawFace(ref: CardRef): CardFace {
   const capPic = cap ? { file: cap.image, wiki: cap.wiki, caption: cap.name } : undefined;
   const ownPic = c.image || (c.layer !== 'country' && c.wiki) ? { file: c.image, wiki: c.wiki, caption: c.name } : undefined;
   const note = c.layer === 'country' ? (c.status !== 'un' ? c.statusNote : null) : c.layer === 'cn' ? cap1(c.type ?? '') : c.facts ?? null; // territories: "Overseas region · Part of France", shown once the card is flipped
+  // Countries, states and provinces: their population, shown once the card is flipped.
+  const popNote = c.population && ['country', 'us', 'cn', 'sub', 'terr'].includes(c.layer) ? `Population about ${fmtPop(c.population)}${c.populationYear ? ` (${c.populationYear})` : ''}` : null;
+  const placeNote = [note, popNote].filter(Boolean).join(' · ') || null;
   const title = c.nameThe ? cap1(c.nameThe) : c.name;
   const capNoun = c.capWord ?? 'capital'; // "county seat" for counties
   const capWord = c.capitals.length > 1 ? `a ${capNoun}` : `the ${capNoun}`;
@@ -294,9 +299,9 @@ function rawFace(ref: CardRef): CardFace {
   const whichNoun = `which ${placeNoun}?`;
   switch (ref.kind) {
     case 'locate':
-      return { mode: 'tap', pre: `${title} ${c.layer === 'range' && /s$/.test(c.name) ? 'are' : 'is'} `, blank: 'where? tap the map', post: '.', answer: 'right here', map: 'tap', note, picture: c.layer !== 'country' ? ownPic ?? capPic : undefined };
+      return { mode: 'tap', pre: `${title} ${c.layer === 'range' && /s$/.test(c.name) ? 'are' : 'is'} `, blank: 'where? tap the map', post: '.', answer: 'right here', map: 'tap', note: placeNote, picture: c.layer !== 'country' ? ownPic ?? capPic : undefined };
     case 'identify':
-      return { mode: 'reveal', pre: `The highlighted ${c.layer === 'cn' ? 'part of China' : noun(c)} ${c.layer === 'range' ? 'is' : 'is'} `, blank: 'what?', post: '.', answer: c.nameThe ?? c.name, map: 'highlight', note, picture: c.layer !== 'country' ? ownPic ?? capPic : undefined };
+      return { mode: 'reveal', pre: `The highlighted ${c.layer === 'cn' ? 'part of China' : noun(c)} ${c.layer === 'range' ? 'is' : 'is'} `, blank: 'what?', post: '.', answer: c.nameThe ?? c.name, map: 'highlight', note: placeNote, picture: c.layer !== 'country' ? ownPic ?? capPic : undefined };
     case 'capital':
       return { mode: 'reveal', pre: `The ${capNoun} of ${c.name} is `, blank: 'what?', post: '.', answer: c.capitalAnswer!, map: 'reveal', picture: capPic, note: c.capitalNote ?? note };
     case 'capitalReverse':
@@ -381,7 +386,7 @@ export function face(ref: CardRef): CardFace {
   const f = rawFace(ref);
   if (ref.kind === 'note') return f; // your own words, untouched
   // Island groups are plural: "The Faroe Islands are part of Denmark".
-  const pre = cap1(withThe(f.pre)).replace(/^((?:The )?(?:[A-Z][\w'-]*\s)*(?:Islands|Isles|Azores)) is /, '$1 are ');
+  const pre = cap1(withThe(f.pre)).replace(/^((?:The )?(?:(?:[A-Z][\w'-]*|and)\s)*(?:Islands|Isles|Azores)) is /, '$1 are ');
   return { ...f, pre, answer: withThe(f.answer), post: withThe(f.post), note: f.note ? withThe(f.note) : f.note };
 }
 

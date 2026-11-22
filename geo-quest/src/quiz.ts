@@ -1,4 +1,4 @@
-import { cardsForNode, GROUPS, LAYER_NOUN, SECTION_PARENT, nodeId, SECTIONS, shuffle, type Group, type Topic } from './cards';
+import { cardsForNode, GROUPS, LAYER_NOUN, SECTION_PARENT, sectionAndDescendants, nodeId, SECTIONS, shuffle, type Group, type Topic } from './cards';
 import type { QuizSpec } from './components/Study';
 import { getProgress, skipped } from './srs';
 import type { Dataset, Place } from './types';
@@ -8,7 +8,13 @@ export type Scope = 'world' | `sec:${string}` | `grp:${string}`;
 
 export function scopeGroups(scope: Scope): Group[] {
   if (scope === 'world') return GROUPS.filter(g => g.layer === 'country');
-  if (scope.startsWith('sec:')) return GROUPS.filter(g => g.section === scope.slice(4));
+  if (scope.startsWith('sec:')) {
+    // A section's own groups; one with none of its own (Food & drink › Cocktails) covers what's nested inside it.
+    const own = GROUPS.filter(g => g.section === scope.slice(4));
+    if (own.length) return own;
+    const inside = sectionAndDescendants(scope.slice(4));
+    return GROUPS.filter(g => inside.includes(g.section));
+  }
   return GROUPS.filter(g => g.id === scope.slice(4));
 }
 

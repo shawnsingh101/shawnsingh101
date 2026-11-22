@@ -96,7 +96,7 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
             <div key={sec} className={'picks' + (i > 0 || subject.id === 'countries' ? ' sub' : '')}>
               {(i > 0 || subject.id === 'countries') && <span className="muted small">{i === 0 ? 'Or one region:' : `${sec}:`}</span>}
               {showAll && <Chip s={`sec:${sec}`} label={i === 0 && subject.id !== 'countries' ? `All ${sec.toLowerCase()}` : 'All'} sub={i > 0} />}
-              {gs.length > 1 && gs.map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.id === 'u-icons' ? 'Heritage icons' : shortName(g.name)} sub={i > 0 || subject.id === 'countries'} />)}
+              {gs.length > 1 && gs.map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.id === 'u-icons' ? 'Heritage icons' : g.section === 'Rivers' || g.section === 'Lakes' || g.section === 'Territories' ? shortName(g.name) : g.name} sub={i > 0 || subject.id === 'countries'} />)}
               {kids.map(k => <Chip key={k} s={allOf(k)} label={`${k} ›`} sub />)}
             </div>
           );

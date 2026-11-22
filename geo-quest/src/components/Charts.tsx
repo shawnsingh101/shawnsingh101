@@ -128,3 +128,27 @@ export function BarChart({ items, format, color = 1 }: { items: { label: string;
     </div>
   );
 }
+
+/** Stacked horizontal bars: each row split into parts (government / households / companies), total at the end. */
+export function StackedBarChart({ items, parts, format, legend = true }: { items: { label: string; values: number[] }[]; parts: { name: string; color: number }[]; format: (v: number) => string; legend?: boolean }) {
+  const max = Math.max(...items.map(i => i.values.reduce((a, b) => a + b, 0)), 0) || 1;
+  const [hover, setHover] = useState<number | null>(null);
+  return <>
+    {legend && <div className="chart-legend">{parts.map(p => <span key={p.name}><i style={{ background: `var(--series-${p.color})` }} />{p.name}</span>)}</div>}
+    <div className="bars" role="list">
+      {items.map((it, i) => {
+        const total = it.values.reduce((a, b) => a + b, 0);
+        return (
+          <div key={it.label} className={'bar-row' + (hover === i ? ' hover' : '')} role="listitem" onPointerEnter={() => setHover(i)} onPointerLeave={() => setHover(null)}>
+            <span className="bar-label">{it.label}</span>
+            <span className="bar-track stacked">
+              {it.values.map((v, j) => <span key={j} className="bar seg" style={{ width: `${(100 * v) / max}%`, background: `var(--series-${parts[j].color})` }} />)}
+            </span>
+            <span className="bar-value">{format(total)}</span>
+            {hover === i && <span className="bar-tip">{parts.map((p, j) => <span key={p.name}><i style={{ background: `var(--series-${p.color})` }} />{p.name} <b>{format(it.values[j])}</b> <small>{Math.round((100 * it.values[j]) / (total || 1))}%</small></span>)}</span>}
+          </div>
+        );
+      })}
+    </div>
+  </>;
+}

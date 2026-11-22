@@ -679,3 +679,11 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .rel-chip.ext { color: var(--muted); }
 .also-in { display: grid; gap: .2rem; margin: .4rem 0; } .also-in p { margin: 0; }
 .sheet-back { margin: -.2rem 0 .3rem; padding-left: 0; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: .3rem .9rem; font-size: .78rem; color: var(--muted); margin-top: .5rem; }
+.chart-legend span { display: inline-flex; align-items: center; gap: .35rem; } .chart-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.bar-row { position: relative; }
+.bar-track.stacked { display: flex; gap: 2px; }
+.bar.seg { border-radius: 0; } .bar-track.stacked .bar.seg:last-child { border-radius: 0 4px 4px 0; }
+.bar-tip { position: absolute; z-index: 2; right: 0; top: 100%; margin-top: 2px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: .35rem .5rem; box-shadow: var(--shadow); display: grid; gap: .1rem; font-size: .75rem; min-width: 190px; }
+.bar-tip span { display: flex; align-items: center; gap: .35rem; color: var(--muted); } .bar-tip b { color: var(--ink); margin-left: auto; } .bar-tip i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.fed-debt { margin: .2rem 0 .4rem; line-height: 1.45; }

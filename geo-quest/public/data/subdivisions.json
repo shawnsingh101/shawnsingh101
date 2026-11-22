@@ -37,6 +37,56 @@
    ]
   },
   {
+   "id": "in",
+   "section": "India",
+   "parent": "Asia",
+   "country": "Q668",
+   "noun": "state or territory",
+   "nouns": "states & territories",
+   "capital": "capital",
+   "groups": [
+    {
+     "id": "in-n",
+     "name": "North India"
+    },
+    {
+     "id": "in-c",
+     "name": "Central India"
+    },
+    {
+     "id": "in-e",
+     "name": "East India"
+    },
+    {
+     "id": "in-ne",
+     "name": "Northeast India"
+    },
+    {
+     "id": "in-w",
+     "name": "West India"
+    },
+    {
+     "id": "in-s",
+     "name": "South India"
+    }
+   ]
+  },
+  {
+   "id": "uz",
+   "section": "Uzbekistan",
+   "parent": "Asia",
+   "country": "Q265",
+   "noun": "region",
+   "nouns": "regions",
+   "capital": "capital",
+   "groups": [
+    {
+     "id": "uz-r",
+     "name": "Regions of Uzbekistan"
+    }
+   ]
+  },
+  {
    "id": "nj",
    "section": "New Jersey",
    "parent": "United States",
@@ -79,7 +129,9 @@
    ],
    "capitalAnswer": "Nagoya",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 7521192,
+   "populationYear": 2021
   },
   {
    "id": "Q81863",
@@ -107,7 +159,99 @@
    ],
    "capitalAnswer": "Akita",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 946380,
+   "populationYear": 2021
+  },
+  {
+   "id": "Q40888",
+   "layer": "sub",
+   "name": "Andaman and Nicobar Islands",
+   "image": "Havelock Island, Mangrove tree on the beach, Andaman Islands.jpg",
+   "lon": 92.72,
+   "lat": 11.68,
+   "wiki": "Andaman_and_Nicobar_Islands",
+   "group": "in-n",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q203476",
+     "name": "Srivijayapuram",
+     "preferred": false,
+     "role": null,
+     "image": "Port blair1.jpg",
+     "lon": 92.75,
+     "lat": 11.667,
+     "wiki": "Port_Blair"
+    }
+   ],
+   "capitalAnswer": "Srivijayapuram",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 356152,
+   "populationYear": 2005
+  },
+  {
+   "id": "Q1159",
+   "layer": "sub",
+   "name": "Andhra Pradesh",
+   "image": "Godavari satellite view.jpg",
+   "lon": 80.867,
+   "lat": 16.85,
+   "wiki": "Andhra_Pradesh",
+   "group": "in-s",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q19881964",
+     "name": "Amaravati",
+     "preferred": false,
+     "role": null,
+     "image": "Highcourt of AP.jpg",
+     "lon": 80.516,
+     "lat": 16.513,
+     "wiki": "Amaravati"
+    }
+   ],
+   "capitalAnswer": "Amaravati",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 53586000,
+   "populationYear": 2025
+  },
+  {
+   "id": "Q487384",
+   "layer": "sub",
+   "name": "Andijan Region",
+   "image": "Xonobod shahri koʻrinishi.jpg",
+   "lon": 72.167,
+   "lat": 40.75,
+   "wiki": "Andijan_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q487656",
+     "name": "Andijan",
+     "preferred": false,
+     "role": null,
+     "image": "Devonaboy Jome Mosque in Andijan.jpg",
+     "lon": 72.351,
+     "lat": 40.783,
+     "wiki": "Andijan"
+    }
+   ],
+   "capitalAnswer": "Andijan",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 1899500,
+   "populationYear": 2005
   },
   {
    "id": "Q71699",
@@ -135,7 +279,69 @@
    ],
    "capitalAnswer": "Aomori",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1232303,
+   "populationYear": 2021
+  },
+  {
+   "id": "Q1162",
+   "layer": "sub",
+   "name": "Arunachal Pradesh",
+   "image": null,
+   "lon": 93.37,
+   "lat": 27.06,
+   "wiki": "Arunachal_Pradesh",
+   "group": "in-ne",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q41128",
+     "name": "Itanagar",
+     "preferred": false,
+     "role": null,
+     "image": "Itanagar town 01.jpg",
+     "lon": 93.62,
+     "lat": 27.1,
+     "wiki": "Itanagar"
+    }
+   ],
+   "capitalAnswer": "Itanagar",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 1382611,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1164",
+   "layer": "sub",
+   "name": "Assam",
+   "image": "ISS052-E-609 - View of India.jpg",
+   "lon": 93,
+   "lat": 26,
+   "wiki": "Assam",
+   "group": "in-ne",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q271911",
+     "name": "Dispur",
+     "preferred": false,
+     "role": null,
+     "image": "Assam Secretariat, Dispur, August, 2008.jpg",
+     "lon": 91.77,
+     "lat": 26.15,
+     "wiki": "Dispur"
+    }
+   ],
+   "capitalAnswer": "Dispur",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 31205576,
+   "populationYear": 2011
   },
   {
    "id": "Q497928",
@@ -163,7 +369,9 @@
    ],
    "capitalAnswer": "Mays Landing",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 274534,
+   "populationYear": 2020
   },
   {
    "id": "Q112915",
@@ -191,7 +399,69 @@
    ],
    "capitalAnswer": "Hackensack",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 955732,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q1165",
+   "layer": "sub",
+   "name": "Bihar",
+   "image": "ISS012-E-21740 - View of India.jpg",
+   "lon": 85.13,
+   "lat": 25.37,
+   "wiki": "Bihar",
+   "group": "in-e",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q80484",
+     "name": "Patna",
+     "preferred": false,
+     "role": null,
+     "image": "Aerial view, Patna (314731093).jpg",
+     "lon": 85.141,
+     "lat": 25.61,
+     "wiki": "Patna"
+    }
+   ],
+   "capitalAnswer": "Patna",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 103804637,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q487372",
+   "layer": "sub",
+   "name": "Bukhara Region",
+   "image": "Bukhara Desert Oasis & Spa (3).jpg",
+   "lon": 63.667,
+   "lat": 40.167,
+   "wiki": "Bukhara_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q5764",
+     "name": "Bukhara",
+     "preferred": false,
+     "role": null,
+     "image": "Kalon-Ensemble Buchara.jpg",
+     "lon": 64.429,
+     "lat": 39.775,
+     "wiki": "Bukhara"
+    }
+   ],
+   "capitalAnswer": "Bukhara",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 1543900,
+   "populationYear": 2009
   },
   {
    "id": "Q138141",
@@ -219,7 +489,9 @@
    ],
    "capitalAnswer": "Mount Holly",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 461860,
+   "populationYear": 2020
   },
   {
    "id": "Q497810",
@@ -247,7 +519,9 @@
    ],
    "capitalAnswer": "Camden",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 523485,
+   "populationYear": 2020
   },
   {
    "id": "Q497795",
@@ -275,7 +549,58 @@
    ],
    "capitalAnswer": "Middle Township",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 95263,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q43433",
+   "layer": "sub",
+   "name": "Chandigarh",
+   "image": "Open Hand Monument and a Rose.jpeg",
+   "lon": 76.78,
+   "lat": 30.733,
+   "wiki": "Chandigarh",
+   "group": "in-n",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [],
+   "capitalAnswer": null,
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 1055450,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1168",
+   "layer": "sub",
+   "name": "Chhattisgarh",
+   "image": "Flora of Chaiturgarh forest hills Korba , Chhattisgarh.jpg",
+   "lon": 81.924,
+   "lat": 21.664,
+   "wiki": "Chhattisgarh",
+   "group": "in-c",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q372773",
+     "name": "Raipur",
+     "preferred": false,
+     "role": null,
+     "image": "TempioRaipur.jpg",
+     "lon": 81.634,
+     "lat": 21.238,
+     "wiki": "Raipur"
+    }
+   ],
+   "capitalAnswer": "Raipur",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 29436231,
+   "populationYear": 2020
   },
   {
    "id": "Q80011",
@@ -303,7 +628,9 @@
    ],
    "capitalAnswer": "Chiba",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 6279002,
+   "populationYear": 2021
   },
   {
    "id": "Q497845",
@@ -331,7 +658,69 @@
    ],
    "capitalAnswer": "Bridgeton",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 154152,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q77997266",
+   "layer": "sub",
+   "name": "Dadra and Nagar Haveli and Daman and Diu",
+   "image": "Portugese Fort3.jpg",
+   "lon": 72.83,
+   "lat": 20.42,
+   "wiki": "Dadra_and_Nagar_Haveli_and_Daman_and_Diu",
+   "group": "in-w",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q463252",
+     "name": "Daman",
+     "preferred": false,
+     "role": null,
+     "image": "Gateway of Moti Daman.jpg",
+     "lon": 72.834,
+     "lat": 20.417,
+     "wiki": "Daman,_India"
+    }
+   ],
+   "capitalAnswer": "Daman",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 585764,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1353",
+   "layer": "sub",
+   "name": "Delhi",
+   "image": "Red Fort in Delhi 03-2016 img3.jpg",
+   "lon": 77.217,
+   "lat": 28.667,
+   "wiki": "Delhi",
+   "group": "in-c",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q987",
+     "name": "New Delhi",
+     "wiki": "New_Delhi",
+     "image": null,
+     "lat": 28.614,
+     "lon": 77.209,
+     "preferred": false,
+     "role": null
+    }
+   ],
+   "capitalAnswer": "New Delhi",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 26495000,
+   "populationYear": 2016
   },
   {
    "id": "Q123376",
@@ -359,7 +748,9 @@
    ],
    "capitalAnswer": "Matsuyama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1321580,
+   "populationYear": 2021
   },
   {
    "id": "Q128077",
@@ -387,7 +778,39 @@
    ],
    "capitalAnswer": "Newark",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 863728,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q487089",
+   "layer": "sub",
+   "name": "Fergana Region",
+   "image": "Khudayar Khan Palace, Kokand 01.JPG",
+   "lon": 71.35,
+   "lat": 40.43,
+   "wiki": "Fergana_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q486329",
+     "name": "Fergana",
+     "preferred": false,
+     "role": null,
+     "image": "Фергана аллея.jpg",
+     "lon": 71.786,
+     "lat": 40.386,
+     "wiki": "Fergana"
+    }
+   ],
+   "capitalAnswer": "Fergana",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 3564800,
+   "populationYear": 2017
   },
   {
    "id": "Q133879",
@@ -415,7 +838,9 @@
    ],
    "capitalAnswer": "Fukui",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 764533,
+   "populationYear": 2021
   },
   {
    "id": "Q123258",
@@ -443,7 +868,9 @@
    ],
    "capitalAnswer": "Fukuoka",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 5108038,
+   "populationYear": 2020
   },
   {
    "id": "Q71707",
@@ -471,7 +898,9 @@
    ],
    "capitalAnswer": "Fukushima",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1825325,
+   "populationYear": 2021
   },
   {
    "id": "Q131277",
@@ -499,7 +928,9 @@
    ],
    "capitalAnswer": "Gifu",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1975397,
+   "populationYear": 2020
   },
   {
    "id": "Q502463",
@@ -527,7 +958,69 @@
    ],
    "capitalAnswer": "Woodbury",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 302294,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q1171",
+   "layer": "sub",
+   "name": "Goa",
+   "image": "The Terekhol River and Querim Beach, panoramic view, Goa, India.jpg",
+   "lon": 74.043,
+   "lat": 15.402,
+   "wiki": "Goa",
+   "group": "in-w",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q214681",
+     "name": "Panaji",
+     "preferred": false,
+     "role": null,
+     "image": "Panaji, nostra signora dell'immacolata concezione, esterno 04.jpg",
+     "lon": 73.83,
+     "lat": 15.48,
+     "wiki": "Panaji"
+    }
+   ],
+   "capitalAnswer": "Panaji",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 1458545,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1061",
+   "layer": "sub",
+   "name": "Gujarat",
+   "image": "Gujarat Satellite Imagery 2012.jpg",
+   "lon": 71.838,
+   "lat": 23.156,
+   "wiki": "Gujarat",
+   "group": "in-w",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q11910",
+     "name": "Gandhinagar",
+     "preferred": false,
+     "role": null,
+     "image": "Akshardham Gandhinagar Gujarat.jpg",
+     "lon": 72.65,
+     "lat": 23.223,
+     "wiki": "Gandhinagar"
+    }
+   ],
+   "capitalAnswer": "Gandhinagar",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 60383628,
+   "populationYear": 2011
   },
   {
    "id": "Q129499",
@@ -555,7 +1048,69 @@
    ],
    "capitalAnswer": "Maebashi",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1934920,
+   "populationYear": 2021
+  },
+  {
+   "id": "Q1174",
+   "layer": "sub",
+   "name": "Haryana",
+   "image": "ISS009-E-11292 - View of India.jpg",
+   "lon": 76.325,
+   "lat": 29.184,
+   "wiki": "Haryana",
+   "group": "in-c",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q43433",
+     "name": "Chandigarh",
+     "preferred": false,
+     "role": null,
+     "image": "Open Hand Monument and a Rose.jpeg",
+     "lon": 76.78,
+     "lat": 30.733,
+     "wiki": "Chandigarh"
+    }
+   ],
+   "capitalAnswer": "Chandigarh",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 27761063,
+   "populationYear": 2016
+  },
+  {
+   "id": "Q1177",
+   "layer": "sub",
+   "name": "Himachal Pradesh",
+   "image": "A Village near Trilokinath temple, Lahaul.jpg",
+   "lon": 77.172,
+   "lat": 31.103,
+   "wiki": "Himachal_Pradesh",
+   "group": "in-n",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q83786",
+     "name": "Shimla",
+     "preferred": false,
+     "role": null,
+     "image": "Shimla skyline.jpg",
+     "lon": 77.172,
+     "lat": 31.103,
+     "wiki": "Shimla"
+    }
+   ],
+   "capitalAnswer": "Shimla",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 6864602,
+   "populationYear": 2011
   },
   {
    "id": "Q617375",
@@ -583,7 +1138,9 @@
    ],
    "capitalAnswer": "Hiroshima",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 2790804,
+   "populationYear": 2021
   },
   {
    "id": "Q35581",
@@ -611,7 +1168,9 @@
    ],
    "capitalAnswer": "Sapporo",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 5383579,
+   "populationYear": 2015
   },
   {
    "id": "Q490505",
@@ -639,7 +1198,9 @@
    ],
    "capitalAnswer": "Jersey City",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 724854,
+   "populationYear": 2020
   },
   {
    "id": "Q502451",
@@ -667,7 +1228,9 @@
    ],
    "capitalAnswer": "Flemington",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 128947,
+   "populationYear": 2020
   },
   {
    "id": "Q130290",
@@ -695,7 +1258,9 @@
    ],
    "capitalAnswer": "Kobe",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 5453392,
+   "populationYear": 2021
   },
   {
    "id": "Q83273",
@@ -723,7 +1288,9 @@
    ],
    "capitalAnswer": "Mito",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 2862372,
+   "populationYear": 2021
   },
   {
    "id": "Q131281",
@@ -751,7 +1318,9 @@
    ],
    "capitalAnswer": "Kanazawa",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1132497,
+   "populationYear": 2020
   },
   {
    "id": "Q48326",
@@ -779,7 +1348,109 @@
    ],
    "capitalAnswer": "Morioka",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1205698,
+   "populationYear": 2021
+  },
+  {
+   "id": "Q66278313",
+   "layer": "sub",
+   "name": "Jammu and Kashmir",
+   "image": "Kashmir-sat-nasa.jpg",
+   "lon": 74.806,
+   "lat": 34.091,
+   "wiki": "Jammu_and_Kashmir_(union_territory)",
+   "group": "in-n",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q255455",
+     "name": "Jammu",
+     "preferred": false,
+     "role": null,
+     "image": "Jammu city.jpg",
+     "lon": 74.869,
+     "lat": 32.736,
+     "wiki": "Jammu"
+    },
+    {
+     "id": "Q170115",
+     "name": "Srinagar",
+     "preferred": false,
+     "role": null,
+     "image": "Srinagar pano.jpg",
+     "lon": 74.806,
+     "lat": 34.091,
+     "wiki": "Srinagar"
+    }
+   ],
+   "capitalAnswer": "Jammu and Srinagar",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 12258433,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1184",
+   "layer": "sub",
+   "name": "Jharkhand",
+   "image": "ISS012-E-10332 - View of India.jpg",
+   "lon": 85,
+   "lat": 23,
+   "wiki": "Jharkhand",
+   "group": "in-e",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q174461",
+     "name": "Ranchi",
+     "preferred": false,
+     "role": null,
+     "image": "View From Pahari Temple.jpg",
+     "lon": 85.335,
+     "lat": 23.356,
+     "wiki": "Ranchi"
+    }
+   ],
+   "capitalAnswer": "Ranchi",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 32988134,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q488811",
+   "layer": "sub",
+   "name": "Jizzakh Region",
+   "image": "Hayat-08.JPG",
+   "lon": 67.667,
+   "lat": 40.417,
+   "wiki": "Jizzakh_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q572380",
+     "name": "Jizzakh",
+     "preferred": false,
+     "role": null,
+     "image": "Jizzaxfountain.jpg",
+     "lon": 67.85,
+     "lat": 40.117,
+     "wiki": "Jizzakh"
+    }
+   ],
+   "capitalAnswer": "Jizzakh",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 1250100,
+   "populationYear": 2015
   },
   {
    "id": "Q161454",
@@ -807,7 +1478,9 @@
    ],
    "capitalAnswer": "Takamatsu",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 949358,
+   "populationYear": 2020
   },
   {
    "id": "Q15701",
@@ -835,7 +1508,9 @@
    ],
    "capitalAnswer": "Kagoshima",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1586435,
+   "populationYear": 2021
   },
   {
    "id": "Q127513",
@@ -863,7 +1538,109 @@
    ],
    "capitalAnswer": "Yokohama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 9216009,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q484245",
+   "layer": "sub",
+   "name": "Karakalpakstan",
+   "image": "Касарма, Башня.jpg",
+   "lon": 58.86,
+   "lat": 43.04,
+   "wiki": "Karakalpakstan",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q489898",
+     "name": "Nukus",
+     "preferred": false,
+     "role": null,
+     "image": "Berdaq National Museum.jpg",
+     "lon": 59.602,
+     "lat": 42.465,
+     "wiki": "Nukus"
+    }
+   ],
+   "capitalAnswer": "Nukus",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 2149932,
+   "populationYear": 2026
+  },
+  {
+   "id": "Q1185",
+   "layer": "sub",
+   "name": "Karnataka",
+   "image": "India Karnataka location map.svg",
+   "lon": 76,
+   "lat": 15,
+   "wiki": "Karnataka",
+   "group": "in-s",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q270176",
+     "name": "Belgaum",
+     "preferred": false,
+     "role": null,
+     "image": "Suvarna Soudha Belagavi12.jpg",
+     "lon": 74.504,
+     "lat": 15.857,
+     "wiki": "Belgaum"
+    },
+    {
+     "id": "Q1355",
+     "name": "Bengaluru",
+     "preferred": false,
+     "role": null,
+     "image": "UB City.jpg",
+     "lon": 77.591,
+     "lat": 12.979,
+     "wiki": "Bengaluru"
+    }
+   ],
+   "capitalAnswer": "Belgaum and Bengaluru",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 61130704,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1186",
+   "layer": "sub",
+   "name": "Kerala",
+   "image": "Kerala oli 201837 lrg February 6 2018.jpg",
+   "lon": 76.3,
+   "lat": 10,
+   "wiki": "Kerala",
+   "group": "in-s",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q167715",
+     "name": "Thiruvananthapuram",
+     "preferred": false,
+     "role": null,
+     "image": "Thiruvananthapuram Montage.jpg",
+     "lon": 76.953,
+     "lat": 8.488,
+     "wiki": "Thiruvananthapuram"
+    }
+   ],
+   "capitalAnswer": "Thiruvananthapuram",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 34523726,
+   "populationYear": 2017
   },
   {
    "id": "Q134093",
@@ -891,7 +1668,9 @@
    ],
    "capitalAnswer": "Kōchi-shi",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 688870,
+   "populationYear": 2021
   },
   {
    "id": "Q130308",
@@ -919,7 +1698,9 @@
    ],
    "capitalAnswer": "Kumamoto",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1732644,
+   "populationYear": 2021
   },
   {
    "id": "Q120730",
@@ -947,7 +1728,209 @@
    ],
    "capitalAnswer": "Kyoto",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 2563192,
+   "populationYear": 2021
+  },
+  {
+   "id": "Q200667",
+   "layer": "sub",
+   "name": "Ladakh",
+   "image": "Rangdum village grazing fields.jpg",
+   "lon": 77.583,
+   "lat": 34.167,
+   "wiki": "Ladakh",
+   "group": "in-n",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q2088176",
+     "name": "Kargil",
+     "preferred": false,
+     "role": null,
+     "image": "Kargil Town Panorama.jpg",
+     "lon": 76.126,
+     "lat": 34.559,
+     "wiki": "Kargil"
+    },
+    {
+     "id": "Q230818",
+     "name": "Leh",
+     "preferred": false,
+     "role": null,
+     "image": "Leh, Ladakh, India.jpg",
+     "lon": 77.585,
+     "lat": 34.164,
+     "wiki": "Leh"
+    }
+   ],
+   "capitalAnswer": "Kargil and Leh",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 274289,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q26927",
+   "layer": "sub",
+   "name": "Lakshadweep",
+   "image": "Bangaram Island, Lakshadweep 20160325- DSC1780.jpg",
+   "lon": 72.64,
+   "lat": 10.57,
+   "wiki": "Lakshadweep",
+   "group": "in-s",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q271287",
+     "name": "Kavaratti",
+     "preferred": false,
+     "role": null,
+     "image": "KAVARATTI MAIN ROAD.jpg",
+     "lon": 72.639,
+     "lat": 10.567,
+     "wiki": "Kavaratti"
+    }
+   ],
+   "capitalAnswer": "Kavaratti",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 64429,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1188",
+   "layer": "sub",
+   "name": "Madhya Pradesh",
+   "image": "Stupa 1 - West Side - Sanchi Hill 2013-02-21 4311.JPG",
+   "lon": 78.657,
+   "lat": 22.973,
+   "wiki": "Madhya_Pradesh",
+   "group": "in-c",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q80989",
+     "name": "Bhopal",
+     "preferred": true,
+     "role": null,
+     "image": "Taj Mahal, Bhopal.JPG",
+     "lon": 77.412,
+     "lat": 23.259,
+     "wiki": "Bhopal"
+    }
+   ],
+   "capitalAnswer": "Bhopal",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 72597565,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1191",
+   "layer": "sub",
+   "name": "Maharashtra",
+   "image": "Ghat satellite view.jpg",
+   "lon": 75.714,
+   "lat": 19.751,
+   "wiki": "Maharashtra",
+   "group": "in-w",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q1156",
+     "name": "Mumbai",
+     "preferred": false,
+     "role": null,
+     "image": "Panoramic view of Taj Palace Hotel and Taj Tower with the iconic Gateway of India in the background (cropped).jpg",
+     "lon": 72.877,
+     "lat": 19.076,
+     "wiki": "Mumbai"
+    },
+    {
+     "id": "Q1513",
+     "name": "Nagpur",
+     "preferred": false,
+     "role": null,
+     "image": "Sitabuldi Market.JPG",
+     "lon": 79.081,
+     "lat": 21.15,
+     "wiki": "Nagpur"
+    }
+   ],
+   "capitalAnswer": "Mumbai and Nagpur",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 112372972,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1193",
+   "layer": "sub",
+   "name": "Manipur",
+   "image": "Breathtaking beauty of Dzukou Valley in Manipur-Nagaland border (edit).jpg",
+   "lon": 93.94,
+   "lat": 24.81,
+   "wiki": "Manipur",
+   "group": "in-ne",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q208097",
+     "name": "Imphal",
+     "preferred": false,
+     "role": null,
+     "image": "Imphal At Dusk.jpg",
+     "lon": 93.95,
+     "lat": 24.82,
+     "wiki": "Imphal"
+    }
+   ],
+   "capitalAnswer": "Imphal",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 2855794,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q1195",
+   "layer": "sub",
+   "name": "Meghalaya",
+   "image": "Cherrapunji waterfalls (India, 2013).jpg",
+   "lon": 91.88,
+   "lat": 25.57,
+   "wiki": "Meghalaya",
+   "group": "in-ne",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q207752",
+     "name": "Shillong",
+     "preferred": false,
+     "role": null,
+     "image": "Shillong.jpg",
+     "lon": 91.879,
+     "lat": 25.574,
+     "wiki": "Shillong"
+    }
+   ],
+   "capitalAnswer": "Shillong",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 3211000,
+   "populationYear": 2014
   },
   {
    "id": "Q496886",
@@ -975,7 +1958,9 @@
    ],
    "capitalAnswer": "Trenton",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 387340,
+   "populationYear": 2020
   },
   {
    "id": "Q496862",
@@ -1003,7 +1988,9 @@
    ],
    "capitalAnswer": "New Brunswick",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 863162,
+   "populationYear": 2020
   },
   {
    "id": "Q128196",
@@ -1031,7 +2018,9 @@
    ],
    "capitalAnswer": "Tsu",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1768632,
+   "populationYear": 2020
   },
   {
    "id": "Q47896",
@@ -1059,7 +2048,9 @@
    ],
    "capitalAnswer": "Sendai",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 2288456,
+   "populationYear": 2021
   },
   {
    "id": "Q130300",
@@ -1087,7 +2078,39 @@
    ],
    "capitalAnswer": "Miyazaki",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1061032,
+   "populationYear": 2021
+  },
+  {
+   "id": "Q1502",
+   "layer": "sub",
+   "name": "Mizoram",
+   "image": "Champhai, Mizoram, from south, with Zotlang in the foreground.jpg",
+   "lon": 92.8,
+   "lat": 23.36,
+   "wiki": "Mizoram",
+   "group": "in-ne",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q192379",
+     "name": "Aizawl",
+     "preferred": false,
+     "role": null,
+     "image": "Aizwal, Mizoram..JPG",
+     "lon": 92.717,
+     "lat": 23.733,
+     "wiki": "Aizawl"
+    }
+   ],
+   "capitalAnswer": "Aizawl",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 1097206,
+   "populationYear": 2011
   },
   {
    "id": "Q502424",
@@ -1115,7 +2138,9 @@
    ],
    "capitalAnswer": "Freehold",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 643615,
+   "populationYear": 2020
   },
   {
    "id": "Q498163",
@@ -1143,7 +2168,39 @@
    ],
    "capitalAnswer": "Morristown",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 509285,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q1599",
+   "layer": "sub",
+   "name": "Nagaland",
+   "image": null,
+   "lon": 94.653,
+   "lat": 26.229,
+   "wiki": "Nagaland",
+   "group": "in-ne",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q234056",
+     "name": "Kohima",
+     "preferred": false,
+     "role": null,
+     "image": "Kohima 24 July 2021.jpeg",
+     "lon": 94.119,
+     "lat": 25.667,
+     "wiki": "Kohima"
+    }
+   ],
+   "capitalAnswer": "Kohima",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 1978502,
+   "populationYear": 2011
   },
   {
    "id": "Q127877",
@@ -1171,7 +2228,9 @@
    ],
    "capitalAnswer": "Nagano",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 2024073,
+   "populationYear": 2021
   },
   {
    "id": "Q169376",
@@ -1199,7 +2258,39 @@
    ],
    "capitalAnswer": "Nagasaki",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1307309,
+   "populationYear": 2021
+  },
+  {
+   "id": "Q474876",
+   "layer": "sub",
+   "name": "Namangan Region",
+   "image": "Nursery in Uychi district, Namangan province, Uzbekistan.JPG",
+   "lon": 71.167,
+   "lat": 41,
+   "wiki": "Namangan_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q492552",
+     "name": "Namangan",
+     "preferred": false,
+     "role": null,
+     "image": "Moellah Kirigizmadrassa.jpg",
+     "lon": 71.672,
+     "lat": 40.995,
+     "wiki": "Namangan"
+    }
+   ],
+   "capitalAnswer": "Namangan",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 2554200,
+   "populationYear": 2015
   },
   {
    "id": "Q131287",
@@ -1227,7 +2318,39 @@
    ],
    "capitalAnswer": "Nara",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1319305,
+   "populationYear": 2021
+  },
+  {
+   "id": "Q487570",
+   "layer": "sub",
+   "name": "Navoiy Region",
+   "image": "Sentob valley.jpg",
+   "lon": 64.25,
+   "lat": 42,
+   "wiki": "Navoiy_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q763015",
+     "name": "Navoiy",
+     "preferred": false,
+     "role": null,
+     "image": "Город Навои, проспект Халклар Дустлиги.JPG",
+     "lon": 65.383,
+     "lat": 40.083,
+     "wiki": "Navoiy"
+    }
+   ],
+   "capitalAnswer": "Navoiy",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 767500,
+   "populationYear": 2010
   },
   {
    "id": "Q132705",
@@ -1255,7 +2378,9 @@
    ],
    "capitalAnswer": "Niigata",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 2192319,
+   "populationYear": 2021
   },
   {
    "id": "Q502564",
@@ -1283,7 +2408,39 @@
    ],
    "capitalAnswer": "Toms River",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 637229,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q22048",
+   "layer": "sub",
+   "name": "Odisha",
+   "image": "Odisha blank districts map.svg",
+   "lon": 83.5,
+   "lat": 20.15,
+   "wiki": "Odisha",
+   "group": "in-e",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q171771",
+     "name": "Bhubaneswar",
+     "preferred": false,
+     "role": null,
+     "image": "Lingaraj Temple in Mansoon, 2023.jpg",
+     "lon": 85.825,
+     "lat": 20.295,
+     "wiki": "Bhubaneswar"
+    }
+   ],
+   "capitalAnswer": "Bhubaneswar",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 41974218,
+   "populationYear": 2011
   },
   {
    "id": "Q133924",
@@ -1311,7 +2468,9 @@
    ],
    "capitalAnswer": "Ōita-shi",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1121589,
+   "populationYear": 2021
   },
   {
    "id": "Q132936",
@@ -1339,7 +2498,9 @@
    ],
    "capitalAnswer": "Okayama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1878884,
+   "populationYear": 2021
   },
   {
    "id": "Q766445",
@@ -1367,7 +2528,9 @@
    ],
    "capitalAnswer": "Naha",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1460652,
+   "populationYear": 2021
   },
   {
    "id": "Q122723",
@@ -1395,7 +2558,9 @@
    ],
    "capitalAnswer": "Osaka",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 8826684,
+   "populationYear": 2021
   },
   {
    "id": "Q495974",
@@ -1423,7 +2588,129 @@
    ],
    "capitalAnswer": "Paterson",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 524118,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q66743",
+   "layer": "sub",
+   "name": "Puducherry",
+   "image": "Pondicherry-Rock beach aerial view.jpg",
+   "lon": 79.83,
+   "lat": 11.93,
+   "wiki": "Puducherry_(union_territory)",
+   "group": "in-s",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q639421",
+     "name": "Pondicherry",
+     "preferred": false,
+     "role": null,
+     "image": "Pondicherry Panorama 1.jpg",
+     "lon": 79.83,
+     "lat": 11.93,
+     "wiki": "Pondicherry"
+    }
+   ],
+   "capitalAnswer": "Pondicherry",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 1394467,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q22424",
+   "layer": "sub",
+   "name": "Punjab",
+   "image": "ISS030-E-16834 - View of India.jpg",
+   "lon": 75.467,
+   "lat": 30.767,
+   "wiki": "Punjab,_India",
+   "group": "in-n",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q43433",
+     "name": "Chandigarh",
+     "preferred": false,
+     "role": null,
+     "image": "Open Hand Monument and a Rose.jpeg",
+     "lon": 76.78,
+     "lat": 30.733,
+     "wiki": "Chandigarh"
+    }
+   ],
+   "capitalAnswer": "Chandigarh",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 27743338,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q487577",
+   "layer": "sub",
+   "name": "Qashqadaryo Region",
+   "image": "Qashqadaryo, Ko'l qishlog'i manzarasi.jpg",
+   "lon": 66.083,
+   "lat": 38.833,
+   "wiki": "Qashqadaryo_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q644008",
+     "name": "Qarshi",
+     "preferred": false,
+     "role": null,
+     "image": "Ancient bridge in Qarshi (Uzbekistan).jpg",
+     "lon": 65.8,
+     "lat": 38.867,
+     "wiki": "Qarshi"
+    }
+   ],
+   "capitalAnswer": "Qarshi",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 3088800,
+   "populationYear": 2017
+  },
+  {
+   "id": "Q1437",
+   "layer": "sub",
+   "name": "Rajasthan",
+   "image": "IN-RJ.svg",
+   "lon": 73.839,
+   "lat": 26.573,
+   "wiki": "Rajasthan",
+   "group": "in-c",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q66485",
+     "name": "Jaipur",
+     "preferred": false,
+     "role": null,
+     "image": "Jaipur Montage.png",
+     "lon": 75.82,
+     "lat": 26.915,
+     "wiki": "Jaipur"
+    }
+   ],
+   "capitalAnswer": "Jaipur",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 68548437,
+   "populationYear": 2011
   },
   {
    "id": "Q160420",
@@ -1451,7 +2738,9 @@
    ],
    "capitalAnswer": "Saga",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 809824,
+   "populationYear": 2021
   },
   {
    "id": "Q128186",
@@ -1479,7 +2768,9 @@
    ],
    "capitalAnswer": "Saitama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 7343100,
+   "populationYear": 2021
   },
   {
    "id": "Q502587",
@@ -1507,7 +2798,39 @@
    ],
    "capitalAnswer": "Salem",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 64837,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q487532",
+   "layer": "sub",
+   "name": "Samarqand Region",
+   "image": "RegistanSquare Samarkand.jpg",
+   "lon": 66.25,
+   "lat": 39.833,
+   "wiki": "Samarkand_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q5753",
+     "name": "Samarkand",
+     "preferred": false,
+     "role": null,
+     "image": "Sherdor madrasah 3.jpg",
+     "lon": 66.976,
+     "lat": 39.655,
+     "wiki": "Samarkand"
+    }
+   ],
+   "capitalAnswer": "Samarkand",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 3444800,
+   "populationYear": 2014
   },
   {
    "id": "Q131358",
@@ -1535,7 +2858,9 @@
    ],
    "capitalAnswer": "Otsu",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1411168,
+   "populationYear": 2021
   },
   {
    "id": "Q132751",
@@ -1563,7 +2888,9 @@
    ],
    "capitalAnswer": "Matsue",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 664539,
+   "populationYear": 2021
   },
   {
    "id": "Q131320",
@@ -1591,7 +2918,67 @@
    ],
    "capitalAnswer": "Shizuoka",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 3609465,
+   "populationYear": 2021
+  },
+  {
+   "id": "Q1505",
+   "layer": "sub",
+   "name": "Sikkim",
+   "image": "Statue of Guru Padmasambhava (Guru Rinpoche), the patron saint of Sikkim.jpg",
+   "lon": 88.5,
+   "lat": 27.55,
+   "wiki": "Sikkim",
+   "group": "in-e",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q186141",
+     "name": "Gangtok",
+     "preferred": false,
+     "role": null,
+     "image": "Sikkim Gangtok.jpg",
+     "lon": 88.62,
+     "lat": 27.33,
+     "wiki": "Gangtok"
+    }
+   ],
+   "capitalAnswer": "Gangtok",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 657876,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q487547",
+   "layer": "sub",
+   "name": "Sirdaryo Region",
+   "image": "Kanal (Sirdaryo tumani).jpg",
+   "lon": 68.667,
+   "lat": 40.417,
+   "wiki": "Sirdaryo_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q609649",
+     "name": "Guliston",
+     "preferred": false,
+     "role": null,
+     "image": "Город Гулистан.jpg",
+     "lon": 68.783,
+     "lat": 40.515,
+     "wiki": "Guliston"
+    }
+   ],
+   "capitalAnswer": "Guliston",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan"
   },
   {
    "id": "Q502414",
@@ -1619,7 +3006,37 @@
    ],
    "capitalAnswer": "Somerville",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 345361,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q487537",
+   "layer": "sub",
+   "name": "Surxondaryo Region",
+   "image": "Boysun Surkhandarya.JPG",
+   "lon": 67.5,
+   "lat": 38,
+   "wiki": "Surxondaryo_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q491879",
+     "name": "Termez",
+     "preferred": false,
+     "role": null,
+     "image": "Termez Sultan-Saodat.jpg",
+     "lon": 67.278,
+     "lat": 37.224,
+     "wiki": "Termez"
+    }
+   ],
+   "capitalAnswer": "Termez",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan"
   },
   {
    "id": "Q495998",
@@ -1647,7 +3064,118 @@
    ],
    "capitalAnswer": "Newton",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 144221,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q1445",
+   "layer": "sub",
+   "name": "Tamil Nadu",
+   "image": "Tea Fields Nilgiris Ranges Mynala Dec25 A7CR 09866.jpg",
+   "lon": 79,
+   "lat": 11,
+   "wiki": "Tamil_Nadu",
+   "group": "in-s",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q1352",
+     "name": "Chennai",
+     "preferred": false,
+     "role": null,
+     "image": "Ripon Building aerial view.jpg",
+     "lon": 80.275,
+     "lat": 13.082,
+     "wiki": "Chennai"
+    }
+   ],
+   "capitalAnswer": "Chennai",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 72147030,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q269",
+   "layer": "sub",
+   "name": "Tashkent",
+   "image": "Aerial view of Tashkent, Uzbekistan.JPG",
+   "lon": 69.28,
+   "lat": 41.311,
+   "wiki": "Tashkent",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [],
+   "capitalAnswer": null,
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 2956384,
+   "populationYear": 2023
+  },
+  {
+   "id": "Q487585",
+   "layer": "sub",
+   "name": "Tashkent Region",
+   "image": "Chirchik River in Khodzhikent.jpg",
+   "lon": 69.75,
+   "lat": 41.167,
+   "wiki": "Tashkent_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q891949",
+     "name": "Nurafshon",
+     "preferred": true,
+     "role": null,
+     "image": "Toytepa masjidi.jpg",
+     "lon": 69.358,
+     "lat": 41.04,
+     "wiki": "Nurafshon"
+    }
+   ],
+   "capitalAnswer": "Nurafshon",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 2644400,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q677037",
+   "layer": "sub",
+   "name": "Telangana",
+   "image": null,
+   "lon": 79.3,
+   "lat": 17.9,
+   "wiki": "Telangana",
+   "group": "in-s",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q1361",
+     "name": "Hyderabad",
+     "preferred": false,
+     "role": null,
+     "image": "Hyderabad Montage 2020.jpg",
+     "lon": 78.475,
+     "lat": 17.362,
+     "wiki": "Hyderabad"
+    }
+   ],
+   "capitalAnswer": "Hyderabad",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 35193978,
+   "populationYear": 2011
   },
   {
    "id": "Q44843",
@@ -1675,7 +3203,9 @@
    ],
    "capitalAnswer": "Utsunomiya",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1927754,
+   "populationYear": 2021
   },
   {
    "id": "Q160734",
@@ -1703,7 +3233,9 @@
    ],
    "capitalAnswer": "Tokushima",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 721721,
+   "populationYear": 2020
   },
   {
    "id": "Q1490",
@@ -1729,10 +3261,12 @@
      "wiki": "Shinjuku"
     }
    ],
+   "capitalNote": "Tokyo is a metropolis, not one city: its government sits in Shinjuku",
    "capitalAnswer": "Shinjuku",
    "parentName": "Japan",
    "facts": "Prefecture of Japan",
-   "capitalNote": "Tokyo is a metropolis, not one city: its government sits in Shinjuku"
+   "population": 14264798,
+   "populationYear": 2022
   },
   {
    "id": "Q133935",
@@ -1760,7 +3294,9 @@
    ],
    "capitalAnswer": "Tottori",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 549925,
+   "populationYear": 2021
   },
   {
    "id": "Q132929",
@@ -1788,7 +3324,39 @@
    ],
    "capitalAnswer": "Toyama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1031262,
+   "populationYear": 2021
+  },
+  {
+   "id": "Q1363",
+   "layer": "sub",
+   "name": "Tripura",
+   "image": "Ujjayanta palace Tripura State Museum Agartala India.jpg",
+   "lon": 91.28,
+   "lat": 23.84,
+   "wiki": "Tripura",
+   "group": "in-ne",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q170454",
+     "name": "Agartala",
+     "preferred": false,
+     "role": null,
+     "image": "Agartala-mayday152.jpg",
+     "lon": 91.267,
+     "lat": 23.833,
+     "wiki": "Agartala"
+    }
+   ],
+   "capitalAnswer": "Agartala",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 3673917,
+   "populationYear": 2011
   },
   {
    "id": "Q502459",
@@ -1816,7 +3384,79 @@
    ],
    "capitalAnswer": "Elizabeth",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 575345,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q1498",
+   "layer": "sub",
+   "name": "Uttar Pradesh",
+   "image": null,
+   "lon": 80.91,
+   "lat": 26.85,
+   "wiki": "Uttar_Pradesh",
+   "group": "in-c",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q47916",
+     "name": "Lucknow",
+     "preferred": false,
+     "role": null,
+     "image": "Gomti river in Downtown New Lucknow.JPG",
+     "lon": 80.947,
+     "lat": 26.847,
+     "wiki": "Lucknow"
+    }
+   ],
+   "capitalAnswer": "Lucknow",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 246270000,
+   "populationYear": 2025
+  },
+  {
+   "id": "Q1499",
+   "layer": "sub",
+   "name": "Uttarakhand",
+   "image": "ISS020-E-6676 - View of India.jpg",
+   "lon": 78.954,
+   "lat": 30.511,
+   "wiki": "Uttarakhand",
+   "group": "in-c",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q199528",
+     "name": "Dehradun",
+     "preferred": false,
+     "role": null,
+     "image": "Dehradun India 2006-11.JPG",
+     "lon": 78.029,
+     "lat": 30.318,
+     "wiki": "Dehradun"
+    },
+    {
+     "id": "Q2080796",
+     "name": "Gairsain",
+     "preferred": false,
+     "role": null,
+     "image": "Dudhatoli 4.jpg",
+     "lon": 79.289,
+     "lat": 30.055,
+     "wiki": "Gairsain"
+    }
+   ],
+   "capitalAnswer": "Dehradun and Gairsain",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 10086292,
+   "populationYear": 2011
   },
   {
    "id": "Q131314",
@@ -1844,7 +3484,9 @@
    ],
    "capitalAnswer": "Wakayama",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 910687,
+   "populationYear": 2021
   },
   {
    "id": "Q502468",
@@ -1872,7 +3514,69 @@
    ],
    "capitalAnswer": "Belvidere",
    "parentName": "New Jersey",
-   "facts": "County of New Jersey"
+   "facts": "County of New Jersey",
+   "population": 109632,
+   "populationYear": 2020
+  },
+  {
+   "id": "Q1356",
+   "layer": "sub",
+   "name": "West Bengal",
+   "image": "West Bengal outline map.svg",
+   "lon": 87,
+   "lat": 23,
+   "wiki": "West_Bengal",
+   "group": "in-e",
+   "noun": "state or territory",
+   "capWord": "capital",
+   "parent": "Q668",
+   "capitals": [
+    {
+     "id": "Q1348",
+     "name": "Kolkata",
+     "preferred": false,
+     "role": null,
+     "image": "Ketan donate4.jpg",
+     "lon": 88.37,
+     "lat": 22.567,
+     "wiki": "Kolkata"
+    }
+   ],
+   "capitalAnswer": "Kolkata",
+   "parentName": "India",
+   "facts": "State or territory of India",
+   "population": 91276115,
+   "populationYear": 2011
+  },
+  {
+   "id": "Q487561",
+   "layer": "sub",
+   "name": "Xorazm Region",
+   "image": "Tugay forest needs river water.jpg",
+   "lon": 61,
+   "lat": 41.333,
+   "wiki": "Khorazm_Region",
+   "group": "uz-r",
+   "noun": "region",
+   "capWord": "capital",
+   "parent": "Q265",
+   "capitals": [
+    {
+     "id": "Q472925",
+     "name": "Urgench",
+     "preferred": false,
+     "role": null,
+     "image": "Waterfront of Shavat canal in Urganch.jpg",
+     "lon": 60.625,
+     "lat": 41.535,
+     "wiki": "Urgench"
+    }
+   ],
+   "capitalAnswer": "Urgench",
+   "parentName": "Uzbekistan",
+   "facts": "Region of Uzbekistan",
+   "population": 1715600,
+   "populationYear": 2015
   },
   {
    "id": "Q125863",
@@ -1900,7 +3604,9 @@
    ],
    "capitalAnswer": "Yamagata",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1063231,
+   "populationYear": 2021
   },
   {
    "id": "Q127264",
@@ -1928,7 +3634,9 @@
    ],
    "capitalAnswer": "Yamaguchi",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 1336522,
+   "populationYear": 2021
   },
   {
    "id": "Q132720",
@@ -1956,7 +3664,9 @@
    ],
    "capitalAnswer": "Kofu",
    "parentName": "Japan",
-   "facts": "Prefecture of Japan"
+   "facts": "Prefecture of Japan",
+   "population": 803963,
+   "populationYear": 2021
   }
  ]
 }

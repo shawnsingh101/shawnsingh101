@@ -295,6 +295,9 @@
     "Q30"
    ],
    "group": "r-great",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Mississippi River",
    "facts": "3,766 km long · flows into the Gulf of Mexico · United States",
    "size": 3766
@@ -311,6 +314,9 @@
     "Q30"
    ],
    "group": "r-great",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Missouri River",
    "facts": "3,726 km long · flows into the Mississippi River · United States",
    "size": 3726
@@ -403,6 +409,9 @@
     "Q30"
    ],
    "group": "r-great",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Yukon River",
    "facts": "3,190 km long · flows into the Bering Sea · Canada, United States",
    "size": 3190
@@ -454,6 +463,9 @@
     "Q30"
    ],
    "group": "r-great",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the St. Lawrence River",
    "facts": "3,058 km long · flows into the Gulf of Saint Lawrence · Canada, United States",
    "size": 3058
@@ -471,6 +483,9 @@
     "Q96"
    ],
    "group": "r-great",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Rio Grande",
    "facts": "3,051 km long · flows into the Gulf of Mexico · United States, Mexico",
    "size": 3051,
@@ -836,6 +851,9 @@
     "Q30"
    ],
    "group": "r-am",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Arkansas River",
    "facts": "2,364 km long · flows into the Mississippi River · United States",
    "size": 2364
@@ -853,6 +871,9 @@
     "Q96"
    ],
    "group": "r-am",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Colorado River",
    "facts": "2,334 km long · flows into the Gulf of California · United States, Mexico",
    "size": 2334,
@@ -1005,6 +1026,22 @@
    }
   },
   {
+   "id": "Q156032",
+   "layer": "river",
+   "name": "Red River",
+   "image": "Redriverbonhamtx.jpg",
+   "lon": -99.965,
+   "lat": 34.576,
+   "wiki": "Red_River_of_the_South",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Red River",
+   "facts": "2,189 km long · flows into the Atchafalaya River · United States",
+   "size": 2189
+  },
+  {
    "id": "Q26076",
    "layer": "river",
    "name": "Irrawaddy River",
@@ -1100,6 +1137,9 @@
     "Q30"
    ],
    "group": "r-am",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Columbia River",
    "facts": "2,000 km long · flows into the Pacific Ocean · Canada, United States",
    "size": 2000
@@ -1329,6 +1369,9 @@
     "Q30"
    ],
    "group": "r-am",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Snake River",
    "facts": "1,735 km long · flows into the Columbia River · United States",
    "size": 1735
@@ -1393,9 +1436,28 @@
     "Q30"
    ],
    "group": "r-am",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Ohio River",
    "facts": "1,579 km long · flows into the Mississippi River · United States",
    "size": 1579
+  },
+  {
+   "id": "Q1356561",
+   "layer": "river",
+   "name": "Pecos River",
+   "image": "Pecos River.jpg",
+   "lon": -105.559,
+   "lat": 35.974,
+   "wiki": "Pecos_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Pecos River",
+   "facts": "1,560 km long · flows into the Rio Grande · United States",
+   "size": 1560
   },
   {
    "id": "Q191829",
@@ -1468,6 +1530,22 @@
      "code": "hi"
     }
    ]
+  },
+  {
+   "id": "Q597753",
+   "layer": "river",
+   "name": "Canadian River",
+   "image": "Canadian River Calvin Oklahoma.jpg",
+   "lon": -95.033,
+   "lat": 35.453,
+   "wiki": "Canadian_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Canadian River",
+   "facts": "1,458 km long · flows into the Arkansas River · United States",
+   "size": 1458
   },
   {
    "id": "Q118251",
@@ -1564,22 +1642,6 @@
    ]
   },
   {
-   "id": "Q903306",
-   "layer": "river",
-   "name": "Brazos River",
-   "image": "Brazos River railroad bridge Waco TX.jpg",
-   "lon": -100.01,
-   "lat": 33.269,
-   "wiki": "Brazos_River",
-   "countries": [
-    "Q30"
-   ],
-   "group": "r-am",
-   "nameThe": "the Brazos River",
-   "facts": "1,352 km long · flows into the Gulf of Mexico · United States",
-   "size": 1352
-  },
-  {
    "id": "Q131210",
    "layer": "river",
    "name": "Dniester",
@@ -1603,6 +1665,25 @@
      "code": "uk"
     }
    ]
+  },
+  {
+   "id": "Q903306",
+   "layer": "river",
+   "name": "Brazos River",
+   "image": "Brazos River railroad bridge Waco TX.jpg",
+   "lon": -100.01,
+   "lat": 33.269,
+   "wiki": "Brazos_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-am",
+   "alsoIn": [
+    "r-us"
+   ],
+   "nameThe": "the Brazos River",
+   "facts": "1,352 km long · flows into the Gulf of Mexico · United States",
+   "size": 1352
   },
   {
    "id": "Q234004",
@@ -1667,6 +1748,38 @@
    }
   },
   {
+   "id": "Q952429",
+   "layer": "river",
+   "name": "Green River",
+   "image": "Mineral-Bottom.jpg",
+   "lon": -109.672,
+   "lat": 43.154,
+   "wiki": "Green_River_(Colorado_River_tributary)",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Green River",
+   "facts": "1,175 km long · flows into the Colorado River · United States",
+   "size": 1175
+  },
+  {
+   "id": "Q1813795",
+   "layer": "river",
+   "name": "White River",
+   "image": "White River Arkansas.jpg",
+   "lon": -93.604,
+   "lat": 35.839,
+   "wiki": "White_River_(Arkansas–Missouri)",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the White River",
+   "facts": "1,162 km long · flows into the Mississippi River · United States",
+   "size": 1162
+  },
+  {
    "id": "Q8510",
    "layer": "river",
    "name": "Helmand River",
@@ -1719,6 +1832,22 @@
    ]
   },
   {
+   "id": "Q374772",
+   "layer": "river",
+   "name": "Yellowstone River",
+   "image": "Yellowstone River Lower Falls.jpg",
+   "lon": -103.982,
+   "lat": 47.978,
+   "wiki": "Yellowstone_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Yellowstone River",
+   "facts": "1,114 km long · flows into the Missouri River · United States",
+   "size": 1114
+  },
+  {
    "id": "Q213576",
    "layer": "river",
    "name": "Huai River",
@@ -1737,6 +1866,22 @@
     "han": "淮河",
     "pinyin": "Huáihé"
    }
+  },
+  {
+   "id": "Q1143718",
+   "layer": "river",
+   "name": "Cumberland River",
+   "image": "Big South Fork Cumberland 2.jpg",
+   "lon": -83.324,
+   "lat": 36.845,
+   "wiki": "Cumberland_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Cumberland River",
+   "facts": "1,107 km long · flows into the Ohio River · United States",
+   "size": 1107
   },
   {
    "id": "Q1644",
@@ -1841,6 +1986,9 @@
     "Q30"
    ],
    "group": "r-am",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Tennessee River",
    "facts": "1,049 km long · flows into the Ohio River · United States",
    "size": 1049
@@ -1867,6 +2015,22 @@
      "code": "pl"
     }
    ]
+  },
+  {
+   "id": "Q838143",
+   "layer": "river",
+   "name": "Gila River",
+   "image": "Gila River - Flickr - benmacaskill.jpg",
+   "lon": -108.206,
+   "lat": 33.18,
+   "wiki": "Gila_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Gila River",
+   "facts": "1,044 km long · flows into the Colorado River · United States",
+   "size": 1044
   },
   {
    "id": "Q75745",
@@ -1968,6 +2132,22 @@
    "size": 1006
   },
   {
+   "id": "Q196183",
+   "layer": "river",
+   "name": "Wabash River",
+   "image": "Wabash River at Lafayette.jpg",
+   "lon": -84.766,
+   "lat": 40.352,
+   "wiki": "Wabash_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Wabash River",
+   "facts": "960 km long · flows into the Ohio River · United States",
+   "size": 960
+  },
+  {
    "id": "Q14383",
    "layer": "river",
    "name": "Sava",
@@ -2059,6 +2239,38 @@
    ]
   },
   {
+   "id": "Q492787",
+   "layer": "river",
+   "name": "Des Moines River",
+   "image": "Des Moines River, North of Ottumwa, Iowa (11004355043).jpg",
+   "lon": -91.422,
+   "lat": 40.381,
+   "wiki": "Des_Moines_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Des Moines River",
+   "facts": "845 km long · flows into the Mississippi River · United States",
+   "size": 845
+  },
+  {
+   "id": "Q596106",
+   "layer": "river",
+   "name": "Sabine River",
+   "image": "Sabine River near Big Sandy, TX IMG 5294.JPG",
+   "lon": -93.79,
+   "lat": 29.985,
+   "wiki": "Sabine_River_(Texas–Louisiana)",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Sabine River",
+   "facts": "820 km long · flows into the Sabine Lake · United States",
+   "size": 820
+  },
+  {
    "id": "Q602",
    "layer": "river",
    "name": "Rhône",
@@ -2104,7 +2316,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Northern Dvina",
-   "facts": "744 km long · flows into the Dvina Bay · Russia",
+   "facts": "744 km long · flows into Dvina Bay · Russia",
    "size": 744,
    "native": [
     {
@@ -2113,6 +2325,150 @@
      "code": "ru"
     }
    ]
+  },
+  {
+   "id": "Q859686",
+   "layer": "river",
+   "name": "Bighorn River",
+   "image": "CQA Four Mile Bridge.jpg",
+   "lon": -107.474,
+   "lat": 46.155,
+   "wiki": "Bighorn_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Bighorn River",
+   "facts": "742 km long · flows into the Yellowstone River · United States",
+   "size": 742
+  },
+  {
+   "id": "Q335575",
+   "layer": "river",
+   "name": "Sacramento River",
+   "image": "Sacramento river delta p1080765.jpg",
+   "lon": -122.42,
+   "lat": 40.718,
+   "wiki": "Sacramento_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Sacramento River",
+   "facts": "719 km long · flows into Suisun Bay · United States",
+   "size": 719
+  },
+  {
+   "id": "Q27538",
+   "layer": "river",
+   "name": "Susquehanna River",
+   "image": "Susquehanna River near Shickshinny, Pennsylvania.JPG",
+   "lon": -74.919,
+   "lat": 42.701,
+   "wiki": "Susquehanna_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Susquehanna River",
+   "facts": "715 km long · flows into Chesapeake Bay · United States",
+   "size": 715
+  },
+  {
+   "id": "Q1068297",
+   "layer": "river",
+   "name": "Chattahoochee River",
+   "image": "Chattahoochee.jpg",
+   "lon": -83.791,
+   "lat": 34.824,
+   "wiki": "Chattahoochee_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Chattahoochee River",
+   "facts": "702 km long · flows into the Apalachicola River · United States",
+   "size": 702
+  },
+  {
+   "id": "Q978496",
+   "layer": "river",
+   "name": "Wisconsin River",
+   "image": "WisconsinRiverWisconsinRapidsWIS54WIS13.jpg",
+   "lon": -89.152,
+   "lat": 46.12,
+   "wiki": "Wisconsin_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Wisconsin River",
+   "facts": "692 km long · flows into the Mississippi River · United States",
+   "size": 692
+  },
+  {
+   "id": "Q601853",
+   "layer": "river",
+   "name": "Salmon River",
+   "image": "Salmon-river-1.jpg",
+   "lon": -114.777,
+   "lat": 43.797,
+   "wiki": "Salmon_River_(Idaho)",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Salmon River",
+   "facts": "684 km long · flows into the Snake River · United States",
+   "size": 684
+  },
+  {
+   "id": "Q179444",
+   "layer": "river",
+   "name": "Potomac River",
+   "image": "GreatFalls3.jpg",
+   "lon": -76.335,
+   "lat": 38,
+   "wiki": "Potomac_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Potomac River",
+   "facts": "665 km long · flows into Chesapeake Bay · United States",
+   "size": 665
+  },
+  {
+   "id": "Q1584933",
+   "layer": "river",
+   "name": "Roanoke River",
+   "image": "Uploaded by PE (14001305528).jpg",
+   "lon": -76.695,
+   "lat": 35.943,
+   "wiki": "Roanoke_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Roanoke River",
+   "facts": "660 km long · flows into the Albemarle Sound · United States",
+   "size": 660
+  },
+  {
+   "id": "Q379648",
+   "layer": "river",
+   "name": "Connecticut River",
+   "image": "Pioneer Valley South From Mt. Sugarloaf.jpg",
+   "lon": -71.2,
+   "lat": 45.237,
+   "wiki": "Connecticut_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Connecticut River",
+   "facts": "660 km long · flows into the Long Island Sound · United States",
+   "size": 660
   },
   {
    "id": "Q643",
@@ -2155,6 +2511,102 @@
    ]
   },
   {
+   "id": "Q558643",
+   "layer": "river",
+   "name": "Alabama River",
+   "image": "Cesam249.jpg",
+   "lon": -86.278,
+   "lat": 32.486,
+   "wiki": "Alabama_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Alabama River",
+   "facts": "640 km long · flows into the Mobile River · United States",
+   "size": 640
+  },
+  {
+   "id": "Q143762",
+   "layer": "river",
+   "name": "Delaware River",
+   "image": "Hawk's Nest view of DelawareR.jpg",
+   "lon": -75.279,
+   "lat": 41.939,
+   "wiki": "Delaware_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Delaware River",
+   "facts": "579 km long · flows into Delaware Bay · United States",
+   "size": 579
+  },
+  {
+   "id": "Q751347",
+   "layer": "river",
+   "name": "San Joaquin River",
+   "image": "SanJoaquinOldRiver.jpg",
+   "lon": -119.183,
+   "lat": 37.532,
+   "wiki": "San_Joaquin_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the San Joaquin River",
+   "facts": "564 km long · flows into the Sacramento River · United States",
+   "size": 564
+  },
+  {
+   "id": "Q370750",
+   "layer": "river",
+   "name": "Savannah River",
+   "image": "Savannah River Queen.jpg",
+   "lon": -82.856,
+   "lat": 34.444,
+   "wiki": "Savannah_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Savannah River",
+   "facts": "563 km long · flows into the Atlantic Ocean · United States",
+   "size": 563
+  },
+  {
+   "id": "Q1136502",
+   "layer": "river",
+   "name": "Minnesota River",
+   "image": "MendotaBridge8.jpg",
+   "lon": -93.149,
+   "lat": 44.897,
+   "wiki": "Minnesota_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Minnesota River",
+   "facts": "534 km long · flows into the Mississippi River · United States",
+   "size": 534
+  },
+  {
+   "id": "Q686021",
+   "layer": "river",
+   "name": "Allegheny River",
+   "image": "Allegheny River Bend.jpg",
+   "lon": -77.875,
+   "lat": 41.873,
+   "wiki": "Allegheny_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Allegheny River",
+   "facts": "523 km long · flows into the Ohio River · United States",
+   "size": 523
+  },
+  {
    "id": "Q55500",
    "layer": "river",
    "name": "Han River",
@@ -2179,6 +2631,22 @@
    ]
   },
   {
+   "id": "Q655754",
+   "layer": "river",
+   "name": "Platte River",
+   "image": "Great Blue Heron and immature Bald Eagle on the Platte River.jpg",
+   "lon": -95.881,
+   "lat": 41.052,
+   "wiki": "Platte_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Platte River",
+   "facts": "500 km long · flows into the Missouri River · United States",
+   "size": 500
+  },
+  {
    "id": "Q3140",
    "layer": "river",
    "name": "Hudson River",
@@ -2190,9 +2658,44 @@
     "Q30"
    ],
    "group": "r-am",
+   "alsoIn": [
+    "r-us"
+   ],
    "nameThe": "the Hudson River",
    "facts": "492 km long · flows into the Upper New York Bay · United States",
    "size": 492
+  },
+  {
+   "id": "Q8321",
+   "layer": "river",
+   "name": "Illinois River",
+   "image": "Illinois River, seen from Starved Rock.jpg",
+   "lon": -88.26,
+   "lat": 41.394,
+   "wiki": "Illinois_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Illinois River",
+   "facts": "432 km long · flows into the Mississippi River · United States",
+   "size": 432
+  },
+  {
+   "id": "Q968640",
+   "layer": "river",
+   "name": "Klamath River",
+   "image": "Klamath River sunset 001.jpg",
+   "lon": -121.783,
+   "lat": 42.191,
+   "wiki": "Klamath_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Klamath River",
+   "facts": "423 km long · flows into the Pacific Ocean · United States",
+   "size": 423
   },
   {
    "id": "Q13712",
@@ -2257,6 +2760,22 @@
    "size": 334
   },
   {
+   "id": "Q131071",
+   "layer": "river",
+   "name": "Willamette River",
+   "image": "USACE Fremont Bridge Portland.jpg",
+   "lon": -122.765,
+   "lat": 45.653,
+   "wiki": "Willamette_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Willamette River",
+   "facts": "301 km long · flows into the Columbia River · United States",
+   "size": 301
+  },
+  {
    "id": "Q40059",
    "layer": "river",
    "name": "Jordan River",
@@ -2287,6 +2806,86 @@
      "code": "ar"
     }
    ]
+  },
+  {
+   "id": "Q1431323",
+   "layer": "river",
+   "name": "Kennebec River",
+   "image": "Kennebec River Augusta 5.JPG",
+   "lon": -69.714,
+   "lat": 45.586,
+   "wiki": "Kennebec_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Kennebec River",
+   "facts": "240 km long · flows into the Gulf of Maine · United States",
+   "size": 240
+  },
+  {
+   "id": "Q1367638",
+   "layer": "river",
+   "name": "Kansas River",
+   "image": "Kansas River.jpg",
+   "lon": -94.611,
+   "lat": 39.115,
+   "wiki": "Kansas_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Kansas River",
+   "facts": "238 km long · flows into the Missouri River · United States",
+   "size": 238
+  },
+  {
+   "id": "Q2223479",
+   "layer": "river",
+   "name": "Santee River",
+   "image": "I95 bridge 1304.JPG",
+   "lon": -80.619,
+   "lat": 33.756,
+   "wiki": "Santee_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Santee River",
+   "facts": "230 km long · flows into the Atlantic Ocean · United States",
+   "size": 230
+  },
+  {
+   "id": "Q643780",
+   "layer": "river",
+   "name": "Monongahela River",
+   "image": "Monongahela River - Southsidefromwash.jpg",
+   "lon": -80.016,
+   "lat": 40.442,
+   "wiki": "Monongahela_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Monongahela River",
+   "facts": "209 km long · flows into the Ohio River · United States",
+   "size": 209
+  },
+  {
+   "id": "Q517787",
+   "layer": "river",
+   "name": "Merrimack River",
+   "image": "MerrimackPembroke.JPG",
+   "lon": -71.648,
+   "lat": 43.436,
+   "wiki": "Merrimack_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Merrimack River",
+   "facts": "177 km long · flows into the Gulf of Maine · United States",
+   "size": 177
   }
  ]
 }

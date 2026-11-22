@@ -37,6 +37,7 @@ export function PlaceSheet({ ds, id: startId, onClose }: { ds: Dataset; id: stri
           {c.type && <p className="muted small">{cap1(c.type)} of China</p>}
           {(c.layer === 'water' || c.layer === 'river' || c.layer === 'lake') && <p className="muted small">{GROUPS.find(g => g.id === c.group)?.name}</p>}
           {c.facts && <p>{c.facts}</p>}
+          {c.population ? <p className="muted small">Population {c.population >= 1e6 ? `${(c.population / 1e6).toFixed(1)} million` : c.population.toLocaleString('en-US')}{c.populationYear ? ` (${c.populationYear})` : ''}</p> : null}
           {c.layer === 'terr' && <p>Part of <b>{c.sovereignName}</b>{c.terrStatus ? <span className="muted"> · {c.terrStatus}</span> : null}</p>}
           {c.capitalAnswer && <p>{c.capWord ? cap1(c.capWord) : 'Capital'}: <b>{c.capitalAnswer}</b>{cap && <span className="local inline"> <LocalName place={c} capital={cap} /></span>}</p>}
           {c.statusNote && <p className="note"><Icon name="info" size={15} /> {c.statusNote}</p>}

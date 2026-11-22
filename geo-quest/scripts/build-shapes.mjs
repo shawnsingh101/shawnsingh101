@@ -124,7 +124,7 @@ for (const r of curated) {
   if (!id) { console.warn('No Wikidata item for', r.wiki); continue; }
   const segs = riversNE.features.filter(f => (f.properties.featurecla === 'River' || f.properties.featurecla === 'Lake Centerline') && (r.ne.includes(f.properties.name_en) || r.ne.includes(f.properties.name)) && inBox(lines(f.geometry), r.bbox));
   if (!segs.length) { console.warn('No shape for', r.wiki); continue; }
-  rivers.push({ type: 'Feature', geometry: { type: 'MultiLineString', coordinates: segs.flatMap(f => lines(f.geometry)) }, properties: { id } });
+  rivers.push({ type: 'Feature', geometry: { type: 'MultiLineString', coordinates: segs.flatMap(f => lines(f.geometry)) }, properties: r.deck ? { id, deck: r.deck } : { id } });
 }
 writeFileSync(join(ROOT, 'public/data/shapes-river.json'), JSON.stringify(build(rivers, 0.1)));
 

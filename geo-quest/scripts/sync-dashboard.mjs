@@ -108,7 +108,7 @@ const jobs = [];
 { const s = await fred('CES0500000003', 3); if (s?.length) jobs.push({ id: 'CES0500000003', name: 'Average hourly earnings, total private', unit: '$', value: s.at(-1).value, prev: s.at(-2).value, asOf: s.at(-1).date, yoy: yoy(s).value }); }
 sections.push({ id: 'jobs', title: 'US jobs', kind: 'monthly', source: 'FRED (BLS)', rows: jobs });
 
-let topIso = [], topNames = {};
+let topIso = [], topNames = {}, popSection = null, iso2Of = {}, unAnnual = {};
 console.log('World Bank…');
 {
   const meta = await get('https://api.worldbank.org/v2/country?format=json&per_page=400', 'json');
@@ -120,14 +120,121 @@ console.log('World Bank…');
   const gdp = await latest('NY.GDP.MKTP.CD');
   const top = Object.entries(gdp).filter(([k]) => real.has(k)).sort((a, b) => b[1].value - a[1].value).slice(0, 10).map(([k]) => k);
   const [pc, pop, un] = [await latest('NY.GDP.PCAP.CD'), await latest('SP.POP.TOTL'), await latest('SL.UEM.TOTL.ZS')];
+  unAnnual = un;
   // Gross external debt (all sectors), quarterly, from the World Bank's Quarterly External Debt Statistics.
   const debtJ = await get(`https://api.worldbank.org/v2/country/${top.join(';')}/indicator/DT.DOD.DECT.CD.AR.US?source=22&format=json&mrnev=1&per_page=50`, 'json');
   const debt = Object.fromEntries((debtJ?.[1] ?? []).filter(r => r.value != null).map(r => [r.countryiso3code, { value: r.value, year: r.date }]));
-  sections.push({ id: 'world', title: "The world's 10 largest economies", kind: 'table', source: 'World Bank (World Development Indicators); unemployment is the ILO modelled estimate',
-    world: { population: pop.WLD ?? null, gdp: gdp.WLD ?? null },
+  // Total debt of the non-financial sector, split by who owes it (BIS total credit statistics): government,
+  // households, companies. US$ billions and % of GDP, latest quarter.
+  const iso2 = Object.fromEntries((meta?.[1] ?? []).map(c => [c.id, c.iso2Code]));
+  const tcCsv = await get(`https://stats.bis.org/api/v2/data/dataflow/BIS/WS_TC/2.0/Q.${top.map(k => iso2[k]).join('+')}.G+H+N.A.M+N.770+USD.A?startPeriod=${today.getFullYear() - 3}-01-01&format=csv`);
+  const tc = {};
+  if (tcCsv) {
+    const lines = tcCsv.trim().split('\n'), head = csvSplit(lines[0]);
+    const ix = k => head.indexOf(k);
+    for (const l of lines.slice(1)) {
+      const c = csvSplit(l); if (c[ix('OBS_VALUE')] === '' || !isFinite(+c[ix('OBS_VALUE')])) continue;
+      const key = [c[ix('BORROWERS_CTY')], c[ix('TC_BORROWERS')], c[ix('UNIT_TYPE')], c[ix('VALUATION')]].join('|');
+      const prev = tc[key]; if (!prev || c[ix('TIME_PERIOD')] > prev.q) tc[key] = { q: c[ix('TIME_PERIOD')], v: +c[ix('OBS_VALUE')] };
+    }
+  }
+  // Government debt is reported at nominal value, households and companies at market value; take what exists.
+  const pick = (cty, sector, unit) => tc[[cty, sector, unit, sector === 'G' ? 'N' : 'M'].join('|')] ?? tc[[cty, sector, unit, sector === 'G' ? 'M' : 'N'].join('|')] ?? null;
+  const totalDebt = Object.fromEntries(top.map(k => {
+    const c2 = iso2[k];
+    const parts = ['G', 'H', 'N'].map(sct => ({ usd: pick(c2, sct, 'USD'), pct: pick(c2, sct, '770') }));
+    if (parts.some(p => !p.usd || !p.pct)) return [k, null];
+    return [k, { quarter: parts[0].usd.q, government: parts[0].usd.v * 1e9, households: parts[1].usd.v * 1e9, companies: parts[2].usd.v * 1e9,
+      governmentPct: parts[0].pct.v, householdsPct: parts[1].pct.v, companiesPct: parts[2].pct.v }];
+  }));
+  // The US federal debt as the Treasury reports it daily ("Debt to the Penny"): the headline ~$40 trillion figure.
+  let usFederal = null;
+  {
+    const from = back(iso(today), { years: 1, days: 7 });
+    const j = await get(`https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?filter=record_date:gte:${from}&sort=record_date&page[size]=400`, 'json');
+    const d = (j?.data ?? []).map(x => ({ date: x.record_date, total: +x.tot_pub_debt_out_amt, public: +x.debt_held_public_amt, intragov: +x.intragov_hold_amt }));
+    if (d.length) { const last = d.at(-1); usFederal = { ...last, yearAgo: d[0].total, yearAgoDate: d[0].date }; }
+  }
+  sections.push({ id: 'world', title: "The world's 10 largest economies", kind: 'table', source: 'World Bank (World Development Indicators; Quarterly External Debt Statistics); total debt: BIS total credit statistics; unemployment is the ILO modelled estimate',
+    world: { population: pop.WLD ?? null, gdp: gdp.WLD ?? null }, usFederal,
     rows: top.map(k => ({ iso3: k, name: PARTNER[gdp[k].name] ?? gdp[k].name, gdp: gdp[k], gdpPerCapita: pc[k] ?? null, population: pop[k] ?? null, unemployment: un[k] ?? null,
-      externalDebt: debt[k] ?? null, debtToGdp: debt[k] ? +((100 * debt[k].value) / gdp[k].value).toFixed(0) : null })) });
+      externalDebt: debt[k] ?? null, totalDebt: totalDebt[k] ?? null, debtToGdp: debt[k] ? +((100 * debt[k].value) / gdp[k].value).toFixed(0) : null })) });
+  // Population: the world and the 10 most populous countries (with annual growth).
+  const growth = await latest('SP.POP.GROW');
+  const popTop = Object.entries(pop).filter(([k]) => real.has(k)).sort((a, b) => b[1].value - a[1].value).slice(0, 10).map(([k]) => k);
+  popSection = { id: 'population', title: 'Population', kind: 'population', source: 'World Bank (World Development Indicators)',
+    world: pop.WLD ? { ...pop.WLD, growth: growth.WLD?.value ?? null } : null,
+    rows: popTop.map(k => ({ iso3: k, name: PARTNER[pop[k].name] ?? pop[k].name, value: pop[k].value, year: pop[k].year, growth: growth[k]?.value ?? null, share: pop.WLD ? +((100 * pop[k].value) / pop.WLD.value).toFixed(1) : null })) };
+  iso2Of = iso2;
   topIso = top; topNames = Object.fromEntries(top.map(k => [k, PARTNER[gdp[k].name] ?? gdp[k].name]));
+}
+
+if (popSection) sections.push(popSection);
+
+// ---- inflation and unemployment in the 10 largest economies ----
+console.log('Inflation & unemployment abroad…');
+{
+  // Consumer prices, year on year, monthly (BIS long CPI series: covers China, India and Russia too).
+  const csv = await get(`https://stats.bis.org/api/v2/data/dataflow/BIS/WS_LONG_CPI/1.0/M.${topIso.map(k => iso2Of[k]).join('+')}.771?startPeriod=${today.getFullYear() - 6}-01&format=csv`);
+  const by = {};
+  if (csv) {
+    const lines = csv.trim().split('\n'), head = csvSplit(lines[0]);
+    const iA = head.indexOf('REF_AREA'), iT = head.indexOf('TIME_PERIOD'), iV = head.indexOf('OBS_VALUE');
+    for (const l of lines.slice(1)) { const c = csvSplit(l); if (c[iV] !== '' && isFinite(+c[iV])) (by[c[iA]] ??= []).push([`${c[iT]}-01`, +(+c[iV]).toFixed(2)]); }
+  }
+  sections.push({ id: 'intlInflation', title: 'Inflation in the largest economies', kind: 'yoy', source: 'Bank for International Settlements (consumer prices, year on year)',
+    rows: topIso.map(k => { const h = (by[iso2Of[k]] ?? []).sort((a, b) => a[0].localeCompare(b[0])); return h.length ? { id: k, name: topNames[k], unit: '% y/y', value: h.at(-1)[1], prev: h.at(-2)?.[1] ?? null, asOf: h.at(-1)[0], hist: h.filter(x => x[0] >= `${today.getFullYear() - 5}`) } : { id: k, name: topNames[k], missing: true }; }) });
+  // Unemployment: monthly, harmonised (OECD via FRED) where it exists; the World Bank's annual ILO estimate otherwise.
+  const rows = [];
+  for (const k of topIso) {
+    const id = k === 'USA' ? 'UNRATE' : `LRHUTTTT${iso2Of[k]}M156S`;
+    const s = await fred(id, 6);
+    if (s?.length && s.at(-1).date >= `${today.getFullYear() - 1}`) rows.push({ id: k, name: topNames[k], unit: '%', value: s.at(-1).value, prev: s.at(-2)?.value ?? null, asOf: s.at(-1).date, hist: s.map(x => [x.date, x.value]) });
+    else if (unAnnual[k]) rows.push({ id: k, name: topNames[k], unit: '%', value: +unAnnual[k].value.toFixed(1), asOf: `${unAnnual[k].year}`, annual: true });
+    else rows.push({ id: k, name: topNames[k], missing: true });
+  }
+  sections.push({ id: 'intlJobs', title: 'Unemployment in the largest economies', kind: 'unemployment', source: 'OECD harmonised unemployment rates (via FRED); World Bank / ILO annual estimates where no monthly series exists', rows });
+}
+
+// ---- the world's most valuable listed companies (Wikipedia's quarterly list, from exchange data) ----
+console.log('Largest companies…');
+{
+  let section = null;
+  const j = await get('https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=wikitext&page=List_of_public_corporations_by_market_capitalization', 'json').catch(() => null);
+  const text = j?.parse?.wikitext?.['*'] ?? '';
+  const start = text.indexOf('== Publicly traded companies');
+  const yearM = /===\s*(\d{4})\s*===/.exec(text.slice(start));
+  if (start >= 0 && yearM) {
+    const year = yearM[1];
+    const body = text.slice(start + yearM.index);
+    const asOf = /\{\{as of\|(\d{4})\|(\d{1,2})\|(\d{1,2})/i.exec(body);
+    const table = body.slice(body.indexOf('{|'), body.indexOf('|}'));
+    const quarters = [...table.matchAll(/colspan="2"\s*\|\s*(First|Second|Third|Fourth) quarter/g)].filter(m => !/<!--[^>]*$/.test(table.slice(0, m.index))).map(m => `Q${['First', 'Second', 'Third', 'Fourth'].indexOf(m[1]) + 1} ${year}`); // skips a commented-out column
+    const clean = x => x.replace(/<ref[^>]*\/>/g, '').replace(/<ref[\s\S]*?<\/ref>/g, '');
+    const companies = {};
+    for (const row of table.split(/\n\|-/).slice(1)) {
+      const cells = clean(row).split('\n').filter(l => /^\|(?![-}+])/.test(l)).map(l => l.slice(1).trim());
+      if (!/^\d+$/.test(cells[0] ?? '')) continue;
+      const rank = +cells[0];
+      for (let q = 0; q < quarters.length; q++) {
+        const flag = /\{\{flagicon\|([^}|]+)/.exec(cells[1 + q * 2] ?? '')?.[1];
+        const cell = cells[2 + q * 2] ?? '';
+        const nm = /^(?:\[\[(?:[^|\]]*\|)?([^\]]+)\]\]|([^<{[]+))/.exec(cell);
+        const val = /(\d[\d,]*(?:\.\d+)?)\s*$/.exec(cell.replace(/<br\s*\/?>/g, ' ').replace(/\{\{[^}]*\}\}/g, ' ').trim());
+        if (!nm || !val) continue;
+        const name = (nm[1] ?? nm[2]).trim();
+        const c = (companies[name] ??= { name, country: PARTNER[flag] ?? (flag === 'United States' ? 'United States' : flag) ?? null, values: {}, ranks: {} });
+        c.values[quarters[q]] = +val[1].replace(/,/g, '') * 1e9; c.ranks[quarters[q]] = rank;
+      }
+    }
+    const latest = quarters.at(-1);
+    const rows = Object.values(companies).filter(c => c.ranks[latest]).sort((a, b) => a.ranks[latest] - b.ranks[latest]);
+    if (rows.length >= 5) section = { id: 'companies', title: 'Most valuable listed companies', kind: 'companies', source: "Wikipedia's quarterly list of public corporations by market capitalization (from CompaniesMarketCap.com exchange data)",
+      quarters, latest, asOf: asOf ? `${asOf[1]}-${asOf[2].padStart(2, '0')}-${asOf[3].padStart(2, '0')}` : null, rows: Object.values(companies).sort((a, b) => (a.ranks[latest] ?? 99) - (b.ranks[latest] ?? 99)) };
+  }
+  // Quarterly figures: if Wikipedia didn't answer tonight, keep the last good copy.
+  if (!section) try { section = JSON.parse(readFileSync(OUT, 'utf8')).sections.find(x => x.id === 'companies') ?? null; } catch { /* none */ }
+  if (section) sections.push(section);
 }
 
 // ---- central bank policy rates (BIS) ----
