@@ -33,6 +33,17 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.9: river drill-down, states and sources
+
+- **Rivers form a tree** like places: Rivers › Rivers of Europe / Asia & Oceania / Africa / the Americas, and
+  Rivers of the Americas › Rivers of the United States (also listed under United States via `alsoInSections`).
+  A level's "All" quiz includes the decks nested inside it that teach the same kind of thing (rivers within rivers),
+  so "Rivers of the Americas" covers the US rivers, while "Americas" (countries) doesn't pull in US states.
+- **US rivers list their states** in order along the river, worked out from the map (river line × state outlines,
+  checking a little to each side so border rivers count for both banks); other countries reached are added after.
+  States are Related chips. A river's `bbox` in `data/rivers.json` now trims its line, dropping stray same-named segments.
+- **Every river shows where it starts** (Wikidata P885): "from Lake Itasca to the Gulf of Mexico".
+
 ## v1.8: more regions & rivers, population, local names, more dashboard
 
 - **India** (36 states & union territories in 6 regional groups) and **Uzbekistan** (14 regions) in `data/subdivisions.json`.

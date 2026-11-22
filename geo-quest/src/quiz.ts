@@ -10,10 +10,14 @@ export function scopeGroups(scope: Scope): Group[] {
   if (scope === 'world') return GROUPS.filter(g => g.layer === 'country');
   if (scope.startsWith('sec:')) {
     // A section's own groups; one with none of its own (Food & drink › Cocktails) covers what's nested inside it.
+    // A section's own groups, plus those nested inside it that teach the same kind of thing: "Rivers of the Americas"
+    // includes the US rivers deck, but "Americas" (countries) doesn't pull in US states. A section with no groups of its
+    // own (Food & drink › Cocktails) covers everything inside it.
     const own = groupsShownIn(scope.slice(4));
-    if (own.length) return own;
-    const inside = sectionAndDescendants(scope.slice(4));
-    return GROUPS.filter(g => inside.includes(g.section));
+    const nested = sectionAndDescendants(scope.slice(4)).slice(1).flatMap(x => GROUPS.filter(g => g.section === x));
+    if (!own.length) return nested;
+    const layers = new Set(own.map(g => g.layer));
+    return [...own, ...nested.filter(g => layers.has(g.layer) && !own.includes(g))];
   }
   return GROUPS.filter(g => g.id === scope.slice(4));
 }

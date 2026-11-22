@@ -366,6 +366,7 @@ async function waterways(kind) {
       ? [`${fmt(p.len / 1000)} km long`, p.mouth && `flows into ${/^(the |Lake )/i.test(p.mouth) || /^[A-Z][a-z]+ Bay$/.test(p.mouth) ? p.mouth : 'the ' + p.mouth}`, where.length && where.slice(0, 4).join(', ') + (where.length > 4 ? '…' : '')].filter(Boolean).join(' · ')
       : [`${fmt(p.area / 1e6)} km²`, where.length && where.slice(0, 4).join(', ')].filter(Boolean).join(' · ');
     p.size = Math.round(kind === 'river' ? p.len / 1000 : p.area / 1e6);
+    if (kind === 'river' && p.mouth) p.mouthName = p.mouth; // kept for the facts line built later (with source and US states)
     delete p.len; delete p.area; delete p.mouth;
     kept.push(p);
   });
@@ -1177,6 +1178,48 @@ function diffAndWrite(path, list, fields, extra = {}) {
   }
   return () => writeFileSync(path, JSON.stringify(path === OUT ? { source: 'Wikidata (CC0)', countries: list } : { source: 'Wikidata (CC0)', ...extra, places: list }, null, 1) + '\n');
 }
+// ---- rivers: where each one rises (Wikidata P885), and the US states a US river runs through (from the map) ----
+console.log('River sources and US states…');
+{
+  const { feature: tf } = await import('topojson-client');
+  const { geoContains } = await import('d3-geo');
+  for (let i = 0; i < rivers.length; i += 150)
+    for (const b of await sparql(`SELECT ?r ?sLabel WHERE { VALUES ?r { ${rivers.slice(i, i + 150).map(r => `wd:${r.id}`).join(' ')} } ?r wdt:P885 ?s . SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`)) {
+      const r = rivers.find(x => x.id === qid(v(b, 'r')));
+      if (r && !r.source && !/^Q\d+$/.test(v(b, 'sLabel'))) r.source = v(b, 'sLabel');
+    }
+  // States: walk along the river's line and note each state it enters (in map order), sampling every few points.
+  const rt = JSON.parse(readFileSync(join(ROOT, 'public/data/shapes-river.json'), 'utf8'));
+  const ut = JSON.parse(readFileSync(join(ROOT, 'public/data/shapes-us.json'), 'utf8'));
+  const riverGeo = Object.fromEntries(tf(rt, rt.objects.places).features.map(f => [f.properties.id, f.geometry]));
+  // Some state outlines are wound inside-out in the source (Maryland would "contain" the whole world): flip those back.
+  const { geoArea } = await import('d3-geo');
+  const fixRing = rings => (geoArea({ type: 'Polygon', coordinates: rings }) > 2 * Math.PI ? rings.map(r => [...r].reverse()) : rings);
+  const stateF = tf(ut, ut.objects.places).features.filter(f => states.has(f.properties.id)).map(f => ({ ...f, geometry: f.geometry.type === 'Polygon' ? { ...f.geometry, coordinates: fixRing(f.geometry.coordinates) } : { ...f.geometry, coordinates: f.geometry.coordinates.map(fixRing) } }));
+  for (const r of rivers) {
+    if (!(r.countries ?? []).includes('Q30') || !riverGeo[r.id]) continue;
+    const lines = riverGeo[r.id].type === 'LineString' ? [riverGeo[r.id].coordinates] : riverGeo[r.id].coordinates;
+    const seen = [];
+    for (const line of lines) for (let k = 0; k < line.length; k += 2) {
+      // Look a little to each side too: rivers that form a border (the Delaware, the Ohio) belong to both banks.
+      for (const [dx, dy] of [[0, 0], [0.03, 0], [-0.03, 0], [0, 0.03], [0, -0.03]]) {
+        const st = stateF.find(f => geoContains(f, [line[k][0] + dx, line[k][1] + dy]));
+        if (st && !seen.includes(st.properties.id)) seen.push(st.properties.id);
+      }
+    }
+    if (seen.length) r.stateIds = seen;
+  }
+  // "the Gulf of Mexico", "the Monongahela River", but "Lake Itasca", "Delaware Bay", "La Poudre Pass".
+  const theIf = x => (/^(the |Lake |Mount )/i.test(x) || /^[A-Z][a-z]+ (Bay|Pass|Spring|Springs|Glacier)$/.test(x) || /^[A-Z][a-z]+ [A-Z][a-z]+ Pass$/.test(x) || / (Lake|Creek)$/.test(x) || !/(River|Sea|Ocean|Gulf|Sound|Bay|Fork|Branch|Mountains|Range|Lakes|Icefield|Glacier)\b|^Gulf|^Bay|^Rio /.test(x) ? x : 'the ' + x);
+  for (const r of rivers) {
+    // US rivers: the states, then any other country they reach (the Columbia rises in Canada).
+    const where = r.stateIds?.length ? [...r.stateIds.map(id => states.get(id).name), ...countryNames((r.countries ?? []).filter(c => c !== 'Q30'))] : countryNames(r.countries);
+    const mouth = r.mouthName;
+    r.facts = [`${fmt(r.size)} km long`, mouth && (r.source ? `from ${theIf(r.source)} to ${theIf(mouth)}` : `flows into ${theIf(mouth)}`),
+      where.length && where.slice(0, 6).join(', ') + (where.length > 6 ? '…' : '')].filter(Boolean).join(' · ');
+  }
+}
+
 // ---- which state / province each World Heritage Site and peak is in (Wikidata P131 → first-level division) ----
 console.log('Finding states & provinces for sites and peaks…');
 {

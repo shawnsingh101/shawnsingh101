@@ -53,6 +53,7 @@ export function relatedFor(ds: Dataset, c: Place): RelLink[] {
     case 'us': place('Q30'); break;
     case 'cn': place('Q148'); break;
     case 'river': case 'lake': case 'range':
+      for (const id of c.stateIds ?? []) place(id);                    // US rivers: the states they run through
       for (const n of ((c.facts ?? '').split(' · ').pop() ?? '').replace(/…$/, '').split(', ')) { const p = findPlace(ds, n); if (p?.layer === 'country') add(link(p)); }
       break;
     case 'country': {

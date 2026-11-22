@@ -16,7 +16,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Amazon River",
-   "facts": "6,992 km long · flows into the Atlantic Ocean · Brazil, Peru, Colombia",
+   "facts": "6,992 km long · from the Marañón River to the Atlantic Ocean · Brazil, Peru, Colombia",
    "size": 6992,
    "native": [
     {
@@ -29,7 +29,8 @@
      "lang": "Aymara",
      "code": "ay"
     }
-   ]
+   ],
+   "source": "Marañón River"
   },
   {
    "id": "Q3392",
@@ -50,7 +51,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Nile",
-   "facts": "6,650 km long · flows into the Mediterranean Sea · Egypt, Ethiopia, South Sudan, Burundi…",
+   "facts": "6,650 km long · from Lake Victoria to the Mediterranean Sea · Egypt, Ethiopia, South Sudan, Burundi, Uganda, Rwanda…",
    "size": 6650,
    "native": [
     {
@@ -68,7 +69,8 @@
      "lang": "Kirundi",
      "code": "rn"
     }
-   ]
+   ],
+   "source": "Lake Victoria"
   },
   {
    "id": "Q5413",
@@ -83,12 +85,13 @@
    ],
    "group": "r-great",
    "nameThe": "the Yangtze River",
-   "facts": "6,300 km long · flows into the East China Sea · China",
+   "facts": "6,300 km long · from Tibetan Plateau to the East China Sea · China",
    "size": 6300,
    "zh": {
     "han": "长江",
     "pinyin": "Chángjiāng"
-   }
+   },
+   "source": "Tibetan Plateau"
   },
   {
    "id": "Q7355",
@@ -103,12 +106,13 @@
    ],
    "group": "r-great",
    "nameThe": "the Yellow River",
-   "facts": "5,464 km long · flows into the Bohai Sea · China",
+   "facts": "5,464 km long · from the Bayan Har Mountains to the Bohai Sea · China",
    "size": 5464,
    "zh": {
     "han": "黄河",
     "pinyin": "Huánghé"
-   }
+   },
+   "source": "Bayan Har Mountains"
   },
   {
    "id": "Q127892",
@@ -125,7 +129,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Paraná River",
-   "facts": "4,880 km long · flows into the Río de la Plata · Brazil, Argentina, Paraguay",
+   "facts": "4,880 km long · from the Grande River to Río de la Plata · Brazil, Argentina, Paraguay",
    "size": 4880,
    "native": [
     {
@@ -138,7 +142,8 @@
      "lang": "Guaraní",
      "code": "gn"
     }
-   ]
+   ],
+   "source": "Grande River"
   },
   {
    "id": "Q3503",
@@ -156,7 +161,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Congo River",
-   "facts": "4,700 km long · flows into the Atlantic Ocean · Angola, Zambia, Republic of the Congo, DR Congo",
+   "facts": "4,700 km long · from Boyoma Falls to the Atlantic Ocean · Angola, Zambia, Republic of the Congo, DR Congo",
    "size": 4700,
    "native": [
     {
@@ -164,7 +169,8 @@
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "source": "Boyoma Falls"
   },
   {
    "id": "Q41179",
@@ -184,7 +190,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Mekong River",
-   "facts": "4,350 km long · flows into the South China Sea · China, Cambodia, Laos, Myanmar…",
+   "facts": "4,350 km long · from Tibetan Plateau to the South China Sea · China, Cambodia, Laos, Myanmar, Thailand, Vietnam",
    "size": 4350,
    "native": [
     {
@@ -197,7 +203,8 @@
      "lang": "Lao",
      "code": "lo"
     }
-   ]
+   ],
+   "source": "Tibetan Plateau"
   },
   {
    "id": "Q46841",
@@ -212,7 +219,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Lena River",
-   "facts": "4,294 km long · flows into the Laptev Sea · Russia",
+   "facts": "4,294 km long · from the Baikal Mountains to the Laptev Sea · Russia",
    "size": 4294,
    "native": [
     {
@@ -220,7 +227,8 @@
      "lang": "Russian",
      "code": "ru"
     }
-   ]
+   ],
+   "source": "Baikal Mountains"
   },
   {
    "id": "Q128102",
@@ -237,7 +245,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Irtysh",
-   "facts": "4,248 km long · flows into the Ob · China, Russia, Kazakhstan",
+   "facts": "4,248 km long · from Mongolian Altai to Ob · China, Russia, Kazakhstan",
    "size": 4248,
    "zh": {
     "han": "额尔齐斯河",
@@ -254,7 +262,8 @@
      "lang": "Kazakh",
      "code": "kk"
     }
-   ]
+   ],
+   "source": "Mongolian Altai"
   },
   {
    "id": "Q3542",
@@ -273,7 +282,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Niger River",
-   "facts": "4,180 km long · flows into the Gulf of Guinea · Mali, Benin, Guinea, Niger…",
+   "facts": "4,180 km long · from Fouta Djallon to the Gulf of Guinea · Mali, Benin, Guinea, Niger, Nigeria",
    "size": 4180,
    "native": [
     {
@@ -281,7 +290,8 @@
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "source": "Fouta Djallon"
   },
   {
    "id": "Q1497",
@@ -299,8 +309,21 @@
     "r-us"
    ],
    "nameThe": "the Mississippi River",
-   "facts": "3,766 km long · flows into the Gulf of Mexico · United States",
-   "size": 3766
+   "facts": "3,766 km long · from Lake Itasca to the Gulf of Mexico · Minnesota, Wisconsin, Iowa, Illinois, Missouri, Kentucky…",
+   "size": 3766,
+   "source": "Lake Itasca",
+   "stateIds": [
+    "Q1527",
+    "Q1537",
+    "Q1546",
+    "Q1204",
+    "Q1581",
+    "Q1603",
+    "Q1509",
+    "Q1612",
+    "Q1494",
+    "Q1588"
+   ]
   },
   {
    "id": "Q5419",
@@ -318,8 +341,18 @@
     "r-us"
    ],
    "nameThe": "the Missouri River",
-   "facts": "3,726 km long · flows into the Mississippi River · United States",
-   "size": 3726
+   "facts": "3,726 km long · flows into the Mississippi River · Montana, North Dakota, South Dakota, Nebraska, Iowa, Missouri…",
+   "size": 3726,
+   "stateIds": [
+    "Q1212",
+    "Q1207",
+    "Q1211",
+    "Q1553",
+    "Q1546",
+    "Q1581",
+    "Q1558",
+    "Q1204"
+   ]
   },
   {
    "id": "Q973",
@@ -334,7 +367,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Ob",
-   "facts": "3,650 km long · flows into the Kara Sea · Russia",
+   "facts": "3,650 km long · from Katun to the Kara Sea · Russia",
    "size": 3650,
    "native": [
     {
@@ -342,7 +375,8 @@
      "lang": "Russian",
      "code": "ru"
     }
-   ]
+   ],
+   "source": "Katun"
   },
   {
    "id": "Q626",
@@ -357,7 +391,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Volga",
-   "facts": "3,530 km long · flows into the Caspian Sea · Russia",
+   "facts": "3,530 km long · from Valdai Hills to the Caspian Sea · Russia",
    "size": 3530,
    "native": [
     {
@@ -371,7 +405,8 @@
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/10/Ru-%D0%92%D0%BE%D0%BB%D0%B3%D0%B0.ogg/Ru-%D0%92%D0%BE%D0%BB%D0%B3%D0%B0.ogg.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/1/10/Ru-%D0%92%D0%BE%D0%BB%D0%B3%D0%B0.ogg"
     ]
-   }
+   },
+   "source": "Valdai Hills"
   },
   {
    "id": "Q78707",
@@ -386,7 +421,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Yenisei",
-   "facts": "3,487 km long · flows into the Kara Sea · Russia",
+   "facts": "3,487 km long · from Tuva to the Kara Sea · Russia",
    "size": 3487,
    "native": [
     {
@@ -394,7 +429,8 @@
      "lang": "Russian",
      "code": "ru"
     }
-   ]
+   ],
+   "source": "Tuva"
   },
   {
    "id": "Q104437",
@@ -413,8 +449,12 @@
     "r-us"
    ],
    "nameThe": "the Yukon River",
-   "facts": "3,190 km long · flows into the Bering Sea · Canada, United States",
-   "size": 3190
+   "facts": "3,190 km long · from the Juneau Icefield to the Bering Sea · Alaska, Canada",
+   "size": 3190,
+   "source": "Juneau Icefield",
+   "stateIds": [
+    "Q797"
+   ]
   },
   {
    "id": "Q7348",
@@ -431,7 +471,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Indus River",
-   "facts": "3,180 km long · flows into the Arabian Sea · China, India, Pakistan",
+   "facts": "3,180 km long · from Tibetan Plateau to the Arabian Sea · China, India, Pakistan",
    "size": 3180,
    "zh": {
     "han": "印度河",
@@ -448,7 +488,8 @@
      "lang": "Urdu",
      "code": "ur"
     }
-   ]
+   ],
+   "source": "Tibetan Plateau"
   },
   {
    "id": "Q134750",
@@ -467,8 +508,12 @@
     "r-us"
    ],
    "nameThe": "the St. Lawrence River",
-   "facts": "3,058 km long · flows into the Gulf of Saint Lawrence · Canada, United States",
-   "size": 3058
+   "facts": "3,058 km long · from Lake Ontario to the Gulf of Saint Lawrence · New York, Canada",
+   "size": 3058,
+   "source": "Lake Ontario",
+   "stateIds": [
+    "Q1384"
+   ]
   },
   {
    "id": "Q160636",
@@ -487,7 +532,7 @@
     "r-us"
    ],
    "nameThe": "the Rio Grande",
-   "facts": "3,051 km long · flows into the Gulf of Mexico · United States, Mexico",
+   "facts": "3,051 km long · flows into the Gulf of Mexico · New Mexico, Texas, Colorado, Mexico",
    "size": 3051,
    "native": [
     {
@@ -495,6 +540,11 @@
      "lang": "Spanish",
      "code": "es"
     }
+   ],
+   "stateIds": [
+    "Q1522",
+    "Q1439",
+    "Q1261"
    ]
   },
   {
@@ -513,7 +563,7 @@
    ],
    "group": "r-great",
    "nameThe": "the Brahmaputra River",
-   "facts": "2,900 km long · flows into the Ganges · China, India, Nepal, Bangladesh",
+   "facts": "2,900 km long · flows into Ganges · China, India, Nepal, Bangladesh",
    "size": 2900,
    "zh": {
     "han": "布拉马普特拉河",
@@ -548,7 +598,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Danube",
-   "facts": "2,850 km long · flows into the Black Sea · Hungary, Austria, Germany, Slovakia…",
+   "facts": "2,850 km long · from Brigach to the Black Sea · Hungary, Austria, Germany, Slovakia, Moldova, Romania…",
    "size": 2850,
    "native": [
     {
@@ -566,7 +616,8 @@
      "lang": "Slovak",
      "code": "sk"
     }
-   ]
+   ],
+   "source": "Brigach"
   },
   {
    "id": "Q6862",
@@ -582,7 +633,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Amur River",
-   "facts": "2,824 km long · flows into the Sea of Okhotsk · China, Russia",
+   "facts": "2,824 km long · from the Onon River to the Sea of Okhotsk · China, Russia",
    "size": 2824,
    "zh": {
     "han": "黑龙江",
@@ -594,7 +645,8 @@
      "lang": "Russian",
      "code": "ru"
     }
-   ]
+   ],
+   "source": "Onon River"
   },
   {
    "id": "Q26422",
@@ -611,7 +663,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Salween River",
-   "facts": "2,815 km long · flows into the Andaman Sea · China, Myanmar, Thailand",
+   "facts": "2,815 km long · from Cona Lake to the Andaman Sea · China, Myanmar, Thailand",
    "size": 2815,
    "native": [
     {
@@ -624,7 +676,8 @@
      "lang": "Thai",
      "code": "th"
     }
-   ]
+   ],
+   "source": "Cona Lake"
   },
   {
    "id": "Q142148",
@@ -639,7 +692,7 @@
    ],
    "group": "r-am",
    "nameThe": "the São Francisco River",
-   "facts": "2,814 km long · flows into the Atlantic Ocean · Brazil",
+   "facts": "2,814 km long · from Serra da Canastra National Park to the Atlantic Ocean · Brazil",
    "size": 2814,
    "native": [
     {
@@ -647,7 +700,8 @@
      "lang": "Portuguese",
      "code": "pt"
     }
-   ]
+   ],
+   "source": "Serra da Canastra National Park"
   },
   {
    "id": "Q34589",
@@ -664,7 +718,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Euphrates",
-   "facts": "2,800 km long · flows into the Shatt al-Arab · Türkiye, Iraq, Syria",
+   "facts": "2,800 km long · flows into Shatt al-Arab · Türkiye, Iraq, Syria",
    "size": 2800,
    "native": [
     {
@@ -687,8 +741,9 @@
    ],
    "group": "r-am",
    "nameThe": "the Fraser River",
-   "facts": "2,657 km long · flows into the Strait of Georgia · Canada",
-   "size": 2657
+   "facts": "2,657 km long · from the Rocky Mountains to Strait of Georgia · Canada",
+   "size": 2657,
+   "source": "Rocky Mountains"
   },
   {
    "id": "Q8493",
@@ -706,7 +761,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Amu Darya",
-   "facts": "2,620 km long · flows into the South Aral Sea · Uzbekistan, Tajikistan, Turkmenistan, Afghanistan",
+   "facts": "2,620 km long · from the Pamir River to the South Aral Sea · Uzbekistan, Tajikistan, Turkmenistan, Afghanistan",
    "size": 2620,
    "native": [
     {
@@ -714,7 +769,8 @@
      "lang": "Russian",
      "code": "ru"
     }
-   ]
+   ],
+   "source": "Pamir River"
   },
   {
    "id": "Q43106",
@@ -733,7 +789,7 @@
    ],
    "group": "r-af",
    "nameThe": "the Zambezi River",
-   "facts": "2,574 km long · flows into the Indian Ocean · Angola, Zambia, Zimbabwe, Mozambique…",
+   "facts": "2,574 km long · from Lunda Plateau to the Indian Ocean · Angola, Zambia, Zimbabwe, Mozambique, Namibia",
    "size": 2574,
    "native": [
     {
@@ -746,7 +802,8 @@
      "lang": "Afrikaans",
      "code": "af"
     }
-   ]
+   ],
+   "source": "Lunda Plateau"
   },
   {
    "id": "Q183078",
@@ -761,8 +818,9 @@
    ],
    "group": "r-as",
    "nameThe": "the Murray River",
-   "facts": "2,530 km long · flows into the Indian Ocean · Australia",
-   "size": 2530
+   "facts": "2,530 km long · from Australian Alps to the Indian Ocean · Australia",
+   "size": 2530,
+   "source": "Australian Alps"
   },
   {
    "id": "Q5089",
@@ -777,7 +835,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Ganges",
-   "facts": "2,525 km long · flows into the Bay of Bengal · India",
+   "facts": "2,525 km long · from Gangotri Glacier to the Bay of Bengal · India",
    "size": 2525,
    "native": [
     {
@@ -785,7 +843,8 @@
      "lang": "Hindi",
      "code": "hi"
     }
-   ]
+   ],
+   "source": "Gangotri Glacier"
   },
   {
    "id": "Q156054",
@@ -824,7 +883,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Ural",
-   "facts": "2,428 km long · flows into the Caspian Sea · Russia, Kazakhstan",
+   "facts": "2,428 km long · from the Ural Mountains to the Caspian Sea · Russia, Kazakhstan",
    "size": 2428,
    "native": [
     {
@@ -837,7 +896,8 @@
      "lang": "Kazakh",
      "code": "kk"
     }
-   ]
+   ],
+   "source": "Ural Mountains"
   },
   {
    "id": "Q8319",
@@ -855,8 +915,16 @@
     "r-us"
    ],
    "nameThe": "the Arkansas River",
-   "facts": "2,364 km long · flows into the Mississippi River · United States",
-   "size": 2364
+   "facts": "2,364 km long · from the East Fork Arkansas River to the Mississippi River · Colorado, Kansas, Oklahoma, Arkansas, Mississippi",
+   "size": 2364,
+   "source": "East Fork Arkansas River",
+   "stateIds": [
+    "Q1261",
+    "Q1558",
+    "Q1649",
+    "Q1612",
+    "Q1494"
+   ]
   },
   {
    "id": "Q1265",
@@ -875,7 +943,7 @@
     "r-us"
    ],
    "nameThe": "the Colorado River",
-   "facts": "2,334 km long · flows into the Gulf of California · United States, Mexico",
+   "facts": "2,334 km long · from La Poudre Pass to the Gulf of California · Colorado, Utah, Arizona, Nevada, California, Mexico",
    "size": 2334,
    "native": [
     {
@@ -883,6 +951,14 @@
      "lang": "Spanish",
      "code": "es"
     }
+   ],
+   "source": "La Poudre Pass",
+   "stateIds": [
+    "Q1261",
+    "Q829",
+    "Q816",
+    "Q1227",
+    "Q99"
    ]
   },
   {
@@ -900,7 +976,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Dnieper",
-   "facts": "2,285 km long · flows into the Dnieper Estuary · Russia, Belarus, Ukraine",
+   "facts": "2,285 km long · from Valdai Hills to Dnieper Estuary · Russia, Belarus, Ukraine",
    "size": 2285,
    "native": [
     {
@@ -918,7 +994,8 @@
      "lang": "Ukrainian",
      "code": "uk"
     }
-   ]
+   ],
+   "source": "Valdai Hills"
   },
   {
    "id": "Q186541",
@@ -995,7 +1072,7 @@
    ],
    "group": "r-af",
    "nameThe": "the Orange River",
-   "facts": "2,200 km long · flows into the Atlantic Ocean · South Africa, Lesotho, Namibia",
+   "facts": "2,200 km long · from Drakensberg to the Atlantic Ocean · South Africa, Lesotho, Namibia",
    "size": 2200,
    "native": [
     {
@@ -1003,7 +1080,8 @@
      "lang": "Afrikaans",
      "code": "af"
     }
-   ]
+   ],
+   "source": "Drakensberg"
   },
   {
    "id": "Q216941",
@@ -1038,8 +1116,15 @@
    ],
    "group": "r-us",
    "nameThe": "the Red River",
-   "facts": "2,189 km long · flows into the Atchafalaya River · United States",
-   "size": 2189
+   "facts": "2,189 km long · from Buck Creek to the Atchafalaya River · Oklahoma, Texas, Arkansas, Louisiana",
+   "size": 2189,
+   "source": "Buck Creek",
+   "stateIds": [
+    "Q1649",
+    "Q1439",
+    "Q1612",
+    "Q1588"
+   ]
   },
   {
    "id": "Q26076",
@@ -1054,7 +1139,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Irrawaddy River",
-   "facts": "2,170 km long · flows into the Andaman Sea · Myanmar",
+   "facts": "2,170 km long · from Gyita Qu to the Andaman Sea · Myanmar",
    "size": 2170,
    "native": [
     {
@@ -1062,7 +1147,8 @@
      "lang": "Burmese",
      "code": "my"
     }
-   ]
+   ],
+   "source": "Gyita Qu"
   },
   {
    "id": "Q131792",
@@ -1117,7 +1203,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Tarim River",
-   "facts": "2,030 km long · flows into the Tarim Basin · China",
+   "facts": "2,030 km long · flows into Tarim Basin · China",
    "size": 2030,
    "zh": {
     "han": "塔里木河",
@@ -1141,8 +1227,13 @@
     "r-us"
    ],
    "nameThe": "the Columbia River",
-   "facts": "2,000 km long · flows into the Pacific Ocean · Canada, United States",
-   "size": 2000
+   "facts": "2,000 km long · from Columbia Lake to the Pacific Ocean · Washington, Oregon, Canada",
+   "size": 2000,
+   "source": "Columbia Lake",
+   "stateIds": [
+    "Q1223",
+    "Q824"
+   ]
   },
   {
    "id": "Q171847",
@@ -1180,7 +1271,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Don",
-   "facts": "1,870 km long · flows into the Sea of Azov · Russia",
+   "facts": "1,870 km long · from Central Russian Upland to the Sea of Azov · Russia",
    "size": 1870,
    "native": [
     {
@@ -1188,7 +1279,8 @@
      "lang": "Russian",
      "code": "ru"
     }
-   ]
+   ],
+   "source": "Central Russian Upland"
   },
   {
    "id": "Q35591",
@@ -1205,7 +1297,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Tigris",
-   "facts": "1,850 km long · flows into the Shatt al-Arab · Türkiye, Iraq, Syria",
+   "facts": "1,850 km long · from Lake Hazar to Shatt al-Arab · Türkiye, Iraq, Syria",
    "size": 1850,
    "native": [
     {
@@ -1213,7 +1305,8 @@
      "lang": "Arabic",
      "code": "ar"
     }
-   ]
+   ],
+   "source": "Lake Hazar"
   },
   {
    "id": "Q8168",
@@ -1228,7 +1321,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Pechora",
-   "facts": "1,809 km long · flows into the Pechora Sea · Russia",
+   "facts": "1,809 km long · from the Ural Mountains to the Pechora Sea · Russia",
    "size": 1809,
    "native": [
     {
@@ -1236,7 +1329,8 @@
      "lang": "Russian",
      "code": "ru"
     }
-   ]
+   ],
+   "source": "Ural Mountains"
   },
   {
    "id": "Q18278",
@@ -1253,7 +1347,7 @@
    ],
    "group": "r-am",
    "nameThe": "the Uruguay River",
-   "facts": "1,790 km long · flows into the Río de la Plata · Uruguay, Brazil, Argentina",
+   "facts": "1,790 km long · from the Pelotas River to Río de la Plata · Uruguay, Brazil, Argentina",
    "size": 1790,
    "native": [
     {
@@ -1261,7 +1355,8 @@
      "lang": "Portuguese",
      "code": "pt"
     }
-   ]
+   ],
+   "source": "Pelotas River"
   },
   {
    "id": "Q882739",
@@ -1277,7 +1372,7 @@
    ],
    "group": "r-af",
    "nameThe": "the Blue Nile",
-   "facts": "1,783 km long · flows into the Nile · Ethiopia, Sudan",
+   "facts": "1,783 km long · from Lake Tana to Nile · Ethiopia, Sudan",
    "size": 1783,
    "native": [
     {
@@ -1290,7 +1385,8 @@
      "lang": "Arabic",
      "code": "ar"
     }
-   ]
+   ],
+   "source": "Lake Tana"
   },
   {
    "id": "Q162737",
@@ -1305,7 +1401,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Angara",
-   "facts": "1,779 km long · flows into the Yenisei · Russia",
+   "facts": "1,779 km long · from Lake Baikal to Yenisei · Russia",
    "size": 1779,
    "native": [
     {
@@ -1313,7 +1409,8 @@
      "lang": "Russian",
      "code": "ru"
     }
-   ]
+   ],
+   "source": "Lake Baikal"
   },
   {
    "id": "Q173017",
@@ -1354,8 +1451,9 @@
    ],
    "group": "r-am",
    "nameThe": "the Mackenzie River",
-   "facts": "1,738 km long · flows into the Beaufort Sea · Canada",
-   "size": 1738
+   "facts": "1,738 km long · from Great Slave Lake to the Beaufort Sea · Canada",
+   "size": 1738,
+   "source": "Great Slave Lake"
   },
   {
    "id": "Q272074",
@@ -1373,8 +1471,13 @@
     "r-us"
    ],
    "nameThe": "the Snake River",
-   "facts": "1,735 km long · flows into the Columbia River · United States",
-   "size": 1735
+   "facts": "1,735 km long · from Yellowstone National Park to the Columbia River · Wyoming, Idaho",
+   "size": 1735,
+   "source": "Yellowstone National Park",
+   "stateIds": [
+    "Q1214",
+    "Q1221"
+   ]
   },
   {
    "id": "Q49544",
@@ -1414,7 +1517,7 @@
    ],
    "group": "r-af",
    "nameThe": "the Okavango River",
-   "facts": "1,600 km long · flows into the Okavango Delta · Angola, Botswana, Namibia",
+   "facts": "1,600 km long · from Bié Plateau to Okavango Delta · Angola, Botswana, Namibia",
    "size": 1600,
    "native": [
     {
@@ -1422,7 +1525,8 @@
      "lang": "Afrikaans",
      "code": "af"
     }
-   ]
+   ],
+   "source": "Bié Plateau"
   },
   {
    "id": "Q4915",
@@ -1440,8 +1544,17 @@
     "r-us"
    ],
    "nameThe": "the Ohio River",
-   "facts": "1,579 km long · flows into the Mississippi River · United States",
-   "size": 1579
+   "facts": "1,579 km long · from the Monongahela River to the Mississippi River · Pennsylvania, Ohio, West Virginia, Kentucky, Indiana, Illinois",
+   "size": 1579,
+   "source": "Monongahela River",
+   "stateIds": [
+    "Q1400",
+    "Q1397",
+    "Q1371",
+    "Q1603",
+    "Q1415",
+    "Q1204"
+   ]
   },
   {
    "id": "Q1356561",
@@ -1456,8 +1569,12 @@
    ],
    "group": "r-us",
    "nameThe": "the Pecos River",
-   "facts": "1,560 km long · flows into the Rio Grande · United States",
-   "size": 1560
+   "facts": "1,560 km long · flows into the Rio Grande · New Mexico, Texas",
+   "size": 1560,
+   "stateIds": [
+    "Q1522",
+    "Q1439"
+   ]
   },
   {
    "id": "Q191829",
@@ -1472,8 +1589,9 @@
    ],
    "group": "r-am",
    "nameThe": "the Magdalena River",
-   "facts": "1,528 km long · flows into the Caribbean Sea · Colombia",
-   "size": 1528
+   "facts": "1,528 km long · from Colombian Massif to the Caribbean Sea · Colombia",
+   "size": 1528,
+   "source": "Colombian Massif"
   },
   {
    "id": "Q192415",
@@ -1544,8 +1662,14 @@
    ],
    "group": "r-us",
    "nameThe": "the Canadian River",
-   "facts": "1,458 km long · flows into the Arkansas River · United States",
-   "size": 1458
+   "facts": "1,458 km long · from the Rocky Mountains to the Arkansas River · Texas, New Mexico, Oklahoma",
+   "size": 1458,
+   "source": "Rocky Mountains",
+   "stateIds": [
+    "Q1439",
+    "Q1522",
+    "Q1649"
+   ]
   },
   {
    "id": "Q118251",
@@ -1561,7 +1685,7 @@
    ],
    "group": "r-am",
    "nameThe": "the Madeira River",
-   "facts": "1,450 km long · flows into the Amazon River · Brazil, Bolivia",
+   "facts": "1,450 km long · from the Mamoré River to the Amazon River · Brazil, Bolivia",
    "size": 1450,
    "native": [
     {
@@ -1569,7 +1693,8 @@
      "lang": "Portuguese",
      "code": "pt"
     }
-   ]
+   ],
+   "source": "Mamoré River"
   },
   {
    "id": "Q193499",
@@ -1584,7 +1709,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Krishna River",
-   "facts": "1,400 km long · flows into the Bay of Bengal · India",
+   "facts": "1,400 km long · from Mahabaleshwar to the Bay of Bengal · India",
    "size": 1400,
    "native": [
     {
@@ -1592,7 +1717,8 @@
      "lang": "Hindi",
      "code": "hi"
     }
-   ]
+   ],
+   "source": "Mahabaleshwar"
   },
   {
    "id": "Q132726",
@@ -1607,7 +1733,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Yamuna",
-   "facts": "1,376 km long · flows into the Ganges · India",
+   "facts": "1,376 km long · flows into Ganges · India",
    "size": 1376,
    "native": [
     {
@@ -1631,7 +1757,7 @@
    ],
    "group": "r-af",
    "nameThe": "the Benue River",
-   "facts": "1,370 km long · flows into the Niger River · Cameroon, Nigeria",
+   "facts": "1,370 km long · from Adamawa Plateau to the Niger River · Cameroon, Nigeria",
    "size": 1370,
    "native": [
     {
@@ -1639,7 +1765,8 @@
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "source": "Adamawa Plateau"
   },
   {
    "id": "Q131210",
@@ -1656,7 +1783,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Dniester",
-   "facts": "1,352 km long · flows into the Dniester Lyman · Ukraine, Moldova, Transnistria",
+   "facts": "1,352 km long · from Ukrainian Carpathians to Dniester Lyman · Ukraine, Moldova, Transnistria",
    "size": 1352,
    "native": [
     {
@@ -1664,7 +1791,8 @@
      "lang": "Ukrainian",
      "code": "uk"
     }
-   ]
+   ],
+   "source": "Ukrainian Carpathians"
   },
   {
    "id": "Q903306",
@@ -1682,8 +1810,12 @@
     "r-us"
    ],
    "nameThe": "the Brazos River",
-   "facts": "1,352 km long · flows into the Gulf of Mexico · United States",
-   "size": 1352
+   "facts": "1,352 km long · from the Double Mountain Fork Brazos River to the Gulf of Mexico · Texas",
+   "size": 1352,
+   "source": "Double Mountain Fork Brazos River",
+   "stateIds": [
+    "Q1439"
+   ]
   },
   {
    "id": "Q234004",
@@ -1698,7 +1830,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Narmada",
-   "facts": "1,315 km long · flows into the Arabian Sea · India",
+   "facts": "1,315 km long · from Amarkantak to the Arabian Sea · India",
    "size": 1315,
    "native": [
     {
@@ -1706,7 +1838,8 @@
      "lang": "Hindi",
      "code": "hi"
     }
-   ]
+   ],
+   "source": "Amarkantak"
   },
   {
    "id": "Q584",
@@ -1726,7 +1859,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Rhine",
-   "facts": "1,233 km long · flows into the North Sea · Switzerland, Austria, France, Germany…",
+   "facts": "1,233 km long · from Tomasee to the North Sea · Switzerland, Austria, France, Germany, Liechtenstein",
    "size": 1233,
    "native": [
     {
@@ -1745,7 +1878,8 @@
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/LL-Q150_(fra)-Eihel-Rhin.wav/LL-Q150_(fra)-Eihel-Rhin.wav.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/8/83/LL-Q150_(fra)-Eihel-Rhin.wav"
     ]
-   }
+   },
+   "source": "Tomasee"
   },
   {
    "id": "Q952429",
@@ -1760,8 +1894,14 @@
    ],
    "group": "r-us",
    "nameThe": "the Green River",
-   "facts": "1,175 km long · flows into the Colorado River · United States",
-   "size": 1175
+   "facts": "1,175 km long · from the Wind River Range to the Colorado River · Wyoming, Utah, Colorado",
+   "size": 1175,
+   "source": "Wind River Range",
+   "stateIds": [
+    "Q1214",
+    "Q829",
+    "Q1261"
+   ]
   },
   {
    "id": "Q1813795",
@@ -1776,8 +1916,14 @@
    ],
    "group": "r-us",
    "nameThe": "the White River",
-   "facts": "1,162 km long · flows into the Mississippi River · United States",
-   "size": 1162
+   "facts": "1,162 km long · from the Boston Mountains to the Mississippi River · Arkansas, Missouri, Mississippi",
+   "size": 1162,
+   "source": "Boston Mountains",
+   "stateIds": [
+    "Q1612",
+    "Q1581",
+    "Q1494"
+   ]
   },
   {
    "id": "Q8510",
@@ -1793,7 +1939,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Helmand River",
-   "facts": "1,150 km long · flows into the Hamun-e Helmand · Iran, Afghanistan",
+   "facts": "1,150 km long · from Hindu Kush to Hamun-e Helmand · Iran, Afghanistan",
    "size": 1150,
    "native": [
     {
@@ -1801,7 +1947,8 @@
      "lang": "Persian (Farsi)",
      "code": "fa"
     }
-   ]
+   ],
+   "source": "Hindu Kush"
   },
   {
    "id": "Q206850",
@@ -1817,7 +1964,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Red River",
-   "facts": "1,149 km long · flows into the South China Sea · China, Vietnam",
+   "facts": "1,149 km long · from Yunnan to the South China Sea · China, Vietnam",
    "size": 1149,
    "zh": {
     "han": "红河",
@@ -1829,7 +1976,8 @@
      "lang": "Vietnamese",
      "code": "vi"
     }
-   ]
+   ],
+   "source": "Yunnan"
   },
   {
    "id": "Q374772",
@@ -1844,8 +1992,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Yellowstone River",
-   "facts": "1,114 km long · flows into the Missouri River · United States",
-   "size": 1114
+   "facts": "1,114 km long · flows into the Missouri River · Wyoming, Montana, North Dakota",
+   "size": 1114,
+   "stateIds": [
+    "Q1214",
+    "Q1212",
+    "Q1207"
+   ]
   },
   {
    "id": "Q213576",
@@ -1860,7 +2013,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Huai River",
-   "facts": "1,110 km long · flows into the Hongze Lake · China",
+   "facts": "1,110 km long · flows into Hongze Lake · China",
    "size": 1110,
    "zh": {
     "han": "淮河",
@@ -1880,8 +2033,14 @@
    ],
    "group": "r-us",
    "nameThe": "the Cumberland River",
-   "facts": "1,107 km long · flows into the Ohio River · United States",
-   "size": 1107
+   "facts": "1,107 km long · from the Clover Fork Cumberland River to the Ohio River · Kentucky, Tennessee, Illinois",
+   "size": 1107,
+   "source": "Clover Fork Cumberland River",
+   "stateIds": [
+    "Q1603",
+    "Q1509",
+    "Q1204"
+   ]
   },
   {
    "id": "Q1644",
@@ -1897,7 +2056,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Elbe",
-   "facts": "1,094 km long · flows into the North Sea · Germany, Czechia",
+   "facts": "1,094 km long · from the Giant Mountains to the North Sea · Germany, Czechia",
    "size": 1094,
    "native": [
     {
@@ -1911,7 +2070,8 @@
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Cs-Labe.ogg/Cs-Labe.ogg.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/c/c8/Cs-Labe.ogg"
     ]
-   }
+   },
+   "source": "Giant Mountains"
   },
   {
    "id": "Q171649",
@@ -1928,7 +2088,7 @@
    ],
    "group": "r-af",
    "nameThe": "the Ubangi River",
-   "facts": "1,060 km long · flows into the Congo River · Central African Republic, Republic of the Congo, DR Congo",
+   "facts": "1,060 km long · from the Uele River to the Congo River · Central African Republic, Republic of the Congo, DR Congo",
    "size": 1060,
    "native": [
     {
@@ -1936,7 +2096,8 @@
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "source": "Uele River"
   },
   {
    "id": "Q3569",
@@ -1953,7 +2114,7 @@
    ],
    "group": "r-af",
    "nameThe": "the Senegal River",
-   "facts": "1,050 km long · flows into the Atlantic Ocean · Mali, Mauritania, Senegal",
+   "facts": "1,050 km long · from the Bafing River to the Atlantic Ocean · Mali, Mauritania, Senegal",
    "size": 1050,
    "native": [
     {
@@ -1972,7 +2133,8 @@
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ef/LL-Q150_(fra)-Jules78120-S%C3%A9n%C3%A9gal.wav/LL-Q150_(fra)-Jules78120-S%C3%A9n%C3%A9gal.wav.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/e/ef/LL-Q150_(fra)-Jules78120-S%C3%A9n%C3%A9gal.wav"
     ]
-   }
+   },
+   "source": "Bafing River"
   },
   {
    "id": "Q193737",
@@ -1990,8 +2152,14 @@
     "r-us"
    ],
    "nameThe": "the Tennessee River",
-   "facts": "1,049 km long · flows into the Ohio River · United States",
-   "size": 1049
+   "facts": "1,049 km long · from the French Broad River to the Ohio River · Tennessee, Kentucky, Alabama",
+   "size": 1049,
+   "source": "French Broad River",
+   "stateIds": [
+    "Q1509",
+    "Q1603",
+    "Q173"
+   ]
   },
   {
    "id": "Q548",
@@ -2006,7 +2174,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Vistula",
-   "facts": "1,047 km long · flows into the Gdańsk Bay · Poland",
+   "facts": "1,047 km long · from Barania Góra to the Gdańsk Bay · Poland",
    "size": 1047,
    "native": [
     {
@@ -2014,7 +2182,8 @@
      "lang": "Polish",
      "code": "pl"
     }
-   ]
+   ],
+   "source": "Barania Góra"
   },
   {
    "id": "Q838143",
@@ -2029,8 +2198,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Gila River",
-   "facts": "1,044 km long · flows into the Colorado River · United States",
-   "size": 1044
+   "facts": "1,044 km long · from the East Fork Gila River to the Colorado River · New Mexico, Arizona",
+   "size": 1044,
+   "source": "East Fork Gila River",
+   "stateIds": [
+    "Q1522",
+    "Q816"
+   ]
   },
   {
    "id": "Q75745",
@@ -2046,7 +2220,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Selenga",
-   "facts": "1,024 km long · flows into Lake Baikal · Russia, Mongolia",
+   "facts": "1,024 km long · from Delgermörön to Lake Baikal · Russia, Mongolia",
    "size": 1024,
    "native": [
     {
@@ -2059,7 +2233,8 @@
      "lang": "Mongolian",
      "code": "mn"
     }
-   ]
+   ],
+   "source": "Delgermörön"
   },
   {
    "id": "Q8197",
@@ -2076,7 +2251,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Daugava",
-   "facts": "1,020 km long · flows into the Gulf of Riga · Russia, Belarus, Latvia",
+   "facts": "1,020 km long · from Valdai Hills to the Gulf of Riga · Russia, Belarus, Latvia",
    "size": 1020,
    "native": [
     {
@@ -2089,7 +2264,8 @@
      "lang": "Belarusian",
      "code": "be"
     }
-   ]
+   ],
+   "source": "Valdai Hills"
   },
   {
    "id": "Q14294",
@@ -2105,7 +2281,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Tagus",
-   "facts": "1,007 km long · flows into the Atlantic Ocean · Spain, Portugal",
+   "facts": "1,007 km long · from Fuente García to the Atlantic Ocean · Spain, Portugal",
    "size": 1007,
    "native": [
     {
@@ -2113,7 +2289,8 @@
      "lang": "Spanish",
      "code": "es"
     }
-   ]
+   ],
+   "source": "Fuente García"
   },
   {
    "id": "Q1469",
@@ -2128,8 +2305,9 @@
    ],
    "group": "r-eu",
    "nameThe": "the Loire",
-   "facts": "1,006 km long · flows into the Bay of Biscay · France",
-   "size": 1006
+   "facts": "1,006 km long · from Saint-Martial to the Bay of Biscay · France",
+   "size": 1006,
+   "source": "Saint-Martial"
   },
   {
    "id": "Q196183",
@@ -2144,8 +2322,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Wabash River",
-   "facts": "960 km long · flows into the Ohio River · United States",
-   "size": 960
+   "facts": "960 km long · flows into the Ohio River · Ohio, Indiana, Illinois",
+   "size": 960,
+   "stateIds": [
+    "Q1397",
+    "Q1415",
+    "Q1204"
+   ]
   },
   {
    "id": "Q14383",
@@ -2163,7 +2346,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Sava",
-   "facts": "945 km long · flows into the Danube · Slovenia, Croatia, Bosnia and Herzegovina, Serbia",
+   "facts": "945 km long · flows into Danube · Slovenia, Croatia, Bosnia and Herzegovina, Serbia",
    "size": 945
   },
   {
@@ -2179,7 +2362,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Ebro",
-   "facts": "910 km long · flows into the Mediterranean Sea · Spain",
+   "facts": "910 km long · from Fontibre to the Mediterranean Sea · Spain",
    "size": 910,
    "native": [
     {
@@ -2187,7 +2370,8 @@
      "lang": "Spanish",
      "code": "es"
     }
-   ]
+   ],
+   "source": "Fontibre"
   },
   {
    "id": "Q14299",
@@ -2203,7 +2387,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Douro",
-   "facts": "897 km long · flows into the Atlantic Ocean · Spain, Portugal",
+   "facts": "897 km long · from Picos de Urbión to the Atlantic Ocean · Spain, Portugal",
    "size": 897,
    "native": [
     {
@@ -2211,7 +2395,8 @@
      "lang": "Spanish",
      "code": "es"
     }
-   ]
+   ],
+   "source": "Picos de Urbión"
   },
   {
    "id": "Q552",
@@ -2251,8 +2436,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Des Moines River",
-   "facts": "845 km long · flows into the Mississippi River · United States",
-   "size": 845
+   "facts": "845 km long · flows into the Mississippi River · Minnesota, Iowa, Missouri",
+   "size": 845,
+   "stateIds": [
+    "Q1527",
+    "Q1546",
+    "Q1581"
+   ]
   },
   {
    "id": "Q596106",
@@ -2267,8 +2457,12 @@
    ],
    "group": "r-us",
    "nameThe": "the Sabine River",
-   "facts": "820 km long · flows into the Sabine Lake · United States",
-   "size": 820
+   "facts": "820 km long · flows into Sabine Lake · Louisiana, Texas",
+   "size": 820,
+   "stateIds": [
+    "Q1588",
+    "Q1439"
+   ]
   },
   {
    "id": "Q602",
@@ -2284,8 +2478,9 @@
    ],
    "group": "r-eu",
    "nameThe": "the Rhône",
-   "facts": "812 km long · flows into the Mediterranean Sea · Switzerland, France",
-   "size": 812
+   "facts": "812 km long · from Rhone Glacier to the Mediterranean Sea · Switzerland, France",
+   "size": 812,
+   "source": "Rhone Glacier"
   },
   {
    "id": "Q1471",
@@ -2300,8 +2495,9 @@
    ],
    "group": "r-eu",
    "nameThe": "the Seine",
-   "facts": "777 km long · flows into the English Channel · France",
-   "size": 777
+   "facts": "777 km long · from the source of the Seine River to English Channel · France",
+   "size": 777,
+   "source": "source of the Seine River"
   },
   {
    "id": "Q8187",
@@ -2316,7 +2512,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Northern Dvina",
-   "facts": "744 km long · flows into Dvina Bay · Russia",
+   "facts": "744 km long · from Sukhona to Dvina Bay · Russia",
    "size": 744,
    "native": [
     {
@@ -2324,7 +2520,8 @@
      "lang": "Russian",
      "code": "ru"
     }
-   ]
+   ],
+   "source": "Sukhona"
   },
   {
    "id": "Q859686",
@@ -2339,8 +2536,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Bighorn River",
-   "facts": "742 km long · flows into the Yellowstone River · United States",
-   "size": 742
+   "facts": "742 km long · from the Wind River to the Yellowstone River · Wyoming, Montana",
+   "size": 742,
+   "source": "Wind River",
+   "stateIds": [
+    "Q1214",
+    "Q1212"
+   ]
   },
   {
    "id": "Q335575",
@@ -2355,8 +2557,11 @@
    ],
    "group": "r-us",
    "nameThe": "the Sacramento River",
-   "facts": "719 km long · flows into Suisun Bay · United States",
-   "size": 719
+   "facts": "719 km long · flows into Suisun Bay · California",
+   "size": 719,
+   "stateIds": [
+    "Q99"
+   ]
   },
   {
    "id": "Q27538",
@@ -2371,8 +2576,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Susquehanna River",
-   "facts": "715 km long · flows into Chesapeake Bay · United States",
-   "size": 715
+   "facts": "715 km long · flows into Chesapeake Bay · New York, Pennsylvania, Maryland",
+   "size": 715,
+   "stateIds": [
+    "Q1384",
+    "Q1400",
+    "Q1391"
+   ]
   },
   {
    "id": "Q1068297",
@@ -2387,8 +2597,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Chattahoochee River",
-   "facts": "702 km long · flows into the Apalachicola River · United States",
-   "size": 702
+   "facts": "702 km long · flows into the Apalachicola River · Georgia, Alabama, Florida",
+   "size": 702,
+   "stateIds": [
+    "Q1428",
+    "Q173",
+    "Q812"
+   ]
   },
   {
    "id": "Q978496",
@@ -2403,8 +2618,12 @@
    ],
    "group": "r-us",
    "nameThe": "the Wisconsin River",
-   "facts": "692 km long · flows into the Mississippi River · United States",
-   "size": 692
+   "facts": "692 km long · flows into the Mississippi River · Wisconsin, Iowa",
+   "size": 692,
+   "stateIds": [
+    "Q1537",
+    "Q1546"
+   ]
   },
   {
    "id": "Q601853",
@@ -2419,8 +2638,11 @@
    ],
    "group": "r-us",
    "nameThe": "the Salmon River",
-   "facts": "684 km long · flows into the Snake River · United States",
-   "size": 684
+   "facts": "684 km long · flows into the Snake River · Idaho",
+   "size": 684,
+   "stateIds": [
+    "Q1221"
+   ]
   },
   {
    "id": "Q179444",
@@ -2435,8 +2657,14 @@
    ],
    "group": "r-us",
    "nameThe": "the Potomac River",
-   "facts": "665 km long · flows into Chesapeake Bay · United States",
-   "size": 665
+   "facts": "665 km long · from the North Branch Potomac River to Chesapeake Bay · Maryland, West Virginia, Virginia",
+   "size": 665,
+   "source": "North Branch Potomac River",
+   "stateIds": [
+    "Q1391",
+    "Q1371",
+    "Q1370"
+   ]
   },
   {
    "id": "Q1584933",
@@ -2451,8 +2679,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Roanoke River",
-   "facts": "660 km long · flows into the Albemarle Sound · United States",
-   "size": 660
+   "facts": "660 km long · from the Blue Ridge Mountains to the Albemarle Sound · Virginia, North Carolina",
+   "size": 660,
+   "source": "Blue Ridge Mountains",
+   "stateIds": [
+    "Q1370",
+    "Q1454"
+   ]
   },
   {
    "id": "Q379648",
@@ -2467,8 +2700,14 @@
    ],
    "group": "r-us",
    "nameThe": "the Connecticut River",
-   "facts": "660 km long · flows into the Long Island Sound · United States",
-   "size": 660
+   "facts": "660 km long · flows into the Long Island Sound · New Hampshire, Vermont, Massachusetts, Connecticut",
+   "size": 660,
+   "stateIds": [
+    "Q759",
+    "Q16551",
+    "Q771",
+    "Q779"
+   ]
   },
   {
    "id": "Q643",
@@ -2483,8 +2722,9 @@
    ],
    "group": "r-eu",
    "nameThe": "the Po",
-   "facts": "652 km long · flows into the Adriatic Sea · Italy",
-   "size": 652
+   "facts": "652 km long · from Pian del Re to the Adriatic Sea · Italy",
+   "size": 652,
+   "source": "Pian del Re"
   },
   {
    "id": "Q5077",
@@ -2500,7 +2740,7 @@
    ],
    "group": "r-eu",
    "nameThe": "the Garonne",
-   "facts": "647 km long · flows into the Gironde estuary · Spain, France",
+   "facts": "647 km long · from Macizo de la Maladeta to Gironde estuary · Spain, France",
    "size": 647,
    "native": [
     {
@@ -2508,7 +2748,8 @@
      "lang": "Spanish",
      "code": "es"
     }
-   ]
+   ],
+   "source": "Macizo de la Maladeta"
   },
   {
    "id": "Q558643",
@@ -2523,8 +2764,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Alabama River",
-   "facts": "640 km long · flows into the Mobile River · United States",
-   "size": 640
+   "facts": "640 km long · from the Coosa River to the Mobile River · Alabama, Georgia",
+   "size": 640,
+   "source": "Coosa River",
+   "stateIds": [
+    "Q173",
+    "Q1428"
+   ]
   },
   {
    "id": "Q143762",
@@ -2539,8 +2785,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Delaware River",
-   "facts": "579 km long · flows into Delaware Bay · United States",
-   "size": 579
+   "facts": "579 km long · flows into Delaware Bay · New York, Pennsylvania, New Jersey",
+   "size": 579,
+   "stateIds": [
+    "Q1384",
+    "Q1400",
+    "Q1408"
+   ]
   },
   {
    "id": "Q751347",
@@ -2555,8 +2806,12 @@
    ],
    "group": "r-us",
    "nameThe": "the San Joaquin River",
-   "facts": "564 km long · flows into the Sacramento River · United States",
-   "size": 564
+   "facts": "564 km long · from Thousand Island Lake to the Sacramento River · California",
+   "size": 564,
+   "source": "Thousand Island Lake",
+   "stateIds": [
+    "Q99"
+   ]
   },
   {
    "id": "Q370750",
@@ -2571,8 +2826,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Savannah River",
-   "facts": "563 km long · flows into the Atlantic Ocean · United States",
-   "size": 563
+   "facts": "563 km long · from the Seneca River to the Atlantic Ocean · Georgia, South Carolina",
+   "size": 563,
+   "source": "Seneca River",
+   "stateIds": [
+    "Q1428",
+    "Q1456"
+   ]
   },
   {
    "id": "Q1136502",
@@ -2587,8 +2847,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Minnesota River",
-   "facts": "534 km long · flows into the Mississippi River · United States",
-   "size": 534
+   "facts": "534 km long · from Big Stone Lake to the Mississippi River · Minnesota, South Dakota",
+   "size": 534,
+   "source": "Big Stone Lake",
+   "stateIds": [
+    "Q1527",
+    "Q1211"
+   ]
   },
   {
    "id": "Q686021",
@@ -2603,8 +2868,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Allegheny River",
-   "facts": "523 km long · flows into the Ohio River · United States",
-   "size": 523
+   "facts": "523 km long · from the Allegheny Mountains to the Ohio River · Pennsylvania, New York",
+   "size": 523,
+   "source": "Allegheny Mountains",
+   "stateIds": [
+    "Q1400",
+    "Q1384"
+   ]
   },
   {
    "id": "Q55500",
@@ -2643,8 +2913,14 @@
    ],
    "group": "r-us",
    "nameThe": "the Platte River",
-   "facts": "500 km long · flows into the Missouri River · United States",
-   "size": 500
+   "facts": "500 km long · from the South Platte River to the Missouri River · Wyoming, Nebraska, Colorado",
+   "size": 500,
+   "source": "South Platte River",
+   "stateIds": [
+    "Q1214",
+    "Q1553",
+    "Q1261"
+   ]
   },
   {
    "id": "Q3140",
@@ -2662,8 +2938,11 @@
     "r-us"
    ],
    "nameThe": "the Hudson River",
-   "facts": "492 km long · flows into the Upper New York Bay · United States",
-   "size": 492
+   "facts": "492 km long · flows into the Upper New York Bay · New York",
+   "size": 492,
+   "stateIds": [
+    "Q1384"
+   ]
   },
   {
    "id": "Q8321",
@@ -2678,8 +2957,11 @@
    ],
    "group": "r-us",
    "nameThe": "the Illinois River",
-   "facts": "432 km long · flows into the Mississippi River · United States",
-   "size": 432
+   "facts": "432 km long · flows into the Mississippi River · Illinois",
+   "size": 432,
+   "stateIds": [
+    "Q1204"
+   ]
   },
   {
    "id": "Q968640",
@@ -2694,8 +2976,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Klamath River",
-   "facts": "423 km long · flows into the Pacific Ocean · United States",
-   "size": 423
+   "facts": "423 km long · from Upper Klamath Lake to the Pacific Ocean · Oregon, California",
+   "size": 423,
+   "source": "Upper Klamath Lake",
+   "stateIds": [
+    "Q824",
+    "Q99"
+   ]
   },
   {
    "id": "Q13712",
@@ -2756,8 +3043,9 @@
    ],
    "group": "r-eu",
    "nameThe": "the River Thames",
-   "facts": "334 km long · flows into the North Sea · United Kingdom",
-   "size": 334
+   "facts": "334 km long · from Kemble to the North Sea · United Kingdom",
+   "size": 334,
+   "source": "Kemble"
   },
   {
    "id": "Q131071",
@@ -2772,8 +3060,11 @@
    ],
    "group": "r-us",
    "nameThe": "the Willamette River",
-   "facts": "301 km long · flows into the Columbia River · United States",
-   "size": 301
+   "facts": "301 km long · flows into the Columbia River · Oregon",
+   "size": 301,
+   "stateIds": [
+    "Q824"
+   ]
   },
   {
    "id": "Q40059",
@@ -2792,7 +3083,7 @@
    ],
    "group": "r-as",
    "nameThe": "the Jordan River",
-   "facts": "252 km long · flows into the Dead Sea · Israel, Jordan, Lebanon, Syria…",
+   "facts": "252 km long · from Golan Heights to the Dead Sea · Israel, Jordan, Lebanon, Syria, Palestine",
    "size": 252,
    "native": [
     {
@@ -2805,7 +3096,8 @@
      "lang": "Arabic",
      "code": "ar"
     }
-   ]
+   ],
+   "source": "Golan Heights"
   },
   {
    "id": "Q1431323",
@@ -2820,8 +3112,11 @@
    ],
    "group": "r-us",
    "nameThe": "the Kennebec River",
-   "facts": "240 km long · flows into the Gulf of Maine · United States",
-   "size": 240
+   "facts": "240 km long · flows into the Gulf of Maine · Maine",
+   "size": 240,
+   "stateIds": [
+    "Q724"
+   ]
   },
   {
    "id": "Q1367638",
@@ -2836,8 +3131,12 @@
    ],
    "group": "r-us",
    "nameThe": "the Kansas River",
-   "facts": "238 km long · flows into the Missouri River · United States",
-   "size": 238
+   "facts": "238 km long · from the Smoky Hill River to the Missouri River · Kansas",
+   "size": 238,
+   "source": "Smoky Hill River",
+   "stateIds": [
+    "Q1558"
+   ]
   },
   {
    "id": "Q2223479",
@@ -2852,8 +3151,11 @@
    ],
    "group": "r-us",
    "nameThe": "the Santee River",
-   "facts": "230 km long · flows into the Atlantic Ocean · United States",
-   "size": 230
+   "facts": "230 km long · flows into the Atlantic Ocean · South Carolina",
+   "size": 230,
+   "stateIds": [
+    "Q1456"
+   ]
   },
   {
    "id": "Q643780",
@@ -2868,8 +3170,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Monongahela River",
-   "facts": "209 km long · flows into the Ohio River · United States",
-   "size": 209
+   "facts": "209 km long · from the Tygart Valley River to the Ohio River · Pennsylvania, West Virginia",
+   "size": 209,
+   "source": "Tygart Valley River",
+   "stateIds": [
+    "Q1400",
+    "Q1371"
+   ]
   },
   {
    "id": "Q517787",
@@ -2884,8 +3191,13 @@
    ],
    "group": "r-us",
    "nameThe": "the Merrimack River",
-   "facts": "177 km long · flows into the Gulf of Maine · United States",
-   "size": 177
+   "facts": "177 km long · from the Pemigewasset River to the Gulf of Maine · New Hampshire, Massachusetts",
+   "size": 177,
+   "source": "Pemigewasset River",
+   "stateIds": [
+    "Q759",
+    "Q771"
+   ]
   }
  ]
 }

@@ -211,6 +211,12 @@
    "wiki": "Columbia River",
    "ne": [
     "Columbia"
+   ],
+   "bbox": [
+    -125,
+    45,
+    -117.1,
+    53
    ]
   },
   {
@@ -240,8 +246,7 @@
   {
    "wiki": "Ohio River",
    "ne": [
-    "Ohio",
-    "Allegheny"
+    "Ohio"
    ]
   },
   {

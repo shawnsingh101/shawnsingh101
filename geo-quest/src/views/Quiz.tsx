@@ -18,7 +18,7 @@ const subjects = (): Subject[] => [
 const sectionOf = (scope: Scope) => (scope === 'world' ? null : scope.startsWith('sec:') ? scope.slice(4) : GROUPS.find(g => g.id === scope.slice(4))!.section);
 const subjectOf = (scope: Scope) => { const sec = sectionOf(scope); const top = sec ? sectionChain(sec)[0] : CONTINENTS[0]; return subjects().find(s => s.sections.includes(top))!; };
 /** The scope covering a whole section: all its groups, or its only group. */
-const allOf = (sec: string): Scope => { const gs = groupsShownIn(sec); return gs.length === 1 ? `grp:${gs[0].id}` : `sec:${sec}`; };
+const allOf = (sec: string): Scope => { const gs = groupsShownIn(sec); return gs.length === 1 && !childSections(sec).length ? `grp:${gs[0].id}` : `sec:${sec}`; }; // a level with deeper levels means all of it
 const allScope = (sub: Subject): Scope => (sub.id === 'countries' ? 'world' : allOf(sub.sections[0]));
 const shortName = (name: string) => name.replace(/^(Rivers|Lakes) of /, '').replace(/ territories$/, '').replace(/^the /, '').replace(/^./, c => c.toUpperCase());
 const SAVED = 'geoquest:quiz-setup';
@@ -99,13 +99,14 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
         </div>}
         {chain.map((sec, i) => {
           const gs = groupsOf(sec), kids = childSections(sec);
-          const showAll = !(subject.id === 'countries' && i === 0) && gs.length > 1;
+          const pickGroups = gs.length > 1 || (gs.length === 1 && kids.length > 0); // Rivers of the Americas: its own deck beside the drill-down
+          const showAll = !(subject.id === 'countries' && i === 0) && pickGroups;
           if (!showAll && gs.length <= 1 && !kids.length) return null; // a single-group level (New Jersey counties) needs no row
           return (
             <div key={sec} className={'picks' + (i > 0 || subject.id === 'countries' ? ' sub' : '')}>
               {(i > 0 || subject.id === 'countries') && <span className="muted small">{i === 0 ? 'Or one region:' : `${sec}:`}</span>}
               {showAll && <Chip s={`sec:${sec}`} label={i === 0 && subject.id !== 'countries' ? `All ${sec.toLowerCase()}` : 'All'} sub={i > 0} />}
-              {gs.length > 1 && gs.map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.id === 'u-icons' ? 'Heritage icons' : g.section === 'Rivers' || g.section === 'Lakes' || g.section === 'Territories' ? shortName(g.name) : g.name} sub={i > 0 || subject.id === 'countries'} />)}
+              {pickGroups && gs.map(g => <Chip key={g.id} s={`grp:${g.id}`} label={g.id === 'u-icons' ? 'Heritage icons' : g.section === 'Lakes' || g.section === 'Territories' ? shortName(g.name) : g.name} sub={i > 0 || subject.id === 'countries'} />)}
               {kids.map(k => <Chip key={k} s={allOf(k)} label={`${k} ›`} sub />)}
             </div>
           );
