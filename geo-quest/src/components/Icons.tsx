@@ -29,6 +29,7 @@ const P: Record<string, ReactNode> = {
   river: <path d="M7 3c3 3-2 5 1 8s7 3 6 7-4 3-3 3M14 3c2 2 1 4 3 6s3 3 2 6" />,
   drop: <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z" />,
   undo: <path d="M9 14 4 9l5-5M4 9h10.5a5.5 5.5 0 0 1 0 11H11" />,
+  sliders: <path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0M14 4v4M8 10v4M16 16v4" />,
   tag: <><path d="M3 12V4h8l10 10-8 8z" /><circle cx="7.5" cy="8.5" r="1.3" /></>,
 };
 export type IconName = keyof typeof P;

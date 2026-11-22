@@ -1,6 +1,6 @@
 import { createEmptyCard, fsrs, generatorParameters, Rating, State, type Card, type Grade } from 'ts-fsrs';
 import { useSyncExternalStore } from 'react';
-import { cardsForNode, fingerprint, groupById, parseNode, refFromId, slotOf, nodeId, TAP_KINDS, type CardRef } from './cards';
+import { cardsForNode, fingerprint, groupById, parseNode, refFromId, slotOf, nodeId, nodeOfCard, TAP_KINDS, type CardRef } from './cards';
 import type { Dataset } from './types';
 
 export { Rating, State };
@@ -15,6 +15,8 @@ export interface Settings {
   mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean; mapRivers: boolean; mapLakes: boolean;
   nativeNames: boolean;
   mapMode: 'tap' | 'flip' | 'skip';
+  kindsOff: string[];                 // question types switched off (they wait until switched back on)
+  sessionNodes: string[] | null;      // decks picked for the next session on the Today screen (null = all)
   targetBox: boolean;                 // lock-on brackets around the place in question   // how "find it on the map" cards work
 }
 interface CardRec { c: Card; fp: string }
@@ -34,7 +36,7 @@ export interface Progress {
 const KEY = 'geoquest:v1';
 const DEFAULT: Progress = {
   v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {},
-  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, nativeNames: true, mapMode: 'tap', targetBox: true },
+  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, nativeNames: true, mapMode: 'tap', targetBox: true, kindsOff: [], sessionNodes: null },
 };
 
 function revive(p: Progress): Progress {
@@ -42,7 +44,7 @@ function revive(p: Progress): Progress {
     r.c.due = new Date(r.c.due);
     if (r.c.last_review) r.c.last_review = new Date(r.c.last_review);
   }
-  return { ...DEFAULT, ...p, quizBest: p.quizBest ?? {}, settings: { ...DEFAULT.settings, ...p.settings } };
+  return { ...DEFAULT, ...p, quizBest: p.quizBest ?? {}, settings: { ...DEFAULT.settings, ...p.settings, kindsOff: p.settings?.kindsOff ?? [], sessionNodes: p.settings?.sessionNodes ?? null } };
 }
 
 function load(): Progress {
@@ -123,13 +125,22 @@ export function isUnlocked(ds: Dataset, p: Progress, node: string) {
 
 // ---- building a study session ---------------------------------------------------
 /** With map questions set to "skip", tap-the-map cards wait on the side until you switch back. */
-export const skipped = (p: Progress, kind: string) => p.settings.mapMode === 'skip' && (TAP_KINDS as string[]).includes(kind);
+export const skipped = (p: Progress, kind: string) => (p.settings.mapMode === 'skip' && (TAP_KINDS as string[]).includes(kind)) || p.settings.kindsOff.includes(kind);
 
-export function buildQueue(ds: Dataset, p: Progress): { due: CardRef[]; fresh: CardRef[] } {
+/** The decks a session covers: the ones passed in, else the Today-screen pick, else everything you're learning. */
+export function sessionDecks(p: Progress, nodes?: string[]) {
+  if (nodes) return nodes;
+  const pick = p.settings.sessionNodes?.filter(n => p.active.includes(n));
+  return pick ?? p.active;
+}
+
+export function buildQueue(ds: Dataset, p: Progress, nodes?: string[]): { due: CardRef[]; fresh: CardRef[] } {
   const now = Date.now();
+  const decks = new Set(sessionDecks(p, nodes));
+  const all = !nodes && p.settings.sessionNodes === null; // "everything": include due reviews from decks you've stopped learning too
   const due: CardRef[] = [];
   for (const [id, r] of Object.entries(p.cards)) {
-    if (r.c.due.getTime() <= now) { const ref = refFromId(ds, id); if (ref && !skipped(p, ref.kind)) due.push(ref); }
+    if (r.c.due.getTime() <= now) { const ref = refFromId(ds, id); if (ref && !skipped(p, ref.kind) && (all || decks.has(nodeOfCard(ref)))) due.push(ref); }
   }
   due.sort((a, b) => p.cards[a.id].c.due.getTime() - p.cards[b.id].c.due.getTime());
 
@@ -138,7 +149,7 @@ export function buildQueue(ds: Dataset, p: Progress): { due: CardRef[]; fresh: C
   // Mix card types, but never show the same country twice in a row: each card
   // type's list is rotated by a different offset, then we deal round-robin.
   const lists: CardRef[][] = [];
-  for (const node of p.active) {
+  for (const node of decks) {
     if (!isUnlocked(ds, p, node)) continue;
     const unseen = cardsForNode(ds, node).filter(c => (!p.cards[c.id] || p.cards[c.id].c.state === State.New) && !skipped(p, c.kind));
     const kinds = [...new Set(unseen.map(c => c.kind))];
@@ -154,9 +165,9 @@ export function buildQueue(ds: Dataset, p: Progress): { due: CardRef[]; fresh: C
 }
 
 /** How many unseen cards are waiting in the skills you're learning (ignoring today's limit). */
-export function unseenCount(ds: Dataset, p: Progress) {
+export function unseenCount(ds: Dataset, p: Progress, nodes?: string[]) {
   let n = 0;
-  for (const node of p.active) if (isUnlocked(ds, p, node)) n += cardsForNode(ds, node).filter(c => (!p.cards[c.id] || p.cards[c.id].c.state === State.New) && !skipped(p, c.kind)).length;
+  for (const node of sessionDecks(p, nodes)) if (isUnlocked(ds, p, node)) n += cardsForNode(ds, node).filter(c => (!p.cards[c.id] || p.cards[c.id].c.state === State.New) && !skipped(p, c.kind)).length;
   return n;
 }
 

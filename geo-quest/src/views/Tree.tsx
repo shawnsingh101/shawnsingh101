@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { GROUPS, nodeId, parseNode, placesIn, SECTIONS, slotOf, groupById, LAYER_NOUN } from '../cards';
-import { isUnlocked, learnMore, nodeStats, update, useProgress } from '../srs';
+import { buildQueue, isUnlocked, learnMore, nodeStats, update, useProgress } from '../srs';
 import { makeQuiz, type Scope } from '../quiz';
 import { sounds } from '../sound';
 import { Icon, type IconName } from '../components/Icons';
 import type { QuizSpec } from '../components/Study';
 import type { Dataset } from '../types';
 
-function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; node: string; onClose: () => void; startQuiz: (q: QuizSpec) => void; startStudy: () => void }) {
+function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; node: string; onClose: () => void; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void }) {
   const p = useProgress();
   const { groupId, topic } = parseNode(node);
   const g = groupById(groupId);
@@ -33,9 +33,11 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
       <p className="muted small">{s.total} cards · {placesIn(ds, groupId).map(c => c.name).join(' · ')}</p>
       {!unlocked && <p className="note"><Icon name="lock" size={15} /> {g.requires ? `Know half of “${groupById(parseNode(g.requires).groupId).name}” to unlock this` : `Know half of ${g.name}'s ${g.topics[0].name.toLowerCase()} to unlock this`} (or turn skill locks off in the ribbon). You can still practise it as a quiz.</p>}
       <div className="sheet-actions">
-        {unlocked && <button className={'btn' + (active ? '' : ' primary')} onClick={toggle}>{active ? 'Stop learning' : 'Start learning'}</button>}
-        {active && s.started < s.total && <button className="btn" onClick={() => { learnMore(10); startStudy(); }}><Icon name="plus" /> Learn 10 more now</button>}
+        {unlocked && !active && <button className="btn primary" onClick={() => { toggle(); startStudy([node]); }}><Icon name="play" /> Start learning</button>}
+        {active && (s.due > 0 || buildQueue(ds, p, [node]).fresh.length > 0) && <button className="btn primary" onClick={() => startStudy([node])}><Icon name="play" /> Study now</button>}
+        {active && s.started < s.total && <button className="btn" onClick={() => { learnMore(10); startStudy([node]); }}><Icon name="plus" /> Learn 10 more now</button>}
         <button className="btn" onClick={() => startQuiz(makeQuiz(ds, `grp:${groupId}`, [topic], 'all'))}><Icon name="target" /> Practice quiz</button>
+        {unlocked && active && <button className="btn ghost" onClick={toggle}>Stop learning</button>}
       </div>
     </div>
   );
@@ -44,7 +46,7 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
 const SECTION_ICON: Record<string, IconName> = { 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop', China: 'map' };
 const OPEN_KEY = 'geoquest:tree-open';
 
-export function Tree({ ds, startQuiz, startStudy }: { ds: Dataset; startQuiz: (q: QuizSpec) => void; startStudy: () => void }) {
+export function Tree({ ds, startQuiz, startStudy }: { ds: Dataset; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void }) {
   const p = useProgress();
   const [sel, setSel] = useState<string | null>(null);
   // Which sections are expanded: remembered per device; by default the ones you're learning.
@@ -125,7 +127,7 @@ export function Tree({ ds, startQuiz, startStudy }: { ds: Dataset; startQuiz: (q
           </section>
         );
       })}
-      {sel && <NodeSheet ds={ds} node={sel} onClose={() => setSel(null)} startQuiz={q => { setSel(null); startQuiz(q); }} startStudy={() => { setSel(null); startStudy(); }} />}
+      {sel && <NodeSheet ds={ds} node={sel} onClose={() => setSel(null)} startQuiz={q => { setSel(null); startQuiz(q); }} startStudy={n => { setSel(null); startStudy(n); }} />}
     </div>
   );
 }

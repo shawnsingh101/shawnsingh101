@@ -13,8 +13,8 @@ interface Item { ref: CardRef; isNew: boolean }
 /** A practice quiz: any set of cards, scored, and it does NOT change your review schedule. */
 export interface QuizSpec { key: string; title: string; draw: () => CardRef[] }
 
-function srsQueue(ds: Dataset): Item[] {
-  const q = buildQueue(ds, getProgress());
+function srsQueue(ds: Dataset, nodes?: string[]): Item[] {
+  const q = buildQueue(ds, getProgress(), nodes);
   const due = q.due.map(ref => ({ ref, isNew: false }));
   const fresh = q.fresh.map(ref => ({ ref, isNew: true }));
   // Mix: a few reviews, then a new card, and so on.
@@ -23,10 +23,10 @@ function srsQueue(ds: Dataset): Item[] {
   return out;
 }
 
-export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () => void; quiz?: QuizSpec; goQuiz?: () => void }) {
+export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit: () => void; quiz?: QuizSpec; goQuiz?: () => void; nodes?: string[] }) {
   const p = useProgress();
   const s = p.settings;
-  const [queue, setQueue] = useState<Item[]>(() => (quiz ? quiz.draw().map(ref => ({ ref, isNew: false })) : srsQueue(ds)));
+  const [queue, setQueue] = useState<Item[]>(() => (quiz ? quiz.draw().map(ref => ({ ref, isNew: false })) : srsQueue(ds, nodes)));
   const [total, setTotal] = useState(queue.length);
   const [done, setDone] = useState(0);
   const [revealed, setRevealed] = useState(false);
@@ -173,14 +173,14 @@ export function Study({ ds, onExit, quiz, goQuiz }: { ds: Dataset; onExit: () =>
         </div>
       );
     }
-    const more = unseenCount(ds, p);
+    const more = unseenCount(ds, p, nodes);
     return (
       <div className="study-done">
         <div className="medal-big"><Icon name={total ? 'check' : 'globe'} size={44} /></div>
         <h2>{total ? 'Session complete' : 'Nothing due right now'}</h2>
         <p>{total ? `${done} answers${s.gamify ? ` · +${sessionXp} XP` : ''}.` : 'Your reviews are done for now.'}</p>
         <div className="row">
-          {more > 0 && <button className="btn primary" onClick={() => { learnMore(10); restart(srsQueue(ds)); }}><Icon name="plus" /> Learn {Math.min(10, more)} more</button>}
+          {more > 0 && <button className="btn primary" onClick={() => { learnMore(10); restart(srsQueue(ds, nodes)); }}><Icon name="plus" /> Learn {Math.min(10, more)} more</button>}
           {goQuiz && <button className="btn" onClick={goQuiz}><Icon name="target" /> Practice quiz</button>}
           <button className="btn" onClick={onExit}>Back</button>
         </div>

@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { exportProgress, importProgress, update, useProgress, type Settings } from '../srs';
 import { Icon, type IconName } from './Icons';
 import { VERSION } from '../views/Landing';
+import { QuestionTypes } from './QuestionTypes';
 
 export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas';
 const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Skills', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['atlas', 'Atlas', 'book']];
@@ -57,6 +58,10 @@ export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTa
                 <button key={v} className={s.mapMode === v ? 'on' : ''} onClick={() => set('mapMode', v)}>{l}</button>
               ))}
             </div>
+          </div>
+          <div className="menu-row column">
+            <span>Question types</span>
+            <QuestionTypes />
           </div>
           <label className="check">
             <input type="checkbox" checked={s.targetBox} onChange={e => set('targetBox', e.target.checked)} />
