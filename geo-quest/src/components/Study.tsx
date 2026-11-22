@@ -248,7 +248,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
               : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}>{f.answer}</span> : <span className="blank">{f.blank}</span>)}
             {f.hidePostUntilReveal && !revealed ? '.' : f.post}
           </p>
-          {revealed && (
+          {revealed && !/^(currency|largestCity|senator)/.test(item.ref.kind) && (
             <div className="local">
               {item.ref.kind.startsWith('capital') && cap ? <>
                 <LocalName place={c} capital={cap} showLang />
