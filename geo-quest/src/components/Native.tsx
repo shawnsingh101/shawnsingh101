@@ -68,7 +68,9 @@ export function Natives({ list, audio, max = 3, showLang = false, voice = true }
 export function LocalName({ place, capital, showLang, voice = true }: { place: Place; capital?: Capital; showLang?: boolean; voice?: boolean }) {
   const on = useProgress().settings.nativeNames;
   const owner = capital ?? place;
-  if (owner.zh) return voice ? <Zh zh={owner.zh} audio={owner.audio} /> : <span className="zh" lang="zh-Hans"><span className="han">{owner.zh.han}</span><span className="py">{owner.zh.pinyin}</span></span>;
-  if (!on) return null;
-  return <Natives list={owner.native} audio={owner.audio} showLang={showLang} voice={voice} />;
+  // Chinese: characters with pinyin; any other languages (a river through China and Laos) follow it.
+  const others = owner.zh ? owner.native?.filter(n => !/^zh/.test(n.code ?? '') && n.lang !== 'Chinese') : owner.native;
+  const zh = owner.zh ? (voice ? <Zh zh={owner.zh} audio={owner.audio} /> : <span className="zh" lang="zh-Hans"><span className="han">{owner.zh.han}</span><span className="py">{owner.zh.pinyin}</span></span>) : null;
+  if (!on) return zh;
+  return <>{zh}<Natives list={others} audio={owner.audio} showLang={showLang} voice={voice} /></>;
 }

@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { addChinese } from './lib/chinese.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = join(ROOT, 'collections');
@@ -38,6 +39,7 @@ const label = (b, k) => { const x = val(b, k); return x && !/^Q\d+$/.test(x) && 
 // The town: walk up "located in" past districts and boroughs (Louvre → 1st arrondissement → Paris).
 const SMALL = /arrondissement|borough|district|ward\b|centrum|mitte|quarter|neighbo|municipality of|Manhattan|Kensington|Westminster|Camden|Vatican Museums|Bezirk|Innere Stadt|Landstraße|^Centro|Sestiere|Quartiere|Retiro|Mid-?town|Downtown|Loop/i;
 const town = (b, keys) => keys.map(k => label(b, k)).find(x => x && !SMALL.test(x)) ?? null;
+const LANG_NAMES = { zh: 'Chinese', 'zh-hans': 'Chinese', 'zh-hant': 'Chinese', ja: 'Japanese', ko: 'Korean', it: 'Italian', fr: 'French', es: 'Spanish', de: 'German', nl: 'Dutch', no: 'Norwegian', nb: 'Norwegian', pt: 'Portuguese', ar: 'Arabic', el: 'Greek', hi: 'Hindi', ca: 'Catalan', la: 'Latin', ru: 'Russian', fa: 'Persian' };
 const yearOf = d => { const m = /^(-?\d+)-/.exec(d ?? ''); return m ? +m[1] : null; };
 const chunks = (a, n) => Array.from({ length: Math.ceil(a.length / n) }, (_, i) => a.slice(i * n, i * n + n));
 
@@ -123,6 +125,25 @@ try {
       OPTIONAL { ?item wdt:P625 ?ownCoord } OPTIONAL { ?item wdt:P131 ?o1 . OPTIONAL { ?o1 wdt:P131 ?o2 . OPTIONAL { ?o2 wdt:P131 ?o3 } } }
       OPTIONAL { ?item wdt:P17 ?ownCountry }
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
+    // The name in its own language: the language of the country the work comes from (P495 country of origin, else the
+    // artist's country, else the country it stands in), never the museum's. Chinese also gets pinyin (lib/chinese.mjs).
+    const origins = await sparql(`SELECT ?item ?origin ?citizen ?own WHERE { VALUES ?item { ${values} }
+      OPTIONAL { ?item wdt:P495 ?origin } OPTIONAL { ?item wdt:P170 ?m . ?m wdt:P27 ?citizen } OPTIONAL { ?item wdt:P17 ?own } }`);
+    const lands = [...new Set(origins.flatMap(r => ['origin', 'citizen', 'own'].map(k => r[k] && qid(r[k].value))).filter(Boolean))];
+    const landLangs = new Map(); // country → its first official language code ('' for English-speaking ones)
+    if (lands.length) for (const r of await sparql(`SELECT ?c ?code WHERE { VALUES ?c { ${lands.map(q => `wd:${q}`).join(' ')} } ?c p:P37 ?st . ?st ps:P37 ?l . ?l wdt:P424 ?code . FILTER NOT EXISTS { ?st pq:P582 [] } }`)) {
+      const c = qid(r.c.value), code = val(r, 'code');
+      const prev = landLangs.get(c);
+      if (prev === undefined || (prev === '' && false)) landLangs.set(c, /^en/.test(code) ? '' : code);
+    }
+    landLangs.set('Q148', 'zh-hans'); landLangs.set('Q40', 'de'); landLangs.set('Q30', ''); landLangs.set('Q145', ''); landLangs.set('Q408', '');
+    const langOf = q => {
+      const rs = origins.filter(r => qid(r.item.value) === q);
+      for (const k of ['origin', 'citizen', 'own']) for (const r of rs) { const c = r[k] && qid(r[k].value); if (c && landLangs.has(c)) return landLangs.get(c); }
+      return null;
+    };
+    const wantCodes = [...new Set(part.map(langOf).filter(Boolean).flatMap(c => (c === 'zh-hans' ? ['zh-hans', 'zh'] : [c])))];
+    const localLabels = wantCodes.length ? await sparql(`SELECT ?item ?l WHERE { VALUES ?item { ${values} } { ?item rdfs:label ?l } UNION { ?item wdt:P1476 ?l } FILTER(LANG(?l) IN (${wantCodes.map(c => `"${c}"`).join(',')})) }`) : [];
     for (const q of part) {
       const b = basics.filter(r => qid(r.item.value) === q);
       if (!b.length) continue;
@@ -152,6 +173,16 @@ try {
         country: country?.id ?? null, countryName: country?.name ?? null,
         lon: coord?.lon ?? null, lat: coord?.lat ?? null,
         links: +(val(b[0], 'links') ?? 0),
+        native: (() => {
+          const code = langOf(q);
+          if (!code) return [];
+          const name = b[0].article ? decodeURIComponent(b[0].article.value.split('/wiki/')[1]).replace(/_/g, ' ').replace(/ \(.*\)$/, '') : '';
+          // The shortest name in that language reads best ("De Nachtwacht", not the 150-character catalogue title).
+          const ls = localLabels.filter(r => qid(r.item.value) === q && (r.l['xml:lang'] === code || (code === 'zh-hans' && r.l['xml:lang'] === 'zh'))).map(r => r.l.value).sort((x, y) => x.length - y.length);
+          const text = ls[0];
+          if (!text || text.toLowerCase() === name.toLowerCase()) return [];
+          return [{ name: text, lang: LANG_NAMES[code] ?? LANG_NAMES[code.split('-')[0]] ?? code, code }];
+        })(),
       };
     }
   }
@@ -173,7 +204,7 @@ for (const x of Object.values(items)) if (x.city && fixes._cities?.[x.city]) x.c
 // A museum set by hand replaces Wikidata's, and its article with it (unless the fix names the article too).
 for (const [q, f] of Object.entries(fixes)) if (items[q] && !q.startsWith('_')) Object.assign(items[q], 'museum' in f && !('museumWiki' in f) ? { museumWiki: null } : {}, f);
 
-writeFileSync(OUT, JSON.stringify({ source: 'Wikidata (CC0)', items }));
+writeFileSync(OUT, JSON.stringify(addChinese({ source: 'Wikidata (CC0)', items })));
 const missing = ids.filter(q => !items[q]);
 console.log(`${files.length} list(s), ${ids.length} entries → ${relative(ROOT, OUT)}${missing.length ? ` (no facts for ${missing.join(', ')})` : ''}`);
 for (const [q, x] of Object.entries(items)) {

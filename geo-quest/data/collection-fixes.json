@@ -1,5 +1,5 @@
 {
- "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museumWiki (the museum's Wikipedia title), museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district.",
+ "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museumWiki (the museum's Wikipedia title), native (its name in its own language: [{name, lang, code}], [] for none), museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district.",
  "_cities": {
   "Saint-Germain-l'Auxerrois": "Paris",
   "Greater London": "London",
@@ -10,7 +10,14 @@
   "Hase": "Kamakura"
  },
  "Q12418": {
-  "nameThe": "the Mona Lisa"
+  "nameThe": "the Mona Lisa",
+  "native": [
+   {
+    "name": "La Gioconda",
+    "lang": "Italian",
+    "code": "it"
+   }
+  ]
  },
  "Q151952": {
   "culture": "ancient Greeks"
@@ -19,13 +26,27 @@
   "artists": [
    "Auguste Rodin"
   ],
-  "nameThe": "The Thinker"
+  "nameThe": "The Thinker",
+  "native": [
+   {
+    "name": "Le Penseur",
+    "lang": "French",
+    "code": "fr"
+   }
+  ]
  },
  "Q219831": {
   "museum": "Rijksmuseum",
   "city": "Amsterdam",
   "lon": 4.885,
-  "lat": 52.36
+  "lat": 52.36,
+  "native": [
+   {
+    "name": "De Nachtwacht",
+    "lang": "Dutch",
+    "code": "nl"
+   }
+  ]
  },
  "Q26082": {
   "culture": "Babylonians",
@@ -50,7 +71,14 @@
  },
  "Q9048095": {
   "culture": "ancient Egyptians",
-  "nameThe": "the Mask of Tutankhamun"
+  "nameThe": "the Mask of Tutankhamun",
+  "native": [
+   {
+    "name": "قناع توت عنخ آمون",
+    "lang": "Arabic",
+    "code": "ar"
+   }
+  ]
  },
  "Q582172": {
   "nameThe": "the Nefertiti Bust"
@@ -134,7 +162,14 @@
   "country": "Q884",
   "countryName": "South Korea",
   "lon": 126.98,
-  "lat": 37.524
+  "lat": 37.524,
+  "native": [
+   {
+    "name": "금동미륵보살반가사유상",
+    "lang": "Korean",
+    "code": "ko"
+   }
+  ]
  },
  "Q509806": {
   "name": "Washington Crossing the Delaware",
@@ -166,14 +201,28 @@
   "countryName": "Mexico",
   "nameThe": "the Olmec colossal heads",
   "year": -1200,
-  "plural": true
+  "plural": true,
+  "native": [
+   {
+    "name": "Cabezas colosales olmecas",
+    "lang": "Spanish",
+    "code": "es"
+   }
+  ]
  },
  "Q79961": {
   "artists": [
    "Paul Landowski"
   ],
   "museum": "Corcovado mountain",
-  "museumWiki": "Corcovado"
+  "museumWiki": "Corcovado",
+  "native": [
+   {
+    "name": "Cristo Redentor",
+    "lang": "Portuguese",
+    "code": "pt"
+   }
+  ]
  },
  "Q20350": {
   "culture": "Rapa Nui people",
@@ -181,9 +230,47 @@
   "lon": -109.35,
   "lat": -27.12,
   "nameThe": "the moai of Easter Island",
-  "plural": true
+  "plural": true,
+  "native": []
  },
  "Q2040958": {
-  "culture": "Rapa Nui people"
+  "culture": "Rapa Nui people",
+  "native": []
+ },
+ "Q128910": {
+  "native": [
+   {
+    "name": "L'Ultima Cena",
+    "lang": "Italian",
+    "code": "it"
+   }
+  ]
+ },
+ "Q500242": {
+  "native": [
+   {
+    "name": "Creazione di Adamo",
+    "lang": "Italian",
+    "code": "it"
+   }
+  ]
+ },
+ "Q321303": {
+  "native": [
+   {
+    "name": "De Tuin der Lusten",
+    "lang": "Dutch",
+    "code": "nl"
+   }
+  ]
+ },
+ "Q45585": {
+  "native": [
+   {
+    "name": "De sterrennacht",
+    "lang": "Dutch",
+    "code": "nl"
+   }
+  ]
  }
 }
