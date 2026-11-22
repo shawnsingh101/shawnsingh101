@@ -46,12 +46,12 @@ export function scopeTopics(scope: Scope) {
 
 /** Countries a site, peak, range, river or lake is in (from its country list / facts), as country ids. */
 export function placeCountries(ds: Dataset, p: Place): string[] {
-  const list = p.layer === 'site' || p.layer === 'peak' ? p.countryName ?? '' : (p.facts ?? '').split(' · ').pop() ?? '';
+  const list = p.layer === 'site' || p.layer === 'peak' || p.layer === 'art' ? p.countryName ?? '' : (p.facts ?? '').split(' · ').pop() ?? '';
   const byName = new Map(ds.countries.map(c => [c.name, c.id]));
   return list.replace(/…$/, '').split(/, | and /).map(n => byName.get(n.trim())).filter((x): x is string => !!x);
 }
 /** Layers where "just one country" makes sense as a filter (World Heritage in China, peaks in Nepal…). */
-export const COUNTRY_FILTER_LAYERS = ['site', 'peak', 'range', 'river', 'lake'];
+export const COUNTRY_FILTER_LAYERS = ['site', 'peak', 'range', 'river', 'lake', 'art'];
 
 export function quizPool(ds: Dataset, scope: Scope, topics: Topic[], country?: string | null) {
   const cards = scopeGroups(scope).flatMap(g => g.topics.filter(t => topics.includes(t.id)).flatMap(t => cardsForNode(ds, nodeId(g.id, t.id))));

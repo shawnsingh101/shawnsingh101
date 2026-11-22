@@ -1247,7 +1247,7 @@ console.log('Finding states & provinces for sites and peaks…');
 // ---- regions inside a country (data/subdivisions.json): prefectures, counties… ----
 console.log('Querying Wikidata for regions inside countries…');
 const subCfg = JSON.parse(readFileSync(join(ROOT, 'data/subdivisions.json'), 'utf8')).sections;
-const subShapes = JSON.parse(readFileSync(join(ROOT, 'public/data/shapes-sub.json'), 'utf8')).objects.places.geometries.map(g => g.properties);
+const subShapes = JSON.parse(readFileSync(join(ROOT, 'public/data/shapes-sub.json'), 'utf8')).objects.places.geometries.map(g => g.properties).filter(p => /^Q\d+$/.test(p.id)); // skip helper outlines ('Q22424-outline')
 const subGroupCfg = Object.fromEntries(subCfg.flatMap(cfg => cfg.groups.map(g => [g.id, cfg])));
 const subs = await fetchPlaces(subShapes.map(x => x.id), 'sub', id => {
   const grp = subShapes.find(x => x.id === id).group, cfg = subGroupCfg[grp];
@@ -1261,20 +1261,47 @@ for (const b of await sparql(CAPITAL_Q.replace('%IDS%', [...subs.keys()].map(q =
     image: file(v(b, 'capImg')) || null, ...point(v(b, 'capCoord')),
     wiki: v(b, 'capArticle') ? decodeURIComponent(v(b, 'capArticle').split('/wiki/')[1]) : null });
 }
-const parentName = id => countries.get(id)?.name ?? states.get(id)?.name ?? null;
+const parentName = id => countries.get(id)?.name ?? states.get(id)?.name ?? subs.get(id)?.name ?? null; // a district's parent can itself be a region (Punjab)
 for (const p of subs.values()) {
   const o = overrides[p.id];
   if (o?.name) p.name = o.name;
+  if (/district$/i.test(p.name)) p.name = p.name.replace(/ District$/, ' district'); // "Jalandhar District" / "Sangrur district": one style
   if (!p.capitals.length && o?.capital) p.capitals.push({ ...o.capital, preferred: false, role: null }); // only fills a gap in Wikidata
   if (o?.capitalNote) p.capitalNote = o.capitalNote;
+  if (o?.capitalKeep && p.capitals.some(x => x.id === o.capitalKeep)) p.capitals = p.capitals.filter(x => x.id === o.capitalKeep); // a second seat that isn't the capital people mean (Belagavi)
   const pref = p.capitals.filter(x => x.preferred);
   p.capitals = (pref.length ? pref : p.capitals).sort((a, b) => a.name.localeCompare(b.name));
   p.capitalAnswer = p.capitals.map(x => x.name).reduce(andJoin, '') || null;
   p.parentName = parentName(p.parent);
-  p.facts = `${p.noun.charAt(0).toUpperCase() + p.noun.slice(1)} of ${p.parentName}`;
+  const cfgOf = subGroupCfg[p.group];
+  const grpName = cfgOf.groups.length > 1 ? cfgOf.groups.find(g => g.id === p.group)?.name : null; // "Jalandhar division", "Kantō"
+  p.facts = [`${p.noun.charAt(0).toUpperCase() + p.noun.slice(1)} of ${p.parentName}`, grpName].filter(Boolean).join(' · ');
   if (!p.capitalAnswer) warnings.push(`${p.name}: no ${p.capWord} in Wikidata`);
 }
-const subMeta = subCfg.map(({ source, _readme, groups, ...cfg }) => ({ ...cfg, groups: groups.map(({ id, name }) => ({ id, name })) }));
+// Local names in each country's own script (Punjab: Gurmukhi, Japan: kanji, Uzbekistan: Uzbek…), for regions and capitals.
+{
+  const langsOf = p => subGroupCfg[p.group]?.nativeLangs ?? [];
+  const items = [...subs.values()].flatMap(p => [{ obj: p, id: p.id, langs: langsOf(p) }, ...p.capitals.filter(c => c.id).map(c => ({ obj: c, id: c.id, langs: langsOf(p) }))]).filter(x => x.langs.length);
+  const codes = [...new Set(items.flatMap(x => x.langs.map(l => l[0])))];
+  const labels = {};
+  for (let i = 0; i < items.length; i += 200)
+    for (const b of await sparql(`SELECT ?c ?l WHERE { VALUES ?c { ${[...new Set(items.slice(i, i + 200).map(x => `wd:${x.id}`))].join(' ')} } ?c rdfs:label ?l FILTER(lang(?l) IN (${codes.map(x => `"${x}"`).join(',')})) }`))
+      (labels[qid(v(b, 'c'))] ??= {})[b.l['xml:lang']] = v(b, 'l');
+  for (const x of items) {
+    const out = [];
+    for (const [code, lang] of x.langs) {
+      let l = labels[x.id]?.[code];
+      if (l && code === 'ja' && x.obj !== subs.get(x.id) && l.length > 2) l = l.replace(/[市町村]$/, ''); // 名古屋市 → 名古屋 (cities only; 愛知県 keeps 県)
+      if (l && l.toLowerCase() !== x.obj.name.toLowerCase() && !out.some(o => o.name === l)) out.push({ name: l, lang, code });
+    }
+    if (out.length) x.obj.native = out;
+  }
+  // Native-speaker recordings where Wikidata has them (otherwise the app uses the device's voice).
+  const withNames = items.filter(x => x.obj.native).map(x => x.obj);
+  await attachAudio(withNames);
+  for (const o of withNames) keep(o, o.native.map(n => n.code));
+}
+const subMeta = subCfg.map(({ source, _readme, groups, nativeLangs, ...cfg }) => ({ ...cfg, groups: groups.map(({ id, name }) => ({ id, name })) }));
 
 // ---- population (Wikidata P1082, best-ranked, latest) for countries, US states, Chinese provinces, regions, territories ----
 console.log('Querying Wikidata for populations…');

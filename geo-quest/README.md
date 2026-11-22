@@ -33,6 +33,33 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.11: Art, photos on note cards, faster maps
+
+- **Collections** (`collections/`, see its README): lists of Wikipedia things that become cards. The folder is the
+  subject (`Art/` → Library › Art), sub-folders are sections, each file is a deck, `## headings` say where a work comes
+  from. Write a work's English Wikipedia title; `npm run sync:collections` (`scripts/sync-collections.mjs`, also nightly)
+  writes its Wikidata id into the line and pulls the name, picture, artist or culture, date, museum, city, country and
+  position into `public/data/collections.json`. Hand fixes live in `data/collection-fixes.json`.
+- **Art › Famous works around the world**: 43 works from Europe, the Middle East, Africa, South & East Asia, the Americas
+  and Oceania. Cards: picture → name (only when Commons has a free image), who made it, where to see it (country on the
+  map, pin on the museum). A work in two lists keeps one set of progress.
+- Wikipedia photos on the example decks (cocktails, sacred places, Greek thinkers).
+- **Faster maps**: projected shapes are cached by map centre, the map starts centred on the first question (no draw-twice),
+  and world state borders are drawn just after the map appears. Opening a New Jersey quiz now does about half the drawing work (≈0.5 s of busy time instead of ≈1 s on a laptop).
+
+## v1.10: Punjab's districts, local scripts for regions
+
+- **Punjab (India) › 23 districts in 5 divisions** (Jalandhar, Patiala, Firozpur, Faridkot, Rupnagar), nested under
+  India. Borders from **OpenStreetMap** (new `osm` source in `data/subdivisions.json`: Overpass, by bounding box and
+  admin level; `groups[].ids` assigns districts to divisions; `OSM_FILE` reuses a saved response). Ways are stitched
+  into rings and rounded to ~500 m. A merged `<parent>-outline` shape gives a bold outline that matches the districts.
+  Headquarters cards appear where the town's name differs from the district's (Mohali, Nawanshahr, Tarn Taran Sahib).
+- A quiz draws one level of regions at a time (Punjab's districts *or* India's states), so they never cover each other.
+- **Local names for regions and their capitals** in each country's script (`nativeLangs`): Gurmukhi for Punjab, kanji for
+  Japan, Uzbek, Hindi for India's states; recordings where Wikidata has them, else the device voice.
+- `capitalKeep` override (Karnataka → Bengaluru, Maharashtra → Mumbai) with notes; notes for real two-capital states.
+- Empty skills / question types are hidden (Punjab divisions whose headquarters all share the district's name).
+
 ## v1.9: river drill-down, states and sources
 
 - **Rivers form a tree** like places: Rivers › Rivers of Europe / Asia & Oceania / Africa / the Americas, and

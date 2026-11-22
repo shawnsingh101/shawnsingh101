@@ -194,6 +194,45 @@ for (const cfg of subCfg) {
   if (cfg.source.type === 'ne-admin1') {
     for (const f of admin1.features.filter(f => f.properties.adm0_a3 === cfg.source.adm0 && f.properties.wikidataid))
       subs.push({ type: 'Feature', geometry: f.geometry, properties: { id: f.properties.wikidataid, group: groupOf(f.properties.region) } });
+  } else if (cfg.source.type === 'osm') {
+    // OpenStreetMap boundary relations (Overpass), e.g. Punjab's districts. Members arrive as loose ways: stitch them into rings.
+    const [s0, w0, n0, e0] = [cfg.source.bbox[1], cfg.source.bbox[0], cfg.source.bbox[3], cfg.source.bbox[2]];
+    const q = `[out:json][timeout:90];rel["boundary"="administrative"]["admin_level"="${cfg.source.adminLevel}"](${s0},${w0},${n0},${e0});out geom;`;
+    let osm = null;
+    if (process.env.OSM_FILE && existsSync(process.env.OSM_FILE)) osm = JSON.parse(readFileSync(process.env.OSM_FILE, 'utf8'));
+    for (const host of ['overpass-api.de', 'overpass.kumi.systems', 'overpass.private.coffee']) {
+      if (osm) break;
+      try { const r = await fetch(`https://${host}/api/interpreter`, { method: 'POST', body: new URLSearchParams({ data: q }) }); if (r.ok) osm = await r.json(); } catch { /* try the next mirror */ }
+    }
+    if (!osm) throw new Error(`Overpass unavailable for ${cfg.section}`);
+    const stitch = ways => {
+      const pool = ways.map(w => w.slice()), rings = [];
+      const same = (a, b) => a[0] === b[0] && a[1] === b[1];
+      while (pool.length) {
+        let ring = pool.pop();
+        for (let guard = 0; !same(ring[0], ring[ring.length - 1]) && guard < 5000; guard++) {
+          const end = ring[ring.length - 1];
+          const i = pool.findIndex(w => same(w[0], end) || same(w[w.length - 1], end));
+          if (i < 0) break;
+          const w = pool.splice(i, 1)[0];
+          ring = ring.concat((same(w[0], end) ? w : w.reverse()).slice(1));
+        }
+        if (ring.length > 3 && same(ring[0], ring[ring.length - 1])) rings.push(ring);
+      }
+      return rings;
+    };
+    const want = new Set(cfg.groups.flatMap(g => g.ids ?? []));
+    for (const rel of osm.elements.filter(e => e.type === 'relation' && want.has(e.tags?.wikidata))) {
+      // Round to ~500 m: OSM is far more detailed than a quiz map needs. Neighbours share the same nodes, so they round alike.
+      const r3 = x => Math.round(x * 200) / 200;
+      const outer = rel.members.filter(m => m.type === 'way' && m.role !== 'inner' && m.geometry)
+        .map(m => m.geometry.map(p => [r3(p.lon), r3(p.lat)]).filter((p, i, a) => !i || p[0] !== a[i - 1][0] || p[1] !== a[i - 1][1]));
+      const rings = stitch(outer);
+      if (!rings.length) { console.warn(`  ${cfg.section}: could not close the outline of ${rel.tags.name}`); continue; }
+      subs.push({ type: 'Feature', geometry: { type: 'MultiPolygon', coordinates: rings.map(r => [r]) }, properties: { id: rel.tags.wikidata, group: cfg.groups.find(g => g.ids?.includes(rel.tags.wikidata)).id } });
+      // The same shape again under '<parent>-outline': build() merges these into one outline that matches the districts exactly.
+      subs.push({ type: 'Feature', geometry: { type: 'MultiPolygon', coordinates: rings.map(r => [r]) }, properties: { id: `${cfg.country}-outline`, group: cfg.groups[0].id } });
+    }
   } else if (cfg.source.type === 'us-counties') {
     // US Census counties via us-atlas (lon/lat TopoJSON); US_ATLAS=/path/counties-10m.json reuses a download.
     const usa = process.env.US_ATLAS && existsSync(process.env.US_ATLAS) ? JSON.parse(readFileSync(process.env.US_ATLAS, 'utf8'))

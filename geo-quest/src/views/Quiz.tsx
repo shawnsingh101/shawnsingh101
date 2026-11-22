@@ -40,7 +40,7 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
     return pick && g?.alsoInSections?.some(sec => pick.sections.includes(sec)) ? pick : own;
   })();
 
-  const offered = scopeTopics(scope);
+  const offered = scopeTopics(scope).filter(t => quizPool(ds, scope, [t.id]).length > 0); // no empty question types (Punjab districts whose headquarters share their name)
   // Only questions this area offers count; if none are left (Countries → Rivers), take its first.
   const valid = picked.filter(t => offered.some(o => o.id === t));
   const topics: Topic[] = valid.length ? valid : offered.length ? [offered[0].id] : [];

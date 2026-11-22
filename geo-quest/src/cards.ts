@@ -7,11 +7,12 @@ import type { IconName } from './components/Icons';
 
 export type Kind = 'locate' | 'identify' | 'capital' | 'capitalReverse' | 'capitalLocate' | 'flag' | 'flagReverse' | 'senator' | 'senatorFace' | 'senatorLocate'
   | 'currency' | 'currencyReverse' | 'largestCity' | 'largestCityReverse' | 'belongsTo'
-  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse' | 'note';
-export type Topic = 'countries' | 'places' | 'capitals' | 'flags' | 'senate' | 'governors' | 'leaders' | 'currency' | 'cities' | 'sovereign' | 'sites' | 'peaks' | 'highest' | 'notes';
+  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse' | 'note' | 'artPhoto' | 'artMaker' | 'artWhere';
+export type Topic = 'countries' | 'places' | 'capitals' | 'flags' | 'senate' | 'governors' | 'leaders' | 'currency' | 'cities' | 'sovereign' | 'sites' | 'peaks' | 'highest' | 'notes' | 'art';
 
 export const TOPIC_KINDS: Record<Topic, Kind[]> = {
   notes: ['note'],
+  art: ['artPhoto', 'artMaker', 'artWhere'],
   countries: ['locate', 'identify'],
   places: ['locate', 'identify'],
   capitals: ['capital', 'capitalReverse', 'capitalLocate'],
@@ -31,7 +32,7 @@ export const TOPIC_KINDS: Record<Topic, Kind[]> = {
 export const TAP_KINDS: Kind[] = ['locate', 'capitalLocate', 'senatorLocate', 'siteLocate'];
 
 export const KIND_LABEL: Record<Kind, string> = {
-  note: 'Card',
+  note: 'Card', artPhoto: 'Picture → name', artMaker: 'Who made it?', artWhere: 'Where is it?',
   locate: 'Find it on the map', identify: 'Name it', capital: 'Name the capital',
   capitalReverse: 'Capital → name', capitalLocate: 'Capital → map', flag: 'Name the flag', flagReverse: 'Picture the flag',
   senator: 'Name the person', senatorFace: 'Who is this?', senatorLocate: 'Person → map',
@@ -47,6 +48,8 @@ export function fingerprint(kind: Kind, c: Place) {
   if (kind.startsWith('currency')) return `${c.name}|${c.currency?.map(x => x.name).join('/')}`;
   if (kind.startsWith('largestCity')) return `${c.name}|${c.largestCity?.name}`;
   if (kind.startsWith('highest')) return `${c.name}|${c.highest?.name}`;
+  if (kind === 'artMaker') return `${c.name}|${makerOf(c)}`;
+  if (kind === 'artWhere') return `${c.name}|${c.museum}|${c.countryName}`;
   return c.name;
 }
 
@@ -62,7 +65,8 @@ export interface Group {
   id: string; section: string; name: string; layer: Place['layer'];
   subregions?: string[]; topics: TopicSlot[]; note?: string;
   requires?: string;   // a node from another group that must be half-known first (e.g. great rivers → more rivers)
-  alsoInSections?: string[]; // also listed in these sections (Rivers of the United States shows under Rivers too)
+  alsoInSections?: string[];
+  nouns?: string;      // what its places are called ("districts", "prefectures"), for regions inside a country // also listed in these sections (Rivers of the United States shows under Rivers too)
 }
 
 const COUNTRY_TOPICS: TopicSlot[] = [
@@ -178,7 +182,7 @@ export function registerSubdivisions(sections: SubSection[]) {
     const cap = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
     for (const g of s.groups) if (!GROUPS.some(x => x.id === g.id)) GROUPS.push({
       id: g.id, section: s.section, name: g.name, layer: 'sub',
-      topics: [{ id: 'places', name: cap(s.nouns), icon: 'map' }, { id: 'capitals', name: cap(s.capital) + 's', icon: 'landmark', requires: 'places' }],
+      nouns: s.nouns, topics: [{ id: 'places', name: cap(s.nouns), icon: 'map' }, { id: 'capitals', name: cap(s.capital) + (/s$/.test(s.capital) ? '' : 's'), icon: 'landmark', requires: 'places' }],
       note: g.id === s.groups[0].id ? `The ${s.nouns} of ${s.section} and their ${s.capital}s. Borders come from ${s.id === 'nj' ? 'the US Census' : 'Natural Earth'}; facts from Wikidata.` : undefined,
     });
   }
@@ -213,6 +217,9 @@ export function kindApplies(k: Kind, c: Place) {
   if (k.startsWith('capital') && c.layer === 'sub' && c.capitals[0] && c.name.startsWith(c.capitals[0].name)) return false;
   if (k === 'siteCountry' && countryCount(c) > 3) return false; // "in Moldova, Ukraine, Latvia… and Norway" isn't a fair question
   if (k === 'highestReverse') return !!c.highest && !c.highestShared;
+  if (k === 'artPhoto') return !!c.image; // a free picture on Commons (a modern painting under copyright has none to show as the question)
+  if (k === 'artMaker') return !!makerOf(c);
+  if (k === 'artWhere') return !!(c.museum || c.countryName);
   if (k === 'currencyReverse') return !!c.currency?.some(x => x.shared === 1); // "the euro is the currency of…" has 20 answers
   return true;
 }
@@ -243,6 +250,7 @@ export function kindsFor(p: Place): Kind[] {
   if (p.layer === 'note') return ['note'];
   if (p.layer === 'senate') return TOPIC_KINDS.senate.filter(k => kindApplies(k, p));
   if (p.layer === 'site' || p.layer === 'peak') return TOPIC_KINDS.sites.filter(k => kindApplies(k, p));
+  if (p.layer === 'art') return TOPIC_KINDS.art.filter(k => kindApplies(k, p));
   const ks: Kind[] = ['locate', 'identify'];
   if (p.capitalAnswer) ks.push(...TOPIC_KINDS.capitals.filter(k => kindApplies(k, p)));
   if (p.layer === 'terr') ks.push('belongsTo');
@@ -270,7 +278,7 @@ export interface CardFace {
   answerFlag?: boolean;           // the answer is the flag picture itself
   promptFlag?: boolean;           // show the flag as the question
   map: 'none' | 'highlight' | 'tap' | 'reveal'; // reveal: map shows the wider area, then zooms to the answer when flipped
-  picture?: { file?: string | null; wiki?: string | null; url?: string | null; caption: string };
+  picture?: { file?: string | null; wiki?: string | null; url?: string | null; caption: string; single?: boolean };
   frontBack?: boolean;            // a note card's front :: back: the answer appears below the question
   promptPicture?: boolean; // show the picture as the question (World Heritage photo cards)
   note?: string | null;
@@ -278,8 +286,12 @@ export interface CardFace {
   hidePostUntilReveal?: boolean;                          // e.g. "…, the senior senator from New York." only after reveal
 }
 
+/** Who made an artwork: its artist(s), else the culture ("the Olmec"). */
+export const makerOf = (c: Place) => (c.artists?.length ? c.artists.reduce((acc, x, i, a) => (!i ? x : acc + (i === a.length - 1 ? ' and ' : ', ') + x), '') : c.culture ? `the ${c.culture}` : null);
+const artPic = (c: Place) => ({ file: c.image, wiki: c.wiki, caption: c.name, single: !!c.image });
+const artNote = (c: Place, withMaker: boolean) => [withMaker && makerOf(c) ? `By ${makerOf(c)}` : null, c.facts].filter(Boolean).join(' · ') || null;
 const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-const noun = (p: Place) => ({ country: 'country', water: 'body of water', river: 'river', lake: 'lake', cn: p.type ?? 'region', us: 'state', senate: 'senator', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range', sub: p.noun ?? 'region', note: 'card' })[p.layer];
+const noun = (p: Place) => ({ country: 'country', water: 'body of water', river: 'river', lake: 'lake', cn: p.type ?? 'region', us: 'state', senate: 'senator', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range', sub: p.noun ?? 'region', note: 'card', art: 'work' })[p.layer];
 
 function rawFace(ref: CardRef): CardFace {
   const c = ref.country;
@@ -371,6 +383,15 @@ function rawFace(ref: CardRef): CardFace {
     }
     case 'flagReverse':
       return { mode: 'reveal', pre: `The flag of ${c.name} looks like `, blank: 'what?', post: '', answer: '', answerFlag: true, map: 'none', note };
+    // Artworks: the picture, who made it, where it is now.
+    case 'artPhoto':
+      return { mode: 'reveal', pre: c.plural ? 'These are ' : 'This is ', blank: 'what?', post: '.', answer: c.nameThe ?? c.name, map: 'none', note: artNote(c, true), picture: artPic(c), promptPicture: true };
+    case 'artMaker': {
+      const v = /paint|fresco|print|drawing|mural/i.test(c.facts ?? '') ? 'painted' : /statue|sculpt|bust|bronze|cast/i.test(c.facts ?? '') ? 'sculpted' : 'made';
+      return { mode: 'reveal', pre: `${c.nameThe ?? c.name} ${c.plural ? 'were' : 'was'} ${v} by `, blank: c.artists?.length ? 'whom?' : 'which people?', post: '.', answer: makerOf(c)!, map: 'none', note: artNote(c, false), picture: artPic(c) };
+    }
+    case 'artWhere':
+      return { mode: 'reveal', pre: `You can see ${c.nameThe ?? c.name} `, blank: 'where?', post: '.', answer: c.museum ? `${/^Corcovado/.test(c.museum) ? 'on' : /^the |museum|gallery|institute|belvedere|rijksmuseum|mauritshuis/i.test(c.museum) ? 'at' : 'in'} ${c.museum}${c.countryName && !c.museum.includes(c.countryName) ? ` (${c.countryName})` : ''}` : `in ${c.countryName}`, map: c.country ? 'reveal' : 'none', note: artNote(c, true), picture: artPic(c) };
     case 'note': // a note card whose deck text is missing
       return { mode: 'reveal', pre: c.name, blank: '', post: '', answer: '', map: 'none', note: null };
   }
@@ -396,7 +417,7 @@ export function face(ref: CardRef): CardFace {
 }
 
 /** Which extra map layer a card needs. */
-export const layerFor = (p: Place) => (p.layer === 'country' || p.layer === 'note' ? null : p.layer === 'site' ? 'site' : p.layer === 'peak' ? 'peak' : p.layer === 'senate' ? (p.topic === 'leaders' ? null : 'us') : p.layer);
+export const layerFor = (p: Place) => (p.layer === 'country' || p.layer === 'note' || p.layer === 'art' ? null : p.layer === 'site' ? 'site' : p.layer === 'peak' ? 'peak' : p.layer === 'senate' ? (p.topic === 'leaders' ? null : 'us') : p.layer);
 
 export function shuffle<T>(a: T[]): T[] {
   const b = [...a];
@@ -405,18 +426,18 @@ export function shuffle<T>(a: T[]): T[] {
 }
 
 /** Plural noun and icon for a layer, for headings and lists. */
-export const LAYER_NOUN: Record<Place['layer'], string> = { note: 'cards', sub: 'regions', country: 'countries', water: 'waters', river: 'rivers', lake: 'lakes', cn: 'divisions', us: 'states', senate: 'senators', terr: 'territories', site: 'sites', peak: 'peaks', range: 'ranges' };
-export const LAYER_ICON: Record<Place['layer'], IconName> = { note: 'book', sub: 'map', country: 'globe', water: 'wave', river: 'river', lake: 'drop', cn: 'map', us: 'map', senate: 'person', terr: 'pin', site: 'temple', peak: 'mountain', range: 'layers' };
+export const LAYER_NOUN: Record<Place['layer'], string> = { note: 'cards', art: 'works', sub: 'regions', country: 'countries', water: 'waters', river: 'rivers', lake: 'lakes', cn: 'divisions', us: 'states', senate: 'senators', terr: 'territories', site: 'sites', peak: 'peaks', range: 'ranges' };
+export const LAYER_ICON: Record<Place['layer'], IconName> = { note: 'book', art: 'image', sub: 'map', country: 'globe', water: 'wave', river: 'river', lake: 'drop', cn: 'map', us: 'map', senate: 'person', terr: 'pin', site: 'temple', peak: 'mountain', range: 'layers' };
 
 // ---- question directions ------------------------------------------------------------
 /** "What is this?" — you're shown the place/flag/capital and name it.
  *  "Where / what is it?" — you're given the name and find it, or name its capital/flag. */
 export const DIRECTIONS: { id: 'recognise' | 'recall'; name: string; hint: string; kinds: Kind[] }[] = [
-  { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse', 'senatorFace', 'currencyReverse', 'largestCityReverse', 'sitePhoto', 'highestReverse'] },
-  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest'] },
+  { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse', 'senatorFace', 'currencyReverse', 'largestCityReverse', 'sitePhoto', 'highestReverse', 'artPhoto'] },
+  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest', 'artMaker', 'artWhere'] },
 ];
 export const KIND_SHORT: Record<Kind, string> = {
-  note: 'Note card',
+  note: 'Note card', artPhoto: 'Picture → name', artMaker: 'Work → artist', artWhere: 'Work → where it is',
   identify: 'Map → name', flag: 'Flag → country', capitalReverse: 'Capital → country',
   locate: 'Name → map', capitalLocate: 'Capital → map', capital: 'Country → capital', flagReverse: 'Country → flag',
   senatorFace: 'Photo → person', senator: 'Office → person', senatorLocate: 'Person → map',
@@ -426,6 +447,6 @@ export const KIND_SHORT: Record<Kind, string> = {
 /** The skill-tree node a card belongs to. */
 export function nodeOfCard(ref: CardRef): string {
   const g = groupOf(ref.country);
-  const topic: Topic = ref.kind === 'note' ? 'notes' : ref.kind.startsWith('highest') ? 'highest' : ref.kind.startsWith('site') ? (ref.country.layer === 'peak' ? 'peaks' : 'sites') : ref.kind === 'belongsTo' ? 'sovereign' : ref.kind.startsWith('senator') ? (ref.country.topic ?? 'senate') : ref.kind.startsWith('currency') ? 'currency' : ref.kind.startsWith('largestCity') ? 'cities' : ref.kind.startsWith('capital') ? 'capitals' : ref.kind.startsWith('flag') ? 'flags' : g.layer === 'country' ? 'countries' : 'places';
+  const topic: Topic = ref.kind === 'note' ? 'notes' : ref.kind.startsWith('art') ? 'art' : ref.kind.startsWith('highest') ? 'highest' : ref.kind.startsWith('site') ? (ref.country.layer === 'peak' ? 'peaks' : 'sites') : ref.kind === 'belongsTo' ? 'sovereign' : ref.kind.startsWith('senator') ? (ref.country.topic ?? 'senate') : ref.kind.startsWith('currency') ? 'currency' : ref.kind.startsWith('largestCity') ? 'cities' : ref.kind.startsWith('capital') ? 'capitals' : ref.kind.startsWith('flag') ? 'flags' : g.layer === 'country' ? 'countries' : 'places';
   return nodeId(g.id, topic);
 }

@@ -14,9 +14,10 @@ import { dataUrl } from '../data';
 // provinces are only fetched the first time they're shown.
 type Extra = Exclude<Layer, 'country'>;
 const cache: Partial<Record<Layer, Promise<Topology>>> = {};
-const loadLayer = (l: Layer) => (cache[l] ??= l === 'country'
+const loaded: Partial<Record<Layer, Topology>> = {}; // already here: a new map starts with them, no blank frame
+const loadLayer = (l: Layer) => (cache[l] ??= (l === 'country'
   ? import('world-atlas/countries-50m.json').then(m => m.default as unknown as Topology)
-  : fetch(dataUrl(`shapes-${l}.json`)).then(r => r.json()));
+  : fetch(dataUrl(`shapes-${l}.json`)).then(r => r.json())).then((t: Topology) => (loaded[l] = t)));
 
 // State / province borders (all countries, Natural Earth admin-1): only fetched once you zoom in, as a bearing.
 let admin1P: Promise<Topology> | null = null;
@@ -41,6 +42,7 @@ interface Props {
   dim?: (placeId: string) => boolean;   // fade places outside the current question's region
   strong?: (placeId: string) => boolean; // regions being studied: solid, darker borders (Uzbekistan's regions in an Uzbekistan quiz)
   outline?: string[];                    // places drawn with a bold outline on top (the country those regions belong to)
+  subFilter?: (placeId: string) => boolean; // which regions-inside-a-country to draw (one level at a time: Punjab's districts, not also India's states)
   onTap?: (hit: MapHit) => void;
   onHover?: (hit: MapHit | null, x: number, y: number) => void; // mouse only
   className?: string;
@@ -85,6 +87,19 @@ function meanLon(lons: number[]) {
   return Math.round((Math.atan2(y, x) * 180) / Math.PI / 5) * 5; // snap to 5° so small moves don't re-draw
 }
 
+// Projecting a layer is the slow part of drawing the map (the world at 1:50m, every county…). The result only depends
+// on where the map is centred, so keep it: switching cards, quizzes or pages re-uses it instead of projecting again.
+const shapeCache = new Map<string, Shape[]>();
+const admin1Cache = new Map<number, string>();
+function cachedShapes(topo: Topology, layer: Layer, lambda: number, path: ReturnType<typeof geoPath>, resolve: (f: Feat) => string | null): Shape[] {
+  const key = `${layer}|${lambda}`;
+  let v = shapeCache.get(key);
+  if (!v) {
+    v = toShapes(topo, layer, path, resolve); shapeCache.set(key, v);
+    if (shapeCache.size > 30) shapeCache.delete(shapeCache.keys().next().value!); // keep the most recent few centrings
+  }
+  return v;
+}
 function toShapes(topo: Topology, layer: Layer, path: ReturnType<typeof geoPath>, resolve: (f: Feat) => string | null): Shape[] {
   return features(topo).map((f, i) => {
     // Frame and label each place by its largest piece (France = mainland France, not French Guiana).
@@ -101,12 +116,12 @@ function toShapes(topo: Topology, layer: Layer, path: ReturnType<typeof geoPath>
   });
 }
 
-export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], target, focus, dim, strong, outline = [], onTap, onHover, className, recenter = false, hide, detailByZoom = false }: Props) {
+export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], target, focus, dim, strong, outline = [], subFilter, onTap, onHover, className, recenter = false, hide, detailByZoom = false }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown>>();
   const [size, setSize] = useState({ w: 0, h: 0 });
-  const [topos, setTopos] = useState<Partial<Record<Layer, Topology>>>({});
+  const [topos, setTopos] = useState<Partial<Record<Layer, Topology>>>(() => ({ ...loaded }));
   const [t, setT] = useState<ZoomTransform>(zoomIdentity);
 
   const wanted: Layer[] = ['country', ...layers];
@@ -132,22 +147,31 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
     return m;
   }, [ds]);
 
-  const [lambda, setLambda] = useState(0);
+  // Start centred where the first question is (a map of New Jersey shouldn't be drawn for 0° first, then again for 75°W).
+  const [lambda, setLambda] = useState(() => (recenter && focus ? meanLon(focus.ids.map(id => ds.byId.get(id)?.lon).filter((l): l is number => l != null)) : 0));
   const recentered = useRef(false);
   const projection = useMemo(() => makeProjection(lambda), [lambda]);
   const path = useMemo(() => geoPath(projection), [projection]);
 
   const shapes = useMemo(() => {
     const out: Partial<Record<Layer, Shape[]>> = {};
-    if (topos.country) out.country = toShapes(topos.country, 'country', path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
-    for (const l of ['water', 'cn', 'us', 'terr', 'sub', 'range', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
+    if (topos.country) out.country = cachedShapes(topos.country, 'country', lambda, path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
+    for (const l of ['water', 'cn', 'us', 'terr', 'sub', 'range', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = cachedShapes(topos[l]!, l, lambda, path, f => (ds.byId.has(f.properties.id) || /-outline$/.test(f.properties.id ?? '') ? f.properties.id : null));
     return out;
-  }, [topos, shapeToCountry, ds, path]);
+  }, [topos, shapeToCountry, ds, path, lambda]);
 
   const zoomedIn = t.k >= fitScale(size) * 2.2;
   const [admin1, setAdmin1] = useState<Topology | null>(null);
   useEffect(() => { if (zoomedIn && !admin1) loadAdmin1().then(setAdmin1).catch(() => {}); }, [zoomedIn, admin1]);
-  const admin1D = useMemo(() => (admin1 ? path(feature(admin1, admin1.objects.b) as unknown as Feature<Geometry>) ?? '' : ''), [admin1, path]);
+  // The state borders of the whole world are a big drawing: make it after the map is on screen, and keep it.
+  const [admin1D, setAdmin1D] = useState('');
+  useEffect(() => {
+    if (!admin1) return;
+    const done = admin1Cache.get(lambda);
+    if (done != null) { setAdmin1D(done); return; }
+    const id = setTimeout(() => { const d = path(feature(admin1, admin1.objects.b) as unknown as Feature<Geometry>) ?? ''; admin1Cache.set(lambda, d); setAdmin1D(d); }, 50);
+    return () => clearTimeout(id);
+  }, [admin1, path, lambda]);
 
   const visible = useMemo(() => wanted.flatMap(l => shapes[l] ?? []), [shapes, wanted.join()]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -155,7 +179,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const dots = useMemo(() => {
     const out: Dot[] = [];
     const byPlace = new Map(visible.filter(s => s.placeId).map(s => [s.placeId!, s]));
-    const candidates = [...ds.countries, ...ds.places.filter(p => (p.layer === 'cn' || p.layer === 'us' || p.layer === 'terr' || p.layer === 'sub') && layers.includes(p.layer))];
+    const candidates = [...ds.countries, ...ds.places.filter(p => (p.layer === 'cn' || p.layer === 'us' || p.layer === 'terr' || p.layer === 'sub') && layers.includes(p.layer) && (p.layer !== 'sub' || !subFilter || subFilter(p.id)))];
     for (const c of candidates) {
       const s = byPlace.get(c.id);
       const tiny = !s || Math.max(s.bounds[1][0] - s.bounds[0][0], s.bounds[1][1] - s.bounds[0][1]) < (c.layer === 'sub' ? 0.25 : c.layer === 'cn' || c.layer === 'us' ? 1.5 : 4);
@@ -298,11 +322,16 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {shapes.cn && layers.includes('cn') && shapes.cn.map(s => shapeEl(s, 'land sub'))}
           {shapes.us && layers.includes('us') && shapes.us.map(s => shapeEl(s, 'land sub'))}
           {shapes.terr && layers.includes('terr') && shapes.terr.map(s => shapeEl(s, 'land sub terr'))}
-          {shapes.sub && layers.includes('sub') && shapes.sub.map(s => shapeEl(s, 'land sub'))}
+          {shapes.sub && layers.includes('sub') && shapes.sub.filter(s => !!s.placeId && !/-outline$/.test(s.placeId) && (!subFilter || subFilter(s.placeId))).map(s => shapeEl(s, 'land sub'))}
           {shapes.range && layers.includes('range') && shapes.range.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'range') : null))}
           {shapes.lake && layers.includes('lake') && shapes.lake.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'lake') : <path key={s.key} d={s.d} className="lake other" />))}
           {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(riverEl)}
-          {outline.map(id => visible.filter(s => s.placeId === id).map(s => <path key={'o' + s.key} d={s.d} className="focus-outline" />))}
+          {outline.map(id => {
+            // Prefer an outline built from the regions themselves (Punjab from its districts), so the edges line up.
+            const all = Object.values(shapes).flat() as Shape[];
+            const own = all.filter(s => s.placeId === `${id}-outline`);
+            return (own.length ? own : all.filter(s => s.placeId === id)).map(s => <path key={'o' + s.key} d={s.d} className="focus-outline" />);
+          })}
           {dots.map(d => (
             <g key={d.placeId} className={'dot' + cls(d.placeId)} {...events({ countryId: d.placeId, name: ds.byId.get(d.placeId)!.name })}>
               <circle cx={d.x} cy={d.y} r={13 / k} className="hit" />

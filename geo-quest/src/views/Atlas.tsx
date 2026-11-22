@@ -104,7 +104,7 @@ export function Atlas({ ds }: { ds: Dataset }) {
         <button key={gr.id} className="tile" onClick={() => setGroup(gr.id)}>
           {gr.layer === 'country' && <div className="tile-flags">{placesIn(ds, gr.id).slice(0, 6).map(c => <Flag key={c.id} file={c.flag ?? null} name={c.name} size={80} />)}</div>}
           {gr.layer !== 'country' && <div className="tile-glyph"><Icon name={LAYER_ICON[gr.layer]} size={28} /></div>}
-          <b>{gr.name}</b><small>{placesIn(ds, gr.id).length} {gr.layer === 'sub' ? nounOf(sec) : LAYER_NOUN[gr.layer]}</small>
+          <b>{gr.name}</b><small>{placesIn(ds, gr.id).length} {gr.nouns ?? LAYER_NOUN[gr.layer]}</small>
         </button>))}
         {kids.map(k => (
           <button key={k} className="tile in-depth-tile" onClick={() => { setSec(k); setGroup(null); }}>

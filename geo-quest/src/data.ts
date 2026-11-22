@@ -1,20 +1,21 @@
 import type { Change, Dataset, Layer, Place } from './types';
 import { groupOf, registerSubdivisions } from './cards';
 import { registerNotes } from './notes';
+import { registerCollections } from './collections';
 
 declare const __BUILD_ID__: string;
 export const dataUrl = (f: string) => `data/${f}?v=${__BUILD_ID__}`;
 
 export async function loadDataset(): Promise<Dataset> {
   const get = (f: string) => fetch(dataUrl(f)).then(r => r.json());
-  const [c, w, cn, rv, lk, us, sen, ld, la, tr, ws, pk, rg, ch, sb] = await Promise.all([
+  const [c, w, cn, rv, lk, us, sen, ld, la, tr, ws, pk, rg, ch, sb, col] = await Promise.all([
     get('countries.json'), get('water.json'), get('cn.json'), get('rivers.json'), get('lakes.json'), get('us.json'), get('senate.json'), get('leaders.json'), get('flag-lookalikes.json').catch(() => ({ groups: [] })), get('territories.json').catch(() => ({ places: [] })), get('sites.json').catch(() => ({ places: [] })), get('peaks.json').catch(() => ({ places: [] })), get('ranges.json').catch(() => ({ places: [] })),
-    get('changes.json').catch(() => []), get('subdivisions.json').catch(() => ({ sections: [], places: [] })),
+    get('changes.json').catch(() => []), get('subdivisions.json').catch(() => ({ sections: [], places: [] })), get('collections.json').catch(() => ({ items: {} })),
   ]);
   registerSubdivisions(sb.sections); // prefectures, counties…: sections, groups and skills come with the data
   const norm = (layer: Layer) => (p: Place) => ({ ...p, layer, capitals: p.capitals ?? [], capitalAnswer: p.capitalAnswer ?? null });
   const countries: Place[] = c.countries.filter((x: Place) => x.capitalAnswer && x.region).map(norm('country'));
-  const places = [...countries, ...w.places.map(norm('water')), ...cn.places.map(norm('cn')), ...rv.places.map(norm('river')), ...lk.places.map(norm('lake')), ...us.places.map(norm('us')), ...sen.places.map(norm('senate')), ...ld.places.map(norm('senate')), ...tr.places.map(norm('terr')), ...ws.places.map(norm('site')), ...pk.places.map(norm('peak')), ...rg.places.map(norm('range')), ...sb.places.map(norm('sub')), ...registerNotes()];
+  const places = [...countries, ...w.places.map(norm('water')), ...cn.places.map(norm('cn')), ...rv.places.map(norm('river')), ...lk.places.map(norm('lake')), ...us.places.map(norm('us')), ...sen.places.map(norm('senate')), ...ld.places.map(norm('senate')), ...tr.places.map(norm('terr')), ...ws.places.map(norm('site')), ...pk.places.map(norm('peak')), ...rg.places.map(norm('range')), ...sb.places.map(norm('sub')), ...registerNotes(), ...registerCollections(col.items, id => countries.find(x => x.id === id)?.name)];
   // A highest point shared by two countries (Everest, Mont Blanc) can't be asked in reverse.
   const hp = new Map<string, number>();
   for (const c of countries) if (c.highest) hp.set(c.highest.id, (hp.get(c.highest.id) ?? 0) + 1);
