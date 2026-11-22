@@ -18,6 +18,8 @@
  },
 
  "Q148": { "name": "China" },
+ "Q1006": { "largestCity": "Conakry", "_why": "GeoNames lists the Camayenne district of Conakry separately" },
+ "Q142": { "currencyCodes": ["EUR"], "_why": "the CFP franc is only used in overseas collectivities" },
  "Q668": { "nativeLangs": ["hin"] },
  "Q843": { "nativeLangs": ["urd"] },
  "Q35":  { "nativeLangs": ["dan"] },

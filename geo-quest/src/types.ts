@@ -43,6 +43,13 @@ export interface Place {
   // Senate seats (layer 'senate'): the place is the seat; these describe who holds it now.
   label?: string; state?: string; stateName?: string; rank?: 'senior' | 'junior';
   party?: string; partyLong?: string; since?: string; termEnd?: string; roles?: string[]; photo?: string;
+  topic?: 'senate' | 'governors' | 'leaders';   // which kind of office a seat is
+  place?: string; placeName?: string;           // the state/country the office belongs to
+  office?: string; rolePrefix?: string;         // "President of France", "President of"
+  noFace?: boolean;                             // same person already has a "who is this?" card (e.g. Charles III)
+  incoming?: { name: string; party: string | null; wiki: string | null; from: string }; // election winner taking over
+  currency?: { id: string; name: string; code: string | null; symbol: string | null; wiki: string | null; shared: number }[];
+  largestCity?: { name: string; population: number; lat: number; lon: number; image: string | null; wiki: string | null; isCapital: boolean };
 }
 export type Country = Place;
 

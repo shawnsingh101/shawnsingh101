@@ -1,17 +1,21 @@
 import type { Change, Dataset, Layer, Place } from './types';
+import { groupOf } from './cards';
 
 declare const __BUILD_ID__: string;
 export const dataUrl = (f: string) => `data/${f}?v=${__BUILD_ID__}`;
 
 export async function loadDataset(): Promise<Dataset> {
   const get = (f: string) => fetch(dataUrl(f)).then(r => r.json());
-  const [c, w, cn, rv, lk, us, sen, ch] = await Promise.all([
-    get('countries.json'), get('water.json'), get('cn.json'), get('rivers.json'), get('lakes.json'), get('us.json'), get('senate.json'),
+  const [c, w, cn, rv, lk, us, sen, ld, ch] = await Promise.all([
+    get('countries.json'), get('water.json'), get('cn.json'), get('rivers.json'), get('lakes.json'), get('us.json'), get('senate.json'), get('leaders.json'),
     get('changes.json').catch(() => []),
   ]);
   const norm = (layer: Layer) => (p: Place) => ({ ...p, layer, capitals: p.capitals ?? [], capitalAnswer: p.capitalAnswer ?? null });
   const countries: Place[] = c.countries.filter((x: Place) => x.capitalAnswer && x.region).map(norm('country'));
-  const places = [...countries, ...w.places.map(norm('water')), ...cn.places.map(norm('cn')), ...rv.places.map(norm('river')), ...lk.places.map(norm('lake')), ...us.places.map(norm('us')), ...sen.places.map(norm('senate'))];
+  const places = [...countries, ...w.places.map(norm('water')), ...cn.places.map(norm('cn')), ...rv.places.map(norm('river')), ...lk.places.map(norm('lake')), ...us.places.map(norm('us')), ...sen.places.map(norm('senate')), ...ld.places.map(norm('senate'))];
+  // World leaders learn alongside their country's region (e.g. Western Europe → Leaders).
+  const byIdTmp = new Map(places.map(x => [x.id, x]));
+  for (const p of places) if (p.topic === 'leaders') { const c = byIdTmp.get(p.place!); if (c) p.group = groupOf(c).id; }
   return { countries, places, byId: new Map(places.map(x => [x.id, x])), changes: ch as Change[] };
 }
 
