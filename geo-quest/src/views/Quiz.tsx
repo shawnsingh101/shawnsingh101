@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CONTINENTS, GROUPS, placesIn, childSections, sectionChain, type Topic } from '../cards';
+import { CONTINENTS, GROUPS, groupsShownIn, placesIn, childSections, sectionChain, type Topic } from '../cards';
 import { COUNTRY_FILTER_LAYERS, makeQuiz, placeCountries, quizKey, quizPool, quizTitle, scopeGroups, scopeTopics, type Scope } from '../quiz';
 import { skipped, useProgress } from '../srs';
 import { Icon, type IconName } from '../components/Icons';
@@ -18,7 +18,7 @@ const subjects = (): Subject[] => [
 const sectionOf = (scope: Scope) => (scope === 'world' ? null : scope.startsWith('sec:') ? scope.slice(4) : GROUPS.find(g => g.id === scope.slice(4))!.section);
 const subjectOf = (scope: Scope) => { const sec = sectionOf(scope); const top = sec ? sectionChain(sec)[0] : CONTINENTS[0]; return subjects().find(s => s.sections.includes(top))!; };
 /** The scope covering a whole section: all its groups, or its only group. */
-const allOf = (sec: string): Scope => { const gs = GROUPS.filter(g => g.section === sec); return gs.length === 1 ? `grp:${gs[0].id}` : `sec:${sec}`; };
+const allOf = (sec: string): Scope => { const gs = groupsShownIn(sec); return gs.length === 1 ? `grp:${gs[0].id}` : `sec:${sec}`; };
 const allScope = (sub: Subject): Scope => (sub.id === 'countries' ? 'world' : allOf(sub.sections[0]));
 const shortName = (name: string) => name.replace(/^(Rivers|Lakes) of /, '').replace(/ territories$/, '').replace(/^the /, '').replace(/^./, c => c.toUpperCase());
 const SAVED = 'geoquest:quiz-setup';
@@ -31,7 +31,14 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
   const [picked, setTopics] = useState<Topic[]>(saved?.topics ?? ['countries']);
   const [len, setLen] = useState<number | 'all'>(saved?.len ?? 25);
   const [pickedCountry, setCountry] = useState<string | null>(saved?.country ?? null);
-  const subject = subjectOf(scope);
+  // Which subject tile is selected: normally the one the area belongs to; a group listed in two places keeps the one you chose.
+  const [subjectPick, setSubjectPick] = useState<string | null>(null);
+  const subject = (() => {
+    const own = subjectOf(scope);
+    const pick = subjects().find(s => s.id === subjectPick);
+    const g = scope.startsWith('grp:') ? GROUPS.find(x => x.id === scope.slice(4)) : null;
+    return pick && g?.alsoInSections?.some(sec => pick.sections.includes(sec)) ? pick : own;
+  })();
 
   const offered = scopeTopics(scope);
   // Only questions this area offers count; if none are left (Countries → Rivers), take its first.
@@ -60,8 +67,10 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
 
   // Area: one row per level, e.g. Americas › United States › New Jersey. Each row offers that level's groups
   // and the places inside it studied in depth, so the list can keep growing downwards.
-  const groupsOf = (sec: string) => GROUPS.filter(g => g.section === sec);
-  const cur = sectionOf(scope);
+  const groupsOf = groupsShownIn;
+  // A group filed in two places (Rivers of the United States) stays in whichever subject you picked it from.
+  const g0 = scope.startsWith('grp:') ? GROUPS.find(g => g.id === scope.slice(4)) : null;
+  const cur = g0?.alsoInSections?.includes(subject.sections[0]) ? subject.sections[0] : sectionOf(scope);
   const chain = cur ? sectionChain(cur) : [];
   const records = Object.entries(p.quizBest).sort((a, b) => pct(b[1]) - pct(a[1]));
   const n = Math.min(pool, len === 'all' ? pool : len);
@@ -75,7 +84,7 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
         <h3><span className="step">1</span> Subject</h3>
         <div className="subjects">
           {subjects().map(sub => (
-            <button key={sub.id} className={'subject' + (subject.id === sub.id ? ' on' : '')} onClick={() => subject.id !== sub.id && setScope(sub.id === 'countries' ? 'sec:Europe' : allScope(sub))}>
+            <button key={sub.id} className={'subject' + (subject.id === sub.id ? ' on' : '')} onClick={() => { setSubjectPick(sub.id); if (subject.id !== sub.id) setScope(sub.id === 'countries' ? 'sec:Europe' : allScope(sub)); }}>
               <Icon name={sub.icon} size={20} /><span>{sub.name}</span>
             </button>
           ))}

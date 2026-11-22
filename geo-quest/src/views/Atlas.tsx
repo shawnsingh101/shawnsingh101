@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { GROUPS, placesIn, cardId, KIND_LABEL, kindsFor, LAYER_NOUN, LAYER_ICON, childSections, sectionChain, sectionAndDescendants } from '../cards';
+import { GROUPS, groupsShownIn, placesIn, cardId, KIND_LABEL, kindsFor, LAYER_NOUN, LAYER_ICON, childSections, sectionChain, sectionAndDescendants } from '../cards';
 import { level, useProgress } from '../srs';
 import type { Dataset } from '../types';
 import { Flag, Picture } from '../components/Picture';
@@ -85,7 +85,7 @@ export function Atlas({ ds }: { ds: Dataset }) {
   const [group, setGroup] = useState<string | null>(null);
   const [place, setPlace] = useState<string | null>(null);
   const sectionPlaces = (s: string) => sectionAndDescendants(s).flatMap(x => GROUPS.filter(g => g.section === x)).flatMap(g => placesIn(ds, g.id));
-  const groups = sec ? GROUPS.filter(g => g.section === sec) : [];
+  const groups = sec ? groupsShownIn(sec) : [];
   const kids = sec ? childSections(sec) : [];
   const g = group ?? (groups.length === 1 && !kids.length ? groups[0].id : null);
   const nounOf = (s: string) => { const g0 = GROUPS.find(g => g.section === s); return s === 'China' ? 'provinces & regions' : g0?.layer === 'sub' ? 'regions' : g0 ? LAYER_NOUN[g0.layer] : 'places'; };
