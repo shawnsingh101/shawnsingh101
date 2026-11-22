@@ -1,25 +1,27 @@
-import type { Country, Dataset } from './types';
+import type { Dataset, Place } from './types';
+import type { IconName } from './components/Icons';
 
 // ---- Card kinds ---------------------------------------------------------------
 // Every fact is asked in both directions, and every card has a stable id
 // `${wikidataId}:${kind}` so progress survives renames and data refreshes.
 
 export type Kind = 'locate' | 'identify' | 'capital' | 'capitalReverse' | 'capitalLocate' | 'flag' | 'flagReverse';
-export type Topic = 'countries' | 'capitals' | 'flags';
+export type Topic = 'countries' | 'places' | 'capitals' | 'flags';
 
-export const TOPICS: { id: Topic; name: string; icon: string; kinds: Kind[]; requires?: Topic }[] = [
-  { id: 'countries', name: 'Countries', icon: '🗺️', kinds: ['locate', 'identify'] },
-  { id: 'capitals', name: 'Capitals', icon: '🏛️', kinds: ['capital', 'capitalReverse', 'capitalLocate'], requires: 'countries' },
-  { id: 'flags', name: 'Flags', icon: '🚩', kinds: ['flag', 'flagReverse'], requires: 'countries' },
-];
+export const TOPIC_KINDS: Record<Topic, Kind[]> = {
+  countries: ['locate', 'identify'],
+  places: ['locate', 'identify'],
+  capitals: ['capital', 'capitalReverse', 'capitalLocate'],
+  flags: ['flag', 'flagReverse'],
+};
 
 export const KIND_LABEL: Record<Kind, string> = {
-  locate: 'Find it on the map', identify: 'Name the country', capital: 'Name the capital',
-  capitalReverse: 'Capital → country', capitalLocate: 'Capital → map', flag: 'Name the flag', flagReverse: 'Picture the flag',
+  locate: 'Find it on the map', identify: 'Name it', capital: 'Name the capital',
+  capitalReverse: 'Capital → name', capitalLocate: 'Capital → map', flag: 'Name the flag', flagReverse: 'Picture the flag',
 };
 
 /** Fingerprint of the facts a card depends on: if Wikidata changes it, the card is re-queued. */
-export function fingerprint(kind: Kind, c: Country) {
+export function fingerprint(kind: Kind, c: Place) {
   if (kind.startsWith('capital')) return `${c.name}|${c.capitalAnswer}`;
   if (kind.startsWith('flag')) return `${c.name}|${c.flag}`;
   return c.name;
@@ -27,56 +29,92 @@ export function fingerprint(kind: Kind, c: Country) {
 
 // ---- Skill tree -----------------------------------------------------------------
 
-export interface Group { id: string; continent: string; name: string; subregions: string[] }
+export interface TopicSlot { id: Topic; name: string; icon: IconName; requires?: Topic }
+export interface Group {
+  id: string; section: string; name: string; layer: Place['layer'];
+  subregions?: string[]; topics: TopicSlot[]; note?: string;
+}
+
+const COUNTRY_TOPICS: TopicSlot[] = [
+  { id: 'countries', name: 'Countries', icon: 'globe' },
+  { id: 'capitals', name: 'Capitals', icon: 'landmark', requires: 'countries' },
+  { id: 'flags', name: 'Flags', icon: 'flag', requires: 'countries' },
+];
+const cg = (id: string, section: string, name: string, subregions: string[]): Group =>
+  ({ id, section, name, layer: 'country', subregions, topics: COUNTRY_TOPICS });
+const wg = (id: string, name: string, topic = 'Seas & gulfs'): Group =>
+  ({ id, section: 'Oceans & Seas', name, layer: 'water', topics: [{ id: 'places', name: topic, icon: 'wave' }] });
 
 export const GROUPS: Group[] = [
-  { id: 'eu-w', continent: 'Europe', name: 'Western Europe', subregions: ['Western Europe'] },
-  { id: 'eu-n', continent: 'Europe', name: 'Northern Europe', subregions: ['Northern Europe'] },
-  { id: 'eu-c', continent: 'Europe', name: 'Central Europe', subregions: ['Central Europe'] },
-  { id: 'eu-s', continent: 'Europe', name: 'Southern Europe', subregions: ['Southern Europe'] },
-  { id: 'eu-se', continent: 'Europe', name: 'Balkans', subregions: ['Southeast Europe'] },
-  { id: 'eu-e', continent: 'Europe', name: 'Eastern Europe', subregions: ['Eastern Europe'] },
-  { id: 'am-n', continent: 'Americas', name: 'North & Central America', subregions: ['North America', 'Central America'] },
-  { id: 'am-c', continent: 'Americas', name: 'Caribbean', subregions: ['Caribbean'] },
-  { id: 'am-s', continent: 'Americas', name: 'South America', subregions: ['South America'] },
-  { id: 'as-w', continent: 'Asia', name: 'Middle East', subregions: ['Western Asia'] },
-  { id: 'as-c', continent: 'Asia', name: 'Central Asia', subregions: ['Central Asia'] },
-  { id: 'as-s', continent: 'Asia', name: 'South Asia', subregions: ['Southern Asia'] },
-  { id: 'as-e', continent: 'Asia', name: 'East Asia', subregions: ['Eastern Asia'] },
-  { id: 'as-se', continent: 'Asia', name: 'Southeast Asia', subregions: ['South-Eastern Asia'] },
-  { id: 'af-n', continent: 'Africa', name: 'North Africa', subregions: ['Northern Africa'] },
-  { id: 'af-w', continent: 'Africa', name: 'West Africa', subregions: ['Western Africa'] },
-  { id: 'af-m', continent: 'Africa', name: 'Central Africa', subregions: ['Middle Africa'] },
-  { id: 'af-e', continent: 'Africa', name: 'East Africa', subregions: ['Eastern Africa'] },
-  { id: 'af-s', continent: 'Africa', name: 'Southern Africa', subregions: ['Southern Africa'] },
-  { id: 'oc', continent: 'Oceania', name: 'Oceania', subregions: ['Australia and New Zealand', 'Melanesia', 'Micronesia', 'Polynesia'] },
+  cg('eu-w', 'Europe', 'Western Europe', ['Western Europe']),
+  cg('eu-n', 'Europe', 'Northern Europe', ['Northern Europe']),
+  cg('eu-c', 'Europe', 'Central Europe', ['Central Europe']),
+  cg('eu-s', 'Europe', 'Southern Europe', ['Southern Europe']),
+  cg('eu-se', 'Europe', 'Balkans', ['Southeast Europe']),
+  cg('eu-e', 'Europe', 'Eastern Europe', ['Eastern Europe']),
+  cg('am-n', 'Americas', 'North & Central America', ['North America', 'Central America']),
+  cg('am-c', 'Americas', 'Caribbean', ['Caribbean']),
+  cg('am-s', 'Americas', 'South America', ['South America']),
+  cg('as-w', 'Asia', 'Middle East', ['Western Asia']),
+  cg('as-c', 'Asia', 'Central Asia', ['Central Asia']),
+  cg('as-s', 'Asia', 'South Asia', ['Southern Asia']),
+  cg('as-e', 'Asia', 'East Asia', ['Eastern Asia']),
+  cg('as-se', 'Asia', 'Southeast Asia', ['South-Eastern Asia']),
+  cg('af-n', 'Africa', 'North Africa', ['Northern Africa']),
+  cg('af-w', 'Africa', 'West Africa', ['Western Africa']),
+  cg('af-m', 'Africa', 'Central Africa', ['Middle Africa']),
+  cg('af-e', 'Africa', 'East Africa', ['Eastern Africa']),
+  cg('af-s', 'Africa', 'Southern Africa', ['Southern Africa']),
+  cg('oc', 'Oceania', 'Oceania', ['Australia and New Zealand', 'Melanesia', 'Micronesia', 'Polynesia']),
+  wg('w-oc', 'The five oceans', 'Oceans'),
+  wg('w-eu', 'Europe & the Mediterranean'),
+  wg('w-am', 'The Americas'),
+  wg('w-in', 'Indian Ocean & Africa'),
+  wg('w-ap', 'Asia-Pacific'),
+  wg('w-po', 'Polar seas'),
+  { id: 'cn', section: 'China', name: "China's provinces", layer: 'cn',
+    note: 'Provinces, autonomous regions, municipalities and the two special administrative regions. The PRC also claims Taiwan as a province; Taiwan is covered under countries.',
+    topics: [{ id: 'places', name: 'Provinces', icon: 'map' }, { id: 'capitals', name: 'Capitals', icon: 'landmark', requires: 'places' }] },
 ];
 
-export const CONTINENTS = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania'];
+export const SECTIONS = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania', 'Oceans & Seas', 'China'];
+export const CONTINENTS = SECTIONS.slice(0, 5);
 
-export function groupOf(c: Country): Group {
-  return GROUPS.find(g => g.subregions.includes(c.subregion))!;
+export function groupOf(c: Place): Group {
+  if (c.layer === 'country') return GROUPS.find(g => g.subregions?.includes(c.subregion!))!;
+  return GROUPS.find(g => g.id === c.group)!;
 }
-export function countriesIn(ds: Dataset, groupId: string) {
+export function placesIn(ds: Dataset, groupId: string) {
   const g = GROUPS.find(x => x.id === groupId)!;
-  return ds.countries.filter(c => g.subregions.includes(c.subregion));
+  return g.layer === 'country' ? ds.countries.filter(c => g.subregions!.includes(c.subregion!)) : ds.places.filter(p => p.group === g.id);
 }
+export const countriesIn = placesIn;
 
 export const nodeId = (groupId: string, topic: Topic) => `${groupId}/${topic}`;
 export const parseNode = (id: string) => { const [g, t] = id.split('/'); return { groupId: g, topic: t as Topic }; };
+export const groupById = (id: string) => GROUPS.find(g => g.id === id)!;
+export const slotOf = (node: string) => { const { groupId, topic } = parseNode(node); return groupById(groupId).topics.find(t => t.id === topic)!; };
 
-export interface CardRef { id: string; kind: Kind; country: Country }
-export const cardId = (countryId: string, kind: Kind) => `${countryId}:${kind}`;
+export interface CardRef { id: string; kind: Kind; country: Place }
+export const cardId = (placeId: string, kind: Kind) => `${placeId}:${kind}`;
 
 export function cardsForNode(ds: Dataset, node: string): CardRef[] {
   const { groupId, topic } = parseNode(node);
-  const kinds = TOPICS.find(t => t.id === topic)!.kinds;
   const out: CardRef[] = [];
-  for (const c of countriesIn(ds, groupId)) {
+  for (const c of placesIn(ds, groupId)) {
     if (topic === 'flags' && !c.flag) continue;
-    for (const k of kinds) out.push({ id: cardId(c.id, k), kind: k, country: c });
+    if (topic === 'capitals' && !c.capitalAnswer) continue;
+    for (const k of TOPIC_KINDS[topic]) out.push({ id: cardId(c.id, k), kind: k, country: c });
   }
   return out;
+}
+
+/** All kinds a place can be asked about (for its mastery colour). */
+export function kindsFor(p: Place): Kind[] {
+  const ks: Kind[] = ['locate', 'identify'];
+  if (p.capitalAnswer) ks.push(...TOPIC_KINDS.capitals);
+  if (p.flag) ks.push(...TOPIC_KINDS.flags);
+  return ks;
 }
 
 export function refFromId(ds: Dataset, id: string): CardRef | null {
@@ -100,27 +138,41 @@ export interface CardFace {
   note?: string | null;
 }
 
-const capitalWord = (c: Country) => (c.capitals.length > 1 ? 'a capital' : 'the capital');
+const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const noun = (p: Place) => (p.layer === 'country' ? 'country' : p.layer === 'water' ? 'body of water' : p.type ?? 'region');
 
 export function face(ref: CardRef): CardFace {
   const c = ref.country;
   const cap = c.capitals[0];
   const capPic = cap ? { file: cap.image, wiki: cap.wiki, caption: cap.name } : undefined;
-  const note = c.status !== 'un' ? c.statusNote : null;
+  const ownPic = c.image || (c.layer !== 'country' && c.wiki) ? { file: c.image, wiki: c.wiki, caption: c.name } : undefined;
+  const note = c.layer === 'country' ? (c.status !== 'un' ? c.statusNote : null) : c.layer === 'cn' ? cap1(c.type ?? '') : null;
+  const title = c.nameThe ? cap1(c.nameThe) : c.name;
+  const capWord = c.capitals.length > 1 ? 'a capital' : 'the capital';
+  const whichNoun = c.layer === 'cn' ? 'which province?' : 'which country?';
   switch (ref.kind) {
     case 'locate':
-      return { mode: 'tap', pre: `${c.name} is `, blank: 'where? tap the map', post: '.', answer: 'right here', map: 'tap', note };
+      return { mode: 'tap', pre: `${title} is `, blank: 'where? tap the map', post: '.', answer: 'right here', map: 'tap', note, picture: c.layer !== 'country' ? ownPic ?? capPic : undefined };
     case 'identify':
-      return { mode: 'reveal', pre: 'The highlighted country is ', blank: 'what?', post: '.', answer: c.name, map: 'highlight', note };
+      return { mode: 'reveal', pre: `The highlighted ${c.layer === 'cn' ? 'part of China' : noun(c)} is `, blank: 'what?', post: '.', answer: c.nameThe ?? c.name, map: 'highlight', note, picture: c.layer !== 'country' ? ownPic ?? capPic : undefined };
     case 'capital':
       return { mode: 'reveal', pre: `The capital of ${c.name} is `, blank: 'what?', post: '.', answer: c.capitalAnswer!, map: 'none', picture: capPic, note: c.capitalNote ?? note };
     case 'capitalReverse':
-      return { mode: 'reveal', pre: `${cap?.name} is ${capitalWord(c)} of `, blank: 'which country?', post: '.', answer: c.name, map: 'none', picture: capPic, note: c.capitalNote ?? note };
+      return { mode: 'reveal', pre: `${cap?.name} is ${capWord} of `, blank: whichNoun, post: '.', answer: c.name, map: 'none', picture: capPic, note: c.capitalNote ?? note };
     case 'capitalLocate':
-      return { mode: 'tap', pre: `${cap?.name} is ${capitalWord(c)} of `, blank: 'tap the country', post: '.', answer: c.name, map: 'tap', picture: capPic, note: c.capitalNote ?? note };
+      return { mode: 'tap', pre: `${cap?.name} is ${capWord} of `, blank: c.layer === 'cn' ? 'tap the province' : 'tap the country', post: '.', answer: c.name, map: 'tap', picture: capPic, note: c.capitalNote ?? note };
     case 'flag':
       return { mode: 'reveal', pre: 'This is the flag of ', blank: 'which country?', post: '.', answer: c.name, promptFlag: true, map: 'none', note };
     case 'flagReverse':
       return { mode: 'reveal', pre: `The flag of ${c.name} looks like `, blank: 'what?', post: '', answer: '', answerFlag: true, map: 'none', note };
   }
+}
+
+/** Which extra map layer a card needs. */
+export const layerFor = (p: Place) => (p.layer === 'country' ? null : p.layer);
+
+export function shuffle<T>(a: T[]): T[] {
+  const b = [...a];
+  for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; }
+  return b;
 }

@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { loadDataset } from './data';
 import { reconcile, useProgress } from './srs';
+import { unlockAudio } from './sound';
+import { Quiz } from './views/Quiz';
+import type { QuizSpec } from './components/Study';
 import type { Dataset } from './types';
 import { Ribbon, type Tab } from './components/Ribbon';
 import { Study } from './components/Study';
@@ -13,11 +16,18 @@ export function App() {
   const [ds, setDs] = useState<Dataset | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [tab, setTab] = useState<Tab>(() => (location.hash.slice(1) as Tab) || 'home');
-  const [studying, setStudying] = useState(false);
+  const [session, setSession] = useState<null | { quiz?: QuizSpec }>(null);
   const p = useProgress();
 
   useEffect(() => { loadDataset().then(d => { reconcile(d); setDs(d); }).catch(e => setErr(String(e))); }, []);
   useEffect(() => { history.replaceState(null, '', '#' + tab); }, [tab]);
+  // Phones only allow sound that starts from a tap: unlock audio on the first one.
+  useEffect(() => {
+    const h = () => unlockAudio();
+    window.addEventListener('pointerdown', h, { once: true });
+    window.addEventListener('keydown', h, { once: true });
+    return () => { window.removeEventListener('pointerdown', h); window.removeEventListener('keydown', h); };
+  }, []);
   useEffect(() => {
     const t = p.settings.theme;
     if (t === 'auto') delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = t;
@@ -25,14 +35,17 @@ export function App() {
 
   if (err) return <div className="splash">Couldn't load the data: {err}</div>;
   if (!ds) return <div className="splash">Loading the world…</div>;
-  if (studying) return <Study ds={ds} onExit={() => setStudying(false)} />;
+  if (session) return <Study key={session.quiz?.key ?? 'srs'} ds={ds} quiz={session.quiz} onExit={() => setSession(null)} goQuiz={() => { setSession(null); setTab('quiz'); }} />;
+  const startQuiz = (quiz: QuizSpec) => setSession({ quiz });
+  const startStudy = () => setSession({});
 
   return (
     <div className="app">
       <Ribbon tab={tab} setTab={setTab} />
       <main className={'tab-' + tab}>
-        {tab === 'home' && <Home ds={ds} onStudy={() => setStudying(true)} goTree={() => setTab('tree')} />}
-        {tab === 'tree' && <Tree ds={ds} />}
+        {tab === 'home' && <Home ds={ds} onStudy={startStudy} goTree={() => setTab('tree')} goQuiz={() => setTab('quiz')} />}
+        {tab === 'tree' && <Tree ds={ds} startQuiz={startQuiz} startStudy={startStudy} />}
+        {tab === 'quiz' && <Quiz ds={ds} start={startQuiz} />}
         {tab === 'map' && <MapView ds={ds} />}
         {tab === 'atlas' && <Atlas ds={ds} />}
       </main>

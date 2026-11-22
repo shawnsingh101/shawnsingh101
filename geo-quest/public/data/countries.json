@@ -25,9 +25,11 @@
      "image": "Sokhumi Collage.jpg",
      "lon": 41.019,
      "lat": 43.004,
-     "wiki": "Sukhumi"
+     "wiki": "Sukhumi",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Sokhumi"
   },
   {
@@ -56,7 +58,18 @@
      "image": "Kabul TV Hill view.jpg",
      "lon": 69.166,
      "lat": 34.533,
-     "wiki": "Kabul"
+     "wiki": "Kabul",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "افغانستان",
+     "lang": "Dari"
+    },
+    {
+     "name": "Owganystan",
+     "lang": "Turkmen"
     }
    ],
    "capitalAnswer": "Kabul"
@@ -87,7 +100,14 @@
      "image": "Tirana from South.jpg",
      "lon": 19.818,
      "lat": 41.328,
-     "wiki": "Tirana"
+     "wiki": "Tirana",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Shqipëria",
+     "lang": "Albanian"
     }
    ],
    "capitalAnswer": "Tirana"
@@ -118,7 +138,19 @@
      "image": "Argel 3.jpg",
      "lon": 3.059,
      "lat": 36.776,
-     "wiki": "Algiers"
+     "wiki": "Algiers",
+     "native": [
+      {
+       "name": "الجزائر العاصمة",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "الجزائر",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Algiers"
@@ -149,9 +181,11 @@
      "image": "Andorra la Vella - view2.jpg",
      "lon": 1.522,
      "lat": 42.507,
-     "wiki": "Andorra_la_Vella"
+     "wiki": "Andorra_la_Vella",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Andorra la Vella"
   },
   {
@@ -180,9 +214,11 @@
      "image": "Luanda feb09 ost01.jpg",
      "lon": 13.23,
      "lat": -8.815,
-     "wiki": "Luanda"
+     "wiki": "Luanda",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Luanda"
   },
   {
@@ -211,9 +247,11 @@
      "image": "St Johns Antigua 2012.jpg",
      "lon": -61.845,
      "lat": 17.121,
-     "wiki": "St._John's,_Antigua_and_Barbuda"
+     "wiki": "St._John's,_Antigua_and_Barbuda",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Q36262"
   },
   {
@@ -242,9 +280,11 @@
      "image": "Vista aérea de la Plaza del Congreso 10.jpg",
      "lon": -58.382,
      "lat": -34.6,
-     "wiki": "Buenos_Aires"
+     "wiki": "Buenos_Aires",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Buenos Aires"
   },
   {
@@ -273,7 +313,19 @@
      "image": "Mount Ararat and the Yerevan skyline in spring (28mm).jpg",
      "lon": 44.514,
      "lat": 40.181,
-     "wiki": "Yerevan"
+     "wiki": "Yerevan",
+     "native": [
+      {
+       "name": "Երևան",
+       "lang": "Armenian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Հայաստան",
+     "lang": "Armenian"
     }
    ],
    "capitalAnswer": "Yerevan"
@@ -304,9 +356,11 @@
      "image": "Canberra from Mt Ainslie (5642431515).jpg",
      "lon": 149.127,
      "lat": -35.293,
-     "wiki": "Canberra"
+     "wiki": "Canberra",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Canberra"
   },
   {
@@ -335,7 +389,19 @@
      "image": "Wien katedra sw Szczepana widok z wiezy 6.jpg",
      "lon": 16.372,
      "lat": 48.208,
-     "wiki": "Vienna"
+     "wiki": "Vienna",
+     "native": [
+      {
+       "name": "Wean",
+       "lang": "Austro-Bavarian German"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Österreich",
+     "lang": "Austro-Bavarian German"
     }
    ],
    "capitalAnswer": "Vienna"
@@ -366,7 +432,27 @@
      "image": "Baku 004 1953c.jpg",
      "lon": 49.835,
      "lat": 40.367,
-     "wiki": "Baku"
+     "wiki": "Baku",
+     "native": [
+      {
+       "name": "Bakı",
+       "lang": "Azerbaijani"
+      },
+      {
+       "name": "Баку",
+       "lang": "Russian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Azərbaycan",
+     "lang": "Azerbaijani"
+    },
+    {
+     "name": "Азербайджан",
+     "lang": "Russian"
     }
    ],
    "capitalAnswer": "Baku"
@@ -397,9 +483,11 @@
      "image": "BHA Nassau, Paradise Island, Atlantis Bridge 001.jpg",
      "lon": -77.339,
      "lat": 25.078,
-     "wiki": "Nassau,_Bahamas"
+     "wiki": "Nassau,_Bahamas",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Nassau"
   },
   {
@@ -428,7 +516,19 @@
      "image": "Bahrain World trade Center .jpg",
      "lon": 50.583,
      "lat": 26.217,
-     "wiki": "Manama"
+     "wiki": "Manama",
+     "native": [
+      {
+       "name": "المنامة",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "البحرين",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Manama"
@@ -459,7 +559,19 @@
      "image": "Dhaka skyline1.jpg",
      "lon": 90.394,
      "lat": 23.729,
-     "wiki": "Dhaka"
+     "wiki": "Dhaka",
+     "native": [
+      {
+       "name": "ঢাকা",
+       "lang": "Bengali"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "বাংলাদেশ",
+     "lang": "Bengali"
     }
    ],
    "capitalAnswer": "Dhaka"
@@ -490,9 +602,11 @@
      "image": "Bridgetown aerial.JPG",
      "lon": -59.617,
      "lat": 13.098,
-     "wiki": "Bridgetown"
+     "wiki": "Bridgetown",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Bridgetown"
   },
   {
@@ -521,7 +635,27 @@
      "image": "Мінск. Сквер па плошчы Незалежнасці.jpg",
      "lon": 27.562,
      "lat": 53.902,
-     "wiki": "Minsk"
+     "wiki": "Minsk",
+     "native": [
+      {
+       "name": "Мінск",
+       "lang": "Belarusian"
+      },
+      {
+       "name": "Минск",
+       "lang": "Russian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Белару́сь",
+     "lang": "Belarusian"
+    },
+    {
+     "name": "Беларусь",
+     "lang": "Russian"
     }
    ],
    "capitalAnswer": "Minsk"
@@ -552,7 +686,35 @@
      "image": "Brussels view from Mont des Arts, Brussels, Belgium (cropped).jpg",
      "lon": 4.352,
      "lat": 50.847,
-     "wiki": "City_of_Brussels"
+     "wiki": "City_of_Brussels",
+     "native": [
+      {
+       "name": "Brüssel",
+       "lang": "German"
+      },
+      {
+       "name": "Bruxelles",
+       "lang": "French"
+      },
+      {
+       "name": "Brussel",
+       "lang": "Dutch"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Belgien",
+     "lang": "German"
+    },
+    {
+     "name": "Belgique",
+     "lang": "French"
+    },
+    {
+     "name": "België",
+     "lang": "Dutch"
     }
    ],
    "capitalAnswer": "Brussels"
@@ -583,7 +745,19 @@
      "image": "Belmopan Parliament.jpg",
      "lon": -88.767,
      "lat": 17.25,
-     "wiki": "Belmopan"
+     "wiki": "Belmopan",
+     "native": [
+      {
+       "name": "Belmopán",
+       "lang": "Spanish"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Belice",
+     "lang": "Spanish"
     }
    ],
    "capitalAnswer": "Belmopan"
@@ -614,7 +788,8 @@
      "image": "Porto-Novo vue.jpg",
      "lon": 2.617,
      "lat": 6.483,
-     "wiki": "Porto-Novo"
+     "wiki": "Porto-Novo",
+     "native": []
     },
     {
      "id": "Q43595",
@@ -624,7 +799,14 @@
      "image": "Vue panoramique quartier cadjéhoun-Cotonou au Bénin 1.jpg",
      "lon": 2.417,
      "lat": 6.367,
-     "wiki": "Cotonou"
+     "wiki": "Cotonou",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Bénin",
+     "lang": "French"
     }
    ],
    "capitalAnswer": "Porto-Novo (official capital), though the government sits in Cotonou",
@@ -656,7 +838,19 @@
      "image": "Thimphu-12-vom Buddha Dordenma-2015-gje.jpg",
      "lon": 89.634,
      "lat": 27.471,
-     "wiki": "Thimphu"
+     "wiki": "Thimphu",
+     "native": [
+      {
+       "name": "ཐིམ་ཕུུུུ",
+       "lang": "Dzongkha"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "འབྲུག་ཡུལ་",
+     "lang": "Dzongkha"
     }
    ],
    "capitalAnswer": "Thimphu"
@@ -687,7 +881,13 @@
      "image": "La Paz-center.jpg",
      "lon": -68.133,
      "lat": -16.496,
-     "wiki": "La_Paz"
+     "wiki": "La_Paz",
+     "native": [
+      {
+       "name": "Chuqiyapu",
+       "lang": "Aymara"
+      }
+     ]
     },
     {
      "id": "Q2907",
@@ -697,7 +897,31 @@
      "image": "Sucre Square.jpg",
      "lon": -65.26,
      "lat": -19.047,
-     "wiki": "Sucre"
+     "wiki": "Sucre",
+     "native": [
+      {
+       "name": "Sukri",
+       "lang": "Aymara"
+      },
+      {
+       "name": "Chuqichaka",
+       "lang": "Quechua"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Wuliwya",
+     "lang": "Aymara"
+    },
+    {
+     "name": "Volívia",
+     "lang": "Guaraní"
+    },
+    {
+     "name": "Buliwya",
+     "lang": "Quechua"
     }
    ],
    "capitalAnswer": "both La Paz (seat of government) and Sucre (constitutional capital)",
@@ -729,7 +953,23 @@
      "image": "Sarajevo City Panorama.JPG",
      "lon": 18.413,
      "lat": 43.856,
-     "wiki": "Sarajevo"
+     "wiki": "Sarajevo",
+     "native": [
+      {
+       "name": "Сарајево",
+       "lang": "Serbian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Bosna i Hercegovina",
+     "lang": "Bosnian"
+    },
+    {
+     "name": "Боснa и Херцеговина",
+     "lang": "Serbian"
     }
    ],
    "capitalAnswer": "Sarajevo"
@@ -760,9 +1000,11 @@
      "image": "Gaborone skyline.JPG",
      "lon": 25.909,
      "lat": -24.657,
-     "wiki": "Gaborone"
+     "wiki": "Gaborone",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Gaborone"
   },
   {
@@ -791,7 +1033,14 @@
      "image": "Planalto Central (cropped).jpg",
      "lon": -47.883,
      "lat": -15.794,
-     "wiki": "Brasília"
+     "wiki": "Brasília",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Brasil",
+     "lang": "Portuguese"
     }
    ],
    "capitalAnswer": "Brasília"
@@ -822,7 +1071,14 @@
      "image": "Sultan Omar Ali Saifuddin Mosque 02.jpg",
      "lon": 114.917,
      "lat": 4.917,
-     "wiki": "Bandar_Seri_Begawan"
+     "wiki": "Bandar_Seri_Begawan",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Negara Brunei Darussalam",
+     "lang": "Malay"
     }
    ],
    "capitalAnswer": "Bandar Seri Begawan"
@@ -853,7 +1109,19 @@
      "image": "Panoramic view over central Sofia and the Vitosha Mountain 2017-10-08.jpg",
      "lon": 23.322,
      "lat": 42.698,
-     "wiki": "Sofia"
+     "wiki": "Sofia",
+     "native": [
+      {
+       "name": "София",
+       "lang": "Bulgarian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "България",
+     "lang": "Bulgarian"
     }
    ],
    "capitalAnswer": "Sofia"
@@ -884,9 +1152,11 @@
      "image": "Monument aux héros nationaux - Ouagadougou - 2024.jpg",
      "lon": -1.528,
      "lat": 12.369,
-     "wiki": "Ouagadougou"
+     "wiki": "Ouagadougou",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Ouagadougou"
   },
   {
@@ -915,7 +1185,14 @@
      "image": "Gitega.JPG",
      "lon": 29.925,
      "lat": -3.428,
-     "wiki": "Gitega"
+     "wiki": "Gitega",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Uburundi",
+     "lang": "Kirundi"
     }
    ],
    "capitalAnswer": "Gitega"
@@ -946,7 +1223,19 @@
      "image": "Phnom Penh aerial.jpg",
      "lon": 104.921,
      "lat": 11.57,
-     "wiki": "Phnom_Penh"
+     "wiki": "Phnom_Penh",
+     "native": [
+      {
+       "name": "ភ្នំពេញ",
+       "lang": "Khmer"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Kâmpŭchéa",
+     "lang": "Khmer"
     }
    ],
    "capitalAnswer": "Phnom Penh"
@@ -977,7 +1266,14 @@
      "image": "Yaoundé view from central market (2014).JPG",
      "lon": 11.518,
      "lat": 3.858,
-     "wiki": "Yaoundé"
+     "wiki": "Yaoundé",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Cameroun",
+     "lang": "French"
     }
    ],
    "capitalAnswer": "Yaoundé"
@@ -1008,9 +1304,11 @@
      "image": "Ottawa Montage 2020.jpg",
      "lon": -75.695,
      "lat": 45.425,
-     "wiki": "Ottawa"
+     "wiki": "Ottawa",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Ottawa"
   },
   {
@@ -1039,7 +1337,14 @@
      "image": "Praia Harbor.jpg",
      "lon": -23.509,
      "lat": 14.918,
-     "wiki": "Praia"
+     "wiki": "Praia",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Cabo Verde",
+     "lang": "Portuguese"
     }
    ],
    "capitalAnswer": "Praia"
@@ -1070,7 +1375,23 @@
      "image": "Bangui City Centre.jpg",
      "lon": 18.563,
      "lat": 4.373,
-     "wiki": "Bangui"
+     "wiki": "Bangui",
+     "native": [
+      {
+       "name": "Kötä gbätä tî Bangî",
+       "lang": "Sango"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "République centrafricaine",
+     "lang": "French"
+    },
+    {
+     "name": "Bêafrîka",
+     "lang": "Sango"
     }
    ],
    "capitalAnswer": "Bangui"
@@ -1101,7 +1422,27 @@
      "image": "Place de la nation4 (Tchad).jpg",
      "lon": 15.05,
      "lat": 12.11,
-     "wiki": "N'Djamena"
+     "wiki": "N'Djamena",
+     "native": [
+      {
+       "name": "انجمينا",
+       "lang": "Arabic"
+      },
+      {
+       "name": "N'Djaména",
+       "lang": "French"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "تشاد",
+     "lang": "Arabic"
+    },
+    {
+     "name": "Tchad",
+     "lang": "French"
     }
    ],
    "capitalAnswer": "N'Djamena"
@@ -1132,9 +1473,11 @@
      "image": "Santiago de Chile, Desde Cerro San Cristóbal (cropped).jpg",
      "lon": -70.65,
      "lat": -33.438,
-     "wiki": "Santiago"
+     "wiki": "Santiago",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Santiago"
   },
   {
@@ -1163,7 +1506,19 @@
      "image": "Skyline of Beijing CBD with B-5906 approaching (20211016171955).jpg",
      "lon": 116.408,
      "lat": 39.904,
-     "wiki": "Beijing"
+     "wiki": "Beijing",
+     "native": [
+      {
+       "name": "北京",
+       "lang": "Chinese"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "中国",
+     "lang": "Chinese"
     }
    ],
    "capitalAnswer": "Beijing"
@@ -1194,9 +1549,11 @@
      "image": "Centro internacional.JPG",
      "lon": -74.082,
      "lat": 4.61,
-     "wiki": "Bogotá"
+     "wiki": "Bogotá",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Bogotá"
   },
   {
@@ -1225,7 +1582,27 @@
      "image": "Moroni harbour (2).jpg",
      "lon": 43.254,
      "lat": -11.704,
-     "wiki": "Moroni,_Comoros"
+     "wiki": "Moroni,_Comoros",
+     "native": [
+      {
+       "name": "موروني",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "جزر القمر",
+     "lang": "Arabic"
+    },
+    {
+     "name": "Comores",
+     "lang": "French"
+    },
+    {
+     "name": "Komori",
+     "lang": "Comorian"
     }
    ],
    "capitalAnswer": "Moroni"
@@ -1256,9 +1633,11 @@
      "image": "Cityscape of San José, Costa Rica (253552473).jpg",
      "lon": -84.08,
      "lat": 9.933,
-     "wiki": "San_José,_Costa_Rica"
+     "wiki": "San_José,_Costa_Rica",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "San José"
   },
   {
@@ -1287,7 +1666,14 @@
      "image": "Zagreb (29255640143).jpg",
      "lon": 15.977,
      "lat": 45.813,
-     "wiki": "Zagreb"
+     "wiki": "Zagreb",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Hrvatska",
+     "lang": "Croatian"
     }
    ],
    "capitalAnswer": "Zagreb"
@@ -1318,9 +1704,11 @@
      "image": "Cuba libre (6941395159).jpg",
      "lon": -82.359,
      "lat": 23.137,
-     "wiki": "Havana"
+     "wiki": "Havana",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Havana"
   },
   {
@@ -1349,7 +1737,27 @@
      "image": "Nicosia 01-2017 img23 View from Shacolas Tower.jpg",
      "lon": 33.365,
      "lat": 35.172,
-     "wiki": "Nicosia"
+     "wiki": "Nicosia",
+     "native": [
+      {
+       "name": "Λευκωσία",
+       "lang": "Greek"
+      },
+      {
+       "name": "Lefkoşa",
+       "lang": "Turkish"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Κύπρος",
+     "lang": "Greek"
+    },
+    {
+     "name": "Kıbrıs",
+     "lang": "Turkish"
     }
    ],
    "capitalAnswer": "Nicosia"
@@ -1380,7 +1788,19 @@
      "image": "Petřín Tower View IMG 3020.JPG",
      "lon": 14.421,
      "lat": 50.087,
-     "wiki": "Prague"
+     "wiki": "Prague",
+     "native": [
+      {
+       "name": "Praha",
+       "lang": "Czech"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Česko",
+     "lang": "Czech"
     }
    ],
    "capitalAnswer": "Prague"
@@ -1411,7 +1831,19 @@
      "image": "Copenhagen - view from Christiansborg castle.jpg",
      "lon": 12.569,
      "lat": 55.676,
-     "wiki": "Copenhagen"
+     "wiki": "Copenhagen",
+     "native": [
+      {
+       "name": "København",
+       "lang": "Danish"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Danmark",
+     "lang": "Danish"
     }
    ],
    "capitalAnswer": "Copenhagen"
@@ -1442,7 +1874,19 @@
      "image": "Djibouti City.jpg",
      "lon": 43.148,
      "lat": 11.595,
-     "wiki": "Djibouti_City"
+     "wiki": "Djibouti_City",
+     "native": [
+      {
+       "name": "جيبوتي",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "جيبوتي",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Djibouti"
@@ -1473,9 +1917,11 @@
      "image": "RoseauWide..jpg",
      "lon": -61.383,
      "lat": 15.3,
-     "wiki": "Roseau"
+     "wiki": "Roseau",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Roseau"
   },
   {
@@ -1504,7 +1950,14 @@
      "image": "Santo Domingo (Dominican Republic) taken atop Novocentro tower viewing the city to the southwest 2010.jpg",
      "lon": -69.936,
      "lat": 18.462,
-     "wiki": "Santo_Domingo"
+     "wiki": "Santo_Domingo",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "República Dominicana",
+     "lang": "Spanish"
     }
    ],
    "capitalAnswer": "Santo Domingo"
@@ -1535,7 +1988,31 @@
      "image": "Vue Kinshasa.jpg",
      "lon": 15.312,
      "lat": -4.322,
-     "wiki": "Kinshasa"
+     "wiki": "Kinshasa",
+     "native": [
+      {
+       "name": "Kinsasa",
+       "lang": "Kikongo"
+      },
+      {
+       "name": "Kinsásá",
+       "lang": "Lingala"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "RD Congo",
+     "lang": "French"
+    },
+    {
+     "name": "Repubilika ya Kongo Demokratiki",
+     "lang": "Kikongo"
+    },
+    {
+     "name": "Republiki ya Kongó Demokratiki",
+     "lang": "Lingala"
     }
    ],
    "capitalAnswer": "Kinshasa"
@@ -1566,9 +2043,11 @@
      "image": "FACHADA ASAMBLEA NACIONAL. QUITO, 20 DE FEBRERO 2020. 01.jpg",
      "lon": -78.513,
      "lat": -0.22,
-     "wiki": "Quito"
+     "wiki": "Quito",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Quito"
   },
   {
@@ -1597,7 +2076,19 @@
      "image": "Cairo Skyline (2020).jpg",
      "lon": 31.236,
      "lat": 30.044,
-     "wiki": "Cairo"
+     "wiki": "Cairo",
+     "native": [
+      {
+       "name": "القاهرة",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "مصر",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Cairo"
@@ -1628,9 +2119,11 @@
      "image": null,
      "lon": -89.191,
      "lat": 13.698,
-     "wiki": "San_Salvador"
+     "wiki": "San_Salvador",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "San Salvador"
   },
   {
@@ -1659,7 +2152,22 @@
      "image": "Autobahnbau in Oyala.JPG",
      "lon": 10.822,
      "lat": 1.592,
-     "wiki": "Ciudad_de_la_Paz"
+     "wiki": "Ciudad_de_la_Paz",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Guinée équatoriale",
+     "lang": "French"
+    },
+    {
+     "name": "Guiné Equatorial",
+     "lang": "Portuguese"
+    },
+    {
+     "name": "Guinea Ecuatorial",
+     "lang": "Spanish"
     }
    ],
    "capitalAnswer": "Ciudad de la Paz"
@@ -1690,7 +2198,27 @@
      "image": "Fiat tagliero, 09.JPG",
      "lon": 38.917,
      "lat": 15.333,
-     "wiki": "Asmara"
+     "wiki": "Asmara",
+     "native": [
+      {
+       "name": "أسمرة",
+       "lang": "Arabic"
+      },
+      {
+       "name": "ኣስመራ",
+       "lang": "Tigrinya"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "إريتريا",
+     "lang": "Arabic"
+    },
+    {
+     "name": "ኤርትራ",
+     "lang": "Tigrinya"
     }
    ],
    "capitalAnswer": "Asmara"
@@ -1721,7 +2249,14 @@
      "image": "Tallinna vanalinn 2015.jpg",
      "lon": 24.745,
      "lat": 59.437,
-     "wiki": "Tallinn"
+     "wiki": "Tallinn",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Eesti",
+     "lang": "Estonian"
     }
    ],
    "capitalAnswer": "Tallinn"
@@ -1752,7 +2287,8 @@
      "image": "Parliament building of Eswatini, Lobamba.jpg",
      "lon": 31.206,
      "lat": -26.446,
-     "wiki": "Lobamba"
+     "wiki": "Lobamba",
+     "native": []
     },
     {
      "id": "Q3904",
@@ -1762,9 +2298,11 @@
      "image": "Mbabane (6035476964).jpg",
      "lon": 31.133,
      "lat": -26.317,
-     "wiki": "Mbabane"
+     "wiki": "Mbabane",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "both Mbabane (administrative) and Lobamba (royal and legislative)",
    "capitalNote": null
   },
@@ -1794,7 +2332,19 @@
      "image": "AddisView.jpg",
      "lon": 38.752,
      "lat": 9.036,
-     "wiki": "Addis_Ababa"
+     "wiki": "Addis_Ababa",
+     "native": [
+      {
+       "name": "አዲስ አበባ",
+       "lang": "Amharic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "ኢትዮጵያ",
+     "lang": "Amharic"
     }
    ],
    "capitalAnswer": "Addis Ababa"
@@ -1825,7 +2375,18 @@
      "image": "Suva, Fiji 52.jpg",
      "lon": 178.44,
      "lat": -18.127,
-     "wiki": "Suva"
+     "wiki": "Suva",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Viti",
+     "lang": "Fijian"
+    },
+    {
+     "name": "फिजी",
+     "lang": "Fiji Hindi"
     }
    ],
    "capitalAnswer": "Suva"
@@ -1856,7 +2417,14 @@
      "image": "Helsinki Lutheran Cathedral (panoraamanäköala)-2 (säätö).jpg",
      "lon": 24.938,
      "lat": 60.171,
-     "wiki": "Helsinki"
+     "wiki": "Helsinki",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Suomi",
+     "lang": "Finnish"
     }
    ],
    "capitalAnswer": "Helsinki"
@@ -1887,9 +2455,11 @@
      "image": "La Tour Eiffel vue de la Tour Saint-Jacques, Paris août 2014 (2).jpg",
      "lon": 2.352,
      "lat": 48.857,
-     "wiki": "Paris"
+     "wiki": "Paris",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Paris"
   },
   {
@@ -1918,9 +2488,11 @@
      "image": "Libreville1.jpg",
      "lon": 9.44,
      "lat": 0.408,
-     "wiki": "Libreville"
+     "wiki": "Libreville",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Libreville"
   },
   {
@@ -1949,9 +2521,11 @@
      "image": "Banjul Gambia skyline.jpg",
      "lon": -16.578,
      "lat": 13.453,
-     "wiki": "Banjul"
+     "wiki": "Banjul",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Banjul"
   },
   {
@@ -1980,7 +2554,19 @@
      "image": "View of Tbilisi from Tabori Church 2023-10-08-2.jpg",
      "lon": 44.792,
      "lat": 41.722,
-     "wiki": "Tbilisi"
+     "wiki": "Tbilisi",
+     "native": [
+      {
+       "name": "თბილისი",
+       "lang": "Georgian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "საქართველო",
+     "lang": "Georgian"
     }
    ],
    "capitalAnswer": "Tbilisi"
@@ -2011,7 +2597,14 @@
      "image": "Cityscape Berlin.jpg",
      "lon": 13.383,
      "lat": 52.517,
-     "wiki": "Berlin"
+     "wiki": "Berlin",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Deutschland",
+     "lang": "German"
     }
    ],
    "capitalAnswer": "Berlin"
@@ -2042,9 +2635,11 @@
      "image": "Accra town.jpg",
      "lon": -0.197,
      "lat": 5.556,
-     "wiki": "Accra"
+     "wiki": "Accra",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Accra"
   },
   {
@@ -2073,7 +2668,19 @@
      "image": "Akropolis 2015.jpg",
      "lon": 23.728,
      "lat": 37.984,
-     "wiki": "Athens"
+     "wiki": "Athens",
+     "native": [
+      {
+       "name": "Αθήνα",
+       "lang": "Greek"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Ελλάδα",
+     "lang": "Greek"
     }
    ],
    "capitalAnswer": "Athens"
@@ -2104,9 +2711,11 @@
      "image": "Grenada - St. George.jpg",
      "lon": -61.753,
      "lat": 12.053,
-     "wiki": "St._George's,_Grenada"
+     "wiki": "St._George's,_Grenada",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "St. George's"
   },
   {
@@ -2135,9 +2744,11 @@
      "image": "Buildings in Guatemala City.jpg",
      "lon": -90.513,
      "lat": 14.642,
-     "wiki": "Guatemala_City"
+     "wiki": "Guatemala_City",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Guatemala City"
   },
   {
@@ -2166,7 +2777,14 @@
      "image": "Un aperçu de la ville de conakry.jpg",
      "lon": -13.712,
      "lat": 9.509,
-     "wiki": "Conakry"
+     "wiki": "Conakry",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Guinée",
+     "lang": "French"
     }
    ],
    "capitalAnswer": "Conakry"
@@ -2197,7 +2815,14 @@
      "image": "20130610 - Monumento aos Heróis da Independência.jpg",
      "lon": -15.583,
      "lat": 11.86,
-     "wiki": "Bissau"
+     "wiki": "Bissau",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Guiné-Bissau",
+     "lang": "Portuguese"
     }
    ],
    "capitalAnswer": "Bissau"
@@ -2228,9 +2853,11 @@
      "image": "St George's Cathedral.jpg",
      "lon": -58.151,
      "lat": 6.806,
-     "wiki": "Georgetown,_Guyana"
+     "wiki": "Georgetown,_Guyana",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Georgetown"
   },
   {
@@ -2259,7 +2886,23 @@
      "image": "US Navy 100221-N-5787K-002 An aerial view of the logistical area near the port in Port-au-Prince (cropped).jpg",
      "lon": -72.34,
      "lat": 18.547,
-     "wiki": "Port-au-Prince"
+     "wiki": "Port-au-Prince",
+     "native": [
+      {
+       "name": "Pòtoprens",
+       "lang": "Haitian Creole"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Haïti",
+     "lang": "French"
+    },
+    {
+     "name": "Ayiti",
+     "lang": "Haitian Creole"
     }
    ],
    "capitalAnswer": "Port-au-Prince"
@@ -2290,9 +2933,11 @@
      "image": "Centro historico de Tegucigalpa y Comayagüela.jpg",
      "lon": -87.205,
      "lat": 14.106,
-     "wiki": "Tegucigalpa"
+     "wiki": "Tegucigalpa",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Tegucigalpa"
   },
   {
@@ -2321,7 +2966,14 @@
      "image": "Budapest, Hungary (explored) (14995308504).jpg",
      "lon": 19.041,
      "lat": 47.498,
-     "wiki": "Budapest"
+     "wiki": "Budapest",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Magyarország",
+     "lang": "Hungarian"
     }
    ],
    "capitalAnswer": "Budapest"
@@ -2352,7 +3004,14 @@
      "image": "Reykjavík 5545 (cropped).JPG",
      "lon": -21.935,
      "lat": 64.147,
-     "wiki": "Reykjavík"
+     "wiki": "Reykjavík",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Ísland",
+     "lang": "Icelandic"
     }
    ],
    "capitalAnswer": "Reykjavík"
@@ -2383,7 +3042,19 @@
      "image": "India Gate Legendary Saga Of Supreme Sacrifice.jpg",
      "lon": 77.209,
      "lat": 28.614,
-     "wiki": "New_Delhi"
+     "wiki": "New_Delhi",
+     "native": [
+      {
+       "name": "नई दिल्ली",
+       "lang": "Hindi"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "भारत",
+     "lang": "Hindi"
     }
    ],
    "capitalAnswer": "New Delhi"
@@ -2414,9 +3085,11 @@
      "image": "Jakarta.jpg",
      "lon": 106.827,
      "lat": -6.175,
-     "wiki": "Jakarta"
+     "wiki": "Jakarta",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Jakarta"
   },
   {
@@ -2445,7 +3118,19 @@
      "image": "North of tehran.jpg",
      "lon": 51.39,
      "lat": 35.689,
-     "wiki": "Tehran"
+     "wiki": "Tehran",
+     "native": [
+      {
+       "name": "تهران",
+       "lang": "Persian (Farsi)"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "ایران",
+     "lang": "Persian (Farsi)"
     }
    ],
    "capitalAnswer": "Tehran"
@@ -2476,7 +3161,31 @@
      "image": null,
      "lon": 44.366,
      "lat": 33.315,
-     "wiki": "Baghdad"
+     "wiki": "Baghdad",
+     "native": [
+      {
+       "name": "بغداد",
+       "lang": "Arabic"
+      },
+      {
+       "name": "بەغدا",
+       "lang": "Sorani"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "العراق",
+     "lang": "Arabic"
+    },
+    {
+     "name": "ܩܘܼܛܢܵܐ",
+     "lang": "Aramaic"
+    },
+    {
+     "name": "کۆماری",
+     "lang": "Sorani"
     }
    ],
    "capitalAnswer": "Baghdad"
@@ -2507,7 +3216,19 @@
      "image": "Dublin - aerial - 2025-07-07 01.jpg",
      "lon": -6.26,
      "lat": 53.35,
-     "wiki": "Dublin"
+     "wiki": "Dublin",
+     "native": [
+      {
+       "name": "Baile Átha Cliath",
+       "lang": "Irish"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Éire",
+     "lang": "Irish"
     }
    ],
    "capitalAnswer": "Dublin"
@@ -2538,7 +3259,27 @@
      "image": "Dome of the Rock seen from the Mount of Olives (12395649153) (cropped).jpg",
      "lon": 35.234,
      "lat": 31.777,
-     "wiki": "Jerusalem"
+     "wiki": "Jerusalem",
+     "native": [
+      {
+       "name": "ירושלים",
+       "lang": "Hebrew"
+      },
+      {
+       "name": "القدس",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "ישראל",
+     "lang": "Hebrew"
+    },
+    {
+     "name": "إسرائيل",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Jerusalem",
@@ -2570,7 +3311,19 @@
      "image": "Rome Skyline (8012016319).jpg",
      "lon": 12.483,
      "lat": 41.893,
-     "wiki": "Rome"
+     "wiki": "Rome",
+     "native": [
+      {
+       "name": "Roma",
+       "lang": "Italian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Italia",
+     "lang": "Italian"
     }
    ],
    "capitalAnswer": "Rome"
@@ -2601,7 +3354,14 @@
      "image": "Inphb de Yamoussoukro (Bosson).jpg",
      "lon": -5.274,
      "lat": 6.816,
-     "wiki": "Yamoussoukro"
+     "wiki": "Yamoussoukro",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Côte d'Ivoire",
+     "lang": "French"
     }
    ],
    "capitalAnswer": "Yamoussoukro"
@@ -2632,9 +3392,11 @@
      "image": "PortofKingston.jpg",
      "lon": -76.793,
      "lat": 17.971,
-     "wiki": "Kingston,_Jamaica"
+     "wiki": "Kingston,_Jamaica",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Kingston"
   },
   {
@@ -2663,7 +3425,19 @@
      "image": "Skyscrapers of Shinjuku 2009 January (revised).jpg",
      "lon": 139.692,
      "lat": 35.689,
-     "wiki": "Tokyo"
+     "wiki": "Tokyo",
+     "native": [
+      {
+       "name": "東京",
+       "lang": "Japanese"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "日本",
+     "lang": "Japanese"
     }
    ],
    "capitalAnswer": "Tokyo"
@@ -2694,7 +3468,19 @@
      "image": "Amman.jpg",
      "lon": 35.933,
      "lat": 31.95,
-     "wiki": "Amman"
+     "wiki": "Amman",
+     "native": [
+      {
+       "name": "عَمَّان",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "الأردن",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Amman"
@@ -2725,7 +3511,23 @@
      "image": "Trip to Astana (2015-10-24) 01.jpg",
      "lon": 71.433,
      "lat": 51.133,
-     "wiki": "Astana"
+     "wiki": "Astana",
+     "native": [
+      {
+       "name": "Астана",
+       "lang": "Kazakh"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Қазақстан",
+     "lang": "Kazakh"
+    },
+    {
+     "name": "Казахстан",
+     "lang": "Russian"
     }
    ],
    "capitalAnswer": "Astana"
@@ -2756,9 +3558,11 @@
      "image": "Nairobi, view from KICC.JPG",
      "lon": 36.817,
      "lat": -1.286,
-     "wiki": "Nairobi"
+     "wiki": "Nairobi",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Nairobi"
   },
   {
@@ -2787,9 +3591,11 @@
      "image": "South Tarawa from the air.jpg",
      "lon": 172.967,
      "lat": 1.333,
-     "wiki": "South_Tarawa"
+     "wiki": "South_Tarawa",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "South Tarawa"
   },
   {
@@ -2818,9 +3624,11 @@
      "image": "PRISHTINA 2013 (13).jpg",
      "lon": 21.167,
      "lat": 42.667,
-     "wiki": "Pristina"
+     "wiki": "Pristina",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Pristina"
   },
   {
@@ -2849,7 +3657,19 @@
      "image": "LiberationTower.jpg",
      "lon": 47.98,
      "lat": 29.375,
-     "wiki": "Kuwait_City"
+     "wiki": "Kuwait_City",
+     "native": [
+      {
+       "name": "مدينة الكويت",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "الكويت",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Kuwait City"
@@ -2880,7 +3700,23 @@
      "image": "Bishkek City's business center.jpg",
      "lon": 74.567,
      "lat": 42.867,
-     "wiki": "Bishkek"
+     "wiki": "Bishkek",
+     "native": [
+      {
+       "name": "Бишкек",
+       "lang": "Kyrgyz"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Кыргызстан",
+     "lang": "Kyrgyz"
+    },
+    {
+     "name": "Киргизия",
+     "lang": "Russian"
     }
    ],
    "capitalAnswer": "Bishkek"
@@ -2911,7 +3747,19 @@
      "image": "20171118 Vientiane 3220 DxO.jpg",
      "lon": 102.63,
      "lat": 17.98,
-     "wiki": "Vientiane"
+     "wiki": "Vientiane",
+     "native": [
+      {
+       "name": "ວຽງຈັນ",
+       "lang": "Lao"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "ສປປລາວ",
+     "lang": "Lao"
     }
    ],
    "capitalAnswer": "Vientiane"
@@ -2942,7 +3790,19 @@
      "image": "Vistas desde la iglesia de San Pedro, Riga, Letonia, 2012-08-07, DD 12.JPG",
      "lon": 24.107,
      "lat": 56.947,
-     "wiki": "Riga"
+     "wiki": "Riga",
+     "native": [
+      {
+       "name": "Rīga",
+       "lang": "Latvian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Latvija",
+     "lang": "Latvian"
     }
    ],
    "capitalAnswer": "Riga"
@@ -2973,7 +3833,27 @@
      "image": "Beirutcity.jpg",
      "lon": 35.513,
      "lat": 33.887,
-     "wiki": "Beirut"
+     "wiki": "Beirut",
+     "native": [
+      {
+       "name": "بيروت",
+       "lang": "Arabic"
+      },
+      {
+       "name": "Beyrouth",
+       "lang": "French"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "لبنان",
+     "lang": "Arabic"
+    },
+    {
+     "name": "Liban",
+     "lang": "French"
     }
    ],
    "capitalAnswer": "Beirut"
@@ -3004,9 +3884,11 @@
      "image": "Maseru from Parliament Hill.jpg",
      "lon": 27.48,
      "lat": -29.31,
-     "wiki": "Maseru"
+     "wiki": "Maseru",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Maseru"
   },
   {
@@ -3035,9 +3917,11 @@
      "image": "Liberia, Africa - panoramio (256).jpg",
      "lon": -10.805,
      "lat": 6.311,
-     "wiki": "Monrovia"
+     "wiki": "Monrovia",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Monrovia"
   },
   {
@@ -3066,7 +3950,19 @@
      "image": "Marcus Aurelius Arch Tripoli Libya.jpg",
      "lon": 13.188,
      "lat": 32.888,
-     "wiki": "Tripoli,_Libya"
+     "wiki": "Tripoli,_Libya",
+     "native": [
+      {
+       "name": "طرابلس",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "ليبيا",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Tripoli"
@@ -3097,9 +3993,11 @@
      "image": "View of Vaduz.jpg",
      "lon": 9.522,
      "lat": 47.141,
-     "wiki": "Vaduz"
+     "wiki": "Vaduz",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Vaduz"
   },
   {
@@ -3128,7 +4026,14 @@
      "image": "Gedimino pilis by Augustas Didzgalvis.jpg",
      "lon": 25.28,
      "lat": 54.687,
-     "wiki": "Vilnius"
+     "wiki": "Vilnius",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Lietuva",
+     "lang": "Lithuanian"
     }
    ],
    "capitalAnswer": "Vilnius"
@@ -3159,7 +4064,27 @@
      "image": "Luxembourg City Hall (54540726309).jpg",
      "lon": 6.13,
      "lat": 49.611,
-     "wiki": "Luxembourg_City"
+     "wiki": "Luxembourg_City",
+     "native": [
+      {
+       "name": "Luxemburg",
+       "lang": "German"
+      },
+      {
+       "name": "Lëtzebuerg",
+       "lang": "Luxembourgish"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Luxemburg",
+     "lang": "German"
+    },
+    {
+     "name": "Lëtzebuerg",
+     "lang": "Luxembourgish"
     }
    ],
    "capitalAnswer": "Luxembourg"
@@ -3190,7 +4115,14 @@
      "image": "Lake Anosy, Central Antananarivo, Capital of Madagascar, Photo by Sascha Grabow.jpg",
      "lon": 47.525,
      "lat": -18.91,
-     "wiki": "Antananarivo"
+     "wiki": "Antananarivo",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Madagasikara",
+     "lang": "Malagasy"
     }
    ],
    "capitalAnswer": "Antananarivo"
@@ -3221,7 +4153,14 @@
      "image": "Lilongwe Area 2.jpg",
      "lon": 33.768,
      "lat": -13.986,
-     "wiki": "Lilongwe"
+     "wiki": "Lilongwe",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Malaŵi",
+     "lang": "Chewa"
     }
    ],
    "capitalAnswer": "Lilongwe"
@@ -3252,7 +4191,8 @@
      "image": "Kl-skyline-at-night-2022.jpg",
      "lon": 101.695,
      "lat": 3.148,
-     "wiki": "Kuala_Lumpur"
+     "wiki": "Kuala_Lumpur",
+     "native": []
     },
     {
      "id": "Q182378",
@@ -3262,7 +4202,14 @@
      "image": "Putrajaya Collage.jpg",
      "lon": 101.69,
      "lat": 2.93,
-     "wiki": "Putrajaya"
+     "wiki": "Putrajaya",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "مليسيا",
+     "lang": "Malay"
     }
    ],
    "capitalAnswer": "Kuala Lumpur (official capital), though the government sits in Putrajaya",
@@ -3294,7 +4241,19 @@
      "image": "Male-total.jpg",
      "lon": 73.508,
      "lat": 4.175,
-     "wiki": "Malé"
+     "wiki": "Malé",
+     "native": [
+      {
+       "name": "މާލެ",
+       "lang": "Maldivian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "ދިވެހިރާއްޖޭގެ",
+     "lang": "Maldivian"
     }
    ],
    "capitalAnswer": "Malé"
@@ -3325,9 +4284,11 @@
      "image": "Bamako ACI 2000 Aeriel.jpg",
      "lon": -7.992,
      "lat": 12.646,
-     "wiki": "Bamako"
+     "wiki": "Bamako",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Bamako"
   },
   {
@@ -3356,9 +4317,11 @@
      "image": "Malta, 2010 - panoramio - Bengt Nyman (23).jpg",
      "lon": 14.512,
      "lat": 35.898,
-     "wiki": "Valletta"
+     "wiki": "Valletta",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Valletta"
   },
   {
@@ -3387,7 +4350,14 @@
      "image": "Majuro main road.jpg",
      "lon": 171.38,
      "lat": 7.092,
-     "wiki": "Majuro"
+     "wiki": "Majuro",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "M̧ajeļ",
+     "lang": "Marshallese"
     }
    ],
    "capitalAnswer": "Majuro"
@@ -3418,7 +4388,19 @@
      "image": "15-Nouakchott-eH-R0058185.jpg",
      "lon": -15.979,
      "lat": 18.086,
-     "wiki": "Nouakchott"
+     "wiki": "Nouakchott",
+     "native": [
+      {
+       "name": "نواكشوط",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "موريتانيا",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Nouakchott"
@@ -3449,7 +4431,23 @@
      "image": "Mauritius port louis.jpg",
      "lon": 57.499,
      "lat": -20.162,
-     "wiki": "Port_Louis"
+     "wiki": "Port_Louis",
+     "native": [
+      {
+       "name": "Port-Louis",
+       "lang": "French"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Maurice",
+     "lang": "French"
+    },
+    {
+     "name": "Moris",
+     "lang": "Mauritian Creole"
     }
    ],
    "capitalAnswer": "Port Louis"
@@ -3480,7 +4478,19 @@
      "image": "Sobrevuelos CDMX HJ2A5091 (40386338731).jpg",
      "lon": -99.136,
      "lat": 19.354,
-     "wiki": "Mexico_City"
+     "wiki": "Mexico_City",
+     "native": [
+      {
+       "name": "Ciudad de México",
+       "lang": "Spanish"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "México",
+     "lang": "Spanish"
     }
    ],
    "capitalAnswer": "Mexico City"
@@ -3511,9 +4521,11 @@
      "image": "Palikir Government Buildings.jpg",
      "lon": 158.185,
      "lat": 6.918,
-     "wiki": "Palikir"
+     "wiki": "Palikir",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Palikir"
   },
   {
@@ -3542,9 +4554,11 @@
      "image": "Arch of Triumph, Chisinau, Republic of Moldova (51160304626 cropped).jpg",
      "lon": 28.835,
      "lat": 47.023,
-     "wiki": "Chișinău"
+     "wiki": "Chișinău",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Chișinău"
   },
   {
@@ -3573,9 +4587,11 @@
      "image": "Panorama von Monaco-La Turbie.jpg",
      "lon": 7.42,
      "lat": 43.731,
-     "wiki": "Monaco"
+     "wiki": "Monaco",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Monaco"
   },
   {
@@ -3604,7 +4620,19 @@
      "image": "UB downtown.jpg",
      "lon": 106.906,
      "lat": 47.921,
-     "wiki": "Ulaanbaatar"
+     "wiki": "Ulaanbaatar",
+     "native": [
+      {
+       "name": "Улаанбаатар",
+       "lang": "Mongolian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Монгол улс",
+     "lang": "Mongolian"
     }
    ],
    "capitalAnswer": "Ulaanbaatar"
@@ -3635,7 +4663,14 @@
      "image": "Titograd.jpg",
      "lon": 19.263,
      "lat": 42.441,
-     "wiki": "Podgorica"
+     "wiki": "Podgorica",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Црна Гора",
+     "lang": "Montenegrin"
     }
    ],
    "capitalAnswer": "Podgorica"
@@ -3666,7 +4701,23 @@
      "image": "Kasbah des Oudaias P1060356.JPG",
      "lon": -6.841,
      "lat": 34.021,
-     "wiki": "Rabat"
+     "wiki": "Rabat",
+     "native": [
+      {
+       "name": "الرباط",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "المغرب",
+     "lang": "Arabic"
+    },
+    {
+     "name": "ⵍⵎⴰⵖⵔⵉⴱ",
+     "lang": "Berber"
     }
    ],
    "capitalAnswer": "Rabat"
@@ -3697,7 +4748,14 @@
      "image": "Maputo seen from southeast - October 2006.jpg",
      "lon": 32.573,
      "lat": -25.969,
-     "wiki": "Maputo"
+     "wiki": "Maputo",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Moçambique",
+     "lang": "Portuguese"
     }
    ],
    "capitalAnswer": "Maputo"
@@ -3728,7 +4786,19 @@
      "image": "Naypyidaw -- Water Fountain Garden.JPG",
      "lon": 96.115,
      "lat": 19.747,
-     "wiki": "Naypyidaw"
+     "wiki": "Naypyidaw",
+     "native": [
+      {
+       "name": "နေပြည်တော်မြို့",
+       "lang": "Burmese"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "မြန်မာ",
+     "lang": "Burmese"
     }
    ],
    "capitalAnswer": "Naypyidaw"
@@ -3759,7 +4829,14 @@
      "image": "Windhoek-Skyline.jpg",
      "lon": 17.084,
      "lat": -22.57,
-     "wiki": "Windhoek"
+     "wiki": "Windhoek",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Namibië",
+     "lang": "Afrikaans"
     }
    ],
    "capitalAnswer": "Windhoek"
@@ -3790,9 +4867,11 @@
      "image": "Nauru-parliament.jpg",
      "lon": 166.921,
      "lat": -0.548,
-     "wiki": "Yaren"
+     "wiki": "Yaren",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Yaren District"
   },
   {
@@ -3821,7 +4900,19 @@
      "image": "Kathmandu Avion 01.JPG",
      "lon": 85.32,
      "lat": 27.71,
-     "wiki": "Kathmandu"
+     "wiki": "Kathmandu",
+     "native": [
+      {
+       "name": "काठमाडौँ",
+       "lang": "Nepali"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "नेपाल",
+     "lang": "Nepali"
     }
    ],
    "capitalAnswer": "Kathmandu"
@@ -3852,7 +4943,14 @@
      "image": "Amsterdam airphoto.jpg",
      "lon": 4.883,
      "lat": 52.367,
-     "wiki": "Amsterdam"
+     "wiki": "Amsterdam",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Nederland",
+     "lang": "Dutch"
     }
    ],
    "capitalAnswer": "Amsterdam"
@@ -3883,7 +4981,19 @@
      "image": "WellingtonPanorama.jpg",
      "lon": 174.777,
      "lat": -41.289,
-     "wiki": "Wellington"
+     "wiki": "Wellington",
+     "native": [
+      {
+       "name": "Te Whanga-nui-a-Tara",
+       "lang": "Māori"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Aotearoa",
+     "lang": "Māori"
     }
    ],
    "capitalAnswer": "Wellington"
@@ -3914,9 +5024,11 @@
      "image": null,
      "lon": -86.274,
      "lat": 12.155,
-     "wiki": null
+     "wiki": null,
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Managua"
   },
   {
@@ -3945,9 +5057,11 @@
      "image": "Niamey from grand mosque theatre 2006.jpg",
      "lon": 2.118,
      "lat": 13.515,
-     "wiki": "Niamey"
+     "wiki": "Niamey",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Niamey"
   },
   {
@@ -3976,9 +5090,11 @@
      "image": "The National Assembly Globe.jpg",
      "lon": 7.491,
      "lat": 9.056,
-     "wiki": "Abuja"
+     "wiki": "Abuja",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Abuja"
   },
   {
@@ -4007,7 +5123,19 @@
      "image": "Panoramic view from Juche Tower.jpg",
      "lon": 125.748,
      "lat": 39.017,
-     "wiki": "Pyongyang"
+     "wiki": "Pyongyang",
+     "native": [
+      {
+       "name": "평양시",
+       "lang": "Korean"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "조선",
+     "lang": "Korean"
     }
    ],
    "capitalAnswer": "Pyongyang"
@@ -4038,7 +5166,19 @@
      "image": "Stone Bridge Skopje 4.jpg",
      "lon": 21.432,
      "lat": 41.996,
-     "wiki": "Skopje"
+     "wiki": "Skopje",
+     "native": [
+      {
+       "name": "Скопје",
+       "lang": "Macedonian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Македонија",
+     "lang": "Macedonian"
     }
    ],
    "capitalAnswer": "Skopje"
@@ -4069,9 +5209,11 @@
      "image": "Nicosia 01-2017 img22 View from Shacolas Tower.jpg",
      "lon": 33.364,
      "lat": 35.19,
-     "wiki": "North_Nicosia"
+     "wiki": "North_Nicosia",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "North Nicosia"
   },
   {
@@ -4100,7 +5242,22 @@
      "image": "Oslo newer montage 2013.png",
      "lon": 10.739,
      "lat": 59.913,
-     "wiki": "Oslo"
+     "wiki": "Oslo",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Noreg",
+     "lang": "Norwegian Nynorsk"
+    },
+    {
+     "name": "Norge",
+     "lang": "Norwegian Bokmål"
+    },
+    {
+     "name": "Norgga",
+     "lang": "Sami"
     }
    ],
    "capitalAnswer": "Oslo"
@@ -4131,7 +5288,19 @@
      "image": "Old city of Maskat.jpg",
      "lon": 58.592,
      "lat": 23.614,
-     "wiki": "Muscat"
+     "wiki": "Muscat",
+     "native": [
+      {
+       "name": "مسقط",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "عمان",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Muscat"
@@ -4162,7 +5331,19 @@
      "image": "King Faisal Mosque.jpg",
      "lon": 73.037,
      "lat": 33.699,
-     "wiki": "Islamabad"
+     "wiki": "Islamabad",
+     "native": [
+      {
+       "name": "اسلام آباد",
+       "lang": "Urdu"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "پاكستان",
+     "lang": "Urdu"
     }
    ],
    "capitalAnswer": "Islamabad"
@@ -4193,7 +5374,14 @@
      "image": "State of Melekeok.png",
      "lon": 134.624,
      "lat": 7.501,
-     "wiki": "Ngerulmud"
+     "wiki": "Ngerulmud",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Belau",
+     "lang": "Palauan"
     }
    ],
    "capitalAnswer": "Ngerulmud"
@@ -4224,7 +5412,13 @@
      "image": "Jerusalem-2013-Aerial-Temple Mount 03.jpg",
      "lon": 35.234,
      "lat": 31.783,
-     "wiki": "East_Jerusalem"
+     "wiki": "East_Jerusalem",
+     "native": [
+      {
+       "name": "القدس الشرقية",
+       "lang": "Arabic"
+      }
+     ]
     },
     {
      "id": "Q158119",
@@ -4234,7 +5428,19 @@
      "image": "Ramallah 2024.jpg",
      "lon": 35.202,
      "lat": 31.897,
-     "wiki": "Ramallah"
+     "wiki": "Ramallah",
+     "native": [
+      {
+       "name": "رام الله",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "فلسطين",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "East Jerusalem (proclaimed capital), with the government based in Ramallah",
@@ -4266,7 +5472,19 @@
      "image": "Panama City Skyline 1.jpg",
      "lon": -79.535,
      "lat": 8.971,
-     "wiki": "Panama_City"
+     "wiki": "Panama_City",
+     "native": [
+      {
+       "name": "Ciudad de Panamá",
+       "lang": "Spanish"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Panamá",
+     "lang": "Spanish"
     }
    ],
    "capitalAnswer": "Panama City"
@@ -4297,7 +5515,23 @@
      "image": "Port Moresby Town2 Mschlauch.jpg",
      "lon": 147.149,
      "lat": -9.479,
-     "wiki": "Port_Moresby"
+     "wiki": "Port_Moresby",
+     "native": [
+      {
+       "name": "Pot Mosbi",
+       "lang": "Tok Pisin"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Papua Niu Gini",
+     "lang": "Hiri Motu"
+    },
+    {
+     "name": "Papua Niugini",
+     "lang": "Tok Pisin"
     }
    ],
    "capitalAnswer": "Port Moresby"
@@ -4328,7 +5562,19 @@
      "image": "Asunción Paraguay.jpg",
      "lon": -57.634,
      "lat": -25.28,
-     "wiki": "Asunción"
+     "wiki": "Asunción",
+     "native": [
+      {
+       "name": "Paraguay",
+       "lang": "Guaraní"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Paraguái",
+     "lang": "Guaraní"
     }
    ],
    "capitalAnswer": "Asunción"
@@ -4359,7 +5605,18 @@
      "image": "Plaza Mayor de Lima-1.jpg",
      "lon": -77.037,
      "lat": -12.06,
-     "wiki": "Lima"
+     "wiki": "Lima",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Piruw",
+     "lang": "Aymara"
+    },
+    {
+     "name": "Perú",
+     "lang": "Spanish"
     }
    ],
    "capitalAnswer": "Lima"
@@ -4390,7 +5647,14 @@
      "image": "Big Manila.jpg",
      "lon": 120.977,
      "lat": 14.596,
-     "wiki": "Manila"
+     "wiki": "Manila",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Pilipinas",
+     "lang": "Filipino"
     }
    ],
    "capitalAnswer": "Manila"
@@ -4421,7 +5685,19 @@
      "image": "Castle Square (22346p).jpg",
      "lon": 21.011,
      "lat": 52.23,
-     "wiki": "Warsaw"
+     "wiki": "Warsaw",
+     "native": [
+      {
+       "name": "Warszawa",
+       "lang": "Polish"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Polska",
+     "lang": "Polish"
     }
    ],
    "capitalAnswer": "Warsaw"
@@ -4452,9 +5728,11 @@
      "image": "Lisboa837.png",
      "lon": -9.139,
      "lat": 38.708,
-     "wiki": "Lisbon"
+     "wiki": "Lisbon",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Lisbon"
   },
   {
@@ -4483,7 +5761,19 @@
      "image": "Doha skyline in the morning (12544910974).jpg",
      "lon": 51.529,
      "lat": 25.286,
-     "wiki": "Doha"
+     "wiki": "Doha",
+     "native": [
+      {
+       "name": "الدوحة",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "قطر",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Doha"
@@ -4514,7 +5804,27 @@
      "image": "Brazzaville (50637).jpg",
      "lon": 15.271,
      "lat": -4.269,
-     "wiki": "Brazzaville"
+     "wiki": "Brazzaville",
+     "native": [
+      {
+       "name": "Mavula",
+       "lang": "Kikongo"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "République du Congo",
+     "lang": "French"
+    },
+    {
+     "name": "Repubilika ya Kongo",
+     "lang": "Kikongo"
+    },
+    {
+     "name": "Republíki ya Kongó",
+     "lang": "Lingala"
     }
    ],
    "capitalAnswer": "Brazzaville"
@@ -4545,7 +5855,19 @@
      "image": "Bucharest-Skyline-01.jpg",
      "lon": 26.098,
      "lat": 44.413,
-     "wiki": "Bucharest"
+     "wiki": "Bucharest",
+     "native": [
+      {
+       "name": "București",
+       "lang": "Romanian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "România",
+     "lang": "Romanian"
     }
    ],
    "capitalAnswer": "Bucharest"
@@ -4576,7 +5898,19 @@
      "image": "Saint Basil's Cathedral and the Red Square.jpg",
      "lon": 37.617,
      "lat": 55.751,
-     "wiki": "Moscow"
+     "wiki": "Moscow",
+     "native": [
+      {
+       "name": "Москва",
+       "lang": "Russian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Россия",
+     "lang": "Russian"
     }
    ],
    "capitalAnswer": "Moscow"
@@ -4607,9 +5941,11 @@
      "image": "Kigali2018Cropped.jpg",
      "lon": 30.115,
      "lat": -1.952,
-     "wiki": "Kigali"
+     "wiki": "Kigali",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Kigali"
   },
   {
@@ -4638,7 +5974,8 @@
      "image": "El Aaiún-Laâyoune Collage.png",
      "lon": -13.2,
      "lat": 27.15,
-     "wiki": "Laayoune"
+     "wiki": "Laayoune",
+     "native": []
     },
     {
      "id": "Q2360337",
@@ -4648,9 +5985,11 @@
      "image": "Tifariti 2005.jpg",
      "lon": -10.567,
      "lat": 26.158,
-     "wiki": "Tifariti"
+     "wiki": "Tifariti",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Laayoune (claimed capital), with Tifariti as the temporary capital",
    "capitalNote": null
   },
@@ -4680,9 +6019,11 @@
      "image": "Basseterre.jpeg",
      "lon": -62.734,
      "lat": 17.298,
-     "wiki": "Basseterre"
+     "wiki": "Basseterre",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Basseterre"
   },
   {
@@ -4711,9 +6052,11 @@
      "image": "CastriesStLucia.JPG",
      "lon": -60.989,
      "lat": 14.011,
-     "wiki": "Castries"
+     "wiki": "Castries",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Castries"
   },
   {
@@ -4742,9 +6085,11 @@
      "image": "St. Vincent, Karibik - Kingstown City - panoramio.jpg",
      "lon": -61.227,
      "lat": 13.155,
-     "wiki": "Kingstown"
+     "wiki": "Kingstown",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Kingstown"
   },
   {
@@ -4773,7 +6118,14 @@
      "image": "Samoa - Apia Govt buildings.jpg",
      "lon": -171.833,
      "lat": -13.833,
-     "wiki": "Apia"
+     "wiki": "Apia",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Sāmoa",
+     "lang": "Samoan"
     }
    ],
    "capitalAnswer": "Apia"
@@ -4804,9 +6156,11 @@
      "image": "View of Mount Titano - San Marino.jpg",
      "lon": 12.448,
      "lat": 43.932,
-     "wiki": "City_of_San_Marino"
+     "wiki": "City_of_San_Marino",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "San Marino"
   },
   {
@@ -4835,7 +6189,14 @@
      "image": "Org 4cd8129a56d8fa1d 1582100284000.jpg",
      "lon": 6.728,
      "lat": 0.338,
-     "wiki": "São_Tomé"
+     "wiki": "São_Tomé",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "São Tomé e Príncipe",
+     "lang": "Portuguese"
     }
    ],
    "capitalAnswer": "São Tomé"
@@ -4866,7 +6227,19 @@
      "image": "Riyadh Skyline.jpg",
      "lon": 46.715,
      "lat": 24.638,
-     "wiki": "Riyadh"
+     "wiki": "Riyadh",
+     "native": [
+      {
+       "name": "الرياض",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "السعودية",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Riyadh"
@@ -4897,7 +6270,14 @@
      "image": "Pointe des Almadies - Senegal.jpg",
      "lon": -17.432,
      "lat": 14.673,
-     "wiki": "Dakar"
+     "wiki": "Dakar",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Sénégal",
+     "lang": "French"
     }
    ],
    "capitalAnswer": "Dakar"
@@ -4928,7 +6308,19 @@
      "image": "Beograd collage.jpg",
      "lon": 20.457,
      "lat": 44.818,
-     "wiki": "Belgrade"
+     "wiki": "Belgrade",
+     "native": [
+      {
+       "name": "Beograd",
+       "lang": "Serbian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Србија",
+     "lang": "Serbian"
     }
    ],
    "capitalAnswer": "Belgrade"
@@ -4959,7 +6351,14 @@
      "image": "Victoria view from Bel Eau asv2024-09 img3.jpg",
      "lon": 55.454,
      "lat": -4.624,
-     "wiki": "Victoria,_Seychelles"
+     "wiki": "Victoria,_Seychelles",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Sesel",
+     "lang": "Seychellois Creole"
     }
    ],
    "capitalAnswer": "Victoria"
@@ -4990,9 +6389,11 @@
      "image": "Freetown-aerialview.jpg",
      "lon": -13.236,
      "lat": 8.487,
-     "wiki": "Freetown"
+     "wiki": "Freetown",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Freetown"
   },
   {
@@ -5021,7 +6422,35 @@
      "image": "Raffles Place.jpg",
      "lon": 103.8,
      "lat": 1.3,
-     "wiki": "Singapore"
+     "wiki": "Singapore",
+     "native": [
+      {
+       "name": "Singapura",
+       "lang": "Malay"
+      },
+      {
+       "name": "சிங்கப்பூர்",
+       "lang": "Tamil"
+      },
+      {
+       "name": "新加坡",
+       "lang": "Chinese"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Singapura",
+     "lang": "Malay"
+    },
+    {
+     "name": "சிங்கப்பூர்",
+     "lang": "Tamil"
+    },
+    {
+     "name": "新加坡",
+     "lang": "Chinese"
     }
    ],
    "capitalAnswer": "Singapore"
@@ -5052,7 +6481,14 @@
      "image": "Hlavné Namestie (35096533142).jpg",
      "lon": 17.109,
      "lat": 48.152,
-     "wiki": "Bratislava"
+     "wiki": "Bratislava",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Slovensko",
+     "lang": "Slovak"
     }
    ],
    "capitalAnswer": "Bratislava"
@@ -5083,7 +6519,14 @@
      "image": "2021-07-28 Ljubljana-0881.jpg",
      "lon": 14.506,
      "lat": 46.051,
-     "wiki": "Ljubljana"
+     "wiki": "Ljubljana",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Slovenija",
+     "lang": "Slovene"
     }
    ],
    "capitalAnswer": "Ljubljana"
@@ -5114,9 +6557,11 @@
      "image": "Honiara aerial crop.jpg",
      "lon": 159.95,
      "lat": -9.433,
-     "wiki": "Honiara"
+     "wiki": "Honiara",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Honiara"
   },
   {
@@ -5145,7 +6590,27 @@
      "image": "Pictures from an armed convoy trip in Mogadishu.jpg",
      "lon": 45.342,
      "lat": 2.039,
-     "wiki": "Mogadishu"
+     "wiki": "Mogadishu",
+     "native": [
+      {
+       "name": "مقديشو",
+       "lang": "Arabic"
+      },
+      {
+       "name": "Muqdisho",
+       "lang": "Somali"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "الصومال",
+     "lang": "Arabic"
+    },
+    {
+     "name": "Soomaaliya",
+     "lang": "Somali"
     }
    ],
    "capitalAnswer": "Mogadishu"
@@ -5176,9 +6641,11 @@
      "image": "HargeisaDrone.jpg",
      "lon": 44.061,
      "lat": 9.566,
-     "wiki": "Hargeisa"
+     "wiki": "Hargeisa",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Hargeisa"
   },
   {
@@ -5207,7 +6674,17 @@
      "image": "Bloemfontein, Free State, South Africa (20351086709).jpg",
      "lon": 26.217,
      "lat": -29.1,
-     "wiki": "Bloemfontein"
+     "wiki": "Bloemfontein",
+     "native": [
+      {
+       "name": "IBloemfontein",
+       "lang": "Zulu"
+      },
+      {
+       "name": "EBloemfontein",
+       "lang": "Xhosa"
+      }
+     ]
     },
     {
      "id": "Q5465",
@@ -5217,7 +6694,13 @@
      "image": "Ciudad del Cabo desde Cabeza de León, Sudáfrica, 2018-07-22, DD 34.jpg",
      "lon": 18.424,
      "lat": -33.925,
-     "wiki": "Cape_Town"
+     "wiki": "Cape_Town",
+     "native": [
+      {
+       "name": "IKapa",
+       "lang": "Zulu"
+      }
+     ]
     },
     {
      "id": "Q3926",
@@ -5227,7 +6710,27 @@
      "image": "Pretoria CBD1.jpg",
      "lon": 28.188,
      "lat": -25.746,
-     "wiki": "Pretoria"
+     "wiki": "Pretoria",
+     "native": [
+      {
+       "name": "IPitoli",
+       "lang": "Zulu"
+      },
+      {
+       "name": "E-Pitoli",
+       "lang": "Xhosa"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Ningizimu Afrika",
+     "lang": "Zulu"
+    },
+    {
+     "name": "Mzantsi Afrika",
+     "lang": "Xhosa"
     }
    ],
    "capitalAnswer": "split three ways: Pretoria (executive), Cape Town (legislative) and Bloemfontein (judicial)",
@@ -5259,7 +6762,19 @@
      "image": "덕수궁의 가을.jpg",
      "lon": 126.99,
      "lat": 37.56,
-     "wiki": "Seoul"
+     "wiki": "Seoul",
+     "native": [
+      {
+       "name": "서울특별시",
+       "lang": "Korean"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "한국",
+     "lang": "Korean"
     }
    ],
    "capitalAnswer": "Seoul"
@@ -5288,9 +6803,11 @@
      "image": "Г. Цхинвал.jpg",
      "lon": 43.97,
      "lat": 42.226,
-     "wiki": "Tskhinvali"
+     "wiki": "Tskhinvali",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Tskhinvali"
   },
   {
@@ -5319,9 +6836,11 @@
      "image": "Juba City.jpg",
      "lon": 31.582,
      "lat": 4.854,
-     "wiki": "Juba"
+     "wiki": "Juba",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Juba"
   },
   {
@@ -5350,7 +6869,14 @@
      "image": "Madrid (38624991251).jpg",
      "lon": -3.703,
      "lat": 40.417,
-     "wiki": "Madrid"
+     "wiki": "Madrid",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "España",
+     "lang": "Spanish"
     }
    ],
    "capitalAnswer": "Madrid"
@@ -5381,7 +6907,17 @@
      "image": "Colombo skyline 2024.jpg",
      "lon": 79.861,
      "lat": 6.927,
-     "wiki": "Colombo"
+     "wiki": "Colombo",
+     "native": [
+      {
+       "name": "කොළඹ",
+       "lang": "Sinhala"
+      },
+      {
+       "name": "கொழும்பு",
+       "lang": "Tamil"
+      }
+     ]
     },
     {
      "id": "Q41963",
@@ -5391,7 +6927,27 @@
      "image": "Fountain at Diyatha Uyana.JPG",
      "lon": 79.916,
      "lat": 6.9,
-     "wiki": "Sri_Jayawardenepura_Kotte"
+     "wiki": "Sri_Jayawardenepura_Kotte",
+     "native": [
+      {
+       "name": "ශ්රී ජයවර්ධනපුර කෝට්ටේ",
+       "lang": "Sinhala"
+      },
+      {
+       "name": "கோட்டே",
+       "lang": "Tamil"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "ශ්‍රී ලංකාව",
+     "lang": "Sinhala"
+    },
+    {
+     "name": "இலங்கை",
+     "lang": "Tamil"
     }
    ],
    "capitalAnswer": "Sri Jayawardenepura Kotte (legislative capital), with Colombo as the executive and commercial capital",
@@ -5423,7 +6979,19 @@
      "image": "Elmek Nimir Bridge.jpg",
      "lon": 32.527,
      "lat": 15.603,
-     "wiki": "Khartoum"
+     "wiki": "Khartoum",
+     "native": [
+      {
+       "name": "الخرطوم",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "السودان",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Khartoum"
@@ -5454,9 +7022,11 @@
      "image": "Waterkant Paramaribo with the Unesco Heritage Buildings.jpg",
      "lon": -55.167,
      "lat": 5.867,
-     "wiki": "Paramaribo"
+     "wiki": "Paramaribo",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Paramaribo"
   },
   {
@@ -5485,7 +7055,14 @@
      "image": "Stockholm gamlastan etc.jpg",
      "lon": 18.069,
      "lat": 59.329,
-     "wiki": "Stockholm"
+     "wiki": "Stockholm",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Sverige",
+     "lang": "Swedish"
     }
    ],
    "capitalAnswer": "Stockholm"
@@ -5516,7 +7093,31 @@
      "image": "Bern luftaufnahme.png",
      "lon": 7.447,
      "lat": 46.948,
-     "wiki": "Bern"
+     "wiki": "Bern",
+     "native": [
+      {
+       "name": "Berne",
+       "lang": "French"
+      },
+      {
+       "name": "Berna",
+       "lang": "Italian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Suisse",
+     "lang": "French"
+    },
+    {
+     "name": "Schweiz",
+     "lang": "Swiss German"
+    },
+    {
+     "name": "Svizzera",
+     "lang": "Italian"
     }
    ],
    "capitalAnswer": "Bern"
@@ -5547,7 +7148,19 @@
      "image": "Damascus coll.jpg",
      "lon": 36.292,
      "lat": 33.513,
-     "wiki": "Damascus"
+     "wiki": "Damascus",
+     "native": [
+      {
+       "name": "دمشق",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "سوريا",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Damascus"
@@ -5578,7 +7191,19 @@
      "image": "20260204 Taipei, Taiwan Skyline.jpg",
      "lon": 121.563,
      "lat": 25.038,
-     "wiki": "Taipei"
+     "wiki": "Taipei",
+     "native": [
+      {
+       "name": "臺北",
+       "lang": "Chinese"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "台灣",
+     "lang": "Chinese"
     }
    ],
    "capitalAnswer": "Taipei"
@@ -5609,7 +7234,23 @@
      "image": "Tehron Street Dushanbe.jpg",
      "lon": 68.786,
      "lat": 38.573,
-     "wiki": "Dushanbe"
+     "wiki": "Dushanbe",
+     "native": [
+      {
+       "name": "Душанбе",
+       "lang": "Russian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Таджикистан",
+     "lang": "Russian"
+    },
+    {
+     "name": "Тоҷикистон",
+     "lang": "Tajik"
     }
    ],
    "capitalAnswer": "Dushanbe"
@@ -5640,9 +7281,11 @@
      "image": "Scene at Nyerere Square, Dodoma City.jpg",
      "lon": 35.746,
      "lat": -6.184,
-     "wiki": "Dodoma"
+     "wiki": "Dodoma",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Dodoma"
   },
   {
@@ -5671,7 +7314,19 @@
      "image": "Temple of the Emerald of buddha or Wat Phra Kaew (cropped).jpg",
      "lon": 100.517,
      "lat": 13.75,
-     "wiki": "Bangkok"
+     "wiki": "Bangkok",
+     "native": [
+      {
+       "name": "กรุงเทพมหานคร",
+       "lang": "Thai"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "ประเทศไทย",
+     "lang": "Thai"
     }
    ],
    "capitalAnswer": "Bangkok"
@@ -5702,7 +7357,14 @@
      "image": "Aussenministerium und Avenida de Portugal.jpg",
      "lon": 125.578,
      "lat": -8.554,
-     "wiki": "Dili"
+     "wiki": "Dili",
+     "native": []
+    }
+   ],
+   "native": [
+    {
+     "name": "Timór-Leste",
+     "lang": "Tetum"
     }
    ],
    "capitalAnswer": "Dili"
@@ -5733,9 +7395,11 @@
      "image": "Monuments de l'indépendance et Palais des congrès de Lomé.jpg",
      "lon": 1.216,
      "lat": 6.13,
-     "wiki": "Lomé"
+     "wiki": "Lomé",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Lomé"
   },
   {
@@ -5764,9 +7428,11 @@
      "image": "Royal Palace, Nuku'alofa, Nov 18.jpg",
      "lon": -175.202,
      "lat": -21.134,
-     "wiki": "Nukuʻalofa"
+     "wiki": "Nukuʻalofa",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Nukuʻalofa"
   },
   {
@@ -5793,9 +7459,11 @@
      "image": "Площадь Суворова после парада.jpg",
      "lon": 29.633,
      "lat": 46.85,
-     "wiki": "Tiraspol"
+     "wiki": "Tiraspol",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Tiraspol"
   },
   {
@@ -5824,9 +7492,11 @@
      "image": "POS SKYLINE 2024 BEAUTIFUL EVAN-P 2024 10-8.jpg",
      "lon": -61.517,
      "lat": 10.667,
-     "wiki": "Port_of_Spain"
+     "wiki": "Port_of_Spain",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Port of Spain"
   },
   {
@@ -5855,7 +7525,19 @@
      "image": "Panoramique du centre de Tunis (3197369985) (cropped).jpg",
      "lon": 10.18,
      "lat": 36.801,
-     "wiki": "Tunis"
+     "wiki": "Tunis",
+     "native": [
+      {
+       "name": "تونس",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "تونس",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Tunis"
@@ -5886,9 +7568,11 @@
      "image": "Ankara (16290014657).jpg",
      "lon": 32.839,
      "lat": 39.936,
-     "wiki": "Ankara"
+     "wiki": "Ankara",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Ankara"
   },
   {
@@ -5917,7 +7601,27 @@
      "image": "Neutrality-Road-Ashgabat-2015.JPG",
      "lon": 58.383,
      "lat": 37.95,
-     "wiki": "Ashgabat"
+     "wiki": "Ashgabat",
+     "native": [
+      {
+       "name": "Ашхабад",
+       "lang": "Russian"
+      },
+      {
+       "name": "Aşgabat",
+       "lang": "Turkmen"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Туркмения",
+     "lang": "Russian"
+    },
+    {
+     "name": "Türkmenistan",
+     "lang": "Turkmen"
     }
    ],
    "capitalAnswer": "Ashgabat"
@@ -5946,9 +7650,11 @@
      "image": "Funafuti township.jpg",
      "lon": 179.117,
      "lat": -8.505,
-     "wiki": "Funafuti"
+     "wiki": "Funafuti",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Funafuti"
   },
   {
@@ -5977,9 +7683,11 @@
      "image": "View from 7th floor on Crane Chambers at Kampala road - panoramio.jpg",
      "lon": 32.581,
      "lat": 0.314,
-     "wiki": "Kampala"
+     "wiki": "Kampala",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Kampala"
   },
   {
@@ -6008,7 +7716,19 @@
      "image": "Kyiv (234807751).jpeg",
      "lon": 30.524,
      "lat": 50.45,
-     "wiki": "Kyiv"
+     "wiki": "Kyiv",
+     "native": [
+      {
+       "name": "Київ",
+       "lang": "Ukrainian"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Україна",
+     "lang": "Ukrainian"
     }
    ],
    "capitalAnswer": "Kyiv"
@@ -6039,7 +7759,19 @@
      "image": "Абу-Даби (Abu Dhabi) - panoramio (1).jpg",
      "lon": 54.397,
      "lat": 24.451,
-     "wiki": "Abu_Dhabi"
+     "wiki": "Abu_Dhabi",
+     "native": [
+      {
+       "name": "أبو ظبي",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "الإمارات",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Abu Dhabi"
@@ -6070,9 +7802,11 @@
      "image": "London Skyline (125508655).jpeg",
      "lon": -0.128,
      "lat": 51.507,
-     "wiki": "London"
+     "wiki": "London",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "London"
   },
   {
@@ -6101,9 +7835,11 @@
      "image": "Aerial view of White House and downtown, Washington, D.C LCCN2010630891.jpg",
      "lon": -77.037,
      "lat": 38.895,
-     "wiki": "Washington,_D.C."
+     "wiki": "Washington,_D.C.",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Washington, D.C."
   },
   {
@@ -6132,9 +7868,11 @@
      "image": "The City (198895997).jpeg",
      "lon": -56.191,
      "lat": -34.906,
-     "wiki": "Montevideo"
+     "wiki": "Montevideo",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Montevideo"
   },
   {
@@ -6163,7 +7901,27 @@
      "image": "Aerial view of Tashkent, Uzbekistan.JPG",
      "lon": 69.28,
      "lat": 41.311,
-     "wiki": "Tashkent"
+     "wiki": "Tashkent",
+     "native": [
+      {
+       "name": "Ташкент",
+       "lang": "Russian"
+      },
+      {
+       "name": "Toshkent",
+       "lang": "Uzbek"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Узбекистан",
+     "lang": "Russian"
+    },
+    {
+     "name": "O‘zbekiston",
+     "lang": "Uzbek"
     }
    ],
    "capitalAnswer": "Tashkent"
@@ -6194,9 +7952,11 @@
      "image": "Port Vila aerial.jpg",
      "lon": 168.317,
      "lat": -17.733,
-     "wiki": "Port_Vila"
+     "wiki": "Port_Vila",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Port Vila"
   },
   {
@@ -6225,7 +7985,27 @@
      "image": "0 Basilique Saint-Pierre - Rome (1).JPG",
      "lon": 12.453,
      "lat": 41.904,
-     "wiki": "Vatican_City"
+     "wiki": "Vatican_City",
+     "native": [
+      {
+       "name": "Città del Vaticano",
+       "lang": "Italian"
+      },
+      {
+       "name": "Civitas Vaticana",
+       "lang": "Latin"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Vaticano",
+     "lang": "Italian"
+    },
+    {
+     "name": "Vaticanæ",
+     "lang": "Latin"
     }
    ],
    "capitalAnswer": "Vatican City"
@@ -6256,9 +8036,11 @@
      "image": "Caracas desde el ávila.jpg",
      "lon": -66.914,
      "lat": 10.506,
-     "wiki": "Caracas"
+     "wiki": "Caracas",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Caracas"
   },
   {
@@ -6287,7 +8069,19 @@
      "image": "Tháp Rùa - NKS.jpg",
      "lon": 105.841,
      "lat": 21.024,
-     "wiki": "Hanoi"
+     "wiki": "Hanoi",
+     "native": [
+      {
+       "name": "Hà Nội",
+       "lang": "Vietnamese"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "Việt Nam",
+     "lang": "Vietnamese"
     }
    ],
    "capitalAnswer": "Hanoi"
@@ -6318,7 +8112,13 @@
      "image": "Old Town Aden Yemen.jpg",
      "lon": 45.033,
      "lat": 12.8,
-     "wiki": "Aden"
+     "wiki": "Aden",
+     "native": [
+      {
+       "name": "عدن",
+       "lang": "Arabic"
+      }
+     ]
     },
     {
      "id": "Q2471",
@@ -6328,7 +8128,19 @@
      "image": "San'a03 flickr.jpg",
      "lon": 44.2,
      "lat": 15.35,
-     "wiki": "Sanaa"
+     "wiki": "Sanaa",
+     "native": [
+      {
+       "name": "صنعاء",
+       "lang": "Arabic"
+      }
+     ]
+    }
+   ],
+   "native": [
+    {
+     "name": "اليمن",
+     "lang": "Arabic"
     }
    ],
    "capitalAnswer": "Sanaa (constitutional capital, held by the Houthis), with Aden as the recognised government's temporary capital",
@@ -6360,9 +8172,11 @@
      "image": "Downtown Lusaka.JPG",
      "lon": 28.283,
      "lat": -15.417,
-     "wiki": "Lusaka"
+     "wiki": "Lusaka",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Lusaka"
   },
   {
@@ -6391,9 +8205,11 @@
      "image": "Harare skyline.jpg",
      "lon": 31.052,
      "lat": -17.829,
-     "wiki": "Harare"
+     "wiki": "Harare",
+     "native": []
     }
    ],
+   "native": [],
    "capitalAnswer": "Harare"
   }
  ]
