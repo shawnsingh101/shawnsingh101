@@ -12,7 +12,7 @@
    "wiki": "Mount_Everest",
    "elevation": 8849,
    "country": "Q148",
-   "countryName": "China",
+   "countryName": "China and Nepal",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "8,849 m · Mahalangur Himal · China, Nepal"
@@ -76,7 +76,7 @@
    "wiki": "Mont_Blanc",
    "elevation": 4806,
    "country": "Q38",
-   "countryName": "Italy",
+   "countryName": "Italy and France",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,806 m · Mont Blanc massif · Italy, France"
@@ -188,7 +188,7 @@
    "wiki": "Mount_Bazardüzü",
    "elevation": 4466,
    "country": "Q159",
-   "countryName": "Russia",
+   "countryName": "Russia and Azerbaijan",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,466 m · Greater Caucasus · Russia, Azerbaijan"
@@ -220,7 +220,7 @@
    "wiki": "Kangchenjunga",
    "elevation": 8586,
    "country": "Q668",
-   "countryName": "India",
+   "countryName": "India and Nepal",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "8,586 m · Himalayas · India, Nepal"
@@ -268,7 +268,7 @@
    "wiki": "Matterhorn",
    "elevation": 4478,
    "country": "Q38",
-   "countryName": "Italy",
+   "countryName": "Italy and Switzerland",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,478 m · Pennine Alps · Italy, Switzerland"
@@ -306,22 +306,6 @@
    "facts": "6,638 m · Gangdise Shan · China"
   },
   {
-   "id": "Q165440",
-   "layer": "peak",
-   "name": "Dhaulagiri",
-   "group": "m-icons",
-   "lon": 83.49,
-   "lat": 28.697,
-   "image": "Dhaulagiri, Himalaya, Nepal.jpg",
-   "wiki": "Dhaulagiri",
-   "elevation": 8167,
-   "country": "Q837",
-   "countryName": "Nepal",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "8,167 m · Dhaulagiri Himal · Nepal"
-  },
-  {
    "id": "Q130736",
    "layer": "peak",
    "name": "Nanga Parbat",
@@ -336,6 +320,22 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "8,126 m · Western Himalaya · Pakistan"
+  },
+  {
+   "id": "Q165440",
+   "layer": "peak",
+   "name": "Dhaulagiri",
+   "group": "m-icons",
+   "lon": 83.49,
+   "lat": 28.697,
+   "image": "Dhaulagiri, Himalaya, Nepal.jpg",
+   "wiki": "Dhaulagiri",
+   "elevation": 8167,
+   "country": "Q837",
+   "countryName": "Nepal",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "8,167 m · Dhaulagiri Himal · Nepal"
   },
   {
    "id": "Q172070",
@@ -364,7 +364,7 @@
    "wiki": "Makalu",
    "elevation": 8485,
    "country": "Q148",
-   "countryName": "China",
+   "countryName": "China and Nepal",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "8,485 m · Mahalangur Himal · China, Nepal"
@@ -428,7 +428,7 @@
    "wiki": "Lhotse",
    "elevation": 8516,
    "country": "Q148",
-   "countryName": "China",
+   "countryName": "China and Nepal",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "8,516 m · Mahalangur Himal · China, Nepal"
@@ -508,7 +508,7 @@
    "wiki": "Mount_Paektu",
    "elevation": 2744,
    "country": "Q148",
-   "countryName": "China",
+   "countryName": "China and North Korea",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,744 m · Changbai Mountains · China, North Korea"
@@ -540,7 +540,7 @@
    "wiki": "Zugspitze",
    "elevation": 2962,
    "country": "Q40",
-   "countryName": "Austria",
+   "countryName": "Austria and Germany",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,962 m · Wetterstein · Austria, Germany"
@@ -588,7 +588,7 @@
    "wiki": "Ojos_del_Salado",
    "elevation": 6893,
    "country": "Q298",
-   "countryName": "Chile",
+   "countryName": "Chile and Argentina",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "6,893 m · Andes · Chile, Argentina"
@@ -892,7 +892,7 @@
    "wiki": "Mount_Roraima",
    "elevation": 2810,
    "country": "Q155",
-   "countryName": "Brazil",
+   "countryName": "Brazil, Venezuela and Guyana",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,810 m · Pakaraima Mountains · Brazil, Venezuela, Guyana"
@@ -908,7 +908,7 @@
    "wiki": "Sněžka",
    "elevation": 1603,
    "country": "Q36",
-   "countryName": "Poland",
+   "countryName": "Poland and Czechia",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "1,603 m · Giant Mountains · Poland, Czechia"
@@ -940,7 +940,7 @@
    "wiki": "Monte_Rosa",
    "elevation": 4634,
    "country": "Q38",
-   "countryName": "Italy",
+   "countryName": "Italy and Switzerland",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,634 m · Pennine Alps · Italy, Switzerland"
@@ -956,7 +956,7 @@
    "wiki": "Noshaq",
    "elevation": 7492,
    "country": "Q843",
-   "countryName": "Pakistan",
+   "countryName": "Pakistan and Afghanistan",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "7,492 m · Hindu Kush · Pakistan, Afghanistan"
@@ -1004,7 +1004,7 @@
    "wiki": "Jengish_Chokusu",
    "elevation": 7439,
    "country": "Q148",
-   "countryName": "China",
+   "countryName": "China and Kyrgyzstan",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "7,439 m · Kakshaal Too · China, Kyrgyzstan"
@@ -1036,7 +1036,7 @@
    "wiki": "Llullaillaco",
    "elevation": 6723,
    "country": "Q298",
-   "countryName": "Chile",
+   "countryName": "Chile and Argentina",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "6,723 m · Andes · Chile, Argentina"
@@ -1084,7 +1084,7 @@
    "wiki": "Shkhara",
    "elevation": 5193,
    "country": "Q159",
-   "countryName": "Russia",
+   "countryName": "Russia and Georgia",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "5,193 m · Bezengi Wall · Russia, Georgia"
@@ -1170,22 +1170,6 @@
    "facts": "4,506 m · Katun Range · Russia"
   },
   {
-   "id": "Q208081",
-   "layer": "peak",
-   "name": "Aneto",
-   "group": "m-eu",
-   "lon": 0.657,
-   "lat": 42.631,
-   "image": "Aneto 01.jpg",
-   "wiki": "Aneto",
-   "elevation": 3404,
-   "country": "Q29",
-   "countryName": "Spain",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "3,404 m · Macizo de la Maladeta · Spain"
-  },
-  {
    "id": "Q203942",
    "layer": "peak",
    "name": "Galdhøpiggen",
@@ -1200,6 +1184,22 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,469 m · Jotunheimen · Norway"
+  },
+  {
+   "id": "Q208081",
+   "layer": "peak",
+   "name": "Aneto",
+   "group": "m-eu",
+   "lon": 0.657,
+   "lat": 42.631,
+   "image": "Aneto 01.jpg",
+   "wiki": "Aneto",
+   "elevation": 3404,
+   "country": "Q29",
+   "countryName": "Spain",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "3,404 m · Macizo de la Maladeta · Spain"
   },
   {
    "id": "Q209528",
@@ -1378,20 +1378,20 @@
    "facts": "4,533 m · Semien Mountains · Ethiopia"
   },
   {
-   "id": "Q159860",
+   "id": "Q1514176",
    "layer": "peak",
-   "name": "Vaalserberg",
+   "name": "Mount Yamantau",
    "group": "m-eu",
-   "lon": 6.021,
-   "lat": 50.755,
-   "image": "Ac vaalserberg.JPG",
-   "wiki": "Vaalserberg",
-   "elevation": 322,
-   "country": "Q31",
-   "countryName": "Belgium",
+   "lon": 58.102,
+   "lat": 54.255,
+   "image": "Yamantau.JPG",
+   "wiki": "Mount_Yamantau",
+   "elevation": 1640,
+   "country": "Q159",
+   "countryName": "Russia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "322 m · Belgium, Germany"
+   "facts": "1,640 m · Ural Mountains · Russia"
   },
   {
    "id": "Q494645",
@@ -1410,20 +1410,20 @@
    "facts": "1,947 m · South Korea"
   },
   {
-   "id": "Q1514176",
+   "id": "Q159860",
    "layer": "peak",
-   "name": "Mount Yamantau",
+   "name": "Vaalserberg",
    "group": "m-eu",
-   "lon": 58.102,
-   "lat": 54.255,
-   "image": "Yamantau.JPG",
-   "wiki": "Mount_Yamantau",
-   "elevation": 1640,
-   "country": "Q159",
-   "countryName": "Russia",
+   "lon": 6.021,
+   "lat": 50.755,
+   "image": "Ac vaalserberg.JPG",
+   "wiki": "Vaalserberg",
+   "elevation": 322,
+   "country": "Q31",
+   "countryName": "Belgium and Germany",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,640 m · Ural Mountains · Russia"
+   "facts": "322 m · Belgium, Germany"
   },
   {
    "id": "Q827728",
@@ -1506,6 +1506,22 @@
    "facts": "4,276 m · Cordillera Central · Colombia"
   },
   {
+   "id": "Q825347",
+   "layer": "peak",
+   "name": "Colima",
+   "group": "m-am",
+   "lon": -103.618,
+   "lat": 19.511,
+   "image": "Colima Landsat image.jpg",
+   "wiki": "Volcán_de_Colima",
+   "elevation": 3850,
+   "country": "Q96",
+   "countryName": "Mexico",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "3,850 m · Trans-Mexican Volcanic Belt · Mexico"
+  },
+  {
    "id": "Q736047",
    "layer": "peak",
    "name": "Dinara",
@@ -1516,7 +1532,7 @@
    "wiki": "Dinara",
    "elevation": 1913,
    "country": "Q224",
-   "countryName": "Croatia",
+   "countryName": "Croatia and Bosnia and Herzegovina",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "1,913 m · Dinaric Alps · Croatia, Bosnia and Herzegovina"
@@ -1538,22 +1554,6 @@
    "facts": "1,014 m · North Hungarian Mountains · Hungary"
   },
   {
-   "id": "Q825347",
-   "layer": "peak",
-   "name": "Colima",
-   "group": "m-am",
-   "lon": -103.618,
-   "lat": 19.511,
-   "image": "Colima Landsat image.jpg",
-   "wiki": "Volcán_de_Colima",
-   "elevation": 3850,
-   "country": "Q96",
-   "countryName": "Mexico",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "3,850 m · Trans-Mexican Volcanic Belt · Mexico"
-  },
-  {
    "id": "Q212836",
    "layer": "peak",
    "name": "Durmitor",
@@ -1570,20 +1570,20 @@
    "facts": "2,523 m · Dinaric Alps · Montenegro"
   },
   {
-   "id": "Q140084",
+   "id": "Q814113",
    "layer": "peak",
-   "name": "Hvannadalshnúkur",
+   "name": "Beerenberg",
    "group": "m-eu",
-   "lon": -16.678,
-   "lat": 64.014,
-   "image": "Oraefajokull-Vatnajokull National Park.JPG",
-   "wiki": "Hvannadalshnjúkur",
-   "elevation": 2110,
-   "country": "Q189",
-   "countryName": "Iceland",
+   "lon": -8.156,
+   "lat": 71.08,
+   "image": "Beerenberg Jan Mayen.JPG",
+   "wiki": "Beerenberg",
+   "elevation": 2277,
+   "country": "Q20",
+   "countryName": "Norway",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "2,110 m · Highlands of Iceland · Iceland"
+   "facts": "2,277 m · Mid-Atlantic Ridge · Norway"
   },
   {
    "id": "Q732838",
@@ -1596,7 +1596,7 @@
    "wiki": "Mount_Elgon",
    "elevation": 4321,
    "country": "Q114",
-   "countryName": "Kenya",
+   "countryName": "Kenya and Uganda",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,321 m · Kenya, Uganda"
@@ -1612,7 +1612,7 @@
    "wiki": "Mount_Stanley",
    "elevation": 5109,
    "country": "Q974",
-   "countryName": "DR Congo",
+   "countryName": "DR Congo and Uganda",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "5,109 m · Rwenzori Mountains · DR Congo, Uganda"
@@ -1628,7 +1628,7 @@
    "wiki": "Fitz_Roy",
    "elevation": 3406,
    "country": "Q298",
-   "countryName": "Chile",
+   "countryName": "Chile and Argentina",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "3,406 m · Fitz Roy massif · Chile, Argentina"
@@ -1650,22 +1650,6 @@
    "facts": "1,486 m · Japan"
   },
   {
-   "id": "Q239485",
-   "layer": "peak",
-   "name": "Phou Bia",
-   "group": "m-as",
-   "lon": 103.133,
-   "lat": 18.983,
-   "image": "PhouBia from Nam Ngum Lake.jpg",
-   "wiki": "Phou_Bia",
-   "elevation": 2819,
-   "country": "Q819",
-   "countryName": "Laos",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,819 m · Annamite Range · Laos"
-  },
-  {
    "id": "Q1142817",
    "layer": "peak",
    "name": "Mount Narodnaya",
@@ -1682,36 +1666,20 @@
    "facts": "1,895 m · Ural Mountains · Russia"
   },
   {
-   "id": "Q275662",
+   "id": "Q239485",
    "layer": "peak",
-   "name": "Mount Hood",
-   "group": "m-am",
-   "lon": -121.696,
-   "lat": 45.374,
-   "image": "Mount Hood reflected in Mirror Lake, Oregon.jpg",
-   "wiki": "Mount_Hood",
-   "elevation": 11237,
-   "country": "Q30",
-   "countryName": "United States",
+   "name": "Phou Bia",
+   "group": "m-as",
+   "lon": 103.133,
+   "lat": 18.983,
+   "image": "PhouBia from Nam Ngum Lake.jpg",
+   "wiki": "Phou_Bia",
+   "elevation": 2819,
+   "country": "Q819",
+   "countryName": "Laos",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "11,237 m · Oregon Cascades · United States"
-  },
-  {
-   "id": "Q739484",
-   "layer": "peak",
-   "name": "Pico da Neblina",
-   "group": "m-am",
-   "lon": -66.005,
-   "lat": 0.805,
-   "image": "Pico da Neblina (FAB).jpg",
-   "wiki": "Pico_da_Neblina",
-   "elevation": 2994,
-   "country": "Q155",
-   "countryName": "Brazil",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,994 m · Cerro de la Neblina · Brazil, Venezuela"
+   "facts": "2,819 m · Annamite Range · Laos"
   },
   {
    "id": "Q748355",
@@ -1730,6 +1698,38 @@
    "facts": "4,322 m · California Cascades · United States"
   },
   {
+   "id": "Q739484",
+   "layer": "peak",
+   "name": "Pico da Neblina",
+   "group": "m-am",
+   "lon": -66.005,
+   "lat": 0.805,
+   "image": "Pico da Neblina (FAB).jpg",
+   "wiki": "Pico_da_Neblina",
+   "elevation": 2994,
+   "country": "Q155",
+   "countryName": "Brazil and Venezuela",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,994 m · Cerro de la Neblina · Brazil, Venezuela"
+  },
+  {
+   "id": "Q275662",
+   "layer": "peak",
+   "name": "Mount Hood",
+   "group": "m-am",
+   "lon": -121.696,
+   "lat": 45.374,
+   "image": "Mount Hood reflected in Mirror Lake, Oregon.jpg",
+   "wiki": "Mount_Hood",
+   "elevation": 3425,
+   "country": "Q30",
+   "countryName": "United States",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "3,425 m · Oregon Cascades · United States"
+  },
+  {
    "id": "Q737859",
    "layer": "peak",
    "name": "Mount Karisimbi",
@@ -1740,26 +1740,10 @@
    "wiki": "Mount_Karisimbi",
    "elevation": 4507,
    "country": "Q974",
-   "countryName": "DR Congo",
+   "countryName": "DR Congo and Rwanda",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "4,507 m · Virunga Mountains · DR Congo, Rwanda"
-  },
-  {
-   "id": "Q540520",
-   "layer": "peak",
-   "name": "Meron",
-   "group": "m-as",
-   "lon": 35.412,
-   "lat": 32.998,
-   "image": "Northern slope of Mount Meron.jpg",
-   "wiki": "Mount_Meron",
-   "elevation": 1208,
-   "country": "Q801",
-   "countryName": "Israel",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "1,208 m · Israel"
   },
   {
    "id": "Q870063",
@@ -1776,6 +1760,22 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "5,881 m · Himalayas · Myanmar"
+  },
+  {
+   "id": "Q540520",
+   "layer": "peak",
+   "name": "Meron",
+   "group": "m-as",
+   "lon": 35.412,
+   "lat": 32.998,
+   "image": "Northern slope of Mount Meron.jpg",
+   "wiki": "Mount_Meron",
+   "elevation": 1208,
+   "country": "Q801",
+   "countryName": "Israel",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,208 m · Israel"
   },
   {
    "id": "Q277441",
@@ -1906,22 +1906,6 @@
    "facts": "1,220 m · Antilles · Saint Vincent and the Grenadines"
   },
   {
-   "id": "Q112568",
-   "layer": "peak",
-   "name": "Mount Hua",
-   "group": "m-as",
-   "lon": 110.083,
-   "lat": 34.483,
-   "image": "Hua Shan.jpg",
-   "wiki": "Mount_Hua",
-   "elevation": 2155,
-   "country": "Q148",
-   "countryName": "China",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,155 m · Qinling · China"
-  },
-  {
    "id": "Q925688",
    "layer": "peak",
    "name": "Uludağ",
@@ -1938,36 +1922,20 @@
    "facts": "2,542 m · Türkiye"
   },
   {
-   "id": "Q615337",
+   "id": "Q112568",
    "layer": "peak",
-   "name": "Mount Mitchell",
-   "group": "m-am",
-   "lon": -82.265,
-   "lat": 35.765,
-   "image": "Mount Mitchell.jpg",
-   "wiki": "Mount_Mitchell",
-   "elevation": 2037,
-   "country": "Q30",
-   "countryName": "United States",
+   "name": "Mount Hua",
+   "group": "m-as",
+   "lon": 110.083,
+   "lat": 34.483,
+   "image": "Hua Shan.jpg",
+   "wiki": "Mount_Hua",
+   "elevation": 2155,
+   "country": "Q148",
+   "countryName": "China",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "2,037 m · Black Mountains · United States"
-  },
-  {
-   "id": "Q657225",
-   "layer": "peak",
-   "name": "Mount Elbert",
-   "group": "m-am",
-   "lon": -106.445,
-   "lat": 39.118,
-   "image": "Mt. Elbert.jpg",
-   "wiki": "Mount_Elbert",
-   "elevation": 4401,
-   "country": "Q30",
-   "countryName": "United States",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "4,401 m · Sawatch Range · United States"
+   "facts": "2,155 m · Qinling · China"
   },
   {
    "id": "Q756244",
@@ -2002,6 +1970,22 @@
    "facts": "4,203 m · Sierra Madre de Chiapas · Guatemala"
   },
   {
+   "id": "Q1048225",
+   "layer": "peak",
+   "name": "Villarrica Volcano",
+   "group": "m-am",
+   "lon": -71.939,
+   "lat": -39.42,
+   "image": "Pucon-y-su-Volcan.jpg",
+   "wiki": "Villarrica_(volcano)",
+   "elevation": 2850,
+   "country": "Q298",
+   "countryName": "Chile",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,850 m · Patagonian Andes · Chile"
+  },
+  {
    "id": "Q1147144",
    "layer": "peak",
    "name": "Maromokotro",
@@ -2018,6 +2002,22 @@
    "facts": "2,876 m · Madagascar"
   },
   {
+   "id": "Q615337",
+   "layer": "peak",
+   "name": "Mount Mitchell",
+   "group": "m-am",
+   "lon": -82.265,
+   "lat": 35.765,
+   "image": "Mount Mitchell.jpg",
+   "wiki": "Mount_Mitchell",
+   "elevation": 2037,
+   "country": "Q30",
+   "countryName": "United States",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,037 m · Black Mountains · United States"
+  },
+  {
    "id": "Q849129",
    "layer": "peak",
    "name": "Mount Richard-Molard",
@@ -2028,7 +2028,7 @@
    "wiki": "Mount_Richard-Molard",
    "elevation": 1752,
    "country": "Q1006",
-   "countryName": "Guinea",
+   "countryName": "Guinea and Ivory Coast",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "1,752 m · Guinea, Ivory Coast"
@@ -2108,7 +2108,7 @@
    "wiki": "Chappal_Waddi",
    "elevation": 2419,
    "country": "Q1009",
-   "countryName": "Cameroon",
+   "countryName": "Cameroon and Nigeria",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,419 m · Mambilla Plateau · Cameroon, Nigeria"
@@ -2156,10 +2156,26 @@
    "wiki": "Mousa_Ali",
    "elevation": 2028,
    "country": "Q115",
-   "countryName": "Ethiopia",
+   "countryName": "Ethiopia, Djibouti and Eritrea",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,028 m · Ethiopia, Djibouti, Eritrea"
+  },
+  {
+   "id": "Q897834",
+   "layer": "peak",
+   "name": "Brandberg",
+   "group": "m-af",
+   "lon": 14.578,
+   "lat": -21.149,
+   "image": "Brand hires trimmed.jpg",
+   "wiki": "Brandberg_Mountain",
+   "elevation": 2573,
+   "country": "Q1030",
+   "countryName": "Namibia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,573 m · Namibia"
   },
   {
    "id": "Q1232136",
@@ -2224,22 +2240,6 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "2,592 m · Zimbabwe"
-  },
-  {
-   "id": "Q897834",
-   "layer": "peak",
-   "name": "Brandberg",
-   "group": "m-af",
-   "lon": 14.578,
-   "lat": -21.149,
-   "image": "Brand hires trimmed.jpg",
-   "wiki": "Brandberg_Mountain",
-   "elevation": 2573,
-   "country": "Q1030",
-   "countryName": "Namibia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,573 m · Namibia"
   },
   {
    "id": "Q1147814",
@@ -2322,6 +2322,38 @@
    "facts": "1,030 m · Tonga"
   },
   {
+   "id": "Q769525",
+   "layer": "peak",
+   "name": "Mount Bintumani",
+   "group": "m-af",
+   "lon": -11.117,
+   "lat": 9.225,
+   "image": "Mountain Bintunami.jpg",
+   "wiki": "Mount_Bintumani",
+   "elevation": 1945,
+   "country": "Q1044",
+   "countryName": "Sierra Leone",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,945 m · Loma Mountains · Sierra Leone"
+  },
+  {
+   "id": "Q886772",
+   "layer": "peak",
+   "name": "Marrah Mountains",
+   "group": "m-af",
+   "lon": 24.236,
+   "lat": 12.938,
+   "image": "Sudan Jabal Marra.jpg",
+   "wiki": "Jebel_Marra",
+   "elevation": 3042,
+   "country": "Q1049",
+   "countryName": "Sudan",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "3,042 m · Sudan"
+  },
+  {
    "id": "Q1337951",
    "layer": "peak",
    "name": "Emlembe",
@@ -2332,42 +2364,10 @@
    "wiki": "Emlembe",
    "elevation": 1862,
    "country": "Q258",
-   "countryName": "South Africa",
+   "countryName": "South Africa and Eswatini",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "1,862 m · Drakensberg · South Africa, Eswatini"
-  },
-  {
-   "id": "Q1753730",
-   "layer": "peak",
-   "name": "Emba Soira",
-   "group": "m-af",
-   "lon": 39.533,
-   "lat": 14.75,
-   "image": null,
-   "wiki": "Emba_Soira",
-   "elevation": 3018,
-   "country": "Q986",
-   "countryName": "Eritrea",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "3,018 m · Ethiopian Highlands · Eritrea"
-  },
-  {
-   "id": "Q116675",
-   "layer": "peak",
-   "name": "Mount Tenakourou",
-   "group": "m-af",
-   "lon": -5.417,
-   "lat": 10.75,
-   "image": "Mt Tenakourou MS 1954.JPG",
-   "wiki": "Mount_Tenakourou",
-   "elevation": 749,
-   "country": "Q912",
-   "countryName": "Mali",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "749 m · Mali, Burkina Faso"
   },
   {
    "id": "Q747182",
@@ -2562,22 +2562,6 @@
    "facts": "1,096 m · Stirling Range · Australia"
   },
   {
-   "id": "Q6924042",
-   "layer": "peak",
-   "name": "Tapuae-o-Uenuku",
-   "group": "m-oc",
-   "lon": 173.662,
-   "lat": -41.996,
-   "image": "Tapuae o Uenuku.jpg",
-   "wiki": "Tapuae-o-Uenuku",
-   "elevation": 2885,
-   "country": "Q664",
-   "countryName": "New Zealand",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,885 m · Inland Kaikōura Range · New Zealand"
-  },
-  {
    "id": "Q3070397",
    "layer": "peak",
    "name": "Mount Anglem / Hananui",
@@ -2592,6 +2576,22 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "980 m · New Zealand"
+  },
+  {
+   "id": "Q6924042",
+   "layer": "peak",
+   "name": "Tapuae-o-Uenuku",
+   "group": "m-oc",
+   "lon": 173.662,
+   "lat": -41.996,
+   "image": "Tapuae o Uenuku.jpg",
+   "wiki": "Tapuae-o-Uenuku",
+   "elevation": 2885,
+   "country": "Q664",
+   "countryName": "New Zealand",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,885 m · Inland Kaikōura Range · New Zealand"
   },
   {
    "id": "Q962462",
@@ -2610,22 +2610,6 @@
    "facts": "1,805 m · Victorian Alps · Australia"
   },
   {
-   "id": "Q3117703",
-   "layer": "peak",
-   "name": "Takuan Group",
-   "group": "m-oc",
-   "lon": 155.608,
-   "lat": -6.442,
-   "image": null,
-   "wiki": "Takuan_Group",
-   "elevation": 2210,
-   "country": "Q691",
-   "countryName": "Papua New Guinea",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,210 m · Papua New Guinea"
-  },
-  {
    "id": "Q21917251",
    "layer": "peak",
    "name": "Barrington Tops",
@@ -2640,6 +2624,22 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "872 m · Great Dividing Range · Australia"
+  },
+  {
+   "id": "Q3117703",
+   "layer": "peak",
+   "name": "Takuan Group",
+   "group": "m-oc",
+   "lon": 155.608,
+   "lat": -6.442,
+   "image": null,
+   "wiki": "Takuan_Group",
+   "elevation": 2210,
+   "country": "Q691",
+   "countryName": "Papua New Guinea",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,210 m · Papua New Guinea"
   }
  ]
 }

@@ -2,22 +2,6 @@
  "source": "Wikidata (CC0)",
  "places": [
   {
-   "id": "Q237",
-   "layer": "site",
-   "name": "Vatican City",
-   "group": "u-icons",
-   "lon": 12.453,
-   "lat": 41.904,
-   "image": "0 Basilique Saint-Pierre - Rome (1).JPG",
-   "wiki": "Vatican_City",
-   "whsId": "286",
-   "country": "Q237",
-   "countryName": "Vatican City",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #286 · Vatican City"
-  },
-  {
    "id": "Q2844",
    "layer": "site",
    "name": "Brasília",
@@ -64,22 +48,6 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #252 · India"
-  },
-  {
-   "id": "Q5513",
-   "layer": "site",
-   "name": "Lake Baikal",
-   "group": "u-icons",
-   "lon": 108.005,
-   "lat": 53.303,
-   "image": "Olkhon Island and Lake Baikal.jpg",
-   "wiki": "Lake_Baikal",
-   "whsId": "754",
-   "country": "Q159",
-   "countryName": "Russia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #754 · Russia"
   },
   {
    "id": "Q23800",
@@ -706,22 +674,6 @@
    "facts": "UNESCO World Heritage Site #295 · Lebanon"
   },
   {
-   "id": "Q4527",
-   "layer": "site",
-   "name": "Western Ghats",
-   "group": "u-icons",
-   "lon": 77.061,
-   "lat": 10.17,
-   "image": "Naikolli Mala near Anamudi.jpg",
-   "wiki": "Western_Ghats",
-   "whsId": "1342",
-   "country": "Q668",
-   "countryName": "India",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1342 · India"
-  },
-  {
    "id": "Q57357",
    "layer": "site",
    "name": "Hadrian's Wall",
@@ -1228,7 +1180,7 @@
    "wiki": "Pantanal",
    "whsId": "999",
    "country": "Q750",
-   "countryName": "Bolivia",
+   "countryName": "Bolivia, Paraguay and Brazil",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #999 · Bolivia, Paraguay, Brazil"
@@ -1548,7 +1500,7 @@
    "wiki": "Danube_Delta",
    "whsId": "588",
    "country": "Q218",
-   "countryName": "Romania",
+   "countryName": "Romania and Ukraine",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #588 · Romania, Ukraine"
@@ -1660,7 +1612,7 @@
    "wiki": "Curonian_Spit",
    "whsId": "994",
    "country": "Q159",
-   "countryName": "Russia",
+   "countryName": "Russia and Lithuania",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #994 · Russia, Lithuania"
@@ -1804,7 +1756,7 @@
    "wiki": "Struve_Geodetic_Arc",
    "whsId": "1187",
    "country": "Q217",
-   "countryName": "Moldova",
+   "countryName": "Moldova, Ukraine, Latvia, Estonia, Belarus, Russia, Lithuania, Sweden, Finland and Norway",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1187 · Moldova, Ukraine, Latvia, Estonia, Belarus, Russia, Lithuania, Sweden, Finland, Norway"
@@ -1884,7 +1836,7 @@
    "wiki": "Białowieża_Forest",
    "whsId": "33",
    "country": "Q184",
-   "countryName": "Belarus",
+   "countryName": "Belarus and Poland",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #33 · Belarus, Poland"
@@ -2306,22 +2258,6 @@
    "facts": "UNESCO World Heritage Site #1426 · France"
   },
   {
-   "id": "Q208559",
-   "layer": "site",
-   "name": "Drottningholm Palace",
-   "group": "u-eu",
-   "lon": 17.886,
-   "lat": 59.322,
-   "image": "Drottningholm Palace (by Pudelek) 3.jpg",
-   "wiki": "Drottningholm_Palace",
-   "whsId": "559-001",
-   "country": "Q34",
-   "countryName": "Sweden",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #559-001 · Sweden"
-  },
-  {
    "id": "Q328488",
    "layer": "site",
    "name": "Salonga National Park",
@@ -2578,22 +2514,6 @@
    "facts": "UNESCO World Heritage Site #1022 · Uganda"
   },
   {
-   "id": "Q106934",
-   "layer": "site",
-   "name": "Notre-Dame d'Amiens",
-   "group": "u-eu",
-   "lon": 2.302,
-   "lat": 49.895,
-   "image": "0 Amiens - Cathédrale Notre-Dame (1).JPG",
-   "wiki": "Amiens_Cathedral",
-   "whsId": "868-062",
-   "country": "Q142",
-   "countryName": "France",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #868-062 · France"
-  },
-  {
    "id": "Q457324",
    "layer": "site",
    "name": "Kahuzi-Biéga National Park",
@@ -2700,7 +2620,7 @@
    "wiki": "Ancient_and_Primeval_Beech_Forests_of_the_Carpathians_and_Other_Regions_of_Europe",
    "whsId": "1133",
    "country": "Q225",
-   "countryName": "Bosnia and Herzegovina",
+   "countryName": "Bosnia and Herzegovina, Croatia, Albania, North Macedonia, Bulgaria, Romania, Slovenia, Slovakia, Czechia, Ukraine, Germany, France, Austria, Switzerland, Italy, Poland, Belgium and Spain",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1133 · Bosnia and Herzegovina, Croatia, Albania, North Macedonia, Bulgaria, Romania, Slovenia, Slovakia, Czechia, Ukraine, Germany, France, Austria, Switzerland, Italy, Poland, Belgium, Spain"
@@ -2944,6 +2864,38 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #380 · Spain"
+  },
+  {
+   "id": "Q61757",
+   "layer": "site",
+   "name": "Hortobágy National Park",
+   "group": "u-eu",
+   "lon": 21.157,
+   "lat": 47.595,
+   "image": "Hortobagy-ziehbrunnen.jpg",
+   "wiki": "Hortobágy_National_Park",
+   "whsId": "474",
+   "country": "Q28",
+   "countryName": "Hungary",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #474 · Hungary"
+  },
+  {
+   "id": "Q19053",
+   "layer": "site",
+   "name": "Mystras",
+   "group": "u-eu",
+   "lon": 22.367,
+   "lat": 37.074,
+   "image": "Palace at Mystras by Joy of Museums.jpg",
+   "wiki": "Mystras",
+   "whsId": "511",
+   "country": "Q41",
+   "countryName": "Greece",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #511 · Greece"
   },
   {
    "id": "Q464913",
@@ -3196,7 +3148,7 @@
    "wiki": "Inca_road_system",
    "whsId": "1459",
    "country": "Q750",
-   "countryName": "Bolivia",
+   "countryName": "Bolivia, Colombia, Ecuador, Peru, Argentina and Chile",
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1459 · Bolivia, Colombia, Ecuador, Peru, Argentina, Chile"
@@ -3504,22 +3456,6 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #742 · Colombia"
-  },
-  {
-   "id": "Q138170",
-   "layer": "site",
-   "name": "Tasmanian Wilderness",
-   "group": "u-oc",
-   "lon": 146.173,
-   "lat": -42.596,
-   "image": "CradleMountain.jpg",
-   "wiki": "Tasmanian_Wilderness_World_Heritage_Area",
-   "whsId": "181quinquies",
-   "country": "Q408",
-   "countryName": "Australia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #181quinquies · Australia"
   },
   {
    "id": "Q643063",

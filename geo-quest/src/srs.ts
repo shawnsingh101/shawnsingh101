@@ -1,6 +1,6 @@
 import { createEmptyCard, fsrs, generatorParameters, Rating, State, type Card, type Grade } from 'ts-fsrs';
 import { useSyncExternalStore } from 'react';
-import { cardsForNode, fingerprint, groupById, parseNode, refFromId, slotOf, nodeId, nodeOfCard, TAP_KINDS, type CardRef } from './cards';
+import { cardsForNode, fingerprint, groupById, kindApplies, parseNode, refFromId, slotOf, nodeId, nodeOfCard, TAP_KINDS, type CardRef } from './cards';
 import type { Dataset } from './types';
 
 export { Rating, State };
@@ -141,7 +141,7 @@ export function buildQueue(ds: Dataset, p: Progress, nodes?: string[]): { due: C
   const all = !nodes && p.settings.sessionNodes === null; // "everything": include due reviews from decks you've stopped learning too
   const due: CardRef[] = [];
   for (const [id, r] of Object.entries(p.cards)) {
-    if (r.c.due.getTime() <= now) { const ref = refFromId(ds, id); if (ref && !skipped(p, ref.kind) && (all || decks.has(nodeOfCard(ref)))) due.push(ref); }
+    if (r.c.due.getTime() <= now) { const ref = refFromId(ds, id); if (ref && !skipped(p, ref.kind) && kindApplies(ref.kind, ref.country) && (all || decks.has(nodeOfCard(ref)))) due.push(ref); }
   }
   due.sort((a, b) => p.cards[a.id].c.due.getTime() - p.cards[b.id].c.due.getTime());
 

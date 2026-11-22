@@ -45,7 +45,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
   // "Find it on the map" cards can be flipped like flashcards instead of tapped (Settings → map questions).
   const rawFace = item ? face(item.ref) : null;
   const flipped = !!rawFace && rawFace.mode === 'tap' && s.mapMode !== 'tap';
-  const f = rawFace && flipped ? { ...rawFace, mode: 'reveal' as const, blank: rawFace.answer === 'right here' ? 'where?' : rawFace.blank.replace(/^tap the /, 'which ') + '?', answer: rawFace.answer === 'right here' ? 'here' : rawFace.answer } : rawFace;
+  const f = rawFace && flipped ? { ...rawFace, mode: 'reveal' as const, blank: rawFace.blank.startsWith('where?') ? 'where?' : rawFace.blank.replace(/^tap the /, 'which ') + '?', answer: rawFace.answer === 'right here' ? 'here' : rawFace.answer } : rawFace;
   const c = item?.ref.country;
 
   const restart = (items: Item[]) => {
@@ -226,7 +226,8 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
   const cap = c.capitals[0];
   const pins = revealed && item.ref.kind.startsWith('capital') && cap?.lon != null ? [{ lon: cap.lon, lat: cap.lat!, label: cap.name }]
     : revealed && item.ref.kind.startsWith('largestCity') && c.largestCity ? [{ lon: c.largestCity.lon, lat: c.largestCity.lat, label: c.largestCity.name }]
-    : revealed && item.ref.kind === 'siteCountry' && c.lon != null ? [{ lon: c.lon, lat: c.lat!, label: c.name }] : [];
+    : revealed && item.ref.kind === 'siteCountry' && c.lon != null ? [{ lon: c.lon, lat: c.lat!, label: c.name }]
+    : revealed && item.ref.kind.startsWith('highest') && c.highest ? [{ lon: c.highest.lon, lat: c.highest.lat, label: c.highest.name }] : [];
 
   return (
     <div className={'study' + (showMap ? ' with-map' : ' no-map')}>
@@ -245,7 +246,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
       {nudge && <div className="nudge">{nudge}</div>}
 
       {showMap && (<div className="map-wrap">
-        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra === 'peak' ? ['range', 'peak'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
+        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra === 'peak' ? ['range', 'peak'] : extra === 'us' ? ['us', 'lake'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
           dim={id => group?.layer === m.layer && !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
           {(f.map === 'highlight' || revealed || tapResult) && (m.layer === 'country' || m.layer === 'terr') && (
             <Inset place={m} label={revealed || tapResult ? m.name : 'Close-up'} />
@@ -260,7 +261,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
           </div>
           {f.promptPicture && f.picture && <div className="prompt-picture"><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} /></div>}
           {f.promptFlag && <Flag file={c.flag ?? null} name="?" className="prompt-flag" size={480} eager />}
-          {f.person && <Portrait photo={f.person.photo} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
+          {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
           <p className="cloze">
             {f.pre}
             {f.answerFlag

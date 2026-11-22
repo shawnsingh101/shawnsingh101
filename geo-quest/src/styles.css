@@ -119,7 +119,7 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .worldmap svg { display: block; }
 .ocean { fill: var(--ocean); }
 .graticule { fill: none; stroke: var(--grat); stroke-width: .6; vector-effect: non-scaling-stroke; }
-.land { fill: var(--land); stroke: var(--border); stroke-width: .7; vector-effect: non-scaling-stroke; transition: fill .3s, opacity .3s; }
+.land { fill: var(--land); stroke: var(--border); stroke-width: .9; vector-effect: non-scaling-stroke; transition: fill .3s, opacity .3s; }
 .land.other { fill: var(--land-other); }
 .land.place:hover { filter: brightness(.95); }
 .land.sub { stroke-width: .45; stroke: color-mix(in srgb, var(--ink) 30%, var(--land)); }
@@ -351,7 +351,7 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 :root { --river: #5b9cc4; } :root[data-theme="dark"] { --river: #6fb3dd; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --river: #6fb3dd; } }
 .lake { fill: color-mix(in srgb, var(--river) 45%, var(--ocean)); stroke: color-mix(in srgb, var(--river) 70%, var(--ocean)); stroke-width: .4; vector-effect: non-scaling-stroke; transition: fill .3s; }
-.lake.other { pointer-events: none; opacity: .7; }
+.lake.other { pointer-events: none; fill: color-mix(in srgb, var(--river) 32%, var(--ocean)); } /* opaque: covers the lake water inside state shapes (Michigan) */
 .lake.place:hover { fill: color-mix(in srgb, var(--river) 70%, var(--ocean)); }
 .tone-accent.lake { fill: var(--accent) !important; } .tone-right.lake { fill: var(--right) !important; } .tone-wrong.lake { fill: var(--wrong) !important; }
 .river path { fill: none; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
@@ -547,3 +547,6 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .range.place:hover { fill: color-mix(in srgb, var(--peak) 38%, transparent); }
 .range.dim { opacity: .6; }
 .tone-accent.range { fill: color-mix(in srgb, var(--accent) 60%, transparent) !important; } .tone-right.range { fill: color-mix(in srgb, var(--right) 60%, transparent) !important; } .tone-wrong.range { fill: color-mix(in srgb, var(--wrong) 60%, transparent) !important; }
+
+.pinlabel { fill: var(--ink); font-weight: 650; paint-order: stroke; stroke: var(--bg); stroke-linejoin: round; pointer-events: none; }
+.admin1 { fill: none; stroke: color-mix(in srgb, var(--ink) 26%, var(--land)); stroke-width: .5; stroke-dasharray: 3 2; vector-effect: non-scaling-stroke; pointer-events: none; }

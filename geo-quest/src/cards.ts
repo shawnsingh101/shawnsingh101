@@ -7,8 +7,8 @@ import type { IconName } from './components/Icons';
 
 export type Kind = 'locate' | 'identify' | 'capital' | 'capitalReverse' | 'capitalLocate' | 'flag' | 'flagReverse' | 'senator' | 'senatorFace' | 'senatorLocate'
   | 'currency' | 'currencyReverse' | 'largestCity' | 'largestCityReverse' | 'belongsTo'
-  | 'sitePhoto' | 'siteLocate' | 'siteCountry';
-export type Topic = 'countries' | 'places' | 'capitals' | 'flags' | 'senate' | 'governors' | 'leaders' | 'currency' | 'cities' | 'sovereign' | 'sites' | 'peaks';
+  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse';
+export type Topic = 'countries' | 'places' | 'capitals' | 'flags' | 'senate' | 'governors' | 'leaders' | 'currency' | 'cities' | 'sovereign' | 'sites' | 'peaks' | 'highest';
 
 export const TOPIC_KINDS: Record<Topic, Kind[]> = {
   countries: ['locate', 'identify'],
@@ -22,7 +22,8 @@ export const TOPIC_KINDS: Record<Topic, Kind[]> = {
   cities: ['largestCity', 'largestCityReverse'],
   sovereign: ['belongsTo'],
   sites: ['sitePhoto', 'siteLocate', 'siteCountry'],
-  peaks: ['sitePhoto', 'siteLocate', 'siteCountry'],
+  peaks: ['siteLocate', 'siteCountry'],
+  highest: ['highest', 'highestReverse'],
 };
 
 /** Cards answered by tapping the map (can be flipped like flashcards, or skipped, in settings). */
@@ -32,7 +33,7 @@ export const KIND_LABEL: Record<Kind, string> = {
   locate: 'Find it on the map', identify: 'Name it', capital: 'Name the capital',
   capitalReverse: 'Capital → name', capitalLocate: 'Capital → map', flag: 'Name the flag', flagReverse: 'Picture the flag',
   senator: 'Name the person', senatorFace: 'Who is this?', senatorLocate: 'Person → map',
-  currency: 'Name the currency', currencyReverse: 'Currency → country', largestCity: 'Largest city', largestCityReverse: 'City → country', belongsTo: 'Part of which country?', sitePhoto: 'Photo → name', siteLocate: 'Find it on the map', siteCountry: 'Which country?',
+  currency: 'Name the currency', currencyReverse: 'Currency → country', largestCity: 'Largest city', largestCityReverse: 'City → country', belongsTo: 'Part of which country?', sitePhoto: 'Photo → name', siteLocate: 'Find it on the map', siteCountry: 'Which country?', highest: 'Highest point', highestReverse: 'Peak → country',
 };
 
 /** Fingerprint of the facts a card depends on: if Wikidata changes it, the card is re-queued. */
@@ -42,6 +43,7 @@ export function fingerprint(kind: Kind, c: Place) {
   if (kind.startsWith('senator')) return `${c.name}|${c.party}|${c.rank ?? c.office}`; // a new person in the seat re-queues it
   if (kind.startsWith('currency')) return `${c.name}|${c.currency?.map(x => x.name).join('/')}`;
   if (kind.startsWith('largestCity')) return `${c.name}|${c.largestCity?.name}`;
+  if (kind.startsWith('highest')) return `${c.name}|${c.highest?.name}`;
   return c.name;
 }
 
@@ -61,6 +63,7 @@ const COUNTRY_TOPICS: TopicSlot[] = [
   { id: 'leaders', name: 'Leaders', icon: 'person', requires: 'countries' },
   { id: 'currency', name: 'Currencies', icon: 'coin', requires: 'countries' },
   { id: 'cities', name: 'Largest cities', icon: 'city', requires: 'countries' },
+  { id: 'highest', name: 'Highest points', icon: 'mountain', requires: 'countries' },
 ];
 const cg = (id: string, section: string, name: string, subregions: string[]): Group =>
   ({ id, section, name, layer: 'country', subregions, topics: COUNTRY_TOPICS });
@@ -161,8 +164,9 @@ export const cardId = (placeId: string, kind: Kind) => `${placeId}:${kind}`;
 
 /** Some card types only make sense for some places. */
 export function kindApplies(k: Kind, c: Place) {
-  if (k === 'senatorFace') return !c.noFace && !!c.photo;
-  if (k === 'sitePhoto') return !!c.image;
+  if (k === 'senatorFace') return !c.noFace && !!(c.photo || c.wiki);
+  if (k === 'sitePhoto') return c.layer === 'site' && !!c.image; // a mountain from a photo alone is too hard to be fair
+  if (k === 'highestReverse') return !!c.highest && !c.highestShared;
   if (k === 'currencyReverse') return !!c.currency?.some(x => x.shared === 1); // "the euro is the currency of…" has 20 answers
   return true;
 }
@@ -182,6 +186,7 @@ export function cardsForNode(ds: Dataset, node: string): CardRef[] {
     if (topic === 'capitals' && !c.capitalAnswer) continue;
     if (topic === 'currency' && !c.currency?.length) continue;
     if (topic === 'cities' && !c.largestCity) continue;
+    if (topic === 'highest' && !c.highest) continue;
     for (const k of TOPIC_KINDS[topic]) if (kindApplies(k, c)) out.push({ id: cardId(c.id, k), kind: k, country: c });
   }
   return out;
@@ -197,6 +202,7 @@ export function kindsFor(p: Place): Kind[] {
   if (p.flag && p.layer !== 'terr') ks.push(...TOPIC_KINDS.flags);
   if (p.currency?.length) ks.push(...TOPIC_KINDS.currency.filter(k => kindApplies(k, p)));
   if (p.largestCity) ks.push(...TOPIC_KINDS.cities);
+  if (p.highest) ks.push(...TOPIC_KINDS.highest.filter(k => kindApplies(k, p)));
   return ks;
 }
 
@@ -251,24 +257,24 @@ export function face(ref: CardRef): CardFace {
       return { mode: 'reveal', pre: 'This is the flag of ', blank: whichNoun, post: '.', answer: c.name, promptFlag: true, map: 'none', note };
     // People in office (senators, governors, world leaders): the card follows the office, not the person.
     case 'senator':
-      return { mode: 'reveal', pre: `The ${c.office} is `, blank: 'who?', post: '.', answer: c.name, map: 'highlight', note: c.facts, person: c.photo ? { photo: c.photo, when: 'after' } : undefined };
+      return { mode: 'reveal', pre: `The ${c.office} is `, blank: 'who?', post: '.', answer: c.name, map: 'highlight', note: c.facts, person: { photo: c.photo ?? '', when: 'after' } };
     case 'senatorFace':
-      return { mode: 'reveal', pre: 'This is ', blank: 'who?', post: `, the ${c.office}.`, answer: c.name, map: 'none', note: c.facts, person: { photo: c.photo!, when: 'before' }, hidePostUntilReveal: true };
+      return { mode: 'reveal', pre: 'This is ', blank: 'who?', post: `, the ${c.office}.`, answer: c.name, map: 'none', note: c.facts, person: { photo: c.photo ?? '', when: 'before' }, hidePostUntilReveal: true };
     case 'senatorLocate': {
       const isState = c.topic !== 'leaders';
-      return { mode: 'tap', pre: `${c.name} is the ${c.rolePrefix} `, blank: isState ? 'tap the state' : 'tap the country', post: '.', answer: c.placeName!, map: 'tap', note: c.facts, person: c.photo ? { photo: c.photo, when: 'after' } : undefined };
+      return { mode: 'tap', pre: `${c.name} is the ${c.rolePrefix} `, blank: isState ? 'tap the state' : 'tap the country', post: '.', answer: c.placeName!, map: 'tap', note: c.facts, person: { photo: c.photo ?? '', when: 'after' } };
     }
     case 'currency': {
       const list = c.currency ?? [];
       const shared = list.find(x => x.shared > 1);
       return { mode: 'reveal', pre: `The currency of ${theName(c)} is `, blank: 'what?', post: '.', answer: list.map(x => 'the ' + curText(x)).join(' and '), map: 'none',
-        picture: list[0]?.wiki ? { wiki: list[0].wiki, caption: list[0].name } : undefined,
+        picture: list[0]?.image ? { file: list[0].image, caption: list[0].name } : list[0]?.wiki ? { wiki: list[0].wiki, caption: list[0].name } : undefined,
         note: shared ? `The ${shared.name} is used by ${shared.shared} countries in this app.` : null };
     }
     case 'currencyReverse': {
       const x = cur1(c)!;
       return { mode: 'reveal', pre: `The ${x.name}${x.code ? ` (${x.code})` : ''} is the currency of `, blank: 'which country?', post: '.', answer: c.name, map: 'none',
-        picture: x.wiki ? { wiki: x.wiki, caption: x.name } : undefined, note: null };
+        picture: x.image ? { file: x.image, caption: x.name } : x.wiki ? { wiki: x.wiki, caption: x.name } : undefined, note: null };
     }
     case 'largestCity': {
       const L = c.largestCity!;
@@ -288,11 +294,21 @@ export function face(ref: CardRef): CardFace {
       return { mode: 'reveal', pre: c.layer === 'peak' ? 'This mountain is ' : 'This World Heritage Site is ', blank: 'what?', post: '.', answer: c.name, map: 'reveal', note: c.facts,
         picture: { file: c.image, wiki: c.wiki, caption: c.name }, promptPicture: true };
     case 'siteLocate':
-      return { mode: 'tap', pre: `${c.name} is `, blank: 'where? tap the map', post: '.', answer: 'right here', map: 'tap', note: c.facts,
+      return { mode: 'tap', pre: `${c.name} is `, blank: 'where? tap the map', post: '.', answer: c.countryName ? `in ${c.countryName}` : 'right here', map: 'tap', note: c.facts,
         picture: { file: c.image, wiki: c.wiki, caption: c.name } };
     case 'siteCountry':
       return { mode: 'reveal', pre: `${c.name} is in `, blank: 'which country?', post: '.', answer: c.countryName!, map: 'reveal', note: c.facts,
         picture: { file: c.image, wiki: c.wiki, caption: c.name } };
+    case 'highest': {
+      const h = c.highest!;
+      return { mode: 'reveal', pre: `The highest point of ${theName(c)} is `, blank: 'what?', post: '.', answer: `${h.name}${h.elevation ? ` (${h.elevation.toLocaleString('en-US')} m)` : ''}`,
+        map: 'reveal', note: h.note, picture: { file: h.image, wiki: h.wiki, caption: h.name } };
+    }
+    case 'highestReverse': {
+      const h = c.highest!;
+      return { mode: 'reveal', pre: `${h.name}${h.elevation ? ` (${h.elevation.toLocaleString('en-US')} m)` : ''} is the highest point of `, blank: 'which country?', post: '.', answer: c.name,
+        map: 'reveal', note: h.note, picture: { file: h.image, wiki: h.wiki, caption: h.name } };
+    }
     case 'flagReverse':
       return { mode: 'reveal', pre: `The flag of ${c.name} looks like `, blank: 'what?', post: '', answer: '', answerFlag: true, map: 'none', note };
   }
@@ -315,19 +331,19 @@ export const LAYER_ICON: Record<Place['layer'], IconName> = { country: 'globe', 
 /** "What is this?" — you're shown the place/flag/capital and name it.
  *  "Where / what is it?" — you're given the name and find it, or name its capital/flag. */
 export const DIRECTIONS: { id: 'recognise' | 'recall'; name: string; hint: string; kinds: Kind[] }[] = [
-  { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse', 'senatorFace', 'currencyReverse', 'largestCityReverse', 'sitePhoto'] },
-  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry'] },
+  { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse', 'senatorFace', 'currencyReverse', 'largestCityReverse', 'sitePhoto', 'highestReverse'] },
+  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest'] },
 ];
 export const KIND_SHORT: Record<Kind, string> = {
   identify: 'Map → name', flag: 'Flag → country', capitalReverse: 'Capital → country',
   locate: 'Name → map', capitalLocate: 'Capital → map', capital: 'Country → capital', flagReverse: 'Country → flag',
   senatorFace: 'Photo → person', senator: 'Office → person', senatorLocate: 'Person → map',
-  currency: 'Country → currency', currencyReverse: 'Currency → country', largestCity: 'Country → largest city', largestCityReverse: 'City → country', belongsTo: 'Territory → country', sitePhoto: 'Photo → name', siteLocate: 'Name → map', siteCountry: 'Place → country',
+  currency: 'Country → currency', currencyReverse: 'Currency → country', largestCity: 'Country → largest city', largestCityReverse: 'City → country', belongsTo: 'Territory → country', sitePhoto: 'Photo → name', siteLocate: 'Name → map', siteCountry: 'Place → country', highest: 'Country → highest point', highestReverse: 'Highest point → country',
 };
 
 /** The skill-tree node a card belongs to. */
 export function nodeOfCard(ref: CardRef): string {
   const g = groupOf(ref.country);
-  const topic: Topic = ref.kind.startsWith('site') ? (ref.country.layer === 'peak' ? 'peaks' : 'sites') : ref.kind === 'belongsTo' ? 'sovereign' : ref.kind.startsWith('senator') ? (ref.country.topic ?? 'senate') : ref.kind.startsWith('currency') ? 'currency' : ref.kind.startsWith('largestCity') ? 'cities' : ref.kind.startsWith('capital') ? 'capitals' : ref.kind.startsWith('flag') ? 'flags' : g.layer === 'country' ? 'countries' : 'places';
+  const topic: Topic = ref.kind.startsWith('highest') ? 'highest' : ref.kind.startsWith('site') ? (ref.country.layer === 'peak' ? 'peaks' : 'sites') : ref.kind === 'belongsTo' ? 'sovereign' : ref.kind.startsWith('senator') ? (ref.country.topic ?? 'senate') : ref.kind.startsWith('currency') ? 'currency' : ref.kind.startsWith('largestCity') ? 'cities' : ref.kind.startsWith('capital') ? 'capitals' : ref.kind.startsWith('flag') ? 'flags' : g.layer === 'country' ? 'countries' : 'places';
   return nodeId(g.id, topic);
 }
