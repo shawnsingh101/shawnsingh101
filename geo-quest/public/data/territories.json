@@ -26,7 +26,9 @@
    "sovereign": "Q33",
    "sovereignName": "Finland",
    "terrStatus": "region of Finland",
-   "facts": "Region of Finland · Part of Finland"
+   "facts": "Region of Finland · Part of Finland",
+   "population": 30836,
+   "populationYear": 2025
   },
   {
    "id": "Q16641",
@@ -53,7 +55,9 @@
    "sovereign": "Q30",
    "sovereignName": "United States",
    "terrStatus": "territory of the United States",
-   "facts": "Territory of the United States · Part of United States"
+   "facts": "Territory of the United States · Part of United States",
+   "population": 49710,
+   "populationYear": 2020
   },
   {
    "id": "Q25228",
@@ -80,7 +84,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "British Overseas Territories",
-   "facts": "British Overseas Territories · Part of United Kingdom"
+   "facts": "British Overseas Territories · Part of United Kingdom",
+   "population": 16293,
+   "populationYear": 2025
   },
   {
    "id": "Q21203",
@@ -107,7 +113,9 @@
    "sovereign": "Q29999",
    "sovereignName": "Netherlands",
    "terrStatus": "country of the Kingdom of the Netherlands",
-   "facts": "Country of the Kingdom of the Netherlands · Part of Netherlands"
+   "facts": "Country of the Kingdom of the Netherlands · Part of Netherlands",
+   "population": 106739,
+   "populationYear": 2022
   },
   {
    "id": "Q18826",
@@ -134,7 +142,9 @@
    "sovereign": "Q691",
    "sovereignName": "Papua New Guinea",
    "terrStatus": "autonomous administrative territorial entity",
-   "facts": "Autonomous administrative territorial entity · Part of Papua New Guinea"
+   "facts": "Autonomous administrative territorial entity · Part of Papua New Guinea",
+   "population": 367093,
+   "populationYear": 2024
   },
   {
    "id": "Q25263",
@@ -181,7 +191,9 @@
    "sovereign": "Q45",
    "sovereignName": "Portugal",
    "terrStatus": "subregion of Portugal",
-   "facts": "Subregion of Portugal · Part of Portugal"
+   "facts": "Subregion of Portugal · Part of Portugal",
+   "population": 236440,
+   "populationYear": 2021
   },
   {
    "id": "Q23635",
@@ -208,7 +220,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "British Overseas Territories",
-   "facts": "British Overseas Territories · Part of United Kingdom"
+   "facts": "British Overseas Territories · Part of United Kingdom",
+   "population": 63179,
+   "populationYear": 2024
   },
   {
    "id": "Q43448",
@@ -235,7 +249,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "British Overseas Territories",
-   "facts": "British Overseas Territories · Part of United Kingdom"
+   "facts": "British Overseas Territories · Part of United Kingdom",
+   "population": 3000,
+   "populationYear": 2018
   },
   {
    "id": "Q25305",
@@ -262,7 +278,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "British Overseas Territories",
-   "facts": "British Overseas Territories · Part of United Kingdom"
+   "facts": "British Overseas Territories · Part of United Kingdom",
+   "population": 39369,
+   "populationYear": 2023
   },
   {
    "id": "Q27561",
@@ -278,7 +296,9 @@
    "sovereign": "Q29999",
    "sovereignName": "Netherlands",
    "terrStatus": null,
-   "facts": "Part of Netherlands"
+   "facts": "Part of Netherlands",
+   "population": 29418,
+   "populationYear": 2023
   },
   {
    "id": "Q5785",
@@ -305,7 +325,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "British Overseas Territories",
-   "facts": "British Overseas Territories · Part of United Kingdom"
+   "facts": "British Overseas Territories · Part of United Kingdom",
+   "population": 88833,
+   "populationYear": 2024
   },
   {
    "id": "Q31063",
@@ -332,7 +354,9 @@
    "sovereign": "Q408",
    "sovereignName": "Australia",
    "terrStatus": "external territory of Australia",
-   "facts": "External territory of Australia · Part of Australia"
+   "facts": "External territory of Australia · Part of Australia",
+   "population": 1692,
+   "populationYear": 2021
   },
   {
    "id": "Q36004",
@@ -359,7 +383,9 @@
    "sovereign": "Q408",
    "sovereignName": "Australia",
    "terrStatus": "external territory of Australia",
-   "facts": "External territory of Australia · Part of Australia"
+   "facts": "External territory of Australia · Part of Australia",
+   "population": 602,
+   "populationYear": 2021
   },
   {
    "id": "Q26988",
@@ -386,7 +412,9 @@
    "sovereign": "Q664",
    "sovereignName": "New Zealand",
    "terrStatus": null,
-   "facts": "Part of New Zealand"
+   "facts": "Part of New Zealand",
+   "population": 14222,
+   "populationYear": 2023
   },
   {
    "id": "Q25279",
@@ -413,7 +441,9 @@
    "sovereign": "Q29999",
    "sovereignName": "Netherlands",
    "terrStatus": "country of the Kingdom of the Netherlands",
-   "facts": "Country of the Kingdom of the Netherlands · Part of Netherlands"
+   "facts": "Country of the Kingdom of the Netherlands · Part of Netherlands",
+   "population": 152849,
+   "populationYear": 2023
   },
   {
    "id": "Q9648",
@@ -440,7 +470,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "British Overseas Territories",
-   "facts": "British Overseas Territories · Part of United Kingdom"
+   "facts": "British Overseas Territories · Part of United Kingdom",
+   "population": 3662,
+   "populationYear": 2021
   },
   {
    "id": "Q4628",
@@ -467,7 +499,9 @@
    "sovereign": "Q35",
    "sovereignName": "Denmark",
    "terrStatus": "autonomous country within the Kingdom of Denmark",
-   "facts": "Autonomous country within the Kingdom of Denmark · Part of Denmark"
+   "facts": "Autonomous country within the Kingdom of Denmark · Part of Denmark",
+   "population": 54149,
+   "populationYear": 2023
   },
   {
    "id": "Q3769",
@@ -494,7 +528,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "region of France",
-   "facts": "Region of France · Part of France"
+   "facts": "Region of France · Part of France",
+   "population": 293996,
+   "populationYear": 2023
   },
   {
    "id": "Q30971",
@@ -521,7 +557,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "overseas collectivity of France",
-   "facts": "Overseas collectivity of France · Part of France"
+   "facts": "Overseas collectivity of France · Part of France",
+   "population": 278786,
+   "populationYear": 2022
   },
   {
    "id": "Q129003",
@@ -548,7 +586,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "dependent territory",
-   "facts": "Dependent territory · Part of France"
+   "facts": "Dependent territory · Part of France",
+   "population": 196,
+   "populationYear": 2012
   },
   {
    "id": "Q223",
@@ -575,7 +615,9 @@
    "sovereign": "Q35",
    "sovereignName": "Denmark",
    "terrStatus": "dependent territory",
-   "facts": "Dependent territory · Part of Denmark"
+   "facts": "Dependent territory · Part of Denmark",
+   "population": 56609,
+   "populationYear": 2023
   },
   {
    "id": "Q17012",
@@ -602,7 +644,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "region of France",
-   "facts": "Region of France · Part of France"
+   "facts": "Region of France · Part of France",
+   "population": 384160,
+   "populationYear": 2023
   },
   {
    "id": "Q16635",
@@ -629,7 +673,9 @@
    "sovereign": "Q30",
    "sovereignName": "United States",
    "terrStatus": "territory of the United States",
-   "facts": "Territory of the United States · Part of United States"
+   "facts": "Territory of the United States · Part of United States",
+   "population": 153836,
+   "populationYear": 2020
   },
   {
    "id": "Q25230",
@@ -656,7 +702,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "Crown Dependencies",
-   "facts": "Crown Dependencies · Part of United Kingdom"
+   "facts": "Crown Dependencies · Part of United Kingdom",
+   "population": 67787,
+   "populationYear": 2024
   },
   {
    "id": "Q9676",
@@ -683,7 +731,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "Crown Dependencies",
-   "facts": "Crown Dependencies · Part of United Kingdom"
+   "facts": "Crown Dependencies · Part of United Kingdom",
+   "population": 84523,
+   "populationYear": 2024
   },
   {
    "id": "Q14056",
@@ -699,7 +749,9 @@
    "sovereign": "Q20",
    "sovereignName": "Norway",
    "terrStatus": "integral overseas territory",
-   "facts": "Integral overseas territory · Part of Norway"
+   "facts": "Integral overseas territory · Part of Norway",
+   "population": 18,
+   "populationYear": 2010
   },
   {
    "id": "Q785",
@@ -726,7 +778,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "Crown Dependencies",
-   "facts": "Crown Dependencies · Part of United Kingdom"
+   "facts": "Crown Dependencies · Part of United Kingdom",
+   "population": 103267,
+   "populationYear": 2021
   },
   {
    "id": "Q26253",
@@ -753,7 +807,9 @@
    "sovereign": "Q45",
    "sovereignName": "Portugal",
    "terrStatus": "subregion of Portugal",
-   "facts": "Subregion of Portugal · Part of Portugal"
+   "facts": "Subregion of Portugal · Part of Portugal",
+   "population": 250769,
+   "populationYear": 2021
   },
   {
    "id": "Q17054",
@@ -780,7 +836,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "region of France",
-   "facts": "Region of France · Part of France"
+   "facts": "Region of France · Part of France",
+   "population": 360630,
+   "populationYear": 2023
   },
   {
    "id": "Q17063",
@@ -807,7 +865,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "region of France",
-   "facts": "Region of France · Part of France"
+   "facts": "Region of France · Part of France",
+   "population": 320901,
+   "populationYear": 2024
   },
   {
    "id": "Q13353",
@@ -844,7 +904,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "British Overseas Territories",
-   "facts": "British Overseas Territories · Part of United Kingdom"
+   "facts": "British Overseas Territories · Part of United Kingdom",
+   "population": 5440,
+   "populationYear": 2023
   },
   {
    "id": "Q33788",
@@ -871,7 +933,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "dependent territory",
-   "facts": "Dependent territory · Part of France"
+   "facts": "Dependent territory · Part of France",
+   "population": 278500,
+   "populationYear": 2017
   },
   {
    "id": "Q34020",
@@ -898,7 +962,9 @@
    "sovereign": "Q664",
    "sovereignName": "New Zealand",
    "terrStatus": null,
-   "facts": "Part of New Zealand"
+   "facts": "Part of New Zealand",
+   "population": 1821,
+   "populationYear": 2025
   },
   {
    "id": "Q31057",
@@ -925,7 +991,9 @@
    "sovereign": "Q408",
    "sovereignName": "Australia",
    "terrStatus": "territory of Australia",
-   "facts": "Territory of Australia · Part of Australia"
+   "facts": "Territory of Australia · Part of Australia",
+   "population": 2188,
+   "populationYear": 2021
   },
   {
    "id": "Q16644",
@@ -952,7 +1020,9 @@
    "sovereign": "Q30",
    "sovereignName": "United States",
    "terrStatus": "commonwealth",
-   "facts": "Commonwealth · Part of United States"
+   "facts": "Commonwealth · Part of United States",
+   "population": 47329,
+   "populationYear": 2020
   },
   {
    "id": "Q35672",
@@ -979,7 +1049,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "British Overseas Territories",
-   "facts": "British Overseas Territories · Part of United Kingdom"
+   "facts": "British Overseas Territories · Part of United Kingdom",
+   "population": 50,
+   "populationYear": 2019
   },
   {
    "id": "Q1183",
@@ -1006,7 +1078,9 @@
    "sovereign": "Q30",
    "sovereignName": "United States",
    "terrStatus": "commonwealth",
-   "facts": "Commonwealth · Part of United States"
+   "facts": "Commonwealth · Part of United States",
+   "population": 3285874,
+   "populationYear": 2020
   },
   {
    "id": "Q17070",
@@ -1033,7 +1107,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "region of France",
-   "facts": "Region of France · Part of France"
+   "facts": "Region of France · Part of France",
+   "population": 889679,
+   "populationYear": 2023
   },
   {
    "id": "Q25362",
@@ -1060,7 +1136,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "overseas collectivity of France",
-   "facts": "Overseas collectivity of France · Part of France"
+   "facts": "Overseas collectivity of France · Part of France",
+   "population": 10124,
+   "populationYear": 2018
   },
   {
    "id": "Q34497",
@@ -1076,7 +1154,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "crown colony",
-   "facts": "Crown colony · Part of United Kingdom"
+   "facts": "Crown colony · Part of United Kingdom",
+   "population": 3924,
+   "populationYear": 2022
   },
   {
    "id": "Q34617",
@@ -1103,7 +1183,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "overseas collectivity of France",
-   "facts": "Overseas collectivity of France · Part of France"
+   "facts": "Overseas collectivity of France · Part of France",
+   "population": 5974,
+   "populationYear": 2019
   },
   {
    "id": "Q126125",
@@ -1130,7 +1212,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "overseas collectivity of France",
-   "facts": "Overseas collectivity of France · Part of France"
+   "facts": "Overseas collectivity of France · Part of France",
+   "population": 32358,
+   "populationYear": 2020
   },
   {
    "id": "Q26273",
@@ -1157,7 +1241,9 @@
    "sovereign": "Q29999",
    "sovereignName": "Netherlands",
    "terrStatus": "country of the Kingdom of the Netherlands",
-   "facts": "Country of the Kingdom of the Netherlands · Part of Netherlands"
+   "facts": "Country of the Kingdom of the Netherlands · Part of Netherlands",
+   "population": 43847,
+   "populationYear": 2020
   },
   {
    "id": "Q35086",
@@ -1184,7 +1270,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "disputed territory",
-   "facts": "Disputed territory · Part of United Kingdom"
+   "facts": "Disputed territory · Part of United Kingdom",
+   "population": 35,
+   "populationYear": 2019
   },
   {
    "id": "Q25231",
@@ -1211,7 +1299,9 @@
    "sovereign": "Q20",
    "sovereignName": "Norway",
    "terrStatus": "integral overseas territory",
-   "facts": "Integral overseas territory · Part of Norway"
+   "facts": "Integral overseas territory · Part of Norway",
+   "population": 2668,
+   "populationYear": null
   },
   {
    "id": "Q36823",
@@ -1227,7 +1317,9 @@
    "sovereign": "Q664",
    "sovereignName": "New Zealand",
    "terrStatus": "dependent territory",
-   "facts": "Dependent territory · Part of New Zealand"
+   "facts": "Dependent territory · Part of New Zealand",
+   "population": 1499,
+   "populationYear": 2016
   },
   {
    "id": "Q18221",
@@ -1254,7 +1346,9 @@
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",
    "terrStatus": "British Overseas Territories",
-   "facts": "British Overseas Territories · Part of United Kingdom"
+   "facts": "British Overseas Territories · Part of United Kingdom",
+   "population": 44542,
+   "populationYear": 2020
   },
   {
    "id": "Q11703",
@@ -1281,7 +1375,9 @@
    "sovereign": "Q30",
    "sovereignName": "United States",
    "terrStatus": "territory of the United States",
-   "facts": "Territory of the United States · Part of United States"
+   "facts": "Territory of the United States · Part of United States",
+   "population": 87146,
+   "populationYear": 2020
   },
   {
    "id": "Q35555",
@@ -1308,7 +1404,9 @@
    "sovereign": "Q142",
    "sovereignName": "France",
    "terrStatus": "overseas collectivity of France",
-   "facts": "Overseas collectivity of France · Part of France"
+   "facts": "Overseas collectivity of France · Part of France",
+   "population": 11558,
+   "populationYear": 2018
   }
  ]
 }

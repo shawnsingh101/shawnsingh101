@@ -31,7 +31,9 @@
     "han": "安徽",
     "pinyin": "Ānhuī"
    },
-   "capitalAnswer": "Hefei"
+   "capitalAnswer": "Hefei",
+   "population": 61027171,
+   "populationYear": 2020
   },
   {
    "id": "Q956",
@@ -54,7 +56,9 @@
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Beijing_pronunciation.ogg/Beijing_pronunciation.ogg.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/c/c8/Beijing_pronunciation.ogg"
     ]
-   }
+   },
+   "population": 21893095,
+   "populationYear": 2020
   },
   {
    "id": "Q11725",
@@ -77,7 +81,9 @@
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ed/Chongqing.ogg/Chongqing.ogg.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/e/ed/Chongqing.ogg"
     ]
-   }
+   },
+   "population": 32054159,
+   "populationYear": 2020
   },
   {
    "id": "Q41705",
@@ -109,7 +115,9 @@
     "han": "福建",
     "pinyin": "Fújiàn"
    },
-   "capitalAnswer": "Fuzhou"
+   "capitalAnswer": "Fuzhou",
+   "population": 41540086,
+   "populationYear": 2020
   },
   {
    "id": "Q42392",
@@ -141,7 +149,9 @@
     "han": "甘肃",
     "pinyin": "Gānsù"
    },
-   "capitalAnswer": "Lanzhou"
+   "capitalAnswer": "Lanzhou",
+   "population": 25019831,
+   "populationYear": 2020
   },
   {
    "id": "Q15175",
@@ -173,7 +183,9 @@
     "han": "广东",
     "pinyin": "Guǎngdōng"
    },
-   "capitalAnswer": "Guangzhou"
+   "capitalAnswer": "Guangzhou",
+   "population": 126012510,
+   "populationYear": 2020
   },
   {
    "id": "Q15176",
@@ -205,7 +217,9 @@
     "han": "广西",
     "pinyin": "Guǎngxī"
    },
-   "capitalAnswer": "Nanning"
+   "capitalAnswer": "Nanning",
+   "population": 50126804,
+   "populationYear": 2020
   },
   {
    "id": "Q47097",
@@ -237,7 +251,9 @@
     "han": "贵州",
     "pinyin": "Guìzhōu"
    },
-   "capitalAnswer": "Guiyang"
+   "capitalAnswer": "Guiyang",
+   "population": 38562148,
+   "populationYear": 2020
   },
   {
    "id": "Q42200",
@@ -269,7 +285,9 @@
     "han": "海南",
     "pinyin": "Hǎinán"
    },
-   "capitalAnswer": "Haikou"
+   "capitalAnswer": "Haikou",
+   "population": 10081232,
+   "populationYear": 2020
   },
   {
    "id": "Q21208",
@@ -301,7 +319,9 @@
     "han": "河北",
     "pinyin": "Héběi"
    },
-   "capitalAnswer": "Shijiazhuang"
+   "capitalAnswer": "Shijiazhuang",
+   "population": 74610235,
+   "populationYear": 2020
   },
   {
    "id": "Q19206",
@@ -333,7 +353,9 @@
     "han": "黑龙江",
     "pinyin": "Hēilóngjiāng"
    },
-   "capitalAnswer": "Harbin"
+   "capitalAnswer": "Harbin",
+   "population": 31850088,
+   "populationYear": 2020
   },
   {
    "id": "Q43684",
@@ -365,7 +387,9 @@
     "han": "河南",
     "pinyin": "Hénán"
    },
-   "capitalAnswer": "Zhengzhou"
+   "capitalAnswer": "Zhengzhou",
+   "population": 99365519,
+   "populationYear": 2020
   },
   {
    "id": "Q8646",
@@ -382,7 +406,9 @@
     "han": "香港",
     "pinyin": "Xiānggǎng"
    },
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "population": 7413070,
+   "populationYear": 2021
   },
   {
    "id": "Q46862",
@@ -420,7 +446,9 @@
     "han": "湖北",
     "pinyin": "Húběi"
    },
-   "capitalAnswer": "Wuhan"
+   "capitalAnswer": "Wuhan",
+   "population": 57752557,
+   "populationYear": 2020
   },
   {
    "id": "Q45761",
@@ -452,7 +480,9 @@
     "han": "湖南",
     "pinyin": "Húnán"
    },
-   "capitalAnswer": "Changsha"
+   "capitalAnswer": "Changsha",
+   "population": 66444864,
+   "populationYear": 2020
   },
   {
    "id": "Q41079",
@@ -484,7 +514,9 @@
     "han": "内蒙古",
     "pinyin": "Nèi Měnggǔ"
    },
-   "capitalAnswer": "Hohhot"
+   "capitalAnswer": "Hohhot",
+   "population": 24049155,
+   "populationYear": 2020
   },
   {
    "id": "Q16963",
@@ -516,7 +548,9 @@
     "han": "江苏",
     "pinyin": "Jiāngsū"
    },
-   "capitalAnswer": "Nanjing"
+   "capitalAnswer": "Nanjing",
+   "population": 84748016,
+   "populationYear": 2020
   },
   {
    "id": "Q57052",
@@ -548,7 +582,9 @@
     "han": "江西",
     "pinyin": "Jiāngxī"
    },
-   "capitalAnswer": "Nanchang"
+   "capitalAnswer": "Nanchang",
+   "population": 45188635,
+   "populationYear": 2020
   },
   {
    "id": "Q45208",
@@ -580,7 +616,9 @@
     "han": "吉林",
     "pinyin": "Jílín"
    },
-   "capitalAnswer": "Changchun"
+   "capitalAnswer": "Changchun",
+   "population": 24073453,
+   "populationYear": 2020
   },
   {
    "id": "Q43934",
@@ -612,7 +650,9 @@
     "han": "辽宁",
     "pinyin": "Liáoníng"
    },
-   "capitalAnswer": "Shenyang"
+   "capitalAnswer": "Shenyang",
+   "population": 42591407,
+   "populationYear": 2020
   },
   {
    "id": "Q14773",
@@ -629,7 +669,9 @@
     "han": "澳门",
     "pinyin": "Àomén"
    },
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "population": 682100,
+   "populationYear": 2021
   },
   {
    "id": "Q57448",
@@ -661,7 +703,9 @@
     "han": "宁夏",
     "pinyin": "Níngxià"
    },
-   "capitalAnswer": "Yinchuan"
+   "capitalAnswer": "Yinchuan",
+   "population": 7202654,
+   "populationYear": 2020
   },
   {
    "id": "Q45833",
@@ -693,7 +737,9 @@
     "han": "青海",
     "pinyin": "Qīnghǎi"
    },
-   "capitalAnswer": "Xining"
+   "capitalAnswer": "Xining",
+   "population": 5923957,
+   "populationYear": 2020
   },
   {
    "id": "Q47974",
@@ -731,7 +777,9 @@
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/92/Zh-Shaanxi.ogg/Zh-Shaanxi.ogg.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/9/92/Zh-Shaanxi.ogg"
     ]
-   }
+   },
+   "population": 39528999,
+   "populationYear": 2020
   },
   {
    "id": "Q43407",
@@ -763,7 +811,9 @@
     "han": "山东",
     "pinyin": "Shāndōng"
    },
-   "capitalAnswer": "Jinan"
+   "capitalAnswer": "Jinan",
+   "population": 101527453,
+   "populationYear": 2020
   },
   {
    "id": "Q8686",
@@ -780,7 +830,9 @@
     "han": "上海",
     "pinyin": "Shànghǎi"
    },
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "population": 24870895,
+   "populationYear": 2020
   },
   {
    "id": "Q46913",
@@ -812,7 +864,9 @@
     "han": "山西",
     "pinyin": "Shānxī"
    },
-   "capitalAnswer": "Taiyuan"
+   "capitalAnswer": "Taiyuan",
+   "population": 34915616,
+   "populationYear": 2020
   },
   {
    "id": "Q19770",
@@ -844,7 +898,9 @@
     "han": "四川",
     "pinyin": "Sìchuān"
    },
-   "capitalAnswer": "Chengdu"
+   "capitalAnswer": "Chengdu",
+   "population": 83674866,
+   "populationYear": 2020
   },
   {
    "id": "Q11736",
@@ -861,7 +917,9 @@
     "han": "天津",
     "pinyin": "Tiānjīn"
    },
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "population": 13866009,
+   "populationYear": 2020
   },
   {
    "id": "Q17269",
@@ -893,7 +951,9 @@
     "han": "西藏",
     "pinyin": "Xīzàng"
    },
-   "capitalAnswer": "Lhasa"
+   "capitalAnswer": "Lhasa",
+   "population": 3648100,
+   "populationYear": 2020
   },
   {
    "id": "Q34800",
@@ -925,7 +985,9 @@
     "han": "新疆",
     "pinyin": "Xīnjiāng"
    },
-   "capitalAnswer": "Ürümqi"
+   "capitalAnswer": "Ürümqi",
+   "population": 25852345,
+   "populationYear": 2020
   },
   {
    "id": "Q43194",
@@ -957,7 +1019,9 @@
     "han": "云南",
     "pinyin": "Yúnnán"
    },
-   "capitalAnswer": "Kunming"
+   "capitalAnswer": "Kunming",
+   "population": 47209277,
+   "populationYear": 2020
   },
   {
    "id": "Q16967",
@@ -989,7 +1053,9 @@
     "han": "浙江",
     "pinyin": "Zhèjiāng"
    },
-   "capitalAnswer": "Hangzhou"
+   "capitalAnswer": "Hangzhou",
+   "population": 64567588,
+   "populationYear": 2020
   }
  ]
 }

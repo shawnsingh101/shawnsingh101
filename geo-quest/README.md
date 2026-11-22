@@ -33,6 +33,23 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.8: more regions & rivers, population, local names, more dashboard
+
+- **India** (36 states & union territories in 6 regional groups) and **Uzbekistan** (14 regions) in `data/subdivisions.json`.
+  Overrides fill missing capitals (New Delhi for Delhi).
+- **Rivers of the United States** (`r-us`, inside United States): 35 more rivers from Natural Earth 1:10m, listed in
+  `data/rivers.json` with `"deck": "r-us"` and a bounding box so same-named rivers elsewhere aren't picked up. Big
+  rivers that touch the US (Mississippi, Columbia, Hudson…) also appear there (`alsoIn`), sharing one set of progress.
+  (Texas's Trinity and Virginia's James aren't in Natural Earth, so they're left out.)
+- **Population** (Wikidata P1082, latest) on country, state, province, region and territory cards and sheets.
+- **Local names** (and pronunciation: Wikidata recordings, else the device voice) for largest cities, peaks and World
+  Heritage Sites: labels in the country's own languages.
+- **Dashboard**: total debt by sector (government / households / companies, BIS total credit) as stacked bars next to
+  external debt; population (world + 10 most populous, with growth); inflation (BIS) and unemployment (OECD via FRED,
+  ILO annual where no monthly series) for the 10 largest economies; most valuable listed companies (Wikipedia's
+  quarterly list, global or US-only, with quarter-on-quarter change).
+- Robustness: election results, company list and trade figures fall back to last night's when a source is rate-limited.
+
 ## v1.7: charts, more data, connections
 
 - **Dashboard charts** (`src/components/Charts.tsx`, plain SVG): line charts with series chips and 1M/3M/1Y/5Y ranges

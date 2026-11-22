@@ -1,20 +1,22 @@
 import { useEffect, useState } from 'react';
 import { dataUrl } from '../data';
 import { Icon } from '../components/Icons';
-import { BarChart, LineChart, RangeToggle, SeriesToggles, type Pt, type Range } from '../components/Charts';
+import { BarChart, LineChart, RangeToggle, SeriesToggles, StackedBarChart, type Pt, type Range } from '../components/Charts';
 
 // A view-only page of numbers worth knowing, refreshed nightly by scripts/sync-dashboard.mjs.
 type Ch = { d1: number | null; m1: number | null; m3: number | null; ytd: number | null; y1: number | null; y5: number | null };
 type Wb = { value: number; year: string; name?: string } | null;
 interface Row { id: string; name: string; unit?: string; missing?: boolean; value?: number | null; prev?: number | null; asOf?: string; yoy?: number | null; hist?: Pt[];
   d1?: number | null; m1?: number | null; m3?: number | null; ytd?: number | null; y1?: number | null; y5?: number | null;
-  since?: string | null; from?: number | null; avg4?: number;
-  iso3?: string; gdp?: Wb; gdpPerCapita?: Wb; population?: Wb; unemployment?: Wb; externalDebt?: Wb; debtToGdp?: number | null }
+  since?: string | null; from?: number | null; avg4?: number; annual?: boolean; growth?: number | null; share?: number | null; year?: string;
+  iso3?: string; gdp?: Wb; gdpPerCapita?: Wb; population?: Wb; unemployment?: Wb; externalDebt?: Wb; debtToGdp?: number | null;
+  totalDebt?: { quarter: string; government: number; households: number; companies: number; governmentPct: number; householdsPct: number; companiesPct: number } | null }
 interface Partner { name: string; value: number; share: number | null }
 interface TradeCountry { iso3: string; name: string; year?: number; missing?: boolean; note?: string; exports?: Partner[]; imports?: Partner[]; oilFrom?: Partner[]; oilTo?: Partner[] }
-interface Section { id: string; title: string; mode?: 'pct' | 'pp'; kind?: 'yoy' | 'monthly' | 'table' | 'pending' | 'policy' | 'petroleum' | 'trade'; source: string; note?: string; rows?: Row[];
-  world?: { population: Wb; gdp: Wb }; weekly?: Row[]; imports?: { period: string; total: number | null; countries: Partner[] }; exports?: { period: string; total: number | null; countries: Partner[] }; countries?: TradeCountry[] }
-interface Dash { updated: string; sections: Section[] }
+interface Section { id: string; title: string; mode?: 'pct' | 'pp'; kind?: 'yoy' | 'monthly' | 'table' | 'pending' | 'policy' | 'petroleum' | 'trade' | 'population' | 'unemployment' | 'companies'; source: string; note?: string; rows?: Row[];
+  world?: { population: Wb; gdp: Wb } & { value?: number; year?: string; growth?: number | null }; weekly?: Row[]; imports?: { period: string; total: number | null; countries: Partner[] }; exports?: { period: string; total: number | null; countries: Partner[] }; countries?: TradeCountry[] }
+interface Company { name: string; country: string | null; values: Record<string, number>; ranks: Record<string, number> }
+interface Dash { updated: string; sections: (Section & { quarters?: string[]; latest?: string; asOf?: string | null; companies?: Company[] })[] }
 
 const COLS: [keyof Ch, string][] = [['d1', '1D'], ['m1', '1M'], ['m3', '3M'], ['ytd', 'YTD'], ['y1', '1Y'], ['y5', '5Y']];
 const num = (v: number, d = 2) => v.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -27,9 +29,9 @@ const kbd = (v: number) => `${num(v, 0)}k b/d`;
 // Which series are switched on at first (the rest are one tap away). Colours follow the series' place in its list.
 const DEFAULT_ON: Record<string, string[]> = {
   markets: ['SP500', 'DJIA', 'NASDAQCOM'], treasury: ['DGS2', 'DGS10', 'DGS30'], rates: ['DFF', 'ECBDFR', 'MORTGAGE30US'],
-  cbpol: ['US', 'XM', 'GB', 'JP', 'CN', 'IN'],
+  cbpol: ['US', 'XM', 'GB', 'JP', 'CN', 'IN'], intlInflation: ['USA', 'CHN', 'DEU', 'JPN', 'GBR', 'IND'],
 };
-const DEFAULT_RANGE: Record<string, Range> = { markets: '1Y', oil: '1Y', treasury: '1Y', rates: '5Y', cbpol: '5Y', inflation: '5Y', jobs: '5Y', petroleum: '1Y' };
+const DEFAULT_RANGE: Record<string, Range> = { intlInflation: '5Y', intlJobs: '5Y', markets: '1Y', oil: '1Y', treasury: '1Y', rates: '5Y', cbpol: '5Y', inflation: '5Y', jobs: '5Y', petroleum: '1Y' };
 
 function Change({ v, mode, k }: { v: number | null | undefined; mode: 'pct' | 'pp'; k: string }) {
   if (v == null) return <td className={'ch none c-' + k}>–</td>;
@@ -40,7 +42,7 @@ function Change({ v, mode, k }: { v: number | null | undefined; mode: 'pct' | 'p
 /** A line chart over a section's rows, with series and range toggles. */
 function SeriesChart({ s, rows, unit = '', indexed, step, refLine, ranges, decimals }: { s: Section; rows: Row[]; unit?: string; indexed?: boolean; step?: boolean; refLine?: { value: number; label: string }; ranges?: Range[]; decimals?: number }) {
   const withHist = rows.filter(r => r.hist?.length);
-  const [on, setOn] = useState<Set<string>>(() => new Set(DEFAULT_ON[s.id]?.filter(id => withHist.some(r => r.id === id)) ?? withHist.map(r => r.id)));
+  const [on, setOn] = useState<Set<string>>(() => { const d = DEFAULT_ON[s.id]?.filter(id => withHist.some(r => r.id === id)); return new Set(d?.length ? d : withHist.map(r => r.id)); });
   const [range, setRange] = useState<Range>(DEFAULT_RANGE[s.id] ?? '1Y');
   if (!withHist.length) return null;
   const colorOf = (id: string) => (withHist.findIndex(r => r.id === id) % 8) + 1;
@@ -72,6 +74,8 @@ const WORLD_METRICS: { id: string; name: string; get: (r: Row) => number | null 
   { id: 'pc', name: 'GDP per person', get: r => r.gdpPerCapita?.value, fmt: v => `$${num(v, 0)}` },
   { id: 'pop', name: 'Population', get: r => r.population?.value, fmt: people },
   { id: 'un', name: 'Unemployment', get: r => r.unemployment?.value, fmt: v => `${num(v, 1)}%` },
+  { id: 'total', name: 'Total debt', get: r => (r.totalDebt ? r.totalDebt.government + r.totalDebt.households + r.totalDebt.companies : null), fmt: big },
+  { id: 'totalgdp', name: 'Total debt % GDP', get: r => (r.totalDebt ? r.totalDebt.governmentPct + r.totalDebt.householdsPct + r.totalDebt.companiesPct : null), fmt: v => `${num(v, 0)}%` },
   { id: 'debt', name: 'External debt', get: r => r.externalDebt?.value, fmt: big },
   { id: 'debtgdp', name: 'Ext. debt % GDP', get: r => r.debtToGdp, fmt: v => `${num(v, 0)}%` },
 ];
@@ -83,13 +87,20 @@ function WorldCard({ s }: { s: Section }) {
   return <>
     {s.world?.population && <p className="small">World population <b>{people(s.world.population.value)}</b> ({s.world.population.year}){s.world.gdp ? <> · world GDP <b>{big(s.world.gdp.value)}</b></> : null}</p>}
     <div className="segmented small wrap">{WORLD_METRICS.map(x => <button key={x.id} className={metric === x.id ? 'on' : ''} onClick={() => setMetric(x.id)}>{x.name}</button>)}</div>
-    <BarChart items={items} format={m.fmt} />
+    {metric === 'total' || metric === 'totalgdp'
+      ? <StackedBarChart format={m.fmt} parts={[{ name: 'Government', color: 1 }, { name: 'Households', color: 2 }, { name: 'Companies', color: 3 }]}
+          items={s.rows!.filter(r => r.totalDebt).map(r => { const d = r.totalDebt!; return { label: r.name, values: metric === 'total' ? [d.government, d.households, d.companies] : [d.governmentPct, d.householdsPct, d.companiesPct] }; })
+            .sort((a, b) => b.values.reduce((x, y) => x + y, 0) - a.values.reduce((x, y) => x + y, 0))} />
+      : <BarChart items={items} format={m.fmt} />}
+    {(metric === 'total' || metric === 'totalgdp') && <p className="muted tiny">Total debt = what the government, households and non-financial companies owe, to anyone at home or abroad (BIS total credit, {s.rows!.find(r => r.totalDebt)?.totalDebt?.quarter}). Banks' own debts aren't included.</p>}
+    {(metric === 'debt' || metric === 'debtgdp') && <p className="muted tiny">External debt = what everyone in the country (government, banks, companies, households) owes to lenders abroad. It overlaps with total debt rather than adding to it, and includes banks.</p>}
     <details className="table-view"><summary>Table</summary><div className="table-scroll"><table>
-      <thead><tr><th>Country</th><th>GDP</th><th>GDP per person</th><th>Population</th><th>Unemployment</th><th>Gross external debt</th><th>% of GDP</th></tr></thead>
+      <thead><tr><th>Country</th><th>GDP</th><th>GDP per person</th><th>Population</th><th>Unemployment</th><th>Total debt</th><th>% of GDP</th><th>Gross external debt</th><th>% of GDP</th></tr></thead>
       <tbody>{s.rows!.map((r, i) => <tr key={r.iso3}>
         <td><span className="rank">{i + 1}</span>{r.name}</td>
         <td>{r.gdp ? big(r.gdp.value) : '–'}</td><td>{r.gdpPerCapita ? `$${num(r.gdpPerCapita.value, 0)}` : '–'}</td>
         <td>{r.population ? people(r.population.value) : '–'}</td><td>{r.unemployment ? `${num(r.unemployment.value, 1)}%` : '–'}</td>
+        <td>{r.totalDebt ? big(r.totalDebt.government + r.totalDebt.households + r.totalDebt.companies) : '–'}</td><td>{r.totalDebt ? `${num(r.totalDebt.governmentPct + r.totalDebt.householdsPct + r.totalDebt.companiesPct, 0)}%` : '–'}</td>
         <td>{r.externalDebt ? <>{big(r.externalDebt.value)} <small className="muted">{r.externalDebt.year}</small></> : '–'}</td><td>{r.debtToGdp != null ? `${r.debtToGdp}%` : '–'}</td>
       </tr>)}</tbody>
     </table></div></details>
@@ -109,6 +120,26 @@ function PetroleumCard({ s }: { s: Section }) {
     </div>
     {p && <BarChart items={p.countries.map(c => ({ label: c.name, value: c.value, note: c.share != null ? `${c.share}%` : undefined }))} format={kbd} color={side === 'imports' ? 1 : 2} />}
     {p?.total != null && <p className="muted tiny">Total {side} {kbd(p.total)} that month (crude oil and petroleum products).</p>}
+  </>;
+}
+
+function CompaniesCard({ s }: { s: Section & { quarters?: string[]; latest?: string; asOf?: string | null } }) {
+  const all = (s.rows ?? []) as unknown as Company[];
+  const quarters = s.quarters ?? [];
+  const [q, setQ] = useState(s.latest ?? quarters[quarters.length - 1]);
+  const [usOnly, setUsOnly] = useState(false);
+  const prevQ = quarters[quarters.indexOf(q) - 1];
+  const rows = all.filter(c => c.values[q] != null && (!usOnly || c.country === 'United States')).sort((a, b) => b.values[q] - a.values[q]);
+  return <>
+    <div className="chart-controls">
+      <div className="segmented small">{quarters.map(x => <button key={x} className={q === x ? 'on' : ''} onClick={() => setQ(x)}>{x.replace(/ \d{4}$/, '')}</button>)}</div>
+      <div className="segmented small"><button className={!usOnly ? 'on' : ''} onClick={() => setUsOnly(false)}>Global</button><button className={usOnly ? 'on' : ''} onClick={() => setUsOnly(true)}>US only</button></div>
+    </div>
+    <BarChart items={rows.map(c => {
+      const ch = prevQ && c.values[prevQ] ? (100 * (c.values[q] - c.values[prevQ])) / c.values[prevQ] : null;
+      return { label: `${c.name}${usOnly || c.country === 'United States' ? '' : ` (${c.country})`}`, value: c.values[q], note: ch == null ? (prevQ ? 'new' : undefined) : `${ch > 0 ? '+' : '−'}${Math.abs(ch).toFixed(0)}%` };
+    })} format={big} color={usOnly ? 1 : 7} />
+    <p className="muted tiny">Market value at the end of {q}{s.asOf && q === s.latest ? ` (list as of ${day(s.asOf)})` : ''}; change vs the quarter before.{usOnly ? ' US companies within the global top 10 — the source ranks the world, not each country.' : ''}</p>
   </>;
 }
 
@@ -141,7 +172,7 @@ export function Dashboard() {
   useEffect(() => { fetch(dataUrl('dashboard.json')).then(r => r.json()).then(setD).catch(() => setErr(true)); }, []);
   if (err) return <div className="dashboard"><h1>Dashboard</h1><p className="muted">The dashboard data hasn't been built yet.</p></div>;
   if (!d) return <div className="dashboard"><h1>Dashboard</h1><p className="muted">Loading…</p></div>;
-  const wide = (s: Section) => ['markets', 'oil', 'world', 'trade', 'petroleum', 'cbpol'].includes(s.id);
+  const wide = (s: Section) => ['markets', 'oil', 'world', 'trade', 'petroleum', 'cbpol', 'intlInflation', 'intlJobs', 'companies'].includes(s.id);
 
   return (
     <div className="dashboard">
@@ -154,6 +185,7 @@ export function Dashboard() {
             {s.kind === 'pending' ? <p className="muted"><Icon name="info" size={15} /> {s.note}</p>
             : s.kind === 'table' ? <WorldCard s={s} />
             : s.kind === 'trade' ? <TradeCard s={s} />
+            : s.kind === 'companies' ? <CompaniesCard s={s} />
             : s.kind === 'petroleum' ? <PetroleumCard s={s} />
             : s.kind === 'policy' ? <>
                 <SeriesChart s={s} rows={s.rows!} unit="%" step ranges={['1Y', '5Y']} />
@@ -163,11 +195,25 @@ export function Dashboard() {
                     <td className="muted">{r.since ? `${day(r.since)}${r.from != null ? ` (from ${num(r.from, 2)}%)` : ''}` : '–'}</td><Change k="y1" v={r.y1} mode="pp" /></tr>)}</tbody>
                 </table></div>
               </>
+            : s.kind === 'population' ? <>
+                {s.world?.value && <p className="small">World population <b>{people(s.world.value)}</b> ({s.world.year}){s.world.growth != null ? <>, growing {num(s.world.growth, 2)}% a year</> : null}</p>}
+                <BarChart items={s.rows!.map(r => ({ label: r.name, value: r.value!, note: r.share != null ? `${r.share}% of the world` : undefined }))} format={people} />
+                <details className="table-view"><summary>Table</summary><table>
+                  <thead><tr><th>Country</th><th>Population</th><th>Share</th><th>Growth a year</th></tr></thead>
+                  <tbody>{s.rows!.map((r, i) => <tr key={r.iso3}><td><span className="rank">{i + 1}</span>{r.name}</td><td>{people(r.value!)}</td><td>{r.share != null ? `${r.share}%` : '–'}</td><td>{r.growth != null ? `${num(r.growth, 2)}%` : '–'}</td></tr>)}</tbody>
+                </table></details>
+                <p className="muted tiny">{s.rows![0]?.year} estimates.</p>
+              </>
+            : s.kind === 'unemployment' ? <>
+                <SeriesChart s={s} rows={s.rows!.filter(r => r.hist?.length)} unit="%" ranges={['1Y', '5Y']} decimals={1} />
+                <table><tbody>{s.rows!.map(r => r.missing ? null : <tr key={r.id}><td>{r.name}</td><td className="big">{num(r.value!, 1)}%</td>
+                  <td className="muted">{r.prev != null ? `prev. ${num(r.prev, 1)}%` : r.annual ? 'annual estimate' : ''}</td><td className="muted tiny">{r.annual ? r.asOf : month(r.asOf)}</td></tr>)}</tbody></table>
+              </>
             : s.kind === 'yoy' ? <>
-                <SeriesChart s={s} rows={s.rows!} unit="%" refLine={{ value: 2, label: 'Fed target 2%' }} ranges={['1Y', '5Y']} decimals={1} />
+                <SeriesChart s={s} rows={s.rows!.filter(r => !r.missing)} unit="%" refLine={s.id === 'inflation' ? { value: 2, label: 'Fed target 2%' } : undefined} ranges={['1Y', '5Y']} decimals={1} />
                 <table>
                   <thead><tr><th></th><th>Year on year</th><th>Month before</th><th></th></tr></thead>
-                  <tbody>{s.rows!.map(r => <tr key={r.id}><td>{r.name}</td><td className="big">{r.value != null ? `${num(r.value, 1)}%` : '–'}</td><td className="muted">{r.prev != null ? `${num(r.prev, 1)}%` : '–'}</td><td className="muted tiny">{month(r.asOf)}</td></tr>)}</tbody>
+                  <tbody>{s.rows!.filter(r => !r.missing).map(r => <tr key={r.id}><td>{r.name}</td><td className="big">{r.value != null ? `${num(r.value, 1)}%` : '–'}</td><td className="muted">{r.prev != null ? `${num(r.prev, 1)}%` : '–'}</td><td className="muted tiny">{month(r.asOf)}</td></tr>)}</tbody>
                 </table>
               </>
             : s.kind === 'monthly' ? <>

@@ -36,6 +36,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1401 · Rabat-Salé-Kénitra, Morocco",
+   "native": [
+    {
+     "name": "الرباط",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q19951239"
    ],
@@ -56,6 +63,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #252 · Uttar Pradesh, India",
+   "native": [
+    {
+     "name": "ताजमहल",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1498"
    ],
@@ -116,6 +130,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1605 · Rajasthan, India",
+   "native": [
+    {
+     "name": "जयपुर",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1437"
    ],
@@ -216,6 +237,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #31 · Lesser Poland Voivodeship, Poland",
+   "native": [
+    {
+     "name": "Auschwitz-Birkenau",
+     "lang": "Polish",
+     "code": "pl"
+    }
+   ],
    "admin1Ids": [
     "Q54159"
    ],
@@ -236,6 +264,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #951 · Quảng Bình, Vietnam",
+   "native": [
+    {
+     "name": "Vườn quốc gia Phong Nha – Kẻ Bàng",
+     "lang": "Vietnamese",
+     "code": "vi"
+    }
+   ],
    "admin1Ids": [
     "Q23533"
    ],
@@ -276,6 +311,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #273 · Cusco Department, Peru",
+   "native": [
+    {
+     "name": "Qusqu",
+     "lang": "Aymara",
+     "code": "ay"
+    }
+   ],
    "admin1Ids": [
     "Q205057"
    ],
@@ -296,6 +338,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #326 · Ma'an Governorate, Jordan",
+   "native": [
+    {
+     "name": "البتراء",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q606340"
    ],
@@ -352,6 +401,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #483 · Yucatán, Mexico",
+   "native": [
+    {
+     "name": "Chichén Itzá",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ],
    "admin1Ids": [
     "Q60176"
    ],
@@ -392,6 +448,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #23 · Homs Governorate, Syria",
+   "native": [
+    {
+     "name": "تدمر",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q214094"
    ],
@@ -412,6 +475,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #114 · Fars Province, Iran",
+   "native": [
+    {
+     "name": "تخت جمشید",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ],
    "admin1Ids": [
     "Q1004666"
    ],
@@ -432,6 +502,18 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1042 · Northern District, Israel",
+   "native": [
+    {
+     "name": "עכו",
+     "lang": "Hebrew",
+     "code": "he"
+    },
+    {
+     "name": "عكا",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q189942"
    ],
@@ -452,6 +534,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #138 · Sindh, Pakistan",
+   "native": [
+    {
+     "name": "موہن جو دڑو",
+     "lang": "Urdu",
+     "code": "ur"
+    }
+   ],
    "admin1Ids": [
     "Q37211"
    ],
@@ -492,6 +581,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #404 · Attica, Greece",
+   "native": [
+    {
+     "name": "Ακρόπολη Αθηνών",
+     "lang": "Greek",
+     "code": "el"
+    }
+   ],
    "admin1Ids": [
     "Q758056"
    ],
@@ -528,6 +624,24 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #276 · Saladin Governorate, Iraq",
+   "native": [
+    {
+     "name": "سامراء",
+     "lang": "Arabic",
+     "code": "ar"
+    },
+    {
+     "name": "سامەڕا",
+     "lang": "Sorani",
+     "code": "ckb"
+    }
+   ],
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/ce/LL-Q13955_(ara)-Spotless_Mind1988-%D8%B3%D8%A7%D9%85%D8%B1%D8%A7%D8%A1.wav/LL-Q13955_(ara)-Spotless_Mind1988-%D8%B3%D8%A7%D9%85%D8%B1%D8%A7%D8%A1.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/ce/LL-Q13955_(ara)-Spotless_Mind1988-%D8%B3%D8%A7%D9%85%D8%B1%D8%A7%D8%A1.wav"
+    ]
+   },
    "admin1Ids": [
     "Q190131"
    ],
@@ -548,6 +662,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #517 · Western Greece, Greece",
+   "native": [
+    {
+     "name": "Ολυμπία",
+     "lang": "Greek",
+     "code": "el"
+    }
+   ],
    "admin1Ids": [
     "Q170291"
    ],
@@ -568,6 +689,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #15 · Tigray Region, Ethiopia",
+   "native": [
+    {
+     "name": "አክሱም",
+     "lang": "Amharic",
+     "code": "am"
+    }
+   ],
    "admin1Ids": [
     "Q200127"
    ],
@@ -588,6 +716,24 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #450 · Central Province, Sri Lanka",
+   "native": [
+    {
+     "name": "මහනුවර",
+     "lang": "Sinhala",
+     "code": "si"
+    },
+    {
+     "name": "கண்டி",
+     "lang": "Tamil",
+     "code": "ta"
+    }
+   ],
+   "audio": {
+    "ta": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b5/LL-Q5885_(tam)-Sriveenkat-%E0%AE%95%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AE%BF.wav/LL-Q5885_(tam)-Sriveenkat-%E0%AE%95%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AE%BF.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/b/b5/LL-Q5885_(tam)-Sriveenkat-%E0%AE%95%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AE%BF.wav"
+    ]
+   },
    "admin1Ids": [
     "Q190716"
    ],
@@ -608,6 +754,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #479 · Luang Prabang Province, Laos",
+   "native": [
+    {
+     "name": "ນະຄອນຫຼວງພະບາງ",
+     "lang": "Lao",
+     "code": "lo"
+    }
+   ],
    "admin1Ids": [
     "Q747881"
    ],
@@ -648,6 +801,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #294 · Baalbek-Hermel Governorate, Lebanon",
+   "native": [
+    {
+     "name": "بعلبك",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q787753"
    ],
@@ -708,6 +868,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #255 · Uttar Pradesh, India",
+   "native": [
+    {
+     "name": "फ़तेहपुर सीकरी",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1498"
    ],
@@ -728,6 +895,19 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #292 · North Rhine-Westphalia, Germany",
+   "native": [
+    {
+     "name": "Kölner Dom",
+     "lang": "German",
+     "code": "de"
+    }
+   ],
+   "audio": {
+    "de": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4b/De-K%C3%B6lner_Dom.ogg/De-K%C3%B6lner_Dom.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/4/4b/De-K%C3%B6lner_Dom.ogg"
+    ]
+   },
    "admin1Ids": [
     "Q1198"
    ],
@@ -768,6 +948,18 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #420 · Potosí Department, Bolivia",
+   "native": [
+    {
+     "name": "Putusi",
+     "lang": "Aymara",
+     "code": "ay"
+    },
+    {
+     "name": "Potosi",
+     "lang": "Guaraní",
+     "code": "gn"
+    }
+   ],
    "admin1Ids": [
     "Q238079"
    ],
@@ -787,7 +979,14 @@
    "countryName": "Vietnam",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #672 · Vietnam"
+   "facts": "UNESCO World Heritage Site #672 · Vietnam",
+   "native": [
+    {
+     "name": "Vịnh Hạ Long",
+     "lang": "Vietnamese",
+     "code": "vi"
+    }
+   ]
   },
   {
    "id": "Q184427",
@@ -804,6 +1003,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #242 · Maharashtra, India",
+   "native": [
+    {
+     "name": "अजंता गुफाएँ",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1191"
    ],
@@ -824,6 +1030,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #295 · Keserwan-Jbeil Governorate, Lebanon",
+   "native": [
+    {
+     "name": "جبيل",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q56345291"
    ],
@@ -864,6 +1077,24 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #200 · North Central Province, Sri Lanka",
+   "native": [
+    {
+     "name": "අනුරාධපුර පෞරාණික නගරය",
+     "lang": "Sinhala",
+     "code": "si"
+    },
+    {
+     "name": "அனுராதபுரம்",
+     "lang": "Tamil",
+     "code": "ta"
+    }
+   ],
+   "audio": {
+    "ta": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c2/LL-Q5885_(tam)-Sriveenkat-%E0%AE%85%E0%AE%A9%E0%AF%81%E0%AE%B0%E0%AE%BE%E0%AE%A4%E0%AE%AA%E0%AF%81%E0%AE%B0%E0%AE%AE%E0%AF%8D.wav/LL-Q5885_(tam)-Sriveenkat-%E0%AE%85%E0%AE%A9%E0%AF%81%E0%AE%B0%E0%AE%BE%E0%AE%A4%E0%AE%AA%E0%AF%81%E0%AE%B0%E0%AE%AE%E0%AF%8D.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/c2/LL-Q5885_(tam)-Sriveenkat-%E0%AE%85%E0%AE%A9%E0%AF%81%E0%AE%B0%E0%AE%BE%E0%AE%A4%E0%AE%AA%E0%AF%81%E0%AE%B0%E0%AE%AE%E0%AF%8D.wav"
+    ]
+   },
    "admin1Ids": [
     "Q1057124"
    ],
@@ -884,6 +1115,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #499 · Kairouan Governorate, Tunisia",
+   "native": [
+    {
+     "name": "القيروان",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q276574"
    ],
@@ -904,6 +1142,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #885 · Qashqadaryo Region, Uzbekistan",
+   "native": [
+    {
+     "name": "Шахрисабз",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ],
    "admin1Ids": [
     "Q487577"
    ],
@@ -924,6 +1169,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #530 · South Aegean, Greece",
+   "native": [
+    {
+     "name": "Δήλος",
+     "lang": "Greek",
+     "code": "el"
+    }
+   ],
    "admin1Ids": [
     "Q173616"
    ],
@@ -944,6 +1196,18 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #63 · North Kivu, Orientale Province, DR Congo",
+   "native": [
+    {
+     "name": "parc national des Virunga",
+     "lang": "French",
+     "code": "fr"
+    },
+    {
+     "name": "Parke ya Virunga",
+     "lang": "Lingala",
+     "code": "ln"
+    }
+   ],
    "admin1Ids": [
     "Q130625",
     "Q831370"
@@ -985,6 +1249,18 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1130 · Saladin Governorate, Iraq",
+   "native": [
+    {
+     "name": "آشور",
+     "lang": "Arabic",
+     "code": "ar"
+    },
+    {
+     "name": "ئاشوور",
+     "lang": "Sorani",
+     "code": "ckb"
+    }
+   ],
    "admin1Ids": [
     "Q190131"
    ],
@@ -1005,6 +1281,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1455 · Khuzestan Province, Iran",
+   "native": [
+    {
+     "name": "شوش",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ],
    "admin1Ids": [
     "Q241119"
    ],
@@ -1045,6 +1328,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1588 · Mandalay Region, Myanmar",
+   "native": [
+    {
+     "name": "ပုဂံ",
+     "lang": "Burmese",
+     "code": "my"
+    }
+   ],
    "admin1Ids": [
     "Q119494"
    ],
@@ -1065,6 +1355,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #251 · Uttar Pradesh, India",
+   "native": [
+    {
+     "name": "आगरा का किला",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1498"
    ],
@@ -1106,6 +1403,19 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #666 · Lumbini Province, Nepal",
+   "native": [
+    {
+     "name": "लुम्बिनी",
+     "lang": "Nepali",
+     "code": "ne"
+    }
+   ],
+   "audio": {
+    "ne": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/55/Ne-Lumbini.oga/Ne-Lumbini.oga.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/5/55/Ne-Lumbini.oga"
+    ]
+   },
    "admin1Ids": [
     "Q25104014"
    ],
@@ -1126,6 +1436,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #231 · National Capital Territory of Delhi, India",
+   "native": [
+    {
+     "name": "लाल क़िला",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q9357528"
    ],
@@ -1146,6 +1463,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #243 · Maharashtra, India",
+   "native": [
+    {
+     "name": "एलोरा गुफाएं",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1191"
    ],
@@ -1166,6 +1490,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #337 · Assam, India",
+   "native": [
+    {
+     "name": "काज़ीरंगा राष्ट्रीय उद्यान",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1164"
    ],
@@ -1186,6 +1517,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #661 · Hyōgo Prefecture, Japan",
+   "native": [
+    {
+     "name": "姫路城",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "admin1Ids": [
     "Q130290"
    ],
@@ -1206,6 +1544,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #139 · Punjab, Pakistan",
+   "native": [
+    {
+     "name": "ٹیکسلا",
+     "lang": "Urdu",
+     "code": "ur"
+    }
+   ],
    "admin1Ids": [
     "Q4478"
    ],
@@ -1226,6 +1571,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #190 · Jabal al Akhdar, Libya",
+   "native": [
+    {
+     "name": "قورينا",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q32841"
    ],
@@ -1286,6 +1638,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #908 · Sicily, Italy",
+   "native": [
+    {
+     "name": "isole Eolie",
+     "lang": "Italian",
+     "code": "it"
+    }
+   ],
    "admin1Ids": [
     "Q1460"
    ],
@@ -1347,6 +1706,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #775 · Hiroshima Prefecture, Japan",
+   "native": [
+    {
+     "name": "原爆ドーム",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "admin1Ids": [
     "Q617375"
    ],
@@ -1367,6 +1733,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #916 · Western Cape, South Africa",
+   "native": [
+    {
+     "name": "I-Robben Island",
+     "lang": "Zulu",
+     "code": "zu"
+    }
+   ],
    "admin1Ids": [
     "Q127167"
    ],
@@ -1387,6 +1760,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1502 · Bihar, India",
+   "native": [
+    {
+     "name": "नालंदा",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1165"
    ],
@@ -1407,6 +1787,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #98 · Karlovac County, Lika-Senj County, Croatia",
+   "native": [
+    {
+     "name": "Nacionalni park Plitvička jezera",
+     "lang": "Croatian",
+     "code": "hr"
+    }
+   ],
    "admin1Ids": [
     "Q57071",
     "Q58081"
@@ -1428,6 +1815,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #437 · Shandong, China",
+   "native": [
+    {
+     "name": "泰山",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
    "admin1Ids": [
     "Q43407"
    ],
@@ -1448,10 +1842,97 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #455 · Thessaly, Greece",
+   "native": [
+    {
+     "name": "Μετέωρα",
+     "lang": "Greek",
+     "code": "el"
+    }
+   ],
    "admin1Ids": [
     "Q22807284"
    ],
    "admin1": "Thessaly"
+  },
+  {
+   "id": "Q235004",
+   "layer": "site",
+   "name": "Vigan",
+   "group": "u-as",
+   "lon": 120.387,
+   "lat": 17.575,
+   "image": "Calle Crisologo, Vigan, Philippines (50025182191).jpg",
+   "wiki": "Vigan",
+   "whsId": "502",
+   "country": "Q928",
+   "countryName": "Philippines",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #502 · Ilocos Sur, Ilocos Region, Philippines",
+   "admin1Ids": [
+    "Q12741",
+    "Q12933"
+   ],
+   "admin1": "Ilocos Sur, Ilocos Region"
+  },
+  {
+   "id": "Q125445",
+   "layer": "site",
+   "name": "Temple of Heaven",
+   "group": "u-as",
+   "lon": 116.407,
+   "lat": 39.882,
+   "image": "Temple of Heaven 20160323 01.jpg",
+   "wiki": "Temple_of_Heaven",
+   "whsId": "881",
+   "country": "Q148",
+   "countryName": "China",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #881 · Beijing, China",
+   "native": [
+    {
+     "name": "天坛",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "admin1Ids": [
+    "Q956"
+   ],
+   "admin1": "Beijing"
+  },
+  {
+   "id": "Q193325",
+   "layer": "site",
+   "name": "Merv",
+   "group": "u-as",
+   "lon": 62.193,
+   "lat": 37.663,
+   "image": "Merv City Walls (10) (44747325714).jpg",
+   "wiki": "Merv",
+   "whsId": "886",
+   "country": "Q874",
+   "countryName": "Turkmenistan",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #886 · Mary Region, Turkmenistan",
+   "native": [
+    {
+     "name": "Мерв",
+     "lang": "Russian",
+     "code": "ru"
+    },
+    {
+     "name": "Merw",
+     "lang": "Turkmen",
+     "code": "tk"
+    }
+   ],
+   "admin1Ids": [
+    "Q487401"
+   ],
+   "admin1": "Mary Region"
   },
   {
    "id": "Q157603",
@@ -1489,6 +1970,18 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1040 · Southern District, Israel",
+   "native": [
+    {
+     "name": "מצדה",
+     "lang": "Hebrew",
+     "code": "he"
+    },
+    {
+     "name": "متسادا",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q188781"
    ],
@@ -1549,6 +2042,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #179 · Illizi Province, Djanet Province, Algeria",
+   "native": [
+    {
+     "name": "طاسيلي ناجر",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q233659",
     "Q77101547"
@@ -1570,6 +2070,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #232 · National Capital Territory of Delhi, India",
+   "native": [
+    {
+     "name": "हुमायूँ का मकबरा",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q9357528"
    ],
@@ -1590,31 +2097,17 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #241 · Karnataka, India",
+   "native": [
+    {
+     "name": "हम्पी",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1185"
    ],
    "admin1": "Karnataka"
-  },
-  {
-   "id": "Q235004",
-   "layer": "site",
-   "name": "Vigan",
-   "group": "u-as",
-   "lon": 120.387,
-   "lat": 17.575,
-   "image": "Calle Crisologo, Vigan, Philippines (50025182191).jpg",
-   "wiki": "Vigan",
-   "whsId": "502",
-   "country": "Q928",
-   "countryName": "Philippines",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #502 · Ilocos Sur, Ilocos Region, Philippines",
-   "admin1Ids": [
-    "Q12741",
-    "Q12933"
-   ],
-   "admin1": "Ilocos Sur, Ilocos Region"
   },
   {
    "id": "Q61750",
@@ -1651,50 +2144,17 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #776 · Hiroshima Prefecture, Japan",
+   "native": [
+    {
+     "name": "厳島神社",
+     "lang": "Japanese",
+     "code": "ja"
+    }
+   ],
    "admin1Ids": [
     "Q617375"
    ],
    "admin1": "Hiroshima Prefecture"
-  },
-  {
-   "id": "Q125445",
-   "layer": "site",
-   "name": "Temple of Heaven",
-   "group": "u-as",
-   "lon": 116.407,
-   "lat": 39.882,
-   "image": "Temple of Heaven 20160323 01.jpg",
-   "wiki": "Temple_of_Heaven",
-   "whsId": "881",
-   "country": "Q148",
-   "countryName": "China",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #881 · Beijing, China",
-   "admin1Ids": [
-    "Q956"
-   ],
-   "admin1": "Beijing"
-  },
-  {
-   "id": "Q193325",
-   "layer": "site",
-   "name": "Merv",
-   "group": "u-as",
-   "lon": 62.193,
-   "lat": 37.663,
-   "image": "Merv City Walls (10) (44747325714).jpg",
-   "wiki": "Merv",
-   "whsId": "886",
-   "country": "Q874",
-   "countryName": "Turkmenistan",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #886 · Mary Region, Turkmenistan",
-   "admin1Ids": [
-    "Q487401"
-   ],
-   "admin1": "Mary Region"
   },
   {
    "id": "Q4513",
@@ -1711,6 +2171,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1056 · Bihar, India",
+   "native": [
+    {
+     "name": "महाबोधि मंदिर",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
    "admin1Ids": [
     "Q1165"
    ],
@@ -1730,7 +2197,14 @@
    "countryName": "China",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1443 · China"
+   "facts": "UNESCO World Heritage Site #1443 · China",
+   "native": [
+    {
+     "name": "大运河",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ]
   },
   {
    "id": "Q188938",
@@ -1747,6 +2221,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1640 · Medenine Governorate, Tunisia",
+   "native": [
+    {
+     "name": "جربة",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q327087"
    ],
@@ -1767,6 +2248,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #183 · Murqub, Libya",
+   "native": [
+    {
+     "name": "لبدة الكبرى",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q209778"
    ],
@@ -1787,6 +2275,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #192 · Hadhramaut Governorate, Yemen",
+   "native": [
+    {
+     "name": "شبام",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q241135"
    ],
@@ -1813,6 +2308,33 @@
    "admin1": "Arusha Region"
   },
   {
+   "id": "Q4523",
+   "layer": "site",
+   "name": "Chogha Zanbil",
+   "group": "u-as",
+   "lon": 48.521,
+   "lat": 32.008,
+   "image": "Choghazanbil2.jpg",
+   "wiki": "Chogha_Zanbil",
+   "whsId": "113",
+   "country": "Q794",
+   "countryName": "Iran",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #113 · Khuzestan Province, Iran",
+   "native": [
+    {
+     "name": "چغازنبیل",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ],
+   "admin1Ids": [
+    "Q241119"
+   ],
+   "admin1": "Khuzestan Province"
+  },
+  {
    "id": "Q970717",
    "layer": "site",
    "name": "Kathmandu Valley",
@@ -1827,6 +2349,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #121 · Bagmati Province, Nepal",
+   "native": [
+    {
+     "name": "काठमाडौं उपत्यका",
+     "lang": "Nepali",
+     "code": "ne"
+    }
+   ],
    "admin1Ids": [
     "Q25104015"
    ],
@@ -1847,6 +2376,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #444 · Drâa-Tafilalet, Morocco",
+   "native": [
+    {
+     "name": "قصر أيت بن حدو",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q19950954"
    ],
@@ -1867,6 +2403,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #588 · Romania, Ukraine",
+   "native": [
+    {
+     "name": "Delta Dunării",
+     "lang": "Romanian",
+     "code": "ro"
+    }
+   ],
    "admin1Ids": [
     "Q191078",
     "Q171852"
@@ -1888,30 +2431,22 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #700 · Ica Department, Peru",
+   "native": [
+    {
+     "name": "lines cheveres",
+     "lang": "Aymara",
+     "code": "ay"
+    },
+    {
+     "name": "Líneas de Nazca",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ],
    "admin1Ids": [
     "Q208186"
    ],
    "admin1": "Ica Department"
-  },
-  {
-   "id": "Q4523",
-   "layer": "site",
-   "name": "Chogha Zanbil",
-   "group": "u-as",
-   "lon": 48.521,
-   "lat": 32.008,
-   "image": "Choghazanbil2.jpg",
-   "wiki": "Chogha_Zanbil",
-   "whsId": "113",
-   "country": "Q794",
-   "countryName": "Iran",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #113 · Khuzestan Province, Iran",
-   "admin1Ids": [
-    "Q241119"
-   ],
-   "admin1": "Khuzestan Province"
   },
   {
    "id": "Q4519",
@@ -1928,6 +2463,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #115 · Isfahan Province, Iran",
+   "native": [
+    {
+     "name": "میدان نقش جهان",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ],
    "admin1Ids": [
     "Q1367759"
    ],
@@ -1968,6 +2510,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #547 · Anhui, China",
+   "native": [
+    {
+     "name": "黄山",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
    "admin1Ids": [
     "Q40956"
    ],
@@ -2004,6 +2553,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #994 · Russia, Lithuania",
+   "native": [
+    {
+     "name": "Куршская коса",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ],
    "admin1Ids": [
     "Q1749"
    ],
@@ -2024,6 +2580,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1106 · Fars Province, Iran",
+   "native": [
+    {
+     "name": "پاسارگاد",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ],
    "admin1Ids": [
     "Q1004666"
    ],
@@ -2044,6 +2607,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1208 · Kerman Province, Iran",
+   "native": [
+    {
+     "name": "بم",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ],
    "admin1Ids": [
     "Q165352"
    ],
@@ -2160,6 +2730,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #440 · Gansu, China",
+   "native": [
+    {
+     "name": "莫高窟",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
    "admin1Ids": [
     "Q42392"
    ],
@@ -2196,6 +2773,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #3 · North Rhine-Westphalia, Germany",
+   "native": [
+    {
+     "name": "Aachener Dom",
+     "lang": "German",
+     "code": "de"
+    }
+   ],
    "admin1Ids": [
     "Q1198"
    ],
@@ -2216,6 +2800,18 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #202 · Central Province, Sri Lanka",
+   "native": [
+    {
+     "name": "සීගිරිය",
+     "lang": "Sinhala",
+     "code": "si"
+    },
+    {
+     "name": "சிகிரியா",
+     "lang": "Tamil",
+     "code": "ta"
+    }
+   ],
    "admin1Ids": [
     "Q190716"
    ],
@@ -2235,7 +2831,14 @@
    "countryName": "Iran",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1505 · Iran"
+   "facts": "UNESCO World Heritage Site #1505 · Iran",
+   "native": [
+    {
+     "name": "بیابان لوت",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ]
   },
   {
    "id": "Q830054",
@@ -2251,7 +2854,14 @@
    "countryName": "Ukraine",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #527-001 · Ukraine"
+   "facts": "UNESCO World Heritage Site #527-001 · Ukraine",
+   "native": [
+    {
+     "name": "Софійський собор",
+     "lang": "Ukrainian",
+     "code": "uk"
+    }
+   ]
   },
   {
    "id": "Q192666",
@@ -2268,6 +2878,18 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #33 · Belarus, Poland",
+   "native": [
+    {
+     "name": "Белавежская пушча",
+     "lang": "Belarusian",
+     "code": "be"
+    },
+    {
+     "name": "Беловежская пуща",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ],
    "admin1Ids": [
     "Q54177"
    ],
@@ -2288,6 +2910,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #90 · Alexandria Governorate, Egypt",
+   "native": [
+    {
+     "name": "أبو مينا",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q29943"
    ],
@@ -2328,6 +2957,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1708 · Apulia, Lazio, Italy",
+   "native": [
+    {
+     "name": "via Appia",
+     "lang": "Italian",
+     "code": "it"
+    }
+   ],
    "admin1Ids": [
     "Q1447",
     "Q1282"
@@ -2365,10 +3001,42 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #277 · Nineveh Governorate, Iraq",
+   "native": [
+    {
+     "name": "مملكة الحضر",
+     "lang": "Arabic",
+     "code": "ar"
+    },
+    {
+     "name": "ھاترا",
+     "lang": "Sorani",
+     "code": "ckb"
+    }
+   ],
    "admin1Ids": [
     "Q189352"
    ],
    "admin1": "Nineveh Governorate"
+  },
+  {
+   "id": "Q207917",
+   "layer": "site",
+   "name": "Mount Nemrut",
+   "group": "u-as",
+   "lon": 38.741,
+   "lat": 37.981,
+   "image": "Nemrut Mountain Peak.JPG",
+   "wiki": "Mount_Nemrut",
+   "whsId": "448",
+   "country": "Q43",
+   "countryName": "Türkiye",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #448 · Adıyaman Province, Türkiye",
+   "admin1Ids": [
+    "Q43924"
+   ],
+   "admin1": "Adıyaman Province"
   },
   {
    "id": "Q188694",
@@ -2385,6 +3053,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #570 · Vlorë County, Albania",
+   "native": [
+    {
+     "name": "Butrinti",
+     "lang": "Albanian",
+     "code": "sq"
+    }
+   ],
    "admin1Ids": [
     "Q192849"
    ],
@@ -2425,6 +3100,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #718 · Ituri Province, DR Congo",
+   "native": [
+    {
+     "name": "réserve de faune à okapis",
+     "lang": "French",
+     "code": "fr"
+    }
+   ],
    "admin1Ids": [
     "Q24909562"
    ],
@@ -2445,30 +3127,17 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #880 · Beijing, China",
+   "native": [
+    {
+     "name": "颐和园",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
    "admin1Ids": [
     "Q956"
    ],
    "admin1": "Beijing"
-  },
-  {
-   "id": "Q4516",
-   "layer": "site",
-   "name": "Lorentz National Park",
-   "group": "u-as",
-   "lon": 137.973,
-   "lat": -4.63,
-   "image": "Taman Nasional Lorentz.jpg",
-   "wiki": "Lorentz_National_Park",
-   "whsId": "955",
-   "country": "Q252",
-   "countryName": "Indonesia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #955 · Papua, Indonesia",
-   "admin1Ids": [
-    "Q5095"
-   ],
-   "admin1": "Papua"
   },
   {
    "id": "Q107370",
@@ -2485,6 +3154,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1152 · Southern Region, Iceland",
+   "native": [
+    {
+     "name": "Þingvellir",
+     "lang": "Icelandic",
+     "code": "is"
+    }
+   ],
    "admin1Ids": [
     "Q204796"
    ],
@@ -2545,6 +3221,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1258 · Canary Islands, Spain",
+   "native": [
+    {
+     "name": "Parque Nacional del Teide",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ],
    "admin1Ids": [
     "Q5813"
    ],
@@ -2585,6 +3268,18 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #136 · Orientale Province, DR Congo",
+   "native": [
+    {
+     "name": "parc national de la Garamba",
+     "lang": "French",
+     "code": "fr"
+    },
+    {
+     "name": "Park national ya Garamba",
+     "lang": "Lingala",
+     "code": "ln"
+    }
+   ],
    "admin1Ids": [
     "Q831370"
    ],
@@ -2605,6 +3300,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #153 · Tambacounda Region, Kedougou Region, Senegal",
+   "native": [
+    {
+     "name": "parc national du Niokolo-Koba",
+     "lang": "French",
+     "code": "fr"
+    }
+   ],
    "admin1Ids": [
     "Q848554",
     "Q1046666"
@@ -2646,6 +3348,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #26 · Dakar, Senegal",
+   "native": [
+    {
+     "name": "île de Gorée",
+     "lang": "French",
+     "code": "fr"
+    }
+   ],
    "admin1Ids": [
     "Q856268"
    ],
@@ -2666,6 +3375,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #194 · Batna Province, Algeria",
+   "native": [
+    {
+     "name": "تيمقاد",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q215452"
    ],
@@ -2686,6 +3402,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #227 · Savanes District, Zanzan District, Ivory Coast",
+   "native": [
+    {
+     "name": "parc national de la Comoé",
+     "lang": "French",
+     "code": "fr"
+    }
+   ],
    "admin1Ids": [
     "Q21002161",
     "Q21003689"
@@ -2747,6 +3470,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #559 · Stockholm County, Sweden",
+   "native": [
+    {
+     "name": "Drottningholms slott",
+     "lang": "Swedish",
+     "code": "sv"
+    }
+   ],
    "admin1Ids": [
     "Q104231"
    ],
@@ -2767,6 +3497,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #599 · Nampula Province, Mozambique",
+   "native": [
+    {
+     "name": "Ilha de Moçambique",
+     "lang": "Portuguese",
+     "code": "pt"
+    }
+   ],
    "admin1Ids": [
     "Q622794"
    ],
@@ -2806,7 +3543,19 @@
    "countryName": "DR Congo",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #280 · DR Congo"
+   "facts": "UNESCO World Heritage Site #280 · DR Congo",
+   "native": [
+    {
+     "name": "parc national de la Salonga",
+     "lang": "French",
+     "code": "fr"
+    },
+    {
+     "name": "parc ya mboka salonga",
+     "lang": "Lingala",
+     "code": "ln"
+    }
+   ]
   },
   {
    "id": "Q215897",
@@ -2843,6 +3592,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #632 · Arkhangelsk Oblast, Russia",
+   "native": [
+    {
+     "name": "Соловецкие острова",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ],
    "admin1Ids": [
     "Q1875"
    ],
@@ -2883,6 +3639,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #830 · Campania, Italy",
+   "native": [
+    {
+     "name": "Costiera amalfitana",
+     "lang": "Italian",
+     "code": "it"
+    }
+   ],
    "admin1Ids": [
     "Q1438"
    ],
@@ -2903,6 +3666,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #847 · Pomeranian Voivodeship, Poland",
+   "native": [
+    {
+     "name": "Zamek w Malborku",
+     "lang": "Polish",
+     "code": "pl"
+    }
+   ],
    "admin1Ids": [
     "Q54180"
    ],
@@ -2923,6 +3693,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #896 · Berlin, Germany",
+   "native": [
+    {
+     "name": "Museumsinsel",
+     "lang": "German",
+     "code": "de"
+    }
+   ],
    "admin1Ids": [
     "Q64"
    ],
@@ -3023,6 +3800,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #168 · Rhineland-Palatinate, Germany",
+   "native": [
+    {
+     "name": "Speyerer Dom",
+     "lang": "German",
+     "code": "de"
+    }
+   ],
    "admin1Ids": [
     "Q1200"
    ],
@@ -3123,6 +3907,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #137 · South Kivu, DR Congo",
+   "native": [
+    {
+     "name": "Kahuzi-Biega",
+     "lang": "French",
+     "code": "fr"
+    }
+   ],
    "admin1Ids": [
     "Q488326"
    ],
@@ -3163,6 +3954,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #191 · Sétif Province, Algeria",
+   "native": [
+    {
+     "name": "جميلة",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q237164"
    ],
@@ -3202,7 +4000,14 @@
    "countryName": "Belgium",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #857 · Belgium"
+   "facts": "UNESCO World Heritage Site #857 · Belgium",
+   "native": [
+    {
+     "name": "Grote Markt",
+     "lang": "Dutch",
+     "code": "nl"
+    }
+   ]
   },
   {
    "id": "Q223385",
@@ -3235,6 +4040,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1133 · Bosnia and Herzegovina, Croatia, Albania, North Macedonia, Bulgaria, Romania, Slovenia, Slovakia, Czechia, Ukraine, Germany, France, Austria, Switzerland, Italy, Poland, Belgium, Spain",
+   "native": [
+    {
+     "name": "Iskonske bukove šume Karpata i drugih regija Evrope",
+     "lang": "Bosnian",
+     "code": "bs"
+    }
+   ],
    "admin1Ids": [
     "Q54175"
    ],
@@ -3275,6 +4087,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #9 · Amhara Region, Ethiopia",
+   "native": [
+    {
+     "name": "ሰሜን ብሄራዊ ፓርክ",
+     "lang": "Amharic",
+     "code": "am"
+    }
+   ],
    "admin1Ids": [
     "Q203009"
    ],
@@ -3295,6 +4114,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #93 · Lombardy, Italy",
+   "native": [
+    {
+     "name": "chiesa di Santa Maria delle Grazie",
+     "lang": "Italian",
+     "code": "it"
+    }
+   ],
    "admin1Ids": [
     "Q1210"
    ],
@@ -3355,6 +4181,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #287 · Ghat District, Libya",
+   "native": [
+    {
+     "name": "جبال أكاكوس",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q48236"
    ],
@@ -3375,6 +4208,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #316 · Castile and León, Spain",
+   "native": [
+    {
+     "name": "catedral de Burgos",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ],
    "admin1Ids": [
     "Q5739"
    ],
@@ -3415,6 +4255,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #475 · Bamingui-Bangoran Prefecture, Central African Republic",
+   "native": [
+    {
+     "name": "parc national du Manovo-Gounda St. Floris",
+     "lang": "French",
+     "code": "fr"
+    }
+   ],
    "admin1Ids": [
     "Q741025"
    ],
@@ -3435,6 +4282,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #696 · Capital Region of Denmark, Denmark",
+   "native": [
+    {
+     "name": "Kronborg",
+     "lang": "Danish",
+     "code": "da"
+    }
+   ],
    "admin1Ids": [
     "Q26073"
    ],
@@ -3535,6 +4389,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #380 · Canary Islands, Spain",
+   "native": [
+    {
+     "name": "Parque nacional de Garajonay",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ],
    "admin1Ids": [
     "Q5813"
    ],
@@ -3555,6 +4416,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #474 · Hajdú-Bihar County, Hungary",
+   "native": [
+    {
+     "name": "Hortobágyi Nemzeti Park",
+     "lang": "Hungarian",
+     "code": "hu"
+    }
+   ],
    "admin1Ids": [
     "Q185368"
    ],
@@ -3575,6 +4443,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #511 · Peloponnese, Greece",
+   "native": [
+    {
+     "name": "Μυστράς",
+     "lang": "Greek",
+     "code": "el"
+    }
+   ],
    "admin1Ids": [
     "Q202484"
    ],
@@ -3656,6 +4531,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #836 · Fès-Meknès, Morocco",
+   "native": [
+    {
+     "name": "وليلي",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q19951027"
    ],
@@ -3752,6 +4634,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #195 · Bas-Sassandra District, Montagnes District, Ivory Coast",
+   "native": [
+    {
+     "name": "parc national de Taï",
+     "lang": "French",
+     "code": "fr"
+    }
+   ],
    "admin1Ids": [
     "Q20980352",
     "Q20980366"
@@ -3773,6 +4662,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1000 · Rio Grande do Norte, Brazil",
+   "native": [
+    {
+     "name": "Atol das Rocas",
+     "lang": "Portuguese",
+     "code": "pt"
+    }
+   ],
    "admin1Ids": [
     "Q43255"
    ],
@@ -3793,6 +4689,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1162 · Free State, North West, South Africa",
+   "native": [
+    {
+     "name": "Isakhiwo sokugadlazeka eVredefort",
+     "lang": "Zulu",
+     "code": "zu"
+    }
+   ],
    "admin1Ids": [
     "Q160284",
     "Q165956"
@@ -3814,6 +4717,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #102 · M'Sila Province, Algeria",
+   "native": [
+    {
+     "name": "قلعة بني حماد",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q240870"
    ],
@@ -3894,7 +4804,14 @@
    "countryName": "Bolivia, Colombia, Ecuador, Peru, Argentina and Chile",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1459 · Bolivia, Colombia, Ecuador, Peru, Argentina, Chile"
+   "facts": "UNESCO World Heritage Site #1459 · Bolivia, Colombia, Ecuador, Peru, Argentina, Chile",
+   "native": [
+    {
+     "name": "Inka ñan",
+     "lang": "Quechua",
+     "code": "qu"
+    }
+   ]
   },
   {
    "id": "Q539518",
@@ -3911,6 +4828,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #506 · Dakhlet Nouadhibou, Mauritania",
+   "native": [
+    {
+     "name": "حوض أركين",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
    "admin1Ids": [
     "Q859573"
    ],
@@ -3930,7 +4854,14 @@
    "countryName": "South Africa",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #915 · South Africa"
+   "facts": "UNESCO World Heritage Site #915 · South Africa",
+   "native": [
+    {
+     "name": "Isidabuko sesintu",
+     "lang": "Zulu",
+     "code": "zu"
+    }
+   ]
   },
   {
    "id": "Q28061",
@@ -4007,6 +4938,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #1611 · Maranhão, Brazil",
+   "native": [
+    {
+     "name": "Parque Nacional dos Lençóis Maranhenses",
+     "lang": "Portuguese",
+     "code": "pt"
+    }
+   ],
    "admin1Ids": [
     "Q42362"
    ],
@@ -4067,6 +5005,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #402 · Cusco Department, Madre de Dios Department, Peru",
+   "native": [
+    {
+     "name": "Parque nacional del Manu",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ],
    "admin1Ids": [
     "Q205057",
     "Q210896"
@@ -4108,6 +5053,13 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #606 · Piauí, Brazil",
+   "native": [
+    {
+     "name": "Parque Nacional da Serra da Capivara",
+     "lang": "Portuguese",
+     "code": "pt"
+    }
+   ],
    "admin1Ids": [
     "Q42722"
    ],
@@ -4127,7 +5079,14 @@
    "countryName": "Belize",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #764 · Belize"
+   "facts": "UNESCO World Heritage Site #764 · Belize",
+   "native": [
+    {
+     "name": "Sistema de Reservas de la Barrera del Arrecife de Belice",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ]
   },
   {
    "id": "Q219279",

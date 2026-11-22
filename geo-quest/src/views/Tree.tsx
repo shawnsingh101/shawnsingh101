@@ -101,7 +101,7 @@ export function Tree({ ds, startQuiz, startStudy, goDashboard }: { ds: Dataset; 
     const nodes = all.flatMap(g => g.topics.map(t => nodeId(g.id, t.id)));
     const tot = nodes.reduce((a, n) => { const st = nodeStats(ds, p, n); return { known: a.known + st.known, total: a.total + st.total, due: a.due + st.due }; }, { known: 0, total: 0, due: 0 });
     const learning = nodes.filter(n => p.active.includes(n)).length;
-    const base = groups.map(g => nodeId(g.id, g.topics[0].id));
+    const base = groups.filter(g => g.layer === groups[0]?.layer).map(g => nodeId(g.id, g.topics[0].id)); // "Learn all states" means the states, not the rivers deck beside them
     const allOn = base.length > 0 && base.every(n => p.active.includes(n));
     const kids = childSections(sec);
     const geo = subject?.id === 'geography';

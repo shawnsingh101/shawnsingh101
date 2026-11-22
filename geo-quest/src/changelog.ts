@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.8.0', notes: 'India & Uzbekistan regions · Rivers of the United States (Hudson, Delaware, Susquehanna…) · population on country cards · local names for cities, peaks & World Heritage Sites · Dashboard: total debt by sector, population, inflation & unemployment for the 10 largest economies, most valuable companies' },
   { version: '1.7.0', notes: 'Dashboard charts with toggles · central bank rates worldwide · US petroleum trade · external debt · what the largest economies trade · Related links between subjects (Kaaba → Saudi Arabia) · World Heritage Sites show their state or province' },
   { version: '1.6.0', notes: 'Library: subjects beyond geography, from your own note decks (two examples: cocktails, macroeconomics) · Dashboard: markets, Treasury yields, policy rates, inflation, jobs, oil and the 10 largest economies, refreshed nightly' },
   { version: '1.5.0', notes: 'Drill-down: countries and states studied in depth sit inside their continent (Americas › United States › New Jersey) · New Jersey counties & county seats · Japan’s prefectures · quiz by country for World Heritage, mountains, rivers & lakes · territory cards say who they belong to' },

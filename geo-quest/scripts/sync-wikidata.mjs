@@ -294,6 +294,8 @@ for (const p of cn.values()) {
 // else comes from Wikidata, including the tiers: the 20 longest rivers / 20 largest lakes are
 // the "great" tier, the rest are grouped by continent and unlock after it.
 const shapeIds = f => JSON.parse(readFileSync(join(ROOT, `public/data/shapes-${f}.json`), 'utf8')).objects.places.geometries.map(g => g.properties.id);
+// Rivers given a deck of their own in data/rivers.json (Rivers of the United States…) instead of their continent's.
+const deckOf = Object.fromEntries(JSON.parse(readFileSync(join(ROOT, 'public/data/shapes-river.json'), 'utf8')).objects.places.geometries.filter(g => g.properties.deck).map(g => [g.properties.id, g.properties.deck]));
 const regionOfCountry = Object.fromEntries([...countries.values()].map(c => [c.id, c.region]));
 const MEASURE_Q = `
 SELECT ?p ?len ?area ?mouthLabel (GROUP_CONCAT(DISTINCT ?ctry; separator=" ") AS ?ctrys) WHERE {
@@ -341,11 +343,14 @@ async function waterways(kind) {
   const prefix = kind === 'river' ? 'r' : 'l';
   const perContinent = {};
   const kept = [];
-  list.forEach((p, i) => {
+  let rank = 0;
+  list.forEach(p => {
     const o = overrides[p.id];
     if (o?.name) p.name = o.name;
     const region = mainRegion(p.countries, p.lon);
-    if (i < 20) p.group = `${prefix}-great`;
+    const i = kind === 'river' && deckOf[p.id] ? Infinity : rank++;
+    if (kind === 'river' && deckOf[p.id]) p.group = deckOf[p.id];
+    else if (i < 20) p.group = `${prefix}-great`;
     else {
       const g = `${prefix}-${CONT_GROUP[region]}`;
       const famous = (overrides._lakesAlways ?? []).includes(p.id); // small but well-known (Dead Sea, Lake Geneva…)
@@ -353,10 +358,12 @@ async function waterways(kind) {
       if (kind === 'lake' && !famous && (perContinent[g] = (perContinent[g] ?? 0) + 1) > 15) return; // keep the 15 largest lakes per continent
       p.group = g;
     }
+    // Big rivers through the US also appear in Rivers of the United States (same cards, one set of progress).
+    if (kind === 'river' && !deckOf[p.id] && (p.countries ?? []).includes('Q30')) p.alsoIn = ['r-us'];
     p.nameThe = kind === 'river' ? (o?.nameThe ?? `the ${p.name}`) : (o?.nameThe ?? (/ Sea$|^Great Salt/.test(p.name) ? `the ${p.name}` : p.name));
     const where = countryNames(p.countries);
     p.facts = kind === 'river'
-      ? [`${fmt(p.len / 1000)} km long`, p.mouth && `flows into ${/^(the |Lake )/i.test(p.mouth) ? p.mouth : 'the ' + p.mouth}`, where.length && where.slice(0, 4).join(', ') + (where.length > 4 ? '…' : '')].filter(Boolean).join(' · ')
+      ? [`${fmt(p.len / 1000)} km long`, p.mouth && `flows into ${/^(the |Lake )/i.test(p.mouth) || /^[A-Z][a-z]+ Bay$/.test(p.mouth) ? p.mouth : 'the ' + p.mouth}`, where.length && where.slice(0, 4).join(', ') + (where.length > 4 ? '…' : '')].filter(Boolean).join(' · ')
       : [`${fmt(p.area / 1e6)} km²`, where.length && where.slice(0, 4).join(', ')].filter(Boolean).join(' · ');
     p.size = Math.round(kind === 'river' ? p.len / 1000 : p.area / 1e6);
     delete p.len; delete p.area; delete p.mouth;
@@ -862,14 +869,21 @@ const ELECTION_YEAR = 2026, TAKES_OFFICE = '2027-01-03';
 if (new Date().toISOString().slice(0, 10) < '2027-02-15') { // after that the new officeholders are in the main data anyway
   console.log('Reading election results from Wikipedia…');
   const stateCodeByName = Object.fromEntries([...states.values()].map(st => [st.name, st.code]));
-  for (const r of raceRows(await wikitext(`${ELECTION_YEAR} United States Senate elections`))) {
+  // If Wikipedia doesn't answer (rate limits), keep last run's results instead of wiping the "incoming" strips.
+  const prevIncoming = {};
+  try { for (const x of JSON.parse(readFileSync(join(ROOT, 'public/data/senate.json'), 'utf8')).places) if (x.incoming) prevIncoming[x.id] = x.incoming; } catch { /* first run */ }
+  const senRows = raceRows(await wikitext(`${ELECTION_YEAR} United States Senate elections`));
+  const govRows = raceRows(await wikitext(`${ELECTION_YEAR} United States gubernatorial elections`));
+  if (!senRows.length) { warnings.push('Senate election results could not be read; kept last run\'s'); for (const x of senate) if (prevIncoming[x.id] && norm(prevIncoming[x.id].name) !== norm(x.name)) x.incoming = prevIncoming[x.id]; }
+  if (!govRows.length) { warnings.push('Governor election results could not be read; kept last run\'s'); for (const x of governors) if (prevIncoming[x.id] && norm(prevIncoming[x.id].name) !== norm(x.name)) x.incoming = prevIncoming[x.id]; }
+  for (const r of senRows) {
     const code = stateCodeByName[r.state];
     const seats = senate.filter(x => x.id.startsWith(`S-${code}-`));
     const seat = seats.find(x => r.incLast && norm(x.name).endsWith(norm(r.incLast))) ?? seats.find(x => x.termEnd === TAKES_OFFICE);
     if (!seat || norm(seat.name) === norm(r.winner)) continue; // re-elected or already sworn in
     seat.incoming = { name: r.winner, party: r.party, wiki: r.wiki, from: 'January 2027' };
   }
-  for (const r of raceRows(await wikitext(`${ELECTION_YEAR} United States gubernatorial elections`))) {
+  for (const r of govRows) {
     const seat = governors.find(x => x.placeName === r.state);
     if (!seat || norm(seat.name) === norm(r.winner)) continue;
     seat.incoming = { name: r.winner, party: r.party, wiki: r.wiki, from: 'January 2027' };
@@ -1054,8 +1068,31 @@ async function attachAudio(items) {
     }
   }
 }
+// ---- local names for largest cities, peaks and World Heritage Sites (labels in the country's own languages) ----
+console.log('Querying Wikidata for local names of cities, peaks and sites…');
+{
+  const jobs = [];
+  for (const c of countries.values()) if (c.largestCity?.id && !c.largestCity.isCapital) jobs.push({ target: c.largestCity, id: c.largestCity.id, country: c });
+  for (const x of [...sites, ...peaks]) { const c = countries.get(x.country); if (c) jobs.push({ target: x, id: x.id, country: c }); }
+  const labels = {};
+  const want = [...new Set(jobs.flatMap(j => j.country.native.map(n => n.code)).filter(Boolean))];
+  for (let i = 0; i < jobs.length; i += 200)
+    for (const b of await sparql(`SELECT ?c ?l WHERE { VALUES ?c { ${jobs.slice(i, i + 200).map(j => `wd:${j.id}`).join(' ')} } ?c rdfs:label ?l FILTER(lang(?l) IN (${want.map(x => `"${x}"`).join(',')})) }`))
+      (labels[qid(v(b, 'c'))] ??= {})[b.l['xml:lang']] = v(b, 'l');
+  for (const j of jobs) {
+    const out = [];
+    for (const n of j.country.native) {
+      let l = labels[j.id]?.[n.code];
+      if (l && /^(zh|ja)/.test(n.code ?? '') && l.length > 2) l = l.replace(/[市都]$/, ''); // 上海市 → 上海
+      if (l && l.toLowerCase() !== j.target.name.toLowerCase() && !out.some(o => o.name === l)) out.push({ name: l, lang: n.lang, code: n.code });
+    }
+    if (out.length) j.target.native = out.slice(0, 2);
+  }
+}
+
 console.log('Querying Wikidata for pronunciations…');
-await attachAudio([...countries.values(), ...[...countries.values()].flatMap(c => c.capitals), ...cn.values(), ...[...cn.values()].flatMap(p => p.capitals), ...rivers, ...lakes]);
+await attachAudio([...countries.values(), ...[...countries.values()].flatMap(c => c.capitals), ...cn.values(), ...[...cn.values()].flatMap(p => p.capitals), ...rivers, ...lakes,
+  ...[...countries.values()].map(c => c.largestCity).filter(x => x?.id && x.native), ...sites.filter(x => x.native), ...peaks.filter(x => x.native)]);
 // Keep only the languages the app shows (the local-language names, Mandarin for China).
 const base = code => code.split('-')[0];
 const keep = (item, codes) => {
@@ -1070,6 +1107,7 @@ for (const c of countries.values()) {
 }
 for (const p of cn.values()) { keep(p, ['zh']); for (const cap of p.capitals) keep(cap, ['zh']); }
 for (const p of [...rivers, ...lakes]) keep(p, [...(p.native ?? []).map(n => n.code), ...(p.zh ? ['zh'] : [])]);
+for (const p of [...sites, ...peaks, ...[...countries.values()].map(c => c.largestCity).filter(Boolean)]) keep(p, (p.native ?? []).map(n => n.code));
 
 // ---- more pronunciation: search Wikimedia Commons for native-speaker recordings ----
 // Lingua Libre uploads thousands of recordings ("LL-Q188 (deu)-Speaker-Deutschland.wav") that Wikidata
@@ -1194,6 +1232,19 @@ for (const p of subs.values()) {
   if (!p.capitalAnswer) warnings.push(`${p.name}: no ${p.capWord} in Wikidata`);
 }
 const subMeta = subCfg.map(({ source, _readme, groups, ...cfg }) => ({ ...cfg, groups: groups.map(({ id, name }) => ({ id, name })) }));
+
+// ---- population (Wikidata P1082, best-ranked, latest) for countries, US states, Chinese provinces, regions, territories ----
+console.log('Querying Wikidata for populations…');
+{
+  const items = [...countries.values(), ...states.values(), ...cn.values(), ...subs.values(), ...territories];
+  const pop = {};
+  for (let i = 0; i < items.length; i += 200)
+    for (const b of await sparql(`SELECT ?p ?n ?t WHERE { VALUES ?p { ${items.slice(i, i + 200).map(x => `wd:${x.id}`).join(' ')} } ?p p:P1082 ?s . ?s a wikibase:BestRank ; ps:P1082 ?n . OPTIONAL { ?s pq:P585 ?t } }`)) {
+      const id = qid(v(b, 'p')), t = v(b, 't') ?? '', n = +v(b, 'n');
+      if (!pop[id] || t > pop[id].t) pop[id] = { n, t };
+    }
+  for (const x of items) if (pop[x.id]?.n) { x.population = Math.round(pop[x.id].n); x.populationYear = pop[x.id].t ? +pop[x.id].t.slice(0, 4) : null; }
+}
 
 // A place is one card set: a site that's also a country, lake, range or peak (Vatican City, Lake Baikal, Western Ghats)
 // stays in its own layer, otherwise the two would share card ids.

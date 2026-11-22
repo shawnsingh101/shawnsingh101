@@ -24,7 +24,9 @@
     }
    ],
    "flag": "Flag of Alabama.svg",
-   "capitalAnswer": "Montgomery"
+   "capitalAnswer": "Montgomery",
+   "population": 5024279,
+   "populationYear": 2020
   },
   {
    "id": "Q797",
@@ -49,7 +51,9 @@
     }
    ],
    "flag": "Flag of Alaska.svg",
-   "capitalAnswer": "Juneau"
+   "capitalAnswer": "Juneau",
+   "population": 733391,
+   "populationYear": 2020
   },
   {
    "id": "Q816",
@@ -74,7 +78,9 @@
     }
    ],
    "flag": "Flag of Arizona.svg",
-   "capitalAnswer": "Phoenix"
+   "capitalAnswer": "Phoenix",
+   "population": 7151502,
+   "populationYear": 2020
   },
   {
    "id": "Q1612",
@@ -99,7 +105,9 @@
     }
    ],
    "flag": "Flag of Arkansas.svg",
-   "capitalAnswer": "Little Rock"
+   "capitalAnswer": "Little Rock",
+   "population": 3011524,
+   "populationYear": 2020
   },
   {
    "id": "Q99",
@@ -124,7 +132,9 @@
     }
    ],
    "flag": "Flag of California.svg",
-   "capitalAnswer": "Sacramento"
+   "capitalAnswer": "Sacramento",
+   "population": 39538223,
+   "populationYear": 2020
   },
   {
    "id": "Q1261",
@@ -149,7 +159,9 @@
     }
    ],
    "flag": "Flag of Colorado.svg",
-   "capitalAnswer": "Denver"
+   "capitalAnswer": "Denver",
+   "population": 5773714,
+   "populationYear": 2020
   },
   {
    "id": "Q779",
@@ -174,7 +186,9 @@
     }
    ],
    "flag": "Flag of Connecticut.svg",
-   "capitalAnswer": "Hartford"
+   "capitalAnswer": "Hartford",
+   "population": 3605944,
+   "populationYear": 2020
   },
   {
    "id": "Q1393",
@@ -199,7 +213,9 @@
     }
    ],
    "flag": "Flag of Delaware.svg",
-   "capitalAnswer": "Dover"
+   "capitalAnswer": "Dover",
+   "population": 989948,
+   "populationYear": 2020
   },
   {
    "id": "Q812",
@@ -224,7 +240,9 @@
     }
    ],
    "flag": "Flag of Florida.svg",
-   "capitalAnswer": "Tallahassee"
+   "capitalAnswer": "Tallahassee",
+   "population": 21538187,
+   "populationYear": 2020
   },
   {
    "id": "Q1428",
@@ -249,7 +267,9 @@
     }
    ],
    "flag": "Flag of the State of Georgia.svg",
-   "capitalAnswer": "Atlanta"
+   "capitalAnswer": "Atlanta",
+   "population": 10711908,
+   "populationYear": 2020
   },
   {
    "id": "Q782",
@@ -274,7 +294,9 @@
     }
    ],
    "flag": "Flag of Hawaii.svg",
-   "capitalAnswer": "Honolulu"
+   "capitalAnswer": "Honolulu",
+   "population": 1455271,
+   "populationYear": 2020
   },
   {
    "id": "Q1221",
@@ -299,7 +321,9 @@
     }
    ],
    "flag": "Flag of Idaho.svg",
-   "capitalAnswer": "Boise"
+   "capitalAnswer": "Boise",
+   "population": 1839106,
+   "populationYear": 2020
   },
   {
    "id": "Q1204",
@@ -324,7 +348,9 @@
     }
    ],
    "flag": "Flag of Illinois.svg",
-   "capitalAnswer": "Springfield"
+   "capitalAnswer": "Springfield",
+   "population": 12812508,
+   "populationYear": 2020
   },
   {
    "id": "Q1415",
@@ -349,7 +375,9 @@
     }
    ],
    "flag": "Flag of Indiana.svg",
-   "capitalAnswer": "Indianapolis"
+   "capitalAnswer": "Indianapolis",
+   "population": 6785528,
+   "populationYear": 2020
   },
   {
    "id": "Q1546",
@@ -374,7 +402,9 @@
     }
    ],
    "flag": "Flag of Iowa.svg",
-   "capitalAnswer": "Des Moines"
+   "capitalAnswer": "Des Moines",
+   "population": 3190369,
+   "populationYear": 2020
   },
   {
    "id": "Q1558",
@@ -399,7 +429,9 @@
     }
    ],
    "flag": "Flag of Kansas.svg",
-   "capitalAnswer": "Topeka"
+   "capitalAnswer": "Topeka",
+   "population": 2937880,
+   "populationYear": 2020
   },
   {
    "id": "Q1603",
@@ -424,7 +456,9 @@
     }
    ],
    "flag": "Flag of Kentucky.svg",
-   "capitalAnswer": "Frankfort"
+   "capitalAnswer": "Frankfort",
+   "population": 4505836,
+   "populationYear": 2020
   },
   {
    "id": "Q1588",
@@ -449,7 +483,9 @@
     }
    ],
    "flag": "Flag of Louisiana.svg",
-   "capitalAnswer": "Baton Rouge"
+   "capitalAnswer": "Baton Rouge",
+   "population": 4657757,
+   "populationYear": 2020
   },
   {
    "id": "Q724",
@@ -474,7 +510,9 @@
     }
    ],
    "flag": "Flag of Maine.svg",
-   "capitalAnswer": "Augusta"
+   "capitalAnswer": "Augusta",
+   "population": 1362359,
+   "populationYear": 2020
   },
   {
    "id": "Q1391",
@@ -499,7 +537,9 @@
     }
    ],
    "flag": "Flag of Maryland.svg",
-   "capitalAnswer": "Annapolis"
+   "capitalAnswer": "Annapolis",
+   "population": 6177224,
+   "populationYear": 2020
   },
   {
    "id": "Q771",
@@ -524,7 +564,9 @@
     }
    ],
    "flag": "Flag of Massachusetts.svg",
-   "capitalAnswer": "Boston"
+   "capitalAnswer": "Boston",
+   "population": 7029917,
+   "populationYear": 2020
   },
   {
    "id": "Q1166",
@@ -549,7 +591,9 @@
     }
    ],
    "flag": "Flag of Michigan.svg",
-   "capitalAnswer": "Lansing"
+   "capitalAnswer": "Lansing",
+   "population": 10077331,
+   "populationYear": 2020
   },
   {
    "id": "Q1527",
@@ -574,7 +618,9 @@
     }
    ],
    "flag": "Flag of Minnesota.svg",
-   "capitalAnswer": "Saint Paul"
+   "capitalAnswer": "Saint Paul",
+   "population": 5706494,
+   "populationYear": 2020
   },
   {
    "id": "Q1494",
@@ -599,7 +645,9 @@
     }
    ],
    "flag": "Flag of Mississippi.svg",
-   "capitalAnswer": "Jackson"
+   "capitalAnswer": "Jackson",
+   "population": 2961279,
+   "populationYear": 2020
   },
   {
    "id": "Q1581",
@@ -624,7 +672,9 @@
     }
    ],
    "flag": "Flag of Missouri.svg",
-   "capitalAnswer": "Jefferson City"
+   "capitalAnswer": "Jefferson City",
+   "population": 6154913,
+   "populationYear": 2020
   },
   {
    "id": "Q1212",
@@ -649,7 +699,9 @@
     }
    ],
    "flag": "Flag of Montana.svg",
-   "capitalAnswer": "Helena"
+   "capitalAnswer": "Helena",
+   "population": 1084225,
+   "populationYear": 2020
   },
   {
    "id": "Q1553",
@@ -674,7 +726,9 @@
     }
    ],
    "flag": "Flag of Nebraska.svg",
-   "capitalAnswer": "Lincoln"
+   "capitalAnswer": "Lincoln",
+   "population": 1961504,
+   "populationYear": 2020
   },
   {
    "id": "Q1227",
@@ -699,7 +753,9 @@
     }
    ],
    "flag": "Flag of Nevada.svg",
-   "capitalAnswer": "Carson City"
+   "capitalAnswer": "Carson City",
+   "population": 3104614,
+   "populationYear": 2020
   },
   {
    "id": "Q759",
@@ -724,7 +780,9 @@
     }
    ],
    "flag": "Flag of New Hampshire.svg",
-   "capitalAnswer": "Concord"
+   "capitalAnswer": "Concord",
+   "population": 1377529,
+   "populationYear": 2020
   },
   {
    "id": "Q1408",
@@ -749,7 +807,9 @@
     }
    ],
    "flag": "Flag of New Jersey.svg",
-   "capitalAnswer": "Trenton"
+   "capitalAnswer": "Trenton",
+   "population": 9288994,
+   "populationYear": 2020
   },
   {
    "id": "Q1522",
@@ -774,7 +834,9 @@
     }
    ],
    "flag": "Flag of New Mexico.svg",
-   "capitalAnswer": "Santa Fe"
+   "capitalAnswer": "Santa Fe",
+   "population": 2117522,
+   "populationYear": 2020
   },
   {
    "id": "Q1384",
@@ -799,7 +861,9 @@
     }
    ],
    "flag": "Flag of New York.svg",
-   "capitalAnswer": "Albany"
+   "capitalAnswer": "Albany",
+   "population": 20201249,
+   "populationYear": 2020
   },
   {
    "id": "Q1454",
@@ -824,7 +888,9 @@
     }
    ],
    "flag": "Flag of North Carolina.svg",
-   "capitalAnswer": "Raleigh"
+   "capitalAnswer": "Raleigh",
+   "population": 10439388,
+   "populationYear": 2020
   },
   {
    "id": "Q1207",
@@ -849,7 +915,9 @@
     }
    ],
    "flag": "Flag of North Dakota.svg",
-   "capitalAnswer": "Bismarck"
+   "capitalAnswer": "Bismarck",
+   "population": 779094,
+   "populationYear": 2020
   },
   {
    "id": "Q1397",
@@ -874,7 +942,9 @@
     }
    ],
    "flag": "Flag of Ohio.svg",
-   "capitalAnswer": "Columbus"
+   "capitalAnswer": "Columbus",
+   "population": 11799448,
+   "populationYear": 2020
   },
   {
    "id": "Q1649",
@@ -899,7 +969,9 @@
     }
    ],
    "flag": "Flag of Oklahoma.svg",
-   "capitalAnswer": "Oklahoma City"
+   "capitalAnswer": "Oklahoma City",
+   "population": 3959353,
+   "populationYear": 2020
   },
   {
    "id": "Q824",
@@ -924,7 +996,9 @@
     }
    ],
    "flag": "Flag of Oregon.svg",
-   "capitalAnswer": "Salem"
+   "capitalAnswer": "Salem",
+   "population": 4237256,
+   "populationYear": 2020
   },
   {
    "id": "Q1400",
@@ -949,7 +1023,9 @@
     }
    ],
    "flag": "Flag of Pennsylvania.svg",
-   "capitalAnswer": "Harrisburg"
+   "capitalAnswer": "Harrisburg",
+   "population": 13002700,
+   "populationYear": 2020
   },
   {
    "id": "Q1387",
@@ -974,7 +1050,9 @@
     }
    ],
    "flag": "Flag of Rhode Island.svg",
-   "capitalAnswer": "Providence"
+   "capitalAnswer": "Providence",
+   "population": 1097379,
+   "populationYear": 2020
   },
   {
    "id": "Q1456",
@@ -999,7 +1077,9 @@
     }
    ],
    "flag": "Flag of South Carolina.svg",
-   "capitalAnswer": "Columbia"
+   "capitalAnswer": "Columbia",
+   "population": 5118425,
+   "populationYear": 2020
   },
   {
    "id": "Q1211",
@@ -1024,7 +1104,9 @@
     }
    ],
    "flag": "Flag of South Dakota.svg",
-   "capitalAnswer": "Pierre"
+   "capitalAnswer": "Pierre",
+   "population": 886667,
+   "populationYear": 2020
   },
   {
    "id": "Q1509",
@@ -1049,7 +1131,9 @@
     }
    ],
    "flag": "Flag of Tennessee.svg",
-   "capitalAnswer": "Nashville"
+   "capitalAnswer": "Nashville",
+   "population": 6910840,
+   "populationYear": 2020
   },
   {
    "id": "Q1439",
@@ -1074,7 +1158,9 @@
     }
    ],
    "flag": "Flag of Texas.svg",
-   "capitalAnswer": "Austin"
+   "capitalAnswer": "Austin",
+   "population": 29145505,
+   "populationYear": 2020
   },
   {
    "id": "Q829",
@@ -1099,7 +1185,9 @@
     }
    ],
    "flag": "Flag of Utah.svg",
-   "capitalAnswer": "Salt Lake City"
+   "capitalAnswer": "Salt Lake City",
+   "population": 3271616,
+   "populationYear": 2020
   },
   {
    "id": "Q16551",
@@ -1124,7 +1212,9 @@
     }
    ],
    "flag": "Flag of Vermont.svg",
-   "capitalAnswer": "Montpelier"
+   "capitalAnswer": "Montpelier",
+   "population": 643077,
+   "populationYear": 2020
   },
   {
    "id": "Q1370",
@@ -1149,7 +1239,9 @@
     }
    ],
    "flag": "Flag of Virginia.svg",
-   "capitalAnswer": "Richmond"
+   "capitalAnswer": "Richmond",
+   "population": 8631393,
+   "populationYear": 2020
   },
   {
    "id": "Q1223",
@@ -1174,7 +1266,9 @@
     }
    ],
    "flag": "Flag of Washington.svg",
-   "capitalAnswer": "Olympia"
+   "capitalAnswer": "Olympia",
+   "population": 7705281,
+   "populationYear": 2020
   },
   {
    "id": "Q1371",
@@ -1199,7 +1293,9 @@
     }
    ],
    "flag": "Flag of West Virginia.svg",
-   "capitalAnswer": "Charleston"
+   "capitalAnswer": "Charleston",
+   "population": 1793716,
+   "populationYear": 2020
   },
   {
    "id": "Q1537",
@@ -1224,7 +1320,9 @@
     }
    ],
    "flag": "Flag of Wisconsin.svg",
-   "capitalAnswer": "Madison"
+   "capitalAnswer": "Madison",
+   "population": 5893718,
+   "populationYear": 2020
   },
   {
    "id": "Q1214",
@@ -1249,7 +1347,9 @@
     }
    ],
    "flag": "Flag of Wyoming.svg",
-   "capitalAnswer": "Cheyenne"
+   "capitalAnswer": "Cheyenne",
+   "population": 576851,
+   "populationYear": 2020
   }
  ]
 }

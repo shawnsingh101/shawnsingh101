@@ -275,9 +275,10 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
               : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}>{f.answer}</span> : <span className="blank">{f.blank}</span>)}
             {f.hidePostUntilReveal && !revealed ? '.' : f.post}
           </p>}
-          {revealed && !/^(currency|largestCity|senator|note)/.test(item.ref.kind) && (
+          {revealed && !/^(currency|senator|note)/.test(item.ref.kind) && (
             <div className="local">
-              {item.ref.kind.startsWith('capital') && cap ? <>
+              {item.ref.kind.startsWith('largestCity') && c.largestCity && !c.largestCity.isCapital ? <LocalName place={c} capital={c.largestCity as unknown as typeof cap} showLang />
+              : item.ref.kind.startsWith('capital') && cap ? <>
                 <LocalName place={c} capital={cap} showLang />
                 {item.ref.kind !== 'capital' && <LocalName place={c} showLang />}
               </> : <LocalName place={c} showLang />}
