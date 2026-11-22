@@ -735,22 +735,6 @@
    ]
   },
   {
-   "id": "Q178741",
-   "layer": "lake",
-   "name": "Great Salt Lake",
-   "image": "Great Salt Lake by Sentinel-2.jpg",
-   "lon": -112.583,
-   "lat": 41.167,
-   "wiki": "Great_Salt_Lake",
-   "countries": [
-    "Q30"
-   ],
-   "group": "l-am",
-   "nameThe": "the Great Salt Lake",
-   "facts": "4,400 km² · United States",
-   "size": 4400
-  },
-  {
    "id": "Q192770",
    "layer": "lake",
    "name": "Saimaa",
@@ -787,21 +771,20 @@
    }
   },
   {
-   "id": "Q845876",
+   "id": "Q178741",
    "layer": "lake",
-   "name": "Lake of the Woods",
-   "image": "Lake of the Woods by Sentinel-2.jpg",
-   "lon": -94.75,
-   "lat": 49.25,
-   "wiki": "Lake_of_the_Woods",
+   "name": "Great Salt Lake",
+   "image": "Great Salt Lake by Sentinel-2.jpg",
+   "lon": -112.583,
+   "lat": 41.167,
+   "wiki": "Great_Salt_Lake",
    "countries": [
-    "Q16",
     "Q30"
    ],
    "group": "l-am",
-   "nameThe": "Lake of the Woods",
-   "facts": "4,350 km² · Canada, United States",
-   "size": 4350
+   "nameThe": "the Great Salt Lake",
+   "facts": "4,400 km² · United States",
+   "size": 4400
   },
   {
    "id": "Q965973",
@@ -817,6 +800,23 @@
    "group": "l-as",
    "nameThe": "Lake Gairdner",
    "facts": "4,350 km² · Australia",
+   "size": 4350
+  },
+  {
+   "id": "Q845876",
+   "layer": "lake",
+   "name": "Lake of the Woods",
+   "image": "Lake of the Woods by Sentinel-2.jpg",
+   "lon": -94.75,
+   "lat": 49.25,
+   "wiki": "Lake_of_the_Woods",
+   "countries": [
+    "Q16",
+    "Q30"
+   ],
+   "group": "l-am",
+   "nameThe": "Lake of the Woods",
+   "facts": "4,350 km² · Canada, United States",
    "size": 4350
   },
   {
@@ -1097,6 +1097,29 @@
    ]
   },
   {
+   "id": "Q199938",
+   "layer": "lake",
+   "name": "Tonle Sap",
+   "image": "Tonlesap.jpg",
+   "lon": 104.067,
+   "lat": 12.883,
+   "wiki": "Tonle_Sap",
+   "countries": [
+    "Q424"
+   ],
+   "group": "l-as",
+   "nameThe": "Tonle Sap",
+   "facts": "2,700 km² · Cambodia",
+   "size": 2700,
+   "native": [
+    {
+     "name": "បឹងទន្លេសាប",
+     "lang": "Khmer",
+     "code": "km"
+    }
+   ]
+  },
+  {
    "id": "Q125912",
    "layer": "lake",
    "name": "Lake Kivu",
@@ -1117,29 +1140,6 @@
      "name": "lac Kivu",
      "lang": "French",
      "code": "fr"
-    }
-   ]
-  },
-  {
-   "id": "Q199938",
-   "layer": "lake",
-   "name": "Tonle Sap",
-   "image": "Tonlesap.jpg",
-   "lon": 104.067,
-   "lat": 12.883,
-   "wiki": "Tonle_Sap",
-   "countries": [
-    "Q424"
-   ],
-   "group": "l-as",
-   "nameThe": "Tonle Sap",
-   "facts": "2,700 km² · Cambodia",
-   "size": 2700,
-   "native": [
-    {
-     "name": "បឹងទន្លេសាប",
-     "lang": "Khmer",
-     "code": "km"
     }
    ]
   },
@@ -1338,22 +1338,6 @@
    ]
   },
   {
-   "id": "Q304933",
-   "layer": "lake",
-   "name": "Lake Abaya",
-   "image": "Lake Abaya.jpg",
-   "lon": 37.832,
-   "lat": 6.236,
-   "wiki": "Lake_Abaya",
-   "countries": [
-    "Q115"
-   ],
-   "group": "l-af",
-   "nameThe": "Lake Abaya",
-   "facts": "1,250 km² · Ethiopia",
-   "size": 1250
-  },
-  {
    "id": "Q1315765",
    "layer": "lake",
    "name": "Vygozero",
@@ -1375,6 +1359,22 @@
      "code": "ru"
     }
    ]
+  },
+  {
+   "id": "Q304933",
+   "layer": "lake",
+   "name": "Lake Abaya",
+   "image": "Lake Abaya.jpg",
+   "lon": 37.832,
+   "lat": 6.236,
+   "wiki": "Lake_Abaya",
+   "countries": [
+    "Q115"
+   ],
+   "group": "l-af",
+   "nameThe": "Lake Abaya",
+   "facts": "1,250 km² · Ethiopia",
+   "size": 1250
   },
   {
    "id": "Q770141",

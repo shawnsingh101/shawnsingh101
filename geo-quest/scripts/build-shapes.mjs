@@ -10,7 +10,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { topology } from 'topojson-server';
 import { presimplify, simplify, quantile } from 'topojson-simplify';
-import { mergeArcs } from 'topojson-client';
+import { mergeArcs, feature } from 'topojson-client';
 import { geoArea } from 'd3-geo';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -37,13 +37,29 @@ function rewind(geometry) {
 /** Build a topology where all features sharing an id are merged into one shape. */
 function build(features, keep) {
   features = features.map(f => ({ ...f, geometry: /Polygon/.test(f.geometry.type) ? rewind(f.geometry) : f.geometry }));
+  // Natural Earth sometimes lists the same shape twice (e.g. Lake Volta); merging two identical
+  // copies would cancel them out, so drop exact duplicates first.
+  const seen = new Set();
+  features = features.filter(f => { const k = f.properties.id + JSON.stringify(f.geometry); if (seen.has(k)) return false; seen.add(k); return true; });
   let topo = topology({ f: { type: 'FeatureCollection', features } }, 1e5);
   topo = presimplify(topo);
+  // Never simplify small shapes (Strait of Gibraltar, Macau…): they'd collapse to nothing.
+  const arcIds = a => (typeof a === 'number' ? [a < 0 ? ~a : a] : a.flatMap(arcIds));
+  topo.objects.f.geometries.forEach((g, i) => {
+    const f = features[i];
+    const small = /Polygon/.test(f.geometry.type) ? geoArea(f) < 2e-5 : false;
+    if (small && g.arcs) for (const ai of arcIds(g.arcs)) for (const pt of topo.arcs[ai]) pt[2] = Infinity;
+  });
   topo = simplify(topo, quantile(topo, keep));
   const byId = new Map();
   for (const g of topo.objects.f.geometries) byId.set(g.properties.id, [...(byId.get(g.properties.id) ?? []), g]);
   const geometries = [...byId].map(([id, gs]) => ({ ...(gs.length > 1 ? mergeArcs(topo, gs) : gs[0]), properties: gs[0].properties }));
   topo.objects = { places: { type: 'GeometryCollection', geometries } };
+  // Check every place still has a visible shape.
+  for (const f of feature(topo, topo.objects.places).features) {
+    const size = /Line/.test(f.geometry?.type ?? '') ? 1 : geoArea(f);
+    if (!(size > 0)) console.warn('⚠ shape collapsed for', f.properties.id);
+  }
   return topo;
 }
 
