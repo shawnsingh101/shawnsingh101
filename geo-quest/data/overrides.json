@@ -13,7 +13,7 @@
   "Q23681":  { "status": "disputed", "note": "Recognised only by Turkey", "region": "Asia", "subregion": "Western Asia", "topoName": "N. Cyprus" },
   "Q34754":  { "status": "disputed", "note": "Self-declared state, internationally considered part of Somalia", "region": "Africa", "subregion": "Eastern Africa", "topoName": "Somaliland" },
   "Q23427":  { "status": "disputed", "note": "Breakaway region of Georgia, recognised by Russia and a few others", "region": "Asia", "subregion": "Western Asia" },
-  "Q23334":  { "status": "disputed", "note": "Breakaway region of Georgia, recognised by Russia and a few others", "region": "Asia", "subregion": "Western Asia" },
+  "Q23334":  { "status": "disputed", "flag": "en:Flag of Abkhazia.svg", "note": "Breakaway region of Georgia, recognised by Russia and a few others", "region": "Asia", "subregion": "Western Asia" },
   "Q907112": { "status": "disputed", "note": "Breakaway region of Moldova, unrecognised", "region": "Europe", "subregion": "Eastern Europe" }
  },
 

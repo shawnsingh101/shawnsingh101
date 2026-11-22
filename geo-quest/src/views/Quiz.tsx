@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { CONTINENTS, GROUPS, SECTIONS, placesIn, type Topic } from '../cards';
 import { makeQuiz, quizKey, quizPool, quizTitle, scopeTopics, type Scope } from '../quiz';
-import { useProgress } from '../srs';
+import { skipped, useProgress } from '../srs';
 import { Icon, type IconName } from '../components/Icons';
 import type { QuizSpec } from '../components/Study';
 import type { Dataset } from '../types';
@@ -37,7 +37,7 @@ export function Quiz({ ds, start }: { ds: Dataset; start: (q: QuizSpec) => void 
   const valid = picked.filter(t => offered.some(o => o.id === t));
   const topics: Topic[] = valid.length ? valid : offered.length ? [offered[0].id] : [];
 
-  const pool = quizPool(ds, scope, topics).length;
+  const pool = quizPool(ds, scope, topics).filter(c => !skipped(p, c.kind)).length; // same filter the quiz itself uses
   const best = p.quizBest[quizKey(scope, topics)];
   const pct = (b: { best: number; total: number }) => Math.round((100 * b.best) / b.total);
   const toggle = (t: Topic) => setTopics(topics.includes(t) ? (topics.length > 1 ? topics.filter(x => x !== t) : topics) : [...topics, t]);

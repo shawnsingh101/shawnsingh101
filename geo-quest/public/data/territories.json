@@ -156,16 +156,6 @@
      "wiki": "Angra_do_Heroísmo"
     },
     {
-     "id": "Q208149",
-     "name": "Ponta Delgada",
-     "preferred": false,
-     "role": null,
-     "image": "Açores 452A1547 (36260769535).jpg",
-     "lon": -25.67,
-     "lat": 37.74,
-     "wiki": "Ponta_Delgada"
-    },
-    {
      "id": "Q990385",
      "name": "Horta",
      "preferred": false,
@@ -174,9 +164,19 @@
      "lon": -28.633,
      "lat": 38.533,
      "wiki": "Horta,_Azores"
+    },
+    {
+     "id": "Q208149",
+     "name": "Ponta Delgada",
+     "preferred": false,
+     "role": null,
+     "image": "Açores 452A1547 (36260769535).jpg",
+     "lon": -25.67,
+     "lat": 37.74,
+     "wiki": "Ponta_Delgada"
     }
    ],
-   "capitalAnswer": "Angra do Heroísmo, Ponta Delgada and Horta",
+   "capitalAnswer": "Angra do Heroísmo, Horta and Ponta Delgada",
    "group": "t-atl",
    "sovereign": "Q45",
    "sovereignName": "Portugal",
@@ -819,16 +819,6 @@
    "wiki": "Montserrat",
    "capitals": [
     {
-     "id": "Q30990",
-     "name": "Plymouth",
-     "preferred": false,
-     "role": null,
-     "image": "Plymouth Montserrat Heli.jpg",
-     "lon": -62.216,
-     "lat": 16.706,
-     "wiki": "Plymouth,_Montserrat"
-    },
-    {
      "id": "Q31006",
      "name": "Brades",
      "preferred": false,
@@ -837,9 +827,19 @@
      "lon": -62.211,
      "lat": 16.793,
      "wiki": "Brades"
+    },
+    {
+     "id": "Q30990",
+     "name": "Plymouth",
+     "preferred": false,
+     "role": null,
+     "image": "Plymouth Montserrat Heli.jpg",
+     "lon": -62.216,
+     "lat": 16.706,
+     "wiki": "Plymouth,_Montserrat"
     }
    ],
-   "capitalAnswer": "Plymouth and Brades",
+   "capitalAnswer": "Brades and Plymouth",
    "group": "t-car",
    "sovereign": "Q145",
    "sovereignName": "United Kingdom",

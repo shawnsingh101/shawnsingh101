@@ -19,7 +19,8 @@ export function PartyPill({ party, label }: { party?: string; label?: string }) 
 /** A person's photo: the official one, or — if that's missing (e.g. a newly appointed senator) — the main image on their Wikipedia page. */
 export function usePersonPhoto(photo?: string | null, wiki?: string | null) {
   const [src, setSrc] = useState<string | null>(photo ?? null);
-  useEffect(() => { setSrc(photo ?? null); if (!photo && wiki) wikiThumb(wiki.replace(/ /g, '_')).then(setSrc); }, [photo, wiki]);
+  // `live` guards against a slow lookup for the previous card landing on this one.
+  useEffect(() => { let live = true; setSrc(photo || null); if (!photo && wiki) wikiThumb(wiki.replace(/ /g, '_')).then(u => { if (live) setSrc(u); }); return () => { live = false; }; }, [photo, wiki]);
   const onError = () => { if (wiki) wikiThumb(wiki.replace(/ /g, '_')).then(u => setSrc(u && u !== src ? u : null)); else setSrc(null); };
   return { src, onError };
 }

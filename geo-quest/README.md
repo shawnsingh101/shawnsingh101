@@ -33,6 +33,19 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.4.2: review sweep
+
+- Currency pictures can be files kept on English Wikipedia itself (most banknotes are copyrighted, so they aren't on
+  Commons). These are stored as `en:<file>`; every candidate is checked to exist, banknotes first, and a failed lookup
+  keeps the last good picture.
+- Cards add "the" where English needs it (the Netherlands, the United States) and "are" for island groups.
+- World leaders: titles no longer read "President of the Czechia"; rows naming a ruling body ("People's Party") ask for
+  the country's leader; Charles III and other multi-realm monarchs have no "tap the country" card.
+- Sites in more than three countries skip "which country?"; the same site under two Wikidata items is listed once.
+- Senator portraits that don't exist yet are skipped (the Wikipedia photo is used); party changes no longer reset cards.
+- Multi-capital lists have a fixed order (no false "world changed" notes); the nightly job now saves the pronunciation
+  cache; PNG home-screen icons for iPhone.
+
 ## v1.4: highest points, borders, money
 
 - **Highest point of each country** (Wikidata P610, best-ranked elevation in metres): "The highest point of Nepal is…" and
