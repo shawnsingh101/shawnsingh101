@@ -71,7 +71,8 @@ export interface Place {
   artists?: string[];      // artworks: who made it…
   culture?: string | null; // …or, for ancient work, which culture
   year?: number | null;    // when (negative = BC)
-  museum?: string | null;  // where it is now: "Louvre, Paris"
+  museum?: string | null;  // where it is now: "the Louvre Museum, Paris"
+  museumName?: string | null; museumWiki?: string | null; city?: string | null; // …its parts, for the Related links
   plural?: boolean;        // "the moai were…"
   origin?: string | null;  // where it comes from (the heading in the list): "Europe", "East Asia"
   highest?: { id: string; name: string; elevation: number | null; lat: number; lon: number; image: string | null; wiki: string | null; note: string | null };

@@ -6,7 +6,7 @@ import { GROUPS, SECTIONS, SECTION_PARENT } from './cards';
 
 export interface CollectionList { id: string; title: string; subject: string; path: string[]; intro: string | null; entries: { id: string; heading: string | null }[] }
 export interface ArtFacts {
-  name: string | null; nameThe?: string | null; plural?: boolean; wiki: string | null; image: string | null; year: number | null; types: string[];
+  name: string | null; nameThe?: string | null; museumWiki?: string | null; plural?: boolean; wiki: string | null; image: string | null; year: number | null; types: string[];
   artists: string[]; culture: string | null; museum: string | null; city: string | null;
   country: string | null; countryName: string | null; lon: number | null; lat: number | null; links: number;
 }
@@ -62,7 +62,7 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
       const where = [museum, f.city && !f.museum?.includes(f.city) ? f.city : null].filter(Boolean).join(', ');
       const cName = (f.country && countryName(f.country)) || f.countryName || null;
       out.set(e.id, {
-        id: e.id, layer: 'art', group: l.id, name: f.name, nameThe: f.nameThe ?? undefined, plural: f.plural, wiki: f.wiki, image: f.image, capitals: [], capitalAnswer: null,
+        id: e.id, layer: 'art', group: l.id, name: f.name, nameThe: f.nameThe ?? undefined, museumName: f.museum, museumWiki: f.museumWiki ?? null, city: f.city, plural: f.plural, wiki: f.wiki, image: f.image, capitals: [], capitalAnswer: null,
         lon: f.lon ?? undefined, lat: f.lat ?? undefined, country: f.country ?? undefined, countryName: cName ?? undefined,
         artists: f.artists, culture: f.culture, year: f.year, museum: where || null, origin: e.heading,
         facts: [fmtYear(f.year), kindOf(f.types), e.heading ? `from ${e.heading.replace(/^The /, 'the ')}` : null].filter(Boolean).join(' · ') || undefined,

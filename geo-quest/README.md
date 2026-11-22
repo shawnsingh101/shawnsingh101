@@ -33,6 +33,13 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.11.1: whole pictures, full screen, museum links
+
+- Artwork pictures are shown whole (`object-fit: contain` on a dark backdrop), never cropped to a strip.
+- Tap any picture (artworks, places, cocktails…) to open it full screen; tap or Esc to close. The copy already on screen
+  shows at once, and a sharper 1600 px copy replaces it when it has loaded.
+- Related on art cards: the museum (its Wikipedia article, `museumWiki` from the sync), the city, the country, the artist.
+
 ## v1.11: Art, photos on note cards, faster maps
 
 - **Collections** (`collections/`, see its README): lists of Wikipedia things that become cards. The folder is the

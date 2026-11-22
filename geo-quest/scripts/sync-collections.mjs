@@ -147,6 +147,7 @@ try {
         artists,
         culture: cultures[0] ?? null,
         museum: spot ? label(spot, 'placeLabel') : null,
+        museumId: spot ? qid(spot.place.value) : null, museumWiki: null, // its Wikipedia article (below), for the Related links
         city: spot ? town(spot, ['c1Label', 'c2Label', 'c3Label']) : own ? town(own, ['o1Label', 'o2Label', 'o3Label']) : null,
         country: country?.id ?? null, countryName: country?.name ?? null,
         lon: coord?.lon ?? null, lat: coord?.lat ?? null,
@@ -154,6 +155,12 @@ try {
       };
     }
   }
+  // The museums' Wikipedia articles ("Belvedere" → "Österreichische Galerie Belvedere"), in one small query.
+  const mids = [...new Set(Object.values(items).map(x => x.museumId).filter(Boolean))];
+  const arts = new Map();
+  for (const part of chunks(mids, 80)) for (const r of await sparql(`SELECT ?m ?a WHERE { VALUES ?m { ${part.map(q => `wd:${q}`).join(' ')} } ?a schema:about ?m ; schema:isPartOf <https://en.wikipedia.org/> }`))
+    arts.set(qid(r.m.value), decodeURIComponent(r.a.value.split('/wiki/')[1]).replace(/_/g, ' '));
+  for (const x of Object.values(items)) x.museumWiki = arts.get(x.museumId) ?? null;
 } catch (e) {
   console.warn(`${e.message}: keeping the facts from the last sync`);
   Object.assign(items, old.items);
@@ -163,7 +170,8 @@ for (const q of ids) if (!items[q] && old.items[q]) items[q] = old.items[q]; // 
 // Fixes kept by hand (Wikidata sometimes lists a room, or a museum without a city).
 const fixes = JSON.parse(readFileSync(join(ROOT, 'data/collection-fixes.json'), 'utf8'));
 for (const x of Object.values(items)) if (x.city && fixes._cities?.[x.city]) x.city = fixes._cities[x.city];
-for (const [q, f] of Object.entries(fixes)) if (items[q] && !q.startsWith('_')) Object.assign(items[q], f);
+// A museum set by hand replaces Wikidata's, and its article with it (unless the fix names the article too).
+for (const [q, f] of Object.entries(fixes)) if (items[q] && !q.startsWith('_')) Object.assign(items[q], 'museum' in f && !('museumWiki' in f) ? { museumWiki: null } : {}, f);
 
 writeFileSync(OUT, JSON.stringify({ source: 'Wikidata (CC0)', items }));
 const missing = ids.filter(q => !items[q]);

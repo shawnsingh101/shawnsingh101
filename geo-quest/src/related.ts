@@ -48,6 +48,9 @@ export function relatedFor(ds: Dataset, c: Place): RelLink[] {
       if (c.layer === 'peak') { const range = (c.facts ?? '').split(' · ')[1]; if (range && !/^\d/.test(range)) add(named(ds, range)); }
       break;
     case 'art':
+      // Where it is (the museum, the city, the country), then who made it.
+      if (c.museumName) add({ label: c.museumName, wiki: (c.museumWiki ?? c.museumName).replace(/ /g, '_') });
+      if (c.city && c.city !== c.museumName) add(named(ds, c.city));
       place(c.country);
       if (c.artists?.[0]) add({ label: c.artists[0], wiki: c.artists[0].replace(/ /g, '_') });
       break;
