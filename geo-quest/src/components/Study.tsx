@@ -250,7 +250,9 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
 
       {showMap && (<div className="map-wrap">
         <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra === 'peak' ? ['range', 'peak'] : extra === 'us' ? ['us', 'lake'] : extra === 'sub' && ds.byId.get(c.parent ?? '')?.layer === 'us' ? ['us', 'sub'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
-          dim={id => group?.layer === m.layer && !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
+          dim={id => group?.layer === m.layer && !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer}
+          strong={['sub', 'us', 'cn'].includes(m.layer) ? (id => regionIds.includes(id) || wideIds.includes(id)) : undefined}
+          outline={m.layer === 'sub' && m.parent ? [m.parent] : m.layer === 'us' ? ['Q30'] : m.layer === 'cn' ? ['Q148'] : []} onTap={f.mode === 'tap' ? onTap : undefined} />
           {(f.map === 'highlight' || revealed || tapResult) && (m.layer === 'country' || m.layer === 'terr') && (
             <Inset place={m} label={revealed || tapResult ? m.name : 'Close-up'} />
           )}

@@ -39,6 +39,8 @@ interface Props {
   target?: { id: string; status?: 'right' | 'wrong' } | null; // "lock-on" brackets around the place in question
   focus?: { ids: string[]; key: string; pad?: number; keepCenter?: boolean } | null; // keepCenter: zoom without re-centring (so it can animate) // pad: share of the screen the focus should fill (default .85)
   dim?: (placeId: string) => boolean;   // fade places outside the current question's region
+  strong?: (placeId: string) => boolean; // regions being studied: solid, darker borders (Uzbekistan's regions in an Uzbekistan quiz)
+  outline?: string[];                    // places drawn with a bold outline on top (the country those regions belong to)
   onTap?: (hit: MapHit) => void;
   onHover?: (hit: MapHit | null, x: number, y: number) => void; // mouse only
   className?: string;
@@ -99,7 +101,7 @@ function toShapes(topo: Topology, layer: Layer, path: ReturnType<typeof geoPath>
   });
 }
 
-export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], target, focus, dim, onTap, onHover, className, recenter = false, hide, detailByZoom = false }: Props) {
+export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], target, focus, dim, strong, outline = [], onTap, onHover, className, recenter = false, hide, detailByZoom = false }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown>>();
@@ -254,7 +256,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
     return items;
   })();
   const nameOf = (s: { placeId: string | null; name: string }) => (s.placeId ? ds.byId.get(s.placeId)!.name : s.name);
-  const cls = (id: string | null) => (id && tones[id] ? ` tone-${tones[id]}` : '') + (id && dim?.(id) ? ' dim' : '');
+  const cls = (id: string | null) => (id && tones[id] ? ` tone-${tones[id]}` : '') + (id && dim?.(id) ? ' dim' : '') + (id && strong?.(id) ? ' strong' : '');
   const style = (id: string | null) => { const f = id ? fill?.(id) : undefined; return f ? { fill: f } : undefined; };
   const events = (hit: MapHit) => ({
     onClick: () => onTap?.(hit),
@@ -300,6 +302,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {shapes.range && layers.includes('range') && shapes.range.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'range') : null))}
           {shapes.lake && layers.includes('lake') && shapes.lake.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'lake') : <path key={s.key} d={s.d} className="lake other" />))}
           {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(riverEl)}
+          {outline.map(id => visible.filter(s => s.placeId === id).map(s => <path key={'o' + s.key} d={s.d} className="focus-outline" />))}
           {dots.map(d => (
             <g key={d.placeId} className={'dot' + cls(d.placeId)} {...events({ countryId: d.placeId, name: ds.byId.get(d.placeId)!.name })}>
               <circle cx={d.x} cy={d.y} r={13 / k} className="hit" />

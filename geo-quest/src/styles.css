@@ -1,7 +1,7 @@
 /* GeoQuest — flat, calm, crisp. Colours are tokens so a restyle is one block. */
 :root {
   --bg: #f5f2ec; --surface: #fffdf9; --ink: #1f2a44; --muted: #6b7286; --line: #e4ded3;
-  --ocean: #dfe9ee; --grat: #cfdde4; --land: #e9e3d8; --land-other: #f1ede6; --border: #fffdf9;
+  --ocean: #dfe9ee; --grat: #cfdde4; --land: #e9e3d8; --land-other: #f1ede6; --border: #fffdf9; --country-line: #9c9384;
   --accent: #e8664a; --accent-ink: #fff; --right: #2f9e7a; --wrong: #d94b4b; --gold: #f2c14e;
   --m0: #e9e3d8; --m1: #f6d58e; --m2: #8fcbb7; --m3: #2f8f73;
   --radius: 16px; --shadow: 0 1px 2px rgba(31,42,68,.06), 0 8px 24px rgba(31,42,68,.06);
@@ -12,13 +12,13 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #121722; --surface: #1a2130; --ink: #eef0f5; --muted: #98a0b3; --line: #2a3346;
-    --ocean: #16202f; --grat: #1d2a3c; --land: #2d3749; --land-other: #232b3a; --border: #16202f;
+    --ocean: #16202f; --grat: #1d2a3c; --land: #2d3749; --land-other: #232b3a; --border: #16202f; --country-line: #5b6880;
     --m0: #2d3749; --m1: #8a6d2c; --m2: #2f7a68; --m3: #4fc6a0; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #121722; --surface: #1a2130; --ink: #eef0f5; --muted: #98a0b3; --line: #2a3346;
-  --ocean: #16202f; --grat: #1d2a3c; --land: #2d3749; --land-other: #232b3a; --border: #16202f;
+  --ocean: #16202f; --grat: #1d2a3c; --land: #2d3749; --land-other: #232b3a; --border: #16202f; --country-line: #5b6880;
   --m0: #2d3749; --m1: #8a6d2c; --m2: #2f7a68; --m3: #4fc6a0; color-scheme: dark;
 }
 
@@ -119,10 +119,14 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .worldmap svg { display: block; }
 .ocean { fill: var(--ocean); }
 .graticule { fill: none; stroke: var(--grat); stroke-width: .6; vector-effect: non-scaling-stroke; }
-.land { fill: var(--land); stroke: var(--border); stroke-width: .9; vector-effect: non-scaling-stroke; transition: fill .3s, opacity .3s; }
+/* Country borders: a clear, darker line (it used to be near-white on beige, hard to see). */
+.land { fill: var(--land); stroke: var(--country-line); stroke-width: 1.05; vector-effect: non-scaling-stroke; transition: fill .3s, opacity .3s; }
 .land.other { fill: var(--land-other); }
 .land.place:hover { filter: brightness(.95); }
-.land.sub { stroke-width: .45; stroke: color-mix(in srgb, var(--ink) 30%, var(--land)); }
+.land.sub { stroke-width: .45; stroke: color-mix(in srgb, var(--ink) 28%, var(--land)); }
+/* The regions you're studying (Uzbekistan's, in an Uzbekistan quiz): solid and darker; the rest stay light. */
+.land.sub.strong { stroke-width: .9; stroke: color-mix(in srgb, var(--ink) 55%, var(--land)); }
+.focus-outline { fill: none; stroke: color-mix(in srgb, var(--ink) 85%, var(--land)); stroke-width: 2.2; stroke-linejoin: round; vector-effect: non-scaling-stroke; pointer-events: none; }
 .water { fill: transparent; stroke: color-mix(in srgb, var(--ink) 18%, var(--ocean)); stroke-width: .4; stroke-dasharray: 2 2; vector-effect: non-scaling-stroke; transition: fill .3s; }
 .water.place:hover { fill: color-mix(in srgb, var(--ink) 5%, transparent); }
 .water.dim { opacity: 1; }
