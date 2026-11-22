@@ -195,7 +195,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
     const sel = select(svgRef.current);
     sel.interrupt();
     if (jump) sel.call(zoomRef.current.transform, target);
-    else sel.transition().duration(520).ease(easeCubicOut).call(zoomRef.current.transform, target);
+    else sel.transition().duration(800).ease(easeCubicOut).call(zoomRef.current.transform, target);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focus?.key, ready, size.w, size.h, lambda]);
 
