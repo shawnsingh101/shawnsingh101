@@ -106,7 +106,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     // A tap on a different kind of thing (a country while looking for a river) is a slip, not an answer.
     const hitLayer = hit.countryId ? ds.byId.get(hit.countryId)?.layer : 'country';
     if (hitLayer !== mp!.layer) {
-      setNudge(`Tap a ${{ country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory' }[mp!.layer]}`);
+      setNudge(`Tap a ${{ country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site' }[mp!.layer]}`);
       setTimeout(() => setNudge(null), 1400);
       return;
     }
@@ -131,7 +131,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
   }, [f, revealed, reveal, next, tapResult, quiz, undo]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // The place shown on the map: itself, or for a senator, their state.
-  const mp = c ? (c.layer === 'senate' ? ds.byId.get(c.place ?? c.state!) ?? c : c) : null;
+  const mp = c ? (c.layer === 'senate' ? ds.byId.get(c.place ?? c.state!) ?? c : item.ref.kind === 'siteCountry' ? ds.byId.get(c.country!) ?? c : c) : null;
   const group = c ? groupOf(c) : null;
   const regionIds = useMemo(() => (group ? placesIn(ds, group.id).map(x => x.id) : []), [ds, group]);
   // For "reveal" map cards (capitals, cities) start wider than the region so the map doesn't give it away:
@@ -225,7 +225,8 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     : f.map === 'highlight' || (flipped && revealed) || (f.map === 'reveal' && revealed) ? { id: m.id } : null;
   const cap = c.capitals[0];
   const pins = revealed && item.ref.kind.startsWith('capital') && cap?.lon != null ? [{ lon: cap.lon, lat: cap.lat!, label: cap.name }]
-    : revealed && item.ref.kind.startsWith('largestCity') && c.largestCity ? [{ lon: c.largestCity.lon, lat: c.largestCity.lat, label: c.largestCity.name }] : [];
+    : revealed && item.ref.kind.startsWith('largestCity') && c.largestCity ? [{ lon: c.largestCity.lon, lat: c.largestCity.lat, label: c.largestCity.name }]
+    : revealed && item.ref.kind === 'siteCountry' && c.lon != null ? [{ lon: c.lon, lat: c.lat!, label: c.name }] : [];
 
   return (
     <div className={'study' + (showMap ? ' with-map' : ' no-map')}>
@@ -245,7 +246,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
 
       {showMap && (<div className="map-wrap">
         <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
-          dim={id => !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
+          dim={id => group?.layer === m.layer && !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer} onTap={f.mode === 'tap' ? onTap : undefined} />
           {(f.map === 'highlight' || revealed || tapResult) && (m.layer === 'country' || m.layer === 'terr') && (
             <Inset place={m} label={revealed || tapResult ? m.name : 'Close-up'} />
           )}
@@ -257,6 +258,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
           <div className="card-meta">
             {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{KIND_LABEL[item.ref.kind]}</span>{item.isNew && <span className="new">new</span>}
           </div>
+          {f.promptPicture && f.picture && <div className="prompt-picture"><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} /></div>}
           {f.promptFlag && <Flag file={c.flag ?? null} name="?" className="prompt-flag" size={480} eager />}
           {f.person && <Portrait photo={f.person.photo} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
           <p className="cloze">
@@ -278,7 +280,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
           {revealed && item.ref.kind.startsWith('flag') && <Lookalikes ds={ds} place={c} />}
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
           {revealed && f.note && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
-          {revealed && s.pictures && f.picture && <Picture {...f.picture} />}
+          {revealed && s.pictures && f.picture && !f.promptPicture && <Picture {...f.picture} />}
           {revealed && !f.picture && c.flag && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}
           {!revealed && f.mode === 'reveal' && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
           {!revealed && f.mode === 'tap' && <div className="tap-hint">

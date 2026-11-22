@@ -44,7 +44,7 @@ interface Props {
 }
 
 interface Shape { key: string; name: string; placeId: string | null; layer: Layer; d: string; bounds: [[number, number], [number, number]]; centroid: [number, number] }
-interface Dot { placeId: string; x: number; y: number }
+interface Dot { placeId: string; x: number; y: number; site?: boolean }
 
 // The map's centre line can move: studying China re-centres the map on ~105°E so the
 // region sits upright in the middle instead of slanting at the edge of the world.
@@ -105,7 +105,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
 
   const wanted: Layer[] = ['country', ...layers];
   useEffect(() => {
-    for (const l of wanted) if (!topos[l]) loadLayer(l).then(tp => setTopos(prev => ({ ...prev, [l]: tp })));
+    for (const l of wanted) if (l !== 'site' && !topos[l]) loadLayer(l).then(tp => setTopos(prev => ({ ...prev, [l]: tp })));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wanted.join()]);
 
@@ -152,8 +152,14 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
       const p = s ? s.centroid : c.lon != null ? projection([c.lon, c.lat!]) : null;
       if (p && isFinite(p[0])) out.push({ placeId: c.id, x: p[0], y: p[1] });
     }
+    // World Heritage Sites are points: a small diamond marker each (only the ones in play)
+    if (layers.includes('site')) for (const c of ds.places) {
+      if (c.layer !== 'site' || c.lon == null || (hide?.(c.id) && !tones[c.id])) continue;
+      const p = projection([c.lon, c.lat!]);
+      if (p && isFinite(p[0])) out.push({ placeId: c.id, x: p[0], y: p[1], site: true });
+    }
     return out;
-  }, [visible, ds, layers.join(), projection]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [visible, ds, layers.join(), projection, hide, tones]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Pan & pinch-zoom.
   useEffect(() => {
@@ -169,7 +175,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const home = () => { const k0 = fitScale(size); return zoomIdentity.translate((size.w - W * k0) / 2, (size.h - H * k0) / 2).scale(k0); };
 
   // Fly to whatever the current question is about.
-  const ready = !!shapes.country && layers.every(l => shapes[l]);
+  const ready = !!shapes.country && layers.every(l => l === 'site' || shapes[l]);
   useEffect(() => {
     if (!ready || !svgRef.current || !zoomRef.current || !size.w) return;
     if (recenter) {
@@ -260,7 +266,9 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {dots.map(d => (
             <g key={d.placeId} className={'dot' + cls(d.placeId)} {...events({ countryId: d.placeId, name: ds.byId.get(d.placeId)!.name })}>
               <circle cx={d.x} cy={d.y} r={13 / k} className="hit" />
-              <circle cx={d.x} cy={d.y} r={4 / k} className="vis" style={style(d.placeId)} />
+              {d.site
+                ? <path d={`M${d.x} ${d.y - 5.5 / k}l${5.5 / k} ${5.5 / k}l${-5.5 / k} ${5.5 / k}l${-5.5 / k} ${-5.5 / k}z`} className="vis site" style={style(d.placeId)} />
+                : <circle cx={d.x} cy={d.y} r={4 / k} className="vis" style={style(d.placeId)} />}
             </g>
           ))}
           {pins.map((p, i) => {

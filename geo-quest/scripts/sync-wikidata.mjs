@@ -640,6 +640,51 @@ const territories = [];
   territories.sort((a, b) => a.name.localeCompare(b.name));
 }
 
+// ---- UNESCO World Heritage Sites (Wikidata: heritage designation = World Heritage Site, with the UNESCO id) ----
+// Fame tier = how many Wikipedia language editions have an article (sitelinks): the 50 most famous are
+// "Icons"; then the 40 best-known per continent. Sites removed from the list (no end date check) drop out.
+console.log('Querying Wikidata for World Heritage Sites…');
+const sites = [];
+{
+  const rows = await sparql(`SELECT ?s ?sLabel ?whs ?links ?country ?coord ?img ?article WHERE {
+    ?s p:P1435 ?h . ?h ps:P1435 wd:Q9259 . FILTER NOT EXISTS { ?h pq:P582 [] }
+    ?s wdt:P757 ?whs ; wikibase:sitelinks ?links .
+    OPTIONAL { ?s wdt:P17 ?country } OPTIONAL { ?s wdt:P625 ?coord } OPTIONAL { ?s wdt:P18 ?img }
+    OPTIONAL { ?article schema:about ?s ; schema:isPartOf <https://en.wikipedia.org/> }
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  }`);
+  // Several items can share one listing (extensions "bis", components); keep the best-known item per listing.
+  const byListing = {};
+  for (const b of rows) {
+    const base = v(b, 'whs').replace(/(bis|ter|rev|quater)+$/i, '');
+    const links = +v(b, 'links');
+    const cur = byListing[base];
+    if (!cur || links > cur.links || (links === cur.links && !cur.coord)) {
+      byListing[base] = { id: qid(v(b, 's')), name: v(b, 'sLabel'), whs: base, links, coord: v(b, 'coord') ?? cur?.coord, img: file(v(b, 'img')) || null,
+        wiki: v(b, 'article') ? decodeURIComponent(v(b, 'article').split('/wiki/')[1]) : null, countries: new Set(cur?.id === qid(v(b, 's')) ? cur.countries : []) };
+    }
+    const keep = byListing[base];
+    if (keep.id === qid(v(b, 's')) && v(b, 'country')) keep.countries.add(qid(v(b, 'country')));
+    if (keep.id === qid(v(b, 's')) && !keep.img) keep.img = file(v(b, 'img')) || null;
+  }
+  const all = Object.values(byListing).filter(x => x.coord && !/^Q\d+$/.test(x.name)).map(x => ({ ...x, ...point(x.coord), countries: [...x.countries].filter(c => countries.has(c)) }))
+    .filter(x => x.countries.length).sort((a, b) => b.links - a.links);
+  const perCont = {};
+  all.forEach((x, i) => {
+    const region = mainRegion(x.countries, x.lon);
+    let group;
+    if (i < 50) group = 'u-icons';
+    else {
+      group = `u-${({ Europe: 'eu', Asia: 'as', Africa: 'af', Americas: 'am', Oceania: 'oc' })[region] ?? 'as'}`;
+      if ((perCont[group] = (perCont[group] ?? 0) + 1) > 40) return;
+    }
+    const where = x.countries.map(c => countries.get(c).name);
+    sites.push({ id: x.id, layer: 'site', name: x.name, group, lon: x.lon, lat: x.lat, image: x.img, wiki: x.wiki, whsId: x.whs,
+      country: x.countries[0], countryName: where[0], capitals: [], capitalAnswer: null,
+      facts: [`UNESCO World Heritage Site #${x.whs}`, where.join(', ')].join(' · ') });
+  });
+}
+
 // ---- election results: who takes over in January (Wikipedia race-summary tables) ----
 // Rows like:  ! [[… election in Alaska|Alaska]]  | {{sortname|Dan|Sullivan}}  …  {{aye}} '''[[Mary Peltola]]''' (Democratic)
 function raceRows(text) {
@@ -811,7 +856,7 @@ for (const p of [...rivers, ...lakes]) keep(p, [...(p.native ?? []).map(n => n.c
     if (!iso3 || !word) return null;
     const key = `${iso3}|${word}`;
     if (cache[key] && (cache[key].file || !stale(cache[key].date))) return cache[key].file;
-    if (asked >= 400) return null; // spread the first big run over a few nights
+    if (asked >= 150) return null; // spread the first big run over a few nights
     asked++;
     const u = `https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=50&format=json&srsearch=${encodeURIComponent(`intitle:"${word}" filetype:audio`)}`;
     let titles = [];
@@ -824,6 +869,7 @@ for (const p of [...rivers, ...lakes]) keep(p, [...(p.native ?? []).map(n => n.c
     const wikt = new RegExp(`^${esc(code.split('-')[0])}-${esc(word)}\\.(ogg|wav|mp3)$`, 'i');
     const hit = titles.find(t => ll.test(t)) ?? titles.find(t => wikt.test(t)) ?? null;
     cache[key] = { file: hit, date: today };
+    if (asked % 25 === 0) { writeFileSync(CACHE, JSON.stringify(cache, null, 0) + '\n'); console.log(`  …${asked} searched`); }
     await new Promise(res => setTimeout(res, 1200)); // be polite to Commons
     return hit;
   }
@@ -868,13 +914,14 @@ const writers = [
   diffAndWrite(join(ROOT, 'public/data/senate.json'), [...senate, ...governors], ['name', 'party']),
   diffAndWrite(join(ROOT, 'public/data/leaders.json'), leaders, ['name']),
   diffAndWrite(join(ROOT, 'public/data/territories.json'), territories, ['name', 'capitalAnswer', 'sovereignName']),
+  diffAndWrite(join(ROOT, 'public/data/sites.json'), sites, ['name']),
   diffAndWrite(join(ROOT, 'public/data/lakes.json'), lakes, ['name', 'group']),
   diffAndWrite(join(ROOT, 'public/data/cn.json'), [...cn.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'zhHan']),
 ];
 
 warnings.forEach(w => console.warn('⚠ ' + w));
 changes.forEach(ch => console.log(`Δ ${ch.name}: ${ch.field} ${JSON.stringify(ch.from)} → ${JSON.stringify(ch.to)}`));
-console.log(`${list.length} countries, ${states.size} US states, ${senate.length} senators, ${governors.length} governors, ${leaders.length} world leaders, ${territories.length} territories, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
+console.log(`${list.length} countries, ${states.size} US states, ${senate.length} senators, ${governors.length} governors, ${leaders.length} world leaders, ${territories.length} territories, ${sites.length} World Heritage Sites, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
 
 if (!DRY) {
   writers.forEach(w => w());

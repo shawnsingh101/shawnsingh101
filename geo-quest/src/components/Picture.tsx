@@ -5,7 +5,7 @@ import { commonsUrl, wikiGallery, wikiUrl, type Photo } from '../data';
  * Photos of a place: the Wikipedia article's infobox collage as a swipeable strip,
  * falling back to the single Wikidata image if the article has no photos.
  */
-export function Picture({ file, wiki, caption }: { file?: string | null; wiki?: string | null; caption: string }) {
+export function Picture({ file, wiki, caption, hideCaption }: { file?: string | null; wiki?: string | null; caption: string; hideCaption?: boolean }) {
   const [photos, setPhotos] = useState<Photo[] | null>(null);
   const [idx, setIdx] = useState(0);
   const strip = useRef<HTMLDivElement>(null);
@@ -32,10 +32,10 @@ export function Picture({ file, wiki, caption }: { file?: string | null; wiki?: 
         <button className="nav next" aria-label="Next photo" disabled={idx === photos.length - 1} onClick={() => go(idx + 1)}>›</button>
         <div className="dots">{photos.map((_, i) => <i key={i} className={i === idx ? 'on' : ''} />)}</div>
       </>}
-      <figcaption>
+      {!hideCaption && <figcaption>
         <span className="cap">{photos[idx]?.caption || caption}</span>
         {wiki && <a href={wikiUrl(wiki)} target="_blank" rel="noreferrer">Wikipedia ↗</a>}
-      </figcaption>
+      </figcaption>}
     </figure>
   );
 }

@@ -534,3 +534,7 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .inset-scale path { stroke: var(--ink); stroke-width: 1.5; } .inset-scale text { font: 600 9px ui-monospace, Menlo, monospace; fill: var(--ink); text-anchor: middle; }
 .inset-label { position: absolute; top: .35rem; left: .5rem; font: 600 .66rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .05em; text-transform: uppercase; color: var(--ink); background: color-mix(in srgb, var(--ocean) 70%, transparent); padding: .1rem .3rem; border-radius: 4px; }
 @media (max-width: 760px) { .inset { left: 1rem; bottom: 1rem; transform: scale(.8); transform-origin: bottom left; } }
+
+.dot .vis.site { fill: var(--gold); stroke: var(--ink); }
+.prompt-picture { margin: -.3rem 0 .9rem; }
+.prompt-picture .gallery { margin: 0; }
