@@ -150,28 +150,95 @@ for (const c of countries.values()) {
 
 const list = [...countries.values()].sort((a, b) => a.name.localeCompare(b.name));
 
-// ---- diff against previous snapshot ------------------------------------------
-const today = new Date().toISOString().slice(0, 10);
-const prev = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')).countries : null;
-const changes = [];
-if (prev) {
-  const prevById = Object.fromEntries(prev.map(c => [c.id, c]));
-  for (const c of list) {
-    const p = prevById[c.id];
-    if (!p) { changes.push({ date: today, id: c.id, name: c.name, field: 'added', from: null, to: c.name }); continue; }
-    for (const f of ['name', 'capitalAnswer', 'flag']) {
-      if (p[f] !== c[f]) changes.push({ date: today, id: c.id, name: c.name, field: f, from: p[f], to: c[f] });
-    }
+// ---- oceans & seas, China's provinces ---------------------------------------------
+const places = JSON.parse(readFileSync(join(ROOT, 'data/places.json'), 'utf8'));
+const cnShapes = JSON.parse(readFileSync(join(ROOT, 'public/data/shapes-cn.json'), 'utf8')).objects.places.geometries;
+
+const PLACE_Q = `
+SELECT ?p ?pLabel ?img ?coord ?article WHERE {
+  VALUES ?p { %IDS% }
+  OPTIONAL { ?p wdt:P18 ?img } OPTIONAL { ?p wdt:P625 ?coord }
+  OPTIONAL { ?article schema:about ?p ; schema:isPartOf <https://en.wikipedia.org/> }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}`;
+
+async function fetchPlaces(ids, layer, extra = () => ({})) {
+  const out = new Map();
+  for (const b of await sparql(PLACE_Q.replace('%IDS%', ids.map(q => `wd:${q}`).join(' ')))) {
+    const id = qid(v(b, 'p'));
+    if (out.has(id)) continue;
+    out.set(id, {
+      id, layer, name: v(b, 'pLabel'), image: file(v(b, 'img')) || null, ...point(v(b, 'coord')),
+      wiki: v(b, 'article') ? decodeURIComponent(v(b, 'article').split('/wiki/')[1]) : null, ...extra(id),
+    });
   }
-  for (const p of prev) if (!countries.has(p.id)) changes.push({ date: today, id: p.id, name: p.name, field: 'removed', from: p.name, to: null });
+  for (const id of ids) if (!out.has(id)) warnings.push(`${layer}: ${id} not found in Wikidata`);
+  return out;
 }
+
+// Most water names take "the" ("the Red Sea"), bays named like "Hudson Bay" don't.
+const withThe = name => (/^[A-Z][a-z]+ Bay$/.test(name) || /^(Baffin|Hudson|James)/.test(name) ? name : `the ${name}`);
+
+console.log('Querying Wikidata for oceans & seas…');
+const waterGroup = Object.fromEntries(places.water.flatMap(g => g.members.map(m => [m, g.id])));
+const water = await fetchPlaces(Object.keys(waterGroup), 'water', id => ({ group: waterGroup[id] }));
+for (const w of water.values()) {
+  const o = overrides[w.id];
+  if (o?.name) w.name = o.name;
+  w.nameThe = o?.nameThe ?? withThe(w.name);
+}
+
+console.log('Querying Wikidata for China\'s provinces…');
+const cnType = Object.fromEntries(cnShapes.map(g => [g.properties.id, g.properties.type]));
+const cn = await fetchPlaces(Object.keys(cnType), 'cn', id => ({ group: 'cn', type: cnType[id], capitals: [] }));
+for (const b of await sparql(CAPITAL_Q.replace('%IDS%', [...cn.keys()].map(q => `wd:${q}`).join(' ')))) {
+  const p = cn.get(qid(v(b, 'c')));
+  if (p.type === 'municipality' || p.type === 'special administrative region') continue; // they are cities themselves
+  const capId = qid(v(b, 'cap'));
+  if (p.capitals.some(x => x.id === capId)) continue;
+  p.capitals.push({ id: capId, name: v(b, 'capLabel'), preferred: v(b, 'rank').endsWith('PreferredRank'), role: null,
+    image: file(v(b, 'capImg')) || null, ...point(v(b, 'capCoord')),
+    wiki: v(b, 'capArticle') ? decodeURIComponent(v(b, 'capArticle').split('/wiki/')[1]) : null });
+}
+for (const p of cn.values()) {
+  const o = overrides[p.id];
+  if (o?.name) p.name = o.name;
+  const pref = p.capitals.filter(x => x.preferred);
+  const main = pref.length ? pref : p.capitals;
+  p.capitals = main;
+  p.capitalAnswer = main.length ? main.map(x => x.name).join(' and ') : null;
+  if (!p.capitalAnswer && (p.type === 'province' || p.type === 'autonomous region')) warnings.push(`${p.name}: no capital in Wikidata`);
+}
+
+// ---- diff against previous snapshots ------------------------------------------------
+const today = new Date().toISOString().slice(0, 10);
+const changes = [];
+function diffAndWrite(path, list, fields) {
+  const prev = existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')).places ?? JSON.parse(readFileSync(path, 'utf8')).countries : null;
+  if (prev) {
+    const prevById = Object.fromEntries(prev.map(c => [c.id, c]));
+    const ids = new Set(list.map(c => c.id));
+    for (const c of list) {
+      const p = prevById[c.id];
+      if (!p) { changes.push({ date: today, id: c.id, name: c.name, field: 'added', from: null, to: c.name }); continue; }
+      for (const f of fields) if (p[f] !== c[f]) changes.push({ date: today, id: c.id, name: c.name, field: f, from: p[f], to: c[f] });
+    }
+    for (const p of prev) if (!ids.has(p.id)) changes.push({ date: today, id: p.id, name: p.name, field: 'removed', from: p.name, to: null });
+  }
+  return () => writeFileSync(path, JSON.stringify(path === OUT ? { source: 'Wikidata (CC0)', countries: list } : { source: 'Wikidata (CC0)', places: list }, null, 1) + '\n');
+}
+const writers = [
+  diffAndWrite(OUT, list, ['name', 'capitalAnswer', 'flag']),
+  diffAndWrite(join(ROOT, 'public/data/water.json'), [...water.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name']),
+  diffAndWrite(join(ROOT, 'public/data/cn.json'), [...cn.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer']),
+];
 
 warnings.forEach(w => console.warn('⚠ ' + w));
 changes.forEach(ch => console.log(`Δ ${ch.name}: ${ch.field} ${JSON.stringify(ch.from)} → ${JSON.stringify(ch.to)}`));
-console.log(`${list.length} countries, ${changes.length} changes, ${warnings.length} warnings`);
+console.log(`${list.length} countries, ${water.size} waters, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
 
 if (!DRY) {
-  writeFileSync(OUT, JSON.stringify({ source: 'Wikidata (CC0)', countries: list }, null, 1) + '\n');
+  writers.forEach(w => w());
   if (changes.length || !existsSync(CHANGES)) {
     const all = existsSync(CHANGES) ? JSON.parse(readFileSync(CHANGES, 'utf8')) : [];
     writeFileSync(CHANGES, JSON.stringify([...changes, ...all].slice(0, 500), null, 1) + '\n');

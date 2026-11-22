@@ -1,12 +1,15 @@
-import type { Change, Country, Dataset } from './types';
+import type { Change, Dataset, Layer, Place } from './types';
 
 export async function loadDataset(): Promise<Dataset> {
-  const [c, ch] = await Promise.all([
-    fetch('data/countries.json').then(r => r.json()),
-    fetch('data/changes.json').then(r => r.json()).catch(() => []),
+  const get = (f: string) => fetch(f).then(r => r.json());
+  const [c, w, cn, ch] = await Promise.all([
+    get('data/countries.json'), get('data/water.json'), get('data/cn.json'),
+    get('data/changes.json').catch(() => []),
   ]);
-  const countries: Country[] = c.countries.filter((x: Country) => x.capitalAnswer && x.region);
-  return { countries, byId: new Map(countries.map(x => [x.id, x])), changes: ch as Change[] };
+  const norm = (layer: Layer) => (p: Place) => ({ ...p, layer, capitals: p.capitals ?? [], capitalAnswer: p.capitalAnswer ?? null });
+  const countries: Place[] = c.countries.filter((x: Place) => x.capitalAnswer && x.region).map(norm('country'));
+  const places = [...countries, ...w.places.map(norm('water')), ...cn.places.map(norm('cn'))];
+  return { countries, places, byId: new Map(places.map(x => [x.id, x])), changes: ch as Change[] };
 }
 
 /** Commons file → resized image URL (Commons does the resizing for us). */

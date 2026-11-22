@@ -4,7 +4,16 @@ A spaced-repetition geography trainer with a map: part game, mostly a learning t
 Learn countries, capitals and flags region by region, in both directions, and watch the
 world map fill in as you master it.
 
-## What's in v0.1
+## What's in v0.2
+
+- **Oceans & seas**: the 5 oceans plus 73 seas, gulfs, bays and straits in 5 regional groups (find it / name it).
+- **China's provinces**: 31 provinces, autonomous regions and municipalities plus Hong Kong and Macau, with province capitals.
+- **Quiz mode**: any scope (region, continent, whole world, oceans, China) × any mix of topics, 10/25/50/all cards. Scored, doesn't touch your schedule, 90%+ earns a medal.
+- **Keep going**: "Learn 10 more" after a session, and per-skill Practice / Learn more in the skill tree.
+- **Map labels**: hover (or tap on a phone) for names and capitals; layer toggles for oceans and China's provinces.
+- Line icons instead of emoji; sound now works on phones (audio is unlocked on first tap; plays even with the silent switch on while Sound is enabled).
+
+## What was in v0.1
 
 - **203 countries**: all 193 UN members, the 2 UN observer states (Vatican City, Palestine),
   and Taiwan, Kosovo, the Sahrawi Republic, Northern Cyprus, Somaliland, Abkhazia,
@@ -64,6 +73,9 @@ devices (automatic sync is on the roadmap).
 | Card kinds, cloze wording, skill tree | `src/cards.ts` |
 | Scheduling, progress, unlocks | `src/srs.ts` |
 | Map (D3 + Natural Earth 1:50m, Equal Earth projection) | `src/components/WorldMap.tsx` |
+| Ocean & province shapes (run by hand; shapes rarely change) | `scripts/build-shapes.mjs` → `public/data/shapes-*.json` |
+| Which seas belong to which group | `data/places.json` |
+| Quizzes | `src/quiz.ts`, `src/views/Quiz.tsx` |
 
 Everything is keyed by Wikidata ID (`Q183` = Germany), which leaves room for provinces, cities,
 rivers or anything else Wikidata knows about.
@@ -71,7 +83,7 @@ rivers or anything else Wikidata knows about.
 ## Roadmap ideas
 
 - Heads of state / government (Wikidata P35/P6, which change often, so the change log matters)
-- Provinces and states (China, India, US …), then rivers, mountains, seas
+- More provinces/states (India, US …), rivers, mountains — each becomes a map layer + label toggle
 - **Anki bridge**: import an `.apkg` or read via AnkiConnect, attach cards to places with a tag
   like `geo::CN`, and show them on that country's page and in mixed sessions
 - Automatic progress sync between devices (e.g. a private GitHub Gist)

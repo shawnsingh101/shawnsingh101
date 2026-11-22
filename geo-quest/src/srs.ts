@@ -1,6 +1,6 @@
 import { createEmptyCard, fsrs, generatorParameters, Rating, State, type Card, type Grade } from 'ts-fsrs';
 import { useSyncExternalStore } from 'react';
-import { cardsForNode, fingerprint, parseNode, refFromId, TOPICS, nodeId, type CardRef } from './cards';
+import { cardsForNode, fingerprint, parseNode, refFromId, slotOf, nodeId, type CardRef } from './cards';
 import type { Dataset } from './types';
 
 export { Rating, State };
@@ -12,9 +12,11 @@ export const scheduler = fsrs(generatorParameters({ enable_fuzz: true, request_r
 export interface Settings {
   sound: boolean; gamify: boolean; pictures: boolean; locks: boolean;
   theme: 'auto' | 'light' | 'dark'; newPerDay: number;
+  mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean;
 }
 interface CardRec { c: Card; fp: string }
-interface Day { reviews: number; fresh: number; correct: number }
+interface Day { reviews: number; fresh: number; correct: number; bonus?: number }
+export interface QuizBest { best: number; total: number; date: string }
 export interface Progress {
   v: 1;
   cards: Record<string, CardRec>;
@@ -23,12 +25,13 @@ export interface Progress {
   xp: number;
   days: Record<string, Day>;
   updates: { date: string; text: string }[]; // facts that changed under you
+  quizBest: Record<string, QuizBest>;
 }
 
 const KEY = 'geoquest:v1';
 const DEFAULT: Progress = {
-  v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [],
-  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15 },
+  v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {},
+  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false },
 };
 
 function revive(p: Progress): Progress {
@@ -36,7 +39,7 @@ function revive(p: Progress): Progress {
     r.c.due = new Date(r.c.due);
     if (r.c.last_review) r.c.last_review = new Date(r.c.last_review);
   }
-  return { ...DEFAULT, ...p, settings: { ...DEFAULT.settings, ...p.settings } };
+  return { ...DEFAULT, ...p, quizBest: p.quizBest ?? {}, settings: { ...DEFAULT.settings, ...p.settings } };
 }
 
 function load(): Progress {
@@ -104,8 +107,8 @@ export function nodeStats(ds: Dataset, p: Progress, node: string) {
 
 export function isUnlocked(ds: Dataset, p: Progress, node: string) {
   if (!p.settings.locks) return true;
-  const { groupId, topic } = parseNode(node);
-  const req = TOPICS.find(t => t.id === topic)!.requires;
+  const { groupId } = parseNode(node);
+  const req = slotOf(node).requires;
   if (!req) return true;
   const s = nodeStats(ds, p, nodeId(groupId, req));
   return s.known / s.total >= 0.5;
@@ -120,8 +123,8 @@ export function buildQueue(ds: Dataset, p: Progress): { due: CardRef[]; fresh: C
   }
   due.sort((a, b) => p.cards[a.id].c.due.getTime() - p.cards[b.id].c.due.getTime());
 
-  const doneToday = p.days[today()]?.fresh ?? 0;
-  const budget = Math.max(0, p.settings.newPerDay - doneToday);
+  const d = p.days[today()];
+  const budget = Math.max(0, p.settings.newPerDay + (d?.bonus ?? 0) - (d?.fresh ?? 0));
   // Mix card types, but never show the same country twice in a row: each card
   // type's list is rotated by a different offset, then we deal round-robin.
   const lists: CardRef[][] = [];
@@ -138,6 +141,26 @@ export function buildQueue(ds: Dataset, p: Progress): { due: CardRef[]; fresh: C
   const fresh: CardRef[] = [];
   for (let i = 0; lists.some(l => i < l.length); i++) for (const l of lists) if (i < l.length) fresh.push(l[i]);
   return { due, fresh: fresh.slice(0, budget) };
+}
+
+/** How many unseen cards are waiting in the skills you're learning (ignoring today's limit). */
+export function unseenCount(ds: Dataset, p: Progress) {
+  let n = 0;
+  for (const node of p.active) if (isUnlocked(ds, p, node)) n += cardsForNode(ds, node).filter(c => !p.cards[c.id] || p.cards[c.id].c.state === State.New).length;
+  return n;
+}
+
+/** "Learn 10 more" — raise today's allowance for new cards. */
+export function learnMore(n = 10) {
+  update(p => { const d = (p.days[today()] ??= { reviews: 0, fresh: 0, correct: 0 }); d.bonus = (d.bonus ?? 0) + n; });
+}
+
+export function recordQuiz(key: string, score: number, total: number) {
+  update(p => {
+    const prev = p.quizBest[key];
+    if (!prev || score / total > prev.best / prev.total || (score / total === prev.best / prev.total && total > prev.total)) p.quizBest[key] = { best: score, total, date: today() };
+    p.xp += score * 2;
+  });
 }
 
 /** Record an answer. Returns the updated FSRS card. */

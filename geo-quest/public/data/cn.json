@@ -1,0 +1,731 @@
+{
+ "source": "Wikidata (CC0)",
+ "places": [
+  {
+   "id": "Q40956",
+   "layer": "cn",
+   "name": "Anhui",
+   "image": "Chao Lake NASA.jpg",
+   "lon": 117,
+   "lat": 31.833,
+   "wiki": "Anhui",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q185684",
+     "name": "Hefei",
+     "preferred": false,
+     "role": null,
+     "image": "Hefei montage1.png",
+     "lon": 117.281,
+     "lat": 31.864,
+     "wiki": "Hefei"
+    }
+   ],
+   "capitalAnswer": "Hefei"
+  },
+  {
+   "id": "Q956",
+   "layer": "cn",
+   "name": "Beijing",
+   "image": "Skyline of Beijing CBD with B-5906 approaching (20211016171955).jpg",
+   "lon": 116.408,
+   "lat": 39.904,
+   "wiki": "Beijing",
+   "group": "cn",
+   "type": "municipality",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q11725",
+   "layer": "cn",
+   "name": "Chongqing",
+   "image": "Chongqing, China ESA23338300.jpeg",
+   "lon": 106.507,
+   "lat": 29.55,
+   "wiki": "Chongqing",
+   "group": "cn",
+   "type": "municipality",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q41705",
+   "layer": "cn",
+   "name": "Fujian",
+   "image": "ISS060-E-60237.jpg",
+   "lon": 118.3,
+   "lat": 25.9,
+   "wiki": "Fujian",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q68481",
+     "name": "Fuzhou",
+     "preferred": false,
+     "role": null,
+     "image": "Fuzhou Taixi CBD.jpg",
+     "lon": 119.292,
+     "lat": 26.077,
+     "wiki": "Fuzhou"
+    }
+   ],
+   "capitalAnswer": "Fuzhou"
+  },
+  {
+   "id": "Q42392",
+   "layer": "cn",
+   "name": "Gansu",
+   "image": "Gobi Desert - Envisat.jpg",
+   "lon": 102,
+   "lat": 38,
+   "wiki": "Gansu",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q183584",
+     "name": "Lanzhou",
+     "preferred": false,
+     "role": null,
+     "image": "兰州皋兰山201905.jpg",
+     "lon": 103.832,
+     "lat": 36.062,
+     "wiki": "Lanzhou"
+    }
+   ],
+   "capitalAnswer": "Lanzhou"
+  },
+  {
+   "id": "Q15175",
+   "layer": "cn",
+   "name": "Guangdong",
+   "image": "Leizhou peninsula.jpg",
+   "lon": 113.5,
+   "lat": 23.4,
+   "wiki": "Guangdong",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q16572",
+     "name": "Guangzhou",
+     "preferred": false,
+     "role": null,
+     "image": "Canton Tower 20220626 (cropped).jpg",
+     "lon": 113.26,
+     "lat": 23.13,
+     "wiki": "Guangzhou"
+    }
+   ],
+   "capitalAnswer": "Guangzhou"
+  },
+  {
+   "id": "Q15176",
+   "layer": "cn",
+   "name": "Guangxi",
+   "image": "1 li jiang guilin yangshuo 2011.jpg",
+   "lon": 108.3,
+   "lat": 23.6,
+   "wiki": "Guangxi",
+   "group": "cn",
+   "type": "autonomous region",
+   "capitals": [
+    {
+     "id": "Q179608",
+     "name": "Nanning",
+     "preferred": false,
+     "role": null,
+     "image": "Nanning Seen from Longxiang Tower.jpg",
+     "lon": 108.315,
+     "lat": 22.819,
+     "wiki": "Nanning"
+    }
+   ],
+   "capitalAnswer": "Nanning"
+  },
+  {
+   "id": "Q47097",
+   "layer": "cn",
+   "name": "Guizhou",
+   "image": "Five hundred meter Aperture Spherical Telescope, China (ASTER).jpg",
+   "lon": 106.833,
+   "lat": 26.833,
+   "wiki": "Guizhou",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q192271",
+     "name": "Guiyang",
+     "preferred": false,
+     "role": null,
+     "image": "Guiyang montage 2019.png",
+     "lon": 106.708,
+     "lat": 26.579,
+     "wiki": "Guiyang"
+    }
+   ],
+   "capitalAnswer": "Guiyang"
+  },
+  {
+   "id": "Q42200",
+   "layer": "cn",
+   "name": "Hainan",
+   "image": "Hainan NASA Terra MODIS 2020-11-13.jpg",
+   "lon": 110.324,
+   "lat": 20.033,
+   "wiki": "Hainan",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q189823",
+     "name": "Haikou",
+     "preferred": false,
+     "role": null,
+     "image": "Haikou skyline 6 - 2009 09 07.jpg",
+     "lon": 110.32,
+     "lat": 20.02,
+     "wiki": "Haikou"
+    }
+   ],
+   "capitalAnswer": "Haikou"
+  },
+  {
+   "id": "Q21208",
+   "layer": "cn",
+   "name": "Hebei",
+   "image": "Snow in China.jpg",
+   "lon": 114.509,
+   "lat": 38.042,
+   "wiki": "Hebei",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q58401",
+     "name": "Shijiazhuang",
+     "preferred": false,
+     "role": null,
+     "image": "石家庄解放广场.jpg",
+     "lon": 114.51,
+     "lat": 38.042,
+     "wiki": "Shijiazhuang"
+    }
+   ],
+   "capitalAnswer": "Shijiazhuang"
+  },
+  {
+   "id": "Q19206",
+   "layer": "cn",
+   "name": "Heilongjiang",
+   "image": "SonghuaRiver ASTER 20020401.jpg",
+   "lon": 129,
+   "lat": 48,
+   "wiki": "Heilongjiang",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q42956",
+     "name": "Harbin",
+     "preferred": false,
+     "role": null,
+     "image": "26941-Harbin (49027716202).jpg",
+     "lon": 126.633,
+     "lat": 45.75,
+     "wiki": "Harbin"
+    }
+   ],
+   "capitalAnswer": "Harbin"
+  },
+  {
+   "id": "Q43684",
+   "layer": "cn",
+   "name": "Henan",
+   "image": "Henan floods July 26, 2020.jpg",
+   "lon": 113.5,
+   "lat": 33.9,
+   "wiki": "Henan",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q30340",
+     "name": "Zhengzhou",
+     "preferred": true,
+     "role": null,
+     "image": "20220812 Central Business District of Zhengdong New Area.jpg",
+     "lon": 113.661,
+     "lat": 34.749,
+     "wiki": "Zhengzhou"
+    }
+   ],
+   "capitalAnswer": "Zhengzhou"
+  },
+  {
+   "id": "Q8646",
+   "layer": "cn",
+   "name": "Hong Kong",
+   "image": "Hong Kong from Victoria Peak1.jpg",
+   "lon": 114.159,
+   "lat": 22.278,
+   "wiki": "Hong_Kong",
+   "group": "cn",
+   "type": "special administrative region",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q46862",
+   "layer": "cn",
+   "name": "Hubei",
+   "image": "Yangtze Dams Spill Water.jpg",
+   "lon": 112.3,
+   "lat": 31.2,
+   "wiki": "Hubei",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q11746",
+     "name": "Wuhan",
+     "preferred": false,
+     "role": null,
+     "image": "武汉黄鹤楼俯瞰.jpg",
+     "lon": 114.297,
+     "lat": 30.595,
+     "wiki": "Wuhan"
+    }
+   ],
+   "capitalAnswer": "Wuhan"
+  },
+  {
+   "id": "Q45761",
+   "layer": "cn",
+   "name": "Hunan",
+   "image": "Waters of central China.jpg",
+   "lon": 111.8,
+   "lat": 27.6,
+   "wiki": "Hunan",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q174091",
+     "name": "Changsha",
+     "preferred": false,
+     "role": null,
+     "image": "Lushan Temple.jpg",
+     "lon": 112.971,
+     "lat": 28.199,
+     "wiki": "Changsha"
+    }
+   ],
+   "capitalAnswer": "Changsha"
+  },
+  {
+   "id": "Q41079",
+   "layer": "cn",
+   "name": "Inner Mongolia",
+   "image": "Dust storm in the Gobi Desert, China (8568589729).jpg",
+   "lon": 113,
+   "lat": 44,
+   "wiki": "Inner_Mongolia",
+   "group": "cn",
+   "type": "autonomous region",
+   "capitals": [
+    {
+     "id": "Q535534",
+     "name": "Hohhot",
+     "preferred": false,
+     "role": null,
+     "image": "Hohhot Montage.png",
+     "lon": 111.663,
+     "lat": 40.815,
+     "wiki": "Hohhot"
+    }
+   ],
+   "capitalAnswer": "Hohhot"
+  },
+  {
+   "id": "Q16963",
+   "layer": "cn",
+   "name": "Jiangsu",
+   "image": "Suzhou, Jingsu, China (ASTER).jpg",
+   "lon": 120,
+   "lat": 33,
+   "wiki": "Jiangsu",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q16666",
+     "name": "Nanjing",
+     "preferred": false,
+     "role": null,
+     "image": "Nanjing CBD from City Wall.jpg",
+     "lon": 118.779,
+     "lat": 32.061,
+     "wiki": "Nanjing"
+    }
+   ],
+   "capitalAnswer": "Nanjing"
+  },
+  {
+   "id": "Q57052",
+   "layer": "cn",
+   "name": "Jiangxi",
+   "image": "Satellite Image of Tahihe.png",
+   "lon": 116,
+   "lat": 27.3,
+   "wiki": "Jiangxi",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q171943",
+     "name": "Nanchang",
+     "preferred": false,
+     "role": null,
+     "image": "Nanchang city view (July 2017).jpg",
+     "lon": 115.887,
+     "lat": 28.684,
+     "wiki": "Nanchang"
+    }
+   ],
+   "capitalAnswer": "Nanchang"
+  },
+  {
+   "id": "Q45208",
+   "layer": "cn",
+   "name": "Jilin",
+   "image": "Jilin, China.jpg",
+   "lon": 125.308,
+   "lat": 43.884,
+   "wiki": "Jilin",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q92161",
+     "name": "Changchun",
+     "preferred": false,
+     "role": null,
+     "image": "Changchun Montage 2017.png",
+     "lon": 125.323,
+     "lat": 43.88,
+     "wiki": "Changchun"
+    }
+   ],
+   "capitalAnswer": "Changchun"
+  },
+  {
+   "id": "Q43934",
+   "layer": "cn",
+   "name": "Liaoning",
+   "image": "ISS059-E-75503 - View of China.jpg",
+   "lon": 123.426,
+   "lat": 41.804,
+   "wiki": "Liaoning",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q11720",
+     "name": "Shenyang",
+     "preferred": false,
+     "role": null,
+     "image": "Skyline of Shenyang 3.jpg",
+     "lon": 123.428,
+     "lat": 41.803,
+     "wiki": "Shenyang"
+    }
+   ],
+   "capitalAnswer": "Shenyang"
+  },
+  {
+   "id": "Q14773",
+   "layer": "cn",
+   "name": "Macau",
+   "image": "Panorama of Macau Peninsula2021.jpg",
+   "lon": 113.538,
+   "lat": 22.19,
+   "wiki": "Macau",
+   "group": "cn",
+   "type": "special administrative region",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q57448",
+   "layer": "cn",
+   "name": "Ningxia",
+   "image": "Xixia.jpg",
+   "lon": 106.271,
+   "lat": 38.467,
+   "wiki": "Ningxia",
+   "group": "cn",
+   "type": "autonomous region",
+   "capitals": [
+    {
+     "id": "Q211243",
+     "name": "Yinchuan",
+     "preferred": false,
+     "role": null,
+     "image": "Yinchuan Montage.jpg",
+     "lon": 106.225,
+     "lat": 38.485,
+     "wiki": "Yinchuan"
+    }
+   ],
+   "capitalAnswer": "Yinchuan"
+  },
+  {
+   "id": "Q45833",
+   "layer": "cn",
+   "name": "Qinghai",
+   "image": "Qinghai Cross Section.jpg",
+   "lon": 96,
+   "lat": 35,
+   "wiki": "Qinghai",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q69060",
+     "name": "Xining",
+     "preferred": false,
+     "role": null,
+     "image": "Xining Montage.jpg",
+     "lon": 101.779,
+     "lat": 36.624,
+     "wiki": "Xining"
+    }
+   ],
+   "capitalAnswer": "Xining"
+  },
+  {
+   "id": "Q47974",
+   "layer": "cn",
+   "name": "Shaanxi",
+   "image": "ISS016-E-9096 - View of China.jpg",
+   "lon": 109.3,
+   "lat": 35.6,
+   "wiki": "Shaanxi",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q5826",
+     "name": "Xi'an",
+     "preferred": false,
+     "role": null,
+     "image": "西安钟楼2020 (1).jpg",
+     "lon": 108.942,
+     "lat": 34.261,
+     "wiki": "Xi'an"
+    }
+   ],
+   "capitalAnswer": "Xi'an"
+  },
+  {
+   "id": "Q43407",
+   "layer": "cn",
+   "name": "Shandong",
+   "image": "Mount Tai 2.jpg",
+   "lon": 118.4,
+   "lat": 36.4,
+   "wiki": "Shandong",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q170247",
+     "name": "Jinan",
+     "preferred": false,
+     "role": null,
+     "image": "Jinanfromqianfoshan.jpg",
+     "lon": 116.983,
+     "lat": 36.667,
+     "wiki": "Jinan"
+    }
+   ],
+   "capitalAnswer": "Jinan"
+  },
+  {
+   "id": "Q8686",
+   "layer": "cn",
+   "name": "Shanghai",
+   "image": "上海·上海市·（俯拍）.jpg",
+   "lon": 121.469,
+   "lat": 31.233,
+   "wiki": "Shanghai",
+   "group": "cn",
+   "type": "municipality",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q46913",
+   "layer": "cn",
+   "name": "Shanxi",
+   "image": "Great Wall of China, Satellite image.jpeg",
+   "lon": 112.564,
+   "lat": 37.873,
+   "wiki": "Shanxi",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q72778",
+     "name": "Taiyuan",
+     "preferred": false,
+     "role": null,
+     "image": "J84682 TempleYongzuo 20140717-155800.22 TempleYongzuoPEst.jpg",
+     "lon": 112.542,
+     "lat": 37.873,
+     "wiki": "Taiyuan"
+    }
+   ],
+   "capitalAnswer": "Taiyuan"
+  },
+  {
+   "id": "Q19770",
+   "layer": "cn",
+   "name": "Sichuan",
+   "image": "Larix potaninii trees Huluhai.jpg",
+   "lon": 103,
+   "lat": 30,
+   "wiki": "Sichuan",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q30002",
+     "name": "Chengdu",
+     "preferred": false,
+     "role": null,
+     "image": "雪山下的成都市天际线 Chengdu skyline with snow capped mountains.jpg",
+     "lon": 104.063,
+     "lat": 30.66,
+     "wiki": "Chengdu"
+    }
+   ],
+   "capitalAnswer": "Chengdu"
+  },
+  {
+   "id": "Q11736",
+   "layer": "cn",
+   "name": "Tianjin",
+   "image": "Tianjin, China ESA15420167.jpeg",
+   "lon": 117.206,
+   "lat": 39.147,
+   "wiki": "Tianjin",
+   "group": "cn",
+   "type": "municipality",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q17269",
+   "layer": "cn",
+   "name": "Tibet",
+   "image": "ISS041-E-81025 - View of China.jpg",
+   "lon": 86.94,
+   "lat": 31.706,
+   "wiki": "Tibet_Autonomous_Region",
+   "group": "cn",
+   "type": "autonomous region",
+   "capitals": [
+    {
+     "id": "Q5869",
+     "name": "Lhasa",
+     "preferred": false,
+     "role": null,
+     "image": "Lhasa from Potala.JPG",
+     "lon": 91.141,
+     "lat": 29.646,
+     "wiki": "Lhasa_(prefecture-level_city)"
+    }
+   ],
+   "capitalAnswer": "Lhasa"
+  },
+  {
+   "id": "Q34800",
+   "layer": "cn",
+   "name": "Xinjiang",
+   "image": "Xinjiang Space View.jpg",
+   "lon": 87.614,
+   "lat": 43.825,
+   "wiki": "Xinjiang",
+   "group": "cn",
+   "type": "autonomous region",
+   "capitals": [
+    {
+     "id": "Q16959",
+     "name": "Ürümqi",
+     "preferred": false,
+     "role": null,
+     "image": "Urumqi Skyline July 2019.jpg",
+     "lon": 87.612,
+     "lat": 43.822,
+     "wiki": "Ürümqi"
+    }
+   ],
+   "capitalAnswer": "Ürümqi"
+  },
+  {
+   "id": "Q43194",
+   "layer": "cn",
+   "name": "Yunnan",
+   "image": "Iss068e023350.jpeg",
+   "lon": 102.709,
+   "lat": 25.049,
+   "wiki": "Yunnan",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q182852",
+     "name": "Kunming",
+     "preferred": false,
+     "role": null,
+     "image": "五华区与盘龙区天际线 - 航拍 - 2025-05-16 03.jpg",
+     "lon": 102.706,
+     "lat": 25.043,
+     "wiki": "Kunming"
+    }
+   ],
+   "capitalAnswer": "Kunming"
+  },
+  {
+   "id": "Q16967",
+   "layer": "cn",
+   "name": "Zhejiang",
+   "image": "City of Wuyi, Zhejiang in 1968 by CORONA satellite.jpg",
+   "lon": 120.15,
+   "lat": 30.267,
+   "wiki": "Zhejiang",
+   "group": "cn",
+   "type": "province",
+   "capitals": [
+    {
+     "id": "Q4970",
+     "name": "Hangzhou",
+     "preferred": false,
+     "role": null,
+     "image": "Huanglong & Broken Bridge - Hangzhou City & West Lake near Broken Bridge.jpg",
+     "lon": 120.168,
+     "lat": 30.25,
+     "wiki": "Hangzhou"
+    }
+   ],
+   "capitalAnswer": "Hangzhou"
+  }
+ ]
+}

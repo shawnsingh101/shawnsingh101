@@ -1,66 +1,76 @@
 import { useState } from 'react';
-import { CONTINENTS, GROUPS, countriesIn, cardId, KIND_LABEL, TOPICS } from '../cards';
+import { GROUPS, SECTIONS, placesIn, cardId, KIND_LABEL, kindsFor } from '../cards';
 import { level, useProgress } from '../srs';
 import type { Dataset } from '../types';
 import { Flag, Picture } from '../components/Picture';
+import { Icon } from '../components/Icons';
 import { wikiUrl } from '../data';
 
 const LEVEL = ['not started', 'learning', 'known', 'mastered'];
+const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-export function CountrySheet({ ds, id, onClose }: { ds: Dataset; id: string; onClose: () => void }) {
+export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClose: () => void }) {
   const p = useProgress();
   const c = ds.byId.get(id)!;
+  const cap = c.capitals[0];
+  const pic = cap ? { file: cap.image, wiki: cap.wiki, caption: cap.name } : { file: c.image, wiki: c.wiki, caption: c.name };
   return (
     <div className="sheet" role="dialog">
-      <button className="btn ghost close" onClick={onClose} aria-label="Close">✕</button>
+      <button className="btn ghost close icon-btn" onClick={onClose} aria-label="Close"><Icon name="x" /></button>
       <div className="sheet-head">
-        <Flag file={c.flag} name={c.name} size={240} className="sheet-flag" />
+        {c.layer === 'country' && <Flag file={c.flag ?? null} name={c.name} size={240} className="sheet-flag" />}
         <div>
           <h2>{c.name}</h2>
-          {c.officialName !== c.name && <p className="muted small">{c.officialName}</p>}
-          <p>Capital: <b>{c.capitalAnswer}</b></p>
-          {c.statusNote && <p className="note">ⓘ {c.statusNote}</p>}
-          {c.capitalNote && <p className="note">ⓘ {c.capitalNote}</p>}
+          {c.officialName && c.officialName !== c.name && <p className="muted small">{c.officialName}</p>}
+          {c.type && <p className="muted small">{cap1(c.type)} of China</p>}
+          {c.layer === 'water' && <p className="muted small">{GROUPS.find(g => g.id === c.group)?.name}</p>}
+          {c.capitalAnswer && <p>Capital: <b>{c.capitalAnswer}</b></p>}
+          {c.statusNote && <p className="note"><Icon name="info" size={15} /> {c.statusNote}</p>}
+          {c.capitalNote && <p className="note"><Icon name="info" size={15} /> {c.capitalNote}</p>}
         </div>
       </div>
-      {p.settings.pictures && c.capitals[0] && <Picture file={c.capitals[0].image} wiki={c.capitals[0].wiki} caption={c.capitals[0].name} />}
+      {p.settings.pictures && <Picture {...pic} />}
       <ul className="card-levels">
-        {TOPICS.flatMap(t => t.kinds).map(k => { const l = level(p, cardId(c.id, k)); return <li key={k} className={'lv' + l}><span>{KIND_LABEL[k]}</span><small>{LEVEL[l]}</small></li>; })}
+        {kindsFor(c).map(k => { const l = level(p, cardId(c.id, k)); return <li key={k} className={'lv' + l}><span>{KIND_LABEL[k]}</span><small>{LEVEL[l]}</small></li>; })}
       </ul>
       {c.wiki && <a className="btn" href={wikiUrl(c.wiki)} target="_blank" rel="noreferrer">Read about {c.name} on Wikipedia ↗</a>}
     </div>
   );
 }
+export const CountrySheet = PlaceSheet;
 
-/** Browse like an iPod: continent → region → country. */
+/** Browse like an iPod: section → region → place. */
 export function Atlas({ ds }: { ds: Dataset }) {
-  const [cont, setCont] = useState<string | null>(null);
+  const [sec, setSec] = useState<string | null>(null);
   const [group, setGroup] = useState<string | null>(null);
-  const [country, setCountry] = useState<string | null>(null);
-  const crumbs = [
-    <button key="w" className="crumb" onClick={() => { setCont(null); setGroup(null); }}>World</button>,
-    cont && <button key="c" className="crumb" onClick={() => setGroup(null)}>{cont}</button>,
-    group && <span key="g" className="crumb">{GROUPS.find(g => g.id === group)!.name}</span>,
-  ];
+  const [place, setPlace] = useState<string | null>(null);
+  const sectionPlaces = (s: string) => GROUPS.filter(g => g.section === s).flatMap(g => placesIn(ds, g.id));
+  const groups = sec ? GROUPS.filter(g => g.section === sec) : [];
+  const g = group ?? (groups.length === 1 ? groups[0].id : null);
   return (
     <div className="atlas">
-      <nav className="crumbs">{crumbs}</nav>
-      {!cont && <div className="tiles">{CONTINENTS.map(c => (
-        <button key={c} className={'tile cont-' + c.toLowerCase()} onClick={() => setCont(c)}>
-          <b>{c}</b><small>{ds.countries.filter(x => x.region === c).length} countries</small>
+      <nav className="crumbs">
+        <button className="crumb" onClick={() => { setSec(null); setGroup(null); }}>World</button>
+        {sec && <button className="crumb" onClick={() => setGroup(null)}>{sec}</button>}
+        {group && <span className="crumb">{GROUPS.find(x => x.id === group)!.name}</span>}
+      </nav>
+      {!sec && <div className="tiles">{SECTIONS.map(s => (
+        <button key={s} className={'tile cont-' + s.toLowerCase().replace(/[^a-z]/g, '')} onClick={() => setSec(s)}>
+          <b>{s}</b><small>{sectionPlaces(s).length} {s === 'Oceans & Seas' ? 'waters' : s === 'China' ? 'provinces & regions' : 'countries'}</small>
         </button>))}</div>}
-      {cont && !group && <div className="tiles">{GROUPS.filter(g => g.continent === cont).map(g => (
-        <button key={g.id} className="tile" onClick={() => setGroup(g.id)}>
-          <div className="tile-flags">{countriesIn(ds, g.id).slice(0, 6).map(c => <Flag key={c.id} file={c.flag} name={c.name} size={80} />)}</div>
-          <b>{g.name}</b><small>{countriesIn(ds, g.id).length} countries</small>
+      {sec && !g && <div className="tiles">{groups.map(gr => (
+        <button key={gr.id} className="tile" onClick={() => setGroup(gr.id)}>
+          {gr.layer === 'country' && <div className="tile-flags">{placesIn(ds, gr.id).slice(0, 6).map(c => <Flag key={c.id} file={c.flag ?? null} name={c.name} size={80} />)}</div>}
+          {gr.layer === 'water' && <div className="tile-glyph"><Icon name="wave" size={28} /></div>}
+          <b>{gr.name}</b><small>{placesIn(ds, gr.id).length} {gr.layer === 'water' ? 'waters' : 'countries'}</small>
         </button>))}</div>}
-      {group && <div className="country-list">{countriesIn(ds, group).sort((a, b) => a.name.localeCompare(b.name)).map(c => (
-        <button key={c.id} className="country-row" onClick={() => setCountry(c.id)}>
-          <Flag file={c.flag} name={c.name} size={80} />
-          <span className="grow"><b>{c.name}</b><small>{c.capitalAnswer && c.capitalAnswer.length < 40 ? c.capitalAnswer : c.capitals.map(x => x.name).join(' / ')}</small></span>
-          {c.status !== 'un' && <span className="tag">{c.status}</span>}
+      {g && <div className="country-list">{placesIn(ds, g).sort((a, b) => a.name.localeCompare(b.name)).map(c => (
+        <button key={c.id} className="country-row" onClick={() => setPlace(c.id)}>
+          {c.layer === 'country' ? <Flag file={c.flag ?? null} name={c.name} size={80} /> : <span className="row-glyph"><Icon name={c.layer === 'water' ? 'wave' : 'map'} /></span>}
+          <span className="grow"><b>{c.name}</b><small>{c.capitalAnswer ? (c.capitalAnswer.length < 40 ? c.capitalAnswer : c.capitals.map(x => x.name).join(' / ')) : c.type ? cap1(c.type) : ''}</small></span>
+          {c.status && c.status !== 'un' && <span className="tag">{c.status}</span>}
         </button>))}</div>}
-      {country && <CountrySheet ds={ds} id={country} onClose={() => setCountry(null)} />}
+      {place && <PlaceSheet ds={ds} id={place} onClose={() => setPlace(null)} />}
     </div>
   );
 }
