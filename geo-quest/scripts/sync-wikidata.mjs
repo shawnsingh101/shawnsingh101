@@ -15,6 +15,7 @@ import { unzipSync, strFromU8 } from 'fflate';
 import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+const andJoin = (acc, x, i, arr) => !i ? x : acc + (i === arr.length - 1 ? ' and ' : ', ') + x;
 
 const require = createRequire(import.meta.url);
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -196,7 +197,7 @@ for (const c of countries.values()) {
   if (!c.capitalAnswer) {
     const pref = c.capitals.filter(x => x.preferred);
     const main = pref.length === 1 ? pref : c.capitals;
-    c.capitalAnswer = main.length ? main.map(x => x.name).join(' and ') : null;
+    c.capitalAnswer = main.length ? main.map(x => x.name).reduce(andJoin, '') : null;
     if (main.length > 1) warnings.push(`${c.name}: ${main.length} capitals and no override — consider adding wording to data/overrides.json`);
   }
   if (!c.capitalAnswer) warnings.push(`${c.name}: no capital in Wikidata`);
@@ -283,7 +284,7 @@ for (const p of cn.values()) {
   const pref = p.capitals.filter(x => x.preferred);
   const main = pref.length ? pref : p.capitals;
   p.capitals = main;
-  p.capitalAnswer = main.length ? main.map(x => x.name).join(' and ') : null;
+  p.capitalAnswer = main.length ? main.map(x => x.name).reduce(andJoin, '') : null;
   if (!p.capitalAnswer && (p.type === 'province' || p.type === 'autonomous region')) warnings.push(`${p.name}: no capital in Wikidata`);
 }
 
@@ -429,7 +430,7 @@ for (const b of await sparql(`SELECT ?p ?flag WHERE { VALUES ?p { ${[...states.k
 for (const st of states.values()) {
   const pref = st.capitals.filter(x => x.preferred);
   st.capitals = pref.length ? pref : st.capitals;
-  st.capitalAnswer = st.capitals.map(x => x.name).join(' and ') || null;
+  st.capitalAnswer = st.capitals.map(x => x.name).reduce(andJoin, '') || null;
   if (!st.capitalAnswer) warnings.push(`${st.name}: no capital`);
   if (!st.flag) warnings.push(`${st.name}: no flag`);
 }
@@ -632,7 +633,7 @@ const territories = [];
     if (!t || !sov) { warnings.push(`Territory ${sh.id} (${sh.sov}): missing facts or sovereign`); continue; }
     const pref = t.capitals.filter(x => x.preferred);
     t.capitals = pref.length ? pref : t.capitals;
-    t.capitalAnswer = t.capitals.map(x => x.name).join(' and ') || null;
+    t.capitalAnswer = t.capitals.map(x => x.name).reduce(andJoin, '') || null;
     const st = (status[sh.id] ?? []).sort((a, b) => a.length - b.length)[0] ?? null;
     territories.push({ ...t, group: GROUP_OVERRIDE[sh.id] ?? GROUP_OF_SUB[sh.sub] ?? 't-atl', sovereign: sov.id, sovereignName: sov.name,
       terrStatus: st, facts: [st ? st.charAt(0).toUpperCase() + st.slice(1) : null, `Part of ${sov.name}`].filter(Boolean).join(' · ') });
@@ -668,7 +669,8 @@ const sites = [];
     if (keep.id === qid(v(b, 's')) && !keep.img) keep.img = file(v(b, 'img')) || null;
   }
   const all = Object.values(byListing).filter(x => x.coord && !/^Q\d+$/.test(x.name)).map(x => ({ ...x, ...point(x.coord), countries: [...x.countries].filter(c => countries.has(c)) }))
-    .filter(x => x.countries.length).sort((a, b) => b.links - a.links);
+    .filter(x => x.countries.length).sort((a, b) => b.links - a.links)
+    .filter((x, i, arr) => arr.findIndex(y => y.id === x.id) === i); // one item can hold two listings (Drottningholm)
   const perCont = {};
   all.forEach((x, i) => {
     const region = mainRegion(x.countries, x.lon);
@@ -680,7 +682,7 @@ const sites = [];
     }
     const where = x.countries.map(c => countries.get(c).name);
     sites.push({ id: x.id, layer: 'site', name: x.name, group, lon: x.lon, lat: x.lat, image: x.img, wiki: x.wiki, whsId: x.whs,
-      country: x.countries[0], countryName: where[0], capitals: [], capitalAnswer: null,
+      country: x.countries[0], countryName: where.reduce(andJoin, ''), capitals: [], capitalAnswer: null,
       facts: [`UNESCO World Heritage Site #${x.whs}`, where.join(', ')].join(' · ') });
   });
 }
@@ -708,7 +710,7 @@ const peaks = [], mranges = [];
   for (let i = 0; i < ids.length; i += 150) {
     for (const b of await sparql(`SELECT ?m ?mLabel ?links ?elev ?coord ?country ?img ?article ?rangeLabel WHERE {
         VALUES ?m { ${ids.slice(i, i + 150).map(x => `wd:${x}`).join(' ')} } ?m wikibase:sitelinks ?links .
-        OPTIONAL { ?m wdt:P2044 ?elev } OPTIONAL { ?m wdt:P625 ?coord } OPTIONAL { ?m wdt:P17 ?country } OPTIONAL { ?m wdt:P18 ?img }
+        OPTIONAL { ?m p:P2044 ?es . ?es a wikibase:BestRank ; psn:P2044/wikibase:quantityAmount ?elev } OPTIONAL { ?m wdt:P625 ?coord } OPTIONAL { ?m wdt:P17 ?country } OPTIONAL { ?m wdt:P18 ?img }
         OPTIONAL { ?m wdt:P4552 ?range . ?range rdfs:label ?rangeLabel FILTER(lang(?rangeLabel) = "en") }
         OPTIONAL { ?article schema:about ?m ; schema:isPartOf <https://en.wikipedia.org/> }
         SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`)) {
@@ -734,7 +736,7 @@ const peaks = [], mranges = [];
     }
     const where = o.countries.map(c => countries.get(c).name);
     peaks.push({ id: o.id, layer: 'peak', name: o.name, group, lon: o.lon, lat: o.lat, image: o.img, wiki: o.wiki, elevation: Math.round(o.elev),
-      country: o.countries[0], countryName: where[0], capitals: [], capitalAnswer: null,
+      country: o.countries[0], countryName: where.reduce(andJoin, ''), capitals: [], capitalAnswer: null,
       facts: [`${Math.round(o.elev).toLocaleString('en-US')} m`, o.range, where.join(', ')].filter(Boolean).join(' · ') });
   });
 
@@ -749,10 +751,51 @@ const peaks = [], mranges = [];
   }
   [...rinfo.values()].filter(r => !/^Q\d+$/.test(r.name)).sort((a, b) => (rankOf[a.id] - rankOf[b.id]) || (rlinks[b.id] ?? 0) - (rlinks[a.id] ?? 0)).forEach((r, i) => {
     if (i >= 70) return;
-    const where = [...(rcountries[r.id] ?? [])].map(c => countries.get(c)?.name).filter(Boolean);
+    // Wikidata sometimes lists a far-off owner (France for the Appalachians, via Saint-Pierre and Miquelon):
+    // drop a lone country from another continent when 2+ countries agree on where the range is.
+    let rc = [...(rcountries[r.id] ?? [])];
+    const regOf = c => regionOfCountry[c] ?? null;
+    const main = mainRegion(rc);
+    if (rc.filter(c => regOf(c) === main).length >= 2) rc = rc.filter(c => regOf(c) === main || TRANSCONTINENTAL.has(c) || rc.filter(d => regOf(d) === regOf(c)).length > 1);
+    const where = rc.map(c => countries.get(c)?.name).filter(Boolean);
     mranges.push({ ...r, group: rankOf[r.id] <= 2 && i < 30 ? 'm-ranges' : 'm-ranges2', nameThe: /^(the )?/i.test(r.name) ? `the ${r.name}` : r.name,
       facts: where.length ? where.slice(0, 5).join(', ') + (where.length > 5 ? '…' : '') : null, capitals: [], capitalAnswer: null });
   });
+}
+
+// Two ranges called Sierra Nevada (Spain, US): add the country so "name it" has one answer.
+for (const arr of [mranges, peaks]) {
+  const count = {}; for (const x of arr) count[x.name] = (count[x.name] ?? 0) + 1;
+  for (const x of arr) if (count[x.name] > 1) {
+    const where = x.countryName ?? (x.facts ?? '').split(/, |…/)[0];
+    if (where) { x.name = `${x.name} (${where})`; if (x.nameThe) x.nameThe = `the ${x.name}`; }
+  }
+}
+
+// ---- highest point of each country (Wikidata P610) ----
+console.log('Querying Wikidata for highest points…');
+{
+  const rows = await sparql(`SELECT ?c ?hp ?hpLabel ?rank ?elev ?coord ?img ?article WHERE {
+    VALUES ?c { ${list.map(c => `wd:${c.id}`).join(' ')} }
+    ?c p:P610 ?s . ?s ps:P610 ?hp ; wikibase:rank ?rank . FILTER(?rank != wikibase:DeprecatedRank)
+    OPTIONAL { ?hp p:P2044 ?es . ?es a wikibase:BestRank ; psn:P2044/wikibase:quantityAmount ?elev } OPTIONAL { ?hp wdt:P625 ?coord } OPTIONAL { ?hp wdt:P18 ?img }  # psn = converted to metres
+    OPTIONAL { ?article schema:about ?hp ; schema:isPartOf <https://en.wikipedia.org/> }
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
+  const best = {};
+  for (const b of rows) {
+    const c = qid(v(b, 'c'));
+    const cand = { id: qid(v(b, 'hp')), name: v(b, 'hpLabel'), elevation: Math.round(+(v(b, 'elev') ?? 0)) || null, ...point(v(b, 'coord')),
+      image: file(v(b, 'img')) || null, wiki: v(b, 'article') ? decodeURIComponent(v(b, 'article').split('/wiki/')[1]) : null,
+      preferred: v(b, 'rank').endsWith('PreferredRank') };
+    const cur = best[c];
+    if (!cur || (cand.preferred && !cur.preferred) || (cand.preferred === cur.preferred && (cand.elevation ?? 0) > (cur.elevation ?? 0))) best[c] = { ...cand, image: cand.image ?? cur?.image ?? null };
+  }
+  for (const c of list) {
+    const h = best[c.id];
+    if (!h || /^Q\d+$/.test(h.name) || h.lon == null) { delete c.highest; continue; }
+    const { preferred, ...rest } = h;
+    c.highest = { ...rest, note: overrides[c.id]?.highestNote ?? null }; // e.g. Australia's is on remote Heard Island
+  }
 }
 
 // ---- election results: who takes over in January (Wikipedia race-summary tables) ----
@@ -823,6 +866,32 @@ console.log('Querying Wikidata for currencies…');
     for (const x of cur) (users[x.id] ??= []).push(c.id);
   }
   for (const c of list) if (c.currency) for (const x of c.currency) x.shared = users[x.id].length;
+  // A picture of the money itself: the currency infobox's images, banknotes before coins.
+  const curTitles = [...new Set(list.flatMap(c => c.currency ?? []).map(x => x.wiki).filter(Boolean))];
+  const curImg = {};
+  for (let i = 0; i < curTitles.length; i += 40) {
+    const batch = curTitles.slice(i, i + 40);
+    for (let attempt = 1; attempt <= 4; attempt++) {
+      try {
+        const r = await fetch(`https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=revisions&rvprop=content&rvslots=main&rvsection=0&titles=${encodeURIComponent(batch.join('|'))}`, { headers: { 'User-Agent': UA } });
+        const j = JSON.parse(await r.text());
+        const back = {}; for (const m of [...(j.query.normalized ?? []), ...(j.query.redirects ?? [])]) back[m.to] = back[m.from] ?? m.from;
+        for (const pg of Object.values(j.query.pages)) {
+          const t = pg.revisions?.[0]?.slots?.main?.['*'] ?? '';
+          const field = n => (t.match(new RegExp(`\\|\\s*${n}\\s*=\\s*([^\\n|]*)`)) ?? [])[1]?.trim().replace(/^(File|Image):/i, '');
+          const imgs = [1, 2, 3].map(n => ({ file: field('image_' + n), title: field('image_title_' + n) ?? '' })).filter(x => x.file && /\.(png|jpe?g|svg|webp|gif|tiff?)$/i.test(x.file));
+          if (!imgs.length && field('image')) imgs.push({ file: field('image').replace(/^(File|Image):/i, ''), title: '' });
+          const isNote = x => /bank ?note|\bnotes?\b|\bbills?\b|paper/i.test(x.file + ' ' + x.title) && !/coin/i.test(x.file + ' ' + x.title);
+          const pick = imgs.find(isNote) ?? imgs.find(x => !/coin/i.test(x.file + ' ' + x.title)) ?? imgs[0];
+          let title = pg.title; while (back[title]) title = back[title];
+          if (pick) curImg[title.replace(/ /g, '_')] = pick.file;
+        }
+        break;
+      } catch { await new Promise(res => setTimeout(res, 10000 * attempt)); }
+    }
+  }
+  for (const c of list) for (const x of c.currency ?? []) x.image = curImg[x.wiki?.replace(/ /g, '_')] ?? null;
+  console.log(`  money pictures for ${Object.keys(curImg).length}/${curTitles.length} currencies`);
 }
 
 // ---- largest city (GeoNames cities of 15,000+, linked to Wikidata via the GeoNames id) ----
@@ -969,15 +1038,25 @@ function diffAndWrite(path, list, fields) {
     for (const c of list) {
       const p = prevById[c.id];
       if (!p) { changes.push({ date: today, id: c.id, name: c.label ?? c.name, field: 'added', from: null, to: c.name }); continue; }
-      const val = (x, f) => (f === 'zhHan' ? x.zh?.han : f === 'currencyName' ? x.currency?.map(c => c.name).join(' / ') : f === 'largestCityName' ? x.largestCity?.name : x[f]);
+      const val = (x, f) => (f === 'zhHan' ? x.zh?.han : f === 'currencyName' ? x.currency?.map(c => c.name).join(' / ') : f === 'largestCityName' ? x.largestCity?.name : f === 'highestName' ? x.highest?.name : x[f]);
       for (const f of fields) if (val(p, f) !== val(c, f)) changes.push({ date: today, id: c.id, name: c.label ?? c.name, field: f === 'zhHan' ? 'Chinese name' : f, from: val(p, f) ?? null, to: val(c, f) ?? null });
     }
     for (const p of prev) if (!ids.has(p.id)) changes.push({ date: today, id: p.id, name: p.name, field: 'removed', from: p.name, to: null });
   }
   return () => writeFileSync(path, JSON.stringify(path === OUT ? { source: 'Wikidata (CC0)', countries: list } : { source: 'Wikidata (CC0)', places: list }, null, 1) + '\n');
 }
+// A place is one card set: a site that's also a country, lake, range or peak (Vatican City, Lake Baikal, Western Ghats)
+// stays in its own layer, otherwise the two would share card ids.
+{
+  const taken = new Set([...list, ...lakes, ...mranges, ...peaks, ...territories, ...rivers].map(x => x.id));
+  const keep = sites.filter(x => !taken.has(x.id));
+  if (keep.length !== sites.length) console.log(`  ${sites.length - keep.length} World Heritage Sites left to their own layer`);
+  sites.splice(0, sites.length, ...keep);
+  const pTaken = new Set([...list, ...lakes, ...mranges].map(x => x.id));
+  const keepP = peaks.filter(x => !pTaken.has(x.id)); peaks.splice(0, peaks.length, ...keepP);
+}
 const writers = [
-  diffAndWrite(OUT, list, ['name', 'capitalAnswer', 'flag', 'currencyName', 'largestCityName']),
+  diffAndWrite(OUT, list, ['name', 'capitalAnswer', 'flag', 'currencyName', 'largestCityName', 'highestName']),
   diffAndWrite(join(ROOT, 'public/data/water.json'), [...water.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name']),
   diffAndWrite(join(ROOT, 'public/data/rivers.json'), rivers, ['name', 'group']),
   diffAndWrite(join(ROOT, 'public/data/us.json'), [...states.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'flag']),

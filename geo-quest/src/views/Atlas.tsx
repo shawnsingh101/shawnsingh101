@@ -6,7 +6,7 @@ import { Flag, Picture } from '../components/Picture';
 import { Icon } from '../components/Icons';
 import { wikiUrl } from '../data';
 import { LocalName } from '../components/Native';
-import { PartyPill } from '../components/Portrait';
+import { PartyPill, PersonPhoto } from '../components/Portrait';
 
 const LEVEL = ['not started', 'learning', 'known', 'mastered'];
 const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -49,7 +49,7 @@ export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClo
           <b>{c.layer === 'us' ? 'Governor & senators' : 'Leaders'}</b>
           {people.map(s => (
             <div key={s.id} className="senator-row">
-              {s.photo ? <img src={s.photo} alt={s.name} loading="lazy" /> : <span className="row-glyph"><Icon name="person" /></span>}
+              <PersonPhoto photo={s.photo} wiki={s.wiki} name={s.name} />
               <div><b>{s.name}</b> <PartyPill party={s.party} /><p className="muted small">{s.topic === 'leaders' ? s.office : s.label}{s.facts && s.topic !== 'leaders' ? ` · ${s.facts}` : ''}</p>
                 {s.incoming && <p className="small incoming-line">→ {s.incoming.name}{s.incoming.party ? ` (${s.incoming.party})` : ''} takes office {s.incoming.from}</p>}</div>
             </div>

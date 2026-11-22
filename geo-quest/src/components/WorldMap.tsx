@@ -18,6 +18,10 @@ const loadLayer = (l: Layer) => (cache[l] ??= l === 'country'
   ? import('world-atlas/countries-50m.json').then(m => m.default as unknown as Topology)
   : fetch(dataUrl(`shapes-${l}.json`)).then(r => r.json()));
 
+// State / province borders (all countries, Natural Earth admin-1): only fetched once you zoom in, as a bearing.
+let admin1P: Promise<Topology> | null = null;
+const loadAdmin1 = () => (admin1P ??= fetch(dataUrl('shapes-admin1.json')).then(r => r.json()));
+
 const W = 1000, H = 487; // world coordinate space (Equal Earth is ~2.05:1)
 const fitScale = (s: { w: number; h: number }) => Math.min(s.w / W, s.h / H);
 
@@ -138,6 +142,11 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
     return out;
   }, [topos, shapeToCountry, ds, path]);
 
+  const zoomedIn = t.k >= fitScale(size) * 2.2;
+  const [admin1, setAdmin1] = useState<Topology | null>(null);
+  useEffect(() => { if (zoomedIn && !admin1) loadAdmin1().then(setAdmin1).catch(() => {}); }, [zoomedIn, admin1]);
+  const admin1D = useMemo(() => (admin1 ? path(feature(admin1, admin1.objects.b) as unknown as Feature<Geometry>) ?? '' : ''), [admin1, path]);
+
   const visible = useMemo(() => wanted.flatMap(l => shapes[l] ?? []), [shapes, wanted.join()]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Tiny places (and countries with no shape) also get a dot that's easy to tap.
@@ -219,6 +228,29 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   }, [focus?.key, ready, size.w, size.h, lambda]);
 
   const k = t.k;
+  // Text labels (place names + pin labels like a capital): if two would overlap (Massachusetts and Boston),
+  // nudge the later one up or down until it's clear.
+  const placedLabels = (() => {
+    type L = { key: string; x: number; y: number; text: string; size: number; anchor: 'start' | 'middle'; cls: string };
+    const items: L[] = [];
+    pins.forEach((p, i) => { const xy = projection([p.lon, p.lat]); if (xy && p.label) items.push({ key: 'pin' + i, x: xy[0] + 7 / k, y: xy[1] + 4 / k, text: p.label, size: 12 / k, anchor: 'start', cls: 'pinlabel' }); });
+    for (const [id, text] of Object.entries(labels)) {
+      const s = visible.find(s => s.placeId === id);
+      const d = dots.find(d => d.placeId === id);
+      const xy = d ? [d.x, d.y - 10 / k] : s?.centroid;
+      if (xy && isFinite(xy[0])) items.push({ key: id, x: xy[0], y: xy[1], text, size: 14 / k, anchor: 'middle', cls: 'maplabel' });
+    }
+    const boxes: { x0: number; x1: number; y0: number; y1: number }[] = [];
+    for (const it of items) {
+      const w = it.text.length * it.size * 0.56, h = it.size * 1.2;
+      const box = (y: number) => ({ x0: it.anchor === 'start' ? it.x : it.x - w / 2, x1: it.anchor === 'start' ? it.x + w : it.x + w / 2, y0: y - h * 0.85, y1: y + h * 0.15 });
+      const clear = (b: ReturnType<typeof box>) => !boxes.some(o => b.x0 < o.x1 && b.x1 > o.x0 && b.y0 < o.y1 && b.y1 > o.y0);
+      const base = it.y;
+      for (const step of [0, 1, -1, 2, -2, 3, -3]) { const b = box(base + step * h); if (clear(b)) { it.y = base + step * h; break; } }
+      boxes.push(box(it.y));
+    }
+    return items;
+  })();
   const nameOf = (s: { placeId: string | null; name: string }) => (s.placeId ? ds.byId.get(s.placeId)!.name : s.name);
   const cls = (id: string | null) => (id && tones[id] ? ` tone-${tones[id]}` : '') + (id && dim?.(id) ? ' dim' : '');
   const style = (id: string | null) => { const f = id ? fill?.(id) : undefined; return f ? { fill: f } : undefined; };
@@ -258,6 +290,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {shapes.water && layers.includes('water') && shapes.water.map(s => shapeEl(s, 'water'))}
           <path d={path(geoGraticule10()) ?? ''} className="graticule" />
           {shapes.country?.map(s => shapeEl(s, 'land' + (s.placeId ? ' country' : '')))}
+          {zoomedIn && admin1D && <path d={admin1D} className="admin1" />}
           {shapes.cn && layers.includes('cn') && shapes.cn.map(s => shapeEl(s, 'land sub'))}
           {shapes.us && layers.includes('us') && shapes.us.map(s => shapeEl(s, 'land sub'))}
           {shapes.terr && layers.includes('terr') && shapes.terr.map(s => shapeEl(s, 'land sub terr'))}
@@ -279,7 +312,6 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
             if (!xy) return null;
             return <g key={i} className="pin">
               <circle cx={xy[0]} cy={xy[1]} r={4.5 / k} />
-              {p.label && <text x={xy[0] + 7 / k} y={xy[1] + 4 / k} style={{ fontSize: 12 / k, strokeWidth: 3 / k }}>{p.label}</text>}
             </g>;
           })}
           {target && (() => {
@@ -315,13 +347,9 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
               </g>
             );
           })()}
-          {Object.entries(labels).map(([id, text]) => {
-            const s = visible.find(s => s.placeId === id);
-            const d = dots.find(d => d.placeId === id);
-            const xy = d ? [d.x, d.y - 10 / k] : s?.centroid;
-            if (!xy || !isFinite(xy[0])) return null;
-            return <text key={id} className="maplabel" x={xy[0]} y={xy[1]} style={{ fontSize: 14 / k, strokeWidth: 3.5 / k }}>{text}</text>;
-          })}
+          {placedLabels.map(t => (
+            <text key={t.key} className={t.cls} x={t.x} y={t.y} style={{ fontSize: t.size, strokeWidth: t.size / 4, textAnchor: t.anchor }}>{t.text}</text>
+          ))}
         </g>
       </svg>
       {!ready && <div className="map-loading">Loading map…</div>}

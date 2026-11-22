@@ -173,4 +173,14 @@ const peakPts = elev.features.filter(f => f.properties.featurecla === 'mountain'
   .map(f => ({ id: f.properties.wikidataid, rank: f.properties.scalerank, elevation: f.properties.elevation, lon: f.geometry.coordinates[0], lat: f.geometry.coordinates[1] }));
 writeFileSync(join(ROOT, 'data/peaks-ne.json'), JSON.stringify(peakPts));
 
+// ---- state / province borders (only the lines between two units of the same country), for bearings when zoomed in ----
+{
+  const { mesh } = await import('topojson-client');
+  const a1 = admin1.features.map(f => ({ type: 'Feature', geometry: f.geometry, properties: { a: f.properties.adm0_a3 } }));
+  let t1 = presimplify(topology({ f: { type: 'FeatureCollection', features: a1 } }, 1e5));
+  t1 = simplify(t1, quantile(t1, 0.2));
+  const lines = mesh(t1, t1.objects.f, (x, y) => x !== y && x.properties.a === y.properties.a);
+  writeFileSync(join(ROOT, 'public/data/shapes-admin1.json'), JSON.stringify(topology({ b: lines }, 1e4)));
+}
+
 console.log(`Wrote ${water.length} water, ${cn.length} China, ${lakes.length} lake, ${rivers.length} river, ${us.length} US state, ${terr.length} territory, ${small.length} small-country, ${ranges.length} range features and ${peakPts.length} peaks.`);

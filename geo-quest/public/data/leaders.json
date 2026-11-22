@@ -3317,11 +3317,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Tokayev%20Address%20to%20the%20Nation%20(cropped).jpg?width=450",
-   "party": "Amanat",
-   "partyLong": "Amanat",
+   "party": "Nur Otan",
+   "partyLong": "Nur Otan",
    "wikidata": "Q200881",
    "noFace": false,
-   "facts": "President of Kazakhstan · Amanat"
+   "facts": "President of Kazakhstan · Nur Otan"
   },
   {
    "id": "L-Q232-prime-minister",
@@ -4173,11 +4173,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Claudia%20Sheinbaum%20Argentina%20v%20Spain%2019%20July%202026-283.jpg?width=450",
-   "party": "Morena",
-   "partyLong": "Morena",
+   "party": "Party of the Democratic Revolution",
+   "partyLong": "Party of the Democratic Revolution",
    "wikidata": "Q5771800",
    "noFace": false,
-   "facts": "President of Mexico · Morena"
+   "facts": "President of Mexico · Party of the Democratic Revolution"
   },
   {
    "id": "L-Q702-president",
@@ -5162,11 +5162,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Premier%20Donald%20Tusk%20KPRM.jpg?width=450",
-   "party": "European People's Party",
-   "partyLong": "European People's Party",
+   "party": "Civic Coalition",
+   "partyLong": "Civic Coalition",
    "wikidata": "Q946",
    "noFace": false,
-   "facts": "Prime Minister of Poland · European People's Party"
+   "facts": "Prime Minister of Poland · Civic Coalition"
   },
   {
    "id": "L-Q45-president",
@@ -5558,11 +5558,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%CA%BBauli%20Leuatea%20Schmidt%20in%202023.jpg?width=450",
-   "party": "Faʻatuatua i le Atua Samoa ua Tasi",
-   "partyLong": "Faʻatuatua i le Atua Samoa ua Tasi",
+   "party": "Human Rights Protection Party",
+   "partyLong": "Human Rights Protection Party",
    "wikidata": "Q16734600",
    "noFace": false,
-   "facts": "Prime Minister of Samoa · Faʻatuatua i le Atua Samoa ua Tasi"
+   "facts": "Prime Minister of Samoa · Human Rights Protection Party"
   },
   {
    "id": "L-Q1039-president",
@@ -6130,11 +6130,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dissanayake%202026.jpg?width=450",
-   "party": "National People's Power",
-   "partyLong": "National People's Power",
+   "party": "Janatha Vimukthi Peramuna",
+   "partyLong": "Janatha Vimukthi Peramuna",
    "wikidata": "Q4777855",
    "noFace": false,
-   "facts": "President of Sri Lanka · National People's Power"
+   "facts": "President of Sri Lanka · Janatha Vimukthi Peramuna"
   },
   {
    "id": "L-Q730-president",
@@ -6372,11 +6372,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Xanana%202011.jpg?width=450",
-   "party": "Revolutionary Front for an Independent East Timor",
-   "partyLong": "Revolutionary Front for an Independent East Timor",
+   "party": "National Congress for Timorese Reconstruction",
+   "partyLong": "National Congress for Timorese Reconstruction",
    "wikidata": "Q11509",
    "noFace": false,
-   "facts": "Prime Minister of Timor-Leste · Revolutionary Front for an Independent East Timor"
+   "facts": "Prime Minister of Timor-Leste · National Congress for Timorese Reconstruction"
   },
   {
    "id": "L-Q945-president",
@@ -6416,11 +6416,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/President%20of%20Togo%20Faure%20Gnassingb%C3%A9%20on%20November%2013%2C%202024%20(cropped).jpg?width=450",
-   "party": "Union for the Republic",
-   "partyLong": "Union for the Republic",
+   "party": "Rally of the Togolese People",
+   "partyLong": "Rally of the Togolese People",
    "wikidata": "Q4414",
    "noFace": false,
-   "facts": "Prime Minister of Togo · Union for the Republic"
+   "facts": "Prime Minister of Togo · Rally of the Togolese People"
   },
   {
    "id": "L-Q678-king",
@@ -6592,11 +6592,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Gurbanguly%20Berdimuhamedov%20on%20July%2016%2C%202025.jpg?width=450",
-   "party": "independent politician",
-   "partyLong": "independent politician",
+   "party": "nonpartisanism",
+   "partyLong": "nonpartisanism",
    "wikidata": "Q57530",
    "noFace": false,
-   "facts": "People's Council of Turkmenistan · Independent politician"
+   "facts": "People's Council of Turkmenistan · Nonpartisanism"
   },
   {
    "id": "L-Q874-president",
@@ -6856,11 +6856,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Yamand%C3%BA%20Orsi.jpg?width=450",
-   "party": "Movement of Popular Participation",
-   "partyLong": "Movement of Popular Participation",
+   "party": "Broad Front",
+   "partyLong": "Broad Front",
    "wikidata": "Q19946921",
    "noFace": false,
-   "facts": "President of Uruguay · Movement of Popular Participation"
+   "facts": "President of Uruguay · Broad Front"
   },
   {
    "id": "L-Q265-president",

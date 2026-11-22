@@ -165,7 +165,7 @@
    "wiki": "Appalachian_Mountains",
    "group": "m-ranges",
    "nameThe": "the Appalachian Mountains",
-   "facts": "Canada, United States, France",
+   "facts": "Canada, United States",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -382,13 +382,13 @@
   {
    "id": "Q26777",
    "layer": "range",
-   "name": "Sierra Nevada",
+   "name": "Sierra Nevada (United States)",
    "image": "Sierra Nevada surface.jpg",
    "lon": -119.57,
    "lat": 37.73,
    "wiki": "Sierra_Nevada",
    "group": "m-ranges2",
-   "nameThe": "the Sierra Nevada",
+   "nameThe": "the Sierra Nevada (United States)",
    "facts": "United States",
    "capitals": [],
    "capitalAnswer": null
@@ -478,20 +478,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q155322",
-   "layer": "range",
-   "name": "Sikhote-Alin",
-   "image": "Sopka in south Sikhote-Alin.JPG",
-   "lon": 136.167,
-   "lat": 45.333,
-   "wiki": "Sikhote-Alin",
-   "group": "m-ranges2",
-   "nameThe": "the Sikhote-Alin",
-   "facts": "Russia",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q207692",
    "layer": "range",
    "name": "Wuyi Mountains",
@@ -502,6 +488,20 @@
    "group": "m-ranges2",
    "nameThe": "the Wuyi Mountains",
    "facts": "China",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q155322",
+   "layer": "range",
+   "name": "Sikhote-Alin",
+   "image": "Sopka in south Sikhote-Alin.JPG",
+   "lon": 136.167,
+   "lat": 45.333,
+   "wiki": "Sikhote-Alin",
+   "group": "m-ranges2",
+   "nameThe": "the Sikhote-Alin",
+   "facts": "Russia",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -548,20 +548,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q584279",
-   "layer": "range",
-   "name": "High Atlas",
-   "image": "Haut Atlas vu du ciel.jpg",
-   "lon": -7.916,
-   "lat": 31.062,
-   "wiki": "High_Atlas",
-   "group": "m-ranges2",
-   "nameThe": "the High Atlas",
-   "facts": "Morocco",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q660304",
    "layer": "range",
    "name": "Pacific Coast Ranges",
@@ -572,6 +558,20 @@
    "group": "m-ranges2",
    "nameThe": "the Pacific Coast Ranges",
    "facts": "Canada, United States, Mexico",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q584279",
+   "layer": "range",
+   "name": "High Atlas",
+   "image": "Haut Atlas vu du ciel.jpg",
+   "lon": -7.916,
+   "lat": 31.062,
+   "wiki": "High_Atlas",
+   "group": "m-ranges2",
+   "nameThe": "the High Atlas",
+   "facts": "Morocco",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -590,20 +590,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q1898305",
-   "layer": "range",
-   "name": "Saharan Atlas",
-   "image": "Atlas-Mountains-Labeled-2.jpg",
-   "lon": 2,
-   "lat": 34,
-   "wiki": "Saharan_Atlas",
-   "group": "m-ranges2",
-   "nameThe": "the Saharan Atlas",
-   "facts": "Algeria",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q682334",
    "layer": "range",
    "name": "Altyn-Tagh",
@@ -614,6 +600,20 @@
    "group": "m-ranges2",
    "nameThe": "the Altyn-Tagh",
    "facts": "China",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q1898305",
+   "layer": "range",
+   "name": "Saharan Atlas",
+   "image": "Atlas-Mountains-Labeled-2.jpg",
+   "lon": 2,
+   "lat": 34,
+   "wiki": "Saharan_Atlas",
+   "group": "m-ranges2",
+   "nameThe": "the Saharan Atlas",
+   "facts": "Algeria",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -660,20 +660,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q404600",
-   "layer": "range",
-   "name": "Lesser Khingan",
-   "image": "Карьер 7.jpg",
-   "lon": 127.208,
-   "lat": 48.792,
-   "wiki": "Lesser_Khingan",
-   "group": "m-ranges2",
-   "nameThe": "the Lesser Khingan",
-   "facts": "Russia",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q1072879",
    "layer": "range",
    "name": "Qilian Mountains",
@@ -684,6 +670,20 @@
    "group": "m-ranges2",
    "nameThe": "the Qilian Mountains",
    "facts": "China",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q404600",
+   "layer": "range",
+   "name": "Lesser Khingan",
+   "image": "Карьер 7.jpg",
+   "lon": 127.208,
+   "lat": 48.792,
+   "wiki": "Lesser_Khingan",
+   "group": "m-ranges2",
+   "nameThe": "the Lesser Khingan",
+   "facts": "Russia",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -760,13 +760,13 @@
   {
    "id": "Q143014",
    "layer": "range",
-   "name": "Cordillera Oriental",
+   "name": "Cordillera Oriental (Colombia)",
    "image": "Vallecojines.jpg",
    "lon": -73,
    "lat": 6,
    "wiki": "Cordillera_Oriental_(Colombia)",
    "group": "m-ranges2",
-   "nameThe": "the Cordillera Oriental",
+   "nameThe": "the Cordillera Oriental (Colombia)",
    "facts": "Colombia",
    "capitals": [],
    "capitalAnswer": null
@@ -830,13 +830,13 @@
   {
    "id": "Q4794486",
    "layer": "range",
-   "name": "Cordillera Oriental",
+   "name": "Cordillera Oriental (Peru)",
    "image": "Andes del Perú.png",
    "lon": -74.517,
    "lat": -10.433,
    "wiki": "Cordillera_Oriental_(Peru)",
    "group": "m-ranges2",
-   "nameThe": "the Cordillera Oriental",
+   "nameThe": "the Cordillera Oriental (Peru)",
    "facts": "Peru",
    "capitals": [],
    "capitalAnswer": null
@@ -914,28 +914,14 @@
   {
    "id": "Q26955",
    "layer": "range",
-   "name": "Sierra Nevada",
+   "name": "Sierra Nevada (Spain)",
    "image": "Sierra Nevada desde el embalse del Cubillas, en Atarfe (Granada).jpg",
    "lon": -3.311,
    "lat": 37.053,
    "wiki": "Sierra_Nevada_(Spain)",
    "group": "m-ranges2",
-   "nameThe": "the Sierra Nevada",
+   "nameThe": "the Sierra Nevada (Spain)",
    "facts": "Spain",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
-   "id": "Q189915",
-   "layer": "range",
-   "name": "Dinaric Alps",
-   "image": "Orjen.jpg",
-   "lon": 16.724,
-   "lat": 44.029,
-   "wiki": "Dinaric_Alps",
-   "group": "m-ranges2",
-   "nameThe": "the Dinaric Alps",
-   "facts": "Slovenia, Albania, Croatia, Bosnia and Herzegovina, Montenegro…",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -950,6 +936,20 @@
    "group": "m-ranges2",
    "nameThe": "the Pontic Mountains",
    "facts": "Türkiye",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q189915",
+   "layer": "range",
+   "name": "Dinaric Alps",
+   "image": "Orjen.jpg",
+   "lon": 16.724,
+   "lat": 44.029,
+   "wiki": "Dinaric_Alps",
+   "group": "m-ranges2",
+   "nameThe": "the Dinaric Alps",
+   "facts": "Slovenia, Albania, Croatia, Bosnia and Herzegovina, Montenegro…",
    "capitals": [],
    "capitalAnswer": null
   },

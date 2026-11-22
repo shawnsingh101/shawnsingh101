@@ -30,7 +30,17 @@
     }
    ],
    "native": [],
-   "capitalAnswer": "Sokhumi"
+   "capitalAnswer": "Sokhumi",
+   "highest": {
+    "id": "Q768409",
+    "name": "Dombai-Ulgen",
+    "elevation": 4046,
+    "lon": 41.726,
+    "lat": 43.244,
+    "image": "Dombay-Ulgen, Caucasus Mountains, Dombay, Karachay-Cherkessia.jpg",
+    "wiki": "Dombay-Ulgen",
+    "note": null
+   }
   },
   {
    "id": "Q889",
@@ -75,6 +85,16 @@
     }
    ],
    "capitalAnswer": "Kabul",
+   "highest": {
+    "id": "Q271700",
+    "name": "Noshaq",
+    "elevation": 7492,
+    "lon": 71.828,
+    "lat": 36.432,
+    "image": "Mount Noshaq seen from the base camp (photo Louis Meunier).jpg",
+    "wiki": "Noshaq",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q199471",
@@ -82,7 +102,8 @@
      "code": "AFN",
      "symbol": "؋",
      "wiki": "Afghan_afghani",
-     "shared": 1
+     "shared": 1,
+     "image": "1000 Afghani banknote of Afghanistan back and front.jpg"
     }
    ],
    "largestCity": {
@@ -140,6 +161,16 @@
     }
    ],
    "capitalAnswer": "Tirana",
+   "highest": {
+    "id": "Q912579",
+    "name": "Korab",
+    "elevation": 2764,
+    "lon": 20.547,
+    "lat": 41.79,
+    "image": "Panair Korab.jpg",
+    "wiki": "Mount_Korab",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q125999",
@@ -147,7 +178,8 @@
      "code": "ALL",
      "symbol": "L",
      "wiki": "Albanian_lek",
-     "shared": 1
+     "shared": 1,
+     "image": "Albania-5000.jpg"
     }
    ],
    "largestCity": {
@@ -211,6 +243,16 @@
     }
    ],
    "capitalAnswer": "Algiers",
+   "highest": {
+    "id": "Q822326",
+    "name": "Mount Tahat",
+    "elevation": 2918,
+    "lon": 5.534,
+    "lat": 23.289,
+    "image": "Tahat matin.jpg",
+    "wiki": "Mount_Tahat",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q199674",
@@ -218,7 +260,8 @@
      "code": "DZD",
      "symbol": "DA",
      "wiki": "Algerian_dinar",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -270,6 +313,16 @@
    ],
    "native": [],
    "capitalAnswer": "Andorra la Vella",
+   "highest": {
+    "id": "Q62467",
+    "name": "Coma Pedrosa",
+    "elevation": 2942,
+    "lon": 1.444,
+    "lat": 42.592,
+    "image": "Comapedrosa01.jpg",
+    "wiki": "Coma_Pedrosa",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -277,7 +330,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -323,6 +377,16 @@
    ],
    "native": [],
    "capitalAnswer": "Luanda",
+   "highest": {
+    "id": "Q1348116",
+    "name": "Mount Moco",
+    "elevation": 2619,
+    "lon": 15.183,
+    "lat": -12.467,
+    "image": "Moco.JPG",
+    "wiki": "Mount_Moco",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q200337",
@@ -330,7 +394,8 @@
      "code": "AOA",
      "symbol": "Kz",
      "wiki": "Angolan_kwanza",
-     "shared": 1
+     "shared": 1,
+     "image": "Bank note of 50 Angolan kwanzas.jpg"
     }
    ],
    "largestCity": {
@@ -376,6 +441,16 @@
    ],
    "native": [],
    "capitalAnswer": "St. John's",
+   "highest": {
+    "id": "Q1718336",
+    "name": "Mount Obama",
+    "elevation": 402,
+    "lon": -61.85,
+    "lat": 17.05,
+    "image": "Boggy Peak.JPG",
+    "wiki": "Boggy_Peak",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q26365",
@@ -383,7 +458,8 @@
      "code": "XCD",
      "symbol": "EC$",
      "wiki": "Eastern_Caribbean_dollar",
-     "shared": 6
+     "shared": 6,
+     "image": "East caribbean states eccb 5 dollars 2019.00.00 b240 pnl ad 000000 f.jpg"
     }
    ],
    "largestCity": {
@@ -429,6 +505,16 @@
    ],
    "native": [],
    "capitalAnswer": "Buenos Aires",
+   "highest": {
+    "id": "Q39739",
+    "name": "Aconcagua",
+    "elevation": 6962,
+    "lon": -70.012,
+    "lat": -32.653,
+    "image": "Aconcagua2016.jpg",
+    "wiki": "Aconcagua",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q199578",
@@ -436,7 +522,8 @@
      "code": "ARS",
      "symbol": "$",
      "wiki": "Argentine_peso",
-     "shared": 1
+     "shared": 1,
+     "image": "Argentina Currency.png"
     }
    ],
    "largestCity": {
@@ -500,6 +587,16 @@
     }
    ],
    "capitalAnswer": "Yerevan",
+   "highest": {
+    "id": "Q203568",
+    "name": "Mount Aragats",
+    "elevation": 4090,
+    "lon": 44.195,
+    "lat": 40.523,
+    "image": "Mount Aragats 2020-05-11.jpg",
+    "wiki": "Mount_Aragats",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q130498",
@@ -507,7 +604,8 @@
      "code": "AMD",
      "symbol": "֏",
      "wiki": "Armenian_dram",
-     "shared": 1
+     "shared": 1,
+     "image": "1000 dram 2018 Obverse.jpg"
     }
    ],
    "largestCity": {
@@ -559,6 +657,16 @@
    ],
    "native": [],
    "capitalAnswer": "Canberra",
+   "highest": {
+    "id": "Q2114101",
+    "name": "Mawson Peak",
+    "elevation": 2745,
+    "lon": 73.518,
+    "lat": -53.104,
+    "image": "Heard.jpg",
+    "wiki": "Mawson_Peak",
+    "note": "On remote Heard Island, an Australian external territory — the mainland's highest is Mount Kosciuszko (2,228 m)"
+   },
    "currency": [
     {
      "id": "Q259502",
@@ -566,7 +674,8 @@
      "code": "AUD",
      "symbol": "AU$",
      "wiki": "Australian_dollar",
-     "shared": 2
+     "shared": 2,
+     "image": "2018 Australian fifty dollar note obverse.jpg"
     }
    ],
    "largestCity": {
@@ -624,6 +733,16 @@
     }
    ],
    "capitalAnswer": "Vienna",
+   "highest": {
+    "id": "Q3388",
+    "name": "Grossglockner",
+    "elevation": 3798,
+    "lon": 12.694,
+    "lat": 47.075,
+    "image": "Großglockner1.jpg",
+    "wiki": "Grossglockner",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -631,7 +750,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -709,6 +829,16 @@
     }
    ],
    "capitalAnswer": "Baku",
+   "highest": {
+    "id": "Q725591",
+    "name": "Mount Bazardüzü",
+    "elevation": 4466,
+    "lon": 47.858,
+    "lat": 41.22,
+    "image": "Bazarduzu detail.JPG",
+    "wiki": "Mount_Bazardüzü",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q483725",
@@ -716,7 +846,8 @@
      "code": "AZN",
      "symbol": "₼",
      "wiki": "Azerbaijani_manat",
-     "shared": 1
+     "shared": 1,
+     "image": "1 manat - 2020 - obv.jpg"
     }
    ],
    "largestCity": {
@@ -772,6 +903,16 @@
    ],
    "native": [],
    "capitalAnswer": "Nassau",
+   "highest": {
+    "id": "Q746274",
+    "name": "Mount Alvernia",
+    "elevation": 63,
+    "lon": -75.408,
+    "lat": 24.294,
+    "image": "The Hermitage, Cat Island, Bahamas.jpg",
+    "wiki": "Mount_Alvernia",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q194339",
@@ -779,7 +920,8 @@
      "code": "BSD",
      "symbol": "B$",
      "wiki": "Bahamian_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -843,6 +985,16 @@
     }
    ],
    "capitalAnswer": "Manama",
+   "highest": {
+    "id": "Q1032812",
+    "name": "Mountain of Smoke",
+    "elevation": 134,
+    "lon": 50.543,
+    "lat": 26.039,
+    "image": null,
+    "wiki": "Mountain_of_Smoke",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q201871",
@@ -850,7 +1002,8 @@
      "code": "BHD",
      "symbol": "BD",
      "wiki": "Bahraini_dinar",
-     "shared": 1
+     "shared": 1,
+     "image": "Бахрейн 1.jpg"
     }
    ],
    "largestCity": {
@@ -920,6 +1073,16 @@
     }
    ],
    "capitalAnswer": "Dhaka",
+   "highest": {
+    "id": "Q2696459",
+    "name": "Mowdok tiang",
+    "elevation": 1054,
+    "lon": 92.61,
+    "lat": 21.787,
+    "image": "Saka Haphong.jpg",
+    "wiki": "Saka_Haphong",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q194453",
@@ -927,7 +1090,8 @@
      "code": "BDT",
      "symbol": "৳",
      "wiki": "Bangladeshi_taka",
-     "shared": 1
+     "shared": 1,
+     "image": "Taka_Banknotes_specimen.jpg"
     }
    ],
    "largestCity": {
@@ -979,6 +1143,16 @@
    ],
    "native": [],
    "capitalAnswer": "Bridgetown",
+   "highest": {
+    "id": "Q1854502",
+    "name": "Mount Hillaby",
+    "elevation": 340,
+    "lon": -59.583,
+    "lat": 13.211,
+    "image": null,
+    "wiki": "Mount_Hillaby",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q194351",
@@ -986,7 +1160,8 @@
      "code": "BBD",
      "symbol": "BBD$",
      "wiki": "Barbadian_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "A Barbadian 100 Dollar bill with various Barbadian coins on it.jpg"
     }
    ],
    "largestCity": {
@@ -1054,6 +1229,16 @@
     }
    ],
    "capitalAnswer": "Minsk",
+   "highest": {
+    "id": "Q921447",
+    "name": "Dziaržynkaja hara",
+    "elevation": 345,
+    "lon": 27.066,
+    "lat": 53.849,
+    "image": "Dziaržynskaja hara.jpg",
+    "wiki": "Dzyarzhynskaya_Hara",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q21531507",
@@ -1061,7 +1246,8 @@
      "code": "BYN",
      "symbol": null,
      "wiki": "Belarusian_ruble",
-     "shared": 1
+     "shared": 1,
+     "image": "200 Belarus 2009 front.jpg"
     }
    ],
    "largestCity": {
@@ -1159,6 +1345,16 @@
     }
    ],
    "capitalAnswer": "Brussels",
+   "highest": {
+    "id": "Q322824",
+    "name": "Signal de Botrange",
+    "elevation": 694,
+    "lon": 6.093,
+    "lat": 50.502,
+    "image": "Signal de Botrange - panoramio.jpg",
+    "wiki": "Signal_de_Botrange",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -1166,7 +1362,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -1238,6 +1435,16 @@
     }
    ],
    "capitalAnswer": "Belmopan",
+   "highest": {
+    "id": "Q47490",
+    "name": "Doyle's Delight",
+    "elevation": 1124,
+    "lon": -89.05,
+    "lat": 16.5,
+    "image": "Doyle's Delight.jpg",
+    "wiki": "Doyle's_Delight",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q275112",
@@ -1245,7 +1452,8 @@
      "code": "BZD",
      "symbol": "Bz$",
      "wiki": "Belize_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "Belize dollar $2 banknote 2025 issue, front.jpg"
     }
    ],
    "largestCity": {
@@ -1315,6 +1523,16 @@
    ],
    "capitalAnswer": "Porto-Novo (official capital), though the government sits in Cotonou",
    "capitalNote": null,
+   "highest": {
+    "id": "Q923330",
+    "name": "Mont Sokbaro",
+    "elevation": 658,
+    "lon": 1.416,
+    "lat": 9.328,
+    "image": null,
+    "wiki": "Mont_Sokbaro",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q861690",
@@ -1322,7 +1540,8 @@
      "code": "XOF",
      "symbol": "F",
      "wiki": "West_African_CFA_franc",
-     "shared": 8
+     "shared": 8,
+     "image": "BCEAOFranc.png"
     }
    ],
    "largestCity": {
@@ -1386,6 +1605,16 @@
     }
    ],
    "capitalAnswer": "Thimphu",
+   "highest": {
+    "id": "Q219986",
+    "name": "Gangkhar Puensum",
+    "elevation": 7570,
+    "lon": 90.455,
+    "lat": 28.047,
+    "image": "Himalayan peak from Bumthang.jpg",
+    "wiki": "Gangkhar_Puensum",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q201799",
@@ -1393,7 +1622,8 @@
      "code": "BTN",
      "symbol": "Nu",
      "wiki": "Bhutanese_ngultrum",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -1484,6 +1714,16 @@
    ],
    "capitalAnswer": "both La Paz (seat of government) and Sucre (constitutional capital)",
    "capitalNote": null,
+   "highest": {
+    "id": "Q272593",
+    "name": "Nevado Sajama",
+    "elevation": 6542,
+    "lon": -68.883,
+    "lat": -18.108,
+    "image": "Nevado Sajama.jpg",
+    "wiki": "Nevado_Sajama",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q200737",
@@ -1491,7 +1731,8 @@
      "code": "BOB",
      "symbol": "Bs",
      "wiki": "Bolivian_boliviano",
-     "shared": 1
+     "shared": 1,
+     "image": "Bolivianos moneda.png"
     }
    ],
    "largestCity": {
@@ -1554,6 +1795,16 @@
     }
    ],
    "capitalAnswer": "Sarajevo",
+   "highest": {
+    "id": "Q837723",
+    "name": "Maglić",
+    "elevation": 2386,
+    "lon": 18.733,
+    "lat": 43.281,
+    "image": "Trnovačko jezero, Maglić.jpg",
+    "wiki": "Maglić_(mountain)",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q179620",
@@ -1561,7 +1812,8 @@
      "code": "BAM",
      "symbol": "KM",
      "wiki": "Bosnia_and_Herzegovina_convertible_mark",
-     "shared": 1
+     "shared": 1,
+     "image": "Konvertibilne marke vertikalno.png"
     }
    ],
    "largestCity": {
@@ -1607,6 +1859,16 @@
    ],
    "native": [],
    "capitalAnswer": "Gaborone",
+   "highest": {
+    "id": "Q3491942",
+    "name": "Otse Hill",
+    "elevation": 1491,
+    "lon": 25.726,
+    "lat": -25.018,
+    "image": "Lovers mountains.jpg",
+    "wiki": "Otse_Hill",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q186794",
@@ -1614,7 +1876,8 @@
      "code": "BWP",
      "symbol": "P",
      "wiki": "Botswana_pula",
-     "shared": 1
+     "shared": 1,
+     "image": "Botswana 2-pula banknote (1980s).png"
     }
    ],
    "largestCity": {
@@ -1666,6 +1929,16 @@
     }
    ],
    "capitalAnswer": "Brasília",
+   "highest": {
+    "id": "Q739484",
+    "name": "Pico da Neblina",
+    "elevation": 2994,
+    "lon": -66.005,
+    "lat": 0.805,
+    "image": "Pico da Neblina (FAB).jpg",
+    "wiki": "Pico_da_Neblina",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q173117",
@@ -1673,7 +1946,8 @@
      "code": "BRL",
      "symbol": "R$",
      "wiki": "Brazilian_real",
-     "shared": 1
+     "shared": 1,
+     "image": "Novas cedulas real thumb11-450x309.jpg"
     }
    ],
    "largestCity": {
@@ -1731,6 +2005,16 @@
     }
    ],
    "capitalAnswer": "Bandar Seri Begawan",
+   "highest": {
+    "id": "Q1003282",
+    "name": "Bukit Pagon",
+    "elevation": 1850,
+    "lon": 115.333,
+    "lat": 4.3,
+    "image": "SunriseOverBukitPagonAC1.jpg",
+    "wiki": "Bukit_Pagon",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q206319",
@@ -1738,7 +2022,8 @@
      "code": "BND",
      "symbol": "B$",
      "wiki": "Brunei_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "1 Brunei dollar (BND) note, front (fair use).jpg"
     }
    ],
    "largestCity": {
@@ -1802,6 +2087,16 @@
     }
    ],
    "capitalAnswer": "Sofia",
+   "highest": {
+    "id": "Q209341",
+    "name": "Musala",
+    "elevation": 2925,
+    "lon": 23.585,
+    "lat": 42.179,
+    "image": "Musala.JPG",
+    "wiki": "Musala",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -1809,7 +2104,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -1861,6 +2157,16 @@
    ],
    "native": [],
    "capitalAnswer": "Ouagadougou",
+   "highest": {
+    "id": "Q116675",
+    "name": "Mount Tenakourou",
+    "elevation": 749,
+    "lon": -5.417,
+    "lat": 10.75,
+    "image": "Mt Tenakourou MS 1954.JPG",
+    "wiki": "Mount_Tenakourou",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q861690",
@@ -1868,7 +2174,8 @@
      "code": "XOF",
      "symbol": "F",
      "wiki": "West_African_CFA_franc",
-     "shared": 8
+     "shared": 8,
+     "image": "BCEAOFranc.png"
     }
    ],
    "largestCity": {
@@ -1920,6 +2227,16 @@
     }
    ],
    "capitalAnswer": "Gitega",
+   "highest": {
+    "id": "Q1649074",
+    "name": "Mount Heha",
+    "elevation": 2684,
+    "lon": 29.499,
+    "lat": -3.603,
+    "image": "Mont Heha Cropped.jpg",
+    "wiki": "Mount_Heha",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q238007",
@@ -1927,7 +2244,8 @@
      "code": "BIF",
      "symbol": "FBu",
      "wiki": "Burundian_franc",
-     "shared": 1
+     "shared": 1,
+     "image": "Burundi 10Franc Front.jpg"
     }
    ],
    "largestCity": {
@@ -1985,6 +2303,16 @@
     }
    ],
    "capitalAnswer": "Phnom Penh",
+   "highest": {
+    "id": "Q539772",
+    "name": "Phnom Aural",
+    "elevation": 1813,
+    "lon": 104.171,
+    "lat": 12.032,
+    "image": "Phom Aoral.jpg",
+    "wiki": "Phnom_Aural",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q204737",
@@ -1992,7 +2320,8 @@
      "code": "KHR",
      "symbol": "៛",
      "wiki": "Cambodian_riel",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -2044,6 +2373,16 @@
     }
    ],
    "capitalAnswer": "Yaoundé",
+   "highest": {
+    "id": "Q190562",
+    "name": "Mount Cameroon",
+    "elevation": 4095,
+    "lon": 9.172,
+    "lat": 4.217,
+    "image": "Le Char des Dieux - Fako Mountain - Mount Cameroon National Park - Région du Sud-ouest.jpg",
+    "wiki": "Mount_Cameroon",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q847739",
@@ -2051,7 +2390,8 @@
      "code": "XAF",
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
-     "shared": 6
+     "shared": 6,
+     "image": "CFA.jpg"
     }
    ],
    "largestCity": {
@@ -2103,6 +2443,16 @@
    ],
    "native": [],
    "capitalAnswer": "Ottawa",
+   "highest": {
+    "id": "Q120306",
+    "name": "Mount Logan",
+    "elevation": 5959,
+    "lon": -140.405,
+    "lat": 60.567,
+    "image": "Mount Logan.jpg",
+    "wiki": "Mount_Logan",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q1104069",
@@ -2110,7 +2460,8 @@
      "code": "CAD",
      "symbol": "C$",
      "wiki": "Canadian_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "Canadian Frontier Banknotes faces.png"
     }
    ],
    "largestCity": {
@@ -2162,6 +2513,16 @@
     }
    ],
    "capitalAnswer": "Praia",
+   "highest": {
+    "id": "Q499108",
+    "name": "Pico do Fogo",
+    "elevation": 2829,
+    "lon": -24.34,
+    "lat": 14.949,
+    "image": "Pico-94-117-13.jpg",
+    "wiki": "Pico_do_Fogo",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4591",
@@ -2169,7 +2530,8 @@
      "code": "CVE",
      "symbol": null,
      "wiki": "Cape_Verdean_escudo",
-     "shared": 1
+     "shared": 1,
+     "image": "Cape Verde BCV 1000 escudos 2024.07.10 B224a PNL FN 259763 f.jpg"
     }
    ],
    "largestCity": {
@@ -2238,6 +2600,16 @@
     }
    ],
    "capitalAnswer": "Bangui",
+   "highest": {
+    "id": "Q2422162",
+    "name": "Mont Ngaoui",
+    "elevation": 1410,
+    "lon": 14.95,
+    "lat": 6.74,
+    "image": null,
+    "wiki": "Mont_Ngaoui",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q847739",
@@ -2245,7 +2617,8 @@
      "code": "XAF",
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
-     "shared": 6
+     "shared": 6,
+     "image": "CFA.jpg"
     }
    ],
    "largestCity": {
@@ -2319,6 +2692,16 @@
     }
    ],
    "capitalAnswer": "N'Djamena",
+   "highest": {
+    "id": "Q257441",
+    "name": "Emi Koussi",
+    "elevation": 3445,
+    "lon": 18.551,
+    "lat": 19.789,
+    "image": "Emi Koussi Volcano, Chad From ISS.JPG",
+    "wiki": "Emi_Koussi",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q847739",
@@ -2326,7 +2709,8 @@
      "code": "XAF",
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
-     "shared": 6
+     "shared": 6,
+     "image": "CFA.jpg"
     }
    ],
    "largestCity": {
@@ -2382,6 +2766,16 @@
    ],
    "native": [],
    "capitalAnswer": "Santiago",
+   "highest": {
+    "id": "Q233836",
+    "name": "Ojos del Salado",
+    "elevation": 6893,
+    "lon": -68.541,
+    "lat": -27.11,
+    "image": "Ojos del Salado summit.jpg",
+    "wiki": "Ojos_del_Salado",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q200050",
@@ -2389,7 +2783,8 @@
      "code": "CLP",
      "symbol": "CLP$",
      "wiki": "Chilean_peso",
-     "shared": 1
+     "shared": 1,
+     "image": "Billetes de Chile.png"
     }
    ],
    "largestCity": {
@@ -2453,6 +2848,16 @@
     }
    ],
    "capitalAnswer": "Beijing",
+   "highest": {
+    "id": "Q513",
+    "name": "Mount Everest",
+    "elevation": 8849,
+    "lon": 86.925,
+    "lat": 27.988,
+    "image": "Mount Everest as seen from Drukair2 PLW edit.jpg",
+    "wiki": "Mount_Everest",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q39099",
@@ -2460,7 +2865,8 @@
      "code": "CNY",
      "symbol": "¥",
      "wiki": "Renminbi",
-     "shared": 1
+     "shared": 1,
+     "image": "Banknotes YuanRPC.png"
     }
    ],
    "largestCity": {
@@ -2512,6 +2918,16 @@
    ],
    "native": [],
    "capitalAnswer": "Bogotá",
+   "highest": {
+    "id": "Q338790",
+    "name": "Pico Simón Bolívar",
+    "elevation": 5775,
+    "lon": -73.691,
+    "lat": 10.834,
+    "image": "Pico Simon Bolivar.webp",
+    "wiki": "Pico_Simón_Bolívar",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q244819",
@@ -2519,7 +2935,8 @@
      "code": "COP",
      "symbol": "COL$",
      "wiki": "Colombian_peso",
-     "shared": 1
+     "shared": 1,
+     "image": "Colombia Currency.png"
     }
    ],
    "largestCity": {
@@ -2586,6 +3003,16 @@
     }
    ],
    "capitalAnswer": "Moroni",
+   "highest": {
+    "id": "Q527548",
+    "name": "Mount Karthala",
+    "elevation": 2361,
+    "lon": 43.353,
+    "lat": -11.76,
+    "image": "Karthala volcano-Comoros.jpg",
+    "wiki": "Mount_Karthala",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q267264",
@@ -2593,7 +3020,8 @@
      "code": "KMF",
      "symbol": "CF",
      "wiki": "Comorian_franc",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -2649,6 +3077,16 @@
    ],
    "native": [],
    "capitalAnswer": "San José",
+   "highest": {
+    "id": "Q252362",
+    "name": "Cerro Chirripó",
+    "elevation": 3820,
+    "lon": -83.489,
+    "lat": 9.484,
+    "image": "Picture 1191.jpg",
+    "wiki": "Cerro_Chirripó",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q242915",
@@ -2656,7 +3094,8 @@
      "code": "CRC",
      "symbol": "₡",
      "wiki": "Costa_Rican_colón",
-     "shared": 1
+     "shared": 1,
+     "image": "Reverso billete 5 colones.png"
     }
    ],
    "largestCity": {
@@ -2708,6 +3147,16 @@
     }
    ],
    "capitalAnswer": "Zagreb",
+   "highest": {
+    "id": "Q3183447",
+    "name": "Dinara",
+    "elevation": 1831,
+    "lon": 16.383,
+    "lat": 44.062,
+    "image": "Sinjal.jpg",
+    "wiki": null,
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -2715,7 +3164,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -2761,6 +3211,16 @@
    ],
    "native": [],
    "capitalAnswer": "Havana",
+   "highest": {
+    "id": "Q1145743",
+    "name": "Pico Turquino",
+    "elevation": 1974,
+    "lon": -76.836,
+    "lat": 19.989,
+    "image": "PicoTurquino.jpg",
+    "wiki": "Pico_Turquino",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q201505",
@@ -2768,7 +3228,8 @@
      "code": "CUP",
      "symbol": "$MN",
      "wiki": "Cuban_peso",
-     "shared": 1
+     "shared": 1,
+     "image": "CUB-69b-República de Cuba-one silver peso (1936).jpg"
     }
    ],
    "largestCity": {
@@ -2842,6 +3303,16 @@
     }
    ],
    "capitalAnswer": "Nicosia",
+   "highest": {
+    "id": "Q819979",
+    "name": "Mount Olympus",
+    "elevation": 1952,
+    "lon": 32.864,
+    "lat": 34.937,
+    "image": "Troodos mountains.jpg",
+    "wiki": "Mount_Olympus_(Cyprus)",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -2849,7 +3320,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -2919,6 +3391,16 @@
     }
    ],
    "capitalAnswer": "Prague",
+   "highest": {
+    "id": "Q617511",
+    "name": "Sněžka",
+    "elevation": 1603,
+    "lon": 15.74,
+    "lat": 50.736,
+    "image": "Śnieżka z zachodu.jpg",
+    "wiki": "Sněžka",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q131016",
@@ -2926,7 +3408,8 @@
      "code": "CZK",
      "symbol": "Kč",
      "wiki": "Czech_koruna",
-     "shared": 1
+     "shared": 1,
+     "image": "CZK_Banknotes_2014.png"
     }
    ],
    "largestCity": {
@@ -2996,6 +3479,16 @@
     }
    ],
    "capitalAnswer": "Copenhagen",
+   "highest": {
+    "id": "Q689106",
+    "name": "Møllehøj",
+    "elevation": 171,
+    "lon": 9.826,
+    "lat": 55.977,
+    "image": "Møllehøj from Ejer Bavnehøj.jpg",
+    "wiki": "Møllehøj",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q25417",
@@ -3003,7 +3496,8 @@
      "code": "DKK",
      "symbol": "kr",
      "wiki": "Danish_krone",
-     "shared": 1
+     "shared": 1,
+     "image": "DKK 500 obverse (2009).jpg"
     }
    ],
    "largestCity": {
@@ -3067,6 +3561,16 @@
     }
    ],
    "capitalAnswer": "Djibouti",
+   "highest": {
+    "id": "Q1951029",
+    "name": "Mousa Ali",
+    "elevation": 2028,
+    "lon": 42.405,
+    "lat": 12.471,
+    "image": "Gufa volcanic field.jpg",
+    "wiki": "Mousa_Ali",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4594",
@@ -3074,7 +3578,8 @@
      "code": "DJF",
      "symbol": "Fdj",
      "wiki": "Djiboutian_franc",
-     "shared": 1
+     "shared": 1,
+     "image": "[[File:5 djiboutian francs.jpg"
     }
    ],
    "largestCity": {
@@ -3120,6 +3625,16 @@
    ],
    "native": [],
    "capitalAnswer": "Roseau",
+   "highest": {
+    "id": "Q1638549",
+    "name": "Morne Diablotins",
+    "elevation": 1447,
+    "lon": -61.397,
+    "lat": 15.503,
+    "image": "Morne Diablotins.jpg",
+    "wiki": "Morne_Diablotins",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q26365",
@@ -3127,7 +3642,8 @@
      "code": "XCD",
      "symbol": "EC$",
      "wiki": "Eastern_Caribbean_dollar",
-     "shared": 6
+     "shared": 6,
+     "image": "East caribbean states eccb 5 dollars 2019.00.00 b240 pnl ad 000000 f.jpg"
     }
    ],
    "largestCity": {
@@ -3179,6 +3695,16 @@
     }
    ],
    "capitalAnswer": "Santo Domingo",
+   "highest": {
+    "id": "Q783742",
+    "name": "Pico Duarte",
+    "elevation": 3101,
+    "lon": -71.005,
+    "lat": 19.033,
+    "image": "Pico Duarte.jpg",
+    "wiki": "Pico_Duarte",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q242922",
@@ -3186,7 +3712,8 @@
      "code": "DOP",
      "symbol": "RD$",
      "wiki": "Dominican_peso",
-     "shared": 1
+     "shared": 1,
+     "image": "Dop2014notes 2000 front.png"
     }
    ],
    "largestCity": {
@@ -3265,6 +3792,16 @@
     }
    ],
    "capitalAnswer": "Kinshasa",
+   "highest": {
+    "id": "Q221666",
+    "name": "Mount Stanley",
+    "elevation": 5109,
+    "lon": 29.872,
+    "lat": 0.386,
+    "image": "Mount Stanley.jpg",
+    "wiki": "Mount_Stanley",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4734",
@@ -3272,7 +3809,8 @@
      "code": "CDF",
      "symbol": "CF",
      "wiki": "Congolese_franc",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -3318,6 +3856,16 @@
    ],
    "native": [],
    "capitalAnswer": "Quito",
+   "highest": {
+    "id": "Q14081",
+    "name": "Chimborazo",
+    "elevation": 6263,
+    "lon": -78.817,
+    "lat": -1.469,
+    "image": "Volcán Chimborazo desde Riobamba.jpg",
+    "wiki": "Chimborazo",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4917",
@@ -3325,7 +3873,8 @@
      "code": "USD",
      "symbol": "$",
      "wiki": "United_States_dollar",
-     "shared": 5
+     "shared": 5,
+     "image": "USDnotesNew.png"
     }
    ],
    "largestCity": {
@@ -3389,6 +3938,16 @@
     }
    ],
    "capitalAnswer": "Cairo",
+   "highest": {
+    "id": "Q1140642",
+    "name": "Mount Catherine",
+    "elevation": 2637,
+    "lon": 33.955,
+    "lat": 28.511,
+    "image": "Sinai-Mosesberg-168-Blick zum Katharinenberg-2009-gje.jpg",
+    "wiki": "Mount_Catherine",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q199462",
@@ -3396,7 +3955,8 @@
      "code": "EGP",
      "symbol": "LE",
      "wiki": "Egyptian_pound",
-     "shared": 1
+     "shared": 1,
+     "image": "EGP 200 Pounds Apr 2007 (Back).jpg"
     }
    ],
    "largestCity": {
@@ -3448,6 +4008,16 @@
    ],
    "native": [],
    "capitalAnswer": "San Salvador",
+   "highest": {
+    "id": "Q74214",
+    "name": "Cerro El Pital",
+    "elevation": 2730,
+    "lon": -89.117,
+    "lat": 14.383,
+    "image": "Cerro El Pital, Chalatenango.JPG",
+    "wiki": "Cerro_El_Pital",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q131723",
@@ -3455,7 +4025,8 @@
      "code": null,
      "symbol": "₿",
      "wiki": "Bitcoin",
-     "shared": 1
+     "shared": 1,
+     "image": "Bitcoin.svg"
     }
    ],
    "largestCity": {
@@ -3517,6 +4088,16 @@
     }
    ],
    "capitalAnswer": "Ciudad de la Paz",
+   "highest": {
+    "id": "Q1518286",
+    "name": "Pico Basilé",
+    "elevation": 3011,
+    "lon": 8.767,
+    "lat": 3.583,
+    "image": "Pico Basilé.jpg",
+    "wiki": "Pico_Basilé",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q847739",
@@ -3524,7 +4105,8 @@
      "code": "XAF",
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
-     "shared": 6
+     "shared": 6,
+     "image": "CFA.jpg"
     }
    ],
    "largestCity": {
@@ -3592,6 +4174,16 @@
     }
    ],
    "capitalAnswer": "Asmara",
+   "highest": {
+    "id": "Q1753730",
+    "name": "Emba Soira",
+    "elevation": 3018,
+    "lon": 39.533,
+    "lat": 14.75,
+    "image": null,
+    "wiki": "Emba_Soira",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q171503",
@@ -3599,7 +4191,8 @@
      "code": "ERN",
      "symbol": "Nfk",
      "wiki": "Eritrean_nakfa",
-     "shared": 1
+     "shared": 1,
+     "image": "Banknotes of Eritrea 02.JPG"
     }
    ],
    "largestCity": {
@@ -3651,6 +4244,16 @@
     }
    ],
    "capitalAnswer": "Tallinn",
+   "highest": {
+    "id": "Q504991",
+    "name": "Suur Munamägi",
+    "elevation": 317,
+    "lon": 27.06,
+    "lat": 57.714,
+    "image": "Haanja kõrgustik.jpg",
+    "wiki": "Suur_Munamägi",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -3658,7 +4261,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -3722,6 +4326,16 @@
    "native": [],
    "capitalAnswer": "both Mbabane (administrative) and Lobamba (royal and legislative)",
    "capitalNote": null,
+   "highest": {
+    "id": "Q1337951",
+    "name": "Emlembe",
+    "elevation": 1862,
+    "lon": 31.133,
+    "lat": -25.917,
+    "image": "Emlembe (2).jpg",
+    "wiki": "Emlembe",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4823",
@@ -3729,7 +4343,8 @@
      "code": "SZL",
      "symbol": "E",
      "wiki": "Swazi_lilangeni",
-     "shared": 1
+     "shared": 1,
+     "image": "Coins-of-swaziland.JPG"
     }
    ],
    "largestCity": {
@@ -3787,6 +4402,16 @@
     }
    ],
    "capitalAnswer": "Addis Ababa",
+   "highest": {
+    "id": "Q275435",
+    "name": "Ras Dashen",
+    "elevation": 4533,
+    "lon": 38.373,
+    "lat": 13.237,
+    "image": "Dejen misura da cima W.jpg",
+    "wiki": "Ras_Dashen",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q206243",
@@ -3794,7 +4419,8 @@
      "code": "ETB",
      "symbol": "Br",
      "wiki": "Ethiopian_birr",
-     "shared": 1
+     "shared": 1,
+     "image": "Ethiopia 1Birr Reverse.jpg"
     }
    ],
    "largestCity": {
@@ -3851,6 +4477,16 @@
     }
    ],
    "capitalAnswer": "Suva",
+   "highest": {
+    "id": "Q1513944",
+    "name": "Mount Tomanivi",
+    "elevation": 1324,
+    "lon": 178.017,
+    "lat": -17.633,
+    "image": "Vitilevu topo.jpg",
+    "wiki": "Mount_Tomanivi",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4592",
@@ -3858,7 +4494,8 @@
      "code": "FJD",
      "symbol": "FJ$",
      "wiki": "Fijian_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "New5fijidollar.png"
     }
    ],
    "largestCity": {
@@ -3910,6 +4547,16 @@
     }
    ],
    "capitalAnswer": "Helsinki",
+   "highest": {
+    "id": "Q216035",
+    "name": "Halti",
+    "elevation": 1361,
+    "lon": 21.286,
+    "lat": 69.313,
+    "image": "Haltitunturi.jpg",
+    "wiki": "Halti",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -3917,7 +4564,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -3969,6 +4617,16 @@
    ],
    "native": [],
    "capitalAnswer": "Paris",
+   "highest": {
+    "id": "Q583",
+    "name": "Mont Blanc",
+    "elevation": 4806,
+    "lon": 6.865,
+    "lat": 45.833,
+    "image": "Panorama of Mont Blanc du Tacul, Mont Maudit and Mont Blanc from Aiguille du Midi, Chamonix, Haute-Savoie.jpg",
+    "wiki": "Mont_Blanc",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -3976,7 +4634,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -4022,6 +4681,16 @@
    ],
    "native": [],
    "capitalAnswer": "Libreville",
+   "highest": {
+    "id": "Q3210770",
+    "name": "Mont Bengoué",
+    "elevation": 1070,
+    "lon": 13.686,
+    "lat": 0.955,
+    "image": null,
+    "wiki": "Mont_Bengoué",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q847739",
@@ -4029,7 +4698,8 @@
      "code": "XAF",
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
-     "shared": 6
+     "shared": 6,
+     "image": "CFA.jpg"
     }
    ],
    "largestCity": {
@@ -4082,7 +4752,8 @@
      "code": "GMD",
      "symbol": "D",
      "wiki": "Gambian_dalasi",
-     "shared": 1
+     "shared": 1,
+     "image": "Gambia-billet-monedes.jpg"
     }
    ],
    "largestCity": {
@@ -4146,6 +4817,16 @@
     }
    ],
    "capitalAnswer": "Tbilisi",
+   "highest": {
+    "id": "Q217457",
+    "name": "Shkhara",
+    "elevation": 5193,
+    "lon": 43.112,
+    "lat": 42.999,
+    "image": "Shahara peak near Ushguli 1870.jpg",
+    "wiki": "Shkhara",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4608",
@@ -4153,7 +4834,8 @@
      "code": "GEL",
      "symbol": "₾",
      "wiki": "Georgian_lari",
-     "shared": 1
+     "shared": 1,
+     "image": "20 lari. Georgia, 2016 a.png"
     }
    ],
    "largestCity": {
@@ -4211,6 +4893,16 @@
     }
    ],
    "capitalAnswer": "Berlin",
+   "highest": {
+    "id": "Q3375",
+    "name": "Zugspitze",
+    "elevation": 2962,
+    "lon": 10.986,
+    "lat": 47.421,
+    "image": "Zugspitzmassiv-von-Almkopf-2024.jpg",
+    "wiki": "Zugspitze",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -4218,7 +4910,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -4270,6 +4963,16 @@
    ],
    "native": [],
    "capitalAnswer": "Accra",
+   "highest": {
+    "id": "Q635179",
+    "name": "Mount Afadja",
+    "elevation": 885,
+    "lon": 0.566,
+    "lat": 7.021,
+    "image": null,
+    "wiki": "Mount_Afadja",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q183530",
@@ -4277,7 +4980,8 @@
      "code": "GHS",
      "symbol": "₵",
      "wiki": "Ghanaian_cedi",
-     "shared": 1
+     "shared": 1,
+     "image": "Ghana Cedi banknotes.jpg"
     }
    ],
    "largestCity": {
@@ -4341,6 +5045,16 @@
     }
    ],
    "capitalAnswer": "Athens",
+   "highest": {
+    "id": "Q80344",
+    "name": "Mount Olympus",
+    "elevation": 2918,
+    "lon": 22.35,
+    "lat": 40.083,
+    "image": "Mt Olympus aerial 2.jpg",
+    "wiki": "Mount_Olympus",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -4348,7 +5062,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -4394,6 +5109,16 @@
    ],
    "native": [],
    "capitalAnswer": "St. George's",
+   "highest": {
+    "id": "Q525281",
+    "name": "Mount Saint Catherine",
+    "elevation": 840,
+    "lon": -61.675,
+    "lat": 12.162,
+    "image": "Mount Saint Catherine Summit.jpg",
+    "wiki": "Mount_Saint_Catherine_(Grenada)",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q26365",
@@ -4401,7 +5126,8 @@
      "code": "XCD",
      "symbol": "EC$",
      "wiki": "Eastern_Caribbean_dollar",
-     "shared": 6
+     "shared": 6,
+     "image": "East caribbean states eccb 5 dollars 2019.00.00 b240 pnl ad 000000 f.jpg"
     }
    ],
    "largestCity": {
@@ -4447,6 +5173,16 @@
    ],
    "native": [],
    "capitalAnswer": "Guatemala City",
+   "highest": {
+    "id": "Q818467",
+    "name": "Volcán Tajumulco",
+    "elevation": 4203,
+    "lon": -91.9,
+    "lat": 15.033,
+    "image": "Tajumulco volcano 01.jpg",
+    "wiki": "Volcán_Tajumulco",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q207396",
@@ -4454,7 +5190,8 @@
      "code": "GTQ",
      "symbol": "Q",
      "wiki": "Guatemalan_quetzal",
-     "shared": 1
+     "shared": 1,
+     "image": "Billete Q1 Anverso.jpg"
     }
    ],
    "largestCity": {
@@ -4506,6 +5243,16 @@
     }
    ],
    "capitalAnswer": "Conakry",
+   "highest": {
+    "id": "Q849129",
+    "name": "Mount Richard-Molard",
+    "elevation": 1752,
+    "lon": -8.408,
+    "lat": 7.623,
+    "image": "Mont Nimba 01.jpg",
+    "wiki": "Mount_Richard-Molard",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q213311",
@@ -4513,7 +5260,8 @@
      "code": "GNF",
      "symbol": "FG",
      "wiki": "Guinean_franc",
-     "shared": 1
+     "shared": 1,
+     "image": "GNF5000.jpg"
     }
    ],
    "largestCity": {
@@ -4571,6 +5319,16 @@
     }
    ],
    "capitalAnswer": "Bissau",
+   "highest": {
+    "id": "Q109837809",
+    "name": "Monte Torin",
+    "elevation": 262,
+    "lon": -13.708,
+    "lat": 12.675,
+    "image": null,
+    "wiki": null,
+    "note": null
+   },
    "currency": [
     {
      "id": "Q861690",
@@ -4578,7 +5336,8 @@
      "code": "XOF",
      "symbol": "F",
      "wiki": "West_African_CFA_franc",
-     "shared": 8
+     "shared": 8,
+     "image": "BCEAOFranc.png"
     }
    ],
    "largestCity": {
@@ -4630,6 +5389,16 @@
    ],
    "native": [],
    "capitalAnswer": "Georgetown",
+   "highest": {
+    "id": "Q4777",
+    "name": "Mount Roraima",
+    "elevation": 2810,
+    "lon": -60.764,
+    "lat": 5.142,
+    "image": "Roraima3 (79).JPG",
+    "wiki": "Mount_Roraima",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q213005",
@@ -4637,7 +5406,8 @@
      "code": "GYD",
      "symbol": "GY$",
      "wiki": "Guyanese_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "GYDnotes.png"
     }
    ],
    "largestCity": {
@@ -4700,6 +5470,16 @@
     }
    ],
    "capitalAnswer": "Port-au-Prince",
+   "highest": {
+    "id": "Q1971319",
+    "name": "Peak la Selle",
+    "elevation": 2674,
+    "lon": -71.983,
+    "lat": 18.367,
+    "image": "Pic La Selle, point culminant d'Haïti.jpg",
+    "wiki": "Pic_la_Selle",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q203955",
@@ -4707,7 +5487,8 @@
      "code": "HTG",
      "symbol": "Gde.",
      "wiki": "Haitian_gourde",
-     "shared": 1
+     "shared": 1,
+     "image": "250G.png"
     }
    ],
    "largestCity": {
@@ -4759,6 +5540,16 @@
    ],
    "native": [],
    "capitalAnswer": "Tegucigalpa",
+   "highest": {
+    "id": "Q1055875",
+    "name": "Cerro Las Minas",
+    "elevation": 2849,
+    "lon": -88.68,
+    "lat": 14.534,
+    "image": "Celaque.JPG",
+    "wiki": "Cerro_Las_Minas",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4719",
@@ -4766,7 +5557,8 @@
      "code": "HNL",
      "symbol": "L",
      "wiki": "Honduran_lempira",
-     "shared": 1
+     "shared": 1,
+     "image": "Lempiras 20 y 100.jpg"
     }
    ],
    "largestCity": {
@@ -4818,6 +5610,16 @@
     }
    ],
    "capitalAnswer": "Budapest",
+   "highest": {
+    "id": "Q747618",
+    "name": "Kékes",
+    "elevation": 1014,
+    "lon": 20.013,
+    "lat": 47.872,
+    "image": "Kékestető 2023. április képek10.jpg",
+    "wiki": "Kékes",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q47190",
@@ -4825,7 +5627,8 @@
      "code": "HUF",
      "symbol": "Ft",
      "wiki": "Hungarian_forint",
-     "shared": 1
+     "shared": 1,
+     "image": "Uj forintok.png"
     }
    ],
    "largestCity": {
@@ -4883,6 +5686,16 @@
     }
    ],
    "capitalAnswer": "Reykjavík",
+   "highest": {
+    "id": "Q140084",
+    "name": "Hvannadalshnúkur",
+    "elevation": 2110,
+    "lon": -16.678,
+    "lat": 64.014,
+    "image": "Oraefajokull-Vatnajokull National Park.JPG",
+    "wiki": "Hvannadalshnjúkur",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q131473",
@@ -4890,7 +5703,8 @@
      "code": "ISK",
      "symbol": "kr",
      "wiki": "Icelandic_króna",
-     "shared": 1
+     "shared": 1,
+     "image": "Iceland 500 Kronur banknote of 1928.jpg"
     }
    ],
    "largestCity": {
@@ -4960,6 +5774,16 @@
     }
    ],
    "capitalAnswer": "New Delhi",
+   "highest": {
+    "id": "Q82019",
+    "name": "Kanchenjunga",
+    "elevation": 8586,
+    "lon": 88.147,
+    "lat": 27.703,
+    "image": "Kangchenjunga, India.jpg",
+    "wiki": "Kangchenjunga",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q80524",
@@ -4967,7 +5791,8 @@
      "code": "INR",
      "symbol": "₹",
      "wiki": "Indian_rupee",
-     "shared": 1
+     "shared": 1,
+     "image": "Banknote of india.png"
     }
    ],
    "largestCity": {
@@ -5019,6 +5844,16 @@
    ],
    "native": [],
    "capitalAnswer": "Jakarta",
+   "highest": {
+    "id": "Q1045888",
+    "name": "Puncak Jaya",
+    "elevation": 4884,
+    "lon": 137.183,
+    "lat": -4.083,
+    "image": "Puncakjaya.jpg",
+    "wiki": "Puncak_Jaya",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q41588",
@@ -5026,7 +5861,8 @@
      "code": "IDR",
      "symbol": "Rp",
      "wiki": "Indonesian_rupiah",
-     "shared": 1
+     "shared": 1,
+     "image": "Rupiah Tahun Emisi 2022.jpg"
     }
    ],
    "largestCity": {
@@ -5090,6 +5926,16 @@
     }
    ],
    "capitalAnswer": "Tehran",
+   "highest": {
+    "id": "Q40758",
+    "name": "Damavand",
+    "elevation": 5628,
+    "lon": 52.109,
+    "lat": 35.955,
+    "image": "981012-Damavand-South-IMG 9861-2.jpg",
+    "wiki": "Mount_Damavand",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q188608",
@@ -5097,7 +5943,8 @@
      "code": "IRR",
      "symbol": "﷼",
      "wiki": "Iranian_rial",
-     "shared": 1
+     "shared": 1,
+     "image": "Iranian Rial.svg"
     }
    ],
    "largestCity": {
@@ -5181,6 +6028,16 @@
     }
    ],
    "capitalAnswer": "Baghdad",
+   "highest": {
+    "id": "Q1068860",
+    "name": "Cheekha Dar",
+    "elevation": 3611,
+    "lon": 44.919,
+    "lat": 36.775,
+    "image": "Cheekhedar.jpg",
+    "wiki": "Cheekha_Dar",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q193094",
@@ -5188,7 +6045,8 @@
      "code": "IQD",
      "symbol": "د.ع",
      "wiki": "Iraqi_dinar",
-     "shared": 1
+     "shared": 1,
+     "image": "Dinar-25000.jpg"
     }
    ],
    "largestCity": {
@@ -5252,6 +6110,16 @@
     }
    ],
    "capitalAnswer": "Dublin",
+   "highest": {
+    "id": "Q503368",
+    "name": "Carrauntoohil",
+    "elevation": 1039,
+    "lon": -9.743,
+    "lat": 51.999,
+    "image": "Carrauntoohil 2016.JPG",
+    "wiki": "Carrauntoohil",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -5259,7 +6127,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -5338,6 +6207,16 @@
    ],
    "capitalAnswer": "Jerusalem",
    "capitalNote": "Israel's capital status is disputed; most countries keep their embassies in Tel Aviv.",
+   "highest": {
+    "id": "Q540520",
+    "name": "Meron",
+    "elevation": 1208,
+    "lon": 35.414,
+    "lat": 32.998,
+    "image": "Northern slope of Mount Meron.jpg",
+    "wiki": "Mount_Meron",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q131309",
@@ -5345,7 +6224,8 @@
      "code": "ILS",
      "symbol": "₪",
      "wiki": "Israeli_new_shekel",
-     "shared": 2
+     "shared": 2,
+     "image": "השטרות החדשים של ישראל.jpg"
     }
    ],
    "largestCity": {
@@ -5419,6 +6299,16 @@
     }
    ],
    "capitalAnswer": "Rome",
+   "highest": {
+    "id": "Q583",
+    "name": "Mont Blanc",
+    "elevation": 4806,
+    "lon": 6.865,
+    "lat": 45.833,
+    "image": "Panorama of Mont Blanc du Tacul, Mont Maudit and Mont Blanc from Aiguille du Midi, Chamonix, Haute-Savoie.jpg",
+    "wiki": "Mont_Blanc",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -5426,7 +6316,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -5484,6 +6375,16 @@
     }
    ],
    "capitalAnswer": "Yamoussoukro",
+   "highest": {
+    "id": "Q849129",
+    "name": "Mount Richard-Molard",
+    "elevation": 1752,
+    "lon": -8.408,
+    "lat": 7.623,
+    "image": "Mont Nimba 01.jpg",
+    "wiki": "Mount_Richard-Molard",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q861690",
@@ -5491,7 +6392,8 @@
      "code": "XOF",
      "symbol": "F",
      "wiki": "West_African_CFA_franc",
-     "shared": 8
+     "shared": 8,
+     "image": "BCEAOFranc.png"
     }
    ],
    "largestCity": {
@@ -5543,6 +6445,16 @@
    ],
    "native": [],
    "capitalAnswer": "Kingston",
+   "highest": {
+    "id": "Q885798",
+    "name": "Blue Mountain Peak",
+    "elevation": 2256,
+    "lon": -76.579,
+    "lat": 18.047,
+    "image": "Blue Mountain Peak.jpg",
+    "wiki": "Blue_Mountain_Peak",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q209792",
@@ -5550,7 +6462,8 @@
      "code": "JMD",
      "symbol": "J$",
      "wiki": "Jamaican_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "Jamaica 100 Dollar observe.jpg"
     }
    ],
    "largestCity": {
@@ -5614,6 +6527,16 @@
     }
    ],
    "capitalAnswer": "Tokyo",
+   "highest": {
+    "id": "Q39231",
+    "name": "Mount Fuji",
+    "elevation": 3777,
+    "lon": 138.727,
+    "lat": 35.361,
+    "image": "Kodaki fuji frm shojinko refurb.jpg",
+    "wiki": "Mount_Fuji",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q8146",
@@ -5621,7 +6544,8 @@
      "code": "JPY",
      "symbol": "¥",
      "wiki": "Japanese_yen",
-     "shared": 1
+     "shared": 1,
+     "image": "Series F 10000 yen front.jpg"
     }
    ],
    "largestCity": {
@@ -5685,6 +6609,16 @@
     }
    ],
    "capitalAnswer": "Amman",
+   "highest": {
+    "id": "Q1261902",
+    "name": "Jabal Umm ad Dami",
+    "elevation": 1854,
+    "lon": 35.429,
+    "lat": 29.308,
+    "image": "Djebel Umm ad Dami.jpg",
+    "wiki": "Jabal_Umm_ad_Dami",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q203722",
@@ -5692,7 +6626,8 @@
      "code": "JOD",
      "symbol": "JD",
      "wiki": "Jordanian_dinar",
-     "shared": 1
+     "shared": 1,
+     "image": "Jordanian currency.jpg"
     }
    ],
    "largestCity": {
@@ -5761,6 +6696,16 @@
     }
    ],
    "capitalAnswer": "Astana",
+   "highest": {
+    "id": "Q211529",
+    "name": "Khan Tengri",
+    "elevation": 7010,
+    "lon": 80.175,
+    "lat": 42.211,
+    "image": "Peak of Khan Tengri at sunset.jpg",
+    "wiki": "Khan_Tengri",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q173751",
@@ -5768,7 +6713,8 @@
      "code": "KZT",
      "symbol": "₸",
      "wiki": "Kazakhstani_tenge",
-     "shared": 1
+     "shared": 1,
+     "image": "Сакский стиль 20000-ос.jpg"
     }
    ],
    "largestCity": {
@@ -5824,6 +6770,16 @@
    ],
    "native": [],
    "capitalAnswer": "Nairobi",
+   "highest": {
+    "id": "Q172070",
+    "name": "Mount Kenya",
+    "elevation": 5199,
+    "lon": 37.2,
+    "lat": -0.1,
+    "image": "Mount kenya.JPG",
+    "wiki": "Mount_Kenya",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q202882",
@@ -5831,7 +6787,8 @@
      "code": "KES",
      "symbol": "Ksh",
      "wiki": "Kenyan_shilling",
-     "shared": 1
+     "shared": 1,
+     "image": "New-Generation-100-Shillings-Observe.png"
     }
    ],
    "largestCity": {
@@ -5877,6 +6834,16 @@
    ],
    "native": [],
    "capitalAnswer": "South Tarawa",
+   "highest": {
+    "id": "Q271901",
+    "name": "Banaba Island",
+    "elevation": 81,
+    "lon": 169.537,
+    "lat": -0.859,
+    "image": "19 Map of Banaba, Kiribati.jpg",
+    "wiki": "Banaba",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q1049963",
@@ -5884,7 +6851,8 @@
      "code": null,
      "symbol": "$",
      "wiki": "Kiribati_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "Kiribati Coins.JPG"
     }
    ],
    "largestCity": {
@@ -5930,6 +6898,16 @@
    ],
    "native": [],
    "capitalAnswer": "Pristina",
+   "highest": {
+    "id": "Q341983",
+    "name": "Gjeravica",
+    "elevation": 2656,
+    "lon": 20.141,
+    "lat": 42.533,
+    "image": "Đeravica.jpg",
+    "wiki": "Gjeravica",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -5937,7 +6915,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -5995,6 +6974,16 @@
     }
    ],
    "capitalAnswer": "Kuwait City",
+   "highest": {
+    "id": "Q4116111",
+    "name": "Mutla Ridge",
+    "elevation": 140,
+    "lon": 47.668,
+    "lat": 29.414,
+    "image": "US Navy 021231-A-3447F-001 Seabees make their way up Mutla Ridge during a 7-mile march on New Year's Eve, 2002.jpg",
+    "wiki": "Mutla_Ridge",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q193098",
@@ -6002,7 +6991,8 @@
      "code": "KWD",
      "symbol": "د.ك",
      "wiki": "Kuwaiti_dinar",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -6077,6 +7067,16 @@
     }
    ],
    "capitalAnswer": "Bishkek",
+   "highest": {
+    "id": "Q332762",
+    "name": "Jengish Chokusu",
+    "elevation": 7439,
+    "lon": 80.129,
+    "lat": 42.035,
+    "image": "Jengish Chokusu from BC.jpg",
+    "wiki": "Jengish_Chokusu",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q35881",
@@ -6084,7 +7084,8 @@
      "code": "KGS",
      "symbol": "⃀",
      "wiki": "Kyrgyz_som",
-     "shared": 1
+     "shared": 1,
+     "image": "100 som 2016 ob.jpg"
     }
    ],
    "largestCity": {
@@ -6158,6 +7159,16 @@
     }
    ],
    "capitalAnswer": "Vientiane",
+   "highest": {
+    "id": "Q239485",
+    "name": "Phou Bia",
+    "elevation": 2819,
+    "lon": 103.133,
+    "lat": 18.983,
+    "image": "PhouBia from Nam Ngum Lake.jpg",
+    "wiki": "Phou_Bia",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q200055",
@@ -6165,7 +7176,8 @@
      "code": "LAK",
      "symbol": "₭",
      "wiki": "Lao_kip",
-     "shared": 1
+     "shared": 1,
+     "image": "[[File:1000 Laotian kip in 2003 Obverse.jpg"
     }
    ],
    "largestCity": {
@@ -6235,6 +7247,16 @@
     }
    ],
    "capitalAnswer": "Riga",
+   "highest": {
+    "id": "Q1122342",
+    "name": "Gaiziņkalns",
+    "elevation": 312,
+    "lon": 25.959,
+    "lat": 56.87,
+    "image": "Gaiziņkalns-aeropanorama - panoramio.jpg",
+    "wiki": "Gaiziņkalns",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -6242,7 +7264,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -6326,6 +7349,16 @@
     }
    ],
    "capitalAnswer": "Beirut",
+   "highest": {
+    "id": "Q311330",
+    "name": "Qurnat as Sawda'",
+    "elevation": 3088,
+    "lon": 36.117,
+    "lat": 34.3,
+    "image": "Qurnat As Sawda top of Lebanon 9 June 1985-EF-Bild-33.JPG",
+    "wiki": "Qurnat_as_Sawda'",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q201880",
@@ -6333,7 +7366,8 @@
      "code": "LBP",
      "symbol": "ل.ل.",
      "wiki": "Lebanese_pound",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -6389,6 +7423,16 @@
    ],
    "native": [],
    "capitalAnswer": "Maseru",
+   "highest": {
+    "id": "Q733132",
+    "name": "Thabana Ntlenyana",
+    "elevation": 3482,
+    "lon": 29.267,
+    "lat": -29.467,
+    "image": "Thabana Ntlenyana.jpeg",
+    "wiki": "Thabana_Ntlenyana",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q208039",
@@ -6396,7 +7440,8 @@
      "code": "LSL",
      "symbol": "M",
      "wiki": "Lesotho_loti",
-     "shared": 1
+     "shared": 1,
+     "image": "Lesotho 200 maloti averse 2015.jpg"
     }
    ],
    "largestCity": {
@@ -6442,6 +7487,16 @@
    ],
    "native": [],
    "capitalAnswer": "Monrovia",
+   "highest": {
+    "id": "Q1950836",
+    "name": "Mount Wuteve",
+    "elevation": 1440,
+    "lon": -9.925,
+    "lat": 8.146,
+    "image": null,
+    "wiki": "Mount_Wuteve",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q242988",
@@ -6449,7 +7504,8 @@
      "code": "LRD",
      "symbol": "L$",
      "wiki": "Liberian_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "Lib5$.png"
     }
    ],
    "largestCity": {
@@ -6513,6 +7569,16 @@
     }
    ],
    "capitalAnswer": "Tripoli",
+   "highest": {
+    "id": "Q860146",
+    "name": "Bikku Bitti",
+    "elevation": 2267,
+    "lon": 19.207,
+    "lat": 22.004,
+    "image": "Bikku Bitti ASTER.jpg",
+    "wiki": "Bikku_Bitti",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q190699",
@@ -6520,7 +7586,8 @@
      "code": "LYD",
      "symbol": "LD",
      "wiki": "Libyan_dinar",
-     "shared": 1
+     "shared": 1,
+     "image": "Libyan bills.jpg"
     }
    ],
    "largestCity": {
@@ -6572,6 +7639,16 @@
    ],
    "native": [],
    "capitalAnswer": "Vaduz",
+   "highest": {
+    "id": "Q665000",
+    "name": "Grauspitz",
+    "elevation": 2599,
+    "lon": 9.581,
+    "lat": 47.053,
+    "image": "Grauspitzen.JPG",
+    "wiki": "Grauspitz",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q25344",
@@ -6579,7 +7656,8 @@
      "code": "CHF",
      "symbol": "Fr",
      "wiki": "Swiss_franc",
-     "shared": 2
+     "shared": 2,
+     "image": "CHF Banknotes 9th series obverse.png"
     }
    ],
    "largestCity": {
@@ -6631,6 +7709,16 @@
     }
    ],
    "capitalAnswer": "Vilnius",
+   "highest": {
+    "id": "Q771431",
+    "name": "Aukštojas Hill",
+    "elevation": 294,
+    "lon": 25.634,
+    "lat": 54.529,
+    "image": "Aukstojo kalnas.JPG",
+    "wiki": "Aukštojas_Hill",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -6638,7 +7726,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -6716,6 +7805,16 @@
     }
    ],
    "capitalAnswer": "Luxembourg",
+   "highest": {
+    "id": "Q24457",
+    "name": "Kneiff",
+    "elevation": 560,
+    "lon": 6.037,
+    "lat": 50.157,
+    "image": "Kneiff.jpg",
+    "wiki": "Kneiff",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -6723,7 +7822,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -6781,6 +7881,16 @@
     }
    ],
    "capitalAnswer": "Antananarivo",
+   "highest": {
+    "id": "Q1147144",
+    "name": "Maromokotro",
+    "elevation": 2876,
+    "lon": 48.966,
+    "lat": -14.023,
+    "image": "Maromokotro.jpg",
+    "wiki": "Maromokotro",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4584",
@@ -6788,7 +7898,8 @@
      "code": "MGA",
      "symbol": "Ar",
      "wiki": "Malagasy_ariary",
-     "shared": 1
+     "shared": 1,
+     "image": "Madagascar BFM 20000 ariary.jpg"
     }
    ],
    "largestCity": {
@@ -6840,6 +7951,16 @@
     }
    ],
    "capitalAnswer": "Lilongwe",
+   "highest": {
+    "id": "Q1510436",
+    "name": "Mulanje Massif",
+    "elevation": 3002,
+    "lon": 35.65,
+    "lat": -15.9,
+    "image": "Mulanje ETM 26may02.jpg",
+    "wiki": "Mulanje_Massif",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q211694",
@@ -6847,7 +7968,8 @@
      "code": "MWK",
      "symbol": "MK",
      "wiki": "Malawian_kwacha",
-     "shared": 1
+     "shared": 1,
+     "image": "MWK2000v.jpg"
     }
    ],
    "largestCity": {
@@ -6911,6 +8033,16 @@
    ],
    "capitalAnswer": "Kuala Lumpur (official capital), though the government sits in Putrajaya",
    "capitalNote": null,
+   "highest": {
+    "id": "Q60967",
+    "name": "Mount Kinabalu",
+    "elevation": 4095,
+    "lon": 116.559,
+    "lat": 6.075,
+    "image": "Kinabalu Sabah Borneo Kampong Kundasang 2.jpg",
+    "wiki": "Mount_Kinabalu",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q163712",
@@ -6918,7 +8050,8 @@
      "code": "MYR",
      "symbol": "RM",
      "wiki": "Malaysian_ringgit",
-     "shared": 1
+     "shared": 1,
+     "image": "New Malaysian Currency Design.jpg"
     }
    ],
    "largestCity": {
@@ -6982,6 +8115,16 @@
     }
    ],
    "capitalAnswer": "Malé",
+   "highest": {
+    "id": "Q176749",
+    "name": "Villingili",
+    "elevation": 5,
+    "lon": 73.485,
+    "lat": 4.173,
+    "image": "Villingili (Malé).jpg",
+    "wiki": "Villingili_(Villimalé)",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q206600",
@@ -6989,7 +8132,8 @@
      "code": "MVR",
      "symbol": "Rf",
      "wiki": "Maldivian_rufiyaa",
-     "shared": 1
+     "shared": 1,
+     "image": "1 Maldivian rufiyaa coin.jpg"
     }
    ],
    "largestCity": {
@@ -7035,6 +8179,16 @@
    ],
    "native": [],
    "capitalAnswer": "Bamako",
+   "highest": {
+    "id": "Q1454300",
+    "name": "Mount Hombori",
+    "elevation": 1153,
+    "lon": -1.669,
+    "lat": 15.257,
+    "image": "Hombori Tondo.jpg",
+    "wiki": "Mount_Hombori",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q861690",
@@ -7042,7 +8196,8 @@
      "code": "XOF",
      "symbol": "F",
      "wiki": "West_African_CFA_franc",
-     "shared": 8
+     "shared": 8,
+     "image": "BCEAOFranc.png"
     }
    ],
    "largestCity": {
@@ -7088,6 +8243,16 @@
    ],
    "native": [],
    "capitalAnswer": "Valletta",
+   "highest": {
+    "id": "Q1850604",
+    "name": "Ta' Dmejrek",
+    "elevation": 253,
+    "lon": 14.396,
+    "lat": 35.846,
+    "image": "Dingli Cliffs 2009.JPG",
+    "wiki": "Ta'_Dmejrek",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -7095,7 +8260,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -7147,6 +8313,16 @@
     }
    ],
    "capitalAnswer": "Majuro",
+   "highest": {
+    "id": "Q518353",
+    "name": "Likiep Atoll",
+    "elevation": 10,
+    "lon": 169.143,
+    "lat": 9.885,
+    "image": "Likiepatoll.jpg",
+    "wiki": "Likiep_Atoll",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q96051466",
@@ -7154,7 +8330,8 @@
      "code": null,
      "symbol": null,
      "wiki": null,
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -7212,6 +8389,16 @@
     }
    ],
    "capitalAnswer": "Nouakchott",
+   "highest": {
+    "id": "Q2595789",
+    "name": "Kediet ej Jill",
+    "elevation": 915,
+    "lon": -12.575,
+    "lat": 22.654,
+    "image": "Kediet-ej-jill.jpg",
+    "wiki": "Kediet_ej_Jill",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q207024",
@@ -7219,7 +8406,8 @@
      "code": "MRU",
      "symbol": "UM",
      "wiki": "Mauritanian_ouguiya",
-     "shared": 1
+     "shared": 1,
+     "image": "MRU coins.jpg"
     }
    ],
    "largestCity": {
@@ -7294,6 +8482,16 @@
     }
    ],
    "capitalAnswer": "Port Louis",
+   "highest": {
+    "id": "Q1760978",
+    "name": "Piton de la Petite Rivière Noire",
+    "elevation": 828,
+    "lon": 57.408,
+    "lat": -20.409,
+    "image": "Rempart Mt..jpg",
+    "wiki": "Piton_de_la_Petite_Rivière_Noire",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q212967",
@@ -7301,7 +8499,8 @@
      "code": "MUR",
      "symbol": "₨",
      "wiki": "Mauritian_rupee",
-     "shared": 1
+     "shared": 1,
+     "image": "Mauritian rupees 100.png"
     }
    ],
    "largestCity": {
@@ -7371,6 +8570,16 @@
     }
    ],
    "capitalAnswer": "Mexico City",
+   "highest": {
+    "id": "Q238147",
+    "name": "Citlaltepetl",
+    "elevation": 5636,
+    "lon": -97.27,
+    "lat": 19.03,
+    "image": "Pico de Orizaba desde Hidalgo, Puebla.jpg",
+    "wiki": "Pico_de_Orizaba",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4730",
@@ -7378,7 +8587,8 @@
      "code": "MXN",
      "symbol": "$",
      "wiki": "Mexican_peso",
-     "shared": 1
+     "shared": 1,
+     "image": "Mexican Currency.png"
     }
    ],
    "largestCity": {
@@ -7430,6 +8640,16 @@
    ],
    "native": [],
    "capitalAnswer": "Palikir",
+   "highest": {
+    "id": "Q1236265",
+    "name": "Dolohmwar",
+    "elevation": 791,
+    "lon": 158.237,
+    "lat": 6.855,
+    "image": null,
+    "wiki": "Dolohmwar",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4917",
@@ -7437,7 +8657,8 @@
      "code": "USD",
      "symbol": "$",
      "wiki": "United_States_dollar",
-     "shared": 5
+     "shared": 5,
+     "image": "USDnotesNew.png"
     }
    ],
    "largestCity": {
@@ -7483,6 +8704,16 @@
    ],
    "native": [],
    "capitalAnswer": "Chișinău",
+   "highest": {
+    "id": "Q47940",
+    "name": "Bălănești Hill",
+    "elevation": 430,
+    "lon": 28.092,
+    "lat": 47.218,
+    "image": "Dealul Bălănești 2.JPG",
+    "wiki": "Bălănești_Hill",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q181129",
@@ -7490,7 +8721,8 @@
      "code": "MDL",
      "symbol": "L",
      "wiki": "Moldovan_leu",
-     "shared": 1
+     "shared": 1,
+     "image": "MD_100_lei_av.jpg"
     }
    ],
    "largestCity": {
@@ -7536,6 +8768,16 @@
    ],
    "native": [],
    "capitalAnswer": "Monaco",
+   "highest": {
+    "id": "Q1069352",
+    "name": "Chemin des Révoires",
+    "elevation": 162,
+    "lon": 7.412,
+    "lat": 43.733,
+    "image": "MonacoLibreDeDroits.jpg",
+    "wiki": "Chemin_des_Révoires",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -7543,7 +8785,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -7601,6 +8844,16 @@
     }
    ],
    "capitalAnswer": "Ulaanbaatar",
+   "highest": {
+    "id": "Q1091113",
+    "name": "Hüiten Peak",
+    "elevation": 4374,
+    "lon": 87.819,
+    "lat": 49.146,
+    "image": "Ukok Plateau 2.jpg",
+    "wiki": "Khüiten_Peak",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q183435",
@@ -7608,7 +8861,8 @@
      "code": "MNT",
      "symbol": "₮",
      "wiki": "Mongolian_tögrög",
-     "shared": 1
+     "shared": 1,
+     "image": "20000 Togrog.jpg"
     }
    ],
    "largestCity": {
@@ -7666,6 +8920,16 @@
     }
    ],
    "capitalAnswer": "Podgorica",
+   "highest": {
+    "id": "Q2720697",
+    "name": "Zla Kolata",
+    "elevation": 2534,
+    "lon": 19.896,
+    "lat": 42.485,
+    "image": "Zla Kolata.JPG",
+    "wiki": "Zla_Kolata",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -7673,7 +8937,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -7747,6 +9012,16 @@
     }
    ],
    "capitalAnswer": "Rabat",
+   "highest": {
+    "id": "Q503433",
+    "name": "Jbel Toubkal",
+    "elevation": 4167,
+    "lon": -7.916,
+    "lat": 31.062,
+    "image": "Toubkal 7.90965W 31.05231N.jpg",
+    "wiki": "Toubkal",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q200192",
@@ -7754,7 +9029,8 @@
      "code": "MAD",
      "symbol": "DH",
      "wiki": "Moroccan_dirham",
-     "shared": 1
+     "shared": 1,
+     "image": "100_dirham.jpg"
     }
    ],
    "largestCity": {
@@ -7812,6 +9088,16 @@
     }
    ],
    "capitalAnswer": "Maputo",
+   "highest": {
+    "id": "Q1353678",
+    "name": "Monte Binga",
+    "elevation": 2436,
+    "lon": 33.061,
+    "lat": -19.774,
+    "image": "Mt Binga Mozambique.JPG",
+    "wiki": "Monte_Binga",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q200753",
@@ -7819,7 +9105,8 @@
      "code": "MZN",
      "symbol": "MT",
      "wiki": "Mozambican_metical",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -7883,6 +9170,16 @@
     }
    ],
    "capitalAnswer": "Naypyidaw",
+   "highest": {
+    "id": "Q870063",
+    "name": "Hkakabo Razi",
+    "elevation": 5881,
+    "lon": 97.467,
+    "lat": 28.333,
+    "image": "Hkakabo Razi Burma 29 Sept 2015 Landsat 8 ETM + Channels 654 panchromatic sharpened.jpg",
+    "wiki": "Hkakabo_Razi",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q201875",
@@ -7890,7 +9187,8 @@
      "code": "MMK",
      "symbol": "K",
      "wiki": "Myanmar_kyat",
-     "shared": 1
+     "shared": 1,
+     "image": "2020MyanmarKyat.png"
     }
    ],
    "largestCity": {
@@ -7948,6 +9246,16 @@
     }
    ],
    "capitalAnswer": "Windhoek",
+   "highest": {
+    "id": "Q897834",
+    "name": "Brandberg",
+    "elevation": 2573,
+    "lon": 14.578,
+    "lat": -21.149,
+    "image": "Brand hires trimmed.jpg",
+    "wiki": "Brandberg_Mountain",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q202462",
@@ -7955,7 +9263,8 @@
      "code": "NAD",
      "symbol": "N$",
      "wiki": "Namibian_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "Coins NAD 2005.jpg"
     }
    ],
    "largestCity": {
@@ -8001,6 +9310,16 @@
    ],
    "native": [],
    "capitalAnswer": "Yaren District",
+   "highest": {
+    "id": "Q2667931",
+    "name": "Command Ridge",
+    "elevation": 71,
+    "lon": 166.917,
+    "lat": -0.531,
+    "image": "Nauru-WWIIrelic.jpg",
+    "wiki": "Command_Ridge",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q259502",
@@ -8008,7 +9327,8 @@
      "code": "AUD",
      "symbol": "AU$",
      "wiki": "Australian_dollar",
-     "shared": 2
+     "shared": 2,
+     "image": "2018 Australian fifty dollar note obverse.jpg"
     }
    ],
    "largestCity": {
@@ -8066,6 +9386,16 @@
     }
    ],
    "capitalAnswer": "Kathmandu",
+   "highest": {
+    "id": "Q513",
+    "name": "Mount Everest",
+    "elevation": 8849,
+    "lon": 86.925,
+    "lat": 27.988,
+    "image": "Mount Everest as seen from Drukair2 PLW edit.jpg",
+    "wiki": "Mount_Everest",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q202895",
@@ -8073,7 +9403,8 @@
      "code": "NPR",
      "symbol": "N₨",
      "wiki": "Nepalese_rupee",
-     "shared": 1
+     "shared": 1,
+     "image": "NPR 1000 (obverse).jpg"
     }
    ],
    "largestCity": {
@@ -8125,6 +9456,16 @@
     }
    ],
    "capitalAnswer": "Amsterdam",
+   "highest": {
+    "id": "Q1301834",
+    "name": "Mount Scenery",
+    "elevation": 870,
+    "lon": -63.239,
+    "lat": 17.635,
+    "image": "Saba with cloud cover.jpg",
+    "wiki": "Mount_Scenery",
+    "note": "On the Caribbean island of Saba — the European Netherlands peaks at the Vaalserberg (322 m)"
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -8132,7 +9473,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -8190,6 +9532,16 @@
     }
    ],
    "capitalAnswer": "Wellington",
+   "highest": {
+    "id": "Q5059",
+    "name": "Aoraki / Mount Cook",
+    "elevation": 3724,
+    "lon": 170.142,
+    "lat": -43.595,
+    "image": "00 0985 Mount Cook - New Zealand Alps.jpg",
+    "wiki": "Aoraki_/_Mount_Cook",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q1472704",
@@ -8197,7 +9549,8 @@
      "code": "NZD",
      "symbol": "NZ$",
      "wiki": "New_Zealand_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "New Zealand one hundred-dollar banknote, Series 7.jpg"
     }
    ],
    "largestCity": {
@@ -8243,6 +9596,16 @@
    ],
    "native": [],
    "capitalAnswer": "Managua",
+   "highest": {
+    "id": "Q2092378",
+    "name": "Cerro Mogotón",
+    "elevation": 2107,
+    "lon": -86.399,
+    "lat": 13.763,
+    "image": null,
+    "wiki": "Mogotón",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q207312",
@@ -8250,7 +9613,8 @@
      "code": "NIO",
      "symbol": "C$",
      "wiki": "Nicaraguan_córdoba",
-     "shared": 1
+     "shared": 1,
+     "image": "Nicaragua 1 Cordoba banknote of 1941.jpg"
     }
    ],
    "largestCity": {
@@ -8296,6 +9660,16 @@
    ],
    "native": [],
    "capitalAnswer": "Niamey",
+   "highest": {
+    "id": "Q3042286",
+    "name": "Mont Idoukal-n-Taghès",
+    "elevation": 2022,
+    "lon": 8.72,
+    "lat": 17.839,
+    "image": "Mont Idoukal-n-Taghès, Niger (Copernicus 2025-10-28).png",
+    "wiki": "Mont_Idoukal-n-Taghès",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q861690",
@@ -8303,7 +9677,8 @@
      "code": "XOF",
      "symbol": "F",
      "wiki": "West_African_CFA_franc",
-     "shared": 8
+     "shared": 8,
+     "image": "BCEAOFranc.png"
     }
    ],
    "largestCity": {
@@ -8349,6 +9724,16 @@
    ],
    "native": [],
    "capitalAnswer": "Abuja",
+   "highest": {
+    "id": "Q976055",
+    "name": "Chappal Waddi",
+    "elevation": 2419,
+    "lon": 11.715,
+    "lat": 7.036,
+    "image": "Chappal Wadi.jpg",
+    "wiki": "Chappal_Waddi",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q203567",
@@ -8356,7 +9741,8 @@
      "code": "NGN",
      "symbol": "₦",
      "wiki": "Nigerian_naira",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -8414,6 +9800,16 @@
     }
    ],
    "capitalAnswer": "Pyongyang",
+   "highest": {
+    "id": "Q107635",
+    "name": "Baekdu Mountain",
+    "elevation": 2744,
+    "lon": 128.077,
+    "lat": 41.993,
+    "image": "Baitou Mountain Tianchi.jpg",
+    "wiki": "Mount_Paektu",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q106720",
@@ -8421,7 +9817,8 @@
      "code": "KPW",
      "symbol": "₩",
      "wiki": "North_Korean_won",
-     "shared": 1
+     "shared": 1,
+     "image": "1959-100won-1.jpg"
     }
    ],
    "largestCity": {
@@ -8485,6 +9882,16 @@
     }
    ],
    "capitalAnswer": "Skopje",
+   "highest": {
+    "id": "Q912579",
+    "name": "Korab",
+    "elevation": 2764,
+    "lon": 20.547,
+    "lat": 41.79,
+    "image": "Panair Korab.jpg",
+    "wiki": "Mount_Korab",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q177875",
@@ -8492,7 +9899,8 @@
      "code": "MKD",
      "symbol": "DEN",
      "wiki": "Macedonian_denar",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -8545,7 +9953,8 @@
      "code": "TRY",
      "symbol": "₺",
      "wiki": "Turkish_lira",
-     "shared": 2
+     "shared": 2,
+     "image": "Turkish Lira Series Banknotes (Modern).png"
     }
    ]
   },
@@ -8596,6 +10005,16 @@
     }
    ],
    "capitalAnswer": "Oslo",
+   "highest": {
+    "id": "Q203942",
+    "name": "Galdhøpiggen",
+    "elevation": 2469,
+    "lon": 8.3,
+    "lat": 61.633,
+    "image": "Galdhopiggen 2004.jpg",
+    "wiki": "Galdhøpiggen",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q132643",
@@ -8603,7 +10022,8 @@
      "code": "NOK",
      "symbol": "kr",
      "wiki": "Norwegian_krone",
-     "shared": 1
+     "shared": 1,
+     "image": "500_kroner_observe.jpg"
     }
    ],
    "largestCity": {
@@ -8667,6 +10087,16 @@
     }
    ],
    "capitalAnswer": "Muscat",
+   "highest": {
+    "id": "Q1261915",
+    "name": "Jebel Shams",
+    "elevation": 3018,
+    "lon": 57.264,
+    "lat": 23.237,
+    "image": "Jebel Shams (2).jpg",
+    "wiki": "Jebel_Shams",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q272290",
@@ -8674,7 +10104,8 @@
      "code": "OMR",
      "symbol": "ر.ع.",
      "wiki": "Omani_rial",
-     "shared": 1
+     "shared": 1,
+     "image": "Omani Rial 2025 Polymer (Obverse).jpg"
     }
    ],
    "largestCity": {
@@ -8732,6 +10163,16 @@
     }
    ],
    "capitalAnswer": "Islamabad",
+   "highest": {
+    "id": "Q43512",
+    "name": "K2",
+    "elevation": 8611,
+    "lon": 76.513,
+    "lat": 35.881,
+    "image": "Chogori.jpg",
+    "wiki": "K2",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q188289",
@@ -8739,7 +10180,8 @@
      "code": "PKR",
      "symbol": "₨",
      "wiki": "Pakistani_rupee",
-     "shared": 1
+     "shared": 1,
+     "image": "Pakistani Rupee.jpg"
     }
    ],
    "largestCity": {
@@ -8790,6 +10232,16 @@
     }
    ],
    "capitalAnswer": "Ngerulmud",
+   "highest": {
+    "id": "Q1191219",
+    "name": "Mount Ngerchelchuus",
+    "elevation": 242,
+    "lon": 134.569,
+    "lat": 7.565,
+    "image": "Mount Ngerchelchuus.JPG",
+    "wiki": "Mount_Ngerchelchuus",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4917",
@@ -8797,7 +10249,8 @@
      "code": "USD",
      "symbol": "$",
      "wiki": "United_States_dollar",
-     "shared": 5
+     "shared": 5,
+     "image": "USDnotesNew.png"
     }
    ],
    "largestCity": {
@@ -8873,6 +10326,16 @@
    ],
    "capitalAnswer": "East Jerusalem (proclaimed capital), with the government based in Ramallah",
    "capitalNote": null,
+   "highest": {
+    "id": "Q6922335",
+    "name": "Mount Nabi Yunis",
+    "elevation": 1026,
+    "lon": 35.105,
+    "lat": 31.579,
+    "image": "Mount Nabi Yunis in Halhul, Palestine.jpg",
+    "wiki": "Mount_Nabi_Yunis,_Palestine",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q131309",
@@ -8880,7 +10343,8 @@
      "code": "ILS",
      "symbol": "₪",
      "wiki": "Israeli_new_shekel",
-     "shared": 2
+     "shared": 2,
+     "image": "השטרות החדשים של ישראל.jpg"
     }
    ],
    "largestCity": {
@@ -8944,6 +10408,16 @@
     }
    ],
    "capitalAnswer": "Panama City",
+   "highest": {
+    "id": "Q594726",
+    "name": "Volcan Baru",
+    "elevation": 3475,
+    "lon": -82.543,
+    "lat": 8.808,
+    "image": "Volcan baru.jpg",
+    "wiki": "Volcán_Barú",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q210472",
@@ -8951,7 +10425,8 @@
      "code": "PAB",
      "symbol": "B/.",
      "wiki": "Panamanian_balboa",
-     "shared": 1
+     "shared": 1,
+     "image": "50 centavos de balboa.jpg"
     }
    ],
    "largestCity": {
@@ -9020,6 +10495,16 @@
     }
    ],
    "capitalAnswer": "Port Moresby",
+   "highest": {
+    "id": "Q277441",
+    "name": "Mount Wilhelm",
+    "elevation": 4509,
+    "lon": 145.03,
+    "lat": -5.78,
+    "image": "Mount Wilhelm.jpg",
+    "wiki": "Mount_Wilhelm",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q200759",
@@ -9027,7 +10512,8 @@
      "code": "PGK",
      "symbol": "K",
      "wiki": "Papua_New_Guinean_kina",
-     "shared": 1
+     "shared": 1,
+     "image": "K50back.jpg"
     }
    ],
    "largestCity": {
@@ -9085,6 +10571,16 @@
     }
    ],
    "capitalAnswer": "Asunción",
+   "highest": {
+    "id": "Q1055965",
+    "name": "Cerro Tres Kandú",
+    "elevation": 842,
+    "lon": -56.16,
+    "lat": -25.902,
+    "image": "Cerro Tres Kandu Paraguay.jpg",
+    "wiki": "Cerro_Tres_Kandú",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q207514",
@@ -9092,7 +10588,8 @@
      "code": "PYG",
      "symbol": "₲",
      "wiki": "Paraguayan_guaraní",
-     "shared": 1
+     "shared": 1,
+     "image": "PYG Monetary Cone.png"
     }
    ],
    "largestCity": {
@@ -9149,6 +10646,16 @@
     }
    ],
    "capitalAnswer": "Lima",
+   "highest": {
+    "id": "Q200935",
+    "name": "Huascarán",
+    "elevation": 6768,
+    "lon": -77.6,
+    "lat": -9.117,
+    "image": "Huascaran norte.JPG",
+    "wiki": "Huascarán",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q204656",
@@ -9156,7 +10663,8 @@
      "code": "PEN",
      "symbol": "S/",
      "wiki": "Peruvian_sol",
-     "shared": 1
+     "shared": 1,
+     "image": "Peru Currency.png"
     }
    ],
    "largestCity": {
@@ -9213,6 +10721,16 @@
     }
    ],
    "capitalAnswer": "Manila",
+   "highest": {
+    "id": "Q455963",
+    "name": "Mount Apo",
+    "elevation": 2954,
+    "lon": 125.271,
+    "lat": 6.987,
+    "image": "The Ring of Mt. Apo.jpg",
+    "wiki": "Mount_Apo",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q17193",
@@ -9220,7 +10738,8 @@
      "code": "PHP",
      "symbol": "₱",
      "wiki": "Philippine_peso",
-     "shared": 1
+     "shared": 1,
+     "image": "Font 20 peso Coin Philippines.png"
     }
    ],
    "largestCity": {
@@ -9284,6 +10803,16 @@
     }
    ],
    "capitalAnswer": "Warsaw",
+   "highest": {
+    "id": "Q672936",
+    "name": "Rysy",
+    "elevation": 2501,
+    "lon": 20.088,
+    "lat": 49.179,
+    "image": "Rysy, szczyt.jpg",
+    "wiki": "Rysy",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q123213",
@@ -9291,7 +10820,8 @@
      "code": "PLN",
      "symbol": "zł",
      "wiki": "Polish_złoty",
-     "shared": 1
+     "shared": 1,
+     "image": "Polish 5-Zloty coin (1994).gif"
     }
    ],
    "largestCity": {
@@ -9343,6 +10873,16 @@
    ],
    "native": [],
    "capitalAnswer": "Lisbon",
+   "highest": {
+    "id": "Q928681",
+    "name": "Mount Pico",
+    "elevation": 2351,
+    "lon": -28.399,
+    "lat": 38.469,
+    "image": "Ilha do Pico vista da Fajã Grande, Calheta, ilha de São Jorge, Açores, Portugal.JPG",
+    "wiki": "Mount_Pico",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -9350,7 +10890,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -9408,6 +10949,16 @@
     }
    ],
    "capitalAnswer": "Doha",
+   "highest": {
+    "id": "Q1633034",
+    "name": "Qurayn Abu al Bawl",
+    "elevation": 103,
+    "lon": 51.184,
+    "lat": 24.946,
+    "image": "Al-Qalail Range depuis la Route Qatar-EAU.jpg",
+    "wiki": "Qurayn_Abu_al_Bawl",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q206386",
@@ -9415,7 +10966,8 @@
      "code": "QAR",
      "symbol": "QR",
      "wiki": "Qatari_riyal",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -9483,6 +11035,16 @@
     }
    ],
    "capitalAnswer": "Brazzaville",
+   "highest": {
+    "id": "Q3113296",
+    "name": "Mont Nabemba",
+    "elevation": 1020,
+    "lon": 13.983,
+    "lat": 1.85,
+    "image": null,
+    "wiki": "Mont_Nabemba",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q847739",
@@ -9490,7 +11052,8 @@
      "code": "XAF",
      "symbol": "XAF",
      "wiki": "Central_African_CFA_franc",
-     "shared": 6
+     "shared": 6,
+     "image": "CFA.jpg"
     }
    ],
    "largestCity": {
@@ -9554,6 +11117,16 @@
     }
    ],
    "capitalAnswer": "Bucharest",
+   "highest": {
+    "id": "Q746524",
+    "name": "Moldoveanu Peak",
+    "elevation": 2544,
+    "lon": 24.736,
+    "lat": 45.599,
+    "image": "Varful-Moldoveanu-scenery.jpg",
+    "wiki": "Moldoveanu_Peak",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q131645",
@@ -9561,7 +11134,8 @@
      "code": "RON",
      "symbol": "rumen leu",
      "wiki": "Romanian_leu",
-     "shared": 1
+     "shared": 1,
+     "image": "100 lei. Romania, 2005 a.jpg"
     }
    ],
    "largestCity": {
@@ -9631,6 +11205,16 @@
     }
    ],
    "capitalAnswer": "Moscow",
+   "highest": {
+    "id": "Q43105",
+    "name": "Mount Elbrus",
+    "elevation": 5642,
+    "lon": 42.438,
+    "lat": 43.353,
+    "image": "Mt. Elbrus in Russia.jpg",
+    "wiki": "Mount_Elbrus",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q41044",
@@ -9638,7 +11222,8 @@
      "code": "RUB",
      "symbol": "₽",
      "wiki": "Russian_ruble",
-     "shared": 1
+     "shared": 1,
+     "image": "100 rubles obverse 2022.jpg"
     }
    ],
    "largestCity": {
@@ -9690,6 +11275,16 @@
    ],
    "native": [],
    "capitalAnswer": "Kigali",
+   "highest": {
+    "id": "Q737859",
+    "name": "Mount Karisimbi",
+    "elevation": 4507,
+    "lon": 29.45,
+    "lat": -1.5,
+    "image": "Karisimbi2.jpg",
+    "wiki": "Mount_Karisimbi",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4741",
@@ -9697,7 +11292,8 @@
      "code": "RWF",
      "symbol": "R₣",
      "wiki": "Rwandan_franc",
-     "shared": 1
+     "shared": 1,
+     "image": "Rwanda francs.jpg"
     }
    ],
    "largestCity": {
@@ -9762,7 +11358,8 @@
      "code": null,
      "symbol": null,
      "wiki": "Sahrawi_peseta",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ]
   },
@@ -9798,6 +11395,16 @@
    ],
    "native": [],
    "capitalAnswer": "Basseterre",
+   "highest": {
+    "id": "Q1269774",
+    "name": "Mount Liamuiga",
+    "elevation": 1156,
+    "lon": -62.8,
+    "lat": 17.367,
+    "image": "ISS022-E-39042 - View of the Lesser Antilles.jpg",
+    "wiki": "Mount_Liamuiga",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q26365",
@@ -9805,7 +11412,8 @@
      "code": "XCD",
      "symbol": "EC$",
      "wiki": "Eastern_Caribbean_dollar",
-     "shared": 6
+     "shared": 6,
+     "image": "East caribbean states eccb 5 dollars 2019.00.00 b240 pnl ad 000000 f.jpg"
     }
    ],
    "largestCity": {
@@ -9851,6 +11459,16 @@
    ],
    "native": [],
    "capitalAnswer": "Castries",
+   "highest": {
+    "id": "Q1811114",
+    "name": "Mount Gimie",
+    "elevation": 952,
+    "lon": -61.011,
+    "lat": 13.863,
+    "image": "Mt. Gimie.jpg",
+    "wiki": "Mount_Gimie",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q26365",
@@ -9858,7 +11476,8 @@
      "code": "XCD",
      "symbol": "EC$",
      "wiki": "Eastern_Caribbean_dollar",
-     "shared": 6
+     "shared": 6,
+     "image": "East caribbean states eccb 5 dollars 2019.00.00 b240 pnl ad 000000 f.jpg"
     }
    ],
    "largestCity": {
@@ -9904,6 +11523,16 @@
    ],
    "native": [],
    "capitalAnswer": "Kingstown",
+   "highest": {
+    "id": "Q26544",
+    "name": "La Soufrière",
+    "elevation": 1220,
+    "lon": -61.183,
+    "lat": 13.333,
+    "image": "Soufriere.jpg",
+    "wiki": "La_Soufrière_(Saint_Vincent)",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q26365",
@@ -9911,7 +11540,8 @@
      "code": "XCD",
      "symbol": "EC$",
      "wiki": "Eastern_Caribbean_dollar",
-     "shared": 6
+     "shared": 6,
+     "image": "East caribbean states eccb 5 dollars 2019.00.00 b240 pnl ad 000000 f.jpg"
     }
    ],
    "largestCity": {
@@ -9963,6 +11593,16 @@
     }
    ],
    "capitalAnswer": "Apia",
+   "highest": {
+    "id": "Q1147814",
+    "name": "Silisili",
+    "elevation": 1858,
+    "lon": -172.486,
+    "lat": -13.618,
+    "image": "Mauga Silisili.jpg",
+    "wiki": "Silisili",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4588",
@@ -9970,7 +11610,8 @@
      "code": "WST",
      "symbol": "WS$",
      "wiki": "Samoan_tālā",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -10016,6 +11657,16 @@
    ],
    "native": [],
    "capitalAnswer": "San Marino",
+   "highest": {
+    "id": "Q158526",
+    "name": "Monte Titano",
+    "elevation": 756,
+    "lon": 12.452,
+    "lat": 43.928,
+    "image": "San marino, veduta del monte titano 02.jpg",
+    "wiki": "Monte_Titano",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -10023,7 +11674,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -10075,6 +11727,16 @@
     }
    ],
    "capitalAnswer": "São Tomé",
+   "highest": {
+    "id": "Q1471391",
+    "name": "Pico de São Tomé",
+    "elevation": 2024,
+    "lon": 6.533,
+    "lat": 0.267,
+    "image": "Otok sv. Tome -E-8383.JPG",
+    "wiki": "Pico_de_São_Tomé",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q193712",
@@ -10082,7 +11744,8 @@
      "code": "STN",
      "symbol": "₡",
      "wiki": "São_Tomé_and_Príncipe_dobra",
-     "shared": 1
+     "shared": 1,
+     "image": "Amador Vieira.jpg"
     }
    ],
    "largestCity": {
@@ -10152,6 +11815,16 @@
     }
    ],
    "capitalAnswer": "Riyadh",
+   "highest": {
+    "id": "Q1261892",
+    "name": "Jabal Sawda",
+    "elevation": 3207,
+    "lon": 42.368,
+    "lat": 18.267,
+    "image": "Al Sawda peak.jpg",
+    "wiki": "Jabal_as-Sūda",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q199857",
@@ -10159,7 +11832,8 @@
      "code": "SAR",
      "symbol": "SR",
      "wiki": "Saudi_riyal",
-     "shared": 1
+     "shared": 1,
+     "image": "Saudi Riyal 6th Domination.png"
     }
    ],
    "largestCity": {
@@ -10224,7 +11898,8 @@
      "code": "XOF",
      "symbol": "F",
      "wiki": "West_African_CFA_franc",
-     "shared": 8
+     "shared": 8,
+     "image": "BCEAOFranc.png"
     }
    ],
    "largestCity": {
@@ -10294,6 +11969,16 @@
     }
    ],
    "capitalAnswer": "Belgrade",
+   "highest": {
+    "id": "Q20568528",
+    "name": "Velika Rudoka",
+    "elevation": 2658,
+    "lon": 20.777,
+    "lat": 41.918,
+    "image": "Рудока.jpg",
+    "wiki": "Velika_Rudoka",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q172524",
@@ -10301,7 +11986,8 @@
      "code": "RSD",
      "symbol": "дин",
      "wiki": "Serbian_dinar",
-     "shared": 1
+     "shared": 1,
+     "image": "1000RSD note obverse.jpg"
     }
    ],
    "largestCity": {
@@ -10353,6 +12039,16 @@
     }
    ],
    "capitalAnswer": "Victoria",
+   "highest": {
+    "id": "Q1579060",
+    "name": "Morne Seychellois",
+    "elevation": 905,
+    "lon": 55.439,
+    "lat": -4.644,
+    "image": "Ile de Mahe - Morne Seychellois (1).JPG",
+    "wiki": "Morne_Seychellois",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4595",
@@ -10360,7 +12056,8 @@
      "code": "SCR",
      "symbol": "SRe",
      "wiki": "Seychellois_rupee",
-     "shared": 1
+     "shared": 1,
+     "image": "Seychellois rupee.jpg"
     }
    ],
    "largestCity": {
@@ -10406,6 +12103,16 @@
    ],
    "native": [],
    "capitalAnswer": "Freetown",
+   "highest": {
+    "id": "Q769525",
+    "name": "Mount Bintumani",
+    "elevation": 1945,
+    "lon": -11.117,
+    "lat": 9.225,
+    "image": "Mountain Bintunami.jpg",
+    "wiki": "Mount_Bintumani",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4587",
@@ -10413,7 +12120,8 @@
      "code": "SLE",
      "symbol": "Le",
      "wiki": "Sierra_Leonean_leone",
-     "shared": 1
+     "shared": 1,
+     "image": "Pile of SLE banknotes.jpg"
     }
    ],
    "largestCity": {
@@ -10505,6 +12213,16 @@
     }
    ],
    "capitalAnswer": "Singapore",
+   "highest": {
+    "id": "Q720209",
+    "name": "Bukit Timah",
+    "elevation": 164,
+    "lon": 103.776,
+    "lat": 1.355,
+    "image": "Bukit timah rock.jpg",
+    "wiki": "Bukit_Timah_Hill",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q190951",
@@ -10512,7 +12230,8 @@
      "code": "SGD",
      "symbol": "S$",
      "wiki": "Singapore_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "SGD 10000 Paper f.jpg"
     }
    ],
    "largestCity": {
@@ -10578,6 +12297,16 @@
     }
    ],
    "capitalAnswer": "Bratislava",
+   "highest": {
+    "id": "Q81213",
+    "name": "Gerlachovský štít",
+    "elevation": 2655,
+    "lon": 20.134,
+    "lat": 49.164,
+    "image": "Gerlachovsky stit from Velicka dolina.jpg",
+    "wiki": "Gerlachovský_štít",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -10585,7 +12314,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -10643,6 +12373,16 @@
     }
    ],
    "capitalAnswer": "Ljubljana",
+   "highest": {
+    "id": "Q1024",
+    "name": "Triglav",
+    "elevation": 2864,
+    "lon": 13.837,
+    "lat": 46.378,
+    "image": "Triglav.jpg",
+    "wiki": "Triglav",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -10650,7 +12390,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -10696,6 +12437,16 @@
    ],
    "native": [],
    "capitalAnswer": "Honiara",
+   "highest": {
+    "id": "Q760819",
+    "name": "Mount Popomanaseu",
+    "elevation": 2335,
+    "lon": 160.061,
+    "lat": -9.704,
+    "image": null,
+    "wiki": "Mount_Popomanaseu",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4597",
@@ -10703,7 +12454,8 @@
      "code": "SBD",
      "symbol": "SI$",
      "wiki": "Solomon_Islands_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "Solomon Islands $2 banknote.jpg"
     }
    ],
    "largestCity": {
@@ -10771,6 +12523,16 @@
     }
    ],
    "capitalAnswer": "Mogadishu",
+   "highest": {
+    "id": "Q649162",
+    "name": "Shimbiris",
+    "elevation": 2460,
+    "lon": 47.245,
+    "lat": 10.736,
+    "image": "Somalia Topography en.png",
+    "wiki": "Mount_Shimbiris",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4603",
@@ -10778,7 +12540,8 @@
      "code": "SOS",
      "symbol": "Sh.So.",
      "wiki": "Somali_shilling",
-     "shared": 1
+     "shared": 1,
+     "image": "1000ShS.png"
     }
    ],
    "largestCity": {
@@ -10830,6 +12593,16 @@
    ],
    "native": [],
    "capitalAnswer": "Hargeisa",
+   "highest": {
+    "id": "Q649162",
+    "name": "Shimbiris",
+    "elevation": 2460,
+    "lon": 47.245,
+    "lat": 10.736,
+    "image": "Somalia Topography en.png",
+    "wiki": "Mount_Shimbiris",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q737384",
@@ -10837,7 +12610,8 @@
      "code": null,
      "symbol": null,
      "wiki": "Somaliland_shilling",
-     "shared": 1
+     "shared": 1,
+     "image": "Somaliland Shillings.jpg"
     }
    ]
   },
@@ -10935,6 +12709,16 @@
    ],
    "capitalAnswer": "split three ways: Pretoria (executive), Cape Town (legislative) and Bloemfontein (judicial)",
    "capitalNote": null,
+   "highest": {
+    "id": "Q1883683",
+    "name": "Mafadi",
+    "elevation": 3450,
+    "lon": 29.358,
+    "lat": -29.203,
+    "image": "Mafadi mountain top.jpg",
+    "wiki": "Mafadi",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q181907",
@@ -10942,7 +12726,8 @@
      "code": "ZAR",
      "symbol": "R",
      "wiki": "South_African_rand",
-     "shared": 1
+     "shared": 1,
+     "image": "South African rand - 2023 banknotes.jpg"
     }
    ],
    "largestCity": {
@@ -11000,6 +12785,16 @@
     }
    ],
    "capitalAnswer": "Seoul",
+   "highest": {
+    "id": "Q494645",
+    "name": "Hallasan",
+    "elevation": 1947,
+    "lon": 126.517,
+    "lat": 33.35,
+    "image": "한라산1.jpg",
+    "wiki": "Hallasan",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q202040",
@@ -11007,7 +12802,8 @@
      "code": "KRW",
      "symbol": "₩",
      "wiki": "South_Korean_won",
-     "shared": 1
+     "shared": 1,
+     "image": "Currency South Korea.jpg"
     }
    ],
    "largestCity": {
@@ -11057,6 +12853,16 @@
    ],
    "native": [],
    "capitalAnswer": "Tskhinvali",
+   "highest": {
+    "id": "Q15975561",
+    "name": "Chanchakhi",
+    "elevation": 4462,
+    "lon": 43.794,
+    "lat": 42.745,
+    "image": "Чанчахи с Уилпаты.jpg",
+    "wiki": null,
+    "note": null
+   },
    "currency": [
     {
      "id": "Q21663036",
@@ -11064,7 +12870,8 @@
      "code": null,
      "symbol": null,
      "wiki": "South_Ossetian_zarin",
-     "shared": 1
+     "shared": 1,
+     "image": "20zarin2013.jpg"
     }
    ]
   },
@@ -11100,6 +12907,16 @@
    ],
    "native": [],
    "capitalAnswer": "Juba",
+   "highest": {
+    "id": "Q948298",
+    "name": "Kinyeti",
+    "elevation": 3187,
+    "lon": 32.909,
+    "lat": 3.947,
+    "image": "Sudan Kinyeti.jpg",
+    "wiki": "Kinyeti",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q244366",
@@ -11107,7 +12924,8 @@
      "code": "SSP",
      "symbol": "Db",
      "wiki": "South_Sudanese_pound",
-     "shared": 1
+     "shared": 1,
+     "image": "Banknote of South Sudan.jpg"
     }
    ],
    "largestCity": {
@@ -11159,6 +12977,16 @@
     }
    ],
    "capitalAnswer": "Madrid",
+   "highest": {
+    "id": "Q38954",
+    "name": "Teide",
+    "elevation": 3715,
+    "lon": -16.644,
+    "lat": 28.273,
+    "image": "Teide von Nordosten (Zuschnitt 2).jpg",
+    "wiki": "Teide",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -11166,7 +12994,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -11269,6 +13098,16 @@
    ],
    "capitalAnswer": "Sri Jayawardenepura Kotte (legislative capital), with Colombo as the executive and commercial capital",
    "capitalNote": null,
+   "highest": {
+    "id": "Q1146327",
+    "name": "Pidurutalagala",
+    "elevation": 2524,
+    "lon": 80.774,
+    "lat": 7.001,
+    "image": "SL Nuwara Eliya asv2020-01 img13 Mount Pedro.jpg",
+    "wiki": "Pidurutalagala",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4596",
@@ -11276,7 +13115,8 @@
      "code": "LKR",
      "symbol": "Rs",
      "wiki": "Sri_Lankan_rupee",
-     "shared": 1
+     "shared": 1,
+     "image": "Raja (elephant) in Sri Lankan Rupee bank notes.JPG"
     }
    ],
    "largestCity": {
@@ -11340,6 +13180,16 @@
     }
    ],
    "capitalAnswer": "Khartoum",
+   "highest": {
+    "id": "Q2520348",
+    "name": "Deriba Caldera",
+    "elevation": 3042,
+    "lon": 24.259,
+    "lat": 12.951,
+    "image": "Deriba Caldera.jpg",
+    "wiki": "Deriba_(caldera)",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q271206",
@@ -11347,7 +13197,8 @@
      "code": "SDG",
      "symbol": "sud£",
      "wiki": "Sudanese_pound",
-     "shared": 1
+     "shared": 1,
+     "image": "Sudan 25pt Awers.JPG"
     }
    ],
    "largestCity": {
@@ -11399,6 +13250,16 @@
    ],
    "native": [],
    "capitalAnswer": "Paramaribo",
+   "highest": {
+    "id": "Q1549215",
+    "name": "Julianatop",
+    "elevation": 1280,
+    "lon": -56.536,
+    "lat": 3.683,
+    "image": null,
+    "wiki": "Julianatop",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q202036",
@@ -11406,7 +13267,8 @@
      "code": "SRD",
      "symbol": "$",
      "wiki": "Surinamese_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "20surinamedollar.jpg"
     }
    ],
    "largestCity": {
@@ -11458,6 +13320,16 @@
     }
    ],
    "capitalAnswer": "Stockholm",
+   "highest": {
+    "id": "Q214011",
+    "name": "Kebnekaise",
+    "elevation": 2097,
+    "lon": 18.528,
+    "lat": 67.905,
+    "image": "Kebnekaise view of the tops from the south.jpg",
+    "wiki": "Kebnekaise",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q122922",
@@ -11465,7 +13337,8 @@
      "code": "SEK",
      "symbol": "kr",
      "wiki": "Swedish_krona",
-     "shared": 1
+     "shared": 1,
+     "image": "Collage SEK.png"
     }
    ],
    "largestCity": {
@@ -11554,6 +13427,16 @@
     }
    ],
    "capitalAnswer": "Bern",
+   "highest": {
+    "id": "Q3403",
+    "name": "Dufourspitze",
+    "elevation": 4634,
+    "lon": 7.867,
+    "lat": 45.937,
+    "image": "MonteRosaWestseite gesehenVomGornergrat.JPG",
+    "wiki": "Dufourspitze",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q25344",
@@ -11561,7 +13444,8 @@
      "code": "CHF",
      "symbol": "Fr",
      "wiki": "Swiss_franc",
-     "shared": 2
+     "shared": 2,
+     "image": "CHF Banknotes 9th series obverse.png"
     }
    ],
    "largestCity": {
@@ -11635,6 +13519,16 @@
     }
    ],
    "capitalAnswer": "Damascus",
+   "highest": {
+    "id": "Q215471",
+    "name": "Mount Hermon",
+    "elevation": 2814,
+    "lon": 35.85,
+    "lat": 33.4,
+    "image": "Hermonsnow.jpg",
+    "wiki": "Mount_Hermon",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q240468",
@@ -11642,7 +13536,8 @@
      "code": "SYP",
      "symbol": "LS",
      "wiki": "Syrian_pound",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -11700,6 +13595,16 @@
     }
    ],
    "capitalAnswer": "Taipei",
+   "highest": {
+    "id": "Q500275",
+    "name": "Yushan Main Peak",
+    "elevation": 3952,
+    "lon": 120.957,
+    "lat": 23.47,
+    "image": "Yushan Main Peak at nine o'clock in the morning.jpg",
+    "wiki": "Yushan_(mountain)",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q208526",
@@ -11707,7 +13612,8 @@
      "code": "TWD",
      "symbol": "NT$",
      "wiki": "New_Taiwan_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -11780,6 +13686,16 @@
     }
    ],
    "capitalAnswer": "Dushanbe",
+   "highest": {
+    "id": "Q41413",
+    "name": "Ismoil Somoni Peak",
+    "elevation": 7495,
+    "lon": 72.015,
+    "lat": 38.943,
+    "image": "Kommunismi pilt 6100m.jpg",
+    "wiki": "Ismoil_Somoni_Peak",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q199886",
@@ -11787,7 +13703,8 @@
      "code": "TJS",
      "symbol": "SM",
      "wiki": "Tajikistani_somoni",
-     "shared": 1
+     "shared": 1,
+     "image": "5 Somoni TJ 2001.png"
     }
    ],
    "largestCity": {
@@ -11839,6 +13756,16 @@
    ],
    "native": [],
    "capitalAnswer": "Dodoma",
+   "highest": {
+    "id": "Q1394606",
+    "name": "Mount Kibo",
+    "elevation": 5895,
+    "lon": 37.359,
+    "lat": -3.065,
+    "image": "Glacier at summit of Mt Kilimanjaro 001.JPG",
+    "wiki": null,
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4589",
@@ -11846,7 +13773,8 @@
      "code": "TZS",
      "symbol": "TSh",
      "wiki": "Tanzanian_shilling",
-     "shared": 1
+     "shared": 1,
+     "image": "1000 tz shillings front.jpg"
     }
    ],
    "largestCity": {
@@ -11904,6 +13832,16 @@
     }
    ],
    "capitalAnswer": "Bangkok",
+   "highest": {
+    "id": "Q1140075",
+    "name": "Doi Inthanon",
+    "elevation": 2565,
+    "lon": 98.487,
+    "lat": 18.592,
+    "image": "InthanonChedi1.jpg",
+    "wiki": "Doi_Inthanon",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q177882",
@@ -11911,7 +13849,8 @@
      "code": "THB",
      "symbol": "฿",
      "wiki": "Thai_baht",
-     "shared": 1
+     "shared": 1,
+     "image": "Thai money.jpg"
     }
    ],
    "largestCity": {
@@ -11963,6 +13902,16 @@
     }
    ],
    "capitalAnswer": "Dili",
+   "highest": {
+    "id": "Q1539961",
+    "name": "Tatamailau",
+    "elevation": 2963,
+    "lon": 125.493,
+    "lat": -8.907,
+    "image": "View to Mt Tatamailau, Ainaro on a clear day.jpg",
+    "wiki": "Tatamailau",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q572213",
@@ -11970,7 +13919,8 @@
      "code": null,
      "symbol": null,
      "wiki": "Timor-Leste_centavo_coins",
-     "shared": 1
+     "shared": 1,
+     "image": "Timor Lorosa'e centavo coin -2.JPG"
     }
    ],
    "largestCity": {
@@ -12016,6 +13966,16 @@
    ],
    "native": [],
    "capitalAnswer": "Lomé",
+   "highest": {
+    "id": "Q1753509",
+    "name": "Mount Agou",
+    "elevation": 986,
+    "lon": 0.755,
+    "lat": 6.871,
+    "image": "Mont agou.png",
+    "wiki": "Mount_Agou",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q861690",
@@ -12023,7 +13983,8 @@
      "code": "XOF",
      "symbol": "F",
      "wiki": "West_African_CFA_franc",
-     "shared": 8
+     "shared": 8,
+     "image": "BCEAOFranc.png"
     }
    ],
    "largestCity": {
@@ -12069,6 +14030,16 @@
    ],
    "native": [],
    "capitalAnswer": "Nukuʻalofa",
+   "highest": {
+    "id": "Q1520405",
+    "name": "Kao",
+    "elevation": 1030,
+    "lon": -175.017,
+    "lat": -19.667,
+    "image": "Tofua and Kao islands, Tonga 1994-10-09.jpg",
+    "wiki": "Kao_(island)",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4613",
@@ -12076,7 +14047,8 @@
      "code": "TOP",
      "symbol": "T$",
      "wiki": "Tongan_paʻanga",
-     "shared": 1
+     "shared": 1,
+     "image": "1-Paʻanga-Schein Vorderseite.jpg"
     }
    ],
    "largestCity": {
@@ -12127,7 +14099,8 @@
      "code": null,
      "symbol": null,
      "wiki": "Transnistrian_ruble",
-     "shared": 1
+     "shared": 1,
+     "image": "Transnistrian ruble notes.jpg"
     }
    ]
   },
@@ -12163,6 +14136,16 @@
    ],
    "native": [],
    "capitalAnswer": "Port of Spain",
+   "highest": {
+    "id": "Q1056103",
+    "name": "El Cerro del Aripo",
+    "elevation": 940,
+    "lon": -61.25,
+    "lat": 10.717,
+    "image": "Asa Wright Center 2.jpg",
+    "wiki": "El_Cerro_del_Aripo",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q242890",
@@ -12170,7 +14153,8 @@
      "code": "TTD",
      "symbol": "TT$",
      "wiki": "Trinidad_and_Tobago_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": "Series 2020 TTD Polymer Design.png"
     }
    ],
    "largestCity": {
@@ -12234,6 +14218,16 @@
     }
    ],
    "capitalAnswer": "Tunis",
+   "highest": {
+    "id": "Q1232136",
+    "name": "Jebel ech Chambi",
+    "elevation": 1544,
+    "lon": 8.683,
+    "lat": 35.207,
+    "image": "Djebel Chambi.jpg",
+    "wiki": "Jebel_ech_Chambi",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4602",
@@ -12241,7 +14235,8 @@
      "code": "TND",
      "symbol": "DT",
      "wiki": "Tunisian_dinar",
-     "shared": 1
+     "shared": 1,
+     "image": "Tunisia BCT 50 dinars.jpg"
     }
    ],
    "largestCity": {
@@ -12293,6 +14288,16 @@
    ],
    "native": [],
    "capitalAnswer": "Ankara",
+   "highest": {
+    "id": "Q72303",
+    "name": "Mount Ararat",
+    "elevation": 5137,
+    "lon": 44.298,
+    "lat": 39.702,
+    "image": "Mount Ararat and the Araratian plain (cropped).jpg",
+    "wiki": "Mount_Ararat",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q172872",
@@ -12300,7 +14305,8 @@
      "code": "TRY",
      "symbol": "₺",
      "wiki": "Turkish_lira",
-     "shared": 2
+     "shared": 2,
+     "image": "Turkish Lira Series Banknotes (Modern).png"
     }
    ],
    "largestCity": {
@@ -12368,6 +14374,16 @@
     }
    ],
    "capitalAnswer": "Ashgabat",
+   "highest": {
+    "id": "Q794684",
+    "name": "Aýrybaba",
+    "elevation": 3139,
+    "lon": 66.567,
+    "lat": 37.833,
+    "image": null,
+    "wiki": "Ayribobo",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q486637",
@@ -12375,7 +14391,8 @@
      "code": "TMT",
      "symbol": "TMT",
      "wiki": "Turkmen_manat",
-     "shared": 1
+     "shared": 1,
+     "image": "100 manat. Türkmenistan, 2014 a.jpg"
     }
    ],
    "largestCity": {
@@ -12425,6 +14442,16 @@
    ],
    "native": [],
    "capitalAnswer": "Funafuti",
+   "highest": {
+    "id": "Q632489",
+    "name": "Niulakita",
+    "elevation": 5,
+    "lon": 179.5,
+    "lat": -10.75,
+    "image": "Niulakita.png",
+    "wiki": "Niulakita",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4406",
@@ -12432,7 +14459,8 @@
      "code": null,
      "symbol": "TV$",
      "wiki": "Tuvaluan_dollar",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -12478,6 +14506,16 @@
    ],
    "native": [],
    "capitalAnswer": "Kampala",
+   "highest": {
+    "id": "Q221666",
+    "name": "Mount Stanley",
+    "elevation": 5109,
+    "lon": 29.872,
+    "lat": 0.386,
+    "image": "Mount Stanley.jpg",
+    "wiki": "Mount_Stanley",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4598",
@@ -12485,7 +14523,8 @@
      "code": "UGX",
      "symbol": "Ush",
      "wiki": "Ugandan_shilling",
-     "shared": 1
+     "shared": 1,
+     "image": "UgandanShillings1000.jpg"
     }
    ],
    "largestCity": {
@@ -12549,6 +14588,16 @@
     }
    ],
    "capitalAnswer": "Kyiv",
+   "highest": {
+    "id": "Q627508",
+    "name": "Hoverla",
+    "elevation": 2061,
+    "lon": 24.5,
+    "lat": 48.16,
+    "image": "Говерла 2015.JPG",
+    "wiki": "Hoverla",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q81893",
@@ -12556,7 +14605,8 @@
      "code": "UAH",
      "symbol": "₴",
      "wiki": "Ukrainian_hryvnia",
-     "shared": 1
+     "shared": 1,
+     "image": "1000 hryvnia 2019 front.png"
     }
    ],
    "largestCity": {
@@ -12626,6 +14676,16 @@
     }
    ],
    "capitalAnswer": "Abu Dhabi",
+   "highest": {
+    "id": "Q3492099",
+    "name": "Jebel Jais",
+    "elevation": 1911,
+    "lon": 56.184,
+    "lat": 25.953,
+    "image": "Jabel Jais - Summit --.jpg",
+    "wiki": "Jebel_Jais",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q200294",
@@ -12633,7 +14693,8 @@
      "code": "AED",
      "symbol": "⃃",
      "wiki": "United_Arab_Emirates_dirham",
-     "shared": 1
+     "shared": 1,
+     "image": "UAE 1 dirham coin, reverse.jpg"
     }
    ],
    "largestCity": {
@@ -12685,6 +14746,16 @@
    ],
    "native": [],
    "capitalAnswer": "London",
+   "highest": {
+    "id": "Q104674",
+    "name": "Ben Nevis",
+    "elevation": 1345,
+    "lon": -5.004,
+    "lat": 56.797,
+    "image": "Ben nevis.jpg",
+    "wiki": "Ben_Nevis",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q25224",
@@ -12692,7 +14763,8 @@
      "code": "GBP",
      "symbol": "£",
      "wiki": "Pound_sterling",
-     "shared": 1
+     "shared": 1,
+     "image": "Bank of England £50 Series G II obverse.jpg"
     }
    ],
    "largestCity": {
@@ -12738,6 +14810,16 @@
    ],
    "native": [],
    "capitalAnswer": "Washington, D.C.",
+   "highest": {
+    "id": "Q130018",
+    "name": "Denali",
+    "elevation": 6190,
+    "lon": -151.006,
+    "lat": 63.069,
+    "image": "Wonder Lake and Denali.jpg",
+    "wiki": "Denali",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4917",
@@ -12745,7 +14827,8 @@
      "code": "USD",
      "symbol": "$",
      "wiki": "United_States_dollar",
-     "shared": 5
+     "shared": 5,
+     "image": "USDnotesNew.png"
     }
    ],
    "largestCity": {
@@ -12791,6 +14874,16 @@
    ],
    "native": [],
    "capitalAnswer": "Montevideo",
+   "highest": {
+    "id": "Q1055837",
+    "name": "Cerro Catedral",
+    "elevation": 514,
+    "lon": -54.674,
+    "lat": -34.381,
+    "image": "CerroCatedral.jpg",
+    "wiki": "Cerro_Catedral_(Uruguay)",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q209272",
@@ -12798,7 +14891,8 @@
      "code": "UYU",
      "symbol": "$U",
      "wiki": "Uruguayan_peso",
-     "shared": 1
+     "shared": 1,
+     "image": "UYU pesos stack Thumnail.png"
     }
    ],
    "largestCity": {
@@ -12872,6 +14966,16 @@
     }
    ],
    "capitalAnswer": "Tashkent",
+   "highest": {
+    "id": "Q519822",
+    "name": "Khazret Sultan",
+    "elevation": 4643,
+    "lon": 68.172,
+    "lat": 38.948,
+    "image": null,
+    "wiki": "Khazret_Sultan",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q487888",
@@ -12879,7 +14983,8 @@
      "code": "UZS",
      "symbol": "Soʻm",
      "wiki": "Uzbekistani_sum",
-     "shared": 1
+     "shared": 1,
+     "image": "200 000 sum new front.jpg"
     }
    ],
    "largestCity": {
@@ -12931,6 +15036,16 @@
    ],
    "native": [],
    "capitalAnswer": "Port Vila",
+   "highest": {
+    "id": "Q1542459",
+    "name": "Mount Tabwemasana",
+    "elevation": 1879,
+    "lon": 166.75,
+    "lat": -15.35,
+    "image": null,
+    "wiki": "Mount_Tabwemasana",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q207523",
@@ -12938,7 +15053,8 @@
      "code": "VUV",
      "symbol": "VT",
      "wiki": "Vanuatu_vatu",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -13012,6 +15128,16 @@
     }
    ],
    "capitalAnswer": "Vatican City",
+   "highest": {
+    "id": "Q1053000",
+    "name": "Vatican Hill",
+    "elevation": 75,
+    "lon": 12.45,
+    "lat": 41.904,
+    "image": "Vatican hill.jpg",
+    "wiki": "Vatican_Hill",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q4916",
@@ -13019,7 +15145,8 @@
      "code": "EUR",
      "symbol": "€",
      "wiki": "Euro",
-     "shared": 27
+     "shared": 27,
+     "image": "Euro Series Banknotes (2019) - centered.png"
     }
    ],
    "largestCity": {
@@ -13065,6 +15192,16 @@
    ],
    "native": [],
    "capitalAnswer": "Caracas",
+   "highest": {
+    "id": "Q213704",
+    "name": "Pico Bolívar",
+    "elevation": 4978,
+    "lon": -71.046,
+    "lat": 8.541,
+    "image": "PicoBolivarMerida.JPG",
+    "wiki": "Pico_Bolívar",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q56349362",
@@ -13072,7 +15209,8 @@
      "code": "VES",
      "symbol": "Bs.S",
      "wiki": "Sovereign_Bolivar",
-     "shared": 1
+     "shared": 1,
+     "image": "Banknotes of Venezuela 2024.jpg"
     }
    ],
    "largestCity": {
@@ -13136,6 +15274,16 @@
     }
    ],
    "capitalAnswer": "Hanoi",
+   "highest": {
+    "id": "Q123782",
+    "name": "Fansipan",
+    "elevation": 3147,
+    "lon": 103.775,
+    "lat": 22.303,
+    "image": "Fansipan Summit.jpg",
+    "wiki": "Fansipan",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q192090",
@@ -13143,7 +15291,8 @@
      "code": "VND",
      "symbol": "₫",
      "wiki": "Vietnamese_đồng",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -13237,6 +15386,16 @@
    ],
    "capitalAnswer": "Sanaa (constitutional capital, held by the Houthis), with Aden as the recognised government's temporary capital",
    "capitalNote": null,
+   "highest": {
+    "id": "Q1261935",
+    "name": "Jabal an Nabi Shu'ayb",
+    "elevation": 3666,
+    "lon": 43.976,
+    "lat": 15.279,
+    "image": "Haraz 200612 Yemen-117 (353667919).jpg",
+    "wiki": "Jabal_An-Nabi_Shu'ayb",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q240512",
@@ -13244,7 +15403,8 @@
      "code": "YER",
      "symbol": "﷼'",
      "wiki": "Yemeni_rial",
-     "shared": 1
+     "shared": 1,
+     "image": "1000YR1.jpg"
     }
    ],
    "largestCity": {
@@ -13296,6 +15456,16 @@
    ],
    "native": [],
    "capitalAnswer": "Lusaka",
+   "highest": {
+    "id": "Q18351462",
+    "name": "Mafinga Central",
+    "elevation": 2339,
+    "lon": 33.352,
+    "lat": -9.953,
+    "image": "Mafinga Central.jpg",
+    "wiki": "Mafinga_Central",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q73408",
@@ -13303,7 +15473,8 @@
      "code": "ZMW",
      "symbol": "ZK",
      "wiki": "Zambian_kwacha",
-     "shared": 1
+     "shared": 1,
+     "image": null
     }
    ],
    "largestCity": {
@@ -13349,6 +15520,16 @@
    ],
    "native": [],
    "capitalAnswer": "Harare",
+   "highest": {
+    "id": "Q152294",
+    "name": "Mount Nyangani",
+    "elevation": 2592,
+    "lon": 32.851,
+    "lat": -18.311,
+    "image": "Nyangani from nyamuziwa source.jpg",
+    "wiki": "Mount_Nyangani",
+    "note": null
+   },
    "currency": [
     {
      "id": "Q125352135",
@@ -13356,7 +15537,8 @@
      "code": "ZWG",
      "symbol": null,
      "wiki": "Zimbabwe_Gold",
-     "shared": 1
+     "shared": 1,
+     "image": "Zimbabwe Gold coins.jpg"
     }
    ],
    "largestCity": {

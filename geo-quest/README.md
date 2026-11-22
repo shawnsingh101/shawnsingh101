@@ -33,11 +33,24 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.4: highest points, borders, money
+
+- **Highest point of each country** (Wikidata P610, best-ranked elevation in metres): "The highest point of Nepal is…" and
+  back again (only when that peak belongs to one country). `highestNote` overrides explain odd cases (Australia → Heard Island).
+- **State / province borders** appear as thin dashed lines once you zoom in (Natural Earth admin-1, only the lines inside
+  a country; `shapes-admin1.json`, ~190 KB, fetched on first zoom). Country borders are drawn a little heavier.
+- **Currency pictures** are the money itself: the currency article's infobox image, banknotes before coins.
+- Mountain cards: no more photo → name (too hard); "Kanchenjunga is in Nepal" instead of "here".
+- People photos fall back to the Wikipedia article's lead image if the official portrait is missing.
+- Map labels nudge apart when they would overlap (Massachusetts / Boston); the Great Lakes are drawn over US states.
+- Data fixes: "A, B and C" capital lists; a place appears in one layer only (Vatican City is a country, not also a site);
+  duplicate range names get their country ("Sierra Nevada (Spain)"); stray far-off countries dropped from ranges.
+
 ## v1.3: mountains
 
 - **Peaks** (165): Natural Earth's notable peaks plus a short list of famous extras (`data/peaks-extra.json`, by Wikipedia
   article), ranked by Wikipedia coverage: 40 famous peaks, then 25 per continent. Height, range and countries from Wikidata.
-  Triangle markers; photo → name, find it, which country.
+  Triangle markers; find it, which country.
 - **Ranges** (70): Natural Earth range outlines with Wikidata ids — 24 great ranges, then more. Shaded areas; find it / name it.
 
 ## v1.2: World Heritage, territories, insets, look-alikes

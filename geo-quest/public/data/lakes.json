@@ -735,22 +735,6 @@
    ]
   },
   {
-   "id": "Q192770",
-   "layer": "lake",
-   "name": "Saimaa",
-   "image": "Luonteri Neitvuori.jpg",
-   "lon": 28.25,
-   "lat": 61.25,
-   "wiki": "Saimaa",
-   "countries": [
-    "Q33"
-   ],
-   "group": "l-eu",
-   "nameThe": "Saimaa",
-   "facts": "4,400 km² · Finland",
-   "size": 4400
-  },
-  {
    "id": "Q178741",
    "layer": "lake",
    "name": "Great Salt Lake",
@@ -764,6 +748,22 @@
    "group": "l-am",
    "nameThe": "the Great Salt Lake",
    "facts": "4,400 km² · United States",
+   "size": 4400
+  },
+  {
+   "id": "Q192770",
+   "layer": "lake",
+   "name": "Saimaa",
+   "image": "Luonteri Neitvuori.jpg",
+   "lon": 28.25,
+   "lat": 61.25,
+   "wiki": "Saimaa",
+   "countries": [
+    "Q33"
+   ],
+   "group": "l-eu",
+   "nameThe": "Saimaa",
+   "facts": "4,400 km² · Finland",
    "size": 4400
   },
   {
