@@ -1,5 +1,5 @@
 {
- "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district.",
+ "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museumWiki (the museum's Wikipedia title), museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district.",
  "_cities": {
   "Saint-Germain-l'Auxerrois": "Paris",
   "Greater London": "London",
@@ -40,7 +40,8 @@
   "countryName": "France",
   "lon": 2.336,
   "lat": 48.861,
-  "nameThe": "the Code of Hammurabi"
+  "nameThe": "the Code of Hammurabi",
+  "museumWiki": "Louvre"
  },
  "Q524447": {
   "culture": "Sumerians",
@@ -81,7 +82,8 @@
   "countryName": "India",
   "lon": 77.219,
   "lat": 28.611,
-  "nameThe": "the Dancing Girl"
+  "nameThe": "the Dancing Girl",
+  "museumWiki": "National Museum, New Delhi"
  },
  "Q3595955": {
   "culture": "Maurya Empire",
@@ -89,7 +91,8 @@
   "city": "Sarnath",
   "lon": 83.025,
   "lat": 25.379,
-  "nameThe": "the Lion Capital of Ashoka"
+  "nameThe": "the Lion Capital of Ashoka",
+  "museumWiki": "Sarnath"
  },
  "Q184427": {
   "culture": "Buddhist monks",
@@ -113,12 +116,14 @@
  "Q47672": {
   "museum": "Mausoleum of the First Qin Emperor",
   "city": "Xi'an",
-  "nameThe": "the Terracotta Army"
+  "nameThe": "the Terracotta Army",
+  "museumWiki": "Mausoleum of Qin Shi Huang"
  },
  "Q12366269": {
   "museum": "Kōtoku-in temple",
   "city": "Kamakura",
-  "nameThe": "the Great Buddha of Kamakura"
+  "nameThe": "the Great Buddha of Kamakura",
+  "museumWiki": "Kōtoku-in"
  },
  "Q1532165": {
   "name": "Pensive Bodhisattva",
@@ -167,7 +172,8 @@
   "artists": [
    "Paul Landowski"
   ],
-  "museum": "Corcovado mountain"
+  "museum": "Corcovado mountain",
+  "museumWiki": "Corcovado"
  },
  "Q20350": {
   "culture": "Rapa Nui people",

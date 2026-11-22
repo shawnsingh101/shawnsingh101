@@ -52,7 +52,7 @@ export function wikiThumb(title: string): Promise<string | null> {
   return summaryCache.get(title)!;
 }
 
-export interface Photo { src: string; caption: string }
+export interface Photo { src: string; big?: string; caption: string } // big: a larger copy for full screen
 const galleryCache = new Map<string, Promise<Photo[]>>();
 /**
  * The photos at the top of a Wikipedia article — for places this is the infobox
