@@ -28,7 +28,7 @@ export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTa
   return (
     <header className="ribbon">
       <div className="ribbon-row">
-        <button className="brand" onClick={goHome} title="Home">Geo<span>Quest</span></button>
+        <button className="brand" onClick={goHome} title="Home"><span className="brand-full">Intelligence <span>Quest</span></span><span className="brand-short">I<span>Q</span></span></button>
         <nav className="tabs">
           {TABS.map(([id, label, icon]) => (
             <button key={id} className={tab === id ? 'active' : ''} onClick={() => setTab(id)}><span className="tab-icon"><Icon name={icon} size={18} /></span><span>{label}</span></button>
@@ -80,7 +80,7 @@ export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTa
               try { importProgress(await f.text()); alert('Progress restored.'); } catch (err) { alert('That file could not be read: ' + (err as Error).message); }
             }} />
           </div>
-          <p className="muted small">GeoQuest v{VERSION.version} · build {VERSION.commit} · Facts: <a href="https://www.wikidata.org" target="_blank" rel="noreferrer">Wikidata</a> (CC0) · Photos & flags: Wikimedia Commons · Map: Natural Earth</p>
+          <p className="muted small">Intelligence Quest v{VERSION.version} · build {VERSION.commit} · Facts: <a href="https://www.wikidata.org" target="_blank" rel="noreferrer">Wikidata</a> (CC0) · Photos & flags: Wikimedia Commons · Map: Natural Earth</p>
         </div>
       )}
     </header>

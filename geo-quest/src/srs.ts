@@ -12,7 +12,7 @@ export const scheduler = fsrs(generatorParameters({ enable_fuzz: true, request_r
 export interface Settings {
   sound: boolean; gamify: boolean; pictures: boolean; locks: boolean;
   theme: 'auto' | 'light' | 'dark'; newPerDay: number;
-  mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean; mapRivers: boolean; mapLakes: boolean;
+  mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean; mapRivers: boolean; mapLakes: boolean; mapUs: boolean;
   nativeNames: boolean;
   mapMode: 'tap' | 'flip' | 'skip';
   kindsOff: string[];                 // question types switched off (they wait until switched back on)
@@ -36,7 +36,7 @@ export interface Progress {
 const KEY = 'geoquest:v1';
 const DEFAULT: Progress = {
   v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {},
-  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, nativeNames: true, mapMode: 'tap', targetBox: true, kindsOff: [], sessionNodes: null },
+  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, mapUs: false, nativeNames: true, mapMode: 'tap', targetBox: true, kindsOff: [], sessionNodes: null },
 };
 
 function revive(p: Progress): Progress {
@@ -83,7 +83,8 @@ export function reconcile(ds: Dataset) {
       p.cards[id] = { c: createEmptyCard(new Date()), fp: fingerprint(ref.kind, ref.country) };
       names.add(ref.country.name);
     }
-    const recent = ds.changes.filter(ch => names.has(ch.name)).map(ch => `${ch.name}: ${ch.field} changed from “${ch.from}” to “${ch.to}”`);
+    const ids = new Set(stale.map(id => id.split(':')[0]));
+    const recent = ds.changes.filter(ch => ids.has(ch.id) || names.has(ch.name)).map(ch => `${ch.name}: ${ch.field} changed from “${ch.from}” to “${ch.to}”`);
     p.updates.unshift({ date: today(), text: recent.length ? recent.join(' · ') : `Facts updated for ${[...names].join(', ')} — those cards were re-queued.` });
   });
 }
@@ -227,6 +228,6 @@ export function streak(p: Progress) {
 export function exportProgress() { return JSON.stringify(state); }
 export function importProgress(json: string) {
   const p = revive(JSON.parse(json));
-  if (p.v !== 1 || typeof p.cards !== 'object') throw new Error('Not a GeoQuest backup');
+  if (p.v !== 1 || typeof p.cards !== 'object') throw new Error('Not an Intelligence Quest backup');
   state = p; save(); listeners.forEach(l => l());
 }

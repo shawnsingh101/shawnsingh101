@@ -1,0 +1,1255 @@
+{
+ "source": "Wikidata (CC0)",
+ "places": [
+  {
+   "id": "Q173",
+   "layer": "us",
+   "name": "Alabama",
+   "image": "Alabama Capitol Building.jpg",
+   "lon": -86.7,
+   "lat": 32.7,
+   "wiki": "Alabama",
+   "code": "AL",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q29364",
+     "name": "Montgomery",
+     "preferred": true,
+     "role": null,
+     "image": "Aerial view of Montgomery, Alabama LCCN2011646683.jpg",
+     "lon": -86.3,
+     "lat": 32.367,
+     "wiki": "Montgomery,_Alabama"
+    }
+   ],
+   "flag": "Flag of Alabama.svg",
+   "capitalAnswer": "Montgomery"
+  },
+  {
+   "id": "Q797",
+   "layer": "us",
+   "name": "Alaska",
+   "image": "Alaska tmo 2013168 lrg(1).jpg",
+   "lon": -150,
+   "lat": 64,
+   "wiki": "Alaska",
+   "code": "AK",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q29445",
+     "name": "Juneau",
+     "preferred": false,
+     "role": null,
+     "image": "Queen Elizabeth (ship, 2010) in Juneau, Alaska 2024-08-15.jpg",
+     "lon": -134.42,
+     "lat": 58.302,
+     "wiki": "Juneau,_Alaska"
+    }
+   ],
+   "flag": "Flag of Alaska.svg",
+   "capitalAnswer": "Juneau"
+  },
+  {
+   "id": "Q816",
+   "layer": "us",
+   "name": "Arizona",
+   "image": "Colorado River from Desert View-1000px.jpeg",
+   "lon": -111.657,
+   "lat": 34.287,
+   "wiki": "Arizona",
+   "code": "AZ",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q16556",
+     "name": "Phoenix",
+     "preferred": false,
+     "role": null,
+     "image": "Phoenix, Arizona.JPG",
+     "lon": -112.074,
+     "lat": 33.448,
+     "wiki": "Phoenix,_Arizona"
+    }
+   ],
+   "flag": "Flag of Arizona.svg",
+   "capitalAnswer": "Phoenix"
+  },
+  {
+   "id": "Q1612",
+   "layer": "us",
+   "name": "Arkansas",
+   "image": "White River National refuge.jpg",
+   "lon": -92.2,
+   "lat": 34.8,
+   "wiki": "Arkansas",
+   "code": "AR",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q33405",
+     "name": "Little Rock",
+     "preferred": false,
+     "role": null,
+     "image": "Little Rock, Arkansas skyline.jpg",
+     "lon": -92.288,
+     "lat": 34.744,
+     "wiki": "Little_Rock,_Arkansas"
+    }
+   ],
+   "flag": "Flag of Arkansas.svg",
+   "capitalAnswer": "Little Rock"
+  },
+  {
+   "id": "Q99",
+   "layer": "us",
+   "name": "California",
+   "image": "GoldenGateBridge BakerBeach MC.jpg",
+   "lon": -120,
+   "lat": 37,
+   "wiki": "California",
+   "code": "CA",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q18013",
+     "name": "Sacramento",
+     "preferred": true,
+     "role": null,
+     "image": "Sacramento, California skyline in 2023.jpg",
+     "lon": -121.494,
+     "lat": 38.581,
+     "wiki": "Sacramento,_California"
+    }
+   ],
+   "flag": "Flag of California.svg",
+   "capitalAnswer": "Sacramento"
+  },
+  {
+   "id": "Q1261",
+   "layer": "us",
+   "name": "Colorado",
+   "image": null,
+   "lon": -105.5,
+   "lat": 39,
+   "wiki": "Colorado",
+   "code": "CO",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q16554",
+     "name": "Denver",
+     "preferred": false,
+     "role": null,
+     "image": "Denver, Colorado skyline (cropped).jpg",
+     "lon": -104.985,
+     "lat": 39.739,
+     "wiki": "Denver"
+    }
+   ],
+   "flag": "Flag of Colorado.svg",
+   "capitalAnswer": "Denver"
+  },
+  {
+   "id": "Q779",
+   "layer": "us",
+   "name": "Connecticut",
+   "image": "Connecticut State Capitol, Hartford.jpg",
+   "lon": -72.7,
+   "lat": 41.6,
+   "wiki": "Connecticut",
+   "code": "CT",
+   "group": "us-ne",
+   "capitals": [
+    {
+     "id": "Q33486",
+     "name": "Hartford",
+     "preferred": false,
+     "role": null,
+     "image": "Hartford, CT skyline (cropped).jpg",
+     "lon": -72.685,
+     "lat": 41.763,
+     "wiki": "Hartford,_Connecticut"
+    }
+   ],
+   "flag": "Flag of Connecticut.svg",
+   "capitalAnswer": "Hartford"
+  },
+  {
+   "id": "Q1393",
+   "layer": "us",
+   "name": "Delaware",
+   "image": null,
+   "lon": -75.5,
+   "lat": 39,
+   "wiki": "Delaware",
+   "code": "DE",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q33518",
+     "name": "Dover",
+     "preferred": false,
+     "role": null,
+     "image": "Dover Delaware.jpg",
+     "lon": -75.526,
+     "lat": 39.162,
+     "wiki": "Dover,_Delaware"
+    }
+   ],
+   "flag": "Flag of Delaware.svg",
+   "capitalAnswer": "Dover"
+  },
+  {
+   "id": "Q812",
+   "layer": "us",
+   "name": "Florida",
+   "image": "Sunset on coast of Florida.jpg",
+   "lon": -81.632,
+   "lat": 28.133,
+   "wiki": "Florida",
+   "code": "FL",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q37043",
+     "name": "Tallahassee",
+     "preferred": false,
+     "role": null,
+     "image": "TallahasseeSkyline2.JPG",
+     "lon": -84.281,
+     "lat": 30.438,
+     "wiki": "Tallahassee,_Florida"
+    }
+   ],
+   "flag": "Flag of Florida.svg",
+   "capitalAnswer": "Tallahassee"
+  },
+  {
+   "id": "Q1428",
+   "layer": "us",
+   "name": "Georgia",
+   "image": "15 18 0030 black rock.jpg",
+   "lon": -83.5,
+   "lat": 33,
+   "wiki": "Georgia_(U.S._state)",
+   "code": "GA",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q23556",
+     "name": "Atlanta",
+     "preferred": false,
+     "role": null,
+     "image": "A2ATL20250614-0721 (cropped).jpg",
+     "lon": -84.39,
+     "lat": 33.754,
+     "wiki": "Atlanta"
+    }
+   ],
+   "flag": "Flag of the State of Georgia.svg",
+   "capitalAnswer": "Atlanta"
+  },
+  {
+   "id": "Q782",
+   "layer": "us",
+   "name": "Hawaii",
+   "image": "Hawaje-NoRedLine.jpg",
+   "lon": -158,
+   "lat": 21.5,
+   "wiki": "Hawaii",
+   "code": "HI",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q18094",
+     "name": "Honolulu",
+     "preferred": false,
+     "role": null,
+     "image": "2022 Views from Diamond Head 02.jpg",
+     "lon": -157.857,
+     "lat": 21.305,
+     "wiki": "Honolulu"
+    }
+   ],
+   "flag": "Flag of Hawaii.svg",
+   "capitalAnswer": "Honolulu"
+  },
+  {
+   "id": "Q1221",
+   "layer": "us",
+   "name": "Idaho",
+   "image": "Snake02.jpg",
+   "lon": -114,
+   "lat": 45,
+   "wiki": "Idaho",
+   "code": "ID",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q35775",
+     "name": "Boise",
+     "preferred": false,
+     "role": null,
+     "image": "Boise Metro Chamber of Commerce photo to share - winter 2017.jpg",
+     "lon": -116.238,
+     "lat": 43.614,
+     "wiki": "Boise,_Idaho"
+    }
+   ],
+   "flag": "Flag of Idaho.svg",
+   "capitalAnswer": "Boise"
+  },
+  {
+   "id": "Q1204",
+   "layer": "us",
+   "name": "Illinois",
+   "image": "Old State Capitol (7352260622).jpg",
+   "lon": -89.25,
+   "lat": 40,
+   "wiki": "Illinois",
+   "code": "IL",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q28515",
+     "name": "Springfield",
+     "preferred": false,
+     "role": null,
+     "image": "Illinois State Capitol, Springfield, IL.jpg",
+     "lon": -89.645,
+     "lat": 39.797,
+     "wiki": "Springfield,_Illinois"
+    }
+   ],
+   "flag": "Flag of Illinois.svg",
+   "capitalAnswer": "Springfield"
+  },
+  {
+   "id": "Q1415",
+   "layer": "us",
+   "name": "Indiana",
+   "image": null,
+   "lon": -86.217,
+   "lat": 39.933,
+   "wiki": "Indiana",
+   "code": "IN",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q6346",
+     "name": "Indianapolis",
+     "preferred": true,
+     "role": null,
+     "image": "Downtown Indianapolis.jpg",
+     "lon": -86.158,
+     "lat": 39.769,
+     "wiki": "Indianapolis"
+    }
+   ],
+   "flag": "Flag of Indiana.svg",
+   "capitalAnswer": "Indianapolis"
+  },
+  {
+   "id": "Q1546",
+   "layer": "us",
+   "name": "Iowa",
+   "image": "Maytag.jpg",
+   "lon": -93,
+   "lat": 42,
+   "wiki": "Iowa",
+   "code": "IA",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q39709",
+     "name": "Des Moines",
+     "preferred": false,
+     "role": null,
+     "image": "Des Moines skyline.jpg",
+     "lon": -93.621,
+     "lat": 41.591,
+     "wiki": "Des_Moines,_Iowa"
+    }
+   ],
+   "flag": "Flag of Iowa.svg",
+   "capitalAnswer": "Des Moines"
+  },
+  {
+   "id": "Q1558",
+   "layer": "us",
+   "name": "Kansas",
+   "image": null,
+   "lon": -98,
+   "lat": 38.5,
+   "wiki": "Kansas",
+   "code": "KS",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q41057",
+     "name": "Topeka",
+     "preferred": false,
+     "role": null,
+     "image": "Topeka, Kansas.JPG",
+     "lon": -95.678,
+     "lat": 39.048,
+     "wiki": "Topeka,_Kansas"
+    }
+   ],
+   "flag": "Flag of Kansas.svg",
+   "capitalAnswer": "Topeka"
+  },
+  {
+   "id": "Q1603",
+   "layer": "us",
+   "name": "Kentucky",
+   "image": null,
+   "lon": -85,
+   "lat": 37.5,
+   "wiki": "Kentucky",
+   "code": "KY",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q28603",
+     "name": "Frankfort",
+     "preferred": false,
+     "role": null,
+     "image": "U.S. Route 60 Frankfort, KY (23892062134).jpg",
+     "lon": -84.863,
+     "lat": 38.197,
+     "wiki": "Frankfort,_Kentucky"
+    }
+   ],
+   "flag": "Flag of Kentucky.svg",
+   "capitalAnswer": "Frankfort"
+  },
+  {
+   "id": "Q1588",
+   "layer": "us",
+   "name": "Louisiana",
+   "image": "Fontainebleau State Park, Louisiana 2019 01.jpg",
+   "lon": -92,
+   "lat": 31,
+   "wiki": "Louisiana",
+   "code": "LA",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q28218",
+     "name": "Baton Rouge",
+     "preferred": true,
+     "role": null,
+     "image": "Baton Rouge Louisiana waterfront aerial view.jpg",
+     "lon": -91.179,
+     "lat": 30.448,
+     "wiki": "Baton_Rouge,_Louisiana"
+    }
+   ],
+   "flag": "Flag of Louisiana.svg",
+   "capitalAnswer": "Baton Rouge"
+  },
+  {
+   "id": "Q724",
+   "layer": "us",
+   "name": "Maine",
+   "image": null,
+   "lon": -69,
+   "lat": 45.5,
+   "wiki": "Maine",
+   "code": "ME",
+   "group": "us-ne",
+   "capitals": [
+    {
+     "id": "Q28206",
+     "name": "Augusta",
+     "preferred": false,
+     "role": null,
+     "image": "Augusta, Maine skyline.jpg",
+     "lon": -69.779,
+     "lat": 44.311,
+     "wiki": "Augusta,_Maine"
+    }
+   ],
+   "flag": "Flag of Maine.svg",
+   "capitalAnswer": "Augusta"
+  },
+  {
+   "id": "Q1391",
+   "layer": "us",
+   "name": "Maryland",
+   "image": "Deep Creek Lake Maryland Panoramic View.jpg",
+   "lon": -76.7,
+   "lat": 39,
+   "wiki": "Maryland",
+   "code": "MD",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q28271",
+     "name": "Annapolis",
+     "preferred": false,
+     "role": null,
+     "image": "Some Annapolis commercial strip.jpg",
+     "lon": -76.492,
+     "lat": 38.979,
+     "wiki": "Annapolis,_Maryland"
+    }
+   ],
+   "flag": "Flag of Maryland.svg",
+   "capitalAnswer": "Annapolis"
+  },
+  {
+   "id": "Q771",
+   "layer": "us",
+   "name": "Massachusetts",
+   "image": "USA Cape Cod 3 MA.jpg",
+   "lon": -71.8,
+   "lat": 42.3,
+   "wiki": "Massachusetts",
+   "code": "MA",
+   "group": "us-ne",
+   "capitals": [
+    {
+     "id": "Q100",
+     "name": "Boston",
+     "preferred": false,
+     "role": null,
+     "image": "Boston from the Harbour, Massachusetts (493360) (10772382303).jpg",
+     "lon": -71.058,
+     "lat": 42.36,
+     "wiki": "Boston"
+    }
+   ],
+   "flag": "Flag of Massachusetts.svg",
+   "capitalAnswer": "Boston"
+  },
+  {
+   "id": "Q1166",
+   "layer": "us",
+   "name": "Michigan",
+   "image": "ISS015-E-6196 - View of Michigan.jpg",
+   "lon": -85.58,
+   "lat": 44.34,
+   "wiki": "Michigan",
+   "code": "MI",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q28237",
+     "name": "Lansing",
+     "preferred": false,
+     "role": null,
+     "image": "1 Lansing Pan cropped.jpg",
+     "lon": -84.547,
+     "lat": 42.733,
+     "wiki": "Lansing,_Michigan"
+    }
+   ],
+   "flag": "Flag of Michigan.svg",
+   "capitalAnswer": "Lansing"
+  },
+  {
+   "id": "Q1527",
+   "layer": "us",
+   "name": "Minnesota",
+   "image": "Minnesota Welcomes You sign.jpg",
+   "lon": -94,
+   "lat": 46,
+   "wiki": "Minnesota",
+   "code": "MN",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q28848",
+     "name": "Saint Paul",
+     "preferred": false,
+     "role": null,
+     "image": "Saint Paul, Minnesota.jpg",
+     "lon": -93.094,
+     "lat": 44.944,
+     "wiki": "Saint_Paul,_Minnesota"
+    }
+   ],
+   "flag": "Flag of Minnesota.svg",
+   "capitalAnswer": "Saint Paul"
+  },
+  {
+   "id": "Q1494",
+   "layer": "us",
+   "name": "Mississippi",
+   "image": null,
+   "lon": -90,
+   "lat": 33,
+   "wiki": "Mississippi",
+   "code": "MS",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q28198",
+     "name": "Jackson",
+     "preferred": false,
+     "role": null,
+     "image": "JacksonMS CapitolSt.jpg",
+     "lon": -90.185,
+     "lat": 32.299,
+     "wiki": "Jackson,_Mississippi"
+    }
+   ],
+   "flag": "Flag of Mississippi.svg",
+   "capitalAnswer": "Jackson"
+  },
+  {
+   "id": "Q1581",
+   "layer": "us",
+   "name": "Missouri",
+   "image": null,
+   "lon": -92.5,
+   "lat": 38.5,
+   "wiki": "Missouri",
+   "code": "MO",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q28180",
+     "name": "Jefferson City",
+     "preferred": false,
+     "role": null,
+     "image": "Jefferson City.jpg",
+     "lon": -92.174,
+     "lat": 38.577,
+     "wiki": "Jefferson_City,_Missouri"
+    }
+   ],
+   "flag": "Flag of Missouri.svg",
+   "capitalAnswer": "Jefferson City"
+  },
+  {
+   "id": "Q1212",
+   "layer": "us",
+   "name": "Montana",
+   "image": "ISS028-E-12597 - View of Montana.jpg",
+   "lon": -110,
+   "lat": 47,
+   "wiki": "Montana",
+   "code": "MT",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q38733",
+     "name": "Helena",
+     "preferred": false,
+     "role": null,
+     "image": "Helena Montana 2006.jpg",
+     "lon": -112.035,
+     "lat": 46.593,
+     "wiki": "Helena,_Montana"
+    }
+   ],
+   "flag": "Flag of Montana.svg",
+   "capitalAnswer": "Helena"
+  },
+  {
+   "id": "Q1553",
+   "layer": "us",
+   "name": "Nebraska",
+   "image": "Scotts Bluff Summit at Scottsbluff National Monument Nebraska (54270764782).jpg",
+   "lon": -100,
+   "lat": 41.5,
+   "wiki": "Nebraska",
+   "code": "NE",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q28260",
+     "name": "Lincoln",
+     "preferred": false,
+     "role": null,
+     "image": "Skyline of Downtown Lincoln, Nebraska, USA (2023).jpg",
+     "lon": -96.678,
+     "lat": 40.809,
+     "wiki": "Lincoln,_Nebraska"
+    }
+   ],
+   "flag": "Flag of Nebraska.svg",
+   "capitalAnswer": "Lincoln"
+  },
+  {
+   "id": "Q1227",
+   "layer": "us",
+   "name": "Nevada",
+   "image": null,
+   "lon": -117,
+   "lat": 39,
+   "wiki": "Nevada",
+   "code": "NV",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q40881",
+     "name": "Carson City",
+     "preferred": false,
+     "role": null,
+     "image": "Nevada State Museum.jpg",
+     "lon": -119.754,
+     "lat": 39.161,
+     "wiki": "Carson_City,_Nevada"
+    }
+   ],
+   "flag": "Flag of Nevada.svg",
+   "capitalAnswer": "Carson City"
+  },
+  {
+   "id": "Q759",
+   "layer": "us",
+   "name": "New Hampshire",
+   "image": null,
+   "lon": -71.5,
+   "lat": 44,
+   "wiki": "New_Hampshire",
+   "code": "NH",
+   "group": "us-ne",
+   "capitals": [
+    {
+     "id": "Q28249",
+     "name": "Concord",
+     "preferred": false,
+     "role": null,
+     "image": "Downtown Concord, NH, near the state capitol IMG 2719 (cropped).JPG",
+     "lon": -71.538,
+     "lat": 43.207,
+     "wiki": "Concord,_New_Hampshire"
+    }
+   ],
+   "flag": "Flag of New Hampshire.svg",
+   "capitalAnswer": "Concord"
+  },
+  {
+   "id": "Q1408",
+   "layer": "us",
+   "name": "New Jersey",
+   "image": null,
+   "lon": -74.5,
+   "lat": 40,
+   "wiki": "New_Jersey",
+   "code": "NJ",
+   "group": "us-ne",
+   "capitals": [
+    {
+     "id": "Q25330",
+     "name": "Trenton",
+     "preferred": false,
+     "role": null,
+     "image": "Trenton, New Jersey.jpg",
+     "lon": -74.766,
+     "lat": 40.22,
+     "wiki": "Trenton,_New_Jersey"
+    }
+   ],
+   "flag": "Flag of New Jersey.svg",
+   "capitalAnswer": "Trenton"
+  },
+  {
+   "id": "Q1522",
+   "layer": "us",
+   "name": "New Mexico",
+   "image": "ISS006-E-25187 - View of New Mexico.jpg",
+   "lon": -106,
+   "lat": 34,
+   "wiki": "New_Mexico",
+   "code": "NM",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q38555",
+     "name": "Santa Fe",
+     "preferred": false,
+     "role": null,
+     "image": "Santa Fe NM.jpg",
+     "lon": -105.967,
+     "lat": 35.667,
+     "wiki": "Santa_Fe,_New_Mexico"
+    }
+   ],
+   "flag": "Flag of New Mexico.svg",
+   "capitalAnswer": "Santa Fe"
+  },
+  {
+   "id": "Q1384",
+   "layer": "us",
+   "name": "New York",
+   "image": "NYSCapitolPanorama.jpg",
+   "lon": -75,
+   "lat": 43,
+   "wiki": "New_York_(state)",
+   "code": "NY",
+   "group": "us-ne",
+   "capitals": [
+    {
+     "id": "Q24861",
+     "name": "Albany",
+     "preferred": false,
+     "role": null,
+     "image": "Albany, New York.jpg",
+     "lon": -73.767,
+     "lat": 42.65,
+     "wiki": "Albany,_New_York"
+    }
+   ],
+   "flag": "Flag of New York.svg",
+   "capitalAnswer": "Albany"
+  },
+  {
+   "id": "Q1454",
+   "layer": "us",
+   "name": "North Carolina",
+   "image": "Snow in Coastal North Carolina 2010-02-14.jpg",
+   "lon": -80,
+   "lat": 35.5,
+   "wiki": "North_Carolina",
+   "code": "NC",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q41087",
+     "name": "Raleigh",
+     "preferred": false,
+     "role": null,
+     "image": "Raleigh Skyline.jpg",
+     "lon": -78.64,
+     "lat": 35.78,
+     "wiki": "Raleigh,_North_Carolina"
+    }
+   ],
+   "flag": "Flag of North Carolina.svg",
+   "capitalAnswer": "Raleigh"
+  },
+  {
+   "id": "Q1207",
+   "layer": "us",
+   "name": "North Dakota",
+   "image": "North Dakota State Capitol 02.jpg",
+   "lon": -100.5,
+   "lat": 47.5,
+   "wiki": "North_Dakota",
+   "code": "ND",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q37066",
+     "name": "Bismarck",
+     "preferred": false,
+     "role": null,
+     "image": "2009-0521-ND-StateCapitol.jpg",
+     "lon": -100.784,
+     "lat": 46.808,
+     "wiki": "Bismarck,_North_Dakota"
+    }
+   ],
+   "flag": "Flag of North Dakota.svg",
+   "capitalAnswer": "Bismarck"
+  },
+  {
+   "id": "Q1397",
+   "layer": "us",
+   "name": "Ohio",
+   "image": "ISS007-E-16092 - View of Ohio.jpg",
+   "lon": -82.5,
+   "lat": 40.5,
+   "wiki": "Ohio",
+   "code": "OH",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q16567",
+     "name": "Columbus",
+     "preferred": false,
+     "role": null,
+     "image": "Montage Columbus 1.jpg",
+     "lon": -83.001,
+     "lat": 39.962,
+     "wiki": "Columbus,_Ohio"
+    }
+   ],
+   "flag": "Flag of Ohio.svg",
+   "capitalAnswer": "Columbus"
+  },
+  {
+   "id": "Q1649",
+   "layer": "us",
+   "name": "Oklahoma",
+   "image": null,
+   "lon": -98,
+   "lat": 35.5,
+   "wiki": "Oklahoma",
+   "code": "OK",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q34863",
+     "name": "Oklahoma City",
+     "preferred": false,
+     "role": null,
+     "image": "Downtown Oklahoma City skyline at twilight.jpg",
+     "lon": -97.535,
+     "lat": 35.482,
+     "wiki": "Oklahoma_City"
+    }
+   ],
+   "flag": "Flag of Oklahoma.svg",
+   "capitalAnswer": "Oklahoma City"
+  },
+  {
+   "id": "Q824",
+   "layer": "us",
+   "name": "Oregon",
+   "image": "Columbia river gorge from crown point.jpg",
+   "lon": -120.575,
+   "lat": 43.936,
+   "wiki": "Oregon",
+   "code": "OR",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q43919",
+     "name": "Salem",
+     "preferred": false,
+     "role": null,
+     "image": "Oregon State Capitol, André Orso (6501975671).jpg",
+     "lon": -123.039,
+     "lat": 44.94,
+     "wiki": "Salem,_Oregon"
+    }
+   ],
+   "flag": "Flag of Oregon.svg",
+   "capitalAnswer": "Salem"
+  },
+  {
+   "id": "Q1400",
+   "layer": "us",
+   "name": "Pennsylvania",
+   "image": "ISS033-E-22378 - View of Pennsylvania.jpg",
+   "lon": -77.5,
+   "lat": 41,
+   "wiki": "Pennsylvania",
+   "code": "PA",
+   "group": "us-ne",
+   "capitals": [
+    {
+     "id": "Q25280",
+     "name": "Harrisburg",
+     "preferred": false,
+     "role": null,
+     "image": "Pennsylvania Capitol from Downtown.jpg",
+     "lon": -76.883,
+     "lat": 40.265,
+     "wiki": "Harrisburg,_Pennsylvania"
+    }
+   ],
+   "flag": "Flag of Pennsylvania.svg",
+   "capitalAnswer": "Harrisburg"
+  },
+  {
+   "id": "Q1387",
+   "layer": "us",
+   "name": "Rhode Island",
+   "image": "Downtown Providence Rhode Island 2008.jpg",
+   "lon": -71.5,
+   "lat": 41.7,
+   "wiki": "Rhode_Island",
+   "code": "RI",
+   "group": "us-ne",
+   "capitals": [
+    {
+     "id": "Q18383",
+     "name": "Providence",
+     "preferred": false,
+     "role": null,
+     "image": "Providence RI skyline.jpg",
+     "lon": -71.413,
+     "lat": 41.824,
+     "wiki": "Providence,_Rhode_Island"
+    }
+   ],
+   "flag": "Flag of Rhode Island.svg",
+   "capitalAnswer": "Providence"
+  },
+  {
+   "id": "Q1456",
+   "layer": "us",
+   "name": "South Carolina",
+   "image": "Ravenel Bridge at night from Mt Pleasant.jpg",
+   "lon": -81,
+   "lat": 34,
+   "wiki": "South_Carolina",
+   "code": "SC",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q38453",
+     "name": "Columbia",
+     "preferred": false,
+     "role": null,
+     "image": "Fall skyline of Columbia SC from Arsenal Hill.jpg",
+     "lon": -81.044,
+     "lat": 34.001,
+     "wiki": "Columbia,_South_Carolina"
+    }
+   ],
+   "flag": "Flag of South Carolina.svg",
+   "capitalAnswer": "Columbia"
+  },
+  {
+   "id": "Q1211",
+   "layer": "us",
+   "name": "South Dakota",
+   "image": "Mount Rushmore detail view (100MP).jpg",
+   "lon": -100,
+   "lat": 44.5,
+   "wiki": "South_Dakota",
+   "code": "SD",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q40747",
+     "name": "Pierre",
+     "preferred": false,
+     "role": null,
+     "image": "South Dakota State Capitol, Capitol Avenue, Pierre, SD - 53748063274.jpg",
+     "lon": -100.351,
+     "lat": 44.368,
+     "wiki": "Pierre,_South_Dakota"
+    }
+   ],
+   "flag": "Flag of South Dakota.svg",
+   "capitalAnswer": "Pierre"
+  },
+  {
+   "id": "Q1509",
+   "layer": "us",
+   "name": "Tennessee",
+   "image": "Lake Lindsey in David Crockett State Park (June 2005).jpg",
+   "lon": -86,
+   "lat": 36,
+   "wiki": "Tennessee",
+   "code": "TN",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q23197",
+     "name": "Nashville",
+     "preferred": false,
+     "role": null,
+     "image": "Nashville from Cumberland River September 2026 005.jpg",
+     "lon": -86.774,
+     "lat": 36.162,
+     "wiki": "Nashville,_Tennessee"
+    }
+   ],
+   "flag": "Flag of Tennessee.svg",
+   "capitalAnswer": "Nashville"
+  },
+  {
+   "id": "Q1439",
+   "layer": "us",
+   "name": "Texas",
+   "image": "ISS036-E-9064 - View of Texas.jpg",
+   "lon": -100,
+   "lat": 31,
+   "wiki": "Texas",
+   "code": "TX",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q16559",
+     "name": "Austin",
+     "preferred": false,
+     "role": null,
+     "image": "Skyline of Austin, Texas (cropped).jpg",
+     "lon": -97.733,
+     "lat": 30.3,
+     "wiki": "Austin,_Texas"
+    }
+   ],
+   "flag": "Flag of Texas.svg",
+   "capitalAnswer": "Austin"
+  },
+  {
+   "id": "Q829",
+   "layer": "us",
+   "name": "Utah",
+   "image": null,
+   "lon": -111.5,
+   "lat": 39.5,
+   "wiki": "Utah",
+   "code": "UT",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q23337",
+     "name": "Salt Lake City",
+     "preferred": false,
+     "role": null,
+     "image": "Salt Lake City pan 1.jpg",
+     "lon": -111.883,
+     "lat": 40.75,
+     "wiki": "Salt_Lake_City"
+    }
+   ],
+   "flag": "Flag of Utah.svg",
+   "capitalAnswer": "Salt Lake City"
+  },
+  {
+   "id": "Q16551",
+   "layer": "us",
+   "name": "Vermont",
+   "image": "Congregational Church, East Brookfield VT.jpg",
+   "lon": -72.7,
+   "lat": 44,
+   "wiki": "Vermont",
+   "code": "VT",
+   "group": "us-ne",
+   "capitals": [
+    {
+     "id": "Q26426",
+     "name": "Montpelier",
+     "preferred": false,
+     "role": null,
+     "image": "Vermont State House, Fall 2015.jpg",
+     "lon": -72.572,
+     "lat": 44.266,
+     "wiki": "Montpelier,_Vermont"
+    }
+   ],
+   "flag": "Flag of Vermont.svg",
+   "capitalAnswer": "Montpelier"
+  },
+  {
+   "id": "Q1370",
+   "layer": "us",
+   "name": "Virginia",
+   "image": "ISS006-E-35934 - View of Virginia.jpg",
+   "lon": -79,
+   "lat": 37.5,
+   "wiki": "Virginia",
+   "code": "VA",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q43421",
+     "name": "Richmond",
+     "preferred": false,
+     "role": null,
+     "image": "Richmond, Virginia - Facing West (32664969852).jpg",
+     "lon": -77.437,
+     "lat": 37.541,
+     "wiki": "Richmond,_Virginia"
+    }
+   ],
+   "flag": "Flag of Virginia.svg",
+   "capitalAnswer": "Richmond"
+  },
+  {
+   "id": "Q1223",
+   "layer": "us",
+   "name": "Washington",
+   "image": "Mount Rainier from Clear Lake, Washington.jpg",
+   "lon": -120.5,
+   "lat": 47.5,
+   "wiki": "Washington_(state)",
+   "code": "WA",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q42735",
+     "name": "Olympia",
+     "preferred": false,
+     "role": null,
+     "image": "Capitol Lake, Olympia, Washington, July 20, 2025 (cropped).jpg",
+     "lon": -122.893,
+     "lat": 47.042,
+     "wiki": "Olympia,_Washington"
+    }
+   ],
+   "flag": "Flag of Washington.svg",
+   "capitalAnswer": "Olympia"
+  },
+  {
+   "id": "Q1371",
+   "layer": "us",
+   "name": "West Virginia",
+   "image": null,
+   "lon": -80.5,
+   "lat": 39,
+   "wiki": "West_Virginia",
+   "code": "WV",
+   "group": "us-s",
+   "capitals": [
+    {
+     "id": "Q44564",
+     "name": "Charleston",
+     "preferred": false,
+     "role": null,
+     "image": "View across the Kanawha River of Charleston, the capital city of West Virginia LCCN2015631775.tif",
+     "lon": -81.633,
+     "lat": 38.347,
+     "wiki": "Charleston,_West_Virginia"
+    }
+   ],
+   "flag": "Flag of West Virginia.svg",
+   "capitalAnswer": "Charleston"
+  },
+  {
+   "id": "Q1537",
+   "layer": "us",
+   "name": "Wisconsin",
+   "image": null,
+   "lon": -89.5,
+   "lat": 44.5,
+   "wiki": "Wisconsin",
+   "code": "WI",
+   "group": "us-mw",
+   "capitals": [
+    {
+     "id": "Q43788",
+     "name": "Madison",
+     "preferred": false,
+     "role": null,
+     "image": "State of the Map US 2026 capitol photo 15.jpg",
+     "lon": -89.384,
+     "lat": 43.075,
+     "wiki": "Madison,_Wisconsin"
+    }
+   ],
+   "flag": "Flag of Wisconsin.svg",
+   "capitalAnswer": "Madison"
+  },
+  {
+   "id": "Q1214",
+   "layer": "us",
+   "name": "Wyoming",
+   "image": "From Chittenden Road, Mt. Washburn, Yellowstone NP - panoramio - Aaron Zhu.jpg",
+   "lon": -107.5,
+   "lat": 43,
+   "wiki": "Wyoming",
+   "code": "WY",
+   "group": "us-w",
+   "capitals": [
+    {
+     "id": "Q39042",
+     "name": "Cheyenne",
+     "preferred": false,
+     "role": null,
+     "image": "CheyenneWY downtown.jpg",
+     "lon": -104.802,
+     "lat": 41.146,
+     "wiki": "Cheyenne,_Wyoming"
+    }
+   ],
+   "flag": "Flag of Wyoming.svg",
+   "capitalAnswer": "Cheyenne"
+  }
+ ]
+}

@@ -1,4 +1,6 @@
-# GeoQuest
+# Intelligence Quest
+
+*(formerly GeoQuest; the code still lives in `geo-quest/` and saved progress keeps its old storage key.)*
 
 A spaced-repetition geography trainer with a map: part game, mostly a learning tool.
 Learn countries, capitals and flags region by region, in both directions, and watch the
@@ -21,6 +23,15 @@ world map fill in as you master it.
   (Deutschland, 日本 · 東京, Ελλάδα · Αθήνα, ישראל). Toggle in Settings. Native country names come from the
   `world-countries` dataset; capitals' native names from Wikidata. `nativeLangs` in `data/overrides.json`
   sets which language comes first where it matters (e.g. Hebrew before Arabic for Israel).
+
+## v1.0: Intelligence Quest — United States
+
+- **50 US states** by Census region (Northeast, Midwest, South, West): find it / name it, capitals both ways, state flags.
+  Shapes from Natural Earth, facts from Wikidata.
+- **US Senate**: a fourth branch per region. Cards are tied to the *seat* (e.g. `S-NY-senior`), so when a seat changes
+  hands the card is re-queued with a note. Data from [@unitedstates/congress-legislators](https://github.com/unitedstates/congress-legislators)
+  (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
+  - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
 ## Versions
 

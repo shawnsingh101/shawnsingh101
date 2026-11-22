@@ -12,7 +12,7 @@ export interface Capital {
 }
 
 export type Status = 'un' | 'observer' | 'disputed';
-export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake';
+export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate';
 
 /** Anything you can learn on the map: a country, a sea, a province… keyed by Wikidata id. */
 export interface Place {
@@ -39,6 +39,10 @@ export interface Place {
   audio?: Audio;
   facts?: string;          // rivers & lakes: "6,650 km long · flows into the Mediterranean Sea"
   size?: number;           // km (rivers) or km² (lakes)
+  code?: string;           // US state postal code
+  // Senate seats (layer 'senate'): the place is the seat; these describe who holds it now.
+  label?: string; state?: string; stateName?: string; rank?: 'senior' | 'junior';
+  party?: string; partyLong?: string; since?: string; termEnd?: string; roles?: string[]; photo?: string;
 }
 export type Country = Place;
 

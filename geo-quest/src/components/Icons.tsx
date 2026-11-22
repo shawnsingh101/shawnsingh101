@@ -30,6 +30,8 @@ const P: Record<string, ReactNode> = {
   drop: <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z" />,
   undo: <path d="M9 14 4 9l5-5M4 9h10.5a5.5 5.5 0 0 1 0 11H11" />,
   sliders: <path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0M14 4v4M8 10v4M16 16v4" />,
+  person: <><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" /></>,
+  capitol: <path d="M3 21h18M5 21v-7h14v7M8 21v-7m4 7v-7m4 7v-7M4 14h16M7 14c0-3 2-5 5-5s5 2 5 5M12 9V4m0 0h2" />,
   tag: <><path d="M3 12V4h8l10 10-8 8z" /><circle cx="7.5" cy="8.5" r="1.3" /></>,
 };
 export type IconName = keyof typeof P;

@@ -19,7 +19,7 @@ export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClo
     <div className="sheet" role="dialog">
       <button className="btn ghost close icon-btn" onClick={onClose} aria-label="Close"><Icon name="x" /></button>
       <div className="sheet-head">
-        {c.layer === 'country' && <Flag file={c.flag ?? null} name={c.name} size={240} className="sheet-flag" />}
+        {(c.layer === 'country' || c.layer === 'us') && <Flag file={c.flag ?? null} name={c.name} size={240} className="sheet-flag" />}
         <div>
           <h2>{c.name}</h2>
           <div className="local"><LocalName place={c} showLang /></div>
@@ -35,6 +35,17 @@ export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClo
       {p.settings.pictures && <Picture {...pic} />}
       <ul className="card-levels">
         {kindsFor(c).map(k => { const l = level(p, cardId(c.id, k)); return <li key={k} className={'lv' + l}><span>{KIND_LABEL[k]}</span><small>{LEVEL[l]}</small></li>; })}
+      </ul>
+      {c.layer === 'us' && <div className="senators">
+        <b>Senators</b>
+        {ds.places.filter(s => s.layer === 'senate' && s.state === c.id).map(s => (
+          <div key={s.id} className="senator-row">
+            <img src={s.photo} alt={s.name} loading="lazy" />
+            <div><b>{s.name}</b> <small className="muted">({s.rank})</small><p className="muted small">{s.facts}</p></div>
+          </div>
+        ))}
+      </div>}
+      <ul className="card-levels" hidden>
       </ul>
       {c.wiki && <a className="btn" href={wikiUrl(c.wiki)} target="_blank" rel="noreferrer">Read about {c.name} on Wikipedia ↗</a>}
     </div>
@@ -69,7 +80,7 @@ export function Atlas({ ds }: { ds: Dataset }) {
         </button>))}</div>}
       {g && <div className="country-list">{placesIn(ds, g).sort((a, b) => a.name.localeCompare(b.name)).map(c => (
         <button key={c.id} className="country-row" onClick={() => setPlace(c.id)}>
-          {c.layer === 'country' ? <Flag file={c.flag ?? null} name={c.name} size={80} /> : <span className="row-glyph"><Icon name={LAYER_ICON[c.layer]} /></span>}
+          {c.flag ? <Flag file={c.flag ?? null} name={c.name} size={80} /> : <span className="row-glyph"><Icon name={LAYER_ICON[c.layer]} /></span>}
           <span className="grow"><b>{c.name} <span className="local inline"><LocalName place={c} voice={false} /></span></b><small>{c.capitalAnswer ? (c.capitalAnswer.length < 40 ? c.capitalAnswer : c.capitals.map(x => x.name).join(' / ')) : c.type ? cap1(c.type) : ''}</small></span>
           {c.status && c.status !== 'un' && <span className="tag">{c.status}</span>}
         </button>))}</div>}
