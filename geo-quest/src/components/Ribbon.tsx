@@ -50,6 +50,14 @@ export function Ribbon({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) 
             <input type="range" min={0} max={50} step={5} value={s.newPerDay} onChange={e => set('newPerDay', +e.target.value)} />
             <b>{s.newPerDay}</b>
           </label>
+          <div className="menu-row">
+            <span>“Find it on the map” questions</span>
+            <div className="seg">
+              {([['tap', 'Tap the map'], ['flip', 'Flip like flashcards'], ['skip', 'Skip them']] as const).map(([v, l]) => (
+                <button key={v} className={s.mapMode === v ? 'on' : ''} onClick={() => set('mapMode', v)}>{l}</button>
+              ))}
+            </div>
+          </div>
           <label className="check">
             <input type="checkbox" checked={s.nativeNames} onChange={e => set('nativeNames', e.target.checked)} />
             Show names in the local language (Deutschland, 日本, Ελλάδα) after each answer — Chinese characters & pinyin always show for China

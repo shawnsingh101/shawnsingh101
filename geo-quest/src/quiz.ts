@@ -1,5 +1,6 @@
 import { cardsForNode, GROUPS, nodeId, SECTIONS, shuffle, type Group, type Topic } from './cards';
 import type { QuizSpec } from './components/Study';
+import { getProgress, skipped } from './srs';
 import type { Dataset } from './types';
 
 /** A quiz scope: the whole world, a section ("Europe", "Oceans & Seas", "China") or one group. */
@@ -41,7 +42,7 @@ export function quizTitle(scope: Scope, topics: Topic[]) {
 export function makeQuiz(ds: Dataset, scope: Scope, topics: Topic[], length: number | 'all'): QuizSpec {
   return {
     key: quizKey(scope, topics), title: quizTitle(scope, topics),
-    draw: () => { const pool = shuffle(quizPool(ds, scope, topics)); return length === 'all' ? pool : pool.slice(0, length); },
+    draw: () => { const pool = shuffle(quizPool(ds, scope, topics).filter(c => !skipped(getProgress(), c.kind))); return length === 'all' ? pool : pool.slice(0, length); },
   };
 }
 

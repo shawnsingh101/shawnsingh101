@@ -15,6 +15,9 @@ export const TOPIC_KINDS: Record<Topic, Kind[]> = {
   flags: ['flag', 'flagReverse'],
 };
 
+/** Cards answered by tapping the map (can be flipped like flashcards, or skipped, in settings). */
+export const TAP_KINDS: Kind[] = ['locate', 'capitalLocate'];
+
 export const KIND_LABEL: Record<Kind, string> = {
   locate: 'Find it on the map', identify: 'Name it', capital: 'Name the capital',
   capitalReverse: 'Capital → name', capitalLocate: 'Capital → map', flag: 'Name the flag', flagReverse: 'Picture the flag',
