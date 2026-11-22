@@ -35,6 +35,8 @@ interface Props {
   onTap?: (hit: MapHit) => void;
   onHover?: (hit: MapHit | null, x: number, y: number) => void; // mouse only
   className?: string;
+  hide?: (placeId: string) => boolean;  // leave some rivers/lakes out (e.g. other regions during a quiz)
+  detailByZoom?: boolean;               // smaller rivers only appear once you zoom in
   recenter?: boolean;                   // rotate the globe so the focused region is centred
 }
 
@@ -81,7 +83,7 @@ function toShapes(topo: Topology, layer: Layer, path: ReturnType<typeof geoPath>
   });
 }
 
-export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], focus, dim, onTap, onHover, className, recenter = false }: Props) {
+export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], focus, dim, onTap, onHover, className, recenter = false, hide, detailByZoom = false }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown>>();
@@ -121,7 +123,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const shapes = useMemo(() => {
     const out: Partial<Record<Layer, Shape[]>> = {};
     if (topos.country) out.country = toShapes(topos.country, 'country', path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
-    for (const l of ['water', 'cn'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
+    for (const l of ['water', 'cn', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = toShapes(topos[l]!, l, path, f => (ds.byId.has(f.properties.id) ? f.properties.id : null));
     return out;
   }, [topos, shapeToCountry, ds, path]);
 
@@ -204,6 +206,24 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
     onPointerMove: (e: React.PointerEvent) => { if (e.pointerType === 'mouse') onHover?.(hit, e.clientX, e.clientY); },
     onPointerLeave: (e: React.PointerEvent) => { if (e.pointerType === 'mouse') onHover?.(null, 0, 0); },
   });
+  // Rivers: a thin visible line plus a wide invisible one, so they're easy to tap.
+  const k0 = fitScale(size);
+  const showWaterway = (s: Shape) => {
+    if (!s.placeId) return false;
+    if (tones[s.placeId] || labels[s.placeId]) return true;
+    if (hide?.(s.placeId)) return false;
+    if (detailByZoom && !/-great$/.test(ds.byId.get(s.placeId)?.group ?? '') && k < k0 * 2.5) return false;
+    return true;
+  };
+  const riverEl = (s: Shape) => {
+    const great = /-great$/.test(ds.byId.get(s.placeId!)?.group ?? '');
+    return (
+      <g key={s.key} className={'river' + (great ? ' great' : '') + cls(s.placeId)} {...events({ countryId: s.placeId, name: nameOf(s) })}>
+        <path d={s.d} className="hit" />
+        <path d={s.d} className="vis" />
+      </g>
+    );
+  };
   const shapeEl = (s: Shape, base: string) => (
     <path key={s.key} d={s.d} className={base + (s.placeId ? ' place' : ' other') + cls(s.placeId)} style={style(s.placeId)}
       {...events({ countryId: s.placeId, name: nameOf(s) })} />
@@ -218,6 +238,8 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           <path d={path(geoGraticule10()) ?? ''} className="graticule" />
           {shapes.country?.map(s => shapeEl(s, 'land' + (s.placeId ? ' country' : '')))}
           {shapes.cn && layers.includes('cn') && shapes.cn.map(s => shapeEl(s, 'land sub'))}
+          {shapes.lake && layers.includes('lake') && shapes.lake.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'lake') : <path key={s.key} d={s.d} className="lake other" />))}
+          {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(riverEl)}
           {dots.map(d => (
             <g key={d.placeId} className={'dot' + cls(d.placeId)} {...events({ countryId: d.placeId, name: ds.byId.get(d.placeId)!.name })}>
               <circle cx={d.x} cy={d.y} r={13 / k} className="hit" />

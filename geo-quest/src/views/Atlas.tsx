@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GROUPS, SECTIONS, placesIn, cardId, KIND_LABEL, kindsFor } from '../cards';
+import { GROUPS, SECTIONS, placesIn, cardId, KIND_LABEL, kindsFor, LAYER_NOUN, LAYER_ICON } from '../cards';
 import { level, useProgress } from '../srs';
 import type { Dataset } from '../types';
 import { Flag, Picture } from '../components/Picture';
@@ -25,7 +25,8 @@ export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClo
           <div className="local"><LocalName place={c} showLang /></div>
           {c.officialName && c.officialName !== c.name && <p className="muted small">{c.officialName}</p>}
           {c.type && <p className="muted small">{cap1(c.type)} of China</p>}
-          {c.layer === 'water' && <p className="muted small">{GROUPS.find(g => g.id === c.group)?.name}</p>}
+          {(c.layer === 'water' || c.layer === 'river' || c.layer === 'lake') && <p className="muted small">{GROUPS.find(g => g.id === c.group)?.name}</p>}
+          {c.facts && <p>{c.facts}</p>}
           {c.capitalAnswer && <p>Capital: <b>{c.capitalAnswer}</b>{cap && <span className="local inline"> <LocalName place={c} capital={cap} /></span>}</p>}
           {c.statusNote && <p className="note"><Icon name="info" size={15} /> {c.statusNote}</p>}
           {c.capitalNote && <p className="note"><Icon name="info" size={15} /> {c.capitalNote}</p>}
@@ -58,17 +59,17 @@ export function Atlas({ ds }: { ds: Dataset }) {
       </nav>
       {!sec && <div className="tiles">{SECTIONS.map(s => (
         <button key={s} className={'tile cont-' + s.toLowerCase().replace(/[^a-z]/g, '')} onClick={() => setSec(s)}>
-          <b>{s}</b><small>{sectionPlaces(s).length} {s === 'Oceans & Seas' ? 'waters' : s === 'China' ? 'provinces & regions' : 'countries'}</small>
+          <b>{s}</b><small>{sectionPlaces(s).length} {s === 'China' ? 'provinces & regions' : LAYER_NOUN[GROUPS.find(g => g.section === s)!.layer]}</small>
         </button>))}</div>}
       {sec && !g && <div className="tiles">{groups.map(gr => (
         <button key={gr.id} className="tile" onClick={() => setGroup(gr.id)}>
           {gr.layer === 'country' && <div className="tile-flags">{placesIn(ds, gr.id).slice(0, 6).map(c => <Flag key={c.id} file={c.flag ?? null} name={c.name} size={80} />)}</div>}
-          {gr.layer === 'water' && <div className="tile-glyph"><Icon name="wave" size={28} /></div>}
-          <b>{gr.name}</b><small>{placesIn(ds, gr.id).length} {gr.layer === 'water' ? 'waters' : 'countries'}</small>
+          {gr.layer !== 'country' && <div className="tile-glyph"><Icon name={LAYER_ICON[gr.layer]} size={28} /></div>}
+          <b>{gr.name}</b><small>{placesIn(ds, gr.id).length} {LAYER_NOUN[gr.layer]}</small>
         </button>))}</div>}
       {g && <div className="country-list">{placesIn(ds, g).sort((a, b) => a.name.localeCompare(b.name)).map(c => (
         <button key={c.id} className="country-row" onClick={() => setPlace(c.id)}>
-          {c.layer === 'country' ? <Flag file={c.flag ?? null} name={c.name} size={80} /> : <span className="row-glyph"><Icon name={c.layer === 'water' ? 'wave' : 'map'} /></span>}
+          {c.layer === 'country' ? <Flag file={c.flag ?? null} name={c.name} size={80} /> : <span className="row-glyph"><Icon name={LAYER_ICON[c.layer]} /></span>}
           <span className="grow"><b>{c.name} <span className="local inline"><LocalName place={c} voice={false} /></span></b><small>{c.capitalAnswer ? (c.capitalAnswer.length < 40 ? c.capitalAnswer : c.capitals.map(x => x.name).join(' / ')) : c.type ? cap1(c.type) : ''}</small></span>
           {c.status && c.status !== 'un' && <span className="tag">{c.status}</span>}
         </button>))}</div>}

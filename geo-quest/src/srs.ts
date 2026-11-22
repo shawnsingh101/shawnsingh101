@@ -1,6 +1,6 @@
 import { createEmptyCard, fsrs, generatorParameters, Rating, State, type Card, type Grade } from 'ts-fsrs';
 import { useSyncExternalStore } from 'react';
-import { cardsForNode, fingerprint, parseNode, refFromId, slotOf, nodeId, type CardRef } from './cards';
+import { cardsForNode, fingerprint, groupById, parseNode, refFromId, slotOf, nodeId, type CardRef } from './cards';
 import type { Dataset } from './types';
 
 export { Rating, State };
@@ -12,7 +12,7 @@ export const scheduler = fsrs(generatorParameters({ enable_fuzz: true, request_r
 export interface Settings {
   sound: boolean; gamify: boolean; pictures: boolean; locks: boolean;
   theme: 'auto' | 'light' | 'dark'; newPerDay: number;
-  mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean;
+  mapNames: boolean; mapCapitals: boolean; mapWater: boolean; mapCn: boolean; mapRivers: boolean; mapLakes: boolean;
   nativeNames: boolean;
 }
 interface CardRec { c: Card; fp: string }
@@ -32,7 +32,7 @@ export interface Progress {
 const KEY = 'geoquest:v1';
 const DEFAULT: Progress = {
   v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {},
-  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, nativeNames: true },
+  settings: { sound: true, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, nativeNames: true },
 };
 
 function revive(p: Progress): Progress {
@@ -109,6 +109,8 @@ export function nodeStats(ds: Dataset, p: Progress, node: string) {
 export function isUnlocked(ds: Dataset, p: Progress, node: string) {
   if (!p.settings.locks) return true;
   const { groupId } = parseNode(node);
+  const g = groupById(groupId);
+  if (g.requires) { const r = nodeStats(ds, p, g.requires); if (r.known / r.total < 0.5) return false; }
   const req = slotOf(node).requires;
   if (!req) return true;
   const s = nodeStats(ds, p, nodeId(groupId, req));

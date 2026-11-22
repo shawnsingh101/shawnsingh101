@@ -278,6 +278,85 @@ for (const p of cn.values()) {
 }
 
 
+// ---- rivers & lakes ---------------------------------------------------------------
+// Which ones exist comes from the shapes (data/rivers.json, Natural Earth lakes); everything
+// else comes from Wikidata, including the tiers: the 20 longest rivers / 20 largest lakes are
+// the "great" tier, the rest are grouped by continent and unlock after it.
+const shapeIds = f => JSON.parse(readFileSync(join(ROOT, `public/data/shapes-${f}.json`), 'utf8')).objects.places.geometries.map(g => g.properties.id);
+const regionOfCountry = Object.fromEntries([...countries.values()].map(c => [c.id, c.region]));
+const MEASURE_Q = `
+SELECT ?p ?len ?area ?mouthLabel (GROUP_CONCAT(DISTINCT ?ctry; separator=" ") AS ?ctrys) WHERE {
+  VALUES ?p { %IDS% }
+  OPTIONAL { ?p p:P2043/psn:P2043/wikibase:quantityAmount ?len }
+  OPTIONAL { ?p p:P2046/psn:P2046/wikibase:quantityAmount ?area }
+  OPTIONAL { ?p wdt:P403 ?mouth . ?mouth rdfs:label ?mouthLabel FILTER(lang(?mouthLabel) = "en") }
+  OPTIONAL { ?p wdt:P17 ?ctry }
+} GROUP BY ?p ?len ?area ?mouthLabel`;
+async function measures(ids) {
+  const out = {};
+  for (let i = 0; i < ids.length; i += 200) {
+    for (const b of await sparql(MEASURE_Q.replace('%IDS%', ids.slice(i, i + 200).map(q => `wd:${q}`).join(' ')))) {
+      const o = (out[qid(v(b, 'p'))] ??= { len: 0, area: 0, mouth: null, countries: [] });
+      o.len = Math.max(o.len, +(v(b, 'len') ?? 0));
+      o.area = Math.max(o.area, +(v(b, 'area') ?? 0));
+      o.mouth ??= v(b, 'mouthLabel') ?? null;
+      for (const c of (v(b, 'ctrys') ?? '').split(' ').filter(Boolean)) if (!o.countries.includes(qid(c))) o.countries.push(qid(c));
+    }
+  }
+  return out;
+}
+const CONT_GROUP = { Europe: 'eu', Asia: 'as', Oceania: 'as', Africa: 'af', Americas: 'am' };
+// Russia and Kazakhstan span two continents: east of the Urals (~60°E) counts as Asia.
+const TRANSCONTINENTAL = new Set(['Q159', 'Q232']);
+function mainRegion(cs, lon) {
+  const n = {};
+  for (const c of cs) {
+    let r = regionOfCountry[c];
+    if (TRANSCONTINENTAL.has(c) && lon != null) r = lon > 60 ? 'Asia' : 'Europe';
+    if (r) n[r] = (n[r] ?? 0) + 1;
+  }
+  return Object.entries(n).sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
+}
+const fmt = n => Math.round(n).toLocaleString('en-US');
+const countryNames = cs => cs.map(c => countries.get(c)?.name).filter(Boolean);
+
+async function waterways(kind) {
+  const ids = shapeIds(kind);
+  const ms = await measures(ids);
+  const places = await fetchPlaces(ids, kind, () => ({}));
+  const list = [...places.values()].map(p => ({ ...p, ...ms[p.id] })).filter(p => (kind === 'river' ? p.len : p.area) > 0 && mainRegion(p.countries ?? [], p.lon));
+  const size = p => (kind === 'river' ? p.len : p.area);
+  list.sort((a, b) => size(b) - size(a));
+  const prefix = kind === 'river' ? 'r' : 'l';
+  const perContinent = {};
+  const kept = [];
+  list.forEach((p, i) => {
+    const o = overrides[p.id];
+    if (o?.name) p.name = o.name;
+    const region = mainRegion(p.countries, p.lon);
+    if (i < 20) p.group = `${prefix}-great`;
+    else {
+      const g = `${prefix}-${CONT_GROUP[region]}`;
+      const famous = (overrides._lakesAlways ?? []).includes(p.id); // small but well-known (Dead Sea, Lake Geneva…)
+      if (kind === 'lake' && !famous && /r[eé]servoir| bay$/i.test(p.name)) return; // man-made lakes only count if they're among the very largest
+      if (kind === 'lake' && !famous && (perContinent[g] = (perContinent[g] ?? 0) + 1) > 15) return; // keep the 15 largest lakes per continent
+      p.group = g;
+    }
+    p.nameThe = kind === 'river' ? (o?.nameThe ?? `the ${p.name}`) : (o?.nameThe ?? (/ Sea$|^Great /.test(p.name) ? `the ${p.name}` : p.name));
+    const where = countryNames(p.countries);
+    p.facts = kind === 'river'
+      ? [`${fmt(p.len / 1000)} km long`, p.mouth && `flows into ${/^(the |Lake )/i.test(p.mouth) ? p.mouth : 'the ' + p.mouth}`, where.length && where.slice(0, 4).join(', ') + (where.length > 4 ? '…' : '')].filter(Boolean).join(' · ')
+      : [`${fmt(p.area / 1e6)} km²`, where.length && where.slice(0, 4).join(', ')].filter(Boolean).join(' · ');
+    p.size = Math.round(kind === 'river' ? p.len / 1000 : p.area / 1e6);
+    delete p.len; delete p.area; delete p.mouth;
+    kept.push(p);
+  });
+  return kept;
+}
+console.log('Querying Wikidata for rivers & lakes…');
+const rivers = await waterways('river');
+const lakes = await waterways('lake');
+
 // ---- pronunciation recordings (Wikidata P443, mostly native speakers via Lingua Libre) ----
 // Stored as { languageCode: [mp3 transcode, original] }; the app falls back to the
 // device's own text-to-speech voice when there's no recording.
@@ -337,12 +416,14 @@ function diffAndWrite(path, list, fields) {
 const writers = [
   diffAndWrite(OUT, list, ['name', 'capitalAnswer', 'flag']),
   diffAndWrite(join(ROOT, 'public/data/water.json'), [...water.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name']),
+  diffAndWrite(join(ROOT, 'public/data/rivers.json'), rivers, ['name', 'group']),
+  diffAndWrite(join(ROOT, 'public/data/lakes.json'), lakes, ['name', 'group']),
   diffAndWrite(join(ROOT, 'public/data/cn.json'), [...cn.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'zhHan']),
 ];
 
 warnings.forEach(w => console.warn('⚠ ' + w));
 changes.forEach(ch => console.log(`Δ ${ch.name}: ${ch.field} ${JSON.stringify(ch.from)} → ${JSON.stringify(ch.to)}`));
-console.log(`${list.length} countries, ${water.size} waters, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
+console.log(`${list.length} countries, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
 
 if (!DRY) {
   writers.forEach(w => w());
