@@ -1139,6 +1139,30 @@ function diffAndWrite(path, list, fields, extra = {}) {
   }
   return () => writeFileSync(path, JSON.stringify(path === OUT ? { source: 'Wikidata (CC0)', countries: list } : { source: 'Wikidata (CC0)', ...extra, places: list }, null, 1) + '\n');
 }
+// ---- which state / province each World Heritage Site and peak is in (Wikidata P131 → first-level division) ----
+console.log('Finding states & provinces for sites and peaks…');
+{
+  const items = [...sites, ...peaks];
+  const anc = {};
+  for (let i = 0; i < items.length; i += 100)
+    for (const b of await sparql(`SELECT ?s ?a WHERE { VALUES ?s { ${items.slice(i, i + 100).map(x => `wd:${x.id}`).join(' ')} } ?s wdt:P131+ ?a . }`))
+      (anc[qid(v(b, 's'))] ??= new Set()).add(qid(v(b, 'a')));
+  const all = [...new Set(Object.values(anc).flatMap(x => [...x]))];
+  const first = {};
+  for (let i = 0; i < all.length; i += 200)
+    for (const b of await sparql(`SELECT ?a ?aLabel WHERE { VALUES ?a { ${all.slice(i, i + 200).map(x => `wd:${x}`).join(' ')} } ?a wdt:P31/wdt:P279* wd:Q10864048 . SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`))
+      if (!/^Q\d+$/.test(v(b, 'aLabel'))) first[qid(v(b, 'a'))] = v(b, 'aLabel');
+  for (const x of items) {
+    // Some countries stack two "first-level" layers (Greece's decentralized administrations): drop those, keep at most two.
+    const regs = [...(anc[x.id] ?? [])].filter(a => first[a] && !/^Decentralized Administration/.test(first[a])).map(a => ({ id: a, name: first[a] }));
+    if (!regs.length || regs.length > 2) continue;
+    x.admin1Ids = regs.map(r => r.id);
+    x.admin1 = regs.map(r => r.name).join(', ');
+    const where = x.countryName ?? '';
+    if (where && !where.includes(' and ') && !where.includes(', ')) x.facts = x.facts.replace(new RegExp(`(· )?${where.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`), `$1${x.admin1}, ${where}`);
+  }
+}
+
 // ---- regions inside a country (data/subdivisions.json): prefectures, counties… ----
 console.log('Querying Wikidata for regions inside countries…');
 const subCfg = JSON.parse(readFileSync(join(ROOT, 'data/subdivisions.json'), 'utf8')).sections;

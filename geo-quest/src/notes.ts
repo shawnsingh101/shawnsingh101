@@ -9,6 +9,7 @@ export interface NoteCard {
   context: string | null;                      // the ## heading it sits under
   picture: { file?: string | null; url?: string | null; caption: string } | null;
   note: string | null;                         // a "> …" line: shown after the answer
+  related: string[];                           // a "related: A, B" line under the heading: links to other things you're learning
   fp: string;                                  // fingerprint: changes when the card's text changes
 }
 export interface Deck { id: string; title: string; subject: string; path: string[]; intro: string | null; cards: { id: string; card: NoteCard }[] }
@@ -28,9 +29,9 @@ export function parseDeck(file: string, text: string): Deck {
   const title = meta.title || parts[parts.length - 1].replace(/[-_]/g, ' ');
   const id = slug([subject, ...path, title].join(' '));
   const cards: Deck['cards'] = [];
-  let context: string | null = null, picture: NoteCard['picture'] = null, intro: string[] = [], seenHeading = false;
-  const add = (c: Omit<NoteCard, 'context' | 'picture' | 'note' | 'fp'>, key: string) => {
-    const card: NoteCard = { ...c, context, picture, note: null, fp: `${c.pre}|${c.answer}|${c.post}` };
+  let context: string | null = null, picture: NoteCard['picture'] = null, related: string[] = [], intro: string[] = [], seenHeading = false;
+  const add = (c: Omit<NoteCard, 'context' | 'picture' | 'note' | 'fp' | 'related'>, key: string) => {
+    const card: NoteCard = { ...c, context, picture, related, note: null, fp: `${c.pre}|${c.answer}|${c.post}` };
     // The id ignores the answer, so fixing an answer keeps your progress (the fingerprint re-queues the card).
     let cid = `N-${id}-${hash((context ?? '') + '|' + key)}`;
     while (cards.some(x => x.id === cid)) cid += 'x';
@@ -40,7 +41,10 @@ export function parseDeck(file: string, text: string): Deck {
     const line = raw.trim();
     if (!line) continue;
     const h = /^#{1,3}\s+(.*)$/.exec(line);
-    if (h) { context = h[1]; picture = null; seenHeading = true; continue; }
+    if (h) { context = h[1]; picture = null; related = []; seenHeading = true; continue; }
+    const rel = /^related:\s*(.+)$/i.exec(line);
+    // Applies to every card under this heading, wherever the line sits.
+    if (rel) { related = rel[1].split(',').map(x => x.trim()).filter(Boolean); for (const c of cards) if (c.card.context === context) c.card.related = related; continue; }
     const img = /^!\[([^\]]*)\]\(([^)]+)\)$/.exec(line);
     if (img) { const src = img[2]; picture = src.startsWith('commons:') ? { file: src.slice(8), caption: img[1] || context || '' } : { url: src, caption: img[1] || context || '' }; continue; }
     if (line.startsWith('>')) { const last = cards[cards.length - 1]; if (last) last.card.note = (last.card.note ? last.card.note + ' ' : '') + line.replace(/^>\s?/, ''); continue; }
@@ -80,7 +84,7 @@ export function registerNotes(): Place[] {
     chain.forEach((sec, i) => { if (!SECTIONS.includes(sec)) SECTIONS.push(sec); if (i) SECTION_PARENT[sec] = chain[i - 1]; });
     const gid = 'n-' + d.id;
     if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined });
-    for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card } as unknown as Place);
+    for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path] } as unknown as Place);
   }
   return out;
 }

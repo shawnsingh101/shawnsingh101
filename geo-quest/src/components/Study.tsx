@@ -10,6 +10,8 @@ import { LocalName } from './Native';
 import { Portrait, Incoming } from './Portrait';
 import { Lookalikes } from './Lookalikes';
 import { Inset } from './Inset';
+import { Related } from './Related';
+import { PlaceSheet } from '../views/Atlas';
 
 interface Item { ref: CardRef; isNew: boolean }
 
@@ -38,6 +40,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
   const [results, setResults] = useState<{ ref: CardRef; ok: boolean }[]>([]);
   const [saved, setSaved] = useState(false);
   const [nudge, setNudge] = useState<string | null>(null);
+  const [sheet, setSheet] = useState<string | null>(null); // a related place opened from the card
   // Undo: a snapshot of the session (and your progress) before each answer.
   const history = useRef<{ queue: Item[]; done: number; results: typeof results; sessionXp: number; progress: Progress }[]>([]);
   const [canUndo, setCanUndo] = useState(false);
@@ -284,6 +287,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
           {revealed && item.ref.kind.startsWith('flag') && <Lookalikes ds={ds} place={c} />}
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
           {revealed && f.note && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
+          {revealed && <Related ds={ds} place={c} onOpen={setSheet} />}
           {revealed && s.pictures && f.picture && !f.promptPicture && <Picture {...f.picture} />}
           {revealed && !f.picture && c.flag && c.layer !== 'note' && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}
           {!revealed && f.mode === 'reveal' && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
@@ -319,6 +323,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
           </div>
         )}
       </div>
+      {sheet && <PlaceSheet ds={ds} id={sheet} onClose={() => setSheet(null)} />}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GROUPS, placesIn, cardId, KIND_LABEL, kindsFor, LAYER_NOUN, LAYER_ICON, childSections, sectionChain, sectionAndDescendants } from '../cards';
 import { level, useProgress } from '../srs';
 import type { Dataset } from '../types';
@@ -8,18 +8,26 @@ import { wikiUrl } from '../data';
 import { LocalName } from '../components/Native';
 import { PartyPill, PersonPhoto } from '../components/Portrait';
 import { isGeography } from '../subjects';
+import { Related } from '../components/Related';
+import { notesAbout } from '../related';
 
 const LEVEL = ['not started', 'learning', 'known', 'mastered'];
 const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClose: () => void }) {
+export function PlaceSheet({ ds, id: startId, onClose }: { ds: Dataset; id: string; onClose: () => void }) {
   const p = useProgress();
+  // Related chips open the next place in the same sheet; "‹" goes back.
+  const [trail, setTrail] = useState<string[]>([startId]);
+  useEffect(() => setTrail([startId]), [startId]);
+  const id = trail[trail.length - 1];
   const c = ds.byId.get(id)!;
+  const notes = notesAbout(ds, c);
   const cap = c.capitals[0];
   const pic = cap ? { file: cap.image, wiki: cap.wiki, caption: cap.name } : { file: c.image, wiki: c.wiki, caption: c.name };
   return (
     <div className="sheet" role="dialog">
       <button className="btn ghost close icon-btn" onClick={onClose} aria-label="Close"><Icon name="x" /></button>
+      {trail.length > 1 && <button className="btn ghost small sheet-back" onClick={() => setTrail(t => t.slice(0, -1))}>‹ {ds.byId.get(trail[trail.length - 2])?.name}</button>}
       <div className="sheet-head">
         {(c.layer === 'country' || c.layer === 'us') && <Flag file={c.flag ?? null} name={c.name} size={240} className="sheet-flag" />}
         <div>
@@ -59,6 +67,11 @@ export function PlaceSheet({ ds, id, onClose }: { ds: Dataset; id: string; onClo
       })()}
       <ul className="card-levels" hidden>
       </ul>
+      <Related ds={ds} place={c} onOpen={pid => setTrail(t => [...t, pid])} />
+      {notes.length > 0 && <div className="also-in">
+        <b className="small">Also in your decks</b>
+        {notes.slice(0, 8).map(n => <p key={n.id} className="small"><Icon name="book" size={13} /> {n.path.join(' › ')} › {n.deck}: <b>{n.topic}</b></p>)}
+      </div>}
       {c.wiki && <a className="btn" href={wikiUrl(c.wiki)} target="_blank" rel="noreferrer">Read about {c.name} on Wikipedia ↗</a>}
     </div>
   );

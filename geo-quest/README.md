@@ -33,6 +33,25 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.7: charts, more data, connections
+
+- **Dashboard charts** (`src/components/Charts.tsx`, plain SVG): line charts with series chips and 1M/3M/1Y/5Y ranges
+  (markets indexed to the start of the range, so the S&P 500 and the Dow share one axis), step charts for policy rates,
+  bar charts with a metric toggle for the 10 largest economies, trade and petroleum partners. Hover/touch for values;
+  colours from a palette checked for colour-blind separation in light and dark mode; the tables stay under each chart.
+- **More sources** in `scripts/sync-dashboard.mjs`: BIS central bank policy rates (10 central banks), EIA weekly US
+  petroleum imports/exports/net imports and monthly top-5 partners (`EIA_KEY` secret), World Bank Quarterly External
+  Debt Statistics (gross external debt and % of GDP), UN Comtrade public preview (each economy's top 5 exports & imports
+  by HS chapter and top petroleum partners; last night's figures are kept when the preview rate-limits). `FRED_KEY` is
+  used when present, otherwise FRED's public CSV.
+- **Related links** (`src/related.ts`): after a card is flipped, chips link it to other things you're learning — a site
+  to its state and country, a peak to its range, a leader to their country, a note card to its `related:` names and any
+  country it mentions. Places open in the sheet (with a back step); others open Wikipedia. A place's sheet lists the
+  note cards that point at it ("Also in your decks").
+- **World Heritage Sites and peaks know their state / province** (Wikidata P131 → first-level division): "Ajanta Caves
+  is in Maharashtra, India".
+- Example decks: Religion › Sacred places, Philosophy › Ancient Greek thinkers.
+
 ## v1.6: Library, note decks, Dashboard
 
 - **Library** (the old Skills tab): one card per subject. Geography is built in; every other subject comes from

@@ -53,6 +53,10 @@ export interface Place {
   incoming?: { name: string; party: string | null; wiki: string | null; from: string }; // election winner taking over
   currency?: { id: string; name: string; code: string | null; symbol: string | null; wiki: string | null; shared: number; image?: string | null }[];
   card?: import('./notes').NoteCard; // a card from a note deck (layer 'note')
+  admin1?: string;          // sites & peaks: the state / province ("Maharashtra")
+  admin1Ids?: string[];
+  deckTitle?: string;       // note cards: which deck, and where it sits (subject › sections)
+  deckPath?: string[];
   noun?: string;            // regions inside a country ('sub'): "prefecture", "county"
   capWord?: string;         // …and what their capital is called: "capital", "county seat"
   parent?: string;          // …and the country / state they belong to
