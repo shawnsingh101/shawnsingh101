@@ -1,0 +1,27 @@
+{
+ "_readme": "Flags that are easy to mix up (hand-curated), by ISO 3166 alpha-3 code, with a tip for telling them apart. Shown after you answer a flag card. Flag images still come from Wikidata/Commons; this file only groups them.",
+ "groups": [
+  { "codes": ["TCD", "ROU"], "tip": "Almost identical: Chad's blue is a darker indigo, Romania's a brighter cobalt." },
+  { "codes": ["AND", "MDA", "ROU"], "tip": "Andorra and Moldova add a coat of arms in the middle; Romania's yellow band is plain." },
+  { "codes": ["IDN", "MCO"], "tip": "Same red over white — Monaco's flag is squarer (4:5), Indonesia's longer (2:3)." },
+  { "codes": ["IDN", "MCO", "POL"], "tip": "Poland is the reverse: white on top, red below." },
+  { "codes": ["NLD", "LUX"], "tip": "Luxembourg's blue is a light sky blue and its flag is longer; the Netherlands' blue is dark." },
+  { "codes": ["AUS", "NZL"], "tip": "Australia: white stars, including a large seven-pointed star under the Union Jack. New Zealand: four red stars." },
+  { "codes": ["IRL", "CIV"], "tip": "Ireland has green next to the flagpole; Ivory Coast has orange next to the flagpole." },
+  { "codes": ["ITA", "MEX"], "tip": "Mexico has its coat of arms (an eagle on a cactus) in the centre and darker green." },
+  { "codes": ["SEN", "MLI"], "tip": "Senegal has a green star in the yellow band; Mali has no star." },
+  { "codes": ["GIN", "MLI"], "tip": "Mirror images: Guinea runs red–yellow–green from the pole, Mali green–yellow–red." },
+  { "codes": ["RUS", "SVK", "SVN"], "tip": "Russia is plain. Slovakia's large shield sits toward the pole; Slovenia's small shield (with a mountain) is in the top corner." },
+  { "codes": ["NOR", "ISL"], "tip": "Norway is red with a blue cross; Iceland is blue with a red cross." },
+  { "codes": ["COL", "ECU", "VEN"], "tip": "Colombia's yellow fills the top half; Ecuador adds a coat of arms; Venezuela has equal stripes and an arc of stars." },
+  { "codes": ["HTI", "LIE"], "tip": "Liechtenstein has a gold crown in the top corner; Haiti has a coat of arms in a white panel." },
+  { "codes": ["EGY", "IRQ", "SYR", "YEM"], "tip": "Egypt: golden eagle. Iraq: green Arabic script. Syria: two green stars. Yemen: plain." },
+  { "codes": ["QAT", "BHR"], "tip": "Qatar is maroon with nine white points; Bahrain is red with five." },
+  { "codes": ["JOR", "PSE"], "tip": "Jordan has a small white seven-pointed star in the red triangle; Palestine has none." },
+  { "codes": ["HND", "NIC", "SLV"], "tip": "Honduras has five blue stars; Nicaragua and El Salvador have their coats of arms in the centre." },
+  { "codes": ["CMR", "SEN"], "tip": "Cameroon's star is yellow on the red middle band; Senegal's star is green on yellow." },
+  { "codes": ["GHA", "BOL", "LTU"], "tip": "Ghana has a black star; Bolivia and Lithuania are plain horizontal stripes (red–yellow–green vs yellow–green–red)." },
+  { "codes": ["TUR", "TUN"], "tip": "Tunisia's crescent and star sit inside a white circle in the middle; Türkiye's are toward the pole." },
+  { "codes": ["SGP", "IDN", "MCO"], "tip": "Singapore adds a white crescent and five stars in the top corner." }
+ ]
+}

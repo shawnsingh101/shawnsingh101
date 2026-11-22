@@ -24,7 +24,7 @@
  "Q843": { "nativeLangs": ["urd"] },
  "Q35":  { "nativeLangs": ["dan"] },
  "Q17269": { "name": "Tibet" },
- "Q29999": { "name": "Netherlands" },
+ "Q29999": { "name": "Netherlands", "currencyCodes": ["EUR"], "_why": "the Kingdom also covers Caribbean islands with their own currencies" },
 
  "Q750":  { "capitalsSeen": ["La Paz", "Sucre"], "capitalAnswer": "both La Paz (seat of government) and Sucre (constitutional capital)" },
  "Q258":  { "nativeLangs": ["zul", "xho", "afr"], "capitalsSeen": ["Bloemfontein", "Cape Town", "Pretoria"], "capitalAnswer": "split three ways: Pretoria (executive), Cape Town (legislative) and Bloemfontein (judicial)" },

@@ -78,7 +78,7 @@ export function Landing({ ds, onStart, onSettings }: { ds: Dataset; onStart: () 
       <Globe ds={ds} />
       <div className="landing-content">
         <h1 className="landing-title">Intelligence <span>Quest</span></h1>
-        <p className="landing-sub">Geography, politics and the people who run the world — one card at a time.</p>
+        <p className="landing-sub">Know the world.</p>
         <div className="landing-actions">
           <button className="btn primary big" onClick={onStart}><Icon name="play" /> Start</button>
           <button className="btn big ghost-light" onClick={onSettings}><Icon name="gear" /> Settings</button>

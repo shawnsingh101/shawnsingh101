@@ -94,6 +94,12 @@
     "wiki": "Kabul",
     "id": "Q5838",
     "isCapital": true
+   },
+   "audio": {
+    "fa-af": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/Fa-%D8%A7%D9%81%D8%BA%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D9%86.ogg/Fa-%D8%A7%D9%81%D8%BA%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D9%86.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/7e/Fa-%D8%A7%D9%81%D8%BA%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D9%86.ogg"
+    ]
    }
   },
   {
@@ -477,7 +483,13 @@
        "lang": "Armenian",
        "code": "hy"
       }
-     ]
+     ],
+     "audio": {
+      "hy": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9e/LL-Q8785_(hye)-Vahagn_Petrosyan-%D4%B5%D6%80%D6%87%D5%A1%D5%B6.wav/LL-Q8785_(hye)-Vahagn_Petrosyan-%D4%B5%D6%80%D6%87%D5%A1%D5%B6.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/9/9e/LL-Q8785_(hye)-Vahagn_Petrosyan-%D4%B5%D6%80%D6%87%D5%A1%D5%B6.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -507,6 +519,12 @@
     "wiki": null,
     "id": null,
     "isCapital": true
+   },
+   "audio": {
+    "hy": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/06/LL-Q8785_(hye)-Veravi95-%D5%80%D5%A1%D5%B5%D5%A1%D5%BD%D5%BF%D5%A1%D5%B6.wav/LL-Q8785_(hye)-Veravi95-%D5%80%D5%A1%D5%B5%D5%A1%D5%BD%D5%BF%D5%A1%D5%B6.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/0/06/LL-Q8785_(hye)-Veravi95-%D5%80%D5%A1%D5%B5%D5%A1%D5%BD%D5%BF%D5%A1%D5%B6.wav"
+    ]
    }
   },
   {
@@ -665,7 +683,17 @@
        "lang": "Russian",
        "code": "ru"
       }
-     ]
+     ],
+     "audio": {
+      "az": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/da/LL-Q9292_(aze)-Zardabi_Bakuvi-Bak%C4%B1.wav/LL-Q9292_(aze)-Zardabi_Bakuvi-Bak%C4%B1.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/d/da/LL-Q9292_(aze)-Zardabi_Bakuvi-Bak%C4%B1.wav"
+      ],
+      "ru": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e2/Ru-%D0%91%D0%B0%D0%BA%D1%83.ogg/Ru-%D0%91%D0%B0%D0%BA%D1%83.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/e/e2/Ru-%D0%91%D0%B0%D0%BA%D1%83.ogg"
+      ]
+     }
     }
    ],
    "native": [
@@ -705,6 +733,10 @@
     "az": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/35/Az-az-Az%C9%99rbaycan.ogg/Az-az-Az%C9%99rbaycan.ogg.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/3/35/Az-az-Az%C9%99rbaycan.ogg"
+    ],
+    "ru": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/92/Ru-%D0%90%D0%B7%D0%B5%D1%80%D0%B1%D0%B0%D0%B9%D0%B4%D0%B6%D0%B0%D0%BD.ogg/Ru-%D0%90%D0%B7%D0%B5%D1%80%D0%B1%D0%B0%D0%B9%D0%B4%D0%B6%D0%B0%D0%BD.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/9/92/Ru-%D0%90%D0%B7%D0%B5%D1%80%D0%B1%D0%B0%D0%B9%D0%B4%D0%B6%D0%B0%D0%BD.ogg"
     ]
    }
   },
@@ -794,7 +826,13 @@
        "lang": "Arabic",
        "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0c/LL-Q13955_(ara)-Fjmustak-%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%85%D8%A9.wav/LL-Q13955_(ara)-Fjmustak-%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%85%D8%A9.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/0/0c/LL-Q13955_(ara)-Fjmustak-%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%85%D8%A9.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -824,6 +862,12 @@
     "wiki": "Manama",
     "id": "Q3882",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/32/LL-Q13955_(ara)-Kareem_(Akbarali)-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D9%86.wav/LL-Q13955_(ara)-Kareem_(Akbarali)-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D9%86.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/3/32/LL-Q13955_(ara)-Kareem_(Akbarali)-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D9%86.wav"
+    ]
    }
   },
   {
@@ -895,6 +939,12 @@
     "wiki": "Dhaka",
     "id": "Q1354",
     "isCapital": true
+   },
+   "audio": {
+    "bn": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/09/LL-Q9610_(ben)-Titodutta-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6.wav/LL-Q9610_(ben)-Titodutta-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/0/09/LL-Q9610_(ben)-Titodutta-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6.wav"
+    ]
    }
   },
   {
@@ -1023,6 +1073,12 @@
     "wiki": "Minsk",
     "id": "Q2280",
     "isCapital": true
+   },
+   "audio": {
+    "ru": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1d/LL-Q7737_(rus)-Baidax-%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C.wav/LL-Q7737_(rus)-Baidax-%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/1d/LL-Q7737_(rus)-Baidax-%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C.wav"
+    ]
    }
   },
   {
@@ -1068,7 +1124,21 @@
        "lang": "Dutch",
        "code": "nl"
       }
-     ]
+     ],
+     "audio": {
+      "de": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c2/De-Br%C3%BCssel.ogg/De-Br%C3%BCssel.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/c/c2/De-Br%C3%BCssel.ogg"
+      ],
+      "fr": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/fd/LL-Q150_(fra)-Sartus85-Bruxelles.wav/LL-Q150_(fra)-Sartus85-Bruxelles.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/f/fd/LL-Q150_(fra)-Sartus85-Bruxelles.wav"
+      ],
+      "nl": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d0/Nl-Brussel.ogg/Nl-Brussel.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/d/d0/Nl-Brussel.ogg"
+      ]
+     }
     }
    ],
    "native": [
@@ -1108,6 +1178,20 @@
     "wiki": null,
     "id": "Q31467408",
     "isCapital": false
+   },
+   "audio": {
+    "de": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/28/LL-Q188_(deu)-Natschoba-Belgien.wav/LL-Q188_(deu)-Natschoba-Belgien.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/2/28/LL-Q188_(deu)-Natschoba-Belgien.wav"
+    ],
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9b/LL-Q150_(fra)-Sartus85-Belgique.wav/LL-Q150_(fra)-Sartus85-Belgique.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/9/9b/LL-Q150_(fra)-Sartus85-Belgique.wav"
+    ],
+    "nl": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/42/Nl-Belgi%C3%AB.ogg/Nl-Belgi%C3%AB.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/4/42/Nl-Belgi%C3%AB.ogg"
+    ]
    }
   },
   {
@@ -1173,6 +1257,12 @@
     "wiki": "Belize_City",
     "id": "Q108223",
     "isCapital": false
+   },
+   "audio": {
+    "es": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/53/LL-Q1321_(spa)-Rodelar-Belice.wav/LL-Q1321_(spa)-Rodelar-Belice.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/5/53/LL-Q1321_(spa)-Rodelar-Belice.wav"
+    ]
    }
   },
   {
@@ -1244,6 +1334,12 @@
     "wiki": "Cotonou",
     "id": "Q43595",
     "isCapital": true
+   },
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3f/LL-Q150_(fra)-LoquaxFR-b%C3%A9nin.wav/LL-Q150_(fra)-LoquaxFR-b%C3%A9nin.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/3/3f/LL-Q150_(fra)-LoquaxFR-b%C3%A9nin.wav"
+    ]
    }
   },
   {
@@ -1689,7 +1785,13 @@
        "lang": "Bulgarian",
        "code": "bg"
       }
-     ]
+     ],
+     "audio": {
+      "bg": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8e/LL-Q7918_(bul)-Kiril_kovachev-%D0%A1%D0%BE%D1%84%D0%B8%D1%8F.wav/LL-Q7918_(bul)-Kiril_kovachev-%D0%A1%D0%BE%D1%84%D0%B8%D1%8F.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/8/8e/LL-Q7918_(bul)-Kiril_kovachev-%D0%A1%D0%BE%D1%84%D0%B8%D1%8F.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -1719,6 +1821,12 @@
     "wiki": "Sofia",
     "id": "Q472",
     "isCapital": true
+   },
+   "audio": {
+    "bg": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8a/LL-Q7918_(bul)-Bogomilshopov-%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F.wav/LL-Q7918_(bul)-Bogomilshopov-%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/8/8a/LL-Q7918_(bul)-Bogomilshopov-%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F.wav"
+    ]
    }
   },
   {
@@ -1955,6 +2063,12 @@
     "wiki": "Douala",
     "id": "Q132830",
     "isCapital": false
+   },
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cb/LL-Q150_(fra)-Didierwiki-Cameroun.wav/LL-Q150_(fra)-Didierwiki-Cameroun.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/cb/LL-Q150_(fra)-Didierwiki-Cameroun.wav"
+    ]
    }
   },
   {
@@ -2067,6 +2181,12 @@
     "wiki": "Praia",
     "id": "Q3751",
     "isCapital": true
+   },
+   "audio": {
+    "pt": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/69/LL-Q5146_(por)-GiuliaCastela-Cabo_Verde.wav/LL-Q5146_(por)-GiuliaCastela-Cabo_Verde.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/6/69/LL-Q5146_(por)-GiuliaCastela-Cabo_Verde.wav"
+    ]
    }
   },
   {
@@ -2137,6 +2257,12 @@
     "wiki": "Bangui",
     "id": "Q3832",
     "isCapital": true
+   },
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2a/LL-Q150_(fra)-Didierwiki-R%C3%A9publique_centrafricaine.wav/LL-Q150_(fra)-Didierwiki-R%C3%A9publique_centrafricaine.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/2/2a/LL-Q150_(fra)-Didierwiki-R%C3%A9publique_centrafricaine.wav"
+    ]
    }
   },
   {
@@ -2212,6 +2338,16 @@
     "wiki": "N'Djamena",
     "id": "Q3659",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b1/LL-Q13955_(ara)-AlNatiq-%D8%AA%D8%B4%D8%A7%D8%AF.wav/LL-Q13955_(ara)-AlNatiq-%D8%AA%D8%B4%D8%A7%D8%AF.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/b/b1/LL-Q13955_(ara)-AlNatiq-%D8%AA%D8%B4%D8%A7%D8%AF.wav"
+    ],
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/39/LL-Q150_(fra)-GrandCelinien-Tchad.wav/LL-Q150_(fra)-GrandCelinien-Tchad.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/3/39/LL-Q150_(fra)-GrandCelinien-Tchad.wav"
+    ]
    }
   },
   {
@@ -2300,7 +2436,13 @@
        "lang": "Chinese",
        "code": "zh-hans"
       }
-     ]
+     ],
+     "audio": {
+      "zh-hans": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/81/LL-Q9192_(cmn)-Luilui6666-%E5%8C%97%E4%BA%AC.wav/LL-Q9192_(cmn)-Luilui6666-%E5%8C%97%E4%BA%AC.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/8/81/LL-Q9192_(cmn)-Luilui6666-%E5%8C%97%E4%BA%AC.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -2330,6 +2472,12 @@
     "wiki": "Shanghai",
     "id": "Q8686",
     "isCapital": false
+   },
+   "audio": {
+    "zh-hans": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/12/LL-Q9192_(cmn)-CanonNi-%E4%B8%AD%E5%9B%BD.wav/LL-Q9192_(cmn)-CanonNi-%E4%B8%AD%E5%9B%BD.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/12/LL-Q9192_(cmn)-CanonNi-%E4%B8%AD%E5%9B%BD.wav"
+    ]
    }
   },
   {
@@ -2457,6 +2605,16 @@
     "wiki": "Moroni,_Comoros",
     "id": "Q3901",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/LL-Q13955_(ara)-Zinou2go-%D8%AC%D8%B2%D8%B1_%D8%A7%D9%84%D9%82%D9%85%D8%B1.wav/LL-Q13955_(ara)-Zinou2go-%D8%AC%D8%B2%D8%B1_%D8%A7%D9%84%D9%82%D9%85%D8%B1.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/c0/LL-Q13955_(ara)-Zinou2go-%D8%AC%D8%B2%D8%B1_%D8%A7%D9%84%D9%82%D9%85%D8%B1.wav"
+    ],
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/67/LL-Q150_(fra)-Didierwiki-Comores.wav/LL-Q150_(fra)-Didierwiki-Comores.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/6/67/LL-Q150_(fra)-Didierwiki-Comores.wav"
+    ]
    }
   },
   {
@@ -2662,7 +2820,13 @@
        "lang": "Turkish",
        "code": "tr"
       }
-     ]
+     ],
+     "audio": {
+      "tr": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f0/LL-Q256_(tur)-Biologg-Lefko%C5%9Fa.wav/LL-Q256_(tur)-Biologg-Lefko%C5%9Fa.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/f/f0/LL-Q256_(tur)-Biologg-Lefko%C5%9Fa.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -2697,6 +2861,12 @@
     "wiki": "Limassol",
     "id": "Q185632",
     "isCapital": false
+   },
+   "audio": {
+    "tr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f5/LL-Q256_(tur)-ToprakM-K%C4%B1br%C4%B1s.wav/LL-Q256_(tur)-ToprakM-K%C4%B1br%C4%B1s.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/f/f5/LL-Q256_(tur)-ToprakM-K%C4%B1br%C4%B1s.wav"
+    ]
    }
   },
   {
@@ -2732,7 +2902,13 @@
        "lang": "Czech",
        "code": "cs"
       }
-     ]
+     ],
+     "audio": {
+      "cs": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2d/LL-Q9056_(ces)-Ghost4Man-Praha.wav/LL-Q9056_(ces)-Ghost4Man-Praha.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/2/2d/LL-Q9056_(ces)-Ghost4Man-Praha.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -2839,6 +3015,12 @@
     "wiki": "Copenhagen",
     "id": "Q1748",
     "isCapital": true
+   },
+   "audio": {
+    "da": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cc/DA-Danmark.ogg/DA-Danmark.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/cc/DA-Danmark.ogg"
+    ]
    }
   },
   {
@@ -3016,6 +3198,12 @@
     "wiki": "Santo_Domingo",
     "id": "Q34820",
     "isCapital": true
+   },
+   "audio": {
+    "es": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0f/LL-Q1321_(spa)-Rodelar-Rep%C3%BAblica_Dominicana.wav/LL-Q1321_(spa)-Rodelar-Rep%C3%BAblica_Dominicana.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/0/0f/LL-Q1321_(spa)-Rodelar-Rep%C3%BAblica_Dominicana.wav"
+    ]
    }
   },
   {
@@ -3184,7 +3372,13 @@
        "lang": "Arabic",
        "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5e/LL-Q13955_(ara)-AlNatiq-%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9.wav/LL-Q13955_(ara)-AlNatiq-%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/5/5e/LL-Q13955_(ara)-AlNatiq-%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -3214,6 +3408,12 @@
     "wiki": "Cairo",
     "id": "Q85",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/90/LL-Q13955_(ara)-Fjmustak-%D9%85%D8%B5%D8%B1.wav/LL-Q13955_(ara)-Fjmustak-%D9%85%D8%B5%D8%B1.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/9/90/LL-Q13955_(ara)-Fjmustak-%D9%85%D8%B5%D8%B1.wav"
+    ]
    }
   },
   {
@@ -3470,6 +3670,12 @@
     "wiki": "Tallinn",
     "id": "Q1770",
     "isCapital": true
+   },
+   "audio": {
+    "et": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8e/LL-Q9072_(est)-Superpositsiooniprintsiip-eesti.wav/LL-Q9072_(est)-Superpositsiooniprintsiip-eesti.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/8/8e/LL-Q9072_(est)-Superpositsiooniprintsiip-eesti.wav"
+    ]
    }
   },
   {
@@ -3723,6 +3929,12 @@
     "wiki": "Helsinki",
     "id": "Q1757",
     "isCapital": true
+   },
+   "audio": {
+    "fi": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e1/LL-Q1412_(fin)-Seqv-Suomi.wav/LL-Q1412_(fin)-Seqv-Suomi.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/e/e1/LL-Q1412_(fin)-Seqv-Suomi.wav"
+    ]
    }
   },
   {
@@ -4112,7 +4324,13 @@
        "lang": "Greek",
        "code": "el"
       }
-     ]
+     ],
+     "audio": {
+      "el": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/02/El-%CE%91%CE%B8%CE%AE%CE%BD%CE%B1.ogg/El-%CE%91%CE%B8%CE%AE%CE%BD%CE%B1.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/0/02/El-%CE%91%CE%B8%CE%AE%CE%BD%CE%B1.ogg"
+      ]
+     }
     }
    ],
    "native": [
@@ -4307,6 +4525,12 @@
     "wiki": "Conakry",
     "id": "Q3733",
     "isCapital": true
+   },
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0f/LL-Q150_(fra)-Aboubacarkhoraa-Guin%C3%A9e.wav/LL-Q150_(fra)-Aboubacarkhoraa-Guin%C3%A9e.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/0/0f/LL-Q150_(fra)-Aboubacarkhoraa-Guin%C3%A9e.wav"
+    ]
    }
   },
   {
@@ -4366,6 +4590,12 @@
     "wiki": "Bissau",
     "id": "Q3739",
     "isCapital": true
+   },
+   "audio": {
+    "pt": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/71/LL-Q5146_(por)-GiuliaCastela-Guin%C3%A9-Bissau.wav/LL-Q5146_(por)-GiuliaCastela-Guin%C3%A9-Bissau.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/71/LL-Q5146_(por)-GiuliaCastela-Guin%C3%A9-Bissau.wav"
+    ]
    }
   },
   {
@@ -4489,6 +4719,12 @@
     "wiki": null,
     "id": "Q33707894",
     "isCapital": true
+   },
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d2/LL-Q150_(fra)-Simon_Villeneuve-Ha%C3%AFti.wav/LL-Q150_(fra)-Simon_Villeneuve-Ha%C3%AFti.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/d/d2/LL-Q150_(fra)-Simon_Villeneuve-Ha%C3%AFti.wav"
+    ]
    }
   },
   {
@@ -4666,6 +4902,12 @@
     "wiki": "Reykjavík",
     "id": "Q1764",
     "isCapital": true
+   },
+   "audio": {
+    "is": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9f/Is-%C3%8Dsland.ogg/Is-%C3%8Dsland.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/9/9f/Is-%C3%8Dsland.ogg"
+    ]
    }
   },
   {
@@ -4701,7 +4943,13 @@
        "lang": "Hindi",
        "code": "hi"
       }
-     ]
+     ],
+     "audio": {
+      "hi": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/65/LL-Q1568_(hin)-Dev_Jadiya-%E0%A4%A8%E0%A4%88_%E0%A4%A6%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%80.wav/LL-Q1568_(hin)-Dev_Jadiya-%E0%A4%A8%E0%A4%88_%E0%A4%A6%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%80.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/6/65/LL-Q1568_(hin)-Dev_Jadiya-%E0%A4%A8%E0%A4%88_%E0%A4%A6%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%80.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -4731,6 +4979,12 @@
     "wiki": "Delhi",
     "id": "Q1353",
     "isCapital": false
+   },
+   "audio": {
+    "hi": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4e/LL-Q1568_(hin)-%E0%A4%B8%E0%A5%8C%E0%A4%AE%E0%A5%8D%E0%A4%AF-%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4.wav/LL-Q1568_(hin)-%E0%A4%B8%E0%A5%8C%E0%A4%AE%E0%A5%8D%E0%A4%AF-%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/4/4e/LL-Q1568_(hin)-%E0%A4%B8%E0%A5%8C%E0%A4%AE%E0%A5%8D%E0%A4%AF-%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4.wav"
+    ]
    }
   },
   {
@@ -4901,7 +5155,13 @@
        "lang": "Sorani",
        "code": "ckb"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a5/LL-Q13955_(ara)-Nehaoua-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF.wav/LL-Q13955_(ara)-Nehaoua-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/a/a5/LL-Q13955_(ara)-Nehaoua-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -4940,6 +5200,12 @@
     "wiki": "Baghdad",
     "id": "Q1530",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f8/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82.wav/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/f/f8/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82.wav"
+    ]
    }
   },
   {
@@ -5045,7 +5311,17 @@
        "lang": "Arabic",
        "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "he": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/37/LL-Q9288_(heb)-Buffer-%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D.wav/LL-Q9288_(heb)-Buffer-%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/3/37/LL-Q9288_(heb)-Buffer-%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D.wav"
+      ],
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/17/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D9%82%D8%AF%D8%B3.wav/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D9%82%D8%AF%D8%B3.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/1/17/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D9%82%D8%AF%D8%B3.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -5086,6 +5362,10 @@
     "he": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/93/He-Medinat_Israel.ogg/He-Medinat_Israel.ogg.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/9/93/He-Medinat_Israel.ogg"
+    ],
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/93/LL-Q13955_(ara)-Nehaoua-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84.wav/LL-Q13955_(ara)-Nehaoua-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/9/93/LL-Q13955_(ara)-Nehaoua-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84.wav"
     ]
    }
   },
@@ -5122,7 +5402,13 @@
        "lang": "Italian",
        "code": "it"
       }
-     ]
+     ],
+     "audio": {
+      "it": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e1/It-Roma.ogg/It-Roma.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/e/e1/It-Roma.ogg"
+      ]
+     }
     }
    ],
    "native": [
@@ -5217,6 +5503,12 @@
     "wiki": "Abidjan",
     "id": "Q1515",
     "isCapital": false
+   },
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/63/LL-Q150_(fra)-Jules78120-C%C3%B4te_d'Ivoire.wav/LL-Q150_(fra)-Jules78120-C%C3%B4te_d'Ivoire.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/6/63/LL-Q150_(fra)-Jules78120-C%C3%B4te_d'Ivoire.wav"
+    ]
    }
   },
   {
@@ -5305,7 +5597,13 @@
        "lang": "Japanese",
        "code": "ja"
       }
-     ]
+     ],
+     "audio": {
+      "ja": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/41/LL-Q5287_(jpn)-Fukujinzuke-%E6%9D%B1%E4%BA%AC.wav/LL-Q5287_(jpn)-Fukujinzuke-%E6%9D%B1%E4%BA%AC.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/4/41/LL-Q5287_(jpn)-Fukujinzuke-%E6%9D%B1%E4%BA%AC.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -5335,6 +5633,12 @@
     "wiki": "Tokyo",
     "id": "Q1490",
     "isCapital": true
+   },
+   "audio": {
+    "ja": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1d/LL-Q5287_(jpn)-Fukujinzuke-%E6%97%A5%E6%9C%AC.wav/LL-Q5287_(jpn)-Fukujinzuke-%E6%97%A5%E6%9C%AC.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/1d/LL-Q5287_(jpn)-Fukujinzuke-%E6%97%A5%E6%9C%AC.wav"
+    ]
    }
   },
   {
@@ -5400,6 +5704,12 @@
     "wiki": "Amman",
     "id": "Q3805",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/63/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86.wav/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/6/63/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86.wav"
+    ]
    }
   },
   {
@@ -5475,6 +5785,10 @@
     "kk": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/Kk-kazakhstan.ogg/Kk-kazakhstan.ogg.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/8/83/Kk-kazakhstan.ogg"
+    ],
+    "ru": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/Ru-%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD.ogg/Ru-%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/d/db/Ru-%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD.ogg"
     ]
    }
   },
@@ -5700,6 +6014,12 @@
     "wiki": "Hawally,_Kuwait",
     "id": "Q3235220",
     "isCapital": false
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e6/LL-Q13955_(ara)-Kareem_(Akbarali)-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA.wav/LL-Q13955_(ara)-Kareem_(Akbarali)-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/e/e6/LL-Q13955_(ara)-Kareem_(Akbarali)-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA.wav"
+    ]
    }
   },
   {
@@ -5781,6 +6101,10 @@
     "ky": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/15/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%9A%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D1%82%D0%B0%D0%BD.wav/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%9A%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D1%82%D0%B0%D0%BD.wav.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/1/15/LL-Q9255_(kir)-Almanbet_Jan%C4%B1%C5%9Fev-%D0%9A%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D1%82%D0%B0%D0%BD.wav"
+    ],
+    "ru": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c9/Ru-%D0%9A%D0%B8%D1%80%D0%B3%D0%B8%D0%B7%D0%B8%D1%8F.ogg/Ru-%D0%9A%D0%B8%D1%80%D0%B3%D0%B8%D0%B7%D0%B8%D1%8F.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/c9/Ru-%D0%9A%D0%B8%D1%80%D0%B3%D0%B8%D0%B7%D0%B8%D1%8F.ogg"
     ]
    }
   },
@@ -5817,7 +6141,13 @@
        "lang": "Lao",
        "code": "lo"
       }
-     ]
+     ],
+     "audio": {
+      "lo": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/14/LL-Q9211_(lao)-RenWikiLA-%E0%BA%A7%E0%BA%BD%E0%BA%87%E0%BA%88%E0%BA%B1%E0%BA%99.wav/LL-Q9211_(lao)-RenWikiLA-%E0%BA%A7%E0%BA%BD%E0%BA%87%E0%BA%88%E0%BA%B1%E0%BA%99.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/1/14/LL-Q9211_(lao)-RenWikiLA-%E0%BA%A7%E0%BA%BD%E0%BA%87%E0%BA%88%E0%BA%B1%E0%BA%99.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -5888,7 +6218,13 @@
        "lang": "Latvian",
        "code": "lv"
       }
-     ]
+     ],
+     "audio": {
+      "lv": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f5/Lv-R%C4%ABga.ogg/Lv-R%C4%ABga.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/f/f5/Lv-R%C4%ABga.ogg"
+      ]
+     }
     }
    ],
    "native": [
@@ -5918,6 +6254,12 @@
     "wiki": "Riga",
     "id": "Q1773",
     "isCapital": true
+   },
+   "audio": {
+    "lv": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ef/Lv-Latvija.ogg/Lv-Latvija.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/e/ef/Lv-Latvija.ogg"
+    ]
    }
   },
   {
@@ -5958,7 +6300,17 @@
        "lang": "French",
        "code": "fr"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a9/LL-Q13955_(ara)-Fjmustak-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.wav/LL-Q13955_(ara)-Fjmustak-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/a/a9/LL-Q13955_(ara)-Fjmustak-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.wav"
+      ],
+      "fr": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/73/LL-Q150_(fra)-WikiLucas00-Beyrouth.wav/LL-Q150_(fra)-WikiLucas00-Beyrouth.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/7/73/LL-Q150_(fra)-WikiLucas00-Beyrouth.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -5993,6 +6345,16 @@
     "wiki": "Beirut",
     "id": "Q3820",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ec/LL-Q13955_(ara)-Zinou2go-%D9%84%D8%A8%D9%86%D8%A7%D9%86.wav/LL-Q13955_(ara)-Zinou2go-%D9%84%D8%A8%D9%86%D8%A7%D9%86.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/e/ec/LL-Q13955_(ara)-Zinou2go-%D9%84%D8%A8%D9%86%D8%A7%D9%86.wav"
+    ],
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1d/LL-Q150_(fra)-GrandCelinien-Liban.wav/LL-Q150_(fra)-GrandCelinien-Liban.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/1d/LL-Q150_(fra)-GrandCelinien-Liban.wav"
+    ]
    }
   },
   {
@@ -6134,7 +6496,13 @@
        "lang": "Arabic",
        "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/61/LL-Q13955_(ara)-Fjmustak-%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3.wav/LL-Q13955_(ara)-Fjmustak-%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/6/61/LL-Q13955_(ara)-Fjmustak-%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -6164,6 +6532,12 @@
     "wiki": "Tripoli,_Libya",
     "id": "Q3579",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/13/LL-Q13955_(ara)-Zinou2go-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7.wav/LL-Q13955_(ara)-Zinou2go-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/13/LL-Q13955_(ara)-Zinou2go-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7.wav"
+    ]
    }
   },
   {
@@ -6321,6 +6695,10 @@
       "lb": [
        "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/42/Lb-L%C3%ABtzebuerg.ogg/Lb-L%C3%ABtzebuerg.ogg.mp3",
        "https://upload.wikimedia.org/wikipedia/commons/4/42/Lb-L%C3%ABtzebuerg.ogg"
+      ],
+      "de": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/10/De-Luxemburg.ogg/De-Luxemburg.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/1/10/De-Luxemburg.ogg"
       ]
      }
     }
@@ -6357,6 +6735,12 @@
     "wiki": "Luxembourg_City",
     "id": "Q1842",
     "isCapital": true
+   },
+   "audio": {
+    "de": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/10/De-Luxemburg.ogg/De-Luxemburg.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/10/De-Luxemburg.ogg"
+    ]
    }
   },
   {
@@ -6847,6 +7231,12 @@
     "wiki": "Nouakchott",
     "id": "Q3688",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f5/LL-Q13955_(ara)-Zinou2go-%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7.wav/LL-Q13955_(ara)-Zinou2go-%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/f/f5/LL-Q13955_(ara)-Zinou2go-%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7.wav"
+    ]
    }
   },
   {
@@ -6882,7 +7272,13 @@
        "lang": "French",
        "code": "fr"
       }
-     ]
+     ],
+     "audio": {
+      "fr": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c5/LL-Q150_(fra)-Leo.fra31-Port-Louis.wav/LL-Q150_(fra)-Leo.fra31-Port-Louis.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/c/c5/LL-Q150_(fra)-Leo.fra31-Port-Louis.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -6917,6 +7313,12 @@
     "wiki": "Port_Louis",
     "id": "Q3929",
     "isCapital": true
+   },
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/10/Fr-Maurice.ogg/Fr-Maurice.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/10/Fr-Maurice.ogg"
+    ]
    }
   },
   {
@@ -6952,7 +7354,13 @@
        "lang": "Spanish",
        "code": "es"
       }
-     ]
+     ],
+     "audio": {
+      "es": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/74/LL-Q1321_(spa)-Enohecruzl79-Ciudad_de_M%C3%A9xico.wav/LL-Q1321_(spa)-Enohecruzl79-Ciudad_de_M%C3%A9xico.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/7/74/LL-Q1321_(spa)-Enohecruzl79-Ciudad_de_M%C3%A9xico.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -7212,6 +7620,12 @@
     "wiki": "Ulaanbaatar",
     "id": "Q23430",
     "isCapital": true
+   },
+   "audio": {
+    "mn": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/45/LL-Q9246_(mon)-Swoopless-%D0%9C%D0%BE%D0%BD%D0%B3%D0%BE%D0%BB_%D0%A3%D0%BB%D1%81.wav/LL-Q9246_(mon)-Swoopless-%D0%9C%D0%BE%D0%BD%D0%B3%D0%BE%D0%BB_%D0%A3%D0%BB%D1%81.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/4/45/LL-Q9246_(mon)-Swoopless-%D0%9C%D0%BE%D0%BD%D0%B3%D0%BE%D0%BB_%D0%A3%D0%BB%D1%81.wav"
+    ]
    }
   },
   {
@@ -7312,7 +7726,13 @@
        "lang": "Arabic",
        "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/01/LL-Q13955_(ara)-Fjmustak-%D8%A7%D9%84%D8%B1%D8%A8%D8%A7%D8%B7.wav/LL-Q13955_(ara)-Fjmustak-%D8%A7%D9%84%D8%B1%D8%A8%D8%A7%D8%B7.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/0/01/LL-Q13955_(ara)-Fjmustak-%D8%A7%D9%84%D8%B1%D8%A8%D8%A7%D8%B7.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -7346,6 +7766,12 @@
     "wiki": "Casablanca",
     "id": "Q7903",
     "isCapital": false
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/LL-Q13955_(ara)-Eavqwiki-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8.wav/LL-Q13955_(ara)-Eavqwiki-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/f/f1/LL-Q13955_(ara)-Eavqwiki-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8.wav"
+    ]
    }
   },
   {
@@ -7405,6 +7831,12 @@
     "wiki": null,
     "id": null,
     "isCapital": false
+   },
+   "audio": {
+    "pt": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b1/LL-Q5146_(por)-GiuliaCastela-Mo%C3%A7ambique.wav/LL-Q5146_(por)-GiuliaCastela-Mo%C3%A7ambique.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/b/b1/LL-Q5146_(por)-GiuliaCastela-Mo%C3%A7ambique.wav"
+    ]
    }
   },
   {
@@ -7470,6 +7902,12 @@
     "wiki": "Yangon",
     "id": "Q37995",
     "isCapital": false
+   },
+   "audio": {
+    "my": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/29/LL-Q9228_(mya)-Sithu015-%E1%80%99%E1%80%BC%E1%80%94%E1%80%BA%E1%80%99%E1%80%AC.wav/LL-Q9228_(mya)-Sithu015-%E1%80%99%E1%80%BC%E1%80%94%E1%80%BA%E1%80%99%E1%80%AC.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/2/29/LL-Q9228_(mya)-Sithu015-%E1%80%99%E1%80%BC%E1%80%94%E1%80%BA%E1%80%99%E1%80%AC.wav"
+    ]
    }
   },
   {
@@ -7695,30 +8133,6 @@
      "symbol": "€",
      "wiki": "Euro",
      "shared": 27
-    },
-    {
-     "id": "Q4917",
-     "name": "United States dollar",
-     "code": "USD",
-     "symbol": "$",
-     "wiki": "United_States_dollar",
-     "shared": 5
-    },
-    {
-     "id": "Q232270",
-     "name": "Aruban florin",
-     "code": "AWG",
-     "symbol": "ƒ",
-     "wiki": "Aruban_florin",
-     "shared": 1
-    },
-    {
-     "id": "Q737779",
-     "name": "Caribbean guilder",
-     "code": "XCG",
-     "symbol": "Cg",
-     "wiki": "Caribbean_guilder",
-     "shared": 1
     }
    ],
    "largestCity": {
@@ -8019,6 +8433,12 @@
     "wiki": null,
     "id": null,
     "isCapital": true
+   },
+   "audio": {
+    "ko": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ae/LL-Q9176_(kor)-CHK2605-%EC%A1%B0%EC%84%A0.wav/LL-Q9176_(kor)-CHK2605-%EC%A1%B0%EC%84%A0.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/a/ae/LL-Q9176_(kor)-CHK2605-%EC%A1%B0%EC%84%A0.wav"
+    ]
    }
   },
   {
@@ -8472,6 +8892,12 @@
     "wiki": "Gaza_City",
     "id": "Q47492",
     "isCapital": false
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/75/LL-Q13955_(ara)-Zinou2go-%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86.wav/LL-Q13955_(ara)-Zinou2go-%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/75/LL-Q13955_(ara)-Zinou2go-%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86.wav"
+    ]
    }
   },
   {
@@ -8537,6 +8963,12 @@
     "wiki": "Panama_City",
     "id": "Q3306",
     "isCapital": true
+   },
+   "audio": {
+    "es": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/51/LL-Q1321_(spa)-Enohecruzl79-Panam%C3%A1.wav/LL-Q1321_(spa)-Enohecruzl79-Panam%C3%A1.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/5/51/LL-Q1321_(spa)-Enohecruzl79-Panam%C3%A1.wav"
+    ]
    }
   },
   {
@@ -8736,6 +9168,12 @@
     "wiki": "Lima",
     "id": "Q2868",
     "isCapital": true
+   },
+   "audio": {
+    "es": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/75/LL-Q1321_(spa)-Enohecruzl79-Per%C3%BA.wav/LL-Q1321_(spa)-Enohecruzl79-Per%C3%BA.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/75/LL-Q1321_(spa)-Enohecruzl79-Per%C3%BA.wav"
+    ]
    }
   },
   {
@@ -9064,6 +9502,12 @@
     "wiki": "Brazzaville",
     "id": "Q3844",
     "isCapital": true
+   },
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/66/LL-Q150_(fra)-GrandCelinien-R%C3%A9publique_du_Congo.wav/LL-Q150_(fra)-GrandCelinien-R%C3%A9publique_du_Congo.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/6/66/LL-Q150_(fra)-GrandCelinien-R%C3%A9publique_du_Congo.wav"
+    ]
    }
   },
   {
@@ -9129,6 +9573,12 @@
     "wiki": "Bucharest",
     "id": "Q19660",
     "isCapital": true
+   },
+   "audio": {
+    "ro": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cb/LL-Q7913_(ron)-KlaudiuMihaila-Rom%C3%A2nia.wav/LL-Q7913_(ron)-KlaudiuMihaila-Rom%C3%A2nia.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/c/cb/LL-Q7913_(ron)-KlaudiuMihaila-Rom%C3%A2nia.wav"
+    ]
    }
   },
   {
@@ -9164,7 +9614,13 @@
        "lang": "Russian",
        "code": "ru"
       }
-     ]
+     ],
+     "audio": {
+      "ru": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/13/Ru-%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.ogg/Ru-%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/1/13/Ru-%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.ogg"
+      ]
+     }
     }
    ],
    "native": [
@@ -9194,6 +9650,12 @@
     "wiki": "Moscow",
     "id": "Q649",
     "isCapital": true
+   },
+   "audio": {
+    "ru": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ed/LL-Q7737_(rus)-Infovarius-%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F.wav/LL-Q7737_(rus)-Infovarius-%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/e/ed/LL-Q7737_(rus)-Infovarius-%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F.wav"
+    ]
    }
   },
   {
@@ -9632,6 +10094,12 @@
     "wiki": "São_Tomé",
     "id": "Q3932",
     "isCapital": true
+   },
+   "audio": {
+    "pt": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/20/LL-Q5146_(por)-Gaygarin-S%C3%A3o_Tom%C3%A9_e_Pr%C3%ADncipe.wav/LL-Q5146_(por)-Gaygarin-S%C3%A3o_Tom%C3%A9_e_Pr%C3%ADncipe.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/2/20/LL-Q5146_(por)-Gaygarin-S%C3%A3o_Tom%C3%A9_e_Pr%C3%ADncipe.wav"
+    ]
    }
   },
   {
@@ -9768,6 +10236,12 @@
     "wiki": "Dakar",
     "id": "Q3718",
     "isCapital": true
+   },
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ef/LL-Q150_(fra)-Jules78120-S%C3%A9n%C3%A9gal.wav/LL-Q150_(fra)-Jules78120-S%C3%A9n%C3%A9gal.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/e/ef/LL-Q150_(fra)-Jules78120-S%C3%A9n%C3%A9gal.wav"
+    ]
    }
   },
   {
@@ -9996,7 +10470,21 @@
        "lang": "Chinese",
        "code": "zh-hans"
       }
-     ]
+     ],
+     "audio": {
+      "ms": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1b/LL-Q9237_(msa)-Noaius_Paticus-Singapura.wav/LL-Q9237_(msa)-Noaius_Paticus-Singapura.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/1/1b/LL-Q9237_(msa)-Noaius_Paticus-Singapura.wav"
+      ],
+      "ta": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/dc/LL-Q5885_(tam)-Sriveenkat-%E0%AE%9A%E0%AE%BF%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%82%E0%AE%B0%E0%AF%8D.wav/LL-Q5885_(tam)-Sriveenkat-%E0%AE%9A%E0%AE%BF%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%82%E0%AE%B0%E0%AF%8D.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/d/dc/LL-Q5885_(tam)-Sriveenkat-%E0%AE%9A%E0%AE%BF%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%82%E0%AE%B0%E0%AF%8D.wav"
+      ],
+      "zh-hans": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d6/LL-Q9192_(cmn)-Luilui6666-%E6%96%B0%E5%8A%A0%E5%9D%A1.wav/LL-Q9192_(cmn)-Luilui6666-%E6%96%B0%E5%8A%A0%E5%9D%A1.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/d/d6/LL-Q9192_(cmn)-Luilui6666-%E6%96%B0%E5%8A%A0%E5%9D%A1.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -10036,6 +10524,20 @@
     "wiki": null,
     "id": "Q49755161",
     "isCapital": true
+   },
+   "audio": {
+    "ms": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1b/LL-Q9237_(msa)-Noaius_Paticus-Singapura.wav/LL-Q9237_(msa)-Noaius_Paticus-Singapura.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/1b/LL-Q9237_(msa)-Noaius_Paticus-Singapura.wav"
+    ],
+    "ta": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/dc/LL-Q5885_(tam)-Sriveenkat-%E0%AE%9A%E0%AE%BF%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%82%E0%AE%B0%E0%AF%8D.wav/LL-Q5885_(tam)-Sriveenkat-%E0%AE%9A%E0%AE%BF%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%82%E0%AE%B0%E0%AF%8D.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/d/dc/LL-Q5885_(tam)-Sriveenkat-%E0%AE%9A%E0%AE%BF%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%82%E0%AE%B0%E0%AF%8D.wav"
+    ],
+    "zh-hans": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d6/LL-Q9192_(cmn)-Luilui6666-%E6%96%B0%E5%8A%A0%E5%9D%A1.wav/LL-Q9192_(cmn)-Luilui6666-%E6%96%B0%E5%8A%A0%E5%9D%A1.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/d/d6/LL-Q9192_(cmn)-Luilui6666-%E6%96%B0%E5%8A%A0%E5%9D%A1.wav"
+    ]
    }
   },
   {
@@ -10095,6 +10597,12 @@
     "wiki": "Bratislava",
     "id": "Q1780",
     "isCapital": true
+   },
+   "audio": {
+    "sk": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/52/Sk-Slovensko.ogg/Sk-Slovensko.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/5/52/Sk-Slovensko.ogg"
+    ]
    }
   },
   {
@@ -10511,6 +11019,12 @@
     "wiki": "Seoul",
     "id": "Q8684",
     "isCapital": true
+   },
+   "audio": {
+    "ko": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/df/Ko-%ED%95%9C%EA%B5%AD.ogg/Ko-%ED%95%9C%EA%B5%AD.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/d/df/Ko-%ED%95%9C%EA%B5%AD.ogg"
+    ]
    }
   },
   {
@@ -10664,6 +11178,12 @@
     "wiki": null,
     "id": "Q116170766",
     "isCapital": true
+   },
+   "audio": {
+    "es": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/40/LL-Q1321_(spa)-Precision27-Espa%C3%B1a.wav/LL-Q1321_(spa)-Precision27-Espa%C3%B1a.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/4/40/LL-Q1321_(spa)-Precision27-Espa%C3%B1a.wav"
+    ]
    }
   },
   {
@@ -10803,7 +11323,13 @@
        "lang": "Arabic",
        "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9a/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%AE%D8%B1%D8%B7%D9%88%D9%85.wav/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%AE%D8%B1%D8%B7%D9%88%D9%85.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/9/9a/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%AE%D8%B1%D8%B7%D9%88%D9%85.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -10833,6 +11359,12 @@
     "wiki": "Khartoum",
     "id": "Q1963",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5b/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86.wav/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/5/5b/LL-Q13955_(ara)-Zinou2go-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86.wav"
+    ]
    }
   },
   {
@@ -10945,6 +11477,12 @@
     "wiki": "Stockholm",
     "id": "Q1754",
     "isCapital": true
+   },
+   "audio": {
+    "sv": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1c/LL-Q9027_(swe)-Moonhouse-Sverige.wav/LL-Q9027_(swe)-Moonhouse-Sverige.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/1/1c/LL-Q9027_(swe)-Moonhouse-Sverige.wav"
+    ]
    }
   },
   {
@@ -10985,7 +11523,17 @@
        "lang": "Italian",
        "code": "it"
       }
-     ]
+     ],
+     "audio": {
+      "fr": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/35/LL-Q150_(fra)-DenisdeShawi-berne.wav/LL-Q150_(fra)-DenisdeShawi-berne.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/3/35/LL-Q150_(fra)-DenisdeShawi-berne.wav"
+      ],
+      "it": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/59/LL-Q652_(ita)-DanielParoliere-Berna.wav/LL-Q652_(ita)-DanielParoliere-Berna.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/5/59/LL-Q652_(ita)-DanielParoliere-Berna.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -11027,13 +11575,13 @@
     "isCapital": false
    },
    "audio": {
-    "fr": [
-     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/72/Fr-us-Suisse.oga/Fr-us-Suisse.oga.mp3",
-     "https://upload.wikimedia.org/wikipedia/commons/7/72/Fr-us-Suisse.oga"
-    ],
     "it": [
      "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav/LL-Q652_(ita)-Francyskus-Svizzera.wav.mp3",
      "https://upload.wikimedia.org/wikipedia/commons/7/7e/LL-Q652_(ita)-Francyskus-Svizzera.wav"
+    ],
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/72/Fr-us-Suisse.oga/Fr-us-Suisse.oga.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/7/72/Fr-us-Suisse.oga"
     ]
    }
   },
@@ -11669,7 +12217,13 @@
        "lang": "Arabic",
        "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/55/LL-Q13955_(ara)-Eavqwiki-%D8%AA%D9%88%D9%86%D8%B3.wav/LL-Q13955_(ara)-Eavqwiki-%D8%AA%D9%88%D9%86%D8%B3.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/5/55/LL-Q13955_(ara)-Eavqwiki-%D8%AA%D9%88%D9%86%D8%B3.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -11699,6 +12253,12 @@
     "wiki": "Tunis",
     "id": "Q3572",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/55/LL-Q13955_(ara)-Eavqwiki-%D8%AA%D9%88%D9%86%D8%B3.wav/LL-Q13955_(ara)-Eavqwiki-%D8%AA%D9%88%D9%86%D8%B3.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/5/55/LL-Q13955_(ara)-Eavqwiki-%D8%AA%D9%88%D9%86%D8%B3.wav"
+    ]
    }
   },
   {
@@ -11827,6 +12387,12 @@
     "wiki": "Ashgabat",
     "id": "Q23438",
     "isCapital": true
+   },
+   "audio": {
+    "ru": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f9/Ru-%D0%A2%D1%83%D1%80%D0%BA%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F.ogg/Ru-%D0%A2%D1%83%D1%80%D0%BA%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/f/f9/Ru-%D0%A2%D1%83%D1%80%D0%BA%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F.ogg"
+    ]
    }
   },
   {
@@ -11966,7 +12532,13 @@
        "lang": "Ukrainian",
        "code": "uk"
       }
-     ]
+     ],
+     "audio": {
+      "uk": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8d/LL-Q8798_(ukr)-Tohaomg-%D0%9A%D0%B8%D1%97%D0%B2.wav/LL-Q8798_(ukr)-Tohaomg-%D0%9A%D0%B8%D1%97%D0%B2.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/8/8d/LL-Q8798_(ukr)-Tohaomg-%D0%9A%D0%B8%D1%97%D0%B2.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -12037,7 +12609,13 @@
        "lang": "Arabic",
        "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e7/LL-Q13955_(ara)-Kareem_(Akbarali)-%D8%A3%D8%A8%D9%88_%D8%B8%D8%A8%D9%8A.wav/LL-Q13955_(ara)-Kareem_(Akbarali)-%D8%A3%D8%A8%D9%88_%D8%B8%D8%A8%D9%8A.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/e/e7/LL-Q13955_(ara)-Kareem_(Akbarali)-%D8%A3%D8%A8%D9%88_%D8%B8%D8%A8%D9%8A.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -12067,6 +12645,12 @@
     "wiki": "Dubai",
     "id": "Q612",
     "isCapital": false
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/80/LL-Q13955_(ara)-Rashed_Aljahdali-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA.wav/LL-Q13955_(ara)-Rashed_Aljahdali-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/8/80/LL-Q13955_(ara)-Rashed_Aljahdali-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA.wav"
+    ]
    }
   },
   {
@@ -12266,7 +12850,13 @@
        "lang": "Uzbek",
        "code": "uz"
       }
-     ]
+     ],
+     "audio": {
+      "ru": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c2/Ru-%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82.ogg/Ru-%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82.ogg.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/c/c2/Ru-%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82.ogg"
+      ]
+     }
     }
    ],
    "native": [
@@ -12301,6 +12891,12 @@
     "wiki": "Tashkent",
     "id": "Q269",
     "isCapital": true
+   },
+   "audio": {
+    "ru": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/af/Ru-%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD.ogg/Ru-%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/a/af/Ru-%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD.ogg"
+    ]
    }
   },
   {
@@ -12600,7 +13196,13 @@
        "lang": "Arabic",
        "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/33/LL-Q13955_(ara)-mohamed_khalaf_(Akbarali)-%D8%B9%D8%AF%D9%86.wav/LL-Q13955_(ara)-mohamed_khalaf_(Akbarali)-%D8%B9%D8%AF%D9%86.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/3/33/LL-Q13955_(ara)-mohamed_khalaf_(Akbarali)-%D8%B9%D8%AF%D9%86.wav"
+      ]
+     }
     },
     {
      "id": "Q2471",
@@ -12617,7 +13219,13 @@
        "lang": "Arabic",
        "code": "ar"
       }
-     ]
+     ],
+     "audio": {
+      "ar": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/79/LL-Q13955_(ara)-Fjmustak-%D8%B5%D9%86%D8%B9%D8%A7%D8%A1.wav/LL-Q13955_(ara)-Fjmustak-%D8%B5%D9%86%D8%B9%D8%A7%D8%A1.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/7/79/LL-Q13955_(ara)-Fjmustak-%D8%B5%D9%86%D8%B9%D8%A7%D8%A1.wav"
+      ]
+     }
     }
    ],
    "native": [
@@ -12648,6 +13256,12 @@
     "wiki": "Sanaa",
     "id": "Q2471",
     "isCapital": true
+   },
+   "audio": {
+    "ar": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ef/LL-Q13955_(ara)-Nehaoua-%D8%A7%D9%84%D9%8A%D9%85%D9%86.wav/LL-Q13955_(ara)-Nehaoua-%D8%A7%D9%84%D9%8A%D9%85%D9%86.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/e/ef/LL-Q13955_(ara)-Nehaoua-%D8%A7%D9%84%D9%8A%D9%85%D9%86.wav"
+    ]
    }
   },
   {

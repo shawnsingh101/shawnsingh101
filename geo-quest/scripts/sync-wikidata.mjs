@@ -601,6 +601,90 @@ const leaders = [];
   if (missing.length) console.log('  (no individual leader listed for: ' + missing.join(', ') + ')');
 }
 
+// ---- territories: overseas regions & dependencies (shapes: Natural Earth map units; facts: Wikidata) ----
+console.log('Querying Wikidata for territories…');
+const territories = [];
+{
+  const shapes = JSON.parse(readFileSync(join(ROOT, 'public/data/shapes-terr.json'), 'utf8')).objects.places.geometries.map(g => g.properties);
+  const GROUP_OF_SUB = { Caribbean: 't-car', Micronesia: 't-pac', Polynesia: 't-pac', Melanesia: 't-pac', 'Australia and New Zealand': 't-pac',
+    'Northern Europe': 't-atl', 'Southern Europe': 't-atl', 'Northern America': 't-atl', 'South America': 't-atl', 'Western Africa': 't-atl',
+    'Eastern Africa': 't-ind', 'South-Eastern Asia': 't-ind' };
+  const GROUP_OVERRIDE = { Q35086: 't-atl', Q43448: 't-ind', Q129003: 't-ind' }; // the "open ocean" ones
+  const sovOf = n => [...countries.values()].find(c => norm(c.name) === norm(n) || norm(c.officialName) === norm(n) || (n === 'United States of America' && c.iso3 === 'USA'));
+  const ids = shapes.map(x => x.id);
+  const facts = await fetchPlaces(ids, 'terr', id => ({ capitals: [] }));
+  for (const b of await sparql(CAPITAL_Q.replace('%IDS%', ids.map(q => `wd:${q}`).join(' ')))) {
+    const t = facts.get(qid(v(b, 'c')));
+    const capId = qid(v(b, 'cap'));
+    if (!t || t.capitals.some(x => x.id === capId)) continue;
+    t.capitals.push({ id: capId, name: v(b, 'capLabel'), preferred: v(b, 'rank').endsWith('PreferredRank'), role: null,
+      image: file(v(b, 'capImg')) || null, ...point(v(b, 'capCoord')), wiki: v(b, 'capArticle') ? decodeURIComponent(v(b, 'capArticle').split('/wiki/')[1]) : null });
+  }
+  // What kind of territory it is: "overseas region of France", "British Overseas Territory", …
+  const status = {};
+  for (const b of await sparql(`SELECT ?p ?tLabel WHERE { VALUES ?p { ${ids.map(q => `wd:${q}`).join(' ')} } ?p wdt:P31 ?t . ?t rdfs:label ?tLabel FILTER(lang(?tLabel) = "en") }`)) {
+    const l = v(b, 'tLabel');
+    if (/overseas|territory|dependenc|constituent|autonomous|collectivit|department|crown|commonwealth|unincorporated|special|region of|country of/i.test(l)) (status[qid(v(b, 'p'))] ??= []).push(l);
+  }
+  for (const sh of shapes) {
+    const t = facts.get(sh.id);
+    const sov = sovOf(sh.sov);
+    if (!t || !sov) { warnings.push(`Territory ${sh.id} (${sh.sov}): missing facts or sovereign`); continue; }
+    const pref = t.capitals.filter(x => x.preferred);
+    t.capitals = pref.length ? pref : t.capitals;
+    t.capitalAnswer = t.capitals.map(x => x.name).join(' and ') || null;
+    const st = (status[sh.id] ?? []).sort((a, b) => a.length - b.length)[0] ?? null;
+    territories.push({ ...t, group: GROUP_OVERRIDE[sh.id] ?? GROUP_OF_SUB[sh.sub] ?? 't-atl', sovereign: sov.id, sovereignName: sov.name,
+      terrStatus: st, facts: [st ? st.charAt(0).toUpperCase() + st.slice(1) : null, `Part of ${sov.name}`].filter(Boolean).join(' · ') });
+  }
+  territories.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+// ---- UNESCO World Heritage Sites (Wikidata: heritage designation = World Heritage Site, with the UNESCO id) ----
+// Fame tier = how many Wikipedia language editions have an article (sitelinks): the 50 most famous are
+// "Icons"; then the 40 best-known per continent. Sites removed from the list (no end date check) drop out.
+console.log('Querying Wikidata for World Heritage Sites…');
+const sites = [];
+{
+  const rows = await sparql(`SELECT ?s ?sLabel ?whs ?links ?country ?coord ?img ?article WHERE {
+    ?s p:P1435 ?h . ?h ps:P1435 wd:Q9259 . FILTER NOT EXISTS { ?h pq:P582 [] }
+    ?s wdt:P757 ?whs ; wikibase:sitelinks ?links .
+    OPTIONAL { ?s wdt:P17 ?country } OPTIONAL { ?s wdt:P625 ?coord } OPTIONAL { ?s wdt:P18 ?img }
+    OPTIONAL { ?article schema:about ?s ; schema:isPartOf <https://en.wikipedia.org/> }
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  }`);
+  // Several items can share one listing (extensions "bis", components); keep the best-known item per listing.
+  const byListing = {};
+  for (const b of rows) {
+    const base = v(b, 'whs').replace(/(bis|ter|rev|quater)+$/i, '');
+    const links = +v(b, 'links');
+    const cur = byListing[base];
+    if (!cur || links > cur.links || (links === cur.links && !cur.coord)) {
+      byListing[base] = { id: qid(v(b, 's')), name: v(b, 'sLabel'), whs: base, links, coord: v(b, 'coord') ?? cur?.coord, img: file(v(b, 'img')) || null,
+        wiki: v(b, 'article') ? decodeURIComponent(v(b, 'article').split('/wiki/')[1]) : null, countries: new Set(cur?.id === qid(v(b, 's')) ? cur.countries : []) };
+    }
+    const keep = byListing[base];
+    if (keep.id === qid(v(b, 's')) && v(b, 'country')) keep.countries.add(qid(v(b, 'country')));
+    if (keep.id === qid(v(b, 's')) && !keep.img) keep.img = file(v(b, 'img')) || null;
+  }
+  const all = Object.values(byListing).filter(x => x.coord && !/^Q\d+$/.test(x.name)).map(x => ({ ...x, ...point(x.coord), countries: [...x.countries].filter(c => countries.has(c)) }))
+    .filter(x => x.countries.length).sort((a, b) => b.links - a.links);
+  const perCont = {};
+  all.forEach((x, i) => {
+    const region = mainRegion(x.countries, x.lon);
+    let group;
+    if (i < 50) group = 'u-icons';
+    else {
+      group = `u-${({ Europe: 'eu', Asia: 'as', Africa: 'af', Americas: 'am', Oceania: 'oc' })[region] ?? 'as'}`;
+      if ((perCont[group] = (perCont[group] ?? 0) + 1) > 40) return;
+    }
+    const where = x.countries.map(c => countries.get(c).name);
+    sites.push({ id: x.id, layer: 'site', name: x.name, group, lon: x.lon, lat: x.lat, image: x.img, wiki: x.wiki, whsId: x.whs,
+      country: x.countries[0], countryName: where[0], capitals: [], capitalAnswer: null,
+      facts: [`UNESCO World Heritage Site #${x.whs}`, where.join(', ')].join(' · ') });
+  });
+}
+
 // ---- election results: who takes over in January (Wikipedia race-summary tables) ----
 // Rows like:  ! [[… election in Alaska|Alaska]]  | {{sortname|Dan|Sullivan}}  …  {{aye}} '''[[Mary Peltola]]''' (Democratic)
 function raceRows(text) {
@@ -754,6 +838,56 @@ for (const c of countries.values()) {
 for (const p of cn.values()) { keep(p, ['zh']); for (const cap of p.capitals) keep(cap, ['zh']); }
 for (const p of [...rivers, ...lakes]) keep(p, [...(p.native ?? []).map(n => n.code), ...(p.zh ? ['zh'] : [])]);
 
+// ---- more pronunciation: search Wikimedia Commons for native-speaker recordings ----
+// Lingua Libre uploads thousands of recordings ("LL-Q188 (deu)-Speaker-Deutschland.wav") that Wikidata
+// never links, plus older Wiktionary-style files ("De-Deutschland.ogg"). Search for an exact match of each
+// local name. Results are cached in data/audio-cache.json so each name is only searched once (misses are
+// retried after 30 days) — Commons limits how fast we may ask.
+{
+  const CACHE = join(ROOT, 'data/audio-cache.json');
+  const cache = existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, 'utf8')) : {};
+  const iso3OfWiki = { de: 'deu', fr: 'fra', es: 'spa', it: 'ita', pt: 'por', ru: 'rus', ja: 'jpn', 'zh-hans': 'cmn', 'zh-hant': 'cmn', zh: 'cmn', ar: 'ara', he: 'heb', el: 'ell', nl: 'nld', sv: 'swe', no: 'nor', nb: 'nob', da: 'dan', fi: 'fin', pl: 'pol', cs: 'ces', sk: 'slk', hu: 'hun', ro: 'ron', bg: 'bul', uk: 'ukr', tr: 'tur', fa: 'fas', hi: 'hin', ko: 'kor', vi: 'vie', th: 'tha', id: 'ind', ms: 'msa', sw: 'swa', ka: 'kat', hy: 'hye', sr: 'srp', hr: 'hrv', sl: 'slv', lt: 'lit', lv: 'lav', et: 'est', is: 'isl', ga: 'gle', ca: 'cat', eu: 'eus', mn: 'mon', kk: 'kaz', uz: 'uzb', az: 'aze', ur: 'urd', bn: 'ben', ta: 'tam', am: 'amh', so: 'som', ne: 'nep', si: 'sin', km: 'khm', lo: 'lao', my: 'mya', tl: 'tgl' };
+  const esc = x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const today = new Date().toISOString().slice(0, 10);
+  const stale = d => (new Date(today) - new Date(d)) / 864e5 > 30;
+  let asked = 0;
+  async function findRecording(word, code) {
+    const iso3 = iso3OfWiki[code] ?? iso3OfWiki[code?.split('-')[0]];
+    if (!iso3 || !word) return null;
+    const key = `${iso3}|${word}`;
+    if (cache[key] && (cache[key].file || !stale(cache[key].date))) return cache[key].file;
+    if (asked >= 150 || process.env.NO_AUDIO_SEARCH) return null; // spread the first big run over a few nights
+    asked++;
+    const u = `https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=50&format=json&srsearch=${encodeURIComponent(`intitle:"${word}" filetype:audio`)}`;
+    let titles = [];
+    for (let attempt = 1; attempt <= 4; attempt++) {
+      const r = await fetch(u, { headers: { 'User-Agent': UA } });
+      const t = await r.text();
+      try { titles = JSON.parse(t).query.search.map(x => x.title.replace(/^File:/, '')); break; } catch { await new Promise(res => setTimeout(res, 15000 * attempt)); }
+    }
+    const ll = new RegExp(`^LL-Q\\d+ \\(${iso3}\\)-[^-]+-${esc(word)}\\.(wav|ogg|mp3|flac)$`, 'i');
+    const wikt = new RegExp(`^${esc(code.split('-')[0])}-${esc(word)}\\.(ogg|wav|mp3)$`, 'i');
+    const hit = titles.find(t => ll.test(t)) ?? titles.find(t => wikt.test(t)) ?? null;
+    cache[key] = { file: hit, date: today };
+    if (asked % 25 === 0) { writeFileSync(CACHE, JSON.stringify(cache, null, 0) + '\n'); console.log(`  …${asked} searched`); }
+    await new Promise(res => setTimeout(res, 1200)); // be polite to Commons
+    return hit;
+  }
+  console.log('Searching Wikimedia Commons for more pronunciations…');
+  const want = [];
+  const addWant = (item, word, code) => { if (word && code && !Object.keys(item.audio ?? {}).some(k => k.split('-')[0] === code.split('-')[0])) want.push([item, word, code]); };
+  for (const c of countries.values()) { for (const n of c.native ?? []) addWant(c, n.name, n.code); for (const cap of c.capitals) for (const n of cap.native ?? []) addWant(cap, n.name, n.code); }
+  for (const p of [...rivers, ...lakes]) { for (const n of p.native ?? []) addWant(p, n.name, n.code); if (p.zh) addWant(p, p.zh.han, 'zh'); }
+  for (const p of cn.values()) { if (p.zh) addWant(p, p.zh.han, 'zh'); for (const cap of p.capitals) if (cap.zh) addWant(cap, cap.zh.han, 'zh'); }
+  let found = 0;
+  for (const [item, word, code] of want) {
+    const f = await findRecording(word, code);
+    if (f) { (item.audio ??= {})[code] = audioUrls(f); found++; }
+  }
+  writeFileSync(CACHE, JSON.stringify(cache, null, 0) + '\n');
+  console.log(`  ${found} more recordings found (${asked} new searches; ${want.length} names without a Wikidata recording)`);
+}
+
 // ---- diff against previous snapshots ------------------------------------------------
 const today = new Date().toISOString().slice(0, 10);
 const changes = [];
@@ -779,13 +913,15 @@ const writers = [
   diffAndWrite(join(ROOT, 'public/data/us.json'), [...states.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'flag']),
   diffAndWrite(join(ROOT, 'public/data/senate.json'), [...senate, ...governors], ['name', 'party']),
   diffAndWrite(join(ROOT, 'public/data/leaders.json'), leaders, ['name']),
+  diffAndWrite(join(ROOT, 'public/data/territories.json'), territories, ['name', 'capitalAnswer', 'sovereignName']),
+  diffAndWrite(join(ROOT, 'public/data/sites.json'), sites, ['name']),
   diffAndWrite(join(ROOT, 'public/data/lakes.json'), lakes, ['name', 'group']),
   diffAndWrite(join(ROOT, 'public/data/cn.json'), [...cn.values()].sort((a, b) => a.name.localeCompare(b.name)), ['name', 'capitalAnswer', 'zhHan']),
 ];
 
 warnings.forEach(w => console.warn('⚠ ' + w));
 changes.forEach(ch => console.log(`Δ ${ch.name}: ${ch.field} ${JSON.stringify(ch.from)} → ${JSON.stringify(ch.to)}`));
-console.log(`${list.length} countries, ${states.size} US states, ${senate.length} senators, ${governors.length} governors, ${leaders.length} world leaders, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
+console.log(`${list.length} countries, ${states.size} US states, ${senate.length} senators, ${governors.length} governors, ${leaders.length} world leaders, ${territories.length} territories, ${sites.length} World Heritage Sites, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
 
 if (!DRY) {
   writers.forEach(w => w());

@@ -13,7 +13,12 @@ function speak(text: string, code?: string) {
   const lang = bcp47(code);
   if (lang) {
     u.lang = lang;
-    const v = speechSynthesis.getVoices().find(v => v.lang.toLowerCase().startsWith(lang.toLowerCase())) ?? speechSynthesis.getVoices().find(v => v.lang.toLowerCase().startsWith(lang.split('-')[0]));
+    // Prefer the device's best voices (Apple "Premium/Enhanced", Google, Microsoft "Natural"/neural) over the basic default.
+    const all = speechSynthesis.getVoices();
+    const match = all.filter(v => v.lang.toLowerCase().startsWith(lang.toLowerCase()));
+    const pool = match.length ? match : all.filter(v => v.lang.toLowerCase().startsWith(lang.split('-')[0]));
+    const score = (v: SpeechSynthesisVoice) => (/premium/i.test(v.name) ? 5 : /enhanced|natural|neural/i.test(v.name) ? 4 : /google/i.test(v.name) ? 3 : /siri/i.test(v.name) ? 2 : 0) + (v.localService ? 0 : 0.5);
+    const v = [...pool].sort((a, b) => score(b) - score(a))[0];
     if (v) u.voice = v;
   }
   u.rate = 0.85;

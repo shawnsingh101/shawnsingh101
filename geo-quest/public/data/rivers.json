@@ -1821,7 +1821,13 @@
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "audio": {
+    "fr": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ef/LL-Q150_(fra)-Jules78120-S%C3%A9n%C3%A9gal.wav/LL-Q150_(fra)-Jules78120-S%C3%A9n%C3%A9gal.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/e/ef/LL-Q150_(fra)-Jules78120-S%C3%A9n%C3%A9gal.wav"
+    ]
+   }
   },
   {
    "id": "Q193737",

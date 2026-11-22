@@ -12,7 +12,7 @@ export interface Capital {
 }
 
 export type Status = 'un' | 'observer' | 'disputed';
-export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate';
+export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site';
 
 /** Anything you can learn on the map: a country, a sea, a province… keyed by Wikidata id. */
 export interface Place {
@@ -44,6 +44,8 @@ export interface Place {
   label?: string; state?: string; stateName?: string; rank?: 'senior' | 'junior';
   party?: string; partyLong?: string; since?: string; termEnd?: string; roles?: string[]; photo?: string;
   topic?: 'senate' | 'governors' | 'leaders';   // which kind of office a seat is
+  whsId?: string; country?: string; countryName?: string; // World Heritage Sites
+  sovereign?: string; sovereignName?: string; terrStatus?: string | null; // territories: which country they belong to
   place?: string; placeName?: string;           // the state/country the office belongs to
   office?: string; rolePrefix?: string;         // "President of France", "President of"
   noFace?: boolean;                             // same person already has a "who is this?" card (e.g. Charles III)
@@ -55,4 +57,5 @@ export type Country = Place;
 
 export interface Change { date: string; id: string; name: string; field: string; from: string | null; to: string | null }
 
-export interface Dataset { countries: Place[]; places: Place[]; byId: Map<string, Place>; changes: Change[] }
+export interface Lookalike { codes: string[]; tip: string }
+export interface Dataset { countries: Place[]; places: Place[]; byId: Map<string, Place>; changes: Change[]; lookalikes: Lookalike[] }

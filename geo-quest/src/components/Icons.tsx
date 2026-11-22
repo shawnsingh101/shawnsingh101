@@ -34,6 +34,7 @@ const P: Record<string, ReactNode> = {
   capitol: <path d="M3 21h18M5 21v-7h14v7M8 21v-7m4 7v-7m4 7v-7M4 14h16M7 14c0-3 2-5 5-5s5 2 5 5M12 9V4m0 0h2" />,
   coin: <><circle cx="12" cy="12" r="8.5" /><path d="M14.5 9.2c-.6-.8-1.5-1.2-2.6-1.2-1.6 0-2.7.8-2.7 2s1.1 1.7 2.7 2 2.8.9 2.8 2.1-1.2 2-2.8 2c-1.2 0-2.2-.5-2.8-1.3M12 6.5V8m0 8v1.5" /></>,
   city: <path d="M3 21h18M5 21V10l5-3v14M10 21V4l6 3v14M16 21v-9l3 2v7M13 9h0M13 12h0M13 15h0M7 13h0M7 16h0" />,
+  temple: <path d="M3 21h18M4 18h16M5 18V9.5m3.5 8.5V9.5m3.5 8.5V9.5m3.5 8.5V9.5M19 18V9.5M3 9.5h18L12 3z" />,
   tag: <><path d="M3 12V4h8l10 10-8 8z" /><circle cx="7.5" cy="8.5" r="1.3" /></>,
 };
 export type IconName = keyof typeof P;
