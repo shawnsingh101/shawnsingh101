@@ -109,7 +109,8 @@ export const GROUPS: Group[] = [
   { id: 'r-great', section: 'Rivers', name: 'Great rivers of the world', layer: 'river', topics: [{ id: 'places', name: 'Great rivers', icon: 'river' }],
     note: "The world's 20 longest rivers (from Wikidata) come first; know half of them to unlock each continent's rivers." },
   ...([['r-eu', 'Rivers of Europe'], ['r-as', 'Rivers of Asia & Oceania'], ['r-af', 'Rivers of Africa'], ['r-am', 'Rivers of the Americas']] as const)
-    .map(([id, name]): Group => ({ id, section: 'Rivers', name, layer: 'river', requires: 'r-great/places', topics: [{ id: 'places', name: 'Rivers', icon: 'river' }] })),
+    // Each continent is its own section under Rivers, so countries can nest inside (Rivers of the Americas › Rivers of the United States).
+    .map(([id, name]): Group => ({ id, section: name, name: id === 'r-am' ? 'Major rivers of the Americas' : name, layer: 'river', requires: 'r-great/places', topics: [{ id: 'places', name: 'Rivers', icon: 'river' }] })),
   { id: 'l-great', section: 'Lakes', name: "The world's largest lakes", layer: 'lake', topics: [{ id: 'places', name: 'Largest lakes', icon: 'drop' }],
     note: 'The 20 largest lakes by area come first; know half of them to unlock each continent’s lakes.' },
   ...([['l-eu', 'Lakes of Europe'], ['l-as', 'Lakes of Asia & Oceania'], ['l-af', 'Lakes of Africa'], ['l-am', 'Lakes of the Americas']] as const)
@@ -125,7 +126,7 @@ export const GROUPS: Group[] = [
     ],
     note: id === 'us-ne' ? 'The 50 states by US Census region. Senators unlock once you know half a region’s states; their cards follow the seat, so when a seat changes hands the card comes back with a note.' : undefined,
   })),
-  { id: 'r-us', section: 'United States', alsoInSections: ['Rivers'], name: 'Rivers of the United States', layer: 'river', topics: [{ id: 'places', name: 'Rivers', icon: 'river' }],
+  { id: 'r-us', section: 'Rivers of the United States', alsoInSections: ['United States'], name: 'Rivers of the United States', layer: 'river', topics: [{ id: 'places', name: 'Rivers', icon: 'river' }],
     note: 'The great US rivers plus the next tier down (the Hudson, Delaware, Susquehanna, Potomac…). Rivers shared with the world decks keep one set of progress.' },
   ...([['t-car', 'Caribbean territories'], ['t-pac', 'Pacific territories'], ['t-atl', 'Atlantic & European territories'], ['t-ind', 'Indian Ocean territories']] as const).map(([id, name]): Group => ({
     id, section: 'Territories', name, layer: 'terr',
@@ -152,7 +153,7 @@ export const GROUPS: Group[] = [
     topics: [{ id: 'places', name: 'Provinces', icon: 'map' }, { id: 'capitals', name: 'Capitals', icon: 'landmark', requires: 'places' }] },
 ];
 
-export const SECTIONS = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania', 'United States', 'Territories', 'World Heritage', 'Mountains', 'Oceans & Seas', 'Rivers', 'Lakes', 'China'];
+export const SECTIONS = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania', 'United States', 'Territories', 'World Heritage', 'Mountains', 'Oceans & Seas', 'Rivers', 'Rivers of Europe', 'Rivers of Asia & Oceania', 'Rivers of Africa', 'Rivers of the Americas', 'Rivers of the United States', 'Lakes', 'China'];
 export const CONTINENTS = SECTIONS.slice(0, 5);
 
 // ---- Sections form a tree -------------------------------------------------------------
@@ -160,7 +161,8 @@ export const CONTINENTS = SECTIONS.slice(0, 5);
 // The skill tree, quiz and atlas all drill down through this, so new regions never pile up at the bottom.
 /** The groups listed in a section: its own, plus any filed elsewhere that also belong here. */
 export const groupsShownIn = (sec: string) => GROUPS.filter(g => g.section === sec || g.alsoInSections?.includes(sec));
-export const SECTION_PARENT: Record<string, string> = { 'United States': 'Americas', China: 'Asia' };
+export const SECTION_PARENT: Record<string, string> = { 'United States': 'Americas', China: 'Asia',
+  'Rivers of Europe': 'Rivers', 'Rivers of Asia & Oceania': 'Rivers', 'Rivers of Africa': 'Rivers', 'Rivers of the Americas': 'Rivers', 'Rivers of the United States': 'Rivers of the Americas' };
 export const childSections = (sec: string | null) => SECTIONS.filter(s => (SECTION_PARENT[s] ?? null) === sec);
 /** The section and its ancestors, outermost first: ['Americas', 'United States', 'New Jersey']. */
 export function sectionChain(sec: string): string[] { const out = [sec]; while (SECTION_PARENT[out[0]]) out.unshift(SECTION_PARENT[out[0]]); return out; }

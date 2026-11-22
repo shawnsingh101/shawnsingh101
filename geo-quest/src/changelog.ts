@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.9.0', notes: 'Rivers drill down like places: Rivers › Rivers of the Americas › Rivers of the United States · US rivers list the states they run through · rivers show where they start and end' },
   { version: '1.8.1', notes: 'Rivers of the United States now also shows under Rivers (Library, Quiz, Atlas) · US federal debt and debt toggles on the Dashboard' },
   { version: '1.8.0', notes: 'India & Uzbekistan regions · Rivers of the United States (Hudson, Delaware, Susquehanna…) · population on country cards · local names for cities, peaks & World Heritage Sites · Dashboard: total debt by sector, population, inflation & unemployment for the 10 largest economies, most valuable companies' },
   { version: '1.7.0', notes: 'Dashboard charts with toggles · central bank rates worldwide · US petroleum trade · external debt · what the largest economies trade · Related links between subjects (Kaaba → Saudi Arabia) · World Heritage Sites show their state or province' },

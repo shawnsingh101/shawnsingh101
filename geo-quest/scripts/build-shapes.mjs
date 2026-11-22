@@ -124,7 +124,10 @@ for (const r of curated) {
   if (!id) { console.warn('No Wikidata item for', r.wiki); continue; }
   const segs = riversNE.features.filter(f => (f.properties.featurecla === 'River' || f.properties.featurecla === 'Lake Centerline') && (r.ne.includes(f.properties.name_en) || r.ne.includes(f.properties.name)) && inBox(lines(f.geometry), r.bbox));
   if (!segs.length) { console.warn('No shape for', r.wiki); continue; }
-  rivers.push({ type: 'Feature', geometry: { type: 'MultiLineString', coordinates: segs.flatMap(f => lines(f.geometry)) }, properties: r.deck ? { id, deck: r.deck } : { id } });
+  // With a bbox, keep only the parts of each line inside it (a segment can stray into a same-named river elsewhere).
+  const inside = ([x, y]) => !r.bbox || (x >= r.bbox[0] && x <= r.bbox[2] && y >= r.bbox[1] && y <= r.bbox[3]);
+  const clipped = segs.flatMap(f => lines(f.geometry)).flatMap(l => { const out = [[]]; for (const p of l) { if (inside(p)) out[out.length - 1].push(p); else if (out[out.length - 1].length) out.push([]); } return out.filter(x => x.length > 1); });
+  rivers.push({ type: 'Feature', geometry: { type: 'MultiLineString', coordinates: clipped }, properties: r.deck ? { id, deck: r.deck } : { id } });
 }
 writeFileSync(join(ROOT, 'public/data/shapes-river.json'), JSON.stringify(build(rivers, 0.1)));
 

@@ -53,6 +53,8 @@ export interface Place {
   incoming?: { name: string; party: string | null; wiki: string | null; from: string }; // election winner taking over
   currency?: { id: string; name: string; code: string | null; symbol: string | null; wiki: string | null; shared: number; image?: string | null }[];
   card?: import('./notes').NoteCard; // a card from a note deck (layer 'note')
+  stateIds?: string[];      // US rivers: the states they run through (from the map)
+  source?: string;          // rivers: where they rise
   alsoIn?: string[];        // extra decks it appears in (a US river in Rivers of the United States)
   population?: number;      // latest official figure (Wikidata)
   populationYear?: number | null;
