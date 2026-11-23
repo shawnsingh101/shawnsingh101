@@ -580,7 +580,7 @@
    "countryName": "Greece",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #404 · Attica, Greece",
+   "facts": "UNESCO World Heritage Site #404 · Attica Region, Greece",
    "native": [
     {
      "name": "Ακρόπολη Αθηνών",
@@ -591,7 +591,7 @@
    "admin1Ids": [
     "Q758056"
    ],
-   "admin1": "Attica"
+   "admin1": "Attica Region"
   },
   {
    "id": "Q131198",
@@ -661,7 +661,7 @@
    "countryName": "Greece",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #517 · Western Greece, Greece",
+   "facts": "UNESCO World Heritage Site #517 · West Greece Region, Greece",
    "native": [
     {
      "name": "Ολυμπία",
@@ -672,7 +672,7 @@
    "admin1Ids": [
     "Q170291"
    ],
-   "admin1": "Western Greece"
+   "admin1": "West Greece Region"
   },
   {
    "id": "Q5832",
@@ -1168,7 +1168,7 @@
    "countryName": "Greece",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #530 · South Aegean, Greece",
+   "facts": "UNESCO World Heritage Site #530 · South Aegean Region, Greece",
    "native": [
     {
      "name": "Δήλος",
@@ -1179,7 +1179,7 @@
    "admin1Ids": [
     "Q173616"
    ],
-   "admin1": "South Aegean"
+   "admin1": "South Aegean Region"
   },
   {
    "id": "Q223589",
@@ -1847,7 +1847,7 @@
    "countryName": "Greece",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #455 · Thessaly, Greece",
+   "facts": "UNESCO World Heritage Site #455 · Thessaly Region, Greece",
    "native": [
     {
      "name": "Μετέωρα",
@@ -1858,7 +1858,7 @@
    "admin1Ids": [
     "Q22807284"
    ],
-   "admin1": "Thessaly"
+   "admin1": "Thessaly Region"
   },
   {
    "id": "Q235004",
@@ -4469,7 +4469,7 @@
    "countryName": "Greece",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #511 · Peloponnese, Greece",
+   "facts": "UNESCO World Heritage Site #511 · Peloponnese Region, Greece",
    "native": [
     {
      "name": "Μυστράς",
@@ -4480,7 +4480,7 @@
    "admin1Ids": [
     "Q202484"
    ],
-   "admin1": "Peloponnese"
+   "admin1": "Peloponnese Region"
   },
   {
    "id": "Q464913",

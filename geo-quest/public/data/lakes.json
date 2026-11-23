@@ -121,7 +121,13 @@
      "lang": "Russian",
      "code": "ru"
     }
-   ]
+   ],
+   "audio": {
+    "ru": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/df/LL-Q7737_(rus)-Lvova-%D0%B1%D0%B0%D0%B9%D0%BA%D0%B0%D0%BB.wav/LL-Q7737_(rus)-Lvova-%D0%B1%D0%B0%D0%B9%D0%BA%D0%B0%D0%BB.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/d/df/LL-Q7737_(rus)-Lvova-%D0%B1%D0%B0%D0%B9%D0%BA%D0%B0%D0%BB.wav"
+    ]
+   }
   },
   {
    "id": "Q5525",
@@ -787,22 +793,6 @@
    }
   },
   {
-   "id": "Q965973",
-   "layer": "lake",
-   "name": "Lake Gairdner",
-   "image": "Lake Gairdner.jpg",
-   "lon": 136,
-   "lat": -31.567,
-   "wiki": "Lake_Gairdner",
-   "countries": [
-    "Q408"
-   ],
-   "group": "l-as",
-   "nameThe": "Lake Gairdner",
-   "facts": "4,350 km² · Australia",
-   "size": 4350
-  },
-  {
    "id": "Q845876",
    "layer": "lake",
    "name": "Lake of the Woods",
@@ -817,6 +807,22 @@
    "group": "l-am",
    "nameThe": "Lake of the Woods",
    "facts": "4,350 km² · Canada, United States",
+   "size": 4350
+  },
+  {
+   "id": "Q965973",
+   "layer": "lake",
+   "name": "Lake Gairdner",
+   "image": "Lake Gairdner.jpg",
+   "lon": 136,
+   "lat": -31.567,
+   "wiki": "Lake_Gairdner",
+   "countries": [
+    "Q408"
+   ],
+   "group": "l-as",
+   "nameThe": "Lake Gairdner",
+   "facts": "4,350 km² · Australia",
    "size": 4350
   },
   {

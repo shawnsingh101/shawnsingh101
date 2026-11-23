@@ -56,15 +56,15 @@
    "sovereignName": "United States",
    "terrStatus": "territory of the United States",
    "facts": "Territory of the United States · Part of United States",
-   "population": 49710,
-   "populationYear": 2020,
    "native": [
     {
      "name": "Amerika Sāmoa",
      "lang": "Samoan",
      "code": "sm"
     }
-   ]
+   ],
+   "population": 49710,
+   "populationYear": 2020
   },
   {
    "id": "Q25228",
@@ -304,8 +304,6 @@
    "sovereignName": "Netherlands",
    "terrStatus": null,
    "facts": "Part of Netherlands",
-   "population": 29418,
-   "populationYear": 2023,
    "native": [
     {
      "name": "Caribisch Nederland",
@@ -317,7 +315,9 @@
      "lang": "Papiamento",
      "code": "pap"
     }
-   ]
+   ],
+   "population": 29418,
+   "populationYear": 2023
   },
   {
    "id": "Q5785",
@@ -461,15 +461,15 @@
    "sovereignName": "Netherlands",
    "terrStatus": "country of the Kingdom of the Netherlands",
    "facts": "Country of the Kingdom of the Netherlands · Part of Netherlands",
-   "population": 152849,
-   "populationYear": 2023,
    "native": [
     {
      "name": "Kòrsou",
      "lang": "Papiamento",
      "code": "pap"
     }
-   ]
+   ],
+   "population": 152849,
+   "populationYear": 2023
   },
   {
    "id": "Q9648",
@@ -526,8 +526,6 @@
    "sovereignName": "Denmark",
    "terrStatus": "autonomous country within the Kingdom of Denmark",
    "facts": "Autonomous country within the Kingdom of Denmark · Part of Denmark",
-   "population": 54149,
-   "populationYear": 2023,
    "native": [
     {
      "name": "Færøerne",
@@ -539,7 +537,9 @@
      "lang": "Faroese",
      "code": "fo"
     }
-   ]
+   ],
+   "population": 54149,
+   "populationYear": 2023
   },
   {
    "id": "Q3769",
@@ -567,8 +567,6 @@
    "sovereignName": "France",
    "terrStatus": "region of France",
    "facts": "Region of France · Part of France",
-   "population": 293996,
-   "populationYear": 2023,
    "native": [
     {
      "name": "Guyane",
@@ -580,7 +578,9 @@
      "lang": "Guianan Creole",
      "code": "gcr"
     }
-   ]
+   ],
+   "population": 293996,
+   "populationYear": 2023
   },
   {
    "id": "Q30971",
@@ -608,15 +608,15 @@
    "sovereignName": "France",
    "terrStatus": "overseas collectivity of France",
    "facts": "Overseas collectivity of France · Part of France",
-   "population": 278786,
-   "populationYear": 2022,
    "native": [
     {
      "name": "Polynésie française",
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "population": 278786,
+   "populationYear": 2022
   },
   {
    "id": "Q129003",
@@ -644,15 +644,15 @@
    "sovereignName": "France",
    "terrStatus": "dependent territory",
    "facts": "Dependent territory · Part of France",
-   "population": 196,
-   "populationYear": 2012,
    "native": [
     {
      "name": "Terres australes et antarctiques françaises",
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "population": 196,
+   "populationYear": 2012
   },
   {
    "id": "Q223",
@@ -680,15 +680,15 @@
    "sovereignName": "Denmark",
    "terrStatus": "dependent territory",
    "facts": "Dependent territory · Part of Denmark",
-   "population": 56609,
-   "populationYear": 2023,
    "native": [
     {
      "name": "Kalaallit Nunaat",
      "lang": "Greenlandic",
      "code": "kl"
     }
-   ]
+   ],
+   "population": 56609,
+   "populationYear": 2023
   },
   {
    "id": "Q17012",
@@ -745,15 +745,15 @@
    "sovereignName": "United States",
    "terrStatus": "territory of the United States",
    "facts": "Territory of the United States · Part of United States",
-   "population": 153836,
-   "populationYear": 2020,
    "native": [
     {
      "name": "Guåhan",
      "lang": "Chamorro",
      "code": "ch"
     }
-   ]
+   ],
+   "population": 153836,
+   "populationYear": 2020
   },
   {
    "id": "Q25230",
@@ -781,15 +781,15 @@
    "sovereignName": "United Kingdom",
    "terrStatus": "Crown Dependencies",
    "facts": "Crown Dependencies · Part of United Kingdom",
-   "population": 67787,
-   "populationYear": 2024,
    "native": [
     {
      "name": "Guernesey",
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "population": 67787,
+   "populationYear": 2024
   },
   {
    "id": "Q9676",
@@ -817,15 +817,15 @@
    "sovereignName": "United Kingdom",
    "terrStatus": "Crown Dependencies",
    "facts": "Crown Dependencies · Part of United Kingdom",
-   "population": 84523,
-   "populationYear": 2024,
    "native": [
     {
      "name": "Mannin",
      "lang": "Manx",
      "code": "gv"
     }
-   ]
+   ],
+   "population": 84523,
+   "populationYear": 2024
   },
   {
    "id": "Q14056",
@@ -1026,15 +1026,15 @@
    "sovereignName": "France",
    "terrStatus": "dependent territory",
    "facts": "Dependent territory · Part of France",
-   "population": 278500,
-   "populationYear": 2017,
    "native": [
     {
      "name": "Nouvelle-Calédonie",
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "population": 278500,
+   "populationYear": 2017
   },
   {
    "id": "Q34020",
@@ -1120,15 +1120,15 @@
    "sovereignName": "United States",
    "terrStatus": "commonwealth",
    "facts": "Commonwealth · Part of United States",
-   "population": 47329,
-   "populationYear": 2020,
    "native": [
     {
      "name": "Notte Mariånas",
      "lang": "Chamorro",
      "code": "ch"
     }
-   ]
+   ],
+   "population": 47329,
+   "populationYear": 2020
   },
   {
    "id": "Q35672",
@@ -1156,15 +1156,15 @@
    "sovereignName": "United Kingdom",
    "terrStatus": "British Overseas Territories",
    "facts": "British Overseas Territories · Part of United Kingdom",
-   "population": 50,
-   "populationYear": 2019,
    "native": [
     {
      "name": "Pitkern Ailen",
      "lang": "Pitkern",
      "code": "pih"
     }
-   ]
+   ],
+   "population": 50,
+   "populationYear": 2019
   },
   {
    "id": "Q1183",
@@ -1221,15 +1221,15 @@
    "sovereignName": "France",
    "terrStatus": "region of France",
    "facts": "Region of France · Part of France",
-   "population": 889679,
-   "populationYear": 2023,
    "native": [
     {
      "name": "La Réunion",
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "population": 889679,
+   "populationYear": 2023
   },
   {
    "id": "Q25362",
@@ -1258,14 +1258,7 @@
    "terrStatus": "overseas collectivity of France",
    "facts": "Overseas collectivity of France · Part of France",
    "population": 10124,
-   "populationYear": 2018,
-   "native": [
-    {
-     "name": "Saint-Barthélemy",
-     "lang": "French",
-     "code": "fr"
-    }
-   ]
+   "populationYear": 2018
   },
   {
    "id": "Q34497",
@@ -1311,15 +1304,15 @@
    "sovereignName": "France",
    "terrStatus": "overseas collectivity of France",
    "facts": "Overseas collectivity of France · Part of France",
-   "population": 5974,
-   "populationYear": 2019,
    "native": [
     {
      "name": "Saint-Pierre-et-Miquelon",
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "population": 5974,
+   "populationYear": 2019
   },
   {
    "id": "Q126125",
@@ -1539,15 +1532,15 @@
    "sovereignName": "France",
    "terrStatus": "overseas collectivity of France",
    "facts": "Overseas collectivity of France · Part of France",
-   "population": 11558,
-   "populationYear": 2018,
    "native": [
     {
      "name": "Wallis-et-Futuna",
      "lang": "French",
      "code": "fr"
     }
-   ]
+   ],
+   "population": 11558,
+   "populationYear": 2018
   }
  ]
 }

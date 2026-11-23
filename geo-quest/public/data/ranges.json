@@ -757,6 +757,27 @@
    "capitalAnswer": null
   },
   {
+   "id": "Q155322",
+   "layer": "range",
+   "name": "Sikhote-Alin",
+   "image": "Sopka in south Sikhote-Alin.JPG",
+   "lon": 136.167,
+   "lat": 45.333,
+   "wiki": "Sikhote-Alin",
+   "group": "m-ranges2",
+   "nameThe": "the Sikhote-Alin",
+   "facts": "Russia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Сихотэ-Алинь",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
+  },
+  {
    "id": "Q207692",
    "layer": "range",
    "name": "Wuyi Mountains",
@@ -780,27 +801,6 @@
     "han": "武夷山",
     "pinyin": "Wǔyí Shān"
    }
-  },
-  {
-   "id": "Q155322",
-   "layer": "range",
-   "name": "Sikhote-Alin",
-   "image": "Sopka in south Sikhote-Alin.JPG",
-   "lon": 136.167,
-   "lat": 45.333,
-   "wiki": "Sikhote-Alin",
-   "group": "m-ranges2",
-   "nameThe": "the Sikhote-Alin",
-   "facts": "Russia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "native": [
-    {
-     "name": "Сихотэ-Алинь",
-     "lang": "Russian",
-     "code": "ru"
-    }
-   ]
   },
   {
    "id": "Q215917",
@@ -866,27 +866,6 @@
    ]
   },
   {
-   "id": "Q660304",
-   "layer": "range",
-   "name": "Pacific Coast Ranges",
-   "image": "Canadian Coast Range.jpg",
-   "lon": -125.25,
-   "lat": 51.383,
-   "wiki": "Pacific_Coast_Ranges",
-   "group": "m-ranges2",
-   "nameThe": "the Pacific Coast Ranges",
-   "facts": "Canada, United States, Mexico",
-   "capitals": [],
-   "capitalAnswer": null,
-   "native": [
-    {
-     "name": "Cadena costera del Pacífico",
-     "lang": "Spanish",
-     "code": "es"
-    }
-   ]
-  },
-  {
    "id": "Q584279",
    "layer": "range",
    "name": "High Atlas",
@@ -904,6 +883,27 @@
      "name": "الأطلس الكبير",
      "lang": "Arabic",
      "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q660304",
+   "layer": "range",
+   "name": "Pacific Coast Ranges",
+   "image": "Canadian Coast Range.jpg",
+   "lon": -125.25,
+   "lat": 51.383,
+   "wiki": "Pacific_Coast_Ranges",
+   "group": "m-ranges2",
+   "nameThe": "the Pacific Coast Ranges",
+   "facts": "Canada, United States, Mexico",
+   "capitals": [],
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Cadena costera del Pacífico",
+     "lang": "Spanish",
+     "code": "es"
     }
    ]
   },
@@ -929,18 +929,25 @@
    ]
   },
   {
-   "id": "Q1124584",
+   "id": "Q1898305",
    "layer": "range",
-   "name": "Sierra Madre Occidental",
-   "image": "Sierra Madre Occidental.jpg",
-   "lon": -108.058,
-   "lat": 26.746,
-   "wiki": "Sierra_Madre_Occidental",
+   "name": "Saharan Atlas",
+   "image": "Atlas-Mountains-Labeled-2.jpg",
+   "lon": 2,
+   "lat": 34,
+   "wiki": "Saharan_Atlas",
    "group": "m-ranges2",
-   "nameThe": "the Sierra Madre Occidental",
-   "facts": "Mexico",
+   "nameThe": "the Saharan Atlas",
+   "facts": "Algeria",
    "capitals": [],
-   "capitalAnswer": null
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "الأطلس الصحراوي",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q682334",
@@ -968,25 +975,18 @@
    }
   },
   {
-   "id": "Q1898305",
+   "id": "Q1124584",
    "layer": "range",
-   "name": "Saharan Atlas",
-   "image": "Atlas-Mountains-Labeled-2.jpg",
-   "lon": 2,
-   "lat": 34,
-   "wiki": "Saharan_Atlas",
+   "name": "Sierra Madre Occidental",
+   "image": "Sierra Madre Occidental.jpg",
+   "lon": -108.058,
+   "lat": 26.746,
+   "wiki": "Sierra_Madre_Occidental",
    "group": "m-ranges2",
-   "nameThe": "the Saharan Atlas",
-   "facts": "Algeria",
+   "nameThe": "the Sierra Madre Occidental",
+   "facts": "Mexico",
    "capitals": [],
-   "capitalAnswer": null,
-   "native": [
-    {
-     "name": "الأطلس الصحراوي",
-     "lang": "Arabic",
-     "code": "ar"
-    }
-   ]
+   "capitalAnswer": null
   },
   {
    "id": "Q804330",
@@ -1017,6 +1017,27 @@
    "capitalAnswer": null
   },
   {
+   "id": "Q404600",
+   "layer": "range",
+   "name": "Lesser Khingan",
+   "image": "Карьер 7.jpg",
+   "lon": 127.208,
+   "lat": 48.792,
+   "wiki": "Lesser_Khingan",
+   "group": "m-ranges2",
+   "nameThe": "the Lesser Khingan",
+   "facts": "Russia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Малый Хинган",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
+  },
+  {
    "id": "Q1072879",
    "layer": "range",
    "name": "Qilian Mountains",
@@ -1040,27 +1061,6 @@
     "han": "祁连山",
     "pinyin": "Qílián Shān"
    }
-  },
-  {
-   "id": "Q404600",
-   "layer": "range",
-   "name": "Lesser Khingan",
-   "image": "Карьер 7.jpg",
-   "lon": 127.208,
-   "lat": 48.792,
-   "wiki": "Lesser_Khingan",
-   "group": "m-ranges2",
-   "nameThe": "the Lesser Khingan",
-   "facts": "Russia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "native": [
-    {
-     "name": "Малый Хинган",
-     "lang": "Russian",
-     "code": "ru"
-    }
-   ]
   },
   {
    "id": "Q1029702",
@@ -1091,20 +1091,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q1132302",
-   "layer": "range",
-   "name": "Cordillera Real",
-   "image": "Cordillera Real e Isla de la Luna en el Lago Titicaca - La Paz - Bolivia.jpg",
-   "lon": -67.167,
-   "lat": -17,
-   "wiki": "Cordillera_Real_(Bolivia)",
-   "group": "m-ranges2",
-   "nameThe": "the Cordillera Real",
-   "facts": "Bolivia",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q1817102",
    "layer": "range",
    "name": "Mackenzie Mountains",
@@ -1115,6 +1101,20 @@
    "group": "m-ranges2",
    "nameThe": "the Mackenzie Mountains",
    "facts": "Canada",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q1132302",
+   "layer": "range",
+   "name": "Cordillera Real",
+   "image": "Cordillera Real e Isla de la Luna en el Lago Titicaca - La Paz - Bolivia.jpg",
+   "lon": -67.167,
+   "lat": -17,
+   "wiki": "Cordillera_Real_(Bolivia)",
+   "group": "m-ranges2",
+   "nameThe": "the Cordillera Real",
+   "facts": "Bolivia",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -1370,6 +1370,20 @@
    ]
   },
   {
+   "id": "Q519263",
+   "layer": "range",
+   "name": "Pontic Mountains",
+   "image": "Sumela Showing Location.JPG",
+   "lon": 41.159,
+   "lat": 40.837,
+   "wiki": "Pontic_Mountains",
+   "group": "m-ranges2",
+   "nameThe": "the Pontic Mountains",
+   "facts": "Türkiye",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
    "id": "Q26955",
    "layer": "range",
    "name": "Sierra Nevada (Spain)",
@@ -1420,20 +1434,6 @@
      "code": "hr"
     }
    ]
-  },
-  {
-   "id": "Q519263",
-   "layer": "range",
-   "name": "Pontic Mountains",
-   "image": "Sumela Showing Location.JPG",
-   "lon": 41.159,
-   "lat": 40.837,
-   "wiki": "Pontic_Mountains",
-   "group": "m-ranges2",
-   "nameThe": "the Pontic Mountains",
-   "facts": "Türkiye",
-   "capitals": [],
-   "capitalAnswer": null
   },
   {
    "id": "Q208076",

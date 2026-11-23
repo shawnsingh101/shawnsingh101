@@ -4503,11 +4503,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/President%20Ram%20Chandra%20Poudel%2C%20Official%20portrait%20(January%202024).jpg?width=450",
-   "party": "Nepali Congress",
-   "partyLong": "Nepali Congress",
+   "party": "independent politician",
+   "partyLong": "independent politician",
    "wikidata": "Q3183124",
    "noFace": false,
-   "facts": "President of Nepal · Nepali Congress"
+   "facts": "President of Nepal · Independent politician"
   },
   {
    "id": "L-Q837-prime-minister",
@@ -5536,11 +5536,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%CA%BBauli%20Leuatea%20Schmidt%20in%202023.jpg?width=450",
-   "party": "Human Rights Protection Party",
-   "partyLong": "Human Rights Protection Party",
+   "party": "Faʻatuatua i le Atua Samoa ua Tasi",
+   "partyLong": "Faʻatuatua i le Atua Samoa ua Tasi",
    "wikidata": "Q16734600",
    "noFace": false,
-   "facts": "Prime Minister of Samoa · Human Rights Protection Party"
+   "facts": "Prime Minister of Samoa · Faʻatuatua i le Atua Samoa ua Tasi"
   },
   {
    "id": "L-Q1039-president",
@@ -5689,7 +5689,7 @@
    "lat": 43.95,
    "capitals": [],
    "capitalAnswer": null,
-   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/AleksandarCupic.png?width=450",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aleksandar%20%C4%8Cupi%C4%87%20(2026-10).png?width=450",
    "party": "Students' List",
    "partyLong": "Students' List",
    "wikidata": "Q142195374",

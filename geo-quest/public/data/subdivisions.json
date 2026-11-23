@@ -174,7 +174,7 @@
      "name": "愛知県",
      "lang": "Japanese",
      "code": "ja",
-     "roman": "Aichi Ken"
+     "roman": "Aichi-ken"
     }
    ],
    "population": 7521192,
@@ -1465,7 +1465,7 @@
        "name": "福岡",
        "lang": "Japanese",
        "code": "ja",
-       "roman": "Fukuoka"
+       "roman": "Fukuoka-shi"
       }
      ]
     }
@@ -2108,7 +2108,7 @@
      "name": "兵庫県",
      "lang": "Japanese",
      "code": "ja",
-     "roman": "Hyōgo Ken"
+     "roman": "Hyōgo-ken"
     }
    ],
    "population": 5453392,
@@ -2344,6 +2344,7 @@
      ]
     }
    ],
+   "capitalNote": "Srinagar in summer, Jammu in winter",
    "capitalAnswer": "Jammu and Srinagar",
    "parentName": "India",
    "facts": "State or territory of India · North India",
@@ -2355,8 +2356,7 @@
     }
    ],
    "population": 12258433,
-   "populationYear": 2011,
-   "capitalNote": "Srinagar in summer, Jammu in winter"
+   "populationYear": 2011
   },
   {
    "id": "Q1184",
@@ -2702,6 +2702,7 @@
      ]
     }
    ],
+   "capitalNote": "Belagavi (Belgaum) hosts the legislature's winter session",
    "capitalAnswer": "Bengaluru",
    "parentName": "India",
    "facts": "State or territory of India · South India",
@@ -2713,8 +2714,7 @@
     }
    ],
    "population": 61130704,
-   "populationYear": 2011,
-   "capitalNote": "Belagavi (Belgaum) hosts the legislature's winter session"
+   "populationYear": 2011
   },
   {
    "id": "Q1186",
@@ -2800,7 +2800,7 @@
      "name": "高知県",
      "lang": "Japanese",
      "code": "ja",
-     "roman": "Kōchi Ken"
+     "roman": "Kōchi-ken"
     }
    ],
    "population": 688870,
@@ -2946,6 +2946,7 @@
      ]
     }
    ],
+   "capitalNote": "Leh and Kargil share the role",
    "capitalAnswer": "Kargil and Leh",
    "parentName": "India",
    "facts": "State or territory of India · North India",
@@ -2957,8 +2958,7 @@
     }
    ],
    "population": 274289,
-   "populationYear": 2011,
-   "capitalNote": "Leh and Kargil share the role"
+   "populationYear": 2011
   },
   {
    "id": "Q26927",
@@ -3123,6 +3123,7 @@
      ]
     }
    ],
+   "capitalNote": "Nagpur is the second capital, where the legislature meets in winter",
    "capitalAnswer": "Mumbai",
    "parentName": "India",
    "facts": "State or territory of India · West India",
@@ -3134,8 +3135,7 @@
     }
    ],
    "population": 112372972,
-   "populationYear": 2011,
-   "capitalNote": "Nagpur is the second capital, where the legislature meets in winter"
+   "populationYear": 2011
   },
   {
    "id": "Q107016021",
@@ -4073,7 +4073,7 @@
      "name": "大分県",
      "lang": "Japanese",
      "code": "ja",
-     "roman": "Ōita Ken"
+     "roman": "Ōita-ken"
     }
    ],
    "population": 1121589,
@@ -5807,6 +5807,7 @@
      ]
     }
    ],
+   "capitalNote": "Dehradun is the winter capital, Gairsain the summer capital",
    "capitalAnswer": "Dehradun and Gairsain",
    "parentName": "India",
    "facts": "State or territory of India · Central India",
@@ -5818,8 +5819,7 @@
     }
    ],
    "population": 10086292,
-   "populationYear": 2011,
-   "capitalNote": "Dehradun is the winter capital, Gairsain the summer capital"
+   "populationYear": 2011
   },
   {
    "id": "Q131314",
