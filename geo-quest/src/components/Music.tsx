@@ -77,6 +77,8 @@ export function MusicReveal({ ds, place }: { ds: Dataset; place: Place }) {
   const flag = m.composer.country ? ds.byId.get(m.composer.country)?.flag : null;
   return (
     <div className="music-reveal" onClick={e => e.stopPropagation()}>
+      {/* Always the piece (and the part) as well as who wrote it, whatever the card asked. */}
+      <p className="work-line"><b>{m.work.replace(/^the /, 'The ')}</b>{m.label ? ` · ${m.label}` : ''}{place.year ? ` · ${place.year < 1000 ? place.year : `c. ${place.year}`}` : ''}</p>
       <p className="composer-line">
         {flag && <Flag file={flag} name={m.composer.countryName ?? ''} size={60} />}
         <span><b>{m.composer.name}</b>{m.composer.born ? ` (${m.composer.born}–${m.composer.died ?? ''})` : ''}{m.composer.countryName ? ` · ${m.composer.countryName}` : ''}{m.era ? ` · ${m.era}` : ''}</span>
