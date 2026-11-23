@@ -7,12 +7,12 @@ import type { IconName } from './components/Icons';
 
 export type Kind = 'locate' | 'identify' | 'capital' | 'capitalReverse' | 'capitalLocate' | 'flag' | 'flagReverse' | 'senator' | 'senatorFace' | 'senatorLocate'
   | 'currency' | 'currencyReverse' | 'largestCity' | 'largestCityReverse' | 'belongsTo'
-  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse' | 'note' | 'artPhoto' | 'artMaker' | 'artWhere' | 'artStyle' | 'bookLang' | 'musicComposer' | 'musicWork' | 'musicPart' | 'roadShield' | 'presFace' | 'presName' | 'presNumber' | 'presYears' | 'presParty';
+  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse' | 'note' | 'artPhoto' | 'artMaker' | 'artWhere' | 'artStyle' | 'bookLang' | 'musicComposer' | 'musicWork' | 'musicPart' | 'personFace' | 'personScene' | 'personBorn' | 'personPlays' | 'roadShield' | 'presFace' | 'presName' | 'presNumber' | 'presYears' | 'presParty';
 export type Topic = 'countries' | 'places' | 'capitals' | 'flags' | 'senate' | 'governors' | 'leaders' | 'currency' | 'cities' | 'sovereign' | 'sites' | 'peaks' | 'highest' | 'notes' | 'art' | 'shields' | 'presidents';
 
 export const TOPIC_KINDS: Record<Topic, Kind[]> = {
   notes: ['note'],
-  art: ['artPhoto', 'artMaker', 'artWhere', 'artStyle', 'bookLang', 'musicComposer', 'musicWork', 'musicPart'],
+  art: ['artPhoto', 'artMaker', 'artWhere', 'artStyle', 'bookLang', 'musicComposer', 'musicWork', 'musicPart', 'personFace', 'personScene', 'personBorn', 'personPlays'],
   shields: ['roadShield'],
   presidents: ['presFace', 'presName', 'presNumber', 'presYears', 'presParty'],
   countries: ['locate', 'identify'],
@@ -34,7 +34,7 @@ export const TOPIC_KINDS: Record<Topic, Kind[]> = {
 export const TAP_KINDS: Kind[] = ['locate', 'capitalLocate', 'senatorLocate', 'siteLocate'];
 
 export const KIND_LABEL: Record<Kind, string> = {
-  note: 'Card', artPhoto: 'Picture → name', artMaker: 'Who made it?', artWhere: 'Where is it?', artStyle: 'Which style?', bookLang: 'Which language?', musicComposer: 'Who composed it?', musicWork: 'Which piece?', musicPart: 'Which movement?', roadShield: 'Name the shield', presFace: 'Who is this?', presName: 'Number → president', presNumber: 'Which number?', presYears: 'When?', presParty: 'Which party?',
+  note: 'Card', artPhoto: 'Picture → name', artMaker: 'Who made it?', artWhere: 'Where is it?', artStyle: 'Which style?', bookLang: 'Which language?', musicComposer: 'Who composed it?', musicWork: 'Which piece?', musicPart: 'Which movement?', personFace: 'Who is this?', personScene: 'Which scene?', personBorn: 'Born where?', personPlays: 'Which instrument?', roadShield: 'Name the shield', presFace: 'Who is this?', presName: 'Number → president', presNumber: 'Which number?', presYears: 'When?', presParty: 'Which party?',
   locate: 'Find it on the map', identify: 'Name it', capital: 'Name the capital',
   capitalReverse: 'Capital → name', capitalLocate: 'Capital → map', flag: 'Name the flag', flagReverse: 'Picture the flag',
   senator: 'Name the person', senatorFace: 'Who is this?', senatorLocate: 'Person → map',
@@ -55,6 +55,7 @@ export function fingerprint(kind: Kind, c: Place) {
   if (kind === 'artWhere') return `${c.name}|${c.museum}|${c.countryName}`;
   if (kind === 'artStyle') return `${c.name}|${c.style}`;
   if (kind === 'bookLang') return `${c.name}|${c.language}`;
+  if (kind.startsWith('person')) return `${c.name}|${kind === 'personScene' ? c.person?.scene : kind === 'personBorn' ? bornIn(c) : kind === 'personPlays' ? c.person?.instruments.join(',') : c.image}`;
   if (kind.startsWith('music')) return `${c.music?.file}|${c.music?.composer.name}|${c.music?.label}`;
   return c.name;
 }
@@ -255,10 +256,14 @@ export function kindApplies(k: Kind, c: Place) {
   if (k === 'highestReverse') return !!c.highest && !c.highestShared;
   if (k === 'presFace') return !!c.photo;
   if (k === 'presParty') return !!c.terms?.some(t => t.party !== 'Unaffiliated');
-  if (k === 'artPhoto') return !!c.image; // a free picture on Commons (a modern painting under copyright has none to show as the question)
+  if (k === 'artPhoto') return !c.person && !!c.image; // a free picture on Commons (a modern painting under copyright has none to show as the question)
   if (k === 'artMaker') return !!makerOf(c);
-  if (k === 'artWhere') return !c.book && !c.music && !!(c.museum || c.countryName);
+  if (k === 'artWhere') return !c.book && !c.music && !c.person && !!(c.museum || c.countryName);
   if (k === 'musicComposer' || k === 'musicWork') return !!c.music;
+  if (k === 'personFace') return !!c.person && !!c.image;
+  if (k === 'personScene') return !!c.person?.scene;
+  if (k === 'personBorn') return !!c.person && !!bornIn(c);
+  if (k === 'personPlays') return !!c.person?.instruments.length;
   if (k === 'musicPart') return !!c.music?.label && c.music.siblings.length > 1; // which movement, only when there's a choice
   if (k === 'bookLang') return !!c.book && !!c.language && c.language !== 'English'; // English would be a give-away for most
   if (k === 'artStyle') return !!c.building && !!c.style;
@@ -338,6 +343,12 @@ export const makerOf = (c: Place) => (c.artists?.length ? c.artists.reduce((acc,
 const artPic = (c: Place) => ({ file: c.image, wiki: c.wiki, caption: c.name, single: !!c.image });
 const artNote = (c: Place, withMaker: boolean) => [withMaker && makerOf(c) ? `By ${makerOf(c)}` : null, c.facts].filter(Boolean).join(' · ') || null;
 const fmtYear = (y: number | null | undefined) => (y == null ? null : y <= 0 ? `c. ${Math.abs(y) || 1} BC` : y < 1000 ? `c. AD ${y}` : `c. ${y}`); // as in collections.ts (which imports this file)
+/** "New Orleans, Louisiana"; "Washington, D.C."; abroad, "Lisbon, Portugal". */
+const bornIn = (c: Place) => { const p = c.person; if (!p?.birthplace) return null; const where = p.state ?? (p.countryName !== 'United States' ? p.countryName : null); return where && p.birthplace !== where && !p.birthplace.endsWith(`, ${where}`) && p.birthplace !== 'New York City' ? `${p.birthplace}, ${where}` : p.birthplace; }; // Kansas City, Kansas ≠ Kansas City, Missouri
+const plays = (xs: string[]) => (xs.length === 1 ? (/^(vocals|drums|keyboards)$/.test(xs[0]) ? xs[0] : `the ${xs[0]}`) : xs.map(x => (/^(vocals|drums|keyboards)$/.test(x) ? x : `the ${x}`)).join(' and '));
+/** Scenes named by a place read as "the New Orleans scene"; styles as they are ("bebop"). */
+const sceneName = (s: string) => (/^(New Orleans|Chicago|Harlem|Kansas City|Swing-era New York)$/.test(s) ? `the ${s} scene` : s.charAt(0).toLowerCase() + s.slice(1));
+const personNote = (c: Place) => { const p = c.person!; return [p.born ? `${p.born}–${p.died ?? ''}` : null, bornIn(c) ? `born in ${bornIn(c)}` : null, p.instruments.join(', ') || null, p.scene].filter(Boolean).join(' · '); };
 const composerPic = (m: NonNullable<Place['music']>) => ({ file: m.composer.image, caption: m.composer.name, single: !!m.composer.image });
 const life = (m: NonNullable<Place['music']>) => (m.composer.born ? `${m.composer.born}–${m.composer.died ?? ''}` : null);
 const musicNote = (c: Place) => { const m = c.music!; return [`${m.composer.name}${life(m) ? ` (${life(m)})` : ''}`, m.composer.countryName, m.era, fmtYear(c.year)].filter(Boolean).join(' · '); };
@@ -464,6 +475,15 @@ function rawFace(ref: CardRef): CardFace {
       const m = c.music!;
       return { mode: 'reveal', pre: `From ${m.work}, by ${m.composer.name}: this is `, blank: 'which part?', post: '.', answer: m.label!, map: 'none', audio: { file: m.file, start: m.start }, note: musicNote(c), picture: composerPic(m) };
     }
+    // People: the face, the scene they're known for, where they were born (to the state), what they played.
+    case 'personFace':
+      return { mode: 'reveal', pre: 'This is ', blank: 'who?', post: '.', answer: c.name, map: 'none', note: personNote(c), person: { photo: c.image!, when: 'before' } };
+    case 'personScene':
+      return { mode: 'reveal', pre: `${c.name} is known for `, blank: 'which scene?', post: '.', answer: sceneName(c.person!.scene!), map: 'none', note: personNote(c), person: { photo: c.image ?? '', when: 'after' } };
+    case 'personBorn':
+      return { mode: 'reveal', pre: `${c.name} was born in `, blank: 'which city and state?', post: '.', answer: bornIn(c)!, map: c.country ? 'reveal' : 'none', note: personNote(c), person: { photo: c.image ?? '', when: 'after' } };
+    case 'personPlays':
+      return { mode: 'reveal', pre: `${c.name} ${c.person!.died ? 'was' : 'is'} known for `, blank: 'which instrument?', post: '.', answer: plays(c.person!.instruments), map: 'none', note: personNote(c), person: { photo: c.image ?? '', when: 'after' } };
     case 'bookLang': // books: "Don Quixote was first written in Spanish."
       return { mode: 'reveal', pre: `${cap1(c.nameThe ?? c.name)} ${c.plural ? 'were' : 'was'} first written in `, blank: 'which language?', post: '.', answer: c.language!, map: 'none', note: artNote(c, true), picture: artPic(c) };
     case 'artStyle': // buildings: "Notre-Dame de Paris was built in the Gothic style."
@@ -524,11 +544,11 @@ export const LAYER_ICON: Record<Place['layer'], IconName> = { note: 'book', art:
 /** "What is this?" — you're shown the place/flag/capital and name it.
  *  "Where / what is it?" — you're given the name and find it, or name its capital/flag. */
 export const DIRECTIONS: { id: 'recognise' | 'recall'; name: string; hint: string; kinds: Kind[] }[] = [
-  { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse', 'senatorFace', 'currencyReverse', 'largestCityReverse', 'sitePhoto', 'highestReverse', 'artPhoto', 'roadShield', 'presFace', 'presName', 'musicComposer', 'musicWork', 'musicPart'] },
-  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest', 'artMaker', 'artWhere', 'artStyle', 'bookLang', 'presNumber', 'presYears', 'presParty'] },
+  { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse', 'senatorFace', 'currencyReverse', 'largestCityReverse', 'sitePhoto', 'highestReverse', 'artPhoto', 'roadShield', 'presFace', 'presName', 'musicComposer', 'musicWork', 'musicPart', 'personFace'] },
+  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest', 'artMaker', 'artWhere', 'artStyle', 'bookLang', 'personScene', 'personBorn', 'personPlays', 'presNumber', 'presYears', 'presParty'] },
 ];
 export const KIND_SHORT: Record<Kind, string> = {
-  note: 'Note card', artPhoto: 'Picture → name', artMaker: 'Work → artist', artWhere: 'Work → where it is', artStyle: 'Building → style', bookLang: 'Book → language', musicComposer: 'Music → composer', musicWork: 'Music → piece', musicPart: 'Music → movement', roadShield: 'Shield → Interstate', presFace: 'Portrait → president', presName: 'Number → president', presNumber: 'President → number', presYears: 'President → years', presParty: 'President → party',
+  note: 'Note card', artPhoto: 'Picture → name', artMaker: 'Work → artist', artWhere: 'Work → where it is', artStyle: 'Building → style', bookLang: 'Book → language', musicComposer: 'Music → composer', musicWork: 'Music → piece', musicPart: 'Music → movement', personFace: 'Face → person', personScene: 'Person → scene', personBorn: 'Person → birthplace', personPlays: 'Person → instrument', roadShield: 'Shield → Interstate', presFace: 'Portrait → president', presName: 'Number → president', presNumber: 'President → number', presYears: 'President → years', presParty: 'President → party',
   identify: 'Map → name', flag: 'Flag → country', capitalReverse: 'Capital → country',
   locate: 'Name → map', capitalLocate: 'Capital → map', capital: 'Country → capital', flagReverse: 'Country → flag',
   senatorFace: 'Photo → person', senator: 'Office → person', senatorLocate: 'Person → map',

@@ -73,7 +73,8 @@ feature consistent. When adding anything, check it against this page. When a new
   from the textbook's own figures** (OpenStax, CC BY 4.0, credited in the caption), which explain better than photos;
   Interstate shields from P14 or `I-N.svg`.
 - **Recordings**: only free ones from Wikimedia Commons (the music is old, but each recording has its own rights). Play
-  the MP3 copy first (iPhones can't play Ogg). A clip is 30 seconds; the reveal shows the whole work.
+  the MP3 copy first (iPhones can't play Ogg). A clip is 30 seconds and starts at the moment people know (`@seconds`), not at the first bar; the reveal names the
+  piece and part and shows the whole work. Anyone can move a clip's start while it plays (Start here).
 
 ## 3. Maps
 

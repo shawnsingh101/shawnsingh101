@@ -1,5 +1,5 @@
 {
- "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museumWiki (the museum's Wikipedia title), native (its name in its own language: [{name, lang, code}], [] for none), museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district. Buildings (kind: building lists) also take 'style' (P149, written to read after 'built in the … style'; null for none) and 'types' (what it is: the first is shown). Books (kind: book) also take 'language' (the one it was first written in) and 'topics' (nonfiction shelves, overriding data/../src/tags.ts). Music (kind: music): 'composer' {id, name, image, born, died, country, countryName} replaces Wikidata's when it names an arranger or a completer.",
+ "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museumWiki (the museum's Wikipedia title), native (its name in its own language: [{name, lang, code}], [] for none), museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district. Buildings (kind: building lists) also take 'style' (P149, written to read after 'built in the … style'; null for none) and 'types' (what it is: the first is shown). Books (kind: book) also take 'language' (the one it was first written in) and 'topics' (nonfiction shelves, overriding data/../src/tags.ts). Music (kind: music): 'composer' {id, name, image, born, died, country, countryName} replaces Wikidata's when it names an arranger or a completer. People (kind: person): 'person' {born, died, birthplace, state, stateId, country, countryName, instruments (the main ones, in order)}.",
  "_cities": {
   "Saint-Germain-l'Auxerrois": "Paris",
   "Greater London": "London",
@@ -1023,5 +1023,657 @@
  },
  "Q185968": {
   "nameThe": "Carmen"
+ },
+ "Q1065305": {
+  "composer": {
+   "id": "Q41309",
+   "name": "Franz Liszt",
+   "image": "FLisztFXD.jpg",
+   "born": 1811,
+   "died": 1886,
+   "country": "Q28",
+   "countryName": "Hungary"
+  },
+  "name": "Liebestraum No. 3"
+ },
+ "Q756843": {
+  "name": "Cello Suite No. 1",
+  "nameThe": "Bach's Cello Suite No. 1"
+ },
+ "Q207732": {
+  "nameThe": "Messiah"
+ },
+ "Q278596": {
+  "nameThe": "Water Music"
+ },
+ "Q231390": {
+  "name": "Symphony No. 40",
+  "nameThe": "Mozart's Symphony No. 40"
+ },
+ "Q1331995": {
+  "name": "Ave Maria",
+  "nameThe": "Schubert's Ave Maria",
+  "native": [
+   {
+    "name": "Ellens dritter Gesang",
+    "lang": "German",
+    "code": "de"
+   }
+  ]
+ },
+ "Q199786": {
+  "nameThe": "Swan Lake"
+ },
+ "Q193705": {
+  "nameThe": "The Nutcracker"
+ },
+ "Q436176": {
+  "person": {
+   "born": 1877,
+   "died": 1931,
+   "birthplace": "New Orleans",
+   "state": "Louisiana",
+   "stateId": "Q1588",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "cornet"
+   ]
+  }
+ },
+ "Q317128": {
+  "person": {
+   "born": 1890,
+   "died": 1941,
+   "birthplace": "New Orleans",
+   "state": "Louisiana",
+   "stateId": "Q1588",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q313368": {
+  "person": {
+   "born": 1881,
+   "died": 1938,
+   "birthplace": "New Orleans",
+   "state": "Louisiana",
+   "stateId": "Q1588",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "cornet"
+   ]
+  }
+ },
+ "Q441399": {
+  "person": {
+   "born": 1886,
+   "died": 1973,
+   "birthplace": "LaPlace",
+   "state": "Louisiana",
+   "stateId": "Q1588",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "trombone"
+   ]
+  }
+ },
+ "Q313519": {
+  "person": {
+   "born": 1897,
+   "died": 1959,
+   "birthplace": "New Orleans",
+   "state": "Louisiana",
+   "stateId": "Q1588",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "soprano saxophone",
+    "clarinet"
+   ]
+  }
+ },
+ "Q1779": {
+  "person": {
+   "born": 1901,
+   "died": 1971,
+   "birthplace": "New Orleans",
+   "state": "Louisiana",
+   "stateId": "Q1588",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "trumpet",
+    "vocals"
+   ]
+  }
+ },
+ "Q462562": {
+  "person": {
+   "born": 1898,
+   "died": 1971,
+   "birthplace": "Memphis",
+   "state": "Tennessee",
+   "stateId": "Q1509",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q225131": {
+  "person": {
+   "born": 1903,
+   "died": 1931,
+   "birthplace": "Davenport",
+   "state": "Iowa",
+   "stateId": "Q1546",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "cornet"
+   ]
+  }
+ },
+ "Q354883": {
+  "person": {
+   "born": 1903,
+   "died": 1983,
+   "birthplace": "Duquesne",
+   "state": "Pennsylvania",
+   "stateId": "Q1400",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q550541": {
+  "person": {
+   "born": 1894,
+   "died": 1955,
+   "birthplace": "New Brunswick",
+   "state": "New Jersey",
+   "stateId": "Q1408",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q310476": {
+  "person": {
+   "born": 1904,
+   "died": 1943,
+   "birthplace": "New York City",
+   "state": "New York",
+   "stateId": "Q1384",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano",
+    "organ"
+   ]
+  }
+ },
+ "Q4030": {
+  "person": {
+   "born": 1899,
+   "died": 1974,
+   "birthplace": "Washington, D.C.",
+   "state": null,
+   "stateId": null,
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q273079": {
+  "person": {
+   "born": 1907,
+   "died": 1994,
+   "birthplace": "Rochester",
+   "state": "New York",
+   "stateId": "Q1384",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "vocals"
+   ]
+  }
+ },
+ "Q505749": {
+  "person": {
+   "born": 1905,
+   "died": 1939,
+   "birthplace": "Baltimore",
+   "state": "Maryland",
+   "stateId": "Q1391",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "drums"
+   ]
+  }
+ },
+ "Q107008": {
+  "person": {
+   "born": 1904,
+   "died": 1984,
+   "birthplace": "Red Bank",
+   "state": "New Jersey",
+   "stateId": "Q1408",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q110714": {
+  "person": {
+   "born": 1909,
+   "died": 1959,
+   "birthplace": "Woodville",
+   "state": "Mississippi",
+   "stateId": "Q1494",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "tenor saxophone"
+   ]
+  }
+ },
+ "Q126677": {
+  "person": {
+   "born": 1910,
+   "died": 1981,
+   "birthplace": "Atlanta",
+   "state": "Georgia",
+   "stateId": "Q1428",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q358350": {
+  "person": {
+   "born": 1911,
+   "died": 1985,
+   "birthplace": "Kansas City",
+   "state": "Missouri",
+   "stateId": "Q1581",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "vocals"
+   ]
+  }
+ },
+ "Q46755": {
+  "person": {
+   "born": 1909,
+   "died": 1986,
+   "birthplace": "Chicago",
+   "state": "Illinois",
+   "stateId": "Q1204",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "clarinet"
+   ]
+  }
+ },
+ "Q217812": {
+  "person": {
+   "born": 1904,
+   "died": 1969,
+   "birthplace": "St. Joseph",
+   "state": "Missouri",
+   "stateId": "Q1581",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "tenor saxophone"
+   ]
+  }
+ },
+ "Q104358": {
+  "person": {
+   "born": 1915,
+   "died": 1959,
+   "birthplace": "Philadelphia",
+   "state": "Pennsylvania",
+   "stateId": "Q1400",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "vocals"
+   ]
+  }
+ },
+ "Q1768": {
+  "person": {
+   "born": 1917,
+   "died": 1996,
+   "birthplace": "Newport News",
+   "state": "Virginia",
+   "stateId": "Q1370",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "vocals"
+   ]
+  }
+ },
+ "Q103767": {
+  "person": {
+   "born": 1920,
+   "died": 1955,
+   "birthplace": "Kansas City",
+   "state": "Kansas",
+   "stateId": "Q1558",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "alto saxophone"
+   ]
+  }
+ },
+ "Q49575": {
+  "person": {
+   "born": 1917,
+   "died": 1993,
+   "birthplace": "Cheraw",
+   "state": "South Carolina",
+   "stateId": "Q1456",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "trumpet"
+   ]
+  }
+ },
+ "Q109612": {
+  "person": {
+   "born": 1917,
+   "died": 1982,
+   "birthplace": "Rocky Mount",
+   "state": "North Carolina",
+   "stateId": "Q1454",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q312692": {
+  "person": {
+   "born": 1924,
+   "died": 1966,
+   "birthplace": "New York City",
+   "state": "New York",
+   "stateId": "Q1384",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q175899": {
+  "person": {
+   "born": 1924,
+   "died": 2007,
+   "birthplace": "Newland",
+   "state": "North Carolina",
+   "stateId": "Q1454",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "drums"
+   ]
+  }
+ },
+ "Q229513": {
+  "person": {
+   "born": 1924,
+   "died": 1990,
+   "birthplace": "Newark",
+   "state": "New Jersey",
+   "stateId": "Q1408",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "vocals"
+   ]
+  }
+ },
+ "Q2274": {
+  "person": {
+   "born": 1929,
+   "died": 1988,
+   "birthplace": "Yale",
+   "state": "Oklahoma",
+   "stateId": "Q1649",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "trumpet",
+    "vocals"
+   ]
+  }
+ },
+ "Q156535": {
+  "person": {
+   "born": 1927,
+   "died": 1996,
+   "birthplace": "New York City",
+   "state": "New York",
+   "stateId": "Q1384",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "baritone saxophone"
+   ]
+  }
+ },
+ "Q108597": {
+  "person": {
+   "born": 1920,
+   "died": 2012,
+   "birthplace": "Concord",
+   "state": "California",
+   "stateId": "Q99",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q30587": {
+  "person": {
+   "born": 1927,
+   "died": 1991,
+   "birthplace": "Philadelphia",
+   "state": "Pennsylvania",
+   "stateId": "Q1400",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "tenor saxophone"
+   ]
+  }
+ },
+ "Q93341": {
+  "person": {
+   "born": 1926,
+   "died": 1991,
+   "birthplace": "Alton",
+   "state": "Illinois",
+   "stateId": "Q1204",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "trumpet"
+   ]
+  }
+ },
+ "Q7346": {
+  "person": {
+   "born": 1926,
+   "died": 1967,
+   "birthplace": "Hamlet",
+   "state": "North Carolina",
+   "stateId": "Q1454",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "tenor saxophone",
+    "soprano saxophone"
+   ]
+  }
+ },
+ "Q311715": {
+  "person": {
+   "born": 1919,
+   "died": 1990,
+   "birthplace": "Pittsburgh",
+   "state": "Pennsylvania",
+   "stateId": "Q1400",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "drums"
+   ]
+  }
+ },
+ "Q365560": {
+  "person": {
+   "born": 1928,
+   "died": 2014,
+   "birthplace": "Norwalk",
+   "state": "Connecticut",
+   "stateId": "Q779",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q299208": {
+  "person": {
+   "born": 1930,
+   "died": 2026,
+   "birthplace": "New York City",
+   "state": "New York",
+   "stateId": "Q1384",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "tenor saxophone"
+   ]
+  }
+ },
+ "Q208205": {
+  "person": {
+   "born": 1929,
+   "died": 1980,
+   "birthplace": "Plainfield",
+   "state": "New Jersey",
+   "stateId": "Q1408",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano"
+   ]
+  }
+ },
+ "Q107432": {
+  "person": {
+   "born": 1922,
+   "died": 1979,
+   "birthplace": "Nogales",
+   "state": "Arizona",
+   "stateId": "Q816",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "double bass"
+   ]
+  }
+ },
+ "Q208797": {
+  "person": {
+   "born": 1930,
+   "died": 2015,
+   "birthplace": "Fort Worth",
+   "state": "Texas",
+   "stateId": "Q1439",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "alto saxophone"
+   ]
+  }
+ },
+ "Q354508": {
+  "person": {
+   "born": 1914,
+   "died": 1993,
+   "birthplace": "Birmingham",
+   "state": "Alabama",
+   "stateId": "Q173",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "keyboards"
+   ]
+  }
+ },
+ "Q105875": {
+  "person": {
+   "born": 1940,
+   "died": null,
+   "birthplace": "Chicago",
+   "state": "Illinois",
+   "stateId": "Q1204",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano",
+    "keyboards"
+   ]
+  }
+ },
+ "Q192465": {
+  "person": {
+   "born": 1941,
+   "died": 2021,
+   "birthplace": "Chelsea",
+   "state": "Massachusetts",
+   "stateId": "Q771",
+   "country": "Q30",
+   "countryName": "United States",
+   "instruments": [
+    "piano",
+    "keyboards"
+   ]
+  }
  }
 }

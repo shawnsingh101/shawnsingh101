@@ -41,12 +41,13 @@ Any idea ("I'd like to learn about Thanksgiving") goes through the same steps:
 
 Ideas for later, not yet in the queue: movies, political science, international relations, current events as
 "briefing" decks (facts with an as-of date that come back for a re-check), AI, languages (listening, typed answers),
-more music (Beethoven's 9th in full, the other Seasons, then beyond classical), holidays & traditions (Thanksgiving first), put-in-order cards, wine regions and grapes.
+jazz recordings (as they become free: 1926 recordings on 1 January 2027), more music beyond classical and jazz, holidays & traditions (Thanksgiving first), put-in-order cards, wine regions and grapes.
 
 ## Done
 
 | Version | What |
 | --- | --- |
+| 1.25 | Jazz musicians by scene (no audio yet); classical clips at the famous moment, more pieces, Start here |
 | 1.24 | Music: classical by ear, with the composer and the whole work on the reveal |
 | 1.23 | Books: essentials and deep cuts, shelved by literature and topic from shared tags |
 | 1.22 | Architecture: famous buildings, styles and architects, tours of the White House, the Capitol and the Met |

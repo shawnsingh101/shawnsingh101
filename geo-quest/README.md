@@ -33,6 +33,25 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.25: Jazz, and better classical clips
+
+- **Jazz** (`collections/Music/2 Jazz.md`, the first `kind: person` list): 43 musicians under the scene they're known for
+  (New Orleans, Chicago, Harlem, Kansas City, Swing-era New York, Bebop, Cool jazz and the West Coast, Hard bop and
+  modal jazz, Free jazz and fusion). The sync takes their portrait, life, birthplace with its US state (P19 → P131* a
+  US state) and instruments (P1303); main instruments set by hand. Cards: face → who, which scene, born where (city and
+  state, on the map; Kansas City, Kansas is not Kansas City, Missouri), which instrument. Music › By scene. No audio yet:
+  jazz recordings are mostly still in copyright (free in the US only once 100 years old: before 1926 now).
+- **Classical clips start at the moment that matters**: an analysis of each recording (`scripts/find-clip-moments.py`, ffmpeg +
+  numpy) found the loudest 30 s (the 1812's cannons, the climax of the Mountain King and of Boléro, the William
+  Tell gallop, the choir in Beethoven's 9th) or the most high-soprano energy (the Queen of the Night's staccato, 0:38),
+  written as `@seconds` in the list. Boléro has two clips (opening and climax) from one recording.
+- **More pieces** (63 clips, 37 works): all four movements of Beethoven's 9th, Winter from the Four Seasons, Swan Lake,
+  the Nutcracker, the Hallelujah Chorus, Water Music, Mozart's 40th, Schubert's Ave Maria, Liebestraum No. 3, Bach's
+  first cello suite.
+- **While a clip plays**: its time, −10 s / +15 s, and **Start here** (keeps your start for that clip, saved with your
+  progress, `clipStarts`; Reset goes back). Every reveal names the piece and part.
+- Search finds a clip by its part and composer ("Hölle Rache").
+
 ## v1.24: Music
 
 - New subject **Music** (`collections/Music/1 Essential classical.md`, `kind: music`): 28 works, 47 clips, in four eras

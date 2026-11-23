@@ -4,6 +4,7 @@ export interface MusicClip {
   era: string | null; composer: Composer;
   siblings: { id: string; label: string | null; file: string; start: number }[]; // every clip of the same work, in order
 }
+export interface PersonFacts { born: number | null; died: number | null; birthplace: string | null; state: string | null; stateId: string | null; country: string | null; countryName: string | null; instruments: string[] }
 export interface Composer { id: string; name: string; image: string | null; born: number | null; died: number | null; country: string | null; countryName: string | null }
 export interface NativeName { name: string; lang: string; code?: string; roman?: string } // roman: romaji / pinyin / transliteration
 /** Pronunciation recordings by language code → [mp3, original] */
@@ -76,7 +77,8 @@ export interface Place {
   highestShared?: boolean; // another country shares the same highest point (Everest: Nepal & China)
   manyPlaces?: boolean;    // a leader who holds the same office in several countries
   artists?: string[];      // artworks: who made it… (buildings: the architect)
-  music?: MusicClip;        // a clip from a `kind: music` collection (one card set per clip)
+  music?: MusicClip;
+  person?: PersonFacts & { scene: string | null }; // from a `kind: person` collection (scene: the heading it's under)        // a clip from a `kind: music` collection (one card set per clip)
   book?: boolean; fiction?: boolean; language?: string | null; shelves?: string[]; // books: first written in; nonfiction topics
   building?: boolean;      // from a `kind: building` collection: it stands somewhere (no museum), was designed, has a style
   style?: string | null;   // a building's architectural style (Wikidata P149): Gothic, Beaux-Arts…

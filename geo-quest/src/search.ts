@@ -23,7 +23,7 @@ function textOf(p: Place): string {
   const bits: (string | null | undefined)[] = [p.name, p.nameThe, p.officialName, p.capitalAnswer, p.facts, p.countryName, p.type, p.office, p.party,
     ...(p.capitals ?? []).map(c => c.name), ...(p.native ?? []).flatMap(n => [n.name, n.roman]), p.zh?.han, p.zh?.pinyin,
     ...(x.artists ?? []), x.museumName, x.city, x.culture, x.species, x.origin,
-    x.card?.pre, x.card?.answer, x.card?.post, x.card?.context, ...(x.card?.parts ?? []).map(q => (typeof q === 'string' ? q : q.answer))];
+    p.music?.label, p.music?.composer.name, p.music?.era, x.card?.pre, x.card?.answer, x.card?.post, x.card?.context, ...(x.card?.parts ?? []).map(q => (typeof q === 'string' ? q : q.answer))];
   return words(fold(bits.filter(Boolean).join(' ')));
 }
 

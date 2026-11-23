@@ -31,6 +31,7 @@ export interface Progress {
   days: Record<string, Day>;
   updates: { date: string; text: string }[]; // facts that changed under you
   quizBest: Record<string, QuizBest>;
+  clipStarts?: Record<string, number>; // music: where you chose a clip should start ("file@listed start" → seconds)
   pins?: string[];           // searches pinned in the Library (just the words: matching cards are found fresh each time)
 }
 

@@ -145,7 +145,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
   }, [f, revealed, reveal, next, tapResult, quiz, undo, peek]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // The place shown on the map: itself, or for a senator, their state.
-  const mp = c ? (c.layer === 'senate' ? ds.byId.get(c.place ?? c.state!) ?? c : item.ref.kind === 'siteCountry' || item.ref.kind === 'artWhere' ? ds.byId.get(c.country!) ?? c : c) : null;
+  const mp = c ? (c.layer === 'senate' ? ds.byId.get(c.place ?? c.state!) ?? c : item.ref.kind === 'siteCountry' || item.ref.kind === 'artWhere' || item.ref.kind === 'personBorn' ? ds.byId.get(c.country!) ?? c : c) : null;
   const group = c ? groupOf(c) : null;
   const regionIds = useMemo(() => (group ? placesIn(ds, group.id).map(x => x.id) : []), [ds, group]);
   // For "reveal" map cards (capitals, cities) start wider than the region so the map doesn't give it away:
