@@ -47,6 +47,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 
 | Version | What |
 | --- | --- |
+| 1.27 | Earth history: a picture of the life of each time |
 | 1.26 | The answer's pronunciation everywhere; Empire of AI and the Artificial intelligence subject |
 | 1.25 | Jazz musicians by scene (no audio yet); classical clips at the famous moment, more pieces, Start here |
 | 1.24 | Music: classical by ear, with the composer and the whole work on the reveal |

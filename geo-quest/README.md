@@ -33,6 +33,15 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.27: Earth history pictures
+
+- Every eon, era, period and epoch has a picture of the life of its time (`pics` in `src/geotime.ts`, Commons; life
+  restorations where there's a good one, else fossils and museum dioramas): on the card about what it's known for, and
+  for the three dinosaur periods a second dinosaur on the card about when it began. Triassic: Coelophysis,
+  Herrerasaurus; Jurassic: Brachiosaurus, Stegosaurus; Cretaceous: Tyrannosaurus, Triceratops; also stromatolites,
+  banded iron, Dickinsonia, Anomalocaris, a Silurian sea floor, Dunkleosteus, Meganeura, Dimetrodon, Basilosaurus, Lucy,
+  the woolly mammoth, Eohippus, Paraceratherium, megalodon's jaws, Smilodon, Göbekli Tepe. All 28 checked to load.
+
 ## v1.26: pronunciation of the answer, Empire of AI, Artificial intelligence
 
 - **A speaker beside the green answer**, saying that answer in its own language (`say` on a card face; `Say` in
