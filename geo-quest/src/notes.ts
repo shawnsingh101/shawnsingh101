@@ -2,6 +2,7 @@
 // Each card becomes a small "item" (layer 'note') so it schedules, quizzes and shows progress like a place does.
 import type { Place } from './types';
 import { GROUPS, SECTIONS, SECTION_PARENT } from './cards';
+import { epochDeck, geotimeDeck } from './geotime';
 
 export interface NoteCard {
   pre: string; answer: string; post: string;  // cloze: "pre [answer] post"; front/back: pre = front, answer = back
@@ -10,9 +11,13 @@ export interface NoteCard {
   picture: { file?: string | null; url?: string | null; caption: string } | null;
   note: string | null;                         // a "> …" line: shown after the answer
   related: string[];                           // a "related: A, B" line under the heading: links to other things you're learning
+  native: { name: string; lang: string; code?: string }[]; // a "native: الكعبة (Arabic)" line: the name in its own language
   fp: string;                                  // fingerprint: changes when the card's text changes
 }
 export interface Deck { id: string; title: string; subject: string; path: string[]; intro: string | null; cards: { id: string; card: NoteCard }[] }
+
+// Language names a deck can use → codes for the device voice.
+const LANG_CODE: Record<string, string> = { arabic: 'ar', punjabi: 'pa', hebrew: 'he', italian: 'it', hindi: 'hi', greek: 'el', latin: 'it', sanskrit: 'hi', japanese: 'ja', chinese: 'zh', mandarin: 'zh', spanish: 'es', french: 'fr', german: 'de', persian: 'fa', portuguese: 'pt', russian: 'ru', korean: 'ko', turkish: 'tr', urdu: 'ur', tibetan: 'bo', thai: 'th', dutch: 'nl' };
 
 /** Short, stable hash for card ids (FNV-1a, base 36). */
 function hash(s: string) { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); } return (h >>> 0).toString(36); }
@@ -29,9 +34,9 @@ export function parseDeck(file: string, text: string): Deck {
   const title = meta.title || parts[parts.length - 1].replace(/[-_]/g, ' ');
   const id = slug([subject, ...path, title].join(' '));
   const cards: Deck['cards'] = [];
-  let context: string | null = null, picture: NoteCard['picture'] = null, related: string[] = [], intro: string[] = [], seenHeading = false;
-  const add = (c: Omit<NoteCard, 'context' | 'picture' | 'note' | 'fp' | 'related'>, key: string) => {
-    const card: NoteCard = { ...c, context, picture, related, note: null, fp: `${c.pre}|${c.answer}|${c.post}` };
+  let context: string | null = null, picture: NoteCard['picture'] = null, related: string[] = [], native: NoteCard['native'] = [], intro: string[] = [], seenHeading = false;
+  const add = (c: Omit<NoteCard, 'context' | 'picture' | 'note' | 'fp' | 'related' | 'native'>, key: string) => {
+    const card: NoteCard = { ...c, context, picture, related, native, note: null, fp: `${c.pre}|${c.answer}|${c.post}` };
     // The id ignores the answer, so fixing an answer keeps your progress (the fingerprint re-queues the card).
     let cid = `N-${id}-${hash((context ?? '') + '|' + key)}`;
     while (cards.some(x => x.id === cid)) cid += 'x';
@@ -41,7 +46,15 @@ export function parseDeck(file: string, text: string): Deck {
     const line = raw.trim();
     if (!line) continue;
     const h = /^#{1,3}\s+(.*)$/.exec(line);
-    if (h) { context = h[1]; picture = null; related = []; seenHeading = true; continue; }
+    if (h) { context = h[1]; picture = null; related = []; native = []; seenHeading = true; continue; }
+    // "native: الكعبة (Arabic); Kaʿbah (Arabic, in Latin letters)": shown with a speaker button after the answer.
+    const nat = /^(?:native|local):\s*(.+)$/i.exec(line);
+    if (nat) {
+      native = nat[1].split(';').map(x => /^(.*?)\s*\(([^)]+)\)\s*$/.exec(x.trim())).filter((m): m is RegExpExecArray => !!m)
+        .map(m => ({ name: m[1], lang: m[2], code: LANG_CODE[m[2].toLowerCase().replace(/^(ancient|classical|modern) /, '')] }));
+      for (const c of cards) if (c.card.context === context) c.card.native = native;
+      continue;
+    }
     const rel = /^related:\s*(.+)$/i.exec(line);
     // Applies to every card under this heading, wherever the line sits.
     if (rel) { related = rel[1].split(',').map(x => x.trim()).filter(Boolean); for (const c of cards) if (c.card.context === context) c.card.related = related; continue; }
@@ -72,7 +85,9 @@ export function parseDeck(file: string, text: string): Deck {
 // (Outside Vite, e.g. in a test script, import.meta.glob doesn't exist: no decks.)
 let files: Record<string, string> = {};
 try { files = import.meta.glob('../decks/**/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>; } catch { /* not built by Vite */ }
-export const DECKS: Deck[] = Object.entries(files).filter(([f]) => !/README\.md$/i.test(f)).map(([f, t]) => parseDeck(f, t))
+// Decks built from data in the app itself (the geologic time scale, shared with its chart).
+const BUILT: [string, string][] = [['../decks/Earth history/Geologic time scale.md', geotimeDeck()], ['../decks/Earth history/Epochs of the Cenozoic.md', epochDeck()]];
+export const DECKS: Deck[] = [...Object.entries(files).filter(([f]) => !/README\.md$/i.test(f)), ...BUILT].map(([f, t]) => parseDeck(f, t))
   .sort((a, b) => a.subject.localeCompare(b.subject) || a.path.join('/').localeCompare(b.path.join('/')) || a.title.localeCompare(b.title));
 export const NOTE_SUBJECTS = [...new Set(DECKS.map(d => d.subject))];
 
@@ -84,7 +99,7 @@ export function registerNotes(): Place[] {
     chain.forEach((sec, i) => { if (!SECTIONS.includes(sec)) SECTIONS.push(sec); if (i) SECTION_PARENT[sec] = chain[i - 1]; });
     const gid = 'n-' + d.id;
     if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined });
-    for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path] } as unknown as Place);
+    for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path], native: card.native.length ? card.native : undefined } as unknown as Place);
   }
   return out;
 }

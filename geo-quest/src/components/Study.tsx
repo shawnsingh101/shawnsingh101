@@ -28,9 +28,10 @@ function srsQueue(ds: Dataset, nodes?: string[]): Item[] {
   return out;
 }
 
-export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit: () => void; quiz?: QuizSpec; goQuiz?: () => void; nodes?: string[] }) {
+export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; onExit: () => void; quiz?: QuizSpec; goQuiz?: () => void; nodes?: string[] }) {
   const p = useProgress();
   const s = p.settings;
+  const onExit = () => { if (s.sound) sounds.back(); exit(); };
   const [queue, setQueue] = useState<Item[]>(() => (quiz ? quiz.draw().map(ref => ({ ref, isNew: false })) : srsQueue(ds, nodes)));
   const [total, setTotal] = useState(queue.length);
   const [done, setDone] = useState(0);
@@ -45,6 +46,8 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
   const history = useRef<{ queue: Item[]; done: number; results: typeof results; sessionXp: number; progress: Progress }[]>([]);
   const [canUndo, setCanUndo] = useState(false);
   const item = queue[0];
+  // A shuffle as the deck comes out (once per session).
+  useEffect(() => { if (s.sound && queue.length) sounds.shuffle(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   // "Find it on the map" cards can be flipped like flashcards instead of tapped (Settings → map questions).
   const rawFace = item ? face(item.ref) : null;
   const flipped = !!rawFace && rawFace.mode === 'tap' && s.mapMode !== 'tap';
@@ -62,6 +65,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     if (history.current.length > 30) history.current.shift();
     setCanUndo(true);
     setRevealed(false); setTapResult(null); setDone(d => d + 1);
+    if (s.sound && queue.length > 1) sounds.deal(); // the next card lands
     if (quiz) {
       setResults(r => [...r, { ref: item.ref, ok: grade >= Rating.Hard }]);
       setQueue(q => q.slice(1));
@@ -82,7 +86,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
       }
       return rest;
     });
-  }, [item, quiz, queue, done, results, sessionXp]);
+  }, [item, quiz, queue, done, results, sessionXp, s.sound]);
 
   const undo = useCallback(() => {
     // First undo a map tap that hasn't been graded yet; otherwise go back one answer.
@@ -109,7 +113,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     // A tap on a different kind of thing (a country while looking for a river) is a slip, not an answer.
     const hitLayer = hit.countryId ? ds.byId.get(hit.countryId)?.layer : 'country';
     if (hitLayer !== mp!.layer) {
-      setNudge(`Tap a ${{ note: 'card', sub: c?.noun ?? 'region', country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range', art: 'work' }[mp!.layer]}`);
+      setNudge(`Tap a ${{ note: 'card', sub: c?.noun ?? 'region', country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range', art: 'work', road: 'highway' }[mp!.layer]}`);
       setTimeout(() => setNudge(null), 1400);
       return;
     }
@@ -149,8 +153,8 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     if (flipped && revealed) return { ids: [mp!.id], key: item.ref.id + ':r', keepCenter: true, pad: c!.layer === 'lake' ? 0.3 : c!.layer === 'river' ? 0.55 : 0.5 };
     // Seas are small inside a big region: zoom right to them. Countries/provinces show their neighbourhood.
     // Rivers & lakes: centred, with some surroundings so you can get your bearings.
-    if (f.map === 'highlight') return ['water', 'river', 'lake', 'range'].includes(c!.layer)
-      ? { ids: [c!.id], key: item.ref.id + ':h', pad: c!.layer === 'water' ? 0.85 : c!.layer === 'river' || c!.layer === 'range' ? 0.55 : 0.3 }
+    if (f.map === 'highlight') return ['water', 'river', 'lake', 'range', 'road'].includes(c!.layer)
+      ? { ids: [c!.id], key: item.ref.id + ':h', pad: c!.layer === 'water' ? 0.85 : c!.layer === 'river' || c!.layer === 'range' || c!.layer === 'road' ? 0.55 : 0.3 }
       : { ids: [mp!.id, ...regionIds], key: item.ref.id + ':h' };
     return { ids: regionIds, key: group!.id };
   }, [item, f, c, mp, regionIds, wideIds, group, flipped, revealed]);
@@ -160,7 +164,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
     if (quiz && !item && results.length && !saved) {
       recordQuiz(quiz.key, results.filter(r => r.ok).length, results.length);
       setSaved(true);
-      if (s.sound && results.filter(r => r.ok).length / results.length >= 0.9) sounds.level();
+      if (s.sound) (results.filter(r => r.ok).length / results.length >= 0.9 ? sounds.medal : sounds.level)();
     }
   }, [quiz, item, results, saved, s.sound]);
 
@@ -250,7 +254,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
       {nudge && <div className="nudge">{nudge}</div>}
 
       {showMap && (<div className="map-wrap">
-        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'river' ? ['lake', 'river'] : extra === 'peak' ? ['range', 'peak'] : extra === 'us' ? ['us', 'lake'] : extra === 'sub' && ds.byId.get(c.parent ?? '')?.layer === 'us' ? ['us', 'sub'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
+        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'road' ? ['us', 'road'] : extra === 'river' ? ['lake', 'river'] : extra === 'peak' ? ['range', 'peak'] : extra === 'us' ? ['us', 'lake'] : extra === 'sub' && ds.byId.get(c.parent ?? '')?.layer === 'us' ? ['us', 'sub'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
           dim={id => group?.layer === m.layer && !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer}
           strong={['sub', 'us', 'cn'].includes(m.layer) ? (id => regionIds.includes(id) || wideIds.includes(id)) : undefined}
           outline={m.layer === 'sub' && m.parent ? [m.parent] : m.layer === 'us' ? ['Q30'] : m.layer === 'cn' ? ['Q148'] : []}
@@ -279,7 +283,7 @@ export function Study({ ds, onExit, quiz, goQuiz, nodes }: { ds: Dataset; onExit
               : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}>{f.answer}</span> : <span className="blank">{f.blank}</span>)}
             {f.hidePostUntilReveal && !revealed ? '.' : f.post}
           </p>}
-          {revealed && !/^(currency|senator|note)/.test(item.ref.kind) && (
+          {revealed && (!/^(currency|senator|note)/.test(item.ref.kind) || (item.ref.kind === 'note' && !!c.native?.length)) && (
             <div className="local">
               {item.ref.kind.startsWith('largestCity') && c.largestCity && !c.largestCity.isCapital ? <LocalName place={c} capital={c.largestCity as unknown as typeof cap} showLang />
               : item.ref.kind.startsWith('capital') && cap ? <>

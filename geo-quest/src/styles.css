@@ -376,6 +376,14 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .river.tone-accent .vis { stroke: var(--accent); stroke-width: 3.5px; }
 .river.tone-right .vis { stroke: var(--right); stroke-width: 3.5px; }
 .river.tone-wrong .vis { stroke: var(--wrong); stroke-width: 3.5px; }
+/* Interstates: shield blue, a little heavier than rivers. */
+.river.road .vis { stroke: var(--road, #2f5aa8); stroke-width: 1.3px; opacity: .85; }
+.river.road.great .vis { stroke-width: 2px; }
+.river.road.tone-accent .vis { stroke: var(--accent); stroke-width: 3.5px; opacity: 1; }
+.river.road.tone-right .vis { stroke: var(--right); stroke-width: 3.5px; opacity: 1; }
+.river.road.tone-wrong .vis { stroke: var(--wrong); stroke-width: 3.5px; opacity: 1; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --road: #7f9cf5; } }
+:root[data-theme="dark"] { --road: #7f9cf5; }
 
 .map-tip .tip-facts { font-size: .78rem; opacity: .85; }
 .cont-rivers { background: linear-gradient(140deg, #d5e8f0, var(--surface) 70%); }
@@ -700,3 +708,50 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .bar-tip { position: absolute; z-index: 2; right: 0; top: 100%; margin-top: 2px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: .35rem .5rem; box-shadow: var(--shadow); display: grid; gap: .1rem; font-size: .75rem; min-width: 190px; }
 .bar-tip span { display: flex; align-items: center; gap: .35rem; color: var(--muted); } .bar-tip b { color: var(--ink); margin-left: auto; } .bar-tip i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
 .fed-debt { margin: .2rem 0 .4rem; line-height: 1.45; }
+
+/* Start → app: the globe swells toward you and the title lifts away, then the app rises into place. */
+.landing.leaving .globe { animation: globe-out .65s cubic-bezier(.5, 0, .75, 0) forwards; }
+.landing.leaving .landing-content { animation: lift-out .5s ease-in forwards; }
+.landing.leaving .landing-version { animation: fade-out .3s forwards; }
+@keyframes globe-out { from { transform: translate(-50%, -50%); opacity: .95; } to { transform: translate(-50%, -50%) scale(1.6); opacity: 0; } }
+@keyframes lift-out { to { transform: translateY(-24px) scale(.97); opacity: 0; } }
+@keyframes fade-out { to { opacity: 0; } }
+.app-enter { animation: app-enter .55s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes app-enter { from { opacity: 0; transform: translateY(14px) scale(.99); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .app-enter, .landing.leaving * { animation: none !important; } }
+
+/* Earth history: the geologic time scale as strata, with a 24-hour clock. */
+.geotime { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 1rem 1.1rem; margin: 0 0 1.4rem; }
+.geotime-head { display: flex; gap: 1rem; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; }
+.geotime-head h2 { margin: 0 0 .2rem; font-size: 1.2rem; }
+.geotime-head p { margin: 0; }
+.geotime-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 1.1rem; margin-top: .9rem; align-items: start; }
+.strata { position: relative; display: grid; grid-template-columns: 1fr 1fr 1.25fr 1.1fr 2.6rem; gap: 3px; margin-top: 1.2rem; }
+.stratum-col { position: relative; }
+.col-head { position: absolute; top: -1.2rem; left: 0; font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.band { position: absolute; left: 0; right: 0; border: 0; border-radius: 3px; padding: 0 .3rem; font: inherit; font-size: .72rem; line-height: 1; text-align: left; overflow: hidden; display: flex; align-items: center; cursor: pointer;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.12); transition: filter .15s, transform .15s; }
+.band span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.band:hover { filter: brightness(1.06) saturate(1.1); }
+.band.in { box-shadow: inset 0 0 0 1.5px rgba(0,0,0,.35); }
+.band.sel { box-shadow: inset 0 0 0 2.5px var(--ink); z-index: 2; transform: scaleX(1.04); }
+.axis-col { position: relative; font-size: .62rem; color: var(--muted); }
+.axis-col span { position: absolute; left: 4px; transform: translateY(-50%); white-space: nowrap; }
+.geotime-card { position: sticky; top: 5rem; display: grid; gap: .45rem; align-content: start; }
+.geotime-card p { margin: 0; }
+.geotime-card .crumbs { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.geotime-card h3 { margin: 0; font-family: var(--serif); font-size: 1.7rem; display: flex; align-items: baseline; gap: .5rem; }
+.geotime-card h3 i { width: .9rem; height: .9rem; border-radius: 3px; align-self: center; }
+.geotime-card h3 small { font-family: var(--sans, inherit); font-size: .8rem; color: var(--muted); font-weight: 400; }
+.clock { width: 150px; height: 150px; justify-self: center; margin: .3rem 0; }
+.clock .clock-sel { transition: d .3s; }
+.clock-dot { fill: var(--ink); }
+.clock-big { font-size: 15px; font-weight: 700; fill: var(--ink); font-variant-numeric: tabular-nums; }
+.clock-small { font-size: 7px; fill: var(--muted); }
+.mnemonic { margin: 1rem 0 0; font-size: .92rem; line-height: 1.6; }
+.mnemonic b { color: var(--accent); }
+@media (max-width: 760px) {
+  .geotime-body { grid-template-columns: 1fr; }
+  .geotime-card { position: static; }
+  .strata { grid-template-columns: .8fr .9fr 1.2fr 1.1fr 2.2rem; }
+}

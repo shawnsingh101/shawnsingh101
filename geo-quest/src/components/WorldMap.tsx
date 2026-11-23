@@ -156,7 +156,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const shapes = useMemo(() => {
     const out: Partial<Record<Layer, Shape[]>> = {};
     if (topos.country) out.country = cachedShapes(topos.country, 'country', lambda, path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
-    for (const l of ['water', 'cn', 'us', 'terr', 'sub', 'range', 'lake', 'river'] as Extra[]) if (topos[l]) out[l] = cachedShapes(topos[l]!, l, lambda, path, f => (ds.byId.has(f.properties.id) || /-outline$/.test(f.properties.id ?? '') ? f.properties.id : null));
+    for (const l of ['water', 'cn', 'us', 'terr', 'sub', 'range', 'lake', 'river', 'road'] as Extra[]) if (topos[l]) out[l] = cachedShapes(topos[l]!, l, lambda, path, f => (ds.byId.has(f.properties.id) || /-outline$/.test(f.properties.id ?? '') ? f.properties.id : null));
     return out;
   }, [topos, shapeToCountry, ds, path, lambda]);
 
@@ -216,10 +216,11 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
     if (recenter) {
       const lons = (focus?.ids ?? []).map(id => ds.byId.get(id)?.lon).filter((l): l is number => l != null);
       const want = focus ? meanLon(lons) : lambda;
-      // keepCenter zooms smoothly without re-centring — unless the target sits near the map's edge,
-      // where it could be split across both sides (e.g. the Yukon when the map is centred on 46°E).
+      // keepCenter zooms smoothly without re-centring — unless the target is far from the middle. Past ~70° the
+      // projection leans shapes over (Japan tilted on a map centred on Africa), and near the edge they can split
+      // across both sides (the Yukon when the map is centred on 46°E): then re-centre on it.
       const fromCentre = (l: number) => Math.abs((((l - lambda) % 360) + 540) % 360 - 180);
-      const nearEdge = lons.some(l => fromCentre(l) > 110);
+      const nearEdge = lons.some(l => fromCentre(l) > 70);
       if (want !== lambda && (!focus?.keepCenter || nearEdge)) { recentered.current = true; setLambda(want); return; } // re-runs once the map is re-drawn
     }
     const k0 = fitScale(size);
@@ -293,13 +294,13 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
     if (!s.placeId) return false;
     if (tones[s.placeId] || labels[s.placeId]) return true;
     if (hide?.(s.placeId)) return false;
-    if (detailByZoom && !/-great$|^m-ranges$/.test(ds.byId.get(s.placeId)?.group ?? '') && k < k0 * 2.5) return false;
+    if (detailByZoom && !/-great$|^m-ranges$|^hw-main$/.test(ds.byId.get(s.placeId)?.group ?? '') && k < k0 * 2.5) return false;
     return true;
   };
-  const riverEl = (s: Shape) => {
-    const great = /-great$/.test(ds.byId.get(s.placeId!)?.group ?? '');
+  const riverEl = (s: Shape, base = 'river') => {
+    const great = /-great$|^hw-main$/.test(ds.byId.get(s.placeId!)?.group ?? '');
     return (
-      <g key={s.key} className={'river' + (great ? ' great' : '') + cls(s.placeId)} data-name={nameOf(s)} {...events({ countryId: s.placeId, name: nameOf(s) })}>
+      <g key={s.key} className={base + (great ? ' great' : '') + cls(s.placeId)} data-name={nameOf(s)} {...events({ countryId: s.placeId, name: nameOf(s) })}>
         <path d={s.d} className="hit" />
         <path d={s.d} className="vis" />
       </g>
@@ -325,7 +326,8 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {shapes.sub && layers.includes('sub') && shapes.sub.filter(s => !!s.placeId && !/-outline$/.test(s.placeId) && (!subFilter || subFilter(s.placeId))).map(s => shapeEl(s, 'land sub'))}
           {shapes.range && layers.includes('range') && shapes.range.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'range') : null))}
           {shapes.lake && layers.includes('lake') && shapes.lake.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'lake') : <path key={s.key} d={s.d} className="lake other" />))}
-          {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(riverEl)}
+          {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(s => riverEl(s))}
+          {shapes.road && layers.includes('road') && shapes.road.filter(showWaterway).map(s => riverEl(s, 'river road'))}
           {outline.map(id => {
             // Prefer an outline built from the regions themselves (Punjab from its districts), so the edges line up.
             const all = Object.values(shapes).flat() as Shape[];

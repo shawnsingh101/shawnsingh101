@@ -7,6 +7,7 @@ import { Icon, type IconName } from '../components/Icons';
 import type { QuizSpec } from '../components/Study';
 import type { Dataset } from '../types';
 import { COLLECTION_SUBJECTS } from '../collections';
+import { GeoTime } from '../components/GeoTime';
 import { SUBJECTS } from '../subjects';
 
 function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; node: string; onClose: () => void; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void }) {
@@ -188,7 +189,8 @@ export function Tree({ ds, startQuiz, startStudy, goDashboard }: { ds: Dataset; 
       <h1>{subject.name}</h1>
       {isGeo
         ? <p className="muted">Tap a skill to start learning it, practise it, or learn more today. <b>Capitals</b> and <b>Flags</b> unlock once you know half of a region's places{p.settings.locks ? '' : ' (locks are currently off)'}. Countries and states you can study in depth sit inside their continent, under <b>In depth</b>.</p>
-        : <p className="muted">Tap a deck to start learning it. {COLLECTION_SUBJECTS.includes(subject.name) ? <>Each deck is a list in <code>geo-quest/collections/{subject.name}/</code>; add a work by its Wikipedia title and the facts and picture are filled in from Wikidata.</> : <>These cards come from the note files in <code>geo-quest/decks/{subject.name}/</code>.</>}</p>}
+        : <p className="muted">Tap a deck to start learning it. {subject.name === 'Earth history' ? <>The cards are made from the same data as the chart (<code>src/geotime.ts</code>), so they always agree.</> : COLLECTION_SUBJECTS.includes(subject.name) ? <>Each deck is a list in <code>geo-quest/collections/{subject.name}/</code>; add a work by its Wikipedia title and the facts and picture are filled in from Wikidata.</> : <>These cards come from the note files in <code>geo-quest/decks/{subject.name}/</code>.</>}</p>}
+      {subject.name === 'Earth history' && <GeoTime />}
       {top.length > 1 && <nav className="jumpbar">
         {top.map(sec => <button key={sec} className={'pick' + (open.has(sec) ? ' on' : '')} onClick={() => jump(sec)}><Icon name={SECTION_ICON[sec] ?? 'globe'} size={14} />{sec}</button>)}
       </nav>}

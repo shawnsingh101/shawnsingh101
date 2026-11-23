@@ -1,0 +1,6 @@
+Sound effects by Kenney (www.kenney.nl), CC0 1.0 (public domain): https://creativecommons.org/publicdomain/zero/1.0/
+  tap, toggle, open, back, right, wrong, medal, unlock  ← "Interface Sounds" (select_001, toggle_002, open_001, back_001,
+                                                           confirmation_001, error_008, confirmation_002, maximize_006)
+  flip, deal, shuffle                                    ← "Casino Audio" (cardSlide1, cardPlace1, cardShuffle, trimmed)
+Converted to mono MP3 with leading silence removed. The start-up chime and the background music are synthesized in the
+browser (src/sound.ts), so they need no files.

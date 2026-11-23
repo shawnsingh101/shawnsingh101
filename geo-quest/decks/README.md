@@ -38,6 +38,8 @@ related: Italy, Florence
 - **`related: A, B, C`** (anywhere under a heading): links shown on those cards after you flip them. A name the app
   teaches (a country, state, prefecture, World Heritage Site, river…) opens its sheet; anything else opens Wikipedia.
   That place's sheet then lists the card under "Also in your decks". Countries named in a card are linked automatically.
+- **`native: الكعبة (Arabic)`** (under a heading): the name in its own language, shown after the answer with a speaker
+  button (the device voice reads it). Several with `;`: `native: 孔子 (Chinese); Kǒngzǐ (Pinyin)`.
 - **`![caption](commons:File name.jpg)`**: a picture from Wikimedia Commons for the cards under that heading
   (or a full `https://…` image address).
 - A bullet with no `{{…}}` and no `::` is just a note to yourself and makes no card.

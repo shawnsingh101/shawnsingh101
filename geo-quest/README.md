@@ -33,6 +33,27 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.13: sound, Interstates, Earth history
+
+- **Sound effects** from Kenney's free (CC0) *Interface Sounds* and *Casino Audio* packs (`public/sfx/`, 68 KB, credits
+  in `public/sfx/LICENSE.txt`): a shuffle when a session starts, a card slide on flip, a card landing for the next one,
+  soft clicks on buttons and tabs, chimes for right / wrong / medals. Played through Web Audio (low latency, works with
+  the iPhone silent switch handling already in place).
+- **Start-up chime** (a deep swell opening into a bright chord and a run of bells) and **background music** (slow,
+  quiet generative chords with the odd bell; never the same twice), both synthesized in the browser: no files. Two
+  toggles in the ribbon: *Sound effects* and *Music* (off by default).
+- **Smoother start**: the globe swells and fades as the title lifts away, then the app rises into place.
+- **Interstate Highways** (Americas › United States › Interstate Highways): the 58 primary Interstates in Natural Earth's
+  roads (`scripts/build-interstates.mjs` → `shapes-road.json`, `roads.json`), facts from Wikidata, states worked out from
+  the map (hand fixes in `data/interstates.json`). *Main corridors* (numbers ending in 0 or 5) unlock *More
+  Interstates*. Cards: find it on the map, name the highlighted one, and name the shield. A Map-view toggle too.
+- **Earth history**: the geologic time scale (ICS 2023 dates and official colours, `src/geotime.ts`) as layers of rock
+  you can tap, *readable* or *true to scale*, with a 24-hour "Earth's day" clock and the period mnemonic. Two decks
+  (122 cards) are built from the same data: when each began, what it's known for, which era, what comes next.
+- Note decks take a `native:` line (`native: الكعبة (Arabic)`): the religion and philosophy examples now show
+  Arabic, Gurmukhi, Hebrew, Italian, Hindi and Greek with the speaker button.
+- Maps re-centre on anything more than ~70° from the middle (Japan was drawn tilted at the edge on World Heritage cards).
+
 ## v1.12: names in their own language, pinyin everywhere
 
 The rule: anything you learn shows its name in its own language too (with the speaker button: a recording where Wikidata

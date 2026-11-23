@@ -69,18 +69,18 @@ function Globe({ ds }: { ds: Dataset }) {
   return <canvas ref={ref} className="globe" aria-hidden="true" />;
 }
 
-export function Landing({ ds, onStart, onSettings }: { ds: Dataset; onStart: () => void; onSettings: () => void }) {
+export function Landing({ ds, onStart, onSettings, leaving }: { ds: Dataset; onStart: () => void; onSettings: () => void; leaving?: boolean }) {
   const p = useProgress();
   const q = buildQueue(ds, p);
   const latest = CHANGELOG[0];
   return (
-    <div className="landing">
+    <div className={'landing' + (leaving ? ' leaving' : '')}>
       <Globe ds={ds} />
       <div className="landing-content">
         <h1 className="landing-title">Intelligence <span>Quest</span></h1>
         <p className="landing-sub">Know the world.</p>
         <div className="landing-actions">
-          <button className="btn primary big" onClick={onStart}><Icon name="play" /> Start</button>
+          <button className="btn primary big" data-sfx="none" onClick={onStart}><Icon name="play" /> Start</button>
           <button className="btn big ghost-light" onClick={onSettings}><Icon name="gear" /> Settings</button>
         </div>
         <p className="landing-due">{q.due.length || q.fresh.length ? `${q.due.length} reviews due · ${q.fresh.length} new cards ready` : p.active.length ? 'All caught up for today' : 'Pick something to learn to get started'}</p>
