@@ -80,10 +80,7 @@ export function geotimeDeck(): string {
   for (const u of big) L.push(`- The {{${u.name}|which ${u.rank}?}} ${u.rank}: ${u.known}.`);
   L.push('## Which period?');
   for (const u of periods) L.push(`- The {{${u.name}|which period?}} period: ${u.known}.`);
-  L.push('## Earth’s history as one day');
-  L.push(`- If Earth’s 4.6 billion years were one day, the first animals with shells (Cambrian) would appear at about {{${onTheClock(538.8)}|what time?}}.`);
-  L.push(`- …the dinosaurs would die out at about {{${onTheClock(66)}|what time?}}.`);
-  L.push(`- …our species would appear at about {{${onTheClock(0.3)}|what time?}}, a few seconds before midnight.`);
+  // (No "Earth's history as one day" cards: an analogy teaches nothing about the world. The clock stays on the chart.)
   return L.join('\n');
 }
 export function epochDeck(): string {

@@ -55,6 +55,8 @@ feature consistent. When adding anything, check it against this page. When a new
     United States entered {{World War I}}", not "…entered World War I in {{1917}}". A date is the answer only when the
     date itself is the landmark (July 4, 1776; the Constitution in 1787; the span of a dynasty or a war as one card;
     a president's years when that's the question asked).
+14. **Cards teach facts about the world, not analogies.** "If Earth's history were one day, the dinosaurs die at 11:40 pm"
+    is a picture to look at (the chart's clock), not something to memorize.
 
 ## 2. Pictures
 

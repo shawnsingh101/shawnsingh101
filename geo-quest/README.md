@@ -54,6 +54,8 @@ world map fill in as you master it.
   from Technology & AI to match).
 - **American spelling** everywhere; respelled cards keep their progress (the card id reads "flavor" as "flavour").
 - A deck's sheet lists each heading once.
+- Earth history: the three "if Earth's history were one day, what time…?" cards are gone (an analogy, not a fact about
+  the world; new rule 14). The clock stays on the time-scale chart.
 
 ## v1.25: Jazz, and better classical clips
 
