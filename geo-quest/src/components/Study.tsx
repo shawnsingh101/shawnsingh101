@@ -307,7 +307,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
       <div className="card-wrap">
         <article className={'card' + (revealed ? ' revealed' : '')} onClick={() => f.mode === 'reveal' && reveal()}>
           <div className="card-meta">
-            {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : KIND_LABEL[item.ref.kind]}</span>{item.isNew && <span className="new">new</span>}
+            {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : (c.building && item.ref.kind === 'artMaker' ? 'Who designed it?' : KIND_LABEL[item.ref.kind])}</span>{item.isNew && <span className="new">new</span>}
           </div>
           {!sidePic && f.promptPicture && f.picture && <div className="prompt-picture"><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} /></div>}
           {f.promptFlag && <Flag file={c.flag ?? null} name="?" className="prompt-flag" size={480} eager />}

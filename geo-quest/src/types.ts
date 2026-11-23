@@ -68,7 +68,10 @@ export interface Place {
   parentName?: string;
   highestShared?: boolean; // another country shares the same highest point (Everest: Nepal & China)
   manyPlaces?: boolean;    // a leader who holds the same office in several countries
-  artists?: string[];      // artworks: who made it…
+  artists?: string[];      // artworks: who made it… (buildings: the architect)
+  building?: boolean;      // from a `kind: building` collection: it stands somewhere (no museum), was designed, has a style
+  style?: string | null;   // a building's architectural style (Wikidata P149): Gothic, Beaux-Arts…
+  qid?: string;            // the Wikidata id, when the id had to differ (a collection entry that is also a World Heritage site)
   culture?: string | null; // …or, for ancient work, which culture
   year?: number | null;    // when (negative = BC)
   museum?: string | null;  // where it is now: "the Louvre Museum, Paris"

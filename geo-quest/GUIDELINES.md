@@ -96,6 +96,11 @@ feature consistent. When adding anything, check it against this page. When a new
 - **Section names are unique.** A folder named like an existing section ("Americas") gets its own name; prefer a clear
   one ("Art of the Americas").
 - **Art**: the starter list, *By period* (Wikipedia's History of art chapters), *Where to see it* (made from the facts).
+- **Architecture** holds buildings themselves (a museum's building and history too); **Art** holds what's inside.
+  A *tour* (`decks/Architecture/2 Tours/`) is one deck per building, written as a walk: its story, then room by room,
+  pointing on to its works in Art. Government buildings' tours will also show under US government.
+- **Ids are unique across the app.** A collection entry that is already something else (a World Heritage site) gets
+  its own id automatically; never give two places the same id.
 - Something that belongs in two places is filed once and *also shown* in the other (`alsoInSections`, `alsoIn`), with one
   set of progress.
 - **Lenses, not copies.** A thing is filed once, in its natural place (History of China › Prehistory), and tagged with

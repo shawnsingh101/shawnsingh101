@@ -1,5 +1,5 @@
 {
- "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museumWiki (the museum's Wikipedia title), native (its name in its own language: [{name, lang, code}], [] for none), museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district.",
+ "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museumWiki (the museum's Wikipedia title), native (its name in its own language: [{name, lang, code}], [] for none), museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district. Buildings (kind: building lists) also take 'style' (P149, written to read after 'built in the … style'; null for none) and 'types' (what it is: the first is shown).",
  "_cities": {
   "Saint-Germain-l'Auxerrois": "Paris",
   "Greater London": "London",
@@ -342,5 +342,387 @@
   "lon": -77.0199,
   "lat": 38.8913,
   "year": 1862
+ },
+ "Q37200": {
+  "year": -2560,
+  "style": "ancient Egyptian",
+  "nameThe": "the Great Pyramid of Giza",
+  "types": [
+   "pyramid tomb"
+  ]
+ },
+ "Q683632": {
+  "artists": [
+   "Ismaila Traoré"
+  ],
+  "style": "Sudano-Sahelian",
+  "nameThe": "the Great Mosque of Djenné",
+  "native": [
+   {
+    "name": "Grande Mosquée de Djenné",
+    "lang": "French",
+    "code": "fr"
+   }
+  ]
+ },
+ "Q10288": {
+  "city": "Athens",
+  "style": "Doric",
+  "nameThe": "the Parthenon",
+  "artists": [
+   "Ictinus",
+   "Callicrates"
+  ],
+  "types": [
+   "temple"
+  ],
+  "year": -447
+ },
+ "Q99309": {
+  "artists": [],
+  "style": "ancient Roman",
+  "nameThe": "the Pantheon",
+  "name": "Pantheon",
+  "native": [
+   {
+    "name": "Pantheum",
+    "lang": "Latin",
+    "code": "la"
+   }
+  ],
+  "types": [
+   "Roman temple, now a church"
+  ],
+  "culture": null
+ },
+ "Q10285": {
+  "city": "Rome",
+  "style": "ancient Roman",
+  "nameThe": "the Colosseum",
+  "native": [
+   {
+    "name": "Colosseo",
+    "lang": "Italian",
+    "code": "it"
+   }
+  ],
+  "types": [
+   "amphitheatre"
+  ]
+ },
+ "Q12506": {
+  "city": "Istanbul",
+  "style": "Byzantine",
+  "native": [
+   {
+    "name": "Ἁγία Σοφία",
+    "lang": "Greek",
+    "code": "el"
+   }
+  ],
+  "types": [
+   "church, then mosque"
+  ]
+ },
+ "Q2981": {
+  "city": "Paris",
+  "artists": [],
+  "style": "Gothic",
+  "native": [
+   {
+    "name": "Notre-Dame de Paris",
+    "lang": "French",
+    "code": "fr"
+   }
+  ],
+  "types": [
+   "cathedral"
+  ]
+ },
+ "Q180274": {
+  "artists": [],
+  "style": "Gothic",
+  "types": [
+   "cathedral"
+  ],
+  "native": [
+   {
+    "name": "Cathédrale Notre-Dame de Chartres",
+    "lang": "French",
+    "code": "fr"
+   }
+  ]
+ },
+ "Q47476": {
+  "style": "Moorish",
+  "culture": "Nasrid dynasty",
+  "nameThe": "the Alhambra",
+  "native": [
+   {
+    "name": "الحمراء",
+    "lang": "Arabic",
+    "code": "ar",
+    "roman": "al-Ḥamrāʾ"
+   }
+  ],
+  "types": [
+   "palace and fortress"
+  ]
+ },
+ "Q191739": {
+  "artists": [
+   "Arnolfo di Cambio",
+   "Filippo Brunelleschi"
+  ],
+  "style": "Gothic and Renaissance",
+  "types": [
+   "cathedral"
+  ],
+  "native": [
+   {
+    "name": "Cattedrale di Santa Maria del Fiore",
+    "lang": "Italian",
+    "code": "it"
+   }
+  ]
+ },
+ "Q12512": {
+  "artists": [
+   "Donato Bramante",
+   "Michelangelo",
+   "Carlo Maderno"
+  ],
+  "style": "Renaissance and Baroque",
+  "native": [
+   {
+    "name": "Basilica di San Pietro",
+    "lang": "Italian",
+    "code": "it"
+   }
+  ],
+  "types": [
+   "basilica"
+  ]
+ },
+ "Q2946": {
+  "artists": [
+   "Louis Le Vau",
+   "Jules Hardouin-Mansart"
+  ],
+  "style": "French Baroque",
+  "nameThe": "the Palace of Versailles",
+  "native": [
+   {
+    "name": "Château de Versailles",
+    "lang": "French",
+    "code": "fr"
+   }
+  ]
+ },
+ "Q62408": {
+  "year": 1840,
+  "artists": [
+   "Charles Barry",
+   "Augustus Pugin"
+  ],
+  "nameThe": "the Palace of Westminster",
+  "types": [
+   "parliament building"
+  ]
+ },
+ "Q4152": {
+  "artists": [
+   "Eduard Riedel"
+  ],
+  "style": "Romanesque Revival",
+  "types": [
+   "castle"
+  ]
+ },
+ "Q243": {
+  "artists": [
+   "Gustave Eiffel"
+  ],
+  "nameThe": "the Eiffel Tower",
+  "native": [
+   {
+    "name": "Tour Eiffel",
+    "lang": "French",
+    "code": "fr"
+   }
+  ]
+ },
+ "Q48435": {
+  "artists": [
+   "Antoni Gaudí"
+  ],
+  "city": "Barcelona",
+  "style": "Catalan Modernisme",
+  "nameThe": "the Sagrada Família",
+  "native": [
+   {
+    "name": "Temple Expiatori de la Sagrada Família",
+    "lang": "Catalan",
+    "code": "ca"
+   }
+  ],
+  "types": [
+   "basilica"
+  ]
+ },
+ "Q129846": {
+  "style": "Russian",
+  "native": [
+   {
+    "name": "Храм Василия Блаженного",
+    "lang": "Russian",
+    "code": "ru",
+    "roman": "Khram Vasiliya Blazhennogo"
+   }
+  ],
+  "types": [
+   "church"
+  ]
+ },
+ "Q940746": {
+  "city": "Poissy",
+  "country": "Q142",
+  "countryName": "France",
+  "lon": 2.028,
+  "lat": 48.924,
+  "style": "Modernist"
+ },
+ "Q179199": {
+  "style": "Deconstructivist",
+  "nameThe": "the Guggenheim Museum Bilbao"
+ },
+ "Q9141": {
+  "city": "Agra",
+  "style": "Mughal",
+  "nameThe": "the Taj Mahal",
+  "artists": [
+   "Ustad Ahmad Lahori"
+  ]
+ },
+ "Q80290": {
+  "artists": [
+   "Kuai Xiang"
+  ],
+  "nameThe": "the Forbidden City"
+ },
+ "Q71229": {
+  "year": 1645,
+  "style": "Tibetan",
+  "nameThe": "the Potala Palace",
+  "types": [
+   "palace"
+  ]
+ },
+ "Q188754": {
+  "year": 1609,
+  "style": "Japanese castle",
+  "types": [
+   "castle"
+  ]
+ },
+ "Q43473": {
+  "country": "Q424",
+  "countryName": "Cambodia",
+  "city": "Siem Reap",
+  "lon": 103.867,
+  "lat": 13.412,
+  "year": 1150,
+  "artists": [],
+  "culture": "Khmer",
+  "style": "Khmer",
+  "native": [
+   {
+    "name": "អង្គរវត្ត",
+    "lang": "Khmer",
+    "code": "km",
+    "roman": "Ângkôr Vôtt"
+   }
+  ],
+  "types": [
+   "Hindu temple, later Buddhist"
+  ]
+ },
+ "Q83063": {
+  "artists": [
+   "César Pelli"
+  ],
+  "nameThe": "the Petronas Towers",
+  "plural": true,
+  "native": [
+   {
+    "name": "Menara Berkembar Petronas",
+    "lang": "Malay",
+    "code": "ms"
+   }
+  ]
+ },
+ "Q12495": {
+  "artists": [
+   "Adrian Smith"
+  ],
+  "style": null
+ },
+ "Q35525": {
+  "nameThe": "the White House",
+  "style": "Neoclassical",
+  "types": [
+   "presidential residence"
+  ]
+ },
+ "Q54109": {
+  "artists": [
+   "William Thornton"
+  ],
+  "nameThe": "the United States Capitol",
+  "style": "Neoclassical"
+ },
+ "Q213559": {
+  "artists": [
+   "Henry Bacon"
+  ],
+  "nameThe": "the Lincoln Memorial",
+  "style": "Greek Revival",
+  "types": [
+   "memorial"
+  ]
+ },
+ "Q11274": {
+  "nameThe": "the Chrysler Building",
+  "style": "Art Deco"
+ },
+ "Q9188": {
+  "nameThe": "the Empire State Building",
+  "style": "Art Deco"
+ },
+ "Q463179": {
+  "city": "Mill Run, Pennsylvania",
+  "style": "organic",
+  "types": [
+   "house"
+  ]
+ },
+ "Q201469": {
+  "nameThe": "the Guggenheim Museum",
+  "style": "Modernist"
+ },
+ "Q201720": {
+  "nameThe": "the Cathedral of Brasília",
+  "style": "Modernist",
+  "types": [
+   "cathedral"
+  ]
+ },
+ "Q45178": {
+  "city": "Sydney",
+  "artists": [
+   "Jørn Utzon"
+  ],
+  "nameThe": "the Sydney Opera House",
+  "style": "Expressionist"
  }
 }

@@ -33,6 +33,23 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.22: Architecture
+
+- New subject **Architecture**:
+  - `collections/Architecture/Famous buildings.md` (`kind: building`): 35 landmarks from the Great Pyramid to the Burj
+    Khalifa. Cards: picture → name, **who designed it** (architect, Wikidata P84), **where it stands** (its own town,
+    not a museum), **which style** (P149; new card kind `artStyle`). Hand fixes in `data/collection-fixes.json`
+    (Angkor Wat was placed in Vietnam, Villa Savoye in New York; William Thornton for the Capitol; plain styles and types).
+  - `decks/Architecture/1 Styles and architects.md`: 23 styles, each with a picture of a building in it, and 7 architects
+    with portraits (and 貝聿銘 Bèi Yùmíng, زها حديد).
+  - `decks/Architecture/2 Tours/`: **The White House**, **The United States Capitol**, **The Metropolitan Museum of
+    Art**, written as a walk (the building's story, then room by room). The Met tour points on to its works in Art.
+- Fix: a collection entry with the same Wikidata id as a World Heritage site, peak, range or territory (Ajanta Caves, in
+  Art and World Heritage) replaced it in the app's lookup, so one of the two showed the wrong cards. The collection's
+  entry now gets its own id (`Q184427-art`). Progress on the Ajanta *art* cards starts over; the site's is kept.
+- Not verified this time (Wikimedia was rate-limiting): the one hand-typed picture, *Washington Crossing the Delaware*;
+  every other picture comes from Wikidata's own P18.
+
 ## v1.21: search
 
 - A search box at the top of the Library (`src/search.ts`, `src/components/Search.tsx`) finds cards in every subject by

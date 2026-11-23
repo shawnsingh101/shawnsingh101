@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.22.0', notes: 'Architecture: 35 famous buildings (picture, architect, where it stands, its style), styles and architects from the Doric order to Zaha Hadid, and tours of the White House, the Capitol and the Met, room by room' },
   { version: '1.21.0', notes: 'Search every card from the Library: type Washington, Ming, juniper or era:prehistory, then Study or Quiz exactly those cards (progress counts wherever they\'re filed) · pin a search to keep it · a clearer settings icon' },
   { version: '1.20.0', notes: 'Simpler: two buttons everywhere (Study, Quiz) · five tabs (the Atlas list is inside Map; the Dashboard is in the Library) · only sound and Settings in the top bar · each deck is one row; small folders fold into their parent; subject pages open short · map layers tuck behind one button on phones' },
   { version: '1.19.0', notes: 'Study a whole branch at once: every section has Study all (all of History of China, all of Physical geography…) · History by era: all prehistory, all ancient history… from every country together, one tap to study' },

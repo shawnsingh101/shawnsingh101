@@ -7,12 +7,12 @@ import type { IconName } from './components/Icons';
 
 export type Kind = 'locate' | 'identify' | 'capital' | 'capitalReverse' | 'capitalLocate' | 'flag' | 'flagReverse' | 'senator' | 'senatorFace' | 'senatorLocate'
   | 'currency' | 'currencyReverse' | 'largestCity' | 'largestCityReverse' | 'belongsTo'
-  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse' | 'note' | 'artPhoto' | 'artMaker' | 'artWhere' | 'roadShield' | 'presFace' | 'presName' | 'presNumber' | 'presYears' | 'presParty';
+  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse' | 'note' | 'artPhoto' | 'artMaker' | 'artWhere' | 'artStyle' | 'roadShield' | 'presFace' | 'presName' | 'presNumber' | 'presYears' | 'presParty';
 export type Topic = 'countries' | 'places' | 'capitals' | 'flags' | 'senate' | 'governors' | 'leaders' | 'currency' | 'cities' | 'sovereign' | 'sites' | 'peaks' | 'highest' | 'notes' | 'art' | 'shields' | 'presidents';
 
 export const TOPIC_KINDS: Record<Topic, Kind[]> = {
   notes: ['note'],
-  art: ['artPhoto', 'artMaker', 'artWhere'],
+  art: ['artPhoto', 'artMaker', 'artWhere', 'artStyle'],
   shields: ['roadShield'],
   presidents: ['presFace', 'presName', 'presNumber', 'presYears', 'presParty'],
   countries: ['locate', 'identify'],
@@ -34,7 +34,7 @@ export const TOPIC_KINDS: Record<Topic, Kind[]> = {
 export const TAP_KINDS: Kind[] = ['locate', 'capitalLocate', 'senatorLocate', 'siteLocate'];
 
 export const KIND_LABEL: Record<Kind, string> = {
-  note: 'Card', artPhoto: 'Picture → name', artMaker: 'Who made it?', artWhere: 'Where is it?', roadShield: 'Name the shield', presFace: 'Who is this?', presName: 'Number → president', presNumber: 'Which number?', presYears: 'When?', presParty: 'Which party?',
+  note: 'Card', artPhoto: 'Picture → name', artMaker: 'Who made it?', artWhere: 'Where is it?', artStyle: 'Which style?', roadShield: 'Name the shield', presFace: 'Who is this?', presName: 'Number → president', presNumber: 'Which number?', presYears: 'When?', presParty: 'Which party?',
   locate: 'Find it on the map', identify: 'Name it', capital: 'Name the capital',
   capitalReverse: 'Capital → name', capitalLocate: 'Capital → map', flag: 'Name the flag', flagReverse: 'Picture the flag',
   senator: 'Name the person', senatorFace: 'Who is this?', senatorLocate: 'Person → map',
@@ -53,6 +53,7 @@ export function fingerprint(kind: Kind, c: Place) {
   if (kind === 'artMaker') return `${c.name}|${makerOf(c)}`;
   if (kind.startsWith('pres')) return `${c.name}|${c.terms?.map(t => `${t.n}:${t.from}-${t.to}`).join(',')}`;
   if (kind === 'artWhere') return `${c.name}|${c.museum}|${c.countryName}`;
+  if (kind === 'artStyle') return `${c.name}|${c.style}`;
   return c.name;
 }
 
@@ -255,6 +256,7 @@ export function kindApplies(k: Kind, c: Place) {
   if (k === 'artPhoto') return !!c.image; // a free picture on Commons (a modern painting under copyright has none to show as the question)
   if (k === 'artMaker') return !!makerOf(c);
   if (k === 'artWhere') return !!(c.museum || c.countryName);
+  if (k === 'artStyle') return !!c.building && !!c.style;
   if (k === 'currencyReverse') return !!c.currency?.some(x => x.shared === 1); // "the euro is the currency of…" has 20 answers
   return true;
 }
@@ -433,11 +435,14 @@ function rawFace(ref: CardRef): CardFace {
     case 'artPhoto':
       return { mode: 'reveal', pre: c.plural ? 'These are ' : 'This is ', blank: 'what?', post: '.', answer: c.nameThe ?? c.name, map: 'none', note: artNote(c, true), picture: artPic(c), promptPicture: true };
     case 'artMaker': {
-      const v = /paint|fresco|print|drawing|mural/i.test(c.facts ?? '') ? 'painted' : /statue|sculpt|bust|bronze|cast/i.test(c.facts ?? '') ? 'sculpted' : 'made';
+      const v = c.building ? 'designed' : /paint|fresco|print|drawing|mural/i.test(c.facts ?? '') ? 'painted' : /statue|sculpt|bust|bronze|cast/i.test(c.facts ?? '') ? 'sculpted' : 'made';
       return { mode: 'reveal', pre: `${c.nameThe ?? c.name} ${c.plural ? 'were' : 'was'} ${v} by `, blank: c.artists?.length ? 'whom?' : 'which people?', post: '.', answer: makerOf(c)!, map: 'none', note: artNote(c, false), picture: artPic(c) };
     }
     case 'artWhere':
+      if (c.building) return { mode: 'reveal', pre: `${cap1(c.nameThe ?? c.name)} ${c.plural ? 'stand' : 'stands'} `, blank: 'in which city?', post: '.', answer: `in ${c.city ?? c.countryName}${c.city && c.countryName && c.city !== c.countryName ? ` (${c.countryName})` : ''}`, map: c.country ? 'reveal' : 'none', note: artNote(c, true), picture: artPic(c) };
       return { mode: 'reveal', pre: `You can see ${c.nameThe ?? c.name} `, blank: 'where?', post: '.', answer: c.museum ? `${/^Corcovado/.test(c.museum) ? 'on' : /^the |museum|gallery|institute|belvedere|rijksmuseum|mauritshuis/i.test(c.museum) ? 'at' : 'in'} ${c.museum}${c.countryName && !c.museum.includes(c.countryName) ? ` (${c.countryName})` : ''}` : `in ${c.countryName}`, map: c.country ? 'reveal' : 'none', note: artNote(c, true), picture: artPic(c) };
+    case 'artStyle': // buildings: "Notre-Dame de Paris was built in the Gothic style."
+      return { mode: 'reveal', pre: `${cap1(c.nameThe ?? c.name)} ${c.plural ? 'were' : 'was'} built in the `, blank: 'which style?', post: ' style.', answer: c.style!.replace(/ architecture$/i, ''), map: 'none', note: artNote(c, true), picture: artPic(c) };
     // US presidents: the portrait, the number, the years, the party; the vice president(s) shown once flipped.
     case 'presFace':
       return { mode: 'reveal', pre: 'This is ', blank: 'who?', post: `, the ${presNumbers(c)} president.`, answer: c.name, map: 'none', note: presNote(c), person: { photo: c.photo ?? '', when: 'before' }, hidePostUntilReveal: true };
@@ -495,10 +500,10 @@ export const LAYER_ICON: Record<Place['layer'], IconName> = { note: 'book', art:
  *  "Where / what is it?" — you're given the name and find it, or name its capital/flag. */
 export const DIRECTIONS: { id: 'recognise' | 'recall'; name: string; hint: string; kinds: Kind[] }[] = [
   { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse', 'senatorFace', 'currencyReverse', 'largestCityReverse', 'sitePhoto', 'highestReverse', 'artPhoto', 'roadShield', 'presFace', 'presName'] },
-  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest', 'artMaker', 'artWhere', 'presNumber', 'presYears', 'presParty'] },
+  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest', 'artMaker', 'artWhere', 'artStyle', 'presNumber', 'presYears', 'presParty'] },
 ];
 export const KIND_SHORT: Record<Kind, string> = {
-  note: 'Note card', artPhoto: 'Picture → name', artMaker: 'Work → artist', artWhere: 'Work → where it is', roadShield: 'Shield → Interstate', presFace: 'Portrait → president', presName: 'Number → president', presNumber: 'President → number', presYears: 'President → years', presParty: 'President → party',
+  note: 'Note card', artPhoto: 'Picture → name', artMaker: 'Work → artist', artWhere: 'Work → where it is', artStyle: 'Building → style', roadShield: 'Shield → Interstate', presFace: 'Portrait → president', presName: 'Number → president', presNumber: 'President → number', presYears: 'President → years', presParty: 'President → party',
   identify: 'Map → name', flag: 'Flag → country', capitalReverse: 'Capital → country',
   locate: 'Name → map', capitalLocate: 'Capital → map', capital: 'Country → capital', flagReverse: 'Country → flag',
   senatorFace: 'Photo → person', senator: 'Office → person', senatorLocate: 'Person → map',
