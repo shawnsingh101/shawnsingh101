@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { face, groupOf, placesIn, GROUPS, KIND_LABEL, LAYER_NOUN, layerFor, sectionChain, type CardRef } from '../cards';
 const m0Layer = (c: { layer: string }) => c.layer;
-import { answer, buildQueue, getProgress, update, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
+import { answer, buildQueue, queueForCards, getProgress, update, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
 import { sounds } from '../sound';
 import type { Dataset } from '../types';
 import { WorldMap, type MapHit, type Tone } from './WorldMap';
@@ -21,8 +21,8 @@ interface Item { ref: CardRef; isNew: boolean }
 /** A practice quiz: any set of cards, scored, and it does NOT change your review schedule. */
 export interface QuizSpec { key: string; title: string; draw: () => CardRef[] }
 
-function srsQueue(ds: Dataset, nodes?: string[]): Item[] {
-  const q = buildQueue(ds, getProgress(), nodes);
+function srsQueue(ds: Dataset, nodes?: string[], cards?: CardRef[]): Item[] {
+  const q = cards ? queueForCards(getProgress(), cards) : buildQueue(ds, getProgress(), nodes);
   const due = q.due.map(ref => ({ ref, isNew: false }));
   const fresh = q.fresh.map(ref => ({ ref, isNew: true }));
   // Mix: a few reviews, then a new card, and so on.
@@ -31,11 +31,11 @@ function srsQueue(ds: Dataset, nodes?: string[]): Item[] {
   return out;
 }
 
-export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; onExit: () => void; quiz?: QuizSpec; goQuiz?: () => void; nodes?: string[] }) {
+export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Dataset; onExit: () => void; quiz?: QuizSpec; goQuiz?: () => void; nodes?: string[]; cards?: CardRef[] }) {
   const p = useProgress();
   const s = p.settings;
   const onExit = () => { if (s.sound) sounds.back(); exit(); };
-  const [queue, setQueue] = useState<Item[]>(() => (quiz ? quiz.draw().map(ref => ({ ref, isNew: false })) : srsQueue(ds, nodes)));
+  const [queue, setQueue] = useState<Item[]>(() => (quiz ? quiz.draw().map(ref => ({ ref, isNew: false })) : srsQueue(ds, nodes, cards)));
   const [total, setTotal] = useState(queue.length);
   const [done, setDone] = useState(0);
   const [revealed, setRevealed] = useState(false);
@@ -200,14 +200,14 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
         </div>
       );
     }
-    const more = unseenCount(ds, p, nodes);
+    const more = cards ? queueForCards(p, cards, Infinity).fresh.length : unseenCount(ds, p, nodes);
     return (
       <div className="study-done">
         <div className="medal-big"><Icon name={total ? 'check' : 'globe'} size={44} /></div>
         <h2>{total ? 'Session complete' : 'Nothing due right now'}</h2>
         <p>{total ? `${done} answers${s.gamify ? ` · +${sessionXp} XP` : ''}.` : 'Your reviews are done for now.'}</p>
         <div className="row">
-          {more > 0 && <button className="btn primary" onClick={() => { learnMore(10); restart(srsQueue(ds, nodes)); }}><Icon name="plus" /> Learn {Math.min(10, more)} more</button>}
+          {more > 0 && <button className="btn primary" onClick={() => { if (!cards) learnMore(10); restart(srsQueue(ds, nodes, cards)); }}><Icon name="plus" /> Learn {Math.min(cards ? 20 : 10, more)} more</button>}
           {goQuiz && <button className="btn" onClick={goQuiz}><Icon name="target" /> Practice quiz</button>}
           <button className="btn" onClick={onExit}>Back</button>
         </div>

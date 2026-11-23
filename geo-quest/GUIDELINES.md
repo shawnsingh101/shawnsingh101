@@ -101,7 +101,9 @@ feature consistent. When adding anything, check it against this page. When a new
 - **Lenses, not copies.** A thing is filed once, in its natural place (History of China › Prehistory), and tagged with
   facets (`era: Prehistory`); the app builds the cross-cutting views from the tags (History › By era › All prehistory).
   Tag every history deck with its world era. New facets (theme, region, Books' genre) work the same way.
-- **Every section can be studied whole** (Study all), including everything nested in it.
+- **Every section can be studied whole** (Study), including everything nested in it.
+- **Search is a view, not a deck.** Anything can be found and studied from the Library search; pinned searches save
+  only the words. Make cards findable: put the real names (and native names) in the card or its facts.
 - **History can be studied by time or by place**: decks follow the period chapters of the source (Wikipedia's "History of
   …" article), and a card tagged `also in: Philadelphia` also shows in the place's deck (History › … › By place).
 - **Textbooks follow the book**: subject › unit › chapter, the deck named after the chapter, with the source credited.

@@ -33,6 +33,19 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.21: search
+
+- A search box at the top of the Library (`src/search.ts`, `src/components/Search.tsx`) finds cards in every subject by
+  what they say: names (also in their own language and pinyin without tones: `xian` finds 西安 Xī'ān), answers, artists,
+  museums, deck and section names. Words match from their start; all must match. Filters: `era:prehistory`,
+  `subject:art`, `in:"History of China"`. A deck's own name brings in the whole deck only when none of its cards match by
+  themselves, so *Washington* finds George Washington, not every president in *Washington to Buchanan*.
+- **Study** these cards: what's due, then up to 20 new ones (chosen on purpose, so not held to the daily budget), dealt
+  so one place's cards don't come in a row (`queueForCards` in `src/srs.ts`). **Quiz**: 25 of them as practice.
+- **Pin** a search: only the words are saved (`pins` in your progress, so backups carry them), so cards added later
+  join it. Not a deck: no copies, one set of progress per card.
+- The settings icon is a cog (the old one looked like the sun on Today).
+
 ## v1.20: streamlined
 
 - **Two verbs.** A deck's sheet has **Study** (adds the deck and starts; if nothing is waiting it brings in 10 new cards) and

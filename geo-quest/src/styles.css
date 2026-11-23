@@ -861,3 +861,18 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .deck-row small { font-size: .75rem; font-variant-numeric: tabular-nums; color: var(--muted); }
 .deck-row.active b { color: var(--accent); }
 .deck-row.active .ring-wrap .icon { color: var(--accent); }
+/* Library search */
+.search { margin: .5rem 0 1.2rem; }
+.search-box { display: flex; align-items: center; gap: .5rem; border: 1px solid var(--line); border-radius: 999px; padding: .55rem .9rem; background: var(--surface); }
+.search-box:focus-within { border-color: var(--accent); }
+.search-box input { flex: 1; min-width: 0; border: 0; background: transparent; font: inherit; color: var(--ink); outline: none; }
+.search-box input::-webkit-search-cancel-button { display: none; }
+.search-chips { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; margin-top: .5rem; }
+.search-chips .chip { font-size: .8rem; }
+.search-results { margin-top: .7rem; border: 1px solid var(--line); border-radius: var(--radius); padding: .8rem; background: var(--surface); }
+.search-head { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: space-between; }
+.search-head .row { display: flex; gap: .35rem; flex-wrap: wrap; }
+.search-decks { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .4rem; margin-top: .4rem; }
+.search-deck { border: 1px solid var(--line); border-radius: 10px; padding: .45rem .6rem; background: var(--bg); min-width: 0; }
+.search-deck b { font-size: .88rem; }
+.search-deck .examples { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

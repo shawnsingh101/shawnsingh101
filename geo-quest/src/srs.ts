@@ -31,6 +31,7 @@ export interface Progress {
   days: Record<string, Day>;
   updates: { date: string; text: string }[]; // facts that changed under you
   quizBest: Record<string, QuizBest>;
+  pins?: string[];           // searches pinned in the Library (just the words: matching cards are found fresh each time)
 }
 
 const KEY = 'geoquest:v1';
@@ -186,6 +187,26 @@ export function unseenCount(ds: Dataset, p: Progress, nodes?: string[]) {
 }
 
 /** "Learn 10 more" — raise today's allowance for new cards. */
+/** Deal cards round-robin by place, so one country's five card types don't come in a row. */
+function spread(refs: CardRef[]): CardRef[] {
+  const by = new Map<string, CardRef[]>();
+  for (const r of refs) { const l = by.get(r.country.id); if (l) l.push(r); else by.set(r.country.id, [r]); }
+  const lists = [...by.values()], out: CardRef[] = [];
+  for (let i = 0; out.length < refs.length; i++) for (const l of lists) if (l[i]) out.push(l[i]);
+  return out;
+}
+
+/**
+ * A session on chosen cards (a search): the ones due, then up to `newLimit` you haven't started. Chosen on purpose, so
+ * new cards here don't wait for the daily budget. They join your schedule like any other card.
+ */
+export function queueForCards(p: Progress, refs: CardRef[], newLimit = 20): { due: CardRef[]; fresh: CardRef[] } {
+  const now = Date.now(), ok = refs.filter(r => !skipped(p, r.kind) && kindApplies(r.kind, r.country));
+  const due = ok.filter(r => { const c = p.cards[r.id]; return c && c.c.state !== State.New && c.c.due.getTime() <= now; });
+  const fresh = spread(ok.filter(r => { const c = p.cards[r.id]; return !c || c.c.state === State.New; })).slice(0, newLimit);
+  return { due: spread(due), fresh };
+}
+
 export function learnMore(n = 10) {
   update(p => { const d = (p.days[today()] ??= { reviews: 0, fresh: 0, correct: 0 }); d.bonus = (d.bonus ?? 0) + n; });
 }

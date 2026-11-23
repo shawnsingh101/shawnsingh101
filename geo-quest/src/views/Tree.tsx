@@ -10,6 +10,8 @@ import type { Dataset } from '../types';
 import { COLLECTION_SUBJECTS } from '../collections';
 import { GeoTime } from '../components/GeoTime';
 import { SUBJECTS, isGeography } from '../subjects';
+import { Search } from '../components/Search';
+import type { CardRef } from '../cards';
 
 function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; node: string; onClose: () => void; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void }) {
   const p = useProgress();
@@ -54,7 +56,7 @@ const secKey = (sec: string) => 'sec-' + sec.replace(/\W/g, '');
 
 const SUBJECT_KEY = 'geoquest:subject';
 
-export function Tree({ ds, startQuiz, startStudy, goDashboard }: { ds: Dataset; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void; goDashboard?: () => void }) {
+export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { ds: Dataset; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void; startCards: (cards: CardRef[]) => void; goDashboard?: () => void }) {
   const p = useProgress();
   const [sel, setSel] = useState<string | null>(null);
   // Library → subject: which subject's tree is open (remembered per device; none = the Library itself).
@@ -194,6 +196,7 @@ export function Tree({ ds, startQuiz, startStudy, goDashboard }: { ds: Dataset; 
     <div className="tree library">
       <h1>Library</h1>
       <p className="muted">Everything you're learning, by subject. Reviews from all of them come together on <b>Today</b>.</p>
+      <Search ds={ds} startCards={startCards} startQuiz={startQuiz} />
       <div className="subject-cards">
         {SUBJECTS.map(sub => {
           const st = statsOf(sub.sections());
