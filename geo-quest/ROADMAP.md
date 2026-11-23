@@ -25,6 +25,13 @@ Any idea ("I'd like to learn about Thanksgiving") goes through the same steps:
 3. **Build** following GUIDELINES.md, including its release steps (version, changelog, README, tests, pull request).
 4. **Done**: it moves to the Done list with its version. A rule learned while building it goes into GUIDELINES.md.
 
+## In progress
+
+**Classical music, Anki-guided** (Classical Music Themes, Parts I–II: 972 pieces). Essential (~170 themes): 39 works,
+63 clips so far; next: free recordings for the rest (Hallelujah Chorus, Bach's cello prelude, Swan Lake, the Nutcracker
+…), from Musopen and Commons only. Then More (~340) and Deep cuts (~540). About a dozen pieces are still under
+copyright (Copland, Prokofiev, Barber, Orff, Khachaturian, Shostakovich) and can't be included.
+
 ## Queue
 
 | # | What | Kind of work | Notes |
@@ -47,6 +54,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 
 | Version | What |
 | --- | --- |
+| 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
 | 1.27 | Earth history: a picture of the life of each time |
 | 1.26 | The answer's pronunciation everywhere; Empire of AI and the Artificial intelligence subject |
 | 1.25 | Jazz musicians by scene (no audio yet); classical clips at the famous moment, more pieces, Start here |

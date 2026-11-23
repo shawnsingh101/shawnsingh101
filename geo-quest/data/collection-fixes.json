@@ -167,9 +167,11 @@
    {
     "name": "금동미륵보살반가사유상",
     "lang": "Korean",
-    "code": "ko"
+    "code": "ko",
+    "roman": "Geumdong Mireuk Bosal Bangasayusang"
    }
-  ]
+  ],
+  "image": "Gilt-bronze Maitreya in Meditation (National Treasure No. 83) 금동미륵보살반가사유상 (국보 제83호) 01.jpg"
  },
  "Q509806": {
   "name": "Washington Crossing the Delaware",
@@ -1675,5 +1677,37 @@
     "keyboards"
    ]
   }
+ },
+ "Q3178652": {
+  "name": "Heroic Polonaise",
+  "nameThe": "the Heroic Polonaise"
+ },
+ "Q3087780": {
+  "name": "Polonaises, Op. 40"
+ },
+ "Q147265": {
+  "name": "Revolutionary Étude",
+  "nameThe": "the Revolutionary Étude"
+ },
+ "Q147031": {
+  "name": "Étude Op. 10, No. 3 (\"Tristesse\")"
+ },
+ "Q246589": {
+  "name": "Symphony No. 6 (\"Pathétique\")",
+  "nameThe": "Tchaikovsky's Pathétique Symphony"
+ },
+ "Q1044709": {
+  "name": "Vltava (The Moldau)",
+  "nameThe": "Vltava (The Moldau)"
+ },
+ "Q946777": {
+  "name": "The Hebrides (Fingal's Cave)",
+  "nameThe": "The Hebrides overture"
+ },
+ "Q201873": {
+  "nameThe": "The Marriage of Figaro"
+ },
+ "Q284448": {
+  "nameThe": "Chopin's Piano Sonata No. 2"
  }
 }

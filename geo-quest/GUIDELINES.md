@@ -10,7 +10,9 @@ feature consistent. When adding anything, check it against this page. When a new
    - Countries, capitals, cities, regions, rivers, lakes, ranges, territories, sites, peaks, artworks: from Wikidata.
    - Note decks: a `native: الكعبة (Arabic)` line under the heading.
    - Use the language of where the thing *comes from*, not where it is now (the Mona Lisa is *La Gioconda*, not French).
-   - **The speaker goes beside the green answer and says that answer** in its own language: the person a card asks
+   - **The speaker says the answer in its own language and sits by the text it says**: beside the green answer when
+     the name is written the same way (Leonardo da Vinci, said in Italian), else beside the own-language name shown
+     under it (*La Gioconda*). It covers the person a card asks
      for (Brunelleschi in Italian, 葛飾北斎, Фёдор Достоевский), the title (*La Gioconda*), the city (*Milano*), the term
      (*Bauhaus*). Spelled the same as in English: no extra text, just the speaker. A person's name written our way is
      read as the card shows it (not their full birth name). Not for concepts, dates or English names.
@@ -62,6 +64,8 @@ feature consistent. When adding anything, check it against this page. When a new
 
 - **The thing itself is shown whole, never cropped**: artworks (on a dark "gallery wall"), banknotes, plants, cocktails,
   road signs, any single photo. A place's gallery of photos keeps the wide strip, which suits landscapes.
+- **A picture is always of the card's own subject.** No picture of its own (a work still under copyright): no picture.
+  Never borrow from the Wikipedia article's gallery for a single thing: those are other works.
 - **Tap any picture to see it full screen.**
 - **No scrolling to see a card.** On a laptop a card without a map shows its picture framed beside it (up to ~400 px
   wide), the two centered together; on a phone the picture stays above the text, at most a third of the screen tall.

@@ -340,12 +340,13 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
             {f.answerFlag
               ? (revealed ? <span className="fill"><Flag file={c.flag ?? null} name={c.name} className="answer-flag" eager /></span> : <span className="blank">{f.blank}</span>)
               : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}>{f.answer}</span> : <span className="blank">{f.blank}</span>)}
-            {/* The green answer, said in its own language (a name written our way is read out as written, in that voice). */}
-            {revealed && say && <Say text={sayText!} code={say.code} />}
+            {/* The speaker sits by the text it says: beside the green answer when that's how the name is written in its own
+                language too (Leonardo da Vinci, said in Italian); otherwise beside the own-language name under it (La Gioconda). */}
+            {revealed && say && fold(sayText!) === fold(f.answer) && <Say text={sayText!} code={say.code} />}
             {f.hidePostUntilReveal && !revealed ? '.' : f.post}
           </p>}
           {/* Art, books, music, people: the answer's own-language name, only when it's written differently (Достоевский, 葛飾北斎). */}
-          {revealed && c.layer === 'art' && say && fold(sayText!) !== fold(f.answer) && <div className="local"><span className="native" title={say.lang}><bdi>{say.name}</bdi>{(say.roman ?? (c.zh && say.name === c.zh.han ? c.zh.pinyin : null)) && <span className="py">{say.roman ?? c.zh!.pinyin}</span>}</span></div>}
+          {revealed && c.layer === 'art' && say && fold(sayText!) !== fold(f.answer) && <div className="local"><span className="native" title={say.lang}><bdi>{say.name}</bdi>{(say.roman ?? (c.zh && say.name === c.zh.han ? c.zh.pinyin : null)) && <span className="py">{say.roman ?? c.zh!.pinyin}</span>}<Say text={sayText!} code={say.code} /></span></div>}
           {revealed && c.layer !== 'art' && !(item.ref.kind === 'note' && say && !c.species) && (!/^(currency|senator|note)/.test(item.ref.kind) || (item.ref.kind === 'note' && (!!c.native?.length || !!c.species))) && (
             <div className="local">
               {c.species && <i className="species" title="Scientific name">{c.species}</i>}
