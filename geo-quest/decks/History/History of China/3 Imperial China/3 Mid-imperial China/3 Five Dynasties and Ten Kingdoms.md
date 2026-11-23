@@ -4,7 +4,7 @@ title: Five Dynasties and Ten Kingdoms
 Chapters follow Wikipedia's History of China article.
 
 ## Five Dynasties and Ten Kingdoms
-- The Five Dynasties and Ten Kingdoms lasted from {{907|when?}} to {{960|when?}}.
+- The Five Dynasties and Ten Kingdoms lasted from {{c1::907|when?}} to {{c1::960|when?}}.
 - Five short dynasties followed one another in the {{north|where?}}, while ten kingdoms ruled the south.
 
 ## Which period?

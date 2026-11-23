@@ -4,16 +4,15 @@ title: Sui dynasty
 Chapters follow Wikipedia's History of China article.
 
 ## Sui dynasty
-![The Grand Canal](commons:大運河.png)
-- The Sui dynasty ruled from {{581|when?}} to {{618|when?}}.
-- The Sui reunited China in {{589|when?}}, after almost 300 years of division.
+- The Sui dynasty ruled from {{c1::581|when?}} to {{c1::618|when?}}.
 - The Sui built the {{Grand Canal|what?}} linking the Yellow River and the Yangtze.
 ![The Grand Canal](commons:大運河.png)
+native: 大运河 Dà Yùnhé (Chinese)
 - The Sui began the {{imperial examinations|what?}} for choosing officials.
+native: 科举 kējǔ (Chinese)
 
 ## Which dynasty?
-![The Grand Canal](commons:大運河.png)
-- The {{Sui dynasty|which dynasty?}} was the short dynasty that reunited China and built the Grand Canal.
+- The {{Sui dynasty|which dynasty?}} reunited China in 589, after almost 300 years of division, and built the Grand Canal.
 native: 隋朝 Suí Cháo (Chinese)
 
 ## In order

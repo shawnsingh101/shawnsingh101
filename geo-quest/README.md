@@ -33,6 +33,16 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.16.1: a picture per card, people's names, fewer date answers
+
+- China history decks rebuilt card by card: each card has its own picture of its own subject (65 in all: Liu Bang,
+  Confucius, Sun Tzu, Qin Shi Huang, Cai Lun, Kublai Khan, Zheng He, the Great Wall, Hangzhou, Song paper money…), and
+  names in the answer (people, places, things) carry their Chinese name with pinyin: 刘邦 *Liú Bāng*, 长安 *Cháng'ān*.
+  A dynasty's span is one card (start and end together); its map sits on the "which dynasty?" card.
+- History cards ask for the event, person or place, with the year as context ("In 1917 the United States entered
+  {{World War I}}"); landmark dates stay (July 4, 1776; 1787; the Civil War's span; the PRC in 1949).
+- Guidelines: people get their portrait and their own name; every card its own picture; dates are rarely the answer.
+
 ## v1.16: one fact per card, pictures, time-scale cards
 
 - **Time-scale cards** (`[strata: Mesozoic]`): the eon and era as coloured blocks, the periods as blank blocks
