@@ -895,3 +895,7 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .movement-strip li em { margin-left: auto; font-size: .72rem; color: var(--accent); font-style: normal; text-transform: uppercase; letter-spacing: .04em; }
 .movement-strip li button { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); flex: none; }
 .movement-strip li.on button { background: var(--accent); color: var(--accent-ink, #fff); border-color: var(--accent); }
+.work-line { margin: 0 0 .35rem; font-size: 1rem; }
+.clip-wrap { margin: .3rem 0 .8rem; }
+.clip-wrap .clip-player { margin: 0; }
+.clip-tools { display: flex; gap: .35rem; flex-wrap: wrap; margin-top: .4rem; }

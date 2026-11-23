@@ -24,6 +24,12 @@ A list with `kind: music`: each work is a `- Q…` line (its Wikidata id); under
 Commons: `♪ II. Adagio | File name.ogg` (empty label for a one-part piece: `♪ | File.ogg`; `@45` at the end starts 45
 seconds in). The sync adds the composer; the app plays the clips. Headings are the eras.
 
+## People
+
+A list with `kind: person`: one person per line (Wikipedia title), headings are the group they belong to (a jazz scene).
+The sync adds the portrait, life, birthplace (with its US state) and instruments. Cards: face, group, birthplace,
+instrument. Fix instruments and birthplaces in `data/collection-fixes.json` (`person`).
+
 ## A list file
 
 ```markdown
