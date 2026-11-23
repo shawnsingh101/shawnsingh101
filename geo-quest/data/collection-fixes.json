@@ -1,5 +1,5 @@
 {
- "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museumWiki (the museum's Wikipedia title), native (its name in its own language: [{name, lang, code}], [] for none), museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district. Buildings (kind: building lists) also take 'style' (P149, written to read after 'built in the … style'; null for none) and 'types' (what it is: the first is shown).",
+ "_readme": "Facts to fix by hand after the collections sync, by Wikidata id: any field of public/data/collections.json (name, nameThe, museumWiki (the museum's Wikipedia title), native (its name in its own language: [{name, lang, code}], [] for none), museum, city, country, countryName, lon, lat, artists, culture, year, image). Set museum and country to null when a work is in many places (prints, scattered groups): it then gets no 'where is it?' card. 'culture' is who made it when there's no named artist, written so it reads after 'made by the …'. 'plural': true when the name is plural (the Moai were…). _cities renames towns Wikidata gives as a district. Buildings (kind: building lists) also take 'style' (P149, written to read after 'built in the … style'; null for none) and 'types' (what it is: the first is shown). Books (kind: book) also take 'language' (the one it was first written in) and 'topics' (nonfiction shelves, overriding data/../src/tags.ts). Music (kind: music): 'composer' {id, name, image, born, died, country, countryName} replaces Wikidata's when it names an arranger or a completer.",
  "_cities": {
   "Saint-Germain-l'Auxerrois": "Paris",
   "Greater London": "London",
@@ -724,5 +724,304 @@
   ],
   "nameThe": "the Sydney Opera House",
   "style": "Expressionist"
+ },
+ "Q8272": {
+  "language": "Akkadian",
+  "artists": [],
+  "nameThe": "the Epic of Gilgamesh"
+ },
+ "Q8275": {
+  "nameThe": "the Iliad"
+ },
+ "Q35160": {
+  "nameThe": "the Odyssey",
+  "year": -725,
+  "native": [
+   {
+    "name": "Ὀδύσσεια",
+    "lang": "Greek",
+    "code": "el",
+    "roman": "Odýsseia"
+   }
+  ]
+ },
+ "Q8276": {
+  "nameThe": "the Mahabharata",
+  "native": [
+   {
+    "name": "महाभारतम्",
+    "lang": "Sanskrit",
+    "code": "sa",
+    "roman": "Mahābhāratam"
+   }
+  ]
+ },
+ "Q40185": {
+  "nameThe": "the Divine Comedy"
+ },
+ "Q8269": {
+  "nameThe": "The Tale of Genji",
+  "native": [
+   {
+    "name": "源氏物語",
+    "lang": "Japanese",
+    "code": "ja",
+    "roman": "Genji Monogatari"
+   }
+  ]
+ },
+ "Q480": {
+  "name": "Don Quixote"
+ },
+ "Q70784": {
+  "native": [
+   {
+    "name": "西游记",
+    "lang": "Chinese",
+    "code": "zh-hans"
+   }
+  ]
+ },
+ "Q8265": {
+  "year": 1791
+ },
+ "Q170583": {
+  "year": 1813
+ },
+ "Q174596": {
+  "year": 1851
+ },
+ "Q161531": {
+  "language": "Russian",
+  "native": [
+   {
+    "name": "Война и мир",
+    "lang": "Russian",
+    "code": "ru",
+    "roman": "Voyna i mir"
+   }
+  ]
+ },
+ "Q464928": {
+  "year": 1913
+ },
+ "Q6511": {
+  "year": 1922
+ },
+ "Q276015": {
+  "artists": [],
+  "culture": "followers of Confucius",
+  "nameThe": "the Analects",
+  "native": [
+   {
+    "name": "论语",
+    "lang": "Chinese",
+    "code": "zh-hans"
+   }
+  ]
+ },
+ "Q134425": {
+  "nameThe": "the Tao Te Ching",
+  "native": [
+   {
+    "name": "道德经",
+    "lang": "Chinese",
+    "code": "zh-hans"
+   }
+  ]
+ },
+ "Q8251": {
+  "nameThe": "The Art of War"
+ },
+ "Q123397": {
+  "nameThe": "the Republic",
+  "language": "Ancient Greek",
+  "native": [
+   {
+    "name": "Πολιτεία",
+    "lang": "Greek",
+    "code": "el",
+    "roman": "Politeía"
+   }
+  ]
+ },
+ "Q474537": {
+  "nameThe": "the Nicomachean Ethics"
+ },
+ "Q1152283": {
+  "year": 180,
+  "native": [
+   {
+    "name": "Τὰ εἰς ἑαυτόν",
+    "lang": "Greek",
+    "code": "el",
+    "roman": "Ta eis heautón"
+   }
+  ]
+ },
+ "Q784882": {
+  "year": 1835
+ },
+ "Q12411055": {
+  "name": "Sapiens",
+  "native": [
+   {
+    "name": "קיצור תולדות האנושות",
+    "lang": "Hebrew",
+    "code": "he"
+   }
+  ]
+ },
+ "Q625764": {
+  "artists": [
+   "Salman Rushdie"
+  ]
+ },
+ "Q1074987": {
+  "nameThe": "the Zhuangzi",
+  "native": [
+   {
+    "name": "庄子",
+    "lang": "Chinese",
+    "code": "zh-hans"
+   }
+  ]
+ },
+ "Q624852": {
+  "name": "Essays",
+  "nameThe": "Montaigne's Essays",
+  "native": [
+   {
+    "name": "Essais",
+    "lang": "French",
+    "code": "fr"
+   }
+  ]
+ },
+ "Q862816": {
+  "name": "Ethics",
+  "nameThe": "Spinoza's Ethics",
+  "language": "Latin",
+  "native": [
+   {
+    "name": "Ethica, ordine geometrico demonstrata",
+    "lang": "Latin",
+    "code": "la"
+   }
+  ]
+ },
+ "Q29478": {
+  "name": "Faust",
+  "nameThe": "Goethe's Faust"
+ },
+ "Q2397469": {
+  "name": "The Black Swan"
+ },
+ "Q18386449": {
+  "name": "Superintelligence"
+ },
+ "Q935151": {
+  "composer": {
+   "id": "Q1339",
+   "name": "Johann Sebastian Bach",
+   "image": "Johann Sebastian Bach.png",
+   "born": 1685,
+   "died": 1750,
+   "country": "Q183",
+   "countryName": "Germany"
+  },
+  "artists": [
+   "Johann Sebastian Bach"
+  ],
+  "year": 1730
+ },
+ "Q207875": {
+  "composer": {
+   "id": "Q254",
+   "name": "Wolfgang Amadeus Mozart",
+   "image": "Wolfgang-amadeus-mozart 1.jpg",
+   "born": 1756,
+   "died": 1791,
+   "country": "Q40",
+   "countryName": "Austria"
+  },
+  "artists": [
+   "Wolfgang Amadeus Mozart"
+  ],
+  "nameThe": "Mozart's Requiem"
+ },
+ "Q3040118": {
+  "composer": {
+   "id": "Q41309",
+   "name": "Franz Liszt",
+   "image": "FLisztFXD.jpg",
+   "born": 1811,
+   "died": 1886,
+   "country": "Q28",
+   "countryName": "Hungary"
+  }
+ },
+ "Q12008": {
+  "name": "Moonlight Sonata",
+  "nameThe": "the Moonlight Sonata"
+ },
+ "Q1148572": {
+  "name": "Raindrop Prelude",
+  "nameThe": "the Raindrop Prelude"
+ },
+ "Q1065126": {
+  "name": "Hungarian Dance No. 5"
+ },
+ "Q1557135": {
+  "name": "Brahms's Lullaby",
+  "native": [
+   {
+    "name": "Wiegenlied",
+    "lang": "German",
+    "code": "de"
+   }
+  ]
+ },
+ "Q689519": {
+  "name": "Canon in D",
+  "nameThe": "Pachelbel's Canon"
+ },
+ "Q12016": {
+  "nameThe": "The Four Seasons"
+ },
+ "Q208224": {
+  "nameThe": "the Brandenburg Concertos"
+ },
+ "Q188709": {
+  "name": "Symphony No. 5",
+  "nameThe": "Beethoven's Fifth Symphony"
+ },
+ "Q11989": {
+  "name": "Symphony No. 9",
+  "nameThe": "Beethoven's Ninth Symphony"
+ },
+ "Q11985": {
+  "name": "Symphony No. 9 \"From the New World\"",
+  "nameThe": "the \"New World\" Symphony"
+ },
+ "Q14912776": {
+  "name": "Peer Gynt",
+  "nameThe": "Peer Gynt"
+ },
+ "Q303508": {
+  "nameThe": "The Planets"
+ },
+ "Q5064": {
+  "nameThe": "The Magic Flute",
+  "native": [
+   {
+    "name": "Die Zauberflöte",
+    "lang": "German",
+    "code": "de"
+   }
+  ]
+ },
+ "Q185968": {
+  "nameThe": "Carmen"
  }
 }

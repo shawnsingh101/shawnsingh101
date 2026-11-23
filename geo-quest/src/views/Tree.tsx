@@ -102,13 +102,13 @@ export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { d
 
   /** A deck with one skill (every note deck and collection): one row, not a box with a single button inside. */
   const deckRow = (g: (typeof GROUPS)[number], sec: string, from?: string) => {
-    const id = nodeId(g.id, g.topics[0].id), st = nodeStats(ds, p, id), active = p.active.includes(id);
+    const id = nodeId(g.id, g.topics[0].id), st = nodeStats(ds, p, id), active = p.active.includes(id), locked = !isUnlocked(ds, p, id);
     const elsewhere = from ?? (g.section !== sec ? sectionChain(g.section)[1] ?? g.section : null);
     return (
-      <button key={g.id} className={'deck-row' + (active ? ' active' : '')} onClick={() => setSel(id)}>
+      <button key={g.id} className={'deck-row' + (active ? ' active' : '') + (locked ? ' locked' : '')} onClick={() => setSel(id)} title={locked ? 'Unlocks once you know half of the deck before it' : undefined}>
         <span className="ring-wrap">
           <svg viewBox="0 0 36 36" className="ring"><circle cx="18" cy="18" r="15" className="track" /><circle cx="18" cy="18" r="15" className="val" style={{ strokeDasharray: `${(st.total ? st.known / st.total : 0) * 94.2} 94.2` }} /></svg>
-          <Icon name={g.topics[0].icon} size={15} />
+          <Icon name={locked ? 'lock' : g.topics[0].icon} size={15} />
         </span>
         <span className="grow"><b>{g.name}</b>{elsewhere && <small className="muted from">{elsewhere}</small>}</span>
         <span className="skill-meta">

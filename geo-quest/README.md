@@ -33,6 +33,43 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.24: Music
+
+- New subject **Music** (`collections/Music/1 Essential classical.md`, `kind: music`): 28 works, 47 clips, in four eras
+  (Baroque, Classical, Romantic, Modern). A work is a Wikidata id; under it, one line per recording:
+  `♪ II. Adagio | File name on Commons.ogg` (add `@45` to start 45 seconds in). Each clip is its own card subject.
+- Cards: the clip plays (30 seconds, by itself, tap to replay or stop) → **who composed it**, **which piece**, and, for
+  works with several recorded parts, **which part** (`musicComposer`, `musicWork`, `musicPart`). The answer shows the
+  composer's portrait, flag (the country of their birthplace today), life and era, and **every part of the work** with
+  play buttons, the current one marked (`src/components/Music.tsx`).
+- Recordings: free ones on Wikimedia Commons only (Musopen, the US Marine Band, and others). Played from Wikimedia's MP3
+  copy first, since most originals are Ogg and iPhones can't play Ogg, then the original; a recording that won't load
+  says so. Addresses come from the MD5 of the file name (`src/md5.ts`). Background music pauses while a clip plays.
+- The sync takes the composer (P86) and their portrait, dates and birthplace's country; fixes for arrangers and
+  completers listed as composers (Air on the G String is Bach's, the Requiem Mozart's), Liszt as Hungarian, common titles.
+- Music › By composer: one deck per composer (made from the facts).
+- Not yet: more of Beethoven's 9th and the other three Seasons (no free recordings linked on Wikidata; to add from
+  Commons when it can be searched); a check that every file loads (Wikimedia was rate-limiting this session: 9 of 11
+  clips tried played, the rest were refused by the rate limit, not missing).
+
+## v1.23: Books
+
+- New subject **Books** (`collections/Books/`, `kind: book`): *Essential books* (52) and *More books* (38, `depth: deep`:
+  unlocks once half of the essentials are known; the first use of core/deep). Each list has `## Fiction` and
+  `## Nonfiction`. The sync takes the author (P50), the first publication date (P577), the original language (P407, and
+  the title in it: *Divina Commedia*, *Война и мир*, 道德经 *Dàodéjīng*), and the main subjects (P921) and genres (P136).
+- Cards: picture → title (title pages and manuscripts; modern covers aren't free, so many books have none), **who wrote
+  it**, **which language** it was first written in (new kind `bookLang`; not asked for English).
+- **Shelves made from tags** (`src/tags.ts`, the shared vocabulary): fiction by literature (Books › Fiction by language ›
+  Italian literature…; language variants merged, so Homeric and Koine Greek are Ancient Greek), nonfiction by topic
+  (Books › Nonfiction by topic › Philosophy, Politics, Economics, Science, Psychology, History, Technology & AI; a book
+  sits on every shelf its subjects match). A topic that is also a subject shows there too: Philosophy › *Philosophy:
+  reading list*. One book, one set of progress, on every shelf.
+- Fixes: wrong languages (War and Peace isn't French), dates, missing authors, Goethe's *Faust* (the list had the legend).
+  The sync now writes Wikipedia links the way Wikidata stores them (parentheses and commas unencoded), so titles like
+  *Ulysses (novel)* resolve without the Wikipedia API. Books never get a "Where to see it" place.
+- Locked decks show a lock in the Library.
+
 ## v1.22: Architecture
 
 - New subject **Architecture**:

@@ -18,6 +18,12 @@ A list with `kind: building` in its front matter is buildings: the sync takes th
 architectural style (P149), and the building's own town instead of a museum. Cards: the picture, who designed it,
 where it stands, which style.
 
+## Music
+
+A list with `kind: music`: each work is a `- Q…` line (its Wikidata id); under it, one line per recording on Wikimedia
+Commons: `♪ II. Adagio | File name.ogg` (empty label for a one-part piece: `♪ | File.ogg`; `@45` at the end starts 45
+seconds in). The sync adds the composer; the app plays the clips. Headings are the eras.
+
 ## A list file
 
 ```markdown

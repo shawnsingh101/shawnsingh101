@@ -1,3 +1,10 @@
+/** One recording of a piece (or of one movement of it), from a music list's "♪ label | file" lines. */
+export interface MusicClip {
+  work: string; workId: string; label: string | null; file: string; start: number;
+  era: string | null; composer: Composer;
+  siblings: { id: string; label: string | null; file: string; start: number }[]; // every clip of the same work, in order
+}
+export interface Composer { id: string; name: string; image: string | null; born: number | null; died: number | null; country: string | null; countryName: string | null }
 export interface NativeName { name: string; lang: string; code?: string; roman?: string } // roman: romaji / pinyin / transliteration
 /** Pronunciation recordings by language code → [mp3, original] */
 export type Audio = Record<string, string[]>;
@@ -69,6 +76,8 @@ export interface Place {
   highestShared?: boolean; // another country shares the same highest point (Everest: Nepal & China)
   manyPlaces?: boolean;    // a leader who holds the same office in several countries
   artists?: string[];      // artworks: who made it… (buildings: the architect)
+  music?: MusicClip;        // a clip from a `kind: music` collection (one card set per clip)
+  book?: boolean; fiction?: boolean; language?: string | null; shelves?: string[]; // books: first written in; nonfiction topics
   building?: boolean;      // from a `kind: building` collection: it stands somewhere (no museum), was designed, has a style
   style?: string | null;   // a building's architectural style (Wikidata P149): Gothic, Beaux-Arts…
   qid?: string;            // the Wikidata id, when the id had to differ (a collection entry that is also a World Heritage site)
