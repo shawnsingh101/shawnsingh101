@@ -44,6 +44,20 @@ A line before the first heading describes the deck.
 
 A card is skipped when Wikidata doesn't know the answer (no artist for the Terracotta Army).
 
+## How Art is organized
+
+- **Famous works around the world** (`Art/Famous works around the world.md`): the starter list, and where a new work
+  usually goes first.
+- **By period** (`Art/By period/…`): the chapters of Wikipedia's *History of art* (Antiquity › Egypt, Asian › Japanese,
+  European › Renaissance, Western art after 1770 › Early 20th century…), one list per chapter, `## headings` for
+  movements. A work can be in several lists; it keeps one set of progress. Numbers in front of folder and file names
+  only set the order.
+- **Where to see it** is made by the app from the facts: Art › Where to see it › continent › country › one deck per
+  museum (or site). Add a work anywhere and it appears under its museum by itself.
+
+To add works "from the Rijksmuseum" or "from Japan": they go in the starter list (or a new list), get their facts from
+the sync, land under Where to see it automatically, and get filed into their period list.
+
 ## Growing it
 
 Start broad, then split: when a heading gets long, move it to its own file in a sub-folder

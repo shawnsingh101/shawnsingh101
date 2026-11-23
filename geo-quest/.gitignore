@@ -1,2 +1,4 @@
 node_modules
 dist
+tests/.audit.cjs
+tests/.deck-pics.json

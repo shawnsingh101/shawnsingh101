@@ -33,6 +33,27 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.17: labels, Art organized, Information Systems, bug sweep
+
+- **Map names in the right place.** A label is placed at the place's real middle, projected (not the middle of the
+  drawn shape, which split at the map's edge put Russia over Alaska and Bangladesh in the Gulf of Mexico); when that
+  point falls outside the place (Vietnam, Israel), at the point deepest inside it (pole of inaccessibility, bounded so
+  it never slows the map). Labels are centred on their point; places cut by the map's edge aren't labelled.
+- **Names for the deck at hand.** The names button labels US states on US decks (US rivers, Interstates; state lines
+  drawn), countries everywhere else, never both.
+- **Art, organized**: *By period* following Wikipedia's History of art (Antiquity › Egypt, Asian › Japanese, European ›
+  Renaissance, Western art after 1770 › Early 20th century…; works can be in several lists) and *Where to see it*,
+  built from the facts: continent › country › museum. New works file themselves under their museum.
+- **Computer science › Information systems**: OpenStax *Foundations of Information Systems*, a deck per chapter (12),
+  one card each, with the book's figures.
+- **Sections can't collide**: a deck or collection folder whose name already belongs elsewhere gets its own name
+  (an art folder "Americas" had pulled Geography's Americas under Art).
+- **Bug sweep**, now part of the project: `npm run audit` (every deck: empty answers, leftover markup, front/back
+  cards, headings that give the answer away, missing "also in" decks, unknown languages) and `npm run sweep` (browser:
+  every tab and subject, 60+ quizzes on laptop and phone, ~5,000 checks that each map label sits inside its own
+  shape, Peek, Map). Also checked: all 2,233 Commons pictures and 19 OpenStax figures exist.
+- "1 work", "1 card" (not "1 works").
+
 ## v1.16.1: a picture per card, people's names, fewer date answers
 
 - China history decks rebuilt card by card: each card has its own picture of its own subject (65 in all: Liu Bang,

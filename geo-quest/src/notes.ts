@@ -1,7 +1,7 @@
 // Note decks: plain Markdown files in geo-quest/decks/, one deck per file. See decks/README.md for the format.
 // Each card becomes a small "item" (layer 'note') so it schedules, quizzes and shows progress like a place does.
 import type { Place } from './types';
-import { GROUPS, SECTIONS, SECTION_PARENT } from './cards';
+import { GROUPS, claimSection } from './cards';
 import { epochDeck, geotimeDeck } from './geotime';
 
 export interface NoteCard {
@@ -23,7 +23,7 @@ export interface NoteCard {
 export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; cards: { id: string; card: NoteCard }[] }
 
 // Language names a deck can use → codes for the device voice.
-const LANG_CODE: Record<string, string> = { arabic: 'ar', punjabi: 'pa', hebrew: 'he', italian: 'it', hindi: 'hi', greek: 'el', latin: 'it', sanskrit: 'hi', japanese: 'ja', chinese: 'zh', mandarin: 'zh', spanish: 'es', french: 'fr', german: 'de', persian: 'fa', portuguese: 'pt', russian: 'ru', korean: 'ko', turkish: 'tr', urdu: 'ur', tibetan: 'bo', thai: 'th', dutch: 'nl' };
+const LANG_CODE: Record<string, string> = { arabic: 'ar', punjabi: 'pa', hebrew: 'he', italian: 'it', hindi: 'hi', greek: 'el', latin: 'it', sanskrit: 'hi', japanese: 'ja', chinese: 'zh', mandarin: 'zh', spanish: 'es', french: 'fr', german: 'de', persian: 'fa', portuguese: 'pt', russian: 'ru', korean: 'ko', turkish: 'tr', urdu: 'ur', polish: 'pl', hungarian: 'hu', vietnamese: 'vi', swahili: 'sw', amharic: 'am', armenian: 'hy', georgian: 'ka', tibetan: 'bo', thai: 'th', dutch: 'nl' };
 
 /** Short, stable hash for card ids (FNV-1a, base 36). */
 function hash(s: string) { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); } return (h >>> 0).toString(36); }
@@ -161,8 +161,8 @@ export const NOTE_SUBJECTS = [...new Set(DECKS.map(d => d.subject))];
 export function registerNotes(): Place[] {
   const out: Place[] = [];
   for (const d of DECKS) {
-    const chain = [d.subject, ...d.path];
-    chain.forEach((sec, i) => { if (!SECTIONS.includes(sec)) SECTIONS.push(sec); if (i) SECTION_PARENT[sec] = chain[i - 1]; });
+    const chain: string[] = [];
+    for (const sec of [d.subject, ...d.path]) chain.push(claimSection(sec, chain.length ? chain[chain.length - 1] : null));
     const gid = 'n-' + d.id;
     if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined });
     for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path], native: card.native.length ? card.native : undefined, species: card.species } as unknown as Place);

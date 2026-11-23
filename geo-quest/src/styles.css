@@ -142,7 +142,7 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .pin circle { fill: var(--ink); stroke: var(--bg); stroke-width: 2; vector-effect: non-scaling-stroke; }
 .pin text, .maplabel { fill: var(--ink); font-weight: 650; paint-order: stroke; stroke: var(--bg); stroke-linejoin: round; pointer-events: none; text-anchor: start; }
 .maplabel { text-anchor: middle; }
-.ctxlabel { fill: var(--muted); font-weight: 600; letter-spacing: .02em; text-anchor: middle; paint-order: stroke; stroke: var(--bg); stroke-linejoin: round; pointer-events: none; opacity: .9; }
+.ctxlabel { dominant-baseline: central; fill: var(--muted); font-weight: 600; letter-spacing: .02em; text-anchor: middle; paint-order: stroke; stroke: var(--bg); stroke-linejoin: round; pointer-events: none; opacity: .9; }
 .map-zoom button.on { background: var(--ink); color: var(--bg); }
 .map-loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); }
 .map-zoom { position: absolute; right: .75rem; bottom: .75rem; display: flex; flex-direction: column; gap: .3rem; }

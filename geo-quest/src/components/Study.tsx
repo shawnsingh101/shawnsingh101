@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { face, groupOf, placesIn, GROUPS, KIND_LABEL, LAYER_NOUN, layerFor, type CardRef } from '../cards';
+import { face, groupOf, placesIn, GROUPS, KIND_LABEL, LAYER_NOUN, layerFor, sectionChain, type CardRef } from '../cards';
+const m0Layer = (c: { layer: string }) => c.layer;
 import { answer, buildQueue, getProgress, update, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
 import { sounds } from '../sound';
 import type { Dataset } from '../types';
@@ -218,6 +219,8 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
   // Intervals only mean something for cards in your schedule (a quiz on unseen cards doesn't schedule them).
   const showIntervals = !quiz || (getProgress().cards[item.ref.id]?.c.state ?? State.New) !== State.New;
   const showMap = f.map !== 'none';
+  // A US deck (US rivers, Interstates, anything under United States): its map shows state lines, and names states.
+  const inUS = m0Layer(c) === 'road' || sectionChain(group?.section ?? '').some(x => /United States/.test(x));
   const sidePic = !showMap && wide && !!f.picture && (s.pictures || !!f.promptPicture);
   const wrongName = tapResult && !tapResult.ok ? tapResult.hit.name : null;
   const extra = layerFor(c);
@@ -265,7 +268,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
         const placesHere = GROUPS.filter(g => g.section === group!.section && g.layer === group!.layer).flatMap(g => placesIn(ds, g.id)).filter((x, i, all) => all.findIndex(y => y.id === x.id) === i);
         const capitals = item.ref.kind.startsWith('capital');
         const peekLayer = m.layer === 'senate' ? null : layerFor(m);
-        const peekLayers = peekLayer === 'road' ? ['us', 'road'] : peekLayer === 'river' ? ['lake', 'river'] : peekLayer === 'peak' ? ['range', 'peak'] : peekLayer === 'sub' && ds.byId.get(m.parent ?? '')?.layer === 'us' ? ['us', 'sub'] : peekLayer ? [peekLayer] : [];
+        const peekLayers = peekLayer === 'road' ? ['us', 'road'] : peekLayer === 'river' ? (inUS ? ['us', 'lake', 'river'] : ['lake', 'river']) : peekLayer === 'peak' ? ['range', 'peak'] : peekLayer === 'sub' && ds.byId.get(m.parent ?? '')?.layer === 'us' ? ['us', 'sub'] : peekLayer ? [peekLayer] : [];
         const ids = placesHere.map(x => (x.layer === 'senate' ? x.place ?? x.state ?? x.id : x.id));
         const names = Object.fromEntries(placesHere.map(x => [x.layer === 'senate' ? x.place ?? x.state ?? x.id : x.id, x.layer === 'road' ? x.short ?? x.name : x.layer === 'senate' ? x.name : x.name]));
         return (
@@ -277,19 +280,19 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
             <WorldMap ds={ds} className="peek-map" recenter layers={peekLayers as never} focus={{ ids, key: 'peek' }} hide={id => !ids.includes(id)}
               tones={Object.fromEntries(ids.map(id => [id, 'answer' as const]))} labels={capitals ? {} : names}
               pins={capitals ? placesHere.filter(x => x.capitals[0]?.lon != null).map(x => ({ lon: x.capitals[0].lon!, lat: x.capitals[0].lat!, label: x.capitals[0].name })) : []}
-              outline={m.layer === 'sub' && m.parent ? [m.parent] : []} subFilter={m.layer === 'sub' ? (id => ds.byId.get(id)?.parent === m.parent) : undefined} contextLabels />
+              outline={m.layer === 'sub' && m.parent ? [m.parent] : []} subFilter={m.layer === 'sub' ? (id => ds.byId.get(id)?.parent === m.parent) : undefined} contextLabels={inUS ? 'states' : 'countries'} />
           </div>
         );
       })()}
 
       {showMap && (<div className="map-wrap">
-        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'road' ? ['us', 'road'] : extra === 'river' ? ['lake', 'river'] : extra === 'peak' ? ['range', 'peak'] : extra === 'us' ? ['us', 'lake'] : extra === 'sub' && ds.byId.get(c.parent ?? '')?.layer === 'us' ? ['us', 'sub'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
+        <WorldMap ds={ds} className="study-map" recenter layers={extra === 'road' ? ['us', 'road'] : extra === 'river' ? (inUS ? ['us', 'lake', 'river'] : ['lake', 'river']) : extra === 'peak' ? ['range', 'peak'] : extra === 'us' ? ['us', 'lake'] : extra === 'sub' && ds.byId.get(c.parent ?? '')?.layer === 'us' ? ['us', 'sub'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
           dim={id => group?.layer === m.layer && !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer}
           strong={['sub', 'us', 'cn'].includes(m.layer) ? (id => regionIds.includes(id) || wideIds.includes(id)) : undefined}
           outline={m.layer === 'sub' && m.parent ? [m.parent] : m.layer === 'us' ? ['Q30'] : m.layer === 'cn' ? ['Q148'] : []}
           subFilter={m.layer === 'sub' ? (id => ds.byId.get(id)?.parent === m.parent) : undefined} onTap={f.mode === 'tap' ? onTap : undefined}
           // Country & state names for bearings, offered only when they can't give the answer away (rivers, roads, peaks…).
-          contextLabels={['river', 'lake', 'road', 'range', 'peak', 'site', 'water', 'desert'].includes(m.layer)} />
+          contextLabels={!['river', 'lake', 'road', 'range', 'peak', 'site', 'water', 'desert'].includes(m.layer) ? false : inUS ? 'states' : 'countries'} />
           {(f.map === 'highlight' || revealed || tapResult) && (m.layer === 'country' || m.layer === 'terr') && (
             <Inset place={m} label={revealed || tapResult ? m.name : 'Close-up'} />
           )}

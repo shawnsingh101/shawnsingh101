@@ -1,14 +1,16 @@
 {
   "name": "geo-quest",
   "private": true,
-  "version": "1.16.1",
+  "version": "1.17.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "sync": "node scripts/sync-wikidata.mjs",
-    "sync:collections": "node scripts/sync-collections.mjs"
+    "sync:collections": "node scripts/sync-collections.mjs",
+    "audit": "esbuild tests/audit-decks.ts --bundle --platform=node --format=cjs --outfile=tests/.audit.cjs --log-level=error && node tests/.audit.cjs",
+    "sweep": "node tests/ui-sweep.cjs"
   },
   "dependencies": {
     "d3-ease": "^3.0.2",

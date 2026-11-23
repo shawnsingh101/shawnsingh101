@@ -3,7 +3,7 @@ title: Chapter 1: The Study of Life
 ---
 From OpenStax Biology 2e, chapter 1 (openstax.org, CC BY 4.0); the pictures are the book's own figures. More chapters get added over time; see Science/README.md for the outline.
 
-## The study of life
+## What biology is
 - Biology is the scientific study of {{life|what?}}.
 - The smallest unit that shows all the properties of life is the {{cell|what?}}.
 
