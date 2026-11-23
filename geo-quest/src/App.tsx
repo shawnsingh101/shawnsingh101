@@ -13,6 +13,7 @@ import { Tree } from './views/Tree';
 import { MapView } from './views/MapView';
 import { Atlas } from './views/Atlas';
 import { Dashboard } from './views/Dashboard';
+import { Me } from './views/Me';
 
 export function App() {
   const [ds, setDs] = useState<Dataset | null>(null);
@@ -82,6 +83,7 @@ export function App() {
         {tab === 'map' && <MapView ds={ds} />}
         {tab === 'atlas' && <Atlas ds={ds} />}
         {tab === 'dash' && <Dashboard />}
+        {tab === 'me' && <Me ds={ds} startStudy={startStudy} />}
       </main>
     </div>
   );

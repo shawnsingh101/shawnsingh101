@@ -1,4 +1,5 @@
 ---
+era: Medieval, Early modern
 title: Ming dynasty
 ---
 Chapters follow Wikipedia's History of China article.

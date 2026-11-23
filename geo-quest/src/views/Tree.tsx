@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { GROUPS, groupsShownIn, nodeId, parseNode, placesIn, slotOf, groupById, LAYER_NOUN, childSections, sectionAndDescendants, SECTION_PARENT } from '../cards';
+import { GROUPS, groupsShownIn, nodeId, parseNode, placesIn, slotOf, groupById, LAYER_NOUN, childSections, sectionAndDescendants, SECTION_PARENT, sectionChain } from '../cards';
+import { ERAS } from '../notes';
 import { buildQueue, isUnlocked, learnMore, nodeStats, update, useProgress } from '../srs';
 import { makeQuiz, type Scope } from '../quiz';
 import { sounds } from '../sound';
@@ -109,6 +110,11 @@ export function Tree({ ds, startQuiz, startStudy, goDashboard }: { ds: Dataset; 
     const allOn = base.length > 0 && base.every(n => p.active.includes(n));
     const kids = childSections(sec);
     const geo = subject?.id === 'geography';
+    // "Study all": every deck in this section and below it (all of History of China, all prehistory…), one session.
+    // Geography branches are huge, so there it covers the first skill of each group (the places, not capitals/flags).
+    const branch = all.map(g => nodeId(g.id, g.topics[0].id)).filter(n => isUnlocked(ds, p, n));
+    const studyAll = () => { update(x => { x.active = [...new Set([...x.active, ...branch])]; }); startStudy(branch); };
+    const showStudyAll = branch.length > 1 && (kids.length > 0 || !geo);
     // Geography sections start closed (there are many); note-deck sections start open (the set then lists closed ones).
     const isOpen = geo ? open.has(sec) : !open.has(sec);
     const bare = !geo && depth === 0; // a notes subject's own section: the page title already names it
@@ -124,19 +130,23 @@ export function Tree({ ds, startQuiz, startStudy, goDashboard }: { ds: Dataset; 
           <span className={'chev' + (isOpen ? ' up' : '')}>›</span>
         </button>}
         {(isOpen || bare) && <div className="section-body">
-          {groups.length > 0 && <div className="section-actions">
+          {(groups.length > 0 || showStudyAll) && <div className="section-actions">
+            {showStudyAll && <button className="btn small primary" onClick={studyAll}><Icon name="play" size={15} /> Study all {branch.length} decks</button>}
+            {groups.length > 0 && <>
             <button className="btn small" onClick={() => update(x => { x.active = allOn ? x.active.filter(a => !base.includes(a)) : [...new Set([...x.active, ...base])]; })}>
               {allOn ? 'Stop all' : `Learn all ${groups[0].topics[0].name.toLowerCase()}`}
             </button>
             <button className="btn small" onClick={() => startQuiz(makeQuiz(ds, (groups.length > 1 ? `sec:${sec}` : `grp:${groups[0].id}`) as Scope, [groups[0].topics[0].id], 25))}>
               <Icon name="target" size={15} /> Quiz
-            </button>
+            </button></>}
           </div>}
-          {groups[0]?.note && <p className="muted small">{groups[0].note}</p>}
+          {ERAS.some(e => sec.startsWith(e.section)) ? <p className="muted small">Every deck from this era ({ERAS.find(e => sec.startsWith(e.section))!.span}), wherever it happened. Each is also in its own country's history; progress is shared.</p>
+            : sec.startsWith('By era') ? <p className="muted small">The same decks again, by world era instead of by country.</p>
+            : groups[0]?.note && <p className="muted small">{groups[0].note}</p>}
           {groups.length > 0 && <div className="groups">
             {groups.map(g => (
               <div key={g.id} className="group">
-                <div className="group-head"><b>{g.name}</b><small>{countOf(placesIn(ds, g.id).length, g.nouns ?? LAYER_NOUN[g.layer])}</small></div>
+                <div className="group-head"><b>{g.name}{g.section !== sec && g.layer === 'note' && <span className="muted from">{sectionChain(g.section)[1] ?? g.section}</span>}</b><small>{countOf(placesIn(ds, g.id).length, g.nouns ?? LAYER_NOUN[g.layer])}</small></div>
                 <div className="skills">{g.topics.filter(t => nodeStats(ds, p, nodeId(g.id, t.id)).total > 0).map(t => skill(nodeId(g.id, t.id), t))}</div>
               </div>
             ))}

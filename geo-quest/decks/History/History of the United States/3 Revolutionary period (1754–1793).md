@@ -1,4 +1,5 @@
 ---
+era: Early modern
 title: Revolutionary period (1754–1793)
 ---
 Chapters follow Wikipedia's History of the United States article. Cards about a city or state also appear in its deck under By place.

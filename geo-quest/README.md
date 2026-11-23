@@ -33,6 +33,26 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.19: Study all, History by era
+
+- **Study all** on every section of the Library: activates every deck in the section *and the sections inside it*
+  and starts one session with them (all of History of China; all of Physical geography). Before, you could only start
+  the decks sitting directly in one section.
+- **Lenses: History › By era.** A deck says which world era it belongs to in its front matter (`era: Prehistory`, or two:
+  `era: Early modern, Modern`), from a fixed list in `src/notes.ts` (`ERAS`: prehistory, ancient, medieval, early modern,
+  modern, contemporary). The app then *also* lists it under History › By era › All prehistory, next to every other deck
+  of that era from any country, so "study all prehistory" is one tap. Nothing is copied: one deck, one set of progress,
+  shown in two places (`alsoInSections`), with where it's filed shown under its name. All 32 China and US history
+  decks are tagged; By place decks are not.
+
+## v1.18: Me (your progress)
+
+- New **Me** tab (`src/views/Me.tsx`): totals (cards known, started, memory, streak, cards in 30 days); a radar chart of
+  every subject; per subject two bars: **covered** (cards you know, of all there are) and **memory** (FSRS
+  retrievability of the cards you've started, i.e. the chance you'd recall them today); tap a subject for its parts
+  (Geography's continents and themes, a notes subject's sections); the **weakest decks** with a one-tap review; and a
+  26-week calendar of study days. Coverage on the chart uses a square-root scale so early progress shows.
+
 ## v1.17.1: Washington, D.C. museums
 
 - New list `collections/Art/More famous works.md` (works added a museum at a time): 6 from the **National Gallery of

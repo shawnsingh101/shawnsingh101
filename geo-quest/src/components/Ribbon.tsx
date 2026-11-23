@@ -5,8 +5,8 @@ import { VERSION } from '../views/Landing';
 import { QuestionTypes } from './QuestionTypes';
 import { SoundLab } from './SoundLab';
 
-export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas' | 'dash';
-const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Library', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['atlas', 'Atlas', 'book'], ['dash', 'Dashboard', 'chart']];
+export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas' | 'dash' | 'me';
+const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Library', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['atlas', 'Atlas', 'book'], ['dash', 'Dashboard', 'chart'], ['me', 'Me', 'person']];
 const TOGGLE_ICON: Record<'sound' | 'music' | 'gamify' | 'pictures' | 'locks', IconName> = { sound: 'sound', music: 'music', gamify: 'star', pictures: 'image', locks: 'lock' };
 
 export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTab: (t: Tab) => void; menu: boolean; setMenu: (v: boolean) => void; goHome: () => void }) {

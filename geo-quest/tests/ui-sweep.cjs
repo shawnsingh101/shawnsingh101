@@ -20,6 +20,8 @@ const SHOTS = process.env.SHOTS ?? '/tmp/';
       if (s === 'Dashboard') continue;
       await page.click('.tabs >> text=Library'); await page.waitForTimeout(200);
       await page.locator('.subject-card', { hasText: s }).first().click(); await page.waitForTimeout(300);
+      // Geography's sections start closed until you're learning something in them: open the first one.
+      if (!(await page.$('.skill'))) { await page.locator('.section-row').first().click().catch(() => {}); await page.waitForTimeout(300); }
       const skills = await page.$$eval('.skill', e => e.length);
       if (!skills) problems.push(`${name} Library "${s}": no skills shown`);
     }

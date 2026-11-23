@@ -1,4 +1,5 @@
 ---
+era: Modern
 title: Expansion and reform (1830–1848)
 ---
 Chapters follow Wikipedia's History of the United States article. Cards about a city or state also appear in its deck under By place.

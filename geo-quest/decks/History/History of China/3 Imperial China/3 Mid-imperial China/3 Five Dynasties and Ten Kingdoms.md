@@ -1,4 +1,5 @@
 ---
+era: Medieval
 title: Five Dynasties and Ten Kingdoms
 ---
 Chapters follow Wikipedia's History of China article.

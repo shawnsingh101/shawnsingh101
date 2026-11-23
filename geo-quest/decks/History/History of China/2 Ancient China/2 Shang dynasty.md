@@ -1,4 +1,5 @@
 ---
+era: Ancient
 title: Shang dynasty
 ---
 Chapters follow Wikipedia's History of China article.

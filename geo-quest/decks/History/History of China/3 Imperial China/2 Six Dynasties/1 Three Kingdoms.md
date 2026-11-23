@@ -1,4 +1,5 @@
 ---
+era: Ancient
 title: Three Kingdoms
 ---
 Chapters follow Wikipedia's History of China article.

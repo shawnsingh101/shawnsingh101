@@ -98,6 +98,10 @@ feature consistent. When adding anything, check it against this page. When a new
 - **Art**: the starter list, *By period* (Wikipedia's History of art chapters), *Where to see it* (made from the facts).
 - Something that belongs in two places is filed once and *also shown* in the other (`alsoInSections`, `alsoIn`), with one
   set of progress.
+- **Lenses, not copies.** A thing is filed once, in its natural place (History of China › Prehistory), and tagged with
+  facets (`era: Prehistory`); the app builds the cross-cutting views from the tags (History › By era › All prehistory).
+  Tag every history deck with its world era. New facets (theme, region, Books' genre) work the same way.
+- **Every section can be studied whole** (Study all), including everything nested in it.
 - **History can be studied by time or by place**: decks follow the period chapters of the source (Wikipedia's "History of
   …" article), and a card tagged `also in: Philadelphia` also shows in the place's deck (History › … › By place).
 - **Textbooks follow the book**: subject › unit › chapter, the deck named after the chapter, with the source credited.
@@ -106,6 +110,7 @@ feature consistent. When adding anything, check it against this page. When a new
 - Big sets start with the essentials and unlock the rest (the 20 longest rivers, then each continent's; the main
   Interstate corridors, then the others).
 - The **Library** tab always opens on the subject cards.
+- **Me** measures every subject the same two ways (covered, memory), so a new subject shows up there by itself.
 
 ## 5. Content files (how to add things)
 

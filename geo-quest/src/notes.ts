@@ -20,7 +20,7 @@ export interface NoteCard {
   native: { name: string; lang: string; code?: string; roman?: string }[]; // a "native: الكعبة (Arabic)" line: the name in its own language
   fp: string;                                  // fingerprint: changes when the card's text changes
 }
-export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; cards: { id: string; card: NoteCard }[] }
+export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; eras: string[]; cards: { id: string; card: NoteCard }[] }
 
 // Language names a deck can use → codes for the device voice.
 const LANG_CODE: Record<string, string> = { arabic: 'ar', punjabi: 'pa', hebrew: 'he', italian: 'it', hindi: 'hi', greek: 'el', latin: 'it', sanskrit: 'hi', japanese: 'ja', chinese: 'zh', mandarin: 'zh', spanish: 'es', french: 'fr', german: 'de', persian: 'fa', portuguese: 'pt', russian: 'ru', korean: 'ko', turkish: 'tr', urdu: 'ur', polish: 'pl', hungarian: 'hu', vietnamese: 'vi', swahili: 'sw', amharic: 'am', armenian: 'hy', georgian: 'ka', tibetan: 'bo', thai: 'th', dutch: 'nl' };
@@ -40,6 +40,8 @@ export function parseDeck(file: string, text: string): Deck {
   const path = meta.path ? meta.path.split('/').map(s => s.trim()).filter(Boolean) : parts.slice(1, -1);
   const title = meta.title || parts[parts.length - 1].replace(/[-_]/g, ' ');
   const id = slug([subject, ...path, title].join(' '));
+  // era: Prehistory, Ancient… (front matter): files the deck under its subject's "By era" lens as well.
+  const eras = (meta.era ?? '').split(',').map(s => s.trim()).filter(Boolean);
   const cards: Deck['cards'] = [];
   // Lines like related: / native: / species: apply to the cards under *this* heading, wherever they sit in it. The same
   // heading can appear twice ("Which spirit?"), so cards remember which occurrence they're under.
@@ -144,7 +146,7 @@ export function parseDeck(file: string, text: string): Deck {
       add({ pre: plainAll(t), answer: answers.join(', '), post: '', front: false, parts, ...(picFirst ? { pictureFirst: true } : {}) }, keyText + '#c' + g);
     });
   }
-  return { file, id, title, subject, path, intro: intro.join(' ') || null, cards };
+  return { file, id, title, subject, path, intro: intro.join(' ') || null, eras, cards };
 }
 
 // Every deck file under geo-quest/decks (bundled at build time; README files are documentation, not decks).
@@ -157,6 +159,16 @@ export const DECKS: Deck[] = [...Object.entries(files).filter(([f]) => !/README\
   .sort((a, b) => a.file.replace(/^.*decks\//, '').localeCompare(b.file.replace(/^.*decks\//, ''), 'en', { numeric: true })); // folder & file order (numbers first)
 export const NOTE_SUBJECTS = [...new Set(DECKS.map(d => d.subject))];
 
+/** The world eras a deck can be tagged with (`era:`), oldest first. Rough world-history spans; a deck can name two. */
+export const ERAS = [
+  { key: 'prehistory', section: 'All prehistory', span: 'before writing' },
+  { key: 'ancient', section: 'All ancient history', span: 'to about AD 500' },
+  { key: 'medieval', section: 'All medieval history', span: 'about 500–1500' },
+  { key: 'early modern', section: 'All early modern history', span: 'about 1500–1800' },
+  { key: 'modern', section: 'All modern history', span: 'about 1800–1945' },
+  { key: 'contemporary', section: 'All contemporary history', span: '1945 to today' },
+];
+
 /** Register note decks as sections (subject › path…) and groups (one per deck), and return their cards as items. */
 export function registerNotes(): Place[] {
   const out: Place[] = [];
@@ -166,6 +178,14 @@ export function registerNotes(): Place[] {
     const gid = 'n-' + d.id;
     if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined });
     for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path], native: card.native.length ? card.native : undefined, species: card.species } as unknown as Place);
+  }
+  // Lenses: a deck tagged `era: Prehistory` is also listed under <subject> › By era › All prehistory, next to every
+  // other deck of that era from any country (China's Paleolithic, the Americas' first peoples…). Filed once, shown in
+  // both places, one set of progress; the eras are a fixed list, so the lens reads in time order.
+  for (const era of ERAS) for (const d of DECKS.filter(x => x.eras.some(e => e.toLowerCase() === era.key))) {
+    const g = GROUPS.find(x => x.id === 'n-' + d.id)!;
+    const sec = claimSection(era.section, claimSection('By era', d.subject));
+    if (!g.alsoInSections?.includes(sec)) g.alsoInSections = [...(g.alsoInSections ?? []), sec];
   }
   // Cards tagged "also in: <deck title>" are listed in that deck too (one set of progress).
   const byTitle = new Map(DECKS.map(d => [d.title.toLowerCase(), 'n-' + d.id]));

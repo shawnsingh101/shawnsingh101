@@ -1,4 +1,5 @@
 ---
+era: Modern
 title: Civil War and Reconstruction (1848–1877)
 ---
 Chapters follow Wikipedia's History of the United States article. Cards about a city or state also appear in its deck under By place.

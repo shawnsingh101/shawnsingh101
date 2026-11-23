@@ -1,4 +1,5 @@
 ---
+era: Medieval
 title: Tang dynasty
 ---
 Chapters follow Wikipedia's History of China article.
