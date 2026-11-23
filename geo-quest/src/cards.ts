@@ -341,7 +341,9 @@ export interface CardFace {
 
 /** Who made an artwork: its artist(s), else the culture ("the Olmec"). */
 export const makerOf = (c: Place) => (c.artists?.length ? c.artists.reduce((acc, x, i, a) => (!i ? x : acc + (i === a.length - 1 ? ' and ' : ', ') + x), '') : c.culture ? `the ${c.culture}` : null);
-const artPic = (c: Place) => ({ file: c.image, wiki: c.wiki, caption: c.name, single: !!c.image });
+// Only the work's own picture. With none (a portrait still under copyright), no picture at all: the Wikipedia article's
+// other images are *other* works (the Michelle Obama portrait's article shows a Klimt), never to be passed off as this one.
+const artPic = (c: Place) => (c.image ? { file: c.image, wiki: c.wiki, caption: c.name, single: true } : undefined);
 const artNote = (c: Place, withMaker: boolean) => [withMaker && makerOf(c) ? `By ${makerOf(c)}` : null, c.facts].filter(Boolean).join(' · ') || null;
 const fmtYear = (y: number | null | undefined) => (y == null ? null : y <= 0 ? `c. ${Math.abs(y) || 1} BC` : y < 1000 ? `c. AD ${y}` : `c. ${y}`); // as in collections.ts (which imports this file)
 /** A person's name: when it's written in our alphabet the voice reads the name as the card shows it (Wikidata's own-language
@@ -353,7 +355,7 @@ const plays = (xs: string[]) => (xs.length === 1 ? (/^(vocals|drums|keyboards)$/
 /** Scenes named by a place read as "the New Orleans scene"; styles as they are ("bebop"). */
 const sceneName = (s: string) => (/^(New Orleans|Chicago|Harlem|Kansas City|Swing-era New York)$/.test(s) ? `the ${s} scene` : s.charAt(0).toLowerCase() + s.slice(1));
 const personNote = (c: Place) => { const p = c.person!; return [p.born ? `${p.born}–${p.died ?? ''}` : null, bornIn(c) ? `born in ${bornIn(c)}` : null, p.instruments.join(', ') || null, p.scene].filter(Boolean).join(' · '); };
-const composerPic = (m: NonNullable<Place['music']>) => ({ file: m.composer.image, caption: m.composer.name, single: !!m.composer.image });
+const composerPic = (m: NonNullable<Place['music']>) => (m.composer.image ? { file: m.composer.image, caption: m.composer.name, single: true } : undefined);
 const life = (m: NonNullable<Place['music']>) => (m.composer.born ? `${m.composer.born}–${m.composer.died ?? ''}` : null);
 const musicNote = (c: Place) => { const m = c.music!; return [`${m.composer.name}${life(m) ? ` (${life(m)})` : ''}`, m.composer.countryName, m.era, fmtYear(c.year)].filter(Boolean).join(' · '); };
 /** "16th", "22nd and 24th" */

@@ -44,7 +44,8 @@ export function PlaceSheet({ ds, id: startId, onClose }: { ds: Dataset; id: stri
           {c.capitalNote && <p className="note"><Icon name="info" size={15} /> {c.capitalNote}</p>}
         </div>
       </div>
-      {p.settings.pictures && <Picture {...pic} />}
+      {/* An artwork, book or person: only its own picture, never the article's gallery (other works). */}
+      {p.settings.pictures && (c.layer !== 'art' || c.image) && <Picture {...pic} single={c.layer === 'art'} />}
       <ul className="card-levels">
         {kindsFor(c).map(k => { const l = level(p, cardId(c.id, k)); return <li key={k} className={'lv' + l}><span>{KIND_LABEL[k]}</span><small>{LEVEL[l]}</small></li>; })}
       </ul>

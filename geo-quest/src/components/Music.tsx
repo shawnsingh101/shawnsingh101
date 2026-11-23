@@ -15,6 +15,7 @@ const CLIP_SECONDS = 30;
  * Wikimedia makes of every audio file, then the original. Files live under the MD5 of their name.
  */
 export function audioUrls(file: string): string[] {
+  if (/^https?:\/\//.test(file)) return [file]; // a full address (the Internet Archive's free recordings): as it is
   const name = file.replace(/ /g, '_').replace(/^./, c => c.toUpperCase());
   const h = md5(name), dir = `${h[0]}/${h.slice(0, 2)}`, enc = encodeURIComponent(name);
   const original = `https://upload.wikimedia.org/wikipedia/commons/${dir}/${enc}`;

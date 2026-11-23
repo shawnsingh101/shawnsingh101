@@ -33,6 +33,24 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.28: classical clean-up, the right picture or none
+
+- **Pictures**: a work, book or person with no free picture of its own now shows none. Before, the card fell back to
+  the Wikipedia article's gallery, which shows *other* works (the Michelle Obama portrait's article has a Klimt). Same on
+  the place sheet. New rule in GUIDELINES.md. The Pensive Bodhisattva gets its photo (National Treasure No. 83) and its
+  Korean name, 금동미륵보살반가사유상.
+- **Speaker placement**: beside the green answer when the name is written the same in its own language (Leonardo da
+  Vinci), else beside the own-language name under it (*La Gioconda*, Достоевский).
+- **Classical, first pass of the Anki-guided rebuild** (Classical Music Themes, Parts I–II, used as the list of pieces and
+  themes; their audio isn't used). Removed 12 clips that sounded bad: old 78 rpm transfers (Hallelujah Chorus, Water
+  Music, Swan Lake ×2, Nutcracker ×2, Liebestraum) and stock-music arrangements on other instruments (the cello
+  prelude, Habanera, three Gymnopédies). Added studio recordings from **Musopen** (public domain) via the Internet
+  Archive: Chopin's Funeral March, Heroic and Military Polonaises, Revolutionary and Tristesse Études, and new
+  recordings of the Nocturne Op. 9 No. 2, Minute Waltz and Raindrop Prelude; all four Peer Gynt pieces; the Moldau, the
+  Hebrides, the Pathétique, the Marriage of Figaro overture. Clips can now be a full address (`♪ label | https://…`).
+- `scripts/find-recordings.py` (Commons) and `scripts/find-recordings-ia.py` (Internet Archive) find candidates; only
+  Musopen and Commons are trusted (archive.org licence labels are set by uploaders and often wrong).
+
 ## v1.27: Earth history pictures
 
 - Every eon, era, period and epoch has a picture of the life of its time (`pics` in `src/geotime.ts`, Commons; life
