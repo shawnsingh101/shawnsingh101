@@ -72,7 +72,8 @@
     {
      "name": "富士山",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Fujisan"
     }
    ],
    "admin1Ids": [
@@ -1879,7 +1880,8 @@
     {
      "name": "桜島",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Sakurajima"
     }
    ],
    "admin1Ids": [
@@ -2511,7 +2513,8 @@
     {
      "name": "雲仙岳",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Unzendake"
     }
    ],
    "admin1Ids": [

@@ -160,7 +160,8 @@
       {
        "name": "名古屋",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Nagoya"
       }
      ]
     }
@@ -172,7 +173,8 @@
     {
      "name": "愛知県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Aichi Ken"
     }
    ],
    "population": 7521192,
@@ -204,7 +206,8 @@
       {
        "name": "秋田",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Akita"
       }
      ]
     }
@@ -216,7 +219,8 @@
     {
      "name": "秋田県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Akita Ken"
     }
    ],
    "population": 946380,
@@ -424,7 +428,8 @@
       {
        "name": "青森",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Aomori"
       }
      ]
     }
@@ -436,7 +441,8 @@
     {
      "name": "青森県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Aomori Ken"
     }
    ],
    "population": 1232303,
@@ -952,7 +958,8 @@
       {
        "name": "千葉",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Chiba"
       }
      ]
     }
@@ -964,7 +971,8 @@
     {
      "name": "千葉県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Chiba Ken"
     }
    ],
    "population": 6279002,
@@ -1114,7 +1122,8 @@
       {
        "name": "松山",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Matsuyama"
       }
      ]
     }
@@ -1126,7 +1135,8 @@
     {
      "name": "愛媛県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Ehime Ken"
     }
    ],
    "population": 1321580,
@@ -1408,7 +1418,8 @@
       {
        "name": "福井",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Fukui"
       }
      ]
     }
@@ -1420,7 +1431,8 @@
     {
      "name": "福井県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Fukui Ken"
     }
    ],
    "population": 764533,
@@ -1452,7 +1464,8 @@
       {
        "name": "福岡",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Fukuoka"
       }
      ]
     }
@@ -1464,7 +1477,8 @@
     {
      "name": "福岡県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Fukuoka Ken"
     }
    ],
    "population": 5108038,
@@ -1496,7 +1510,8 @@
       {
        "name": "福島",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Fukushima"
       }
      ]
     }
@@ -1508,7 +1523,8 @@
     {
      "name": "福島県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Fukushima Ken"
     }
    ],
    "population": 1825325,
@@ -1540,7 +1556,8 @@
       {
        "name": "岐阜",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Gifu"
       }
      ]
     }
@@ -1552,7 +1569,8 @@
     {
      "name": "岐阜県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Gifu Ken"
     }
    ],
    "population": 1975397,
@@ -1702,7 +1720,8 @@
       {
        "name": "前橋",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Maebashi"
       }
      ]
     }
@@ -1714,7 +1733,8 @@
     {
      "name": "群馬県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Gumma Ken"
     }
    ],
    "population": 1934920,
@@ -1878,7 +1898,8 @@
       {
        "name": "広島",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Hiroshima"
       }
      ]
     }
@@ -1890,7 +1911,8 @@
     {
      "name": "広島県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Hiroshima Ken"
     }
    ],
    "population": 2790804,
@@ -1922,7 +1944,8 @@
       {
        "name": "札幌",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Sapporo"
       }
      ]
     }
@@ -1934,7 +1957,8 @@
     {
      "name": "北海道",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Hokkaidō"
     }
    ],
    "population": 5383579,
@@ -2070,7 +2094,8 @@
       {
        "name": "神戸",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Kōbe"
       }
      ]
     }
@@ -2082,7 +2107,8 @@
     {
      "name": "兵庫県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Hyōgo Ken"
     }
    ],
    "population": 5453392,
@@ -2114,7 +2140,8 @@
       {
        "name": "水戸",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Mito"
       }
      ]
     }
@@ -2126,7 +2153,8 @@
     {
      "name": "茨城県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Ibaraki Ken"
     }
    ],
    "population": 2862372,
@@ -2158,7 +2186,8 @@
       {
        "name": "金沢",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Kanazawa"
       }
      ]
     }
@@ -2170,7 +2199,8 @@
     {
      "name": "石川県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Ishikawa Ken"
     }
    ],
    "population": 1132497,
@@ -2202,7 +2232,8 @@
       {
        "name": "盛岡",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Morioka"
       }
      ]
     }
@@ -2214,7 +2245,8 @@
     {
      "name": "岩手県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Iwate Ken"
     }
    ],
    "population": 1205698,
@@ -2440,7 +2472,8 @@
       {
        "name": "高松",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Takamatsu"
       }
      ]
     }
@@ -2452,7 +2485,8 @@
     {
      "name": "香川県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Kagawa Ken"
     }
    ],
    "population": 949358,
@@ -2484,7 +2518,8 @@
       {
        "name": "鹿児島",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Kagoshima"
       }
      ]
     }
@@ -2496,7 +2531,8 @@
     {
      "name": "鹿児島県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Kagoshima Ken"
     }
    ],
    "population": 1586435,
@@ -2528,7 +2564,8 @@
       {
        "name": "横浜",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Yokohama"
       }
      ],
      "audio": {
@@ -2546,7 +2583,8 @@
     {
      "name": "神奈川県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Kanagawa Ken"
     }
    ],
    "population": 9216009,
@@ -2748,7 +2786,8 @@
       {
        "name": "高知",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Kōchi"
       }
      ]
     }
@@ -2760,7 +2799,8 @@
     {
      "name": "高知県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Kōchi Ken"
     }
    ],
    "population": 688870,
@@ -2792,7 +2832,8 @@
       {
        "name": "熊本",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Kumamoto"
       }
      ]
     }
@@ -2804,7 +2845,8 @@
     {
      "name": "熊本県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Kumamoto Ken"
     }
    ],
    "population": 1732644,
@@ -2836,7 +2878,8 @@
       {
        "name": "京都",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Kyōto"
       }
      ]
     }
@@ -2848,7 +2891,8 @@
     {
      "name": "京都府",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Kyōto Fu"
     }
    ],
    "population": 2563192,
@@ -3353,7 +3397,8 @@
       {
        "name": "津市",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Tsu Shi"
       }
      ]
     }
@@ -3365,7 +3410,8 @@
     {
      "name": "三重県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Mie Ken"
     }
    ],
    "population": 1768632,
@@ -3397,7 +3443,8 @@
       {
        "name": "仙台",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Sendai"
       }
      ]
     }
@@ -3409,7 +3456,8 @@
     {
      "name": "宮城県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Miyagi Ken"
     }
    ],
    "population": 2288456,
@@ -3441,7 +3489,8 @@
       {
        "name": "宮崎",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Miyazaki"
       }
      ]
     }
@@ -3453,7 +3502,8 @@
     {
      "name": "宮崎県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Miyazaki Ken"
     }
    ],
    "population": 1061032,
@@ -3677,7 +3727,8 @@
       {
        "name": "長野",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Nagano"
       }
      ]
     }
@@ -3689,7 +3740,8 @@
     {
      "name": "長野県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Nagano Ken"
     }
    ],
    "population": 2024073,
@@ -3721,7 +3773,8 @@
       {
        "name": "長崎",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Nagasaki"
       }
      ]
     }
@@ -3733,7 +3786,8 @@
     {
      "name": "長崎県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Nagasaki Ken"
     }
    ],
    "population": 1307309,
@@ -3802,7 +3856,8 @@
       {
        "name": "奈良",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Nara"
       }
      ]
     }
@@ -3814,7 +3869,8 @@
     {
      "name": "奈良県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Nara Ken"
     }
    ],
    "population": 1319305,
@@ -3883,7 +3939,8 @@
       {
        "name": "新潟",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Nīgata"
       }
      ]
     }
@@ -3895,7 +3952,8 @@
     {
      "name": "新潟県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Nīgata Ken"
     }
    ],
    "population": 2192319,
@@ -4001,7 +4059,8 @@
       {
        "name": "大分",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Ōita"
       }
      ]
     }
@@ -4013,7 +4072,8 @@
     {
      "name": "大分県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Ōita Ken"
     }
    ],
    "population": 1121589,
@@ -4045,7 +4105,8 @@
       {
        "name": "岡山",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Okayama"
       }
      ]
     }
@@ -4057,7 +4118,8 @@
     {
      "name": "岡山県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Okayama Ken"
     }
    ],
    "population": 1878884,
@@ -4089,7 +4151,8 @@
       {
        "name": "那覇",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Naha"
       }
      ]
     }
@@ -4101,7 +4164,8 @@
     {
      "name": "沖縄県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Okinawa Ken"
     }
    ],
    "population": 1460652,
@@ -4133,7 +4197,8 @@
       {
        "name": "大阪",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Ōsaka"
       }
      ]
     }
@@ -4145,7 +4210,8 @@
     {
      "name": "大阪府",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Ōsaka Fu"
     }
    ],
    "population": 8826684,
@@ -4508,7 +4574,8 @@
       {
        "name": "佐賀",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Saga"
       }
      ]
     }
@@ -4520,7 +4587,8 @@
     {
      "name": "佐賀県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Saga Ken"
     }
    ],
    "population": 809824,
@@ -4596,7 +4664,8 @@
       {
        "name": "さいたま",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Saitama"
       }
      ]
     }
@@ -4608,7 +4677,8 @@
     {
      "name": "埼玉県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Saitama Ken"
     }
    ],
    "population": 7343100,
@@ -4802,7 +4872,8 @@
       {
        "name": "大津",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Ōtsu"
       }
      ]
     }
@@ -4814,7 +4885,8 @@
     {
      "name": "滋賀県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Shiga Ken"
     }
    ],
    "population": 1411168,
@@ -4846,7 +4918,8 @@
       {
        "name": "松江",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Matsue"
       }
      ]
     }
@@ -4858,7 +4931,8 @@
     {
      "name": "島根県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Shimane Ken"
     }
    ],
    "population": 664539,
@@ -4890,7 +4964,8 @@
       {
        "name": "静岡",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Shizuoka"
       }
      ]
     }
@@ -4902,7 +4977,8 @@
     {
      "name": "静岡県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Shizuoka Ken"
     }
    ],
    "population": 3609465,
@@ -5360,7 +5436,8 @@
       {
        "name": "宇都宮",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Utsunomiya"
       }
      ]
     }
@@ -5372,7 +5449,8 @@
     {
      "name": "栃木県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Tochigi Ken"
     }
    ],
    "population": 1927754,
@@ -5404,7 +5482,8 @@
       {
        "name": "徳島",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Tokushima"
       }
      ]
     }
@@ -5416,7 +5495,8 @@
     {
      "name": "徳島県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Tokushima Ken"
     }
    ],
    "population": 721721,
@@ -5448,7 +5528,8 @@
       {
        "name": "新宿区",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Shinjuku Ku"
       }
      ]
     }
@@ -5461,7 +5542,8 @@
     {
      "name": "東京都",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Tōkyō To"
     }
    ],
    "population": 14264798,
@@ -5493,7 +5575,8 @@
       {
        "name": "鳥取",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Tottori"
       }
      ]
     }
@@ -5505,7 +5588,8 @@
     {
      "name": "鳥取県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Tottori Ken"
     }
    ],
    "population": 549925,
@@ -5537,7 +5621,8 @@
       {
        "name": "富山",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Toyama"
       }
      ]
     }
@@ -5549,7 +5634,8 @@
     {
      "name": "富山県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Toyama Ken"
     }
    ],
    "population": 1031262,
@@ -5761,7 +5847,8 @@
       {
        "name": "和歌山",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Wakayama"
       }
      ]
     }
@@ -5773,7 +5860,8 @@
     {
      "name": "和歌山県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Wakayama Ken"
     }
    ],
    "population": 910687,
@@ -5923,7 +6011,8 @@
       {
        "name": "山形",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Yamagata"
       }
      ]
     }
@@ -5935,7 +6024,8 @@
     {
      "name": "山形県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Yamagata Ken"
     }
    ],
    "population": 1063231,
@@ -5967,7 +6057,8 @@
       {
        "name": "山口",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Yamaguchi"
       }
      ]
     }
@@ -5979,7 +6070,8 @@
     {
      "name": "山口県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Yamaguchi Ken"
     }
    ],
    "population": 1336522,
@@ -6011,7 +6103,8 @@
       {
        "name": "甲府",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Kōfu"
       }
      ]
     }
@@ -6023,7 +6116,8 @@
     {
      "name": "山梨県",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Yamanashi Ken"
     }
    ],
    "population": 803963,

@@ -13,6 +13,10 @@ feature consistent. When adding anything, check it against this page. When a new
    - Skip it when it's the same as the English name.
 2. **Chinese gets characters and Hanyu Pinyin with tone marks**, everywhere (`scripts/lib/chinese.mjs`): words written
    apart and capitalised as on maps (*Kūnlún Shānmài*), sound-spelled foreign names kept whole.
+   **Japanese gets romaji (Hepburn, with macrons)** the same way (`scripts/lib/japanese.mjs`): Wikidata's own
+   romanization (P2125) where it has one, else read from the kanji: 東京 *Tōkyō*, 神奈川沖浪裏 *Kanagawa Oki Nami Ura*.
+   In a deck, write the script then its romanization: `native: 夏朝 Xià Cháo (Chinese)`, `native: 富士山 Fujisan (Japanese)`;
+   any other non-Latin script can carry a transliteration the same way.
 3. **Plants and animals get their scientific name**, in italics after the answer: `species: Juniperus communis` in a
    deck; Wikidata's taxon name (P225) in collections.
 4. **A blank says what kind of answer it wants** when "what?" could mislead: `{{Milan|what city?}}`,
@@ -61,6 +65,11 @@ feature consistent. When adding anything, check it against this page. When a new
   Set the parent (`SECTION_PARENT`, a deck's `path:`, a collection's folder).
 - Something that belongs in two places is filed once and *also shown* in the other (`alsoInSections`, `alsoIn`), with one
   set of progress.
+- **History can be studied by time or by place**: decks follow the period chapters of the source (Wikipedia's "History of
+  …" article), and a card tagged `also in: Philadelphia` also shows in the place's deck (History › … › By place).
+- **Textbooks follow the book**: subject › unit › chapter, the deck named after the chapter, with the source credited.
+- **Geography is split**: countries and their regions (continents, territories, World Heritage) vs **Physical
+  geography** (mountains, rivers, lakes, oceans & seas, deserts).
 - Big sets start with the essentials and unlock the rest (the 20 longest rivers, then each continent's; the main
   Interstate corridors, then the others).
 - The **Library** tab always opens on the subject cards.
@@ -70,13 +79,15 @@ feature consistent. When adding anything, check it against this page. When a new
 | What | Where | Format |
 | --- | --- | --- |
 | Note decks (your own cards) | `decks/<Subject>/…/<Deck>.md` | see `decks/README.md` |
+| History, science, textbooks | `decks/History/…`, `decks/Science/<Subject>/<Unit>/<Chapter>.md` | number prefixes set the order; follow the source's own chapters (Wikipedia article, textbook) |
+| US presidents | `data/presidents.json` → `scripts/sync-presidents.mjs` | one line per presidency |
 | Collections (Wikipedia things: art…) | `collections/<Subject>/…/<List>.md` | see `collections/README.md` |
 | Regions inside a country | `data/subdivisions.json` | sources: Natural Earth, US Census, OpenStreetMap |
 | Hand fixes | `data/overrides.json`, `data/collection-fixes.json`, `data/interstates.json` | each has a `_readme` |
 | Built-in data with its own view | `src/*.ts` (e.g. `src/geotime.ts`) | the view and the cards read the same data |
 
 Deck syntax, quickly: `## Heading` · `- cloze with {{answer|hint}}` · `- front :: back` (`:::` both ways) ·
-`> note after the answer` · `related: A, B` · `native: name (Language)` · `species: Genus species` ·
+`> note after the answer` · `related: A, B` · `native: name romanization (Language)` · `species: Genus species` · `also in: Deck title` ·
 `![caption](commons:File.jpg)` · `- question [picture] :: answer`.
 
 ## 6. Data

@@ -9,15 +9,16 @@ export interface NoteCard {
   front: boolean;                              // a front :: back card (answer shown under the question)
   pictureFirst?: boolean;
   hint?: string;                               // what the blank says before you flip: {{Milan|what city?}} → "what city?"
+  also?: string[];                             // an "also in: Philadelphia" line after it: the card is also in that deck
   species?: string;                            // a "species: Juniperus communis" line: the scientific name of the plant or animal                      // "[picture]" in the question: the heading's picture is the question
   context: string | null;                      // the ## heading it sits under
   picture: { file?: string | null; url?: string | null; caption: string } | null;
   note: string | null;                         // a "> …" line: shown after the answer
   related: string[];                           // a "related: A, B" line under the heading: links to other things you're learning
-  native: { name: string; lang: string; code?: string }[]; // a "native: الكعبة (Arabic)" line: the name in its own language
+  native: { name: string; lang: string; code?: string; roman?: string }[]; // a "native: الكعبة (Arabic)" line: the name in its own language
   fp: string;                                  // fingerprint: changes when the card's text changes
 }
-export interface Deck { id: string; title: string; subject: string; path: string[]; intro: string | null; cards: { id: string; card: NoteCard }[] }
+export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; cards: { id: string; card: NoteCard }[] }
 
 // Language names a deck can use → codes for the device voice.
 const LANG_CODE: Record<string, string> = { arabic: 'ar', punjabi: 'pa', hebrew: 'he', italian: 'it', hindi: 'hi', greek: 'el', latin: 'it', sanskrit: 'hi', japanese: 'ja', chinese: 'zh', mandarin: 'zh', spanish: 'es', french: 'fr', german: 'de', persian: 'fa', portuguese: 'pt', russian: 'ru', korean: 'ko', turkish: 'tr', urdu: 'ur', tibetan: 'bo', thai: 'th', dutch: 'nl' };
@@ -31,7 +32,8 @@ export function parseDeck(file: string, text: string): Deck {
   const meta: Record<string, string> = {};
   for (const line of fm?.[1].split('\n') ?? []) { const m = /^(\w+):\s*(.*)$/.exec(line); if (m) meta[m[1]] = m[2].trim(); }
   const body = fm ? text.slice(fm[0].length) : text;
-  const parts = file.replace(/^.*decks\//, '').replace(/\.md$/, '').split('/');
+  // A number in front of a folder or file name only sets the order ("2 Ancient China" → Ancient China, second).
+  const parts = file.replace(/^.*decks\//, '').replace(/\.md$/, '').split('/').map(p => p.replace(/^\d+\s+/, ''));
   const subject = meta.subject || parts[0];
   const path = meta.path ? meta.path.split('/').map(s => s.trim()).filter(Boolean) : parts.slice(1, -1);
   const title = meta.title || parts[parts.length - 1].replace(/[-_]/g, ' ');
@@ -60,7 +62,11 @@ export function parseDeck(file: string, text: string): Deck {
     const nat = /^(?:native|local):\s*(.+)$/i.exec(line);
     if (nat) {
       native = nat[1].split(';').map(x => /^(.*?)\s*\(([^)]+)\)\s*$/.exec(x.trim())).filter((m): m is RegExpExecArray => !!m)
-        .map(m => ({ name: m[1], lang: m[2], code: LANG_CODE[m[2].toLowerCase().replace(/^(ancient|classical|modern) /, '')] }));
+        .map(m => {
+          // "夏朝 Xià Cháo (Chinese)": the script first, then its romanization (pinyin, romaji…), shown under it.
+          const sr = /^(.*?[^\x00-\u024f\s'’-])\s+([\x00-\u024f'’ -]+)$/.exec(m[1]);
+          return { name: sr ? sr[1] : m[1], ...(sr ? { roman: sr[2].trim() } : {}), lang: m[2], code: LANG_CODE[m[2].toLowerCase().replace(/^(ancient|classical|modern) /, '')] };
+        });
       for (const c of cards) if (secOf.get(c.id) === section) c.card.native = native;
       continue;
     }
@@ -69,6 +75,9 @@ export function parseDeck(file: string, text: string): Deck {
     if (rel) { related = rel[1].split(',').map(x => x.trim()).filter(Boolean); for (const c of cards) if (secOf.get(c.id) === section) c.card.related = related; continue; }
     const img = /^!\[([^\]]*)\]\(([^)]+)\)$/.exec(line);
     if (img) { const src = img[2]; picture = src.startsWith('commons:') ? { file: src.slice(8), caption: img[1] || context || '' } : { url: src, caption: img[1] || context || '' }; continue; }
+    // "also in: Philadelphia, New Jersey" after a card: it also appears in those decks (by title), e.g. History by place.
+    const alsoIn = /^also in:\s*(.+)$/i.exec(line);
+    if (alsoIn) { const last = cards[cards.length - 1]; if (last) last.card.also = alsoIn[1].split(',').map(x => x.trim()).filter(Boolean); continue; }
     if (line.startsWith('>')) { const last = cards[cards.length - 1]; if (last) last.card.note = (last.card.note ? last.card.note + ' ' : '') + line.replace(/^>\s?/, ''); continue; }
     const b = /^[-*]\s+(.*)$/.exec(line);
     if (!b) { if (!seenHeading) intro.push(line); continue; }
@@ -90,7 +99,7 @@ export function parseDeck(file: string, text: string): Deck {
       add({ pre: before, answer: m[1], post: after, front: false, ...(m[2] ? { hint: m[2].trim() } : {}) }, t.replace(/\{\{[^}]*\}\}/g, '_') + '#' + i);
     });
   }
-  return { id, title, subject, path, intro: intro.join(' ') || null, cards };
+  return { file, id, title, subject, path, intro: intro.join(' ') || null, cards };
 }
 
 // Every deck file under geo-quest/decks (bundled at build time; README files are documentation, not decks).
@@ -100,7 +109,7 @@ try { files = import.meta.glob('../decks/**/*.md', { query: '?raw', import: 'def
 // Decks built from data in the app itself (the geologic time scale, shared with its chart).
 const BUILT: [string, string][] = [['../decks/Earth history/Geologic time scale.md', geotimeDeck()], ['../decks/Earth history/Epochs of the Cenozoic.md', epochDeck()]];
 export const DECKS: Deck[] = [...Object.entries(files).filter(([f]) => !/README\.md$/i.test(f)), ...BUILT].map(([f, t]) => parseDeck(f, t))
-  .sort((a, b) => a.subject.localeCompare(b.subject) || a.path.join('/').localeCompare(b.path.join('/')) || a.title.localeCompare(b.title));
+  .sort((a, b) => a.file.replace(/^.*decks\//, '').localeCompare(b.file.replace(/^.*decks\//, ''), 'en', { numeric: true })); // folder & file order (numbers first)
 export const NOTE_SUBJECTS = [...new Set(DECKS.map(d => d.subject))];
 
 /** Register note decks as sections (subject › path…) and groups (one per deck), and return their cards as items. */
@@ -112,6 +121,12 @@ export function registerNotes(): Place[] {
     const gid = 'n-' + d.id;
     if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined });
     for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path], native: card.native.length ? card.native : undefined, species: card.species } as unknown as Place);
+  }
+  // Cards tagged "also in: <deck title>" are listed in that deck too (one set of progress).
+  const byTitle = new Map(DECKS.map(d => [d.title.toLowerCase(), 'n-' + d.id]));
+  for (const p of out) {
+    const also = (p as unknown as { card?: NoteCard }).card?.also;
+    if (also?.length) p.alsoIn = also.map(t => byTitle.get(t.toLowerCase())).filter((g): g is string => !!g);
   }
   return out;
 }

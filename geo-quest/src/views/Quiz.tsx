@@ -10,7 +10,7 @@ const LENGTHS: (number | 'all')[] = [10, 25, 50, 'all'];
 
 /** Step 1 is "what subject": Countries (continents, and the countries/states studied in depth inside them), or a theme. */
 interface Subject { id: string; name: string; icon: IconName; sections: string[] }
-const THEME_ICON: Record<string, IconName> = { Territories: 'pin', 'World Heritage': 'temple', Mountains: 'mountain', 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop' };
+const THEME_ICON: Record<string, IconName> = { Territories: 'pin', 'World Heritage': 'temple', Mountains: 'mountain', 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop', 'Physical geography': 'mountain', Deserts: 'sun' };
 const subjects = (): Subject[] => [
   { id: 'countries', name: 'Countries', icon: 'globe', sections: CONTINENTS },
   ...childSections(null).filter(s => !CONTINENTS.includes(s)).map(s => ({ id: s, name: s, sections: [s], icon: THEME_ICON[s] ?? 'book' })),

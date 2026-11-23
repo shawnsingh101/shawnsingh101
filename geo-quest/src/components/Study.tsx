@@ -116,7 +116,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
     // A tap on a different kind of thing (a country while looking for a river) is a slip, not an answer.
     const hitLayer = hit.countryId ? ds.byId.get(hit.countryId)?.layer : 'country';
     if (hitLayer !== mp!.layer) {
-      setNudge(`Tap a ${{ note: 'card', sub: c?.noun ?? 'region', country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range', art: 'work', road: 'highway' }[mp!.layer]}`);
+      setNudge(`Tap a ${{ note: 'card', sub: c?.noun ?? 'region', country: 'country', water: 'sea or ocean', river: 'river', lake: 'lake', cn: 'province', us: 'state', senate: 'state', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range', art: 'work', road: 'highway', desert: 'desert', person: 'person' }[mp!.layer]}`);
       setTimeout(() => setNudge(null), 1400);
       return;
     }
@@ -157,8 +157,8 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
     if (flipped && revealed) return { ids: [mp!.id], key: item.ref.id + ':r', keepCenter: true, pad: c!.layer === 'lake' ? 0.3 : c!.layer === 'river' ? 0.55 : 0.5 };
     // Seas are small inside a big region: zoom right to them. Countries/provinces show their neighbourhood.
     // Rivers & lakes: centred, with some surroundings so you can get your bearings.
-    if (f.map === 'highlight') return ['water', 'river', 'lake', 'range', 'road'].includes(c!.layer)
-      ? { ids: [c!.id], key: item.ref.id + ':h', pad: c!.layer === 'water' ? 0.85 : c!.layer === 'river' || c!.layer === 'range' || c!.layer === 'road' ? 0.55 : 0.3 }
+    if (f.map === 'highlight') return ['water', 'river', 'lake', 'range', 'road', 'desert'].includes(c!.layer)
+      ? { ids: [c!.id], key: item.ref.id + ':h', pad: c!.layer === 'water' ? 0.85 : c!.layer === 'river' || c!.layer === 'range' || c!.layer === 'road' || c!.layer === 'desert' ? 0.55 : 0.3 }
       : { ids: [mp!.id, ...regionIds], key: item.ref.id + ':h' };
     return { ids: regionIds, key: group!.id };
   }, [item, f, c, mp, regionIds, wideIds, group, flipped, revealed]);
@@ -288,7 +288,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
           outline={m.layer === 'sub' && m.parent ? [m.parent] : m.layer === 'us' ? ['Q30'] : m.layer === 'cn' ? ['Q148'] : []}
           subFilter={m.layer === 'sub' ? (id => ds.byId.get(id)?.parent === m.parent) : undefined} onTap={f.mode === 'tap' ? onTap : undefined}
           // Country & state names for bearings, offered only when they can't give the answer away (rivers, roads, peaks…).
-          contextLabels={['river', 'lake', 'road', 'range', 'peak', 'site', 'water'].includes(m.layer)} />
+          contextLabels={['river', 'lake', 'road', 'range', 'peak', 'site', 'water', 'desert'].includes(m.layer)} />
           {(f.map === 'highlight' || revealed || tapResult) && (m.layer === 'country' || m.layer === 'terr') && (
             <Inset place={m} label={revealed || tapResult ? m.name : 'Close-up'} />
           )}

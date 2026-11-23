@@ -1,0 +1,909 @@
+{
+ "source": "Natural Earth, Wikidata (CC0)",
+ "places": [
+  {
+   "id": "Q6583",
+   "layer": "desert",
+   "name": "Sahara",
+   "nameThe": "the Sahara",
+   "wiki": "Sahara",
+   "image": "Sahara real color.jpg",
+   "lon": 13.59,
+   "lat": 18.74,
+   "size": 9200000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "9,200,000 km² · Algeria, Chad, Egypt, Mali, Mauritania…",
+   "native": [
+    {
+     "name": "الصحراء الكبرى",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q42070",
+   "layer": "desert",
+   "name": "Gobi Desert",
+   "nameThe": "the Gobi Desert",
+   "wiki": "Gobi_Desert",
+   "image": "Mongolia (35427009881).jpg",
+   "lon": 104.57,
+   "lat": 41.53,
+   "size": 2354460,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,354,460 km² · China, Mongolia",
+   "native": [
+    {
+     "name": "戈壁",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    },
+    {
+     "name": "Говь",
+     "lang": "Mongolian",
+     "code": "mn"
+    }
+   ],
+   "zh": {
+    "han": "戈壁",
+    "pinyin": "Gēbì"
+   }
+  },
+  {
+   "id": "Q47141",
+   "layer": "desert",
+   "name": "Atacama Desert",
+   "nameThe": "the Atacama Desert",
+   "wiki": "Atacama_Desert",
+   "image": "Atacama.png",
+   "lon": -70.03,
+   "lat": -23.57,
+   "size": 1813005,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,813,005 km² · Chile"
+  },
+  {
+   "id": "Q181528",
+   "layer": "desert",
+   "name": "Libyan Desert",
+   "nameThe": "the Libyan Desert",
+   "wiki": "Libyan_Desert",
+   "image": "Libyan Desert - 2006.jpg",
+   "lon": 26.36,
+   "lat": 22.6,
+   "size": 1100000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,100,000 km² · Egypt, Libya, Sudan",
+   "native": [
+    {
+     "name": "الصحراء الليبية",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q47700",
+   "layer": "desert",
+   "name": "Kalahari Desert",
+   "nameThe": "the Kalahari Desert",
+   "wiki": "Kalahari_Desert",
+   "image": "Kalahari.png",
+   "lon": 19.37,
+   "lat": -23.64,
+   "size": 930000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "930,000 km² · Angola, Botswana, Namibia, South Africa",
+   "native": [
+    {
+     "name": "Kalahari",
+     "lang": "Afrikaans",
+     "code": "af"
+    }
+   ]
+  },
+  {
+   "id": "Q14314106",
+   "layer": "desert",
+   "name": "Western Desert",
+   "nameThe": "the Western Desert",
+   "wiki": "Western_Desert",
+   "image": "SiwaSandDunes.jpg",
+   "lon": 29.84,
+   "lat": 27.67,
+   "size": 680650,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "680,650 km² · Egypt",
+   "native": [
+    {
+     "name": "الصحراء الغربية",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q229269",
+   "layer": "desert",
+   "name": "Rub' al Khali",
+   "nameThe": "the Rub' al Khali",
+   "wiki": "Rub'_al_Khali",
+   "image": "Rub al-Chali.jpg",
+   "lon": 50.33,
+   "lat": 20.25,
+   "size": 680000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "680,000 km² · Oman, Saudi Arabia, United Arab Emirates, Yemen",
+   "native": [
+    {
+     "name": "الربع الخالي",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q339162",
+   "layer": "desert",
+   "name": "Syrian desert",
+   "nameThe": "the Syrian desert",
+   "wiki": "Syrian_desert",
+   "image": "Valley of the Tombs, Panoramic view, Palmyra, Syria.jpg",
+   "lon": 40.31,
+   "lat": 32.19,
+   "size": 518000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "518,000 km² · Iraq, Jordan, Saudi Arabia, Syria",
+   "native": [
+    {
+     "name": "بادية الشام",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q272521",
+   "layer": "desert",
+   "name": "Ténéré",
+   "nameThe": "the Ténéré",
+   "wiki": "Ténéré",
+   "image": "Fachi-Bilma-Dünen.jpg",
+   "lon": 11.98,
+   "lat": 19.87,
+   "size": 400000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "400,000 km² · Niger"
+  },
+  {
+   "id": "Q464909",
+   "layer": "desert",
+   "name": "Nubian Desert",
+   "nameThe": "the Nubian Desert",
+   "wiki": "Nubian_Desert",
+   "image": "Nubian Desert (8651154432).jpg",
+   "lon": 33.82,
+   "lat": 19.94,
+   "size": 400000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "400,000 km² · Sudan",
+   "native": [
+    {
+     "name": "صحراء النوبة",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q172702",
+   "layer": "desert",
+   "name": "Karakum Desert",
+   "nameThe": "the Karakum Desert",
+   "wiki": "Karakum_Desert",
+   "image": "MAKarakum6.jpg",
+   "lon": 61.72,
+   "lat": 41.37,
+   "size": 400000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "400,000 km² · Turkmenistan",
+   "native": [
+    {
+     "name": "Каракумы",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
+  },
+  {
+   "id": "Q855658",
+   "layer": "desert",
+   "name": "Chihuahuan Desert",
+   "nameThe": "the Chihuahuan Desert",
+   "wiki": "Chihuahuan_Desert",
+   "image": "Chihuahuan Desert.jpg",
+   "lon": -105.1,
+   "lat": 30.08,
+   "size": 362600,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "362,600 km² · Mexico, United States",
+   "native": [
+    {
+     "name": "Desierto de monterrey",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ]
+  },
+  {
+   "id": "Q145165",
+   "layer": "desert",
+   "name": "Great Victoria Desert",
+   "nameThe": "the Great Victoria Desert",
+   "wiki": "Great_Victoria_Desert",
+   "image": "Australia.A2002231.0145.250m NASA Nullarbor.jpg",
+   "lon": 127.44,
+   "lat": -28.35,
+   "size": 348750,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "348,750 km² · Australia"
+  },
+  {
+   "id": "Q132956",
+   "layer": "desert",
+   "name": "Taklamakan Desert",
+   "nameThe": "the Taklamakan Desert",
+   "wiki": "Taklamakan_Desert",
+   "image": "Taklamakan-d43.jpg",
+   "lon": 81.85,
+   "lat": 38.78,
+   "size": 337000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "337,000 km² · China",
+   "native": [
+    {
+     "name": "塔克拉玛干沙漠",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "zh": {
+    "han": "塔克拉玛干沙漠",
+    "pinyin": "Tǎkèlāmǎgān Shāmò"
+   }
+  },
+  {
+   "id": "Q184364",
+   "layer": "desert",
+   "name": "Kyzylkum Desert",
+   "nameThe": "the Kyzylkum Desert",
+   "wiki": "Kyzylkum_Desert",
+   "image": "Dzhangeldy Uzbekistan 2008.JPG",
+   "lon": 62.07,
+   "lat": 41.63,
+   "size": 298000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "298,000 km² · Kazakhstan, Turkmenistan, Uzbekistan",
+   "native": [
+    {
+     "name": "Қызылқұм",
+     "lang": "Kazakh",
+     "code": "kk"
+    },
+    {
+     "name": "Кызылкум",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
+  },
+  {
+   "id": "Q326896",
+   "layer": "desert",
+   "name": "Great Sandy Desert",
+   "nameThe": "the Great Sandy Desert",
+   "wiki": "Great_Sandy_Desert",
+   "image": "Landsat art - Great Sandy Desert, Australia.jpg",
+   "lon": 125.26,
+   "lat": -20.63,
+   "size": 284993,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "284,993 km² · Australia"
+  },
+  {
+   "id": "Q189429",
+   "layer": "desert",
+   "name": "Sonoran Desert",
+   "nameThe": "the Sonoran Desert",
+   "wiki": "Sonoran_Desert",
+   "image": "AguaFriaNM (cropped).jpeg",
+   "lon": -113.47,
+   "lat": 31.27,
+   "size": 260000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "260,000 km² · Mexico, United States",
+   "native": [
+    {
+     "name": "Desierto de Sonora",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ]
+  },
+  {
+   "id": "Q624170",
+   "layer": "desert",
+   "name": "Eastern Desert",
+   "nameThe": "the Eastern Desert",
+   "wiki": "Eastern_Desert",
+   "image": "Eastern-desert-mountain-range-Qena.jpg",
+   "lon": 33.32,
+   "lat": 26.36,
+   "size": 221900,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "221,900 km² · Egypt, Eritrea, Ethiopia, Sudan",
+   "native": [
+    {
+     "name": "الصحراء الشرقية",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q3056157",
+   "layer": "desert",
+   "name": "Erg Chech",
+   "nameThe": "the Erg Chech",
+   "wiki": "Erg_Chech",
+   "image": "Chergach meteorite, 5.7 grams, oriented.jpg",
+   "lon": -2.89,
+   "lat": 24.94,
+   "size": 206000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "206,000 km² · Algeria, Mali, Mauritania",
+   "native": [
+    {
+     "name": "عرق شاش",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q172691",
+   "layer": "desert",
+   "name": "Thar Desert",
+   "nameThe": "the Thar Desert",
+   "wiki": "Thar_Desert",
+   "image": "Thar desert Rajasthan India.jpg",
+   "lon": 71.9,
+   "lat": 27.38,
+   "size": 200000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "200,000 km² · India, Pakistan",
+   "native": [
+    {
+     "name": "थार मरुस्थल",
+     "lang": "Hindi",
+     "code": "hi"
+    },
+    {
+     "name": "صحرائے تھر",
+     "lang": "Urdu",
+     "code": "ur"
+    }
+   ]
+  },
+  {
+   "id": "Q307143",
+   "layer": "desert",
+   "name": "Grand Erg Oriental",
+   "nameThe": "the Grand Erg Oriental",
+   "wiki": "Grand_Erg_Oriental",
+   "image": "Dune, Grand erg près de Ksar Ghilane, Tunisien, 2004.jpg",
+   "lon": 7.08,
+   "lat": 30.16,
+   "size": 185000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "185,000 km² · Algeria, Libya, Tunisia",
+   "native": [
+    {
+     "name": "العرق الشرقي الكبير",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q674262",
+   "layer": "desert",
+   "name": "Tanami Desert",
+   "nameThe": "the Tanami Desert",
+   "wiki": "Tanami_Desert",
+   "image": "Tanami Track 23rd June.jpg",
+   "lon": 131.57,
+   "lat": -19.6,
+   "size": 184500,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "184,500 km² · Australia"
+  },
+  {
+   "id": "Q211839",
+   "layer": "desert",
+   "name": "Simpson Desert",
+   "nameThe": "the Simpson Desert",
+   "wiki": "Simpson_Desert",
+   "image": "Simpson-Desert-2007-12-16-NASA.jpg",
+   "lon": 136.99,
+   "lat": -25.04,
+   "size": 176500,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "176,500 km² · Australia"
+  },
+  {
+   "id": "Q272577",
+   "layer": "desert",
+   "name": "Gibson Desert",
+   "nameThe": "the Gibson Desert",
+   "wiki": "Gibson_Desert",
+   "image": "Gibson Desert and moon from Alfred & Marie Range.jpg",
+   "lon": 125.04,
+   "lat": -24.45,
+   "size": 155000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "155,000 km² · Australia"
+  },
+  {
+   "id": "Q2356478",
+   "layer": "desert",
+   "name": "Dasht-e Margo",
+   "nameThe": "Dasht-e Margo",
+   "wiki": "Dasht-e_Margo",
+   "image": null,
+   "lon": 63.33,
+   "lat": 31.03,
+   "size": 150000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "150,000 km² · Afghanistan"
+  },
+  {
+   "id": "Q141513",
+   "layer": "desert",
+   "name": "Danakil Desert",
+   "nameThe": "the Danakil Desert",
+   "wiki": "Danakil_Desert",
+   "image": "Danakil-Sable.jpg",
+   "lon": 42.06,
+   "lat": 12.87,
+   "size": 136956,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "136,956 km² · Djibouti, Eritrea, Ethiopia",
+   "native": [
+    {
+     "name": "صحراء الدناكل",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q1350167",
+   "layer": "desert",
+   "name": "Strzelecki Desert",
+   "nameThe": "the Strzelecki Desert",
+   "wiki": "Strzelecki_Desert",
+   "image": "BoreTrack.jpg",
+   "lon": 141.38,
+   "lat": -29.74,
+   "size": 80250,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "80,250 km² · Australia"
+  },
+  {
+   "id": "Q749205",
+   "layer": "desert",
+   "name": "Nafud desert",
+   "nameThe": "the Nafud desert",
+   "wiki": "Nafud_desert",
+   "image": "ISS-64 Jubba with Nefud Desert, Saudi Arabia.jpg",
+   "lon": 42.42,
+   "lat": 28.77,
+   "size": 78000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "78,000 km² · Saudi Arabia",
+   "native": [
+    {
+     "name": "صحراء النفود الكبير",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q1537020",
+   "layer": "desert",
+   "name": "Grand Erg Occidental",
+   "nameThe": "the Grand Erg Occidental",
+   "wiki": "Grand_Erg_Occidental",
+   "image": "Grand erg occidental.jpg",
+   "lon": 0.73,
+   "lat": 30.87,
+   "size": 75000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "75,000 km² · Algeria",
+   "native": [
+    {
+     "name": "العرق الغربي الكبير",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q1359850",
+   "layer": "desert",
+   "name": "Betpak-Dala",
+   "nameThe": "the Betpak-Dala",
+   "wiki": "Betpak-Dala",
+   "image": "Betpack-Dala.JPG",
+   "lon": 70.79,
+   "lat": 44.61,
+   "size": 75000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "75,000 km² · Kazakhstan",
+   "native": [
+    {
+     "name": "Бетпақдала",
+     "lang": "Kazakh",
+     "code": "kk"
+    }
+   ]
+  },
+  {
+   "id": "Q190048",
+   "layer": "desert",
+   "name": "Tassili n'Ajjer",
+   "nameThe": "the Tassili n'Ajjer",
+   "wiki": "Tassili_n'Ajjer",
+   "image": "Tassili Desert Algeria.jpg",
+   "lon": 7.99,
+   "lat": 25.65,
+   "size": 72000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "72,000 km² · Algeria",
+   "native": [
+    {
+     "name": "طاسيلي ناجر",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q3326866",
+   "layer": "desert",
+   "name": "Murzuq Desert",
+   "nameThe": "the Murzuq Desert",
+   "wiki": "Murzuq_Desert",
+   "image": "Sanddunes marzuq sandsea.jpg",
+   "lon": 13.42,
+   "lat": 24.53,
+   "size": 58000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "58,000 km² · Libya",
+   "native": [
+    {
+     "name": "صحراء مرزق",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q272514",
+   "layer": "desert",
+   "name": "Great Salt Desert",
+   "nameThe": "the Great Salt Desert",
+   "wiki": "Great_Salt_Desert",
+   "image": "Dasht-e Kavir 2, Iran.JPG",
+   "lon": 55.12,
+   "lat": 34.44,
+   "size": 55000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "55,000 km² · Iran",
+   "native": [
+    {
+     "name": "دشت کویر",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ]
+  },
+  {
+   "id": "Q131377",
+   "layer": "desert",
+   "name": "Namib",
+   "nameThe": "the Namib",
+   "wiki": "Namib",
+   "image": "Namib Desert surface.jpg",
+   "lon": 13.68,
+   "lat": -20.08,
+   "size": 30777,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "30,777 km² · Namibia",
+   "native": [
+    {
+     "name": "Namibwoestyn",
+     "lang": "Afrikaans",
+     "code": "af"
+    }
+   ]
+  },
+  {
+   "id": "Q3056158",
+   "layer": "desert",
+   "name": "Erg Iguidi",
+   "nameThe": "the Erg Iguidi",
+   "wiki": "Erg_Iguidi",
+   "image": "STS-45 payload.jpg",
+   "lon": -3.42,
+   "lat": 27.97,
+   "size": 18000,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "18,000 km² · Algeria",
+   "native": [
+    {
+     "name": "عرق إقيدي",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q767128",
+   "layer": "desert",
+   "name": "Lut Desert",
+   "nameThe": "Lut Desert",
+   "wiki": "Lut_Desert",
+   "image": "Sand castles - Dasht-e Lut desert - Kerman.JPG",
+   "lon": 58.15,
+   "lat": 31.46,
+   "size": 17941,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "17,941 km² · Iran",
+   "native": [
+    {
+     "name": "بیابان لوت",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ]
+  },
+  {
+   "id": "Q162843",
+   "layer": "desert",
+   "name": "Negev",
+   "nameThe": "the Negev",
+   "wiki": "Negev",
+   "image": "Negev-2005-1.JPG",
+   "lon": 34.84,
+   "lat": 30.43,
+   "size": 13000,
+   "group": "d-great",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "13,000 km² · Israel",
+   "native": [
+    {
+     "name": "הנגב",
+     "lang": "Hebrew",
+     "code": "he"
+    }
+   ]
+  },
+  {
+   "id": "Q1548386",
+   "layer": "desert",
+   "name": "Great Salt Lake Desert",
+   "nameThe": "the Great Salt Lake Desert",
+   "wiki": "Great_Salt_Lake_Desert",
+   "image": "2015-11-03 07 22 33 View south across the Utah Test Range in the Great Salt Lake Desert, Utah from an airplane flying from Reno, Nevada to Salt Lake City, Utah.jpg",
+   "lon": -113.49,
+   "lat": 40.66,
+   "size": 10500,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "10,500 km² · United States"
+  },
+  {
+   "id": "Q880529",
+   "layer": "desert",
+   "name": "Black Rock Desert",
+   "nameThe": "the Black Rock Desert",
+   "wiki": "Black_Rock_Desert",
+   "image": "Kluft-photo-Black-Rock-Desert-Aug-2005-Img 5081.jpg",
+   "lon": -118.94,
+   "lat": 41.03,
+   "size": 2590,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,590 km² · United States"
+  },
+  {
+   "id": "Q1810329",
+   "layer": "desert",
+   "name": "Sharqiya Sands",
+   "nameThe": "the Sharqiya Sands",
+   "wiki": "Sharqiya_Sands",
+   "image": "Wahiba Sands (12).jpg",
+   "lon": 58.75,
+   "lat": 21.79,
+   "size": null,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "Oman",
+   "native": [
+    {
+     "name": "رمال شرقية",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q1774690",
+   "layer": "desert",
+   "name": "Chalbi Desert",
+   "nameThe": "the Chalbi Desert",
+   "wiki": "Chalbi_Desert",
+   "image": "Chalbi Desert Panorama.jpg",
+   "lon": 37.8,
+   "lat": 2.39,
+   "size": null,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "Kenya"
+  },
+  {
+   "id": "Q2064799",
+   "layer": "desert",
+   "name": "El Djouf",
+   "nameThe": "the El Djouf",
+   "wiki": "El_Djouf",
+   "image": null,
+   "lon": -7.06,
+   "lat": 21.44,
+   "size": null,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "Mauritania",
+   "native": [
+    {
+     "name": "الجوف",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
+  },
+  {
+   "id": "Q1670841",
+   "layer": "desert",
+   "name": "Ordos Desert",
+   "nameThe": "the Ordos Desert",
+   "wiki": "Ordos_Desert",
+   "image": "鄂尔多斯-响沙湾 - panoramio.jpg",
+   "lon": 108.32,
+   "lat": 38.94,
+   "size": null,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "China",
+   "native": [
+    {
+     "name": "鄂爾多斯沙漠",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "zh": {
+    "han": "鄂爾多斯沙漠",
+    "pinyin": "È'ěrduōsī Shāmò"
+   }
+  },
+  {
+   "id": "Q375816",
+   "layer": "desert",
+   "name": "Caatinga",
+   "nameThe": "the Caatinga",
+   "wiki": "Caatinga",
+   "image": "História Geral das Bandeiras Paulistas - tomo 5 - 1929.pdf",
+   "lon": -40.64,
+   "lat": -5.05,
+   "size": null,
+   "group": "d-more",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "Brazil"
+  }
+ ]
+}

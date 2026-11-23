@@ -1,4 +1,4 @@
-export interface NativeName { name: string; lang: string; code?: string }
+export interface NativeName { name: string; lang: string; code?: string; roman?: string } // roman: romaji / pinyin / transliteration
 /** Pronunciation recordings by language code → [mp3, original] */
 export type Audio = Record<string, string[]>;
 export interface Chinese { han: string; pinyin: string }
@@ -12,7 +12,7 @@ export interface Capital {
 }
 
 export type Status = 'un' | 'observer' | 'disputed';
-export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site' | 'peak' | 'range' | 'sub' | 'note' | 'art' | 'road';
+export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site' | 'peak' | 'range' | 'sub' | 'note' | 'art' | 'road' | 'desert' | 'person';
 
 /** Anything you can learn on the map: a country, a sea, a province… keyed by Wikidata id. */
 export interface Place {
@@ -73,6 +73,7 @@ export interface Place {
   year?: number | null;    // when (negative = BC)
   museum?: string | null;  // where it is now: "the Louvre Museum, Paris"
   museumName?: string | null; museumWiki?: string | null; city?: string | null; // …its parts, for the Related links
+  terms?: { n: number; from: string; to: string | null; party: string; vp: string[] }[]; // presidents: each presidency they held
   number?: number; short?: string; direction?: string; // Interstates: 95, "I-95", "north–south"
   plural?: boolean;        // "the moai were…"
   species?: string;        // plants and animals: the scientific name, shown in italics (Juniperus communis)

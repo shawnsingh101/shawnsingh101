@@ -1521,7 +1521,8 @@
     {
      "name": "姫路城",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Himejijō"
     }
    ],
    "admin1Ids": [
@@ -1710,7 +1711,8 @@
     {
      "name": "原爆ドーム",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Gembaku Dōmu"
     }
    ],
    "admin1Ids": [
@@ -2156,7 +2158,8 @@
     {
      "name": "厳島神社",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Itsukushima Jinja"
     }
    ],
    "admin1Ids": [

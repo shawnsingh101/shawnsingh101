@@ -1,0 +1,789 @@
+{
+ "source": "data/presidents.json; portraits from Wikidata (CC0) / Wikimedia Commons",
+ "people": [
+  {
+   "id": "Q23",
+   "name": "George Washington",
+   "image": "Gilbert Stuart Williamstown Portrait of George Washington.jpg",
+   "wiki": "George_Washington",
+   "terms": [
+    {
+     "n": 1,
+     "from": "1789",
+     "to": "1797",
+     "party": "Unaffiliated",
+     "vp": [
+      "John Adams"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11806",
+   "name": "John Adams",
+   "image": "John Adams A18236.jpg",
+   "wiki": "John_Adams",
+   "terms": [
+    {
+     "n": 2,
+     "from": "1797",
+     "to": "1801",
+     "party": "Federalist",
+     "vp": [
+      "Thomas Jefferson"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11812",
+   "name": "Thomas Jefferson",
+   "image": "Official Presidential portrait of Thomas Jefferson (by Rembrandt Peale, 1800)(cropped).jpg",
+   "wiki": "Thomas_Jefferson",
+   "terms": [
+    {
+     "n": 3,
+     "from": "1801",
+     "to": "1809",
+     "party": "Democratic-Republican",
+     "vp": [
+      "Aaron Burr",
+      "George Clinton"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11813",
+   "name": "James Madison",
+   "image": "James Madison.jpg",
+   "wiki": "James_Madison",
+   "terms": [
+    {
+     "n": 4,
+     "from": "1809",
+     "to": "1817",
+     "party": "Democratic-Republican",
+     "vp": [
+      "George Clinton",
+      "Elbridge Gerry"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11815",
+   "name": "James Monroe",
+   "image": "James Monroe by Gilbert Stuart c1817.jpg",
+   "wiki": "James_Monroe",
+   "terms": [
+    {
+     "n": 5,
+     "from": "1817",
+     "to": "1825",
+     "party": "Democratic-Republican",
+     "vp": [
+      "Daniel D. Tompkins"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11816",
+   "name": "John Quincy Adams",
+   "image": "John Q. Adams-edit.jpg",
+   "wiki": "John_Quincy_Adams",
+   "terms": [
+    {
+     "n": 6,
+     "from": "1825",
+     "to": "1829",
+     "party": "Democratic-Republican",
+     "vp": [
+      "John C. Calhoun"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11817",
+   "name": "Andrew Jackson",
+   "image": "Andrew jackson head.jpg",
+   "wiki": "Andrew_Jackson",
+   "terms": [
+    {
+     "n": 7,
+     "from": "1829",
+     "to": "1837",
+     "party": "Democratic",
+     "vp": [
+      "John C. Calhoun",
+      "Martin Van Buren"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11820",
+   "name": "Martin Van Buren",
+   "image": "Martin Van Buren by Mathew Brady c1855-58 sepia original restored.jpg",
+   "wiki": "Martin_Van_Buren",
+   "terms": [
+    {
+     "n": 8,
+     "from": "1837",
+     "to": "1841",
+     "party": "Democratic",
+     "vp": [
+      "Richard Mentor Johnson"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11869",
+   "name": "William Henry Harrison",
+   "image": "William Henry Harrison by James Reid Lambdin, 1835.jpg",
+   "wiki": "William_Henry_Harrison",
+   "terms": [
+    {
+     "n": 9,
+     "from": "1841",
+     "to": "1841",
+     "party": "Whig",
+     "vp": [
+      "John Tyler"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11881",
+   "name": "John Tyler",
+   "image": "WHOportTyler.jpg",
+   "wiki": "John_Tyler",
+   "terms": [
+    {
+     "n": 10,
+     "from": "1841",
+     "to": "1845",
+     "party": "Whig",
+     "vp": []
+    }
+   ]
+  },
+  {
+   "id": "Q11891",
+   "name": "James K. Polk",
+   "image": "James K. Polk restored (3x4 cropped).jpg",
+   "wiki": "James_K._Polk",
+   "terms": [
+    {
+     "n": 11,
+     "from": "1845",
+     "to": "1849",
+     "party": "Democratic",
+     "vp": [
+      "George M. Dallas"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11896",
+   "name": "Zachary Taylor",
+   "image": "Zachary Taylor 2.jpg",
+   "wiki": "Zachary_Taylor",
+   "terms": [
+    {
+     "n": 12,
+     "from": "1849",
+     "to": "1850",
+     "party": "Whig",
+     "vp": [
+      "Millard Fillmore"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q12306",
+   "name": "Millard Fillmore",
+   "image": "Millard Fillmore.jpg",
+   "wiki": "Millard_Fillmore",
+   "terms": [
+    {
+     "n": 13,
+     "from": "1850",
+     "to": "1853",
+     "party": "Whig",
+     "vp": []
+    }
+   ]
+  },
+  {
+   "id": "Q12312",
+   "name": "Franklin Pierce",
+   "image": "Franklin Pierce.jpg",
+   "wiki": "Franklin_Pierce",
+   "terms": [
+    {
+     "n": 14,
+     "from": "1853",
+     "to": "1857",
+     "party": "Democratic",
+     "vp": [
+      "William R. King"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q12325",
+   "name": "James Buchanan",
+   "image": "James Buchanan (cropped).jpg",
+   "wiki": "James_Buchanan",
+   "terms": [
+    {
+     "n": 15,
+     "from": "1857",
+     "to": "1861",
+     "party": "Democratic",
+     "vp": [
+      "John C. Breckinridge"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q91",
+   "name": "Abraham Lincoln",
+   "image": "Abraham Lincoln O-77 matte collodion print.jpg",
+   "wiki": "Abraham_Lincoln",
+   "terms": [
+    {
+     "n": 16,
+     "from": "1861",
+     "to": "1865",
+     "party": "Republican",
+     "vp": [
+      "Hannibal Hamlin",
+      "Andrew Johnson"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q8612",
+   "name": "Andrew Johnson",
+   "image": "President Andrew Johnson.jpg",
+   "wiki": "Andrew_Johnson",
+   "terms": [
+    {
+     "n": 17,
+     "from": "1865",
+     "to": "1869",
+     "party": "National Union",
+     "vp": []
+    }
+   ]
+  },
+  {
+   "id": "Q34836",
+   "name": "Ulysses S. Grant",
+   "image": "Ulysses S. Grant 1870-1880.jpg",
+   "wiki": "Ulysses_S._Grant",
+   "terms": [
+    {
+     "n": 18,
+     "from": "1869",
+     "to": "1877",
+     "party": "Republican",
+     "vp": [
+      "Schuyler Colfax",
+      "Henry Wilson"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q35686",
+   "name": "Rutherford B. Hayes",
+   "image": "President Rutherford Hayes 1870 - 1880 Restored.jpg",
+   "wiki": "Rutherford_B._Hayes",
+   "terms": [
+    {
+     "n": 19,
+     "from": "1877",
+     "to": "1881",
+     "party": "Republican",
+     "vp": [
+      "William A. Wheeler"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q34597",
+   "name": "James A. Garfield",
+   "image": "James Abram Garfield, photo portrait seated.jpg",
+   "wiki": "James_A._Garfield",
+   "terms": [
+    {
+     "n": 20,
+     "from": "1881",
+     "to": "1881",
+     "party": "Republican",
+     "vp": [
+      "Chester A. Arthur"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q35498",
+   "name": "Chester A. Arthur",
+   "image": "Chester A. Arthur by Abraham Bogardus.jpg",
+   "wiki": "Chester_A._Arthur",
+   "terms": [
+    {
+     "n": 21,
+     "from": "1881",
+     "to": "1885",
+     "party": "Republican",
+     "vp": []
+    }
+   ]
+  },
+  {
+   "id": "Q35171",
+   "name": "Grover Cleveland",
+   "image": "Grover Cleveland - NARA - 518139 (cropped).jpg",
+   "wiki": "Grover_Cleveland",
+   "terms": [
+    {
+     "n": 22,
+     "from": "1885",
+     "to": "1889",
+     "party": "Democratic",
+     "vp": [
+      "Thomas A. Hendricks"
+     ]
+    },
+    {
+     "n": 24,
+     "from": "1893",
+     "to": "1897",
+     "party": "Democratic",
+     "vp": [
+      "Adlai Stevenson I"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q35678",
+   "name": "Benjamin Harrison",
+   "image": "Benjamin Harrison, head and shoulders bw photo, 1896.jpg",
+   "wiki": "Benjamin_Harrison",
+   "terms": [
+    {
+     "n": 23,
+     "from": "1889",
+     "to": "1893",
+     "party": "Republican",
+     "vp": [
+      "Levi P. Morton"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q35041",
+   "name": "William McKinley",
+   "image": "William mckinley.jpg",
+   "wiki": "William_McKinley",
+   "terms": [
+    {
+     "n": 25,
+     "from": "1897",
+     "to": "1901",
+     "party": "Republican",
+     "vp": [
+      "Garret Hobart",
+      "Theodore Roosevelt"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q33866",
+   "name": "Theodore Roosevelt",
+   "image": "Theodore Roosevelt by the Pach Bros.jpg",
+   "wiki": "Theodore_Roosevelt",
+   "terms": [
+    {
+     "n": 26,
+     "from": "1901",
+     "to": "1909",
+     "party": "Republican",
+     "vp": [
+      "Charles W. Fairbanks"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q35648",
+   "name": "William Howard Taft",
+   "image": "Cabinet card of William Howard Taft by Pach Brothers - Cropped to image.jpg",
+   "wiki": "William_Howard_Taft",
+   "terms": [
+    {
+     "n": 27,
+     "from": "1909",
+     "to": "1913",
+     "party": "Republican",
+     "vp": [
+      "James S. Sherman"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q34296",
+   "name": "Woodrow Wilson",
+   "image": "President Woodrow Wilson Harris & Ewing (3x4 cropped b).jpg",
+   "wiki": "Woodrow_Wilson",
+   "terms": [
+    {
+     "n": 28,
+     "from": "1913",
+     "to": "1921",
+     "party": "Democratic",
+     "vp": [
+      "Thomas R. Marshall"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q35286",
+   "name": "Warren G. Harding",
+   "image": "Warren G Harding portrait as senator June 1920.jpg",
+   "wiki": "Warren_G._Harding",
+   "terms": [
+    {
+     "n": 29,
+     "from": "1921",
+     "to": "1923",
+     "party": "Republican",
+     "vp": [
+      "Calvin Coolidge"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q36023",
+   "name": "Calvin Coolidge",
+   "image": "President Calvin Coolidge, 1924 portrait photograph (3x4 cropped).jpeg",
+   "wiki": "Calvin_Coolidge",
+   "terms": [
+    {
+     "n": 30,
+     "from": "1923",
+     "to": "1929",
+     "party": "Republican",
+     "vp": [
+      "Charles G. Dawes"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q35236",
+   "name": "Herbert Hoover",
+   "image": "President Hoover portrait.jpg",
+   "wiki": "Herbert_Hoover",
+   "terms": [
+    {
+     "n": 31,
+     "from": "1929",
+     "to": "1933",
+     "party": "Republican",
+     "vp": [
+      "Charles Curtis"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q8007",
+   "name": "Franklin D. Roosevelt",
+   "image": "FDR 1944 Color Portrait.jpg",
+   "wiki": "Franklin_D._Roosevelt",
+   "terms": [
+    {
+     "n": 32,
+     "from": "1933",
+     "to": "1945",
+     "party": "Democratic",
+     "vp": [
+      "John Nance Garner",
+      "Henry A. Wallace",
+      "Harry S. Truman"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q11613",
+   "name": "Harry S. Truman",
+   "image": "TRUMAN 58-766-06 (cropped).jpg",
+   "wiki": "Harry_S._Truman",
+   "terms": [
+    {
+     "n": 33,
+     "from": "1945",
+     "to": "1953",
+     "party": "Democratic",
+     "vp": [
+      "Alben W. Barkley"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q9916",
+   "name": "Dwight D. Eisenhower",
+   "image": "Dwight D. Eisenhower, official photo portrait, May 29, 1959.jpg",
+   "wiki": "Dwight_D._Eisenhower",
+   "terms": [
+    {
+     "n": 34,
+     "from": "1953",
+     "to": "1961",
+     "party": "Republican",
+     "vp": [
+      "Richard Nixon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q9696",
+   "name": "John F. Kennedy",
+   "image": "John F. Kennedy, White House color photo portrait.jpg",
+   "wiki": "John_F._Kennedy",
+   "terms": [
+    {
+     "n": 35,
+     "from": "1961",
+     "to": "1963",
+     "party": "Democratic",
+     "vp": [
+      "Lyndon B. Johnson"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q9640",
+   "name": "Lyndon B. Johnson",
+   "image": "Lyndon B. Johnson, photo portrait, leaning on chair, color cropped.jpg",
+   "wiki": "Lyndon_B._Johnson",
+   "terms": [
+    {
+     "n": 36,
+     "from": "1963",
+     "to": "1969",
+     "party": "Democratic",
+     "vp": [
+      "Hubert Humphrey"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q9588",
+   "name": "Richard Nixon",
+   "image": "Richard Nixon presidential portrait.jpg",
+   "wiki": "Richard_Nixon",
+   "terms": [
+    {
+     "n": 37,
+     "from": "1969",
+     "to": "1974",
+     "party": "Republican",
+     "vp": [
+      "Spiro Agnew",
+      "Gerald Ford"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q9582",
+   "name": "Gerald Ford",
+   "image": "Gerald Ford presidential portrait (cropped).jpg",
+   "wiki": "Gerald_Ford",
+   "terms": [
+    {
+     "n": 38,
+     "from": "1974",
+     "to": "1977",
+     "party": "Republican",
+     "vp": [
+      "Nelson Rockefeller"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q23685",
+   "name": "Jimmy Carter",
+   "image": "JimmyCarterPortrait2.jpg",
+   "wiki": "Jimmy_Carter",
+   "terms": [
+    {
+     "n": 39,
+     "from": "1977",
+     "to": "1981",
+     "party": "Democratic",
+     "vp": [
+      "Walter Mondale"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q9960",
+   "name": "Ronald Reagan",
+   "image": "Ronald Reagan 1981 presidential portrait.jpg",
+   "wiki": "Ronald_Reagan",
+   "terms": [
+    {
+     "n": 40,
+     "from": "1981",
+     "to": "1989",
+     "party": "Republican",
+     "vp": [
+      "George H. W. Bush"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q23505",
+   "name": "George H. W. Bush",
+   "image": "George H. W. Bush presidential portrait (cropped).jpg",
+   "wiki": "George_H._W._Bush",
+   "terms": [
+    {
+     "n": 41,
+     "from": "1989",
+     "to": "1993",
+     "party": "Republican",
+     "vp": [
+      "Dan Quayle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q1124",
+   "name": "Bill Clinton",
+   "image": "Bill Clinton.jpg",
+   "wiki": "Bill_Clinton",
+   "terms": [
+    {
+     "n": 42,
+     "from": "1993",
+     "to": "2001",
+     "party": "Democratic",
+     "vp": [
+      "Al Gore"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q207",
+   "name": "George W. Bush",
+   "image": "George-W-Bush.jpeg",
+   "wiki": "George_W._Bush",
+   "terms": [
+    {
+     "n": 43,
+     "from": "2001",
+     "to": "2009",
+     "party": "Republican",
+     "vp": [
+      "Dick Cheney"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q76",
+   "name": "Barack Obama",
+   "image": "President Barack Obama.jpg",
+   "wiki": "Barack_Obama",
+   "terms": [
+    {
+     "n": 44,
+     "from": "2009",
+     "to": "2017",
+     "party": "Democratic",
+     "vp": [
+      "Joe Biden"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q22686",
+   "name": "Donald Trump",
+   "image": "Official Presidential Portrait of President Donald J. Trump (2025) (3x4).jpg",
+   "wiki": "Donald_Trump",
+   "terms": [
+    {
+     "n": 45,
+     "from": "2017",
+     "to": "2021",
+     "party": "Republican",
+     "vp": [
+      "Mike Pence"
+     ]
+    },
+    {
+     "n": 47,
+     "from": "2025",
+     "to": null,
+     "party": "Republican",
+     "vp": [
+      "JD Vance"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q6279",
+   "name": "Joe Biden",
+   "image": "Joe Biden presidential portrait.jpg",
+   "wiki": "Joe_Biden",
+   "terms": [
+    {
+     "n": 46,
+     "from": "2021",
+     "to": "2025",
+     "party": "Democratic",
+     "vp": [
+      "Kamala Harris"
+     ]
+    }
+   ]
+  }
+ ]
+}

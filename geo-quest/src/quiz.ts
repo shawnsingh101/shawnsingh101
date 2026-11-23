@@ -51,7 +51,7 @@ export function placeCountries(ds: Dataset, p: Place): string[] {
   return list.replace(/…$/, '').split(/, | and /).map(n => byName.get(n.trim())).filter((x): x is string => !!x);
 }
 /** Layers where "just one country" makes sense as a filter (World Heritage in China, peaks in Nepal…). */
-export const COUNTRY_FILTER_LAYERS = ['site', 'peak', 'range', 'river', 'lake', 'art'];
+export const COUNTRY_FILTER_LAYERS = ['site', 'peak', 'range', 'river', 'lake', 'art', 'desert'];
 
 export function quizPool(ds: Dataset, scope: Scope, topics: Topic[], country?: string | null) {
   const cards = scopeGroups(scope).flatMap(g => g.topics.filter(t => topics.includes(t.id)).flatMap(t => cardsForNode(ds, nodeId(g.id, t.id))));

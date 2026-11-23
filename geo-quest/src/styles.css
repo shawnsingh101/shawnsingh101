@@ -795,3 +795,6 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 @media (max-width: 899px) { .study.no-map .gallery.whole img { max-height: 34vh; } .study.no-map .prompt-picture .gallery.whole img { max-height: 40vh; } }
 /* The settings panel scrolls on its own when it's taller than the screen. */
 .menu { max-height: calc(100dvh - 4.5rem); overflow-y: auto; overscroll-behavior: contain; }
+.native .py { font-size: .9rem; font-style: italic; color: var(--accent); margin-left: .35rem; } /* romaji, pinyin in decks */
+.range.desert { fill: color-mix(in srgb, #d9a441 30%, transparent); stroke: color-mix(in srgb, #b9832a 60%, transparent); }
+.range.desert.place:hover { fill: color-mix(in srgb, #d9a441 48%, transparent); }

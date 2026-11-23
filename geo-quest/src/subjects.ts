@@ -6,8 +6,8 @@ import type { IconName } from './components/Icons';
 
 export interface Subject { id: string; name: string; icon: IconName; blurb: string; sections: () => string[] }
 
-const BLURB: Record<string, string> = { 'Earth history': 'The geologic time scale as layers of rock: eons, eras, periods, epochs' };
-const ICON: Record<string, IconName> = { Art: 'image', 'Earth history': 'mountain', Economics: 'coin', 'Food & drink': 'drop', History: 'book', Languages: 'sound', Religion: 'temple', Politics: 'capitol', STEM: 'layers' };
+const BLURB: Record<string, string> = { 'Earth history': 'The geologic time scale as layers of rock: eons, eras, periods, epochs', History: 'China by dynasty; the United States by period, by place, and its presidents', Science: 'Biology from the OpenStax textbook, chapter by chapter' };
+const ICON: Record<string, IconName> = { Art: 'image', 'Earth history': 'mountain', Science: 'layers', Economics: 'coin', 'Food & drink': 'drop', History: 'book', Languages: 'sound', Religion: 'temple', Politics: 'capitol', STEM: 'layers' };
 
 export const SUBJECTS: Subject[] = [
   { id: 'geography', name: 'Geography', icon: 'globe', blurb: 'Countries, capitals, flags, leaders, regions, rivers, mountains, World Heritage',

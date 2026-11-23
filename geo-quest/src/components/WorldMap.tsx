@@ -160,7 +160,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
   const shapes = useMemo(() => {
     const out: Partial<Record<Layer, Shape[]>> = {};
     if (topos.country) out.country = cachedShapes(topos.country, 'country', lambda, path, f => shapeToCountry.get(f.id ? 'id:' + f.id : 'name:' + f.properties.name) ?? null);
-    for (const l of ['water', 'cn', 'us', 'terr', 'sub', 'range', 'lake', 'river', 'road'] as Extra[]) if (topos[l]) out[l] = cachedShapes(topos[l]!, l, lambda, path, f => (ds.byId.has(f.properties.id) || /-outline$/.test(f.properties.id ?? '') ? f.properties.id : null));
+    for (const l of ['water', 'cn', 'us', 'terr', 'sub', 'range', 'desert', 'lake', 'river', 'road'] as Extra[]) if (topos[l]) out[l] = cachedShapes(topos[l]!, l, lambda, path, f => (ds.byId.has(f.properties.id) || /-outline$/.test(f.properties.id ?? '') ? f.properties.id : null));
     return out;
   }, [topos, shapeToCountry, ds, path, lambda]);
 
@@ -328,6 +328,7 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {shapes.us && layers.includes('us') && shapes.us.map(s => shapeEl(s, 'land sub'))}
           {shapes.terr && layers.includes('terr') && shapes.terr.map(s => shapeEl(s, 'land sub terr'))}
           {shapes.sub && layers.includes('sub') && shapes.sub.filter(s => !!s.placeId && !/-outline$/.test(s.placeId) && (!subFilter || subFilter(s.placeId))).map(s => shapeEl(s, 'land sub'))}
+          {shapes.desert && layers.includes('desert') && shapes.desert.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'range desert') : null))}
           {shapes.range && layers.includes('range') && shapes.range.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'range') : null))}
           {shapes.lake && layers.includes('lake') && shapes.lake.map(s => (s.placeId && showWaterway(s) ? shapeEl(s, 'lake') : <path key={s.key} d={s.d} className="lake other" />))}
           {shapes.river && layers.includes('river') && shapes.river.filter(showWaterway).map(s => riverEl(s))}

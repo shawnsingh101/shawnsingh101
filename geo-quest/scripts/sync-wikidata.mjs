@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { toPinyin, addChinese } from './lib/chinese.mjs';
+import { addRomaji } from './lib/japanese.mjs';
 import YAML from 'yaml';
 import { unzipSync, strFromU8 } from 'fflate';
 import { createHash } from 'node:crypto';
@@ -1347,6 +1348,20 @@ const writers = [
 warnings.forEach(w => console.warn('⚠ ' + w));
 changes.forEach(ch => console.log(`Δ ${ch.name}: ${ch.field} ${JSON.stringify(ch.from)} → ${JSON.stringify(ch.to)}`));
 console.log(`${list.length} countries, ${states.size} US states, ${senate.length} senators, ${governors.length} governors, ${leaders.length} world leaders, ${territories.length} territories, ${sites.length} World Heritage Sites, ${peaks.length} peaks, ${mranges.length} ranges, ${water.size} waters, ${rivers.length} rivers, ${lakes.length} lakes, ${cn.size} China divisions, ${changes.length} changes, ${warnings.length} warnings`);
+
+// Japanese local names get romaji (Wikidata's own Hepburn spelling where it has one).
+{
+  const all = [list, [...water.values()], rivers, [...states.values()], territories, sites, peaks, mranges, lakes, [...subs.values()], [...cn.values()]];
+  const known = new Map();
+  try {
+    const ids = [...new Set(all.flat().flatMap(p => [p, ...(p.capitals ?? []), p.largestCity].filter(Boolean)).filter(p => p.native?.some(n => n.code === 'ja')).map(p => p.id).filter(Boolean))];
+    const byId = new Map(all.flat().flatMap(p => [p, ...(p.capitals ?? []), p.largestCity].filter(Boolean)).map(p => [p.id, p]));
+    for (let i = 0; i < ids.length; i += 200) for (const b of await sparql(`SELECT ?p ?r WHERE { VALUES ?p { ${ids.slice(i, i + 200).map(q => `wd:${q}`).join(' ')} } ?p wdt:P2125 ?r }`)) {
+      const n = byId.get(qid(v(b, 'p')))?.native?.find(x => x.code === 'ja'); if (n) known.set(n.name, v(b, 'r'));
+    }
+  } catch (e) { console.warn('romaji lookup:', e.message); }
+  await addRomaji(all, known);
+}
 
 if (!DRY) {
   writers.forEach(w => w());

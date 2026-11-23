@@ -33,6 +33,27 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.15: History, Science, deserts, romaji
+
+- **Romaji for Japanese** (`scripts/lib/japanese.mjs`, kuroshiro, Hepburn with macrons; Wikidata P2125 first), shown
+  under the kanji like pinyin: 東京 *Tōkyō*, 神奈川沖浪裏 *Kanagawa Oki Nami Ura*, 富士山 *Fujisan*. Decks write
+  `native: 夏朝 Xià Cháo (Chinese)` (script, then romanization).
+- **Physical geography**: Mountains, Rivers, Lakes, Oceans & Seas and the new **Deserts** sit together, apart from
+  countries and their regions. Deserts (`scripts/build-deserts.mjs`): 44 from Natural Earth with Wikidata facts (area,
+  countries, local names); the 18 best known unlock the rest; a Map-view toggle too.
+- **History** (a new subject):
+  - *Presidents* (History of the United States › Presidents): all 45 people / 47 presidencies, from
+    `data/presidents.json` (hand-checked parties and vice presidents) + portraits (`scripts/sync-presidents.mjs`).
+    Cards: portrait → name, number → name, name → number, years, party; vice presidents on the back. Four eras.
+  - *History of China*, following Wikipedia's chapters: Prehistory, Ancient China, Imperial China (Early, Six Dynasties,
+    Mid, Late), Modern period; one deck per dynasty or period (dates, founder, capital, what it's known for, 汉字 +
+    pinyin, what came before).
+  - *History of the United States*: one deck per Wikipedia chapter, plus **By place** (New York › New York City,
+    Pennsylvania › Philadelphia, New Jersey). `also in: Philadelphia` after a card puts it in that deck too.
+- **Science**: Biology from OpenStax Biology 2e (CC BY 4.0), unit by unit, chapter by chapter; chapter 1 started;
+  the full outline in `decks/Science/README.md`.
+- Decks: a number in front of a folder or file name sets the order and is hidden ("2 Ancient China").
+
 ## v1.14.2: a classier picture size
 
 - On a laptop the picture beside a card is framed at a modest size (up to 400 px wide, ~440 px tall), with the picture
