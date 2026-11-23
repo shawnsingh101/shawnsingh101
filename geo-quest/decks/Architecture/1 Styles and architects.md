@@ -30,37 +30,45 @@ How to tell the great styles apart, oldest first, and the architects who changed
 - Victorian churches, universities and the Houses of Parliament revived medieval forms in the {{Gothic Revival|which style?}}.
 ![Royal Courts of Justice, London](commons:Royal Courts of Justice 20130414 065.JPG)
 - Grand, richly carved public buildings in the manner taught at the École des Beaux-Arts in Paris are called {{Beaux-Arts|which style?}}.
+native: Beaux-Arts (French)
 ![Petit Palais, Paris](commons:Petit Palais, Paris 8th 003.JPG)
 - Flowing, plant-like lines in iron and glass, as in Victor Horta's Hôtel Tassel in Brussels, mark {{Art Nouveau|which style?}}.
+native: Art nouveau (French)
 ![Hôtel Tassel, Brussels](commons:Victor Horta Hotel Tassel.JPG)
 - Antoni Gaudí's buildings in Barcelona belong to Catalan {{Modernisme|which movement?}}.
+native: Modernisme (Catalan)
 ![Casa Batlló, Barcelona](commons:Casa Batllo Overview Barcelona Spain cut.jpg)
 - Bold geometry, zigzags and sleek ornament, as on the Chrysler Building, mark {{Art Deco|which style?}}.
 ![The Chrysler Building, New York](commons:Chrysler Building by David Shankbone Retouched.jpg)
 - Long, low houses with wide overhanging roofs, by Frank Lloyd Wright and others in the Midwest, are the {{Prairie School|which style?}}.
 ![Darwin D. Martin House, Buffalo](commons:D. D. Martin House - West side elevation and porte cochere - HABS NY,15-BUF,5-7.jpg)
 - The German art school at Weimar and Dessau that joined art, craft and industry was the {{Bauhaus|which school?}}.
+native: Bauhaus (German)
 ![The Bauhaus building, Dessau](commons:Dessau Bauhaus-Gebäude asv2024-06 img1.jpg)
 - Plain boxes of glass and steel with no ornament, like the Seagram Building in New York, mark the {{International Style|which style?}}.
 ![The Seagram Building, New York](commons:Seagrambuilding.JPG)
 - Massive blocks of raw, exposed concrete mark {{Brutalist|which style?}} architecture.
 ![Buffalo City Court Building](commons:Buffalo City Court Building, 1971-74, Pfohl, Roberts and Biggie (8448022295).jpg)
 > From the French *béton brut*, "raw concrete".
-- Playful, colourful borrowing from older styles, as in Charles Moore's Piazza d'Italia, marks {{Postmodern|which style?}} architecture.
+- Playful, colorful borrowing from older styles, as in Charles Moore's Piazza d'Italia, marks {{Postmodern|which style?}} architecture.
 ![Piazza d'Italia, New Orleans](commons:Charles Moore Piazza d'Italia.jpg)
 - Fragmented, twisting forms, as in Frank Gehry's Guggenheim Museum Bilbao, mark {{Deconstructivism|which style?}}.
 ![Guggenheim Museum Bilbao](commons:Museo Guggenheim, Bilbao (31273245344).jpg)
 
 ## Name the architect
 - {{Filippo Brunelleschi|who?}} built the dome of Florence Cathedral, the start of Renaissance architecture.
+native: Filippo Brunelleschi (Italian)
 ![Brunelleschi, in a fresco by Masaccio](commons:Masaccio, cappella brancacci, san pietro in cattedra. ritratto di filippo brunelleschi.jpg)
-- {{Andrea Palladio|who?}} built villas modelled on Roman temples, such as Villa La Rotonda; his books shaped houses for 300 years.
+- {{Andrea Palladio|who?}} built villas modeled on Roman temples, such as Villa La Rotonda; his books shaped houses for 300 years.
+native: Andrea Palladio (Italian)
 ![Andrea Palladio](commons:Andrea Palladio2.jpeg)
 - {{Frank Lloyd Wright|who?}} designed Fallingwater and the Guggenheim Museum in New York.
 ![Frank Lloyd Wright](commons:Frank Lloyd Wright LC-USZ62-36384.jpg)
 - "Less is more" was the motto of {{Ludwig Mies van der Rohe|who?}}, the last director of the Bauhaus.
+native: Ludwig Mies van der Rohe (German)
 ![Ludwig Mies van der Rohe](commons:Ludwig Mies van der Rohe in Arts & Architecture, June 1960 issue.jpg)
 - "A house is a machine for living in," wrote {{Le Corbusier|who?}}, the Swiss-French architect of Villa Savoye.
+native: Le Corbusier (French)
 ![Le Corbusier](commons:Le Corbusier (1964).jpg)
 - {{I. M. Pei|who?}} designed the glass pyramid at the Louvre.
 ![I. M. Pei (right) with a model](commons:Itzhak Perlman with I.M. Pei, architect, looking at model of NYC Convention Center (03124v) (cropped).jpg)

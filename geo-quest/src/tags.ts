@@ -28,7 +28,8 @@ export const TOPICS: Record<string, string[]> = {
   Science: ['natural selection', 'evolution', 'evolutionary biology', 'gene', 'meme', 'cosmology', 'physics', 'biology', 'natural environment', 'ddt',
     'history of science', "gödel's incompleteness theorems", 'mathematics', 'popularisation of science'],
   Psychology: ['psychology', 'the unconscious', 'dream interpretation', 'decision-making', 'cognitive bias', 'psychoanalysis'],
-  'Technology & AI': ['artificial intelligence', 'superintelligence', 'ai alignment', 'existential risk from artificial intelligence', 'technology', 'machine learning'],
+  // Named like the subject, so its shelf also shows there (Artificial intelligence › reading list).
+  'Artificial intelligence': ['artificial intelligence', 'artificial general intelligence', 'openai', 'large language model', 'superintelligence', 'ai alignment', 'existential risk from artificial intelligence', 'technology', 'machine learning'],
 };
 /** The shelves a nonfiction item belongs on: from its subjects; from its genres only if its subjects match nothing. */
 export function topicsOf(subjects: string[] = [], genres: string[] = []): string[] {

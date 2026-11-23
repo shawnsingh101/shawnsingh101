@@ -33,6 +33,28 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.26: pronunciation of the answer, Empire of AI, Artificial intelligence
+
+- **A speaker beside the green answer**, saying that answer in its own language (`say` on a card face; `Say` in
+  `Study.tsx`). The sync now fetches people's own-language names (Wikidata P1559) for every artist, architect, author,
+  composer and person in a list (92 so far): the speaker says Brunelleschi in Italian, Фёдор Достоевский, 葛飾北斎
+  (with romaji). A person's name written our way is read as the card shows it (not "Johann Chrysostomus Wolfgang
+  Gottlieb Mozart"); a title is said, and shown, in its own form (*La Gioconda*). Before, the line under a "who made
+  it?" card showed the *work's* local name; now each card shows only its answer's. Voices for languages devices
+  lack borrow the nearest (Ancient Greek → Greek, Latin → Italian, Sanskrit → Hindi).
+- Decks: `native: Milan = Milano (Italian); Italy = Italia (Italian)` gives each blank of a two-blank line its own name.
+  Added to Architecture (Brunelleschi, Palladio, Mies, Le Corbusier, Beaux-Arts, Art nouveau, Modernisme, Bauhaus),
+  Food & drink (Campari, Negroni, Milano, Torino, Bourgogne, México…), Philosophy (Αθήνα, Πλάτων) and Religion (مكة,
+  ירושלים, ਅੰਮ੍ਰਿਤਸਰ, ਸਿੱਖੀ, गंगा).
+- **Books you've read**: *Books › My reading* (the book itself, by Wikidata) and *Books › Reading notes › Empire of AI*
+  (19 cards, its intro a summary page shown on the deck's sheet) and *Empire of AI: deep cuts* (`depth: deep`, now for
+  note decks too). The rules are in GUIDELINES.md (about 20 cards, no repeats across books).
+- **Artificial intelligence**, a subject of lenses: *History of AI*, *How AI works*, *The AI industry*, *AI debates*,
+  filled by `also in:` from every book's notes; plus *Artificial intelligence: reading list* (the Books shelf, renamed
+  from Technology & AI to match).
+- **American spelling** everywhere; respelled cards keep their progress (the card id reads "flavor" as "flavour").
+- A deck's sheet lists each heading once.
+
 ## v1.25: Jazz, and better classical clips
 
 - **Jazz** (`collections/Music/2 Jazz.md`, the first `kind: person` list): 43 musicians under the scene they're known for

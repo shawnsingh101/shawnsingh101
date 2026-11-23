@@ -48,6 +48,10 @@ related: Italy, Florence
   That place's sheet then lists the card under "Also in your decks". Countries named in a card are linked automatically.
 - **`era: Prehistory`** (front matter, History decks): the world era (Prehistory, Ancient, Medieval, Early modern, Modern,
   Contemporary; two allowed). The deck also shows under History › By era, beside the same era from every country.
+- **`native: Milan = Milano (Italian); Italy = Italia (Italian)`** (after a card with two blanks): each name goes to its own
+  card. A name spelled as in English still gets its line (`native: Filippo Brunelleschi (Italian)`): the speaker says it.
+- **`depth: deep`** (front matter): a deck of deep cuts; it unlocks once half of the deck beside it is known.
+- **Lines before the first heading** are the deck's intro; several lines make a summary page (books you've read).
 - **`also in: Philadelphia, New Jersey`** (right after a card): the card also shows in the decks with those titles (one
   set of progress). Used for History by place.
 - A number in front of a folder or file name (`2 Ancient China/`, `3 Zhou dynasty.md`) sets the order and is hidden.

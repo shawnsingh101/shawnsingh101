@@ -18,7 +18,7 @@ const cap = w => w.charAt(0).toUpperCase() + w.slice(1);
 /** Every Japanese local name in `data` (anywhere inside it). */
 function collect(x, out = new Set()) {
   if (Array.isArray(x)) x.forEach(y => collect(y, out));
-  else if (x && typeof x === 'object') { for (const n of x.native ?? []) if (isJa(n)) out.add(n.name); for (const [k, v] of Object.entries(x)) if (k !== 'audio') collect(v, out); }
+  else if (x && typeof x === 'object') { for (const n of [...(x.native ?? []), ...(x.makerNative ?? [])]) if (isJa(n)) out.add(n.name); for (const [k, v] of Object.entries(x)) if (k !== 'audio') collect(v, out); }
   return out;
 }
 /** Readings for names: words spaced and capitalised ("Kamakura Daibutsu"). `known` (name → romaji) takes precedence. */
@@ -37,7 +37,7 @@ export async function addRomaji(data, known, refresh = false) {
   const map = await romajiFor(names, known);
   const walk = x => {
     if (Array.isArray(x)) x.forEach(walk);
-    else if (x && typeof x === 'object') { for (const n of x.native ?? []) if (isJa(n) && (refresh || !n.roman)) n.roman = map.get(n.name); for (const [k, v] of Object.entries(x)) if (k !== 'audio') walk(v); }
+    else if (x && typeof x === 'object') { for (const n of [...(x.native ?? []), ...(x.makerNative ?? [])]) if (isJa(n) && (refresh || !n.roman)) n.roman = map.get(n.name); for (const [k, v] of Object.entries(x)) if (k !== 'audio') walk(v); }
   };
   walk(data);
   return data;

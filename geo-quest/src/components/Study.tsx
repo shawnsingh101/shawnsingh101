@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ClipPlayer, MusicReveal } from './Music';
+import { Say } from './Native';
+const fold = (x: string) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/^the /, '').trim();
+const latin = (x: string) => /^[\p{Script=Latin}\p{N}\p{P}\p{Zs}]+$/u.test(x);
 import { face, groupOf, placesIn, GROUPS, KIND_LABEL, LAYER_NOUN, layerFor, sectionChain, type CardRef } from '../cards';
 const m0Layer = (c: { layer: string }) => c.layer;
 import { answer, buildQueue, queueForCards, getProgress, update, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
@@ -216,6 +219,13 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
     );
   }
 
+  // The answer in its own language, for the speaker beside it: from the card (art, music, people), or a note card's
+  // native line when it is the answer itself (spelled the same: Filippo Brunelleschi, said in Italian).
+  const noteNative = item.ref.kind === 'note' ? c.native?.[0] : null;
+  const say = f.say ?? (noteNative && fold(noteNative.name) === fold(f.answer) ? noteNative : null);
+  // What the speaker says: a person's name written our way as the card shows it; anything else in its own form
+  // (La Gioconda for "the Mona Lisa", which is then shown under the answer too).
+  const sayText = say ? ((f.say?.asWritten && latin(say.name)) ? f.answer : say.name) : null;
   const pv = revealed ? previews(item.ref) : null;
   // Intervals only mean something for cards in your schedule (a quiz on unseen cards doesn't schedule them).
   const showIntervals = !quiz || (getProgress().cards[item.ref.id]?.c.state ?? State.New) !== State.New;
@@ -330,9 +340,13 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
             {f.answerFlag
               ? (revealed ? <span className="fill"><Flag file={c.flag ?? null} name={c.name} className="answer-flag" eager /></span> : <span className="blank">{f.blank}</span>)
               : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}>{f.answer}</span> : <span className="blank">{f.blank}</span>)}
+            {/* The green answer, said in its own language (a name written our way is read out as written, in that voice). */}
+            {revealed && say && <Say text={sayText!} code={say.code} />}
             {f.hidePostUntilReveal && !revealed ? '.' : f.post}
           </p>}
-          {revealed && (!/^(currency|senator|note)/.test(item.ref.kind) || (item.ref.kind === 'note' && (!!c.native?.length || !!c.species))) && (
+          {/* Art, books, music, people: the answer's own-language name, only when it's written differently (Достоевский, 葛飾北斎). */}
+          {revealed && c.layer === 'art' && say && fold(sayText!) !== fold(f.answer) && <div className="local"><span className="native" title={say.lang}><bdi>{say.name}</bdi>{(say.roman ?? (c.zh && say.name === c.zh.han ? c.zh.pinyin : null)) && <span className="py">{say.roman ?? c.zh!.pinyin}</span>}</span></div>}
+          {revealed && c.layer !== 'art' && !(item.ref.kind === 'note' && say && !c.species) && (!/^(currency|senator|note)/.test(item.ref.kind) || (item.ref.kind === 'note' && (!!c.native?.length || !!c.species))) && (
             <div className="local">
               {c.species && <i className="species" title="Scientific name">{c.species}</i>}
               {item.ref.kind.startsWith('largestCity') && c.largestCity && !c.largestCity.isCapital ? <LocalName place={c} capital={c.largestCity as unknown as typeof cap} showLang />

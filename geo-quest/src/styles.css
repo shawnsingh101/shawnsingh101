@@ -899,3 +899,6 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .clip-wrap { margin: .3rem 0 .8rem; }
 .clip-wrap .clip-player { margin: 0; }
 .clip-tools { display: flex; gap: .35rem; flex-wrap: wrap; margin-top: .4rem; }
+.deck-summary { margin-top: .9rem; border-top: 1px solid var(--line); padding-top: .6rem; }
+.deck-summary summary { font-weight: 650; cursor: pointer; }
+.deck-summary p { margin: .45rem 0; font-size: .92rem; line-height: 1.5; }

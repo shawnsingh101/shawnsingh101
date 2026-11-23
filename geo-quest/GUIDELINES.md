@@ -10,7 +10,12 @@ feature consistent. When adding anything, check it against this page. When a new
    - Countries, capitals, cities, regions, rivers, lakes, ranges, territories, sites, peaks, artworks: from Wikidata.
    - Note decks: a `native: الكعبة (Arabic)` line under the heading.
    - Use the language of where the thing *comes from*, not where it is now (the Mona Lisa is *La Gioconda*, not French).
-   - Skip it when it's the same as the English name.
+   - **The speaker goes beside the green answer and says that answer** in its own language: the person a card asks
+     for (Brunelleschi in Italian, 葛飾北斎, Фёдор Достоевский), the title (*La Gioconda*), the city (*Milano*), the term
+     (*Bauhaus*). Spelled the same as in English: no extra text, just the speaker. A person's name written our way is
+     read as the card shows it (not their full birth name). Not for concepts, dates or English names.
+   - People's own-language names come from Wikidata (P1559) for collections; in decks, a `native:` line right after the
+     card. A line with two blanks names its answer: `native: Milan = Milano (Italian); Italy = Italia (Italian)`.
 2. **Chinese gets characters and Hanyu Pinyin with tone marks**, everywhere (`scripts/lib/chinese.mjs`): words written
    apart and capitalised as on maps (*Kūnlún Shānmài*), sound-spelled foreign names kept whole.
    **Japanese gets romaji (Hepburn, with macrons)** the same way (`scripts/lib/japanese.mjs`): Wikidata's own
@@ -57,7 +62,7 @@ feature consistent. When adding anything, check it against this page. When a new
   road signs, any single photo. A place's gallery of photos keeps the wide strip, which suits landscapes.
 - **Tap any picture to see it full screen.**
 - **No scrolling to see a card.** On a laptop a card without a map shows its picture framed beside it (up to ~400 px
-  wide), the two centred together; on a phone the picture stays above the text, at most a third of the screen tall.
+  wide), the two centered together; on a phone the picture stays above the text, at most a third of the screen tall.
 - **Never enlarge a picture past its own pixels** (no blur), on the card or full screen. Full screen fits the whole
   picture on screen; nothing scrolls.
 - A picture can be the question (`- What is made from this? [picture] :: gin`); its caption stays hidden until the card
@@ -80,7 +85,7 @@ feature consistent. When adding anything, check it against this page. When a new
 
 - **One level of regions at a time** (Punjab's districts *or* India's states, never both on top of each other), with a
   bold outline of the country or state they belong to.
-- **Re-centre on the place** when it's far from the middle of the map (past ~70°), so nothing is drawn tilted at the edge.
+- **Re-center on the place** when it's far from the middle of the map (past ~70°), so nothing is drawn tilted at the edge.
 - **Country and state names as a toggle** (the tag button by the zoom buttons) on cards where they can't give the
   answer away: rivers, lakes, Interstates, ranges, peaks, World Heritage, seas. Never on cards that ask for a country or
   state.
@@ -124,6 +129,18 @@ feature consistent. When adding anything, check it against this page. When a new
   Interstate corridors, then the others).
 - The **Library** tab always opens on the subject cards.
 - **Me** measures every subject the same two ways (covered, memory), so a new subject shows up there by itself.
+
+## 4b. Books you've read
+
+- **About 20 cards a book**: the author (from the *My reading* list), the big idea (2–3), and the facts that outlast the
+  book (10–15). Deep cuts only when asked, in a `depth: deep` deck beside it.
+- **No repeats across books**: search first; a fact another book already taught gets `also in:` the new book's lens,
+  not a second card.
+- **The summary page** is the deck's intro (thesis, structure, key terms, key people): read any time, never reviewed.
+- **Cards feed the subject's lenses** (`also in: History of AI`, `How AI works`, `The AI industry`, `AI debates`), so
+  every book on a topic builds one history, one picture of the technology, the industry and the debates.
+- The owner has read many AI books: later AI books should lean past the basics.
+- Read the PDF as text (`pdftotext`), never commit the book; cards are in our own words with very short quotes.
 
 ## 5. Content files (how to add things)
 
@@ -172,7 +189,7 @@ Deck syntax, quickly: `## Heading` · `- cloze with {{answer|hint}}` · `- front
   set-once switches live in Settings. One row per deck; a folder with one or two small decks (under 30 cards) is listed in its parent and gets its own fold
   back by itself as it grows. Ask "what can this replace?"
   before adding a button.
-- Writing: plain English, short, no jargon in the app. Explain the *why* in code comments where it isn't obvious.
+- Writing: plain English, short, no jargon in the app. **American spelling** (color, center, labor, flavor, modeled). Explain the *why* in code comments where it isn't obvious.
 
 ## 9. How changes are made
 

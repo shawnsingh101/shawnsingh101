@@ -14,7 +14,8 @@ const titles = new Set(decks.map(x => x.d.title.toLowerCase()));
 const ids = new Map<string, string>();
 let n = 0;
 for (const { f, d } of decks) {
-  if (!d.cards.length) issues.push(`EMPTY deck: ${f}`);
+  // A lens deck (History of AI) has no cards of its own: other decks' cards are shown in it ("also in").
+  if (!d.cards.length && !decks.some(x => x.d.cards.some(c => c.card.also?.some(t => t.toLowerCase() === d.title.toLowerCase())))) issues.push(`EMPTY deck: ${f}`);
   for (const { id, card: c } of d.cards) {
     n++;
     if (ids.has(id)) issues.push(`DUP id ${id}: ${f} & ${ids.get(id)}`); ids.set(id, f);

@@ -12,7 +12,7 @@ native: 忽必烈 Hūbìliè (Chinese)
 - The Yuan capital, Dadu, is today's {{Beijing|what city?}}.
 ![Beijing](commons:天安门夜景.jpg)
 native: 北京 Běijīng (Chinese)
-- The Venetian traveller {{Marco Polo|who?}} described Kublai Khan's court.
+- The Venetian traveler {{Marco Polo|who?}} described Kublai Khan's court.
 ![Marco Polo](commons:Marco Polo Mosaic from Palazzo Tursi.jpg)
 native: 马可·波罗 Mǎkě Bōluó (Chinese)
 

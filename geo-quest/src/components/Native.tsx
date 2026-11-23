@@ -5,7 +5,9 @@ import { Icon } from './Icons';
 // ---- pronunciation ------------------------------------------------------------------
 // A real recording from Wikimedia Commons when Wikidata has one in that language,
 // otherwise the device's own text-to-speech voice (good on phones, incl. Mandarin tones).
-const bcp47 = (code?: string) => (!code ? undefined : code === 'zh-hans' || code === 'zh' ? 'zh-CN' : code === 'zh-hant' ? 'zh-TW' : code);
+// Languages without a device voice borrow the nearest one: Ancient Greek → Greek, Latin → Italian, Sanskrit → Hindi.
+const NEAREST: Record<string, string> = { grc: 'el', la: 'it', sa: 'hi', lzh: 'zh-CN', nn: 'nb', no: 'nb', akk: 'ar' };
+const bcp47 = (code?: string) => (!code ? undefined : code === 'zh-hans' || code === 'zh' ? 'zh-CN' : code === 'zh-hant' ? 'zh-TW' : NEAREST[code] ?? code);
 
 function speak(text: string, code?: string) {
   if (!('speechSynthesis' in window)) return;

@@ -8,7 +8,7 @@ Every spirit on the bar starts as a plant somewhere in the world. Learn what eac
 related: Netherlands, England
 species: Juniperus communis
 ![Juniper berries](commons:Jeneverbes-spice.jpg)
-- Gin gets its flavour from {{juniper berries|which berries?}}.
+- Gin gets its flavor from {{juniper berries|which berries?}}.
 - Gin grew out of {{jenever|what spirit?}}, a Dutch spirit, and became a craze in {{London|what city?}} in the 1700s.
 
 ## Tequila
@@ -17,6 +17,7 @@ species: Agave tequilana
 ![Agave](commons:Agave americana R01.jpg)
 - Tequila is made from the {{blue agave|which plant?}} plant.
 - Real tequila can only come from {{Mexico|which country?}}, mostly the state of {{Jalisco|which state?}}.
+native: Mexico = México (Spanish); Jalisco = Jalisco (Spanish)
 > Mezcal is also made from agave, of many kinds; its heart is roasted in pits, which makes it smoky. Most comes from Oaxaca.
 
 ## Rum
@@ -30,6 +31,7 @@ species: Saccharum officinarum
 related: Brazil
 species: Saccharum officinarum
 - Cachaça is made from fresh {{sugarcane juice|what?}}, not molasses, and comes from {{Brazil|which country?}}.
+native: Brazil = Brasil (Portuguese)
 - Brazil's national cocktail, made with cachaça, lime and sugar, is the {{caipirinha|which cocktail?}}.
 
 ## Bourbon
@@ -65,11 +67,13 @@ species: Vitis vinifera
 ![Grapes](commons:Wine grapes03.jpg)
 - Cognac is a brandy: a spirit distilled from {{wine|what?}}, made from {{grapes|which fruit?}}.
 - Cognac must come from around the town of Cognac in western {{France|which country?}}.
+native: France = France (French)
 
 ## Pisco
 related: Peru, Chile
 species: Vitis vinifera
 - Pisco is a grape brandy from {{Peru|which country?}} and {{Chile|which country?}}, both of which claim it.
+native: Peru = Perú (Spanish); Chile = Chile (Spanish)
 - Pisco, lime, sugar and egg white, shaken, make a {{pisco sour|which cocktail?}}.
 
 ## Baijiu
@@ -77,12 +81,14 @@ related: China
 species: Sorghum bicolor
 ![Sorghum](commons:Sorghum bicolor03.jpg)
 - Baijiu, the most drunk spirit in the world, is made mostly from {{sorghum|which grain?}} in {{China|which country?}}.
+native: China = 中国 Zhōngguó (Chinese)
 
 ## Soju
 related: South Korea
 species: Oryza sativa
 ![Rice](commons:White, Brown, Red & Wild rice.jpg)
 - Soju is a clear spirit from {{Korea|which country?}}, first made from {{rice|which grain?}}.
+native: Korea = 한국 Hanguk (Korean)
 
 ## Absinthe
 related: Switzerland, France
@@ -94,7 +100,7 @@ species: Artemisia absinthium
 ## Which spirit?
 ![Juniper berries](commons:Jeneverbes-spice.jpg)
 species: Juniperus communis
-- [picture] These berries give {{gin|which spirit?}} its flavour.
+- [picture] These berries give {{gin|which spirit?}} its flavor.
 
 ## Which spirit?
 ![Agave](commons:Agave americana R01.jpg)
