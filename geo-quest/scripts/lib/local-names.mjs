@@ -25,7 +25,8 @@ export async function addLocalNames(items, langsOf, sparql) {
   for (const p of items) {
     const out = [];
     for (const l of want.get(p.id)) {
-      const name = labels[p.id]?.[l.code] ?? (l.code === 'zh-hans' ? labels[p.id]?.zh : undefined);
+      let name = labels[p.id]?.[l.code] ?? (l.code === 'zh-hans' ? labels[p.id]?.zh : undefined);
+      if (name) name = name.replace(/\s*\([^)]*\)\s*$/, ''); // "الصحراء الغربية (مصر)": drop the disambiguation
       if (name && same(name) !== same(p.name) && !out.some(n => same(n.name) === same(name))) out.push({ name, lang: l.lang, code: l.code });
     }
     if (out.length) p.native = out; else delete p.native;

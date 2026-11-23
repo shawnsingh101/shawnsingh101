@@ -7,13 +7,14 @@ import type { IconName } from './components/Icons';
 
 export type Kind = 'locate' | 'identify' | 'capital' | 'capitalReverse' | 'capitalLocate' | 'flag' | 'flagReverse' | 'senator' | 'senatorFace' | 'senatorLocate'
   | 'currency' | 'currencyReverse' | 'largestCity' | 'largestCityReverse' | 'belongsTo'
-  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse' | 'note' | 'artPhoto' | 'artMaker' | 'artWhere' | 'roadShield';
-export type Topic = 'countries' | 'places' | 'capitals' | 'flags' | 'senate' | 'governors' | 'leaders' | 'currency' | 'cities' | 'sovereign' | 'sites' | 'peaks' | 'highest' | 'notes' | 'art' | 'shields';
+  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse' | 'note' | 'artPhoto' | 'artMaker' | 'artWhere' | 'roadShield' | 'presFace' | 'presName' | 'presNumber' | 'presYears' | 'presParty';
+export type Topic = 'countries' | 'places' | 'capitals' | 'flags' | 'senate' | 'governors' | 'leaders' | 'currency' | 'cities' | 'sovereign' | 'sites' | 'peaks' | 'highest' | 'notes' | 'art' | 'shields' | 'presidents';
 
 export const TOPIC_KINDS: Record<Topic, Kind[]> = {
   notes: ['note'],
   art: ['artPhoto', 'artMaker', 'artWhere'],
   shields: ['roadShield'],
+  presidents: ['presFace', 'presName', 'presNumber', 'presYears', 'presParty'],
   countries: ['locate', 'identify'],
   places: ['locate', 'identify'],
   capitals: ['capital', 'capitalReverse', 'capitalLocate'],
@@ -33,7 +34,7 @@ export const TOPIC_KINDS: Record<Topic, Kind[]> = {
 export const TAP_KINDS: Kind[] = ['locate', 'capitalLocate', 'senatorLocate', 'siteLocate'];
 
 export const KIND_LABEL: Record<Kind, string> = {
-  note: 'Card', artPhoto: 'Picture → name', artMaker: 'Who made it?', artWhere: 'Where is it?', roadShield: 'Name the shield',
+  note: 'Card', artPhoto: 'Picture → name', artMaker: 'Who made it?', artWhere: 'Where is it?', roadShield: 'Name the shield', presFace: 'Who is this?', presName: 'Number → president', presNumber: 'Which number?', presYears: 'When?', presParty: 'Which party?',
   locate: 'Find it on the map', identify: 'Name it', capital: 'Name the capital',
   capitalReverse: 'Capital → name', capitalLocate: 'Capital → map', flag: 'Name the flag', flagReverse: 'Picture the flag',
   senator: 'Name the person', senatorFace: 'Who is this?', senatorLocate: 'Person → map',
@@ -50,6 +51,7 @@ export function fingerprint(kind: Kind, c: Place) {
   if (kind.startsWith('largestCity')) return `${c.name}|${c.largestCity?.name}`;
   if (kind.startsWith('highest')) return `${c.name}|${c.highest?.name}`;
   if (kind === 'artMaker') return `${c.name}|${makerOf(c)}`;
+  if (kind.startsWith('pres')) return `${c.name}|${c.terms?.map(t => `${t.n}:${t.from}-${t.to}`).join(',')}`;
   if (kind === 'artWhere') return `${c.name}|${c.museum}|${c.countryName}`;
   return c.name;
 }
@@ -159,12 +161,20 @@ export const GROUPS: Group[] = [
     note: 'The Interstates whose numbers end in 0 or 5: the long ones that cross the country. Odd numbers run north–south (I-5 in the west, I-95 in the east); even numbers run east–west (I-10 in the south, I-90 in the north).' },
   { id: 'hw-more', section: 'Interstate Highways', name: 'More Interstates', layer: 'road', nouns: 'Interstates', requires: 'hw-main/places',
     topics: [{ id: 'places', name: 'On the map', icon: 'road' }, { id: 'shields', name: 'Shields', icon: 'road', requires: 'places' }] },
+  // US presidents, by era (History › History of the United States › Presidents).
+  ...([['pr-1', 'Washington to Buchanan (1789–1861)'], ['pr-2', 'Lincoln to McKinley (1861–1901)'], ['pr-3', 'Theodore Roosevelt to FDR (1901–1945)'], ['pr-4', 'Truman to today (1945–)']] as const)
+    .map(([id, name], i): Group => ({ id, section: 'Presidents', name, layer: 'person', nouns: 'presidents', requires: i ? 'pr-1/presidents' : undefined,
+      topics: [{ id: 'presidents', name: 'Presidents', icon: 'person' }],
+      note: i ? undefined : 'Every president from George Washington on: their portrait, their number, their years, their party, and their vice presidents. Grover Cleveland (22nd and 24th) and Donald Trump (45th and 47th) each served twice.' })),
+  { id: 'd-great', section: 'Deserts', name: 'Great deserts', layer: 'desert', nouns: 'deserts', topics: [{ id: 'places', name: 'Great deserts', icon: 'sun' }],
+    note: 'The best-known deserts of every continent first (the Sahara, Gobi, Atacama, Kalahari…); know half of them to unlock the rest. Shapes from Natural Earth, facts from Wikidata.' },
+  { id: 'd-more', section: 'Deserts', name: 'More deserts', layer: 'desert', nouns: 'deserts', requires: 'd-great/places', topics: [{ id: 'places', name: 'Deserts', icon: 'sun' }] },
   { id: 'cn', section: 'China', name: 'Provinces & regions', layer: 'cn',
     note: 'Provinces, autonomous regions, municipalities and the two special administrative regions. The PRC also claims Taiwan as a province; Taiwan is covered under countries.',
     topics: [{ id: 'places', name: 'Provinces', icon: 'map' }, { id: 'capitals', name: 'Capitals', icon: 'landmark', requires: 'places' }] },
 ];
 
-export const SECTIONS = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania', 'United States', 'Territories', 'World Heritage', 'Mountains', 'Oceans & Seas', 'Rivers', 'Rivers of Europe', 'Rivers of Asia & Oceania', 'Rivers of Africa', 'Rivers of the Americas', 'Rivers of the United States', 'Lakes', 'China', 'Interstate Highways'];
+export const SECTIONS = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania', 'United States', 'Territories', 'World Heritage', 'Mountains', 'Oceans & Seas', 'Rivers', 'Rivers of Europe', 'Rivers of Asia & Oceania', 'Rivers of Africa', 'Rivers of the Americas', 'Rivers of the United States', 'Lakes', 'China', 'Interstate Highways', 'Deserts', 'Physical geography', 'History', 'History of the United States', 'Presidents'];
 export const CONTINENTS = SECTIONS.slice(0, 5);
 
 // ---- Sections form a tree -------------------------------------------------------------
@@ -172,7 +182,9 @@ export const CONTINENTS = SECTIONS.slice(0, 5);
 // The skill tree, quiz and atlas all drill down through this, so new regions never pile up at the bottom.
 /** The groups listed in a section: its own, plus any filed elsewhere that also belong here. */
 export const groupsShownIn = (sec: string) => GROUPS.filter(g => g.section === sec || g.alsoInSections?.includes(sec));
-export const SECTION_PARENT: Record<string, string> = { 'United States': 'Americas', China: 'Asia', 'Interstate Highways': 'United States',
+export const SECTION_PARENT: Record<string, string> = { 'United States': 'Americas', China: 'Asia', 'Interstate Highways': 'United States', Presidents: 'History of the United States', 'History of the United States': 'History',
+  // Physical geography: the land and water themselves, apart from countries and their regions.
+  Mountains: 'Physical geography', Rivers: 'Physical geography', Lakes: 'Physical geography', 'Oceans & Seas': 'Physical geography', Deserts: 'Physical geography',
   'Rivers of Europe': 'Rivers', 'Rivers of Asia & Oceania': 'Rivers', 'Rivers of Africa': 'Rivers', 'Rivers of the Americas': 'Rivers', 'Rivers of the United States': 'Rivers of the Americas' };
 export const childSections = (sec: string | null) => SECTIONS.filter(s => (SECTION_PARENT[s] ?? null) === sec);
 /** The section and its ancestors, outermost first: ['Americas', 'United States', 'New Jersey']. */
@@ -224,6 +236,8 @@ export function kindApplies(k: Kind, c: Place) {
   if (k.startsWith('capital') && c.layer === 'sub' && c.capitals[0] && c.name.startsWith(c.capitals[0].name)) return false;
   if (k === 'siteCountry' && countryCount(c) > 3) return false; // "in Moldova, Ukraine, Latvia… and Norway" isn't a fair question
   if (k === 'highestReverse') return !!c.highest && !c.highestShared;
+  if (k === 'presFace') return !!c.photo;
+  if (k === 'presParty') return !!c.terms?.some(t => t.party !== 'Unaffiliated');
   if (k === 'artPhoto') return !!c.image; // a free picture on Commons (a modern painting under copyright has none to show as the question)
   if (k === 'artMaker') return !!makerOf(c);
   if (k === 'artWhere') return !!(c.museum || c.countryName);
@@ -258,6 +272,7 @@ export function kindsFor(p: Place): Kind[] {
   if (p.layer === 'senate') return TOPIC_KINDS.senate.filter(k => kindApplies(k, p));
   if (p.layer === 'site' || p.layer === 'peak') return TOPIC_KINDS.sites.filter(k => kindApplies(k, p));
   if (p.layer === 'art') return TOPIC_KINDS.art.filter(k => kindApplies(k, p));
+  if (p.layer === 'person') return TOPIC_KINDS.presidents.filter(k => kindApplies(k, p));
   const ks: Kind[] = ['locate', 'identify'];
   if (p.layer === 'road') ks.push('roadShield');
   if (p.capitalAnswer) ks.push(...TOPIC_KINDS.capitals.filter(k => kindApplies(k, p)));
@@ -298,8 +313,13 @@ export interface CardFace {
 export const makerOf = (c: Place) => (c.artists?.length ? c.artists.reduce((acc, x, i, a) => (!i ? x : acc + (i === a.length - 1 ? ' and ' : ', ') + x), '') : c.culture ? `the ${c.culture}` : null);
 const artPic = (c: Place) => ({ file: c.image, wiki: c.wiki, caption: c.name, single: !!c.image });
 const artNote = (c: Place, withMaker: boolean) => [withMaker && makerOf(c) ? `By ${makerOf(c)}` : null, c.facts].filter(Boolean).join(' · ') || null;
+/** "16th", "22nd and 24th" */
+const ordinal = (n: number) => n + (n % 100 >= 11 && n % 100 <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][n % 10] ?? 'th');
+const presNumbers = (c: Place) => (c.terms ?? []).map(t => ordinal(t.n)).join(' and ');
+const presNote = (c: Place) => (c.terms ?? []).map(t => [`${ordinal(t.n)} president, ${t.to === null ? `${t.from}–` : t.from === t.to ? t.from : `${t.from}–${t.to}`}`, t.party,
+  t.vp.length ? `Vice president: ${t.vp.join(', then ')}` : 'No vice president'].join(' · ')).join(' | ');
 const cap1 = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-const noun = (p: Place) => ({ country: 'country', water: 'body of water', river: 'river', lake: 'lake', cn: p.type ?? 'region', us: 'state', senate: 'senator', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range', sub: p.noun ?? 'region', note: 'card', art: 'work', road: 'Interstate' })[p.layer];
+const noun = (p: Place) => ({ country: 'country', water: 'body of water', river: 'river', lake: 'lake', cn: p.type ?? 'region', us: 'state', senate: 'senator', terr: 'territory', site: 'site', peak: 'mountain', range: 'mountain range', sub: p.noun ?? 'region', note: 'card', art: 'work', road: 'Interstate', desert: 'desert', person: 'president' })[p.layer];
 
 function rawFace(ref: CardRef): CardFace {
   const c = ref.country;
@@ -400,6 +420,17 @@ function rawFace(ref: CardRef): CardFace {
     }
     case 'artWhere':
       return { mode: 'reveal', pre: `You can see ${c.nameThe ?? c.name} `, blank: 'where?', post: '.', answer: c.museum ? `${/^Corcovado/.test(c.museum) ? 'on' : /^the |museum|gallery|institute|belvedere|rijksmuseum|mauritshuis/i.test(c.museum) ? 'at' : 'in'} ${c.museum}${c.countryName && !c.museum.includes(c.countryName) ? ` (${c.countryName})` : ''}` : `in ${c.countryName}`, map: c.country ? 'reveal' : 'none', note: artNote(c, true), picture: artPic(c) };
+    // US presidents: the portrait, the number, the years, the party; the vice president(s) shown once flipped.
+    case 'presFace':
+      return { mode: 'reveal', pre: 'This is ', blank: 'who?', post: `, the ${presNumbers(c)} president.`, answer: c.name, map: 'none', note: presNote(c), person: { photo: c.photo ?? '', when: 'before' }, hidePostUntilReveal: true };
+    case 'presName':
+      return { mode: 'reveal', pre: `The ${presNumbers(c)} president of the United States was `, blank: 'who?', post: '.', answer: c.name, map: 'none', note: presNote(c), person: { photo: c.photo ?? '', when: 'after' } };
+    case 'presNumber':
+      return { mode: 'reveal', pre: `${c.name} was the `, blank: 'which number?', post: ' president of the United States.', answer: presNumbers(c), map: 'none', note: presNote(c), person: { photo: c.photo ?? '', when: 'after' } };
+    case 'presYears':
+      return { mode: 'reveal', pre: `${c.name} was president `, blank: 'when?', post: '.', answer: c.terms!.map(t => (!t.to ? `since ${t.from}` : t.from === t.to ? `in ${t.from}` : `from ${t.from} to ${t.to}`)).join(', and '), map: 'none', note: presNote(c), person: { photo: c.photo ?? '', when: 'after' } };
+    case 'presParty':
+      return { mode: 'reveal', pre: `${c.name} belonged to the `, blank: 'which party?', post: '.', answer: [...new Set(c.terms!.map(t => t.party))].map(p => `${p} Party`).join(', then the '), map: 'none', note: presNote(c), person: { photo: c.photo ?? '', when: 'after' } };
     // Interstates: the blue-and-red shield alone → its number.
     case 'roadShield':
       return { mode: 'reveal', pre: 'This shield marks ', blank: 'which Interstate?', post: '.', answer: c.name, map: 'none', note: c.facts ?? null,
@@ -438,18 +469,18 @@ export function shuffle<T>(a: T[]): T[] {
 }
 
 /** Plural noun and icon for a layer, for headings and lists. */
-export const LAYER_NOUN: Record<Place['layer'], string> = { note: 'cards', art: 'works', road: 'Interstates', sub: 'regions', country: 'countries', water: 'waters', river: 'rivers', lake: 'lakes', cn: 'divisions', us: 'states', senate: 'senators', terr: 'territories', site: 'sites', peak: 'peaks', range: 'ranges' };
-export const LAYER_ICON: Record<Place['layer'], IconName> = { note: 'book', art: 'image', road: 'road', sub: 'map', country: 'globe', water: 'wave', river: 'river', lake: 'drop', cn: 'map', us: 'map', senate: 'person', terr: 'pin', site: 'temple', peak: 'mountain', range: 'layers' };
+export const LAYER_NOUN: Record<Place['layer'], string> = { note: 'cards', art: 'works', road: 'Interstates', desert: 'deserts', person: 'presidents', sub: 'regions', country: 'countries', water: 'waters', river: 'rivers', lake: 'lakes', cn: 'divisions', us: 'states', senate: 'senators', terr: 'territories', site: 'sites', peak: 'peaks', range: 'ranges' };
+export const LAYER_ICON: Record<Place['layer'], IconName> = { note: 'book', art: 'image', road: 'road', desert: 'sun', person: 'person', sub: 'map', country: 'globe', water: 'wave', river: 'river', lake: 'drop', cn: 'map', us: 'map', senate: 'person', terr: 'pin', site: 'temple', peak: 'mountain', range: 'layers' };
 
 // ---- question directions ------------------------------------------------------------
 /** "What is this?" — you're shown the place/flag/capital and name it.
  *  "Where / what is it?" — you're given the name and find it, or name its capital/flag. */
 export const DIRECTIONS: { id: 'recognise' | 'recall'; name: string; hint: string; kinds: Kind[] }[] = [
-  { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse', 'senatorFace', 'currencyReverse', 'largestCityReverse', 'sitePhoto', 'highestReverse', 'artPhoto', 'roadShield'] },
-  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest', 'artMaker', 'artWhere'] },
+  { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse', 'senatorFace', 'currencyReverse', 'largestCityReverse', 'sitePhoto', 'highestReverse', 'artPhoto', 'roadShield', 'presFace', 'presName'] },
+  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest', 'artMaker', 'artWhere', 'presNumber', 'presYears', 'presParty'] },
 ];
 export const KIND_SHORT: Record<Kind, string> = {
-  note: 'Note card', artPhoto: 'Picture → name', artMaker: 'Work → artist', artWhere: 'Work → where it is', roadShield: 'Shield → Interstate',
+  note: 'Note card', artPhoto: 'Picture → name', artMaker: 'Work → artist', artWhere: 'Work → where it is', roadShield: 'Shield → Interstate', presFace: 'Portrait → president', presName: 'Number → president', presNumber: 'President → number', presYears: 'President → years', presParty: 'President → party',
   identify: 'Map → name', flag: 'Flag → country', capitalReverse: 'Capital → country',
   locate: 'Name → map', capitalLocate: 'Capital → map', capital: 'Country → capital', flagReverse: 'Country → flag',
   senatorFace: 'Photo → person', senator: 'Office → person', senatorLocate: 'Person → map',
@@ -459,6 +490,6 @@ export const KIND_SHORT: Record<Kind, string> = {
 /** The skill-tree node a card belongs to. */
 export function nodeOfCard(ref: CardRef): string {
   const g = groupOf(ref.country);
-  const topic: Topic = ref.kind === 'note' ? 'notes' : ref.kind.startsWith('art') ? 'art' : ref.kind === 'roadShield' ? 'shields' : ref.kind.startsWith('highest') ? 'highest' : ref.kind.startsWith('site') ? (ref.country.layer === 'peak' ? 'peaks' : 'sites') : ref.kind === 'belongsTo' ? 'sovereign' : ref.kind.startsWith('senator') ? (ref.country.topic ?? 'senate') : ref.kind.startsWith('currency') ? 'currency' : ref.kind.startsWith('largestCity') ? 'cities' : ref.kind.startsWith('capital') ? 'capitals' : ref.kind.startsWith('flag') ? 'flags' : g.layer === 'country' ? 'countries' : 'places';
+  const topic: Topic = ref.kind === 'note' ? 'notes' : ref.kind.startsWith('art') ? 'art' : ref.kind === 'roadShield' ? 'shields' : ref.kind.startsWith('pres') ? 'presidents' : ref.kind.startsWith('highest') ? 'highest' : ref.kind.startsWith('site') ? (ref.country.layer === 'peak' ? 'peaks' : 'sites') : ref.kind === 'belongsTo' ? 'sovereign' : ref.kind.startsWith('senator') ? (ref.country.topic ?? 'senate') : ref.kind.startsWith('currency') ? 'currency' : ref.kind.startsWith('largestCity') ? 'cities' : ref.kind.startsWith('capital') ? 'capitals' : ref.kind.startsWith('flag') ? 'flags' : g.layer === 'country' ? 'countries' : 'places';
   return nodeId(g.id, topic);
 }

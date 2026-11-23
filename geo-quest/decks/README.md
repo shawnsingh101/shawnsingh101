@@ -40,6 +40,9 @@ related: Italy, Florence
 - **`related: A, B, C`** (anywhere under a heading): links shown on those cards after you flip them. A name the app
   teaches (a country, state, prefecture, World Heritage Site, river…) opens its sheet; anything else opens Wikipedia.
   That place's sheet then lists the card under "Also in your decks". Countries named in a card are linked automatically.
+- **`also in: Philadelphia, New Jersey`** (right after a card): the card also shows in the decks with those titles (one
+  set of progress). Used for History by place.
+- A number in front of a folder or file name (`2 Ancient China/`, `3 Zhou dynasty.md`) sets the order and is hidden.
 - **`species: Juniperus communis`** (under a heading): the scientific name of a plant or animal, shown in italics after the
   answer.
 - **`native: الكعبة (Arabic)`** (under a heading): the name in its own language, shown after the answer with a speaker

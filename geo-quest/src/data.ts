@@ -8,14 +8,14 @@ export const dataUrl = (f: string) => `data/${f}?v=${__BUILD_ID__}`;
 
 export async function loadDataset(): Promise<Dataset> {
   const get = (f: string) => fetch(dataUrl(f)).then(r => r.json());
-  const [c, w, cn, rv, lk, us, sen, ld, la, tr, ws, pk, rg, ch, sb, col, rd] = await Promise.all([
+  const [c, w, cn, rv, lk, us, sen, ld, la, tr, ws, pk, rg, ch, sb, col, rd, dz, pr] = await Promise.all([
     get('countries.json'), get('water.json'), get('cn.json'), get('rivers.json'), get('lakes.json'), get('us.json'), get('senate.json'), get('leaders.json'), get('flag-lookalikes.json').catch(() => ({ groups: [] })), get('territories.json').catch(() => ({ places: [] })), get('sites.json').catch(() => ({ places: [] })), get('peaks.json').catch(() => ({ places: [] })), get('ranges.json').catch(() => ({ places: [] })),
-    get('changes.json').catch(() => []), get('subdivisions.json').catch(() => ({ sections: [], places: [] })), get('collections.json').catch(() => ({ items: {} })), get('roads.json').catch(() => ({ places: [] })),
+    get('changes.json').catch(() => []), get('subdivisions.json').catch(() => ({ sections: [], places: [] })), get('collections.json').catch(() => ({ items: {} })), get('roads.json').catch(() => ({ places: [] })), get('deserts.json').catch(() => ({ places: [] })), get('presidents.json').catch(() => ({ people: [] })),
   ]);
   registerSubdivisions(sb.sections); // prefectures, counties…: sections, groups and skills come with the data
   const norm = (layer: Layer) => (p: Place) => ({ ...p, layer, capitals: p.capitals ?? [], capitalAnswer: p.capitalAnswer ?? null });
   const countries: Place[] = c.countries.filter((x: Place) => x.capitalAnswer && x.region).map(norm('country'));
-  const places = [...countries, ...w.places.map(norm('water')), ...cn.places.map(norm('cn')), ...rv.places.map(norm('river')), ...lk.places.map(norm('lake')), ...us.places.map(norm('us')), ...sen.places.map(norm('senate')), ...ld.places.map(norm('senate')), ...tr.places.map(norm('terr')), ...ws.places.map(norm('site')), ...pk.places.map(norm('peak')), ...rg.places.map(norm('range')), ...sb.places.map(norm('sub')), ...rd.places.map(norm('road')), ...registerNotes(), ...registerCollections(col.items, id => countries.find(x => x.id === id)?.name)];
+  const places = [...countries, ...w.places.map(norm('water')), ...cn.places.map(norm('cn')), ...rv.places.map(norm('river')), ...lk.places.map(norm('lake')), ...us.places.map(norm('us')), ...sen.places.map(norm('senate')), ...ld.places.map(norm('senate')), ...tr.places.map(norm('terr')), ...ws.places.map(norm('site')), ...pk.places.map(norm('peak')), ...rg.places.map(norm('range')), ...sb.places.map(norm('sub')), ...rd.places.map(norm('road')), ...dz.places.map(norm('desert')), ...presidents(pr.people), ...registerNotes(), ...registerCollections(col.items, id => countries.find(x => x.id === id)?.name)];
   // A highest point shared by two countries (Everest, Mont Blanc) can't be asked in reverse.
   const hp = new Map<string, number>();
   for (const c of countries) if (c.highest) hp.set(c.highest.id, (hp.get(c.highest.id) ?? 0) + 1);
@@ -28,6 +28,13 @@ export async function loadDataset(): Promise<Dataset> {
   const byIdTmp = new Map(places.map(x => [x.id, x]));
   for (const p of places) if (p.topic === 'leaders') { const c = byIdTmp.get(p.place!); if (c) p.group = groupOf(c).id; }
   return { countries, places, byId: new Map(places.map(x => [x.id, x])), changes: ch as Change[], lookalikes: la.groups };
+}
+
+/** US presidents (public/data/presidents.json): one card set per person, grouped by era. */
+function presidents(people: { id: string; name: string; image: string | null; wiki: string | null; terms: NonNullable<Place['terms']> }[]): Place[] {
+  const era = (n: number) => (n <= 15 ? 'pr-1' : n <= 25 ? 'pr-2' : n <= 32 ? 'pr-3' : 'pr-4');
+  return people.map(p => ({ id: p.id, layer: 'person', name: p.name, wiki: p.wiki, image: p.image, photo: p.image ? commonsUrl(p.image, 360) : undefined,
+    terms: p.terms, group: era(p.terms[0].n), capitals: [], capitalAnswer: null, party: p.terms[0].party }) as Place);
 }
 
 /** A Wikimedia image. "en:<file>" means a file kept on English Wikipedia itself (e.g. banknotes), not on Commons. */

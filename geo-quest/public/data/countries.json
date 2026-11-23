@@ -6745,7 +6745,8 @@
       {
        "name": "東京",
        "lang": "Japanese",
-       "code": "ja"
+       "code": "ja",
+       "roman": "Tōkyō"
       }
      ],
      "audio": {
@@ -6760,7 +6761,8 @@
     {
      "name": "日本",
      "lang": "Japanese",
-     "code": "ja"
+     "code": "ja",
+     "roman": "Nippon"
     }
    ],
    "capitalAnswer": "Tokyo",

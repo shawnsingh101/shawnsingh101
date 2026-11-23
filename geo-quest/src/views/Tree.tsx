@@ -46,7 +46,7 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
   );
 }
 
-const SECTION_ICON: Record<string, IconName> = { 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop', China: 'map', 'United States': 'capitol', Territories: 'pin', 'World Heritage': 'temple', Mountains: 'mountain' };
+const SECTION_ICON: Record<string, IconName> = { 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop', China: 'map', 'United States': 'capitol', Territories: 'pin', 'World Heritage': 'temple', Mountains: 'mountain', Deserts: 'sun', 'Physical geography': 'mountain', 'Interstate Highways': 'road' };
 const OPEN_KEY = 'geoquest:tree-open';
 const secKey = (sec: string) => 'sec-' + sec.replace(/\W/g, '');
 

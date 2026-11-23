@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.15.0', notes: 'History: US presidents (portrait, number, years, party, vice presidents), China by dynasty, the US by period and by place (New York City, Philadelphia, New Jersey) · Science: Biology from the OpenStax textbook · Deserts, and Physical geography as its own section · romaji for every Japanese name (東京 Tōkyō)' },
   { version: '1.14.2', notes: 'Pictures beside cards are a framed, modest size and never stretched past their pixels · full screen shows the whole picture at once, no scrolling' },
   { version: '1.14.1', notes: 'On a laptop, cards without a map show their picture large on the left, so nothing needs scrolling · smaller whole pictures on phones (tap to enlarge) · the settings panel scrolls on its own' },
   { version: '1.14.0', notes: 'Peek: an answer map for any map question (pauses the session) · country & state names on/off on river, road and mountain maps · Interstate signs on their cards · scientific names for plants · blanks say what they want (what city?) · photos shown whole · Sound lab: pick your own sounds, softer clicks · Library tab opens the Library · fixed pop-ups that opened off screen' },

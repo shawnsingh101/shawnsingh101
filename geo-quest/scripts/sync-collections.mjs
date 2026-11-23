@@ -10,6 +10,7 @@ import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from '
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { addChinese } from './lib/chinese.mjs';
+import { addRomaji } from './lib/japanese.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = join(ROOT, 'collections');
@@ -205,6 +206,7 @@ for (const x of Object.values(items)) if (x.city && fixes._cities?.[x.city]) x.c
 // A museum set by hand replaces Wikidata's, and its article with it (unless the fix names the article too).
 for (const [q, f] of Object.entries(fixes)) if (items[q] && !q.startsWith('_')) Object.assign(items[q], 'museum' in f && !('museumWiki' in f) ? { museumWiki: null } : {}, f);
 
+await addRomaji(items);
 writeFileSync(OUT, JSON.stringify(addChinese({ source: 'Wikidata (CC0)', items })));
 const missing = ids.filter(q => !items[q]);
 console.log(`${files.length} list(s), ${ids.length} entries → ${relative(ROOT, OUT)}${missing.length ? ` (no facts for ${missing.join(', ')})` : ''}`);

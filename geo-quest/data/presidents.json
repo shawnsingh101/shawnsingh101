@@ -1,0 +1,523 @@
+{
+ "_readme": "The presidencies of the United States, in order: written by hand (parties and vice presidents are clearer here than in Wikidata) and checked against Wikidata's list. scripts/sync-presidents.mjs adds each person's portrait and Wikipedia article. A president who served twice (Cleveland, Trump) has two entries; the app makes one set of cards per person. 'to': null means in office now. Add the next president as a new line.",
+ "terms": [
+  {
+   "n": 1,
+   "name": "George Washington",
+   "id": "Q23",
+   "from": "1789",
+   "to": "1797",
+   "party": "Unaffiliated",
+   "vp": [
+    "John Adams"
+   ]
+  },
+  {
+   "n": 2,
+   "name": "John Adams",
+   "id": "Q11806",
+   "from": "1797",
+   "to": "1801",
+   "party": "Federalist",
+   "vp": [
+    "Thomas Jefferson"
+   ]
+  },
+  {
+   "n": 3,
+   "name": "Thomas Jefferson",
+   "id": "Q11812",
+   "from": "1801",
+   "to": "1809",
+   "party": "Democratic-Republican",
+   "vp": [
+    "Aaron Burr",
+    "George Clinton"
+   ]
+  },
+  {
+   "n": 4,
+   "name": "James Madison",
+   "id": "Q11813",
+   "from": "1809",
+   "to": "1817",
+   "party": "Democratic-Republican",
+   "vp": [
+    "George Clinton",
+    "Elbridge Gerry"
+   ]
+  },
+  {
+   "n": 5,
+   "name": "James Monroe",
+   "id": "Q11815",
+   "from": "1817",
+   "to": "1825",
+   "party": "Democratic-Republican",
+   "vp": [
+    "Daniel D. Tompkins"
+   ]
+  },
+  {
+   "n": 6,
+   "name": "John Quincy Adams",
+   "id": "Q11816",
+   "from": "1825",
+   "to": "1829",
+   "party": "Democratic-Republican",
+   "vp": [
+    "John C. Calhoun"
+   ]
+  },
+  {
+   "n": 7,
+   "name": "Andrew Jackson",
+   "id": "Q11817",
+   "from": "1829",
+   "to": "1837",
+   "party": "Democratic",
+   "vp": [
+    "John C. Calhoun",
+    "Martin Van Buren"
+   ]
+  },
+  {
+   "n": 8,
+   "name": "Martin Van Buren",
+   "id": "Q11820",
+   "from": "1837",
+   "to": "1841",
+   "party": "Democratic",
+   "vp": [
+    "Richard Mentor Johnson"
+   ]
+  },
+  {
+   "n": 9,
+   "name": "William Henry Harrison",
+   "id": "Q11869",
+   "from": "1841",
+   "to": "1841",
+   "party": "Whig",
+   "vp": [
+    "John Tyler"
+   ]
+  },
+  {
+   "n": 10,
+   "name": "John Tyler",
+   "id": "Q11881",
+   "from": "1841",
+   "to": "1845",
+   "party": "Whig",
+   "vp": []
+  },
+  {
+   "n": 11,
+   "name": "James K. Polk",
+   "id": "Q11891",
+   "from": "1845",
+   "to": "1849",
+   "party": "Democratic",
+   "vp": [
+    "George M. Dallas"
+   ]
+  },
+  {
+   "n": 12,
+   "name": "Zachary Taylor",
+   "id": "Q11896",
+   "from": "1849",
+   "to": "1850",
+   "party": "Whig",
+   "vp": [
+    "Millard Fillmore"
+   ]
+  },
+  {
+   "n": 13,
+   "name": "Millard Fillmore",
+   "id": "Q12306",
+   "from": "1850",
+   "to": "1853",
+   "party": "Whig",
+   "vp": []
+  },
+  {
+   "n": 14,
+   "name": "Franklin Pierce",
+   "id": "Q12312",
+   "from": "1853",
+   "to": "1857",
+   "party": "Democratic",
+   "vp": [
+    "William R. King"
+   ]
+  },
+  {
+   "n": 15,
+   "name": "James Buchanan",
+   "id": "Q12325",
+   "from": "1857",
+   "to": "1861",
+   "party": "Democratic",
+   "vp": [
+    "John C. Breckinridge"
+   ]
+  },
+  {
+   "n": 16,
+   "name": "Abraham Lincoln",
+   "id": "Q91",
+   "from": "1861",
+   "to": "1865",
+   "party": "Republican",
+   "vp": [
+    "Hannibal Hamlin",
+    "Andrew Johnson"
+   ]
+  },
+  {
+   "n": 17,
+   "name": "Andrew Johnson",
+   "id": "Q8612",
+   "from": "1865",
+   "to": "1869",
+   "party": "National Union",
+   "vp": []
+  },
+  {
+   "n": 18,
+   "name": "Ulysses S. Grant",
+   "id": "Q34836",
+   "from": "1869",
+   "to": "1877",
+   "party": "Republican",
+   "vp": [
+    "Schuyler Colfax",
+    "Henry Wilson"
+   ]
+  },
+  {
+   "n": 19,
+   "name": "Rutherford B. Hayes",
+   "id": "Q35686",
+   "from": "1877",
+   "to": "1881",
+   "party": "Republican",
+   "vp": [
+    "William A. Wheeler"
+   ]
+  },
+  {
+   "n": 20,
+   "name": "James A. Garfield",
+   "id": "Q34597",
+   "from": "1881",
+   "to": "1881",
+   "party": "Republican",
+   "vp": [
+    "Chester A. Arthur"
+   ]
+  },
+  {
+   "n": 21,
+   "name": "Chester A. Arthur",
+   "id": "Q35498",
+   "from": "1881",
+   "to": "1885",
+   "party": "Republican",
+   "vp": []
+  },
+  {
+   "n": 22,
+   "name": "Grover Cleveland",
+   "id": "Q35171",
+   "from": "1885",
+   "to": "1889",
+   "party": "Democratic",
+   "vp": [
+    "Thomas A. Hendricks"
+   ]
+  },
+  {
+   "n": 23,
+   "name": "Benjamin Harrison",
+   "id": "Q35678",
+   "from": "1889",
+   "to": "1893",
+   "party": "Republican",
+   "vp": [
+    "Levi P. Morton"
+   ]
+  },
+  {
+   "n": 24,
+   "name": "Grover Cleveland",
+   "id": "Q35171",
+   "from": "1893",
+   "to": "1897",
+   "party": "Democratic",
+   "vp": [
+    "Adlai Stevenson I"
+   ]
+  },
+  {
+   "n": 25,
+   "name": "William McKinley",
+   "id": "Q35041",
+   "from": "1897",
+   "to": "1901",
+   "party": "Republican",
+   "vp": [
+    "Garret Hobart",
+    "Theodore Roosevelt"
+   ]
+  },
+  {
+   "n": 26,
+   "name": "Theodore Roosevelt",
+   "id": "Q33866",
+   "from": "1901",
+   "to": "1909",
+   "party": "Republican",
+   "vp": [
+    "Charles W. Fairbanks"
+   ]
+  },
+  {
+   "n": 27,
+   "name": "William Howard Taft",
+   "id": "Q35648",
+   "from": "1909",
+   "to": "1913",
+   "party": "Republican",
+   "vp": [
+    "James S. Sherman"
+   ]
+  },
+  {
+   "n": 28,
+   "name": "Woodrow Wilson",
+   "id": "Q34296",
+   "from": "1913",
+   "to": "1921",
+   "party": "Democratic",
+   "vp": [
+    "Thomas R. Marshall"
+   ]
+  },
+  {
+   "n": 29,
+   "name": "Warren G. Harding",
+   "id": "Q35286",
+   "from": "1921",
+   "to": "1923",
+   "party": "Republican",
+   "vp": [
+    "Calvin Coolidge"
+   ]
+  },
+  {
+   "n": 30,
+   "name": "Calvin Coolidge",
+   "id": "Q36023",
+   "from": "1923",
+   "to": "1929",
+   "party": "Republican",
+   "vp": [
+    "Charles G. Dawes"
+   ]
+  },
+  {
+   "n": 31,
+   "name": "Herbert Hoover",
+   "id": "Q35236",
+   "from": "1929",
+   "to": "1933",
+   "party": "Republican",
+   "vp": [
+    "Charles Curtis"
+   ]
+  },
+  {
+   "n": 32,
+   "name": "Franklin D. Roosevelt",
+   "id": "Q8007",
+   "from": "1933",
+   "to": "1945",
+   "party": "Democratic",
+   "vp": [
+    "John Nance Garner",
+    "Henry A. Wallace",
+    "Harry S. Truman"
+   ]
+  },
+  {
+   "n": 33,
+   "name": "Harry S. Truman",
+   "id": "Q11613",
+   "from": "1945",
+   "to": "1953",
+   "party": "Democratic",
+   "vp": [
+    "Alben W. Barkley"
+   ]
+  },
+  {
+   "n": 34,
+   "name": "Dwight D. Eisenhower",
+   "id": "Q9916",
+   "from": "1953",
+   "to": "1961",
+   "party": "Republican",
+   "vp": [
+    "Richard Nixon"
+   ]
+  },
+  {
+   "n": 35,
+   "name": "John F. Kennedy",
+   "id": "Q9696",
+   "from": "1961",
+   "to": "1963",
+   "party": "Democratic",
+   "vp": [
+    "Lyndon B. Johnson"
+   ]
+  },
+  {
+   "n": 36,
+   "name": "Lyndon B. Johnson",
+   "id": "Q9640",
+   "from": "1963",
+   "to": "1969",
+   "party": "Democratic",
+   "vp": [
+    "Hubert Humphrey"
+   ]
+  },
+  {
+   "n": 37,
+   "name": "Richard Nixon",
+   "id": "Q9588",
+   "from": "1969",
+   "to": "1974",
+   "party": "Republican",
+   "vp": [
+    "Spiro Agnew",
+    "Gerald Ford"
+   ]
+  },
+  {
+   "n": 38,
+   "name": "Gerald Ford",
+   "id": "Q9582",
+   "from": "1974",
+   "to": "1977",
+   "party": "Republican",
+   "vp": [
+    "Nelson Rockefeller"
+   ]
+  },
+  {
+   "n": 39,
+   "name": "Jimmy Carter",
+   "id": "Q23685",
+   "from": "1977",
+   "to": "1981",
+   "party": "Democratic",
+   "vp": [
+    "Walter Mondale"
+   ]
+  },
+  {
+   "n": 40,
+   "name": "Ronald Reagan",
+   "id": "Q9960",
+   "from": "1981",
+   "to": "1989",
+   "party": "Republican",
+   "vp": [
+    "George H. W. Bush"
+   ]
+  },
+  {
+   "n": 41,
+   "name": "George H. W. Bush",
+   "id": "Q23505",
+   "from": "1989",
+   "to": "1993",
+   "party": "Republican",
+   "vp": [
+    "Dan Quayle"
+   ]
+  },
+  {
+   "n": 42,
+   "name": "Bill Clinton",
+   "id": "Q1124",
+   "from": "1993",
+   "to": "2001",
+   "party": "Democratic",
+   "vp": [
+    "Al Gore"
+   ]
+  },
+  {
+   "n": 43,
+   "name": "George W. Bush",
+   "id": "Q207",
+   "from": "2001",
+   "to": "2009",
+   "party": "Republican",
+   "vp": [
+    "Dick Cheney"
+   ]
+  },
+  {
+   "n": 44,
+   "name": "Barack Obama",
+   "id": "Q76",
+   "from": "2009",
+   "to": "2017",
+   "party": "Democratic",
+   "vp": [
+    "Joe Biden"
+   ]
+  },
+  {
+   "n": 45,
+   "name": "Donald Trump",
+   "id": "Q22686",
+   "from": "2017",
+   "to": "2021",
+   "party": "Republican",
+   "vp": [
+    "Mike Pence"
+   ]
+  },
+  {
+   "n": 46,
+   "name": "Joe Biden",
+   "id": "Q6279",
+   "from": "2021",
+   "to": "2025",
+   "party": "Democratic",
+   "vp": [
+    "Kamala Harris"
+   ]
+  },
+  {
+   "n": 47,
+   "name": "Donald Trump",
+   "id": "Q22686",
+   "from": "2025",
+   "to": null,
+   "party": "Republican",
+   "vp": [
+    "JD Vance"
+   ]
+  }
+ ]
+}

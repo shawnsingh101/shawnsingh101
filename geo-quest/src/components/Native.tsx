@@ -58,7 +58,7 @@ export function Natives({ list, audio, max = 3, showLang = false, voice = true }
   return (
     <span className="natives">
       {list.slice(0, max).map(n => (
-        <span key={n.name} className="native" title={n.lang}><bdi>{n.name}</bdi>{showLang && <small>{n.lang}</small>}{voice && <Say text={n.name} code={n.code} audio={audio} />}</span>
+        <span key={n.name} className="native" title={n.lang}><bdi>{n.name}</bdi>{n.roman && <span className="py">{n.roman}</span>}{showLang && <small>{n.lang}</small>}{voice && <Say text={n.name} code={n.code} audio={audio} />}</span>
       ))}
     </span>
   );
