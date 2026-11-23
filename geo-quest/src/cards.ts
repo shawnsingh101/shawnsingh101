@@ -186,6 +186,20 @@ export const SECTION_PARENT: Record<string, string> = { 'United States': 'Americ
   // Physical geography: the land and water themselves, apart from countries and their regions.
   Mountains: 'Physical geography', Rivers: 'Physical geography', Lakes: 'Physical geography', 'Oceans & Seas': 'Physical geography', Deserts: 'Physical geography',
   'Rivers of Europe': 'Rivers', 'Rivers of Asia & Oceania': 'Rivers', 'Rivers of Africa': 'Rivers', 'Rivers of the Americas': 'Rivers', 'Rivers of the United States': 'Rivers of the Americas' };
+/**
+ * A section for a deck or collection folder. Section names are global, so a folder can't take over one that already
+ * belongs elsewhere (an art folder called "Americas" once pulled Geography's Americas under Art): it gets its own name.
+ */
+export function claimSection(name: string, parent: string | null): string {
+  if (SECTIONS.includes(name) && (SECTION_PARENT[name] ?? null) !== parent) {
+    const own = `${name} (${parent})`;
+    if (!SECTIONS.includes(own)) { SECTIONS.push(own); if (parent) SECTION_PARENT[own] = parent; }
+    return own;
+  }
+  if (!SECTIONS.includes(name)) SECTIONS.push(name);
+  if (parent) SECTION_PARENT[name] = parent;
+  return name;
+}
 export const childSections = (sec: string | null) => SECTIONS.filter(s => (SECTION_PARENT[s] ?? null) === sec);
 /** The section and its ancestors, outermost first: ['Americas', 'United States', 'New Jersey']. */
 export function sectionChain(sec: string): string[] { const out = [sec]; while (SECTION_PARENT[out[0]]) out.unshift(SECTION_PARENT[out[0]]); return out; }

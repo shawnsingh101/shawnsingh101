@@ -83,6 +83,8 @@ feature consistent. When adding anything, check it against this page. When a new
   state.
 - **Peek (the answer map)**: any map card can open a full map of every answer in its section (names, capitals pinned,
   roads and rivers labelled). The session pauses while it's open: no answering until you go back.
+- **Map names sit inside their own place** and name only what the deck is about: US states on a US deck, countries
+  otherwise, never both.
 - "Reveal" cards start wider than the answer so the map doesn't give it away, then fly to it when flipped.
 - Line features (rivers, Interstates) are easy to tap: a wide invisible line under the visible one.
 
@@ -91,6 +93,9 @@ feature consistent. When adding anything, check it against this page. When a new
 - **Drill down, don't pile up.** A subject has sections; a section can hold sections: Americas › United States ›
   New Jersey; Rivers › Rivers of the Americas › Rivers of the United States; Food & drink › Cocktails › Ingredients.
   Set the parent (`SECTION_PARENT`, a deck's `path:`, a collection's folder).
+- **Section names are unique.** A folder named like an existing section ("Americas") gets its own name; prefer a clear
+  one ("Art of the Americas").
+- **Art**: the starter list, *By period* (Wikipedia's History of art chapters), *Where to see it* (made from the facts).
 - Something that belongs in two places is filed once and *also shown* in the other (`alsoInSections`, `alsoIn`), with one
   set of progress.
 - **History can be studied by time or by place**: decks follow the period chapters of the source (Wikipedia's "History of
@@ -151,6 +156,7 @@ Deck syntax, quickly: `## Heading` · `- cloze with {{answer|hint}}` · `- front
 1. Work on the development branch; never push to `main` directly.
 2. Bump the version in `package.json` and add a line at the top of `src/changelog.ts` (what the person will notice).
 3. Add a section to `README.md` for the version.
-4. Type-check and build; test in a real browser at phone and laptop sizes (Playwright), including the screens touched.
+4. Type-check and build; run `npm run audit` (decks) and `npm run sweep` (browser, with `npx vite preview` running);
+   test the screens touched at phone and laptop sizes.
 5. Commit, push, open a pull request with a clear description; the owner merges.
 6. After a big batch, do a review pass for mistakes and loose ends before calling it done.

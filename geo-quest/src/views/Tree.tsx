@@ -46,6 +46,8 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
   );
 }
 
+/** "3 works", "1 work", "1 country" */
+const countOf = (n: number, plural: string) => `${n} ${n !== 1 ? plural : plural.replace(/ies$/, 'y').replace(/(ches|shes|sses|xes)$/, m => m.slice(0, -2)).replace(/([^s])s$/, '$1')}`;
 const SECTION_ICON: Record<string, IconName> = { 'Oceans & Seas': 'wave', Rivers: 'river', Lakes: 'drop', China: 'map', 'United States': 'capitol', Territories: 'pin', 'World Heritage': 'temple', Mountains: 'mountain', Deserts: 'sun', 'Physical geography': 'mountain', 'Interstate Highways': 'road' };
 const OPEN_KEY = 'geoquest:tree-open';
 const secKey = (sec: string) => 'sec-' + sec.replace(/\W/g, '');
@@ -134,7 +136,7 @@ export function Tree({ ds, startQuiz, startStudy, goDashboard }: { ds: Dataset; 
           {groups.length > 0 && <div className="groups">
             {groups.map(g => (
               <div key={g.id} className="group">
-                <div className="group-head"><b>{g.name}</b><small>{placesIn(ds, g.id).length} {g.nouns ?? LAYER_NOUN[g.layer]}</small></div>
+                <div className="group-head"><b>{g.name}</b><small>{countOf(placesIn(ds, g.id).length, g.nouns ?? LAYER_NOUN[g.layer])}</small></div>
                 <div className="skills">{g.topics.filter(t => nodeStats(ds, p, nodeId(g.id, t.id)).total > 0).map(t => skill(nodeId(g.id, t.id), t))}</div>
               </div>
             ))}

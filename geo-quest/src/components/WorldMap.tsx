@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { geoArea, geoEqualEarth, geoPath, geoGraticule10 } from 'd3-geo';
+import { geoArea, geoCentroid, geoEqualEarth, geoPath, geoGraticule10, type GeoProjection } from 'd3-geo';
 import { feature } from 'topojson-client';
+import { polygonContains } from 'd3-polygon';
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom';
 import { select } from 'd3-selection';
 import 'd3-transition';
@@ -51,10 +52,10 @@ interface Props {
   hide?: (placeId: string) => boolean;  // leave some rivers/lakes out (e.g. other regions during a quiz)
   detailByZoom?: boolean;               // smaller rivers only appear once you zoom in
   recenter?: boolean;                   // rotate the globe so the focused region is centred
-  contextLabels?: boolean;              // offer a button that names the countries and states around (when they aren't the answer)
+  contextLabels?: false | 'countries' | 'states'; // offer a button that names the countries, or the US states, around (when they aren't the answer)
 }
 
-interface Shape { key: string; name: string; placeId: string | null; layer: Layer; d: string; bounds: [[number, number], [number, number]]; centroid: [number, number] }
+interface Shape { key: string; name: string; placeId: string | null; layer: Layer; d: string; bounds: [[number, number], [number, number]]; centroid: [number, number]; lon: number }
 interface Dot { placeId: string; x: number; y: number; site?: boolean; peak?: boolean }
 
 // The map's centre line can move: studying China re-centres the map on ~105°E so the
@@ -90,6 +91,44 @@ function meanLon(lons: number[]) {
   return Math.round((Math.atan2(y, x) * 180) / Math.PI / 5) * 5; // snap to 5° so small moves don't re-draw
 }
 
+/** The point inside a polygon farthest from its edges ("pole of inaccessibility", after Mapbox's polylabel). */
+function polylabel(rings: [number, number][][], precision = 0.5): [number, number] {
+  const outer = rings[0];
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  for (const [x, y] of outer) { minX = Math.min(minX, x); minY = Math.min(minY, y); maxX = Math.max(maxX, x); maxY = Math.max(maxY, y); }
+  const segDist = (px: number, py: number, a: [number, number], b: [number, number]) => {
+    let x = a[0], y = a[1], dx = b[0] - x, dy = b[1] - y;
+    if (dx || dy) { const t = ((px - x) * dx + (py - y) * dy) / (dx * dx + dy * dy); if (t > 1) { x = b[0]; y = b[1]; } else if (t > 0) { x += dx * t; y += dy * t; } }
+    dx = px - x; dy = py - y; return dx * dx + dy * dy;
+  };
+  const dist = (x: number, y: number) => { // signed: positive inside
+    let inside = false, min = Infinity;
+    for (const ring of rings) for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const a = ring[i], b = ring[j];
+      if ((a[1] > y) !== (b[1] > y) && x < ((b[0] - a[0]) * (y - a[1])) / (b[1] - a[1]) + a[0]) inside = !inside;
+      min = Math.min(min, segDist(x, y, a, b));
+    }
+    return (inside ? 1 : -1) * Math.sqrt(min);
+  };
+  type Cell = { x: number; y: number; h: number; d: number; max: number };
+  const cell = (x: number, y: number, h: number): Cell => { const d = dist(x, y) || 0; return { x, y, h, d, max: d + h * Math.SQRT2 }; };
+  const size = Math.min(maxX - minX, maxY - minY);
+  if (!size) return [minX, minY];
+  precision = Math.max(0.02, Math.min(precision, size / 50)); // small places (Northern Cyprus) need a finer search
+  let h = size / 2, best = cell((minX + maxX) / 2, (minY + maxY) / 2, 0);
+  const queue: Cell[] = [];
+  for (let x = minX; x < maxX && queue.length < 64; x += size) for (let y = minY; y < maxY && queue.length < 64; y += size) queue.push(cell(x + h, y + h, h));
+  for (let step = 0; queue.length && step < 400; step++) { // bounded: a label never holds up the map
+    queue.sort((a, b) => b.max - a.max);
+    const c = queue.shift()!;
+    if (c.d > best.d) best = c;
+    if (c.max - best.d <= precision) continue;
+    h = c.h / 2;
+    queue.push(cell(c.x - h, c.y - h, h), cell(c.x + h, c.y - h, h), cell(c.x - h, c.y + h, h), cell(c.x + h, c.y + h, h));
+  }
+  return [best.x, best.y];
+}
+
 // Projecting a layer is the slow part of drawing the map (the world at 1:50m, every county…). The result only depends
 // on where the map is centred, so keep it: switching cards, quizzes or pages re-uses it instead of projecting again.
 const shapeCache = new Map<string, Shape[]>();
@@ -115,12 +154,27 @@ function toShapes(topo: Topology, layer: Layer, path: ReturnType<typeof geoPath>
         if (a > best) { best = a; main = poly; }
       }
     }
-    return { key: `${layer}${i}`, name: f.properties?.name ?? '', placeId: resolve(f), layer, d: path(f) ?? '', bounds: path.bounds(main), centroid: path.centroid(main) };
+    // Label point: the place's real middle, projected. (The middle of the drawn shape goes wrong when the map's edge
+    // cuts a country in two: Russia's label landed over Alaska on a map centred on the Americas.)
+    const proj = path.projection() as GeoProjection;
+    const geo = geoCentroid(main as Feature<Geometry>), p = proj(geo);
+    let centroid: [number, number] = p && isFinite(p[0]) ? [p[0], p[1]] : path.centroid(main);
+    // A curved or thin country (Vietnam, Israel, Chile) can have its middle outside itself: then use the point deepest
+    // inside its main piece instead, so the name always sits on the place.
+    const g = ('geometry' in main ? main.geometry : main) as Geometry;
+    if (g.type === 'Polygon') {
+      const rings = g.coordinates.map(r => r.map(pt => proj(pt as [number, number])));
+      if (rings.every(r => r.every(pt => pt && isFinite(pt[0])))) {
+        const R = rings as [number, number][][];
+        if (!polygonContains(R[0], centroid)) centroid = polylabel(R);
+      }
+    }
+    return { key: `${layer}${i}`, name: f.properties?.name ?? '', placeId: resolve(f), layer, d: path(f) ?? '', bounds: path.bounds(main), centroid, lon: geo[0] };
   });
 }
 
 export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], target, focus, dim, strong, outline = [], subFilter, onTap, onHover, className, recenter = false, hide, detailByZoom = false, contextLabels = false }: Props) {
-  const showContext = useProgress().settings.mapContext && contextLabels;
+  const showContext = !!(useProgress().settings.mapContext && contextLabels);
   const wrap = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown>>();
@@ -392,8 +446,10 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
           {showContext && (() => {
             // Country and state names for bearings, biggest first, skipping any that would overlap or are too small to read.
             const boxes: [number, number, number, number][] = [], out: JSX.Element[] = [];
-            const pool = [...(layers.includes('us') ? shapes.us ?? [] : []), ...(shapes.country ?? [])]
-              .filter(s => s.placeId && !labels[s.placeId] && !tones[s.placeId])
+            // Only what the deck is about: US states for a US deck, countries otherwise. Skip shapes cut by the map's edge.
+            const fromCentre = (l: number) => Math.abs((((l - lambda) % 360) + 540) % 360 - 180);
+            const pool = (contextLabels === 'states' ? shapes.us ?? [] : shapes.country ?? [])
+              .filter(s => s.placeId && !labels[s.placeId] && !tones[s.placeId] && fromCentre(s.lon) < 100 && s.bounds[1][0] - s.bounds[0][0] < W / 2)
               .map(s => ({ s, w: (s.bounds[1][0] - s.bounds[0][0]) * k })).filter(x => x.w > 46).sort((a, b) => b.w - a.w);
             const size = 11 / k;
             for (const { s } of pool) {

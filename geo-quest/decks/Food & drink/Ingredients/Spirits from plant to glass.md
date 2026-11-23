@@ -64,7 +64,7 @@ related: France, Cognac
 species: Vitis vinifera
 ![Grapes](commons:Wine grapes03.jpg)
 - Cognac is a brandy: a spirit distilled from {{wine|what?}}, made from {{grapes|which fruit?}}.
-- Cognac must come from around the town of {{Cognac|what town?}} in western {{France|which country?}}.
+- Cognac must come from around the town of Cognac in western {{France|which country?}}.
 
 ## Pisco
 related: Peru, Chile

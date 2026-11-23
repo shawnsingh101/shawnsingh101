@@ -74,7 +74,6 @@ species: Gentiana lutea
 ![Gentian](commons:Gentiana lutea 230705.jpg)
 - Angostura bitters get their bitterness mainly from {{gentian|which root?}} root.
 - Angostura bitters were invented in the town of Angostura, {{Venezuela|which country?}}, and are now made in {{Trinidad and Tobago|which country?}}.
-- The bitters in an Old Fashioned and a Manhattan are {{Angostura|which bitters?}}.
 
 ## Grenadine and orgeat
 species: Punica granatum (pomegranate)
@@ -106,3 +105,6 @@ species: Ribes nigrum
 ![Pomegranate](commons:Punica granatum 004.JPG)
 species: Punica granatum
 - [picture] Grenadine was first made from this fruit, the {{pomegranate|which fruit?}}.
+
+## Name the bitters
+- The bitters in an Old Fashioned and a Manhattan are {{Angostura|which bitters?}}.
