@@ -7,7 +7,9 @@ import { epochDeck, geotimeDeck } from './geotime';
 export interface NoteCard {
   pre: string; answer: string; post: string;  // cloze: "pre [answer] post"; front/back: pre = front, answer = back
   front: boolean;                              // a front :: back card (answer shown under the question)
-  pictureFirst?: boolean;                      // "[picture]" in the question: the heading's picture is the question
+  pictureFirst?: boolean;
+  hint?: string;                               // what the blank says before you flip: {{Milan|what city?}} → "what city?"
+  species?: string;                            // a "species: Juniperus communis" line: the scientific name of the plant or animal                      // "[picture]" in the question: the heading's picture is the question
   context: string | null;                      // the ## heading it sits under
   picture: { file?: string | null; url?: string | null; caption: string } | null;
   note: string | null;                         // a "> …" line: shown after the answer
@@ -35,30 +37,36 @@ export function parseDeck(file: string, text: string): Deck {
   const title = meta.title || parts[parts.length - 1].replace(/[-_]/g, ' ');
   const id = slug([subject, ...path, title].join(' '));
   const cards: Deck['cards'] = [];
-  let context: string | null = null, picture: NoteCard['picture'] = null, related: string[] = [], native: NoteCard['native'] = [], intro: string[] = [], seenHeading = false;
+  // Lines like related: / native: / species: apply to the cards under *this* heading, wherever they sit in it. The same
+  // heading can appear twice ("Which spirit?"), so cards remember which occurrence they're under.
+  let section = 0; const secOf = new Map<string, number>();
+  let context: string | null = null, picture: NoteCard['picture'] = null, related: string[] = [], native: NoteCard['native'] = [], species: string | undefined, intro: string[] = [], seenHeading = false;
   const add = (c: Omit<NoteCard, 'context' | 'picture' | 'note' | 'fp' | 'related' | 'native'>, key: string) => {
-    const card: NoteCard = { ...c, context, picture, related, native, note: null, fp: `${c.pre}|${c.answer}|${c.post}` };
+    const card: NoteCard = { ...c, context, picture, related, native, ...(species ? { species } : {}), note: null, fp: `${c.pre}|${c.answer}|${c.post}` };
     // The id ignores the answer, so fixing an answer keeps your progress (the fingerprint re-queues the card).
     let cid = `N-${id}-${hash((context ?? '') + '|' + key)}`;
     while (cards.some(x => x.id === cid)) cid += 'x';
-    cards.push({ id: cid, card });
+    cards.push({ id: cid, card }); secOf.set(cid, section);
   };
   for (const raw of body.split('\n')) {
     const line = raw.trim();
     if (!line) continue;
     const h = /^#{1,3}\s+(.*)$/.exec(line);
-    if (h) { context = h[1]; picture = null; related = []; native = []; seenHeading = true; continue; }
+    if (h) { section++; context = h[1]; picture = null; related = []; native = []; species = undefined; seenHeading = true; continue; }
     // "native: الكعبة (Arabic); Kaʿbah (Arabic, in Latin letters)": shown with a speaker button after the answer.
+    // "species: Juniperus communis": the scientific name of the plant or animal, shown in italics after the answer.
+    const sp = /^species:\s*(.+)$/i.exec(line);
+    if (sp) { species = sp[1].trim(); for (const c of cards) if (secOf.get(c.id) === section) c.card.species = species; continue; }
     const nat = /^(?:native|local):\s*(.+)$/i.exec(line);
     if (nat) {
       native = nat[1].split(';').map(x => /^(.*?)\s*\(([^)]+)\)\s*$/.exec(x.trim())).filter((m): m is RegExpExecArray => !!m)
         .map(m => ({ name: m[1], lang: m[2], code: LANG_CODE[m[2].toLowerCase().replace(/^(ancient|classical|modern) /, '')] }));
-      for (const c of cards) if (c.card.context === context) c.card.native = native;
+      for (const c of cards) if (secOf.get(c.id) === section) c.card.native = native;
       continue;
     }
     const rel = /^related:\s*(.+)$/i.exec(line);
     // Applies to every card under this heading, wherever the line sits.
-    if (rel) { related = rel[1].split(',').map(x => x.trim()).filter(Boolean); for (const c of cards) if (c.card.context === context) c.card.related = related; continue; }
+    if (rel) { related = rel[1].split(',').map(x => x.trim()).filter(Boolean); for (const c of cards) if (secOf.get(c.id) === section) c.card.related = related; continue; }
     const img = /^!\[([^\]]*)\]\(([^)]+)\)$/.exec(line);
     if (img) { const src = img[2]; picture = src.startsWith('commons:') ? { file: src.slice(8), caption: img[1] || context || '' } : { url: src, caption: img[1] || context || '' }; continue; }
     if (line.startsWith('>')) { const last = cards[cards.length - 1]; if (last) last.card.note = (last.card.note ? last.card.note + ' ' : '') + line.replace(/^>\s?/, ''); continue; }
@@ -73,12 +81,13 @@ export function parseDeck(file: string, text: string): Deck {
       if (fb[2] === ':::') add({ pre: fb[3], answer: fb[1], post: '', front: true }, '↺' + fb[3]); // both directions
       continue;
     }
-    const blanks = [...t.matchAll(/\{\{(.*?)\}\}/g)];
+    // {{answer}} or {{answer|hint}}: the hint ("what city?") replaces the plain "what?" until the card is flipped.
+    const blanks = [...t.matchAll(/\{\{([^|}]*)(?:\|([^}]*))?\}\}/g)];
     if (!blanks.length) continue; // a plain bullet is just a note to yourself
+    const plain = (x: string) => x.replace(/\{\{([^|}]*)(?:\|[^}]*)?\}\}/g, '$1');
     blanks.forEach((m, i) => {
-      const before = t.slice(0, m.index).replace(/\{\{(.*?)\}\}/g, '$1');
-      const after = t.slice(m.index! + m[0].length).replace(/\{\{(.*?)\}\}/g, '$1');
-      add({ pre: before, answer: m[1], post: after, front: false }, t.replace(/\{\{(.*?)\}\}/g, '_') + '#' + i);
+      const before = plain(t.slice(0, m.index)), after = plain(t.slice(m.index! + m[0].length));
+      add({ pre: before, answer: m[1], post: after, front: false, ...(m[2] ? { hint: m[2].trim() } : {}) }, t.replace(/\{\{[^}]*\}\}/g, '_') + '#' + i);
     });
   }
   return { id, title, subject, path, intro: intro.join(' ') || null, cards };
@@ -102,7 +111,7 @@ export function registerNotes(): Place[] {
     chain.forEach((sec, i) => { if (!SECTIONS.includes(sec)) SECTIONS.push(sec); if (i) SECTION_PARENT[sec] = chain[i - 1]; });
     const gid = 'n-' + d.id;
     if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined });
-    for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path], native: card.native.length ? card.native : undefined } as unknown as Place);
+    for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path], native: card.native.length ? card.native : undefined, species: card.species } as unknown as Place);
   }
   return out;
 }

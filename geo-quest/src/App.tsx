@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { loadDataset } from './data';
 import { reconcile, useProgress } from './srs';
-import { sounds, startMusic, stopMusic, unlockAudio } from './sound';
+import { setChosenSounds, sounds, startMusic, stopMusic, unlockAudio } from './sound';
 import { Quiz } from './views/Quiz';
 import { Landing } from './views/Landing';
 import type { QuizSpec } from './components/Study';
@@ -21,6 +21,7 @@ export function App() {
   const [landing, setLanding] = useState(true); // the title screen shows every time the app opens
   const [leaving, setLeaving] = useState(false); // the title screen fading out after Start
   const [menu, setMenu] = useState(false);
+  const [treeKey, setTreeKey] = useState(0); // bumped when you tap Library: back to the Library's front page
   const [session, setSession] = useState<null | { quiz?: QuizSpec; nodes?: string[] }>(null);
   const p = useProgress();
 
@@ -33,6 +34,7 @@ export function App() {
     window.addEventListener('keydown', h, { once: true });
     return () => { window.removeEventListener('pointerdown', h); window.removeEventListener('keydown', h); };
   }, []);
+  useEffect(() => { setChosenSounds(p.settings.sfx); }, [p.settings.sfx]);
   // Music plays once you're past the title screen, if it's switched on.
   useEffect(() => { if (p.settings.music && !landing) startMusic(); else stopMusic(); }, [p.settings.music, landing]);
   // A soft click for buttons and tabs (the study screen and toggles choose their own sounds: data-sfx).
@@ -72,10 +74,10 @@ export function App() {
 
   return (
     <div className="app app-enter">
-      <Ribbon tab={tab} setTab={setTab} menu={menu} setMenu={setMenu} goHome={() => setLanding(true)} />
+      <Ribbon tab={tab} setTab={t => { if (t === 'tree') { try { localStorage.removeItem('geoquest:subject'); } catch { /* ignore */ } setTreeKey(k => k + 1); window.scrollTo({ top: 0 }); } setTab(t); }} menu={menu} setMenu={setMenu} goHome={() => setLanding(true)} />
       <main className={'tab-' + tab}>
         {tab === 'home' && <Home ds={ds} onStudy={() => startStudy()} goTree={() => setTab('tree')} goQuiz={() => setTab('quiz')} />}
-        {tab === 'tree' && <Tree ds={ds} startQuiz={startQuiz} startStudy={startStudy} goDashboard={() => setTab('dash')} />}
+        {tab === 'tree' && <Tree key={treeKey} ds={ds} startQuiz={startQuiz} startStudy={startStudy} goDashboard={() => setTab('dash')} />}
         {tab === 'quiz' && <Quiz ds={ds} start={startQuiz} />}
         {tab === 'map' && <MapView ds={ds} />}
         {tab === 'atlas' && <Atlas ds={ds} />}

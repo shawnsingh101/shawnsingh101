@@ -33,6 +33,26 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.14: answer map, map names, guidelines
+
+- **GUIDELINES.md**: the rules the app is built by (local names, pinyin, scientific names, answer hints, no spoilers in
+  headings, Related links, pictures, maps, hierarchy, data, sound, speed, release steps), with `CLAUDE.md` pointing to it.
+- **Peek**: a button on map questions opens the answer map: every place, road or river in the section named on the map
+  (capitals pinned on capital cards). The session pauses until you go back.
+- **Country & state names toggle** (tag button by the zoom buttons) on river, lake, Interstate, range, peak, World
+  Heritage and sea cards: names for bearings, biggest first, without overlaps. Never offered where a name is the answer.
+- **Interstate sign on the card** (once flipped when the number is the answer).
+- **Scientific names** (`species:` in decks, P225 in collections) in italics after the answer; the ingredient decks
+  have them for every plant.
+- **Answer hints**: `{{Milan|what city?}}` says what kind of answer a blank wants; added across the example decks.
+- **Photos shown whole** when they're one picture of the thing (cocktails, plants, banknotes); place galleries keep the
+  wide strip. Tap for full screen.
+- **Sound lab** (Settings): 56 CC0 alternatives (Kenney) to audition and pick for each kind of sound
+  (`public/sfx/lab/`, loaded only when played). Clicks are now softer and lower; the old back sound is gone.
+- **Library** in the top bar always opens the Library's front page.
+- Fix: pop-ups (skill sheets) opened at the top of the page instead of on screen after the start animation.
+- Fix: `related:`/`native:`/`species:` lines no longer leak between two headings with the same name.
+
 ## v1.13: sound, Interstates, Earth history
 
 - **Sound effects** from Kenney's free (CC0) *Interface Sounds* and *Casino Audio* packs (`public/sfx/`, 68 KB, credits

@@ -1,0 +1,113 @@
+# Intelligence Quest: guidelines
+
+The rules this app is built by. They grew out of building it; writing them down keeps every new deck, map layer and
+feature consistent. When adding anything, check it against this page. When a new rule comes up, add it here.
+
+## 1. What every card should do
+
+1. **Names in their own language.** Anything with a name shows it in its own language and script as well, after the
+   answer, with a speaker button (a native recording from Wikidata when there is one, else the device voice).
+   - Countries, capitals, cities, regions, rivers, lakes, ranges, territories, sites, peaks, artworks: from Wikidata.
+   - Note decks: a `native: الكعبة (Arabic)` line under the heading.
+   - Use the language of where the thing *comes from*, not where it is now (the Mona Lisa is *La Gioconda*, not French).
+   - Skip it when it's the same as the English name.
+2. **Chinese gets characters and Hanyu Pinyin with tone marks**, everywhere (`scripts/lib/chinese.mjs`): words written
+   apart and capitalised as on maps (*Kūnlún Shānmài*), sound-spelled foreign names kept whole.
+3. **Plants and animals get their scientific name**, in italics after the answer: `species: Juniperus communis` in a
+   deck; Wikidata's taxon name (P225) in collections.
+4. **A blank says what kind of answer it wants** when "what?" could mislead: `{{Milan|what city?}}`,
+   `{{Italy|which country?}}`, `{{juniper berries|which berries?}}`. Built-in cards already say "which country?",
+   "which state?", "whom?".
+5. **A heading never gives the answer away.** The heading is shown with every card under it, so cards that ask *for* a
+   name sit under neutral headings ("Which period?", "Which spirit?", "Name it from the picture"); only cards that start
+   *from* the name sit under it.
+6. **Every card links to what it's connected to** (Related): the place on the map (country, state, city, museum), the
+   person, the region. The reverse shows on the place: "Also in your decks". A place the app teaches opens its sheet;
+   anything else opens Wikipedia.
+7. **Facts come with a little context** after the answer: dates, size, population, who made it, which division it's in.
+8. **Every fact can be asked both ways** when both ways are fair (capital ↔ country, plant ↔ spirit). Skip a direction
+   that gives itself away (Hiroshima Prefecture → Hiroshima) or has many answers (the euro → 20 countries).
+
+## 2. Pictures
+
+- **The thing itself is shown whole, never cropped**: artworks (on a dark "gallery wall"), banknotes, plants, cocktails,
+  road signs, any single photo. A place's gallery of photos keeps the wide strip, which suits landscapes.
+- **Tap any picture to see it full screen.**
+- A picture can be the question (`- What is made from this? [picture] :: gin`); its caption stays hidden until the card
+  is flipped. Only use a picture as a question when it's free to show (Commons), never a copyrighted work's thumbnail.
+- Prefer pictures from Wikimedia Commons (via Wikidata P18). Interstate shields: P14 or `I-N.svg`.
+
+## 3. Maps
+
+- **One level of regions at a time** (Punjab's districts *or* India's states, never both on top of each other), with a
+  bold outline of the country or state they belong to.
+- **Re-centre on the place** when it's far from the middle of the map (past ~70°), so nothing is drawn tilted at the edge.
+- **Country and state names as a toggle** (the tag button by the zoom buttons) on cards where they can't give the
+  answer away: rivers, lakes, Interstates, ranges, peaks, World Heritage, seas. Never on cards that ask for a country or
+  state.
+- **Peek (the answer map)**: any map card can open a full map of every answer in its section (names, capitals pinned,
+  roads and rivers labelled). The session pauses while it's open: no answering until you go back.
+- "Reveal" cards start wider than the answer so the map doesn't give it away, then fly to it when flipped.
+- Line features (rivers, Interstates) are easy to tap: a wide invisible line under the visible one.
+
+## 4. Where things go (the hierarchy)
+
+- **Drill down, don't pile up.** A subject has sections; a section can hold sections: Americas › United States ›
+  New Jersey; Rivers › Rivers of the Americas › Rivers of the United States; Food & drink › Cocktails › Ingredients.
+  Set the parent (`SECTION_PARENT`, a deck's `path:`, a collection's folder).
+- Something that belongs in two places is filed once and *also shown* in the other (`alsoInSections`, `alsoIn`), with one
+  set of progress.
+- Big sets start with the essentials and unlock the rest (the 20 longest rivers, then each continent's; the main
+  Interstate corridors, then the others).
+- The **Library** tab always opens on the subject cards.
+
+## 5. Content files (how to add things)
+
+| What | Where | Format |
+| --- | --- | --- |
+| Note decks (your own cards) | `decks/<Subject>/…/<Deck>.md` | see `decks/README.md` |
+| Collections (Wikipedia things: art…) | `collections/<Subject>/…/<List>.md` | see `collections/README.md` |
+| Regions inside a country | `data/subdivisions.json` | sources: Natural Earth, US Census, OpenStreetMap |
+| Hand fixes | `data/overrides.json`, `data/collection-fixes.json`, `data/interstates.json` | each has a `_readme` |
+| Built-in data with its own view | `src/*.ts` (e.g. `src/geotime.ts`) | the view and the cards read the same data |
+
+Deck syntax, quickly: `## Heading` · `- cloze with {{answer|hint}}` · `- front :: back` (`:::` both ways) ·
+`> note after the answer` · `related: A, B` · `native: name (Language)` · `species: Genus species` ·
+`![caption](commons:File.jpg)` · `- question [picture] :: answer`.
+
+## 6. Data
+
+- **Everything is keyed by its Wikidata id** (Q183 = Germany), so names can change without losing progress.
+- **A card's fingerprint** is the facts it depends on: when Wikidata changes them, the card comes back for review with a note.
+- **A failing source never wipes data**: every sync keeps the last good copy (election results, companies, trade,
+  pictures, museum articles).
+- **Hand fixes are explicit and explained**, never silent: an override says why, and is ignored if Wikidata changes
+  the fact it was written for.
+- Where the truth is complicated, say so in a note (two capitals; a print with many copies has no single museum).
+- Prefer official sources: ICS for geologic time, the Census for US borders, UNESCO for World Heritage.
+
+## 7. Sound
+
+- Only free-to-use sounds (CC0, e.g. Kenney), credited in `public/sfx/LICENSE.txt` and Settings.
+- **Separate switches** for sound effects and music; music is off until you turn it on.
+- UI clicks are soft and low (a gentle filter); card sounds feel like real cards.
+- Alternatives live in `public/sfx/lab/`, chosen in Settings → Sound lab, so the person using the app picks by ear.
+- The start-up chime and the music are synthesized in the browser (no files).
+
+## 8. Look, feel and speed
+
+- **Phone first**: every screen is checked at phone and laptop sizes; nothing scrolls sideways.
+- Light and dark themes; respects reduced motion.
+- Pop-ups and sheets stay on screen (don't leave a transform on a parent of a fixed element).
+- **Lean**: map layers load only when needed; projected shapes are cached; coordinates rounded (~500 m for regions);
+  large extras (state borders, sound lab files) load on demand.
+- Writing: plain English, short, no jargon in the app. Explain the *why* in code comments where it isn't obvious.
+
+## 9. How changes are made
+
+1. Work on the development branch; never push to `main` directly.
+2. Bump the version in `package.json` and add a line at the top of `src/changelog.ts` (what the person will notice).
+3. Add a section to `README.md` for the version.
+4. Type-check and build; test in a real browser at phone and laptop sizes (Playwright), including the screens touched.
+5. Commit, push, open a pull request with a clear description; the owner merges.
+6. After a big batch, do a review pass for mistakes and loose ends before calling it done.
