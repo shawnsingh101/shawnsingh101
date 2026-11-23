@@ -33,6 +33,12 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.14.2: a classier picture size
+
+- On a laptop the picture beside a card is framed at a modest size (up to 400 px wide, ~440 px tall), with the picture
+  and the card centred together, and it's never stretched past its own pixels.
+- Full screen shows the whole picture on screen at once (no scrolling, the page behind stays still), up to its own size.
+
 ## v1.14.1: pictures beside the card
 
 - Laptop, cards without a map: the picture fills the left half (where the map goes on map cards), the card sits on the
