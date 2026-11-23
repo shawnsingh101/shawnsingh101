@@ -170,6 +170,8 @@ Deck syntax, quickly: `## Heading` · `- cloze with {{answer|hint}}` · `- front
 
 ## 9. How changes are made
 
+New topics start as a proposal and a place in the queue: see [ROADMAP.md](ROADMAP.md).
+
 1. Work on the development branch; never push to `main` directly.
 2. Bump the version in `package.json` and add a line at the top of `src/changelog.ts` (what the person will notice).
 3. Add a section to `README.md` for the version.
