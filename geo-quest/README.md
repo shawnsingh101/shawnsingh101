@@ -33,6 +33,14 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.14.1: pictures beside the card
+
+- Laptop, cards without a map: the picture fills the left half (where the map goes on map cards), the card sits on the
+  right, so nothing needs scrolling; before you flip, a placeholder holds the space. Phones keep the picture above the
+  text, at most a third of the screen tall (tap it for full screen).
+- A card taller than the screen scrolls from its top instead of being cut off (flex centring no longer hides it).
+- The settings panel scrolls inside itself when it's taller than the screen.
+
 ## v1.14: answer map, map names, guidelines
 
 - **GUIDELINES.md**: the rules the app is built by (local names, pinyin, scientific names, answer hints, no spoilers in

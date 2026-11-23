@@ -43,7 +43,8 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
   const [saved, setSaved] = useState(false);
   const [nudge, setNudge] = useState<string | null>(null);
   const [sheet, setSheet] = useState<string | null>(null); // a related place opened from the card
-  const [peek, setPeek] = useState(false); // the answer map: every answer in this deck, session paused
+  const [peek, setPeek] = useState(false);
+  const wide = useWide(); // the answer map: every answer in this deck, session paused
   // Undo: a snapshot of the session (and your progress) before each answer.
   const history = useRef<{ queue: Item[]; done: number; results: typeof results; sessionXp: number; progress: Progress }[]>([]);
   const [canUndo, setCanUndo] = useState(false);
@@ -216,6 +217,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
   // Intervals only mean something for cards in your schedule (a quiz on unseen cards doesn't schedule them).
   const showIntervals = !quiz || (getProgress().cards[item.ref.id]?.c.state ?? State.New) !== State.New;
   const showMap = f.map !== 'none';
+  const sidePic = !showMap && wide && !!f.picture && (s.pictures || !!f.promptPicture);
   const wrongName = tapResult && !tapResult.ok ? tapResult.hit.name : null;
   const extra = layerFor(c);
 
@@ -241,7 +243,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
     : revealed && item.ref.kind.startsWith('highest') && c.highest ? [{ lon: c.highest.lon, lat: c.highest.lat, label: c.highest.name }] : [];
 
   return (
-    <div className={'study' + (showMap ? ' with-map' : ' no-map')}>
+    <div className={'study' + (showMap ? ' with-map' : ' no-map') + (sidePic ? ' side-pic' : '')}>
       <div className="study-top">
         <button className="btn ghost icon-btn" onClick={onExit} aria-label="End session"><Icon name="x" /></button>
         <div className="bar"><div style={{ width: `${(done / Math.max(1, done + queue.length)) * 100}%` }} /></div>
@@ -293,12 +295,17 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
         </div>
       )}
 
+      {/* Laptop, no map: the picture fills the left half (where the map would be), so the card never needs scrolling. */}
+      {sidePic && <div className="side-picture">
+        {f.promptPicture || revealed ? <Picture {...f.picture!} caption={f.promptPicture && !revealed ? '?' : f.picture!.caption} hideCaption={f.promptPicture && !revealed} />
+          : <div className="side-placeholder"><Icon name="image" size={28} /><span>The picture shows when you flip the card</span></div>}
+      </div>}
       <div className="card-wrap">
         <article className={'card' + (revealed ? ' revealed' : '')} onClick={() => f.mode === 'reveal' && reveal()}>
           <div className="card-meta">
             {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : KIND_LABEL[item.ref.kind]}</span>{item.isNew && <span className="new">new</span>}
           </div>
-          {f.promptPicture && f.picture && <div className="prompt-picture"><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} /></div>}
+          {!sidePic && f.promptPicture && f.picture && <div className="prompt-picture"><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} /></div>}
           {f.promptFlag && <Flag file={c.flag ?? null} name="?" className="prompt-flag" size={480} eager />}
           {/* Interstates: the route sign beside the question (once flipped when the number is what's being asked) */}
           {c.layer === 'road' && c.image && item.ref.kind !== 'roadShield' && (revealed || item.ref.kind === 'locate') && <img className="card-shield" src={commonsUrl(c.image, 160)} alt={`${c.short ?? c.name} sign`} />}
@@ -328,7 +335,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
           {revealed && f.note && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
           {revealed && <Related ds={ds} place={c} onOpen={setSheet} />}
-          {revealed && s.pictures && f.picture && !f.promptPicture && <Picture {...f.picture} />}
+          {!sidePic && revealed && s.pictures && f.picture && !f.promptPicture && <Picture {...f.picture} />}
           {revealed && !f.picture && c.flag && c.layer !== 'note' && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}
           {!revealed && f.mode === 'reveal' && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
           {!revealed && f.mode === 'tap' && <div className="tap-hint">
@@ -366,4 +373,12 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
       {sheet && <PlaceSheet ds={ds} id={sheet} onClose={() => setSheet(null)} />}
     </div>
   );
+}
+
+/** Laptop-sized window (picture beside the card rather than inside it). */
+function useWide() {
+  const q = '(min-width: 900px) and (min-aspect-ratio: 1/1)';
+  const [wide, setWide] = useState(() => typeof window !== 'undefined' && window.matchMedia(q).matches);
+  useEffect(() => { const m = window.matchMedia(q); const h = () => setWide(m.matches); m.addEventListener('change', h); return () => m.removeEventListener('change', h); }, []);
+  return wide;
 }
