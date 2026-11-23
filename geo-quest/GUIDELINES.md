@@ -96,8 +96,19 @@ feature consistent. When adding anything, check it against this page. When a new
 - **Section names are unique.** A folder named like an existing section ("Americas") gets its own name; prefer a clear
   one ("Art of the Americas").
 - **Art**: the starter list, *By period* (Wikipedia's History of art chapters), *Where to see it* (made from the facts).
+- **Architecture** holds buildings themselves (a museum's building and history too); **Art** holds what's inside.
+  A *tour* (`decks/Architecture/2 Tours/`) is one deck per building, written as a walk: its story, then room by room,
+  pointing on to its works in Art. Government buildings' tours will also show under US government.
+- **Ids are unique across the app.** A collection entry that is already something else (a World Heritage site) gets
+  its own id automatically; never give two places the same id.
 - Something that belongs in two places is filed once and *also shown* in the other (`alsoInSections`, `alsoIn`), with one
   set of progress.
+- **Lenses, not copies.** A thing is filed once, in its natural place (History of China › Prehistory), and tagged with
+  facets (`era: Prehistory`); the app builds the cross-cutting views from the tags (History › By era › All prehistory).
+  Tag every history deck with its world era. New facets (theme, region, Books' genre) work the same way.
+- **Every section can be studied whole** (Study), including everything nested in it.
+- **Search is a view, not a deck.** Anything can be found and studied from the Library search; pinned searches save
+  only the words. Make cards findable: put the real names (and native names) in the card or its facts.
 - **History can be studied by time or by place**: decks follow the period chapters of the source (Wikipedia's "History of
   …" article), and a card tagged `also in: Philadelphia` also shows in the place's deck (History › … › By place).
 - **Textbooks follow the book**: subject › unit › chapter, the deck named after the chapter, with the source credited.
@@ -106,6 +117,7 @@ feature consistent. When adding anything, check it against this page. When a new
 - Big sets start with the essentials and unlock the rest (the 20 longest rivers, then each continent's; the main
   Interstate corridors, then the others).
 - The **Library** tab always opens on the subject cards.
+- **Me** measures every subject the same two ways (covered, memory), so a new subject shows up there by itself.
 
 ## 5. Content files (how to add things)
 
@@ -149,6 +161,11 @@ Deck syntax, quickly: `## Heading` · `- cloze with {{answer|hint}}` · `- front
 - Pop-ups and sheets stay on screen (don't leave a transform on a parent of a fixed element).
 - **Lean**: map layers load only when needed; projected shapes are cached; coordinates rounded (~500 m for regions);
   large extras (state borders, sound lab files) load on demand.
+- **Keep it small.** Two verbs for learning: **Study** and **Quiz**. Five tabs (Today, Library, Quiz, Map, Me); a new
+  screen goes inside one of them, not beside them. The top bar holds only what's toggled often (sound) and Settings;
+  set-once switches live in Settings. One row per deck; a folder with one or two small decks (under 30 cards) is listed in its parent and gets its own fold
+  back by itself as it grows. Ask "what can this replace?"
+  before adding a button.
 - Writing: plain English, short, no jargon in the app. Explain the *why* in code comments where it isn't obvious.
 
 ## 9. How changes are made

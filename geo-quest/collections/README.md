@@ -12,6 +12,12 @@ collections/
       Impressionism.md
 ```
 
+## Buildings
+
+A list with `kind: building` in its front matter is buildings: the sync takes the architect (P84) as the maker, the
+architectural style (P149), and the building's own town instead of a museum. Cards: the picture, who designed it,
+where it stands, which style.
+
 ## A list file
 
 ```markdown

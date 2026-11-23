@@ -1,4 +1,5 @@
 ---
+era: Ancient
 title: Jin dynasty
 ---
 Chapters follow Wikipedia's History of China article.

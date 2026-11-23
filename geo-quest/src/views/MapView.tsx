@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { WorldMap, type MapHit } from '../components/WorldMap';
 import { level, update, useProgress, type Settings } from '../srs';
 import { cardId, kindsFor } from '../cards';
@@ -34,10 +34,12 @@ const TOGGLES: { k: MapKey; label: string; icon: IconName; kind: 'label' | 'laye
   { k: 'mapRoads', label: 'Interstates', icon: 'road', kind: 'layer' },
 ];
 
-export function MapView({ ds }: { ds: Dataset }) {
+export function MapView({ ds, switcher }: { ds: Dataset; switcher?: ReactNode }) {
   const p = useProgress();
   const s = p.settings;
   const [sel, setSel] = useState<string | null>(null);
+  // The layer switches fold away behind one button on a phone, where they'd cover half the map.
+  const [showLayers, setShowLayers] = useState(() => window.innerWidth > 760);
   const [tip, setTip] = useState<{ id: string | null; name: string; x: number; y: number; touch?: boolean } | null>(null);
   const lastPointer = useRef('mouse');
   useEffect(() => {
@@ -56,6 +58,7 @@ export function MapView({ ds }: { ds: Dataset }) {
   ds.countries.forEach(c => { const m = mastery.get(c.id) ?? 0; counts[m === 0 ? 0 : m < 1.5 ? 1 : m < 2.5 ? 2 : 3]++; });
   const set = (k: keyof Settings, v: boolean) => update(x => { (x.settings as unknown as Record<string, boolean>)[k] = v; });
   const labelsOn = s.mapNames || s.mapCapitals;
+  const layersOn = TOGGLES.filter(t => s[t.k]).length;
   const layers = [...(s.mapWater ? ['water' as const] : []), ...(s.mapCn ? ['cn' as const] : []), ...(s.mapUs ? ['us' as const] : []), ...(s.mapUs && !s.mapLakes ? ['lake' as const] : []), ...(s.mapTerr ? ['terr' as const] : []), ...(s.mapSub ? ['sub' as const] : []), ...(s.mapSites ? ['site' as const] : []), ...(s.mapMountains ? ['range' as const, 'peak' as const] : []), ...(s.mapLakes ? ['lake' as const] : []), ...(s.mapRivers ? ['river' as const] : []), ...(s.mapRoads ? ['road' as const] : []), ...(s.mapDeserts ? ['desert' as const] : [])];
 
   const onTap = (h: MapHit) => {
@@ -82,7 +85,9 @@ export function MapView({ ds }: { ds: Dataset }) {
         onHover={labelsOn ? (h, x, y) => setTip(h ? { id: h.countryId, name: h.name, x, y } : null) : undefined} />
 
       <div className="map-toggles">
-        {TOGGLES.map(t => (
+        {switcher}
+        <button className={'chip' + (showLayers ? ' on' : '')} onClick={() => setShowLayers(!showLayers)} aria-expanded={showLayers}><Icon name="layers" size={15} /><span>Layers{layersOn ? ` · ${layersOn}` : ''}</span></button>
+        {showLayers && TOGGLES.map(t => (
           <button key={t.k} className={'chip' + (s[t.k] ? ' on' : '') + (t.kind === 'layer' ? ' layer' : '')} onClick={() => set(t.k, !s[t.k])} aria-pressed={s[t.k]}>
             <Icon name={t.icon} size={15} /><span>{t.label}</span>
           </button>

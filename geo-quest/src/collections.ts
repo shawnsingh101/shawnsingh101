@@ -4,12 +4,12 @@
 import type { Chinese, NativeName, Place } from './types';
 import { GROUPS, claimSection, sectionChain } from './cards';
 
-export interface CollectionList { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; entries: { id: string; heading: string | null }[] }
+export interface CollectionList { file: string; id: string; building: boolean; title: string; subject: string; path: string[]; intro: string | null; entries: { id: string; heading: string | null }[] }
 export interface ArtFacts {
   name: string | null; nameThe?: string | null; museumWiki?: string | null;
   plural?: boolean; species?: string | null; native?: NativeName[]; zh?: Chinese | null; // native: its name in its own language (Chinese with pinyin)
   wiki: string | null; image: string | null; year: number | null; types: string[];
-  artists: string[]; culture: string | null; museum: string | null; city: string | null;
+  artists: string[]; culture: string | null; style?: string | null; museum: string | null; city: string | null;
   country: string | null; countryName: string | null; lon: number | null; lat: number | null; links: number;
 }
 
@@ -33,7 +33,7 @@ export function parseList(file: string, text: string): CollectionList {
     if (e) { if (!entries.some(x => x.id === e[1])) entries.push({ id: e[1], heading }); continue; }
     if (line && !heading && !line.startsWith('-') && !line.startsWith('#')) intro.push(line);
   }
-  return { file, id: 'c-' + slug([subject, ...path, title].join(' ')), title, subject, path, intro: intro.join(' ') || null, entries };
+  return { file, id: 'c-' + slug([subject, ...path, title].join(' ')), building: meta.kind === 'building', title, subject, path, intro: intro.join(' ') || null, entries };
 }
 
 let files: Record<string, string> = {};
@@ -50,26 +50,29 @@ const kindOf = (types: string[]) => { for (const k of KINDS) if (types.some(t =>
 export const fmtYear = (y: number | null | undefined) => (y == null ? null : y <= 0 ? `c. ${Math.abs(y) || 1} BC` : y < 1000 ? `c. AD ${y}` : `c. ${y}`);
 
 /** Register each list as a deck (group) under its subject › sections, and return its works as places. */
-export function registerCollections(facts: Record<string, ArtFacts>, countryName: (id: string) => string | undefined, regionOf: (id: string) => string | undefined = () => undefined): Place[] {
+export function registerCollections(facts: Record<string, ArtFacts>, countryName: (id: string) => string | undefined, regionOf: (id: string) => string | undefined = () => undefined, taken: Set<string> = new Set()): Place[] {
   const out = new Map<string, Place>();
   for (const l of LISTS) {
     const chain: string[] = [];
     for (const sec of [l.subject, ...l.path]) chain.push(claimSection(sec, chain.length ? chain[chain.length - 1] : null));
-    if (!GROUPS.some(g => g.id === l.id)) GROUPS.push({ id: l.id, section: chain[chain.length - 1], name: l.title, layer: 'art', nouns: 'works', topics: [{ id: 'art', name: 'Works', icon: 'image' }], note: l.intro ?? undefined });
+    if (!GROUPS.some(g => g.id === l.id)) GROUPS.push({ id: l.id, section: chain[chain.length - 1], name: l.title, layer: 'art', nouns: l.building ? 'buildings' : 'works', topics: [{ id: 'art', name: l.building ? 'Buildings' : 'Works', icon: l.building ? 'landmark' : 'image' }], note: l.intro ?? undefined });
     for (const e of l.entries) {
       const f = facts[e.id];
       if (!f?.name) continue; // not synced yet
-      const seen = out.get(e.id);
+      // Ids are global: if a work or building is already in the app as something else (the Taj Mahal is a World Heritage
+      // site), the collection's entry gets its own id so the two never overwrite each other. Facts stay keyed by Q-id.
+      const pid = taken.has(e.id) ? `${e.id}-${slug(l.subject)}` : e.id;
+      const seen = out.get(pid);
       if (seen) { seen.alsoIn = [...(seen.alsoIn ?? []), l.id]; continue; } // one work, one set of progress
       // "the Louvre Museum, Paris": museums take "the" (not churches, temples or mountains named for a saint or a place).
       const museum = f.museum && !/^(the |Santa |San |St\.? |Saint |Corcovado|Kōtoku-in|Rijksmuseum|Mauritshuis)/i.test(f.museum) ? `the ${f.museum}` : f.museum;
       const where = [museum, f.city && !f.museum?.includes(f.city) ? f.city : null].filter(Boolean).join(', ');
       const cName = (f.country && countryName(f.country)) || f.countryName || null;
-      out.set(e.id, {
-        id: e.id, layer: 'art', group: l.id, name: f.name, nameThe: f.nameThe ?? undefined, species: f.species ?? undefined, native: f.native?.length ? f.native : undefined, zh: f.zh ?? null, museumName: f.museum, museumWiki: f.museumWiki ?? null, city: f.city, plural: f.plural, wiki: f.wiki, image: f.image, capitals: [], capitalAnswer: null,
+      out.set(pid, {
+        id: pid, qid: e.id, building: l.building || undefined, style: f.style ?? null, layer: 'art', group: l.id, name: f.name, nameThe: f.nameThe ?? undefined, species: f.species ?? undefined, native: f.native?.length ? f.native : undefined, zh: f.zh ?? null, museumName: f.museum, museumWiki: f.museumWiki ?? null, city: f.city, plural: f.plural, wiki: f.wiki, image: f.image, capitals: [], capitalAnswer: null,
         lon: f.lon ?? undefined, lat: f.lat ?? undefined, country: f.country ?? undefined, countryName: cName ?? undefined,
         artists: f.artists, culture: f.culture, year: f.year, museum: where || null, origin: e.heading,
-        facts: [fmtYear(f.year), kindOf(f.types), e.heading ? `from ${e.heading.replace(/^The /, 'the ')}` : null].filter(Boolean).join(' · ') || undefined,
+        facts: [fmtYear(f.year), l.building ? f.types[0] ?? null : kindOf(f.types), f.style ?? null, e.heading && !l.building ? `from ${e.heading.replace(/^The /, 'the ')}` : null].filter(Boolean).join(' · ') || undefined,
       });
     }
   }

@@ -15,3 +15,7 @@ Chapters follow Wikipedia's History of art article.
 
 ## Post-Impressionism
 - Q45585 The Starry Night
+
+## Impressionism and Aestheticism
+- Q2395218 Woman with a Parasol – Madame Monet and Her Son
+- Q970968 Symphony in White, No. 1: The White Girl

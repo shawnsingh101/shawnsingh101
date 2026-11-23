@@ -1,4 +1,5 @@
 ---
+era: Medieval
 title: Song dynasty
 ---
 Chapters follow Wikipedia's History of China article.

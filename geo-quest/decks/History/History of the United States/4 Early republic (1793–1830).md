@@ -1,4 +1,5 @@
 ---
+era: Modern
 title: Early republic (1793–1830)
 ---
 Chapters follow Wikipedia's History of the United States article. Cards about a city or state also appear in its deck under By place.

@@ -1,4 +1,5 @@
 ---
+era: Ancient
 title: Northern and Southern dynasties
 ---
 Chapters follow Wikipedia's History of China article.

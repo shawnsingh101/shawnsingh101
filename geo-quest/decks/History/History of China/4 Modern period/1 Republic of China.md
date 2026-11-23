@@ -1,4 +1,5 @@
 ---
+era: Modern
 title: Republic of China
 ---
 Chapters follow Wikipedia's History of China article.

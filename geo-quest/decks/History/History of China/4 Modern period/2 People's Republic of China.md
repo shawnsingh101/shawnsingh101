@@ -1,4 +1,5 @@
 ---
+era: Contemporary
 title: People's Republic of China
 ---
 Chapters follow Wikipedia's History of China article.

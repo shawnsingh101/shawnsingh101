@@ -1,4 +1,5 @@
 ---
+era: Early modern, Modern
 title: Qing dynasty
 ---
 Chapters follow Wikipedia's History of China article.

@@ -1,4 +1,5 @@
 ---
+era: Contemporary
 title: Contemporary United States (1991–present)
 ---
 Chapters follow Wikipedia's History of the United States article. Cards about a city or state also appear in its deck under By place.

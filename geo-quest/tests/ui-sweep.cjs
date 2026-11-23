@@ -12,18 +12,27 @@ const SHOTS = process.env.SHOTS ?? '/tmp/';
     await page.evaluate(() => { localStorage.clear(); localStorage.setItem('geoquest:v1', JSON.stringify({ v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {}, settings: { sound: false, locks: false, mapMode: 'flip', mapContext: true } })); });
     await page.reload(); await page.click('text=Start'); await page.waitForTimeout(900);
     // Tabs
-    for (const t of ['Today', 'Library', 'Quiz', 'Map', 'Atlas', 'Dashboard']) { await page.click(`.tabs >> text=${t}`); await page.waitForTimeout(700); }
+    if (process.env.SWEEP_LOG) require("fs").appendFileSync(process.env.SWEEP_LOG, [name, 'Tabs', new Date().toISOString().slice(11, 19)].join(" ") + "\n");
+    for (const t of ['Today', 'Library', 'Quiz', 'Map', 'Me']) { await page.click(`.tabs >> text=${t}`); await page.waitForTimeout(700); }
+    // The list view (Atlas) is inside Map; the Dashboard is a card in the Library.
+    if (process.env.SWEEP_LOG) require("fs").appendFileSync(process.env.SWEEP_LOG, [name, 'The list view (Atlas) is inside Map; the', new Date().toISOString().slice(11, 19)].join(" ") + "\n");
+    await page.click('.tabs >> text=Map'); await page.click('.view-switch >> text=List'); await page.waitForTimeout(500);
+    await page.click('.tabs >> text=Library'); await page.locator('.subject-card', { hasText: 'Dashboard' }).click(); await page.waitForTimeout(700);
     // Library: every subject opens, has content
+    if (process.env.SWEEP_LOG) require("fs").appendFileSync(process.env.SWEEP_LOG, [name, 'Library: every subject opens, has conten', new Date().toISOString().slice(11, 19)].join(" ") + "\n");
     await page.click('.tabs >> text=Library'); await page.waitForTimeout(300);
     const subjects = await page.$$eval('.subject-card b', e => e.map(x => x.textContent));
     for (const s of subjects) {
       if (s === 'Dashboard') continue;
       await page.click('.tabs >> text=Library'); await page.waitForTimeout(200);
       await page.locator('.subject-card', { hasText: s }).first().click(); await page.waitForTimeout(300);
-      const skills = await page.$$eval('.skill', e => e.length);
+      // Geography's sections start closed until you're learning something in them: open the first one.
+      if (!(await page.$('.skill, .deck-row'))) { await page.locator('.section-row').first().click({ timeout: 3000 }).catch(() => {}); await page.waitForTimeout(300); }
+      const skills = await page.$$eval('.skill, .deck-row', e => e.length);
       if (!skills) problems.push(`${name} Library "${s}": no skills shown`);
     }
     // Quiz: every subject × every area at the first level, 4 cards each
+    if (process.env.SWEEP_LOG) require("fs").appendFileSync(process.env.SWEEP_LOG, [name, 'Quiz: every subject × every area at the ', new Date().toISOString().slice(11, 19)].join(" ") + "\n");
     await page.click('.tabs >> text=Quiz'); await page.waitForTimeout(300);
     const qsubs = await page.$$eval('.subjects .subject span', e => e.map(x => x.textContent));
     let quizzes = 0, cards = 0, labelChecks = 0;
@@ -67,6 +76,7 @@ const SHOTS = process.env.SHOTS ?? '/tmp/';
       }
     }
     // Map tab: every layer on
+    if (process.env.SWEEP_LOG) require("fs").appendFileSync(process.env.SWEEP_LOG, [name, 'Map tab: every layer on', new Date().toISOString().slice(11, 19)].join(" ") + "\n");
     await page.click('.tabs >> text=Map'); await page.waitForTimeout(500);
     for (const l of await page.$$('.map-layers button, .layer-toggles button, .chips button')) { await l.click().catch(() => {}); await page.waitForTimeout(80); }
     await page.waitForTimeout(1500); await page.screenshot({ path: SHOTS + `sweep-${name}-map.png` });

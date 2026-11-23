@@ -10,3 +10,6 @@ Chapters follow Wikipedia's History of art article.
 
 ## Spanish Baroque
 - Q208758 Las Meninas
+
+## Dutch Golden Age, in Washington
+- Q969367 Woman Holding a Balance

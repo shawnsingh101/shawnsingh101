@@ -1,4 +1,5 @@
 ---
+era: Medieval
 title: Yuan dynasty
 ---
 Chapters follow Wikipedia's History of China article.

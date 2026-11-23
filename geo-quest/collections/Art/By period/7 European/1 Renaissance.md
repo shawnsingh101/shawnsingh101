@@ -13,3 +13,7 @@ Chapters follow Wikipedia's History of art article.
 
 ## Northern Renaissance
 - Q321303 The Garden of Earthly Delights
+
+## In Washington
+- Q1267893 Ginevra de' Benci
+- Q254923 Alba Madonna

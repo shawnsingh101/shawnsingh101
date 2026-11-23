@@ -1,4 +1,5 @@
 ---
+era: Prehistory
 title: Neolithic China
 ---
 Chapters follow Wikipedia's History of China article.

@@ -1,4 +1,5 @@
 ---
+era: Early modern
 title: European colonization (1075–1754)
 ---
 Chapters follow Wikipedia's History of the United States article. Cards about a city or state also appear in its deck under By place.

@@ -33,6 +33,83 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.22: Architecture
+
+- New subject **Architecture**:
+  - `collections/Architecture/Famous buildings.md` (`kind: building`): 35 landmarks from the Great Pyramid to the Burj
+    Khalifa. Cards: picture → name, **who designed it** (architect, Wikidata P84), **where it stands** (its own town,
+    not a museum), **which style** (P149; new card kind `artStyle`). Hand fixes in `data/collection-fixes.json`
+    (Angkor Wat was placed in Vietnam, Villa Savoye in New York; William Thornton for the Capitol; plain styles and types).
+  - `decks/Architecture/1 Styles and architects.md`: 23 styles, each with a picture of a building in it, and 7 architects
+    with portraits (and 貝聿銘 Bèi Yùmíng, زها حديد).
+  - `decks/Architecture/2 Tours/`: **The White House**, **The United States Capitol**, **The Metropolitan Museum of
+    Art**, written as a walk (the building's story, then room by room). The Met tour points on to its works in Art.
+- Fix: a collection entry with the same Wikidata id as a World Heritage site, peak, range or territory (Ajanta Caves, in
+  Art and World Heritage) replaced it in the app's lookup, so one of the two showed the wrong cards. The collection's
+  entry now gets its own id (`Q184427-art`). Progress on the Ajanta *art* cards starts over; the site's is kept.
+- Not verified this time (Wikimedia was rate-limiting): the one hand-typed picture, *Washington Crossing the Delaware*;
+  every other picture comes from Wikidata's own P18.
+
+## v1.21: search
+
+- A search box at the top of the Library (`src/search.ts`, `src/components/Search.tsx`) finds cards in every subject by
+  what they say: names (also in their own language and pinyin without tones: `xian` finds 西安 Xī'ān), answers, artists,
+  museums, deck and section names. Words match from their start; all must match. Filters: `era:prehistory`,
+  `subject:art`, `in:"History of China"`. A deck's own name brings in the whole deck only when none of its cards match by
+  themselves, so *Washington* finds George Washington, not every president in *Washington to Buchanan*.
+- **Study** these cards: what's due, then up to 20 new ones (chosen on purpose, so not held to the daily budget), dealt
+  so one place's cards don't come in a row (`queueForCards` in `src/srs.ts`). **Quiz**: 25 of them as practice.
+- **Pin** a search: only the words are saved (`pins` in your progress, so backups carry them), so cards added later
+  join it. Not a deck: no copies, one set of progress per card.
+- The settings icon is a cog (the old one looked like the sun on Today).
+
+## v1.20: streamlined
+
+- **Two verbs.** A deck's sheet has **Study** (adds the deck and starts; if nothing is waiting it brings in 10 new cards) and
+  **Quiz**, plus Stop learning. A section has **Study** (everything in it and below; in Geography by the quiz's rule, so a
+  continent means its countries), **Quiz** and **Stop**. Gone: Start learning, Study now, Learn 10 more now, Learn all,
+  Practice quiz.
+- **Five tabs**: Today, Library, Quiz, Map, Me. Atlas is the **List** view inside Map (a Map | List switch); the
+  Dashboard is reached from its card in the Library.
+- **Top bar**: sound and Settings only. Music, XP & streaks, pictures, skill locks and the theme moved into Settings.
+- **Library**: a deck with one skill (every note deck and collection) is a single row; a folder with one or two small
+  decks (under 30 cards together) and nothing inside is listed in its parent, labelled with its name, and gets its own
+  fold back by itself once it grows (a third deck, 30 cards, or a sub-folder); notes subjects open their first level only (the
+  By era lens starts closed). Remembered open/closed state moved to a new key, so everyone starts from the new defaults.
+- **Today** is about today (due, new, done, one button); XP moved to Me. **Map** layer switches fold behind a *Layers*
+  button on phones.
+- Tests: the sweep visits the five tabs, the List view and the Dashboard card, counts deck rows, and can log its steps
+  (`SWEEP_LOG=file`).
+
+## v1.19: Study all, History by era
+
+- **Study all** on every section of the Library: activates every deck in the section *and the sections inside it*
+  and starts one session with them (all of History of China; all of Physical geography). Before, you could only start
+  the decks sitting directly in one section.
+- **Lenses: History › By era.** A deck says which world era it belongs to in its front matter (`era: Prehistory`, or two:
+  `era: Early modern, Modern`), from a fixed list in `src/notes.ts` (`ERAS`: prehistory, ancient, medieval, early modern,
+  modern, contemporary). The app then *also* lists it under History › By era › All prehistory, next to every other deck
+  of that era from any country, so "study all prehistory" is one tap. Nothing is copied: one deck, one set of progress,
+  shown in two places (`alsoInSections`), with where it's filed shown under its name. All 32 China and US history
+  decks are tagged; By place decks are not.
+
+## v1.18: Me (your progress)
+
+- New **Me** tab (`src/views/Me.tsx`): totals (cards known, started, memory, streak, cards in 30 days); a radar chart of
+  every subject; per subject two bars: **covered** (cards you know, of all there are) and **memory** (FSRS
+  retrievability of the cards you've started, i.e. the chance you'd recall them today); tap a subject for its parts
+  (Geography's continents and themes, a notes subject's sections); the **weakest decks** with a one-tap review; and a
+  26-week calendar of study days. Coverage on the chart uses a square-root scale so early progress shows.
+
+## v1.17.1: Washington, D.C. museums
+
+- New list `collections/Art/More famous works.md` (works added a museum at a time): 6 from the **National Gallery of
+  Art** (Ginevra de' Benci, Woman Holding a Balance, the Alba Madonna, Woman with a Parasol, Watson and the Shark, The
+  White Girl) and 4 from the **National Portrait Gallery** (the Lansdowne and Athenaeum portraits of Washington, the
+  Obama portraits). They show under Where to see it › Art in the Americas › Art in the United States, and in their
+  period lists (new: Late 18th century, Contemporary art). Fixes: the National Gallery's place (Wikidata gives it no
+  position), the 1778 original of Watson and the Shark, Whistler's date.
+
 ## v1.17: labels, Art organized, Information Systems, bug sweep
 
 - **Map names in the right place.** A label is placed at the place's real middle, projected (not the middle of the

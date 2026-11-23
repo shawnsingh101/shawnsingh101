@@ -59,8 +59,10 @@ const lists = files.map(path => {
     const m = /^-\s+(?:(Q\d+)\s*)?(.*)$/.exec(line.trim()); if (!m) return;
     entries.push({ line: i, id: m[1] ?? null, text: m[2].trim(), heading });
   });
-  return { path, lines, entries };
+  return { path, lines, entries, building: /^kind:\s*building\s*$/m.test(text.split('\n---')[0]) };
 });
+// Buildings stand where they are: their own place and town, never a "museum" (a location like Champ de Mars).
+const BUILDINGS = new Set(lists.filter(l => l.building).flatMap(l => l.entries.map(e => e.id).filter(Boolean)));
 
 // ---- 2. Find ids for entries written as Wikipedia titles, and write them back --------------------
 const unresolved = lists.flatMap(l => l.entries.filter(e => !e.id && e.text));
@@ -110,9 +112,12 @@ try {
       OPTIONAL { ?item wdt:P18 ?image } OPTIONAL { ?item wdt:P571 ?inception } OPTIONAL { ?item wdt:P225 ?taxon } OPTIONAL { ?item wdt:P31 ?type }
       OPTIONAL { ?item wikibase:sitelinks ?links }
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
-    // Who made it (an artist, or for ancient work, the culture).
+    // A building's architectural style (P149).
+    const styles = await sparql(`SELECT ?item ?styleLabel WHERE { VALUES ?item { ${values} } ?item wdt:P149 ?style .
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
+    // Who made it (an artist or, for a building, its architect; for ancient work, the culture).
     const makers = await sparql(`SELECT ?item ?maker ?makerLabel ?culture ?cultureLabel WHERE { VALUES ?item { ${values} }
-      OPTIONAL { ?item wdt:P170 ?maker . FILTER(isIRI(?maker)) FILTER NOT EXISTS { ?maker wdt:P31 wd:Q4233718 } }
+      OPTIONAL { ?item wdt:P170|wdt:P84 ?maker . FILTER(isIRI(?maker)) FILTER NOT EXISTS { ?maker wdt:P31 wd:Q4233718 } }
       OPTIONAL { ?item wdt:P2596 ?culture }
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
     // Where it is: the museum that holds it (P195 collection, else P276 location), its city and country; or the work's own spot.
@@ -155,7 +160,7 @@ try {
       const cultures = [...new Set(mk.map(r => label(r, 'cultureLabel')).filter(Boolean))];
       const w = where.filter(r => qid(r.item.value) === q);
       // Prefer the collection (the museum) if it has a position, then the location.
-      const spot = ['P195', 'P276'].map(p => w.find(r => val(r, 'prop') === p && r.coord)).find(Boolean) ?? null;
+      const spot = BUILDINGS.has(q) ? null : ['P195', 'P276'].map(p => w.find(r => val(r, 'prop') === p && r.coord)).find(Boolean) ?? null;
       const own = w.find(r => r.ownCoord) ?? w[0];
       const coord = point(spot ? val(spot, 'coord') : own && val(own, 'ownCoord'));
       const country = spot?.country ? { id: qid(spot.country.value), name: label(spot, 'countryLabel') } : own?.ownCountry ? { id: qid(own.ownCountry.value), name: label(own, 'ownCountryLabel') } : null;
@@ -169,6 +174,7 @@ try {
         types,
         artists,
         culture: cultures[0] ?? null,
+        style: styles.filter(r => qid(r.item.value) === q).map(r => label(r, 'styleLabel')).find(Boolean) ?? null, // architecture: Gothic, Beaux-Arts…
         museum: spot ? label(spot, 'placeLabel') : null,
         museumId: spot ? qid(spot.place.value) : null, museumWiki: null, // its Wikipedia article (below), for the Related links
         city: spot ? town(spot, ['c1Label', 'c2Label', 'c3Label']) : own ? town(own, ['o1Label', 'o2Label', 'o3Label']) : null,
