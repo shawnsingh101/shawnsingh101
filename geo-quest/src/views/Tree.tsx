@@ -128,9 +128,14 @@ export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { d
     const tot = nodes.reduce((a, n) => { const st = nodeStats(ds, p, n); return { known: a.known + st.known, total: a.total + st.total, due: a.due + st.due }; }, { known: 0, total: 0, due: 0 });
     const learning = nodes.filter(n => p.active.includes(n)).length;
     const geo = subject?.id === 'geography';
-    // A sub-section with only one or two decks and nothing inside isn't worth a fold of its own: its decks are listed here,
-    // labelled with where they sit (By place › New York › New York City).
-    const tiny = (k: string) => !geo && !childSections(k).length && groupsShownIn(k).length <= 2;
+    // A small sub-section (one or two decks, under 30 cards, nothing inside) isn't worth a fold of its own: its decks are
+    // listed here, labelled with where they sit (By place › New York › New York City). It gets its fold back by itself
+    // once it grows: a third deck, 30 cards, or a sub-folder.
+    const tiny = (k: string) => {
+      if (geo || childSections(k).length) return false;
+      const gs = groupsShownIn(k);
+      return gs.length <= 2 && gs.reduce((n, g) => n + nodeStats(ds, p, nodeId(g.id, g.topics[0].id)).total, 0) < 30;
+    };
     const kids = childSections(sec).filter(k => !tiny(k));
     const inlined = childSections(sec).filter(tiny).flatMap(k => groupsShownIn(k).map(g => ({ g, from: k })));
     // Study: every deck in this section and below it (all of History of China, all prehistory…), one session. In

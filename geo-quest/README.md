@@ -72,8 +72,9 @@ world map fill in as you master it.
 - **Five tabs**: Today, Library, Quiz, Map, Me. Atlas is the **List** view inside Map (a Map | List switch); the
   Dashboard is reached from its card in the Library.
 - **Top bar**: sound and Settings only. Music, XP & streaks, pictures, skill locks and the theme moved into Settings.
-- **Library**: a deck with one skill (every note deck and collection) is a single row; a folder with one or two decks
-  and nothing inside is listed in its parent, labelled with its name; notes subjects open their first level only (the
+- **Library**: a deck with one skill (every note deck and collection) is a single row; a folder with one or two small
+  decks (under 30 cards together) and nothing inside is listed in its parent, labelled with its name, and gets its own
+  fold back by itself once it grows (a third deck, 30 cards, or a sub-folder); notes subjects open their first level only (the
   By era lens starts closed). Remembered open/closed state moved to a new key, so everyone starts from the new defaults.
 - **Today** is about today (due, new, done, one button); XP moved to Me. **Map** layer switches fold behind a *Layers*
   button on phones.

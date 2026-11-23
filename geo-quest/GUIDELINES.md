@@ -163,7 +163,8 @@ Deck syntax, quickly: `## Heading` · `- cloze with {{answer|hint}}` · `- front
   large extras (state borders, sound lab files) load on demand.
 - **Keep it small.** Two verbs for learning: **Study** and **Quiz**. Five tabs (Today, Library, Quiz, Map, Me); a new
   screen goes inside one of them, not beside them. The top bar holds only what's toggled often (sound) and Settings;
-  set-once switches live in Settings. One row per deck; no folder for one or two decks. Ask "what can this replace?"
+  set-once switches live in Settings. One row per deck; a folder with one or two small decks (under 30 cards) is listed in its parent and gets its own fold
+  back by itself as it grows. Ask "what can this replace?"
   before adding a button.
 - Writing: plain English, short, no jargon in the app. Explain the *why* in code comments where it isn't obvious.
 
