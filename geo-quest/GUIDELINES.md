@@ -33,8 +33,10 @@ feature consistent. When adding anything, check it against this page. When a new
 - **The thing itself is shown whole, never cropped**: artworks (on a dark "gallery wall"), banknotes, plants, cocktails,
   road signs, any single photo. A place's gallery of photos keeps the wide strip, which suits landscapes.
 - **Tap any picture to see it full screen.**
-- **No scrolling to see a card.** On a laptop a card without a map shows its picture on the left half; on a phone the
-  picture stays above the text at most a third of the screen tall.
+- **No scrolling to see a card.** On a laptop a card without a map shows its picture framed beside it (up to ~400 px
+  wide), the two centred together; on a phone the picture stays above the text, at most a third of the screen tall.
+- **Never enlarge a picture past its own pixels** (no blur), on the card or full screen. Full screen fits the whole
+  picture on screen; nothing scrolls.
 - A picture can be the question (`- What is made from this? [picture] :: gin`); its caption stays hidden until the card
   is flipped. Only use a picture as a question when it's free to show (Commons), never a copyrighted work's thumbnail.
 - Prefer pictures from Wikimedia Commons (via Wikidata P18). Interstate shields: P14 or `I-N.svg`.

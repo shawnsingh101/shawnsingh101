@@ -55,7 +55,8 @@ function Lightbox({ src, big, alt, onClose }: { src: string; big?: string; alt: 
   useEffect(() => {
     const k = (e: KeyboardEvent) => { if (e.key === 'Escape') { e.stopPropagation(); onClose(); } };
     window.addEventListener('keydown', k, true);
-    return () => window.removeEventListener('keydown', k, true);
+    const was = document.body.style.overflow; document.body.style.overflow = 'hidden'; // the page behind stays put
+    return () => { window.removeEventListener('keydown', k, true); document.body.style.overflow = was; };
   }, [onClose]);
   return createPortal(
     <div className="lightbox" role="dialog" aria-label="Picture, full screen" onClick={e => { e.stopPropagation(); onClose(); }}>
