@@ -50,6 +50,11 @@ world map fill in as you master it.
 - **Earth history**: the geologic time scale (ICS 2023 dates and official colours, `src/geotime.ts`) as layers of rock
   you can tap, *readable* or *true to scale*, with a 24-hour "Earth's day" clock and the period mnemonic. Two decks
   (122 cards) are built from the same data: when each began, what it's known for, which era, what comes next.
+- **Cocktail ingredients** (Food & drink › Cocktails › Ingredients): *Spirits: from plant to glass* (gin ← juniper,
+  tequila ← agave, rum ← sugarcane, bourbon ← corn, Scotch ← barley, baijiu ← sorghum…) and *Liqueurs & bitters*
+  (Campari, amaretto ← apricot kernels, maraschino ← Marasca cherries, Angostura ← gentian…), with photos of the plants
+  and links to where each comes from. New deck syntax: `- What is made from this? [picture] :: gin` shows the heading's
+  picture as the question.
 - Note decks take a `native:` line (`native: الكعبة (Arabic)`): the religion and philosophy examples now show
   Arabic, Gurmukhi, Hebrew, Italian, Hindi and Greek with the speaker button.
 - Maps re-centre on anything more than ~70° from the middle (Japan was drawn tilted at the edge on World Heritage cards).

@@ -7,6 +7,7 @@ import { epochDeck, geotimeDeck } from './geotime';
 export interface NoteCard {
   pre: string; answer: string; post: string;  // cloze: "pre [answer] post"; front/back: pre = front, answer = back
   front: boolean;                              // a front :: back card (answer shown under the question)
+  pictureFirst?: boolean;                      // "[picture]" in the question: the heading's picture is the question
   context: string | null;                      // the ## heading it sits under
   picture: { file?: string | null; url?: string | null; caption: string } | null;
   note: string | null;                         // a "> …" line: shown after the answer
@@ -66,6 +67,8 @@ export function parseDeck(file: string, text: string): Deck {
     const t = b[1];
     const fb = /^(.*?)\s+(:::|::)\s+(.*)$/.exec(t);
     if (fb) {
+      // "What is made from this? [picture] :: gin": the picture is shown as the question.
+      if (/\[picture\]/i.test(fb[1])) { add({ pre: fb[1].replace(/\s*\[picture\]\s*/i, ' ').trim(), answer: fb[3], post: '', front: true, pictureFirst: true }, fb[1]); continue; }
       add({ pre: fb[1], answer: fb[3], post: '', front: true }, fb[1]);
       if (fb[2] === ':::') add({ pre: fb[3], answer: fb[1], post: '', front: true }, '↺' + fb[3]); // both directions
       continue;
