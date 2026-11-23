@@ -154,6 +154,10 @@ Deck syntax, quickly: `## Heading` · `- cloze with {{answer|hint}}` · `- front
 - Pop-ups and sheets stay on screen (don't leave a transform on a parent of a fixed element).
 - **Lean**: map layers load only when needed; projected shapes are cached; coordinates rounded (~500 m for regions);
   large extras (state borders, sound lab files) load on demand.
+- **Keep it small.** Two verbs for learning: **Study** and **Quiz**. Five tabs (Today, Library, Quiz, Map, Me); a new
+  screen goes inside one of them, not beside them. The top bar holds only what's toggled often (sound) and Settings;
+  set-once switches live in Settings. One row per deck; no folder for one or two decks. Ask "what can this replace?"
+  before adding a button.
 - Writing: plain English, short, no jargon in the app. Explain the *why* in code comments where it isn't obvious.
 
 ## 9. How changes are made

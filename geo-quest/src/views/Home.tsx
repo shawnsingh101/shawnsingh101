@@ -1,8 +1,6 @@
 import { activeNodes, buildQueue, learnMore, sessionDecks, streak, today, unseenCount, useProgress, nodeStats, update } from '../srs';
 import { groupById, nodeId, parseNode, slotOf } from '../cards';
 import { Icon } from '../components/Icons';
-import { QuestionTypes } from '../components/QuestionTypes';
-import { useState } from 'react';
 import type { Dataset } from '../types';
 
 export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: () => void; goTree: () => void; goQuiz: () => void }) {
@@ -14,7 +12,6 @@ export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: ()
   const nothingActive = active.length === 0;
   const more = unseenCount(ds, p);
   const caughtUp = !q.due.length && !q.fresh.length;
-  const [showTypes, setShowTypes] = useState(false);
   // Which decks this session covers (ticked in "Learning now"); null = all of them.
   const picked = new Set(sessionDecks(p));
   const partial = p.settings.sessionNodes !== null && picked.size < active.length;
@@ -23,7 +20,6 @@ export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: ()
     if (cur.has(n)) cur.delete(n); else cur.add(n);
     x.settings.sessionNodes = cur.size === activeNodes(x).length ? null : [...cur];
   });
-  const kindsOff = p.settings.kindsOff.length;
 
   return (
     <div className="home">
@@ -41,8 +37,7 @@ export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: ()
           <div><b>{q.due.length}</b><span>reviews due</span></div>
           <div><b>{q.fresh.length}</b><span>new cards</span></div>
           <div><b>{d?.reviews ?? 0}</b><span>done today</span></div>
-          {p.settings.gamify && <div><b className="with-icon">{st}<Icon name="flame" size={20} className="flame" /></b><span>day streak</span></div>}
-          {p.settings.gamify && <div><b>{p.xp}</b><span>XP</span></div>}
+          {p.settings.gamify && st > 1 && <div><b className="with-icon">{st}<Icon name="flame" size={20} className="flame" /></b><span>day streak</span></div>}
         </div>
         <div className="row">
           {nothingActive
@@ -55,10 +50,7 @@ export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: ()
                   {more > 0 && <button className="btn primary" onClick={() => { learnMore(10); onStudy(); }}><Icon name="plus" /> Learn {Math.min(10, more)} more</button>}
                 </>
               : <button className="btn primary big" onClick={onStudy}><Icon name="play" /> Start studying{partial ? ` (${picked.size} deck${picked.size === 1 ? '' : 's'})` : ''}</button>}
-          <button className="btn" onClick={goQuiz}><Icon name="target" /> Practice quiz</button>
-          <button className={'btn' + (showTypes ? ' on' : '')} onClick={() => setShowTypes(!showTypes)}><Icon name="sliders" /> Question types{kindsOff ? ` · ${kindsOff} off` : ''}</button>
         </div>
-        {showTypes && <div className="types-panel"><QuestionTypes /></div>}
       </section>
 
       {!nothingActive && (
@@ -87,7 +79,7 @@ export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: ()
               );
             })}
           </div>
-          <p className="muted small">New cards per day: {p.settings.newPerDay} (change it in the settings menu). Progress is saved in this browser — use Settings → Backup to move it between phone and laptop.</p>
+          <p className="muted small">New cards per day: {p.settings.newPerDay} · question types, backup and the rest are in Settings (the gear).</p>
         </section>
       )}
 
@@ -95,11 +87,11 @@ export function Home({ ds, onStudy, goTree, goQuiz }: { ds: Dataset; onStudy: ()
         <section className="intro">
           <h2>How it works</h2>
           <ol>
-            <li><b>Pick a region</b> in the Skill tree and start with its <i>Countries</i>.</li>
+            <li><b>Pick something</b> in the Library (a region's countries, a history chapter, a set of paintings) and tap <b>Study</b>.</li>
             <li>Answer cards: tap places on the map, or reveal cloze sentences like <i>“The capital of Germany is <u>what?</u>”</i> and grade yourself.</li>
             <li>Cards come back on a spaced-repetition schedule (the same FSRS method Anki uses).</li>
             <li>Know half a region's countries and its <b>Capitals</b> and <b>Flags</b> unlock. The map fills in colour as you master it.</li>
-            <li>Ready for more? <b>Quiz</b> yourself on whole continents or the whole world.</li>
+            <li>Ready for more? <b>Quiz</b> yourself on a whole section; see how you're doing on <b>Me</b>.</li>
           </ol>
           <p className="muted small">All facts come from Wikidata and refresh automatically; if a capital or name changes, the affected cards are re-queued and you'll see a note here.</p>
           <button className="btn" onClick={() => { update(x => { x.active = [nodeId('eu-w', 'countries')]; }); }}>Quick start: Western Europe</button>

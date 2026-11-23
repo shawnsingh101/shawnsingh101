@@ -70,6 +70,7 @@ export function Me({ ds, startStudy }: { ds: Dataset; startStudy: (nodes?: strin
         <div><b>{data.all.started ? pct(memory(data.all)) : '–'}</b><small>memory</small></div>
         <div><b>{streak(p)}</b><small>day streak</small></div>
         <div><b>{last30.toLocaleString('en-US')}</b><small>cards in 30 days</small></div>
+        {p.settings.gamify && <div><b>{p.xp.toLocaleString('en-US')}</b><small>XP</small></div>}
       </div>
       <div className="me-grid">
         <Radar items={data.subjects.map(x => ({ name: x.sub.name, a: covered(x.s), b: memory(x.s), started: x.s.started > 0 }))} />

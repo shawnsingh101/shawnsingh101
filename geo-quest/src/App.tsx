@@ -72,6 +72,8 @@ export function App() {
   if (session) return <Study key={session.quiz?.key ?? 'srs'} ds={ds} quiz={session.quiz} nodes={session.nodes} onExit={() => setSession(null)} goQuiz={() => { setSession(null); setTab('quiz'); }} />;
   const startQuiz = (quiz: QuizSpec) => setSession({ quiz });
   const startStudy = (nodes?: string[]) => setSession({ nodes });
+  // Map and Atlas are one tab: the same places, drawn or listed.
+  const switcher = <div className="seg view-switch">{([['map', 'Map'], ['atlas', 'List']] as const).map(([t, l]) => <button key={t} className={tab === t ? 'on' : ''} onClick={() => setTab(t)}>{l}</button>)}</div>;
 
   return (
     <div className="app app-enter">
@@ -80,8 +82,8 @@ export function App() {
         {tab === 'home' && <Home ds={ds} onStudy={() => startStudy()} goTree={() => setTab('tree')} goQuiz={() => setTab('quiz')} />}
         {tab === 'tree' && <Tree key={treeKey} ds={ds} startQuiz={startQuiz} startStudy={startStudy} goDashboard={() => setTab('dash')} />}
         {tab === 'quiz' && <Quiz ds={ds} start={startQuiz} />}
-        {tab === 'map' && <MapView ds={ds} />}
-        {tab === 'atlas' && <Atlas ds={ds} />}
+        {tab === 'map' && <MapView ds={ds} switcher={switcher} />}
+        {tab === 'atlas' && <div className="atlas-page">{switcher}<Atlas ds={ds} /></div>}
         {tab === 'dash' && <Dashboard />}
         {tab === 'me' && <Me ds={ds} startStudy={startStudy} />}
       </main>

@@ -6,7 +6,9 @@ import { QuestionTypes } from './QuestionTypes';
 import { SoundLab } from './SoundLab';
 
 export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas' | 'dash' | 'me';
-const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Library', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['atlas', 'Atlas', 'book'], ['dash', 'Dashboard', 'chart'], ['me', 'Me', 'person']];
+// Five tabs. The Atlas (places as lists) lives inside Map; the Dashboard is a card in the Library.
+const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Library', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['me', 'Me', 'person']];
+const TAB_OF: Partial<Record<Tab, Tab>> = { atlas: 'map', dash: 'tree' };
 const TOGGLE_ICON: Record<'sound' | 'music' | 'gamify' | 'pictures' | 'locks', IconName> = { sound: 'sound', music: 'music', gamify: 'star', pictures: 'image', locks: 'lock' };
 
 export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTab: (t: Tab) => void; menu: boolean; setMenu: (v: boolean) => void; goHome: () => void }) {
@@ -32,23 +34,31 @@ export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTa
         <button className="brand" onClick={goHome} title="Home"><span className="brand-full">Intelligence <span>Quest</span></span><span className="brand-short">I<span>Q</span></span></button>
         <nav className="tabs">
           {TABS.map(([id, label, icon]) => (
-            <button key={id} className={tab === id ? 'active' : ''} onClick={() => setTab(id)}><span className="tab-icon"><Icon name={icon} size={18} /></span><span>{label}</span></button>
+            <button key={id} className={(TAB_OF[tab] ?? tab) === id ? 'active' : ''} onClick={() => setTab(id)}><span className="tab-icon"><Icon name={icon} size={18} /></span><span>{label}</span></button>
           ))}
         </nav>
         <div className="toggles">
           <Toggle k="sound" label="Sound effects" />
-          <Toggle k="music" label="Music" />
-          <Toggle k="gamify" label="XP & streaks" />
-          <Toggle k="pictures" label="Pictures" />
-          <Toggle k="locks" label="Skill locks" />
-          <button className="chip on" onClick={() => set('theme', s.theme === 'auto' ? 'dark' : s.theme === 'dark' ? 'light' : 'auto')} title="Theme">
-            <Icon name="theme" size={15} /><span className="chip-label">{s.theme === 'auto' ? 'Auto' : s.theme === 'dark' ? 'Dark' : 'Light'}</span>
-          </button>
           <button className={'chip' + (menu ? ' on' : '')} onClick={() => setMenu(!menu)} title="More settings" aria-label="More settings"><Icon name="gear" size={15} /></button>
         </div>
       </div>
       {menu && (
         <div className="menu">
+          {/* Set-once switches live here, not in the top row: only sound (often toggled) and this menu stay up there. */}
+          <div className="menu-row">
+            <Toggle k="music" label="Music" />
+            <Toggle k="gamify" label="XP & streaks" />
+            <Toggle k="pictures" label="Pictures" />
+            <Toggle k="locks" label="Skill locks" />
+          </div>
+          <div className="menu-row">
+            <span>Theme</span>
+            <div className="seg">
+              {([['auto', 'Auto'], ['light', 'Light'], ['dark', 'Dark']] as const).map(([v, l]) => (
+                <button key={v} className={s.theme === v ? 'on' : ''} onClick={() => set('theme', v)}>{l}</button>
+              ))}
+            </div>
+          </div>
           <label>New cards per day
             <input type="range" min={0} max={50} step={5} value={s.newPerDay} onChange={e => set('newPerDay', +e.target.value)} />
             <b>{s.newPerDay}</b>

@@ -33,6 +33,23 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.20: streamlined
+
+- **Two verbs.** A deck's sheet has **Study** (adds the deck and starts; if nothing is waiting it brings in 10 new cards) and
+  **Quiz**, plus Stop learning. A section has **Study** (everything in it and below; in Geography by the quiz's rule, so a
+  continent means its countries), **Quiz** and **Stop**. Gone: Start learning, Study now, Learn 10 more now, Learn all,
+  Practice quiz.
+- **Five tabs**: Today, Library, Quiz, Map, Me. Atlas is the **List** view inside Map (a Map | List switch); the
+  Dashboard is reached from its card in the Library.
+- **Top bar**: sound and Settings only. Music, XP & streaks, pictures, skill locks and the theme moved into Settings.
+- **Library**: a deck with one skill (every note deck and collection) is a single row; a folder with one or two decks
+  and nothing inside is listed in its parent, labelled with its name; notes subjects open their first level only (the
+  By era lens starts closed). Remembered open/closed state moved to a new key, so everyone starts from the new defaults.
+- **Today** is about today (due, new, done, one button); XP moved to Me. **Map** layer switches fold behind a *Layers*
+  button on phones.
+- Tests: the sweep visits the five tabs, the List view and the Dashboard card, counts deck rows, and can log its steps
+  (`SWEEP_LOG=file`).
+
 ## v1.19: Study all, History by era
 
 - **Study all** on every section of the Library: activates every deck in the section *and the sections inside it*
