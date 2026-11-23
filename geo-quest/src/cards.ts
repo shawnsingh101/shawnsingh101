@@ -304,6 +304,8 @@ export interface CardFace {
   picture?: { file?: string | null; wiki?: string | null; url?: string | null; caption: string; single?: boolean };
   frontBack?: boolean;            // a note card's front :: back: the answer appears below the question
   promptPicture?: boolean; // show the picture as the question (World Heritage photo cards)
+  parts?: (string | { answer: string; hint?: string })[]; // a sentence with several blanks hidden together
+  strata?: string;         // a geologic time card: the unit's place in the time scale and its (blank) parts
   note?: string | null;
   person?: { photo: string; when: 'before' | 'after' }; // a portrait: shown as the question, or revealed with the answer
   hidePostUntilReveal?: boolean;                          // e.g. "…, the senior senator from New York." only after reveal
@@ -326,9 +328,11 @@ function rawFace(ref: CardRef): CardFace {
   if (ref.kind === 'note' && c.card) {
     // Note decks: a cloze ("Equal parts {{gin}}, Campari…") or a front :: back card.
     const n = c.card;
+    if (n.strata) return { mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, frontBack: true, strata: n.strata };
     return n.front
       ? { mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption, single: n.pictureFirst } : undefined, frontBack: true, promptPicture: !!(n.pictureFirst && n.picture) }
-      : { mode: 'reveal', pre: n.pre, blank: n.hint ?? 'what?', post: n.post, answer: n.answer, map: 'none', note: n.note, picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption } : undefined };
+      : { mode: 'reveal', pre: n.pre, blank: n.hint ?? 'what?', post: n.post, answer: n.answer, map: 'none', note: n.note, parts: n.parts,
+          picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption, single: n.pictureFirst } : undefined, promptPicture: !!(n.pictureFirst && n.picture) };
   }
   const cap = c.capitals[0];
   const capPic = cap ? { file: cap.image, wiki: cap.wiki, caption: cap.name } : undefined;

@@ -96,3 +96,35 @@ function Clock({ sel }: { sel: Unit }) {
     </svg>
   );
 }
+
+/**
+ * A time-scale card: the unit's ancestors as labelled blocks (Phanerozoic › Mesozoic), then its parts as blank blocks,
+ * youngest on top like the rock layers; flipped, the blocks fill in with their names and colours.
+ */
+export function StrataCard({ unit, revealed }: { unit: string; revealed: boolean }) {
+  // "Earth" stands for the whole history: its parts are the four eons.
+  const u = UNITS.find(x => x.name === unit);
+  if (!u && unit !== 'Earth') return null;
+  const chain: Unit[] = [];
+  for (let p: Unit | undefined = u; p; p = UNITS.find(x => x.name === p!.parent)) chain.unshift(p);
+  const kids = UNITS.filter(x => (u ? x.parent === u.name : x.rank === 'eon')).sort((a, b) => a.start - b.start); // youngest first
+  const rank = kids[0]?.rank;
+  return (
+    <div className="strata-card">
+      {chain.map(x => (
+        <div key={x.name} className="sc-col">
+          <span className="sc-head">{x.rank}</span>
+          <div className="sc-block" style={{ background: x.color, color: inkFor(x.color) }}>{x.name}</div>
+        </div>
+      ))}
+      <div className="sc-col kids">
+        <span className="sc-head">{rank}s</span>
+        {kids.map(k => (
+          <div key={k.name} className={'sc-block' + (revealed ? ' shown' : ' blank')} style={revealed ? { background: k.color, color: inkFor(k.color) } : undefined}>
+            {revealed ? <><b>{k.name}</b><small>{fmtMa(k.start)} years ago</small></> : '?'}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

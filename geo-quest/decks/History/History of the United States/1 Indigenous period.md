@@ -6,5 +6,7 @@ Chapters follow Wikipedia's History of the United States article. Cards about a 
 ## Indigenous period
 - The first people reached the Americas from Asia, probably across a land bridge at the {{Bering Strait|where?}}, at least 15,000 years ago.
 - {{Cahokia|which city?}}, near today's St. Louis, was the largest city of the Mississippian mound builders.
+![Monks Mound, Cahokia](commons:Monks Mound in July.JPG)
 - The {{Haudenosaunee|which people?}} (Iroquois) Confederacy of the Northeast joined five, later six, nations.
+![Haudenosaunee (Iroquois) people, 1914](commons:1914 Panoramic View of Iroquois.jpg)
 related: Cahokia, Bering Strait

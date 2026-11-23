@@ -57,40 +57,42 @@ export const fmtMa = (ma: number) => (ma >= 1000 ? `${(ma / 1000).toLocaleString
 export const MNEMONIC = 'Camels Often Sit Down Carefully; Perhaps Their Joints Creak, Probably Not Quietly.';
 
 // ---- cards: written as a note deck, so they schedule and quiz like any other deck ----------------------
-// A card's heading is shown with it, so cards that ask for a name sit under neutral headings ("Which period?"),
-// and only cards that start from the name sit under it.
+// Cloze cards, one fact each. Cards that ask for a name sit under neutral headings ("Which period?"), so the heading
+// never gives it away. How the units fit together is asked with time-scale cards ([strata: …]): the unit's blocks with
+// its parts blank, filled in on flip.
 export function geotimeDeck(): string {
   const of = (r: Rank) => UNITS.filter(u => u.rank === r);
   const big = [...of('eon'), ...of('era')];
   const periods = of('period').filter(p => p.parent !== 'Proterozoic');
   const L: string[] = ['---', 'title: Geologic time scale', 'path: Geologic time', '---',
-    'Eons, eras and periods of Earth’s 4.6-billion-year history, in order, with when they began and what they’re known for. The chart above shows them as layers of rock.'];
+    'Eons, eras and periods of Earth’s 4.6-billion-year history: when each began, what it’s known for, and how they fit together. The chart above shows them as layers of rock.'];
+  L.push('## How the time scale fits together');
+  L.push('- [strata: Earth] The four eons of Earth’s history');
+  L.push('- [strata: Phanerozoic] The three eras of the Phanerozoic eon');
+  for (const e of of('era')) L.push(`- [strata: ${e.name}] The periods of the ${e.name} era`);
   for (const u of [...big, ...periods]) {
     L.push(`## The ${u.name} ${u.rank}`);
-    L.push(`- The ${u.name} ${u.rank} began about {{${fmtMa(u.start)}}} years ago.`);
-    if (u.parent && u.rank === 'period') L.push(`- The ${u.name} period is in the {{${u.parent}}} era.`);
-    L.push(`- The ${u.name} ${u.rank} is known for :: ${u.known}`);
+    L.push(`- The ${u.name} ${u.rank} began about {{${fmtMa(u.start)} years ago|when?}}.`);
+    if (u.rank === 'period' && u.parent) L.push(`- The ${u.name} period is part of the {{${u.parent}|which era?}} era.`);
     if (u.meaning) L.push(`> ${u.name}: ${u.meaning}.`);
   }
   L.push('## Which eon or era?');
-  for (const u of big) L.push(`- The ${u.rank} known for ${u.known} :: the ${u.name}`);
+  for (const u of big) L.push(`- The {{${u.name}|which ${u.rank}?}} ${u.rank}: ${u.known}.`);
   L.push('## Which period?');
-  for (const u of periods) L.push(`- The period known for ${u.known} :: the ${u.name}`);
-  L.push('## In order');
-  periods.forEach((u, i) => { if (i) L.push(`- The period after the ${periods[i - 1].name} :: the ${u.name}`); });
-  big.forEach((u, i) => { if (i && big[i - 1].rank === u.rank) L.push(`- The ${u.rank} after the ${big[i - 1].name} :: the ${u.name}`); });
+  for (const u of periods) L.push(`- The {{${u.name}|which period?}} period: ${u.known}.`);
   L.push('## Earth’s history as one day');
-  L.push(`- If Earth’s 4.6 billion years were one day, the first animals with shells (Cambrian) appear at about {{${onTheClock(538.8)}}}.`);
-  L.push(`- …the dinosaurs die out at about {{${onTheClock(66)}}}.`);
-  L.push(`- …our species appears at about {{${onTheClock(0.3)}}}, a few seconds before midnight.`);
+  L.push(`- If Earth’s 4.6 billion years were one day, the first animals with shells (Cambrian) would appear at about {{${onTheClock(538.8)}|what time?}}.`);
+  L.push(`- …the dinosaurs would die out at about {{${onTheClock(66)}|what time?}}.`);
+  L.push(`- …our species would appear at about {{${onTheClock(0.3)}|what time?}}, a few seconds before midnight.`);
   return L.join('\n');
 }
 export function epochDeck(): string {
   const eps = UNITS.filter(u => u.rank === 'epoch');
   return ['---', 'title: Epochs of the Cenozoic', 'path: Geologic time', '---',
     'The seven epochs since the dinosaurs died out, which split the Age of Mammals into chapters.',
-    ...eps.flatMap(u => [`## The ${u.name} epoch`, `- The ${u.name} epoch began about {{${fmtMa(u.start)}}} years ago, in the {{${u.parent}}} period.`, `- The ${u.name} epoch is known for :: ${u.known}`]),
-    '## Which epoch?', ...eps.map(u => `- The epoch known for ${u.known} :: the ${u.name}`),
-    '## In order', ...eps.slice(1).map((u, i) => `- The epoch after the ${eps[i].name} :: the ${u.name}`),
+    '## How the epochs fit together',
+    ...['Paleogene', 'Neogene', 'Quaternary'].map(p => `- [strata: ${p}] The epochs of the ${p} period`),
+    ...eps.flatMap(u => [`## The ${u.name} epoch`, `- The ${u.name} epoch began about {{${fmtMa(u.start)} years ago|when?}}.`, `- The ${u.name} epoch is part of the {{${u.parent}|which period?}} period.`]),
+    '## Which epoch?', ...eps.map(u => `- The {{${u.name}|which epoch?}} epoch: ${u.known}.`),
   ].join('\n');
 }
