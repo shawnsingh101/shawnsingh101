@@ -12,7 +12,7 @@ export interface Capital {
 }
 
 export type Status = 'un' | 'observer' | 'disputed';
-export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site' | 'peak' | 'range' | 'sub' | 'note' | 'art';
+export type Layer = 'country' | 'water' | 'cn' | 'river' | 'lake' | 'us' | 'senate' | 'terr' | 'site' | 'peak' | 'range' | 'sub' | 'note' | 'art' | 'road';
 
 /** Anything you can learn on the map: a country, a sea, a province… keyed by Wikidata id. */
 export interface Place {
@@ -73,6 +73,7 @@ export interface Place {
   year?: number | null;    // when (negative = BC)
   museum?: string | null;  // where it is now: "the Louvre Museum, Paris"
   museumName?: string | null; museumWiki?: string | null; city?: string | null; // …its parts, for the Related links
+  number?: number; short?: string; direction?: string; // Interstates: 95, "I-95", "north–south"
   plural?: boolean;        // "the moai were…"
   origin?: string | null;  // where it comes from (the heading in the list): "Europe", "East Asia"
   highest?: { id: string; name: string; elevation: number | null; lat: number; lon: number; image: string | null; wiki: string | null; note: string | null };

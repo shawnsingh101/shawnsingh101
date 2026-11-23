@@ -1,0 +1,8 @@
+{
+  "_readme": "Fixes for scripts/build-interstates.mjs, by Interstate number. The states each road runs through are worked out from the map, which is coarse: 'remove' drops a state the line only grazes, 'add' puts one back after the state named in 'after' (Natural Earth is missing some stretches). 'ends' sets the two ends (south/west first).",
+  "26": { "remove": ["Virginia"] },
+  "55": { "add": [{ "state": "Tennessee", "after": "Arkansas" }] },
+  "70": { "remove": ["Nebraska"] },
+  "84": { "remove": ["Washington"] },
+  "90": { "add": [{ "state": "Indiana", "after": "Illinois" }] }
+}

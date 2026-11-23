@@ -27,6 +27,7 @@ Example deck: eight classics and how they're built. Replace or extend it with yo
 - Martini garnish :: an olive or a lemon twist
 
 ## Daiquiri
+native: Daiquirí (Spanish)
 ![Daiquiri](commons:Daiquiri, Floridita bar, Havana, Cuba.jpg)
 - A Daiquiri is {{white rum}}, {{lime juice}} and {{simple syrup}}, shaken.
 

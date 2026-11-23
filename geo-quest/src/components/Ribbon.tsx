@@ -6,15 +6,15 @@ import { QuestionTypes } from './QuestionTypes';
 
 export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas' | 'dash';
 const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Library', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['atlas', 'Atlas', 'book'], ['dash', 'Dashboard', 'chart']];
-const TOGGLE_ICON: Record<'sound' | 'gamify' | 'pictures' | 'locks', IconName> = { sound: 'sound', gamify: 'star', pictures: 'image', locks: 'lock' };
+const TOGGLE_ICON: Record<'sound' | 'music' | 'gamify' | 'pictures' | 'locks', IconName> = { sound: 'sound', music: 'music', gamify: 'star', pictures: 'image', locks: 'lock' };
 
 export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTab: (t: Tab) => void; menu: boolean; setMenu: (v: boolean) => void; goHome: () => void }) {
   const p = useProgress();
   const s = p.settings;
   const file = useRef<HTMLInputElement>(null);
   const set = <K extends keyof Settings>(k: K, v: Settings[K]) => update(x => { x.settings[k] = v; });
-  const Toggle = ({ k, label }: { k: 'sound' | 'gamify' | 'pictures' | 'locks'; label: string }) => (
-    <button className={'chip' + (s[k] ? ' on' : '')} onClick={() => set(k, !s[k])} aria-pressed={s[k]} title={label}>
+  const Toggle = ({ k, label }: { k: 'sound' | 'music' | 'gamify' | 'pictures' | 'locks'; label: string }) => (
+    <button className={'chip' + (s[k] ? ' on' : '')} data-sfx="toggle" onClick={() => set(k, !s[k])} aria-pressed={s[k]} title={label}>
       <Icon name={TOGGLE_ICON[k]} size={15} /><span className="chip-label">{label}</span>
     </button>
   );
@@ -35,7 +35,8 @@ export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTa
           ))}
         </nav>
         <div className="toggles">
-          <Toggle k="sound" label="Sound" />
+          <Toggle k="sound" label="Sound effects" />
+          <Toggle k="music" label="Music" />
           <Toggle k="gamify" label="XP & streaks" />
           <Toggle k="pictures" label="Pictures" />
           <Toggle k="locks" label="Skill locks" />
@@ -80,7 +81,7 @@ export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTa
               try { importProgress(await f.text()); alert('Progress restored.'); } catch (err) { alert('That file could not be read: ' + (err as Error).message); }
             }} />
           </div>
-          <p className="muted small">Intelligence Quest v{VERSION.version} · build {VERSION.commit} · Facts: <a href="https://www.wikidata.org" target="_blank" rel="noreferrer">Wikidata</a> (CC0) · Photos & flags: Wikimedia Commons · Map: Natural Earth</p>
+          <p className="muted small">Intelligence Quest v{VERSION.version} · build {VERSION.commit} · Facts: <a href="https://www.wikidata.org" target="_blank" rel="noreferrer">Wikidata</a> (CC0) · Photos & flags: Wikimedia Commons · Map & Interstates: Natural Earth · Sounds: <a href="https://kenney.nl" target="_blank" rel="noreferrer">Kenney</a> (CC0)</p>
         </div>
       )}
     </header>
