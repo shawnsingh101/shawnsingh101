@@ -4,8 +4,8 @@ title: Modern America and World Wars (1914–1945)
 Chapters follow Wikipedia's History of the United States article. Cards about a city or state also appear in its deck under By place.
 
 ## Modern America and the World Wars
-- The United States entered World War I in {{1917|when?}}.
-- The Great Depression began with the Wall Street crash of {{1929|when?}}.
+- In 1917 the United States entered {{World War I|which war?}}.
+- The Wall Street crash of 1929 began the {{Great Depression|what?}}.
 also in: New York City
 - President {{Franklin D. Roosevelt|who?}} answered the Depression with the New Deal.
 ![The New Deal](commons:New Deal collage.jpg)

@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.16.1', notes: 'China history: every card has its own picture (Liu Bang, Confucius, Kublai Khan, the Great Wall…) and names in Chinese with pinyin · history cards ask for the event, not the year, except landmark dates' },
   { version: '1.16.0', notes: 'Time-scale cards: see the eon and era, name the blank periods · pictures on history cards (Wikipedia) and biology cards (the textbook\'s own figures) · fill-in-the-blank everywhere, one fact per card, long lists hidden three at a time · local names only on the card whose answer they name' },
   { version: '1.15.0', notes: 'History: US presidents (portrait, number, years, party, vice presidents), China by dynasty, the US by period and by place (New York City, Philadelphia, New Jersey) · Science: Biology from the OpenStax textbook · Deserts, and Physical geography as its own section · romaji for every Japanese name (東京 Tōkyō)' },
   { version: '1.14.2', notes: 'Pictures beside cards are a framed, modest size and never stretched past their pixels · full screen shows the whole picture at once, no scrolling' },

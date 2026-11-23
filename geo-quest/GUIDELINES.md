@@ -42,6 +42,15 @@ feature consistent. When adding anything, check it against this page. When a new
     about oracle bones). Put `native:` right after that card. If a topic has no card whose answer is its name, add one
     (under a neutral heading) rather than spreading the name over cards about other things.
 
+12. **People get their face and their own name.** A card whose answer is a person shows their portrait (from their
+    Wikipedia article), and when their name comes from another language, that name in its script with romanization and
+    the speaker button: Liu Bang → 刘邦 *Liú Bāng*, Confucius → 孔子 *Kǒngzǐ*. Places and things named in the answer get
+    the same (长安 *Cháng'ān*, 甲骨文 *jiǎgǔwén*).
+13. **Dates are rarely the answer.** Keep the date in the sentence and blank the event, person or place: "In 1917 the
+    United States entered {{World War I}}", not "…entered World War I in {{1917}}". A date is the answer only when the
+    date itself is the landmark (July 4, 1776; the Constitution in 1787; the span of a dynasty or a war as one card;
+    a president's years when that's the question asked).
+
 ## 2. Pictures
 
 - **The thing itself is shown whole, never cropped**: artworks (on a dark "gallery wall"), banknotes, plants, cocktails,
@@ -56,6 +65,9 @@ feature consistent. When adding anything, check it against this page. When a new
 - **Give a card a picture when the picture shows what the card is about**: a person, a place, an object, an organism, a
   structure, a map of an empire, a diagram of a process. Skip it for bare dates, definitions and abstract ideas.
 - **The picture belongs to the card, not just the topic**: a picture line right after a card is that card's own (the
+  **Every card gets its own picture of its own subject**: no topic picture repeated across all its cards (the oracle
+  bone belongs on the writing card, Liu Bang's portrait on the founder card, a map of the empire on the "which dynasty?"
+  card). A heading picture is only for a topic whose every card is about that one thing (a cocktail, a plant).
   oracle bone on the card about Shang writing); a picture under the heading is the topic's default.
 - **Where pictures come from**: places, people, history and art from Wikimedia Commons (via Wikidata P18); **science
   from the textbook's own figures** (OpenStax, CC BY 4.0, credited in the caption), which explain better than photos;
