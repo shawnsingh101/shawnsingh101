@@ -9,6 +9,8 @@ export interface NoteCard {
   front: boolean;                              // a front :: back card (answer shown under the question)
   pictureFirst?: boolean;
   hint?: string;                               // what the blank says before you flip: {{Milan|what city?}} → "what city?"
+  parts?: (string | { answer: string; hint?: string })[]; // a grouped cloze ({{c1::…}}): the sentence with several blanks
+  strata?: string;                             // "[strata: Phanerozoic]": a geologic time card showing the unit's blocks (src/geotime.ts)
   also?: string[];                             // an "also in: Philadelphia" line after it: the card is also in that deck
   species?: string;                            // a "species: Juniperus communis" line: the scientific name of the plant or animal                      // "[picture]" in the question: the heading's picture is the question
   context: string | null;                      // the ## heading it sits under
@@ -50,15 +52,22 @@ export function parseDeck(file: string, text: string): Deck {
     while (cards.some(x => x.id === cid)) cid += 'x';
     cards.push({ id: cid, card }); secOf.set(cid, section);
   };
+  let lastWasCard = false; // native: / a picture / also in: / > right after a card apply to that card (every card from that line)
+  let lineFrom = 0;         // where the last bullet's cards start
+  const lastCards = () => cards.slice(lineFrom);
   for (const raw of body.split('\n')) {
     const line = raw.trim();
     if (!line) continue;
+    const wasCard: boolean = lastWasCard; lastWasCard = false;
     const h = /^#{1,3}\s+(.*)$/.exec(line);
     if (h) { section++; context = h[1]; picture = null; related = []; native = []; species = undefined; seenHeading = true; continue; }
     // "native: الكعبة (Arabic); Kaʿbah (Arabic, in Latin letters)": shown with a speaker button after the answer.
     // "species: Juniperus communis": the scientific name of the plant or animal, shown in italics after the answer.
     const sp = /^species:\s*(.+)$/i.exec(line);
-    if (sp) { species = sp[1].trim(); for (const c of cards) if (secOf.get(c.id) === section) c.card.species = species; continue; }
+    if (sp) {
+      if (wasCard) { for (const c of lastCards()) c.card.species = sp[1].trim(); lastWasCard = true; continue; } // right after a card: that card only
+      species = sp[1].trim(); for (const c of cards) if (secOf.get(c.id) === section) c.card.species = species; continue;
+    }
     const nat = /^(?:native|local):\s*(.+)$/i.exec(line);
     if (nat) {
       native = nat[1].split(';').map(x => /^(.*?)\s*\(([^)]+)\)\s*$/.exec(x.trim())).filter((m): m is RegExpExecArray => !!m)
@@ -67,21 +76,35 @@ export function parseDeck(file: string, text: string): Deck {
           const sr = /^(.*?[^\x00-\u024f\s'’-])\s+([\x00-\u024f'’ -]+)$/.exec(m[1]);
           return { name: sr ? sr[1] : m[1], ...(sr ? { roman: sr[2].trim() } : {}), lang: m[2], code: LANG_CODE[m[2].toLowerCase().replace(/^(ancient|classical|modern) /, '')] };
         });
+      // Right after a card: that card only (the card whose answer is the name). Under the heading, before any card: all of them.
+      if (wasCard) { for (const c of lastCards()) c.card.native = native; native = []; lastWasCard = true; continue; }
       for (const c of cards) if (secOf.get(c.id) === section) c.card.native = native;
       continue;
     }
     const rel = /^related:\s*(.+)$/i.exec(line);
     // Applies to every card under this heading, wherever the line sits.
     if (rel) { related = rel[1].split(',').map(x => x.trim()).filter(Boolean); for (const c of cards) if (secOf.get(c.id) === section) c.card.related = related; continue; }
-    const img = /^!\[([^\]]*)\]\(([^)]+)\)$/.exec(line);
-    if (img) { const src = img[2]; picture = src.startsWith('commons:') ? { file: src.slice(8), caption: img[1] || context || '' } : { url: src, caption: img[1] || context || '' }; continue; }
+    const img = /^!\[([^\]]*)\]\((.+)\)$/.exec(line); // file names can contain brackets: "Golden Temple (Amritsar).jpg"
+    if (img) {
+      const src = img[2], pic = src.startsWith('commons:') ? { file: src.slice(8), caption: img[1] || context || '' } : { url: src, caption: img[1] || context || '' };
+      // Right after a card: that card's own picture (the oracle bone on the card about Shang writing). Otherwise the heading's.
+      if (wasCard) { for (const c of lastCards()) c.card.picture = pic; lastWasCard = true; continue; }
+      picture = pic; continue;
+    }
     // "also in: Philadelphia, New Jersey" after a card: it also appears in those decks (by title), e.g. History by place.
     const alsoIn = /^also in:\s*(.+)$/i.exec(line);
-    if (alsoIn) { const last = cards[cards.length - 1]; if (last) last.card.also = alsoIn[1].split(',').map(x => x.trim()).filter(Boolean); continue; }
-    if (line.startsWith('>')) { const last = cards[cards.length - 1]; if (last) last.card.note = (last.card.note ? last.card.note + ' ' : '') + line.replace(/^>\s?/, ''); continue; }
+    if (alsoIn) { for (const c of lastCards()) c.card.also = alsoIn[1].split(',').map(x => x.trim()).filter(Boolean); lastWasCard = wasCard; continue; }
+    if (line.startsWith('>')) { for (const c of lastCards()) c.card.note = (c.card.note ? c.card.note + ' ' : '') + line.replace(/^>\s?/, ''); lastWasCard = wasCard; continue; }
     const b = /^[-*]\s+(.*)$/.exec(line);
     if (!b) { if (!seenHeading) intro.push(line); continue; }
-    const t = b[1];
+    let t = b[1];
+    lastWasCard = true; lineFrom = cards.length;
+    // "[strata: Mesozoic]": a time-scale card drawn from src/geotime.ts (the unit's place and its blank parts).
+    const st = /^\[strata:\s*([^\]]+)\]\s*(.*)$/i.exec(t);
+    if (st) { add({ pre: st[2] || `The parts of the ${st[1]}, oldest at the bottom`, answer: st[1], post: '', front: true, strata: st[1].trim() }, 'strata:' + st[1]); continue; }
+    // "[picture]" in a cloze: the heading's picture is shown as the question.
+    const picFirst = /\[picture\]/i.test(t) && /\{\{/.test(t);
+    if (picFirst) t = t.replace(/\s*\[picture\]\s*/i, ' ').trim();
     const fb = /^(.*?)\s+(:::|::)\s+(.*)$/.exec(t);
     if (fb) {
       // "What is made from this? [picture] :: gin": the picture is shown as the question.
@@ -93,10 +116,32 @@ export function parseDeck(file: string, text: string): Deck {
     // {{answer}} or {{answer|hint}}: the hint ("what city?") replaces the plain "what?" until the card is flipped.
     const blanks = [...t.matchAll(/\{\{([^|}]*)(?:\|([^}]*))?\}\}/g)];
     if (!blanks.length) continue; // a plain bullet is just a note to yourself
-    const plain = (x: string) => x.replace(/\{\{([^|}]*)(?:\|[^}]*)?\}\}/g, '$1');
+    // {{c1::order}} … {{c1::sensitivity}}: blanks with the same number are hidden together on one card (a short list
+    // learned as one fact); unnumbered blanks each make their own card.
+    const group = (m: RegExpMatchArray) => /^c(\d+)::/.exec(m[1])?.[1] ?? null;
+    const strip = (x: string) => x.replace(/^c\d+::/, '');
+    const keyText = t.replace(/\{\{[^}]*\}\}/g, '_');
+    const plainAll = (x: string) => x.replace(/\{\{(?:c\d+::)?([^|}]*)(?:\|[^}]*)?\}\}/g, '$1');
+    const done = new Set<string>();
     blanks.forEach((m, i) => {
-      const before = plain(t.slice(0, m.index)), after = plain(t.slice(m.index! + m[0].length));
-      add({ pre: before, answer: m[1], post: after, front: false, ...(m[2] ? { hint: m[2].trim() } : {}) }, t.replace(/\{\{[^}]*\}\}/g, '_') + '#' + i);
+      const g = group(m);
+      if (!g) {
+        const before = plainAll(t.slice(0, m.index)), after = plainAll(t.slice(m.index! + m[0].length));
+        add({ pre: before, answer: m[1], post: after, front: false, ...(m[2] ? { hint: m[2].trim() } : {}), ...(picFirst ? { pictureFirst: true } : {}) }, keyText + '#' + i);
+        return;
+      }
+      if (done.has(g)) return;
+      done.add(g);
+      const parts: NonNullable<NoteCard['parts']> = [];
+      let at = 0;
+      for (const n of blanks) {
+        parts.push(plainAll(t.slice(at, n.index)));
+        parts.push(group(n) === g ? { answer: strip(n[1]), ...(n[2] ? { hint: n[2].trim() } : {}) } : strip(n[1]));
+        at = n.index! + n[0].length;
+      }
+      parts.push(plainAll(t.slice(at)));
+      const answers = blanks.filter(n => group(n) === g).map(n => strip(n[1]));
+      add({ pre: plainAll(t), answer: answers.join(', '), post: '', front: false, parts, ...(picFirst ? { pictureFirst: true } : {}) }, keyText + '#c' + g);
     });
   }
   return { file, id, title, subject, path, intro: intro.join(' ') || null, cards };

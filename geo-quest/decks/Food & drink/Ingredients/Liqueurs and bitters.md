@@ -9,13 +9,13 @@ related: Italy, Milan
 species: Citrus × aurantium (bitter orange)
 ![Bitter oranges](commons:Turunç - Citrus aurantium 02.JPG)
 - Campari is a bitter red liqueur from {{Milan|what city?}}, {{Italy|which country?}}, flavoured with herbs and bitter orange.
-- Campari, gin and sweet vermouth in equal parts :: a Negroni
+- Campari, gin and sweet vermouth in equal parts make a {{Negroni|which cocktail?}}.
 
 ## Aperol
 related: Italy, Padua
 species: Rheum rhabarbarum (rhubarb)
 - Aperol is Campari's sweeter, orange cousin, first made in {{Padua|what city?}}, flavoured with bitter orange and {{rhubarb|which plant?}}.
-- Aperol, prosecco and a splash of soda :: an Aperol spritz
+- Aperol, prosecco and a splash of soda make an {{Aperol spritz|which cocktail?}}.
 
 ## Triple sec and Cointreau
 related: France
@@ -36,12 +36,11 @@ related: Mexico, Veracruz
 species: Coffea arabica
 ![Coffee beans](commons:Roasted coffee beans.jpg)
 - Kahlúa is a {{coffee|what?}} liqueur made with rum, from {{Mexico|which country?}}.
-- Vodka, coffee liqueur and cream :: a White Russian
+- Vodka, coffee liqueur and cream make a {{White Russian|which cocktail?}}.
 
 ## Chartreuse
 related: France
 - Chartreuse is made by {{Carthusian monks|whom?}} in the French Alps from a secret recipe of about {{130|how many?}} herbs.
-- The only liqueur whose colour is named after it (green and yellow) :: Chartreuse
 
 ## Maraschino
 related: Croatia, Zadar
@@ -60,7 +59,7 @@ related: France, Burgundy
 species: Ribes nigrum
 ![Blackcurrants](commons:Schwarzejohannisbeere.jpg)
 - Crème de cassis is made from {{blackcurrants|which fruit?}}, in {{Burgundy|which region?}}, France.
-- White wine with a splash of crème de cassis :: a Kir
+- White wine with a splash of crème de cassis makes a {{Kir|which drink?}}.
 
 ## Vermouth
 related: Italy, Turin, France
@@ -75,7 +74,7 @@ species: Gentiana lutea
 ![Gentian](commons:Gentiana lutea 230705.jpg)
 - Angostura bitters get their bitterness mainly from {{gentian|which root?}} root.
 - Angostura bitters were invented in the town of Angostura, {{Venezuela|which country?}}, and are now made in {{Trinidad and Tobago|which country?}}.
-- The bitters in an Old Fashioned and a Manhattan :: Angostura
+- The bitters in an Old Fashioned and a Manhattan are {{Angostura|which bitters?}}.
 
 ## Grenadine and orgeat
 species: Punica granatum (pomegranate)
@@ -86,24 +85,24 @@ species: Punica granatum (pomegranate)
 ## Name it from the picture
 ![Bitter oranges](commons:Turunç - Citrus aurantium 02.JPG)
 species: Citrus × aurantium
-- What fruit's peel flavours triple sec, Cointreau and Grand Marnier? [picture] :: orange (bitter and sweet)
+- [picture] The peel of this fruit, {{orange|which fruit?}}, flavours triple sec, Cointreau and Grand Marnier.
 
 ## Name it from the picture
 ![Apricot kernels](commons:Apricot kernel centimeter scale.png)
 species: Prunus armeniaca
-- What gives amaretto its almond taste? [picture] :: apricot kernels (or almonds)
+- [picture] Amaretto often gets its almond taste from these: {{apricot kernels|what?}}.
 
 ## Name it from the picture
 ![Marasca cherries](commons:Illustration Prunus cerasus0.jpg)
 species: Prunus cerasus var. marasca
-- What cherry gives maraschino liqueur its name? [picture] :: the Marasca cherry
+- [picture] Maraschino liqueur is named after this sour cherry, the {{Marasca|which cherry?}}.
 
 ## Name it from the picture
 ![Blackcurrants](commons:Schwarzejohannisbeere.jpg)
 species: Ribes nigrum
-- What berry makes crème de cassis? [picture] :: blackcurrant
+- [picture] Crème de cassis is made from these berries: {{blackcurrants|which berries?}}.
 
 ## Name it from the picture
 ![Pomegranate](commons:Punica granatum 004.JPG)
 species: Punica granatum
-- What fruit was grenadine first made from? [picture] :: pomegranate
+- [picture] Grenadine was first made from this fruit, the {{pomegranate|which fruit?}}.

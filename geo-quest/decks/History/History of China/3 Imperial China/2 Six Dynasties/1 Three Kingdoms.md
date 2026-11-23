@@ -4,14 +4,19 @@ title: Three Kingdoms
 Chapters follow Wikipedia's History of China article.
 
 ## Three Kingdoms
-native: 三国 Sānguó (Chinese)
-- The Three Kingdoms period lasted from {{AD 220|when?}} to {{280|when?}}.
-- The three kingdoms were {{Wei|which?}}, {{Shu|which?}} and {{Wu|which?}}.
-- Its story is told in the novel {{Romance of the Three Kingdoms|which novel?}}.
+![The Three Kingdoms in 262](commons:Saam Gwok 262 CE.png)
+- The Three Kingdoms lasted from {{AD 220|when?}} to {{280|when?}}.
+- The three kingdoms were {{c1::Wei|which?}}, {{c1::Shu|which?}} and {{c1::Wu|which?}}.
+- The Three Kingdoms are the setting of the novel {{Romance of the Three Kingdoms|which novel?}}.
+![Romance of the Three Kingdoms](commons:Sanguo2.PNG)
 - At the Battle of {{Red Cliffs|which battle?}} (208), Liu Bei and Sun Quan stopped Cao Cao.
+![Red Cliffs](commons:Chibi.jpg)
 
 ## Which period?
-- China split between Wei, Shu and Wu (220–280) :: the Three Kingdoms
+![The Three Kingdoms in 262](commons:Saam Gwok 262 CE.png)
+- The {{Three Kingdoms|which period?}} was the time China was split between Wei, Shu and Wu.
+native: 三国 Sānguó (Chinese)
 
 ## In order
-- The dynasty or period after the Han dynasty :: the Three Kingdoms
+- After the Han dynasty came the {{Three Kingdoms|which period?}}.
+native: 三国 Sānguó (Chinese)

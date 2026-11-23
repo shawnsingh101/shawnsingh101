@@ -5,5 +5,7 @@ Chapters follow Wikipedia's History of China article.
 
 ## Bronze Age China
 - The {{Erlitou|which culture?}} culture (c. 1900–1500 BC) is often linked with the Xia dynasty.
-- The giant bronze masks of {{Sanxingdui|where?}} in Sichuan come from a culture unknown to the written histories.
+![An Erlitou bronze wine vessel](commons:CMOC Treasures of Ancient China exhibit - bronze jue.jpg)
+- The giant bronze figures of {{Sanxingdui|where?}} in Sichuan come from a culture unknown to the written histories.
+![The bronze standing figure of Sanxingdui](commons:三星堆出土青铜大立人像, 2017-09-17.jpg)
 related: Sichuan

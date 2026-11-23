@@ -35,6 +35,12 @@ related: Italy, Florence
 - **`- … {{answer}} …`**: a fill-in-the-blank card. Several `{{…}}` in one line make one card per blank.
 - **`{{Milan|what city?}}`**: a hint for the blank, shown instead of "what?" until you flip. Use one whenever the
   answer could be read more than one way ("a liqueur from ___" could be a place or an ingredient).
+- **`{{c1::order}}, {{c1::sensitivity}} … {{c2::adaptation}}`**: blanks with the same number are hidden together on one
+  card, the others shown as clues. Use it for a list (about three items per card).
+- **Cloze is the default.** Front :: back is for the rare card a sentence can't carry.
+- **After a card**, a picture line, `native:`, `species:`, `also in:` or `> note` belong to that card only (all the cards
+  made from that line). Under a heading, before any card, a picture / `native:` / `species:` apply to the whole topic.
+- **`- [strata: Mesozoic] The periods of the Mesozoic era`**: a geologic time card (the era's place, its periods blank).
 - **`- front :: back`**: a question-and-answer card. **`:::`** makes cards in both directions.
 - **`> text`**: a note shown after the answer of the card above it.
 - **`related: A, B, C`** (anywhere under a heading): links shown on those cards after you flip them. A name the app

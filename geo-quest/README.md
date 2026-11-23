@@ -33,6 +33,24 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.16: one fact per card, pictures, time-scale cards
+
+- **Time-scale cards** (`[strata: Mesozoic]`): the eon and era as coloured blocks, the periods as blank blocks
+  (youngest on top), filled in with names, colours and dates on flip. They replace the "what comes after" cards: the
+  eons of Earth, the eras of the Phanerozoic, the periods of each era, the epochs of each Cenozoic period.
+- **Pictures on history cards** from Wikimedia Commons (maps of the dynasties, the oracle bone, the Terracotta Army,
+  the Declaration, Gettysburg…), and on **biology cards the OpenStax textbook's own figures** (levels of organization,
+  the three domains, inductive vs deductive reasoning, the properties of life), credited in the caption.
+- **Cloze everywhere**: front/back cards rewritten as sentences with a blank (cocktails, ingredients, religion,
+  philosophy, economics, history, biology, the time scale).
+- **One fact per card**: a long list becomes a grouped cloze (`{{c1::…}}`) that hides about three items at a time with
+  the rest as clues (the nine properties of life → 3 cards; the 12 levels of organization → 3 cards).
+- **Local names go with the card whose answer they name** (the "which dynasty?" card, not the oracle-bone card); decks
+  gained "which…?" cards where needed (sacred places, Greek thinkers, baijiu, soju, vodka).
+- Deck syntax: a picture, `native:`, `species:`, `also in:` or `>` right after a card belongs to that card (all the
+  cards made from that line); `[picture]` works in cloze lines; picture file names may contain brackets (the Golden
+  Temple photo had been silently skipped).
+
 ## v1.15: History, Science, deserts, romaji
 
 - **Romaji for Japanese** (`scripts/lib/japanese.mjs`, kuroshiro, Hepburn with macrons; Wikidata P2125 first), shown

@@ -32,6 +32,16 @@ feature consistent. When adding anything, check it against this page. When a new
 8. **Every fact can be asked both ways** when both ways are fair (capital ↔ country, plant ↔ spirit). Skip a direction
    that gives itself away (Hiroshima Prefecture → Hiroshima) or has many answers (the euro → 20 countries).
 
+9. **Cloze first.** Write cards as a sentence with a blank (`The Shang ruled from {{c. 1600 BC|when?}}…`). Use
+   front :: back only when a sentence would be forced; never write a card whose back is a paragraph.
+10. **One fact per card.** A list is split: either a **grouped cloze** that hides about three items at a time and shows
+    the rest as clues (`{{c1::order}}, {{c1::sensitivity}}, {{c1::reproduction}}, {{c2::adaptation}}…`: one card per
+    group), or a **structure card** when the shape *is* the fact (time scale: `[strata: Mesozoic]` shows the era with
+    its three periods blank).
+11. **The local-language name goes with the card whose answer is that name** (the "which dynasty?" card, not the card
+    about oracle bones). Put `native:` right after that card. If a topic has no card whose answer is its name, add one
+    (under a neutral heading) rather than spreading the name over cards about other things.
+
 ## 2. Pictures
 
 - **The thing itself is shown whole, never cropped**: artworks (on a dark "gallery wall"), banknotes, plants, cocktails,
@@ -43,7 +53,13 @@ feature consistent. When adding anything, check it against this page. When a new
   picture on screen; nothing scrolls.
 - A picture can be the question (`- What is made from this? [picture] :: gin`); its caption stays hidden until the card
   is flipped. Only use a picture as a question when it's free to show (Commons), never a copyrighted work's thumbnail.
-- Prefer pictures from Wikimedia Commons (via Wikidata P18). Interstate shields: P14 or `I-N.svg`.
+- **Give a card a picture when the picture shows what the card is about**: a person, a place, an object, an organism, a
+  structure, a map of an empire, a diagram of a process. Skip it for bare dates, definitions and abstract ideas.
+- **The picture belongs to the card, not just the topic**: a picture line right after a card is that card's own (the
+  oracle bone on the card about Shang writing); a picture under the heading is the topic's default.
+- **Where pictures come from**: places, people, history and art from Wikimedia Commons (via Wikidata P18); **science
+  from the textbook's own figures** (OpenStax, CC BY 4.0, credited in the caption), which explain better than photos;
+  Interstate shields from P14 or `I-N.svg`.
 
 ## 3. Maps
 

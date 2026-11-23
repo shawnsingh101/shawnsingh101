@@ -798,3 +798,12 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .native .py { font-size: .9rem; font-style: italic; color: var(--accent); margin-left: .35rem; } /* romaji, pinyin in decks */
 .range.desert { fill: color-mix(in srgb, #d9a441 30%, transparent); stroke: color-mix(in srgb, #b9832a 60%, transparent); }
 .range.desert.place:hover { fill: color-mix(in srgb, #d9a441 48%, transparent); }
+/* Time-scale cards: the unit and its ancestors as coloured blocks, its parts blank until flipped (youngest on top). */
+.strata-card { display: flex; gap: .4rem; margin: .8rem 0 .2rem; align-items: stretch; min-height: 200px; }
+.sc-col { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+.sc-col.kids { flex: 1.6; }
+.sc-head { font-size: .66rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.sc-block { flex: 1; border-radius: 6px; display: grid; place-content: center; text-align: center; padding: .3rem; font-size: .82rem; font-weight: 600; min-height: 34px; }
+.sc-block small { display: block; font-weight: 400; font-size: .68rem; opacity: .85; }
+.sc-block.blank { background: var(--ink); color: var(--bg); opacity: .85; font-size: 1.1rem; }
+.sc-block.shown { animation: rise .25s ease; }

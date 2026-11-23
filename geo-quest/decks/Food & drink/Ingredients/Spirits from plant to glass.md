@@ -30,7 +30,7 @@ species: Saccharum officinarum
 related: Brazil
 species: Saccharum officinarum
 - Cachaça is made from fresh {{sugarcane juice|what?}}, not molasses, and comes from {{Brazil|which country?}}.
-- The national cocktail of Brazil, made with cachaça, lime and sugar :: the caipirinha
+- Brazil's national cocktail, made with cachaça, lime and sugar, is the {{caipirinha|which cocktail?}}.
 
 ## Bourbon
 related: Kentucky, United States
@@ -54,7 +54,6 @@ species: Hordeum vulgare
 
 ## Vodka
 related: Russia, Poland
-native: водка (Russian); wódka (Polish)
 species: Solanum tuberosum (potato)
 ![Potatoes](commons:234 Solanum tuberosum L.jpg)
 - Vodka can be made from {{grain|what?}} or {{potatoes|what?}}, distilled until it tastes of almost nothing.
@@ -71,18 +70,16 @@ species: Vitis vinifera
 related: Peru, Chile
 species: Vitis vinifera
 - Pisco is a grape brandy from {{Peru|which country?}} and {{Chile|which country?}}, both of which claim it.
-- Pisco, lime, sugar and egg white, shaken :: a pisco sour
+- Pisco, lime, sugar and egg white, shaken, make a {{pisco sour|which cocktail?}}.
 
 ## Baijiu
 related: China
-native: 白酒 (Chinese)
 species: Sorghum bicolor
 ![Sorghum](commons:Sorghum bicolor03.jpg)
 - Baijiu, the most drunk spirit in the world, is made mostly from {{sorghum|which grain?}} in {{China|which country?}}.
 
 ## Soju
 related: South Korea
-native: 소주 (Korean)
 species: Oryza sativa
 ![Rice](commons:White, Brown, Red & Wild rice.jpg)
 - Soju is a clear spirit from {{Korea|which country?}}, first made from {{rice|which grain?}}.
@@ -97,42 +94,50 @@ species: Artemisia absinthium
 ## Which spirit?
 ![Juniper berries](commons:Jeneverbes-spice.jpg)
 species: Juniperus communis
-- What spirit gets its flavour from these berries? [picture] :: gin
+- [picture] These berries give {{gin|which spirit?}} its flavour.
 
 ## Which spirit?
 ![Agave](commons:Agave americana R01.jpg)
 species: Agave tequilana (blue agave); this is its cousin Agave americana
-- What spirit is distilled from the heart of this plant? [picture] :: tequila (or mezcal)
+- [picture] The heart of this plant is distilled into {{tequila|which spirit?}} (and mezcal).
 
 ## Which spirit?
 ![Sugarcane](commons:Cut sugarcane.jpg)
 species: Saccharum officinarum
-- What spirit is made from this plant? [picture] :: rum (and cachaça)
+- [picture] This plant is made into {{rum|which spirit?}} (and cachaça).
 
 ## Which spirit?
 ![Maize](commons:Étale de grains de maïs 01.jpg)
 species: Zea mays
-- What American whiskey is made mostly from this grain? [picture] :: bourbon
+- [picture] This grain is the main ingredient of {{bourbon|which American whiskey?}}.
 
 ## Name the spirit
-- The whiskey in a classic Manhattan :: rye
+- The whiskey in a classic Manhattan is {{rye|which whiskey?}}.
 
 ## Which spirit?
 ![Barley](commons:Champ d'Orge carrée (Hordeum vulgare).jpg)
 species: Hordeum vulgare
-- What grain, sprouted and dried ("malted"), makes Scotch? [picture] :: barley
+- [picture] Scotch is made from this grain, {{barley|which grain?}}, sprouted and dried ("malted").
 
 ## Which spirit?
 ![Grapes](commons:Wine grapes03.jpg)
 species: Vitis vinifera
-- What do you get when you distil wine made from these? [picture] :: brandy (cognac, pisco, armagnac)
+- [picture] Distil wine made from these and you get {{brandy|which spirit?}} (cognac, pisco, armagnac).
 
 ## Which spirit?
 ![Sorghum](commons:Sorghum bicolor03.jpg)
 species: Sorghum bicolor
-- What grain makes most baijiu? [picture] :: sorghum
+- [picture] Most baijiu is made from this grain, {{sorghum|which grain?}}.
 
 ## Which spirit?
 ![Wormwood](commons:Artemisia absinthium P1210748.jpg)
 species: Artemisia absinthium
-- What herb gives absinthe its name? [picture] :: wormwood (Artemisia absinthium)
+- [picture] This herb, {{wormwood|which herb?}}, gives absinthe its name.
+
+## Name the spirit
+- Russia and Poland's clear spirit, whose name means "little water", is {{vodka|which spirit?}}.
+native: водка vodka (Russian); wódka (Polish)
+- China's {{baijiu|which spirit?}}, the most drunk spirit in the world, is distilled mostly from sorghum.
+native: 白酒 báijiǔ (Chinese)
+- Korea's clear spirit, first made from rice, is {{soju|which spirit?}}.
+native: 소주 soju (Korean)
