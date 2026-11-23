@@ -7,6 +7,7 @@ Example deck: eight classics and how they're built. Replace or extend it with yo
 ## Negroni
 ![Negroni](commons:Negroni served in Vancouver BC.jpg)
 - A Negroni is equal parts {{gin}}, {{Campari}} and {{sweet vermouth}}.
+native: Campari = Campari (Italian)
 - A Negroni is garnished with {{an orange peel|what?}}.
 > Stirred, served over ice.
 
@@ -42,4 +43,5 @@ Example deck: eight classics and how they're built. Replace or extend it with yo
 ## Sidecar
 ![Sidecar](commons:Sidecar-cocktail.jpg)
 - A Sidecar is {{cognac}}, {{Cointreau}} and {{lemon juice}}, shaken.
+native: Cointreau = Cointreau (French)
 - A Sidecar glass is rimmed with {{sugar|what?}}.

@@ -17,13 +17,13 @@ export interface NoteCard {
   picture: { file?: string | null; url?: string | null; caption: string } | null;
   note: string | null;                         // a "> …" line: shown after the answer
   related: string[];                           // a "related: A, B" line under the heading: links to other things you're learning
-  native: { name: string; lang: string; code?: string; roman?: string }[]; // a "native: الكعبة (Arabic)" line: the name in its own language
+  native: { name: string; lang: string; code?: string; roman?: string; for?: string }[]; // a "native: الكعبة (Arabic)" line: the name in its own language
   fp: string;                                  // fingerprint: changes when the card's text changes
 }
-export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; eras: string[]; cards: { id: string; card: NoteCard }[] }
+export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; eras: string[]; deep: boolean; cards: { id: string; card: NoteCard }[] }
 
 // Language names a deck can use → codes for the device voice.
-const LANG_CODE: Record<string, string> = { arabic: 'ar', punjabi: 'pa', hebrew: 'he', italian: 'it', hindi: 'hi', greek: 'el', latin: 'it', sanskrit: 'hi', japanese: 'ja', chinese: 'zh', mandarin: 'zh', spanish: 'es', french: 'fr', german: 'de', persian: 'fa', portuguese: 'pt', russian: 'ru', korean: 'ko', turkish: 'tr', urdu: 'ur', polish: 'pl', hungarian: 'hu', vietnamese: 'vi', swahili: 'sw', amharic: 'am', armenian: 'hy', georgian: 'ka', tibetan: 'bo', thai: 'th', dutch: 'nl' };
+const LANG_CODE: Record<string, string> = { maori: 'mi', 'māori': 'mi', catalan: 'ca', croatian: 'hr', czech: 'cs', danish: 'da', swedish: 'sv', arabic: 'ar', punjabi: 'pa', hebrew: 'he', italian: 'it', hindi: 'hi', greek: 'el', latin: 'it', sanskrit: 'hi', japanese: 'ja', chinese: 'zh', mandarin: 'zh', spanish: 'es', french: 'fr', german: 'de', persian: 'fa', portuguese: 'pt', russian: 'ru', korean: 'ko', turkish: 'tr', urdu: 'ur', polish: 'pl', hungarian: 'hu', vietnamese: 'vi', swahili: 'sw', amharic: 'am', armenian: 'hy', georgian: 'ka', tibetan: 'bo', thai: 'th', dutch: 'nl' };
 
 /** Short, stable hash for card ids (FNV-1a, base 36). */
 function hash(s: string) { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); } return (h >>> 0).toString(36); }
@@ -50,7 +50,11 @@ export function parseDeck(file: string, text: string): Deck {
   const add = (c: Omit<NoteCard, 'context' | 'picture' | 'note' | 'fp' | 'related' | 'native'>, key: string) => {
     const card: NoteCard = { ...c, context, picture, related, native, ...(species ? { species } : {}), note: null, fp: `${c.pre}|${c.answer}|${c.post}` };
     // The id ignores the answer, so fixing an answer keeps your progress (the fingerprint re-queues the card).
-    let cid = `N-${id}-${hash((context ?? '') + '|' + key)}`;
+    // Cards were once written in British spelling; the app now uses American. The id reads the new spellings as the old
+    // ones, so changing "flavour" to "flavor" keeps your progress on the card. (Only words that were changed; add any
+    // future respelling here the same way.)
+    const stable = key.replace(/\bflavor/g, 'flavour').replace(/\bcolorful/g, 'colourful').replace(/\bmodeled/g, 'modelled').replace(/\btraveler/g, 'traveller');
+    let cid = `N-${id}-${hash((context ?? '') + '|' + stable)}`;
     while (cards.some(x => x.id === cid)) cid += 'x';
     cards.push({ id: cid, card }); secOf.set(cid, section);
   };
@@ -72,15 +76,18 @@ export function parseDeck(file: string, text: string): Deck {
     }
     const nat = /^(?:native|local):\s*(.+)$/i.exec(line);
     if (nat) {
-      native = nat[1].split(';').map(x => /^(.*?)\s*\(([^)]+)\)\s*$/.exec(x.trim())).filter((m): m is RegExpExecArray => !!m)
+      // "Milan = Milano (Italian)": for the card whose answer is Milan only (a line with two blanks makes two cards).
+      const forOf = new Map<object, string>();
+      native = nat[1].split(';').map(x => { const k = /^([^=]+?)\s*=\s*(.+)$/.exec(x.trim()); const m = /^(.*?)\s*\(([^)]+)\)\s*$/.exec(k ? k[2] : x.trim()); if (m && k) forOf.set(m, k[1].trim().toLowerCase()); return m; }).filter((m): m is RegExpExecArray => !!m)
         .map(m => {
           // "夏朝 Xià Cháo (Chinese)": the script first, then its romanization (pinyin, romaji…), shown under it.
           const sr = /^(.*?[^\x00-\u024f\s'’-])\s+([\x00-\u024f'’ -]+)$/.exec(m[1]);
-          return { name: sr ? sr[1] : m[1], ...(sr ? { roman: sr[2].trim() } : {}), lang: m[2], code: LANG_CODE[m[2].toLowerCase().replace(/^(ancient|classical|modern) /, '')] };
+          return { name: sr ? sr[1] : m[1], ...(sr ? { roman: sr[2].trim() } : {}), lang: m[2], code: LANG_CODE[m[2].toLowerCase().replace(/^(ancient|classical|modern) /, '')], ...(forOf.has(m) ? { for: forOf.get(m) } : {}) };
         });
       // Right after a card: that card only (the card whose answer is the name). Under the heading, before any card: all of them.
-      if (wasCard) { for (const c of lastCards()) c.card.native = native; native = []; lastWasCard = true; continue; }
-      for (const c of cards) if (secOf.get(c.id) === section) c.card.native = native;
+      const mine = (answer: string) => native.filter(n => !n.for || n.for === answer.toLowerCase()).map(({ for: _f, ...n }) => n);
+      if (wasCard) { for (const c of lastCards()) c.card.native = mine(c.card.answer); native = []; lastWasCard = true; continue; }
+      for (const c of cards) if (secOf.get(c.id) === section) c.card.native = mine(c.card.answer);
       continue;
     }
     const rel = /^related:\s*(.+)$/i.exec(line);
@@ -146,7 +153,8 @@ export function parseDeck(file: string, text: string): Deck {
       add({ pre: plainAll(t), answer: answers.join(', '), post: '', front: false, parts, ...(picFirst ? { pictureFirst: true } : {}) }, keyText + '#c' + g);
     });
   }
-  return { file, id, title, subject, path, intro: intro.join(' ') || null, eras, cards };
+  // The intro keeps its lines (a book's summary page has paragraphs); `depth: deep` marks a deck of deep cuts.
+  return { file, id, title, subject, path, intro: intro.join('\n') || null, eras, deep: meta.depth === 'deep', cards };
 }
 
 // Every deck file under geo-quest/decks (bundled at build time; README files are documentation, not decks).
@@ -176,7 +184,9 @@ export function registerNotes(): Place[] {
     const chain: string[] = [];
     for (const sec of [d.subject, ...d.path]) chain.push(claimSection(sec, chain.length ? chain[chain.length - 1] : null));
     const gid = 'n-' + d.id;
-    if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined });
+    // Deep cuts unlock once half of the core deck beside them (same folder, not deep) is known.
+    const core = d.deep ? DECKS.find(x => !x.deep && x.subject === d.subject && x.path.join('/') === d.path.join('/') && d.title.startsWith(x.title)) ?? DECKS.find(x => !x.deep && x.subject === d.subject && x.path.join('/') === d.path.join('/')) : undefined;
+    if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined, ...(core ? { requires: `n-${core.id}/notes` } : {}) });
     for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path], native: card.native.length ? card.native : undefined, species: card.species } as unknown as Place);
   }
   // Lenses: a deck tagged `era: Prehistory` is also listed under <subject> › By era › All prehistory, next to every

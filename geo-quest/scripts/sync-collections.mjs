@@ -40,7 +40,7 @@ const label = (b, k) => { const x = val(b, k); return x && !/^Q\d+$/.test(x) && 
 // The town: walk up "located in" past districts and boroughs (Louvre → 1st arrondissement → Paris).
 const SMALL = /arrondissement|borough|district|ward\b|centrum|mitte|quarter|neighbo|municipality of|Manhattan|Kensington|Westminster|Camden|Vatican Museums|Bezirk|Innere Stadt|Landstraße|^Centro|Sestiere|Quartiere|Retiro|Mid-?town|Downtown|Loop/i;
 const town = (b, keys) => keys.map(k => label(b, k)).find(x => x && !SMALL.test(x)) ?? null;
-const LANG_NAMES = { grc: 'Ancient Greek', la: 'Latin', sa: 'Sanskrit', he: 'Hebrew', fa: 'Persian', akk: 'Akkadian', zh: 'Chinese', 'zh-hans': 'Chinese', 'zh-hant': 'Chinese', ja: 'Japanese', ko: 'Korean', it: 'Italian', fr: 'French', es: 'Spanish', de: 'German', nl: 'Dutch', no: 'Norwegian', nb: 'Norwegian', pt: 'Portuguese', ar: 'Arabic', el: 'Greek', hi: 'Hindi', ca: 'Catalan', la: 'Latin', ru: 'Russian', fa: 'Persian' };
+const LANG_NAMES = { da: 'Danish', nn: 'Norwegian', pl: 'Polish', cs: 'Czech', lzh: 'Classical Chinese', sv: 'Swedish', fi: 'Finnish', hu: 'Hungarian', tr: 'Turkish', uk: 'Ukrainian', grc: 'Ancient Greek', la: 'Latin', sa: 'Sanskrit', he: 'Hebrew', fa: 'Persian', akk: 'Akkadian', zh: 'Chinese', 'zh-hans': 'Chinese', 'zh-hant': 'Chinese', ja: 'Japanese', ko: 'Korean', it: 'Italian', fr: 'French', es: 'Spanish', de: 'German', nl: 'Dutch', no: 'Norwegian', nb: 'Norwegian', pt: 'Portuguese', ar: 'Arabic', el: 'Greek', hi: 'Hindi', ca: 'Catalan', la: 'Latin', ru: 'Russian', fa: 'Persian' };
 const yearOf = d => { const m = /^(-?\d+)-/.exec(d ?? ''); return m ? +m[1] : null; };
 const chunks = (a, n) => Array.from({ length: Math.ceil(a.length / n) }, (_, i) => a.slice(i * n, i * n + n));
 
@@ -203,7 +203,7 @@ try {
         species: b.map(r => val(r, 'taxon')).find(Boolean) ?? null, // plants and animals: the scientific name (Juniperus communis)
         year: year ?? null,
         types,
-        artists,
+        artists, makerIds: [...new Map(mk.filter(r => r.maker && label(r, 'makerLabel')).map(r => [qid(r.maker.value), 1])).keys()],
         culture: cultures[0] ?? null,
         ...(BOOKS.has(q) ? { book: true, language: bi.map(r => label(r, 'langLabel')).find(Boolean) ?? null,
           subjects: [...new Set(bi.map(r => label(r, 'subjectLabel')).filter(Boolean))], genres: [...new Set(bi.map(r => label(r, 'genreLabel')).filter(Boolean))] } : {}),
@@ -249,6 +249,24 @@ for (const x of Object.values(items)) if (x.city && fixes._cities?.[x.city]) x.c
 // A museum set by hand replaces Wikidata's, and its article with it (unless the fix names the article too).
 for (const [q, f] of Object.entries(fixes)) if (items[q] && !q.startsWith('_')) Object.assign(items[q], 'museum' in f && !('museumWiki' in f) ? { museumWiki: null } : {}, f);
 
+// People's names in their own language (Wikidata P1559), for the speaker beside a green answer: the artist, architect,
+// author or composer a card asks for, and the people in a people list. Kept even when spelled as in English
+// (Filippo Brunelleschi): the voice still says it in Italian. Matched by English name, so hand fixes to 'artists' keep working.
+try {
+  const ids = [...new Set(Object.entries(items).flatMap(([q, x]) => [...(x.makerIds ?? []), x.composer?.id, x.person ? q : null]).filter(Boolean))];
+  const byName = new Map();
+  for (const part of chunks(ids, 150)) for (const r of await sparql(`SELECT ?p ?pLabel ?n WHERE { VALUES ?p { ${part.map(q => `wd:${q}`).join(' ')} } ?p wdt:P1559 ?n .
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`)) {
+    const en = label(r, 'pLabel'), code = r.n['xml:lang'];
+    if (en && code && !/^en/.test(code) && !byName.has(en)) byName.set(en, { name: r.n.value, lang: LANG_NAMES[code] ?? LANG_NAMES[code.split('-')[0]] ?? code, code });
+  }
+  for (const [q, x] of Object.entries(items)) {
+    const m = x.artists?.[0] && byName.get(x.artists[0]); if (m && x.artists.length === 1) x.makerNative = [m];
+    if (x.composer) x.composer.native = byName.has(x.composer.name) ? [byName.get(x.composer.name)] : [];
+    if (x.person) x.person.native = byName.has(x.name) ? [byName.get(x.name)] : [];
+    delete x.makerIds;
+  }
+} catch (e) { console.warn('Native names of people skipped:', e.message); }
 await addRomaji(items);
 writeFileSync(OUT, JSON.stringify(addChinese({ source: 'Wikidata (CC0)', items })));
 const missing = ids.filter(q => !items[q]);

@@ -7,7 +7,7 @@ A walk through the president's house: how it was built, then room by room from t
 related: Washington, D.C., White House
 - The Irish-born architect {{James Hoban|who?}} won the 1792 competition to design the President's House.
 ![James Hoban](commons:James Hoban circa 1800 - Crop.jpg)
-- Hoban modelled the house in part on {{Leinster House|which building?}} in Dublin, now home of Ireland's parliament.
+- Hoban modeled the house in part on {{Leinster House|which building?}} in Dublin, now home of Ireland's parliament.
 ![The White House, south side](commons:WhiteHouseSouthFacade.JPG)
 - In 1800 {{John Adams|which president?}} became the first president to live in the White House.
 - In 1814, during the War of 1812, {{British troops|who?}} set the house on fire; only the outer walls survived.

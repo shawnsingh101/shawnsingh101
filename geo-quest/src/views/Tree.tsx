@@ -36,7 +36,7 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
         <div><b>{s.due}</b><span>due</span></div>
       </div>
       <div className="mini-bar"><i style={{ width: `${(s.known / s.total) * 100}%` }} /><em style={{ width: `${(s.mastered / s.total) * 100}%` }} /></div>
-      <p className="muted small">{s.total} cards · {placesIn(ds, groupId).map(c => c.name).join(' · ')}</p>
+      <p className="muted small">{s.total} cards · {[...new Set(placesIn(ds, groupId).map(c => c.name))].join(' · ')}</p>
       {!unlocked && <p className="note"><Icon name="lock" size={15} /> {g.requires ? `Know half of “${groupById(parseNode(g.requires).groupId).name}” to unlock this` : `Know half of ${g.name}'s ${g.topics[0].name.toLowerCase()} to unlock this`} (or turn skill locks off in Settings). You can still practise it as a quiz.</p>}
       <div className="sheet-actions">
         {/* Two verbs everywhere: Study (adds the deck and starts; if nothing is waiting, it brings in new cards) and Quiz. */}
@@ -44,6 +44,10 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
         <button className="btn" onClick={() => startQuiz(makeQuiz(ds, `grp:${groupId}`, [topic], 'all'))}><Icon name="target" /> Quiz</button>
         {unlocked && active && <button className="btn ghost" onClick={toggle}>Stop learning</button>}
       </div>
+      {/* A deck's intro: one line for most decks; for a book's notes, its summary page (read any time, never reviewed). */}
+      {g.note && (g.note.includes('\n')
+        ? <details className="deck-summary" open><summary>Summary</summary>{g.note.split('\n').map((l, i) => <p key={i}>{l}</p>)}</details>
+        : <p className="muted small">{g.note}</p>)}
     </div>
   );
 }
@@ -170,7 +174,7 @@ export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { d
           </div>}
           {ERAS.some(e => sec.startsWith(e.section)) ? <p className="muted small">Every deck from this era ({ERAS.find(e => sec.startsWith(e.section))!.span}), wherever it happened. Each is also in its own country's history; progress is shared.</p>
             : sec.startsWith('By era') ? <p className="muted small">The same decks again, by world era instead of by country.</p>
-            : groups[0]?.note && <p className="muted small">{groups[0].note}</p>}
+            : groups[0]?.note && <p className="muted small">{groups[0].note.split('\n')[0]}</p>}
           {(groups.some(g => g.topics.length === 1) || inlined.length > 0) && <div className="deck-rows">
             {groups.filter(g => g.topics.length === 1).map(g => deckRow(g, sec))}
             {inlined.map(({ g, from }) => deckRow(g, sec, from))}

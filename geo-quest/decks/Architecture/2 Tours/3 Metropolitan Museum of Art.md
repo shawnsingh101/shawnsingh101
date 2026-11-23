@@ -14,6 +14,7 @@ related: New York City, Metropolitan Museum of Art
 - The grand Fifth Avenue front, opened in 1902, was designed by {{Richard Morris Hunt|who?}}.
 ![Richard Morris Hunt](commons:Richard Morris Hunt.jpg)
 - The Fifth Avenue front is in the {{Beaux-Arts|which style?}} style.
+native: Beaux-Arts (French)
 ![The Met's Fifth Avenue front](commons:Metropolitan Museum of Art (The Met) - Central Park, NYC.jpg)
 - From 1967, the glass-walled wings and the museum's master plan were designed by {{Kevin Roche|who?}} and John Dinkeloo.
 ![Kevin Roche](commons:Kevin Roche krb.00028 (cropped).jpg)

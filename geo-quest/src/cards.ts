@@ -1,4 +1,4 @@
-import type { Dataset, Place } from './types';
+import type { Dataset, NativeName, Place } from './types';
 import type { IconName } from './components/Icons';
 
 // ---- Card kinds ---------------------------------------------------------------
@@ -334,6 +334,7 @@ export interface CardFace {
   strata?: string;         // a geologic time card: the unit's place in the time scale and its (blank) parts
   note?: string | null;
   audio?: { file: string; start: number }; // a recording is the question (music)
+  say?: (NativeName & { asWritten?: boolean }) | null; // the answer (the green text) in its own language: a speaker beside it
   person?: { photo: string; when: 'before' | 'after' }; // a portrait: shown as the question, or revealed with the answer
   hidePostUntilReveal?: boolean;                          // e.g. "…, the senior senator from New York." only after reveal
 }
@@ -343,6 +344,9 @@ export const makerOf = (c: Place) => (c.artists?.length ? c.artists.reduce((acc,
 const artPic = (c: Place) => ({ file: c.image, wiki: c.wiki, caption: c.name, single: !!c.image });
 const artNote = (c: Place, withMaker: boolean) => [withMaker && makerOf(c) ? `By ${makerOf(c)}` : null, c.facts].filter(Boolean).join(' · ') || null;
 const fmtYear = (y: number | null | undefined) => (y == null ? null : y <= 0 ? `c. ${Math.abs(y) || 1} BC` : y < 1000 ? `c. AD ${y}` : `c. ${y}`); // as in collections.ts (which imports this file)
+/** A person's name: when it's written in our alphabet the voice reads the name as the card shows it (Wikidata's own-language
+ *  name can be the full birth name: "Johann Chrysostomus Wolfgang Gottlieb Mozart"); other scripts are shown and read. */
+const asName = (n?: NativeName) => (n ? { ...n, asWritten: true } : null);
 /** "New Orleans, Louisiana"; "Washington, D.C."; abroad, "Lisbon, Portugal". */
 const bornIn = (c: Place) => { const p = c.person; if (!p?.birthplace) return null; const where = p.state ?? (p.countryName !== 'United States' ? p.countryName : null); return where && p.birthplace !== where && !p.birthplace.endsWith(`, ${where}`) && p.birthplace !== 'New York City' ? `${p.birthplace}, ${where}` : p.birthplace; }; // Kansas City, Kansas ≠ Kansas City, Missouri
 const plays = (xs: string[]) => (xs.length === 1 ? (/^(vocals|drums|keyboards)$/.test(xs[0]) ? xs[0] : `the ${xs[0]}`) : xs.map(x => (/^(vocals|drums|keyboards)$/.test(x) ? x : `the ${x}`)).join(' and '));
@@ -454,10 +458,10 @@ function rawFace(ref: CardRef): CardFace {
       return { mode: 'reveal', pre: `The flag of ${c.name} looks like `, blank: 'what?', post: '', answer: '', answerFlag: true, map: 'none', note };
     // Artworks: the picture, who made it, where it is now.
     case 'artPhoto':
-      return { mode: 'reveal', pre: c.plural ? 'These are ' : 'This is ', blank: 'what?', post: '.', answer: c.nameThe ?? c.name, map: 'none', note: artNote(c, true), picture: artPic(c), promptPicture: true };
+      return { mode: 'reveal', pre: c.plural ? 'These are ' : 'This is ', blank: 'what?', post: '.', answer: c.nameThe ?? c.name, map: 'none', note: artNote(c, true), picture: artPic(c), promptPicture: true, say: c.native?.[0] };
     case 'artMaker': {
       const v = c.book ? 'written' : c.building ? 'designed' : /paint|fresco|print|drawing|mural/i.test(c.facts ?? '') ? 'painted' : /statue|sculpt|bust|bronze|cast/i.test(c.facts ?? '') ? 'sculpted' : 'made';
-      return { mode: 'reveal', pre: `${c.nameThe ?? c.name} ${c.plural ? 'were' : 'was'} ${v} by `, blank: c.artists?.length ? 'whom?' : 'which people?', post: '.', answer: makerOf(c)!, map: 'none', note: artNote(c, false), picture: artPic(c) };
+      return { mode: 'reveal', pre: `${c.nameThe ?? c.name} ${c.plural ? 'were' : 'was'} ${v} by `, blank: c.artists?.length ? 'whom?' : 'which people?', post: '.', answer: makerOf(c)!, map: 'none', note: artNote(c, false), picture: artPic(c), say: c.artists?.length === 1 ? asName(c.makerNative?.[0]) : null };
     }
     case 'artWhere':
       if (c.building) return { mode: 'reveal', pre: `${cap1(c.nameThe ?? c.name)} ${c.plural ? 'stand' : 'stands'} `, blank: 'in which city?', post: '.', answer: `in ${c.city ?? c.countryName}${c.city && c.countryName && c.city !== c.countryName ? ` (${c.countryName})` : ''}`, map: c.country ? 'reveal' : 'none', note: artNote(c, true), picture: artPic(c) };
@@ -465,11 +469,11 @@ function rawFace(ref: CardRef): CardFace {
     // Music: the clip plays; name the composer, the piece, or (in a work of several movements) which one.
     case 'musicComposer': {
       const m = c.music!;
-      return { mode: 'reveal', pre: 'This music was composed by ', blank: 'whom?', post: '.', answer: m.composer.name, map: 'none', audio: { file: m.file, start: m.start }, note: musicNote(c), picture: composerPic(m) };
+      return { mode: 'reveal', pre: 'This music was composed by ', blank: 'whom?', post: '.', answer: m.composer.name, map: 'none', audio: { file: m.file, start: m.start }, note: musicNote(c), picture: composerPic(m), say: asName(m.composer.native?.[0]) };
     }
     case 'musicWork': {
       const m = c.music!;
-      return { mode: 'reveal', pre: 'This is ', blank: 'which piece?', post: m.label ? ` (${m.label}).` : '.', answer: m.work, map: 'none', audio: { file: m.file, start: m.start }, note: musicNote(c), picture: composerPic(m), hidePostUntilReveal: true };
+      return { mode: 'reveal', pre: 'This is ', blank: 'which piece?', post: m.label ? ` (${m.label}).` : '.', answer: m.work, map: 'none', audio: { file: m.file, start: m.start }, note: musicNote(c), picture: composerPic(m), hidePostUntilReveal: true, say: c.native?.[0] };
     }
     case 'musicPart': {
       const m = c.music!;
@@ -477,7 +481,7 @@ function rawFace(ref: CardRef): CardFace {
     }
     // People: the face, the scene they're known for, where they were born (to the state), what they played.
     case 'personFace':
-      return { mode: 'reveal', pre: 'This is ', blank: 'who?', post: '.', answer: c.name, map: 'none', note: personNote(c), person: { photo: c.image!, when: 'before' } };
+      return { mode: 'reveal', pre: 'This is ', blank: 'who?', post: '.', answer: c.name, map: 'none', note: personNote(c), person: { photo: c.image!, when: 'before' }, say: asName(c.person?.native?.[0]) };
     case 'personScene':
       return { mode: 'reveal', pre: `${c.name} is known for `, blank: 'which scene?', post: '.', answer: sceneName(c.person!.scene!), map: 'none', note: personNote(c), person: { photo: c.image ?? '', when: 'after' } };
     case 'personBorn':
