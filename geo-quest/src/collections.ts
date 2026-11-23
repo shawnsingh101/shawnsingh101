@@ -1,15 +1,22 @@
 // Collections: lists of Wikipedia things kept as Markdown in geo-quest/collections/ (see collections/README.md).
 // The lists give the structure (subject › sections › deck, and which works are in it); the facts for each entry
 // come from public/data/collections.json, filled in from Wikidata by scripts/sync-collections.mjs.
-import type { Chinese, NativeName, Place } from './types';
+import type { Chinese, Composer, NativeName, Place } from './types';
 import { GROUPS, claimSection, sectionChain } from './cards';
+import { NOTE_SUBJECTS } from './notes';
+import { languageOf, literatureOf, topicsOf } from './tags';
+/** Subjects other than the collections' own (a shelf named like one is shown there too). */
+const OTHER_SUBJECTS = () => NOTE_SUBJECTS;
 
-export interface CollectionList { file: string; id: string; building: boolean; title: string; subject: string; path: string[]; intro: string | null; entries: { id: string; heading: string | null }[] }
+export interface CollectionList { file: string; id: string; building: boolean; book: boolean; music: boolean; deep: boolean; title: string; subject: string; path: string[]; intro: string | null; entries: { id: string; heading: string | null; clips?: { label: string | null; file: string; start: number }[] }[] }
 export interface ArtFacts {
   name: string | null; nameThe?: string | null; museumWiki?: string | null;
   plural?: boolean; species?: string | null; native?: NativeName[]; zh?: Chinese | null; // native: its name in its own language (Chinese with pinyin)
   wiki: string | null; image: string | null; year: number | null; types: string[];
-  artists: string[]; culture: string | null; style?: string | null; museum: string | null; city: string | null;
+  artists: string[]; culture: string | null; style?: string | null;
+  museum: string | null; city: string | null;
+  book?: boolean; language?: string | null; subjects?: string[]; genres?: string[]; topics?: string[]; // books
+  composer?: Composer | null; // music
   country: string | null; countryName: string | null; lon: number | null; lat: number | null; links: number;
 }
 
@@ -31,9 +38,12 @@ export function parseList(file: string, text: string): CollectionList {
     if (h) { heading = h[1]; continue; }
     const e = /^-\s+(Q\d+)\b/.exec(line); // lines without an id yet are waiting for the sync
     if (e) { if (!entries.some(x => x.id === e[1])) entries.push({ id: e[1], heading }); continue; }
+    // Music: "♪ II. Adagio | File.ogg" (or "♪ II. Adagio | File.ogg @45" to start 45 seconds in) under its work.
+    const clip = /^♪\s*([^|]*)\|\s*(.+?)(?:\s+@(\d+))?$/.exec(line);
+    if (clip && entries.length) { const last = entries[entries.length - 1]; (last.clips ??= []).push({ label: clip[1].trim() || null, file: clip[2].trim(), start: +(clip[3] ?? 0) }); continue; }
     if (line && !heading && !line.startsWith('-') && !line.startsWith('#')) intro.push(line);
   }
-  return { file, id: 'c-' + slug([subject, ...path, title].join(' ')), building: meta.kind === 'building', title, subject, path, intro: intro.join(' ') || null, entries };
+  return { file, id: 'c-' + slug([subject, ...path, title].join(' ')), building: meta.kind === 'building', book: meta.kind === 'book', music: meta.kind === 'music', deep: meta.depth === 'deep', title, subject, path, intro: intro.join(' ') || null, entries };
 }
 
 let files: Record<string, string> = {};
@@ -55,10 +65,26 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
   for (const l of LISTS) {
     const chain: string[] = [];
     for (const sec of [l.subject, ...l.path]) chain.push(claimSection(sec, chain.length ? chain[chain.length - 1] : null));
-    if (!GROUPS.some(g => g.id === l.id)) GROUPS.push({ id: l.id, section: chain[chain.length - 1], name: l.title, layer: 'art', nouns: l.building ? 'buildings' : 'works', topics: [{ id: 'art', name: l.building ? 'Buildings' : 'Works', icon: l.building ? 'landmark' : 'image' }], note: l.intro ?? undefined });
+    const sec = chain[chain.length - 1];
+    // `depth: deep` (deep cuts): unlocks once half of the core list beside it is known.
+    const core = l.deep ? LISTS.find(x => !x.deep && x.subject === l.subject && x.path.join('/') === l.path.join('/')) : undefined;
+    const noun = l.music ? ['pieces', 'Pieces', 'music'] as const : l.building ? ['buildings', 'Buildings', 'landmark'] as const : l.book ? ['books', 'Books', 'book'] as const : ['works', 'Works', 'image'] as const;
+    if (!GROUPS.some(g => g.id === l.id)) GROUPS.push({ id: l.id, section: sec, name: l.title, layer: 'art', nouns: noun[0], topics: [{ id: 'art', name: noun[1], icon: noun[2] }], note: l.intro ?? undefined, ...(core ? { requires: `${core.id}/art` } : {}) });
     for (const e of l.entries) {
       const f = facts[e.id];
       if (!f?.name) continue; // not synced yet
+      // Music: each recording is its own card subject (composer, piece, movement), knowing its siblings in the work.
+      if (l.music) {
+        if (!f.composer || !e.clips?.length) continue;
+        const sib = e.clips.map((c, i) => ({ id: `${e.id}-${i + 1}`, ...c }));
+        for (const c of sib) out.set(c.id, {
+          id: c.id, qid: e.id, layer: 'art', group: l.id, name: f.name, nameThe: f.nameThe ?? undefined, wiki: f.wiki, image: null, capitals: [], capitalAnswer: null,
+          native: f.native?.length ? f.native : undefined, zh: f.zh ?? null, artists: [], year: f.year, country: f.composer.country ?? undefined, countryName: f.composer.countryName ?? undefined,
+          music: { work: f.nameThe ?? f.name, workId: e.id, label: c.label, file: c.file, start: c.start, era: e.heading, composer: f.composer, siblings: sib },
+          facts: [fmtYear(f.year), e.heading].filter(Boolean).join(' · ') || undefined,
+        } as Place);
+        continue;
+      }
       // Ids are global: if a work or building is already in the app as something else (the Taj Mahal is a World Heritage
       // site), the collection's entry gets its own id so the two never overwrite each other. Facts stay keyed by Q-id.
       const pid = taken.has(e.id) ? `${e.id}-${slug(l.subject)}` : e.id;
@@ -69,11 +95,39 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
       const where = [museum, f.city && !f.museum?.includes(f.city) ? f.city : null].filter(Boolean).join(', ');
       const cName = (f.country && countryName(f.country)) || f.countryName || null;
       out.set(pid, {
-        id: pid, qid: e.id, building: l.building || undefined, style: f.style ?? null, layer: 'art', group: l.id, name: f.name, nameThe: f.nameThe ?? undefined, species: f.species ?? undefined, native: f.native?.length ? f.native : undefined, zh: f.zh ?? null, museumName: f.museum, museumWiki: f.museumWiki ?? null, city: f.city, plural: f.plural, wiki: f.wiki, image: f.image, capitals: [], capitalAnswer: null,
+        id: pid, qid: e.id, building: l.building || undefined, style: f.style ?? null, layer: 'art',
+        ...(l.book ? { book: true, language: languageOf(f.language), fiction: e.heading === 'Fiction', shelves: e.heading === 'Fiction' ? [] : f.topics ?? topicsOf(f.subjects, f.genres) } : {}), group: l.id, name: f.name, nameThe: f.nameThe ?? undefined, species: f.species ?? undefined, native: f.native?.length ? f.native : undefined, zh: f.zh ?? null, museumName: f.museum, museumWiki: f.museumWiki ?? null, city: f.city, plural: f.plural, wiki: f.wiki, image: f.image, capitals: [], capitalAnswer: null,
         lon: f.lon ?? undefined, lat: f.lat ?? undefined, country: f.country ?? undefined, countryName: cName ?? undefined,
         artists: f.artists, culture: f.culture, year: f.year, museum: where || null, origin: e.heading,
-        facts: [fmtYear(f.year), l.building ? f.types[0] ?? null : kindOf(f.types), f.style ?? null, e.heading && !l.building ? `from ${e.heading.replace(/^The /, 'the ')}` : null].filter(Boolean).join(' · ') || undefined,
+        facts: l.book ? [fmtYear(f.year), languageOf(f.language), e.heading?.toLowerCase()].filter(Boolean).join(' · ') : [fmtYear(f.year), l.building ? f.types[0] ?? null : kindOf(f.types), f.style ?? null, e.heading && !l.building ? `from ${e.heading.replace(/^The /, 'the ')}` : null].filter(Boolean).join(' · ') || undefined,
       });
+    }
+  }
+  // Music by composer: Music › By composer › one deck per composer ("all of Beethoven").
+  for (const p of out.values()) {
+    if (!p.music) continue;
+    const subject = sectionChain(GROUPS.find(g => g.id === p.group)!.section)[0];
+    const s = claimSection('By composer', subject), gid = 'cc-' + slug(`${subject} ${p.music.composer.name}`);
+    if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: s, name: p.music.composer.name, layer: 'art', nouns: 'pieces', topics: [{ id: 'art', name: 'Pieces', icon: 'music' }] });
+    p.alsoIn = [...(p.alsoIn ?? []), gid];
+  }
+  // Shelves, made from the tags (src/tags.ts): Books › Fiction by language › "Italian literature"; Books › Nonfiction by
+  // topic › "Philosophy". A topic that is also a subject (Philosophy, Economics, History…) shows its shelf there too, as
+  // "Philosophy: reading list". Each book is filed once (its list) and shown on every shelf it belongs to.
+  for (const p of out.values()) {
+    if (!p.book) continue;
+    const subject = sectionChain(GROUPS.find(g => g.id === p.group)!.section)[0];
+    const shelves = p.fiction ? (p.language ? [literatureOf(p.language)] : []) : p.shelves ?? [];
+    for (const shelf of shelves) {
+      const secName = p.fiction ? 'Fiction by language' : 'Nonfiction by topic';
+      const s = claimSection(secName, subject), gid = 'cs-' + slug(`${subject} ${shelf}`);
+      let g = GROUPS.find(x => x.id === gid);
+      if (!g) {
+        g = { id: gid, section: s, name: shelf, layer: 'art', nouns: 'books', topics: [{ id: 'art', name: 'Books', icon: 'book' }] };
+        if (!p.fiction && OTHER_SUBJECTS().includes(shelf)) g.alsoInSections = [claimSection(`${shelf}: reading list`, shelf)];
+        GROUPS.push(g);
+      }
+      p.alsoIn = [...(p.alsoIn ?? []), gid];
     }
   }
   // "Where to see it", made from the facts: subject › Where to see it › continent › country › one deck per museum (or site).
@@ -81,7 +135,7 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
   // they never clash with the geography sections of the same name.
   for (const p of out.values()) {
     const subject = sectionChain(GROUPS.find(g => g.id === p.group)!.section)[0];
-    if (!p.country || !p.museumName) continue;
+    if (p.book || !p.country || !p.museumName) continue; // books are read, not visited
     const cont = regionOf(p.country), cname = countryName(p.country) ?? p.countryName;
     if (!cont || !cname) continue;
     const the = /^(United States|United Kingdom|Netherlands|Philippines|Czech Republic)$/.test(cname) ? `the ${cname}` : cname;

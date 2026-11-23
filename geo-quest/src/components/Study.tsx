@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { ClipPlayer, MusicReveal } from './Music';
 import { face, groupOf, placesIn, GROUPS, KIND_LABEL, LAYER_NOUN, layerFor, sectionChain, type CardRef } from '../cards';
 const m0Layer = (c: { layer: string }) => c.layer;
 import { answer, buildQueue, queueForCards, getProgress, update, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
@@ -307,8 +308,9 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
       <div className="card-wrap">
         <article className={'card' + (revealed ? ' revealed' : '')} onClick={() => f.mode === 'reveal' && reveal()}>
           <div className="card-meta">
-            {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : (c.building && item.ref.kind === 'artMaker' ? 'Who designed it?' : KIND_LABEL[item.ref.kind])}</span>{item.isNew && <span className="new">new</span>}
+            {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : (c.building && item.ref.kind === 'artMaker' ? 'Who designed it?' : c.book && item.ref.kind === 'artMaker' ? 'Who wrote it?' : KIND_LABEL[item.ref.kind])}</span>{item.isNew && <span className="new">new</span>}
           </div>
+          {f.audio && <ClipPlayer key={item.ref.id} file={f.audio.file} start={f.audio.start} />}
           {!sidePic && f.promptPicture && f.picture && <div className="prompt-picture"><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} /></div>}
           {f.promptFlag && <Flag file={c.flag ?? null} name="?" className="prompt-flag" size={480} eager />}
           {/* Interstates: the route sign beside the question (once flipped when the number is what's being asked) */}
@@ -343,7 +345,8 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {revealed && c.incoming && <Incoming inc={c.incoming} current={c.name} />}
           {revealed && item.ref.kind.startsWith('flag') && <Lookalikes ds={ds} place={c} />}
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
-          {revealed && f.note && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
+          {revealed && f.note && !c.music && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
+          {revealed && c.music && <MusicReveal ds={ds} place={c} />}
           {revealed && <Related ds={ds} place={c} onOpen={setSheet} />}
           {!sidePic && revealed && s.pictures && f.picture && !f.promptPicture && <Picture {...f.picture} />}
           {revealed && !f.picture && c.flag && c.layer !== 'note' && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}

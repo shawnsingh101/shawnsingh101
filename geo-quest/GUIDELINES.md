@@ -72,6 +72,8 @@ feature consistent. When adding anything, check it against this page. When a new
 - **Where pictures come from**: places, people, history and art from Wikimedia Commons (via Wikidata P18); **science
   from the textbook's own figures** (OpenStax, CC BY 4.0, credited in the caption), which explain better than photos;
   Interstate shields from P14 or `I-N.svg`.
+- **Recordings**: only free ones from Wikimedia Commons (the music is old, but each recording has its own rights). Play
+  the MP3 copy first (iPhones can't play Ogg). A clip is 30 seconds; the reveal shows the whole work.
 
 ## 3. Maps
 
@@ -101,6 +103,9 @@ feature consistent. When adding anything, check it against this page. When a new
   pointing on to its works in Art. Government buildings' tours will also show under US government.
 - **Ids are unique across the app.** A collection entry that is already something else (a World Heritage site) gets
   its own id automatically; never give two places the same id.
+- **Depth**: a list or deck with `depth: deep` holds the deep cuts; it unlocks once half of the core one beside it is
+  known. Start every topic with its core.
+- **Shelves come from tags** (`src/tags.ts`): a new label is added there once, not per item.
 - Something that belongs in two places is filed once and *also shown* in the other (`alsoInSections`, `alsoIn`), with one
   set of progress.
 - **Lenses, not copies.** A thing is filed once, in its natural place (History of China › Prehistory), and tagged with

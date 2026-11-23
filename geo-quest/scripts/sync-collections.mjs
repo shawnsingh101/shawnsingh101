@@ -40,7 +40,7 @@ const label = (b, k) => { const x = val(b, k); return x && !/^Q\d+$/.test(x) && 
 // The town: walk up "located in" past districts and boroughs (Louvre → 1st arrondissement → Paris).
 const SMALL = /arrondissement|borough|district|ward\b|centrum|mitte|quarter|neighbo|municipality of|Manhattan|Kensington|Westminster|Camden|Vatican Museums|Bezirk|Innere Stadt|Landstraße|^Centro|Sestiere|Quartiere|Retiro|Mid-?town|Downtown|Loop/i;
 const town = (b, keys) => keys.map(k => label(b, k)).find(x => x && !SMALL.test(x)) ?? null;
-const LANG_NAMES = { zh: 'Chinese', 'zh-hans': 'Chinese', 'zh-hant': 'Chinese', ja: 'Japanese', ko: 'Korean', it: 'Italian', fr: 'French', es: 'Spanish', de: 'German', nl: 'Dutch', no: 'Norwegian', nb: 'Norwegian', pt: 'Portuguese', ar: 'Arabic', el: 'Greek', hi: 'Hindi', ca: 'Catalan', la: 'Latin', ru: 'Russian', fa: 'Persian' };
+const LANG_NAMES = { grc: 'Ancient Greek', la: 'Latin', sa: 'Sanskrit', he: 'Hebrew', fa: 'Persian', akk: 'Akkadian', zh: 'Chinese', 'zh-hans': 'Chinese', 'zh-hant': 'Chinese', ja: 'Japanese', ko: 'Korean', it: 'Italian', fr: 'French', es: 'Spanish', de: 'German', nl: 'Dutch', no: 'Norwegian', nb: 'Norwegian', pt: 'Portuguese', ar: 'Arabic', el: 'Greek', hi: 'Hindi', ca: 'Catalan', la: 'Latin', ru: 'Russian', fa: 'Persian' };
 const yearOf = d => { const m = /^(-?\d+)-/.exec(d ?? ''); return m ? +m[1] : null; };
 const chunks = (a, n) => Array.from({ length: Math.ceil(a.length / n) }, (_, i) => a.slice(i * n, i * n + n));
 
@@ -59,15 +59,22 @@ const lists = files.map(path => {
     const m = /^-\s+(?:(Q\d+)\s*)?(.*)$/.exec(line.trim()); if (!m) return;
     entries.push({ line: i, id: m[1] ?? null, text: m[2].trim(), heading });
   });
-  return { path, lines, entries, building: /^kind:\s*building\s*$/m.test(text.split('\n---')[0]) };
+  const kind = (/^kind:\s*(\w+)\s*$/m.exec(text.split('\n---')[0]) ?? [])[1];
+  return { path, lines, entries, building: kind === 'building', book: kind === 'book', music: kind === 'music' };
 });
 // Buildings stand where they are: their own place and town, never a "museum" (a location like Champ de Mars).
-const BUILDINGS = new Set(lists.filter(l => l.building).flatMap(l => l.entries.map(e => e.id).filter(Boolean)));
+// (Filled in after step 2, once titles have their ids.)
+const BUILDINGS = new Set();
+// Books: the author is the maker, the date is when it was published, the language is the one it was written in.
+const BOOKS = new Set();
+// Music: the composer is the maker; the clips (♪ lines) are read by the app, not here.
+const MUSIC = new Set();
 
 // ---- 2. Find ids for entries written as Wikipedia titles, and write them back --------------------
 const unresolved = lists.flatMap(l => l.entries.filter(e => !e.id && e.text));
 if (unresolved.length) {
-  const enc = t => `<https://en.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_')).replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29')}>`;
+  // Wikidata writes article links the way MediaWiki does: percent-encoded, except ; : @ $ ! * ( ) , / ~ which stay as they are.
+  const enc = t => `<https://en.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_')).replace(/'/g, '%27').replace(/%(3B|3A|40|24|21|2A|28|29|2C|2F|7E)/g, (_, h) => String.fromCharCode(parseInt(h, 16)))}>`;
   const found = new Map();
   for (const part of chunks(unresolved, 60)) {
     // Titles may be redirects ("Guernica (Picasso)" → "Guernica (Picasso painting)"): follow them.
@@ -99,6 +106,8 @@ if (unresolved.length) {
   for (const e of unresolved.filter(e => !e.id)) console.warn(`Not found on Wikipedia: "${e.text}" — check the title`);
 }
 
+for (const l of lists) for (const e of l.entries) if (e.id) { if (l.building) BUILDINGS.add(e.id); if (l.book) BOOKS.add(e.id); if (l.music) MUSIC.add(e.id); }
+
 // ---- 3. Facts for every id ---------------------------------------------------------------------
 const ids = [...new Set(lists.flatMap(l => l.entries.map(e => e.id).filter(Boolean)))];
 const old = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : { items: {} };
@@ -112,12 +121,25 @@ try {
       OPTIONAL { ?item wdt:P18 ?image } OPTIONAL { ?item wdt:P571 ?inception } OPTIONAL { ?item wdt:P225 ?taxon } OPTIONAL { ?item wdt:P31 ?type }
       OPTIONAL { ?item wikibase:sitelinks ?links }
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
+    // Books: original language (P407, with its code for the name in that language), publication date, main subjects
+    // and genres (turned into shelves by the app, through data/tags.json).
+    const bookIds = part.filter(q => BOOKS.has(q));
+    const bookInfo = bookIds.length ? await sparql(`SELECT ?item ?langLabel ?code ?pub ?subjectLabel ?genreLabel WHERE { VALUES ?item { ${bookIds.map(q => `wd:${q}`).join(' ')} }
+      OPTIONAL { ?item wdt:P407 ?lang . OPTIONAL { ?lang wdt:P424 ?code } } OPTIONAL { ?item wdt:P577 ?pub }
+      OPTIONAL { ?item wdt:P921 ?subject } OPTIONAL { ?item wdt:P136 ?genre }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`) : [];
+    // Music: the composer's portrait, life and the (present-day) country of their birthplace, for the flag.
+    const musicIds = part.filter(q => MUSIC.has(q));
+    const composers = musicIds.length ? await sparql(`SELECT ?item ?c ?cLabel ?img ?born ?died ?land ?landLabel WHERE { VALUES ?item { ${musicIds.map(q => `wd:${q}`).join(' ')} }
+      ?item wdt:P86 ?c . OPTIONAL { ?c wdt:P18 ?img } OPTIONAL { ?c wdt:P569 ?born } OPTIONAL { ?c wdt:P570 ?died }
+      OPTIONAL { ?c wdt:P19 ?bp . ?bp wdt:P17 ?land . FILTER NOT EXISTS { ?land wdt:P576 [] } }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`) : [];
     // A building's architectural style (P149).
     const styles = await sparql(`SELECT ?item ?styleLabel WHERE { VALUES ?item { ${values} } ?item wdt:P149 ?style .
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
     // Who made it (an artist or, for a building, its architect; for ancient work, the culture).
     const makers = await sparql(`SELECT ?item ?maker ?makerLabel ?culture ?cultureLabel WHERE { VALUES ?item { ${values} }
-      OPTIONAL { ?item wdt:P170|wdt:P84 ?maker . FILTER(isIRI(?maker)) FILTER NOT EXISTS { ?maker wdt:P31 wd:Q4233718 } }
+      OPTIONAL { ?item wdt:P170|wdt:P84|wdt:P50|wdt:P86 ?maker . FILTER(isIRI(?maker)) FILTER NOT EXISTS { ?maker wdt:P31 wd:Q4233718 } }
       OPTIONAL { ?item wdt:P2596 ?culture }
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
     // Where it is: the museum that holds it (P195 collection, else P276 location), its city and country; or the work's own spot.
@@ -144,6 +166,7 @@ try {
     }
     landLangs.set('Q148', 'zh-hans'); landLangs.set('Q40', 'de'); landLangs.set('Q30', ''); landLangs.set('Q145', ''); landLangs.set('Q408', '');
     const langOf = q => {
+      if (BOOKS.has(q)) { const code = bookInfo.find(r => qid(r.item.value) === q && val(r, 'code'))?.code?.value; if (code) return /^en/.test(code) ? '' : code === 'zh' ? 'zh-hans' : code; }
       const rs = origins.filter(r => qid(r.item.value) === q);
       for (const k of ['origin', 'citizen', 'own']) for (const r of rs) { const c = r[k] && qid(r[k].value); if (c && landLangs.has(c)) return landLangs.get(c); }
       return null;
@@ -153,14 +176,15 @@ try {
     for (const q of part) {
       const b = basics.filter(r => qid(r.item.value) === q);
       if (!b.length) continue;
-      const year = b.map(r => yearOf(val(r, 'inception'))).filter(y => y != null).sort((a, z) => a - z)[0];
+      const bi = bookInfo.filter(r => qid(r.item.value) === q);
+      const year = [...b.map(r => yearOf(val(r, 'inception'))), ...bi.map(r => yearOf(val(r, 'pub')))].filter(y => y != null).sort((a, z) => a - z)[0];
       const types = [...new Set(b.map(r => label(r, 'typeLabel')).filter(Boolean))];
       const mk = makers.filter(r => qid(r.item.value) === q);
       const artists = [...new Map(mk.filter(r => r.maker && label(r, 'makerLabel')).map(r => [qid(r.maker.value), label(r, 'makerLabel')])).values()];
       const cultures = [...new Set(mk.map(r => label(r, 'cultureLabel')).filter(Boolean))];
       const w = where.filter(r => qid(r.item.value) === q);
       // Prefer the collection (the museum) if it has a position, then the location.
-      const spot = BUILDINGS.has(q) ? null : ['P195', 'P276'].map(p => w.find(r => val(r, 'prop') === p && r.coord)).find(Boolean) ?? null;
+      const spot = BUILDINGS.has(q) || BOOKS.has(q) || MUSIC.has(q) ? null : ['P195', 'P276'].map(p => w.find(r => val(r, 'prop') === p && r.coord)).find(Boolean) ?? null;
       const own = w.find(r => r.ownCoord) ?? w[0];
       const coord = point(spot ? val(spot, 'coord') : own && val(own, 'ownCoord'));
       const country = spot?.country ? { id: qid(spot.country.value), name: label(spot, 'countryLabel') } : own?.ownCountry ? { id: qid(own.ownCountry.value), name: label(own, 'ownCountryLabel') } : null;
@@ -174,6 +198,9 @@ try {
         types,
         artists,
         culture: cultures[0] ?? null,
+        ...(BOOKS.has(q) ? { book: true, language: bi.map(r => label(r, 'langLabel')).find(Boolean) ?? null,
+          subjects: [...new Set(bi.map(r => label(r, 'subjectLabel')).filter(Boolean))], genres: [...new Set(bi.map(r => label(r, 'genreLabel')).filter(Boolean))] } : {}),
+        ...(MUSIC.has(q) ? { composer: (() => { const r = composers.find(x => qid(x.item.value) === q); return r ? { id: qid(r.c.value), name: label(r, 'cLabel'), image: file(val(r, 'img')) ?? null, born: yearOf(val(r, 'born')), died: yearOf(val(r, 'died')), country: r.land ? qid(r.land.value) : null, countryName: label(r, 'landLabel') } : null; })() } : {}),
         style: styles.filter(r => qid(r.item.value) === q).map(r => label(r, 'styleLabel')).find(Boolean) ?? null, // architecture: Gothic, Beaux-Arts…
         museum: spot ? label(spot, 'placeLabel') : null,
         museumId: spot ? qid(spot.place.value) : null, museumWiki: null, // its Wikipedia article (below), for the Related links
@@ -217,6 +244,6 @@ writeFileSync(OUT, JSON.stringify(addChinese({ source: 'Wikidata (CC0)', items }
 const missing = ids.filter(q => !items[q]);
 console.log(`${files.length} list(s), ${ids.length} entries → ${relative(ROOT, OUT)}${missing.length ? ` (no facts for ${missing.join(', ')})` : ''}`);
 for (const [q, x] of Object.entries(items)) {
-  const gaps = [!x.image && 'picture', !x.artists.length && !x.culture && 'maker', !x.museum && !x.city && 'place', !x.country && 'country'].filter(Boolean);
+  const gaps = [!x.image && !x.composer && 'picture', !x.artists.length && !x.culture && 'maker', !x.book && !x.composer && !x.museum && !x.city && 'place', !x.book && !x.composer && !x.country && 'country', x.book && !x.language && 'language'].filter(Boolean);
   if (gaps.length) console.log(`  ${q} ${x.name}: no ${gaps.join(', ')}`);
 }
