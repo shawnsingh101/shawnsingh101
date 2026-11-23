@@ -8,6 +8,8 @@ import { easeCubicOut } from 'd3-ease';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry } from 'geojson';
 import type { Dataset, Layer } from '../types';
+import { update, useProgress } from '../srs';
+import { Icon } from './Icons';
 import { dataUrl } from '../data';
 
 // Shapes are loaded lazily: countries ship with the app, oceans and China's
@@ -49,6 +51,7 @@ interface Props {
   hide?: (placeId: string) => boolean;  // leave some rivers/lakes out (e.g. other regions during a quiz)
   detailByZoom?: boolean;               // smaller rivers only appear once you zoom in
   recenter?: boolean;                   // rotate the globe so the focused region is centred
+  contextLabels?: boolean;              // offer a button that names the countries and states around (when they aren't the answer)
 }
 
 interface Shape { key: string; name: string; placeId: string | null; layer: Layer; d: string; bounds: [[number, number], [number, number]]; centroid: [number, number] }
@@ -116,7 +119,8 @@ function toShapes(topo: Topology, layer: Layer, path: ReturnType<typeof geoPath>
   });
 }
 
-export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], target, focus, dim, strong, outline = [], subFilter, onTap, onHover, className, recenter = false, hide, detailByZoom = false }: Props) {
+export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins = [], target, focus, dim, strong, outline = [], subFilter, onTap, onHover, className, recenter = false, hide, detailByZoom = false, contextLabels = false }: Props) {
+  const showContext = useProgress().settings.mapContext && contextLabels;
   const wrap = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown>>();
@@ -384,6 +388,22 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
               </g>
             );
           })()}
+          {showContext && (() => {
+            // Country and state names for bearings, biggest first, skipping any that would overlap or are too small to read.
+            const boxes: [number, number, number, number][] = [], out: JSX.Element[] = [];
+            const pool = [...(layers.includes('us') ? shapes.us ?? [] : []), ...(shapes.country ?? [])]
+              .filter(s => s.placeId && !labels[s.placeId] && !tones[s.placeId])
+              .map(s => ({ s, w: (s.bounds[1][0] - s.bounds[0][0]) * k })).filter(x => x.w > 46).sort((a, b) => b.w - a.w);
+            const size = 11 / k;
+            for (const { s } of pool) {
+              const name = ds.byId.get(s.placeId!)?.name ?? s.name, [x, y] = s.centroid, w = name.length * size * 0.55, h = size * 1.2;
+              const b: [number, number, number, number] = [x - w / 2, y - h, x + w / 2, y];
+              if (boxes.some(o => b[0] < o[2] && b[2] > o[0] && b[1] < o[3] && b[3] > o[1])) continue;
+              boxes.push(b);
+              out.push(<text key={'c' + s.key} className="ctxlabel" x={x} y={y} style={{ fontSize: size, strokeWidth: size / 4 }}>{name}</text>);
+            }
+            return out;
+          })()}
           {placedLabels.map(t => (
             <text key={t.key} className={t.cls} x={t.x} y={t.y} style={{ fontSize: t.size, strokeWidth: t.size / 4, textAnchor: t.anchor }}>{t.text}</text>
           ))}
@@ -391,6 +411,8 @@ export function WorldMap({ ds, layers = [], fill, tones = {}, labels = {}, pins 
       </svg>
       {!ready && <div className="map-loading">Loading map…</div>}
       <div className="map-zoom">
+        {contextLabels && <button aria-label="Show place names" aria-pressed={showContext} title={showContext ? 'Hide country & state names' : 'Show country & state names'} className={showContext ? 'on' : ''}
+          onClick={() => update(x => { x.settings.mapContext = !x.settings.mapContext; })}><Icon name="tag" size={16} /></button>}
         <button aria-label="Zoom in" onClick={() => svgRef.current && zoomRef.current && select(svgRef.current).call(zoomRef.current.scaleBy, 1.6)}>+</button>
         <button aria-label="Zoom out" onClick={() => svgRef.current && zoomRef.current && select(svgRef.current).call(zoomRef.current.scaleBy, 1 / 1.6)}>−</button>
         <button aria-label="Whole world" onClick={() => { if (svgRef.current && zoomRef.current) select(svgRef.current).call(zoomRef.current.transform, home()); }}>◎</button>

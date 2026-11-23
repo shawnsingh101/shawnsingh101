@@ -40,25 +40,59 @@ function reverb(c: AudioContext) {
 }
 
 // ---- effects (files) -------------------------------------------------------------------------
-const FILES = ['tap', 'toggle', 'open', 'back', 'right', 'wrong', 'medal', 'unlock', 'flip', 'deal', 'shuffle'] as const;
-type Sfx = typeof FILES[number];
-const LEVEL: Partial<Record<Sfx, number>> = { tap: 0.35, toggle: 0.4, open: 0.35, back: 0.35, flip: 0.7, deal: 0.55, shuffle: 0.6, right: 0.45, wrong: 0.4, medal: 0.5, unlock: 0.45 };
-const buffers = new Map<Sfx, AudioBuffer>();
-let loading: Promise<void> | null = null;
-function loadSamples() {
+// Each kind of sound ("role") has a default and a few alternatives you can try in Settings → Sound lab.
+// A sound is a file name: "tap" is public/sfx/tap.mp3, "lab/ui-click3" is public/sfx/lab/ui-click3.mp3.
+// UI clicks are played a little lower and through a soft filter, so they sound padded rather than sharp.
+export type Role = 'tap' | 'back' | 'toggle' | 'open' | 'flip' | 'deal' | 'shuffle' | 'right' | 'wrong' | 'medal' | 'unlock';
+interface Voice { file: string; level: number; rate?: number; soft?: boolean }
+export const ROLES: { id: Role; name: string; when: string; voice: Voice; options: string[] }[] = [
+  { id: 'tap', name: 'Click', when: 'buttons and tabs', voice: { file: 'tap', level: 0.32, rate: 0.85, soft: true }, options: ['lab/ui-click3', 'lab/ui-click1', 'lab/ui-mouseclick1', 'lab/click_001', 'lab/tick_004', 'lab/drop_001', 'lab/pluck_001', 'lab/select_002', 'lab/ui-switch12'] },
+  { id: 'back', name: 'Back', when: 'closing and leaving', voice: { file: 'tap', level: 0.3, rate: 0.72, soft: true }, options: ['lab/back_002', 'lab/back_003', 'lab/close_001', 'lab/minimize_007', 'lab/ui-switch13', 'lab/drop_001'] },
+  { id: 'toggle', name: 'Toggle', when: 'switches in the ribbon', voice: { file: 'toggle', level: 0.32, rate: 0.9, soft: true }, options: ['lab/toggle_001', 'lab/toggle_003', 'lab/toggle_004', 'lab/ui-switch7', 'lab/ui-switch22'] },
+  { id: 'open', name: 'Open', when: 'opening a panel', voice: { file: 'open', level: 0.3, soft: true }, options: ['lab/open_002', 'lab/maximize_001', 'lab/question_001'] },
+  { id: 'flip', name: 'Flip', when: 'turning a card over', voice: { file: 'flip', level: 0.7 }, options: ['lab/cardSlide2', 'lab/cardSlide3', 'lab/cardSlide5', 'lab/cardFan1'] },
+  { id: 'deal', name: 'Next card', when: 'the next card lands', voice: { file: 'deal', level: 0.55 }, options: ['lab/cardPlace2', 'lab/cardSlide5', 'lab/chipsStack1'] },
+  { id: 'shuffle', name: 'Shuffle', when: 'a session starts', voice: { file: 'shuffle', level: 0.6 }, options: ['lab/cardFan1', 'lab/cardOpenPackage1'] },
+  { id: 'right', name: 'Right', when: 'a right map answer', voice: { file: 'right', level: 0.45 }, options: ['lab/confirmation_003', 'lab/glass_002', 'lab/maximize_002', 'lab/pluck_002'] },
+  { id: 'wrong', name: 'Wrong', when: 'a missed map answer', voice: { file: 'wrong', level: 0.4 }, options: ['lab/error_002', 'lab/error_004', 'lab/bong_001'] },
+  { id: 'medal', name: 'Medal', when: 'a quiz at 90% or more', voice: { file: 'medal', level: 0.5 }, options: ['lab/confirmation_004', 'lab/glass_004', 'lab/maximize_003'] },
+  { id: 'unlock', name: 'Unlock', when: 'starting a skill, finishing a quiz', voice: { file: 'unlock', level: 0.45 }, options: ['lab/maximize_003', 'lab/confirmation_003', 'lab/open_002'] },
+];
+let chosen: Partial<Record<Role, string>> = {};
+/** The sounds picked in the Sound lab (kept in settings). */
+export function setChosenSounds(c: Partial<Record<Role, string>> | undefined) { chosen = c ?? {}; }
+
+const buffers = new Map<string, AudioBuffer>();
+const loads = new Map<string, Promise<AudioBuffer | null>>();
+function load(file: string) {
   const c = ctx;
-  if (!c) return Promise.resolve();
-  return (loading ??= Promise.all(FILES.map(name => fetch(`sfx/${name}.mp3`).then(r => r.arrayBuffer())
-    .then(b => new Promise<AudioBuffer>((ok, no) => c.decodeAudioData(b, ok, no))).then(buf => { buffers.set(name, buf); }).catch(() => {}))).then(() => {}));
+  if (!c) return Promise.resolve(null);
+  if (!loads.has(file)) loads.set(file, fetch(`sfx/${file}.mp3`).then(r => r.arrayBuffer())
+    .then(b => new Promise<AudioBuffer>((ok, no) => c.decodeAudioData(b, ok, no))).then(buf => { buffers.set(file, buf); return buf; }).catch(() => null));
+  return loads.get(file)!;
 }
-function play(name: Sfx) {
+function loadSamples() { return Promise.all(ROLES.map(r => load(chosen[r.id] ?? r.voice.file))).then(() => {}); }
+
+function sound(file: string, v: Pick<Voice, 'level' | 'rate' | 'soft'>, waitForIt = false) {
   const c = ac(); if (!c) return;
-  const buf = buffers.get(name);
-  if (!buf) { void loadSamples(); return; } // first tap: still loading, stay quiet
+  const buf = buffers.get(file);
+  if (!buf) { void load(file).then(b => { if (b && waitForIt) sound(file, v); }); return; } // first time: still loading
   fx ??= (() => { const g = c.createGain(); g.gain.value = 0.9; g.connect(c.destination); return g; })();
   const s = c.createBufferSource(), g = c.createGain();
-  s.buffer = buf; g.gain.value = LEVEL[name] ?? 0.5;
-  s.connect(g).connect(fx); s.start();
+  s.buffer = buf; s.playbackRate.value = v.rate ?? 1; g.gain.value = v.level;
+  let node: AudioNode = s;
+  if (v.soft) { const lp = c.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2600; lp.Q.value = 0.5; node = s.connect(lp); }
+  node.connect(g).connect(fx); s.start();
+}
+function play(role: Role) {
+  const r = ROLES.find(x => x.id === role)!;
+  const pick = chosen[role];
+  sound(pick ?? r.voice.file, pick ? { level: r.voice.level, soft: r.voice.soft } : r.voice);
+}
+/** Sound lab: play a candidate for a role (the default when `file` is null), loading it first if needed. */
+export function preview(role: Role, file: string | null) {
+  const r = ROLES.find(x => x.id === role)!;
+  sound(file ?? r.voice.file, file ? { level: r.voice.level, soft: r.voice.soft } : r.voice, true);
 }
 
 export const sounds = {

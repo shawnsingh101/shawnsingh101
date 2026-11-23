@@ -33,11 +33,15 @@ related: Italy, Florence
 
 - **`## Heading`**: the topic. It is shown on each card under it.
 - **`- … {{answer}} …`**: a fill-in-the-blank card. Several `{{…}}` in one line make one card per blank.
+- **`{{Milan|what city?}}`**: a hint for the blank, shown instead of "what?" until you flip. Use one whenever the
+  answer could be read more than one way ("a liqueur from ___" could be a place or an ingredient).
 - **`- front :: back`**: a question-and-answer card. **`:::`** makes cards in both directions.
 - **`> text`**: a note shown after the answer of the card above it.
 - **`related: A, B, C`** (anywhere under a heading): links shown on those cards after you flip them. A name the app
   teaches (a country, state, prefecture, World Heritage Site, river…) opens its sheet; anything else opens Wikipedia.
   That place's sheet then lists the card under "Also in your decks". Countries named in a card are linked automatically.
+- **`species: Juniperus communis`** (under a heading): the scientific name of a plant or animal, shown in italics after the
+  answer.
 - **`native: الكعبة (Arabic)`** (under a heading): the name in its own language, shown after the answer with a speaker
   button (the device voice reads it). Several with `;`: `native: 孔子 (Chinese); Kǒngzǐ (Pinyin)`.
 - **`![caption](commons:File name.jpg)`**: a picture from Wikimedia Commons for the cards under that heading

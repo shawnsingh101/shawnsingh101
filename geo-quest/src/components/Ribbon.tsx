@@ -3,6 +3,7 @@ import { exportProgress, importProgress, update, useProgress, type Settings } fr
 import { Icon, type IconName } from './Icons';
 import { VERSION } from '../views/Landing';
 import { QuestionTypes } from './QuestionTypes';
+import { SoundLab } from './SoundLab';
 
 export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas' | 'dash';
 const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Library', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['atlas', 'Atlas', 'book'], ['dash', 'Dashboard', 'chart']];
@@ -72,6 +73,10 @@ export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTa
             <input type="checkbox" checked={s.nativeNames} onChange={e => set('nativeNames', e.target.checked)} />
             Show names in the local language (Deutschland, 日本, Ελλάδα) after each answer — Chinese characters & pinyin always show for China
           </label>
+          <details className="menu-row column">
+            <summary>Sound lab: choose your sounds</summary>
+            <SoundLab />
+          </details>
           <div className="menu-row">
             <span>Backup / move to another device</span>
             <button className="btn small" onClick={download}>Download backup</button>

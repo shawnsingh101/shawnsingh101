@@ -142,6 +142,8 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .pin circle { fill: var(--ink); stroke: var(--bg); stroke-width: 2; vector-effect: non-scaling-stroke; }
 .pin text, .maplabel { fill: var(--ink); font-weight: 650; paint-order: stroke; stroke: var(--bg); stroke-linejoin: round; pointer-events: none; text-anchor: start; }
 .maplabel { text-anchor: middle; }
+.ctxlabel { fill: var(--muted); font-weight: 600; letter-spacing: .02em; text-anchor: middle; paint-order: stroke; stroke: var(--bg); stroke-linejoin: round; pointer-events: none; opacity: .9; }
+.map-zoom button.on { background: var(--ink); color: var(--bg); }
 .map-loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); }
 .map-zoom { position: absolute; right: .75rem; bottom: .75rem; display: flex; flex-direction: column; gap: .3rem; }
 .map-zoom button { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); font-size: 1.1rem; box-shadow: var(--shadow); }
@@ -329,7 +331,8 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .gallery img.loaded { opacity: 1; }
 .gallery img { cursor: zoom-in; }
 /* Artworks: the whole picture, never cropped: a portrait painting stands tall on a dark "gallery wall". */
-.gallery.whole { background: #2b2a28; }
+.gallery.whole { background: var(--line); }
+.gallery.whole.dark { background: #2b2a28; } /* artworks: a gallery wall */
 .gallery.whole img { height: auto; max-height: min(420px, 52vh); object-fit: contain; background: transparent; }
 .study.with-map .gallery.whole img { height: auto; max-height: min(360px, 42vh); }
 .lightbox { position: fixed; inset: 0; z-index: 1000; background: rgba(12, 12, 12, .92); display: grid; place-items: center; padding: 1rem; cursor: zoom-out; animation: fade-in .15s ease-out; }
@@ -716,7 +719,7 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 @keyframes globe-out { from { transform: translate(-50%, -50%); opacity: .95; } to { transform: translate(-50%, -50%) scale(1.6); opacity: 0; } }
 @keyframes lift-out { to { transform: translateY(-24px) scale(.97); opacity: 0; } }
 @keyframes fade-out { to { opacity: 0; } }
-.app-enter { animation: app-enter .55s cubic-bezier(.2, .7, .2, 1) both; }
+.app-enter { animation: app-enter .55s cubic-bezier(.2, .7, .2, 1) backwards; } /* not "both": a transform left behind would pin fixed pop-ups to the page instead of the screen */
 @keyframes app-enter { from { opacity: 0; transform: translateY(14px) scale(.99); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .app-enter, .landing.leaving * { animation: none !important; } }
 
@@ -755,3 +758,21 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
   .geotime-card { position: static; }
   .strata { grid-template-columns: .8fr .9fr 1.2fr 1.1fr 2.2rem; }
 }
+.species { font-style: italic; font-family: var(--serif); color: var(--muted); margin-right: .6rem; }
+.card-shield { float: right; width: 64px; height: 64px; object-fit: contain; margin: 0 0 .4rem .8rem; }
+.sound-lab { display: grid; gap: .55rem; margin-top: .5rem; }
+.lab-row { display: grid; grid-template-columns: 9rem 1fr; gap: .6rem; align-items: start; }
+.lab-role { display: grid; }
+.lab-options { display: flex; flex-wrap: wrap; gap: .3rem; }
+.lab-options .chip { font-size: .78rem; padding: .25rem .55rem; display: inline-flex; gap: .3rem; align-items: center; }
+.lab-options .chip .chip-label { display: inline; }
+@media (max-width: 760px) { .lab-row { grid-template-columns: 1fr; gap: .25rem; } }
+.menu details > summary { cursor: pointer; font-weight: 600; }
+/* Answer map (Peek): every answer of the deck, softly coloured and named; the session waits underneath. */
+.tone-answer.land, .tone-answer.water, .dot.tone-answer .vis { fill: color-mix(in srgb, var(--accent) 38%, var(--land)) !important; }
+.tone-answer.lake { fill: color-mix(in srgb, var(--accent) 45%, var(--ocean)) !important; }
+.river.tone-answer .vis, .river.road.tone-answer .vis { stroke: var(--accent); stroke-width: 2.4px; opacity: 1; }
+.peek { position: fixed; inset: 0; z-index: 60; background: var(--bg); display: grid; grid-template-rows: auto 1fr; animation: fade-in .2s ease; }
+.peek-head { display: flex; gap: .8rem; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: .7rem 1rem; border-bottom: 1px solid var(--line); background: var(--surface); }
+.peek-head span { display: inline-flex; gap: .35rem; align-items: center; flex-wrap: wrap; }
+.peek-map { position: relative; min-height: 0; height: 100%; }

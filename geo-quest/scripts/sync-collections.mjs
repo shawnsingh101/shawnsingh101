@@ -104,9 +104,9 @@ try {
   for (const part of chunks(ids, 50)) {
     const values = part.map(q => `wd:${q}`).join(' ');
     // Basics: name, Wikipedia article, picture, date, what it is, how well known.
-    const basics = await sparql(`SELECT ?item ?itemLabel ?article ?image ?inception ?typeLabel ?links WHERE { VALUES ?item { ${values} }
+    const basics = await sparql(`SELECT ?item ?itemLabel ?article ?image ?inception ?typeLabel ?links ?taxon WHERE { VALUES ?item { ${values} }
       OPTIONAL { ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> }
-      OPTIONAL { ?item wdt:P18 ?image } OPTIONAL { ?item wdt:P571 ?inception } OPTIONAL { ?item wdt:P31 ?type }
+      OPTIONAL { ?item wdt:P18 ?image } OPTIONAL { ?item wdt:P571 ?inception } OPTIONAL { ?item wdt:P225 ?taxon } OPTIONAL { ?item wdt:P31 ?type }
       OPTIONAL { ?item wikibase:sitelinks ?links }
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
     // Who made it (an artist, or for ancient work, the culture).
@@ -163,6 +163,7 @@ try {
         name: b[0].article ? decodeURIComponent(b[0].article.value.split('/wiki/')[1]).replace(/_/g, ' ').replace(/ \(.*\)$/, '') : label(b[0], 'itemLabel'),
         wiki: b[0].article ? decodeURIComponent(b[0].article.value.split('/wiki/')[1]) : null,
         image: b.map(r => file(val(r, 'image'))).find(Boolean) ?? null,
+        species: b.map(r => val(r, 'taxon')).find(Boolean) ?? null, // plants and animals: the scientific name (Juniperus communis)
         year: year ?? null,
         types,
         artists,

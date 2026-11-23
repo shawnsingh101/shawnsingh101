@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { face, groupOf, placesIn, GROUPS, KIND_LABEL, layerFor, type CardRef } from '../cards';
+import { face, groupOf, placesIn, GROUPS, KIND_LABEL, LAYER_NOUN, layerFor, type CardRef } from '../cards';
 import { answer, buildQueue, getProgress, update, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
 import { sounds } from '../sound';
 import type { Dataset } from '../types';
@@ -11,6 +11,7 @@ import { Portrait, Incoming } from './Portrait';
 import { Lookalikes } from './Lookalikes';
 import { Inset } from './Inset';
 import { Related } from './Related';
+import { commonsUrl } from '../data';
 import { PlaceSheet } from '../views/Atlas';
 
 interface Item { ref: CardRef; isNew: boolean }
@@ -42,6 +43,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
   const [saved, setSaved] = useState(false);
   const [nudge, setNudge] = useState<string | null>(null);
   const [sheet, setSheet] = useState<string | null>(null); // a related place opened from the card
+  const [peek, setPeek] = useState(false); // the answer map: every answer in this deck, session paused
   // Undo: a snapshot of the session (and your progress) before each answer.
   const history = useRef<{ queue: Item[]; done: number; results: typeof results; sessionXp: number; progress: Progress }[]>([]);
   const [canUndo, setCanUndo] = useState(false);
@@ -125,6 +127,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
   // Keyboard: space/enter to reveal, 1-4 to grade.
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
+      if (peek) { if (e.key === 'Escape') setPeek(false); return; } // paused while the answer map is open
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); undo(); return; }
       if (!f) return;
       if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'reveal') { e.preventDefault(); reveal(); }
@@ -135,7 +138,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
     };
     window.addEventListener('keydown', h);
     return () => window.removeEventListener('keydown', h);
-  }, [f, revealed, reveal, next, tapResult, quiz, undo]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [f, revealed, reveal, next, tapResult, quiz, undo, peek]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // The place shown on the map: itself, or for a senator, their state.
   const mp = c ? (c.layer === 'senate' ? ds.byId.get(c.place ?? c.state!) ?? c : item.ref.kind === 'siteCountry' || item.ref.kind === 'artWhere' ? ds.byId.get(c.country!) ?? c : c) : null;
@@ -249,16 +252,41 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
             <Icon name={s.mapMode === 'tap' ? 'pin' : 'book'} size={15} /> {s.mapMode === 'tap' ? 'Tap mode' : 'Flip mode'}
           </button>
         )}
+        {f.map !== 'none' && <button className="btn ghost small" onClick={() => setPeek(true)} title="See every answer in this deck on the map (pauses the session)"><Icon name="eye" size={15} /> Peek</button>}
         {(canUndo || tapResult) && <button className="btn ghost small undo" onClick={undo} title="Undo (⌘Z / Ctrl+Z)"><Icon name="undo" size={15} /> Undo</button>}
       </div>
       {nudge && <div className="nudge">{nudge}</div>}
+      {peek && (() => {
+        // The answer map: every place in this deck named on the map (capitals pinned when the card is about capitals).
+        // Cards can't be answered while it's open.
+        const placesHere = GROUPS.filter(g => g.section === group!.section && g.layer === group!.layer).flatMap(g => placesIn(ds, g.id)).filter((x, i, all) => all.findIndex(y => y.id === x.id) === i);
+        const capitals = item.ref.kind.startsWith('capital');
+        const peekLayer = m.layer === 'senate' ? null : layerFor(m);
+        const peekLayers = peekLayer === 'road' ? ['us', 'road'] : peekLayer === 'river' ? ['lake', 'river'] : peekLayer === 'peak' ? ['range', 'peak'] : peekLayer === 'sub' && ds.byId.get(m.parent ?? '')?.layer === 'us' ? ['us', 'sub'] : peekLayer ? [peekLayer] : [];
+        const ids = placesHere.map(x => (x.layer === 'senate' ? x.place ?? x.state ?? x.id : x.id));
+        const names = Object.fromEntries(placesHere.map(x => [x.layer === 'senate' ? x.place ?? x.state ?? x.id : x.id, x.layer === 'road' ? x.short ?? x.name : x.layer === 'senate' ? x.name : x.name]));
+        return (
+          <div className="peek" role="dialog" aria-label="Answer map">
+            <div className="peek-head">
+              <span><Icon name="eye" size={16} /> <b>Answer map</b> · {group!.section} · {placesHere.length} {group!.nouns ?? LAYER_NOUN[group!.layer]} <span className="muted small">(session paused)</span></span>
+              <button className="btn small primary" onClick={() => setPeek(false)}>Back to the cards</button>
+            </div>
+            <WorldMap ds={ds} className="peek-map" recenter layers={peekLayers as never} focus={{ ids, key: 'peek' }} hide={id => !ids.includes(id)}
+              tones={Object.fromEntries(ids.map(id => [id, 'answer' as const]))} labels={capitals ? {} : names}
+              pins={capitals ? placesHere.filter(x => x.capitals[0]?.lon != null).map(x => ({ lon: x.capitals[0].lon!, lat: x.capitals[0].lat!, label: x.capitals[0].name })) : []}
+              outline={m.layer === 'sub' && m.parent ? [m.parent] : []} subFilter={m.layer === 'sub' ? (id => ds.byId.get(id)?.parent === m.parent) : undefined} contextLabels />
+          </div>
+        );
+      })()}
 
       {showMap && (<div className="map-wrap">
         <WorldMap ds={ds} className="study-map" recenter layers={extra === 'road' ? ['us', 'road'] : extra === 'river' ? ['lake', 'river'] : extra === 'peak' ? ['range', 'peak'] : extra === 'us' ? ['us', 'lake'] : extra === 'sub' && ds.byId.get(c.parent ?? '')?.layer === 'us' ? ['us', 'sub'] : extra ? [extra] : []} hide={id => !regionIds.includes(id)} tones={tones} labels={labels} pins={pins} target={target} focus={focus}
           dim={id => group?.layer === m.layer && !(f.map === 'reveal' ? wideIds : regionIds).includes(id) && ds.byId.get(id)?.layer === m.layer}
           strong={['sub', 'us', 'cn'].includes(m.layer) ? (id => regionIds.includes(id) || wideIds.includes(id)) : undefined}
           outline={m.layer === 'sub' && m.parent ? [m.parent] : m.layer === 'us' ? ['Q30'] : m.layer === 'cn' ? ['Q148'] : []}
-          subFilter={m.layer === 'sub' ? (id => ds.byId.get(id)?.parent === m.parent) : undefined} onTap={f.mode === 'tap' ? onTap : undefined} />
+          subFilter={m.layer === 'sub' ? (id => ds.byId.get(id)?.parent === m.parent) : undefined} onTap={f.mode === 'tap' ? onTap : undefined}
+          // Country & state names for bearings, offered only when they can't give the answer away (rivers, roads, peaks…).
+          contextLabels={['river', 'lake', 'road', 'range', 'peak', 'site', 'water'].includes(m.layer)} />
           {(f.map === 'highlight' || revealed || tapResult) && (m.layer === 'country' || m.layer === 'terr') && (
             <Inset place={m} label={revealed || tapResult ? m.name : 'Close-up'} />
           )}
@@ -272,6 +300,8 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
           </div>
           {f.promptPicture && f.picture && <div className="prompt-picture"><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} /></div>}
           {f.promptFlag && <Flag file={c.flag ?? null} name="?" className="prompt-flag" size={480} eager />}
+          {/* Interstates: the route sign beside the question (once flipped when the number is what's being asked) */}
+          {c.layer === 'road' && c.image && item.ref.kind !== 'roadShield' && (revealed || item.ref.kind === 'locate') && <img className="card-shield" src={commonsUrl(c.image, 160)} alt={`${c.short ?? c.name} sign`} />}
           {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
           {f.frontBack ? <>
             <p className="cloze front">{f.pre}</p>
@@ -283,8 +313,9 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes }: { ds: Dataset; 
               : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}>{f.answer}</span> : <span className="blank">{f.blank}</span>)}
             {f.hidePostUntilReveal && !revealed ? '.' : f.post}
           </p>}
-          {revealed && (!/^(currency|senator|note)/.test(item.ref.kind) || (item.ref.kind === 'note' && !!c.native?.length)) && (
+          {revealed && (!/^(currency|senator|note)/.test(item.ref.kind) || (item.ref.kind === 'note' && (!!c.native?.length || !!c.species))) && (
             <div className="local">
+              {c.species && <i className="species" title="Scientific name">{c.species}</i>}
               {item.ref.kind.startsWith('largestCity') && c.largestCity && !c.largestCity.isCapital ? <LocalName place={c} capital={c.largestCity as unknown as typeof cap} showLang />
               : item.ref.kind.startsWith('capital') && cap ? <>
                 <LocalName place={c} capital={cap} showLang />

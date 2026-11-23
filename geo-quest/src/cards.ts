@@ -308,7 +308,7 @@ function rawFace(ref: CardRef): CardFace {
     const n = c.card;
     return n.front
       ? { mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption, single: n.pictureFirst } : undefined, frontBack: true, promptPicture: !!(n.pictureFirst && n.picture) }
-      : { mode: 'reveal', pre: n.pre, blank: 'what?', post: n.post, answer: n.answer, map: 'none', note: n.note, picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption } : undefined };
+      : { mode: 'reveal', pre: n.pre, blank: n.hint ?? 'what?', post: n.post, answer: n.answer, map: 'none', note: n.note, picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption } : undefined };
   }
   const cap = c.capitals[0];
   const capPic = cap ? { file: cap.image, wiki: cap.wiki, caption: cap.name } : undefined;

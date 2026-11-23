@@ -75,6 +75,7 @@ export interface Place {
   museumName?: string | null; museumWiki?: string | null; city?: string | null; // …its parts, for the Related links
   number?: number; short?: string; direction?: string; // Interstates: 95, "I-95", "north–south"
   plural?: boolean;        // "the moai were…"
+  species?: string;        // plants and animals: the scientific name, shown in italics (Juniperus communis)
   origin?: string | null;  // where it comes from (the heading in the list): "Europe", "East Asia"
   highest?: { id: string; name: string; elevation: number | null; lat: number; lon: number; image: string | null; wiki: string | null; note: string | null };
   largestCity?: { name: string; population: number; lat: number; lon: number; image: string | null; wiki: string | null; isCapital: boolean };

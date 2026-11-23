@@ -38,6 +38,7 @@ const P: Record<string, ReactNode> = {
   mountain: <path d="M2 20h20L14.5 6l-3.5 6-2-3z M11.6 10.8l1.6 1.4 1.3-1.6" />,
   chart: <path d="M3 3v18h18M7 15l4-5 3 3 5-7" />,
   road: <path d="M8 3 4 21M16 3l4 18M12 4v3m0 4v3m0 4v3" />,
+  eye: <><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" /><circle cx="12" cy="12" r="3" /></>,
   music: <><path d="M9 18V5l11-2v13" /><circle cx="6.5" cy="18" r="2.5" /><circle cx="17.5" cy="16" r="2.5" /></>,
   tag: <><path d="M3 12V4h8l10 10-8 8z" /><circle cx="7.5" cy="8.5" r="1.3" /></>,
 };

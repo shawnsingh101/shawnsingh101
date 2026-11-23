@@ -27,7 +27,9 @@ export function Picture({ file, wiki, url, caption, hideCaption, single }: { fil
   const go = (i: number) => { const el = strip.current; if (el) el.scrollTo({ left: i * el.clientWidth, behavior: 'smooth' }); };
 
   return (
-    <figure className={'gallery' + (single ? ' whole' : '')} onClick={e => e.stopPropagation()}>
+    // One picture on its own (an artwork, a banknote, a cocktail, a plant) is shown whole, never cropped. A place's
+    // gallery of photos keeps the wide strip, which suits landscapes; tap any photo to see it uncropped.
+    <figure className={'gallery' + (single ? ' whole dark' : photos.length === 1 ? ' whole' : '')} onClick={e => e.stopPropagation()}>
       <div className="strip" ref={strip} onScroll={e => { const el = e.currentTarget; setIdx(Math.round(el.scrollLeft / el.clientWidth)); }}>
         {photos.map((p, i) => <img key={p.src} src={p.src} alt={p.caption} loading={i ? 'lazy' : 'eager'} title="Tap to see it full screen" onClick={() => setZoom(p)} onLoad={e => e.currentTarget.classList.add('loaded')} />)}
       </div>
