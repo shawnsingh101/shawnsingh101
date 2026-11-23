@@ -33,6 +33,15 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.17.1: Washington, D.C. museums
+
+- New list `collections/Art/More famous works.md` (works added a museum at a time): 6 from the **National Gallery of
+  Art** (Ginevra de' Benci, Woman Holding a Balance, the Alba Madonna, Woman with a Parasol, Watson and the Shark, The
+  White Girl) and 4 from the **National Portrait Gallery** (the Lansdowne and Athenaeum portraits of Washington, the
+  Obama portraits). They show under Where to see it › Art in the Americas › Art in the United States, and in their
+  period lists (new: Late 18th century, Contemporary art). Fixes: the National Gallery's place (Wikidata gives it no
+  position), the 1778 original of Watson and the Shark, Whistler's date.
+
 ## v1.17: labels, Art organized, Information Systems, bug sweep
 
 - **Map names in the right place.** A label is placed at the place's real middle, projected (not the middle of the

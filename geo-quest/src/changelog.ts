@@ -1,5 +1,6 @@
 // Shown on the home screen. Add a line at the top with each update (and bump package.json "version").
 export const CHANGELOG: { version: string; notes: string }[] = [
+  { version: '1.17.1', notes: 'Art: the National Gallery of Art and the National Portrait Gallery in Washington (Ginevra de\' Benci, Woman Holding a Balance, the Lansdowne portrait, the Obama portraits…)' },
   { version: '1.17.0', notes: 'Map names now sit on their own country (no more Russia over Alaska) and name only what the deck is about (US states on US maps) · Art by period (History of art) and where to see it (continent › country › museum) · Computer science: Information Systems, a card per chapter · a full bug sweep' },
   { version: '1.16.1', notes: 'China history: every card has its own picture (Liu Bang, Confucius, Kublai Khan, the Great Wall…) and names in Chinese with pinyin · history cards ask for the event, not the year, except landmark dates' },
   { version: '1.16.0', notes: 'Time-scale cards: see the eon and era, name the blank periods · pictures on history cards (Wikipedia) and biology cards (the textbook\'s own figures) · fill-in-the-blank everywhere, one fact per card, long lists hidden three at a time · local names only on the card whose answer they name' },

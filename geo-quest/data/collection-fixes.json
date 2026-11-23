@@ -272,5 +272,75 @@
     "code": "nl"
    }
   ]
+ },
+ "Q1267893": {
+  "museum": "National Gallery of Art",
+  "museumWiki": "National Gallery of Art",
+  "city": "Washington, D.C.",
+  "country": "Q30",
+  "countryName": "United States",
+  "lon": -77.0199,
+  "lat": 38.8913,
+  "native": [
+   {
+    "name": "Ritratto di Ginevra de' Benci",
+    "lang": "Italian",
+    "code": "it"
+   }
+  ]
+ },
+ "Q969367": {
+  "museum": "National Gallery of Art",
+  "museumWiki": "National Gallery of Art",
+  "city": "Washington, D.C.",
+  "country": "Q30",
+  "countryName": "United States",
+  "lon": -77.0199,
+  "lat": 38.8913
+ },
+ "Q254923": {
+  "museum": "National Gallery of Art",
+  "museumWiki": "National Gallery of Art",
+  "city": "Washington, D.C.",
+  "country": "Q30",
+  "countryName": "United States",
+  "lon": -77.0199,
+  "lat": 38.8913,
+  "native": [
+   {
+    "name": "Madonna d'Alba",
+    "lang": "Italian",
+    "code": "it"
+   }
+  ]
+ },
+ "Q2395218": {
+  "museum": "National Gallery of Art",
+  "museumWiki": "National Gallery of Art",
+  "city": "Washington, D.C.",
+  "country": "Q30",
+  "countryName": "United States",
+  "lon": -77.0199,
+  "lat": 38.8913
+ },
+ "Q1787460": {
+  "museum": "National Gallery of Art",
+  "museumWiki": "National Gallery of Art",
+  "city": "Washington, D.C.",
+  "country": "Q30",
+  "countryName": "United States",
+  "lon": -77.0199,
+  "lat": 38.8913,
+  "year": 1778
+ },
+ "Q970968": {
+  "museum": "National Gallery of Art",
+  "museumWiki": "National Gallery of Art",
+  "city": "Washington, D.C.",
+  "country": "Q30",
+  "countryName": "United States",
+  "lon": -77.0199,
+  "lat": 38.8913,
+  "year": 1862
  }
 }
