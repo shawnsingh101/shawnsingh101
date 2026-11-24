@@ -27,6 +27,8 @@ The internet really runs on a simpler four-layer model (TCP/IP), but security pe
 ## MAC addresses and ARP
 On a local network, devices find each other by **MAC address** (Media Access Control): a 48-bit number set in each network card at the factory, written like `00:1A:2B:3C:4D:5E`. When a computer knows an IP address but needs the MAC address to deliver to, it asks with **ARP** (Address Resolution Protocol): "Who has 192.168.1.1?", and the owner answers.
 
+![ARP poisoning: the attacker claims the router's address, and traffic flows through them](commons:ARP Spoofing.svg)
+
 > Why security cares: ARP believes any answer. In **ARP poisoning**, an attacker answers "I'm 192.168.1.1, the router", so the victims send their traffic to the attacker, who reads it and passes it on. That's an **on-path attack** (once called man-in-the-middle): someone secretly sitting between two parties.
 
 ## The web: HTTP
@@ -48,6 +50,7 @@ Common status codes: **200** OK, **301** moved permanently, **403** forbidden, *
 
 ## The OSI model
 - The OSI model divides networking into {{seven|how many?}} layers.
+![The OSI model's seven layers](commons:OSI Model v1.svg)
 - IP addresses and routers work at OSI layer {{3|which layer?}}, Network.
 - TCP, UDP and ports work at OSI layer {{4|which layer?}}, Transport.
 - MAC addresses and switches work at OSI layer {{2|which layer?}}, Data link.
@@ -66,8 +69,9 @@ Common status codes: **200** OK, **301** moved permanently, **403** forbidden, *
 
 ## The local network
 - A {{MAC|what kind of?}} address identifies a network card on the local network.
-- {{ARP|which protocol?}} (Address Resolution Protocol) finds the MAC address that goes with an IP address.
+- {{ARP (Address Resolution Protocol)|which protocol?}} finds the MAC address that goes with an IP address.
 - Answering ARP requests falsely, to pose as the router, is ARP {{poisoning|which attack?}}.
+![ARP poisoning: the attacker poses as the router](commons:ARP Spoofing.svg)
 - An attacker secretly sitting between two parties, reading and changing their traffic, is making an {{on-path|what kind of?}} attack.
 
 ## The web

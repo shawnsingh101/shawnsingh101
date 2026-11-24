@@ -229,7 +229,8 @@ try { files = import.meta.glob('../decks/**/*.md', { query: '?raw', import: 'def
 // Decks built from data in the app itself (the geologic time scale, shared with its chart).
 const BUILT: [string, string][] = [['../decks/Earth history/Geologic time scale.md', geotimeDeck()], ['../decks/Earth history/Epochs of the Cenozoic.md', epochDeck()]];
 export const DECKS: Deck[] = [...Object.entries(files).filter(([f]) => !/README\.md$/i.test(f)), ...BUILT].map(([f, t]) => parseDeck(f, t))
-  .sort((a, b) => a.file.replace(/^.*decks\//, '').localeCompare(b.file.replace(/^.*decks\//, ''), 'en', { numeric: true })); // folder & file order (numbers first)
+  // Folder and file order (numbers first). Compared without ".md", so "Hashing" comes before "Hashing - going further".
+  .sort((a, b) => a.file.replace(/^.*decks\//, '').replace(/\.md$/, '').localeCompare(b.file.replace(/^.*decks\//, '').replace(/\.md$/, ''), 'en', { numeric: true }));
 export const NOTE_SUBJECTS = [...new Set(DECKS.map(d => d.subject))];
 /** The Live topics lens: every deck that follows an ongoing story. */
 export const LIVE = 'Live topics';

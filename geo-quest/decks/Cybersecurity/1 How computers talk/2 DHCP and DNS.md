@@ -20,6 +20,8 @@ New laptop -> DHCP server: Request: "I'll take 192.168.1.20"
 DHCP server -> New laptop: Acknowledge: "It's yours for 24 hours. Your gateway and DNS server are 192.168.1.1"
 ```
 
+![The DHCP exchange as it's usually drawn: Discover, Offer, Request, Acknowledge](commons:DHCP session en.svg)
+
 > Why security cares: any device can answer a Discover. A **rogue DHCP server** that answers first can name itself as the gateway or DNS server and sit in the middle of everyone's traffic. Network switches defend with **DHCP snooping**: only answers from trusted ports get through.
 
 ## DNS: names into addresses
@@ -36,6 +38,8 @@ example.com's server -> Resolver: 203.0.113.10
 Resolver -> Your computer: 203.0.113.10 (and remembers it for a while)
 ```
 
+![A resolver asking one server after another, from the root down to the domain's own](commons:Example of an iterative DNS resolver.svg)
+
 The resolver keeps answers in its **cache** for a set time (the TTL, time to live), so the next lookup is instant. DNS stores different kinds of **records**:
 - **A**: a name's IPv4 address. **AAAA**: its IPv6 address.
 - **MX** (mail exchanger): the server that receives a domain's email.
@@ -49,8 +53,8 @@ Nearly every attack on a network touches these two: a rogue DHCP server or a poi
 :::
 
 ## Getting an address
-- {{DHCP|which protocol?}} (Dynamic Host Configuration Protocol) gives a device joining a network its IP address.
-- DHCP's four steps, Discover, Offer, Request, Acknowledge, are remembered as {{DORA|what?}}.
+- {{DHCP (Dynamic Host Configuration Protocol)|which protocol?}} gives a device joining a network its IP address.
+![The DHCP exchange: Discover, Offer, Request, Acknowledge](commons:DHCP session en.svg)
 - Fill in the DHCP exchange:
 ```flow
 New laptop | DHCP server
@@ -65,9 +69,10 @@ DHCP server -> New laptop: Acknowledge
 - Switches block rogue DHCP servers with DHCP {{snooping|what?}}.
 
 ## Names into addresses
-- {{DNS|which system?}} (Domain Name System) turns names like www.example.com into IP addresses.
+- {{DNS (Domain Name System)|which system?}} turns names like www.example.com into IP addresses.
+![A resolver works down from the root servers to the domain's own server](commons:Example of an iterative DNS resolver.svg)
 - A DNS {{A|which record?}} record gives a name's IPv4 address.
 - A DNS {{MX|which record?}} record names the server that receives a domain's email.
 - A DNS {{CNAME|which record?}} record makes one name an alias of another.
 - Slipping a false answer into a DNS resolver's cache is DNS {{cache poisoning|which attack?}}.
-- {{DNSSEC|what?}} (DNS Security Extensions) digitally signs DNS answers so they can't be faked.
+- {{DNSSEC (DNS Security Extensions)|what?}} digitally signs DNS answers so they can't be faked.

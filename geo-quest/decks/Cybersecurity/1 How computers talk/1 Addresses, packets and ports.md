@@ -12,7 +12,11 @@ Every message sent over a network, an email, a web page, a video call, is cut in
 ## IP addresses
 An **IP address** (Internet Protocol address) identifies a device on a network. The common kind, IPv4, is four numbers from 0 to 255: `192.168.1.20`. There are only about 4.3 billion of them, so the newer **IPv6** uses much longer addresses, like `2001:db8::1`.
 
+![An IPv4 address: four numbers, each stored as 8 bits](commons:Ipv4 address.svg)
+
 Addresses that begin `10.`, `172.16.` to `172.31.`, or `192.168.` are **private**: used inside homes and offices, never on the open internet. Your router swaps them for its single public address on the way out, which is called **NAT** (network address translation).
+
+![NAT: devices with private addresses share the router's one public address](commons:NAT Concept-en.svg)
 
 ## The right program
 An IP address gets a packet to the right computer; a **port number** gets it to the right program on that computer. A web server listens on port 443, a mail server on 25. The ones worth knowing by heart:
@@ -39,6 +43,8 @@ Client -> Server: ACK: "Here we go" (acknowledge)
 Client -> Server: The data itself, now that the connection is open
 ```
 
+![The same handshake as network engineers usually draw it](commons:TCP Three-Way Handshake.svg)
+
 > Often confused: a port isn't a physical socket on the computer, just a number in each packet's header. And "TCP/IP" isn't one protocol: it's the name for the whole family the internet runs on.
 
 ## Where it fits
@@ -48,8 +54,10 @@ Attackers start by **port scanning**: knocking on every port of a system to see 
 ## Finding the way
 - Data crossing a network travels in small pieces called {{packets|what?}}, each labeled with where it's from and where it's going.
 - A device on a network is identified by its {{IP address|what?}}.
+![An IPv4 address: four numbers, each stored as 8 bits](commons:Ipv4 address.svg)
 - Addresses that begin 192.168. or 10. are {{private|what kind of?}}: used inside a home or office, never on the open internet.
-- {{NAT|what?}} (network address translation) lets a whole private network share one public IP address.
+- {{NAT (network address translation)|what?}} lets a whole private network share one public IP address.
+![NAT: private addresses sharing one public address](commons:NAT Concept-en.svg)
 
 ## The right program
 - An IP address finds the computer; a {{port|what?}} number finds the program on it.
@@ -61,8 +69,8 @@ Attackers start by **port scanning**: knocking on every port of a system to see 
 - Every open port adds to a system's {{attack surface|what?}}.
 
 ## Two ways to send
-- {{TCP|which protocol?}} (Transmission Control Protocol) makes sure every packet arrives, in order.
-- {{UDP|which protocol?}} (User Datagram Protocol) just sends: faster, but with no guarantee.
+- {{TCP (Transmission Control Protocol)|which protocol?}} makes sure every packet arrives, in order.
+- {{UDP (User Datagram Protocol)|which protocol?}} just sends: faster, but with no guarantee.
 - Fill in TCP's three-way handshake:
 ```flow
 Client | Server

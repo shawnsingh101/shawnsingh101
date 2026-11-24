@@ -992,3 +992,7 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .stack-block small { font-size: .76rem; color: var(--muted); margin-left: auto; }
 .stack .blank, .stack .fill { font-size: .8rem; }
 @media (max-width: 600px) { .stack-block { display: block; } .stack-block small { display: block; margin: .1rem 0 0; } }
+.lesson-picture { margin: .9rem 0; }
+.lesson-picture .gallery.whole { background: #fff; }
+.lesson-picture .gallery.whole img { max-height: min(360px, 50vh); }
+.lesson-picture .gallery figcaption, .lesson-picture .gallery figcaption * { white-space: normal; overflow: visible; text-overflow: clip; }

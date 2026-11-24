@@ -30,6 +30,8 @@ Browser: computes the session key from the two key shares (Diffie–Hellman); th
 Browser -> Server: Finished. From here on, everything is encrypted with the shared session key
 ```
 
+![The full TLS 1.3 handshake, as engineers draw it](commons:Full TLS 1.3 Handshake.svg)
+
 - The **certificate** (lesson 4) proves the server's identity.
 - **Diffie–Hellman** (lesson 2) agrees on a fresh session key that never crosses the network: forward secrecy.
 - **Symmetric encryption** (lesson 1), usually AES, encrypts the data itself, because it's fast.
@@ -48,7 +50,8 @@ TLS protects data **in transit**, between two programs. Once the data reaches th
 ## The protocol
 - TLS stands for {{Transport Layer Security|what?}}.
 - HTTPS is HTTP inside a {{TLS|which protocol?}} connection.
-- TLS replaced {{SSL|which protocol?}} (Secure Sockets Layer), now deprecated.
+![The TLS 1.3 handshake](commons:Full TLS 1.3 Handshake.svg)
+- TLS replaced {{SSL (Secure Sockets Layer)|which protocol?}}, now deprecated.
 - The newest version of TLS is {{1.3|which version?}}, published in 2018.
 
 ## The handshake

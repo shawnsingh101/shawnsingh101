@@ -10,6 +10,8 @@ What encryption is, how one shared secret key protects data, why AES is everywhe
 **Encryption** scrambles readable **plaintext** into unreadable **ciphertext**; **decryption** turns it back. It takes two things: an algorithm (the **cipher**), which is public, and a **key**, which is secret. Good cryptography assumes the attacker knows exactly how the cipher works: everything rests on the key.
 
 ## Symmetric encryption: one shared key
+![Symmetric encryption: the same key encrypts and decrypts](commons:Simple symmetric encryption-en.svg)
+
 In **symmetric** encryption the same key locks and unlocks. It's fast, so it does nearly all the real work: encrypting disks, files, and the data in every secure web connection.
 
 ```flow
@@ -30,6 +32,14 @@ Both sides need the same key, and it has to reach them secretly: sent across the
 
 ## Where it fits: the three states of data
 Security people talk about protecting data in three states:
+
+```stack
+# The three states of data
+at rest | Stored | on a disk or in a database: full-disk and database encryption
+in transit | Moving | across a network: TLS, VPNs, SSH
+in use | Being worked on | in memory: secure enclaves
+```
+
 - **At rest**: stored, on a disk or in a database. Protected by full-disk encryption (BitLocker on Windows, FileVault on Mac) or by encrypting files and databases.
 - **In transit**: moving across a network. Protected by TLS, VPNs and SSH.
 - **In use**: in memory, being worked on. The hardest to protect; it takes special hardware such as secure enclaves.
@@ -44,6 +54,7 @@ Security people talk about protecting data in three states:
 
 ## One key
 - In {{symmetric|what kind of?}} encryption, the same key encrypts and decrypts.
+![Symmetric encryption: one key for both](commons:Simple symmetric encryption-en.svg)
 - Fill in what Bob uses:
 ```flow
 Alice | Bob
@@ -51,9 +62,9 @@ Alice: encrypts with the key she shares with Bob
 Alice -> Bob: the ciphertext
 Bob: decrypts with {{the same shared key|which key?}}
 ```
-- {{AES|which cipher?}} (Advanced Encryption Standard) is today's standard symmetric cipher.
+- {{AES (Advanced Encryption Standard)|which cipher?}} is today's standard symmetric cipher.
 - AES keys are 128, 192 or {{256|how many?}} bits long.
-- {{DES|which cipher?}} (Data Encryption Standard), with its 56-bit key, was cracked by brute force in the late 1990s.
+- {{DES (Data Encryption Standard)|which cipher?}}, with its 56-bit key, was cracked by brute force in the late 1990s.
 - Each extra bit of key length {{doubles|does what to?}} the number of keys an attacker must try.
 - Getting a shared key to both sides secretly is the key {{distribution|what?}} problem.
 

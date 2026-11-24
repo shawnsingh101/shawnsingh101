@@ -34,7 +34,8 @@ dolphins, dinosaurs (v1.30, reworked v1.31). Next: the book decks (Spying on Wha
 the Dinosaurs: send the PDFs), birds with calls, trees and plants, any animal a book is about.
 
 **Cybersecurity** (started): IT security from the ground up, ahead of Security+ (SY0-701) practice in the owner's Study
-Lab. Lessons before cards, flow diagrams, tagged by exam objective and book chapter. Done (v1.34): 1 How computers talk,
+Lab. Lessons before cards, then foundation cards, then a "going further" deck of applied cards; flow diagrams, stacks
+and Wikipedia diagrams; tagged by exam objective and book chapter. Done (v1.34–1.35): 1 How computers talk,
 3 Cryptography. Next: 2 The core ideas (CIA, AAA, controls, risk, zero trust), 4 Identity, 5 Networks, 6 Attacks,
 7 Defending systems, 8 Operations, 9 Governance. Later: a network-map card (tap where the firewall goes).
 
@@ -75,6 +76,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 | 1.32 | Programming: Python chapters 1–3 and Under the hood (the repo, Git and GitHub); code cards; practice mode (write Python, run and checked); dinosaur times from Wikipedia; Wikipedia lead images where Commons has none |
 | 1.33 | Live topics: the Russo-Ukrainian war and the AI race, "as of" cards, a weekly briefing (Wednesdays) that suggests up to two cards a week as a pull request |
 | 1.34 | Cybersecurity: lessons before cards, flow diagrams, Security+ lenses; How computers talk and Cryptography |
+| 1.35 | Cybersecurity: no give-away cards (checked app-wide), "going further" decks, Wikipedia diagrams |
 | 1.29 | Where people are really from, with the flag of their time |
 | 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
 | 1.27 | Earth history: a picture of the life of each time |
