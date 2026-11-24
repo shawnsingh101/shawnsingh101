@@ -1748,6 +1748,27 @@
    "admin1": "Western Cape"
   },
   {
+   "id": "Q157603",
+   "layer": "site",
+   "name": "Pantanal",
+   "group": "u-am",
+   "lon": -57.5,
+   "lat": -17.4,
+   "image": "Pantanal, south-central South America 5170.jpg",
+   "wiki": "Pantanal",
+   "whsId": "999",
+   "country": "Q750",
+   "countryName": "Bolivia, Paraguay and Brazil",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #999 · Bolivia, Paraguay, Brazil",
+   "admin1Ids": [
+    "Q42824",
+    "Q43319"
+   ],
+   "admin1": "Mato Grosso, Mato Grosso do Sul"
+  },
+  {
    "id": "Q216243",
    "layer": "site",
    "name": "Nalanda Mahavihara",
@@ -1801,6 +1822,33 @@
     "Q58081"
    ],
    "admin1": "Karlovac County, Lika-Senj County"
+  },
+  {
+   "id": "Q26732",
+   "layer": "site",
+   "name": "Hampi",
+   "group": "u-as",
+   "lon": 76.462,
+   "lat": 15.335,
+   "image": "Hampi, India, Granite boulders of Matanga Hill.jpg",
+   "wiki": "Hampi",
+   "whsId": "241",
+   "country": "Q668",
+   "countryName": "India",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #241 · Karnataka, India",
+   "native": [
+    {
+     "name": "हम्पी",
+     "lang": "Hindi",
+     "code": "hi"
+    }
+   ],
+   "admin1Ids": [
+    "Q1185"
+   ],
+   "admin1": "Karnataka"
   },
   {
    "id": "Q216059",
@@ -1945,27 +1993,6 @@
    "admin1": "Mary Region"
   },
   {
-   "id": "Q157603",
-   "layer": "site",
-   "name": "Pantanal",
-   "group": "u-am",
-   "lon": -57.5,
-   "lat": -17.4,
-   "image": "Pantanal, south-central South America 5170.jpg",
-   "wiki": "Pantanal",
-   "whsId": "999",
-   "country": "Q750",
-   "countryName": "Bolivia, Paraguay and Brazil",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #999 · Bolivia, Paraguay, Brazil",
-   "admin1Ids": [
-    "Q42824",
-    "Q43319"
-   ],
-   "admin1": "Mato Grosso, Mato Grosso do Sul"
-  },
-  {
    "id": "Q186312",
    "layer": "site",
    "name": "Masada",
@@ -2091,33 +2118,6 @@
     "Q9357528"
    ],
    "admin1": "National Capital Territory of Delhi"
-  },
-  {
-   "id": "Q26732",
-   "layer": "site",
-   "name": "Hampi",
-   "group": "u-as",
-   "lon": 76.462,
-   "lat": 15.335,
-   "image": "Hampi, India, Granite boulders of Matanga Hill.jpg",
-   "wiki": "Hampi",
-   "whsId": "241",
-   "country": "Q668",
-   "countryName": "India",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #241 · Karnataka, India",
-   "native": [
-    {
-     "name": "हम्पी",
-     "lang": "Hindi",
-     "code": "hi"
-    }
-   ],
-   "admin1Ids": [
-    "Q1185"
-   ],
-   "admin1": "Karnataka"
   },
   {
    "id": "Q61750",
@@ -2946,6 +2946,38 @@
    "admin1": "Alexandria Governorate"
   },
   {
+   "id": "Q466614",
+   "layer": "site",
+   "name": "Hatra",
+   "group": "u-as",
+   "lon": 42.718,
+   "lat": 35.588,
+   "image": "Hatra ruins.jpg",
+   "wiki": "Hatra",
+   "whsId": "277",
+   "country": "Q796",
+   "countryName": "Iraq",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #277 · Nineveh Governorate, Iraq",
+   "native": [
+    {
+     "name": "مملكة الحضر",
+     "lang": "Arabic",
+     "code": "ar"
+    },
+    {
+     "name": "ھاترا",
+     "lang": "Sorani",
+     "code": "ckb"
+    }
+   ],
+   "admin1Ids": [
+    "Q189352"
+   ],
+   "admin1": "Nineveh Governorate"
+  },
+  {
    "id": "Q178124",
    "layer": "site",
    "name": "Surtsey",
@@ -3008,38 +3040,6 @@
    "capitals": [],
    "capitalAnswer": null,
    "facts": "UNESCO World Heritage Site #75 · United States"
-  },
-  {
-   "id": "Q466614",
-   "layer": "site",
-   "name": "Hatra",
-   "group": "u-as",
-   "lon": 42.718,
-   "lat": 35.588,
-   "image": "Hatra ruins.jpg",
-   "wiki": "Hatra",
-   "whsId": "277",
-   "country": "Q796",
-   "countryName": "Iraq",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #277 · Nineveh Governorate, Iraq",
-   "native": [
-    {
-     "name": "مملكة الحضر",
-     "lang": "Arabic",
-     "code": "ar"
-    },
-    {
-     "name": "ھاترا",
-     "lang": "Sorani",
-     "code": "ckb"
-    }
-   ],
-   "admin1Ids": [
-    "Q189352"
-   ],
-   "admin1": "Nineveh Governorate"
   },
   {
    "id": "Q207917",

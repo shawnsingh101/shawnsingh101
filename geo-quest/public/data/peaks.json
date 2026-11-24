@@ -1391,7 +1391,7 @@
    "countryName": "Poland and Czechia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,603 m · Giant Mountains · Poland, Czechia",
+   "facts": "1,603 m · Sudetes · Poland, Czechia",
    "native": [
     {
      "name": "Śnieżka",
@@ -2256,6 +2256,34 @@
    "admin1": "Nariño Department"
   },
   {
+   "id": "Q825347",
+   "layer": "peak",
+   "name": "Colima",
+   "group": "m-am",
+   "lon": -103.618,
+   "lat": 19.511,
+   "image": "Colima Landsat image.jpg",
+   "wiki": "Volcán_de_Colima",
+   "elevation": 3850,
+   "country": "Q96",
+   "countryName": "Mexico",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "3,850 m · Trans-Mexican Volcanic Belt · Jalisco, Colima, Mexico",
+   "native": [
+    {
+     "name": "Volcán de Colima",
+     "lang": "Spanish",
+     "code": "es"
+    }
+   ],
+   "admin1Ids": [
+    "Q13160",
+    "Q61309"
+   ],
+   "admin1": "Jalisco, Colima"
+  },
+  {
    "id": "Q212836",
    "layer": "peak",
    "name": "Durmitor",
@@ -2332,34 +2360,6 @@
    "admin1": "Jan Mayen"
   },
   {
-   "id": "Q825347",
-   "layer": "peak",
-   "name": "Colima",
-   "group": "m-am",
-   "lon": -103.618,
-   "lat": 19.511,
-   "image": "Colima Landsat image.jpg",
-   "wiki": "Volcán_de_Colima",
-   "elevation": 3850,
-   "country": "Q96",
-   "countryName": "Mexico",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "3,850 m · Trans-Mexican Volcanic Belt · Jalisco, Colima, Mexico",
-   "native": [
-    {
-     "name": "Volcán de Colima",
-     "lang": "Spanish",
-     "code": "es"
-    }
-   ],
-   "admin1Ids": [
-    "Q13160",
-    "Q61309"
-   ],
-   "admin1": "Jalisco, Colima"
-  },
-  {
    "id": "Q215138",
    "layer": "peak",
    "name": "Mount Fitz Roy",
@@ -2373,7 +2373,7 @@
    "countryName": "Chile and Argentina",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "3,406 m · Patagonian Andes · Chile, Argentina",
+   "facts": "3,406 m · Fitz Roy massif · Chile, Argentina",
    "admin1Ids": [
     "Q2189",
     "Q44821"

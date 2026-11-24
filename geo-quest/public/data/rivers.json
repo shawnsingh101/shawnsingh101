@@ -2893,6 +2893,28 @@
    ]
   },
   {
+   "id": "Q1584933",
+   "layer": "river",
+   "name": "Roanoke River",
+   "image": "Uploaded by PE (14001305528).jpg",
+   "lon": -76.695,
+   "lat": 35.943,
+   "wiki": "Roanoke_River",
+   "countries": [
+    "Q30"
+   ],
+   "group": "r-us",
+   "nameThe": "the Roanoke River",
+   "facts": "660 km long · from the Blue Ridge Mountains to the Albemarle Sound · Virginia, North Carolina",
+   "size": 660,
+   "mouthName": "Albemarle Sound",
+   "source": "Blue Ridge Mountains",
+   "stateIds": [
+    "Q1370",
+    "Q1454"
+   ]
+  },
+  {
    "id": "Q379648",
    "layer": "river",
    "name": "Connecticut River",
@@ -2913,28 +2935,6 @@
     "Q16551",
     "Q771",
     "Q779"
-   ]
-  },
-  {
-   "id": "Q1584933",
-   "layer": "river",
-   "name": "Roanoke River",
-   "image": "Uploaded by PE (14001305528).jpg",
-   "lon": -76.695,
-   "lat": 35.943,
-   "wiki": "Roanoke_River",
-   "countries": [
-    "Q30"
-   ],
-   "group": "r-us",
-   "nameThe": "the Roanoke River",
-   "facts": "660 km long · from the Blue Ridge Mountains to the Albemarle Sound · Virginia, North Carolina",
-   "size": 660,
-   "mouthName": "Albemarle Sound",
-   "source": "Blue Ridge Mountains",
-   "stateIds": [
-    "Q1370",
-    "Q1454"
    ]
   },
   {
