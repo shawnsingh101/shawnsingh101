@@ -27,6 +27,12 @@ Any idea ("I'd like to learn about Thanksgiving") goes through the same steps:
 
 ## In progress
 
+**Life** (started): one tree of life, like the time scale (kingdom › … › genus), with groups of species on it and book
+decks feeding its branches. Cards: tree blocks, photo → name (species when a photo can tell, else the group),
+scientific name, range map and habitat, how to tell look-alikes apart, deep cuts from books. Batch 1 done (v1.30): the
+backbone, whales and dolphins, dinosaurs (also in Earth history), look-alikes. Next: the book decks (Spying on Whales, The Rise and Fall of
+the Dinosaurs: send the PDFs), birds with calls, trees and plants, any animal a book is about.
+
 **Classical music, Anki-guided** (Classical Music Themes, Parts I–II: 972 pieces). Essential (~170 themes): 39 works,
 63 clips so far; next: free recordings for the rest (Hallelujah Chorus, Bach's cello prelude, Swan Lake, the Nutcracker
 …), from Musopen and Commons only. Then More (~340) and Deep cuts (~540). About a dozen pieces are still under
@@ -36,12 +42,12 @@ copyright (Copland, Prokofiev, Barber, Orff, Khachaturian, Shostakovich) and can
 
 | # | What | Kind of work | Notes |
 | --- | --- | --- | --- |
-| 1 | **Labelled diagrams**: house systems, car, bike | new card type | Tap the part on a diagram, like tapping a country on the map |
-| 2 | **Practice mode**: math, statistics, Python | new mode | Numbers change each time, worked steps, Python that runs and is checked; scheduled by skill |
-| 3 | **Quotes** | deck + card types | Fill in the key words; quote ↔ who said it |
-| 4 | **Astronomy**: night sky, constellations, and more | built data + map engine | A star chart using the map engine |
-| 5 | **Periodic table** | built data + chart | An interactive chart like the geologic time scale |
-| 6 | **Birds and trees** | collection | Photo, sound, scientific name |
+| 1 | **Life**: the tree of life, animals and plants | built tree + collections + book decks | In progress (see above). Replaces "Birds and trees" |
+| 2 | **Labelled diagrams**: house systems, car, bike | new card type | Tap the part on a diagram, like tapping a country on the map |
+| 3 | **Practice mode**: math, statistics, Python | new mode | Numbers change each time, worked steps, Python that runs and is checked; scheduled by skill |
+| 4 | **Quotes** | deck + card types | Fill in the key words; quote ↔ who said it |
+| 5 | **Astronomy**: night sky, constellations, and more | built data + map engine | A star chart using the map engine |
+| 6 | **Periodic table** | built data + chart | An interactive chart like the geologic time scale |
 | 7 | **US government**: Constitution, amendments, Supreme Court | decks + collection | Built to take other countries later; the White House and Capitol tours also show here |
 | 8 | **International organizations and treaties** | collection + map layers | Tap every member on the map (NATO, EU, BRICS…) |
 | 9 | **Finance** | decks | Linked to coursework and the Dashboard's live numbers |
@@ -54,6 +60,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 
 | Version | What |
 | --- | --- |
+| 1.30 | Life: the tree of life, whales and dolphins, dinosaurs, how to tell them apart |
 | 1.29 | Where people are really from, with the flag of their time |
 | 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
 | 1.27 | Earth history: a picture of the life of each time |

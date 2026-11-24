@@ -30,6 +30,12 @@ A list with `kind: person`: one person per line (Wikipedia title), headings are 
 The sync adds the portrait, life, birthplace (with its US state) and instruments. Cards: face, group, birthplace,
 instrument. Fix instruments and birthplaces in `data/collection-fixes.json` (`person`).
 
+## Animals and plants
+
+A list with `kind: taxon`: `## Rorquals | Balaenopteridae` (the heading names its branch of the tree, `src/tree.ts`), then
+`- Blue whale | in every ocean…` (Wikipedia title, then where it lives; for dinosaurs, when and where). The sync adds
+the scientific name, range map and conservation status.
+
 ## A list file
 
 ```markdown

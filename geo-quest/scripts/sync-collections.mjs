@@ -87,10 +87,11 @@ const lists = files.map(path => {
     if (inFm) { if (line === '---') inFm = false; return; }
     const h = /^##\s+(.*)$/.exec(line); if (h) { heading = h[1].trim(); return; }
     const m = /^-\s+(?:(Q\d+)\s*)?(.*)$/.exec(line.trim()); if (!m) return;
-    entries.push({ line: i, id: m[1] ?? null, text: m[2].trim(), heading });
+    // "- Humpback whale | all oceans…": the title, then (for some lists) a note the app reads; the sync only needs the title.
+    entries.push({ line: i, id: m[1] ?? null, text: m[2].split(' | ')[0].trim(), rest: m[2].trim(), heading });
   });
   const kind = (/^kind:\s*(\w+)\s*$/m.exec(text.split('\n---')[0]) ?? [])[1];
-  return { path, lines, entries, building: kind === 'building', book: kind === 'book', music: kind === 'music', person: kind === 'person' };
+  return { path, lines, entries, building: kind === 'building', book: kind === 'book', music: kind === 'music', person: kind === 'person', taxon: kind === 'taxon' };
 });
 // Buildings stand where they are: their own place and town, never a "museum" (a location like Champ de Mars).
 // (Filled in after step 2, once titles have their ids.)
@@ -101,6 +102,8 @@ const BOOKS = new Set();
 const MUSIC = new Set();
 // People: their portrait, life, birthplace (with its US state, or region) and instruments.
 const PEOPLE = new Set();
+// Animals and plants: scientific name (P225, already fetched), range map (P181), conservation status (P141).
+const TAXA = new Set();
 
 // ---- 2. Find ids for entries written as Wikipedia titles, and write them back --------------------
 const unresolved = lists.flatMap(l => l.entries.filter(e => !e.id && e.text));
@@ -132,13 +135,13 @@ if (unresolved.length) {
   }
   for (const l of lists) {
     let changed = false;
-    for (const e of l.entries) if (!e.id && found.has(e.text)) { e.id = found.get(e.text); l.lines[e.line] = `- ${e.id} ${e.text}`; changed = true; }
+    for (const e of l.entries) if (!e.id && found.has(e.text)) { e.id = found.get(e.text); l.lines[e.line] = `- ${e.id} ${e.rest}`; changed = true; }
     if (changed) writeFileSync(l.path, l.lines.join('\n'));
   }
   for (const e of unresolved.filter(e => !e.id)) console.warn(`Not found on Wikipedia: "${e.text}" — check the title`);
 }
 
-for (const l of lists) for (const e of l.entries) if (e.id) { if (l.building) BUILDINGS.add(e.id); if (l.book) BOOKS.add(e.id); if (l.music) MUSIC.add(e.id); if (l.person) PEOPLE.add(e.id); }
+for (const l of lists) for (const e of l.entries) if (e.id) { if (l.building) BUILDINGS.add(e.id); if (l.book) BOOKS.add(e.id); if (l.music) MUSIC.add(e.id); if (l.person) PEOPLE.add(e.id); if (l.taxon) TAXA.add(e.id); }
 
 // ---- 3. Facts for every id ---------------------------------------------------------------------
 const ids = [...new Set(lists.flatMap(l => l.entries.map(e => e.id).filter(Boolean)))];
@@ -170,6 +173,10 @@ try {
     const people = peopleIds.length ? await sparql(`SELECT ?item ?born ?died ?bp ?bpLabel ?state ?stateLabel ?land ?landLabel ?instLabel WHERE { VALUES ?item { ${peopleIds.map(q => `wd:${q}`).join(' ')} }
       OPTIONAL { ?item wdt:P569 ?born } OPTIONAL { ?item wdt:P570 ?died } OPTIONAL { ?item wdt:P1303 ?inst }
       OPTIONAL { ?item wdt:P19 ?bp . OPTIONAL { ?bp wdt:P17 ?land } OPTIONAL { ?bp wdt:P131* ?state . ?state wdt:P31 wd:Q35657 } }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`) : [];
+    const taxIds = part.filter(q => TAXA.has(q));
+    const taxa = taxIds.length ? await sparql(`SELECT ?item ?range ?statusLabel WHERE { VALUES ?item { ${taxIds.map(q => `wd:${q}`).join(' ')} }
+      OPTIONAL { ?item wdt:P181 ?range } OPTIONAL { ?item wdt:P141 ?status }
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`) : [];
     // A building's architectural style (P149).
     const styles = await sparql(`SELECT ?item ?styleLabel WHERE { VALUES ?item { ${values} } ?item wdt:P149 ?style .
@@ -221,7 +228,7 @@ try {
       const cultures = [...new Set(mk.map(r => label(r, 'cultureLabel')).filter(Boolean))];
       const w = where.filter(r => qid(r.item.value) === q);
       // Prefer the collection (the museum) if it has a position, then the location.
-      const spot = BUILDINGS.has(q) || BOOKS.has(q) || MUSIC.has(q) || PEOPLE.has(q) ? null : ['P195', 'P276'].map(p => w.find(r => val(r, 'prop') === p && r.coord)).find(Boolean) ?? null;
+      const spot = BUILDINGS.has(q) || BOOKS.has(q) || MUSIC.has(q) || PEOPLE.has(q) || TAXA.has(q) ? null : ['P195', 'P276'].map(p => w.find(r => val(r, 'prop') === p && r.coord)).find(Boolean) ?? null;
       const own = w.find(r => r.ownCoord) ?? w[0];
       const coord = point(spot ? val(spot, 'coord') : own && val(own, 'ownCoord'));
       const country = spot?.country ? { id: qid(spot.country.value), name: label(spot, 'countryLabel') } : own?.ownCountry ? { id: qid(own.ownCountry.value), name: label(own, 'ownCountryLabel') } : null;
@@ -237,6 +244,8 @@ try {
         culture: cultures[0] ?? null,
         ...(BOOKS.has(q) ? { book: true, language: bi.map(r => label(r, 'langLabel')).find(Boolean) ?? null,
           subjects: [...new Set(bi.map(r => label(r, 'subjectLabel')).filter(Boolean))], genres: [...new Set(bi.map(r => label(r, 'genreLabel')).filter(Boolean))] } : {}),
+        ...(TAXA.has(q) ? { taxon: true, rangeMap: taxa.filter(r => qid(r.item.value) === q).map(r => file(val(r, 'range'))).find(Boolean) ?? null,
+          status: taxa.filter(r => qid(r.item.value) === q).map(r => label(r, 'statusLabel')).find(Boolean) ?? null } : {}),
         ...(PEOPLE.has(q) ? { person: (() => { const rs = people.filter(x => qid(x.item.value) === q); const r = rs.find(x => x.state) ?? rs[0]; return r ? {
           born: yearOf(val(r, 'born')), died: yearOf(val(r, 'died')), birthplace: label(r, 'bpLabel'), state: label(r, 'stateLabel'), stateId: r.state ? qid(r.state.value) : null,
           country: r.land ? qid(r.land.value) : null, countryName: label(r, 'landLabel'), instruments: [...new Set(rs.map(x => label(x, 'instLabel')).filter(Boolean))] } : null; })() } : {}),
@@ -325,6 +334,6 @@ writeFileSync(OUT, JSON.stringify(addChinese({ source: 'Wikidata (CC0)', items }
 const missing = ids.filter(q => !items[q]);
 console.log(`${files.length} list(s), ${ids.length} entries → ${relative(ROOT, OUT)}${missing.length ? ` (no facts for ${missing.join(', ')})` : ''}`);
 for (const [q, x] of Object.entries(items)) {
-  const gaps = [!x.image && !x.composer && 'picture', !x.person && !x.artists.length && !x.culture && 'maker', !x.book && !x.composer && !x.person && !x.museum && !x.city && 'place', !x.book && !x.composer && !x.person && !x.country && 'country', x.book && !x.language && 'language'].filter(Boolean);
+  const gaps = [!x.image && !x.composer && 'picture', !x.taxon && !x.person && !x.artists.length && !x.culture && 'maker', !x.taxon && !x.book && !x.composer && !x.person && !x.museum && !x.city && 'place', !x.taxon && !x.book && !x.composer && !x.person && !x.country && 'country', x.book && !x.language && 'language'].filter(Boolean);
   if (gaps.length) console.log(`  ${q} ${x.name}: no ${gaps.join(', ')}`);
 }

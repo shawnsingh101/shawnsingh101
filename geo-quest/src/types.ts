@@ -82,6 +82,7 @@ export interface Place {
   artists?: string[];      // artworks: who made it… (buildings: the architect)
   makerOrigin?: Origin;      // where the artist / author / architect is from (when there's one maker)
   makerNative?: NativeName[]; // the artist / author / architect in their own language (for the speaker on 'who made it?')
+  taxon?: { branch: string | null; note: string | null; rangeMap: string | null; status: string | null; group: string | null; genusOnly: boolean; period: string | null };
   music?: MusicClip;
   person?: PersonFacts & { scene: string | null }; // from a `kind: person` collection (scene: the heading it's under)        // a clip from a `kind: music` collection (one card set per clip)
   book?: boolean; fiction?: boolean; language?: string | null; shelves?: string[]; // books: first written in; nonfiction topics

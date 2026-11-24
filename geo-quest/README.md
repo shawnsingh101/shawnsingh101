@@ -33,6 +33,24 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.30: Life (the tree of life)
+
+- New subject **Life**. Its backbone is `src/tree.ts`: 57 groups worth knowing (the main animal phyla, vertebrate
+  classes, 13 mammal orders, 10 bird orders, whale suborders and families, the dinosaur groups), each with its common
+  name, what it's known for and a block color. `treeDeck()` builds *Life › Tree of life › The tree of life* from it,
+  like the time-scale deck: `[tree: Mammalia]` cards (`TreeCard`: the group's ancestors as blocks, its branches blank
+  until flipped; two columns when there are many, a row of ancestors on phones), "which group?" and scientific names
+  (with a Latin speaker).
+- `kind: taxon` collections: `collections/Life/1 Whales and dolphins.md` (22) and `2 Dinosaurs.md` (23). A heading names
+  the branch (`## Rorquals | Balaenopteridae`); a line can carry a note after ` | ` (where it lives; for dinosaurs, when
+  and where). The sync takes the scientific name, range map (P181) and conservation status (P141). Cards: photo → name;
+  scientific name (dinosaurs, named by genus, ask the species: *Tyrannosaurus* ___ → *rex*); which branch of the tree;
+  where it lives (range map on the answer). Dinosaurs use the full-color restorations where we have them, and also show
+  in **Earth history › Dinosaurs by period**.
+- `decks/Life/How to tell them apart.md`: 21 cards on look-alikes, each answered by what a photo shows (baleen or teeth,
+  dolphin or porpoise, seal or sea lion, alligator or crocodile, African or Asian elephant, cheetah/leopard/jaguar,
+  raven or crow, hare or rabbit).
+
 ## v1.29: where people are really from
 
 - The sync now works out each person's origin (`originOf` in `scripts/sync-collections.mjs`): the birthplace; the state

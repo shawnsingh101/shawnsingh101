@@ -1,4 +1,5 @@
 import type { Dataset, NativeName, Origin, Place } from './types';
+import { node } from './tree';
 import type { IconName } from './components/Icons';
 
 // ---- Card kinds ---------------------------------------------------------------
@@ -7,12 +8,12 @@ import type { IconName } from './components/Icons';
 
 export type Kind = 'locate' | 'identify' | 'capital' | 'capitalReverse' | 'capitalLocate' | 'flag' | 'flagReverse' | 'senator' | 'senatorFace' | 'senatorLocate'
   | 'currency' | 'currencyReverse' | 'largestCity' | 'largestCityReverse' | 'belongsTo'
-  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse' | 'note' | 'artPhoto' | 'artMaker' | 'artWhere' | 'artStyle' | 'bookLang' | 'musicComposer' | 'musicWork' | 'musicPart' | 'personFace' | 'personScene' | 'personBorn' | 'personPlays' | 'roadShield' | 'presFace' | 'presName' | 'presNumber' | 'presYears' | 'presParty';
+  | 'sitePhoto' | 'siteLocate' | 'siteCountry' | 'highest' | 'highestReverse' | 'note' | 'artPhoto' | 'artMaker' | 'artWhere' | 'artStyle' | 'bookLang' | 'musicComposer' | 'musicWork' | 'musicPart' | 'personFace' | 'personScene' | 'personBorn' | 'personPlays' | 'taxonSci' | 'taxonGroup' | 'taxonRange' | 'roadShield' | 'presFace' | 'presName' | 'presNumber' | 'presYears' | 'presParty';
 export type Topic = 'countries' | 'places' | 'capitals' | 'flags' | 'senate' | 'governors' | 'leaders' | 'currency' | 'cities' | 'sovereign' | 'sites' | 'peaks' | 'highest' | 'notes' | 'art' | 'shields' | 'presidents';
 
 export const TOPIC_KINDS: Record<Topic, Kind[]> = {
   notes: ['note'],
-  art: ['artPhoto', 'artMaker', 'artWhere', 'artStyle', 'bookLang', 'musicComposer', 'musicWork', 'musicPart', 'personFace', 'personScene', 'personBorn', 'personPlays'],
+  art: ['artPhoto', 'artMaker', 'artWhere', 'artStyle', 'bookLang', 'musicComposer', 'musicWork', 'musicPart', 'personFace', 'personScene', 'personBorn', 'personPlays', 'taxonSci', 'taxonGroup', 'taxonRange'],
   shields: ['roadShield'],
   presidents: ['presFace', 'presName', 'presNumber', 'presYears', 'presParty'],
   countries: ['locate', 'identify'],
@@ -34,7 +35,7 @@ export const TOPIC_KINDS: Record<Topic, Kind[]> = {
 export const TAP_KINDS: Kind[] = ['locate', 'capitalLocate', 'senatorLocate', 'siteLocate'];
 
 export const KIND_LABEL: Record<Kind, string> = {
-  note: 'Card', artPhoto: 'Picture → name', artMaker: 'Who made it?', artWhere: 'Where is it?', artStyle: 'Which style?', bookLang: 'Which language?', musicComposer: 'Who composed it?', musicWork: 'Which piece?', musicPart: 'Which movement?', personFace: 'Who is this?', personScene: 'Which scene?', personBorn: 'Born where?', personPlays: 'Which instrument?', roadShield: 'Name the shield', presFace: 'Who is this?', presName: 'Number → president', presNumber: 'Which number?', presYears: 'When?', presParty: 'Which party?',
+  note: 'Card', artPhoto: 'Picture → name', artMaker: 'Who made it?', artWhere: 'Where is it?', artStyle: 'Which style?', bookLang: 'Which language?', musicComposer: 'Who composed it?', musicWork: 'Which piece?', musicPart: 'Which movement?', personFace: 'Who is this?', personScene: 'Which scene?', personBorn: 'Born where?', personPlays: 'Which instrument?', taxonSci: 'Scientific name?', taxonGroup: 'Which branch?', taxonRange: 'Where does it live?', roadShield: 'Name the shield', presFace: 'Who is this?', presName: 'Number → president', presNumber: 'Which number?', presYears: 'When?', presParty: 'Which party?',
   locate: 'Find it on the map', identify: 'Name it', capital: 'Name the capital',
   capitalReverse: 'Capital → name', capitalLocate: 'Capital → map', flag: 'Name the flag', flagReverse: 'Picture the flag',
   senator: 'Name the person', senatorFace: 'Who is this?', senatorLocate: 'Person → map',
@@ -56,6 +57,7 @@ export function fingerprint(kind: Kind, c: Place) {
   if (kind === 'artStyle') return `${c.name}|${c.style}`;
   if (kind === 'bookLang') return `${c.name}|${c.language}`;
   if (kind.startsWith('person')) return `${c.name}|${kind === 'personScene' ? c.person?.scene : kind === 'personBorn' ? bornIn(c) : kind === 'personPlays' ? c.person?.instruments.join(',') : c.image}`;
+  if (kind.startsWith('taxon')) return `${c.name}|${kind === 'taxonSci' ? c.species : kind === 'taxonGroup' ? c.taxon?.branch : c.taxon?.note}`;
   if (kind.startsWith('music')) return `${c.music?.file}|${c.music?.composer.name}|${c.music?.label}`;
   return c.name;
 }
@@ -261,6 +263,9 @@ export function kindApplies(k: Kind, c: Place) {
   if (k === 'artWhere') return !c.book && !c.music && !c.person && !!(c.museum || c.countryName);
   if (k === 'musicComposer' || k === 'musicWork') return !!c.music;
   if (k === 'personFace') return !!c.person && !!c.image;
+  if (k === 'taxonSci') return !!c.taxon && !!c.species;
+  if (k === 'taxonGroup') return !!c.taxon?.branch && !!node(c.taxon.branch);
+  if (k === 'taxonRange') return !!c.taxon?.note;
   if (k === 'personScene') return !!c.person?.scene;
   if (k === 'personBorn') return !!c.person && !!bornIn(c);
   if (k === 'personPlays') return !!c.person?.instruments.length;
@@ -331,6 +336,7 @@ export interface CardFace {
   frontBack?: boolean;            // a note card's front :: back: the answer appears below the question
   promptPicture?: boolean; // show the picture as the question (World Heritage photo cards)
   parts?: (string | { answer: string; hint?: string })[]; // a sentence with several blanks hidden together
+  tree?: string;           // a tree-of-life card: the group's ancestors as blocks and its branches (blank)
   strata?: string;         // a geologic time card: the unit's place in the time scale and its (blank) parts
   note?: string | null;
   audio?: { file: string; start: number }; // a recording is the question (music)
@@ -356,6 +362,8 @@ const plays = (xs: string[]) => (xs.length === 1 ? (/^(vocals|drums|keyboards)$/
 /** Scenes named by a place read as "the New Orleans scene"; styles as they are ("bebop"). */
 const sceneName = (s: string) => (/^(New Orleans|Chicago|Harlem|Kansas City|Swing-era New York)$/.test(s) ? `the ${s} scene` : s.charAt(0).toLowerCase() + s.slice(1));
 const personNote = (c: Place) => { const p = c.person!; return [p.born ? `${p.born}–${p.died ?? ''}` : null, bornIn(c) && !p.origin ? `born in ${bornIn(c)}` : null, p.instruments.join(', ') || null, p.scene].filter(Boolean).join(' · '); };
+/** "the humpback whale" (a species), "Tyrannosaurus" (a genus, as dinosaurs are named). */
+const theOf = (c: Place) => (c.taxon?.genusOnly ? c.name : (c.nameThe ?? c.name).replace(/^an? /, 'the '));
 const composerPic = (m: NonNullable<Place['music']>) => (m.composer.image ? { file: m.composer.image, caption: m.composer.name, single: true } : undefined);
 const life = (m: NonNullable<Place['music']>) => (m.composer.born ? `${m.composer.born}–${m.composer.died ?? ''}` : null);
 const musicNote = (c: Place) => { const m = c.music!; return [`${m.composer.name}${life(m) ? ` (${life(m)})` : ''}`, m.composer.countryName, m.era, fmtYear(c.year)].filter(Boolean).join(' · '); };
@@ -373,6 +381,7 @@ function rawFace(ref: CardRef): CardFace {
     // Note decks: a cloze ("Equal parts {{gin}}, Campari…") or a front :: back card.
     const n = c.card;
     if (n.strata) return { mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, frontBack: true, strata: n.strata };
+    if (n.tree) return { mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, frontBack: true, tree: n.tree };
     return n.front
       ? { mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption, single: n.pictureFirst } : undefined, frontBack: true, promptPicture: !!(n.pictureFirst && n.picture) }
       : { mode: 'reveal', pre: n.pre, blank: n.hint ?? 'what?', post: n.post, answer: n.answer, map: 'none', note: n.note, parts: n.parts,
@@ -491,6 +500,22 @@ function rawFace(ref: CardRef): CardFace {
       return { mode: 'reveal', pre: `${c.name} was born in `, blank: 'which city and state?', post: '.', answer: bornIn(c)!, map: c.country ? 'reveal' : 'none', note: personNote(c), person: { photo: c.image ?? '', when: 'after' } };
     case 'personPlays':
       return { mode: 'reveal', pre: `${c.name} ${c.person!.died ? 'was' : 'is'} known for `, blank: 'which instrument?', post: '.', answer: plays(c.person!.instruments), map: 'none', note: personNote(c), person: { photo: c.image ?? '', when: 'after' } };
+    // Animals and plants: the scientific name (with the Latin read out), the branch of the tree, where (or when) it lives.
+    case 'taxonSci': {
+      const t = c.taxon!, sp = c.species!;
+      if (t.genusOnly) return { mode: 'reveal', pre: `The best-known species of ${c.name}: ${sp.split(' ')[0]} `, blank: 'which species?', post: '.', answer: sp.split(' ').slice(1).join(' '), map: 'none', note: c.facts ?? null, picture: artPic(c), say: { name: sp, lang: 'Latin', code: 'la' } };
+      return { mode: 'reveal', pre: `The scientific name of ${theOf(c)} is `, blank: 'what?', post: '.', answer: sp, map: 'none', note: c.facts ?? null, picture: artPic(c), say: { name: sp, lang: 'Latin', code: 'la' } };
+    }
+    case 'taxonGroup': {
+      const n = node(c.taxon!.branch!)!;
+      return { mode: 'reveal', pre: `${cap1(theOf(c))} belongs to the `, blank: `which ${n.rank === 'clade' ? 'group' : n.rank}?`, post: ` (${n.name}).`, answer: n.common.replace(/^the /, ''), map: 'none', note: n.known, picture: artPic(c), hidePostUntilReveal: true };
+    }
+    case 'taxonRange': {
+      const t = c.taxon!;
+      const when = !!t.period;
+      return { mode: 'reveal', pre: `${cap1(theOf(c))} ${when ? 'lived' : 'lives'} `, blank: when ? 'when and where?' : 'where?', post: '.', answer: when ? `in the ${t.note}` : t.note!, map: 'none', note: t.status && t.status !== 'least concern' ? `Status: ${t.status}` : null,
+        picture: t.rangeMap ? { file: t.rangeMap, caption: when ? `Where ${c.name} fossils are found` : `Where ${theOf(c)} lives`, single: true } : artPic(c) };
+    }
     case 'bookLang': // books: "Don Quixote was first written in Spanish."
       return { mode: 'reveal', pre: `${cap1(c.nameThe ?? c.name)} ${c.plural ? 'were' : 'was'} first written in `, blank: 'which language?', post: '.', answer: c.language!, map: 'none', note: artNote(c, true), picture: artPic(c) };
     case 'artStyle': // buildings: "Notre-Dame de Paris was built in the Gothic style."
@@ -552,10 +577,10 @@ export const LAYER_ICON: Record<Place['layer'], IconName> = { note: 'book', art:
  *  "Where / what is it?" — you're given the name and find it, or name its capital/flag. */
 export const DIRECTIONS: { id: 'recognise' | 'recall'; name: string; hint: string; kinds: Kind[] }[] = [
   { id: 'recognise', name: 'What is this?', hint: 'shown it → name it', kinds: ['identify', 'flag', 'capitalReverse', 'senatorFace', 'currencyReverse', 'largestCityReverse', 'sitePhoto', 'highestReverse', 'artPhoto', 'roadShield', 'presFace', 'presName', 'musicComposer', 'musicWork', 'musicPart', 'personFace'] },
-  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest', 'artMaker', 'artWhere', 'artStyle', 'bookLang', 'personScene', 'personBorn', 'personPlays', 'presNumber', 'presYears', 'presParty'] },
+  { id: 'recall', name: 'Where / what is it?', hint: 'given the name → find or answer it', kinds: ['locate', 'capitalLocate', 'capital', 'flagReverse', 'senator', 'senatorLocate', 'currency', 'largestCity', 'belongsTo', 'siteLocate', 'siteCountry', 'highest', 'artMaker', 'artWhere', 'artStyle', 'bookLang', 'personScene', 'personBorn', 'personPlays', 'taxonSci', 'taxonGroup', 'taxonRange', 'presNumber', 'presYears', 'presParty'] },
 ];
 export const KIND_SHORT: Record<Kind, string> = {
-  note: 'Note card', artPhoto: 'Picture → name', artMaker: 'Work → artist', artWhere: 'Work → where it is', artStyle: 'Building → style', bookLang: 'Book → language', musicComposer: 'Music → composer', musicWork: 'Music → piece', musicPart: 'Music → movement', personFace: 'Face → person', personScene: 'Person → scene', personBorn: 'Person → birthplace', personPlays: 'Person → instrument', roadShield: 'Shield → Interstate', presFace: 'Portrait → president', presName: 'Number → president', presNumber: 'President → number', presYears: 'President → years', presParty: 'President → party',
+  note: 'Note card', artPhoto: 'Picture → name', artMaker: 'Work → artist', artWhere: 'Work → where it is', artStyle: 'Building → style', bookLang: 'Book → language', musicComposer: 'Music → composer', musicWork: 'Music → piece', musicPart: 'Music → movement', personFace: 'Face → person', personScene: 'Person → scene', personBorn: 'Person → birthplace', personPlays: 'Person → instrument', taxonSci: 'Animal → scientific name', taxonGroup: 'Animal → branch of the tree', taxonRange: 'Animal → where it lives', roadShield: 'Shield → Interstate', presFace: 'Portrait → president', presName: 'Number → president', presNumber: 'President → number', presYears: 'President → years', presParty: 'President → party',
   identify: 'Map → name', flag: 'Flag → country', capitalReverse: 'Capital → country',
   locate: 'Name → map', capitalLocate: 'Capital → map', capital: 'Country → capital', flagReverse: 'Country → flag',
   senatorFace: 'Photo → person', senator: 'Office → person', senatorLocate: 'Person → map',

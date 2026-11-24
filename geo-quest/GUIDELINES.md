@@ -156,6 +156,14 @@ feature consistent. When adding anything, check it against this page. When a new
 - The owner has read many AI books: later AI books should lean past the basics.
 - Read the PDF as text (`pdftotext`), never commit the book; cards are in our own words with very short quotes.
 
+## 4c. Life (animals and plants)
+
+- **One tree of life** (`src/tree.ts`): every group of species names its branch; book decks about an animal feed it too.
+- **Ask at the level a photo can tell**: the species when it's distinctive (humpback whale), else the group (a rorqual,
+  a beaked whale). Never ask what needs bones or teeth to see; look-alikes are taught by the one feature you can see.
+- Scientific names in italics with a Latin speaker; where it lives with a range map; dinosaurs by period, also in Earth
+  history. Not a children's set: no cow-dog-tiger basics.
+
 ## 5. Content files (how to add things)
 
 | What | Where | Format |
