@@ -65,6 +65,10 @@ function originOf(rs) {
   else if (parent) Object.assign(out, { then: label(parent, 'parLabel'), thenId: qid(parent.par.value), state: label(r, 'cLabel'), flag: file(val(parent, 'parFlag')) });
   else Object.assign(out, { then: label(r, 'cLabel'), thenId: qid(r.c.value) });
   if (qid(r.c.value) === HRE) out.then = 'Holy Roman Empire';
+  // Americans: today's US flag, whenever they were born (Frank Lloyd Wright, Louis Armstrong, even colonial-era
+  // George Washington), not a period flag or the British one. A Native American nation is the exception: set it by hand
+  // in _origins (then: the nation, flag: its flag).
+  if (out.today === 'United States') Object.assign(out, { then: null, thenId: null, state: null, flag: null });
   return out;
 }
 const yearOf = d => { const m = /^(-?\d+)-/.exec(d ?? ''); return m ? +m[1] : null; };

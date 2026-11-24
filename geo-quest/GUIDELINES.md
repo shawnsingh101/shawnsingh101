@@ -58,6 +58,9 @@ feature consistent. When adding anything, check it against this page. When a new
     the flag in use in the birth year (the Russian Empire's changed in 1858). Today's country is always named too. Before
     national flags (ancient figures), or with no flag known, today's flag. From Wikidata (the birthplace's country in
     the birth year); hand fixes in `data/collection-fixes.json` `_origins`.
+    **Except Americans**: anyone born in what's now the United States gets today's US flag, whatever the year
+    (George Washington, Louis Armstrong): no colonial or early US flags. A member of a Native American nation gets that
+    nation's flag (set in `_origins`).
 13. **Dates are rarely the answer.** Keep the date in the sentence and blank the event, person or place: "In 1917 the
     United States entered {{World War I}}", not "…entered World War I in {{1917}}". A date is the answer only when the
     date itself is the landmark (July 4, 1776; the Constitution in 1787; the span of a dynasty or a war as one card;

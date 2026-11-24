@@ -41,7 +41,8 @@ world map fill in as you master it.
   Holy Roman Empire (or German, Austrian and Czech lands before 1806) show the empire's banner with the state named
   (Mozart: Prince-Archbishopric of Salzburg; Bach: Duchy of Saxe-Eisenach; Beethoven: Electorate of Cologne). Before
   1200, no flag of the time. Fixes by person in `_origins` (Brahms: Free City of Hamburg; Dostoevsky: Moscow), and
-  formal country names made plain (`_origins._today`: Third Hellenic Republic → Greece).
+  formal country names made plain (`_origins._today`: Third Hellenic Republic → Greece). Americans always get today's US
+  flag (by preference: no colonial or 19th-century US flags); a Native American nation, its own flag, set by hand.
 - Shown under the answer (`OriginLine`, `src/components/Origin.tsx`) on every card whose answer is a person: composers
   (in the music reveal), artists, architects and authors, jazz musicians (with their US state). 187 people; 22 have no
   flag of the time and show today's.

@@ -14,9 +14,9 @@ export function OriginLine({ ds, o, name }: { ds: Dataset; o: Origin; name?: str
       {flag && <Flag file={flag} name={then ?? todayName ?? ''} size={80} />}
       <span>
         {name && <b>{name} </b>}
-        {o.place ? `born in ${o.place}` : 'from'}{then ? `, ${then}` : !o.place && todayName ? ` ${todayName}` : ''}
+        {o.place ? `born in ${o.place}` : 'from'}{then ? `, ${then}` : todayName && !o.place?.endsWith(todayName) ? `${o.place ? ',' : ''} ${todayName}` : ''}
         {o.state && <span className="muted"> ({o.state})</span>}
-        {todayName && (then || o.place) && <span className="muted"> · today {todayName}</span>}
+        {todayName && then && <span className="muted"> · today {todayName}</span>}
       </span>
     </p>
   );
