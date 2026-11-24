@@ -54,6 +54,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 
 | Version | What |
 | --- | --- |
+| 1.29 | Where people are really from, with the flag of their time |
 | 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
 | 1.27 | Earth history: a picture of the life of each time |
 | 1.26 | The answer's pronunciation everywhere; Empire of AI and the Artificial intelligence subject |

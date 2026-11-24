@@ -1709,5 +1709,22 @@
  },
  "Q284448": {
   "nameThe": "Chopin's Piano Sonata No. 2"
+ },
+ "_origins": {
+  "_readme": "Where a person is from, by their English name, when Wikidata reads wrong: then (the state in their birth year), state (a smaller state inside it), flag (Commons file), place, today.",
+  "Johannes Brahms": {
+   "then": "Free City of Hamburg",
+   "state": null,
+   "flag": "Flag of Hamburg.svg"
+  },
+  "Fyodor Dostoyevsky": {
+   "place": "Moscow"
+  },
+  "_today": {
+   "Third Hellenic Republic": [
+    "Greece",
+    "Q41"
+   ]
+  }
  }
 }

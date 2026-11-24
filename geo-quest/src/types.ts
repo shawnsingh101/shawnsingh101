@@ -4,8 +4,11 @@ export interface MusicClip {
   era: string | null; composer: Composer;
   siblings: { id: string; label: string | null; file: string; start: number }[]; // every clip of the same work, in order
 }
-export interface PersonFacts { born: number | null; died: number | null; birthplace: string | null; state: string | null; stateId: string | null; country: string | null; countryName: string | null; instruments: string[]; native?: NativeName[] }
-export interface Composer { id: string; name: string; image: string | null; born: number | null; died: number | null; country: string | null; countryName: string | null; native?: NativeName[] }
+/** Where a person is from: their birthplace, the state it belonged to in their birth year (with that state's flag then:
+ *  the Holy Roman Empire's banner for Mozart's Salzburg), and the country it's in today. */
+export interface Origin { place: string | null; born: number | null; then: string | null; thenId: string | null; state: string | null; flag: string | null; today: string | null; todayId: string | null }
+export interface PersonFacts { born: number | null; died: number | null; birthplace: string | null; state: string | null; stateId: string | null; country: string | null; countryName: string | null; instruments: string[]; native?: NativeName[]; origin?: Origin }
+export interface Composer { id: string; name: string; image: string | null; born: number | null; died: number | null; country: string | null; countryName: string | null; native?: NativeName[]; origin?: Origin }
 export interface NativeName { name: string; lang: string; code?: string; roman?: string } // roman: romaji / pinyin / transliteration
 /** Pronunciation recordings by language code → [mp3, original] */
 export type Audio = Record<string, string[]>;
@@ -77,6 +80,7 @@ export interface Place {
   highestShared?: boolean; // another country shares the same highest point (Everest: Nepal & China)
   manyPlaces?: boolean;    // a leader who holds the same office in several countries
   artists?: string[];      // artworks: who made it… (buildings: the architect)
+  makerOrigin?: Origin;      // where the artist / author / architect is from (when there's one maker)
   makerNative?: NativeName[]; // the artist / author / architect in their own language (for the speaker on 'who made it?')
   music?: MusicClip;
   person?: PersonFacts & { scene: string | null }; // from a `kind: person` collection (scene: the heading it's under)        // a clip from a `kind: music` collection (one card set per clip)

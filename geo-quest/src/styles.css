@@ -902,3 +902,7 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .deck-summary { margin-top: .9rem; border-top: 1px solid var(--line); padding-top: .6rem; }
 .deck-summary summary { font-weight: 650; cursor: pointer; }
 .deck-summary p { margin: .45rem 0; font-size: .92rem; line-height: 1.5; }
+/* Where a person is from: the flag of the time, then today's country */
+.origin-line { display: flex; align-items: center; gap: .55rem; margin: .45rem 0 0; font-size: .9rem; line-height: 1.35; }
+.origin-line img { width: 34px; height: auto; flex: none; border-radius: 2px; box-shadow: 0 0 0 1px var(--line); }
+.composer-life { margin: .15rem 0 .5rem; }

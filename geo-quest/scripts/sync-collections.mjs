@@ -41,6 +41,36 @@ const label = (b, k) => { const x = val(b, k); return x && !/^Q\d+$/.test(x) && 
 const SMALL = /arrondissement|borough|district|ward\b|centrum|mitte|quarter|neighbo|municipality of|Manhattan|Kensington|Westminster|Camden|Vatican Museums|Bezirk|Innere Stadt|Landstraße|^Centro|Sestiere|Quartiere|Retiro|Mid-?town|Downtown|Loop/i;
 const town = (b, keys) => keys.map(k => label(b, k)).find(x => x && !SMALL.test(x)) ?? null;
 const LANG_NAMES = { da: 'Danish', nn: 'Norwegian', pl: 'Polish', cs: 'Czech', lzh: 'Classical Chinese', sv: 'Swedish', fi: 'Finnish', hu: 'Hungarian', tr: 'Turkish', uk: 'Ukrainian', grc: 'Ancient Greek', la: 'Latin', sa: 'Sanskrit', he: 'Hebrew', fa: 'Persian', akk: 'Akkadian', zh: 'Chinese', 'zh-hans': 'Chinese', 'zh-hant': 'Chinese', ja: 'Japanese', ko: 'Korean', it: 'Italian', fr: 'French', es: 'Spanish', de: 'German', nl: 'Dutch', no: 'Norwegian', nb: 'Norwegian', pt: 'Portuguese', ar: 'Arabic', el: 'Greek', hi: 'Hindi', ca: 'Catalan', la: 'Latin', ru: 'Russian', fa: 'Persian' };
+const HRE = 'Q12548', HRE_FLAG = 'Banner of the Holy Roman Emperor with haloes (1430-1806).svg'; // the Holy Roman Empire: its states (Salzburg, Saxony…) show the empire's banner
+/** A person's origin from rows of (birthplace country with dates | citizenship): the state their birthplace belonged to
+ *  in their birth year, its flag (or, for a state of the Holy Roman Empire or one with no flag, the empire's / parent's),
+ *  and the country it's in today. Birthplace history wins over citizenship (Chopin later became French). */
+function originOf(rs) {
+  const born = yearOf(val(rs[0], 'born'));
+  const covers = r => { const s = yearOf(val(r, 'start')) ?? yearOf(val(r, 'cs')), e = yearOf(val(r, 'end')) ?? yearOf(val(r, 'ce')); return born != null && (s == null || s <= born) && (e == null || born <= e); };
+  const span = r => (yearOf(val(r, 'end')) ?? yearOf(val(r, 'ce')) ?? 2100) - (yearOf(val(r, 'start')) ?? yearOf(val(r, 'cs')) ?? -1000);
+  const place = rs.filter(r => val(r, 'src') === 'place' && covers(r)).sort((a, b) => span(a) - span(b)); // the most specific period first
+  const citizen = rs.filter(r => val(r, 'src') === 'citizen' && covers(r) && r.flag);
+  const r = place[0] ?? citizen[0];
+  const today = rs.find(x => val(x, 'src') === 'place' && !x.end && !x.ce);
+  // A state's flag in the birth year (the Russian Empire's changed in 1858): the one in use then, else any.
+  const flagOf = c => { const fl = rs.filter(x => x.c.value === c && x.flag); const then = fl.find(x => { const a = yearOf(val(x, 'fs0')), b = yearOf(val(x, 'fs1')); return (a != null || b != null) && (a == null || a <= born) && (b == null || born <= b); }); return file(val(then ?? fl.find(x => !x.fs0 && !x.fs1) ?? fl[0] ?? {}, 'flag')) ?? null; };
+  const out = { place: label(rs[0], 'bpLabel'), born, today: today ? label(today, 'cLabel') : null, todayId: today ? qid(today.c.value) : null, then: null, thenId: null, state: null, flag: null };
+  if (!r || born < 1200) return out; // before national flags: just where it is today (Plato: Athens, today Greece)
+  // In the Holy Roman Empire: its state says so, or it's a German, Austrian or Czech land before 1806.
+  const inHRE = rs.filter(x => x.c.value === r.c.value).some(x => x.par && qid(x.par.value) === HRE) || (born >= 962 && born <= 1806 && /^(Germany|Austria|Czech Republic|Luxembourg|Slovenia)$/.test(out.today ?? ''));
+  const parent = rs.find(x => x.c.value === r.c.value && x.par && x.parFlag);
+  if (inHRE) Object.assign(out, { then: 'Holy Roman Empire', thenId: HRE, state: qid(r.c.value) === HRE ? null : label(r, 'cLabel'), flag: HRE_FLAG });
+  else if (r.flag) Object.assign(out, { then: label(r, 'cLabel'), thenId: qid(r.c.value), flag: flagOf(r.c.value) });
+  else if (parent) Object.assign(out, { then: label(parent, 'parLabel'), thenId: qid(parent.par.value), state: label(r, 'cLabel'), flag: file(val(parent, 'parFlag')) });
+  else Object.assign(out, { then: label(r, 'cLabel'), thenId: qid(r.c.value) });
+  if (qid(r.c.value) === HRE) out.then = 'Holy Roman Empire';
+  // Americans: today's US flag, whenever they were born (Frank Lloyd Wright, Louis Armstrong, even colonial-era
+  // George Washington), not a period flag or the British one. A Native American nation is the exception: set it by hand
+  // in _origins (then: the nation, flag: its flag).
+  if (out.today === 'United States') Object.assign(out, { then: null, thenId: null, state: null, flag: null });
+  return out;
+}
 const yearOf = d => { const m = /^(-?\d+)-/.exec(d ?? ''); return m ? +m[1] : null; };
 const chunks = (a, n) => Array.from({ length: Math.ceil(a.length / n) }, (_, i) => a.slice(i * n, i * n + n));
 
@@ -259,6 +289,29 @@ try {
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`)) {
     const en = label(r, 'pLabel'), code = r.n['xml:lang'];
     if (en && code && !/^en/.test(code) && !byName.has(en)) byName.set(en, { name: r.n.value, lang: LANG_NAMES[code] ?? LANG_NAMES[code.split('-')[0]] ?? code, code });
+  }
+  // Where each person is really from: their birthplace, the country it belonged to in their birth year (with that
+  // country's flag: the Holy Roman Empire's banner for Mozart's Salzburg, the Republic of Venice for Vivaldi), and the
+  // country it's in today. See originOf().
+  const origins = new Map();
+  for (const part of chunks(ids, 60)) {
+    const rows = await sparql(`SELECT ?p ?pLabel ?born ?bpLabel ?c ?cLabel ?flag ?fs0 ?fs1 ?start ?end ?cs ?ce ?src ?par ?parLabel ?parFlag WHERE { VALUES ?p { ${part.map(q => `wd:${q}`).join(' ')} }
+      ?p wdt:P569 ?born . ?p wdt:P19 ?bp .
+      { ?bp p:P17 ?st . ?st ps:P17 ?c . OPTIONAL { ?st pq:P580 ?start } OPTIONAL { ?st pq:P582 ?end } BIND('place' AS ?src) } UNION { ?p wdt:P27 ?c . BIND('citizen' AS ?src) }
+      OPTIONAL { ?c p:P41 ?fst . ?fst ps:P41 ?flag . OPTIONAL { ?fst pq:P580 ?fs0 } OPTIONAL { ?fst pq:P582 ?fs1 } } OPTIONAL { ?c wdt:P571 ?cs } OPTIONAL { ?c wdt:P576 ?ce }
+      OPTIONAL { ?c wdt:P361|wdt:P17 ?par . FILTER(?par != ?c) OPTIONAL { ?par wdt:P41 ?parFlag } }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`);
+    const byP = new Map(); for (const r of rows) { const k = label(r, 'pLabel'); if (k) (byP.get(k) ?? byP.set(k, []).get(k)).push(r); }
+    for (const [name, rs] of byP) origins.set(name, originOf(rs));
+  }
+  // Hand fixes by person, where Wikidata's answer reads wrong (data/collection-fixes.json, _origins).
+  for (const [name, o] of Object.entries(fixes._origins ?? {})) if (origins.has(name)) Object.assign(origins.get(name), o);
+  // Wikidata's formal names for countries today ("Third Hellenic Republic") → the plain one (Greece).
+  for (const o of origins.values()) { const t = fixes._origins?._today?.[o.today]; if (t) [o.today, o.todayId] = t; }
+  for (const [q, x] of Object.entries(items)) {
+    if (x.artists?.length === 1 && origins.has(x.artists[0])) x.makerOrigin = origins.get(x.artists[0]);
+    if (x.composer && origins.has(x.composer.name)) x.composer.origin = origins.get(x.composer.name);
+    if (x.person && origins.has(x.name)) x.person.origin = origins.get(x.name);
   }
   for (const [q, x] of Object.entries(items)) {
     const m = x.artists?.[0] && byName.get(x.artists[0]); if (m && x.artists.length === 1) x.makerNative = [m];

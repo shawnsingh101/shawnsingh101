@@ -33,6 +33,20 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.29: where people are really from
+
+- The sync now works out each person's origin (`originOf` in `scripts/sync-collections.mjs`): the birthplace; the state
+  it belonged to in the birth year, from Wikidata's dated country statements for the place (citizenship only as a
+  fallback, since Chopin later became French); that state's flag as it was then; and the country today. States of the
+  Holy Roman Empire (or German, Austrian and Czech lands before 1806) show the empire's banner with the state named
+  (Mozart: Prince-Archbishopric of Salzburg; Bach: Duchy of Saxe-Eisenach; Beethoven: Electorate of Cologne). Before
+  1200, no flag of the time. Fixes by person in `_origins` (Brahms: Free City of Hamburg; Dostoevsky: Moscow), and
+  formal country names made plain (`_origins._today`: Third Hellenic Republic → Greece). Americans always get today's US
+  flag (by preference: no colonial or 19th-century US flags); a Native American nation, its own flag, set by hand.
+- Shown under the answer (`OriginLine`, `src/components/Origin.tsx`) on every card whose answer is a person: composers
+  (in the music reveal), artists, architects and authors, jazz musicians (with their US state). 187 people; 22 have no
+  flag of the time and show today's.
+
 ## v1.28: classical clean-up, the right picture or none
 
 - **Pictures**: a work, book or person with no free picture of its own now shows none. Before, the card fell back to
