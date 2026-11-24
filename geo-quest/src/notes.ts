@@ -3,6 +3,7 @@
 import type { Place } from './types';
 import { GROUPS, claimSection } from './cards';
 import { epochDeck, geotimeDeck } from './geotime';
+import { chapterName, objectiveName } from './secplus';
 
 export interface NoteCard {
   pre: string; answer: string; post: string;  // cloze: "pre [answer] post"; front/back: pre = front, answer = back
@@ -28,6 +29,8 @@ export interface NoteCard {
  *  should print), asserts run after it, and a model solution (shown on request, and checked by the audit). */
 export interface Practice { starter: string; cases: { input: string; output: string | null }[]; check: string; solution: string }
 export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; eras: string[]; deep: boolean;
+  lesson: string | null;                     // a `:::lesson … :::` block: a short read that comes before the cards
+  objectives: string[]; chapter: string | null; // Security+ tags (src/secplus.ts): exam objectives, study-guide chapter
   follows: string[]; checked: string | null; // a live topic: the Wikipedia articles the weekly briefing reads, and when it last did
   cards: { id: string; card: NoteCard }[] }
 
@@ -42,7 +45,10 @@ export function parseDeck(file: string, text: string): Deck {
   const fm = /^---\n([\s\S]*?)\n---\n?/.exec(text);
   const meta: Record<string, string> = {};
   for (const line of fm?.[1].split('\n') ?? []) { const m = /^(\w+):\s*(.*)$/.exec(line); if (m) meta[m[1]] = m[2].trim(); }
-  const body = fm ? text.slice(fm[0].length) : text;
+  let body = fm ? text.slice(fm[0].length) : text;
+  // A lesson: everything between a `:::lesson` line and a `:::` line, read before the cards (components/Lesson.tsx).
+  let lesson: string | null = null;
+  body = body.replace(/^:::lesson[ \t]*\n([\s\S]*?)\n:::[ \t]*$/m, (_w, l: string) => { lesson = l.trim(); return ''; });
   // A number in front of a folder or file name only sets the order ("2 Ancient China" → Ancient China, second).
   const parts = file.replace(/^.*decks\//, '').replace(/\.md$/, '').split('/').map(p => p.replace(/^\d+\s+/, ''));
   const subject = meta.subject || parts[0];
@@ -212,7 +218,8 @@ export function parseDeck(file: string, text: string): Deck {
     });
   }
   // The intro keeps its lines (a book's summary page has paragraphs); `depth: deep` marks a deck of deep cuts.
-  return { file, id, title, subject, path, intro: intro.join('\n') || null, eras, deep: meta.depth === 'deep', follows: (meta.follows ?? '').split(';').map(s => s.trim()).filter(Boolean), checked: meta.checked || null, cards };
+  return { file, id, title, subject, path, intro: intro.join('\n') || null, eras, deep: meta.depth === 'deep', lesson,
+    objectives: (meta.objectives ?? '').split(',').map(s => s.trim()).filter(Boolean), chapter: meta.chapter || null, follows: (meta.follows ?? '').split(';').map(s => s.trim()).filter(Boolean), checked: meta.checked || null, cards };
 }
 
 // Every deck file under geo-quest/decks (bundled at build time; README files are documentation, not decks).
@@ -247,7 +254,8 @@ export function registerNotes(): Place[] {
     const gid = 'n-' + d.id;
     // Deep cuts unlock once half of the core deck beside them (same folder, not deep) is known.
     const core = d.deep ? DECKS.find(x => !x.deep && x.subject === d.subject && x.path.join('/') === d.path.join('/') && d.title.startsWith(x.title)) ?? DECKS.find(x => !x.deep && x.subject === d.subject && x.path.join('/') === d.path.join('/')) : undefined;
-    if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined, ...(core ? { requires: `n-${core.id}/notes` } : {}) });
+    if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined, ...(core ? { requires: `n-${core.id}/notes` } : {}),
+      ...(d.lesson ? { lesson: d.lesson } : {}), ...(d.objectives.length || d.chapter ? { secplus: { objectives: d.objectives, chapter: d.chapter } } : {}) });
     for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path], native: card.native.length ? card.native : undefined, species: card.species } as unknown as Place);
   }
   // Lenses: a deck tagged `era: Prehistory` is also listed under <subject> › By era › All prehistory, next to every
@@ -256,6 +264,18 @@ export function registerNotes(): Place[] {
   for (const era of ERAS) for (const d of DECKS.filter(x => x.eras.some(e => e.toLowerCase() === era.key))) {
     const g = GROUPS.find(x => x.id === 'n-' + d.id)!;
     const sec = claimSection(era.section, claimSection('By era', d.subject));
+    if (!g.alsoInSections?.includes(sec)) g.alsoInSections = [...(g.alsoInSections ?? []), sec];
+  }
+  // Security+ lenses: a lesson tagged `objectives: 1.4` is also listed under Cybersecurity › By exam objective ›
+  // "1.4 Cryptographic solutions", and `chapter: 7` under By book chapter › "Ch. 7 Cryptography and the PKI", in exam
+  // order, so it lines up with the owner's Study Lab. Filed once, one set of progress.
+  const byCode = (a: string, b: string) => a.localeCompare(b, 'en', { numeric: true });
+  for (const code of [...new Set(DECKS.flatMap(d => d.objectives))].sort(byCode)) for (const d of DECKS.filter(x => x.objectives.includes(code))) {
+    const g = GROUPS.find(x => x.id === 'n-' + d.id)!, sec = claimSection(objectiveName(code), claimSection('By exam objective', d.subject));
+    if (!g.alsoInSections?.includes(sec)) g.alsoInSections = [...(g.alsoInSections ?? []), sec];
+  }
+  for (const ch of [...new Set(DECKS.map(d => d.chapter).filter((c): c is string => !!c))].sort(byCode)) for (const d of DECKS.filter(x => x.chapter === ch)) {
+    const g = GROUPS.find(x => x.id === 'n-' + d.id)!, sec = claimSection(chapterName(ch), claimSection('By book chapter', d.subject));
     if (!g.alsoInSections?.includes(sec)) g.alsoInSections = [...(g.alsoInSections ?? []), sec];
   }
   // Live topics: a deck that follows Wikipedia articles (`follows:`) is also listed under Live topics, its own subject,

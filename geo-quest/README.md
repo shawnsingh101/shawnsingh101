@@ -33,6 +33,25 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.34: Cybersecurity, with lessons and flow diagrams
+
+- **Lessons**: a deck's `:::lesson … :::` block is a short textbook-style read (`components/Lesson.tsx`: headings,
+  paragraphs, lists, callouts, bold, code and flows). It opens from **Read the lesson** on the deck (the primary button
+  until you start its cards) and from any of its cards' answers, and ends with **Study these cards** and a pointer back
+  to the Security+ Study Lab.
+- **Flow diagrams** (`components/Flow.tsx`, parsed by `src/flow.ts`): actors as columns with lifelines, each step an
+  arrow or a note. In lessons you step through them (Next, Back); as cards, one step is blank. The audit checks every
+  step names an actor.
+- **Stacks** (`components/Stack.tsx`): layered blocks in the style of the time-scale and lineage cards, for the OSI
+  model and the chain of trust; a lesson illustration or, with a blank, a card. Flows and stacks share the clean look:
+  pastel fills, thin arrows, a title line (`# The TLS 1.3 handshake`).
+- **Security+ lenses** (`src/secplus.ts`): `objectives:` and `chapter:` front matter put a deck under Cybersecurity ›
+  By exam objective (SY0-701) and By book chapter (Chapple and Seidl, 9th ed.), both closed by default.
+- **Cybersecurity**, layered (GUIDELINES 4f). Part 1, *How computers talk*: Addresses, packets and ports; DHCP and DNS;
+  Layers and the web. Part 3, *Cryptography*: Encryption and shared keys; Public and private keys; Hashing; Digital
+  signatures and certificates; TLS. 8 lessons, 102 cards, 15 flows (6 of them cards) and 4 stacks (2 of them cards).
+- A section's description now shows only when it holds a single deck (a folder no longer borrows its first deck's).
+
 ## v1.33: Live topics
 
 - **Live topics** (ongoing stories), a lens subject listing every deck that follows Wikipedia articles (`follows:` and

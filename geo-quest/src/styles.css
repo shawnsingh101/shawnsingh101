@@ -945,3 +945,50 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .practice-sol { margin: .9rem 0 0; }
 /* A live topic's card about how things stand now: its date, on the question */
 .as-of { display: inline-block; margin: 0 0 .45rem; padding: .1rem .5rem; border-radius: 999px; font-size: .72rem; font-weight: 600; letter-spacing: .02em; color: #9a5b00; background: rgba(240, 160, 40, .14); }
+/* Flow diagrams: soft pastel boxes for the actors, faint lifelines, thin arrows with small labels (a clean textbook look) */
+.flow { margin: .8rem 0 .9rem; font-size: .86rem; padding: .9rem; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.flow-title { font-weight: 650; font-size: .95rem; margin: 0 0 .7rem; }
+.flow-actors { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: .5rem; }
+.flow-actors span { text-align: center; font-weight: 650; font-size: .84rem; line-height: 1.2; padding: .6rem .3rem; border-radius: 10px; color: var(--ink); background: color-mix(in srgb, var(--c) 13%, var(--surface)); }
+.flow-steps { list-style: none; margin: .2rem 0 0; padding: 0; }
+.flow-steps li { position: relative; padding-top: .15rem; animation: rise .25s ease both; }
+.flow-lines i { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid color-mix(in srgb, var(--muted) 30%, transparent); }
+.flow-label { position: relative; display: block; text-align: center; font-size: .78rem; line-height: 1.3; color: var(--ink); opacity: .85; padding: .45rem .5rem 0; }
+.flow-label > *, .flow-note > * { position: relative; }
+.flow-label b, .flow-note b { display: inline-grid; place-items: center; min-width: 1.05rem; height: 1.05rem; border-radius: 999px; background: color-mix(in srgb, var(--muted) 16%, transparent); color: var(--muted); font-size: .62rem; font-weight: 700; margin-right: .3rem; vertical-align: 1px; }
+.flow-arrow { position: relative; display: block; height: 0; margin-top: .3rem; margin-bottom: .55rem; border-top: 1.5px solid color-mix(in srgb, var(--c) 75%, transparent); }
+.flow-steps li.right .flow-arrow::after, .flow-steps li.left .flow-arrow::after { content: ""; position: absolute; top: -5px; border: 4.5px solid transparent; }
+.flow-steps li.right .flow-arrow::after { right: -1px; border-left: 8px solid color-mix(in srgb, var(--c) 75%, transparent); border-right: 0; }
+.flow-steps li.left .flow-arrow::after { left: -1px; border-right: 8px solid color-mix(in srgb, var(--c) 75%, transparent); border-left: 0; }
+.flow-note { position: relative; display: block; width: 60%; margin: .45rem 0 .5rem; padding: .5rem .7rem; border-radius: 10px; text-align: center; font-size: .78rem; line-height: 1.35; color: var(--ink); background: color-mix(in srgb, var(--c) 11%, var(--surface)); }
+.flow .blank, .flow .fill { font-size: .78rem; }
+.flow-controls { display: flex; align-items: center; justify-content: center; gap: .6rem; margin-top: .5rem; }
+@media (max-width: 600px) { .flow { padding: .7rem .55rem; } .flow-label, .flow-note { font-size: .74rem; } .flow-actors span { font-size: .76rem; padding: .5rem .2rem; } .flow-note { width: 82%; } }
+/* Lessons: a full-screen reading page, a comfortable line length, flows and code inline */
+.lesson { position: fixed; inset: 0; z-index: 60; background: var(--bg); overflow-y: auto; animation: rise .25s ease; }
+.lesson-inner { position: relative; max-width: 44rem; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
+.lesson-inner .close { position: absolute; top: 1rem; right: .6rem; }
+.lesson-kicker { text-transform: uppercase; letter-spacing: .08em; margin: 0; }
+.lesson h1 { font-family: var(--serif); font-size: 2rem; margin: .2rem 0 .5rem; }
+.lesson-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin: 0 0 1.2rem; }
+.lesson-tags span { font-size: .72rem; font-weight: 600; padding: .15rem .55rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); }
+.lesson-body { font-size: 1.04rem; line-height: 1.7; }
+.lesson-body h2 { font-family: var(--serif); font-size: 1.4rem; margin: 1.8rem 0 .4rem; }
+.lesson-body h3 { font-size: 1.05rem; margin: 1.3rem 0 .3rem; }
+.lesson-body p { margin: .55rem 0; }
+.lesson-body ul { margin: .4rem 0 .7rem; padding-left: 1.3rem; }
+.lesson-body li { margin: .2rem 0; }
+.lesson-callout { display: flex; gap: .45rem; align-items: flex-start; margin: .9rem 0; padding: .7rem .9rem; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-size: .95rem; }
+.lesson-callout .icon { flex: none; margin-top: .25rem; color: var(--muted); }
+.lesson-end { margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); display: grid; gap: .7rem; justify-items: start; }
+.flow-text { background: var(--surface); padding: .05rem .3rem; border-radius: 6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+/* Stacks: layered blocks, like the time-scale and lineage cards, in soft colors */
+.stack { margin: .8rem 0 .9rem; padding: .9rem; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.stack ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.stack li { display: grid; grid-template-columns: minmax(2.2rem, auto) minmax(0, 1fr); gap: .5rem; align-items: center; animation: rise .25s ease both; }
+.stack-label { font-size: .68rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); text-align: right; }
+.stack-block { display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .6rem; padding: .55rem .8rem; border-radius: 10px; color: var(--ink); background: color-mix(in srgb, var(--c) 15%, var(--surface)); border-left: 4px solid color-mix(in srgb, var(--c) 70%, transparent); }
+.stack-block b { font-size: .9rem; }
+.stack-block small { font-size: .76rem; color: var(--muted); margin-left: auto; }
+.stack .blank, .stack .fill { font-size: .8rem; }
+@media (max-width: 600px) { .stack-block { display: block; } .stack-block small { display: block; margin: .1rem 0 0; } }
