@@ -33,6 +33,19 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.33: Live topics
+
+- **Live topics** (ongoing stories), a lens subject listing every deck that follows Wikipedia articles (`follows:` and
+  `checked:` in the front matter; `LIVE` and `HAS_LIVE` in `src/notes.ts`, the subject in `src/subjects.ts`).
+- **"As of" cards**: `as of: November 2026` after a card shows that date on it (`.as-of`), and changing it re-queues the card.
+- Two decks, written from the Wikipedia articles as they stood on 24 November 2026:
+  - *History › History of Ukraine › Russo-Ukrainian war* (24 cards), following the war and the peace-negotiations articles;
+  - *Artificial intelligence › The AI race* (16 cards), following *AI boom* and *Artificial intelligence arms race*.
+- **The weekly briefing**: `scripts/briefing.mjs` prints, for each live deck, what changed in its articles between a week
+  before the last check and a week ago (text that has stood for a week), and its "as of" cards. A scheduled Claude
+  session runs it every Wednesday, writes at most two new cards a week across all live topics plus any "as of" updates,
+  sets `checked:`, runs the audit, and opens a pull request. Merging it is the approval. Rules: GUIDELINES.md, 4e.
+
 ## v1.32: Programming with practice mode, dinosaurs from Wikipedia, and more pictures
 
 - **Code cards.** A fenced block (```` ```python ````) after a card shows with the question in a dark code panel with

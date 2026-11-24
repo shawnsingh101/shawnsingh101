@@ -943,3 +943,5 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .practice-out.good { color: #1e8a5a; font-weight: 600; }
 .practice-out.bad, .practice-out .bad { color: #c0392b; }
 .practice-sol { margin: .9rem 0 0; }
+/* A live topic's card about how things stand now: its date, on the question */
+.as-of { display: inline-block; margin: 0 0 .45rem; padding: .1rem .5rem; border-radius: 999px; font-size: .72rem; font-weight: 600; letter-spacing: .02em; color: #9a5b00; background: rgba(240, 160, 40, .14); }

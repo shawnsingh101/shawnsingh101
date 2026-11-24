@@ -1,6 +1,6 @@
 // The Library: top-level subjects. Geography is built in; every other subject comes from note decks (decks/<Subject>/…).
 import { CONTINENTS, childSections, sectionChain } from './cards';
-import { NOTE_SUBJECTS } from './notes';
+import { HAS_LIVE, LIVE, NOTE_SUBJECTS } from './notes';
 import { COLLECTION_SUBJECTS } from './collections';
 import type { IconName } from './components/Icons';
 
@@ -11,8 +11,10 @@ const ICON: Record<string, IconName> = { Life: 'tree', Art: 'image', Music: 'mus
 
 export const SUBJECTS: Subject[] = [
   { id: 'geography', name: 'Geography', icon: 'globe', blurb: 'Countries, capitals, flags, leaders, regions, rivers, mountains, World Heritage',
-    sections: () => childSections(null).filter(s => !NOTE_SUBJECTS.includes(s) && !COLLECTION_SUBJECTS.includes(s)) },
+    sections: () => childSections(null).filter(s => !NOTE_SUBJECTS.includes(s) && !COLLECTION_SUBJECTS.includes(s) && s !== LIVE) },
   ...[...new Set([...COLLECTION_SUBJECTS, ...NOTE_SUBJECTS])].map((s): Subject => ({ id: s, name: s, icon: ICON[s] ?? 'book', blurb: BLURB[s] ?? (COLLECTION_SUBJECTS.includes(s) ? 'Famous works, with facts and pictures from Wikidata' : 'Your note decks'), sections: () => [s] })),
+  // A lens, not a home: ongoing stories from every subject (the war in Ukraine from History, the AI race from AI).
+  ...(HAS_LIVE ? [{ id: LIVE, name: LIVE, icon: 'flame' as IconName, blurb: 'Ongoing stories, checked against Wikipedia every Wednesday: new cards suggested, outdated ones updated', sections: () => [LIVE] }] : []),
 ];
 export const subjectOfSection = (sec: string) => { const top = sectionChain(sec)[0]; return SUBJECTS.find(s => s.sections().includes(top)) ?? SUBJECTS[0]; };
 export const isGeography = (sec: string) => subjectOfSection(sec).id === 'geography';

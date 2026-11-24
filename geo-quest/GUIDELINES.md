@@ -194,6 +194,24 @@ feature consistent. When adding anything, check it against this page. When a new
 - Practice problems use only what the chapter (and the ones before it) taught, two or more test cases where input is
   read, so hard-coding an answer can't pass. They're worked in Study and kept out of timed quizzes.
 
+## 4e. Live topics (ongoing stories)
+
+- **A live topic is a deck that follows Wikipedia articles** (`follows: Title; Title` and `checked: YYYY-MM-DD` in its
+  front matter). It lives with its subject (the war in Ukraine in History, the AI race in Artificial intelligence) and
+  is also listed under **Live topics**. Followed now: the Russo-Ukrainian war and the AI race (owner's choice, v1.33).
+- **Two kinds of card.** Settled facts (the invasion began on 24 February 2022). And **"as of" cards**, true for now
+  (`as of: November 2026` after the card), shown with their date. When one stops being true, rewrite it (the new state,
+  or the old one as history: "In 2025, …"); never delete a card someone has learned.
+- **The weekly briefing, every Wednesday**, is a scheduled Claude session. It runs `node scripts/briefing.mjs`, which
+  shows what changed in the followed articles, counting only text that has stood for a week. Fresh edits on ongoing
+  events are often early reports, disputed claims or vandalism.
+  - It writes **at most two new cards a week across all live topics**, the most significant changes first, and nothing
+    on a quiet week. Updates to "as of" cards don't count toward the two.
+  - It sets `checked:` to the day it ran, runs the audit, and opens a **pull request**. Merging it is the owner's
+    approval: nothing reaches the app without it.
+- **Wikipedia is the source of truth**, in its words: attribute disputed claims ("Ukraine says…"); casualty and similar
+  figures as ranges with whose estimate they are; no opinions of our own. Headings stay neutral, as everywhere.
+
 ## 5. Content files (how to add things)
 
 | What | Where | Format |
