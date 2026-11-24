@@ -36,7 +36,8 @@ the Dinosaurs: send the PDFs), birds with calls, trees and plants, any animal a 
 **Programming** (started): two linked decks in Computer science. *Python* follows the OpenStax textbook chapter by
 chapter (done: 1–3; next: Decisions, Loops, Functions…). *Under the hood* teaches this app from its own files (done:
 The repo, Git and GitHub; next: Data and the sync, the basics in real code with Python beside it, Structures, the app,
-algorithms, testing). Writing code comes with practice mode (queued).
+algorithms, testing). Practice decks beside each Python chapter: write the program, the app runs it in real Python and
+checks it (v1.32).
 
 **Classical music, Anki-guided** (Classical Music Themes, Parts I–II: 972 pieces). Essential (~170 themes): 39 works,
 63 clips so far; next: free recordings for the rest (Hallelujah Chorus, Bach's cello prelude, Swan Lake, the Nutcracker
@@ -49,7 +50,7 @@ copyright (Copland, Prokofiev, Barber, Orff, Khachaturian, Shostakovich) and can
 | --- | --- | --- | --- |
 | 1 | **Life**: the tree of life, animals and plants | built tree + collections + book decks | In progress (see above). Replaces "Birds and trees" |
 | 2 | **Labelled diagrams**: house systems, car, bike | new card type | Tap the part on a diagram, like tapping a country on the map |
-| 3 | **Practice mode**: math, statistics, Python | new mode | Numbers change each time, worked steps, Python that runs and is checked; scheduled by skill |
+| 3 | **Practice mode, part 2**: math and statistics | builds on practice cards | Python practice is done (v1.32). Next: numbers that change each time, worked steps |
 | 4 | **Quotes** | deck + card types | Fill in the key words; quote ↔ who said it |
 | 5 | **Astronomy**: night sky, constellations, and more | built data + map engine | A star chart using the map engine |
 | 6 | **Periodic table** | built data + chart | An interactive chart like the geologic time scale |
@@ -67,7 +68,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 | --- | --- |
 | 1.30 | Life: the tree of life, whales and dolphins, dinosaurs, how to tell them apart |
 | 1.31 | Life reorganized by the tree: domains as sections, photo → name with lineage blocks, dinosaurs by time |
-| 1.32 | Programming: Python chapters 1–3 and Under the hood (the repo, Git and GitHub); code cards; dinosaur times from Wikipedia |
+| 1.32 | Programming: Python chapters 1–3 and Under the hood (the repo, Git and GitHub); code cards; practice mode (write Python, run and checked); dinosaur times from Wikipedia; Wikipedia lead images where Commons has none |
 | 1.29 | Where people are really from, with the flag of their time |
 | 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
 | 1.27 | Earth history: a picture of the life of each time |

@@ -65,6 +65,10 @@ related: Italy, Florence
   ```
   ````
   `` `inline code` `` works in any card, even around a blank: `` `print({{name}})` ``.
+- **`- [practice] Read two numbers and print their sum`**: a practice card. You write the program; the app runs it in
+  real Python and checks it. Then, in any order, fenced blocks: ```` ```python ```` the starting code, ```` ```input ````
+  and ```` ```output ```` one test case (repeat for more), ```` ```check ```` asserts run after the program, and
+  ```` ```solution ```` a model answer (the audit makes sure it passes).
 - **`source: src/srs.ts`** (after a code card): the file the code is quoted from. The card links to it on GitHub, and
   `npm run audit` fails if the file no longer contains that code.
 - **`species: Juniperus communis`** (under a heading): the scientific name of a plant or animal, shown in italics after the

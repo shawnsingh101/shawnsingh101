@@ -354,6 +354,27 @@ function fossilRangeOf(wt) {
   const text = s.replace(/\{\{[^|{}]*\|?/g, ' ').replace(/\|/g, ' ').replace(/\[\[(?:[^|\]]*\|)?([^\]]*)\]\]/g, '$1').replace(/<[^>]+>/g, ' ').replace(/'{2,}/g, '').replace(/\s+/g, ' ').trim().replace(/[,;~ ]+$/, '');
   return text || ma.length ? { text, ma: ma.length ? ma : null, source: 'Wikipedia' } : null;
 }
+// No free picture on Commons (a building or painting still under copyright, a book cover): use the English Wikipedia
+// article's lead image instead, which Wikipedia shows under fair use. Hot-linked from Wikipedia, never copied here.
+try {
+  const bare = Object.entries(items).filter(([, x]) => !x.image && x.wiki);
+  for (const part of chunks(bare, 40)) {
+    const u = `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&redirects=1&prop=pageimages&piprop=thumbnail&pithumbsize=800&pilicense=any&titles=${encodeURIComponent(part.map(([, x]) => x.wiki.replace(/_/g, ' ')).join('|'))}`;
+    let q = null;
+    for (let attempt = 1; attempt <= 4 && !q; attempt++) {
+      try { const res = await fetch(u, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(60000) }); if (res.ok) q = (await res.json()).query; } catch { /* retry */ }
+      if (!q) await new Promise(r => setTimeout(r, 10000 * attempt));
+    }
+    if (!q) { for (const [id] of part) if (old.items[id]?.imageUrl) items[id].imageUrl = old.items[id].imageUrl; continue; }
+    const hop = new Map([...(q.normalized ?? []), ...(q.redirects ?? [])].map(x => [x.from, x.to]));
+    const byTitle = new Map(q.pages.map(p => [p.title, p]));
+    for (const [id, x] of part) {
+      let t = x.wiki.replace(/_/g, ' '); for (let i = 0; i < 3 && hop.has(t); i++) t = hop.get(t);
+      const src = byTitle.get(t)?.thumbnail?.source?.replace(/\?.*$/, '');
+      if (src) items[id].imageUrl = src;
+    }
+  }
+} catch (e) { console.warn('Wikipedia lead images skipped:', e.message); }
 try {
   const when = lists.filter(l => l.taxon).flatMap(l => l.entries.filter(e => e.id && e.rest.split(' | ').length > 2 && items[e.id]?.wiki));
   for (const part of chunks(when, 20)) {

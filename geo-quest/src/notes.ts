@@ -14,6 +14,7 @@ export interface NoteCard {
   also?: string[];                             // an "also in: Philadelphia" line after it: the card is also in that deck
   species?: string;                            // a "species: Juniperus communis" line: the scientific name of the plant or animal
   code?: { lang: string; text: string };       // a fenced code block: shown with the question. A \u0000 in it marks the card's blank
+  practice?: Practice;                         // a "[practice]" card: write a program; it's run and checked (src/python.ts)
   source?: string;                             // a "source: src/tree.ts" line: the file the code is quoted from (linked on GitHub)
   context: string | null;                      // the ## heading it sits under
   picture: { file?: string | null; url?: string | null; caption: string } | null;
@@ -22,6 +23,9 @@ export interface NoteCard {
   native: { name: string; lang: string; code?: string; roman?: string; for?: string }[]; // a "native: الكعبة (Arabic)" line: the name in its own language
   fp: string;                                  // fingerprint: changes when the card's text changes
 }
+/** A practice problem: the code you start from, the cases it's tested on (the lines it reads with input(), and what it
+ *  should print), asserts run after it, and a model solution (shown on request, and checked by the audit). */
+export interface Practice { starter: string; cases: { input: string; output: string | null }[]; check: string; solution: string }
 export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; eras: string[]; deep: boolean; cards: { id: string; card: NoteCard }[] }
 
 // Language names a deck can use → codes for the device voice.
@@ -88,6 +92,19 @@ export function parseDeck(file: string, text: string): Deck {
         for (const c of lastCards()) c.card.fp += '|' + text;
         prompt = null; lastWasCard = true; continue;
       }
+      // A practice card's blocks: ```python (the starting code), ```input / ```output (a test case, as many as you like),
+      // ```check (asserts), ```solution.
+      const pr = afterCard ? lastCards().find(c => c.card.practice)?.card.practice : undefined;
+      if (pr) {
+        const last = pr.cases[pr.cases.length - 1];
+        if (lang === 'input') pr.cases.push({ input: text, output: null });
+        else if (lang === 'output') { if (last && last.output === null) last.output = text; else pr.cases.push({ input: '', output: text }); }
+        else if (lang === 'check') pr.check = text;
+        else if (lang === 'solution') pr.solution = text;
+        else pr.starter = text;
+        for (const c of lastCards()) c.card.fp += '|' + text;
+        lastWasCard = true; continue;
+      }
       if (afterCard) for (const c of lastCards()) { c.card.code = { lang, text }; c.card.fp += '|' + text; }
       lastWasCard = afterCard; continue;
     }
@@ -140,6 +157,9 @@ export function parseDeck(file: string, text: string): Deck {
     if (!b) { if (!seenHeading) intro.push(line); continue; }
     let t = b[1];
     lastWasCard = true; lineFrom = cards.length; prompt = null;
+    // "[practice] Ask for a name and greet it": a practice card (its code blocks follow).
+    const prac = /^\[practice\]\s*(.+)$/i.exec(t);
+    if (prac) { add({ pre: prac[1], answer: 'its solution', post: '', front: false, practice: { starter: '', cases: [], check: '', solution: '' } }, 'practice:' + prac[1]); continue; }
     // "[strata: Mesozoic]": a time-scale card drawn from src/geotime.ts (the unit's place and its blank parts).
     const st = /^\[strata:\s*([^\]]+)\]\s*(.*)$/i.exec(t);
     if (st) { add({ pre: st[2] || `The parts of the ${st[1]}, oldest at the bottom`, answer: st[1], post: '', front: true, strata: st[1].trim() }, 'strata:' + st[1]); continue; }

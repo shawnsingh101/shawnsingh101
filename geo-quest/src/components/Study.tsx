@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Lineage } from './Lineage';
 import { CodeBlock, REPO_FILE, Rich } from './Code';
+import { PracticeCard } from './Practice';
 import { ClipPlayer, MusicReveal } from './Music';
 import { Say } from './Native';
 import { OriginLine } from './Origin';
@@ -140,6 +141,9 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
       if (peek) { if (e.key === 'Escape') setPeek(false); return; } // paused while the answer map is open
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); undo(); return; }
       if (!f) return;
+      // Typing in a practice card's editor is typing, not a shortcut; and a practice card flips by passing (or giving up).
+      if ((e.target as HTMLElement | null)?.closest?.('textarea, input')) return;
+      if (!revealed && f.practice) return;
       if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'reveal') { e.preventDefault(); reveal(); }
       else if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'tap') { e.preventDefault(); dontKnow(); }
       // 1 Again · 2 Hard · 3 Good · 4 Easy (space = Good), like Anki. A missed map tap can only be "Again".
@@ -320,7 +324,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           : <div className="side-placeholder"><Icon name="image" size={28} /><span>The picture shows when you flip the card</span></div>}
       </div>}
       <div className="card-wrap">
-        <article className={'card' + (revealed ? ' revealed' : '')} onClick={() => f.mode === 'reveal' && reveal()}>
+        <article className={'card' + (revealed ? ' revealed' : '')} onClick={() => f.mode === 'reveal' && !f.practice && reveal()}>
           <div className="card-meta">
             {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : (c.building && item.ref.kind === 'artMaker' ? 'Who designed it?' : c.book && item.ref.kind === 'artMaker' ? 'Who wrote it?' : KIND_LABEL[item.ref.kind])}</span>{item.isNew && <span className="new">new</span>}
           </div>
@@ -333,7 +337,8 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
           {/* Code with the question: above the sentence ("This prints ___."), or holding the blank itself */}
           {f.code && !f.code.text.includes('\u0000') && <CodeBlock text={f.code.text} lang={f.code.lang} />}
-          {f.code?.text.includes('\u0000') ? <>
+          {f.practice ? <PracticeCard key={item.ref.id} p={f.practice} prompt={f.pre} revealed={revealed} onDone={reveal} />
+          : f.code?.text.includes('\u0000') ? <>
             <p className="cloze front"><Rich before={f.pre} /></p>
             <CodeBlock text={f.code.text} lang={f.code.lang} blank={revealed ? <span className="fill">{f.answer}</span> : <span className="blank">{f.blank}</span>} />
           </> : f.strata ? <>
@@ -379,7 +384,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {revealed && <Related ds={ds} place={c} onOpen={setSheet} />}
           {!sidePic && revealed && s.pictures && f.picture && !f.promptPicture && <Picture {...f.picture} />}
           {revealed && !f.picture && c.flag && c.layer !== 'note' && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}
-          {!revealed && f.mode === 'reveal' && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
+          {!revealed && f.mode === 'reveal' && !f.practice && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
           {!revealed && f.mode === 'tap' && <div className="tap-hint">
             <p className="hint">Tap the right place on the map{regionIds.length > 1 ? ` — zoomed to ${group?.name}` : ''}</p>
             <button className="btn small" onClick={e => { e.stopPropagation(); dontKnow(); }}>I don't know<kbd className="kbd-only">space</kbd></button>

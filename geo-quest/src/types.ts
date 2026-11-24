@@ -40,6 +40,7 @@ export interface Place {
   topo?: { id?: string; name?: string } | null;
   flag?: string | null;
   image?: string | null;
+  imageUrl?: string;        // no free picture on Commons: the English Wikipedia article's lead image (fair use, hot-linked)
   lon?: number; lat?: number;
   wiki: string | null;
   capitals: Capital[];

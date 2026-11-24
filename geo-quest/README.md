@@ -33,7 +33,7 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
-## v1.32: Programming, and dinosaurs from Wikipedia
+## v1.32: Programming with practice mode, dinosaurs from Wikipedia, and more pictures
 
 - **Code cards.** A fenced block (```` ```python ````) after a card shows with the question in a dark code panel with
   simple coloring (`components/Code.tsx`); a block with `{{blanks}}` is its own fill-in-the-code card, asked by the bullet
@@ -49,6 +49,16 @@ world map fill in as you master it.
   into epochs and ages, falling back on the dates when no age is named. All 30 Mesozoic ages are in the time scale now. A
   range can span epochs (Deinonychus: Early–Late Cretaceous, Aptian–Cenomanian); the card says "as Wikipedia has it".
   The list line keeps a fallback range; `fossilRange` in `collection-fixes.json` overrides both.
+- **Practice mode**: `[practice]` cards (one practice deck beside each Python chapter, 15 problems). An editor (Tab
+  indents, Enter keeps the indentation, Ctrl+Enter checks), **Run** and **Check** against the card's tests, friendly
+  errors ("NameError on line 2: …"), "should print / but printed", and **Show a solution**. Passing flips the card, then
+  you grade it. Real Python 3.14 via Pyodide 314.0.7 (an exact devDependency), copied into the site's `pyodide/` folder
+  at build time by a small Vite plugin and run in a module worker (`public/py-worker.js`, `src/python.ts`); a run is
+  stopped after 5 s. `public/practice-runner.py` runs a case for both the app and the audit, which checks every
+  solution passes and every starting code doesn't. Practice cards stay out of timed quizzes.
+- **Pictures**: where Commons has no free picture (Villa Savoye, Dalí, Kahlo, Pollock, the Obama portraits, book
+  covers), the sync takes the English Wikipedia article's lead image (`pilicense=any`), hot-linked, never copied: 19 of
+  the 20 that had none.
 - Fixed: a stray brace in the stylesheet (from v1.31) that hid every style after it.
 
 ## v1.31: Life, reorganized by the tree

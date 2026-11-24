@@ -54,7 +54,8 @@ export function placeCountries(ds: Dataset, p: Place): string[] {
 export const COUNTRY_FILTER_LAYERS = ['site', 'peak', 'range', 'river', 'lake', 'art', 'desert'];
 
 export function quizPool(ds: Dataset, scope: Scope, topics: Topic[], country?: string | null) {
-  const cards = scopeGroups(scope).flatMap(g => g.topics.filter(t => topics.includes(t.id)).flatMap(t => cardsForNode(ds, nodeId(g.id, t.id))));
+  // Practice problems are worked through in Study, not timed in a quiz.
+  const cards = scopeGroups(scope).flatMap(g => g.topics.filter(t => topics.includes(t.id)).flatMap(t => cardsForNode(ds, nodeId(g.id, t.id)))).filter(c => !c.country.card?.practice);
   return country ? cards.filter(c => placeCountries(ds, c.country).includes(country)) : cards;
 }
 
