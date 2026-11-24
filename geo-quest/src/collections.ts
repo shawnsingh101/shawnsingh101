@@ -8,7 +8,7 @@ import { languageOf, literatureOf, topicsOf } from './tags';
 /** Subjects other than the collections' own (a shelf named like one is shown there too). */
 const OTHER_SUBJECTS = () => NOTE_SUBJECTS;
 
-export interface CollectionList { file: string; id: string; building: boolean; book: boolean; music: boolean; person: boolean; deep: boolean; title: string; subject: string; path: string[]; intro: string | null; entries: { id: string; heading: string | null; clips?: { label: string | null; file: string; start: number }[] }[] }
+export interface CollectionList { file: string; id: string; building: boolean; book: boolean; music: boolean; person: boolean; taxon: boolean; deep: boolean; title: string; subject: string; path: string[]; intro: string | null; entries: { id: string; heading: string | null; note?: string; branch?: string; clips?: { label: string | null; file: string; start: number }[] }[] }
 export interface ArtFacts {
   name: string | null; nameThe?: string | null; museumWiki?: string | null;
   plural?: boolean; species?: string | null; native?: NativeName[]; zh?: Chinese | null; // native: its name in its own language (Chinese with pinyin)
@@ -20,6 +20,7 @@ export interface ArtFacts {
   makerNative?: NativeName[]; // the maker's name in their own language
   makerOrigin?: Origin;
   person?: PersonFacts | null; // people
+  taxon?: boolean; rangeMap?: string | null; status?: string | null; // animals and plants
   country: string | null; countryName: string | null; lon: number | null; lat: number | null; links: number;
 }
 
@@ -39,14 +40,16 @@ export function parseList(file: string, text: string): CollectionList {
     const line = raw.trim();
     const h = /^##\s+(.*)$/.exec(line);
     if (h) { heading = h[1]; continue; }
-    const e = /^-\s+(Q\d+)\b/.exec(line); // lines without an id yet are waiting for the sync
-    if (e) { if (!entries.some(x => x.id === e[1])) entries.push({ id: e[1], heading }); continue; }
+    const e = /^-\s+(Q\d+)\b(.*)$/.exec(line); // lines without an id yet are waiting for the sync
+    // "- Q42196 Blue whale | in every ocean…": the note after " | " (where it lives); "## Rorquals | Balaenopteridae": the
+    // heading names the group's place in the tree of life (src/tree.ts).
+    if (e) { if (!entries.some(x => x.id === e[1])) entries.push({ id: e[1], heading: heading?.split(' | ')[0] ?? null, branch: heading?.split(' | ')[1]?.trim(), note: e[2].split(' | ')[1]?.trim() }); continue; }
     // Music: "♪ II. Adagio | File.ogg" (or "♪ II. Adagio | File.ogg @45" to start 45 seconds in) under its work.
     const clip = /^♪\s*([^|]*)\|\s*(.+?)(?:\s+@(\d+))?$/.exec(line);
     if (clip && entries.length) { const last = entries[entries.length - 1]; (last.clips ??= []).push({ label: clip[1].trim() || null, file: clip[2].trim(), start: +(clip[3] ?? 0) }); continue; }
     if (line && !heading && !line.startsWith('-') && !line.startsWith('#')) intro.push(line);
   }
-  return { file, id: 'c-' + slug([subject, ...path, title].join(' ')), building: meta.kind === 'building', book: meta.kind === 'book', music: meta.kind === 'music', person: meta.kind === 'person', deep: meta.depth === 'deep', title, subject, path, intro: intro.join(' ') || null, entries };
+  return { file, id: 'c-' + slug([subject, ...path, title].join(' ')), building: meta.kind === 'building', book: meta.kind === 'book', music: meta.kind === 'music', person: meta.kind === 'person', taxon: meta.kind === 'taxon', deep: meta.depth === 'deep', title, subject, path, intro: intro.join(' ') || null, entries };
 }
 
 let files: Record<string, string> = {};
@@ -71,7 +74,7 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
     const sec = chain[chain.length - 1];
     // `depth: deep` (deep cuts): unlocks once half of the core list beside it is known.
     const core = l.deep ? LISTS.find(x => !x.deep && x.subject === l.subject && x.path.join('/') === l.path.join('/')) : undefined;
-    const noun = l.person ? ['people', 'People', 'person'] as const : l.music ? ['pieces', 'Pieces', 'music'] as const : l.building ? ['buildings', 'Buildings', 'landmark'] as const : l.book ? ['books', 'Books', 'book'] as const : ['works', 'Works', 'image'] as const;
+    const noun = l.taxon ? ['species', 'Species', 'eye'] as const : l.person ? ['people', 'People', 'person'] as const : l.music ? ['pieces', 'Pieces', 'music'] as const : l.building ? ['buildings', 'Buildings', 'landmark'] as const : l.book ? ['books', 'Books', 'book'] as const : ['works', 'Works', 'image'] as const;
     if (!GROUPS.some(g => g.id === l.id)) GROUPS.push({ id: l.id, section: sec, name: l.title, layer: 'art', nouns: noun[0], topics: [{ id: 'art', name: noun[1], icon: noun[2] }], note: l.intro ?? undefined, ...(core ? { requires: `${core.id}/art` } : {}) });
     for (const e of l.entries) {
       const f = facts[e.id];
@@ -98,6 +101,22 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
           native: f.native?.length ? f.native : undefined, city: pp.birthplace, country: pp.stateId ?? pp.country ?? undefined, countryName: pp.state ?? pp.countryName ?? undefined,
           person: { ...pp, scene: e.heading }, year: pp.born,
           facts: [pp.born ? `${pp.born}–${pp.died ?? ''}` : null, pp.instruments.join(', ') || null, e.heading].filter(Boolean).join(' · ') || undefined,
+        } as Place);
+        continue;
+      }
+      // Animals and plants: the photo, the scientific name, the branch of the tree, where (or when) it lives.
+      if (l.taxon) {
+        const pid = taken.has(e.id) ? `${e.id}-${slug(l.subject)}` : e.id;
+        if (out.has(pid)) { out.get(pid)!.alsoIn = [...(out.get(pid)!.alsoIn ?? []), l.id]; continue; }
+        const genusOnly = !!f.species && f.species.split(' ')[0] === f.name; // a dinosaur's name is its genus
+        const first = f.name.split(' ')[0];
+        const article = /^(North|South)$|'s$/.test(first) ? f.name : f.name.charAt(0).toLowerCase() + f.name.slice(1);
+        out.set(pid, {
+          id: pid, qid: e.id, layer: 'art', group: l.id, name: f.name, nameThe: f.nameThe ?? (genusOnly ? undefined : `${/^[aeiou]/i.test(f.name) ? 'an' : 'a'} ${article}`),
+          wiki: f.wiki, image: f.image, capitals: [], capitalAnswer: null, artists: [], species: f.species ?? undefined, native: f.native?.length ? f.native : undefined,
+          taxon: { branch: e.branch ?? null, note: e.note ?? null, rangeMap: f.rangeMap ?? null, status: f.status ?? null, group: e.heading, genusOnly,
+            period: /Triassic|Jurassic|Cretaceous/.exec(e.note ?? '')?.[0] ?? null },
+          facts: [e.heading, f.status && f.status !== 'least concern' ? f.status : null].filter(Boolean).join(' · ') || undefined,
         } as Place);
         continue;
       }
@@ -133,6 +152,14 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
     const subject = sectionChain(GROUPS.find(g => g.id === p.group)!.section)[0];
     const s = claimSection('By scene', subject), gid = 'cp-' + slug(`${subject} ${p.person.scene}`);
     if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: s, name: p.person.scene, layer: 'art', nouns: 'people', topics: [{ id: 'art', name: 'People', icon: 'person' }] });
+    p.alsoIn = [...(p.alsoIn ?? []), gid];
+  }
+  // Dinosaurs also live in Earth history, beside their period: Earth history › Dinosaurs by period › Jurassic dinosaurs.
+  for (const p of out.values()) {
+    const per = p.taxon?.period; if (!per || !COLLECTION_SUBJECTS.length) continue;
+    if (!NOTE_SUBJECTS.includes('Earth history')) continue;
+    const s = claimSection('Dinosaurs by period', 'Earth history'), gid = 'cd-' + slug(per);
+    if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: s, name: `${per} dinosaurs`, layer: 'art', nouns: 'dinosaurs', topics: [{ id: 'art', name: 'Dinosaurs', icon: 'mountain' }] });
     p.alsoIn = [...(p.alsoIn ?? []), gid];
   }
   // Shelves, made from the tags (src/tags.ts): Books › Fiction by language › "Italian literature"; Books › Nonfiction by

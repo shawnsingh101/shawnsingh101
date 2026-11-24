@@ -3,6 +3,7 @@
 import type { Place } from './types';
 import { GROUPS, claimSection } from './cards';
 import { epochDeck, geotimeDeck } from './geotime';
+import { treeDeck } from './tree';
 
 export interface NoteCard {
   pre: string; answer: string; post: string;  // cloze: "pre [answer] post"; front/back: pre = front, answer = back
@@ -10,6 +11,7 @@ export interface NoteCard {
   pictureFirst?: boolean;
   hint?: string;                               // what the blank says before you flip: {{Milan|what city?}} → "what city?"
   parts?: (string | { answer: string; hint?: string })[]; // a grouped cloze ({{c1::…}}): the sentence with several blanks
+  tree?: string;                               // "[tree: Cetacea]": a tree-of-life card: the group's place and its (blank) branches (src/tree.ts)
   strata?: string;                             // "[strata: Phanerozoic]": a geologic time card showing the unit's blocks (src/geotime.ts)
   also?: string[];                             // an "also in: Philadelphia" line after it: the card is also in that deck
   species?: string;                            // a "species: Juniperus communis" line: the scientific name of the plant or animal                      // "[picture]" in the question: the heading's picture is the question
@@ -111,6 +113,8 @@ export function parseDeck(file: string, text: string): Deck {
     // "[strata: Mesozoic]": a time-scale card drawn from src/geotime.ts (the unit's place and its blank parts).
     const st = /^\[strata:\s*([^\]]+)\]\s*(.*)$/i.exec(t);
     if (st) { add({ pre: st[2] || `The parts of the ${st[1]}, oldest at the bottom`, answer: st[1], post: '', front: true, strata: st[1].trim() }, 'strata:' + st[1]); continue; }
+    const tr = /^\[tree:\s*([^\]]+)\]\s*(.*)$/i.exec(t);
+    if (tr) { add({ pre: tr[2] || `The branches of ${tr[1]}`, answer: tr[1], post: '', front: true, tree: tr[1].trim() }, 'tree:' + tr[1]); continue; }
     // "[picture]" in a cloze: the heading's picture is shown as the question.
     const picFirst = /\[picture\]/i.test(t) && /\{\{/.test(t);
     if (picFirst) t = t.replace(/\s*\[picture\]\s*/i, ' ').trim();
@@ -162,7 +166,7 @@ export function parseDeck(file: string, text: string): Deck {
 let files: Record<string, string> = {};
 try { files = import.meta.glob('../decks/**/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>; } catch { /* not built by Vite */ }
 // Decks built from data in the app itself (the geologic time scale, shared with its chart).
-const BUILT: [string, string][] = [['../decks/Earth history/Geologic time scale.md', geotimeDeck()], ['../decks/Earth history/Epochs of the Cenozoic.md', epochDeck()]];
+const BUILT: [string, string][] = [['../decks/Life/The tree of life.md', treeDeck()], ['../decks/Earth history/Geologic time scale.md', geotimeDeck()], ['../decks/Earth history/Epochs of the Cenozoic.md', epochDeck()]];
 export const DECKS: Deck[] = [...Object.entries(files).filter(([f]) => !/README\.md$/i.test(f)), ...BUILT].map(([f, t]) => parseDeck(f, t))
   .sort((a, b) => a.file.replace(/^.*decks\//, '').localeCompare(b.file.replace(/^.*decks\//, ''), 'en', { numeric: true })); // folder & file order (numbers first)
 export const NOTE_SUBJECTS = [...new Set(DECKS.map(d => d.subject))];

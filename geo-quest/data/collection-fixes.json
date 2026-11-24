@@ -1726,5 +1726,90 @@
     "Q41"
    ]
   }
+ },
+ "Q13612407": {
+  "species": "Balaenoptera acutorostrata",
+  "status": "least concern",
+  "name": "Minke whale"
+ },
+ "Q27027": {
+  "name": "Harbor porpoise"
+ },
+ "Q26843": {
+  "status": "data deficient"
+ },
+ "Q309392": {
+  "species": "Coelophysis bauri",
+  "image": "Coelophysis TD.png"
+ },
+ "Q14400": {
+  "species": "Allosaurus fragilis"
+ },
+ "Q100196": {
+  "species": "Archaeopteryx lithographica"
+ },
+ "Q14405": {
+  "species": "Deinonychus antirrhopus"
+ },
+ "Q130966": {
+  "species": "Spinosaurus aegyptiacus"
+ },
+ "Q14438": {
+  "species": "Giganotosaurus carolinii"
+ },
+ "Q18510948": {
+  "species": "Carnotaurus sastrei"
+ },
+ "Q14403": {
+  "species": "Velociraptor mongoliensis"
+ },
+ "Q14332": {
+  "species": "Tyrannosaurus rex",
+  "image": "Tyrannosaurus TD.png"
+ },
+ "Q131046": {
+  "species": "Plateosaurus trossingensis"
+ },
+ "Q14397": {
+  "species": "Brachiosaurus altithorax",
+  "image": "Brachiosaurus TD.png"
+ },
+ "Q14330": {
+  "species": "Diplodocus carnegii"
+ },
+ "Q14326": {
+  "species": "Apatosaurus ajax"
+ },
+ "Q130859": {
+  "species": "Argentinosaurus huinculensis"
+ },
+ "Q14388": {
+  "species": "Stegosaurus stenops",
+  "image": "Stegosaurus TD.png"
+ },
+ "Q40621": {
+  "species": "Ankylosaurus magniventris"
+ },
+ "Q130980": {
+  "species": "Iguanodon bernissartensis"
+ },
+ "Q203583": {
+  "species": "Parasaurolophus walkeri"
+ },
+ "Q309466": {
+  "species": "Edmontosaurus regalis"
+ },
+ "Q14506": {
+  "species": "Protoceratops andrewsi"
+ },
+ "Q14483": {
+  "species": "Styracosaurus albertensis"
+ },
+ "Q14384": {
+  "species": "Triceratops horridus",
+  "image": "Triceratops TD.png"
+ },
+ "Q14455": {
+  "species": "Pachycephalosaurus wyomingensis"
  }
 }

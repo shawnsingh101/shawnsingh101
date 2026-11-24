@@ -41,6 +41,7 @@ related: Italy, Florence
 - **After a card**, a picture line, `native:`, `species:`, `also in:` or `> note` belong to that card only (all the cards
   made from that line). Under a heading, before any card, a picture / `native:` / `species:` apply to the whole topic.
 - **`- [strata: Mesozoic] The periods of the Mesozoic era`**: a geologic time card (the era's place, its periods blank).
+- **`- [tree: Cetacea] The families of whales`**: a tree-of-life card (the group's ancestors, its branches blank).
 - **`- front :: back`**: a question-and-answer card. **`:::`** makes cards in both directions.
 - **`> text`**: a note shown after the answer of the card above it.
 - **`related: A, B, C`** (anywhere under a heading): links shown on those cards after you flip them. A name the app

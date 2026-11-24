@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { TreeCard } from './TreeCard';
 import { ClipPlayer, MusicReveal } from './Music';
 import { Say } from './Native';
 import { OriginLine } from './Origin';
@@ -327,7 +328,10 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {/* Interstates: the route sign beside the question (once flipped when the number is what's being asked) */}
           {c.layer === 'road' && c.image && item.ref.kind !== 'roadShield' && (revealed || item.ref.kind === 'locate') && <img className="card-shield" src={commonsUrl(c.image, 160)} alt={`${c.short ?? c.name} sign`} />}
           {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
-          {f.strata ? <>
+          {f.tree ? <>
+            <p className="cloze front">{f.pre}</p>
+            <TreeCard group={f.tree} revealed={revealed} />
+          </> : f.strata ? <>
             <p className="cloze front">{f.pre}</p>
             <StrataCard unit={f.strata} revealed={revealed} />
           </> : f.parts ? <p className="cloze">
