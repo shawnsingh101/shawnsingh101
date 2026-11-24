@@ -58,8 +58,7 @@ copyright (Copland, Prokofiev, Barber, Orff, Khachaturian, Shostakovich) and can
 | 8 | **International organizations and treaties** | collection + map layers | Tap every member on the map (NATO, EU, BRICS…) |
 | 9 | **Finance** | decks | Linked to coursework and the Dashboard's live numbers |
 
-Ideas for later, not yet in the queue: movies, political science, international relations, current events as
-"briefing" decks (facts with an as-of date that come back for a re-check), AI, languages (listening, typed answers),
+Ideas for later, not yet in the queue: movies, political science, international relations, AI, languages (listening, typed answers),
 jazz recordings (as they become free: 1926 recordings on 1 January 2027), more music beyond classical and jazz, holidays & traditions (Thanksgiving first), put-in-order cards, wine regions and grapes.
 
 ## Done
@@ -69,6 +68,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 | 1.30 | Life: the tree of life, whales and dolphins, dinosaurs, how to tell them apart |
 | 1.31 | Life reorganized by the tree: domains as sections, photo → name with lineage blocks, dinosaurs by time |
 | 1.32 | Programming: Python chapters 1–3 and Under the hood (the repo, Git and GitHub); code cards; practice mode (write Python, run and checked); dinosaur times from Wikipedia; Wikipedia lead images where Commons has none |
+| 1.33 | Live topics: the Russo-Ukrainian war and the AI race, "as of" cards, a weekly briefing (Wednesdays) that suggests up to two cards a week as a pull request |
 | 1.29 | Where people are really from, with the flag of their time |
 | 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
 | 1.27 | Earth history: a picture of the life of each time |

@@ -69,6 +69,10 @@ related: Italy, Florence
   real Python and checks it. Then, in any order, fenced blocks: ```` ```python ```` the starting code, ```` ```input ````
   and ```` ```output ```` one test case (repeat for more), ```` ```check ```` asserts run after the program, and
   ```` ```solution ```` a model answer (the audit makes sure it passes).
+- **`follows: Russo-Ukrainian war (2022–present); …`** and **`checked: 2026-11-24`** (front matter): a live topic. The
+  weekly briefing reads those Wikipedia articles and suggests cards; the deck is also listed under Live topics.
+- **`as of: November 2026`** (after a card): true for now, not for good. Shown on the card; the weekly briefing
+  suggests an update when it changes.
 - **`source: src/srs.ts`** (after a code card): the file the code is quoted from. The card links to it on GitHub, and
   `npm run audit` fails if the file no longer contains that code.
 - **`species: Juniperus communis`** (under a heading): the scientific name of a plant or animal, shown in italics after the

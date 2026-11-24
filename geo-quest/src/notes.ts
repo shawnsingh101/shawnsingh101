@@ -13,6 +13,7 @@ export interface NoteCard {
   strata?: string;                             // "[strata: Phanerozoic]": a geologic time card showing the unit's blocks (src/geotime.ts)
   also?: string[];                             // an "also in: Philadelphia" line after it: the card is also in that deck
   species?: string;                            // a "species: Juniperus communis" line: the scientific name of the plant or animal
+  asOf?: string;                               // an "as of: November 2026" line: true for now, not for good (a live topic's current state)
   code?: { lang: string; text: string };       // a fenced code block: shown with the question. A \u0000 in it marks the card's blank
   practice?: Practice;                         // a "[practice]" card: write a program; it's run and checked (src/python.ts)
   source?: string;                             // a "source: src/tree.ts" line: the file the code is quoted from (linked on GitHub)
@@ -26,7 +27,9 @@ export interface NoteCard {
 /** A practice problem: the code you start from, the cases it's tested on (the lines it reads with input(), and what it
  *  should print), asserts run after it, and a model solution (shown on request, and checked by the audit). */
 export interface Practice { starter: string; cases: { input: string; output: string | null }[]; check: string; solution: string }
-export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; eras: string[]; deep: boolean; cards: { id: string; card: NoteCard }[] }
+export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; eras: string[]; deep: boolean;
+  follows: string[]; checked: string | null; // a live topic: the Wikipedia articles the weekly briefing reads, and when it last did
+  cards: { id: string; card: NoteCard }[] }
 
 // Language names a deck can use → codes for the device voice.
 const LANG_CODE: Record<string, string> = { maori: 'mi', 'māori': 'mi', catalan: 'ca', croatian: 'hr', czech: 'cs', danish: 'da', swedish: 'sv', arabic: 'ar', punjabi: 'pa', hebrew: 'he', italian: 'it', hindi: 'hi', greek: 'el', latin: 'it', sanskrit: 'hi', japanese: 'ja', chinese: 'zh', mandarin: 'zh', spanish: 'es', french: 'fr', german: 'de', persian: 'fa', portuguese: 'pt', russian: 'ru', korean: 'ko', turkish: 'tr', urdu: 'ur', polish: 'pl', hungarian: 'hu', vietnamese: 'vi', swahili: 'sw', amharic: 'am', armenian: 'hy', georgian: 'ka', tibetan: 'bo', thai: 'th', dutch: 'nl' };
@@ -112,6 +115,9 @@ export function parseDeck(file: string, text: string): Deck {
     if (!line) continue;
     const wasCard: boolean = lastWasCard; lastWasCard = false;
     // "source: src/tree.ts": where the code on the card above comes from; the card links to it on GitHub.
+    // "as of: November 2026": the card is about the current state of things; shown on the card, rewritten when it changes.
+    const asOf = /^as of:\s*(.+)$/i.exec(line);
+    if (asOf) { for (const c of lastCards()) { c.card.asOf = asOf[1].trim(); c.card.fp += '|' + asOf[1].trim(); } lastWasCard = wasCard; continue; }
     const srcLine = /^source:\s*(\S+)$/i.exec(line);
     if (srcLine) { for (const c of lastCards()) c.card.source = srcLine[1]; lastWasCard = wasCard; continue; }
     const h = /^#{1,3}\s+(.*)$/.exec(line);
@@ -206,7 +212,7 @@ export function parseDeck(file: string, text: string): Deck {
     });
   }
   // The intro keeps its lines (a book's summary page has paragraphs); `depth: deep` marks a deck of deep cuts.
-  return { file, id, title, subject, path, intro: intro.join('\n') || null, eras, deep: meta.depth === 'deep', cards };
+  return { file, id, title, subject, path, intro: intro.join('\n') || null, eras, deep: meta.depth === 'deep', follows: (meta.follows ?? '').split(';').map(s => s.trim()).filter(Boolean), checked: meta.checked || null, cards };
 }
 
 // Every deck file under geo-quest/decks (bundled at build time; README files are documentation, not decks).
@@ -218,6 +224,9 @@ const BUILT: [string, string][] = [['../decks/Earth history/Geologic time scale.
 export const DECKS: Deck[] = [...Object.entries(files).filter(([f]) => !/README\.md$/i.test(f)), ...BUILT].map(([f, t]) => parseDeck(f, t))
   .sort((a, b) => a.file.replace(/^.*decks\//, '').localeCompare(b.file.replace(/^.*decks\//, ''), 'en', { numeric: true })); // folder & file order (numbers first)
 export const NOTE_SUBJECTS = [...new Set(DECKS.map(d => d.subject))];
+/** The Live topics lens: every deck that follows an ongoing story. */
+export const LIVE = 'Live topics';
+export const HAS_LIVE = DECKS.some(d => d.follows.length);
 
 /** The world eras a deck can be tagged with (`era:`), oldest first. Rough world-history spans; a deck can name two. */
 export const ERAS = [
@@ -247,6 +256,12 @@ export function registerNotes(): Place[] {
   for (const era of ERAS) for (const d of DECKS.filter(x => x.eras.some(e => e.toLowerCase() === era.key))) {
     const g = GROUPS.find(x => x.id === 'n-' + d.id)!;
     const sec = claimSection(era.section, claimSection('By era', d.subject));
+    if (!g.alsoInSections?.includes(sec)) g.alsoInSections = [...(g.alsoInSections ?? []), sec];
+  }
+  // Live topics: a deck that follows Wikipedia articles (`follows:`) is also listed under Live topics, its own subject,
+  // beside every other ongoing story. The weekly briefing reads those articles and suggests cards (scripts/briefing.mjs).
+  for (const d of DECKS.filter(x => x.follows.length)) {
+    const g = GROUPS.find(x => x.id === 'n-' + d.id)!, sec = claimSection(LIVE, null);
     if (!g.alsoInSections?.includes(sec)) g.alsoInSections = [...(g.alsoInSections ?? []), sec];
   }
   // Cards tagged "also in: <deck title>" are listed in that deck too (one set of progress).

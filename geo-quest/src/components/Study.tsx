@@ -328,6 +328,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           <div className="card-meta">
             {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : (c.building && item.ref.kind === 'artMaker' ? 'Who designed it?' : c.book && item.ref.kind === 'artMaker' ? 'Who wrote it?' : KIND_LABEL[item.ref.kind])}</span>{item.isNew && <span className="new">new</span>}
           </div>
+          {f.asOf && <p className="as-of" title="True as of this date; the weekly briefing updates it when things change">As of {f.asOf}</p>}
           {f.audio && <ClipPlayer key={item.ref.id} file={f.audio.file} start={f.audio.start} />}
           {!sidePic && f.promptPicture && f.picture && <div className={'prompt-picture' + (f.picture2?.prompt ? ' pair' : '')}><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} />
             {f.picture2?.prompt && <Picture file={f.picture2.file} caption={f.picture2.caption} single />}</div>}

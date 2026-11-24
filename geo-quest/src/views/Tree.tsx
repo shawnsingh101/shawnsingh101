@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { GROUPS, groupsShownIn, nodeId, parseNode, placesIn, slotOf, groupById, LAYER_NOUN, childSections, sectionAndDescendants, SECTION_PARENT, sectionChain } from '../cards';
-import { ERAS, NOTE_SUBJECTS } from '../notes';
+import { ERAS, NOTE_SUBJECTS, LIVE } from '../notes';
 import { buildQueue, isUnlocked, learnMore, nodeStats, update, useProgress } from '../srs';
 import { makeQuiz, scopeGroups, type Scope } from '../quiz';
 import { sounds } from '../sound';
@@ -178,7 +178,7 @@ export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { d
           </div>}
           {ERAS.some(e => sec.startsWith(e.section)) ? <p className="muted small">Every deck from this era ({ERAS.find(e => sec.startsWith(e.section))!.span}), wherever it happened. Each is also in its own country's history; progress is shared.</p>
             : sec.startsWith('By era') ? <p className="muted small">The same decks again, by world era instead of by country.</p>
-            : groups[0]?.note && <p className="muted small">{groups[0].note.split('\n')[0]}</p>}
+            : groups[0]?.note && sec !== LIVE && <p className="muted small">{groups[0].note.split('\n')[0]}</p>}
           {(groups.some(g => g.topics.length === 1) || inlined.length > 0) && <div className="deck-rows">
             {groups.filter(g => g.topics.length === 1).map(g => deckRow(g, sec))}
             {inlined.map(({ g, from }) => deckRow(g, sec, from))}
@@ -242,7 +242,7 @@ export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { d
       <h1>{subject.name}</h1>
       {isGeo
         ? <p className="muted">Tap a skill to study or quiz it, or <b>Study</b> a whole region at once. <b>Capitals</b> and <b>Flags</b> unlock once you know half of a region's places{p.settings.locks ? '' : ' (locks are currently off)'}. Countries and states you can study in depth sit inside their continent, under <b>In depth</b>.</p>
-        : <p className="muted">Tap a deck, or <b>Study</b> a whole section at once. {subject.name === 'Earth history' ? <>The cards are made from the same data as the chart (<code>src/geotime.ts</code>), so they always agree.</> : COLLECTION_SUBJECTS.includes(subject.name) && NOTE_SUBJECTS.includes(subject.name) ? <>Lists of buildings or works come from <code>geo-quest/collections/{subject.name}/</code> (facts and pictures from Wikidata); the other decks from <code>geo-quest/decks/{subject.name}/</code>.</> : COLLECTION_SUBJECTS.includes(subject.name) ? <>Each deck is a list in <code>geo-quest/collections/{subject.name}/</code>; add a work by its Wikipedia title and the facts and picture are filled in from Wikidata.</> : <>These cards come from the note files in <code>geo-quest/decks/{subject.name}/</code>.</>}</p>}
+        : <p className="muted">Tap a deck, or <b>Study</b> a whole section at once. {subject.name === LIVE ? <>Ongoing stories, each filed in its own subject too. Every Wednesday the Wikipedia articles they follow are checked: up to two new cards a week, and updates to the cards marked “as of”, arrive as a pull request for you to approve.</> : subject.name === 'Earth history' ? <>The cards are made from the same data as the chart (<code>src/geotime.ts</code>), so they always agree.</> : COLLECTION_SUBJECTS.includes(subject.name) && NOTE_SUBJECTS.includes(subject.name) ? <>Lists of buildings or works come from <code>geo-quest/collections/{subject.name}/</code> (facts and pictures from Wikidata); the other decks from <code>geo-quest/decks/{subject.name}/</code>.</> : COLLECTION_SUBJECTS.includes(subject.name) ? <>Each deck is a list in <code>geo-quest/collections/{subject.name}/</code>; add a work by its Wikipedia title and the facts and picture are filled in from Wikidata.</> : <>These cards come from the note files in <code>geo-quest/decks/{subject.name}/</code>.</>}</p>}
       {subject.name === 'Earth history' && <GeoTime />}
       {top.length > 1 && <nav className="jumpbar">
         {top.map(sec => <button key={sec} className={'pick' + (open.has(sec) ? ' on' : '')} onClick={() => jump(sec)}><Icon name={SECTION_ICON[sec] ?? 'globe'} size={14} />{sec}</button>)}

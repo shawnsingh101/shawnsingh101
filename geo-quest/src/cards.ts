@@ -342,6 +342,7 @@ export interface CardFace {
   practice?: Practice;                   // a practice card: write a program, run and check it (components/Practice.tsx)
   code?: { lang: string; text: string }; // a note card's code: shown with the question (a \u0000 in it is the blank)
   source?: string;                         // the app file that code is quoted from (a link on GitHub)
+  asOf?: string;                           // "November 2026": a live topic's card about how things stand now
   picture2?: { file: string; caption: string; prompt: boolean }; // a second picture: with the question (a fossil), or after it (a range map)
   lineage?: { steps: Step[]; label: string }; // shown with the answer: the animal's place in the tree, or the dinosaur's in time
   strata?: string;         // a geologic time card: the unit's place in the time scale and its (blank) parts
@@ -390,7 +391,7 @@ function rawFace(ref: CardRef): CardFace {
     // Note decks: a cloze ("Equal parts {{gin}}, Campari…") or a front :: back card.
     const n = c.card;
     if (n.strata) return { mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, frontBack: true, strata: n.strata };
-    const code = { code: n.code, source: n.source, practice: n.practice };
+    const code = { code: n.code, source: n.source, practice: n.practice, asOf: n.asOf };
     return n.front
       ? { ...code, mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption, single: n.pictureFirst } : undefined, frontBack: true, promptPicture: !!(n.pictureFirst && n.picture) }
       : { ...code, mode: 'reveal', pre: n.pre, blank: n.hint ?? 'what?', post: n.post, answer: n.answer, map: 'none', note: n.note, parts: n.parts,
