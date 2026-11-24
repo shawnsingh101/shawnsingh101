@@ -158,11 +158,19 @@ feature consistent. When adding anything, check it against this page. When a new
 
 ## 4c. Life (animals and plants)
 
-- **One tree of life** (`src/tree.ts`): every group of species names its branch; book decks about an animal feed it too.
-- **Ask at the level a photo can tell**: the species when it's distinctive (humpback whale), else the group (a rorqual,
-  a beaked whale). Never ask what needs bones or teeth to see; look-alikes are taught by the one feature you can see.
-- Scientific names in italics with a Latin speaker; where it lives with a range map; dinosaurs by period, also in Earth
-  history. Not a children's set: no cow-dog-tiger basics.
+- **The tree of life organizes; it isn't memorized** (`src/tree.ts`). The real tree has far more branches than a card can
+  hold, so there are no "name the branches" cards. It files Life's sections (Bacteria · Archaea · Eukaryotes › Animals ›
+  Mammals…), every group of species names its branch, and book decks about an animal feed it too.
+- **One question, a rich answer.** An animal's card is its photo → its name. The back shows the scientific name (Latin
+  speaker), its lineage as blocks from the domain down to genus and species (`Lineage`), where it lives with a range map.
+  Never ask what needs bones or teeth to see; look-alike tips belong on the answer ("not to be confused with…"), not in
+  a deck of their own.
+- **Dinosaurs are asked when, not which.** They're told apart by bones, so no photo → name cards (book decks can ask
+  more). Their card shows the life restoration and a fossil, gives the name and species, and asks the period, epoch and
+  age; the back draws the time-scale blocks (eon › era › period › epoch › age). Ages come from the list line
+  (`| Maastrichtian`) and must exist in `src/geotime.ts`. They also show in Earth history (one deck, so its name never
+  gives the period away).
+- Not a children's set: no cow-dog-tiger basics.
 
 ## 5. Content files (how to add things)
 
@@ -209,7 +217,7 @@ Deck syntax, quickly: `## Heading` · `- cloze with {{answer|hint}}` · `- front
 - **Keep it small.** Two verbs for learning: **Study** and **Quiz**. Five tabs (Today, Library, Quiz, Map, Me); a new
   screen goes inside one of them, not beside them. The top bar holds only what's toggled often (sound) and Settings;
   set-once switches live in Settings. One row per deck; a folder with one or two small decks (under 30 cards) is listed in its parent and gets its own fold
-  back by itself as it grows. Ask "what can this replace?"
+  back by itself as it grows. A subject's top level is its outline: all folds or all rows, never a mix. Ask "what can this replace?"
   before adding a button.
 - Writing: plain English, short, no jargon in the app. **American spelling** (color, center, labor, flavor, modeled). Explain the *why* in code comments where it isn't obvious.
 

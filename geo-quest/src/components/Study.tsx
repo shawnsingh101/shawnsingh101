@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { TreeCard } from './TreeCard';
+import { Lineage } from './Lineage';
 import { ClipPlayer, MusicReveal } from './Music';
 import { Say } from './Native';
 import { OriginLine } from './Origin';
@@ -314,7 +314,8 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
 
       {/* Laptop, no map: the picture fills the left half (where the map would be), so the card never needs scrolling. */}
       {sidePic && <div className="side-picture">
-        {f.promptPicture || revealed ? <Picture {...f.picture!} caption={f.promptPicture && !revealed ? '?' : f.picture!.caption} hideCaption={f.promptPicture && !revealed} />
+        {f.promptPicture || revealed ? <><Picture {...f.picture!} caption={f.promptPicture && !revealed ? '?' : f.picture!.caption} hideCaption={f.promptPicture && !revealed} />
+          {f.picture2 && (f.picture2.prompt || revealed) && <Picture file={f.picture2.file} caption={f.picture2.caption} single />}</>
           : <div className="side-placeholder"><Icon name="image" size={28} /><span>The picture shows when you flip the card</span></div>}
       </div>}
       <div className="card-wrap">
@@ -323,15 +324,13 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
             {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : (c.building && item.ref.kind === 'artMaker' ? 'Who designed it?' : c.book && item.ref.kind === 'artMaker' ? 'Who wrote it?' : KIND_LABEL[item.ref.kind])}</span>{item.isNew && <span className="new">new</span>}
           </div>
           {f.audio && <ClipPlayer key={item.ref.id} file={f.audio.file} start={f.audio.start} />}
-          {!sidePic && f.promptPicture && f.picture && <div className="prompt-picture"><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} /></div>}
+          {!sidePic && f.promptPicture && f.picture && <div className={'prompt-picture' + (f.picture2?.prompt ? ' pair' : '')}><Picture {...f.picture} caption={revealed ? f.picture.caption : '?'} hideCaption={!revealed} />
+            {f.picture2?.prompt && <Picture file={f.picture2.file} caption={f.picture2.caption} single />}</div>}
           {f.promptFlag && <Flag file={c.flag ?? null} name="?" className="prompt-flag" size={480} eager />}
           {/* Interstates: the route sign beside the question (once flipped when the number is what's being asked) */}
           {c.layer === 'road' && c.image && item.ref.kind !== 'roadShield' && (revealed || item.ref.kind === 'locate') && <img className="card-shield" src={commonsUrl(c.image, 160)} alt={`${c.short ?? c.name} sign`} />}
           {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
-          {f.tree ? <>
-            <p className="cloze front">{f.pre}</p>
-            <TreeCard group={f.tree} revealed={revealed} />
-          </> : f.strata ? <>
+          {f.strata ? <>
             <p className="cloze front">{f.pre}</p>
             <StrataCard unit={f.strata} revealed={revealed} />
           </> : f.parts ? <p className="cloze">
@@ -368,6 +367,8 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
           {revealed && f.note && !c.music && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
           {revealed && c.music && <MusicReveal ds={ds} place={c} />}
+          {revealed && f.lineage && <Lineage steps={f.lineage.steps} label={f.lineage.label} />}
+          {!sidePic && revealed && f.picture2 && !f.picture2.prompt && s.pictures && <Picture file={f.picture2.file} caption={f.picture2.caption} single />}
           {revealed && <Related ds={ds} place={c} onOpen={setSheet} />}
           {!sidePic && revealed && s.pictures && f.picture && !f.promptPicture && <Picture {...f.picture} />}
           {revealed && !f.picture && c.flag && c.layer !== 'note' && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}

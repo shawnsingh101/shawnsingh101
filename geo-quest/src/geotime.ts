@@ -1,7 +1,9 @@
 // The geologic time scale: one source for the Earth history chart and its cards.
 // Dates (millions of years ago) and colours from the International Chronostratigraphic Chart (ICS, v2023/09);
 // the colours are the official ones geologists use on every map and chart.
-export type Rank = 'eon' | 'era' | 'period' | 'epoch';
+import type { Step } from './tree';
+
+export type Rank = 'eon' | 'era' | 'period' | 'epoch' | 'age';
 export interface Unit {
   name: string; rank: Rank; start: number; end: number; color: string;
   parent?: string;          // the eon an era sits in, the era a period sits in…
@@ -36,6 +38,27 @@ export const UNITS: Unit[] = [
   { name: 'Paleogene', rank: 'period', parent: 'Cenozoic', start: 66, end: 23.03, color: '#FD9A52', known: 'mammals fill the world the dinosaurs left; the first primates and whales', meaning: '“ancient born”', pics: [['Basilosaurus cetoides recon.png', 'Basilosaurus, an early whale, still with tiny hind legs']] },
   { name: 'Neogene', rank: 'period', parent: 'Cenozoic', start: 23.03, end: 2.58, color: '#FFE619', known: 'grasslands spread; the first hominins walk upright', meaning: '“new born”', pics: [['Lucy blackbg.jpg', '“Lucy”, Australopithecus afarensis, about 3.2 million years old']] },
   { name: 'Quaternary', rank: 'period', parent: 'Cenozoic', start: 2.58, end: 0, color: '#F9F97F', known: 'the ice ages, and our own species', meaning: '“fourth”', pics: [['202003 Woolly mammoth.png', 'The woolly mammoth of the ice ages']] },
+  // Epochs of the Mesozoic, and the ages (stages) the dinosaur cards need. Not on the chart or the time-scale cards, which
+  // stop at the Cenozoic epochs; here so a dinosaur can say exactly when it lived (Late Cretaceous › Maastrichtian).
+  { name: 'Early Triassic', rank: 'epoch', parent: 'Triassic', start: 251.902, end: 247.2, color: '#983999', known: 'life recovers from the Great Dying' },
+  { name: 'Middle Triassic', rank: 'epoch', parent: 'Triassic', start: 247.2, end: 237, color: '#B168B1', known: 'the first dinosaur relatives' },
+  { name: 'Late Triassic', rank: 'epoch', parent: 'Triassic', start: 237, end: 201.4, color: '#BD8CC3', known: 'the first dinosaurs and mammals' },
+  { name: 'Early Jurassic', rank: 'epoch', parent: 'Jurassic', start: 201.4, end: 174.7, color: '#00B4EB', known: 'dinosaurs take over after the end-Triassic extinction' },
+  { name: 'Middle Jurassic', rank: 'epoch', parent: 'Jurassic', start: 174.7, end: 161.5, color: '#80CFD8', known: 'Pangaea splits apart' },
+  { name: 'Late Jurassic', rank: 'epoch', parent: 'Jurassic', start: 161.5, end: 145, color: '#B3E3EE', known: 'giant sauropods, Stegosaurus and the first birds' },
+  { name: 'Early Cretaceous', rank: 'epoch', parent: 'Cretaceous', start: 145, end: 100.5, color: '#8CCD57', known: 'the first flowering plants' },
+  { name: 'Late Cretaceous', rank: 'epoch', parent: 'Cretaceous', start: 100.5, end: 66, color: '#A6D84A', known: 'T. rex and Triceratops; ends with the asteroid' },
+  { name: 'Norian', rank: 'age', parent: 'Late Triassic', start: 227, end: 208.5, color: '#D6AAD3', known: '' },
+  { name: 'Rhaetian', rank: 'age', parent: 'Late Triassic', start: 208.5, end: 201.4, color: '#E3B9DB', known: '' },
+  { name: 'Kimmeridgian', rank: 'age', parent: 'Late Jurassic', start: 154.8, end: 149.2, color: '#CCECF4', known: '' },
+  { name: 'Tithonian', rank: 'age', parent: 'Late Jurassic', start: 149.2, end: 145, color: '#D9F1F7', known: '' },
+  { name: 'Barremian', rank: 'age', parent: 'Early Cretaceous', start: 125.77, end: 121.4, color: '#B3DF7F', known: '' },
+  { name: 'Aptian', rank: 'age', parent: 'Early Cretaceous', start: 121.4, end: 113, color: '#BFE48A', known: '' },
+  { name: 'Albian', rank: 'age', parent: 'Early Cretaceous', start: 113, end: 100.5, color: '#CCEA97', known: '' },
+  { name: 'Cenomanian', rank: 'age', parent: 'Late Cretaceous', start: 100.5, end: 93.9, color: '#B3DE53', known: '' },
+  { name: 'Turonian', rank: 'age', parent: 'Late Cretaceous', start: 93.9, end: 89.8, color: '#BFE35D', known: '' },
+  { name: 'Campanian', rank: 'age', parent: 'Late Cretaceous', start: 83.6, end: 72.1, color: '#E6F47F', known: '' },
+  { name: 'Maastrichtian', rank: 'age', parent: 'Late Cretaceous', start: 72.1, end: 66, color: '#F2FA8C', known: '' },
   // Epochs of the Cenozoic
   { name: 'Paleocene', rank: 'epoch', parent: 'Paleogene', start: 66, end: 56, color: '#FDA75F', known: 'the world recovers from the asteroid; mammals stay small', pics: [['Gastornis skeleton.jpg', 'Gastornis, a giant flightless bird of the early Age of Mammals']] },
   { name: 'Eocene', rank: 'epoch', parent: 'Paleogene', start: 56, end: 33.9, color: '#FDB46C', known: 'a hot world; the first horses, whales and primates spread', pics: [['Eohippus.jpg', 'Eohippus, an early horse the size of a fox']] },
@@ -45,6 +68,22 @@ export const UNITS: Unit[] = [
   { name: 'Pleistocene', rank: 'epoch', parent: 'Quaternary', start: 2.58, end: 0.0117, color: '#FFF2AE', known: 'ice ages, mammoths, and Homo sapiens', pics: [['Smilodon fatalis life-restoration \'08.jpg', 'Smilodon, the saber-toothed cat of the Pleistocene']] },
   { name: 'Holocene', rank: 'epoch', parent: 'Quaternary', start: 0.0117, end: 0, color: '#FEF2E0', known: 'the warm time since the last ice age: farming, cities, history', pics: [['Göbekli Tepe, Urfa.jpg', 'Göbekli Tepe, Turkey: stone temples from the dawn of farming']] },
 ];
+
+/** The units a chart or time-scale card shows: the Mesozoic epochs and the ages are only for the dinosaur cards. */
+export const CHARTED = UNITS.filter(u => u.rank !== 'age' && !(u.rank === 'epoch' && ['Triassic', 'Jurassic', 'Cretaceous'].includes(u.parent!)));
+export const unit = (name: string) => UNITS.find(u => u.name === name);
+
+const span = (a: number, b: number) => (b ? `${+a.toFixed(1)}–${+b.toFixed(1)} million years ago` : `${+a.toFixed(1)} million years ago to now`);
+/** A dinosaur's time, top to bottom: Phanerozoic › Mesozoic › Cretaceous › Late Cretaceous › Maastrichtian (two ages share
+ *  the last block: Kimmeridgian–Tithonian). */
+export function timeSteps(epoch: string, ages: string[]): Step[] {
+  const chain: Unit[] = [];
+  for (let u = unit(epoch); u; u = u.parent ? unit(u.parent) : undefined) chain.unshift(u);
+  const steps: Step[] = chain.map(u => ({ rank: u.rank, name: u.name, sub: span(u.start, u.end), color: u.color }));
+  const as = ages.map(unit).filter((u): u is Unit => !!u);
+  if (as.length) steps.push({ rank: as.length > 1 ? 'ages' : 'age', name: as.map(u => u.name).join('–'), sub: span(as[0].start, as[as.length - 1].end), color: as[0].color, color2: as[1]?.color });
+  return steps;
+}
 
 /** Where a date falls if all of Earth's history were one day: "21:10". */
 export function onTheClock(ma: number) {
@@ -88,7 +127,7 @@ export function geotimeDeck(): string {
   return L.join('\n');
 }
 export function epochDeck(): string {
-  const eps = UNITS.filter(u => u.rank === 'epoch');
+  const eps = UNITS.filter(u => u.rank === 'epoch' && ['Paleogene', 'Neogene', 'Quaternary'].includes(u.parent!));
   return ['---', 'title: Epochs of the Cenozoic', 'path: Geologic time', '---',
     'The seven epochs since the dinosaurs died out, which split the Age of Mammals into chapters.',
     '## How the epochs fit together',

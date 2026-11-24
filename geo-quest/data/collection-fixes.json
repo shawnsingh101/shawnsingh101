@@ -1740,76 +1740,116 @@
  },
  "Q309392": {
   "species": "Coelophysis bauri",
-  "image": "Coelophysis TD.png"
+  "image": "Coelophysis TD.png",
+  "fossil": "Coelophysis mount NHM2.jpg"
  },
  "Q14400": {
-  "species": "Allosaurus fragilis"
+  "species": "Allosaurus fragilis",
+  "image": "202009 Allosaurus fragilis.png",
+  "fossil": "Quarry Visitor Center, Dinosaur National Monument, Allosaurus.jpg"
  },
  "Q100196": {
-  "species": "Archaeopteryx lithographica"
+  "species": "Archaeopteryx lithographica",
+  "image": "Archaeopteryx TD.png",
+  "fossil": "Berlin Archaeopteryx.jpg"
  },
  "Q14405": {
-  "species": "Deinonychus antirrhopus"
+  "species": "Deinonychus antirrhopus",
+  "image": "Deinonychus TD.png",
+  "fossil": "Deinonychus FMNH.jpg"
  },
  "Q130966": {
-  "species": "Spinosaurus aegyptiacus"
+  "species": "Spinosaurus aegyptiacus",
+  "image": "202005 Spinosaurus aegyptiacus.png",
+  "fossil": "Spinosaurus in Japan Expo.jpg"
  },
  "Q14438": {
-  "species": "Giganotosaurus carolinii"
+  "species": "Giganotosaurus carolinii",
+  "image": "Giganotosaurus TD.png"
  },
  "Q18510948": {
-  "species": "Carnotaurus sastrei"
+  "species": "Carnotaurus sastrei",
+  "image": "Carnotaurus 2017.png",
+  "fossil": "Carnotaurus, Chlupáč Museum, Prague-2.jpg"
  },
  "Q14403": {
-  "species": "Velociraptor mongoliensis"
+  "species": "Velociraptor mongoliensis",
+  "image": "Velociraptor TD.png",
+  "fossil": "Velociraptor skeleton white background.jpg"
  },
  "Q14332": {
   "species": "Tyrannosaurus rex",
-  "image": "Tyrannosaurus TD.png"
+  "image": "Tyrannosaurus TD.png",
+  "fossil": "Tyrannosaurus Rex Holotype.jpg"
  },
  "Q131046": {
-  "species": "Plateosaurus trossingensis"
+  "species": "Plateosaurus trossingensis",
+  "image": "Life restoration of Plateosaurus trossingensis.jpg",
+  "fossil": "Plateo Leiden.JPG"
  },
  "Q14397": {
   "species": "Brachiosaurus altithorax",
-  "image": "Brachiosaurus TD.png"
+  "image": "Brachiosaurus TD.png",
+  "fossil": "Brachiosaurus mount.jpg"
  },
  "Q14330": {
-  "species": "Diplodocus carnegii"
+  "species": "Diplodocus carnegii",
+  "image": "Diplodocus TD.png",
+  "fossil": "Diplodocus carnegiei.jpg"
  },
  "Q14326": {
-  "species": "Apatosaurus ajax"
+  "species": "Apatosaurus ajax",
+  "image": "Apatosaurus TD.png",
+  "fossil": "Louisae.jpg"
  },
  "Q130859": {
-  "species": "Argentinosaurus huinculensis"
+  "species": "Argentinosaurus huinculensis",
+  "image": "Argentinosaurus TD.png",
+  "fossil": "Argentinosaurus DSC 2943.jpg"
  },
  "Q14388": {
   "species": "Stegosaurus stenops",
-  "image": "Stegosaurus TD.png"
+  "image": "Stegosaurus TD.png",
+  "fossil": "Stegosaurus - Salt Lake City.jpg"
  },
  "Q40621": {
-  "species": "Ankylosaurus magniventris"
+  "species": "Ankylosaurus magniventris",
+  "image": "Ankylosaurus TD.png",
+  "fossil": "Ankylosaur head - cast - Custer County Montana - Museum of the Rockies - 2013-07-08.jpg"
  },
  "Q130980": {
-  "species": "Iguanodon bernissartensis"
+  "species": "Iguanodon bernissartensis",
+  "image": "Iguanodon TD.png",
+  "fossil": "Iguanodon bernissartensis skull.JPG"
  },
  "Q203583": {
-  "species": "Parasaurolophus walkeri"
+  "species": "Parasaurolophus walkeri",
+  "image": "Parasaurolophus TD.png",
+  "fossil": "Parasaurolophus cyrtocristatus.jpg"
  },
  "Q309466": {
-  "species": "Edmontosaurus regalis"
+  "species": "Edmontosaurus regalis",
+  "image": "Edmontosaurus TD.png",
+  "fossil": "Edmontosaurus annectens specimen.jpg"
  },
  "Q14506": {
-  "species": "Protoceratops andrewsi"
+  "species": "Protoceratops andrewsi",
+  "image": "Protoceratops TD.png",
+  "fossil": "Carnegie Protoceratops andrewsi.jpg"
  },
  "Q14483": {
-  "species": "Styracosaurus albertensis"
+  "species": "Styracosaurus albertensis",
+  "image": "Styracosaurus TD.png",
+  "fossil": "Styracosaurus albertensis mount.jpg"
  },
  "Q14384": {
   "species": "Triceratops horridus",
-  "image": "Triceratops TD.png"
+  "image": "Triceratops TD.png",
+  "fossil": "LA-Triceratops mount-2.jpg"
  },
  "Q14455": {
-  "species": "Pachycephalosaurus wyomingensis"
+  "species": "Pachycephalosaurus wyomingensis",
+  "image": "Pachycephalosaurus TD.png",
+  "fossil": "Pachycephalosaurus skull.JPG"
  }
 }

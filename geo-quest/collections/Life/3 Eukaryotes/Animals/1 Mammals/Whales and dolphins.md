@@ -2,7 +2,7 @@
 title: Whales and dolphins
 kind: taxon
 ---
-The whales and dolphins worth knowing on sight, by family: the photo, the scientific name, which branch of the tree, and where they live (with a range map).
+The whales and dolphins worth knowing on sight, by family. Each card shows a photo: name the animal. The back gives its scientific name (read aloud), its place in the tree of life from the top down, and where it lives, with a range map.
 
 ## Rorquals | Balaenopteridae
 - Q42196 Blue whale | in every ocean, feeding in cold polar waters; the largest animal that has ever lived
