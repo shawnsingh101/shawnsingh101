@@ -33,6 +33,11 @@ dinosaurs asked when they lived (period, epoch, age) with time-scale blocks; dee
 dolphins, dinosaurs (v1.30, reworked v1.31). Next: the book decks (Spying on Whales, The Rise and Fall of
 the Dinosaurs: send the PDFs), birds with calls, trees and plants, any animal a book is about.
 
+**Programming** (started): two linked decks in Computer science. *Python* follows the OpenStax textbook chapter by
+chapter (done: 1–3; next: Decisions, Loops, Functions…). *Under the hood* teaches this app from its own files (done:
+The repo, Git and GitHub; next: Data and the sync, the basics in real code with Python beside it, Structures, the app,
+algorithms, testing). Writing code comes with practice mode (queued).
+
 **Classical music, Anki-guided** (Classical Music Themes, Parts I–II: 972 pieces). Essential (~170 themes): 39 works,
 63 clips so far; next: free recordings for the rest (Hallelujah Chorus, Bach's cello prelude, Swan Lake, the Nutcracker
 …), from Musopen and Commons only. Then More (~340) and Deep cuts (~540). About a dozen pieces are still under
@@ -62,6 +67,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 | --- | --- |
 | 1.30 | Life: the tree of life, whales and dolphins, dinosaurs, how to tell them apart |
 | 1.31 | Life reorganized by the tree: domains as sections, photo → name with lineage blocks, dinosaurs by time |
+| 1.32 | Programming: Python chapters 1–3 and Under the hood (the repo, Git and GitHub); code cards; dinosaur times from Wikipedia |
 | 1.29 | Where people are really from, with the flag of their time |
 | 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
 | 1.27 | Earth history: a picture of the life of each time |

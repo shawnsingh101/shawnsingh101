@@ -33,6 +33,24 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.32: Programming, and dinosaurs from Wikipedia
+
+- **Code cards.** A fenced block (```` ```python ````) after a card shows with the question in a dark code panel with
+  simple coloring (`components/Code.tsx`); a block with `{{blanks}}` is its own fill-in-the-code card, asked by the bullet
+  above it; `` `inline code` `` works anywhere, even around a blank. `source: src/srs.ts` links the card to that file
+  on GitHub, and `npm run audit` fails if the file no longer contains the quoted code.
+- **Computer science › Python**: OpenStax *Introduction to Python Programming*, chapters 1–3 (Statements, Expressions,
+  Objects), each with a harder `depth: deep` deck. Every output was checked by running it.
+- **Computer science › Under the hood**: how this app works, from its real files: *The repo* (folders, generated vs.
+  hand-written files, JSON, package.json, .gitignore, saved progress) and *Git and GitHub* (commits, branches, pull
+  requests, the two Actions and their triggers).
+- **Dinosaurs follow Wikipedia.** The collections sync reads each dinosaur's fossil range from its article's infobox
+  (refs and "possible" records dropped; dates in millions of years kept), and `rangeFrom()` in `src/geotime.ts` turns it
+  into epochs and ages, falling back on the dates when no age is named. All 30 Mesozoic ages are in the time scale now. A
+  range can span epochs (Deinonychus: Early–Late Cretaceous, Aptian–Cenomanian); the card says "as Wikipedia has it".
+  The list line keeps a fallback range; `fossilRange` in `collection-fixes.json` overrides both.
+- Fixed: a stray brace in the stylesheet (from v1.31) that hid every style after it.
+
 ## v1.31: Life, reorganized by the tree
 
 - The tree of life is now the **outline of Life**, not a deck to memorize: *Bacteria · Archaea · Eukaryotes*, then

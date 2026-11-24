@@ -167,10 +167,25 @@ feature consistent. When adding anything, check it against this page. When a new
   a deck of their own.
 - **Dinosaurs are asked when, not which.** They're told apart by bones, so no photo → name cards (book decks can ask
   more). Their card shows the life restoration and a fossil, gives the name and species, and asks the period, epoch and
-  age; the back draws the time-scale blocks (eon › era › period › epoch › age). Ages come from the list line
-  (`| Maastrichtian`) and must exist in `src/geotime.ts`. They also show in Earth history (one deck, so its name never
-  gives the period away).
+  age; the back draws the time-scale blocks (eon › era › period › epoch › age). **When it lived follows its Wikipedia
+  article** (the infobox's fossil range, read by the nightly sync), so a redating reaches the cards; the list line's range
+  (`| Late Cretaceous (Maastrichtian)`) is only the fallback, and `fossilRange` in `collection-fixes.json` overrides both.
+  They also show in Earth history (one deck, so its name never gives the period away).
 - Not a children's set: no cow-dog-tiger basics.
+
+## 4d. Programming
+
+- **Two decks, linked.** *Python* follows OpenStax *Introduction to Python Programming* chapter by chapter: universal
+  ideas, taught in Python. *Under the hood* teaches how this app works, from its real files. A card in one can be
+  `also in:` the matching deck of the other (one card, two places).
+- **Code on cards** goes in a fenced block, shown in a dark panel in every theme. Kinds of card: what does this print,
+  fill in the blank in the code, which error, and plain concept cards. Easy first; harder ones in a `depth: deep` deck
+  beside each chapter.
+- **Every "prints" answer is run in Python before it ships.** Never write an output from memory.
+- **Quoted code must be real.** An Under the hood card quoting the app names its file (`source: src/srs.ts`); the audit
+  fails when that code no longer matches, so the card is fixed when the code changes. Don't quote lines that change
+  every release (the version number).
+- Flashcards teach reading code; writing it comes from **practice mode** (queued), where Python is run and checked.
 
 ## 5. Content files (how to add things)
 

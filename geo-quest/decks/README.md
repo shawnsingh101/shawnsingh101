@@ -55,6 +55,18 @@ related: Italy, Florence
 - **`also in: Philadelphia, New Jersey`** (right after a card): the card also shows in the decks with those titles (one
   set of progress). Used for History by place.
 - A number in front of a folder or file name (`2 Ancient China/`, `3 Zhou dynasty.md`) sets the order and is hidden.
+- **Code**: a fenced block right after a card is shown with it (a program, then "This prints {{7}}."). A block with
+  `{{blanks}}` in it is a card of its own, asked by the plain bullet just above it:
+  ````markdown
+  - Fill in the loop:
+  ```python
+  for i in {{range(3)|what goes here?}}:
+      print(i)
+  ```
+  ````
+  `` `inline code` `` works in any card, even around a blank: `` `print({{name}})` ``.
+- **`source: src/srs.ts`** (after a code card): the file the code is quoted from. The card links to it on GitHub, and
+  `npm run audit` fails if the file no longer contains that code.
 - **`species: Juniperus communis`** (under a heading): the scientific name of a plant or animal, shown in italics after the
   answer.
 - **`native: الكعبة (Arabic)`** (under a heading): the name in its own language, shown after the answer with a speaker

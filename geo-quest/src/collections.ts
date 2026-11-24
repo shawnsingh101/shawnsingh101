@@ -5,6 +5,7 @@ import type { Chinese, Composer, NativeName, Origin, PersonFacts, Place } from '
 import { GROUPS, claimSection, sectionChain } from './cards';
 import { NOTE_SUBJECTS } from './notes';
 import { languageOf, literatureOf, topicsOf } from './tags';
+import { rangeFrom } from './geotime';
 /** Subjects other than the collections' own (a shelf named like one is shown there too). */
 const OTHER_SUBJECTS = () => NOTE_SUBJECTS;
 
@@ -21,6 +22,7 @@ export interface ArtFacts {
   makerOrigin?: Origin;
   person?: PersonFacts | null; // people
   taxon?: boolean; rangeMap?: string | null; status?: string | null; fossil?: string | null; // animals and plants
+  fossilRange?: { text: string; ma: number[] | null; source: string } | null; // when it lived, from its Wikipedia article
   country: string | null; countryName: string | null; lon: number | null; lat: number | null; links: number;
 }
 
@@ -116,7 +118,8 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
           id: pid, qid: e.id, layer: 'art', group: l.id, name: f.name, nameThe: f.nameThe ?? (genusOnly ? undefined : `${/^[aeiou]/i.test(f.name) ? 'an' : 'a'} ${article}`),
           wiki: f.wiki, image: f.image, capitals: [], capitalAnswer: null, artists: [], species: f.species ?? undefined, native: f.native?.length ? f.native : undefined,
           taxon: { branch: e.branch ?? null, note: e.note ?? null, rangeMap: f.rangeMap ?? null, status: f.status ?? null, group: e.heading, genusOnly,
-            ...(e.age ? { epoch: /^(Early|Middle|Late) (Triassic|Jurassic|Cretaceous)/.exec(e.note ?? '')?.[0] ?? null, ages: e.age.split('–'), fossil: f.fossil ?? null } : {}) },
+            // When it lived: as its Wikipedia article says (synced nightly), else the list's own range.
+            ...(e.age ? { when: true, fossil: f.fossil ?? null, time: ((w, l) => (w ? { ...w, from: f.fossilRange!.source } : l ? { ...l, from: null } : null))(f.fossilRange ? rangeFrom(f.fossilRange.text, f.fossilRange.ma) : null, rangeFrom(e.age)) } : {}) },
           facts: [e.heading, f.status && f.status !== 'least concern' ? f.status : null].filter(Boolean).join(' · ') || undefined,
         } as Place);
         continue;
@@ -158,7 +161,7 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
   // Dinosaurs also live in Earth history (Earth history › Dinosaurs): their cards ask when they lived. One deck, not one per
   // period, so its name never gives the answer away.
   for (const p of out.values()) {
-    if (!p.taxon?.ages || !NOTE_SUBJECTS.includes('Earth history')) continue;
+    if (!p.taxon?.time || !NOTE_SUBJECTS.includes('Earth history')) continue;
     const s = claimSection('Earth history', null), gid = 'cd-dinosaurs';
     if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: s, name: 'Dinosaurs through time', layer: 'art', nouns: 'dinosaurs', topics: [{ id: 'art', name: 'Dinosaurs', icon: 'mountain' }] });
     p.alsoIn = [...(p.alsoIn ?? []), gid];
