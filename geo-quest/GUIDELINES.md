@@ -53,6 +53,11 @@ feature consistent. When adding anything, check it against this page. When a new
     Wikipedia article), and when their name comes from another language, that name in its script with romanization and
     the speaker button: Liu Bang → 刘邦 *Liú Bāng*, Confucius → 孔子 *Kǒngzǐ*. Places and things named in the answer get
     the same (长安 *Cháng'ān*, 甲骨文 *jiǎgǔwén*).
+12b. **People get where they're really from, with the flag of the time.** "Born in Salzburg, Holy Roman Empire
+    (Prince-Archbishopric of Salzburg) · today Austria" under the imperial banner; Vivaldi under the Republic of Venice;
+    the flag in use in the birth year (the Russian Empire's changed in 1858). Today's country is always named too. Before
+    national flags (ancient figures), or with no flag known, today's flag. From Wikidata (the birthplace's country in
+    the birth year); hand fixes in `data/collection-fixes.json` `_origins`.
 13. **Dates are rarely the answer.** Keep the date in the sentence and blank the event, person or place: "In 1917 the
     United States entered {{World War I}}", not "…entered World War I in {{1917}}". A date is the answer only when the
     date itself is the landmark (July 4, 1776; the Constitution in 1787; the span of a dynasty or a war as one card;

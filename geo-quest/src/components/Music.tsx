@@ -7,6 +7,7 @@ import { Flag } from './Picture';
 import { Icon } from './Icons';
 import { stopMusic } from '../sound';
 import { md5 } from '../md5';
+import { OriginLine } from './Origin';
 import type { Dataset, Place } from '../types';
 
 const CLIP_SECONDS = 30;
@@ -106,10 +107,14 @@ export function MusicReveal({ ds, place }: { ds: Dataset; place: Place }) {
     <div className="music-reveal" onClick={e => e.stopPropagation()}>
       {/* Always the piece (and the part) as well as who wrote it, whatever the card asked. */}
       <p className="work-line"><b>{m.work.replace(/^the /, 'The ')}</b>{m.label ? ` · ${m.label}` : ''}{place.year ? ` · ${place.year < 1000 ? place.year : `c. ${place.year}`}` : ''}</p>
-      <p className="composer-line">
+      {/* Who wrote it and where they're really from: the flag of their birthplace's country at the time. */}
+      {m.composer.origin ? <>
+        <OriginLine ds={ds} o={m.composer.origin} name={m.composer.name} />
+        <p className="muted small composer-life">{m.composer.born ? `${m.composer.born}–${m.composer.died ?? ''}` : ''}{m.era ? ` · ${m.era}` : ''}</p>
+      </> : <p className="composer-line">
         {flag && <Flag file={flag} name={m.composer.countryName ?? ''} size={60} />}
         <span><b>{m.composer.name}</b>{m.composer.born ? ` (${m.composer.born}–${m.composer.died ?? ''})` : ''}{m.composer.countryName ? ` · ${m.composer.countryName}` : ''}{m.era ? ` · ${m.era}` : ''}</span>
-      </p>
+      </p>}
       {m.siblings.length > 1 && <div className="movement-strip">
         <small className="muted">{m.work}: {m.siblings.length} parts here</small>
         <ol>

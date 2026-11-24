@@ -1,7 +1,7 @@
 // Collections: lists of Wikipedia things kept as Markdown in geo-quest/collections/ (see collections/README.md).
 // The lists give the structure (subject › sections › deck, and which works are in it); the facts for each entry
 // come from public/data/collections.json, filled in from Wikidata by scripts/sync-collections.mjs.
-import type { Chinese, Composer, NativeName, PersonFacts, Place } from './types';
+import type { Chinese, Composer, NativeName, Origin, PersonFacts, Place } from './types';
 import { GROUPS, claimSection, sectionChain } from './cards';
 import { NOTE_SUBJECTS } from './notes';
 import { languageOf, literatureOf, topicsOf } from './tags';
@@ -18,6 +18,7 @@ export interface ArtFacts {
   book?: boolean; language?: string | null; subjects?: string[]; genres?: string[]; topics?: string[]; // books
   composer?: Composer | null; // music
   makerNative?: NativeName[]; // the maker's name in their own language
+  makerOrigin?: Origin;
   person?: PersonFacts | null; // people
   country: string | null; countryName: string | null; lon: number | null; lat: number | null; links: number;
 }
@@ -110,7 +111,7 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
       const where = [museum, f.city && !f.museum?.includes(f.city) ? f.city : null].filter(Boolean).join(', ');
       const cName = (f.country && countryName(f.country)) || f.countryName || null;
       out.set(pid, {
-        id: pid, qid: e.id, makerNative: f.makerNative?.length ? f.makerNative : undefined, building: l.building || undefined, style: f.style ?? null, layer: 'art',
+        id: pid, qid: e.id, makerNative: f.makerNative?.length ? f.makerNative : undefined, makerOrigin: f.artists.length === 1 ? f.makerOrigin : undefined, building: l.building || undefined, style: f.style ?? null, layer: 'art',
         ...(l.book ? { book: true, language: languageOf(f.language), fiction: e.heading === 'Fiction', shelves: e.heading === 'Fiction' ? [] : f.topics ?? topicsOf(f.subjects, f.genres) } : {}), group: l.id, name: f.name, nameThe: f.nameThe ?? undefined, species: f.species ?? undefined, native: f.native?.length ? f.native : undefined, zh: f.zh ?? null, museumName: f.museum, museumWiki: f.museumWiki ?? null, city: f.city, plural: f.plural, wiki: f.wiki, image: f.image, capitals: [], capitalAnswer: null,
         lon: f.lon ?? undefined, lat: f.lat ?? undefined, country: f.country ?? undefined, countryName: cName ?? undefined,
         artists: f.artists, culture: f.culture, year: f.year, museum: where || null, origin: e.heading,

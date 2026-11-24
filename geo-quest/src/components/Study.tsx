@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ClipPlayer, MusicReveal } from './Music';
 import { Say } from './Native';
+import { OriginLine } from './Origin';
 const fold = (x: string) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/^the /, '').trim();
 const latin = (x: string) => /^[\p{Script=Latin}\p{N}\p{P}\p{Zs}]+$/u.test(x);
 import { face, groupOf, placesIn, GROUPS, KIND_LABEL, LAYER_NOUN, layerFor, sectionChain, type CardRef } from '../cards';
@@ -357,6 +358,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
               </> : <LocalName place={c} showLang />}
             </div>
           )}
+          {revealed && f.origin && <OriginLine ds={ds} o={f.origin} />}
           {revealed && c.incoming && <Incoming inc={c.incoming} current={c.name} />}
           {revealed && item.ref.kind.startsWith('flag') && <Lookalikes ds={ds} place={c} />}
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
