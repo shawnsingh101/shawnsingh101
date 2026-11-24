@@ -33,6 +33,22 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.31: Life, reorganized by the tree
+
+- The tree of life is now the **outline of Life**, not a deck to memorize: *Bacteria · Archaea · Eukaryotes*, then
+  *Animals › Mammals / Reptiles*. Lists live where they sit (`collections/Life/3 Eukaryotes/Animals/1 Mammals/Whales
+  and dolphins.md`). Two small starter decks, *What bacteria are* and *What archaea are*, open the first two domains.
+  `src/tree.ts` gains the three domains; `treeDeck()`, `TreeCard`, `[tree: …]` and the look-alikes deck are gone.
+- **Whales and dolphins**: one card each, photo → name (`taxonId`). The back: the Latin name with a speaker, the
+  lineage as indented blocks from Eukaryotes down to genus and species (`components/Lineage.tsx`, `taxonSteps()`), the
+  habitat and status, and the range map (beside the photo on a laptop).
+- **Dinosaurs**: no "which dinosaur?" cards. One card each (`dinoTime`): the life restoration and a fossil, the name and
+  species → *the Late Cretaceous, in its Maastrichtian age*; the back draws Phanerozoic › Mesozoic › Cretaceous › Late
+  Cretaceous › Maastrichtian with their dates (`timeSteps()`). `src/geotime.ts` adds the Mesozoic epochs and 13 ages
+  (ICS dates and colors), kept off the chart. Ages are hand-curated in the list (Wikidata has them for only four).
+  Also in **Earth history › Dinosaurs through time**.
+- A subject's top level is all folds or all rows (so Books › Reading notes is now a fold too).
+
 ## v1.30: Life (the tree of life)
 
 - New subject **Life**. Its backbone is `src/tree.ts`: 57 groups worth knowing (the main animal phyla, vertebrate

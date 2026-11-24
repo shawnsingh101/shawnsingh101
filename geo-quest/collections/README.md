@@ -32,9 +32,12 @@ instrument. Fix instruments and birthplaces in `data/collection-fixes.json` (`pe
 
 ## Animals and plants
 
-A list with `kind: taxon`: `## Rorquals | Balaenopteridae` (the heading names its branch of the tree, `src/tree.ts`), then
-`- Blue whale | in every ocean…` (Wikipedia title, then where it lives; for dinosaurs, when and where). The sync adds
-the scientific name, range map and conservation status.
+A list with `kind: taxon`, filed by the tree (`Life/3 Eukaryotes/Animals/1 Mammals/…`): `## Rorquals | Balaenopteridae`
+(the heading names its branch of the tree, `src/tree.ts`), then `- Blue whale | in every ocean…` (Wikipedia title, then
+where it lives). A dinosaur's line ends with its age (stage) from the time scale:
+`- Tyrannosaurus | Late Cretaceous, in western North America | Maastrichtian` (two ages: `Kimmeridgian–Tithonian`);
+its `image` (life restoration) and `fossil` pictures are set in `data/collection-fixes.json`. The sync adds the
+scientific name, range map and conservation status. Cards: an animal's photo → name; a dinosaur → when it lived.
 
 ## A list file
 

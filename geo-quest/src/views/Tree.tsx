@@ -135,11 +135,15 @@ export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { d
     // A small sub-section (one or two decks, under 30 cards, nothing inside) isn't worth a fold of its own: its decks are
     // listed here, labelled with where they sit (By place › New York › New York City). It gets its fold back by itself
     // once it grows: a third deck, 30 cards, or a sub-folder.
-    const tiny = (k: string) => {
+    const small = (k: string) => {
       if (geo || childSections(k).length) return false;
       const gs = groupsShownIn(k);
       return gs.length <= 2 && gs.reduce((n, g) => n + nodeStats(ds, p, nodeId(g.id, g.topics[0].id)).total, 0) < 30;
     };
+    // A subject's top level is its outline, so it's all folds or all rows, never a mix: Life's three domains (Bacteria ·
+    // Archaea · Eukaryotes) stay three folds even while two of them hold one small deck.
+    const mixedTop = depth === 0 && childSections(sec).some(k => !small(k));
+    const tiny = (k: string) => !mixedTop && small(k);
     const kids = childSections(sec).filter(k => !tiny(k));
     const inlined = childSections(sec).filter(tiny).flatMap(k => groupsShownIn(k).map(g => ({ g, from: k })));
     // Study: every deck in this section and below it (all of History of China, all prehistory…), one session. In

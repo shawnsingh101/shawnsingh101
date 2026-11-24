@@ -906,16 +906,18 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .origin-line { display: flex; align-items: center; gap: .55rem; margin: .45rem 0 0; font-size: .9rem; line-height: 1.35; }
 .origin-line img { width: 34px; height: auto; flex: none; border-radius: 2px; box-shadow: 0 0 0 1px var(--line); }
 .composer-life { margin: .15rem 0 .5rem; }
-/* Tree-of-life cards: like the time-scale blocks; a long list of branches folds into two columns so the card fits */
-.tree-card .sc-col.kids.many { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4px; align-content: start; min-width: 0; flex: 1.6; }
-.tree-card .sc-col.kids.many .sc-block { hyphens: auto; }
-.tree-card .sc-col.kids.many .sc-head { grid-column: 1 / -1; }
-.tree-card .sc-col.kids.many .sc-block { min-height: 2.6rem; padding: .25rem .35rem; font-size: .8rem; }
-.tree-card .sc-col.kids.many .sc-block small { font-size: .68rem; }
-/* Phones: the ancestors become a short row across the top, the branches get the full width below */
-@media (max-width: 600px) {
-  .tree-card { flex-wrap: wrap; }
-  .tree-card .sc-col:not(.kids) { flex: 1 1 0; min-width: 0; }
-  .tree-card .sc-col:not(.kids) .sc-block { min-height: 3.2rem; flex: 0 0 auto; }
-  .tree-card .sc-col.kids, .tree-card .sc-col.kids.many { flex: 1 1 100%; margin-top: .4rem; }
+/* A lineage (an animal's place in the tree) or a time chain (a dinosaur's place in time), on the back of the card: one
+   block per step, each a little further in, like a family tree read top to bottom */
+.lineage { list-style: none; margin: .8rem 0 .3rem; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.lineage li { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); align-items: center; gap: .45rem; animation: rise .25s ease both; }
+.lineage .ln-rank { font-size: .64rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); text-align: right; }
+.lineage .ln-block { border-radius: 6px; padding: .28rem .55rem; font-size: .84rem; line-height: 1.25; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 .4rem; }
+.lineage .ln-block i { opacity: .85; font-size: .8rem; }
+.lineage .ln-block small { margin-left: auto; font-size: .7rem; opacity: .85; }
+/* The range map under a lineage: kept short so the card fits a laptop screen */
+.lineage ~ .gallery img { max-height: min(230px, 32vh) !important; width: auto !important; max-width: 100%; object-fit: contain; }
+/* Two pictures as the question (a dinosaur, life-like and as a fossil): side by side */
+.prompt-picture.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .5rem; align-items: center; }
+.side-picture:has(> .gallery + .gallery) { flex-direction: column; gap: .6rem; align-items: center; }
+.side-picture .gallery + .gallery img { max-height: min(220px, 30vh) !important; }
 }

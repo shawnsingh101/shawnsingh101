@@ -27,10 +27,10 @@ Any idea ("I'd like to learn about Thanksgiving") goes through the same steps:
 
 ## In progress
 
-**Life** (started): one tree of life, like the time scale (kingdom › … › genus), with groups of species on it and book
-decks feeding its branches. Cards: tree blocks, photo → name (species when a photo can tell, else the group),
-scientific name, range map and habitat, how to tell look-alikes apart, deep cuts from books. Batch 1 done (v1.30): the
-backbone, whales and dolphins, dinosaurs (also in Earth history), look-alikes. Next: the book decks (Spying on Whales, The Rise and Fall of
+**Life** (started): the tree of life as the outline (Bacteria · Archaea · Eukaryotes › …), groups of species filed on it,
+book decks feeding its branches. Cards: photo → name with the lineage, Latin name, range map and habitat on the back;
+dinosaurs asked when they lived (period, epoch, age) with time-scale blocks; deep cuts from books. Done: whales and
+dolphins, dinosaurs (v1.30, reworked v1.31). Next: the book decks (Spying on Whales, The Rise and Fall of
 the Dinosaurs: send the PDFs), birds with calls, trees and plants, any animal a book is about.
 
 **Classical music, Anki-guided** (Classical Music Themes, Parts I–II: 972 pieces). Essential (~170 themes): 39 works,
@@ -61,6 +61,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 | Version | What |
 | --- | --- |
 | 1.30 | Life: the tree of life, whales and dolphins, dinosaurs, how to tell them apart |
+| 1.31 | Life reorganized by the tree: domains as sections, photo → name with lineage blocks, dinosaurs by time |
 | 1.29 | Where people are really from, with the flag of their time |
 | 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
 | 1.27 | Earth history: a picture of the life of each time |

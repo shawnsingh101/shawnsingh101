@@ -1,21 +1,25 @@
-// The tree of life, as far as is worth knowing by heart: the backbone the Life subject hangs on, like src/geotime.ts for
-// Earth history. One source for the tree cards (a group's place and its branches, blank until flipped) and the
-// "which group?" cards. Not every branch: the ones a curious adult meets (vertebrate classes, mammal and bird orders,
-// whale families, the dinosaurs). Groups of species (collections/Life/…) say where they sit by naming a node here.
-export type TreeRank = 'kingdom' | 'phylum' | 'class' | 'clade' | 'order' | 'suborder' | 'family';
+// The tree of life: the backbone the Life subject hangs on, like src/geotime.ts for Earth history. Not a thing to learn by
+// heart (the real tree has far more branches than any card could hold): it files Life's sections (Bacteria · Archaea ·
+// Eukaryotes › Animals › Mammals…) and draws an animal's lineage, top to bottom, on the back of its card. Groups of
+// species (collections/Life/…) say where they sit by naming a node here; nodes are added as the lists need them.
+export type TreeRank = 'domain' | 'kingdom' | 'phylum' | 'class' | 'clade' | 'order' | 'suborder' | 'family';
 export interface Node {
   name: string;        // the scientific name (Cetacea)
   common: string;      // what people call it ("whales and dolphins")
   rank: TreeRank;
   parent?: string;
-  known: string;       // how to recognize it, in a few words (used as a card)
-  color: string;       // its block color on the tree cards
+  known: string;       // how to recognize it, in a few words (shown when you point at its block)
+  color: string;       // its block color
 }
 
-const C = { animal: '#8E7DBE', chordate: '#6C8EBF', mammal: '#D9822B', bird: '#4E9F6F', reptile: '#7A9A3A', fish: '#3E8FB0', amphibian: '#5DA399', invert: '#B07AA1', whale: '#2F6E9E', dino: '#9C6B30' };
+const C = { domain: '#4B5F8F', bacteria: '#5B8C5A', archaea: '#B5653A', animal: '#8E7DBE', chordate: '#6C8EBF', mammal: '#D9822B', bird: '#4E9F6F', reptile: '#7A9A3A', fish: '#3E8FB0', amphibian: '#5DA399', invert: '#B07AA1', whale: '#2F6E9E', dino: '#9C6B30' };
 
 export const TREE: Node[] = [
-  { name: 'Animalia', common: 'animals', rank: 'kingdom', known: 'many-celled life that eats other life and moves', color: C.animal },
+  // The three domains: everything alive is one of these
+  { name: 'Bacteria', common: 'bacteria', rank: 'domain', known: 'single cells with no nucleus; everywhere, from soil to your gut', color: C.bacteria },
+  { name: 'Archaea', common: 'archaea', rank: 'domain', known: 'single cells with no nucleus, as different from bacteria as from us; many love extremes', color: C.archaea },
+  { name: 'Eukaryota', common: 'eukaryotes', rank: 'domain', known: 'cells with a nucleus: animals, plants, fungi and many single-celled kinds', color: C.domain },
+  { name: 'Animalia', common: 'animals', rank: 'kingdom', parent: 'Eukaryota', known: 'many-celled life that eats other life and moves', color: C.animal },
   // Phyla
   { name: 'Chordata', common: 'chordates', rank: 'phylum', parent: 'Animalia', known: 'a nerve cord along the back; nearly all have a backbone', color: C.chordate },
   { name: 'Arthropoda', common: 'arthropods', rank: 'phylum', parent: 'Animalia', known: 'jointed legs and an outer skeleton: insects, spiders, crabs', color: C.invert },
@@ -83,18 +87,17 @@ export const TREE: Node[] = [
 export const node = (name: string) => TREE.find(n => n.name === name);
 export const branchesOf = (name: string) => TREE.filter(n => n.parent === name);
 export function lineage(name: string): Node[] { const out: Node[] = []; for (let n = node(name); n; n = n.parent ? node(n.parent) : undefined) out.unshift(n); return out; }
-const plural = (r: TreeRank) => (r === 'class' ? 'classes' : r === 'family' ? 'families' : `${r}s`);
-const rankWord = (n: Node) => (n.rank === 'clade' ? 'group' : n.rank);
-
-/** The tree deck, built from the data like the time-scale deck: where each group sits, and its branches. */
-export function treeDeck(): string {
-  const L: string[] = ['---', 'title: The tree of life', 'path: Tree of life', '---',
-    'The branches of the tree of life worth knowing by heart: the vertebrate classes, the orders of mammals and birds, the families of whales and the dinosaurs. Each card shows a group\'s place in the tree; its branches fill in when you flip it.'];
-  L.push('## How the tree fits together');
-  for (const n of TREE) if (branchesOf(n.name).length >= 2) L.push(`- [tree: ${n.name}] The ${plural(branchesOf(n.name)[0].rank)} of the ${n.common}`);
-  L.push('## Which group?');
-  for (const n of TREE.filter(x => x.parent)) L.push(`- The {{${n.common}|which ${rankWord(n)}?}} (${n.name}): ${n.known}.`);
-  L.push('## Scientific names');
-  for (const n of TREE.filter(x => x.parent && x.rank !== 'family')) L.push(`- The scientific name of the ${n.common} is {{${n.name}|what?}}.`, `native: ${n.name} (Latin)`);
-  return L.join('\n');
+/** One block of a lineage or time chain, top to bottom: "class · Mammalia (mammals)". */
+export interface Step { rank: string; name: string; common?: string; sub?: string; color: string; color2?: string; note?: string }
+/** An animal's place in the tree, all the way down: the nodes above it, then its genus and species. */
+export function taxonSteps(branch: string | null | undefined, species: string | null | undefined, common: string): Step[] {
+  const up = branch ? lineage(branch) : [];
+  const steps: Step[] = up.map(n => ({ rank: n.rank === 'clade' ? 'group' : n.rank, name: n.name, common: n.common, color: n.color, note: n.known }));
+  const color = up[up.length - 1]?.color ?? '#777';
+  if (species) {
+    const [g, ...sp] = species.split(' ');
+    steps.push({ rank: 'genus', name: g, color });
+    if (sp.length) steps.push({ rank: 'species', name: species, common, color });
+  }
+  return steps;
 }

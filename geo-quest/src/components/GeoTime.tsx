@@ -1,7 +1,7 @@
 // Earth's history as layers of rock: eons, eras, periods and epochs stacked like strata (youngest on top), in the
 // official ICS colours, beside a 24-hour clock of the same history. Tap a layer to read about it.
 import { useMemo, useRef, useState } from 'react';
-import { AGE_OF_EARTH, MNEMONIC, UNITS, fmtMa, onTheClock, type Rank, type Unit } from '../geotime';
+import { AGE_OF_EARTH, CHARTED, MNEMONIC, UNITS, fmtMa, onTheClock, type Rank, type Unit } from '../geotime';
 
 const RANKS: Rank[] = ['eon', 'era', 'period', 'epoch'];
 const H = 560; // column height, px
@@ -43,7 +43,7 @@ export function GeoTime() {
           {RANKS.map(rank => (
             <div key={rank} className={'stratum-col ' + rank}>
               <span className="col-head">{rank}s</span>
-              {UNITS.filter(u => u.rank === rank).map(u => {
+              {CHARTED.filter(u => u.rank === rank).map(u => {
                 const top = y(u.end), h = Math.max(1, y(u.start) - y(u.end));
                 return (
                   <button key={u.name} className={'band' + (sel === u ? ' sel' : inside(u) ? ' in' : '')} title={`${u.name} · ${fmtMa(u.start)} years ago`}
@@ -107,7 +107,7 @@ export function StrataCard({ unit, revealed }: { unit: string; revealed: boolean
   if (!u && unit !== 'Earth') return null;
   const chain: Unit[] = [];
   for (let p: Unit | undefined = u; p; p = UNITS.find(x => x.name === p!.parent)) chain.unshift(p);
-  const kids = UNITS.filter(x => (u ? x.parent === u.name : x.rank === 'eon')).sort((a, b) => a.start - b.start); // youngest first
+  const kids = CHARTED.filter(x => (u ? x.parent === u.name : x.rank === 'eon')).sort((a, b) => a.start - b.start); // youngest first
   const rank = kids[0]?.rank;
   return (
     <div className="strata-card">
