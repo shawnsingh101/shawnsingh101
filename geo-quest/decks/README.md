@@ -69,6 +69,18 @@ related: Italy, Florence
   real Python and checks it. Then, in any order, fenced blocks: ```` ```python ```` the starting code, ```` ```input ````
   and ```` ```output ```` one test case (repeat for more), ```` ```check ```` asserts run after the program, and
   ```` ```solution ```` a model answer (the audit makes sure it passes).
+- **A lesson**: everything between a `:::lesson` line and a `:::` line is a short read shown before the deck's cards
+  (Read the lesson). Markdown: `##` and `###` headings, paragraphs, `-` lists, `>` callouts, `**bold**`, `` `code` ``,
+  code blocks and flows.
+- **A flow diagram**: a ```` ```flow ```` block. The first line names the actors (`Browser | Server`); then one step per line,
+  `Browser -> Server: what it sends` or `Browser: what it does`. In a lesson you step through it; after a card it's shown
+  with the card; with `{{blanks}}` in it, it's a card of its own, asked by the plain bullet above it.
+- **A stack**: a ```` ```stack ```` block draws layered blocks, like the time-scale cards: one row per line,
+  `label | name | detail` (`4 | Transport | TCP, UDP, ports`). For layers (the OSI model) and chains (root CA ›
+  intermediate › site). Like a flow, it can carry `{{blanks}}` and be a card. Flows and stacks can start with a
+  `# Title` line.
+- **`objectives: 1.4, 3.3`** and **`chapter: 7`** (front matter): Security+ exam objectives and study-guide chapter
+  (`src/secplus.ts`), for the By exam objective and By book chapter lenses.
 - **`follows: Russo-Ukrainian war (2022–present); …`** and **`checked: 2026-11-24`** (front matter): a live topic. The
   weekly briefing reads those Wikipedia articles and suggests cards; the deck is also listed under Live topics.
 - **`as of: November 2026`** (after a card): true for now, not for good. Shown on the card; the weekly briefing

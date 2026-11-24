@@ -212,6 +212,25 @@ feature consistent. When adding anything, check it against this page. When a new
 - **Wikipedia is the source of truth**, in its words: attribute disputed claims ("Ukraine says…"); casualty and similar
   figures as ranges with whose estimate they are; no opinions of our own. Headings stay neutral, as everywhere.
 
+## 4f. Cybersecurity
+
+- **Understanding first, exam practice second.** The owner practices Security+ (SY0-701) questions in a separate Study
+  Lab. Here, each deck opens with a **lesson**: a short textbook-style read (what it is, why it exists, how it works,
+  where it fits, what it's confused with), then cards on just that lesson. Acronyms are spelled out on first use in every
+  lesson and on every card.
+- **Layered order, not the exam's**: each part uses only what came before. 1 How computers talk, 2 The core ideas,
+  3 Cryptography, 4 Identity, 5 Networks, 6 Attacks, 7 Defending systems, 8 Operations, 9 Governance.
+- **Tagged to the exam and the book**: `objectives:` (SY0-701, e.g. `1.4, 3.3`) and `chapter:` (Chapple and Seidl's
+  Study Guide, 9th ed.) in each deck's front matter, giving By exam objective and By book chapter lenses, and a pointer
+  back to the Study Lab at the end of each lesson. Titles live in `src/secplus.ts`.
+- **Flow diagrams** for anything that passes between systems (keys, certificates, tickets, handshakes): ```` ```flow ````
+  blocks, stepped through in lessons and blanked as cards. Every step must name an actor; the audit checks it.
+  Layers and chains (the OSI model, a certificate's chain of trust) are **stacks** (```` ```stack ````), drawn like the
+  time-scale and lineage blocks the owner likes. Look: soft pastel fills, no heavy outlines, thin arrows, small labels,
+  a short title (owner's feedback, v1.34).
+- Written in our own words from the official objectives and standard references; the study guide (copyrighted) is never
+  copied or committed. An analogy may help a lesson's intuition, but is never a card's answer (rule 14).
+
 ## 5. Content files (how to add things)
 
 | What | Where | Format |

@@ -4,6 +4,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { parseDeck } from '../src/notes';
+import { parseFlow } from '../src/flow';
 import { geotimeDeck, epochDeck } from '../src/geotime';
 const ROOT = join(process.cwd(), 'decks');
 const walk = (d: string): string[] => readdirSync(d).flatMap(f => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : /\.md$/.test(f) && !/README/i.test(f) ? [p] : []; });
@@ -14,7 +15,16 @@ const issues: string[] = []; const pics = new Set<string>(); const urls = new Se
 const titles = new Set(decks.map(x => x.d.title.toLowerCase()));
 const ids = new Map<string, string>();
 let n = 0;
+// A flow diagram: two or more actors, and every step names one of them (a typo would draw an arrow to nowhere).
+function checkFlow(text: string, where: string) {
+  const { actors, steps } = parseFlow(text);
+  if (actors.length < 2) issues.push(`FLOW needs two or more actors ${where}`);
+  for (const s of steps) if (s.from < 0 || s.to < 0) issues.push(`FLOW step names no actor ${where}: "${s.label.slice(0, 50)}"`);
+}
 for (const { f, d } of decks) {
+  // A lesson's flows are checked the same way; and a lesson needs cards to go with it.
+  for (const m of (d.lesson ?? '').matchAll(/```flow\n([\s\S]*?)\n```/g)) checkFlow(m[1], `${f} (lesson)`);
+  if (d.lesson && !d.cards.length) issues.push(`LESSON without cards ${f}`);
   // A lens deck (History of AI) has no cards of its own: other decks' cards are shown in it ("also in").
   if (!d.cards.length && !decks.some(x => x.d.cards.some(c => c.card.also?.some(t => t.toLowerCase() === d.title.toLowerCase())))) issues.push(`EMPTY deck: ${f}`);
   for (const { id, card: c } of d.cards) {
@@ -56,6 +66,7 @@ for (const { f, d } of decks) {
         if (run(p.starter).every(x => !x)) issues.push(`PRACTICE starter already passes ${f}: ${c.pre.slice(0, 50)}`);
       }
     }
+    if (c.code?.lang === 'flow') checkFlow(c.code.text, `${f}: ${c.pre.slice(0, 40)}`);
     if (c.picture?.file) pics.add(c.picture.file);
     if (c.picture?.url) urls.add(c.picture.url);
     for (const nn of c.native) if (!nn.code) issues.push(`NATIVE no lang code ${f}: ${nn.name} (${nn.lang})`);

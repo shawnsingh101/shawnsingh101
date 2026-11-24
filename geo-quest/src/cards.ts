@@ -76,6 +76,8 @@ export interface TopicSlot { id: Topic; name: string; icon: IconName; requires?:
 export interface Group {
   id: string; section: string; name: string; layer: Place['layer'];
   subregions?: string[]; topics: TopicSlot[]; note?: string;
+  lesson?: string;     // a note deck's lesson: a short read before its cards (components/Lesson.tsx)
+  secplus?: { objectives: string[]; chapter: string | null }; // Security+ tags, for the lesson's pointer back to the Study Lab
   requires?: string;   // a node from another group that must be half-known first (e.g. great rivers → more rivers)
   alsoInSections?: string[];
   nouns?: string;      // what its places are called ("districts", "prefectures"), for regions inside a country // also listed in these sections (Rivers of the United States shows under Rivers too)

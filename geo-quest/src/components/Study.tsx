@@ -2,6 +2,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Lineage } from './Lineage';
 import { CodeBlock, REPO_FILE, Rich } from './Code';
 import { PracticeCard } from './Practice';
+import { Flow } from './Flow';
+import { Stack } from './Stack';
+import { LessonReader } from './Lesson';
 import { ClipPlayer, MusicReveal } from './Music';
 import { Say } from './Native';
 import { OriginLine } from './Origin';
@@ -53,6 +56,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
   const [saved, setSaved] = useState(false);
   const [nudge, setNudge] = useState<string | null>(null);
   const [sheet, setSheet] = useState<string | null>(null); // a related place opened from the card
+  const [lesson, setLesson] = useState(false); // the deck's lesson, opened from a card's answer
   const [peek, setPeek] = useState(false);
   const wide = useWide(); // the answer map: every answer in this deck, session paused
   // Undo: a snapshot of the session (and your progress) before each answer.
@@ -337,11 +341,13 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {c.layer === 'road' && c.image && item.ref.kind !== 'roadShield' && (revealed || item.ref.kind === 'locate') && <img className="card-shield" src={commonsUrl(c.image, 160)} alt={`${c.short ?? c.name} sign`} />}
           {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
           {/* Code with the question: above the sentence ("This prints ___."), or holding the blank itself */}
-          {f.code && !f.code.text.includes('\u0000') && <CodeBlock text={f.code.text} lang={f.code.lang} />}
+          {f.code && !f.code.text.includes('\u0000') && (f.code.lang === 'flow' ? <Flow text={f.code.text} /> : f.code.lang === 'stack' ? <Stack text={f.code.text} /> : <CodeBlock text={f.code.text} lang={f.code.lang} />)}
           {f.practice ? <PracticeCard key={item.ref.id} p={f.practice} prompt={f.pre} revealed={revealed} onDone={reveal} />
           : f.code?.text.includes('\u0000') ? <>
             <p className="cloze front"><Rich before={f.pre} /></p>
-            <CodeBlock text={f.code.text} lang={f.code.lang} blank={revealed ? <span className="fill">{f.answer}</span> : <span className="blank">{f.blank}</span>} />
+            {f.code.lang === 'flow' || f.code.lang === 'stack'
+              ? (f.code.lang === 'flow' ? <Flow text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} /> : <Stack text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} />)
+              : <CodeBlock text={f.code.text} lang={f.code.lang} blank={revealed ? <span className="fill">{f.answer}</span> : <span className="blank">{f.blank}</span>} />}
           </> : f.strata ? <>
             <p className="cloze front">{f.pre}</p>
             <StrataCard unit={f.strata} revealed={revealed} />
@@ -378,6 +384,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {revealed && item.ref.kind.startsWith('flag') && <Lookalikes ds={ds} place={c} />}
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
           {revealed && f.note && !c.music && <p className="note"><Icon name="info" size={15} /> <Rich before={f.note} /></p>}
+          {revealed && group?.lesson && <button className="btn small ghost lesson-link" onClick={e => { e.stopPropagation(); setLesson(true); }}><Icon name="book" size={15} /> Read the lesson</button>}
           {revealed && f.source && <a className="code-source" href={REPO_FILE(f.source)} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}>See it in the code: <code>{f.source}</code> ↗</a>}
           {revealed && c.music && <MusicReveal ds={ds} place={c} />}
           {revealed && f.lineage && <Lineage steps={f.lineage.steps} label={f.lineage.label} />}
@@ -419,6 +426,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
         )}
       </div>
       {sheet && <PlaceSheet ds={ds} id={sheet} onClose={() => setSheet(null)} />}
+      {lesson && group?.lesson && <LessonReader title={group.name} text={group.lesson} secplus={group.secplus} onClose={() => setLesson(false)} />}
     </div>
   );
 }
