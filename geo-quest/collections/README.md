@@ -34,8 +34,10 @@ instrument. Fix instruments and birthplaces in `data/collection-fixes.json` (`pe
 
 A list with `kind: taxon`, filed by the tree (`Life/3 Eukaryotes/Animals/1 Mammals/…`): `## Rorquals | Balaenopteridae`
 (the heading names its branch of the tree, `src/tree.ts`), then `- Blue whale | in every ocean…` (Wikipedia title, then
-where it lives). A dinosaur's line ends with its age (stage) from the time scale:
-`- Tyrannosaurus | Late Cretaceous, in western North America | Maastrichtian` (two ages: `Kimmeridgian–Tithonian`);
+where it lives). A dinosaur's line ends with when it lived:
+`- Tyrannosaurus | in western North America | Late Cretaceous (Maastrichtian)`. That's the fallback: the sync reads the
+fossil range from the dinosaur's Wikipedia article every night and the cards follow it (the sync log lists any that
+differ from the list);
 its `image` (life restoration) and `fossil` pictures are set in `data/collection-fixes.json`. The sync adds the
 scientific name, range map and conservation status. Cards: an animal's photo → name; a dinosaur → when it lived.
 

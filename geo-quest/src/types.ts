@@ -40,6 +40,7 @@ export interface Place {
   topo?: { id?: string; name?: string } | null;
   flag?: string | null;
   image?: string | null;
+  imageUrl?: string;        // no free picture on Commons: the English Wikipedia article's lead image (fair use, hot-linked)
   lon?: number; lat?: number;
   wiki: string | null;
   capitals: Capital[];
@@ -82,7 +83,7 @@ export interface Place {
   artists?: string[];      // artworks: who made it… (buildings: the architect)
   makerOrigin?: Origin;      // where the artist / author / architect is from (when there's one maker)
   makerNative?: NativeName[]; // the artist / author / architect in their own language (for the speaker on 'who made it?')
-  taxon?: { branch: string | null; note: string | null; rangeMap: string | null; status: string | null; group: string | null; genusOnly: boolean; epoch?: string | null; ages?: string[]; fossil?: string | null };
+  taxon?: { branch: string | null; note: string | null; rangeMap: string | null; status: string | null; group: string | null; genusOnly: boolean; when?: boolean; time?: { epochs: string[]; ages: string[]; from: string | null } | null; fossil?: string | null };
   music?: MusicClip;
   person?: PersonFacts & { scene: string | null }; // from a `kind: person` collection (scene: the heading it's under)        // a clip from a `kind: music` collection (one card set per clip)
   book?: boolean; fiction?: boolean; language?: string | null; shelves?: string[]; // books: first written in; nonfiction topics

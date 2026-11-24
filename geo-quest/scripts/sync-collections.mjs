@@ -329,6 +329,79 @@ try {
     delete x.makerIds;
   }
 } catch (e) { console.warn('Native names of people skipped:', e.message); }
+// When each dinosaur lived, from its English Wikipedia article ("fossil_range" in the infobox): the text the article
+// shows ("Late Cretaceous (Maastrichtian)") and its dates in millions of years. The app reads the epoch and ages out of it
+// (rangeFrom in src/geotime.ts), so a card follows the article as new finds redate an animal. A list line's own range
+// (`| Late Cretaceous (Cenomanian)`) is only the fallback. Lists say which entries ask "when": a taxon line with a third field.
+function fossilRangeOf(wt) {
+  const m = /\|\s*fossil_range\s*=([\s\S]*?)(?=\n\s*\|\s*[\w ]+=|\n\}\})/.exec(wt);
+  if (!m) return null;
+  let s = m[1].replace(/<ref[^>]*\/>/g, '').replace(/<ref[^>]*>[\s\S]*?<\/ref>/g, '');
+  s = s.replace(/\|\s*(?:earliest|latest)\s*=[^|}]*/gi, ''); // a possible earlier or later record, not the settled range
+  s = s.split(/\bpossible\b/i)[0]; // "Possible later Maastrichtian record": the same, in words
+  const ma = [];
+  for (let prev = ''; prev !== s;) {
+    prev = s;
+    s = s.replace(/\{\{([^{}]*)\}\}/g, (_, inner) => {
+      const [name, ...args] = inner.split('|').map(x => x.trim());
+      if (!/fossil range|geological range/i.test(name)) return '';
+      const kept = args.filter(a => !/^(earliest|latest|ref|PS|PreC|Ma)\s*=/i.test(a));
+      const nums = kept.filter(a => /^[\d.]+$/.test(a)).map(Number);
+      if (nums.length >= 2 && !ma.length) ma.push(nums[0], nums[1]);
+      return ' ' + kept.filter(a => !/^[\d.]+$/.test(a)).join(' ') + ' ';
+    });
+  }
+  const text = s.replace(/\{\{[^|{}]*\|?/g, ' ').replace(/\|/g, ' ').replace(/\[\[(?:[^|\]]*\|)?([^\]]*)\]\]/g, '$1').replace(/<[^>]+>/g, ' ').replace(/'{2,}/g, '').replace(/\s+/g, ' ').trim().replace(/[,;~ ]+$/, '');
+  return text || ma.length ? { text, ma: ma.length ? ma : null, source: 'Wikipedia' } : null;
+}
+// No free picture on Commons (a building or painting still under copyright, a book cover): use the English Wikipedia
+// article's lead image instead, which Wikipedia shows under fair use. Hot-linked from Wikipedia, never copied here.
+try {
+  const bare = Object.entries(items).filter(([, x]) => !x.image && x.wiki);
+  for (const part of chunks(bare, 40)) {
+    const u = `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&redirects=1&prop=pageimages&piprop=thumbnail&pithumbsize=800&pilicense=any&titles=${encodeURIComponent(part.map(([, x]) => x.wiki.replace(/_/g, ' ')).join('|'))}`;
+    let q = null;
+    for (let attempt = 1; attempt <= 4 && !q; attempt++) {
+      try { const res = await fetch(u, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(60000) }); if (res.ok) q = (await res.json()).query; } catch { /* retry */ }
+      if (!q) await new Promise(r => setTimeout(r, 10000 * attempt));
+    }
+    if (!q) { for (const [id] of part) if (old.items[id]?.imageUrl) items[id].imageUrl = old.items[id].imageUrl; continue; }
+    const hop = new Map([...(q.normalized ?? []), ...(q.redirects ?? [])].map(x => [x.from, x.to]));
+    const byTitle = new Map(q.pages.map(p => [p.title, p]));
+    for (const [id, x] of part) {
+      let t = x.wiki.replace(/_/g, ' '); for (let i = 0; i < 3 && hop.has(t); i++) t = hop.get(t);
+      const src = byTitle.get(t)?.thumbnail?.source?.replace(/\?.*$/, '');
+      if (src) items[id].imageUrl = src;
+    }
+  }
+} catch (e) { console.warn('Wikipedia lead images skipped:', e.message); }
+try {
+  const when = lists.filter(l => l.taxon).flatMap(l => l.entries.filter(e => e.id && e.rest.split(' | ').length > 2 && items[e.id]?.wiki));
+  for (const part of chunks(when, 20)) {
+    let pages = null;
+    for (let attempt = 1; attempt <= 5 && !pages; attempt++) {
+      try {
+        const u = `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&redirects=1&prop=revisions&rvprop=content&rvslots=main&titles=${encodeURIComponent(part.map(e => items[e.id].wiki.replace(/_/g, ' ')).join('|'))}`;
+        const res = await fetch(u, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(60000) });
+        if (res.ok) pages = (await res.json()).query; else console.warn(`Wikipedia answered ${res.status}, retry ${attempt}/5`);
+      } catch (e) { console.warn(`Wikipedia unreachable (${e.message}), retry ${attempt}/5`); }
+      if (!pages) await new Promise(r => setTimeout(r, 10000 * attempt));
+    }
+    if (!pages) { console.warn('Fossil ranges: keeping last time\'s'); for (const e of part) if (old.items[e.id]?.fossilRange) items[e.id].fossilRange = old.items[e.id].fossilRange; continue; }
+    // Titles come back normalized and redirected: follow each entry's title through to its page.
+    const hop = new Map([...(pages.normalized ?? []), ...(pages.redirects ?? [])].map(x => [x.from, x.to]));
+    const byTitle = new Map(pages.pages.map(p => [p.title, p]));
+    for (const e of part) {
+      if (fixes[e.id]?.fossilRange) continue; // set by hand in collection-fixes.json: that wins
+      let t = items[e.id].wiki.replace(/_/g, ' '); for (let i = 0; i < 3 && hop.has(t); i++) t = hop.get(t);
+      const wt = byTitle.get(t)?.revisions?.[0]?.slots?.main?.content;
+      const fr = wt ? fossilRangeOf(wt) : null;
+      if (fr) items[e.id].fossilRange = fr; else if (old.items[e.id]?.fossilRange) items[e.id].fossilRange = old.items[e.id].fossilRange;
+      const listed = e.rest.split(' | ')[2]?.trim();
+      if (fr && listed && !fr.text.includes(listed.replace(/ \(.*$/, ''))) console.log(`  ${items[e.id].name}: Wikipedia says "${fr.text}" (the list's fallback: "${listed}")`);
+    }
+  }
+} catch (e) { console.warn('Fossil ranges skipped:', e.message); }
 await addRomaji(items);
 writeFileSync(OUT, JSON.stringify(addChinese({ source: 'Wikidata (CC0)', items })));
 const missing = ids.filter(q => !items[q]);

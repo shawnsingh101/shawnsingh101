@@ -1,6 +1,7 @@
 import type { Dataset, NativeName, Origin, Place } from './types';
 import { taxonSteps, type Step } from './tree';
-import { timeSteps, unit } from './geotime';
+import type { Practice } from './notes';
+import { timeSteps } from './geotime';
 import type { IconName } from './components/Icons';
 
 // ---- Card kinds ---------------------------------------------------------------
@@ -59,7 +60,7 @@ export function fingerprint(kind: Kind, c: Place) {
   if (kind === 'bookLang') return `${c.name}|${c.language}`;
   if (kind.startsWith('person')) return `${c.name}|${kind === 'personScene' ? c.person?.scene : kind === 'personBorn' ? bornIn(c) : kind === 'personPlays' ? c.person?.instruments.join(',') : c.image}`;
   if (kind === 'taxonId') return `${c.name}|${c.image}`;
-  if (kind === 'dinoTime') return `${c.name}|${c.taxon?.epoch}|${c.taxon?.ages?.join('-')}`;
+  if (kind === 'dinoTime') return `${c.name}|${c.taxon?.time?.epochs.join('-')}|${c.taxon?.time?.ages.join('-')}`; // a redating re-queues the card
   if (kind.startsWith('music')) return `${c.music?.file}|${c.music?.composer.name}|${c.music?.label}`;
   return c.name;
 }
@@ -260,14 +261,14 @@ export function kindApplies(k: Kind, c: Place) {
   if (k === 'highestReverse') return !!c.highest && !c.highestShared;
   if (k === 'presFace') return !!c.photo;
   if (k === 'presParty') return !!c.terms?.some(t => t.party !== 'Unaffiliated');
-  if (k === 'artPhoto') return !c.person && !c.taxon && !!c.image; // a free picture on Commons (a modern painting under copyright has none to show as the question)
+  if (k === 'artPhoto') return !c.person && !c.taxon && !!(c.image || c.imageUrl); // its picture on Commons, or the fair-use one on Wikipedia
   if (k === 'artMaker') return !!makerOf(c);
   if (k === 'artWhere') return !c.book && !c.music && !c.person && !!(c.museum || c.countryName);
   if (k === 'musicComposer' || k === 'musicWork') return !!c.music;
   if (k === 'personFace') return !!c.person && !!c.image;
   // Animals are named from a photo; dinosaurs, told apart by their bones, are asked when they lived instead.
-  if (k === 'taxonId') return !!c.taxon && !c.taxon.ages && !!c.image;
-  if (k === 'dinoTime') return !!c.taxon?.ages && !!c.taxon.epoch && !!unit(c.taxon.epoch);
+  if (k === 'taxonId') return !!c.taxon && !c.taxon.when && !!c.image;
+  if (k === 'dinoTime') return !!c.taxon?.time;
   if (k === 'personScene') return !!c.person?.scene;
   if (k === 'personBorn') return !!c.person && !!bornIn(c);
   if (k === 'personPlays') return !!c.person?.instruments.length;
@@ -338,6 +339,9 @@ export interface CardFace {
   frontBack?: boolean;            // a note card's front :: back: the answer appears below the question
   promptPicture?: boolean; // show the picture as the question (World Heritage photo cards)
   parts?: (string | { answer: string; hint?: string })[]; // a sentence with several blanks hidden together
+  practice?: Practice;                   // a practice card: write a program, run and check it (components/Practice.tsx)
+  code?: { lang: string; text: string }; // a note card's code: shown with the question (a \u0000 in it is the blank)
+  source?: string;                         // the app file that code is quoted from (a link on GitHub)
   picture2?: { file: string; caption: string; prompt: boolean }; // a second picture: with the question (a fossil), or after it (a range map)
   lineage?: { steps: Step[]; label: string }; // shown with the answer: the animal's place in the tree, or the dinosaur's in time
   strata?: string;         // a geologic time card: the unit's place in the time scale and its (blank) parts
@@ -353,7 +357,9 @@ export interface CardFace {
 export const makerOf = (c: Place) => (c.artists?.length ? c.artists.reduce((acc, x, i, a) => (!i ? x : acc + (i === a.length - 1 ? ' and ' : ', ') + x), '') : c.culture ? `the ${c.culture}` : null);
 // Only the work's own picture. With none (a portrait still under copyright), no picture at all: the Wikipedia article's
 // other images are *other* works (the Michelle Obama portrait's article shows a Klimt), never to be passed off as this one.
-const artPic = (c: Place) => (c.image ? { file: c.image, wiki: c.wiki, caption: c.name, single: true } : undefined);
+// A work's own picture: its free one on Commons, else the English Wikipedia article's lead image (fair use). Never a
+// different work from the article's gallery.
+const artPic = (c: Place) => (c.image ? { file: c.image, wiki: c.wiki, caption: c.name, single: true } : c.imageUrl ? { url: c.imageUrl, wiki: c.wiki, caption: c.name, single: true } : undefined);
 const artNote = (c: Place, withMaker: boolean) => [withMaker && makerOf(c) ? `By ${makerOf(c)}` : null, c.facts].filter(Boolean).join(' · ') || null;
 const fmtYear = (y: number | null | undefined) => (y == null ? null : y <= 0 ? `c. ${Math.abs(y) || 1} BC` : y < 1000 ? `c. AD ${y}` : `c. ${y}`); // as in collections.ts (which imports this file)
 /** A person's name: when it's written in our alphabet the voice reads the name as the card shows it (Wikidata's own-language
@@ -384,9 +390,10 @@ function rawFace(ref: CardRef): CardFace {
     // Note decks: a cloze ("Equal parts {{gin}}, Campari…") or a front :: back card.
     const n = c.card;
     if (n.strata) return { mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, frontBack: true, strata: n.strata };
+    const code = { code: n.code, source: n.source, practice: n.practice };
     return n.front
-      ? { mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption, single: n.pictureFirst } : undefined, frontBack: true, promptPicture: !!(n.pictureFirst && n.picture) }
-      : { mode: 'reveal', pre: n.pre, blank: n.hint ?? 'what?', post: n.post, answer: n.answer, map: 'none', note: n.note, parts: n.parts,
+      ? { ...code, mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption, single: n.pictureFirst } : undefined, frontBack: true, promptPicture: !!(n.pictureFirst && n.picture) }
+      : { ...code, mode: 'reveal', pre: n.pre, blank: n.hint ?? 'what?', post: n.post, answer: n.answer, map: 'none', note: n.note, parts: n.parts,
           picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption, single: n.pictureFirst } : undefined, promptPicture: !!(n.pictureFirst && n.picture) };
   }
   const cap = c.capitals[0];
@@ -512,12 +519,13 @@ function rawFace(ref: CardRef): CardFace {
         picture2: t.rangeMap ? { file: t.rangeMap, caption: `Where ${theOf(c)} lives`, prompt: false } : undefined };
     }
     case 'dinoTime': { // the dinosaur (life-like, and its fossil) → when it lived: the epoch and age, drawn as time-scale blocks
-      const t = c.taxon!, ages = t.ages!;
-      const where = t.note?.split(/;/)[0].replace(/^[^,]*,\s*/, '');
-      return { mode: 'reveal', pre: `${c.name}${c.species ? ` (${c.species})` : ''} lived in `, blank: 'which period, epoch and age?', post: '.',
-        answer: `the ${t.epoch}, in its ${ages.join(' and ')} age${ages.length > 1 ? 's' : ''}`, map: 'none', picture: artPic(c), promptPicture: true,
-        note: [where ? `Fossils found ${where}` : null, t.note?.split('; ')[1] ?? null].filter(Boolean).join(' · ') || null,
-        lineage: { steps: timeSteps(t.epoch!, ages), label: `When ${c.name} lived, in the geologic time scale` },
+      const t = c.taxon!, { epochs, ages } = t.time!;
+      const when = epochs.length > 1 ? `the ${epochs[0].split(' ')[0]} to ${epochs[1]}` : `the ${epochs[0]}`;
+      const age = ages.length > 1 ? `, from the ${ages[0]} to the ${ages[1]} age` : ages.length ? `, in the ${ages[0]} age` : '';
+      return { mode: 'reveal', pre: `${c.name}${c.species ? ` (${c.species})` : ''} lived in `, blank: ages.length ? 'which period, epoch and age?' : 'which period and epoch?', post: '.',
+        answer: when + age, map: 'none', picture: artPic(c), promptPicture: true,
+        note: [t.note ? `Fossils found ${t.note.split(';')[0]}` : null, t.note?.split('; ')[1] ?? null, t.time!.from ? `as ${t.time!.from} has it` : null].filter(Boolean).join(' · ') || null,
+        lineage: { steps: timeSteps(t.time!), label: `When ${c.name} lived, in the geologic time scale` },
         picture2: t.fossil ? { file: t.fossil, caption: `A fossil of ${c.name}`, prompt: true } : undefined };
     }
     case 'bookLang': // books: "Don Quixote was first written in Spanish."

@@ -1,7 +1,8 @@
 // Content audit (npm run audit): parse every deck the way the app does and flag empty answers, leftover markup,
 // front/back cards, headings that give the answer away, "also in" targets that don't exist, unknown languages.
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { parseDeck } from '../src/notes';
 import { geotimeDeck, epochDeck } from '../src/geotime';
 const ROOT = join(process.cwd(), 'decks');
@@ -27,6 +28,34 @@ for (const { f, d } of decks) {
     const ans = c.answer.toLowerCase().replace(/^(the|a|an) /, '');
     if (c.context && ans.length > 3 && c.context.toLowerCase().includes(ans) && !c.strata) issues.push(`SPOILER ${f}: heading "${c.context}" ⊇ answer "${c.answer}"`);
     for (const a of c.also ?? []) if (!titles.has(a.toLowerCase())) issues.push(`ALSO-IN target missing ${f}: ${a}`);
+    // Code quoted from the app (Under the hood): the file must exist and still contain the code, blank filled in, so a card
+    // never teaches a line that has since changed. Spacing is ignored.
+    if (c.code && /\{\{/.test(c.code.text)) issues.push(`MARKUP LEFT in code ${f}: ${c.pre.slice(0, 60)}`);
+    if (c.source) {
+      const path = [join(process.cwd(), c.source), join(process.cwd(), '..', c.source)].find(existsSync);
+      const squash = (x: string) => x.replace(/\s+/g, ' ').trim();
+      if (!path) issues.push(`SOURCE missing ${f}: ${c.source}`);
+      else if (!c.code) issues.push(`SOURCE without code ${f}: ${c.pre.slice(0, 60)}`);
+      else if (!squash(readFileSync(path, 'utf8')).includes(squash(c.code.text.replace('\u0000', c.answer)))) issues.push(`CODE CHANGED ${f}: ${c.source} no longer has "${squash(c.code.text.replace('\u0000', c.answer)).slice(0, 70)}"`);
+    }
+    // Practice cards: the solution must pass every test, run with the same runner the app uses (public/practice-runner.py);
+    // and the starting code alone must not, or there'd be nothing to do.
+    if (c.practice) {
+      const p = c.practice;
+      const run = (src: string) => {
+        const r = spawnSync('python3', ['-I', join(process.cwd(), 'public/practice-runner.py')], { input: JSON.stringify({ src, cases: p.cases.length ? p.cases : [{ input: '' }], check: p.check }), encoding: 'utf8', timeout: 10000 });
+        const results: { output: string; error: { type: string; message: string } | null }[] = JSON.parse(r.stdout || '[]');
+        const norm = (x: string) => x.split('\n').map(l => l.trimEnd()).join('\n').replace(/\n+$/, '');
+        return (p.cases.length ? p.cases : [{ input: '', output: null }]).map((k, i) => !results[i] ? 'no result' : results[i].error ? `${results[i].error!.type}: ${results[i].error!.message}` : k.output != null && norm(results[i].output) !== norm(k.output) ? `printed "${norm(results[i].output)}", not "${norm(k.output)}"` : null);
+      };
+      if (!p.solution) issues.push(`PRACTICE no solution ${f}: ${c.pre.slice(0, 50)}`);
+      else if (!p.cases.length && !p.check) issues.push(`PRACTICE no tests ${f}: ${c.pre.slice(0, 50)}`);
+      else {
+        const bad = run(p.solution).map((x, i) => x && `test ${i + 1}: ${x}`).filter(Boolean);
+        if (bad.length) issues.push(`PRACTICE solution fails ${f}: ${c.pre.slice(0, 40)}… ${bad.join('; ')}`);
+        if (run(p.starter).every(x => !x)) issues.push(`PRACTICE starter already passes ${f}: ${c.pre.slice(0, 50)}`);
+      }
+    }
     if (c.picture?.file) pics.add(c.picture.file);
     if (c.picture?.url) urls.add(c.picture.url);
     for (const nn of c.native) if (!nn.code) issues.push(`NATIVE no lang code ${f}: ${nn.name} (${nn.lang})`);

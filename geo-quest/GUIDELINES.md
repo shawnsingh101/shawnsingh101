@@ -72,15 +72,17 @@ feature consistent. When adding anything, check it against this page. When a new
 
 - **The thing itself is shown whole, never cropped**: artworks (on a dark "gallery wall"), banknotes, plants, cocktails,
   road signs, any single photo. A place's gallery of photos keeps the wide strip, which suits landscapes.
-- **A picture is always of the card's own subject.** No picture of its own (a work still under copyright): no picture.
-  Never borrow from the Wikipedia article's gallery for a single thing: those are other works.
+- **A picture is always of the card's own subject.** Its free picture on Commons first. When Commons can't have one (a
+  building or painting still under copyright, a book cover), the English Wikipedia article's **lead image**, which
+  Wikipedia shows under fair use: hot-linked from Wikipedia, never copied into the repo (owner's decision, v1.32). Never
+  borrow from the article's gallery for a single thing: those are other works.
 - **Tap any picture to see it full screen.**
 - **No scrolling to see a card.** On a laptop a card without a map shows its picture framed beside it (up to ~400 px
   wide), the two centered together; on a phone the picture stays above the text, at most a third of the screen tall.
 - **Never enlarge a picture past its own pixels** (no blur), on the card or full screen. Full screen fits the whole
   picture on screen; nothing scrolls.
 - A picture can be the question (`- What is made from this? [picture] :: gin`); its caption stays hidden until the card
-  is flipped. Only use a picture as a question when it's free to show (Commons), never a copyrighted work's thumbnail.
+  is flipped. A fair-use lead image may be the question too (owner's decision, v1.32).
 - **Give a card a picture when the picture shows what the card is about**: a person, a place, an object, an organism, a
   structure, a map of an empire, a diagram of a process. Skip it for bare dates, definitions and abstract ideas.
 - **The picture belongs to the card, not just the topic**: a picture line right after a card is that card's own (the
@@ -167,10 +169,30 @@ feature consistent. When adding anything, check it against this page. When a new
   a deck of their own.
 - **Dinosaurs are asked when, not which.** They're told apart by bones, so no photo → name cards (book decks can ask
   more). Their card shows the life restoration and a fossil, gives the name and species, and asks the period, epoch and
-  age; the back draws the time-scale blocks (eon › era › period › epoch › age). Ages come from the list line
-  (`| Maastrichtian`) and must exist in `src/geotime.ts`. They also show in Earth history (one deck, so its name never
-  gives the period away).
+  age; the back draws the time-scale blocks (eon › era › period › epoch › age). **When it lived follows its Wikipedia
+  article** (the infobox's fossil range, read by the nightly sync), so a redating reaches the cards; the list line's range
+  (`| Late Cretaceous (Maastrichtian)`) is only the fallback, and `fossilRange` in `collection-fixes.json` overrides both.
+  They also show in Earth history (one deck, so its name never gives the period away).
 - Not a children's set: no cow-dog-tiger basics.
+
+## 4d. Programming
+
+- **Two decks, linked.** *Python* follows OpenStax *Introduction to Python Programming* chapter by chapter: universal
+  ideas, taught in Python. *Under the hood* teaches how this app works, from its real files. A card in one can be
+  `also in:` the matching deck of the other (one card, two places).
+- **Code on cards** goes in a fenced block, shown in a dark panel in every theme. Kinds of card: what does this print,
+  fill in the blank in the code, which error, and plain concept cards. Easy first; harder ones in a `depth: deep` deck
+  beside each chapter.
+- **Every "prints" answer is run in Python before it ships.** Never write an output from memory.
+- **Quoted code must be real.** An Under the hood card quoting the app names its file (`source: src/srs.ts`); the audit
+  fails when that code no longer matches, so the card is fixed when the code changes. Don't quote lines that change
+  every release (the version number).
+- Flashcards teach reading code; **practice cards** teach writing it: `[practice]` with starting code, test cases
+  (input lines → expected output), optional asserts and a model solution. Python runs in the browser (Pyodide, served
+  from the app's own `pyodide/` folder, never a CDN) in a worker, stopped after 5 seconds. The audit runs every solution
+  with the same runner (`public/practice-runner.py`) and fails if it doesn't pass, or if the starting code already does.
+- Practice problems use only what the chapter (and the ones before it) taught, two or more test cases where input is
+  read, so hard-coding an answer can't pass. They're worked in Study and kept out of timed quizzes.
 
 ## 5. Content files (how to add things)
 

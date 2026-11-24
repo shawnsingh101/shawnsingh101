@@ -12,7 +12,10 @@ export interface NoteCard {
   parts?: (string | { answer: string; hint?: string })[]; // a grouped cloze ({{c1::…}}): the sentence with several blanks
   strata?: string;                             // "[strata: Phanerozoic]": a geologic time card showing the unit's blocks (src/geotime.ts)
   also?: string[];                             // an "also in: Philadelphia" line after it: the card is also in that deck
-  species?: string;                            // a "species: Juniperus communis" line: the scientific name of the plant or animal                      // "[picture]" in the question: the heading's picture is the question
+  species?: string;                            // a "species: Juniperus communis" line: the scientific name of the plant or animal
+  code?: { lang: string; text: string };       // a fenced code block: shown with the question. A \u0000 in it marks the card's blank
+  practice?: Practice;                         // a "[practice]" card: write a program; it's run and checked (src/python.ts)
+  source?: string;                             // a "source: src/tree.ts" line: the file the code is quoted from (linked on GitHub)
   context: string | null;                      // the ## heading it sits under
   picture: { file?: string | null; url?: string | null; caption: string } | null;
   note: string | null;                         // a "> …" line: shown after the answer
@@ -20,6 +23,9 @@ export interface NoteCard {
   native: { name: string; lang: string; code?: string; roman?: string; for?: string }[]; // a "native: الكعبة (Arabic)" line: the name in its own language
   fp: string;                                  // fingerprint: changes when the card's text changes
 }
+/** A practice problem: the code you start from, the cases it's tested on (the lines it reads with input(), and what it
+ *  should print), asserts run after it, and a model solution (shown on request, and checked by the audit). */
+export interface Practice { starter: string; cases: { input: string; output: string | null }[]; check: string; solution: string }
 export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; eras: string[]; deep: boolean; cards: { id: string; card: NoteCard }[] }
 
 // Language names a deck can use → codes for the device voice.
@@ -58,15 +64,58 @@ export function parseDeck(file: string, text: string): Deck {
     while (cards.some(x => x.id === cid)) cid += 'x';
     cards.push({ id: cid, card }); secOf.set(cid, section);
   };
+  // Code: a fenced block (```python … ```) right after a card is shown with that card ("This prints {{7}}." + the
+  // program). A block with blanks in it is a card of its own, asked by the plain bullet above it ("- Fill in the loop:").
+  let fence: { lang: string; lines: string[]; afterCard: boolean } | null = null, prompt: string | null = null;
+  const BLANK = /\{\{([^|}]*)(?:\|([^}]*))?\}\}/g;
   let lastWasCard = false; // native: / a picture / also in: / > right after a card apply to that card (every card from that line)
   let lineFrom = 0;         // where the last bullet's cards start
   const lastCards = () => cards.slice(lineFrom);
   for (const raw of body.split('\n')) {
     const line = raw.trim();
+    if (fence) {
+      if (!line.startsWith('```')) { fence.lines.push(raw); continue; }
+      // Close the block: drop the indentation the whole block shares (it sits under a bullet), keep the rest.
+      const ls = fence.lines; while (ls.length && !ls[ls.length - 1].trim()) ls.pop();
+      const pad = Math.min(...ls.filter(l => l.trim()).map(l => /^\s*/.exec(l)![0].length));
+      const text = ls.map(l => l.slice(pad)).join('\n'), lang = fence.lang, afterCard: boolean = fence.afterCard; fence = null;
+      const blanks = [...text.matchAll(BLANK)];
+      if (blanks.length && prompt) {
+        // One card per blank; the other blanks show their answers.
+        lineFrom = cards.length;
+        const keyText = prompt + '|' + text.replace(BLANK, '_');
+        blanks.forEach((m, i) => {
+          let k = 0;
+          const shown = text.replace(BLANK, (_w, a: string) => (k++ === i ? '\u0000' : a));
+          add({ pre: prompt!, answer: m[1], post: '', front: false, ...(m[2] ? { hint: m[2].trim() } : {}), code: { lang, text: shown } }, keyText + '#' + i);
+        });
+        for (const c of lastCards()) c.card.fp += '|' + text;
+        prompt = null; lastWasCard = true; continue;
+      }
+      // A practice card's blocks: ```python (the starting code), ```input / ```output (a test case, as many as you like),
+      // ```check (asserts), ```solution.
+      const pr = afterCard ? lastCards().find(c => c.card.practice)?.card.practice : undefined;
+      if (pr) {
+        const last = pr.cases[pr.cases.length - 1];
+        if (lang === 'input') pr.cases.push({ input: text, output: null });
+        else if (lang === 'output') { if (last && last.output === null) last.output = text; else pr.cases.push({ input: '', output: text }); }
+        else if (lang === 'check') pr.check = text;
+        else if (lang === 'solution') pr.solution = text;
+        else pr.starter = text;
+        for (const c of lastCards()) c.card.fp += '|' + text;
+        lastWasCard = true; continue;
+      }
+      if (afterCard) for (const c of lastCards()) { c.card.code = { lang, text }; c.card.fp += '|' + text; }
+      lastWasCard = afterCard; continue;
+    }
+    if (line.startsWith('```')) { fence = { lang: line.slice(3).trim().toLowerCase() || 'text', lines: [], afterCard: lastWasCard }; continue; }
     if (!line) continue;
     const wasCard: boolean = lastWasCard; lastWasCard = false;
+    // "source: src/tree.ts": where the code on the card above comes from; the card links to it on GitHub.
+    const srcLine = /^source:\s*(\S+)$/i.exec(line);
+    if (srcLine) { for (const c of lastCards()) c.card.source = srcLine[1]; lastWasCard = wasCard; continue; }
     const h = /^#{1,3}\s+(.*)$/.exec(line);
-    if (h) { section++; context = h[1]; picture = null; related = []; native = []; species = undefined; seenHeading = true; continue; }
+    if (h) { prompt = null; section++; context = h[1]; picture = null; related = []; native = []; species = undefined; seenHeading = true; continue; }
     // "native: الكعبة (Arabic); Kaʿbah (Arabic, in Latin letters)": shown with a speaker button after the answer.
     // "species: Juniperus communis": the scientific name of the plant or animal, shown in italics after the answer.
     const sp = /^species:\s*(.+)$/i.exec(line);
@@ -107,7 +156,10 @@ export function parseDeck(file: string, text: string): Deck {
     const b = /^[-*]\s+(.*)$/.exec(line);
     if (!b) { if (!seenHeading) intro.push(line); continue; }
     let t = b[1];
-    lastWasCard = true; lineFrom = cards.length;
+    lastWasCard = true; lineFrom = cards.length; prompt = null;
+    // "[practice] Ask for a name and greet it": a practice card (its code blocks follow).
+    const prac = /^\[practice\]\s*(.+)$/i.exec(t);
+    if (prac) { add({ pre: prac[1], answer: 'its solution', post: '', front: false, practice: { starter: '', cases: [], check: '', solution: '' } }, 'practice:' + prac[1]); continue; }
     // "[strata: Mesozoic]": a time-scale card drawn from src/geotime.ts (the unit's place and its blank parts).
     const st = /^\[strata:\s*([^\]]+)\]\s*(.*)$/i.exec(t);
     if (st) { add({ pre: st[2] || `The parts of the ${st[1]}, oldest at the bottom`, answer: st[1], post: '', front: true, strata: st[1].trim() }, 'strata:' + st[1]); continue; }
@@ -124,7 +176,7 @@ export function parseDeck(file: string, text: string): Deck {
     }
     // {{answer}} or {{answer|hint}}: the hint ("what city?") replaces the plain "what?" until the card is flipped.
     const blanks = [...t.matchAll(/\{\{([^|}]*)(?:\|([^}]*))?\}\}/g)];
-    if (!blanks.length) continue; // a plain bullet is just a note to yourself
+    if (!blanks.length) { prompt = t; continue; } // a plain bullet is a note to yourself, or the question for a code block below it
     // {{c1::order}} … {{c1::sensitivity}}: blanks with the same number are hidden together on one card (a short list
     // learned as one fact); unnumbered blanks each make their own card.
     const group = (m: RegExpMatchArray) => /^c(\d+)::/.exec(m[1])?.[1] ?? null;

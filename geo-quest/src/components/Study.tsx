@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Lineage } from './Lineage';
+import { CodeBlock, REPO_FILE, Rich } from './Code';
+import { PracticeCard } from './Practice';
 import { ClipPlayer, MusicReveal } from './Music';
 import { Say } from './Native';
 import { OriginLine } from './Origin';
@@ -139,6 +141,9 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
       if (peek) { if (e.key === 'Escape') setPeek(false); return; } // paused while the answer map is open
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); undo(); return; }
       if (!f) return;
+      // Typing in a practice card's editor is typing, not a shortcut; and a practice card flips by passing (or giving up).
+      if ((e.target as HTMLElement | null)?.closest?.('textarea, input')) return;
+      if (!revealed && f.practice) return;
       if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'reveal') { e.preventDefault(); reveal(); }
       else if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'tap') { e.preventDefault(); dontKnow(); }
       // 1 Again · 2 Hard · 3 Good · 4 Easy (space = Good), like Anki. A missed map tap can only be "Again".
@@ -319,7 +324,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           : <div className="side-placeholder"><Icon name="image" size={28} /><span>The picture shows when you flip the card</span></div>}
       </div>}
       <div className="card-wrap">
-        <article className={'card' + (revealed ? ' revealed' : '')} onClick={() => f.mode === 'reveal' && reveal()}>
+        <article className={'card' + (revealed ? ' revealed' : '')} onClick={() => f.mode === 'reveal' && !f.practice && reveal()}>
           <div className="card-meta">
             {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : (c.building && item.ref.kind === 'artMaker' ? 'Who designed it?' : c.book && item.ref.kind === 'artMaker' ? 'Who wrote it?' : KIND_LABEL[item.ref.kind])}</span>{item.isNew && <span className="new">new</span>}
           </div>
@@ -330,24 +335,30 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {/* Interstates: the route sign beside the question (once flipped when the number is what's being asked) */}
           {c.layer === 'road' && c.image && item.ref.kind !== 'roadShield' && (revealed || item.ref.kind === 'locate') && <img className="card-shield" src={commonsUrl(c.image, 160)} alt={`${c.short ?? c.name} sign`} />}
           {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
-          {f.strata ? <>
+          {/* Code with the question: above the sentence ("This prints ___."), or holding the blank itself */}
+          {f.code && !f.code.text.includes('\u0000') && <CodeBlock text={f.code.text} lang={f.code.lang} />}
+          {f.practice ? <PracticeCard key={item.ref.id} p={f.practice} prompt={f.pre} revealed={revealed} onDone={reveal} />
+          : f.code?.text.includes('\u0000') ? <>
+            <p className="cloze front"><Rich before={f.pre} /></p>
+            <CodeBlock text={f.code.text} lang={f.code.lang} blank={revealed ? <span className="fill">{f.answer}</span> : <span className="blank">{f.blank}</span>} />
+          </> : f.strata ? <>
             <p className="cloze front">{f.pre}</p>
             <StrataCard unit={f.strata} revealed={revealed} />
           </> : f.parts ? <p className="cloze">
-            {f.parts.map((x, i) => typeof x === 'string' ? <span key={i}>{x}</span>
+            {f.parts.map((x, i) => typeof x === 'string' ? <span key={i}><Rich before={x} /></span>
               : revealed ? <span key={i} className="fill">{x.answer}</span> : <span key={i} className="blank">{x.hint ?? 'what?'}</span>)}
           </p> : f.frontBack ? <>
-            <p className="cloze front">{f.pre}</p>
-            {revealed && <p className="back">{f.answer}</p>}
+            <p className="cloze front"><Rich before={f.pre} /></p>
+            {revealed && <p className="back"><Rich before={f.answer} /></p>}
           </> : <p className="cloze">
-            {f.pre}
-            {f.answerFlag
-              ? (revealed ? <span className="fill"><Flag file={c.flag ?? null} name={c.name} className="answer-flag" eager /></span> : <span className="blank">{f.blank}</span>)
-              : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}>{f.answer}</span> : <span className="blank">{f.blank}</span>)}
-            {/* The speaker sits by the text it says: beside the green answer when that's how the name is written in its own
-                language too (Leonardo da Vinci, said in Italian); otherwise beside the own-language name under it (La Gioconda). */}
-            {revealed && say && fold(sayText!) === fold(f.answer) && <Say text={sayText!} code={say.code} />}
-            {f.hidePostUntilReveal && !revealed ? '.' : f.post}
+            <Rich before={f.pre} blank={<>
+              {f.answerFlag
+                ? (revealed ? <span className="fill"><Flag file={c.flag ?? null} name={c.name} className="answer-flag" eager /></span> : <span className="blank">{f.blank}</span>)
+                : (revealed ? <span className={'fill' + (tapResult && !tapResult.ok ? ' missed' : '')}><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>)}
+              {/* The speaker sits by the text it says: beside the green answer when that's how the name is written in its own
+                  language too (Leonardo da Vinci, said in Italian); otherwise beside the own-language name under it (La Gioconda). */}
+              {revealed && say && fold(sayText!) === fold(f.answer) && <Say text={sayText!} code={say.code} />}
+            </>} after={f.hidePostUntilReveal && !revealed ? '.' : f.post} />
           </p>}
           {/* Art, books, music, people: the answer's own-language name, only when it's written differently (Достоевский, 葛飾北斎). */}
           {revealed && c.layer === 'art' && say && fold(sayText!) !== fold(f.answer) && <div className="local"><span className="native" title={say.lang}><bdi>{say.name}</bdi>{(say.roman ?? (c.zh && say.name === c.zh.han ? c.zh.pinyin : null)) && <span className="py">{say.roman ?? c.zh!.pinyin}</span>}<Say text={sayText!} code={say.code} /></span></div>}
@@ -365,14 +376,15 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {revealed && c.incoming && <Incoming inc={c.incoming} current={c.name} />}
           {revealed && item.ref.kind.startsWith('flag') && <Lookalikes ds={ds} place={c} />}
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
-          {revealed && f.note && !c.music && <p className="note"><Icon name="info" size={15} /> {f.note}</p>}
+          {revealed && f.note && !c.music && <p className="note"><Icon name="info" size={15} /> <Rich before={f.note} /></p>}
+          {revealed && f.source && <a className="code-source" href={REPO_FILE(f.source)} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}>See it in the code: <code>{f.source}</code> ↗</a>}
           {revealed && c.music && <MusicReveal ds={ds} place={c} />}
           {revealed && f.lineage && <Lineage steps={f.lineage.steps} label={f.lineage.label} />}
           {!sidePic && revealed && f.picture2 && !f.picture2.prompt && s.pictures && <Picture file={f.picture2.file} caption={f.picture2.caption} single />}
           {revealed && <Related ds={ds} place={c} onOpen={setSheet} />}
           {!sidePic && revealed && s.pictures && f.picture && !f.promptPicture && <Picture {...f.picture} />}
           {revealed && !f.picture && c.flag && c.layer !== 'note' && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}
-          {!revealed && f.mode === 'reveal' && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
+          {!revealed && f.mode === 'reveal' && !f.practice && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
           {!revealed && f.mode === 'tap' && <div className="tap-hint">
             <p className="hint">Tap the right place on the map{regionIds.length > 1 ? ` — zoomed to ${group?.name}` : ''}</p>
             <button className="btn small" onClick={e => { e.stopPropagation(); dontKnow(); }}>I don't know<kbd className="kbd-only">space</kbd></button>

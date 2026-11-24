@@ -38,7 +38,7 @@ export const UNITS: Unit[] = [
   { name: 'Paleogene', rank: 'period', parent: 'Cenozoic', start: 66, end: 23.03, color: '#FD9A52', known: 'mammals fill the world the dinosaurs left; the first primates and whales', meaning: '“ancient born”', pics: [['Basilosaurus cetoides recon.png', 'Basilosaurus, an early whale, still with tiny hind legs']] },
   { name: 'Neogene', rank: 'period', parent: 'Cenozoic', start: 23.03, end: 2.58, color: '#FFE619', known: 'grasslands spread; the first hominins walk upright', meaning: '“new born”', pics: [['Lucy blackbg.jpg', '“Lucy”, Australopithecus afarensis, about 3.2 million years old']] },
   { name: 'Quaternary', rank: 'period', parent: 'Cenozoic', start: 2.58, end: 0, color: '#F9F97F', known: 'the ice ages, and our own species', meaning: '“fourth”', pics: [['202003 Woolly mammoth.png', 'The woolly mammoth of the ice ages']] },
-  // Epochs of the Mesozoic, and the ages (stages) the dinosaur cards need. Not on the chart or the time-scale cards, which
+  // Epochs and ages (stages) of the Mesozoic, all of them, so any range a dinosaur's Wikipedia article gives can be drawn. Not on the chart or the time-scale cards, which
   // stop at the Cenozoic epochs; here so a dinosaur can say exactly when it lived (Late Cretaceous › Maastrichtian).
   { name: 'Early Triassic', rank: 'epoch', parent: 'Triassic', start: 251.902, end: 247.2, color: '#983999', known: 'life recovers from the Great Dying' },
   { name: 'Middle Triassic', rank: 'epoch', parent: 'Triassic', start: 247.2, end: 237, color: '#B168B1', known: 'the first dinosaur relatives' },
@@ -48,15 +48,34 @@ export const UNITS: Unit[] = [
   { name: 'Late Jurassic', rank: 'epoch', parent: 'Jurassic', start: 161.5, end: 145, color: '#B3E3EE', known: 'giant sauropods, Stegosaurus and the first birds' },
   { name: 'Early Cretaceous', rank: 'epoch', parent: 'Cretaceous', start: 145, end: 100.5, color: '#8CCD57', known: 'the first flowering plants' },
   { name: 'Late Cretaceous', rank: 'epoch', parent: 'Cretaceous', start: 100.5, end: 66, color: '#A6D84A', known: 'T. rex and Triceratops; ends with the asteroid' },
+  { name: 'Induan', rank: 'age', parent: 'Early Triassic', start: 251.902, end: 251.2, color: '#A4469F', known: '' },
+  { name: 'Olenekian', rank: 'age', parent: 'Early Triassic', start: 251.2, end: 247.2, color: '#B051A5', known: '' },
+  { name: 'Anisian', rank: 'age', parent: 'Middle Triassic', start: 247.2, end: 242, color: '#BC75B7', known: '' },
+  { name: 'Ladinian', rank: 'age', parent: 'Middle Triassic', start: 242, end: 237, color: '#C983BF', known: '' },
+  { name: 'Carnian', rank: 'age', parent: 'Late Triassic', start: 237, end: 227, color: '#C99BCB', known: '' },
   { name: 'Norian', rank: 'age', parent: 'Late Triassic', start: 227, end: 208.5, color: '#D6AAD3', known: '' },
   { name: 'Rhaetian', rank: 'age', parent: 'Late Triassic', start: 208.5, end: 201.4, color: '#E3B9DB', known: '' },
+  { name: 'Hettangian', rank: 'age', parent: 'Early Jurassic', start: 201.4, end: 199.5, color: '#4EB3D3', known: '' },
+  { name: 'Sinemurian', rank: 'age', parent: 'Early Jurassic', start: 199.5, end: 192.9, color: '#67BCD8', known: '' },
+  { name: 'Pliensbachian', rank: 'age', parent: 'Early Jurassic', start: 192.9, end: 184.2, color: '#80C5DD', known: '' },
+  { name: 'Toarcian', rank: 'age', parent: 'Early Jurassic', start: 184.2, end: 174.7, color: '#99CEE3', known: '' },
+  { name: 'Aalenian', rank: 'age', parent: 'Middle Jurassic', start: 174.7, end: 170.9, color: '#9AD9DD', known: '' },
+  { name: 'Bajocian', rank: 'age', parent: 'Middle Jurassic', start: 170.9, end: 168.2, color: '#A6DDE0', known: '' },
+  { name: 'Bathonian', rank: 'age', parent: 'Middle Jurassic', start: 168.2, end: 165.3, color: '#B3E2E3', known: '' },
+  { name: 'Callovian', rank: 'age', parent: 'Middle Jurassic', start: 165.3, end: 161.5, color: '#BFE7E5', known: '' },
+  { name: 'Oxfordian', rank: 'age', parent: 'Late Jurassic', start: 161.5, end: 154.8, color: '#BFE7F1', known: '' },
   { name: 'Kimmeridgian', rank: 'age', parent: 'Late Jurassic', start: 154.8, end: 149.2, color: '#CCECF4', known: '' },
   { name: 'Tithonian', rank: 'age', parent: 'Late Jurassic', start: 149.2, end: 145, color: '#D9F1F7', known: '' },
+  { name: 'Berriasian', rank: 'age', parent: 'Early Cretaceous', start: 145, end: 139.8, color: '#8CCD60', known: '' },
+  { name: 'Valanginian', rank: 'age', parent: 'Early Cretaceous', start: 139.8, end: 132.6, color: '#99D36A', known: '' },
+  { name: 'Hauterivian', rank: 'age', parent: 'Early Cretaceous', start: 132.6, end: 125.77, color: '#A6D975', known: '' },
   { name: 'Barremian', rank: 'age', parent: 'Early Cretaceous', start: 125.77, end: 121.4, color: '#B3DF7F', known: '' },
   { name: 'Aptian', rank: 'age', parent: 'Early Cretaceous', start: 121.4, end: 113, color: '#BFE48A', known: '' },
   { name: 'Albian', rank: 'age', parent: 'Early Cretaceous', start: 113, end: 100.5, color: '#CCEA97', known: '' },
   { name: 'Cenomanian', rank: 'age', parent: 'Late Cretaceous', start: 100.5, end: 93.9, color: '#B3DE53', known: '' },
   { name: 'Turonian', rank: 'age', parent: 'Late Cretaceous', start: 93.9, end: 89.8, color: '#BFE35D', known: '' },
+  { name: 'Coniacian', rank: 'age', parent: 'Late Cretaceous', start: 89.8, end: 86.3, color: '#CCE868', known: '' },
+  { name: 'Santonian', rank: 'age', parent: 'Late Cretaceous', start: 86.3, end: 83.6, color: '#D9EF74', known: '' },
   { name: 'Campanian', rank: 'age', parent: 'Late Cretaceous', start: 83.6, end: 72.1, color: '#E6F47F', known: '' },
   { name: 'Maastrichtian', rank: 'age', parent: 'Late Cretaceous', start: 72.1, end: 66, color: '#F2FA8C', known: '' },
   // Epochs of the Cenozoic
@@ -74,14 +93,33 @@ export const CHARTED = UNITS.filter(u => u.rank !== 'age' && !(u.rank === 'epoch
 export const unit = (name: string) => UNITS.find(u => u.name === name);
 
 const span = (a: number, b: number) => (b ? `${+a.toFixed(1)}–${+b.toFixed(1)} million years ago` : `${+a.toFixed(1)} million years ago to now`);
-/** A dinosaur's time, top to bottom: Phanerozoic › Mesozoic › Cretaceous › Late Cretaceous › Maastrichtian (two ages share
- *  the last block: Kimmeridgian–Tithonian). */
-export function timeSteps(epoch: string, ages: string[]): Step[] {
+/** When a dinosaur lived, read from text like Wikipedia's "Late Jurassic (Oxfordian–Tithonian)": the epochs and the oldest
+ *  and youngest ages named. With no age named, the ages its dates in millions of years (`ma`, oldest first) overlap. */
+export interface TimeRange { epochs: string[]; ages: string[] }
+export function rangeFrom(text: string, ma?: number[] | null): TimeRange | null {
+  const named = (rank: Rank) => UNITS.filter(u => u.rank === rank && new RegExp(`\\b${u.name}\\b`).test(text)).sort((a, b) => b.start - a.start);
+  let ages = named('age');
+  if (!ages.length && ma?.length === 2) ages = UNITS.filter(u => u.rank === 'age' && Math.min(u.start, ma[0]) - Math.max(u.end, ma[1]) > 0.3).sort((a, b) => b.start - a.start);
+  const ends = <T,>(xs: T[]) => (xs.length > 1 ? [xs[0], xs[xs.length - 1]] : xs);
+  ages = ends(ages);
+  // "Early-Late Cretaceous" names both ends; otherwise the epochs come from the ages, or are named outright.
+  const pair = /\b(Early|Middle|Late)\s*[-–]\s*(Early|Middle|Late) (Triassic|Jurassic|Cretaceous)\b/.exec(text);
+  let epochs = ages.length ? [...new Set(ages.map(a => a.parent!))].map(n => unit(n)!) : pair ? [unit(`${pair[1]} ${pair[3]}`)!, unit(`${pair[2]} ${pair[3]}`)!].filter(Boolean) : named('epoch').filter(e => ['Triassic', 'Jurassic', 'Cretaceous'].includes(e.parent!));
+  epochs = ends(epochs);
+  return epochs.length ? { epochs: epochs.map(e => e.name), ages: ages.map(a => a.name) } : null;
+}
+
+/** A dinosaur's time, top to bottom: Phanerozoic › Mesozoic › Cretaceous › Late Cretaceous › Maastrichtian. A range shares
+ *  a block between its two ends: Early–Late Cretaceous, Oxfordian–Tithonian. */
+export function timeSteps({ epochs, ages }: TimeRange): Step[] {
   const chain: Unit[] = [];
-  for (let u = unit(epoch); u; u = u.parent ? unit(u.parent) : undefined) chain.unshift(u);
+  for (let u = unit(unit(epochs[0])!.parent!); u; u = u.parent ? unit(u.parent) : undefined) chain.unshift(u);
   const steps: Step[] = chain.map(u => ({ rank: u.rank, name: u.name, sub: span(u.start, u.end), color: u.color }));
-  const as = ages.map(unit).filter((u): u is Unit => !!u);
-  if (as.length) steps.push({ rank: as.length > 1 ? 'ages' : 'age', name: as.map(u => u.name).join('–'), sub: span(as[0].start, as[as.length - 1].end), color: as[0].color, color2: as[1]?.color });
+  const both = (rank: string, us: Unit[], name: string): Step => ({ rank: us.length > 1 ? rank + 's' : rank, name, sub: span(us[0].start, us[us.length - 1].end), color: us[0].color, color2: us[1]?.color });
+  const es = epochs.map(n => unit(n)!);
+  steps.push(both('epoch', es, es.length > 1 ? `${es[0].name.split(' ')[0]}–${es[1].name}` : es[0].name));
+  const as = ages.map(n => unit(n)!).filter(Boolean);
+  if (as.length) steps.push(both('age', as, as.map(u => u.name).join('–')));
   return steps;
 }
 
