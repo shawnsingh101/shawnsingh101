@@ -929,27 +929,6 @@
    ]
   },
   {
-   "id": "Q1898305",
-   "layer": "range",
-   "name": "Saharan Atlas",
-   "image": "Atlas-Mountains-Labeled-2.jpg",
-   "lon": 2,
-   "lat": 34,
-   "wiki": "Saharan_Atlas",
-   "group": "m-ranges2",
-   "nameThe": "the Saharan Atlas",
-   "facts": "Algeria",
-   "capitals": [],
-   "capitalAnswer": null,
-   "native": [
-    {
-     "name": "الأطلس الصحراوي",
-     "lang": "Arabic",
-     "code": "ar"
-    }
-   ]
-  },
-  {
    "id": "Q682334",
    "layer": "range",
    "name": "Altyn-Tagh",
@@ -987,6 +966,27 @@
    "facts": "Mexico",
    "capitals": [],
    "capitalAnswer": null
+  },
+  {
+   "id": "Q1898305",
+   "layer": "range",
+   "name": "Saharan Atlas",
+   "image": "Atlas-Mountains-Labeled-2.jpg",
+   "lon": 2,
+   "lat": 34,
+   "wiki": "Saharan_Atlas",
+   "group": "m-ranges2",
+   "nameThe": "the Saharan Atlas",
+   "facts": "Algeria",
+   "capitals": [],
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "الأطلس الصحراوي",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ]
   },
   {
    "id": "Q804330",
@@ -1091,6 +1091,20 @@
    "capitalAnswer": null
   },
   {
+   "id": "Q1132302",
+   "layer": "range",
+   "name": "Cordillera Real",
+   "image": "Cordillera Real e Isla de la Luna en el Lago Titicaca - La Paz - Bolivia.jpg",
+   "lon": -67.167,
+   "lat": -17,
+   "wiki": "Cordillera_Real_(Bolivia)",
+   "group": "m-ranges2",
+   "nameThe": "the Cordillera Real",
+   "facts": "Bolivia",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
    "id": "Q1817102",
    "layer": "range",
    "name": "Mackenzie Mountains",
@@ -1105,16 +1119,16 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q1132302",
+   "id": "Q143014",
    "layer": "range",
-   "name": "Cordillera Real",
-   "image": "Cordillera Real e Isla de la Luna en el Lago Titicaca - La Paz - Bolivia.jpg",
-   "lon": -67.167,
-   "lat": -17,
-   "wiki": "Cordillera_Real_(Bolivia)",
+   "name": "Cordillera Oriental (Colombia)",
+   "image": "Vallecojines.jpg",
+   "lon": -73,
+   "lat": 6,
+   "wiki": "Cordillera_Oriental_(Colombia)",
    "group": "m-ranges2",
-   "nameThe": "the Cordillera Real",
-   "facts": "Bolivia",
+   "nameThe": "the Cordillera Oriental (Colombia)",
+   "facts": "Colombia",
    "capitals": [],
    "capitalAnswer": null
   },
@@ -1147,20 +1161,6 @@
     "han": "塔尔巴哈台山",
     "pinyin": "Tǎ'ěrbāhātái Shān"
    }
-  },
-  {
-   "id": "Q143014",
-   "layer": "range",
-   "name": "Cordillera Oriental (Colombia)",
-   "image": "Vallecojines.jpg",
-   "lon": -73,
-   "lat": 6,
-   "wiki": "Cordillera_Oriental_(Colombia)",
-   "group": "m-ranges2",
-   "nameThe": "the Cordillera Oriental (Colombia)",
-   "facts": "Colombia",
-   "capitals": [],
-   "capitalAnswer": null
   },
   {
    "id": "Q1195285",
@@ -1384,27 +1384,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q26955",
-   "layer": "range",
-   "name": "Sierra Nevada (Spain)",
-   "image": "Sierra Nevada desde el embalse del Cubillas, en Atarfe (Granada).jpg",
-   "lon": -3.311,
-   "lat": 37.053,
-   "wiki": "Sierra_Nevada_(Spain)",
-   "group": "m-ranges2",
-   "nameThe": "the Sierra Nevada (Spain)",
-   "facts": "Spain",
-   "capitals": [],
-   "capitalAnswer": null,
-   "native": [
-    {
-     "name": "Sierra Nevada",
-     "lang": "Spanish",
-     "code": "es"
-    }
-   ]
-  },
-  {
    "id": "Q189915",
    "layer": "range",
    "name": "Dinaric Alps",
@@ -1432,6 +1411,27 @@
      "name": "Dinaridi",
      "lang": "Croatian",
      "code": "hr"
+    }
+   ]
+  },
+  {
+   "id": "Q26955",
+   "layer": "range",
+   "name": "Sierra Nevada (Spain)",
+   "image": "Sierra Nevada desde el embalse del Cubillas, en Atarfe (Granada).jpg",
+   "lon": -3.311,
+   "lat": 37.053,
+   "wiki": "Sierra_Nevada_(Spain)",
+   "group": "m-ranges2",
+   "nameThe": "the Sierra Nevada (Spain)",
+   "facts": "Spain",
+   "capitals": [],
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Sierra Nevada",
+     "lang": "Spanish",
+     "code": "es"
     }
    ]
   },

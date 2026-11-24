@@ -793,6 +793,22 @@
    }
   },
   {
+   "id": "Q965973",
+   "layer": "lake",
+   "name": "Lake Gairdner",
+   "image": "Lake Gairdner.jpg",
+   "lon": 136,
+   "lat": -31.567,
+   "wiki": "Lake_Gairdner",
+   "countries": [
+    "Q408"
+   ],
+   "group": "l-as",
+   "nameThe": "Lake Gairdner",
+   "facts": "4,350 km² · Australia",
+   "size": 4350
+  },
+  {
    "id": "Q845876",
    "layer": "lake",
    "name": "Lake of the Woods",
@@ -807,22 +823,6 @@
    "group": "l-am",
    "nameThe": "Lake of the Woods",
    "facts": "4,350 km² · Canada, United States",
-   "size": 4350
-  },
-  {
-   "id": "Q965973",
-   "layer": "lake",
-   "name": "Lake Gairdner",
-   "image": "Lake Gairdner.jpg",
-   "lon": 136,
-   "lat": -31.567,
-   "wiki": "Lake_Gairdner",
-   "countries": [
-    "Q408"
-   ],
-   "group": "l-as",
-   "nameThe": "Lake Gairdner",
-   "facts": "4,350 km² · Australia",
    "size": 4350
   },
   {
@@ -1717,7 +1717,13 @@
      "lang": "German",
      "code": "de"
     }
-   ]
+   ],
+   "audio": {
+    "de": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f7/De-Bodensee.ogg/De-Bodensee.ogg.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/f/f7/De-Bodensee.ogg"
+    ]
+   }
   },
   {
    "id": "Q169962",

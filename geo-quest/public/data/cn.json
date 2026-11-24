@@ -176,6 +176,12 @@
      "zh": {
       "han": "广州",
       "pinyin": "Guǎngzhōu"
+     },
+     "audio": {
+      "zh": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f0/LL-Q9192_(cmn)-Luilui6666-%E5%B9%BF%E5%B7%9E.wav/LL-Q9192_(cmn)-Luilui6666-%E5%B9%BF%E5%B7%9E.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/f/f0/LL-Q9192_(cmn)-Luilui6666-%E5%B9%BF%E5%B7%9E.wav"
+      ]
      }
     }
    ],
@@ -407,6 +413,12 @@
     "pinyin": "Xiānggǎng"
    },
    "capitalAnswer": null,
+   "audio": {
+    "zh": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/de/LL-Q727694_(cmn)-Shangkuanlc-%E9%A6%99%E6%B8%AF.wav/LL-Q727694_(cmn)-Shangkuanlc-%E9%A6%99%E6%B8%AF.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/d/de/LL-Q727694_(cmn)-Shangkuanlc-%E9%A6%99%E6%B8%AF.wav"
+    ]
+   },
    "population": 7413070,
    "populationYear": 2021
   },
@@ -541,6 +553,12 @@
      "zh": {
       "han": "南京",
       "pinyin": "Nánjīng"
+     },
+     "audio": {
+      "zh": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/LL-Q9192_(cmn)-Luilui6666-%E5%8D%97%E4%BA%AC.wav/LL-Q9192_(cmn)-Luilui6666-%E5%8D%97%E4%BA%AC.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/c/c0/LL-Q9192_(cmn)-Luilui6666-%E5%8D%97%E4%BA%AC.wav"
+      ]
      }
     }
    ],
@@ -764,6 +782,12 @@
      "zh": {
       "han": "西安",
       "pinyin": "Xī'ān"
+     },
+     "audio": {
+      "zh": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/59/LL-Q9192_(cmn)-Luilui6666-%E8%A5%BF%E5%AE%89.wav/LL-Q9192_(cmn)-Luilui6666-%E8%A5%BF%E5%AE%89.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/5/59/LL-Q9192_(cmn)-Luilui6666-%E8%A5%BF%E5%AE%89.wav"
+      ]
      }
     }
    ],
@@ -831,6 +855,12 @@
     "pinyin": "Shànghǎi"
    },
    "capitalAnswer": null,
+   "audio": {
+    "zh": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a3/LL-Q9192_(cmn)-Luilui6666-%E4%B8%8A%E6%B5%B7.wav/LL-Q9192_(cmn)-Luilui6666-%E4%B8%8A%E6%B5%B7.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/a/a3/LL-Q9192_(cmn)-Luilui6666-%E4%B8%8A%E6%B5%B7.wav"
+    ]
+   },
    "population": 24870895,
    "populationYear": 2020
   },
@@ -891,6 +921,12 @@
      "zh": {
       "han": "成都",
       "pinyin": "Chéngdū"
+     },
+     "audio": {
+      "zh": [
+       "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5b/LL-Q9192_(cmn)-Luilui6666-%E6%88%90%E9%83%BD.wav/LL-Q9192_(cmn)-Luilui6666-%E6%88%90%E9%83%BD.wav.mp3",
+       "https://upload.wikimedia.org/wikipedia/commons/5/5b/LL-Q9192_(cmn)-Luilui6666-%E6%88%90%E9%83%BD.wav"
+      ]
      }
     }
    ],
@@ -899,6 +935,12 @@
     "pinyin": "Sìchuān"
    },
    "capitalAnswer": "Chengdu",
+   "audio": {
+    "zh": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/89/LL-Q9192_(cmn)-Luilui6666-%E5%9B%9B%E5%B7%9D.wav/LL-Q9192_(cmn)-Luilui6666-%E5%9B%9B%E5%B7%9D.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/8/89/LL-Q9192_(cmn)-Luilui6666-%E5%9B%9B%E5%B7%9D.wav"
+    ]
+   },
    "population": 83674866,
    "populationYear": 2020
   },
@@ -918,6 +960,12 @@
     "pinyin": "Tiānjīn"
    },
    "capitalAnswer": null,
+   "audio": {
+    "zh": [
+     "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/eb/LL-Q9192_(cmn)-Luilui6666-%E5%A4%A9%E6%B4%A5.wav/LL-Q9192_(cmn)-Luilui6666-%E5%A4%A9%E6%B4%A5.wav.mp3",
+     "https://upload.wikimedia.org/wikipedia/commons/e/eb/LL-Q9192_(cmn)-Luilui6666-%E5%A4%A9%E6%B4%A5.wav"
+    ]
+   },
    "population": 13866009,
    "populationYear": 2020
   },

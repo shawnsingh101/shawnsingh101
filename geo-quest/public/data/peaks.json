@@ -2008,6 +2008,33 @@
    "admin1": "Áncash Department"
   },
   {
+   "id": "Q494645",
+   "layer": "peak",
+   "name": "Hallasan",
+   "group": "m-as",
+   "lon": 126.517,
+   "lat": 33.35,
+   "image": "한라산1.jpg",
+   "wiki": "Hallasan",
+   "elevation": 1947,
+   "country": "Q884",
+   "countryName": "South Korea",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "1,947 m · Jeju Province, South Korea",
+   "native": [
+    {
+     "name": "한라산",
+     "lang": "Korean",
+     "code": "ko"
+    }
+   ],
+   "admin1Ids": [
+    "Q41164"
+   ],
+   "admin1": "Jeju Province"
+  },
+  {
    "id": "Q503368",
    "layer": "peak",
    "name": "Carrauntoohil",
@@ -2148,33 +2175,6 @@
    "admin1": "Amhara Region"
   },
   {
-   "id": "Q494645",
-   "layer": "peak",
-   "name": "Hallasan",
-   "group": "m-as",
-   "lon": 126.517,
-   "lat": 33.35,
-   "image": "한라산1.jpg",
-   "wiki": "Hallasan",
-   "elevation": 1947,
-   "country": "Q884",
-   "countryName": "South Korea",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "1,947 m · Jeju Province, South Korea",
-   "native": [
-    {
-     "name": "한라산",
-     "lang": "Korean",
-     "code": "ko"
-    }
-   ],
-   "admin1Ids": [
-    "Q41164"
-   ],
-   "admin1": "Jeju Province"
-  },
-  {
    "id": "Q827728",
    "layer": "peak",
    "name": "Mount Kerinci",
@@ -2305,7 +2305,7 @@
    "countryName": "Hungary",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,014 m · Mátra · Heves County, Hungary",
+   "facts": "1,014 m · North Hungarian Mountains · Heves County, Hungary",
    "admin1Ids": [
     "Q191604"
    ],
@@ -2373,7 +2373,7 @@
    "countryName": "Chile and Argentina",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "3,406 m · Fitz Roy massif · Chile, Argentina",
+   "facts": "3,406 m · Patagonian Andes · Chile, Argentina",
    "admin1Ids": [
     "Q2189",
     "Q44821"
@@ -2974,6 +2974,33 @@
    "admin1": "Bursa Province"
   },
   {
+   "id": "Q1140075",
+   "layer": "peak",
+   "name": "Doi Inthanon",
+   "group": "m-as",
+   "lon": 98.487,
+   "lat": 18.592,
+   "image": "InthanonChedi1.jpg",
+   "wiki": "Doi_Inthanon",
+   "elevation": 2565,
+   "country": "Q869",
+   "countryName": "Thailand",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,565 m · Thanon Thong Chai Range · Chiang Mai, Thailand",
+   "native": [
+    {
+     "name": "ดอยอินทนนท์",
+     "lang": "Thai",
+     "code": "th"
+    }
+   ],
+   "admin1Ids": [
+    "Q233588"
+   ],
+   "admin1": "Chiang Mai"
+  },
+  {
    "id": "Q1140642",
    "layer": "peak",
    "name": "Mount Catherine",
@@ -3027,33 +3054,6 @@
     "Q20980366"
    ],
    "admin1": "Nzérékoré Region, Montagnes District"
-  },
-  {
-   "id": "Q1140075",
-   "layer": "peak",
-   "name": "Doi Inthanon",
-   "group": "m-as",
-   "lon": 98.487,
-   "lat": 18.592,
-   "image": "InthanonChedi1.jpg",
-   "wiki": "Doi_Inthanon",
-   "elevation": 2565,
-   "country": "Q869",
-   "countryName": "Thailand",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,565 m · Thanon Thong Chai Range · Chiang Mai, Thailand",
-   "native": [
-    {
-     "name": "ดอยอินทนนท์",
-     "lang": "Thai",
-     "code": "th"
-    }
-   ],
-   "admin1Ids": [
-    "Q233588"
-   ],
-   "admin1": "Chiang Mai"
   },
   {
    "id": "Q948298",
