@@ -62,7 +62,7 @@ $$MPN = \frac{\partial Y}{\partial N} = (1-\alpha)\,A\,K^{\alpha}N^{-\alpha} \qq
 eq: Cobb-Douglas production function | Y = A\,K^{\alpha}N^{1-\alpha}
 - In the Cobb-Douglas function, $A$ is {{total factor productivity|what?}}: everything besides capital and labor that affects output.
 - In the US, capital's share of income $\alpha$ was long taken to be about {{1/3|what fraction?}}.
-- A 1% rise in labor raises output by {{1-\alpha|how many percent?}} percent.
+- A 1% rise in labor raises output by {{$1-\alpha$|how many percent?}} percent.
 eq: Cobb-Douglas production function | Y = A\,K^{\alpha}N^{1-\alpha}
 
 ## Growth accounting

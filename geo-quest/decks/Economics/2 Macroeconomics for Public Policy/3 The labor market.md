@@ -30,7 +30,7 @@ Households choose between leisure and the consumption that work pays for. A high
 The two pull opposite ways, so an individual's supply can rise, fall or stay flat with the wage. For people deciding whether to work at all (the **extensive margin**), there's no income effect: a higher wage can only draw them in, once it passes their **reservation wage**. Adding everyone up, aggregate labor supply is taken to slope **upward**; the flatter it is, the more elastic.
 
 ## Equilibrium
-Where labor demand meets supply, the model is solved: $w^*$ and $N^*$, then $Y^* = AK^{\alpha}N^{*1-\alpha}$, and the rental rate of capital $r^* = MPK$. The labor graph also shows who gets what: the area under labor demand up to $N^*$ is **GDP** (the sum of every worker's marginal product), the rectangle $w^* N^*$ is **workers' income**, and the triangle between them is **capital owners' income**. What's produced equals what's paid out.
+Where labor demand meets supply, the model is solved: $w^*$ and $N^*$, then $Y^* = AK^{\alpha}(N^*)^{1-\alpha}$, and the rental rate of capital $r^* = MPK$. The labor graph also shows who gets what: the area under labor demand up to $N^*$ is **GDP** (the sum of every worker's marginal product), the rectangle $w^* N^*$ is **workers' income**, and the area between them is **capital owners' income**. What's produced equals what's paid out.
 
 ## A productivity shock
 TFP rises. Each worker produces more, so the MPN curve, labor demand, shifts right:

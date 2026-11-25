@@ -7,6 +7,8 @@ import { Stack } from './Stack';
 import { Graph } from './Graph';
 import { Derive } from './Derive';
 import { LessonReader } from './Lesson';
+import { EquationPanel } from './EquationDef';
+import { equationDef } from '../equations';
 import { ClipPlayer, MusicReveal } from './Music';
 import { Say } from './Native';
 import { OriginLine } from './Origin';
@@ -387,6 +389,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {revealed && item.ref.kind.startsWith('flag') && <Lookalikes ds={ds} place={c} />}
           {wrongName && <p className="miss">You tapped <b>{wrongName}</b>.</p>}
           {revealed && f.note && !c.music && <p className="note"><Icon name="info" size={15} /> <Rich before={f.note} /></p>}
+          {revealed && c.card?.eq && equationDef(c.card.eq.name) && <EquationPanel def={equationDef(c.card.eq.name)!} />}
           {revealed && group?.lesson && <button className="btn small ghost lesson-link" onClick={e => { e.stopPropagation(); setLesson(true); }}><Icon name="book" size={15} /> Read the lesson</button>}
           {revealed && f.source && <a className="code-source" href={REPO_FILE(f.source)} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}>See it in the code: <code>{f.source}</code> ↗</a>}
           {revealed && c.music && <MusicReveal ds={ds} place={c} />}

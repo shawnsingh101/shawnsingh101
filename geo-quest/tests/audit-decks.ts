@@ -7,6 +7,7 @@ import { parseDeck } from '../src/notes';
 import { parseFlow } from '../src/flow';
 import { parseGraph } from '../src/graph';
 import katex from 'katex';
+import { parseEquations } from '../src/equations';
 import { geotimeDeck, epochDeck } from '../src/geotime';
 const ROOT = join(process.cwd(), 'decks');
 const walk = (d: string): string[] => readdirSync(d).flatMap(f => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : /\.md$/.test(f) && !/README/i.test(f) ? [p] : []; });
@@ -29,6 +30,16 @@ function checkFlow(text: string, where: string) {
   const { actors, steps } = parseFlow(text);
   if (actors.length < 2) issues.push(`FLOW needs two or more actors ${where}`);
   for (const s of steps) if (s.from < 0 || s.to < 0) issues.push(`FLOW step names no actor ${where}: "${s.label.slice(0, 50)}"`);
+}
+// Equation definitions: every formula and symbol valid TeX; every eq: tag on a card has a definition (checked below).
+const eqDir = join(process.cwd(), 'equations');
+const defs = existsSync(eqDir) ? readdirSync(eqDir).filter(x => x.endsWith('.md')).flatMap(x => parseEquations(readFileSync(join(eqDir, x), 'utf8'))) : [];
+const defNames = new Set(defs.map(d => d.name.toLowerCase()));
+for (const d of defs) {
+  checkTex(d.tex, `equation ${d.name}`);
+  for (const s of d.symbols) checkTex(s.sym, `equation ${d.name}, symbol`);
+  if (d.example) checkMath(d.example, `equation ${d.name}, example`); else issues.push(`EQUATION no example: ${d.name}`);
+  if (!d.symbols.length) issues.push(`EQUATION no symbols: ${d.name}`);
 }
 for (const { f, d } of decks) {
   // A lesson's flows are checked the same way; and a lesson needs cards to go with it.
@@ -87,6 +98,10 @@ for (const { f, d } of decks) {
         if (run(p.starter).every(x => !x)) issues.push(`PRACTICE starter already passes ${f}: ${c.pre.slice(0, 50)}`);
       }
     }
+    if (c.eq && !defNames.has(c.eq.name.toLowerCase())) issues.push(`EQUATION undefined ${f}: "${c.eq.name}" (add it to equations/)`);
+    // TeX in an answer must sit inside a formula, or it shows as raw text ("1-\alpha").
+    const inMath = ((c.pre.replace(/\\\$/g, '').match(/\$/g) ?? []).length % 2) === 1;
+    if (!c.code && !inMath && /\\[a-zA-Z]/.test(c.answer) && !c.answer.includes('$')) issues.push(`TEX OUTSIDE MATH ${f}: answer "${c.answer}"`);
     if (c.code?.lang === 'flow') checkFlow(c.code.text, `${f}: ${c.pre.slice(0, 40)}`);
     if (c.code?.lang === 'graph') checkGraph(c.code.text, `${f}: ${c.pre.slice(0, 40)}`);
     if (c.code?.lang === 'derive') checkDerive(c.code.text, `${f}: ${c.pre.slice(0, 40)}`);

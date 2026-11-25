@@ -34,8 +34,9 @@ dolphins, dinosaurs (v1.30, reworked v1.31). Next: the book decks (Spying on Wha
 the Dinosaurs: send the PDFs), birds with calls, trees and plants, any animal a book is about.
 
 **Economics** (started): rebuilt course by course from the owner's class notes (GUIDELINES 4g), with KaTeX math,
-derivations, graphs and an Equations section. Done (v1.36): Macroeconomics lectures 1–3. Next: the rest of Macro
-(consumption and saving, investment, the open economy, fiscal policy and debt, money, IS-LM-FE, the Phillips curve,
+derivations, graphs and an Equations section. Done: Macroeconomics lectures 1–3 (v1.36), 4–9 (v1.37), with every
+equation defined (symbols and a worked example). Next: the rest of Macro (taxes, government purchases, fiscal
+sustainability, money, IS-LM-FE, the Phillips curve,
 exchange rates, the open-economy IS-LM), then International Trade, International Finance and Monetary Theory, Micro,
 Capital Markets, IPE, Econometrics. Later: typed math answers checked by Python.
 
@@ -84,6 +85,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 | 1.34 | Cybersecurity: lessons before cards, flow diagrams, Security+ lenses; How computers talk and Cryptography |
 | 1.35 | Cybersecurity: no give-away cards (checked app-wide), "going further" decks, Wikipedia diagrams |
 | 1.36 | Economics by course (Macro lectures 1–3), KaTeX math, derivations, graphs, Equations section |
+| 1.37 | Macro lectures 4–9; equation cards explain every symbol with a worked example; tables in lessons |
 | 1.29 | Where people are really from, with the flag of their time |
 | 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
 | 1.27 | Earth history: a picture of the life of each time |

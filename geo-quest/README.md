@@ -33,6 +33,22 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.37: Macro lectures 4–9, and equations explained
+
+- **Equation definitions** (`equations/<Subject>.md`, loaded by `src/equations.ts`): each equation once, by the name in
+  the cards' `eq:` lines: its formula, `- symbol | meaning` lines, and `example:` with real numbers (checked by
+  computing them). The back of every equation card shows the symbols and the example (`components/EquationDef.tsx`),
+  and so does each equation's page under Equations. The audit fails on an `eq:` with no definition, or a definition
+  with no symbols or example. 38 equations so far.
+- **Tables in lessons**: `| a | b |` rows, the first a header.
+- **Macroeconomics for Public Policy**, lectures 4–9: Income inequality (the market for skill, globalization,
+  skill-biased technical change, monopsony); Wealth and the balance of payments; Consume or save (real rates, the
+  intertemporal budget constraint, log utility, wealth); What drives consumption and saving; Investment and the
+  saving-investment balance (the user cost of capital, temporary and permanent shocks, closed and open); Sudden stops
+  (a country's budget constraint, country risk, reserves, policy). Each with a lesson and a "going further" deck.
+- **Fixes from a sweep**: the nominal-growth derivation step showed real GDP; the elasticity answer, the equilibrium
+  output formula and the labor-market income areas are corrected.
+
 ## v1.36: Economics, with math, derivations, graphs and an Equations section
 
 - **Math** (KaTeX 0.16.29, bundled): `$…$` and `$$…$$` in cards, notes and lessons (`MATH`, `tex`, `blankTex` in

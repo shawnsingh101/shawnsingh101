@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { GROUPS, groupsShownIn, nodeId, parseNode, placesIn, slotOf, groupById, LAYER_NOUN, childSections, sectionAndDescendants, SECTION_PARENT, sectionChain } from '../cards';
-import { ERAS, NOTE_SUBJECTS, LIVE } from '../notes';
+import { ERAS, NOTE_SUBJECTS, LIVE, EQUATIONS } from '../notes';
 import { buildQueue, isUnlocked, learnMore, nodeStats, update, useProgress } from '../srs';
 import { makeQuiz, scopeGroups, type Scope } from '../quiz';
 import { sounds } from '../sound';
@@ -13,6 +13,8 @@ import { SUBJECTS, isGeography } from '../subjects';
 import { Search } from '../components/Search';
 import { LessonReader } from '../components/Lesson';
 import { Rich } from '../components/Code';
+import { EquationPanel } from '../components/EquationDef';
+import { equationDef } from '../equations';
 import type { CardRef } from '../cards';
 
 function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; node: string; onClose: () => void; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void }) {
@@ -51,10 +53,12 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
         <button className="btn" onClick={() => startQuiz(makeQuiz(ds, `grp:${groupId}`, [topic], 'all'))}><Icon name="target" /> Quiz</button>
         {unlocked && active && <button className="btn ghost" onClick={toggle}>Stop learning</button>}
       </div>
+      {/* An equation's page (Equations › …): its formula, symbols and worked example. */}
+      {groupId.startsWith('eq-') && equationDef(g.name) ? <EquationPanel def={equationDef(g.name)!} showFormula /> : <>
       {/* A deck's intro: one line for most decks; for a book's notes, its summary page (read any time, never reviewed). */}
       {g.note && (g.note.includes('\n')
         ? <details className="deck-summary" open><summary>Summary</summary>{g.note.split('\n').map((l, i) => <p key={i}>{l}</p>)}</details>
-        : <p className="muted small"><Rich before={g.note} /></p>)}
+        : <p className="muted small"><Rich before={g.note} /></p>)}</>}
     </div>
   );
 }
@@ -249,7 +253,7 @@ export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { d
       <h1>{subject.name}</h1>
       {isGeo
         ? <p className="muted">Tap a skill to study or quiz it, or <b>Study</b> a whole region at once. <b>Capitals</b> and <b>Flags</b> unlock once you know half of a region's places{p.settings.locks ? '' : ' (locks are currently off)'}. Countries and states you can study in depth sit inside their continent, under <b>In depth</b>.</p>
-        : <p className="muted">Tap a deck, or <b>Study</b> a whole section at once. {subject.name === 'Cybersecurity' ? <>Every deck starts with a short <b>lesson</b>: open a deck and tap <b>Read the lesson</b>, then study its cards. Diagrams step through who sends what to whom. Also listed by Security+ exam objective and by chapter of the study guide.</> : subject.name === LIVE ? <>Ongoing stories, each filed in its own subject too. Every Wednesday the Wikipedia articles they follow are checked: up to two new cards a week, and updates to the cards marked “as of”, arrive as a pull request for you to approve.</> : subject.name === 'Earth history' ? <>The cards are made from the same data as the chart (<code>src/geotime.ts</code>), so they always agree.</> : COLLECTION_SUBJECTS.includes(subject.name) && NOTE_SUBJECTS.includes(subject.name) ? <>Lists of buildings or works come from <code>geo-quest/collections/{subject.name}/</code> (facts and pictures from Wikidata); the other decks from <code>geo-quest/decks/{subject.name}/</code>.</> : COLLECTION_SUBJECTS.includes(subject.name) ? <>Each deck is a list in <code>geo-quest/collections/{subject.name}/</code>; add a work by its Wikipedia title and the facts and picture are filled in from Wikidata.</> : <>These cards come from the note files in <code>geo-quest/decks/{subject.name}/</code>.</>}</p>}
+        : <p className="muted">Tap a deck, or <b>Study</b> a whole section at once. {subject.name === EQUATIONS ? <>Every equation from every course, each gathering its cards from wherever they are: how it's derived, the formula, what moves it, its graph. Open one to see what every symbol means and a worked example.</> : subject.name === 'Cybersecurity' ? <>Every deck starts with a short <b>lesson</b>: open a deck and tap <b>Read the lesson</b>, then study its cards. Diagrams step through who sends what to whom. Also listed by Security+ exam objective and by chapter of the study guide.</> : subject.name === LIVE ? <>Ongoing stories, each filed in its own subject too. Every Wednesday the Wikipedia articles they follow are checked: up to two new cards a week, and updates to the cards marked “as of”, arrive as a pull request for you to approve.</> : subject.name === 'Earth history' ? <>The cards are made from the same data as the chart (<code>src/geotime.ts</code>), so they always agree.</> : COLLECTION_SUBJECTS.includes(subject.name) && NOTE_SUBJECTS.includes(subject.name) ? <>Lists of buildings or works come from <code>geo-quest/collections/{subject.name}/</code> (facts and pictures from Wikidata); the other decks from <code>geo-quest/decks/{subject.name}/</code>.</> : COLLECTION_SUBJECTS.includes(subject.name) ? <>Each deck is a list in <code>geo-quest/collections/{subject.name}/</code>; add a work by its Wikipedia title and the facts and picture are filled in from Wikidata.</> : <>These cards come from the note files in <code>geo-quest/decks/{subject.name}/</code>.</>}</p>}
       {subject.name === 'Earth history' && <GeoTime />}
       {top.length > 1 && <nav className="jumpbar">
         {top.map(sec => <button key={sec} className={'pick' + (open.has(sec) ? ' on' : '')} onClick={() => jump(sec)}><Icon name={SECTION_ICON[sec] ?? 'globe'} size={14} />{sec}</button>)}
