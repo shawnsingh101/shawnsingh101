@@ -106,3 +106,193 @@ N^D = \left(\frac{(1-\alpha)A}{w}\right)^{1/\alpha} K
 - K | the capital stock
 - \alpha | capital's share of income
 example: With $\alpha = 1/2$, $A = 1$, $K = 1$ and $w = 0.25$: $N^D = \left(\frac{0.5}{0.25}\right)^{2} = 4$, the same as $\frac{1}{4w^2} = \frac{1}{4 \times 0.0625}$.
+
+## Wage skill premium
+\frac{W_S}{W_L} = \frac{w_S}{w_L}
+- W_S | the nominal wage of skilled workers
+- W_L | the nominal wage of low-skilled workers
+- w_S, w_L | the same wages in real terms (each divided by the price level $P$)
+example: Skilled workers earn 60 dollars an hour and low-skilled 25: the premium is $60/25 = 2.4$. With $P = 1.2$ the real wages are 50 and about 20.83, and $50/20.83 = 2.4$ again: the price level cancels.
+
+## Relative demand for skill
+\frac{S}{L} = \frac{\alpha}{1-\alpha}\,\frac{w_L}{w_S}
+- S | skilled work units
+- L | low-skilled work units
+- \alpha | the exponent on skilled work in $Y = AS^{\alpha}L^{1-\alpha}$
+- w_S/w_L | the wage skill premium
+example: With $\alpha = 0.4$ and a premium of 2, firms want $\frac{S}{L} = \frac{0.4}{0.6} \times \frac{1}{2} \approx 0.33$: one skilled unit for every three low-skilled.
+
+## Monopsony markdown
+\frac{MPN}{w} = 1 + \frac{1}{\varepsilon}
+- MPN | the marginal product of labor: what the last worker produces
+- w | the real wage the monopsonist pays
+- \varepsilon | the elasticity of labor supply the firm faces (infinite in perfect competition, where the ratio is 1)
+example: With $\varepsilon = 4$, $\frac{MPN}{w} = 1.25$: a worker who produces 25 units an hour is paid $25 / 1.25 = 20$.
+
+## Wealth
+Wealth = Assets - Liabilities
+- Wealth | net worth, a stock measured at a moment
+- Assets | what is owned: real assets (homes, land, capital) and financial assets (claims on others)
+- Liabilities | what is owed to others
+example: A house worth 300,000 dollars and savings of 50,000, with a 200,000 mortgage: $Wealth = 350{,}000 - 200{,}000 = 150{,}000$.
+
+## Change in wealth
+\Delta Wealth = Saving + \Delta\text{price of existing assets and liabilities}
+- \Delta Wealth | the change in net worth over the period
+- Saving | income minus current spending
+- \Delta\text{price…} | gains or losses on what was already owned or owed
+example: Someone saves 20,000 dollars, but their house falls 50,000 in value: $\Delta Wealth = 20{,}000 - 50{,}000 = -30{,}000$.
+
+## Gross national disposable income
+GNDI = Y + NI + NUT
+- GNDI | what a country's residents have to spend or save
+- Y | GDP
+- NI | net primary income from abroad: wages, interest and profits in, minus those out
+- NUT | net unilateral transfers (secondary income): remittances and aid in, minus out
+example: $Y = 1000$, $NI = -30$ and $NUT = 10$: $GNDI = 1000 - 30 + 10 = 980$.
+
+## National saving
+S = I + NX + NI + NUT
+- S | national saving: national income minus consumption and government purchases
+- I | investment
+- NX | net exports
+- NI | net primary income from abroad
+- NUT | net unilateral transfers
+example: $I = 200$, $NX = -40$, $NI = -30$, $NUT = 10$: $S = 200 - 40 - 30 + 10 = 140$. Saving covers only 140 of the 200 invested; the other 60 comes from abroad.
+
+## Balance of payments
+CA + KA = \Delta FA - \Delta FL
+- CA | the current account balance
+- KA | the capital account: non-produced assets (land, rights) and capital transfers like debt forgiveness
+- \Delta FA | residents' net purchases of foreign financial assets
+- \Delta FL | foreigners' net purchases of domestic financial assets (new foreign liabilities)
+example: China sells 10 to the US and buys 1: $CA = +9$, and China ends up holding 9 more in US assets: $\Delta FA = +9$. For the US, $CA = -9$ and $\Delta FL = +9$.
+
+## Current account
+\Delta NFA = CA = NX + NI + NUT = S - I = GNDI - ABS
+- NFA | net foreign assets: foreign assets minus foreign liabilities
+- CA | the current account balance
+- NX, NI, NUT | net exports, net primary income, net unilateral transfers
+- S, I | national saving and investment
+- GNDI, ABS | national income and absorption ($C + I + G$)
+example: $NX = -40$, $NI = -30$, $NUT = 10$: $CA = -60$. The same number three ways: $S - I = 140 - 200$, and $GNDI - ABS = 980 - 1040$. Net foreign assets fall by 60.
+
+## Nominal interest rate
+i = \frac{V_2 - V_1}{V_1}
+- i | the nominal interest rate
+- V_1 | the asset's value today
+- V_2 | its value next period
+example: Pay 100 dollars for a bond that pays back 105: $i = \frac{105 - 100}{100} = 5\%$.
+
+## Real interest rate
+1 + r = \frac{1+i}{1+\pi} \quad\Rightarrow\quad r \approx i - \pi
+- r | the real interest rate: the return in goods
+- i | the nominal interest rate
+- \pi | inflation
+example: $i = 5\%$ and $\pi = 3\%$: $1 + r = 1.05/1.03 \approx 1.0194$, so $r \approx 1.94\%$, close to the shortcut $5 - 3 = 2\%$.
+
+## Intertemporal budget constraint
+C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r}
+- C_1, C_2 | consumption now and in the future
+- Y_1, Y_2 | income now and in the future
+- r | the real interest rate
+example: $Y_1 = 100$, $Y_2 = 110$, $r = 10\%$: lifetime resources are worth $100 + 110/1.1 = 200$ today. Consume 90 now, save 10, and the future allows $C_2 = 110 + 1.1 \times 10 = 121$; check: $90 + 121/1.1 = 200$.
+
+## Intertemporal budget constraint with wealth
+C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r} + (1+r)\,Wealth_1
+- C_1, C_2 | consumption now and in the future
+- Y_1, Y_2 | labor income now and in the future
+- Wealth_1 | wealth at the start of period 1; with its interest it is worth $(1+r)Wealth_1$ in period 1
+- r | the real interest rate
+example: $Y_1 = 100$, $Y_2 = 110$, $r = 10\%$ and $Wealth_1 = 50$: resources are $100 + 100 + 55 = 255$.
+
+## Euler equation
+C_2 = \beta\,(1+r)\,C_1
+- C_1, C_2 | consumption now and in the future
+- \beta | the discount factor, between 0 and 1: patience
+- r | the real interest rate
+example: With $\beta = 0.9$, $r = 10\%$ and $C_1 = 100$: $C_2 = 0.9 \times 1.1 \times 100 = 99$. Patience and interest nearly cancel, so consumption is almost flat.
+
+## Optimal consumption
+C_1^* = \frac{1}{1+\beta}\left(Y_1 + \frac{Y_2}{1+r}\right)
+- C_1^* | the best consumption now, with $\ln C_1 + \beta\ln C_2$ preferences
+- \beta | the discount factor (patience)
+- Y_1, Y_2 | income now and in the future
+- r | the real interest rate
+example: $Y_1 = 150$, $Y_2 = 55$, $r = 10\%$, $\beta = 0.6$: resources are $150 + 55/1.1 = 200$, so $C_1^* = 200/1.6 = 125$. Saving is 25, and $C_2 = 0.6 \times 1.1 \times 125 = 82.5 = 55 + 1.1 \times 25$.
+
+## Optimal saving
+S_1^* = \frac{\beta}{1+\beta}\,Y_1 - \frac{1}{1+\beta}\,\frac{Y_2}{1+r}
+- S_1^* | the best saving now: $Y_1 - C_1^*$
+- \beta | the discount factor (patience)
+- Y_1, Y_2 | income now and in the future
+- r | the real interest rate
+example: $Y_1 = 150$, $Y_2 = 55$, $r = 10\%$, $\beta = 0.6$: $S_1^* = \tfrac{0.6}{1.6}(150) - \tfrac{1}{1.6}(50) = 56.25 - 31.25 = 25$.
+
+## Marginal propensity to consume
+MPC = \frac{\Delta C}{\Delta Y}, \qquad MPS = 1 - MPC
+- MPC | the share of an extra unit of current income that is consumed
+- MPS | the share that is saved
+- \Delta C, \Delta Y | the change in consumption and in current income
+example: A one-time bonus of 100 dollars raises spending by 60: $MPC = 0.6$ and $MPS = 0.4$.
+
+## Capital accumulation
+K_2 = (1-d)\,K_1 + I_1
+- K_1, K_2 | the capital stock now and next period
+- d | the depreciation rate: the share of capital that wears out
+- I_1 | gross investment this period
+example: $K_1 = 1000$, $d = 5\%$, $I_1 = 80$: $K_2 = 950 + 80 = 1030$.
+
+## Optimal investment
+I_1 = K_2^* - (1-d)\,K_1
+- I_1 | investment this period
+- K_2^* | the capital stock firms want next period
+- K_1 | capital today
+- d | the depreciation rate
+example: Firms want $K_2^* = 1100$; with $K_1 = 1000$ and $d = 5\%$, 950 survives, so they invest $1100 - 950 = 150$.
+
+## User cost of capital
+uc = p_K\,(r + \delta)
+- uc | what one more unit of capital really costs for a period, in goods
+- p_K | the real price of a unit of capital
+- r | the real interest rate: the return given up on the money
+- \delta | the depreciation rate on the new capital
+example: A machine costs 10,000, $r = 3\%$, $\delta = 10\%$: $uc = 10{,}000 \times 0.13 = 1300$ a year.
+
+## Optimal capital
+MPK_2 = p_K\,(r + \delta)
+- MPK_2 | the future marginal product of capital
+- p_K\,(r+\delta) | the user cost of capital
+example: With a user cost of 1300, firms add machines while the next one would produce more than 1300 a year, and stop when diminishing returns bring $MPK_2$ down to 1300.
+
+## Net foreign assets over time
+NFA_2 = (1+r)\,NFA_1 + NX_1 + NUT_1
+- NFA_1, NFA_2 | net foreign assets at the start of periods 1 and 2
+- r | the interest rate earned or paid on them
+- NX_1 | net exports in period 1
+- NUT_1 | net unilateral transfers in period 1
+example: A country owes 100 ($NFA_1 = -100$) at $r = 5\%$ and runs $NX = 20$, $NUT = 5$: $NFA_2 = -105 + 25 = -80$.
+
+## A country's intertemporal budget constraint
+NX_1 + \frac{NX_2}{1+r} + NUT_1 + \frac{NUT_2}{1+r} + (1+r)\,NFA_1 = 0
+- NX_1, NX_2 | net exports now and later
+- NUT_1, NUT_2 | net unilateral transfers now and later
+- NFA_1 | net foreign assets at the start
+- r | the interest rate
+example: $NFA_1 = -100$, $r = 10\%$, no transfers, $NX_1 = -10$: the future must bring $NX_2 = 132$, since $-10 + 132/1.1 - 110 = -10 + 120 - 110 = 0$.
+
+## Country risk premium
+1 + r_H = \frac{1+r}{1 - p\,(1-x)}
+- r_H | the interest rate the risky country must pay
+- r | the risk-free world rate
+- p | the probability of default
+- x | the recovery rate: the share repaid in a default
+example: $r = 4\%$, $p = 10\%$, $x = 0.5$: $1 + r_H = 1.04/0.95 \approx 1.0947$, so $r_H \approx 9.5\%$, a spread of about 5.5 points.
+
+## Net financial inflows
+\text{Net inflows} = \Delta RES + ABS - GNDI
+- \text{Net inflows} | non-official $\Delta FL - \Delta FA$: foreign money coming in, net
+- \Delta RES | the change in the central bank's foreign reserves
+- ABS | absorption: $C + I + G$
+- GNDI | national disposable income
+example: $ABS = 1040$, $GNDI = 980$ and the central bank adds 10 to reserves: net inflows must be $10 + 1040 - 980 = 70$.

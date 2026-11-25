@@ -1,7 +1,7 @@
 // A lesson: the short read before a deck's cards, like a textbook section. What it is, why it exists, how it works, where
 // it fits, what it's confused with, with flow diagrams to step through. Written in a deck's `:::lesson … :::` block in
-// plain Markdown: ## and ### headings, paragraphs, - lists, > callouts, **bold**, `code`, pictures, ```flow, ```stack
-// and code blocks.
+// plain Markdown: ## and ### headings, paragraphs, - lists, > callouts, **bold**, `code`, pictures, | tables |,
+// ```flow, ```stack and code blocks.
 import { Fragment, useEffect, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { CodeBlock, Rich } from './Code';
@@ -38,6 +38,22 @@ export function LessonBody({ text }: { text: string }) {
     if (img) { flush(); out.push(<div key={out.length} className="lesson-picture"><Picture file={img[2]} caption={img[1]} single /></div>); continue; }
     const h = /^(#{2,3})\s+(.*)$/.exec(l);
     if (h) { flush(); out.push(h[1] === '##' ? <h2 key={out.length}>{inline(h[2])}</h2> : <h3 key={out.length}>{inline(h[2])}</h3>); continue; }
+    // A table: | a | b | rows, the first is the header, a |---| row under it is skipped.
+    if (l.startsWith('|')) {
+      flush();
+      const rows: string[][] = [];
+      for (; i < lines.length && lines[i].trim().startsWith('|'); i++) {
+        const cells = lines[i].trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+        if (!cells.every(c => /^:?-+:?$/.test(c))) rows.push(cells);
+      }
+      i--;
+      const [head, ...body] = rows;
+      out.push(<div key={out.length} className="lesson-table"><table>
+        <thead><tr>{head.map((c, j) => <th key={j}>{inline(c)}</th>)}</tr></thead>
+        <tbody>{body.map((r, k) => <tr key={k}>{r.map((c, j) => <td key={j}>{inline(c)}</td>)}</tr>)}</tbody>
+      </table></div>);
+      continue;
+    }
     if (l.startsWith('> ')) { flush(); out.push(<aside key={out.length} className="lesson-callout"><Icon name="info" size={15} /> <span>{inline(l.slice(2))}</span></aside>); continue; }
     if (/^- /.test(l)) { if (para.length) { const p = para; para = []; out.push(<p key={out.length}>{inline(p.join(' '))}</p>); } list.push(l.slice(2)); continue; }
     if (!l) { flush(); continue; }

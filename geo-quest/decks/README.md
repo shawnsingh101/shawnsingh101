@@ -71,7 +71,7 @@ related: Italy, Florence
   ```` ```solution ```` a model answer (the audit makes sure it passes).
 - **A lesson**: everything between a `:::lesson` line and a `:::` line is a short read shown before the deck's cards
   (Read the lesson). Markdown: `##` and `###` headings, paragraphs, `-` lists, `>` callouts, `**bold**`, `` `code` ``,
-  code blocks and flows.
+  code blocks, flows, derivations, graphs, and tables (`| a | b |` rows, the first one the header).
 - **A flow diagram**: a ```` ```flow ```` block. The first line names the actors (`Browser | Server`); then one step per line,
   `Browser -> Server: what it sends` or `Browser: what it does`. In a lesson you step through it; after a card it's shown
   with the card; with `{{blanks}}` in it, it's a card of its own, asked by the plain bullet above it.
@@ -85,7 +85,9 @@ related: Italy, Florence
   `shift ND: right` lines. After a card it's the question, and flipping animates the shift and marks the new equilibrium;
   in a lesson, "Show the shift" does it. `equilibrium: IS, LM` picks the two curves that set it (default: the first two).
 - **`eq: IS curve | Y = C + I + G`** (after a card): the card is about that equation. Every such card from every course
-  is gathered under Equations, one group per equation, in deck order: derivation, formula, inputs, graph.
+  is gathered under Equations, one group per equation, in deck order: derivation, formula, inputs, graph. Every name
+  needs a definition in `equations/<Subject>.md`: `## Name`, the TeX formula on the next line, `- symbol | meaning`
+  lines, then `example:` with real numbers. Flipping the card shows the symbols and the example.
 - **A stack**: a ```` ```stack ```` block draws layered blocks, like the time-scale cards: one row per line,
   `label | name | detail` (`4 | Transport | TCP, UDP, ports`). For layers (the OSI model) and chains (root CA ›
   intermediate › site). Like a flow, it can carry `{{blanks}}` and be a card. Flows and stacks can start with a

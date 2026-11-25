@@ -980,6 +980,10 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .lesson-body li { margin: .2rem 0; }
 .lesson-callout { display: flex; gap: .45rem; align-items: flex-start; margin: .9rem 0; padding: .7rem .9rem; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-size: .95rem; }
 .lesson-callout .icon { flex: none; margin-top: .25rem; color: var(--muted); }
+.lesson-table { margin: .9rem 0; overflow-x: auto; }
+.lesson-table table { border-collapse: collapse; font-size: .92rem; min-width: 100%; }
+.lesson-table th, .lesson-table td { text-align: left; padding: .4rem .7rem; border-bottom: 1px solid var(--line); }
+.lesson-table th { font-weight: 600; color: var(--muted); font-size: .82rem; }
 .lesson-end { margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); display: grid; gap: .7rem; justify-items: start; }
 .flow-text { background: var(--surface); padding: .05rem .3rem; border-radius: 6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 /* Stacks: layered blocks, like the time-scale and lineage cards, in soft colors */

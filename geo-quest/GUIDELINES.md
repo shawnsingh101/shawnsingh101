@@ -255,6 +255,11 @@ feature consistent. When adding anything, check it against this page. When a new
   blanks a step, for understanding, never to memorize), the formula (blank a term), its inputs and outputs (what moves
   it, which way), its graph (a shock: which curve shifts, which way; the flip animates it), and a policy scenario. Tag
   each with `eq:` so the Equations section gathers them.
+- **Every equation is explained**: each `eq:` name has one definition in `equations/<Subject>.md`: the formula, what
+  every symbol means, and a worked example with real numbers, computed before it's written. The back of each equation
+  card shows them. A new equation in a deck means a new definition in the same change (the audit enforces it).
+- **Check derivations step by step**: each line must follow from the one before, and the "why" must describe that
+  step (not a different one); superscripts and subscripts must match the words (nominal vs. real, 1 vs. 2).
 - **Math is KaTeX**, bundled with the app; the audit renders every formula and fails on bad TeX. Numbers in "going
   further" cards are checked by computing them.
 - **Next**: typed math answers (MathLive), checked by the app's Python (SymPy), for problem sets.
