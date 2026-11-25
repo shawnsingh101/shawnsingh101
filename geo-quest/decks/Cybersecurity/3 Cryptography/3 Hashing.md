@@ -14,6 +14,8 @@ SHA-256("hello") = 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9
 SHA-256("Hello") = 185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969
 ```
 
+![A hash function: inputs of any length become fixed-length digests, and a small change makes a completely different one](commons:Cryptographic Hash Function.svg)
+
 One capital letter changed every character. A good hash function is:
 - **One-way**: you can't work back from the hash to the input.
 - **Deterministic**: the same input always gives the same hash.
@@ -41,6 +43,7 @@ A plain hash proves a file is unchanged, but anyone can compute a hash. An **HMA
 
 ## What a hash is
 - A hash function turns any input into a short fixed-length value called a {{digest|what?}}.
+![A hash function: any input in, a fixed-length digest out](commons:Cryptographic Hash Function.svg)
 - Hashing is {{one-way|which way?}}: you can't get the input back from the hash.
 - {{SHA-256|which hash function?}} always produces a 256-bit hash.
 - Changing one character of the input changes the whole hash: the {{avalanche|what?}} effect.
@@ -49,7 +52,7 @@ A plain hash proves a file is unchanged, but anyone can compute a hash. An **HMA
 ## Uses
 - Comparing a downloaded file's hash with the published one proves its {{integrity|what?}}.
 - Websites should store a {{hash|what?}} of your password, never the password itself.
-- An {{HMAC|what?}} (hash-based message authentication code) mixes a secret key into a hash, proving who sent it as well as that it's unchanged.
+- An {{HMAC (hash-based message authentication code)|what?}} mixes a secret key into a hash, proving who sent it as well as that it's unchanged.
 
 ## Storing passwords
 - A random value added to each password before hashing is a {{salt|what?}}.

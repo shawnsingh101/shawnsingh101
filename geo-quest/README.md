@@ -33,6 +33,19 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.35: Cybersecurity, sharper
+
+- **No give-aways** (GUIDELINES rule 15): an acronym's spelled-out name goes in the answer, seen on the flip
+  (`{{DNS (Domain Name System)|which system?}}`). The audit fails a card whose question holds its answer: an acronym
+  spelled out right after the blank, or the answer's words elsewhere on the card. That caught 15 Cybersecurity cards
+  and 7 elsewhere (Beaux-Arts, rye whiskey, the Cambrian, Under the hood), all reworded. The DORA card is gone.
+- **"Going further" decks**: one per lesson (`depth: deep`), 60 applied cards: reading a port scan, secure ports, APIPA,
+  rogue DHCP and starvation, pharming and DNS tunneling, MAC flooding, the TPM and HSM, key escrow, password spraying,
+  the birthday paradox, pinning, code signing, S/MIME, TLS inspection, SSL stripping and HSTS, mutual TLS.
+- **Pictures**: lessons show `![caption](commons:File.svg)` lines (`.lesson-picture`); 15 Commons diagrams in lessons
+  and on the matching cards (shown on the flip), and a stack for the three states of data.
+- Decks sort without their `.md`, so a basic deck comes before its "going further" or "harder" deck.
+
 ## v1.34: Cybersecurity, with lessons and flow diagrams
 
 - **Lessons**: a deck's `:::lesson … :::` block is a short textbook-style read (`components/Lesson.tsx`: headings,

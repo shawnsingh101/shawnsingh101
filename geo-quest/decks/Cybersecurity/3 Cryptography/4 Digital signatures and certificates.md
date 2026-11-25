@@ -18,6 +18,8 @@ Bob: decrypts the signature with Alice's public key: out comes the hash Alice ma
 Bob: hashes the contract himself and compares: a match means it's unchanged, and from Alice
 ```
 
+![Signing (top) and verifying (bottom) a digital signature](commons:Digital Signature diagram.svg)
+
 A valid signature proves three things: the message wasn't changed (**integrity**), it came from the private key's owner (**authenticity**), and that owner can't later deny signing it (**non-repudiation**).
 
 ## But whose public key is it?
@@ -62,6 +64,7 @@ If a private key is stolen, its certificate is **revoked** before it expires. Br
 - A digital signature is made with the signer's {{private key|which key?}}.
 - Anyone can check a signature with the signer's {{public key|which key?}}.
 - To sign, you encrypt a {{hash|what?}} of the message, not the whole message.
+![Signing and verifying a digital signature](commons:Digital Signature diagram.svg)
 - Fill in how Bob checks Alice's signature:
 ```flow
 Alice | Bob
@@ -76,6 +79,7 @@ Bob: hashes the contract himself and compares the two
 - Certificates are signed by a {{certificate authority|who?}} (CA).
 - The standard format for certificates is {{X.509|which standard?}}.
 - Browsers trust a certificate that chains up to a {{root|which kind of?}} CA in their trust store.
+![A chain of trust: each certificate is signed by the one above, up to the root](commons:Chain of trust.svg)
 - Fill in the chain of trust:
 ```stack
 # The chain of trust
@@ -83,10 +87,10 @@ root | Root CA | in the browser's trust store
 signs | {{Intermediate CA|what's in between?}} | signs certificates day to day
 signs | www.example.com | the site's certificate
 ```
-- To get a certificate, you send a CA a {{CSR|what?}} (certificate signing request).
+- To get a certificate, you send a CA a {{CSR (certificate signing request)|what?}}.
 - A {{wildcard|which kind of?}} certificate, like *.example.com, covers every subdomain one level down.
 
 ## Revocation
-- A {{CRL|what?}} (certificate revocation list) lists certificates revoked before they expired.
-- {{OCSP|which protocol?}} (Online Certificate Status Protocol) checks a certificate's status in real time.
+- A {{CRL (certificate revocation list)|what?}} lists certificates revoked before they expired.
+- {{OCSP (Online Certificate Status Protocol)|which protocol?}} checks a certificate's status in real time.
 - PKI stands for public key {{infrastructure|what?}}.

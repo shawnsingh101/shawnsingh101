@@ -67,6 +67,11 @@ feature consistent. When adding anything, check it against this page. When a new
     a president's years when that's the question asked).
 14. **Cards teach facts about the world, not analogies.** "If Earth's history were one day, the dinosaurs die at 11:40 pm"
     is a picture to look at (the chart's clock), not something to memorize.
+15. **The question never contains its answer.** When the answer is an acronym, its spelled-out name goes *in the
+    answer*, seen on the flip: `{{DNS (Domain Name System)|which system?}} turns names into addresses`, never
+    `{{DNS}} (Domain Name System) turns…`. Nor may the answer appear elsewhere on the card ("Rye whiskey is made from
+    {{rye}}"). A card that only asks for a mnemonic's letters (DORA) tests nothing; ask what the steps do instead.
+    `npm run audit` fails on both (owner's feedback, v1.35).
 
 ## 2. Pictures
 
@@ -218,6 +223,12 @@ feature consistent. When adding anything, check it against this page. When a new
   Lab. Here, each deck opens with a **lesson**: a short textbook-style read (what it is, why it exists, how it works,
   where it fits, what it's confused with), then cards on just that lesson. Acronyms are spelled out on first use in every
   lesson and on every card.
+- **Three steps up in every part**: the lesson; its cards (the foundations); then a **"going further"** deck (`depth:
+  deep`, unlocking at half the basics) of applied, scenario-style cards: what a scan or log or symptom means, which tool
+  or setting, what an attack looks like. That's the bridge to the Study Lab's exam questions. Later parts are harder in
+  themselves, since they build on everything before.
+- **Pictures**: a Commons diagram in the lesson and on the matching card wherever a clean one exists (checked to exist
+  before use); where none does, draw one of our own (a stack or a flow), like the three states of data.
 - **Layered order, not the exam's**: each part uses only what came before. 1 How computers talk, 2 The core ideas,
   3 Cryptography, 4 Identity, 5 Networks, 6 Attacks, 7 Defending systems, 8 Operations, 9 Governance.
 - **Tagged to the exam and the book**: `objectives:` (SY0-701, e.g. `1.4, 3.3`) and `chapter:` (Chapple and Seidl's

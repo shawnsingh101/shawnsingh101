@@ -34,6 +34,15 @@ for (const { f, d } of decks) {
     if (!c.answer?.trim() && !c.strata) issues.push(`NO ANSWER ${f}: ${c.pre.slice(0, 60)}`);
     if (/\{\{|\}\}|::/.test(text) && !c.front) issues.push(`MARKUP LEFT ${f}: ${text.slice(0, 80)}`);
     if (c.front && !c.strata && !c.pictureFirst) issues.push(`FRONT/BACK ${f}: ${c.pre.slice(0, 70)}`);
+    // The question must not give the answer away: an acronym answer followed by its spelled-out name, "{{DNS}} (Domain
+    // Name System)", or the answer written out elsewhere on the card. The expansion belongs in the answer, shown on the flip.
+    if (!c.front && !c.practice && !c.parts) {
+      const acr = /^[A-Z][A-Za-z0-9-]{1,9}$/.test(c.answer.trim()) && /[A-Z].*[A-Z]/.test(c.answer);
+      if (acr && /^\s*\(/.test(c.post)) issues.push(`GIVEAWAY ${f}: "${c.answer}" is spelled out right after the blank: ${c.post.slice(0, 50)}`);
+      const rest = `${c.pre} ${c.post}`.toLowerCase(), a2 = c.answer.toLowerCase().replace(/^(the|a|an) /, '').replace(/[`"]/g, '');
+      // (A quoted value read out of code shown on the card, `["blue", "fin"][1]` → "fin", is the skill, not a give-away.)
+      if (a2.length > 2 && !/^\d+$/.test(a2) && !/^`["']/.test(c.answer.trim()) && new RegExp(`(^|[^a-z0-9])${a2.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z0-9]|$)`).test(rest)) issues.push(`GIVEAWAY ${f}: the answer "${c.answer}" also appears in the question`);
+    }
     // the heading must not give the answer away
     const ans = c.answer.toLowerCase().replace(/^(the|a|an) /, '');
     if (c.context && ans.length > 3 && c.context.toLowerCase().includes(ans) && !c.strata) issues.push(`SPOILER ${f}: heading "${c.context}" ⊇ answer "${c.answer}"`);

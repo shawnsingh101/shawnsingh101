@@ -29,7 +29,7 @@ How to tell the great styles apart, oldest first, and the architects who changed
 ![The Lincoln Memorial, Washington](commons:Aerial view of Lincoln Memorial - east side EDIT.jpeg)
 - Victorian churches, universities and the Houses of Parliament revived medieval forms in the {{Gothic Revival|which style?}}.
 ![Royal Courts of Justice, London](commons:Royal Courts of Justice 20130414 065.JPG)
-- Grand, richly carved public buildings in the manner taught at the École des Beaux-Arts in Paris are called {{Beaux-Arts|which style?}}.
+- Grand, richly carved public buildings in the manner taught at Paris's great school of fine arts are called {{Beaux-Arts|which style?}}.
 native: Beaux-Arts (French)
 ![Petit Palais, Paris](commons:Petit Palais, Paris 8th 003.JPG)
 - Flowing, plant-like lines in iron and glass, as in Victor Horta's Hôtel Tassel in Brussels, mark {{Art Nouveau|which style?}}.

@@ -45,7 +45,7 @@ species: Zea mays
 related: United States, Canada
 species: Secale cereale
 ![Rye](commons:Ear of rye.jpg)
-- Rye whiskey is made mostly from {{rye|which grain?}}, which makes it spicier than bourbon.
+- An American whiskey made mostly from {{rye|which grain?}} is spicier than bourbon.
 
 ## Scotch whisky
 related: Scotland, United Kingdom
