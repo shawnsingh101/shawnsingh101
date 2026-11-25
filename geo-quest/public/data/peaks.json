@@ -832,7 +832,7 @@
    "layer": "peak",
    "name": "Zugspitze",
    "group": "m-icons",
-   "lon": 10.986,
+   "lon": 10.985,
    "lat": 47.421,
    "image": "Zugspitzmassiv-von-Almkopf-2024.jpg",
    "wiki": "Zugspitze",
@@ -1391,7 +1391,7 @@
    "countryName": "Poland and Czechia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,603 m · Sudetes · Poland, Czechia",
+   "facts": "1,603 m · Giant Mountains · Poland, Czechia",
    "native": [
     {
      "name": "Śnieżka",
@@ -2333,7 +2333,7 @@
    "countryName": "Hungary",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,014 m · North Hungarian Mountains · Heves County, Hungary",
+   "facts": "1,014 m · Mátra · Heves County, Hungary",
    "admin1Ids": [
     "Q191604"
    ],

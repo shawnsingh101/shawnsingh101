@@ -929,6 +929,31 @@
    ]
   },
   {
+   "id": "Q682334",
+   "layer": "range",
+   "name": "Altyn-Tagh",
+   "image": "Altyn Tagh grassland and snow.jpg",
+   "lon": 89,
+   "lat": 38.6,
+   "wiki": "Altyn-Tagh",
+   "group": "m-ranges2",
+   "nameThe": "the Altyn-Tagh",
+   "facts": "China",
+   "capitals": [],
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "阿尔金山脉",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "zh": {
+    "han": "阿尔金山脉",
+    "pinyin": "Ā'ěrjīn Shānmài"
+   }
+  },
+  {
    "id": "Q1124584",
    "layer": "range",
    "name": "Sierra Madre Occidental",
@@ -962,31 +987,6 @@
      "code": "ar"
     }
    ]
-  },
-  {
-   "id": "Q682334",
-   "layer": "range",
-   "name": "Altyn-Tagh",
-   "image": "Altyn Tagh grassland and snow.jpg",
-   "lon": 89,
-   "lat": 38.6,
-   "wiki": "Altyn-Tagh",
-   "group": "m-ranges2",
-   "nameThe": "the Altyn-Tagh",
-   "facts": "China",
-   "capitals": [],
-   "capitalAnswer": null,
-   "native": [
-    {
-     "name": "阿尔金山脉",
-     "lang": "Chinese",
-     "code": "zh-hans"
-    }
-   ],
-   "zh": {
-    "han": "阿尔金山脉",
-    "pinyin": "Ā'ěrjīn Shānmài"
-   }
   },
   {
    "id": "Q804330",
@@ -1391,6 +1391,20 @@
    ]
   },
   {
+   "id": "Q519263",
+   "layer": "range",
+   "name": "Pontic Mountains",
+   "image": "Sumela Showing Location.JPG",
+   "lon": 41.159,
+   "lat": 40.837,
+   "wiki": "Pontic_Mountains",
+   "group": "m-ranges2",
+   "nameThe": "the Pontic Mountains",
+   "facts": "Türkiye",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
    "id": "Q189915",
    "layer": "range",
    "name": "Dinaric Alps",
@@ -1420,20 +1434,6 @@
      "code": "hr"
     }
    ]
-  },
-  {
-   "id": "Q519263",
-   "layer": "range",
-   "name": "Pontic Mountains",
-   "image": "Sumela Showing Location.JPG",
-   "lon": 41.159,
-   "lat": 40.837,
-   "wiki": "Pontic_Mountains",
-   "group": "m-ranges2",
-   "nameThe": "the Pontic Mountains",
-   "facts": "Türkiye",
-   "capitals": [],
-   "capitalAnswer": null
   },
   {
    "id": "Q208076",
