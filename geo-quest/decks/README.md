@@ -75,6 +75,17 @@ related: Italy, Florence
 - **A flow diagram**: a ```` ```flow ```` block. The first line names the actors (`Browser | Server`); then one step per line,
   `Browser -> Server: what it sends` or `Browser: what it does`. In a lesson you step through it; after a card it's shown
   with the card; with `{{blanks}}` in it, it's a card of its own, asked by the plain bullet above it.
+- **Math**: `$…$` inline and `$$…$$` on its own line, in KaTeX (TeX). A blank can sit inside a formula:
+  `$Y = A K^{\alpha} N^{ {{1-\alpha}} }$` (keep a space between TeX's own braces and the blank's). An answer may hold one level of
+  braces, `{{\frac{1}{2}}}`. A dollar sign followed by a digit and preceded by a space is a price, not math.
+- **A derivation**: a ```` ```derive ```` block, one step per line, `formula :: why` (the formula in TeX, no dollar signs),
+  optionally titled `# …`. Stepped through in lessons; with a blank, a card.
+- **A graph**: a ```` ```graph ```` block: `axes: N | w`, then curves (`ND: down`, `NS: up`, `FE: vertical 0.6`,
+  `LRAS: vertical`, `SRAS: horizontal 0.4`, optionally `steep`, `flat` or `at 0.4 0.6`), then the shock's
+  `shift ND: right` lines. After a card it's the question, and flipping animates the shift and marks the new equilibrium;
+  in a lesson, "Show the shift" does it. `equilibrium: IS, LM` picks the two curves that set it (default: the first two).
+- **`eq: IS curve | Y = C + I + G`** (after a card): the card is about that equation. Every such card from every course
+  is gathered under Equations, one group per equation, in deck order: derivation, formula, inputs, graph.
 - **A stack**: a ```` ```stack ```` block draws layered blocks, like the time-scale cards: one row per line,
   `label | name | detail` (`4 | Transport | TCP, UDP, ports`). For layers (the OSI model) and chains (root CA ›
   intermediate › site). Like a flow, it can carry `{{blanks}}` and be a card. Flows and stacks can start with a

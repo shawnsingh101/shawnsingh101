@@ -8,6 +8,8 @@ import { CodeBlock, Rich } from './Code';
 import { Flow } from './Flow';
 import { Stack } from './Stack';
 import { Picture } from './Picture';
+import { Graph } from './Graph';
+import { Derive } from './Derive';
 import { Icon } from './Icons';
 import { chapterName, objectiveName } from '../secplus';
 
@@ -28,7 +30,7 @@ export function LessonBody({ text }: { text: string }) {
       flush();
       const lang = l.slice(3).trim() || 'text', body: string[] = [];
       while (++i < lines.length && !lines[i].trim().startsWith('```')) body.push(lines[i]);
-      out.push(lang === 'flow' ? <Flow key={out.length} text={body.join('\n')} stepper /> : lang === 'stack' ? <Stack key={out.length} text={body.join('\n')} /> : <CodeBlock key={out.length} text={body.join('\n')} lang={lang} />);
+      out.push(lang === 'flow' ? <Flow key={out.length} text={body.join('\n')} stepper /> : lang === 'stack' ? <Stack key={out.length} text={body.join('\n')} /> : lang === 'graph' ? <Graph key={out.length} text={body.join('\n')} interactive /> : lang === 'derive' ? <Derive key={out.length} text={body.join('\n')} stepper /> : <CodeBlock key={out.length} text={body.join('\n')} lang={lang} />);
       continue;
     }
     // A picture: ![caption](commons:File.svg), shown whole (a diagram), tap to enlarge.

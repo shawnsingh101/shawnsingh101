@@ -12,6 +12,7 @@ import { GeoTime } from '../components/GeoTime';
 import { SUBJECTS, isGeography } from '../subjects';
 import { Search } from '../components/Search';
 import { LessonReader } from '../components/Lesson';
+import { Rich } from '../components/Code';
 import type { CardRef } from '../cards';
 
 function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; node: string; onClose: () => void; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void }) {
@@ -53,7 +54,7 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
       {/* A deck's intro: one line for most decks; for a book's notes, its summary page (read any time, never reviewed). */}
       {g.note && (g.note.includes('\n')
         ? <details className="deck-summary" open><summary>Summary</summary>{g.note.split('\n').map((l, i) => <p key={i}>{l}</p>)}</details>
-        : <p className="muted small">{g.note}</p>)}
+        : <p className="muted small"><Rich before={g.note} /></p>)}
     </div>
   );
 }
@@ -184,7 +185,7 @@ export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { d
           </div>}
           {ERAS.some(e => sec.startsWith(e.section)) ? <p className="muted small">Every deck from this era ({ERAS.find(e => sec.startsWith(e.section))!.span}), wherever it happened. Each is also in its own country's history; progress is shared.</p>
             : sec.startsWith('By era') ? <p className="muted small">The same decks again, by world era instead of by country.</p>
-            : groups.length === 1 && groups[0].note && sec !== LIVE && <p className="muted small">{groups[0].note.split('\n')[0]}</p>}
+            : groups.length === 1 && groups[0].note && sec !== LIVE && <p className="muted small"><Rich before={groups[0].note.split('\n')[0]} /></p>}
           {(groups.some(g => g.topics.length === 1) || inlined.length > 0) && <div className="deck-rows">
             {groups.filter(g => g.topics.length === 1).map(g => deckRow(g, sec))}
             {inlined.map(({ g, from }) => deckRow(g, sec, from))}

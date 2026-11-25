@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Lineage } from './Lineage';
-import { CodeBlock, REPO_FILE, Rich } from './Code';
+import { CodeBlock, REPO_FILE, Rich, blankTex } from './Code';
 import { PracticeCard } from './Practice';
 import { Flow } from './Flow';
 import { Stack } from './Stack';
+import { Graph } from './Graph';
+import { Derive } from './Derive';
 import { LessonReader } from './Lesson';
 import { ClipPlayer, MusicReveal } from './Music';
 import { Say } from './Native';
@@ -341,11 +343,12 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {c.layer === 'road' && c.image && item.ref.kind !== 'roadShield' && (revealed || item.ref.kind === 'locate') && <img className="card-shield" src={commonsUrl(c.image, 160)} alt={`${c.short ?? c.name} sign`} />}
           {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
           {/* Code with the question: above the sentence ("This prints ___."), or holding the blank itself */}
-          {f.code && !f.code.text.includes('\u0000') && (f.code.lang === 'flow' ? <Flow text={f.code.text} /> : f.code.lang === 'stack' ? <Stack text={f.code.text} /> : <CodeBlock text={f.code.text} lang={f.code.lang} />)}
+          {f.code && !f.code.text.includes('\u0000') && (f.code.lang === 'flow' ? <Flow text={f.code.text} /> : f.code.lang === 'stack' ? <Stack text={f.code.text} /> : f.code.lang === 'graph' ? <Graph text={f.code.text} revealed={revealed} /> : f.code.lang === 'derive' ? <Derive text={f.code.text} /> : <CodeBlock text={f.code.text} lang={f.code.lang} />)}
           {f.practice ? <PracticeCard key={item.ref.id} p={f.practice} prompt={f.pre} revealed={revealed} onDone={reveal} />
           : f.code?.text.includes('\u0000') ? <>
             <p className="cloze front"><Rich before={f.pre} /></p>
-            {f.code.lang === 'flow' || f.code.lang === 'stack'
+            {f.code.lang === 'derive' ? <Derive text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} blankTeX={blankTex(revealed, f.answer, f.blank)} />
+            : f.code.lang === 'flow' || f.code.lang === 'stack'
               ? (f.code.lang === 'flow' ? <Flow text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} /> : <Stack text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} />)
               : <CodeBlock text={f.code.text} lang={f.code.lang} blank={revealed ? <span className="fill">{f.answer}</span> : <span className="blank">{f.blank}</span>} />}
           </> : f.strata ? <>
@@ -365,7 +368,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
               {/* The speaker sits by the text it says: beside the green answer when that's how the name is written in its own
                   language too (Leonardo da Vinci, said in Italian); otherwise beside the own-language name under it (La Gioconda). */}
               {revealed && say && fold(sayText!) === fold(f.answer) && <Say text={sayText!} code={say.code} />}
-            </>} after={f.hidePostUntilReveal && !revealed ? '.' : f.post} />
+            </>} after={f.hidePostUntilReveal && !revealed ? '.' : f.post} blankTeX={blankTex(revealed, f.answer, f.blank)} />
           </p>}
           {/* Art, books, music, people: the answer's own-language name, only when it's written differently (Достоевский, 葛飾北斎). */}
           {revealed && c.layer === 'art' && say && fold(sayText!) !== fold(f.answer) && <div className="local"><span className="native" title={say.lang}><bdi>{say.name}</bdi>{(say.roman ?? (c.zh && say.name === c.zh.han ? c.zh.pinyin : null)) && <span className="py">{say.roman ?? c.zh!.pinyin}</span>}<Say text={sayText!} code={say.code} /></span></div>}

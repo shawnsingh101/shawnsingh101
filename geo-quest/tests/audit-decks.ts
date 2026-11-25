@@ -5,6 +5,8 @@ import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { parseDeck } from '../src/notes';
 import { parseFlow } from '../src/flow';
+import { parseGraph } from '../src/graph';
+import katex from 'katex';
 import { geotimeDeck, epochDeck } from '../src/geotime';
 const ROOT = join(process.cwd(), 'decks');
 const walk = (d: string): string[] => readdirSync(d).flatMap(f => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : /\.md$/.test(f) && !/README/i.test(f) ? [p] : []; });
@@ -15,6 +17,13 @@ const issues: string[] = []; const pics = new Set<string>(); const urls = new Se
 const titles = new Set(decks.map(x => x.d.title.toLowerCase()));
 const ids = new Map<string, string>();
 let n = 0;
+// Math: every $…$, $$…$$ and derivation line must be valid TeX (KaTeX would otherwise show it in red).
+const MATH = /\$\$([\s\S]+?)\$\$|\$(?=[^\s$])((?:\\\$|[^$])+?)(?<=[^\s\\])\$(?!\d)/g;
+function checkTex(src: string, where: string) { try { katex.renderToString(src.replace('\u0000', '\\boxed{?}'), { throwOnError: true, strict: false }); } catch (e) { issues.push(`TEX ${where}: ${(e as Error).message.slice(0, 120)}`); } }
+function checkMath(text: string, where: string) { for (const m of text.matchAll(MATH)) checkTex(m[1] ?? m[2], where); }
+// A graph: every line readable, every shift and equilibrium names a curve.
+function checkGraph(text: string, where: string) { for (const e of parseGraph(text).errors) issues.push(`GRAPH ${where}: ${e}`); }
+function checkDerive(text: string, where: string) { for (const l of text.split('\n').filter(x => x.trim() && !/^#\s/.test(x.trim()))) checkTex(l.split('::')[0], where); }
 // A flow diagram: two or more actors, and every step names one of them (a typo would draw an arrow to nowhere).
 function checkFlow(text: string, where: string) {
   const { actors, steps } = parseFlow(text);
@@ -24,6 +33,9 @@ function checkFlow(text: string, where: string) {
 for (const { f, d } of decks) {
   // A lesson's flows are checked the same way; and a lesson needs cards to go with it.
   for (const m of (d.lesson ?? '').matchAll(/```flow\n([\s\S]*?)\n```/g)) checkFlow(m[1], `${f} (lesson)`);
+  for (const m of (d.lesson ?? '').matchAll(/```graph\n([\s\S]*?)\n```/g)) checkGraph(m[1], `${f} (lesson)`);
+  for (const m of (d.lesson ?? '').matchAll(/```derive\n([\s\S]*?)\n```/g)) checkDerive(m[1], `${f} (lesson)`);
+  checkMath((d.lesson ?? '').replace(/```[\s\S]*?```/g, ''), `${f} (lesson)`);
   if (d.lesson && !d.cards.length) issues.push(`LESSON without cards ${f}`);
   // A lens deck (History of AI) has no cards of its own: other decks' cards are shown in it ("also in").
   if (!d.cards.length && !decks.some(x => x.d.cards.some(c => c.card.also?.some(t => t.toLowerCase() === d.title.toLowerCase())))) issues.push(`EMPTY deck: ${f}`);
@@ -32,7 +44,7 @@ for (const { f, d } of decks) {
     if (ids.has(id)) issues.push(`DUP id ${id}: ${f} & ${ids.get(id)}`); ids.set(id, f);
     const text = `${c.pre} ${c.answer} ${c.post}`;
     if (!c.answer?.trim() && !c.strata) issues.push(`NO ANSWER ${f}: ${c.pre.slice(0, 60)}`);
-    if (/\{\{|\}\}|::/.test(text) && !c.front) issues.push(`MARKUP LEFT ${f}: ${text.slice(0, 80)}`);
+    if ((/\{\{|::/.test(text) || (/\}\}/.test(text) && !text.includes('$'))) && !c.front) issues.push(`MARKUP LEFT ${f}: ${text.slice(0, 80)}`); // TeX may end in }}
     if (c.front && !c.strata && !c.pictureFirst) issues.push(`FRONT/BACK ${f}: ${c.pre.slice(0, 70)}`);
     // The question must not give the answer away: an acronym answer followed by its spelled-out name, "{{DNS}} (Domain
     // Name System)", or the answer written out elsewhere on the card. The expansion belongs in the answer, shown on the flip.
@@ -76,6 +88,9 @@ for (const { f, d } of decks) {
       }
     }
     if (c.code?.lang === 'flow') checkFlow(c.code.text, `${f}: ${c.pre.slice(0, 40)}`);
+    if (c.code?.lang === 'graph') checkGraph(c.code.text, `${f}: ${c.pre.slice(0, 40)}`);
+    if (c.code?.lang === 'derive') checkDerive(c.code.text, `${f}: ${c.pre.slice(0, 40)}`);
+    checkMath(`${c.pre}\u0000${c.post}`, `${f}: ${c.pre.slice(0, 40)}`); checkMath(c.answer, `${f}: ${c.pre.slice(0, 40)}`); if (c.note) checkMath(c.note, `${f} note`);
     if (c.picture?.file) pics.add(c.picture.file);
     if (c.picture?.url) urls.add(c.picture.url);
     for (const nn of c.native) if (!nn.code) issues.push(`NATIVE no lang code ${f}: ${nn.name} (${nn.lang})`);

@@ -33,6 +33,22 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.36: Economics, with math, derivations, graphs and an Equations section
+
+- **Math** (KaTeX 0.16.29, bundled): `$…$` and `$$…$$` in cards, notes and lessons (`MATH`, `tex`, `blankTex` in
+  `components/Code.tsx`); a blank inside a formula is a boxed hint, filled in green on the flip. Blanks may hold one
+  level of braces for TeX. The audit renders every formula. Prices like "$4 trillion … $5" stay text.
+- **Derivations** (`components/Derive.tsx`): ```` ```derive ```` blocks, `formula :: why` per line, stepped in lessons; a
+  blank in one step makes a card.
+- **Graphs** (`components/Graph.tsx`, parsed by `src/graph.ts`): axes, straight-line curves (down, up, vertical,
+  horizontal; steep or flat), the equilibrium and its dashed guides; a shock's shifts animate on the flip (or "Show the
+  shift" in a lesson), with the new equilibrium marked. The audit checks every graph.
+- **Equations** lens subject: `eq: name | TeX` after a card gathers it, with every other card on that equation from any
+  course, under Equations › <course> › <equation>, the formula shown on the group.
+- **Economics** rebuilt by course (GUIDELINES 4g). *Macroeconomics for Public Policy*, lectures 1–3 so far: Measuring GDP;
+  Production and growth accounting; The labor market. Each with a lesson (derivations, graphs, formulas) and a
+  "going further" deck from past exams. The placeholder "Macroeconomics basics" deck is gone.
+
 ## v1.35: Cybersecurity, sharper
 
 - **No give-aways** (GUIDELINES rule 15): an acronym's spelled-out name goes in the answer, seen on the flip
