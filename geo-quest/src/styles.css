@@ -1038,3 +1038,36 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .eqdef-symbols dd { margin: 0; color: var(--ink); }
 .eqdef-example { margin: .6rem 0 0; padding-top: .55rem; border-top: 1px dashed var(--line); line-height: 1.5; }
 .eqdef-example b { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: .15rem; }
+
+/* Parts cards (components/Recall.tsx): parts recalled one at a time, each marked got or missed. */
+.recall-how { margin: -.3rem 0 .6rem; }
+.recall-steps { list-style: none; margin: 0 0 .4rem; padding: 0; display: flex; flex-direction: column; gap: .4rem; }
+.recall-step { display: flex; gap: .6rem; align-items: flex-start; padding: .55rem .7rem; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); transition: background .2s, border-color .2s; }
+.recall-num { flex: none; width: 1.5rem; height: 1.5rem; border-radius: 50%; display: grid; place-items: center; font-size: .8rem; font-weight: 600; background: var(--line); color: var(--muted); }
+.recall-body { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
+.recall-cue { font-size: .85rem; color: var(--muted); }
+.recall-answer { font-weight: 600; }
+.recall-later { color: var(--muted); }
+.recall-step.later { opacity: .55; }
+.recall-step.current, .recall-step.open { border-color: var(--accent, #3d7fc4); }
+.recall-step.current .recall-num, .recall-step.open .recall-num { background: var(--accent, #3d7fc4); color: #fff; }
+.recall-step.got { border-color: color-mix(in srgb, var(--right) 45%, transparent); }
+.recall-step.got .recall-num { background: var(--right); color: #fff; }
+.recall-step.got .recall-answer { color: var(--right); }
+.recall-step.missed { border-color: color-mix(in srgb, var(--wrong) 45%, transparent); }
+.recall-step.missed .recall-num { background: var(--wrong); color: #fff; }
+.recall-step.missed .recall-answer { color: var(--wrong); }
+.recall-show { align-self: flex-start; }
+.recall-marks { margin-top: .6rem; }
+.recall-score { margin: .5rem 0 0; text-align: center; }
+
+/* Bureau map cards (components/BureauMap.tsx): which regional bureau covers this country. */
+.bureau-map { margin: .2rem 0 .8rem; }
+.bureau-world { height: 230px; border-radius: 14px; border: 1px solid var(--line); overflow: hidden; }
+@media (min-width: 900px) { .bureau-world { height: 300px; } }
+.bureau-legend { list-style: none; padding: 0; margin: .5rem 0 0; display: flex; flex-wrap: wrap; gap: .3rem .8rem; font-size: .78rem; color: var(--muted); }
+.bureau-legend li { display: flex; align-items: center; gap: .3rem; }
+.bureau-legend li span { display: none; }
+.bureau-legend li.mine { color: var(--ink); font-weight: 600; }
+.bureau-legend li.mine span { display: inline; }
+.bureau-legend i { width: .7rem; height: .7rem; border-radius: 3px; display: inline-block; }

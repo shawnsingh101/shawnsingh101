@@ -264,6 +264,27 @@ feature consistent. When adding anything, check it against this page. When a new
   further" cards are checked by computing them.
 - **Next**: typed math answers (MathLive), checked by the app's Python (SymPy), for problem sets.
 
+## 4h. Government
+
+- **By country**: `decks/Government/<n> <Country>/…`. The United States first: Foundations (the Constitution's split
+  of powers), then each branch and department; the State Department is the first built out.
+- **History of government stays in History** (presidents, eras); **Law** will be its own subject (the Constitution
+  stays here, being the structure). A law that matters to both is filed once and shown in the other with `also in:`.
+- **Durable vs. current**: structure, law and treaties are ordinary cards. People in office, budgets in force and
+  stated priorities carry `as of:` and sit in a deck that `follows:` Wikipedia articles, so the weekly briefing keeps
+  them current. Never mix the two in one card.
+- **Neutral and attributed**: an administration's goals are given in its own words, with whose words they are ("The
+  2025 National Security Strategy says…").
+- **Not FSO preparation**, as with Economics: a general course on how the department works, which also serves it.
+- **Sources**: US government works are public domain (state.gov, the Foreign Affairs Manual, CRS reports), so they
+  can be followed closely; check current facts against state.gov's schedules and leadership pages and Wikipedia.
+
+## 4i. Parts cards
+
+- For a short list or process: 2 to 5 parts, about what working memory holds. A longer process is split into
+  stages, one card for the stages and one per stage (the audit refuses more than 5).
+- Give each part a cue that prompts it without giving it away; `# any order` for a set, none for a sequence.
+
 ## 5. Content files (how to add things)
 
 | What | Where | Format |

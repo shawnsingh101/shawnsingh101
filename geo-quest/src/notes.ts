@@ -4,6 +4,7 @@ import type { Place } from './types';
 import { GROUPS, claimSection } from './cards';
 import { epochDeck, geotimeDeck } from './geotime';
 import { chapterName, objectiveName } from './secplus';
+import { bureauOf, bureauAnswer } from './bureaus';
 
 export interface NoteCard {
   pre: string; answer: string; post: string;  // cloze: "pre [answer] post"; front/back: pre = front, answer = back
@@ -17,6 +18,8 @@ export interface NoteCard {
   eq?: { name: string; tex: string | null };   // an "eq: IS curve | Y = C + I + G" line: the card is about that equation (the Equations lens)
   asOf?: string;                               // an "as of: November 2026" line: true for now, not for good (a live topic's current state)
   code?: { lang: string; text: string };       // a fenced code block: shown with the question. A \u0000 in it marks the card's blank
+  bureau?: string;                             // "[bureau: EGY] Which bureau covers Egypt?": a map card (src/bureaus.ts), the country's ISO code
+  recall?: Recall;                             // a parts card: a ```parts block under a plain bullet, recalled one part at a time
   practice?: Practice;                         // a "[practice]" card: write a program; it's run and checked (src/python.ts)
   source?: string;                             // a "source: src/tree.ts" line: the file the code is quoted from (linked on GitHub)
   context: string | null;                      // the ## heading it sits under
@@ -28,6 +31,20 @@ export interface NoteCard {
 }
 /** A practice problem: the code you start from, the cases it's tested on (the lines it reads with input(), and what it
  *  should print), asserts run after it, and a model solution (shown on request, and checked by the audit). */
+/** A parts card: 2 to 5 parts recalled one at a time (each with an optional cue), graded by how many you got. */
+export interface Recall { steps: { cue: string | null; answer: string }[]; anyOrder: boolean }
+/** At most this many parts on a card: about what working memory holds. Longer processes are split into stages. */
+export const RECALL_MAX = 5;
+export function parseRecall(text: string): Recall {
+  let anyOrder = false; const steps: Recall['steps'] = [];
+  for (const raw of text.split('\n')) {
+    const l = raw.trim(); if (!l) continue;
+    if (/^#\s*any order$/i.test(l)) { anyOrder = true; continue; }
+    const m = /^(.*?)\s+::\s+(.+)$/.exec(l);
+    steps.push(m ? { cue: m[1].trim(), answer: m[2].trim() } : { cue: null, answer: l });
+  }
+  return { steps, anyOrder };
+}
 export interface Practice { starter: string; cases: { input: string; output: string | null }[]; check: string; solution: string }
 export interface Deck { file: string; id: string; title: string; subject: string; path: string[]; intro: string | null; eras: string[]; deep: boolean;
   lesson: string | null;                     // a `:::lesson … :::` block: a short read that comes before the cards
@@ -90,6 +107,14 @@ export function parseDeck(file: string, text: string): Deck {
       const ls = fence.lines; while (ls.length && !ls[ls.length - 1].trim()) ls.pop();
       const pad = Math.min(...ls.filter(l => l.trim()).map(l => /^\s*/.exec(l)![0].length));
       const text = ls.map(l => l.slice(pad)).join('\n'), lang = fence.lang, afterCard: boolean = fence.afterCard; fence = null;
+      // A parts card: "- How a treaty takes effect" then a ```parts block, one "cue :: answer" per line.
+      if (lang === 'parts' && prompt) {
+        lineFrom = cards.length;
+        const recall = parseRecall(text);
+        add({ pre: prompt, answer: recall.steps.map(s => s.answer).join(' · '), post: '', front: true, recall }, 'parts:' + prompt);
+        cards[cards.length - 1].card.fp += '|' + text;
+        prompt = null; lastWasCard = true; continue;
+      }
       const blanks = [...text.matchAll(BLANK)];
       if (blanks.length && prompt) {
         // One card per blank; the other blanks show their answers.
@@ -181,6 +206,9 @@ export function parseDeck(file: string, text: string): Deck {
     // "[strata: Mesozoic]": a time-scale card drawn from src/geotime.ts (the unit's place and its blank parts).
     const st = /^\[strata:\s*([^\]]+)\]\s*(.*)$/i.exec(t);
     if (st) { add({ pre: st[2] || `The parts of the ${st[1]}, oldest at the bottom`, answer: st[1], post: '', front: true, strata: st[1].trim() }, 'strata:' + st[1]); continue; }
+    // "[bureau: EGY] Which regional bureau covers Egypt?": a map card; the answer comes from src/bureaus.ts.
+    const bu = /^\[bureau:\s*([A-Za-z]{3})\]\s*(.+)$/i.exec(t);
+    if (bu) { const b = bureauOf(bu[1]); add({ pre: bu[2], answer: b ? bureauAnswer(b) : '', post: '', front: true, bureau: bu[1].toUpperCase() }, 'bureau:' + bu[1].toUpperCase()); continue; }
     // "[picture]" in a cloze: the heading's picture is shown as the question.
     const picFirst = /\[picture\]/i.test(t) && /\{\{/.test(t);
     if (picFirst) t = t.replace(/\s*\[picture\]\s*/i, ' ').trim();

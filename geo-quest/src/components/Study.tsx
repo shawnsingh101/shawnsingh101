@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Lineage } from './Lineage';
 import { CodeBlock, REPO_FILE, Rich, blankTex } from './Code';
+import { BureauMap } from './BureauMap';
+import { RecallCard, recallGrade, RECALL_LABEL, type RecallGrade } from './Recall';
 import { PracticeCard } from './Practice';
 import { Flow } from './Flow';
 import { Stack } from './Stack';
@@ -62,6 +64,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
   const [sheet, setSheet] = useState<string | null>(null); // a related place opened from the card
   const [lesson, setLesson] = useState(false); // the deck's lesson, opened from a card's answer
   const [peek, setPeek] = useState(false);
+  const [recallG, setRecallG] = useState<RecallGrade | null>(null); // a parts card's grade, from how many parts you had
   const wide = useWide(); // the answer map: every answer in this deck, session paused
   // Undo: a snapshot of the session (and your progress) before each answer.
   const history = useRef<{ queue: Item[]; done: number; results: typeof results; sessionXp: number; progress: Progress }[]>([]);
@@ -85,7 +88,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
     history.current.push({ queue, done, results, sessionXp, progress: getProgress() });
     if (history.current.length > 30) history.current.shift();
     setCanUndo(true);
-    setRevealed(false); setTapResult(null); setDone(d => d + 1);
+    setRevealed(false); setTapResult(null); setRecallG(null); setDone(d => d + 1);
     if (s.sound && queue.length > 1) sounds.deal(); // the next card lands
     if (quiz) {
       setResults(r => [...r, { ref: item.ref, ok: grade >= Rating.Hard }]);
@@ -151,12 +154,12 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
       if (!f) return;
       // Typing in a practice card's editor is typing, not a shortcut; and a practice card flips by passing (or giving up).
       if ((e.target as HTMLElement | null)?.closest?.('textarea, input')) return;
-      if (!revealed && f.practice) return;
+      if (!revealed && (f.practice || f.recall)) return; // a parts card handles its own keys until every part is checked
       if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'reveal') { e.preventDefault(); reveal(); }
       else if (!revealed && (e.key === ' ' || e.key === 'Enter') && f.mode === 'tap') { e.preventDefault(); dontKnow(); }
       // 1 Again · 2 Hard · 3 Good · 4 Easy (space = Good), like Anki. A missed map tap can only be "Again".
       else if (revealed && ['1', '2', '3', '4'].includes(e.key)) next((tapResult && !tapResult.ok ? Rating.Again : +e.key) as Grade);
-      else if (revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); next(tapResult ? (tapResult.ok ? Rating.Good : Rating.Again) : Rating.Good); }
+      else if (revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); next(tapResult ? (tapResult.ok ? Rating.Good : Rating.Again) : recallG ?? Rating.Good); }
     };
     window.addEventListener('keydown', h);
     return () => window.removeEventListener('keydown', h);
@@ -332,7 +335,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           : <div className="side-placeholder"><Icon name="image" size={28} /><span>The picture shows when you flip the card</span></div>}
       </div>}
       <div className="card-wrap">
-        <article className={'card' + (revealed ? ' revealed' : '')} onClick={() => f.mode === 'reveal' && !f.practice && reveal()}>
+        <article className={'card' + (revealed ? ' revealed' : '')} onClick={() => f.mode === 'reveal' && !f.practice && !f.recall && reveal()}>
           <div className="card-meta">
             {quiz ? <span>{quiz.title}</span> : <span>{group?.name}</span>}<span>{item.ref.kind === 'note' ? c.name : (c.building && item.ref.kind === 'artMaker' ? 'Who designed it?' : c.book && item.ref.kind === 'artMaker' ? 'Who wrote it?' : KIND_LABEL[item.ref.kind])}</span>{item.isNew && <span className="new">new</span>}
           </div>
@@ -346,7 +349,9 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
           {/* Code with the question: above the sentence ("This prints ___."), or holding the blank itself */}
           {f.code && !f.code.text.includes('\u0000') && (f.code.lang === 'flow' ? <Flow text={f.code.text} /> : f.code.lang === 'stack' ? <Stack text={f.code.text} /> : f.code.lang === 'graph' ? <Graph text={f.code.text} revealed={revealed} /> : f.code.lang === 'derive' ? <Derive text={f.code.text} /> : <CodeBlock text={f.code.text} lang={f.code.lang} />)}
-          {f.practice ? <PracticeCard key={item.ref.id} p={f.practice} prompt={f.pre} revealed={revealed} onDone={reveal} />
+          {f.bureau && <BureauMap ds={ds} iso3={f.bureau} revealed={revealed} />}
+          {f.recall ? <RecallCard key={item.ref.id + ':' + done} r={f.recall} prompt={f.pre} done={revealed} onDone={(got, n) => { setRecallG(recallGrade(got, n)); reveal(); }} />
+          : f.practice ? <PracticeCard key={item.ref.id} p={f.practice} prompt={f.pre} revealed={revealed} onDone={reveal} />
           : f.code?.text.includes('\u0000') ? <>
             <p className="cloze front"><Rich before={f.pre} /></p>
             {f.code.lang === 'derive' ? <Derive text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} blankTeX={blankTex(revealed, f.answer, f.blank)} />
@@ -398,14 +403,19 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {revealed && <Related ds={ds} place={c} onOpen={setSheet} />}
           {!sidePic && revealed && s.pictures && f.picture && !f.promptPicture && <Picture {...f.picture} />}
           {revealed && !f.picture && c.flag && c.layer !== 'note' && !f.promptFlag && !f.answerFlag && s.pictures && <div className="mini-flag"><Flag file={c.flag} name={c.name} size={160} /></div>}
-          {!revealed && f.mode === 'reveal' && !f.practice && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
+          {!revealed && f.mode === 'reveal' && !f.practice && !f.recall && <p className="hint">{flipped ? 'Picture where it is, then tap the card to see it on the map' : 'Tap the card to reveal'}<span className="kbd-only"> (or press space)</span></p>}
           {!revealed && f.mode === 'tap' && <div className="tap-hint">
             <p className="hint">Tap the right place on the map{regionIds.length > 1 ? ` — zoomed to ${group?.name}` : ''}</p>
             <button className="btn small" onClick={e => { e.stopPropagation(); dontKnow(); }}>I don't know<kbd className="kbd-only">space</kbd></button>
           </div>}
         </article>
 
-        {revealed && f.mode === 'reveal' && (!quiz || pv) && pv && (
+        {revealed && f.recall && recallG !== null && pv && (
+          <div className="grades">
+            <button className={'grade full g' + recallG} onClick={() => next(recallG)}><b>Next · {RECALL_LABEL[recallG]}</b>{showIntervals && <small>see it again in {pv[recallG]}</small>}<kbd>space</kbd></button>
+          </div>
+        )}
+        {revealed && !(f.recall && recallG !== null) && f.mode === 'reveal' && (!quiz || pv) && pv && (
           <div className="grades">
             {([[Rating.Again, 'Again'], [Rating.Hard, 'Hard'], [Rating.Good, 'Good'], [Rating.Easy, 'Easy']] as [Grade, string][]).map(([g, label]) => (
               <button key={g} className={'grade g' + g} onClick={() => next(g)}><b>{label}</b>{showIntervals && <small>{pv[g]}</small>}<kbd>{g === Rating.Good ? '3 · space' : g}</kbd></button>
