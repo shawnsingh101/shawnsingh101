@@ -4681,8 +4681,8 @@
      "roman": "Saitama Ken"
     }
    ],
-   "population": 7343100,
-   "populationYear": 2021
+   "population": 7287325,
+   "populationYear": 2025
   },
   {
    "id": "Q502587",
@@ -5111,7 +5111,7 @@
      "name": "Sri Muktsar Sahib",
      "preferred": false,
      "role": null,
-     "image": "Gurudwara Muktsar Sahib.jpg",
+     "image": null,
      "lon": 74.515,
      "lat": 30.475,
      "wiki": "Sri_Muktsar_Sahib",
