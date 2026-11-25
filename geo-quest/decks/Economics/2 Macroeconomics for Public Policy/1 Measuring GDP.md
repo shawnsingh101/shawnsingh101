@@ -86,7 +86,7 @@ eq: GDP deflator | GDP^R = \frac{GDP^N}{P/100}
 - Fill in the missing step:
 ```derive
 # Nominal growth = real growth + inflation
-1+g_N = \frac{GDP^R_1}{GDP^R_0}\cdot\frac{P_1}{P_0} :: Divide this year's nominal GDP by last year's.
+1+g_N = \frac{GDP^N_1}{GDP^N_0} = \frac{GDP^R_1}{GDP^R_0}\cdot\frac{P_1}{P_0} :: Divide this year's nominal GDP by last year's, then write each as real GDP times the price level.
 1+g_N = (1+g_R)({{1+\pi}}) :: Each ratio is one plus a growth rate.
 g_N \approx g_R + \pi :: Multiply out; the tiny product of two small rates drops.
 ```

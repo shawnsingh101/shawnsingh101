@@ -1026,3 +1026,11 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .derive .math-display { margin: .2rem 0; text-align: left; }
 .derive-why { display: block; font-size: .82rem; color: var(--muted); line-height: 1.35; }
 @media (max-width: 600px) { .derive .math-display { font-size: .74em; } .derive li { padding: .35rem .45rem; } }
+/* An equation's symbols and worked example, on the back of its cards */
+.eqdef { margin: .7rem 0 0; padding: .7rem .85rem; border-radius: 12px; background: color-mix(in srgb, #3d6fd6 6%, var(--surface)); border: 1px solid var(--line); font-size: .86rem; }
+.eqdef-symbols { margin: 0; display: grid; gap: .25rem; }
+.eqdef-symbols div { display: grid; grid-template-columns: minmax(3rem, auto) minmax(0, 1fr); gap: .6rem; align-items: baseline; }
+.eqdef-symbols dt { text-align: right; font-weight: 600; }
+.eqdef-symbols dd { margin: 0; color: var(--ink); }
+.eqdef-example { margin: .6rem 0 0; padding-top: .55rem; border-top: 1px dashed var(--line); line-height: 1.5; }
+.eqdef-example b { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: .15rem; }
