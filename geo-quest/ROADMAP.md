@@ -33,6 +33,12 @@ dinosaurs asked when they lived (period, epoch, age) with time-scale blocks; dee
 dolphins, dinosaurs (v1.30, reworked v1.31). Next: the book decks (Spying on Whales, The Rise and Fall of
 the Dinosaurs: send the PDFs), birds with calls, trees and plants, any animal a book is about.
 
+**Economics** (started): rebuilt course by course from the owner's class notes (GUIDELINES 4g), with KaTeX math,
+derivations, graphs and an Equations section. Done (v1.36): Macroeconomics lectures 1–3. Next: the rest of Macro
+(consumption and saving, investment, the open economy, fiscal policy and debt, money, IS-LM-FE, the Phillips curve,
+exchange rates, the open-economy IS-LM), then International Trade, International Finance and Monetary Theory, Micro,
+Capital Markets, IPE, Econometrics. Later: typed math answers checked by Python.
+
 **Cybersecurity** (started): IT security from the ground up, ahead of Security+ (SY0-701) practice in the owner's Study
 Lab. Lessons before cards, then foundation cards, then a "going further" deck of applied cards; flow diagrams, stacks
 and Wikipedia diagrams; tagged by exam objective and book chapter. Done (v1.34–1.35): 1 How computers talk,
@@ -77,6 +83,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 | 1.33 | Live topics: the Russo-Ukrainian war and the AI race, "as of" cards, a weekly briefing (Wednesdays) that suggests up to two cards a week as a pull request |
 | 1.34 | Cybersecurity: lessons before cards, flow diagrams, Security+ lenses; How computers talk and Cryptography |
 | 1.35 | Cybersecurity: no give-away cards (checked app-wide), "going further" decks, Wikipedia diagrams |
+| 1.36 | Economics by course (Macro lectures 1–3), KaTeX math, derivations, graphs, Equations section |
 | 1.29 | Where people are really from, with the flag of their time |
 | 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
 | 1.27 | Earth history: a picture of the life of each time |

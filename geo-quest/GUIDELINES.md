@@ -242,6 +242,23 @@ feature consistent. When adding anything, check it against this page. When a new
 - Written in our own words from the official objectives and standard references; the study guide (copyrighted) is never
   copied or committed. An analogy may help a lesson's intuition, but is never a card's answer (rule 14).
 
+## 4g. Economics
+
+- **One section per course**, following its syllabus lecture by lecture: Microeconomics for Public Policy,
+  Macroeconomics for Public Policy, International Trade, International Capital Markets, International Finance and
+  Monetary Theory, Theory of International Political Economy, Quantitative Analysis I and II. The owner's class notes
+  are the guide; lessons and cards are in our own words, in the course's notation. The notes are never committed (the
+  repo is public). Each lecture: a lesson, cards, and a "going further" deck built from the course's past exams.
+- **Not FSO preparation.** The owner is preparing for the Foreign Service (economic cone) separately and privately; the
+  economics here serves it, but stays a general course.
+- **The equation ladder**: for each important equation, cards in this order: its derivation (stepped through; one card
+  blanks a step, for understanding, never to memorize), the formula (blank a term), its inputs and outputs (what moves
+  it, which way), its graph (a shock: which curve shifts, which way; the flip animates it), and a policy scenario. Tag
+  each with `eq:` so the Equations section gathers them.
+- **Math is KaTeX**, bundled with the app; the audit renders every formula and fails on bad TeX. Numbers in "going
+  further" cards are checked by computing them.
+- **Next**: typed math answers (MathLive), checked by the app's Python (SymPy), for problem sets.
+
 ## 5. Content files (how to add things)
 
 | What | Where | Format |

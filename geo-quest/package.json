@@ -1,7 +1,7 @@
 {
   "name": "geo-quest",
   "private": true,
-  "version": "1.35.0",
+  "version": "1.36.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,6 +19,7 @@
     "d3-selection": "^3.0.1",
     "d3-transition": "^3.0.2",
     "d3-zoom": "^3.0.1",
+    "katex": "0.16.29",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "topojson-client": "^3.1.0",
@@ -32,6 +33,7 @@
     "@types/d3-selection": "^3.0.12",
     "@types/d3-transition": "^3.0.9",
     "@types/d3-zoom": "^3.0.9",
+    "@types/katex": "0.16.8",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@types/topojson-client": "^3.1.5",

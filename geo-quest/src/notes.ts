@@ -14,6 +14,7 @@ export interface NoteCard {
   strata?: string;                             // "[strata: Phanerozoic]": a geologic time card showing the unit's blocks (src/geotime.ts)
   also?: string[];                             // an "also in: Philadelphia" line after it: the card is also in that deck
   species?: string;                            // a "species: Juniperus communis" line: the scientific name of the plant or animal
+  eq?: { name: string; tex: string | null };   // an "eq: IS curve | Y = C + I + G" line: the card is about that equation (the Equations lens)
   asOf?: string;                               // an "as of: November 2026" line: true for now, not for good (a live topic's current state)
   code?: { lang: string; text: string };       // a fenced code block: shown with the question. A \u0000 in it marks the card's blank
   practice?: Practice;                         // a "[practice]" card: write a program; it's run and checked (src/python.ts)
@@ -76,7 +77,8 @@ export function parseDeck(file: string, text: string): Deck {
   // Code: a fenced block (```python … ```) right after a card is shown with that card ("This prints {{7}}." + the
   // program). A block with blanks in it is a card of its own, asked by the plain bullet above it ("- Fill in the loop:").
   let fence: { lang: string; lines: string[]; afterCard: boolean } | null = null, prompt: string | null = null;
-  const BLANK = /\{\{([^|}]*)(?:\|([^}]*))?\}\}/g;
+  // An answer may hold one level of braces, for TeX: {{\frac{1}{1+g}|which factor?}}.
+  const BLANK = /\{\{((?:[^|{}]|\{[^{}]*\})*)(?:\|([^}]*))?\}\}/g;
   let lastWasCard = false; // native: / a picture / also in: / > right after a card apply to that card (every card from that line)
   let lineFrom = 0;         // where the last bullet's cards start
   const lastCards = () => cards.slice(lineFrom);
@@ -122,6 +124,10 @@ export function parseDeck(file: string, text: string): Deck {
     const wasCard: boolean = lastWasCard; lastWasCard = false;
     // "source: src/tree.ts": where the code on the card above comes from; the card links to it on GitHub.
     // "as of: November 2026": the card is about the current state of things; shown on the card, rewritten when it changes.
+    // "eq: Cobb-Douglas production function | Y = A K^{\alpha} N^{1-\alpha}": the cards above are about that equation;
+    // all such cards, from any deck or course, are gathered under Equations. The formula after | is TeX.
+    const eqLine = /^eq:\s*([^|]+?)\s*(?:\|\s*(.+))?$/i.exec(line);
+    if (eqLine) { for (const c of lastCards()) c.card.eq = { name: eqLine[1], tex: eqLine[2]?.trim() ?? null }; lastWasCard = wasCard; continue; }
     const asOf = /^as of:\s*(.+)$/i.exec(line);
     if (asOf) { for (const c of lastCards()) { c.card.asOf = asOf[1].trim(); c.card.fp += '|' + asOf[1].trim(); } lastWasCard = wasCard; continue; }
     const srcLine = /^source:\s*(\S+)$/i.exec(line);
@@ -187,14 +193,14 @@ export function parseDeck(file: string, text: string): Deck {
       continue;
     }
     // {{answer}} or {{answer|hint}}: the hint ("what city?") replaces the plain "what?" until the card is flipped.
-    const blanks = [...t.matchAll(/\{\{([^|}]*)(?:\|([^}]*))?\}\}/g)];
+    const blanks = [...t.matchAll(/\{\{((?:[^|{}]|\{[^{}]*\})*)(?:\|([^}]*))?\}\}/g)];
     if (!blanks.length) { prompt = t; continue; } // a plain bullet is a note to yourself, or the question for a code block below it
     // {{c1::order}} … {{c1::sensitivity}}: blanks with the same number are hidden together on one card (a short list
     // learned as one fact); unnumbered blanks each make their own card.
     const group = (m: RegExpMatchArray) => /^c(\d+)::/.exec(m[1])?.[1] ?? null;
     const strip = (x: string) => x.replace(/^c\d+::/, '');
-    const keyText = t.replace(/\{\{[^}]*\}\}/g, '_');
-    const plainAll = (x: string) => x.replace(/\{\{(?:c\d+::)?([^|}]*)(?:\|[^}]*)?\}\}/g, '$1');
+    const keyText = t.replace(/\{\{(?:[^{}]|\{[^{}]*\})*\}\}/g, '_');
+    const plainAll = (x: string) => x.replace(/\{\{(?:c\d+::)?((?:[^|{}]|\{[^{}]*\})*)(?:\|[^}]*)?\}\}/g, '$1');
     const done = new Set<string>();
     blanks.forEach((m, i) => {
       const g = group(m);
@@ -235,6 +241,9 @@ export const NOTE_SUBJECTS = [...new Set(DECKS.map(d => d.subject))];
 /** The Live topics lens: every deck that follows an ongoing story. */
 export const LIVE = 'Live topics';
 export const HAS_LIVE = DECKS.some(d => d.follows.length);
+/** The Equations lens: every card tagged `eq:`, grouped by equation, under the course it first appears in. */
+export const EQUATIONS = 'Equations';
+export const HAS_EQUATIONS = DECKS.some(d => d.cards.some(c => c.card.eq));
 
 /** The world eras a deck can be tagged with (`era:`), oldest first. Rough world-history spans; a deck can name two. */
 export const ERAS = [
@@ -285,11 +294,26 @@ export function registerNotes(): Place[] {
     const g = GROUPS.find(x => x.id === 'n-' + d.id)!, sec = claimSection(LIVE, null);
     if (!g.alsoInSections?.includes(sec)) g.alsoInSections = [...(g.alsoInSections ?? []), sec];
   }
+  // Equations: one group per equation, filed under Equations › <the course it first appears in> (Macroeconomics for
+  // Public Policy…), and also under every other course that uses it. A card's progress is shared with its own deck.
+  const eqGroups = new Map<string, string>();
+  const display = (t: string) => '$$' + t + '$$';
+  for (const d of DECKS) for (const { id, card } of d.cards) {
+    if (!card.eq) continue;
+    const course = d.path[0] ?? d.subject, gid = 'eq-' + slug(card.eq.name);
+    const sec = claimSection(course, claimSection(EQUATIONS, null));
+    let g = GROUPS.find(x => x.id === gid);
+    if (!g) { g = { id: gid, section: sec, name: card.eq.name, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], ...(card.eq.tex ? { note: display(card.eq.tex) } : {}) }; GROUPS.push(g); }
+    else if (g.section !== sec && !g.alsoInSections?.includes(sec)) g.alsoInSections = [...(g.alsoInSections ?? []), sec];
+    if (card.eq.tex && !g.note) g.note = display(card.eq.tex);
+    eqGroups.set(id, gid);
+  }
   // Cards tagged "also in: <deck title>" are listed in that deck too (one set of progress).
   const byTitle = new Map(DECKS.map(d => [d.title.toLowerCase(), 'n-' + d.id]));
   for (const p of out) {
     const also = (p as unknown as { card?: NoteCard }).card?.also;
     if (also?.length) p.alsoIn = also.map(t => byTitle.get(t.toLowerCase())).filter((g): g is string => !!g);
+    const eg = eqGroups.get(p.id); if (eg) p.alsoIn = [...(p.alsoIn ?? []), eg];
   }
   return out;
 }

@@ -1,6 +1,7 @@
 // Code on cards: a block of code (a program, a line of the app's own source) in a fixed-width font with simple colors,
 // and `inline code` inside a card's sentence. A blank can sit inside either: "for i in ____:" until you flip it.
 import { Fragment, type ReactNode } from 'react';
+import katex from 'katex';
 
 /** Where the app's code lives, for "see it in the code" links on Under the hood cards. */
 // Paths are from geo-quest/ (src/tree.ts); the robots' folder sits beside it, at the top of the repo (.github/…).
@@ -38,14 +39,37 @@ export function CodeBlock({ text, lang, blank }: { text: string; lang: string; b
   );
 }
 
-/** A card sentence with `inline code`: before + blank + after, where the backticks may open before the blank and close
- *  after it (`print({{"Hello"}})`), so the blank sits inside the code. */
-export function Rich({ before, blank, after }: { before: string; blank?: ReactNode; after?: string }) {
-  if (!before.includes('`') && !(after ?? '').includes('`')) return <>{before}{blank}{after}</>;
+/** Math: $…$ inline and $$…$$ on its own line, in KaTeX. The common Markdown rule keeps prices as text: an opening $ is
+ *  followed by a non-space, a closing $ follows a non-space and isn't followed by a digit ("$4 trillion … $5" is text). */
+export const MATH = /\$\$([\s\S]+?)\$\$|\$(?=[^\s$])((?:\\\$|[^$])+?)(?<=[^\s\\])\$(?!\d)/g;
+export const tex = (src: string, display: boolean) => katex.renderToString(src, { throwOnError: false, displayMode: display, strict: false, trust: false });
+/** What a blank looks like inside a formula: a box with its hint, then the green answer once flipped. */
+export const blankTex = (revealed: boolean, answer: string, hint: string) =>
+  revealed ? `\\textcolor{#1e8a5a}{\\mathbf{${answer}}}` : `\\boxed{\\scriptsize\\text{${hint.replace(/[\\{}$&#^_%~]/g, '')}}}`;
+
+/** Text with math in it: KaTeX for the math, the blank (\u0000) as `blank` in text or `blankTeX` inside a formula. */
+function withMath(text: string, blank: ReactNode, blankTeX: string | undefined, key: number): ReactNode {
+  if (!text.includes('$')) { const p = text.split('\u0000'); return p.length > 1 ? <Fragment key={key}>{p[0]}{blank}{p[1]}</Fragment> : <Fragment key={key}>{text}</Fragment>; }
+  const out: ReactNode[] = []; let at = 0, m: RegExpExecArray | null;
+  MATH.lastIndex = 0;
+  const plain = (t: string) => { const p = t.split('\u0000'); out.push(p.length > 1 ? <Fragment key={out.length}>{p[0]}{blank}{p[1]}</Fragment> : <Fragment key={out.length}>{t}</Fragment>); };
+  while ((m = MATH.exec(text))) {
+    if (m.index > at) plain(text.slice(at, m.index));
+    const display = m[1] !== undefined, src = (m[1] ?? m[2]).replace('\u0000', blankTeX ?? '\\boxed{?}');
+    out.push(<span key={out.length} className={display ? 'math-display' : 'math'} dangerouslySetInnerHTML={{ __html: tex(src, display) }} />);
+    at = m.index + m[0].length;
+  }
+  if (at < text.length) plain(text.slice(at));
+  return <Fragment key={key}>{out}</Fragment>;
+}
+
+/** A card sentence with `inline code` and $math$: before + blank + after, where the backticks or dollar signs may open
+ *  before the blank and close after it (`print({{"Hello"}})`, $N^{ {{1-\alpha}} }$), so the blank sits inside them. */
+export function Rich({ before, blank, after, blankTeX }: { before: string; blank?: ReactNode; after?: string; blankTeX?: string }) {
   const whole = before + (blank !== undefined ? '\u0000' : '') + (after ?? '');
+  if (!whole.includes('`') && !whole.includes('$')) return <>{before}{blank}{after}</>;
   return <>{whole.split('`').map((seg, i) => {
-    const parts = seg.split('\u0000');
-    const inner = parts.length > 1 ? <>{parts[0]}{blank}{parts[1]}</> : seg;
-    return i % 2 ? <code key={i} className="inline-code">{inner}</code> : <Fragment key={i}>{inner}</Fragment>;
+    if (i % 2) { const parts = seg.split('\u0000'); return <code key={i} className="inline-code">{parts.length > 1 ? <>{parts[0]}{blank}{parts[1]}</> : seg}</code>; }
+    return withMath(seg, blank, blankTeX, i);
   })}</>;
 }

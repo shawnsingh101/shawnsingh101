@@ -996,3 +996,33 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .lesson-picture .gallery.whole { background: #fff; }
 .lesson-picture .gallery.whole img { max-height: min(360px, 50vh); }
 .lesson-picture .gallery figcaption, .lesson-picture .gallery figcaption * { white-space: normal; overflow: visible; text-overflow: clip; }
+/* Math (KaTeX): inline at the text's size; display formulas centered on their own line, scrolling sideways if long */
+.math .katex { font-size: 1.05em; }
+.math-display { display: block; margin: .5rem 0; overflow-x: auto; overflow-y: hidden; text-align: center; }
+.math-display .katex-display { margin: 0; }
+.cloze .math-display { font-size: .8em; }
+/* Graphs: thin axes, soft colored curves; after a shift the old curve fades and the new one draws itself in */
+.graph, .derive { margin: .8rem 0 .9rem; padding: .9rem; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.graph svg { display: block; width: 100%; max-width: 30rem; margin: 0 auto; overflow: visible; }
+.graph-axis { fill: none; stroke: var(--muted); stroke-width: 1.2; }
+.graph-arrowhead { fill: var(--muted); }
+.graph-axis-label { font-size: 12px; font-weight: 700; fill: var(--ink); font-style: italic; }
+.graph-curve { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+.graph-label { font-size: 11px; font-weight: 700; fill: currentColor; }
+.graph-old { opacity: .3; }
+.graph-old .graph-curve { stroke-dasharray: 5 4; }
+.graph-new .graph-curve { stroke-dasharray: 400; stroke-dashoffset: 400; animation: graph-draw .9s ease forwards; }
+.graph-new { animation: rise .4s ease both; }
+@keyframes graph-draw { to { stroke-dashoffset: 0; } }
+.graph-guide { fill: none; stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; opacity: .7; }
+.graph-dot { fill: var(--ink); }
+.graph-tick { font-size: 10px; fill: var(--muted); font-style: italic; }
+@media (prefers-reduced-motion: reduce) { .graph-new .graph-curve { animation: none; stroke-dashoffset: 0; } }
+/* Derivations: numbered steps, each a formula and why */
+.derive ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .35rem; }
+.derive li { display: grid; grid-template-columns: 1.4rem minmax(0, 1fr); gap: .5rem; align-items: start; padding: .4rem .6rem; border-radius: 10px; background: color-mix(in srgb, #3d6fd6 7%, var(--surface)); animation: rise .25s ease both; }
+.derive-n { font-size: .7rem; font-weight: 700; color: var(--muted); padding-top: .55rem; }
+.derive-body { min-width: 0; }
+.derive .math-display { margin: .2rem 0; text-align: left; }
+.derive-why { display: block; font-size: .82rem; color: var(--muted); line-height: 1.35; }
+@media (max-width: 600px) { .derive .math-display { font-size: .74em; } .derive li { padding: .35rem .45rem; } }
