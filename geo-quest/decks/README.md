@@ -88,6 +88,11 @@ related: Italy, Florence
   is gathered under Equations, one group per equation, in deck order: derivation, formula, inputs, graph. Every name
   needs a definition in `equations/<Subject>.md`: `## Name`, the TeX formula on the next line, `- symbol | meaning`
   lines, then `example:` with real numbers. Flipping the card shows the symbols and the example.
+- **A parts card**: a plain bullet (the question), then a ```` ```parts ```` block, one `cue :: answer` per line (or
+  just the answer), 2 to 5 lines; `# any order` as the first line for a set. Recalled one part at a time, graded by
+  how many you had.
+- **A bureau map card**: `- [bureau: EGY] Which regional bureau covers Egypt?` (the country's ISO 3166 alpha-3 code;
+  the answer comes from `src/bureaus.ts`).
 - **A stack**: a ```` ```stack ```` block draws layered blocks, like the time-scale cards: one row per line,
   `label | name | detail` (`4 | Transport | TCP, UDP, ports`). For layers (the OSI model) and chains (root CA ›
   intermediate › site). Like a flow, it can carry `{{blanks}}` and be a card. Flows and stacks can start with a

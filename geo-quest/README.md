@@ -33,6 +33,18 @@ world map fill in as you master it.
   (senior/junior rank, party & caucus, terms, leadership roles) and its public-domain official portraits.
   - State → senator (map locks on the state, silhouette until reveal) · photo → senator · senator → tap the state.
 
+## v1.38: Government, the State Department, parts cards and bureau maps
+
+- **Government** subject (GUIDELINES 4h), by country: *United States* › Foundations (Who runs foreign policy) and
+  *Department of State*: What the State Department is; How the department is organized; Which bureau covers it;
+  Embassies and consulates (+ "Who handles this?" scenarios); The Foreign Service; The money; Rules, tools and norms;
+  National security; Who leads it now (a live topic, `follows:` the State Department's Wikipedia articles).
+- **Parts cards** (`components/Recall.tsx`): a plain bullet followed by a ```` ```parts ```` block, one `cue :: answer`
+  per line (`# any order` for a set). You reveal and mark each part (Missed it / Got it); all parts = Good, half or
+  more = Hard, fewer = Again. 2 to 5 parts (`RECALL_MAX`); the audit refuses more.
+- **Bureau map cards** (`components/BureauMap.tsx`, data in `src/bureaus.ts`): `[bureau: EGY] Which regional bureau
+  covers Egypt?`; the country lit on a world map, then the world colored by the six regional bureaus.
+
 ## v1.37: Macro lectures 4–9, and equations explained
 
 - **Equation definitions** (`equations/<Subject>.md`, loaded by `src/equations.ts`): each equation once, by the name in

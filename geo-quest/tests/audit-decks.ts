@@ -3,7 +3,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { parseDeck } from '../src/notes';
+import { parseDeck, RECALL_MAX } from '../src/notes';
 import { parseFlow } from '../src/flow';
 import { parseGraph } from '../src/graph';
 import katex from 'katex';
@@ -56,7 +56,8 @@ for (const { f, d } of decks) {
     const text = `${c.pre} ${c.answer} ${c.post}`;
     if (!c.answer?.trim() && !c.strata) issues.push(`NO ANSWER ${f}: ${c.pre.slice(0, 60)}`);
     if ((/\{\{|::/.test(text) || (/\}\}/.test(text) && !text.includes('$'))) && !c.front) issues.push(`MARKUP LEFT ${f}: ${text.slice(0, 80)}`); // TeX may end in }}
-    if (c.front && !c.strata && !c.pictureFirst) issues.push(`FRONT/BACK ${f}: ${c.pre.slice(0, 70)}`);
+    if (c.bureau && !c.answer) issues.push(`BUREAU ${f}: no regional bureau covers ${c.bureau} (src/bureaus.ts)`);
+    if (c.front && !c.strata && !c.pictureFirst && !c.recall && !c.bureau) issues.push(`FRONT/BACK ${f}: ${c.pre.slice(0, 70)}`);
     // The question must not give the answer away: an acronym answer followed by its spelled-out name, "{{DNS}} (Domain
     // Name System)", or the answer written out elsewhere on the card. The expansion belongs in the answer, shown on the flip.
     if (!c.front && !c.practice && !c.parts) {
@@ -82,6 +83,12 @@ for (const { f, d } of decks) {
     }
     // Practice cards: the solution must pass every test, run with the same runner the app uses (public/practice-runner.py);
     // and the starting code alone must not, or there'd be nothing to do.
+    // Parts cards: 2 to 5 parts (what working memory holds); longer processes are split into stages.
+    if (c.recall) {
+      const n = c.recall.steps.length;
+      if (n < 2 || n > RECALL_MAX) issues.push(`PARTS ${f}: "${c.pre.slice(0, 60)}" has ${n} parts (2 to ${RECALL_MAX}; split a longer process into stages)`);
+      for (const s of c.recall.steps) { checkMath(s.answer, f); if (s.cue) checkMath(s.cue, f); if (s.cue && s.answer.length > 3 && s.cue.toLowerCase().includes(s.answer.toLowerCase())) issues.push(`GIVEAWAY ${f}: the part "${s.answer}" is in its cue`); }
+    }
     if (c.practice) {
       const p = c.practice;
       const run = (src: string) => {

@@ -67,7 +67,7 @@ copyright (Copland, Prokofiev, Barber, Orff, Khachaturian, Shostakovich) and can
 | 4 | **Quotes** | deck + card types | Fill in the key words; quote ↔ who said it |
 | 5 | **Astronomy**: night sky, constellations, and more | built data + map engine | A star chart using the map engine |
 | 6 | **Periodic table** | built data + chart | An interactive chart like the geologic time scale |
-| 7 | **US government**: Constitution, amendments, Supreme Court | decks + collection | Built to take other countries later; the White House and Capitol tours also show here |
+| 7 | **US government**, continued: the Constitution and amendments, Congress, the executive branch, the courts | decks + collection | Started in v1.38 with the State Department (see Done). Built to take other countries later; then **Law** as its own subject (sources of law, the US Code, civil and criminal, torts, major acts) |
 | 8 | **International organizations and treaties** | collection + map layers | Tap every member on the map (NATO, EU, BRICS…) |
 | 9 | **Finance** | decks | Linked to coursework and the Dashboard's live numbers |
 
@@ -85,6 +85,7 @@ jazz recordings (as they become free: 1926 recordings on 1 January 2027), more m
 | 1.34 | Cybersecurity: lessons before cards, flow diagrams, Security+ lenses; How computers talk and Cryptography |
 | 1.35 | Cybersecurity: no give-away cards (checked app-wide), "going further" decks, Wikipedia diagrams |
 | 1.36 | Economics by course (Macro lectures 1–3), KaTeX math, derivations, graphs, Equations section |
+| 1.38 | Government: the State Department (10 decks), parts cards with partial credit, bureau map cards |
 | 1.37 | Macro lectures 4–9; equation cards explain every symbol with a worked example; tables in lessons |
 | 1.29 | Where people are really from, with the flag of their time |
 | 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
