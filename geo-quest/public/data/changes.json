@@ -1,5 +1,21 @@
 [
  {
+  "date": "2026-11-26",
+  "id": "Q4516",
+  "name": "Lorentz National Park",
+  "field": "added",
+  "from": null,
+  "to": "Lorentz National Park"
+ },
+ {
+  "date": "2026-11-26",
+  "id": "Q4132",
+  "name": "Summer Palace",
+  "field": "removed",
+  "from": "Summer Palace",
+  "to": null
+ },
+ {
   "date": "2026-11-23",
   "id": "Q790",
   "name": "Haiti",

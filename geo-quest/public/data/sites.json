@@ -1218,6 +1218,33 @@
    "admin1": "Saladin Governorate"
   },
   {
+   "id": "Q180773",
+   "layer": "site",
+   "name": "Susa",
+   "group": "u-as",
+   "lon": 48.256,
+   "lat": 32.189,
+   "image": "The Apadana, a large hypostyle room of 36 columns in the Palace of Darius, Susa, capital of Elam and of the Achaemenid Empire, Iran (46950284624).jpg",
+   "wiki": "Susa",
+   "whsId": "1455",
+   "country": "Q794",
+   "countryName": "Iran",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #1455 · Khuzestan Province, Iran",
+   "native": [
+    {
+     "name": "شوش",
+     "lang": "Persian (Farsi)",
+     "code": "fa"
+    }
+   ],
+   "admin1Ids": [
+    "Q241119"
+   ],
+   "admin1": "Khuzestan Province"
+  },
+  {
    "id": "Q214944",
    "layer": "site",
    "name": "Göbekli Tepe",
@@ -1289,33 +1316,6 @@
     "Q82112"
    ],
    "admin1": "State of Mexico"
-  },
-  {
-   "id": "Q180773",
-   "layer": "site",
-   "name": "Susa",
-   "group": "u-as",
-   "lon": 48.256,
-   "lat": 32.189,
-   "image": "The Apadana, a large hypostyle room of 36 columns in the Palace of Darius, Susa, capital of Elam and of the Achaemenid Empire, Iran (46950284624).jpg",
-   "wiki": "Susa",
-   "whsId": "1455",
-   "country": "Q794",
-   "countryName": "Iran",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #1455 · Khuzestan Province, Iran",
-   "native": [
-    {
-     "name": "شوش",
-     "lang": "Persian (Farsi)",
-     "code": "fa"
-    }
-   ],
-   "admin1Ids": [
-    "Q241119"
-   ],
-   "admin1": "Khuzestan Province"
   },
   {
    "id": "Q29317",
@@ -2982,6 +2982,26 @@
    "admin1": "Nineveh Governorate"
   },
   {
+   "id": "Q4516",
+   "layer": "site",
+   "name": "Lorentz National Park",
+   "group": "u-as",
+   "lon": 137.973,
+   "lat": -4.63,
+   "image": "Taman Nasional Lorentz.jpg",
+   "wiki": "Lorentz_National_Park",
+   "whsId": "955",
+   "country": "Q252",
+   "countryName": "Indonesia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "UNESCO World Heritage Site #955 · Papua, Indonesia",
+   "admin1Ids": [
+    "Q5095"
+   ],
+   "admin1": "Papua"
+  },
+  {
    "id": "Q178124",
    "layer": "site",
    "name": "Surtsey",
@@ -3138,37 +3158,6 @@
     "Q24909562"
    ],
    "admin1": "Ituri Province"
-  },
-  {
-   "id": "Q4132",
-   "layer": "site",
-   "name": "Summer Palace",
-   "group": "u-as",
-   "lon": 116.269,
-   "lat": 39.998,
-   "image": "Longevity Hill of the Summer Palace.jpg",
-   "wiki": "Summer_Palace",
-   "whsId": "880",
-   "country": "Q148",
-   "countryName": "China",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "UNESCO World Heritage Site #880 · Beijing, China",
-   "native": [
-    {
-     "name": "颐和园",
-     "lang": "Chinese",
-     "code": "zh-hans"
-    }
-   ],
-   "admin1Ids": [
-    "Q956"
-   ],
-   "admin1": "Beijing",
-   "zh": {
-    "han": "颐和园",
-    "pinyin": "Yíhéyuán"
-   }
   },
   {
    "id": "Q107370",

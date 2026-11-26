@@ -2249,7 +2249,7 @@
    "countryName": "Colombia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "4,276 m · Cordillera Central · Nariño Department, Colombia",
+   "facts": "4,276 m · Andes · Nariño Department, Colombia",
    "admin1Ids": [
     "Q230217"
    ],
@@ -2333,7 +2333,7 @@
    "countryName": "Hungary",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "1,014 m · Mátra · Heves County, Hungary",
+   "facts": "1,014 m · North Hungarian Mountains · Heves County, Hungary",
    "admin1Ids": [
     "Q191604"
    ],
@@ -2634,6 +2634,33 @@
    ]
   },
   {
+   "id": "Q822326",
+   "layer": "peak",
+   "name": "Mount Tahat",
+   "group": "m-af",
+   "lon": 5.534,
+   "lat": 23.289,
+   "image": "Tahat matin.jpg",
+   "wiki": "Mount_Tahat",
+   "elevation": 2918,
+   "country": "Q262",
+   "countryName": "Algeria",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "2,918 m · Atakor · Tamanrasset Province, Algeria",
+   "native": [
+    {
+     "name": "تاهات",
+     "lang": "Arabic",
+     "code": "ar"
+    }
+   ],
+   "admin1Ids": [
+    "Q229467"
+   ],
+   "admin1": "Tamanrasset Province"
+  },
+  {
    "id": "Q870063",
    "layer": "peak",
    "name": "Hkakabo Razi",
@@ -2706,33 +2733,6 @@
     "Q199910"
    ],
    "admin1": "Magdalena Department"
-  },
-  {
-   "id": "Q822326",
-   "layer": "peak",
-   "name": "Mount Tahat",
-   "group": "m-af",
-   "lon": 5.534,
-   "lat": 23.289,
-   "image": "Tahat matin.jpg",
-   "wiki": "Mount_Tahat",
-   "elevation": 2918,
-   "country": "Q262",
-   "countryName": "Algeria",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "2,918 m · Atakor · Tamanrasset Province, Algeria",
-   "native": [
-    {
-     "name": "تاهات",
-     "lang": "Arabic",
-     "code": "ar"
-    }
-   ],
-   "admin1Ids": [
-    "Q229467"
-   ],
-   "admin1": "Tamanrasset Province"
   },
   {
    "id": "Q594387",
@@ -3710,7 +3710,7 @@
    "countryName": "New Zealand",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "2,885 m · Inland Kaikōura Range · Marlborough District, Canterbury Region, New Zealand",
+   "facts": "2,885 m · Kaikōura Ranges · Marlborough District, Canterbury Region, New Zealand",
    "admin1Ids": [
     "Q140083",
     "Q657004"

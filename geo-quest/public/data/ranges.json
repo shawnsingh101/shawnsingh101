@@ -1391,20 +1391,6 @@
    ]
   },
   {
-   "id": "Q519263",
-   "layer": "range",
-   "name": "Pontic Mountains",
-   "image": "Sumela Showing Location.JPG",
-   "lon": 41.159,
-   "lat": 40.837,
-   "wiki": "Pontic_Mountains",
-   "group": "m-ranges2",
-   "nameThe": "the Pontic Mountains",
-   "facts": "Türkiye",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q189915",
    "layer": "range",
    "name": "Dinaric Alps",
@@ -1434,6 +1420,20 @@
      "code": "hr"
     }
    ]
+  },
+  {
+   "id": "Q519263",
+   "layer": "range",
+   "name": "Pontic Mountains",
+   "image": "Sumela Showing Location.JPG",
+   "lon": 41.159,
+   "lat": 40.837,
+   "wiki": "Pontic_Mountains",
+   "group": "m-ranges2",
+   "nameThe": "the Pontic Mountains",
+   "facts": "Türkiye",
+   "capitals": [],
+   "capitalAnswer": null
   },
   {
    "id": "Q208076",
