@@ -6,6 +6,7 @@ import { useMemo, useState } from 'react';
 import { GROUPS, cardsForNode, nodeId, sectionChain, type CardRef } from '../cards';
 import { SUBJECTS } from '../subjects';
 import { LevelProgress } from '../components/Level';
+import { Report } from './Report';
 import { level, scheduler, State, streak, useProgress, type Progress } from '../srs';
 import { Icon } from '../components/Icons';
 import type { Dataset } from '../types';
@@ -35,6 +36,7 @@ function statOf(cards: CardRef[], p: Progress, now: Date): Stat {
 export function Me({ ds, startStudy }: { ds: Dataset; startStudy: (nodes?: string[]) => void }) {
   const p = useProgress();
   const [open, setOpen] = useState<string | null>(null);
+  const [view, setView] = useState<'overview' | 'reports'>('overview');
   const data = useMemo(() => {
     const now = new Date();
     // Every deck (node), its stats, and where it sits.
@@ -63,7 +65,13 @@ export function Me({ ds, startStudy }: { ds: Dataset; startStudy: (nodes?: strin
 
   return (
     <div className="me">
-      <h1>Me</h1>
+      <div className="me-head no-print">
+        <h1>Me</h1>
+        <div className="seg" role="tablist" aria-label="Me">
+          {([['overview', 'Overview'], ['reports', 'Reports']] as const).map(([v, l]) => <button key={v} role="tab" aria-selected={view === v} className={view === v ? 'on' : ''} onClick={() => setView(v)}>{l}</button>)}
+        </div>
+      </div>
+      {view === 'reports' ? <Report ds={ds} /> : <>
       <p className="muted">How much of each area you know, and how well you remember it right now. <b>Covered</b>: cards you know, of all there are. <b>Memory</b>: the chance you'd recall the cards you've started, today.</p>
       <div className="me-totals">
         <div><b>{data.all.known.toLocaleString('en-US')}</b><small>cards known</small></div>
@@ -109,6 +117,7 @@ export function Me({ ds, startStudy }: { ds: Dataset; startStudy: (nodes?: strin
         <h2>Study days</h2>
         <Calendar p={p} />
       </section>
+      </>}
     </div>
   );
 }
