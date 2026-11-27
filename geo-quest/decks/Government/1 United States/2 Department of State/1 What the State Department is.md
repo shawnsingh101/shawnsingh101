@@ -36,6 +36,7 @@ Congress created the **Department of Foreign Affairs** in July 1789, the first e
 ## Its history
 - State began in July 1789 as the Department of {{Foreign Affairs|what?}}.
 - The first Secretary of State was {{Thomas Jefferson|who?}}.
+![Thomas Jefferson](commons:Official Presidential portrait of Thomas Jefferson (by Rembrandt Peale, 1800).jpg)
 - State still keeps the Great {{Seal|what?}} of the United States.
 - A President who resigns does it by letter to the {{Secretary of State|whom?}}.
 
@@ -43,6 +44,7 @@ Congress created the **Department of Foreign Affairs** in July 1789, the first e
 - In the line of succession to the presidency, the Secretary of State comes {{fourth|what place?}}.
 - In the cabinet's order of precedence, the Secretary of State comes {{first|what place?}}.
 - State's headquarters is the Harry S {{Truman|whose?}} Building.
+![Harry S. Truman](commons:TRUMAN 58-766-06 (cropped).jpg)
 - The Washington neighborhood whose name stands for the State Department is {{Foggy Bottom|which?}}.
 - "The {{seventh|which?}} floor" means the Secretary and the department's top leadership.
 

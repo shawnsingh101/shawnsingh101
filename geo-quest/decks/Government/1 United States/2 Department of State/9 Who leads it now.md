@@ -8,6 +8,7 @@ The people in the top jobs at State today, and the priorities they've set. A liv
 ## The Secretary
 - The Secretary of State is {{Marco Rubio|who?}}.
 as of: November 2026
+![Marco Rubio](commons:Official portrait of Secretary Marco Rubio (cropped)(2).jpg)
 - Rubio was confirmed by the Senate on January 20, 2025, by a vote of {{99–0|what vote?}}.
 - Before becoming Secretary, Rubio was a US senator from {{Florida|which state?}}.
 - Rubio's test for every dollar, program and policy: does it make America safer, stronger, or more {{prosperous|what?}}?
@@ -15,20 +16,25 @@ as of: November 2026
 ## The deputies
 - The Deputy Secretary of State is {{Christopher Landau|who?}}.
 as of: November 2026
+![Christopher Landau](commons:Deputy Secretary Christopher Landau Official Portrait.png)
 - The Deputy Secretary for Management and Resources is {{Michael Rigas|who?}}.
 as of: November 2026
+![Michael Rigas](commons:United States Deputy Secretary of State for Management and Resources Michael John Rigas.jpg)
 
 ## The under secretaries
 - The Under Secretary for Political Affairs is {{Allison Hooker|who?}}.
 as of: November 2026
+![Allison Hooker](commons:Under Secretary Allison Hooker.jpg)
 - Jacob Helberg is the Under Secretary for {{Economic Affairs|which?}}.
 as of: November 2026
+![Jacob Helberg](commons:Jacob Helberg at DLD Munich Conference 2024 (cropped).jpg)
 - Jason Evans is the Under Secretary for {{Management|which?}}.
 as of: November 2026
 - Sarah Rogers is the Under Secretary for {{Public Diplomacy|which?}} and Public Affairs.
 as of: November 2026
 - Thomas DiNanno is the Under Secretary for {{Arms Control and International Security|which?}}.
 as of: November 2026
+![Thomas DiNanno](commons:Under Secretary of State for Arms Control and International Security Thomas Dinanno.jpg)
 - Andrew Veprek has led F, foreign assistance and humanitarian affairs, since August 2026, while also heading the Bureau of {{Population, Refugees, and Migration|which bureau?}}.
 as of: November 2026
 
@@ -39,6 +45,7 @@ as of: November 2026
 as of: November 2026
 - The Assistant Secretary for Near Eastern Affairs is {{Donald Blome|who?}}.
 as of: November 2026
+![Donald Blome](commons:Donald Blome, U.S. Ambassador (cropped).jpg)
 - The Assistant Secretary for African Affairs is {{Frank Garcia|who?}}.
 as of: November 2026
 - The Assistant Secretary for East Asian and Pacific Affairs is {{Michael DeSombre|who?}}.
