@@ -22,6 +22,7 @@ export interface NoteCard {
   recall?: Recall;                             // a parts card: a ```parts block under a plain bullet, recalled one part at a time
   practice?: Practice;                         // a "[practice]" card: write a program; it's run and checked (src/python.ts)
   source?: string;                             // a "source: src/tree.ts" line: the file the code is quoted from (linked on GitHub)
+  line?: number;                               // the line in the deck file of the bullet the card comes from (Edit a card)
   context: string | null;                      // the ## heading it sits under
   picture: { file?: string | null; url?: string | null; caption: string } | null;
   note: string | null;                         // a "> …" line: shown after the answer
@@ -82,7 +83,9 @@ export function parseDeck(file: string, text: string): Deck {
   let body = fm ? text.slice(fm[0].length) : text;
   // A lesson: everything between a `:::lesson` line and a `:::` line, read before the cards (components/Lesson.tsx).
   let lesson: string | null = null;
-  body = body.replace(/^:::lesson[ \t]*\n([\s\S]*?)\n:::[ \t]*$/m, (_w, l: string) => { lesson = l.trim(); return ''; });
+  // (Replaced by as many empty lines as it had, so every card still knows its line in the file.)
+  body = body.replace(/^:::lesson[ \t]*\n([\s\S]*?)\n:::[ \t]*$/m, (w: string, l: string) => { lesson = l.trim(); return '\n'.repeat(w.split('\n').length - 1); });
+  const firstLine = fm ? fm[0].split('\n').length - (fm[0].endsWith('\n') ? 1 : 0) + 1 : 1; // the body's first line, 1-based
   // A number in front of a folder or file name only sets the order ("2 Ancient China" → Ancient China, second).
   const parts = file.replace(/^.*decks\//, '').replace(/\.md$/, '').split('/').map(p => p.replace(/^\d+\s+/, ''));
   const subject = meta.subject || parts[0];
@@ -97,7 +100,7 @@ export function parseDeck(file: string, text: string): Deck {
   let section = 0; const secOf = new Map<string, number>();
   let context: string | null = null, picture: NoteCard['picture'] = null, related: string[] = [], native: NoteCard['native'] = [], species: string | undefined, intro: string[] = [], seenHeading = false;
   const add = (c: Omit<NoteCard, 'context' | 'picture' | 'note' | 'fp' | 'related' | 'native'>, key: string) => {
-    const card: NoteCard = { ...c, context, picture, related, native, ...(species ? { species } : {}), note: null, fp: `${c.pre}|${c.answer}|${c.post}` };
+    const card: NoteCard = { ...c, context, picture, related, native, ...(species ? { species } : {}), note: null, fp: `${c.pre}|${c.answer}|${c.post}`, line: bulletLine };
     // The id ignores the answer, so fixing an answer keeps your progress (the fingerprint re-queues the card).
     // Cards were once written in British spelling; the app now uses American. The id reads the new spellings as the old
     // ones, so changing "flavour" to "flavor" keeps your progress on the card. (Only words that were changed; add any
@@ -115,7 +118,9 @@ export function parseDeck(file: string, text: string): Deck {
   let lastWasCard = false; // native: / a picture / also in: / > right after a card apply to that card (every card from that line)
   let lineFrom = 0;         // where the last bullet's cards start
   const lastCards = () => cards.slice(lineFrom);
+  let lineNo = firstLine - 1, bulletLine = 0; // the line being read, and the last bullet's line (a code card's is its question's)
   for (const raw of body.split('\n')) {
+    lineNo++;
     const line = raw.trim();
     if (fence) {
       if (!line.startsWith('```')) { fence.lines.push(raw); continue; }
@@ -226,6 +231,7 @@ export function parseDeck(file: string, text: string): Deck {
     const b = /^[-*]\s+(.*)$/.exec(line);
     if (!b) { if (!seenHeading) intro.push(line); continue; }
     let t = b[1];
+    bulletLine = lineNo;
     lastWasCard = true; lineFrom = cards.length; prompt = null;
     // "[practice] Ask for a name and greet it": a practice card (its code blocks follow).
     const prac = /^\[practice\]\s*(.+)$/i.exec(t);
@@ -287,6 +293,29 @@ export function parseDeck(file: string, text: string): Deck {
 // (Outside Vite, e.g. in a test script, import.meta.glob doesn't exist: no decks.)
 let files: Record<string, string> = {};
 try { files = import.meta.glob('../decks/**/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>; } catch { /* not built by Vite */ }
+/** A hand-written card's source, for Edit a card: the deck file in the repo, its text as built, and the card's line. */
+export function cardSource(cardId: string): { path: string; text: string; line: number; deck: Deck } | null {
+  for (const d of DECKS) {
+    const c = d.cards.find(x => x.id === cardId);
+    if (!c) continue;
+    const text = files[d.file];
+    return text && c.card.line ? { path: 'geo-quest/' + d.file.replace(/^\.\.\//, ''), text, line: c.card.line, deck: d } : null;
+  }
+  return null;
+}
+/** The lines that make up the card starting at `line`: its bullet and what's attached (code blocks, native:, notes…),
+ *  up to the next bullet, heading or empty line. Returned as 0-based [start, end). */
+export function cardBlock(text: string, line: number): [number, number] {
+  const ls = text.split('\n'), start = line - 1;
+  let end = start + 1, fenced = false;
+  for (; end < ls.length; end++) {
+    const l = ls[end].trim();
+    if (l.startsWith('```')) { fenced = !fenced; continue; }
+    if (fenced) continue;
+    if (!l || /^[-*]\s/.test(l) || l.startsWith('#') || l.startsWith(':::')) break;
+  }
+  return [start, end];
+}
 // Decks built from data in the app itself (the geologic time scale, shared with its chart).
 const BUILT: [string, string][] = [['../decks/Earth history/Geologic time scale.md', geotimeDeck()], ['../decks/Earth history/Epochs of the Cenozoic.md', epochDeck()]];
 export const DECKS: Deck[] = [...Object.entries(files).filter(([f]) => !/README\.md$/i.test(f)), ...BUILT].map(([f, t]) => parseDeck(f, t))

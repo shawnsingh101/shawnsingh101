@@ -24,6 +24,8 @@ import type { Dataset } from '../types';
 import { WorldMap, type MapHit, type Tone } from './WorldMap';
 import { Flag, Picture } from './Picture';
 import { LevelProgress } from './Level';
+import { EditCard } from './EditCard';
+import { cardSource } from '../notes';
 import { Icon } from './Icons';
 import { LocalName } from './Native';
 import { Portrait, Incoming } from './Portrait';
@@ -65,6 +67,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
   const [sheet, setSheet] = useState<string | null>(null); // a related place opened from the card
   const [lesson, setLesson] = useState(false); // the deck's lesson, opened from a card's answer
   const [peek, setPeek] = useState(false);
+  const [editing, setEditing] = useState(false); // Edit a card is open: keys go to the editor, not the session
   const [recallG, setRecallG] = useState<RecallGrade | null>(null); // a parts card's grade, from how many parts you had
   const wide = useWide(); // the answer map: every answer in this deck, session paused
   // Undo: a snapshot of the session (and your progress) before each answer.
@@ -153,6 +156,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
       if (peek) { if (e.key === 'Escape') setPeek(false); return; } // paused while the answer map is open
+      if (editing) return;
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); undo(); return; }
       if (!f) return;
       // Typing in a practice card's editor is typing, not a shortcut; and a practice card flips by passing (or giving up).
@@ -166,7 +170,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
     };
     window.addEventListener('keydown', h);
     return () => window.removeEventListener('keydown', h);
-  }, [f, revealed, reveal, next, tapResult, quiz, undo, peek]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [f, revealed, reveal, next, tapResult, quiz, undo, peek, editing]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // The place shown on the map: itself, or for a senator, their state.
   const mp = c ? (c.layer === 'senate' ? ds.byId.get(c.place ?? c.state!) ?? c : item.ref.kind === 'siteCountry' || item.ref.kind === 'artWhere' || item.ref.kind === 'personBorn' ? ds.byId.get(c.country!) ?? c : c) : null;
@@ -294,7 +298,9 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
         )}
         {f.map !== 'none' && <button className="btn ghost small" onClick={() => setPeek(true)} title="See every answer in this deck on the map (pauses the session)"><Icon name="eye" size={15} /> Peek</button>}
         {(canUndo || tapResult) && <button className="btn ghost small undo" onClick={undo} title="Undo (⌘Z / Ctrl+Z)"><Icon name="undo" size={15} /> Undo</button>}
+        {revealed && item.ref.kind === 'note' && cardSource(item.ref.country.id) && <button className="btn ghost small" onClick={() => setEditing(true)} title="Fix this card: the change goes to GitHub for you to approve"><Icon name="pencil" size={15} /> Edit</button>}
       </div>
+      {editing && <EditCard cardId={item.ref.country.id} onClose={() => setEditing(false)} />}
       {nudge && <div className="nudge">{nudge}</div>}
       {peek && (() => {
         // The answer map: every place in this deck named on the map (capitals pinned when the card is about capitals).

@@ -6,6 +6,8 @@ import { Icon, type IconName } from './Icons';
 import { VERSION } from '../views/Landing';
 import { QuestionTypes } from './QuestionTypes';
 import { SoundLab } from './SoundLab';
+import { TokenSetup } from './EditCard';
+import { getToken, sentEdits } from '../github';
 
 // The backup's file name carries the local date and time, e.g. geoquest-backup-2026-11-27_14-05-32.json
 // (dashes, not colons, so the name is valid on every system), so several backups a day sort in order.
@@ -65,7 +67,7 @@ function Choice<T extends string>({ value, options, onPick }: { value: T; option
 
 const THEMES = [['auto', 'Auto (follow the device)'], ['light', 'Light'], ['dark', 'Dark']] as const;
 const MAP_MODES = [['tap', 'Tap the map'], ['flip', 'Flip like flashcards'], ['skip', 'Skip them']] as const;
-type Pop = 'theme' | 'new' | 'map' | 'types' | 'lab';
+type Pop = 'theme' | 'new' | 'map' | 'types' | 'lab' | 'github';
 
 export function Settings() {
   const s = useProgress().settings;
@@ -100,6 +102,7 @@ export function Settings() {
         <Opener icon="map" label="“Find it on the map” questions" value={label(MAP_MODES, s.mapMode)} onClick={() => setPop('map')} />
         <Opener icon="sliders" label="Question types" value={s.kindsOff.length ? `${s.kindsOff.length} off` : 'All on'} onClick={() => setPop('types')} />
         <Opener icon="music" label="Sound lab" value={labCount ? `${labCount} changed` : 'Defaults'} onClick={() => setPop('lab')} />
+        <Opener icon="pencil" label="Editing on GitHub" value={getToken() ? 'Set up' : 'Not set up'} onClick={() => setPop('github')} />
         <div className="set-drop">
           <button className="set-row" aria-haspopup="menu" aria-expanded={backup} onClick={() => setBackup(!backup)}>
             <Icon name="save" size={18} />
@@ -133,6 +136,14 @@ export function Settings() {
       )}
       {pop === 'map' && <Popup title="“Find it on the map” questions" onClose={close}><Choice value={s.mapMode} options={MAP_MODES} onPick={v => { set('mapMode', v); close(); }} /></Popup>}
       {pop === 'types' && <Popup title="Question types" onClose={close}><QuestionTypes /></Popup>}
+      {pop === 'github' && (
+        <Popup title="Editing on GitHub" onClose={close}>
+          <p className="muted small">After you flip a hand-written card, <b>Edit</b> lets you fix it. The fix goes to GitHub as a pull request for you to approve.</p>
+          <TokenSetup />
+          {sentEdits().length > 0 && <div className="sent-list"><b>Sent from this device</b>
+            <ul>{sentEdits().slice(0, 10).map(e => <li key={e.url}><a href={e.url} target="_blank" rel="noreferrer">Pull request #{e.number}</a> <span className="muted">· {new Date(e.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span></li>)}</ul></div>}
+        </Popup>
+      )}
       {pop === 'lab' && <Popup title="Sound lab: choose your sounds" onClose={close}><SoundLab /></Popup>}
     </div>
   );
