@@ -296,3 +296,87 @@ example: $r = 4\%$, $p = 10\%$, $x = 0.5$: $1 + r_H = 1.04/0.95 \approx 1.0947$,
 - ABS | absorption: $C + I + G$
 - GNDI | national disposable income
 example: $ABS = 1040$, $GNDI = 980$ and the central bank adds 10 to reserves: net inflows must be $10 + 1040 - 980 = 70$.
+
+## Government's intertemporal budget constraint
+G_1 + \frac{G_2}{1+r} = T_1 + \frac{T_2}{1+r}
+- G_1, G_2 | government purchases now and in the future
+- T_1, T_2 | taxes now and in the future
+- r | the real interest rate
+example: $G_1 = 100$, $G_2 = 110$, $r = 10\%$: spending is worth $100 + 110/1.1 = 200$ today. If $T_1 = 90$, then $T_2/1.1 = 110$, so $T_2 = 121$.
+
+## After-tax real wage
+w\,(1 - t)
+- w | the real wage
+- t | the tax rate on labor income
+example: $w = 30$ an hour and $t = 25\%$: the worker keeps $30 \times 0.75 = 22.5$ an hour. The gap of 7.5 is the tax wedge.
+
+## Debt dynamics
+b_{t+1} = \frac{1+r}{1+g}\,b_t - pb_{t+1}
+- b_t | public debt as a share of GDP
+- r | the real interest rate on the debt
+- g | real GDP growth
+- pb | the primary balance (taxes minus non-interest spending) as a share of GDP
+example: $b_t = 60\%$, $r = 4\%$, $g = 2\%$, $pb = 1\%$: $b_{t+1} = \tfrac{1.04}{1.02}(0.60) - 0.01 \approx 0.612 - 0.010 = 0.602$, so debt edges up to about $60.2\%$ of GDP.
+
+## Debt-stabilizing primary balance
+pb^* = \frac{r - g}{1+g}\,b
+- pb^* | the primary balance that keeps the debt ratio constant
+- r, g | the real interest rate and real growth
+- b | the debt ratio
+example: $b = 60\%$, $r = 4\%$, $g = 2\%$: $pb^* = \tfrac{0.02}{1.02}(0.60) \approx 1.2\%$ of GDP. With $r < g$ the answer is negative: a small primary deficit still keeps the ratio steady.
+
+## Quantity equation
+M\,V = P\,Y
+- M | the money supply
+- V | velocity: how many times a year each unit of money is spent
+- P | the price level
+- Y | real output
+example: $M = 2{,}000$, $V = 5$, $Y = 8{,}000$: $P = \tfrac{2{,}000 \times 5}{8{,}000} = 1.25$.
+
+## Quantity theory in growth rates
+\pi = g_M + g_V - g_Y
+- \pi | inflation
+- g_M, g_V, g_Y | growth of money, velocity and real output
+example: money grows $7\%$, velocity is steady, output grows $3\%$: $\pi = 7 + 0 - 3 = 4\%$.
+
+## Seigniorage
+\text{Seigniorage} = \frac{\Delta M}{P}
+- \Delta M | new money created in a year
+- P | the price level
+example: the central bank creates $\Delta M = 50$ and $P = 1.25$: the government gains $50/1.25 = 40$ in real goods.
+
+## LM curve
+\frac{M}{P} = L(Y,\; r + \pi^e)
+- M/P | the real money supply
+- L | real money demand: rises with income, falls with the nominal interest rate
+- Y | real output
+- r + \pi^e | the nominal interest rate: the real rate plus expected inflation
+example: $M = 1{,}000$, $P = 2$, so real money is 500. With $L = 0.5Y - 1{,}000(r + \pi^e)$, $Y = 1{,}100$, $r = 2\%$, $\pi^e = 3\%$: demand is $550 - 50 = 500$. The money market clears.
+
+## Expectations-augmented Phillips curve
+\pi = \pi^e - h\,(u - \bar{u})
+- \pi, \pi^e | inflation and expected inflation
+- u | the unemployment rate
+- \bar{u} | the natural rate of unemployment
+- h | how strongly inflation responds to the unemployment gap
+example: $\pi^e = 3\%$, $h = 0.5$, $u = 7\%$, $\bar{u} = 5\%$: $\pi = 3 - 0.5 \times 2 = 2\%$.
+
+## Okun's law
+\frac{\bar{Y} - Y}{\bar{Y}} = 2\,(u - \bar{u})
+- \bar{Y} | full-employment output
+- Y | actual output
+- u, \bar{u} | actual and natural unemployment
+example: $u = 7\%$, $\bar{u} = 5\%$: output is $2 \times 2 = 4\%$ below full employment. If $\bar{Y} = 20{,}000$, then $Y = 19{,}200$.
+
+## Real exchange rate
+e = \frac{e_{nom}\,P}{P_{For}}
+- e | the real exchange rate: foreign goods per home good
+- e_{nom} | the nominal exchange rate: foreign currency per unit of home currency
+- P, P_{For} | home and foreign price levels
+example: 100 yen per dollar, a burger costs 2 dollars in the US and 250 yen in Japan: $e = \tfrac{100 \times 2}{250} = 0.8$ Japanese burgers per US burger.
+
+## Uncovered interest parity
+i = i_{For} - \frac{\Delta e_{nom}^{e}}{e_{nom}}
+- i, i_{For} | home and foreign nominal interest rates
+- \Delta e_{nom}^{e} / e_{nom} | the expected appreciation of the home currency
+example: $i_{For} = 2\%$ and the home currency is expected to lose $3\%$ (an expected appreciation of $-3\%$): $i = 2 - (-3) = 5\%$. Investors need the extra 3 points to hold it.

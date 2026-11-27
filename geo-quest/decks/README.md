@@ -91,6 +91,11 @@ related: Italy, Florence
 - **A parts card**: a plain bullet (the question), then a ```` ```parts ```` block, one `cue :: answer` per line (or
   just the answer), 2 to 5 lines; `# any order` as the first line for a set. Recalled one part at a time, graded by
   how many you had.
+- **A recipe card**: a plain bullet naming the drink (`- A Negroni`), then a ```` ```recipe ```` block, one
+  `role: amount ingredient` per line. Roles for what goes in: `spirit`, `liqueur`, `vermouth`, `wine`, `sour`, `sweet`,
+  `bitters`, `juice`, `top`, `cream`, `other`; for how it's served: `method`, `glass`, `garnish`, `rim`. It makes two
+  parts cards: *what goes in?*, drawn as a glass filling with one colored block per ingredient (sized by the amount),
+  and *how is it served?*. Up to 5 lines each; an ingredient named in the drink's name is left out (the audit checks).
 - **A bureau map card**: `- [bureau: EGY] Which regional bureau covers Egypt?` (the country's ISO 3166 alpha-3 code;
   the answer comes from `src/bureaus.ts`).
 - **A stack**: a ```` ```stack ```` block draws layered blocks, like the time-scale cards: one row per line,

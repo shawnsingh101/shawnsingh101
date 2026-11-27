@@ -1,7 +1,7 @@
 # Intelligence Quest: guidelines
 
 The rules every change follows. This page holds the rules that apply everywhere; rules for one subject live in
-`guides/<subject>.md` (books, life, programming, live-topics, cybersecurity, economics, government, music). Read this
+`guides/<subject>.md` (books, life, programming, live-topics, cybersecurity, economics, government, music, food-and-drink). Read this
 page plus the guide for the subject you're touching, nothing more. A new rule goes in the narrowest place it fits.
 
 ## 0. Working efficiently (for Claude)

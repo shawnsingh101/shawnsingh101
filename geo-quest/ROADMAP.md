@@ -34,18 +34,18 @@ dinosaurs asked when they lived (period, epoch, age) with time-scale blocks; dee
 dolphins, dinosaurs (v1.30, reworked v1.31). Next: the book decks (Spying on Whales, The Rise and Fall of
 the Dinosaurs: send the PDFs), birds with calls, trees and plants, any animal a book is about.
 
-**Economics** (started): rebuilt course by course from the owner's class notes (GUIDELINES 4g), with KaTeX math,
-derivations, graphs and an Equations section. Done: Macroeconomics lectures 1–3 (v1.36), 4–9 (v1.37), with every
-equation defined (symbols and a worked example). Next: the rest of Macro (taxes, government purchases, fiscal
-sustainability, money, IS-LM-FE, the Phillips curve,
-exchange rates, the open-economy IS-LM), then International Trade, International Finance and Monetary Theory, Micro,
-Capital Markets, IPE, Econometrics. Later: typed math answers checked by Python.
+**Economics** (started): rebuilt course by course from the owner's class notes (guides/economics.md), with KaTeX math,
+derivations, graphs and an Equations section. Done: Macroeconomics lectures 1–9 from the notes (v1.36–1.37), and 10–17
+(v1.39: taxes and government purchases, fiscal sustainability, money and inflation, IS-LM-FE, AD-AS, the Phillips
+curve, exchange rates, the open economy). **10–17 were written from the roadmap's topic list and standard
+intermediate macro, not the notes**: when the owner shares the notes for those lectures, check order, notation and
+emphasis against them. Next: International Trade, International Finance and Monetary Theory, Micro, Capital Markets,
+IPE, Econometrics. Later: typed math answers checked by Python.
 
-**Cybersecurity** (started): IT security from the ground up, ahead of Security+ (SY0-701) practice in the owner's Study
-Lab. Lessons before cards, then foundation cards, then a "going further" deck of applied cards; flow diagrams, stacks
-and Wikipedia diagrams; tagged by exam objective and book chapter. Done (v1.34–1.35): 1 How computers talk,
-3 Cryptography. Next: 2 The core ideas (CIA, AAA, controls, risk, zero trust), 4 Identity, 5 Networks, 6 Attacks,
-7 Defending systems, 8 Operations, 9 Governance. Later: a network-map card (tap where the firewall goes).
+**Cybersecurity** (outline complete, v1.39): all nine parts have lessons, cards and "going further" decks; parts 1 and
+3 have three to five decks each, parts 2 and 4–9 two each. Next: deepen parts 2 and 4–9 toward the same size (e.g.
+cloud and virtualization, application security, physical security and resilience, digital forensics in more depth),
+add Commons diagrams where clean ones exist, and later a network-map card (tap where the firewall goes).
 
 **Programming** (started): two linked decks in Computer science. *Python* follows the OpenStax textbook chapter by
 chapter (done: 1–3; next: Decisions, Loops, Functions…). *Under the hood* teaches this app from its own files (done:
@@ -53,17 +53,15 @@ The repo, Git and GitHub; next: Data and the sync, the basics in real code with 
 algorithms, testing). Practice decks beside each Python chapter: write the program, the app runs it in real Python and
 checks it (v1.32).
 
+**Cocktails** (v1.39): rebuilt from the owner's bartending study guide with recipe cards (guides/food-and-drink.md).
+Next: wine (red, white, fortified, service) from the same guide's wine section, and spirits brands if wanted.
+
+**Books**: The Changing World Order (Ray Dalio) added in v1.39. Not yet in *My reading* (needs its Wikidata id).
+
 **Classical music, Anki-guided** (Classical Music Themes, Parts I–II: 972 pieces). Essential (~170 themes): 39 works,
 63 clips so far; next: free recordings for the rest (Hallelujah Chorus, Bach's cello prelude, Swan Lake, the Nutcracker
 …), from Musopen and Commons only. Then More (~340) and Deep cuts (~540). About a dozen pieces are still under
 copyright (Copland, Prokofiev, Barber, Orff, Khachaturian, Shostakovich) and can't be included.
-
-**Cocktails, revamped** (next): rebuild how a drink's ingredients are asked, from the owner's bartending study guide
-(measurements included; the guide itself is never committed). Idea: a "build the drink" parts card drawn as colored
-blocks (spirit, modifier, sweet, sour, garnish, glass, method), each block a measured ingredient to recall.
-
-**Books: The Changing World Order (Ray Dalio)** (next): a book deck from the owner's notes, cross-cutting into
-History, Economics and Government lenses (guides/books.md).
 
 ## Queue
 
