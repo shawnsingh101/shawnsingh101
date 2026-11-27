@@ -13,11 +13,12 @@ export const getToken = () => read().token;
 export const setToken = (token: string | null) => write({ ...read(), token });
 export const sentEdits = () => read().sent;
 
-async function gh<T>(path: string, init: RequestInit = {}, token = getToken()): Promise<T> {
+async function gh<T>(path: string, init: RequestInit & { notFound?: boolean } = {}, token = getToken()): Promise<T> {
   if (!token) throw new Error('No GitHub token on this device yet.');
   const r = await fetch(API + path, { ...init, headers: { Accept: 'application/vnd.github+json', Authorization: `Bearer ${token}`, 'X-GitHub-Api-Version': '2022-11-28', ...(init.body ? { 'Content-Type': 'application/json' } : {}) } });
   if (!r.ok) {
     let msg = ''; try { msg = (await r.json()).message ?? ''; } catch { /* not JSON */ }
+    if (r.status === 404 && init.notFound) return null as T; // a file that doesn't exist yet
     if (r.status === 401) throw new Error('GitHub did not accept the token (it may have expired). Make a new one in Settings › Editing on GitHub.');
     if (r.status === 403 || r.status === 404) throw new Error(`The token can't do this (${msg || r.status}). It needs this repository, with Contents and Pull requests set to "Read and write".`);
     throw new Error(`GitHub said: ${msg || r.status}`);
@@ -36,23 +37,29 @@ const toB64 = (s: string) => { const b = new TextEncoder().encode(s); let out = 
 const fromB64 = (s: string) => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g, '')), c => c.charCodeAt(0)));
 
 /**
- * Replace `oldText` with `newText` in a file on a new branch, and open a pull request for it.
- * The file is read fresh from GitHub, so an edit made since this version of the app was built isn't lost; if the
- * old text isn't there any more, nothing is sent.
+ * Change one file on a new branch and open a pull request for it. The file is read fresh from GitHub (null if it
+ * doesn't exist yet), so a change made since this version of the app was built isn't lost; `apply` returns the new text
+ * or throws to send nothing.
  */
-export async function proposeEdit(o: { path: string; oldText: string; newText: string; title: string; body: string; card: string }): Promise<Sent> {
+export async function proposeChange(o: { path: string; apply: (current: string | null) => string; title: string; body: string; card?: string }): Promise<Sent> {
   const ref = await gh<{ object: { sha: string } }>(`/git/ref/heads/${BASE}`);
-  const file = await gh<{ content: string; sha: string }>(`/contents/${encodeURI(o.path)}?ref=${BASE}`);
-  const current = fromB64(file.content);
-  const at = current.indexOf(o.oldText);
-  if (at < 0) throw new Error('This card has changed on GitHub since this version of the app. Reload the app once the latest update is live, then try again.');
-  const updated = current.slice(0, at) + o.newText + current.slice(at + o.oldText.length);
+  const file = await gh<{ content: string; sha: string } | null>(`/contents/${encodeURI(o.path)}?ref=${BASE}`, { notFound: true });
+  const updated = o.apply(file ? fromB64(file.content) : null);
   const stamp = new Date().toISOString().replace(/[-:T]/g, '').slice(0, 14);
-  const branch = `edit/${o.path.split('/').pop()!.replace(/\.md$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 40)}-${stamp}`;
+  const branch = `edit/${o.path.split('/').pop()!.replace(/\.md$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40)}-${stamp}`;
   await gh(`/git/refs`, { method: 'POST', body: JSON.stringify({ ref: `refs/heads/${branch}`, sha: ref.object.sha }) });
-  await gh(`/contents/${encodeURI(o.path)}`, { method: 'PUT', body: JSON.stringify({ message: o.title, content: toB64(updated), sha: file.sha, branch }) });
+  await gh(`/contents/${encodeURI(o.path)}`, { method: 'PUT', body: JSON.stringify({ message: o.title, content: toB64(updated), branch, ...(file ? { sha: file.sha } : {}) }) });
   const pr = await gh<{ html_url: string; number: number }>(`/pulls`, { method: 'POST', body: JSON.stringify({ title: o.title, head: branch, base: BASE, body: o.body }) });
-  const sent: Sent = { url: pr.html_url, number: pr.number, card: o.card, date: new Date().toISOString() };
+  const sent: Sent = { url: pr.html_url, number: pr.number, card: o.card ?? o.path, date: new Date().toISOString() };
   const s = read(); write({ ...s, sent: [sent, ...s.sent].slice(0, 50) });
   return sent;
+}
+
+/** Edit a card: replace its old lines with new ones (nothing is sent if the old lines aren't there any more). */
+export function proposeEdit(o: { path: string; oldText: string; newText: string; title: string; body: string; card: string }) {
+  return proposeChange({ ...o, apply: current => {
+    const at = current?.indexOf(o.oldText) ?? -1;
+    if (!current || at < 0) throw new Error('This card has changed on GitHub since this version of the app. Reload the app once the latest update is live, then try again.');
+    return current.slice(0, at) + o.newText + current.slice(at + o.oldText.length);
+  } });
 }

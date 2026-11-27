@@ -1215,3 +1215,37 @@ main.tab-map { max-width: none; padding: 0; position: relative; }
 .token-field input { flex: 1; min-width: 0; font: .9rem ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: .45rem .6rem; }
 .token-err { margin: 0; color: var(--wrong); font-size: .88rem; }
 .sent-list ul { margin: .3rem 0 0; padding-left: 1.1rem; font-size: .9rem; }
+
+/* ---- v1.44: Builder ---- */
+.pop:has(.b-types) { width: min(600px, 100%); }
+.b-mode { justify-self: start; }
+.b-mode button:disabled { opacity: .45; }
+.b-field { display: grid; gap: .25rem; font-size: .85rem; color: var(--muted); flex: 1; min-width: 0; }
+.b-field small { font-size: .78rem; }
+.b-field input, .b-field textarea, .b-field select, .b-list-row input, .b-list-row select, .b-wiki-row input { font: inherit; font-size: .95rem; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: .5rem .65rem; min-width: 0; width: 100%; }
+.b-field textarea { resize: vertical; }
+.b-field input:focus, .b-field textarea:focus, .b-field select:focus, .b-list-row input:focus, .b-wiki-row input:focus { outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 1px; }
+.b-row { display: flex; gap: .6rem; flex-wrap: wrap; }
+.b-row > .b-field { flex: 1 1 180px; }
+.b-check { display: flex; gap: .5rem; align-items: flex-start; font-size: .88rem; }
+.b-check input { margin-top: .2rem; accent-color: var(--accent); }
+.b-icons { display: flex; flex-wrap: wrap; gap: .3rem; }
+.b-icons button { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--muted); }
+.b-icons button.on { border-color: var(--accent); color: var(--accent); background: var(--surface); }
+.b-wiki, .b-more, .b-preview { border: 1px solid var(--line); border-radius: 12px; padding: .55rem .75rem; display: grid; gap: .5rem; }
+.b-wiki summary, .b-more summary, .b-preview summary { cursor: pointer; font-size: .9rem; display: flex; align-items: center; gap: .4rem; }
+.b-wiki[open], .b-more[open] { gap: .6rem; }
+.b-wiki-row { display: flex; gap: .5rem; }
+.b-hits { list-style: none; margin: 0; padding: 0; display: grid; gap: .3rem; }
+.b-hits button { display: flex; gap: .6rem; align-items: center; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 10px; padding: .35rem .5rem; font: inherit; }
+.b-hits img, .b-nothumb { width: 40px; height: 40px; object-fit: cover; border-radius: 6px; flex: none; background: var(--line); }
+.b-hits span { display: grid; min-width: 0; }
+.b-hits small { color: var(--muted); font-size: .8rem; }
+.b-types { display: flex; flex-wrap: wrap; gap: .35rem; }
+.b-card { display: grid; gap: .6rem; }
+.b-list { display: grid; gap: .35rem; }
+.b-list-row { display: flex; gap: .35rem; align-items: center; }
+.b-list-row select { flex: 0 0 7.5rem; }
+.b-preview pre { margin: 0; white-space: pre-wrap; font: .8rem/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.b-batch-actions { justify-content: flex-start; }
+.library-actions { margin: .2rem 0 .8rem; }

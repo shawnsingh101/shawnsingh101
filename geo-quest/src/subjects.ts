@@ -1,6 +1,6 @@
 // The Library: top-level subjects. Geography is built in; every other subject comes from note decks (decks/<Subject>/…).
 import { CONTINENTS, childSections, sectionChain } from './cards';
-import { EQUATIONS, HAS_EQUATIONS, HAS_LIVE, LIVE, NOTE_SUBJECTS } from './notes';
+import { DECKS, EQUATIONS, HAS_EQUATIONS, HAS_LIVE, LIVE, NOTE_SUBJECTS } from './notes';
 import { COLLECTION_SUBJECTS } from './collections';
 import type { IconName } from './components/Icons';
 
@@ -12,7 +12,7 @@ const ICON: Record<string, IconName> = { Government: 'capitol', Cybersecurity: '
 export const SUBJECTS: Subject[] = [
   { id: 'geography', name: 'Geography', icon: 'globe', blurb: 'Countries, capitals, flags, leaders, regions, rivers, mountains, World Heritage',
     sections: () => childSections(null).filter(s => !NOTE_SUBJECTS.includes(s) && !COLLECTION_SUBJECTS.includes(s) && s !== LIVE && s !== EQUATIONS) },
-  ...[...new Set([...COLLECTION_SUBJECTS, ...NOTE_SUBJECTS])].map((s): Subject => ({ id: s, name: s, icon: ICON[s] ?? 'book', blurb: BLURB[s] ?? (COLLECTION_SUBJECTS.includes(s) ? 'Famous works, with facts and pictures from Wikidata' : 'Your note decks'), sections: () => [s] })),
+  ...[...new Set([...COLLECTION_SUBJECTS, ...NOTE_SUBJECTS])].map((s): Subject => ({ id: s, name: s, icon: ICON[s] ?? (DECKS.find(d => d.subject === s && d.icon)?.icon as IconName | undefined) ?? 'book', blurb: BLURB[s] ?? (COLLECTION_SUBJECTS.includes(s) ? 'Famous works, with facts and pictures from Wikidata' : 'Your note decks'), sections: () => [s] })),
   // A lens, not a home: ongoing stories from every subject (the war in Ukraine from History, the AI race from AI).
   // A lens too: every equation from every course, each with its ladder of cards (derivation, formula, inputs, graph).
   ...(HAS_EQUATIONS ? [{ id: EQUATIONS, name: EQUATIONS, icon: 'chart' as IconName, blurb: 'Every equation from every course in one place: how it is derived, the formula, what moves it, and its graph', sections: () => [EQUATIONS] }] : []),

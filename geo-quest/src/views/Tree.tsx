@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { GROUPS, groupsShownIn, nodeId, parseNode, placesIn, slotOf, groupById, LAYER_NOUN, childSections, sectionAndDescendants, SECTION_PARENT, sectionChain } from '../cards';
-import { ERAS, NOTE_SUBJECTS, LIVE, EQUATIONS } from '../notes';
-import { buildQueue, isUnlocked, learnMore, nodeStats, update, useProgress } from '../srs';
+import { DECKS, ERAS, NOTE_SUBJECTS, LIVE, EQUATIONS, deckText, repoPath, type Deck } from '../notes';
+import { Builder } from '../components/Builder';
+import { Popup } from '../components/Settings';
+import { TokenSetup } from '../components/EditCard';
+import { getToken, proposeChange, type Sent } from '../github';
+import { buildQueue, isUnlocked, learnMore, nodeStats, reloadApp, removeDeviceDecks, update, useProgress } from '../srs';
 import { makeQuiz, scopeGroups, type Scope } from '../quiz';
 import { sounds } from '../sound';
 import { Icon, type IconName } from '../components/Icons';
@@ -26,6 +30,9 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
   const active = p.active.includes(node);
   const unlocked = isUnlocked(ds, p, node);
   const [reading, setReading] = useState(false);
+  const [building, setBuilding] = useState(false);
+  const [publishing, setPublishing] = useState(false);
+  const deck = groupId.startsWith('n-') ? DECKS.find(d => 'n-' + d.id === groupId) : undefined;
   const toggle = () => {
     update(x => { x.active = x.active.includes(node) ? x.active.filter(a => a !== node) : [...x.active, node]; });
     if (p.settings.sound && !active) sounds.level();
@@ -53,6 +60,14 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
         <button className="btn" onClick={() => startQuiz(makeQuiz(ds, `grp:${groupId}`, [topic], 'all'))}><Icon name="target" /> Quiz</button>
         {unlocked && active && <button className="btn ghost" onClick={toggle}>Stop learning</button>}
       </div>
+      {deck && deckText(deck) !== null && <div className="sheet-actions">
+        <button className="btn small" onClick={() => setBuilding(true)}><Icon name="plus" size={15} /> Add cards</button>
+        {deck.device && <button className="btn small" onClick={() => setPublishing(true)}><Icon name="save" size={15} /> Publish to GitHub</button>}
+        {deck.device && <button className="btn small ghost" onClick={() => { if (confirm(`Delete “${deck.title}” from this device? Its cards and your progress on them go too. (A backup made earlier still has it.)`)) { removeDeviceDecks([deck.file]); reloadApp(); } }}>Delete</button>}
+      </div>}
+      {deck?.device && <p className="muted small"><Icon name="lock" size={14} /> Kept on this device only, and in your backups.</p>}
+      {building && deck && <Builder deckId={deck.id} onClose={() => setBuilding(false)} />}
+      {publishing && deck && <Publish deck={deck} onClose={() => setPublishing(false)} />}
       {/* An equation's page (Equations › …): its formula, symbols and worked example. */}
       {groupId.startsWith('eq-') && equationDef(g.name) ? <EquationPanel def={equationDef(g.name)!} showFormula /> : <>
       {/* A deck's intro: one line for most decks; for a book's notes, its summary page (read any time, never reviewed). */}
@@ -60,6 +75,38 @@ function NodeSheet({ ds, node, onClose, startQuiz, startStudy }: { ds: Dataset; 
         ? <details className="deck-summary" open><summary>Summary</summary>{g.note.split('\n').map((l, i) => <p key={i}>{l}</p>)}</details>
         : <p className="muted small"><Rich before={g.note} /></p>)}</>}
     </div>
+  );
+}
+
+/** Publish a device deck: it goes to GitHub as a new deck file. Once merged, the repo's copy takes over (same cards,
+ *  same progress) and this device's copy is removed. */
+function Publish({ deck, onClose }: { deck: Deck; onClose: () => void }) {
+  const [tokenOk, setTokenOk] = useState(!!getToken());
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+  const [sent, setSent] = useState<Sent | null>(null);
+  const go = async () => {
+    setBusy(true); setErr(null);
+    try {
+      const text = deckText(deck)!;
+      setSent(await proposeChange({ path: repoPath(deck.file), title: `New deck: ${deck.subject} › ${deck.title}`,
+        body: `**File:** \`${repoPath(deck.file)}\`\n\nA deck made in Intelligence Quest and kept on one device, now published (${deck.cards.length} cards). Progress carries over: the card ids are the same.\n\n_The audit runs on this pull request; merge it when it passes._`,
+        apply: current => { if (current !== null) throw new Error('A deck file with this name is already on GitHub.'); return text; } }));
+    } catch (e) { setErr((e as Error).message); } finally { setBusy(false); }
+  };
+  return (
+    <Popup title="Publish to GitHub" onClose={onClose}>
+      {sent ? <div className="edit-sent">
+        <p><Icon name="check" size={18} /> Sent as pull request <a href={sent.url} target="_blank" rel="noreferrer">#{sent.number}</a>.</p>
+        <p className="muted small">Merge it when the check is green. A few minutes later the deck comes from GitHub, and this device's copy is removed by itself; your progress stays.</p>
+        <button className="btn primary" onClick={onClose}>Done</button>
+      </div> : <>
+        <p>“{deck.title}” ({deck.cards.length} cards) goes to GitHub as a new deck, as a pull request for you to merge. Then it's on every device and can be improved like any other deck.</p>
+        <p className="muted small">The repository is public: once merged, anyone can see these cards.</p>
+        {!tokenOk ? <TokenSetup onDone={() => setTokenOk(true)} /> : <div className="row edit-actions"><button className="btn" onClick={onClose}>Cancel</button><button className="btn primary" disabled={busy} onClick={go}>{busy ? 'Sending…' : 'Publish'}</button></div>}
+        {err && <p className="token-err">{err}</p>}
+      </>}
+    </Popup>
   );
 }
 
@@ -73,6 +120,7 @@ const SUBJECT_KEY = 'geoquest:subject';
 
 export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { ds: Dataset; startQuiz: (q: QuizSpec) => void; startStudy: (nodes?: string[]) => void; startCards: (cards: CardRef[]) => void; goDashboard?: () => void }) {
   const p = useProgress();
+  const [builder, setBuilder] = useState(false);
   const [sel, setSel] = useState<string | null>(null);
   // Library → subject: which subject's tree is open (remembered per device; none = the Library itself).
   const [subjectId, setSubjectId] = useState<string | null>(() => { try { return localStorage.getItem(SUBJECT_KEY); } catch { return null; } });
@@ -221,6 +269,8 @@ export function Tree({ ds, startQuiz, startStudy, startCards, goDashboard }: { d
       <h1>Library</h1>
       <p className="muted">Everything you're learning, by subject. Reviews from all of them come together on <b>Today</b>.</p>
       <Search ds={ds} startCards={startCards} startQuiz={startQuiz} />
+      <div className="row library-actions"><button className="btn small" onClick={() => setBuilder(true)}><Icon name="plus" size={15} /> New cards or deck</button></div>
+      {builder && <Builder onClose={() => setBuilder(false)} />}
       <div className="subject-cards">
         {SUBJECTS.map(sub => {
           const st = statsOf(sub.sections());

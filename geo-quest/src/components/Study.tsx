@@ -408,6 +408,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {revealed && c.card?.eq && equationDef(c.card.eq.name) && <EquationPanel def={equationDef(c.card.eq.name)!} />}
           {revealed && group?.lesson && <button className="btn small ghost lesson-link" onClick={e => { e.stopPropagation(); setLesson(true); }}><Icon name="book" size={15} /> Read the lesson</button>}
           {revealed && f.source && <a className="code-source" href={REPO_FILE(f.source)} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}>See it in the code: <code>{f.source}</code> ↗</a>}
+          {revealed && f.link && <a className="code-source" href={f.link} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}>Source: {f.link.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]} ↗</a>}
           {revealed && c.music && <MusicReveal ds={ds} place={c} />}
           {revealed && f.lineage && <Lineage steps={f.lineage.steps} label={f.lineage.label} />}
           {!sidePic && revealed && f.picture2 && !f.picture2.prompt && s.pictures && <Picture file={f.picture2.file} caption={f.picture2.caption} single />}

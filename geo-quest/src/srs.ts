@@ -37,6 +37,7 @@ export interface Progress {
   clipStarts?: Record<string, number>; // music: where you chose a clip should start ("file@listed start" → seconds)
   pins?: string[];           // searches pinned in the Library (just the words: matching cards are found fresh each time)
   log: LogEntry[];           // every answer, oldest first (saved under its own key: see save())
+  myDecks?: { file: string; text: string }[]; // decks made in the app, on this device only (read at start-up by notes.ts)
 }
 
 const KEY = 'geoquest:v1';
@@ -294,6 +295,21 @@ export function streak(p: Progress) {
   if (!p.days[d.toLocaleDateString('en-CA')]) d.setDate(d.getDate() - 1); // today not done yet doesn't break it
   while (p.days[d.toLocaleDateString('en-CA')]?.reviews) { n++; d.setDate(d.getDate() - 1); }
   return n;
+}
+
+// ---- decks kept on this device ----------------------------------------------------
+/** Save (or replace) a device deck. Decks are read at start-up, so the caller reloads the app afterwards. */
+export function saveDeviceDeck(file: string, text: string) {
+  update(p => { const l = (p.myDecks ?? []).filter(d => d.file !== file); p.myDecks = [...l, { file, text }]; });
+}
+export function removeDeviceDecks(files: string[]) {
+  if (!files.length) return;
+  update(p => { p.myDecks = (p.myDecks ?? []).filter(d => !files.includes(d.file)); });
+}
+/** Start the app again (device decks are read at start-up), straight back to where you were, past the title screen. */
+export function reloadApp() {
+  try { sessionStorage.setItem('geoquest:skipTitle', '1'); } catch { /* ignore */ }
+  location.reload();
 }
 
 // ---- backup / move between phone and laptop ----------------------------------------

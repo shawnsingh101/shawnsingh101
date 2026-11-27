@@ -36,7 +36,7 @@ Integrals deck (v1.40). Next: review the pilot after study, then add Chapter 3 M
 position, velocity, and acceleration linked to calculus; continue through the supplied chapter outline. No OpenStax
 chapter text, figures, or assessments are used.
 
-**Owner controls: edit and build inside the app** (agreed with the owner, one session per step, in order). **Step 1 done
+**Owner controls: edit and build inside the app** (done v1.41–v1.44; agreed with the owner, one session per step, in order). **Step 1 done
 (v1.41):** Settings is a list (`src/components/Settings.tsx`: switches, popups via `Popup`, a Backup dropdown); the top
 bar holds only Settings. Levels in `src/levels.ts` (gem tiers; level 1 costs 10,000 XP, each next ×1.2 rounded to 500;
 weekly target = average of the last four full weeks since the first study day, rounded to 500, 5,000 in a first week),
@@ -59,8 +59,18 @@ new `edit/<deck>-<time>` branch and opens a pull request, all from the browser w
 backups. Set up in the editor or Settings › Editing on GitHub (step-by-step, token checked before saving; lists edits
 sent). `.github/workflows/geo-quest-audit.yml` runs the audit on every PR touching `geo-quest/`. A note card whose
 fingerprint changed now keeps its FSRS state and is due at once (data facts still reset). Not yet: editing
-collection cards (they come from Wikidata: fixes go in `data/collection-fixes.json`) and the lesson text. **Next: step 4, Builder** (reuse `github.ts`
-`proposeEdit` for new files: it will need a "create file" path without `sha`).
+collection cards (they come from Wikidata: fixes go in `data/collection-fixes.json`) and the lesson text. **Step 4 done (v1.44)**, so all four
+steps are built: the Builder (`src/components/Builder.tsx`, pure helpers in `src/builder.ts`) opens from Library ›
+New cards or deck and a deck's sheet (Add cards). Card types: cloze (words to hide + hint, or typed `{{…}}`),
+question & answer (both ways), parts (2–5, cues, any order), recipe, picture; extras: picture, note, `native:`,
+`source: https://…` (new: `NoteCard.link`, shown on the back). Several cards per save. Add from Wikipedia: search API,
+then the page summary and Wikidata (P18 picture, P1705/P1559 native name, P225). New decks: subject (or new), section,
+name, `icon:` front matter (new), first heading; files keep existing numbered folders (`newDeckFile`). Saved with
+`proposeChange` (`github.ts`; creates files without `sha`, reads fresh from main, inserts at the end of the heading's
+part) or as a **device deck**: `Progress.myDecks` (`{file, text}`), parsed at start-up in `notes.ts` like any deck
+(the app restarts itself after saving: `reloadApp`), editable with Edit (saved locally), **Publish to GitHub** (a new
+file PR; once merged the repo copy has the same id and the device copy is dropped by `PUBLISHED_DEVICE`) or Delete.
+Ideas left: lessons and deck intros from the app, Wikidata collections from the app, reorder or delete cards.
 1. ~~**Settings and rewards.**~~ Settings becomes a clean list: buttons that open their own popup (Theme, New cards,
    Backup, …) and sliding switches for on/off ones (sound effects, music, XP & Streaks); sound moves inside Settings.
    Backup is a dropdown: *Download backup* / *Restore from a file*. The session-complete screen gets a sleeker XP line
@@ -75,7 +85,7 @@ collection cards (they come from Wikidata: fixes go in `data/collection-fixes.js
    **pull request** (owner's choice), where a GitHub Action runs `npm run audit`; the owner merges. The owner pastes a
    fine-grained GitHub token (this repo only: contents and pull requests), stored only on the device; walk them
    through creating it. Fixing an answer keeps progress; rewording the question makes a new card (say so in the editor).
-4. **Builder.** New cards by type (cloze, front/back, parts, recipe, picture) and new decks (subject, section, name,
+4. ~~**Builder.**~~ New cards by type (cloze, front/back, parts, recipe, picture) and new decks (subject, section, name,
    icon), saved the same way. **Add from Wikipedia**: search a name, pull title, picture, description and native name
    (Wikipedia/Wikidata allow browser requests), fill the card for the owner to adjust. A `source:` link per card,
    shown on the back. **Device-only decks** (kept in progress and backups, private) for studying without Claude,
