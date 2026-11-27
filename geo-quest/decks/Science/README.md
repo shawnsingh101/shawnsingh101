@@ -10,12 +10,27 @@ Science/
       1 The Study of Life.md    ← Chapter 1 (started)
 ```
 
-Planned, same pattern: Chemistry (OpenStax Chemistry 2e), Physics (OpenStax University Physics), Calculus
-(OpenStax Calculus 1–3), Statistics (OpenStax Introductory Statistics), Python, Economics (the existing Economics
-subject can move here).
+Planned, same pattern: Chemistry, Physics (the chapter outline supplied by the owner; cards built from independently
+licensed sources), and Statistics. Calculus is a separate `Math/Calculus` track designed to build alongside Physics.
+The outline sets the order; it does not authorize use of a textbook's chapter content.
 
-**Adding cards from a textbook**: OpenStax books are free online, chapter by chapter. Name a chapter ("5 cards from
-Biology chapter 6") and the cards are written from that chapter's text, with its number and title in the deck.
+**Adding cards from a textbook**: check the specific book's license and AI-use terms first. Use only sources that allow
+the planned workflow, and record attribution, changes, image credits, and the license in the deck. A user-supplied
+chapter outline can set the order without using the textbook's prose, figures, examples, or assessments.
+
+## Physics 1: mechanics outline supplied by the owner
+
+1. Units and Measurement · 2. Vectors · 3. Motion Along a Straight Line · 4. Motion in Two and Three Dimensions ·
+5. Newton's Laws of Motion · 6. Applications of Newton's Laws · 7. Work and Kinetic Energy ·
+8. Potential Energy and Conservation of Energy · 9. Linear Momentum and Collisions · 10. Fixed-Axis Rotation ·
+11. Angular Momentum · 12. Static Equilibrium and Elasticity · 13. Gravitation · 14. Fluid Mechanics ·
+15. Oscillations · 16. Waves · 17. Sound
+
+Chapter 1 section order: The Scope and Scale of Physics · Units and Standards · Unit Conversion · Dimensional Analysis ·
+Estimates and Fermi Calculations · Significant Figures · Solving Problems in Physics.
+
+Chapter 2 section order: Scalars and Vectors · Coordinate Systems and Components of a Vector · Algebra of Vectors ·
+Products of Vectors.
 
 ## OpenStax Biology 2e: outline
 

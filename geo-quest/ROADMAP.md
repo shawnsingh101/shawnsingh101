@@ -28,6 +28,14 @@ Any idea ("I'd like to learn about Thanksgiving") goes through the same steps:
 
 ## In progress
 
+**Physics and Calculus** (new): the Physics path uses Shawn's 17-chapter mechanics outline, with chapters 1–2 started
+from independently sourced material. Math › Calculus begins alongside it, so calculus concepts can be learned before
+they are needed in mechanics. Cards use KaTeX, equation definitions, and Commons images when useful; content sources
+and licenses are tracked per deck. Done: Units and Measurement, Vectors, and an initial Limits, Derivatives, and
+Integrals deck (v1.40). Next: review the pilot after study, then add Chapter 3 Motion Along a Straight Line with
+position, velocity, and acceleration linked to calculus; continue through the supplied chapter outline. No OpenStax
+chapter text, figures, or assessments are used.
+
 **Life** (started): the tree of life as the outline (Bacteria · Archaea · Eukaryotes › …), groups of species filed on it,
 book decks feeding its branches. Cards: photo → name with the lineage, Latin name, range map and habitat on the back;
 dinosaurs asked when they lived (period, epoch, age) with time-scale blocks; deep cuts from books. Done: whales and
