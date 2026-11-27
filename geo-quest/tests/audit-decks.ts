@@ -87,6 +87,11 @@ for (const { f, d } of decks) {
     if (c.recall) {
       const n = c.recall.steps.length;
       if (n < 2 || n > RECALL_MAX) issues.push(`PARTS ${f}: "${c.pre.slice(0, 60)}" has ${n} parts (2 to ${RECALL_MAX}; split a longer process into stages)`);
+      // A recipe's ingredient may not be named in the drink's own name ("Gin and tonic: what goes in?").
+      if (c.recall.recipe === 'pour') for (const s of c.recall.steps) {
+        const what = s.answer.toLowerCase().replace(/^(fill|top|splash|add|a few drops|a dash|dash)( with| of)?\s+/, '').replace(/^[\d¼½¾⅓⅔.\s]+(oz|tsp|tbsp|shots?|parts?)?\s*(of\s+)?/, '').trim();
+        if (what.length > 3 && c.pre.toLowerCase().includes(what)) issues.push(`GIVEAWAY ${f}: "${s.answer}" is named in "${c.pre.slice(0, 50)}"`);
+      }
       for (const s of c.recall.steps) { checkMath(s.answer, f); if (s.cue) checkMath(s.cue, f); if (s.cue && s.answer.length > 3 && s.cue.toLowerCase().includes(s.answer.toLowerCase())) issues.push(`GIVEAWAY ${f}: the part "${s.answer}" is in its cue`); }
     }
     if (c.practice) {

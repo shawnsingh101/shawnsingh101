@@ -11,6 +11,18 @@ export type RecallGrade = Rating.Again | Rating.Hard | Rating.Good;
 export const recallGrade = (got: number, total: number): RecallGrade => (got === total ? Rating.Good : got * 2 >= total ? Rating.Hard : Rating.Again);
 export const RECALL_LABEL: Record<RecallGrade, string> = { [Rating.Good]: 'Full credit', [Rating.Hard]: 'Partial credit', [Rating.Again]: 'No credit' };
 
+// A recipe's pour card is drawn as a glass that fills up, one colored block per ingredient, sized by how much goes in.
+const FRACTIONS: Record<string, number> = { '¼': .25, '½': .5, '¾': .75, '⅓': 1 / 3, '⅔': 2 / 3 };
+export function ounces(answer: string): number {
+  const m = /^(\d+)?\s*([¼½¾⅓⅔])?\s*(oz|tsp|teaspoons?|tbsp|tablespoons?|shots?|parts?|dash(?:es)?)?/i.exec(answer.trim());
+  const n = (m?.[1] ? +m[1] : 0) + (m?.[2] ? FRACTIONS[m[2]] : 0), unit = (m?.[3] || '').toLowerCase();
+  if (/^fill|^top|^splash/i.test(answer)) return /^splash/i.test(answer) ? .5 : 3;
+  if (!n) return /dash|drop/i.test(answer) ? .1 : 1;
+  return unit.startsWith('t') && unit !== 'tbsp' && !unit.startsWith('table') ? n / 8 : unit.startsWith('tb') || unit.startsWith('table') ? n * 3 / 8
+    : unit.startsWith('shot') ? n * 1.5 : unit.startsWith('dash') ? n * .1 : n;
+}
+const blockHeight = (answer: string) => `${(2.3 + Math.min(ounces(answer), 4) * 1.1).toFixed(2)}rem`;
+
 export function RecallCard({ r, prompt, done, onDone }: { r: Recall; prompt: string; done: boolean; onDone: (got: number, total: number) => void }) {
   const n = r.steps.length;
   const [marks, setMarks] = useState<boolean[]>([]); // one per part already graded
@@ -37,12 +49,13 @@ export function RecallCard({ r, prompt, done, onDone }: { r: Recall; prompt: str
   return (
     <div className="recall" onClick={e => e.stopPropagation()}>
       <p className="cloze front"><Rich before={prompt} /></p>
-      <p className="recall-how muted small">{n} parts{r.anyOrder ? ', in any order' : ', in order'}{done ? '' : ': recall each one, then check it'}</p>
-      <ol className={'recall-steps' + (r.anyOrder ? ' any' : '')}>
+      <p className="recall-how muted small">{r.recipe === 'pour' ? `${n} ingredients, with how much of each` : r.recipe === 'serve' ? `${n} parts` : `${n} parts${r.anyOrder ? ', in any order' : ', in order'}`}{done ? '' : ': recall each one, then check it'}</p>
+      <ol className={'recall-steps' + (r.anyOrder ? ' any' : '') + (r.recipe ? ' recipe-' + r.recipe : '')}>
         {r.steps.map((s, i) => {
           const state = i < at ? (marks[i] ? 'got' : 'missed') : i === at && !done ? (shown ? 'open' : 'current') : 'later';
           return (
-            <li key={i} className={'recall-step ' + state} onClick={() => i === at && show()}>
+            <li key={i} className={'recall-step ' + state + (s.role ? ' role-' + s.role : '')} onClick={() => i === at && show()}
+              style={r.recipe === 'pour' ? { minHeight: blockHeight(s.answer) } : undefined}>
               <span className="recall-num">{i < at ? <Icon name={marks[i] ? 'check' : 'x'} size={14} /> : i + 1}</span>
               <span className="recall-body">
                 {s.cue && <span className="recall-cue"><Rich before={s.cue} /></span>}
