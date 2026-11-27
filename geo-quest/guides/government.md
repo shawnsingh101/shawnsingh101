@@ -11,3 +11,5 @@
 - **Not FSO preparation**, as with Economics.
 - **Sources**: US government works are public domain (state.gov, the Foreign Affairs Manual, CRS reports); check
   current facts against state.gov and Wikipedia.
+- **Titles are spelled as the office spells them**, checked against the office's own page or its Wikipedia article:
+  the *National Security Advisor*, but the State Department's *Legal Adviser*. Not from memory or a style guide.

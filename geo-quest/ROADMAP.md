@@ -36,6 +36,27 @@ Integrals deck (v1.40). Next: review the pilot after study, then add Chapter 3 M
 position, velocity, and acceleration linked to calculus; continue through the supplied chapter outline. No OpenStax
 chapter text, figures, or assessments are used.
 
+**Owner controls: edit and build inside the app** (next; agreed with the owner, one session per step, in order):
+1. **Settings and rewards.** Settings becomes a clean list: buttons that open their own popup (Theme, New cards,
+   Backup, …) and sliding switches for on/off ones (sound effects, music, XP & Streaks); sound moves inside Settings.
+   Backup is a dropdown: *Download backup* / *Restore from a file*. The session-complete screen gets a sleeker XP line
+   with a flat gem icon. **Levels, not leagues** (owner's choice): named gem tiers (quartz, amethyst, sapphire,
+   emerald, ruby, diamond…), each needing a bit more XP than the last (the owner earned ~27,000 XP in two weeks: a new
+   level every week or two at first), a weekly target set from the owner's own recent weeks, and a progress bar to
+   the next level at the end of study sessions and quizzes and on Me. **Also start an answer log** (every answer with
+   its time, kept in progress and in backups) so step 2 has history.
+2. **Reports** under Me: past 24 hours, week, month, 3 months, year to date, 1 year or a custom range; a dashboard of
+   progress from the answer log (and daily XP totals before it); save as PDF with the browser's print-to-PDF.
+3. **Edit a card.** An Edit button on hand-written cards opens the card's source line; saving sends it to GitHub as a
+   **pull request** (owner's choice), where a GitHub Action runs `npm run audit`; the owner merges. The owner pastes a
+   fine-grained GitHub token (this repo only: contents and pull requests), stored only on the device; walk them
+   through creating it. Fixing an answer keeps progress; rewording the question makes a new card (say so in the editor).
+4. **Builder.** New cards by type (cloze, front/back, parts, recipe, picture) and new decks (subject, section, name,
+   icon), saved the same way. **Add from Wikipedia**: search a name, pull title, picture, description and native name
+   (Wikipedia/Wikidata allow browser requests), fill the card for the owner to adjust. A `source:` link per card,
+   shown on the back. **Device-only decks** (kept in progress and backups, private) for studying without Claude,
+   publishable later. Remind the owner the repo is public.
+
 **Life** (started): the tree of life as the outline (Bacteria · Archaea · Eukaryotes › …), groups of species filed on it,
 book decks feeding its branches. Cards: photo → name with the lineage, Latin name, range map and habitat on the back;
 dinosaurs asked when they lived (period, epoch, age) with time-scale blocks; deep cuts from books. Done: whales and

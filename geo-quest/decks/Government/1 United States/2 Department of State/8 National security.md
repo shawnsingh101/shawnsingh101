@@ -5,9 +5,9 @@ Where State fits in the bigger machine: the National Security Council, how the a
 
 :::lesson
 ## The National Security Council
-The **National Security Act of 1947** built the post-war security system: it created the **National Security Council**, the Central Intelligence Agency, and what became the Department of Defense. The NSC is the President's forum for national security decisions. By law its members include the President, the Vice President, the Secretaries of **State**, **Defense** and **Energy**; the Chairman of the Joint Chiefs of Staff and the Director of National Intelligence advise it. Its staff, in the White House, is run by the **national security adviser**, a presidential assistant who, unlike the Secretary of State, is not confirmed by the Senate.
+The **National Security Act of 1947** built the post-war security system: it created the **National Security Council**, the Central Intelligence Agency, and what became the Department of Defense. The NSC is the President's forum for national security decisions. By law its members include the President, the Vice President, the Secretaries of **State**, **Defense** and **Energy**; the Chairman of the Joint Chiefs of Staff and the Director of National Intelligence advise it. Its staff, in the White House, is run by the **National Security Advisor**, a presidential assistant who, unlike the Secretary of State, is not confirmed by the Senate.
 
-In May 2025, Secretary Rubio was also made national security adviser, the first person to hold both jobs at once since Henry Kissinger in the 1970s.
+In May 2025, Secretary Rubio was also made National Security Advisor, the first person to hold both jobs at once since Henry Kissinger in the 1970s.
 
 ## How the agencies decide
 Big questions climb a ladder of committees, so each level settles what it can and sends up only real disagreements:
@@ -15,8 +15,8 @@ Big questions climb a ladder of committees, so each level settles what it can an
 ```stack
 # The interagency ladder
 NSC | National Security Council | the President decides
-PC | Principals Committee | cabinet secretaries, chaired by the national security adviser
-DC | Deputies Committee | their deputies, chaired by the deputy national security adviser
+PC | Principals Committee | cabinet secretaries, chaired by the National Security Advisor
+DC | Deputies Committee | their deputies, chaired by the Deputy National Security Advisor
 PCC | Policy Coordination Committees | assistant secretaries and senior directors, by region or issue
 ```
 
@@ -36,8 +36,8 @@ At State, Secretary Rubio puts the same idea as a test for every dollar, program
 
 ## The National Security Council
 - The National Security Council was created by the National Security Act of {{1947|which year?}}.
-- The National Security Council's staff is run by the national security {{adviser|who?}}.
-- Unlike the Secretary of State, the national security adviser is not confirmed by the {{Senate|by whom?}}.
+- The National Security Council's staff is run by the {{National Security Advisor|who?}}, officially the Assistant to the President for National Security Affairs.
+- Unlike the Secretary of State, the National Security Advisor is not confirmed by the {{Senate|by whom?}}.
 - By law, the Secretaries on the National Security Council
 ```parts
 # any order
@@ -45,7 +45,7 @@ Diplomacy :: State
 The military :: Defense
 Nuclear weapons and the power grid :: Energy
 ```
-- In May 2025, Secretary Rubio also became national security adviser, the first to hold both jobs since Henry {{Kissinger|who?}}.
+- In May 2025, Secretary Rubio also became National Security Advisor, the first to hold both jobs since Henry {{Kissinger|who?}}.
 ![Henry Kissinger](commons:Henry A. Kissinger, U.S. Secretary of State, 1973-1977.jpg)
 
 ## How the agencies decide
@@ -56,7 +56,7 @@ Their bosses' deputies :: Deputies Committee
 Cabinet secretaries :: Principals Committee
 Where the President decides :: The National Security Council
 ```
-- The committee of cabinet secretaries, chaired by the national security adviser, is the {{Principals|which?}} Committee.
+- The committee of cabinet secretaries, chaired by the National Security Advisor, is the {{Principals|which?}} Committee.
 - Fill in the missing rung:
 ```stack
 NSC | National Security Council | the President decides
