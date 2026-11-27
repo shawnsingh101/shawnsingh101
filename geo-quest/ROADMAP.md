@@ -44,7 +44,12 @@ drawn by `LevelProgress` (`src/components/Level.tsx`) at the end of sessions and
 `xp`; older days get their share of the XP total by `dailyXp()`. The answer log is `Progress.log`
 (`[unixSeconds, cardId, grade 1–4, xp, 1 if quiz]`), saved under its own localStorage key `geoquest:log` and included in
 backups; quiz answers on unlearned cards are logged with 0 XP (the score bonus is a day total, not a log entry).
-Watch: about 3 MB a year at the owner's pace; if storage fills, move the log to IndexedDB. **Next: step 2, Reports.**
+Watch: about 3 MB a year at the owner's pace; if storage fills, move the log to IndexedDB. **Step 2 done (v1.42):**
+Me has Overview | Reports (`src/views/Report.tsx`). Periods: past 24 hours (by hour, from the log), week, month, 3
+months (by day), year to date, 1 year (by week), custom dates. Tiles (XP, answers, % right, new cards, days, time
+studying = gaps between logged answers capped at 2 min) compare with the period before; answers, XP and days come from
+`p.days` (all history), subjects, time and most-missed from the log (a note says when the log started). Save as PDF is
+`window.print()` with print CSS that shows only the report on white. **Next: step 3, Edit a card.**
 1. ~~**Settings and rewards.**~~ Settings becomes a clean list: buttons that open their own popup (Theme, New cards,
    Backup, …) and sliding switches for on/off ones (sound effects, music, XP & Streaks); sound moves inside Settings.
    Backup is a dropdown: *Download backup* / *Restore from a file*. The session-complete screen gets a sleeker XP line
@@ -53,7 +58,7 @@ Watch: about 3 MB a year at the owner's pace; if storage fills, move the log to 
    level every week or two at first), a weekly target set from the owner's own recent weeks, and a progress bar to
    the next level at the end of study sessions and quizzes and on Me. **Also start an answer log** (every answer with
    its time, kept in progress and in backups) so step 2 has history.
-2. **Reports** under Me: past 24 hours, week, month, 3 months, year to date, 1 year or a custom range; a dashboard of
+2. ~~**Reports**~~ under Me: past 24 hours, week, month, 3 months, year to date, 1 year or a custom range; a dashboard of
    progress from the answer log (and daily XP totals before it); save as PDF with the browser's print-to-PDF.
 3. **Edit a card.** An Edit button on hand-written cards opens the card's source line; saving sends it to GitHub as a
    **pull request** (owner's choice), where a GitHub Action runs `npm run audit`; the owner merges. The owner pastes a
