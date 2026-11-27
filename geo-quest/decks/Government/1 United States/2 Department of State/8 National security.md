@@ -46,6 +46,7 @@ The military :: Defense
 Nuclear weapons and the power grid :: Energy
 ```
 - In May 2025, Secretary Rubio also became national security adviser, the first to hold both jobs since Henry {{Kissinger|who?}}.
+![Henry Kissinger](commons:Henry A. Kissinger, U.S. Secretary of State, 1973-1977.jpg)
 
 ## How the agencies decide
 - The interagency ladder, from the bottom up

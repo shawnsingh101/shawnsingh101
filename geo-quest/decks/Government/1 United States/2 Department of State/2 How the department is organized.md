@@ -115,6 +115,7 @@ The Americas, Canada included :: Western Hemisphere Affairs (WHA)
 ## Reporting to the Secretary
 - State's in-house think tank is the {{Policy Planning|which?}} Staff.
 - The first director of Policy Planning, in 1947, was {{George Kennan|who?}}.
+![George Kennan](commons:George F. Kennan 1947 (cropped).jpg)
 - State's own intelligence analysts work in the Bureau of {{Intelligence and Research|which?}}.
 - The office that watches the world around the clock for the Secretary is the {{Operations Center|what?}}.
 - The office that runs state visits and the rules of diplomatic rank is headed by the Chief of {{Protocol|what?}}.

@@ -96,5 +96,7 @@ The host country's remedy :: Declare a diplomat persona non grata, without givin
 - When staff and families must leave a post, it's an {{ordered|which kind of?}} departure.
 - When staff and families may leave but don't have to, it's an {{authorized|which kind of?}} departure.
 - The embassy security standards that followed the 1983 Beirut bombings are named for Admiral Bobby {{Inman|who?}}.
+![Bobby Ray Inman](commons:Admiral Bobby Ray Inman, official CIA photo, 1983.JPEG)
 - By law, a deadly attack on a post is reviewed by an {{Accountability Review Board|what?}}.
 - The US ambassador killed in Benghazi in 2012 was {{Chris Stevens|who?}}.
+![J. Christopher Stevens](commons:Ambassador christopher stevens.jpg)
