@@ -2249,7 +2249,7 @@
    "countryName": "Colombia",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "4,276 m · Andes · Nariño Department, Colombia",
+   "facts": "4,276 m · Cordillera Central · Nariño Department, Colombia",
    "admin1Ids": [
     "Q230217"
    ],
@@ -2735,6 +2735,37 @@
    "admin1": "Magdalena Department"
   },
   {
+   "id": "Q1050238",
+   "layer": "peak",
+   "name": "Namcha Barwa",
+   "group": "m-as",
+   "lon": 95.055,
+   "lat": 29.631,
+   "image": "Namcha Barwa from the west.jpg",
+   "wiki": "Namcha_Barwa",
+   "elevation": 7782,
+   "country": "Q148",
+   "countryName": "China",
+   "capitals": [],
+   "capitalAnswer": null,
+   "facts": "7,782 m · Assam Himalaya · Tibet Autonomous Region, China",
+   "native": [
+    {
+     "name": "南迦巴瓦峰",
+     "lang": "Chinese",
+     "code": "zh-hans"
+    }
+   ],
+   "admin1Ids": [
+    "Q17269"
+   ],
+   "admin1": "Tibet Autonomous Region",
+   "zh": {
+    "han": "南迦巴瓦峰",
+    "pinyin": "Nánjiābāwǎ Fēng"
+   }
+  },
+  {
    "id": "Q594387",
    "layer": "peak",
    "name": "Mount Baker",
@@ -2773,37 +2804,6 @@
     "Q140207"
    ],
    "admin1": "Taranaki Region"
-  },
-  {
-   "id": "Q1050238",
-   "layer": "peak",
-   "name": "Namcha Barwa",
-   "group": "m-as",
-   "lon": 95.055,
-   "lat": 29.631,
-   "image": "Namcha Barwa from the west.jpg",
-   "wiki": "Namcha_Barwa",
-   "elevation": 7782,
-   "country": "Q148",
-   "countryName": "China",
-   "capitals": [],
-   "capitalAnswer": null,
-   "facts": "7,782 m · Assam Himalaya · Tibet Autonomous Region, China",
-   "native": [
-    {
-     "name": "南迦巴瓦峰",
-     "lang": "Chinese",
-     "code": "zh-hans"
-    }
-   ],
-   "admin1Ids": [
-    "Q17269"
-   ],
-   "admin1": "Tibet Autonomous Region",
-   "zh": {
-    "han": "南迦巴瓦峰",
-    "pinyin": "Nánjiābāwǎ Fēng"
-   }
   },
   {
    "id": "Q26544",
@@ -3710,7 +3710,7 @@
    "countryName": "New Zealand",
    "capitals": [],
    "capitalAnswer": null,
-   "facts": "2,885 m · Kaikōura Ranges · Marlborough District, Canterbury Region, New Zealand",
+   "facts": "2,885 m · Inland Kaikōura Range · Marlborough District, Canterbury Region, New Zealand",
    "admin1Ids": [
     "Q140083",
     "Q657004"

@@ -4503,11 +4503,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/President%20Ram%20Chandra%20Poudel%2C%20Official%20portrait%20(January%202024).jpg?width=450",
-   "party": "Nepali Congress",
-   "partyLong": "Nepali Congress",
+   "party": "independent politician",
+   "partyLong": "independent politician",
    "wikidata": "Q3183124",
    "noFace": false,
-   "facts": "President of Nepal · Nepali Congress"
+   "facts": "President of Nepal · Independent politician"
   },
   {
    "id": "L-Q837-prime-minister",
@@ -6350,11 +6350,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Xanana%202011.jpg?width=450",
-   "party": "National Congress for Timorese Reconstruction",
-   "partyLong": "National Congress for Timorese Reconstruction",
+   "party": "Revolutionary Front for an Independent East Timor",
+   "partyLong": "Revolutionary Front for an Independent East Timor",
    "wikidata": "Q11509",
    "noFace": false,
-   "facts": "Prime Minister of Timor-Leste · National Congress for Timorese Reconstruction"
+   "facts": "Prime Minister of Timor-Leste · Revolutionary Front for an Independent East Timor"
   },
   {
    "id": "L-Q945-president",
@@ -6834,11 +6834,11 @@
    "capitals": [],
    "capitalAnswer": null,
    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Yamand%C3%BA%20Orsi.jpg?width=450",
-   "party": "Broad Front",
-   "partyLong": "Broad Front",
+   "party": "Movement of Popular Participation",
+   "partyLong": "Movement of Popular Participation",
    "wikidata": "Q19946921",
    "noFace": false,
-   "facts": "President of Uruguay · Broad Front"
+   "facts": "President of Uruguay · Movement of Popular Participation"
   },
   {
    "id": "L-Q265-president",
@@ -7469,7 +7469,7 @@
    "lat": 15.5,
    "capitals": [],
    "capitalAnswer": null,
-   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%85%D9%84%DA%A9%20%D8%AD%D9%88%D8%AB%DB%8C.jpg?width=450",
+   "photo": null,
    "party": null,
    "partyLong": null,
    "wikidata": "Q2558262",

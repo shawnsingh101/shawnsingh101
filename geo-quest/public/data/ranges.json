@@ -757,27 +757,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q155322",
-   "layer": "range",
-   "name": "Sikhote-Alin",
-   "image": "Sopka in south Sikhote-Alin.JPG",
-   "lon": 136.167,
-   "lat": 45.333,
-   "wiki": "Sikhote-Alin",
-   "group": "m-ranges2",
-   "nameThe": "the Sikhote-Alin",
-   "facts": "Russia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "native": [
-    {
-     "name": "Сихотэ-Алинь",
-     "lang": "Russian",
-     "code": "ru"
-    }
-   ]
-  },
-  {
    "id": "Q207692",
    "layer": "range",
    "name": "Wuyi Mountains",
@@ -801,6 +780,27 @@
     "han": "武夷山",
     "pinyin": "Wǔyí Shān"
    }
+  },
+  {
+   "id": "Q155322",
+   "layer": "range",
+   "name": "Sikhote-Alin",
+   "image": "Sopka in south Sikhote-Alin.JPG",
+   "lon": 136.167,
+   "lat": 45.333,
+   "wiki": "Sikhote-Alin",
+   "group": "m-ranges2",
+   "nameThe": "the Sikhote-Alin",
+   "facts": "Russia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Сихотэ-Алинь",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q215917",
@@ -1017,27 +1017,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q404600",
-   "layer": "range",
-   "name": "Lesser Khingan",
-   "image": "Карьер 7.jpg",
-   "lon": 127.208,
-   "lat": 48.792,
-   "wiki": "Lesser_Khingan",
-   "group": "m-ranges2",
-   "nameThe": "the Lesser Khingan",
-   "facts": "Russia",
-   "capitals": [],
-   "capitalAnswer": null,
-   "native": [
-    {
-     "name": "Малый Хинган",
-     "lang": "Russian",
-     "code": "ru"
-    }
-   ]
-  },
-  {
    "id": "Q1072879",
    "layer": "range",
    "name": "Qilian Mountains",
@@ -1061,6 +1040,27 @@
     "han": "祁连山",
     "pinyin": "Qílián Shān"
    }
+  },
+  {
+   "id": "Q404600",
+   "layer": "range",
+   "name": "Lesser Khingan",
+   "image": "Карьер 7.jpg",
+   "lon": 127.208,
+   "lat": 48.792,
+   "wiki": "Lesser_Khingan",
+   "group": "m-ranges2",
+   "nameThe": "the Lesser Khingan",
+   "facts": "Russia",
+   "capitals": [],
+   "capitalAnswer": null,
+   "native": [
+    {
+     "name": "Малый Хинган",
+     "lang": "Russian",
+     "code": "ru"
+    }
+   ]
   },
   {
    "id": "Q1029702",
@@ -1091,20 +1091,6 @@
    "capitalAnswer": null
   },
   {
-   "id": "Q1132302",
-   "layer": "range",
-   "name": "Cordillera Real",
-   "image": "Cordillera Real e Isla de la Luna en el Lago Titicaca - La Paz - Bolivia.jpg",
-   "lon": -67.167,
-   "lat": -17,
-   "wiki": "Cordillera_Real_(Bolivia)",
-   "group": "m-ranges2",
-   "nameThe": "the Cordillera Real",
-   "facts": "Bolivia",
-   "capitals": [],
-   "capitalAnswer": null
-  },
-  {
    "id": "Q1817102",
    "layer": "range",
    "name": "Mackenzie Mountains",
@@ -1115,6 +1101,20 @@
    "group": "m-ranges2",
    "nameThe": "the Mackenzie Mountains",
    "facts": "Canada",
+   "capitals": [],
+   "capitalAnswer": null
+  },
+  {
+   "id": "Q1132302",
+   "layer": "range",
+   "name": "Cordillera Real",
+   "image": "Cordillera Real e Isla de la Luna en el Lago Titicaca - La Paz - Bolivia.jpg",
+   "lon": -67.167,
+   "lat": -17,
+   "wiki": "Cordillera_Real_(Bolivia)",
+   "group": "m-ranges2",
+   "nameThe": "the Cordillera Real",
+   "facts": "Bolivia",
    "capitals": [],
    "capitalAnswer": null
   },
