@@ -134,7 +134,7 @@ Never commit copyrighted sources or the owner's notes (the repo is public); writ
 - Pop-ups stay on screen (no transform on a parent of a fixed element).
 - **Lean**: map layers load when needed, shapes cached, coordinates rounded, large extras on demand.
 - **Keep it small.** Two verbs: **Study** and **Quiz**. Five tabs (Today, Library, Quiz, Map, Me); new screens go inside
-  one. The top bar holds only sound and Settings. One row per deck; a folder with one or two small decks (under 30
+  one. The top bar holds only Settings. One row per deck; a folder with one or two small decks (under 30
   cards) is listed in its parent. A subject's top level is all folds or all rows. Ask "what can this replace?" first.
 - **Diagram look** (stacks, flows, lineage, time scale): soft pastel fills, no heavy outlines, thin arrows, small labels.
 - Plain English, short, **American spelling**. Code comments explain the *why* where it isn't obvious.

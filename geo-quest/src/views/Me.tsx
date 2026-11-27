@@ -5,6 +5,7 @@
 import { useMemo, useState } from 'react';
 import { GROUPS, cardsForNode, nodeId, sectionChain, type CardRef } from '../cards';
 import { SUBJECTS } from '../subjects';
+import { LevelProgress } from '../components/Level';
 import { level, scheduler, State, streak, useProgress, type Progress } from '../srs';
 import { Icon } from '../components/Icons';
 import type { Dataset } from '../types';
@@ -72,6 +73,7 @@ export function Me({ ds, startStudy }: { ds: Dataset; startStudy: (nodes?: strin
         <div><b>{last30.toLocaleString('en-US')}</b><small>cards in 30 days</small></div>
         {p.settings.gamify && <div><b>{p.xp.toLocaleString('en-US')}</b><small>XP</small></div>}
       </div>
+      {p.settings.gamify && <LevelProgress />}
       <div className="me-grid">
         <Radar items={data.subjects.map(x => ({ name: x.sub.name, a: covered(x.s), b: memory(x.s), started: x.s.started > 0 }))} />
         <div className="me-subjects">

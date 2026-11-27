@@ -20,7 +20,10 @@ export interface Settings {
   targetBox: boolean;                 // lock-on brackets around the place in question   // how "find it on the map" cards work
 }
 interface CardRec { c: Card; fp: string }
-interface Day { reviews: number; fresh: number; correct: number; bonus?: number }
+interface Day { reviews: number; fresh: number; correct: number; bonus?: number; xp?: number /* XP earned that day (recorded from v1.41) */ }
+/** One answer: when (Unix seconds), which card, the grade (1 again · 2 hard · 3 good · 4 easy), the XP it earned,
+ *  and 1 at the end when it was given in a quiz. Kept for Reports (Me); travels in backups. */
+export type LogEntry = [t: number, id: string, grade: number, xp: number, quiz?: 1];
 export interface QuizBest { best: number; total: number; date: string }
 export interface Progress {
   v: 1;
@@ -33,11 +36,12 @@ export interface Progress {
   quizBest: Record<string, QuizBest>;
   clipStarts?: Record<string, number>; // music: where you chose a clip should start ("file@listed start" → seconds)
   pins?: string[];           // searches pinned in the Library (just the words: matching cards are found fresh each time)
+  log: LogEntry[];           // every answer, oldest first (saved under its own key: see save())
 }
 
 const KEY = 'geoquest:v1';
 const DEFAULT: Progress = {
-  v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {},
+  v: 1, cards: {}, active: [], xp: 0, days: {}, updates: [], quizBest: {}, log: [],
   settings: { sound: true, music: false, sfx: {}, gamify: true, pictures: true, locks: true, theme: 'auto', newPerDay: 15, mapNames: true, mapCapitals: false, mapWater: false, mapCn: false, mapRivers: true, mapLakes: true, mapUs: false, mapTerr: false, mapSub: false, mapSites: false, mapMountains: false, mapRoads: false, mapDeserts: false, mapContext: false, nativeNames: true, mapMode: 'tap', targetBox: true, kindsOff: [], sessionNodes: null },
 };
 
@@ -46,7 +50,7 @@ function revive(p: Progress): Progress {
     r.c.due = new Date(r.c.due);
     if (r.c.last_review) r.c.last_review = new Date(r.c.last_review);
   }
-  return { ...DEFAULT, ...p, active: p.active ?? [], quizBest: p.quizBest ?? {}, settings: { ...DEFAULT.settings, ...p.settings, kindsOff: p.settings?.kindsOff ?? [], sessionNodes: p.settings?.sessionNodes ?? null } };
+  return { ...DEFAULT, ...p, active: p.active ?? [], quizBest: p.quizBest ?? {}, log: Array.isArray(p.log) ? p.log : [], settings: { ...DEFAULT.settings, ...p.settings, kindsOff: p.settings?.kindsOff ?? [], sessionNodes: p.settings?.sessionNodes ?? null } };
 }
 
 /** The skills you're learning that exist in the data loaded now. Unknown ones (a renamed group, or a data file
@@ -56,16 +60,35 @@ export function activeNodes(p: Progress) {
   return p.active.filter(n => valid.has(n));
 }
 
+// The answer log grows by one entry per answer, so it lives under its own key and is written only when it changes;
+// the rest of progress is small and rewritten on every update.
+const LOG_KEY = 'geoquest:log';
 function load(): Progress {
-  try { const raw = localStorage.getItem(KEY); if (raw) return revive(JSON.parse(raw)); } catch { /* private mode etc. */ }
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (raw) {
+      const p = JSON.parse(raw), log = localStorage.getItem(LOG_KEY);
+      if (log) p.log = JSON.parse(log);
+      return revive(p);
+    }
+  } catch { /* private mode etc. */ }
   return structuredClone(DEFAULT);
 }
 
 let state = load();
 const listeners = new Set<() => void>();
-function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { /* ignore */ } }
+const logSig = (log: LogEntry[]) => { const e = log[log.length - 1]; return `${log.length}:${e?.[0] ?? ''}:${e?.[1] ?? ''}`; };
+let savedLog = logSig(state.log);
+function save() {
+  const { log, ...rest } = state;
+  try { localStorage.setItem(KEY, JSON.stringify(rest)); } catch { /* ignore */ }
+  const sig = logSig(log);
+  if (sig !== savedLog) { try { localStorage.setItem(LOG_KEY, JSON.stringify(log)); savedLog = sig; } catch { /* full: the log still rides in backups */ } }
+}
 export function update(fn: (p: Progress) => void) {
-  const next = structuredClone(state); fn(next); state = next; save(); listeners.forEach(l => l());
+  // Log entries are never changed once written, so they're shared between copies instead of deep-cloned each time.
+  const { log, ...rest } = state;
+  const next = { ...structuredClone(rest), log: log.slice() } as Progress; fn(next); state = next; save(); listeners.forEach(l => l());
 }
 export function useProgress() {
   return useSyncExternalStore(cb => { listeners.add(cb); return () => listeners.delete(cb); }, () => state);
@@ -217,11 +240,18 @@ export function recordQuiz(key: string, score: number, total: number) {
     const prev = p.quizBest[key];
     if (!prev || score / total > prev.best / prev.total || (score / total === prev.best / prev.total && total > prev.total)) p.quizBest[key] = { best: score, total, date: today() };
     p.xp += score * 2;
+    const d = (p.days[today()] ??= { reviews: 0, fresh: 0, correct: 0 });
+    d.xp = (d.xp ?? 0) + score * 2;
   });
 }
 
+/** A quiz answer on a card you aren't learning: logged, but it doesn't touch the schedule (its XP comes with the score). */
+export function logQuizAnswer(ref: CardRef, grade: Grade) {
+  update(p => { p.log.push([Math.round(Date.now() / 1000), ref.id, grade, 0, 1]); });
+}
+
 /** Record an answer. Returns the updated FSRS card. */
-export function answer(ref: CardRef, grade: Grade, isNew: boolean) {
+export function answer(ref: CardRef, grade: Grade, isNew: boolean, quiz = false) {
   const now = new Date();
   update(p => {
     const prev = p.cards[ref.id]?.c ?? createEmptyCard(now);
@@ -231,7 +261,10 @@ export function answer(ref: CardRef, grade: Grade, isNew: boolean) {
     d.reviews++;
     if (isNew) d.fresh++;
     if (grade >= Rating.Good) d.correct++;
-    p.xp += grade === Rating.Again ? 1 : grade === Rating.Hard ? 5 : grade === Rating.Good ? 10 : 12;
+    const xp = grade === Rating.Again ? 1 : grade === Rating.Hard ? 5 : grade === Rating.Good ? 10 : 12;
+    p.xp += xp; d.xp = (d.xp ?? 0) + xp;
+    const t = Math.round(now.getTime() / 1000);
+    p.log.push(quiz ? [t, ref.id, grade, xp, 1] : [t, ref.id, grade, xp]);
   });
   return state.cards[ref.id].c;
 }

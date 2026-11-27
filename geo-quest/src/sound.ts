@@ -48,7 +48,7 @@ interface Voice { file: string; level: number; rate?: number; soft?: boolean }
 export const ROLES: { id: Role; name: string; when: string; voice: Voice; options: string[] }[] = [
   { id: 'tap', name: 'Click', when: 'buttons and tabs', voice: { file: 'tap', level: 0.32, rate: 0.85, soft: true }, options: ['lab/ui-click3', 'lab/ui-click1', 'lab/ui-mouseclick1', 'lab/click_001', 'lab/tick_004', 'lab/drop_001', 'lab/pluck_001', 'lab/select_002', 'lab/ui-switch12'] },
   { id: 'back', name: 'Back', when: 'closing and leaving', voice: { file: 'tap', level: 0.3, rate: 0.72, soft: true }, options: ['lab/back_002', 'lab/back_003', 'lab/close_001', 'lab/minimize_007', 'lab/ui-switch13', 'lab/drop_001'] },
-  { id: 'toggle', name: 'Toggle', when: 'switches in the ribbon', voice: { file: 'toggle', level: 0.32, rate: 0.9, soft: true }, options: ['lab/toggle_001', 'lab/toggle_003', 'lab/toggle_004', 'lab/ui-switch7', 'lab/ui-switch22'] },
+  { id: 'toggle', name: 'Toggle', when: 'switches in Settings', voice: { file: 'toggle', level: 0.32, rate: 0.9, soft: true }, options: ['lab/toggle_001', 'lab/toggle_003', 'lab/toggle_004', 'lab/ui-switch7', 'lab/ui-switch22'] },
   { id: 'open', name: 'Open', when: 'opening a panel', voice: { file: 'open', level: 0.3, soft: true }, options: ['lab/open_002', 'lab/maximize_001', 'lab/question_001'] },
   { id: 'flip', name: 'Flip', when: 'turning a card over', voice: { file: 'flip', level: 0.7 }, options: ['lab/cardSlide2', 'lab/cardSlide3', 'lab/cardSlide5', 'lab/cardFan1'] },
   { id: 'deal', name: 'Next card', when: 'the next card lands', voice: { file: 'deal', level: 0.55 }, options: ['lab/cardPlace2', 'lab/cardSlide5', 'lab/chipsStack1'] },

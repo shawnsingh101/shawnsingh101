@@ -1,37 +1,11 @@
-import { useRef } from 'react';
-import { exportProgress, importProgress, update, useProgress, type Settings } from '../srs';
 import { Icon, type IconName } from './Icons';
-import { VERSION } from '../views/Landing';
-import { QuestionTypes } from './QuestionTypes';
-import { SoundLab } from './SoundLab';
-// The backup's file name carries the local date and time, e.g. geoquest-backup-2026-11-27_14-05-32.json
-// (dashes, not colons, so the name is valid on every system), so several backups a day sort in order.
-const backupStamp = (d: Date) => { const p = (n: number) => String(n).padStart(2, '0');
-  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}_${p(d.getHours())}-${p(d.getMinutes())}-${p(d.getSeconds())}`; };
+import { Settings } from './Settings';
 
 export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas' | 'dash' | 'me';
 // Five tabs. The Atlas (places as lists) lives inside Map; the Dashboard is a card in the Library.
 const TABS: [Tab, string, IconName][] = [['home', 'Today', 'sun'], ['tree', 'Library', 'tree'], ['quiz', 'Quiz', 'target'], ['map', 'Map', 'map'], ['me', 'Me', 'person']];
 const TAB_OF: Partial<Record<Tab, Tab>> = { atlas: 'map', dash: 'tree' };
-const TOGGLE_ICON: Record<'sound' | 'music' | 'gamify' | 'pictures' | 'locks', IconName> = { sound: 'sound', music: 'music', gamify: 'star', pictures: 'image', locks: 'lock' };
-
 export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTab: (t: Tab) => void; menu: boolean; setMenu: (v: boolean) => void; goHome: () => void }) {
-  const p = useProgress();
-  const s = p.settings;
-  const file = useRef<HTMLInputElement>(null);
-  const set = <K extends keyof Settings>(k: K, v: Settings[K]) => update(x => { x.settings[k] = v; });
-  const Toggle = ({ k, label }: { k: 'sound' | 'music' | 'gamify' | 'pictures' | 'locks'; label: string }) => (
-    <button className={'chip' + (s[k] ? ' on' : '')} data-sfx="toggle" onClick={() => set(k, !s[k])} aria-pressed={s[k]} title={label}>
-      <Icon name={TOGGLE_ICON[k]} size={15} /><span className="chip-label">{label}</span>
-    </button>
-  );
-
-  const download = () => {
-    const blob = new Blob([exportProgress()], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = `geoquest-backup-${backupStamp(new Date())}.json`; a.click();
-  };
-
   return (
     <header className="ribbon">
       <div className="ribbon-row">
@@ -42,67 +16,11 @@ export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTa
           ))}
         </nav>
         <div className="toggles">
-          <Toggle k="sound" label="Sound effects" />
-          <button className={'chip' + (menu ? ' on' : '')} onClick={() => setMenu(!menu)} title="More settings" aria-label="More settings"><Icon name="gear" size={15} /></button>
+          {/* Only Settings up here: sound and every other switch live inside it. */}
+          <button className={'chip' + (menu ? ' on' : '')} data-sfx="open" onClick={() => setMenu(!menu)} title="Settings" aria-label="Settings" aria-expanded={menu}><Icon name="gear" size={15} /><span className="chip-label">Settings</span></button>
         </div>
       </div>
-      {menu && (
-        <div className="menu">
-          {/* Set-once switches live here, not in the top row: only sound (often toggled) and this menu stay up there. */}
-          <div className="menu-row">
-            <Toggle k="music" label="Music" />
-            <Toggle k="gamify" label="XP & streaks" />
-            <Toggle k="pictures" label="Pictures" />
-            <Toggle k="locks" label="Skill locks" />
-          </div>
-          <div className="menu-row">
-            <span>Theme</span>
-            <div className="seg">
-              {([['auto', 'Auto'], ['light', 'Light'], ['dark', 'Dark']] as const).map(([v, l]) => (
-                <button key={v} className={s.theme === v ? 'on' : ''} onClick={() => set('theme', v)}>{l}</button>
-              ))}
-            </div>
-          </div>
-          <label>New cards per day
-            <input type="range" min={0} max={50} step={5} value={s.newPerDay} onChange={e => set('newPerDay', +e.target.value)} />
-            <b>{s.newPerDay}</b>
-          </label>
-          <div className="menu-row">
-            <span>“Find it on the map” questions</span>
-            <div className="seg">
-              {([['tap', 'Tap the map'], ['flip', 'Flip like flashcards'], ['skip', 'Skip them']] as const).map(([v, l]) => (
-                <button key={v} className={s.mapMode === v ? 'on' : ''} onClick={() => set('mapMode', v)}>{l}</button>
-              ))}
-            </div>
-          </div>
-          <div className="menu-row column">
-            <span>Question types</span>
-            <QuestionTypes />
-          </div>
-          <label className="check">
-            <input type="checkbox" checked={s.targetBox} onChange={e => set('targetBox', e.target.checked)} />
-            Target brackets around the place in question, with ✓ / ✗ after map answers
-          </label>
-          <label className="check">
-            <input type="checkbox" checked={s.nativeNames} onChange={e => set('nativeNames', e.target.checked)} />
-            Show names in the local language (Deutschland, 日本, Ελλάδα) after each answer — Chinese characters & pinyin always show for China
-          </label>
-          <details className="menu-row column">
-            <summary>Sound lab: choose your sounds</summary>
-            <SoundLab />
-          </details>
-          <div className="menu-row">
-            <span>Backup / move to another device</span>
-            <button className="btn small" onClick={download}>Download backup</button>
-            <button className="btn small" onClick={() => file.current?.click()}>Restore from file</button>
-            <input ref={file} type="file" accept="application/json" hidden onChange={async e => {
-              const f = e.target.files?.[0]; if (!f) return;
-              try { importProgress(await f.text()); alert('Progress restored.'); } catch (err) { alert('That file could not be read: ' + (err as Error).message); }
-            }} />
-          </div>
-          <p className="muted small">Intelligence Quest v{VERSION.version} · build {VERSION.commit} · Facts: <a href="https://www.wikidata.org" target="_blank" rel="noreferrer">Wikidata</a> (CC0) · Photos & flags: Wikimedia Commons · Map & Interstates: Natural Earth · Sounds: <a href="https://kenney.nl" target="_blank" rel="noreferrer">Kenney</a> (CC0)</p>
-        </div>
-      )}
+      {menu && <Settings />}
     </header>
   );
 }

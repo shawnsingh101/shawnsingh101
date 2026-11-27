@@ -18,11 +18,12 @@ const fold = (x: string) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').t
 const latin = (x: string) => /^[\p{Script=Latin}\p{N}\p{P}\p{Zs}]+$/u.test(x);
 import { face, groupOf, placesIn, GROUPS, KIND_LABEL, LAYER_NOUN, layerFor, sectionChain, type CardRef } from '../cards';
 const m0Layer = (c: { layer: string }) => c.layer;
-import { answer, buildQueue, queueForCards, getProgress, update, learnMore, previews, Rating, recordQuiz, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
+import { answer, buildQueue, queueForCards, getProgress, update, learnMore, previews, Rating, recordQuiz, logQuizAnswer, restoreProgress, State, unseenCount, useProgress, type Grade, type Progress } from '../srs';
 import { sounds } from '../sound';
 import type { Dataset } from '../types';
 import { WorldMap, type MapHit, type Tone } from './WorldMap';
 import { Flag, Picture } from './Picture';
+import { LevelProgress } from './Level';
 import { Icon } from './Icons';
 import { LocalName } from './Native';
 import { Portrait, Incoming } from './Portrait';
@@ -67,6 +68,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
   const [recallG, setRecallG] = useState<RecallGrade | null>(null); // a parts card's grade, from how many parts you had
   const wide = useWide(); // the answer map: every answer in this deck, session paused
   // Undo: a snapshot of the session (and your progress) before each answer.
+  const quizStartXp = useRef(getProgress().xp); // a quiz's XP: its answers plus the score bonus at the end
   const history = useRef<{ queue: Item[]; done: number; results: typeof results; sessionXp: number; progress: Progress }[]>([]);
   const [canUndo, setCanUndo] = useState(false);
   const item = queue[0];
@@ -79,6 +81,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
   const c = item?.ref.country;
 
   const restart = (items: Item[]) => {
+    quizStartXp.current = getProgress().xp;
     history.current = []; setCanUndo(false);
     setQueue(items); setTotal(items.length); setDone(0); setResults([]); setSaved(false); setRevealed(false); setTapResult(null);
   };
@@ -95,7 +98,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
       setQueue(q => q.slice(1));
       // A quiz answer also counts as a review for cards you're already learning (it never adds new cards).
       const rec = getProgress().cards[item.ref.id];
-      if (rec && rec.c.state !== State.New) answer(item.ref, grade, false);
+      if (rec && rec.c.state !== State.New) answer(item.ref, grade, false, true); else logQuizAnswer(item.ref, grade);
       return;
     }
     const before = getProgress().xp;
@@ -208,6 +211,7 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           <h2>{quiz.title}</h2>
           <p className="score">{score} / {results.length} <span>({pct}%)</span></p>
           {best && <p className="muted">Best: {best.best}/{best.total} ({Math.round((100 * best.best) / best.total)}%){pct >= 90 ? ' · medal earned' : ' · 90% earns a medal'}</p>}
+          {s.gamify && <LevelProgress gained={p.xp - quizStartXp.current} />}
           {missed.length > 0 && (
             <div className="missed-list">
               <b>To review</b>
@@ -227,7 +231,8 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
       <div className="study-done">
         <div className="medal-big"><Icon name={total ? 'check' : 'globe'} size={44} /></div>
         <h2>{total ? 'Session complete' : 'Nothing due right now'}</h2>
-        <p>{total ? `${done} answers${s.gamify ? ` · +${sessionXp} XP` : ''}.` : 'Your reviews are done for now.'}</p>
+        <p>{total ? `${done} answers.` : 'Your reviews are done for now.'}</p>
+        {s.gamify && total > 0 && <LevelProgress gained={sessionXp} />}
         <div className="row">
           {more > 0 && <button className="btn primary" onClick={() => { if (!cards) learnMore(10); restart(srsQueue(ds, nodes, cards)); }}><Icon name="plus" /> Learn {Math.min(cards ? 20 : 10, more)} more</button>}
           {goQuiz && <button className="btn" onClick={goQuiz}><Icon name="target" /> Practice quiz</button>}
