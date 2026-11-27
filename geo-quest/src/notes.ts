@@ -32,7 +32,23 @@ export interface NoteCard {
 /** A practice problem: the code you start from, the cases it's tested on (the lines it reads with input(), and what it
  *  should print), asserts run after it, and a model solution (shown on request, and checked by the audit). */
 /** A parts card: 2 to 5 parts recalled one at a time (each with an optional cue), graded by how many you got. */
-export interface Recall { steps: { cue: string | null; answer: string }[]; anyOrder: boolean }
+export interface Recall { steps: { cue: string | null; answer: string; role?: string }[]; anyOrder: boolean;
+  recipe?: 'pour' | 'serve' } // a ```recipe block: what goes in (drawn as a glass filling up), then how it's served
+/** Recipe roles: the cue each block shows, and its color (styles.css .role-*). Method, glass, garnish and rim are "serve". */
+export const RECIPE_ROLES: Record<string, string> = { spirit: 'Spirit', liqueur: 'Liqueur', vermouth: 'Vermouth', wine: 'Wine',
+  sour: 'Sour', sweet: 'Sweet', bitters: 'Bitters', juice: 'Juice', top: 'Top with', cream: 'Cream', other: 'Also',
+  method: 'Method', glass: 'Glass', garnish: 'Garnish', rim: 'Rim' };
+const SERVE = new Set(['method', 'glass', 'garnish', 'rim']);
+/** A ```recipe block: one "role: amount ingredient" per line. Makes a pour card (the ingredients) and a serve card. */
+export function parseRecipe(text: string): { pour: Recall; serve: Recall } {
+  const pour: Recall['steps'] = [], serve: Recall['steps'] = [];
+  for (const raw of text.split('\n')) {
+    const m = /^\s*([a-z]+)\s*:\s*(.+)$/i.exec(raw); if (!m) continue;
+    const role = m[1].toLowerCase(), step = { cue: RECIPE_ROLES[role] ?? m[1], answer: m[2].trim(), role };
+    (SERVE.has(role) ? serve : pour).push(step);
+  }
+  return { pour: { steps: pour, anyOrder: true, recipe: 'pour' }, serve: { steps: serve, anyOrder: true, recipe: 'serve' } };
+}
 /** At most this many parts on a card: about what working memory holds. Longer processes are split into stages. */
 export const RECALL_MAX = 5;
 export function parseRecall(text: string): Recall {
@@ -113,6 +129,17 @@ export function parseDeck(file: string, text: string): Deck {
         const recall = parseRecall(text);
         add({ pre: prompt, answer: recall.steps.map(s => s.answer).join(' · '), post: '', front: true, recall }, 'parts:' + prompt);
         cards[cards.length - 1].card.fp += '|' + text;
+        prompt = null; lastWasCard = true; continue;
+      }
+      // A recipe: "- A Negroni" then a ```recipe block: a pour card (what goes in) and a serve card (method, glass, garnish).
+      if (lang === 'recipe' && prompt) {
+        lineFrom = cards.length;
+        const { pour, serve } = parseRecipe(text);
+        for (const [r, q] of [[pour, ': what goes in?'], [serve, ': how is it served?']] as const) {
+          if (!r.steps.length) continue;
+          add({ pre: prompt + q, answer: r.steps.map(s => s.answer).join(' · '), post: '', front: true, recall: r }, 'recipe:' + r.recipe + ':' + prompt);
+          cards[cards.length - 1].card.fp += '|' + text;
+        }
         prompt = null; lastWasCard = true; continue;
       }
       const blanks = [...text.matchAll(BLANK)];
