@@ -4,6 +4,10 @@ import { Icon, type IconName } from './Icons';
 import { VERSION } from '../views/Landing';
 import { QuestionTypes } from './QuestionTypes';
 import { SoundLab } from './SoundLab';
+// The backup's file name carries the local date and time, e.g. geoquest-backup-2026-11-27_14-05-32.json
+// (dashes, not colons, so the name is valid on every system), so several backups a day sort in order.
+const backupStamp = (d: Date) => { const p = (n: number) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}_${p(d.getHours())}-${p(d.getMinutes())}-${p(d.getSeconds())}`; };
 
 export type Tab = 'home' | 'tree' | 'quiz' | 'map' | 'atlas' | 'dash' | 'me';
 // Five tabs. The Atlas (places as lists) lives inside Map; the Dashboard is a card in the Library.
@@ -25,7 +29,7 @@ export function Ribbon({ tab, setTab, menu, setMenu, goHome }: { tab: Tab; setTa
   const download = () => {
     const blob = new Blob([exportProgress()], { type: 'application/json' });
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = `geoquest-backup-${new Date().toISOString().slice(0, 10)}.json`; a.click();
+    a.href = URL.createObjectURL(blob); a.download = `geoquest-backup-${backupStamp(new Date())}.json`; a.click();
   };
 
   return (
