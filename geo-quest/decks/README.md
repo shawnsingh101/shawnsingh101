@@ -108,6 +108,12 @@ related: Italy, Florence
   weekly briefing reads those Wikipedia articles and suggests cards; the deck is also listed under Live topics.
 - **`as of: November 2026`** (after a card): true for now, not for good. Shown on the card; the weekly briefing
   suggests an update when it changes.
+- **`source: https://…`** (after a card): where the fact comes from; shown as a link on the back. Cards made in the app's
+  Builder from Wikipedia get one.
+- **`icon: star`** (front matter): the deck's icon in the Library (a name from `src/components/Icons.tsx`); a new
+  subject takes the icon of its first deck that has one.
+- **Made in the app**: the Library's *New cards or deck* (the Builder) writes these same lines and sends them as a pull
+  request, or keeps a deck on one device (`Progress.myDecks`) until it's published.
 - **`source: src/srs.ts`** (after a code card): the file the code is quoted from. The card links to it on GitHub, and
   `npm run audit` fails if the file no longer contains that code.
 - **`species: Juniperus communis`** (under a heading): the scientific name of a plant or animal, shown in italics after the

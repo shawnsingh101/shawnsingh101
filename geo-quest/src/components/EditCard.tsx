@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { cardBlock, cardSource, parseDeck } from '../notes';
 import { checkToken, getToken, OWNER, proposeEdit, REPO, setToken, type Sent } from '../github';
 import { Popup } from './Settings';
+import { reloadApp, saveDeviceDeck } from '../srs';
 import { Icon } from './Icons';
 
 /** How to make a fine-grained token, then a box to paste it in. Used by the editor and by Settings. */
@@ -74,6 +75,7 @@ export function EditCard({ cardId, onClose }: { cardId: string; onClose: () => v
     try {
       const body = [why.trim() && `**Why:** ${why.trim()}`, `**File:** \`${src.path}\`, line ${src.line}`, effect?.kind === 'new' ? '**Note:** the question\'s wording changed, so this becomes a new card (progress on the old wording is set aside).' : '**Progress:** kept (only the answer or details changed).',
         '**Before**\n```markdown\n' + original + '\n```', '**After**\n```markdown\n' + text + '\n```', '_Sent from Intelligence Quest (Edit a card). The audit runs on this pull request; merge it when it passes._'].filter(Boolean).join('\n\n');
+      if (src.device) { saveDeviceDeck(src.deck.file, [...lines.slice(0, start), ...text.split('\n'), ...lines.slice(end)].join('\n')); reloadApp(); return; }
       setSent(await proposeEdit({ path: src.path, oldText: original, newText: text, title, body, card: cardId }));
     } catch (e) { setErr((e as Error).message); } finally { setBusy(false); }
   };
@@ -87,7 +89,7 @@ export function EditCard({ cardId, onClose }: { cardId: string; onClose: () => v
           <button className="btn primary" onClick={onClose}>Back to studying</button>
         </div>
       ) : (<>
-        <p className="muted small edit-where">{src.deck.subject} › {src.deck.title}{heading ? ` › ${heading}` : ''} · <a href={`https://github.com/${OWNER}/${REPO}/blob/main/${src.path}#L${src.line}`} target="_blank" rel="noreferrer">line {src.line}</a></p>
+        <p className="muted small edit-where">{src.deck.subject} › {src.deck.title}{heading ? ` › ${heading}` : ''} · {src.device ? `line ${src.line}, on this device` : <a href={`https://github.com/${OWNER}/${REPO}/blob/main/${src.path}#L${src.line}`} target="_blank" rel="noreferrer">line {src.line}</a>}</p>
         <textarea className="edit-text" value={text} onChange={e => setText(e.target.value)} rows={Math.min(14, Math.max(3, text.split('\n').length + 1))} spellCheck autoFocus />
         <p className={'edit-effect' + (effect?.kind === 'new' || effect?.kind === 'gone' ? ' warn' : '')}>
           {!effect ? 'Fixing an answer keeps your progress. Rewording the question makes it a new card.'
@@ -97,14 +99,19 @@ export function EditCard({ cardId, onClose }: { cardId: string; onClose: () => v
           {effect && effect.kind !== 'gone' && effect.more > 0 ? ` It also adds ${effect.more} card${effect.more > 1 ? 's' : ''}.` : ''}
         </p>
         <input className="edit-why" placeholder="What's wrong with it? (optional, for the pull request)" value={why} onChange={e => setWhy(e.target.value)} />
-        {!tokenOk ? <TokenSetup onDone={() => setTokenOk(true)} /> : (
+        {src.device ? (
+          <div className="row edit-actions">
+            <button className="btn" onClick={onClose}>Cancel</button>
+            <button className="btn primary" disabled={!effect || effect.kind === 'gone' || busy} onClick={send}>Save on this device</button>
+          </div>
+        ) : !tokenOk ? <TokenSetup onDone={() => setTokenOk(true)} /> : (
           <div className="row edit-actions">
             <button className="btn" onClick={onClose}>Cancel</button>
             <button className="btn primary" disabled={!effect || effect.kind === 'gone' || busy} onClick={send}>{busy ? 'Sending…' : 'Send for review'}</button>
           </div>
         )}
         {err && <p className="token-err">{err}</p>}
-        <p className="muted small">The change goes to GitHub as a pull request; nothing changes in the app until you merge it. The repository is public, so the edit can be seen by anyone.</p>
+        <p className="muted small">{src.device ? 'This deck is kept on this device only, so the change is saved here at once (the app restarts to load it).' : 'The change goes to GitHub as a pull request; nothing changes in the app until you merge it. The repository is public, so the edit can be seen by anyone.'}</p>
       </>)}
     </Popup>
   );

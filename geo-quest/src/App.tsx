@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { loadDataset } from './data';
-import { reconcile, useProgress } from './srs';
+import { reconcile, removeDeviceDecks, useProgress } from './srs';
+import { PUBLISHED_DEVICE } from './notes';
 import { setChosenSounds, sounds, startMusic, stopMusic, unlockAudio } from './sound';
 import { Quiz } from './views/Quiz';
 import { Landing } from './views/Landing';
@@ -20,14 +21,15 @@ export function App() {
   const [ds, setDs] = useState<Dataset | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [tab, setTab] = useState<Tab>(() => (location.hash.slice(1) as Tab) || 'home');
-  const [landing, setLanding] = useState(true); // the title screen shows every time the app opens
+  // The title screen shows every time the app opens, except when the app restarted itself (after saving a device deck).
+  const [landing, setLanding] = useState(() => { try { if (sessionStorage.getItem('geoquest:skipTitle')) { sessionStorage.removeItem('geoquest:skipTitle'); return false; } } catch { /* ignore */ } return true; });
   const [leaving, setLeaving] = useState(false); // the title screen fading out after Start
   const [menu, setMenu] = useState(false);
   const [treeKey, setTreeKey] = useState(0); // bumped when you tap Library: back to the Library's front page
   const [session, setSession] = useState<null | { quiz?: QuizSpec; nodes?: string[]; cards?: CardRef[] }>(null);
   const p = useProgress();
 
-  useEffect(() => { loadDataset().then(d => { reconcile(d); setDs(d); }).catch(e => setErr(String(e))); }, []);
+  useEffect(() => { loadDataset().then(d => { reconcile(d); removeDeviceDecks(PUBLISHED_DEVICE); setDs(d); }).catch(e => setErr(String(e))); }, []);
   useEffect(() => { history.replaceState(null, '', '#' + tab); }, [tab]);
   // Phones only allow sound that starts from a tap: unlock audio on the first one.
   useEffect(() => {

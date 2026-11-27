@@ -1,6 +1,7 @@
 // Note decks: plain Markdown files in geo-quest/decks/, one deck per file. See decks/README.md for the format.
 // Each card becomes a small "item" (layer 'note') so it schedules, quizzes and shows progress like a place does.
 import type { Place } from './types';
+import type { IconName } from './components/Icons';
 import { GROUPS, claimSection } from './cards';
 import { epochDeck, geotimeDeck } from './geotime';
 import { chapterName, objectiveName } from './secplus';
@@ -23,6 +24,7 @@ export interface NoteCard {
   practice?: Practice;                         // a "[practice]" card: write a program; it's run and checked (src/python.ts)
   source?: string;                             // a "source: src/tree.ts" line: the file the code is quoted from (linked on GitHub)
   line?: number;                               // the line in the deck file of the bullet the card comes from (Edit a card)
+  link?: string;                               // a "source: https://…" line: where the fact comes from (shown on the back)
   context: string | null;                      // the ## heading it sits under
   picture: { file?: string | null; url?: string | null; caption: string } | null;
   note: string | null;                         // a "> …" line: shown after the answer
@@ -67,6 +69,8 @@ export interface Deck { file: string; id: string; title: string; subject: string
   lesson: string | null;                     // a `:::lesson … :::` block: a short read that comes before the cards
   objectives: string[]; chapter: string | null; // Security+ tags (src/secplus.ts): exam objectives, study-guide chapter
   follows: string[]; checked: string | null; // a live topic: the Wikipedia articles the weekly briefing reads, and when it last did
+  icon?: string;                             // `icon: star` (front matter): the deck's icon in the Library (an IconName)
+  device?: boolean;                          // made in the app and kept on this device only (Progress.myDecks)
   cards: { id: string; card: NoteCard }[] }
 
 // Language names a deck can use → codes for the device voice.
@@ -188,7 +192,8 @@ export function parseDeck(file: string, text: string): Deck {
     const asOf = /^as of:\s*(.+)$/i.exec(line);
     if (asOf) { for (const c of lastCards()) { c.card.asOf = asOf[1].trim(); c.card.fp += '|' + asOf[1].trim(); } lastWasCard = wasCard; continue; }
     const srcLine = /^source:\s*(\S+)$/i.exec(line);
-    if (srcLine) { for (const c of lastCards()) c.card.source = srcLine[1]; lastWasCard = wasCard; continue; }
+    // A web address is where the fact comes from (shown on the back); anything else is an app file the code is quoted from.
+    if (srcLine) { for (const c of lastCards()) { if (/^https?:\/\//i.test(srcLine[1])) c.card.link = srcLine[1]; else c.card.source = srcLine[1]; } lastWasCard = wasCard; continue; }
     const h = /^#{1,3}\s+(.*)$/.exec(line);
     if (h) { prompt = null; section++; context = h[1]; picture = null; related = []; native = []; species = undefined; seenHeading = true; continue; }
     // "native: الكعبة (Arabic); Kaʿbah (Arabic, in Latin letters)": shown with a speaker button after the answer.
@@ -286,23 +291,33 @@ export function parseDeck(file: string, text: string): Deck {
   }
   // The intro keeps its lines (a book's summary page has paragraphs); `depth: deep` marks a deck of deep cuts.
   return { file, id, title, subject, path, intro: intro.join('\n') || null, eras, deep: meta.depth === 'deep', lesson,
-    objectives: (meta.objectives ?? '').split(',').map(s => s.trim()).filter(Boolean), chapter: meta.chapter || null, follows: (meta.follows ?? '').split(';').map(s => s.trim()).filter(Boolean), checked: meta.checked || null, cards };
+    objectives: (meta.objectives ?? '').split(',').map(s => s.trim()).filter(Boolean), chapter: meta.chapter || null, follows: (meta.follows ?? '').split(';').map(s => s.trim()).filter(Boolean), checked: meta.checked || null, ...(meta.icon ? { icon: meta.icon } : {}), cards };
 }
 
 // Every deck file under geo-quest/decks (bundled at build time; README files are documentation, not decks).
 // (Outside Vite, e.g. in a test script, import.meta.glob doesn't exist: no decks.)
 let files: Record<string, string> = {};
 try { files = import.meta.glob('../decks/**/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>; } catch { /* not built by Vite */ }
-/** A hand-written card's source, for Edit a card: the deck file in the repo, its text as built, and the card's line. */
-export function cardSource(cardId: string): { path: string; text: string; line: number; deck: Deck } | null {
+// Decks made in the app and kept on this device (Progress.myDecks: the same Markdown, under the path the file would
+// have). Read here, at start-up, so they become subjects, sections and decks like any other; the app reloads itself
+// after one is saved. Once a deck is published and merged, the repo's copy (same id) takes over and this one is skipped.
+export interface DeviceDeck { file: string; text: string }
+let deviceFiles: DeviceDeck[] = [];
+try { deviceFiles = (JSON.parse(localStorage.getItem('geoquest:v1') ?? '{}').myDecks ?? []) as DeviceDeck[]; } catch { /* no storage */ }
+/** The repo path of a deck file ("../decks/X/Y.md" → "geo-quest/decks/X/Y.md"). */
+export const repoPath = (file: string) => 'geo-quest/' + file.replace(/^\.\.\//, '');
+/** A hand-written card's source, for Edit a card: the deck file (in the repo, or on this device), its text, the card's line. */
+export function cardSource(cardId: string): { path: string; text: string; line: number; deck: Deck; device: boolean } | null {
   for (const d of DECKS) {
     const c = d.cards.find(x => x.id === cardId);
     if (!c) continue;
-    const text = files[d.file];
-    return text && c.card.line ? { path: 'geo-quest/' + d.file.replace(/^\.\.\//, ''), text, line: c.card.line, deck: d } : null;
+    const text = d.device ? deviceFiles.find(x => x.file === d.file)?.text : files[d.file];
+    return text && c.card.line ? { path: repoPath(d.file), text, line: c.card.line, deck: d, device: !!d.device } : null;
   }
   return null;
 }
+/** A deck's text as built (repo decks) or as saved (device decks). */
+export const deckText = (d: Deck) => (d.device ? deviceFiles.find(x => x.file === d.file)?.text : files[d.file]) ?? null;
 /** The lines that make up the card starting at `line`: its bullet and what's attached (code blocks, native:, notes…),
  *  up to the next bullet, heading or empty line. Returned as 0-based [start, end). */
 export function cardBlock(text: string, line: number): [number, number] {
@@ -318,7 +333,10 @@ export function cardBlock(text: string, line: number): [number, number] {
 }
 // Decks built from data in the app itself (the geologic time scale, shared with its chart).
 const BUILT: [string, string][] = [['../decks/Earth history/Geologic time scale.md', geotimeDeck()], ['../decks/Earth history/Epochs of the Cenozoic.md', epochDeck()]];
-export const DECKS: Deck[] = [...Object.entries(files).filter(([f]) => !/README\.md$/i.test(f)), ...BUILT].map(([f, t]) => parseDeck(f, t))
+const REPO_DECKS = [...Object.entries(files).filter(([f]) => !/README\.md$/i.test(f)), ...BUILT].map(([f, t]) => parseDeck(f, t));
+/** Device decks now in the repo too (published and merged): skipped, and dropped from progress by the app. */
+export const PUBLISHED_DEVICE = deviceFiles.filter(x => REPO_DECKS.some(d => d.file === x.file || d.id === parseDeck(x.file, x.text).id)).map(x => x.file);
+export const DECKS: Deck[] = [...REPO_DECKS, ...deviceFiles.filter(x => !PUBLISHED_DEVICE.includes(x.file)).map(x => ({ ...parseDeck(x.file, x.text), device: true }))]
   // Folder and file order (numbers first). Compared without ".md", so "Hashing" comes before "Hashing - going further".
   .sort((a, b) => a.file.replace(/^.*decks\//, '').replace(/\.md$/, '').localeCompare(b.file.replace(/^.*decks\//, '').replace(/\.md$/, ''), 'en', { numeric: true }));
 export const NOTE_SUBJECTS = [...new Set(DECKS.map(d => d.subject))];
@@ -348,7 +366,7 @@ export function registerNotes(): Place[] {
     const gid = 'n-' + d.id;
     // Deep cuts unlock once half of the core deck beside them (same folder, not deep) is known.
     const core = d.deep ? DECKS.find(x => !x.deep && x.subject === d.subject && x.path.join('/') === d.path.join('/') && d.title.startsWith(x.title)) ?? DECKS.find(x => !x.deep && x.subject === d.subject && x.path.join('/') === d.path.join('/')) : undefined;
-    if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: 'book' }], note: d.intro ?? undefined, ...(core ? { requires: `n-${core.id}/notes` } : {}),
+    if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: chain[chain.length - 1], name: d.title, layer: 'note', topics: [{ id: 'notes', name: 'Cards', icon: (d.icon ?? 'book') as IconName }], note: d.intro ?? undefined, ...(d.device ? { device: true } : {}), ...(core ? { requires: `n-${core.id}/notes` } : {}),
       ...(d.lesson ? { lesson: d.lesson } : {}), ...(d.objectives.length || d.chapter ? { secplus: { objectives: d.objectives, chapter: d.chapter } } : {}) });
     for (const { id, card } of d.cards) out.push({ id, layer: 'note', group: gid, name: card.context ?? d.title, capitals: [], capitalAnswer: null, card, deckTitle: d.title, deckPath: [d.subject, ...d.path], native: card.native.length ? card.native : undefined, species: card.species } as unknown as Place);
   }

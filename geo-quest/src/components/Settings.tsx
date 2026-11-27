@@ -1,7 +1,7 @@
 // Settings: one clean list. On/off settings are sliding switches; anything with choices opens its own popup.
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import { exportProgress, importProgress, update, useProgress, type Settings as S } from '../srs';
+import { exportProgress, importProgress, reloadApp, update, useProgress, type Settings as S } from '../srs';
 import { Icon, type IconName } from './Icons';
 import { VERSION } from '../views/Landing';
 import { QuestionTypes } from './QuestionTypes';
@@ -117,7 +117,7 @@ export function Settings() {
           )}
           <input ref={file} type="file" accept="application/json" hidden onChange={async e => {
             const f = e.target.files?.[0]; if (!f) return;
-            try { importProgress(await f.text()); alert('Progress restored.'); } catch (err) { alert('That file could not be read: ' + (err as Error).message); }
+            try { importProgress(await f.text()); alert('Progress restored.'); reloadApp(); /* its device decks load at start-up */ } catch (err) { alert('That file could not be read: ' + (err as Error).message); }
             e.target.value = '';
           }} />
         </div>
