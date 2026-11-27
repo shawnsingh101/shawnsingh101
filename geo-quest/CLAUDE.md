@@ -1,10 +1,8 @@
 # Intelligence Quest
 
-Before changing anything in this app, read [GUIDELINES.md](GUIDELINES.md): the rules for cards (local names, pinyin,
-scientific names, answer hints, no spoilers in headings, Related links), pictures, maps, the section hierarchy, data
-sources and fixes, sound, performance, and the release steps (version, changelog, README, browser test, pull request).
-When a new rule is agreed, add it to GUIDELINES.md.
+Read [GUIDELINES.md](GUIDELINES.md) first (§0 is how to work without wasting effort), then only the guide in
+`guides/` for the subject you're touching, and `decks/README.md` when writing decks. Don't read `archive/` or `shots/`.
 
 What comes next is in [ROADMAP.md](ROADMAP.md). When the owner suggests a new topic, answer with a proposal in the
-shape ROADMAP.md describes (home, tags and lenses, items, card types, sources, size, links), then offer to build it
-now or add it to the queue; keep the Queue and Done lists current.
+shape ROADMAP.md describes, then offer to build it now or add it to the queue. Before ending a session, update the
+topic's *In progress* entry so the next session can start from it. A new rule goes in GUIDELINES.md or the subject guide.
