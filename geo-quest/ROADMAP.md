@@ -36,8 +36,16 @@ Integrals deck (v1.40). Next: review the pilot after study, then add Chapter 3 M
 position, velocity, and acceleration linked to calculus; continue through the supplied chapter outline. No OpenStax
 chapter text, figures, or assessments are used.
 
-**Owner controls: edit and build inside the app** (next; agreed with the owner, one session per step, in order):
-1. **Settings and rewards.** Settings becomes a clean list: buttons that open their own popup (Theme, New cards,
+**Owner controls: edit and build inside the app** (agreed with the owner, one session per step, in order). **Step 1 done
+(v1.41):** Settings is a list (`src/components/Settings.tsx`: switches, popups via `Popup`, a Backup dropdown); the top
+bar holds only Settings. Levels in `src/levels.ts` (gem tiers; level 1 costs 10,000 XP, each next ×1.2 rounded to 500;
+weekly target = average of the last four full weeks since the first study day, rounded to 500, 5,000 in a first week),
+drawn by `LevelProgress` (`src/components/Level.tsx`) at the end of sessions and quizzes and on Me. Days now record
+`xp`; older days get their share of the XP total by `dailyXp()`. The answer log is `Progress.log`
+(`[unixSeconds, cardId, grade 1–4, xp, 1 if quiz]`), saved under its own localStorage key `geoquest:log` and included in
+backups; quiz answers on unlearned cards are logged with 0 XP (the score bonus is a day total, not a log entry).
+Watch: about 3 MB a year at the owner's pace; if storage fills, move the log to IndexedDB. **Next: step 2, Reports.**
+1. ~~**Settings and rewards.**~~ Settings becomes a clean list: buttons that open their own popup (Theme, New cards,
    Backup, …) and sliding switches for on/off ones (sound effects, music, XP & Streaks); sound moves inside Settings.
    Backup is a dropdown: *Download backup* / *Restore from a file*. The session-complete screen gets a sleeker XP line
    with a flat gem icon. **Levels, not leagues** (owner's choice): named gem tiers (quartz, amethyst, sapphire,
