@@ -118,7 +118,9 @@ Never commit copyrighted sources or the owner's notes (the repo is public); writ
 ## 6. Data
 
 - **Everything is keyed by its Wikidata id**, so names can change without losing progress.
-- A card's fingerprint is the facts it depends on; when they change, the card comes back with a note.
+- A card's fingerprint is the facts it depends on; when they change, the card comes back with a note. A fact that
+  changed in the data starts the card over; a hand-written card that was fixed keeps its progress and comes back once.
+  A note card's id ignores its answers, so fixing an answer keeps progress; rewording the question makes a new card.
 - A failing source never wipes data: every sync keeps the last good copy.
 - Hand fixes are explicit and explained, and ignored if Wikidata changes the fact they were written for.
 - Where the truth is complicated, say so in a note. Prefer official sources (ICS, Census, UNESCO).
@@ -151,5 +153,7 @@ New topics start as a proposal (ROADMAP.md).
    - **Code** (`src/`, `scripts/`, styles): type-check and build, `npm run audit`, `npm run sweep` (with
      `npx vite preview` running), and look at only the screens touched, at phone and laptop sizes. Screenshots go in
      the scratchpad, not the repo.
-4. Commit, push, open a pull request with a clear description; the owner merges.
+4. Commit, push, open a pull request with a clear description; the owner merges. Every pull request touching the app
+   runs `npm run audit` (`.github/workflows/geo-quest-audit.yml`), including the owner's own edits sent from the app
+   (branches `edit/…`, titled "Edit card: …").
 5. After a big batch, a review pass for mistakes and loose ends.

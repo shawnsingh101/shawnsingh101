@@ -111,8 +111,12 @@ export function reconcile(ds: Dataset) {
   update(p => {
     const names = new Set<string>();
     for (const id of stale) {
-      const ref = refFromId(ds, id)!;
-      p.cards[id] = { c: createEmptyCard(new Date()), fp: fingerprint(ref.kind, ref.country) };
+      const ref = refFromId(ds, id)!, prev = p.cards[id].c;
+      // A hand-written card that was fixed (Edit a card) keeps what you've learned and comes back once to show the fix;
+      // a fact that changed in the data (a new capital) starts over.
+      p.cards[id] = ref.kind === 'note' && prev.state !== State.New
+        ? { c: { ...prev, due: new Date() }, fp: fingerprint(ref.kind, ref.country) }
+        : { c: createEmptyCard(new Date()), fp: fingerprint(ref.kind, ref.country) };
       names.add(ref.country.name);
     }
     const ids = new Set(stale.map(id => id.split(':')[0]));

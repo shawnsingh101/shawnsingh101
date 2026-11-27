@@ -49,7 +49,18 @@ Me has Overview | Reports (`src/views/Report.tsx`). Periods: past 24 hours (by h
 months (by day), year to date, 1 year (by week), custom dates. Tiles (XP, answers, % right, new cards, days, time
 studying = gaps between logged answers capped at 2 min) compare with the period before; answers, XP and days come from
 `p.days` (all history), subjects, time and most-missed from the log (a note says when the log started). Save as PDF is
-`window.print()` with print CSS that shows only the report on white. **Next: step 3, Edit a card.**
+`window.print()` with print CSS that shows only the report on white. **Step 3 done (v1.43):** after a hand-written card
+is flipped, Edit (top bar of the study screen) opens `EditCard` (`src/components/EditCard.tsx`): the card's lines from
+its deck file (`cardSource` / `cardBlock` in `src/notes.ts`; every card records its bullet's `line`, checked by the
+audit), a live note on whether the edit keeps progress (re-parses the deck and looks for the card's id), and Send for
+review. `src/github.ts` reads the file fresh from `main`, replaces the old lines (refuses if they changed), commits to a
+new `edit/<deck>-<time>` branch and opens a pull request, all from the browser with the owner's fine-grained token
+(this repo only; Contents + Pull requests read/write), kept in localStorage `geoquest:github`, never in progress or
+backups. Set up in the editor or Settings › Editing on GitHub (step-by-step, token checked before saving; lists edits
+sent). `.github/workflows/geo-quest-audit.yml` runs the audit on every PR touching `geo-quest/`. A note card whose
+fingerprint changed now keeps its FSRS state and is due at once (data facts still reset). Not yet: editing
+collection cards (they come from Wikidata: fixes go in `data/collection-fixes.json`) and the lesson text. **Next: step 4, Builder** (reuse `github.ts`
+`proposeEdit` for new files: it will need a "create file" path without `sha`).
 1. ~~**Settings and rewards.**~~ Settings becomes a clean list: buttons that open their own popup (Theme, New cards,
    Backup, …) and sliding switches for on/off ones (sound effects, music, XP & Streaks); sound moves inside Settings.
    Backup is a dropdown: *Download backup* / *Restore from a file*. The session-complete screen gets a sleeker XP line
@@ -60,7 +71,7 @@ studying = gaps between logged answers capped at 2 min) compare with the period 
    its time, kept in progress and in backups) so step 2 has history.
 2. ~~**Reports**~~ under Me: past 24 hours, week, month, 3 months, year to date, 1 year or a custom range; a dashboard of
    progress from the answer log (and daily XP totals before it); save as PDF with the browser's print-to-PDF.
-3. **Edit a card.** An Edit button on hand-written cards opens the card's source line; saving sends it to GitHub as a
+3. ~~**Edit a card.**~~ An Edit button on hand-written cards opens the card's source line; saving sends it to GitHub as a
    **pull request** (owner's choice), where a GitHub Action runs `npm run audit`; the owner merges. The owner pastes a
    fine-grained GitHub token (this repo only: contents and pull requests), stored only on the device; walk them
    through creating it. Fixing an answer keeps progress; rewording the question makes a new card (say so in the editor).

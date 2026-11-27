@@ -1,0 +1,27 @@
+name: GeoQuest audit
+
+# Checks every pull request that touches the app's decks or code with `npm run audit` (the same check Claude runs):
+# card format, answers not given away, math, code cards. Edits sent from the app (Edit a card) arrive as pull
+# requests, so this runs before the owner merges them.
+on:
+  pull_request:
+    paths: ['geo-quest/**', '.github/workflows/geo-quest-audit.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: geo-quest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: geo-quest/package-lock.json
+      - run: npm ci
+      - run: npm run audit

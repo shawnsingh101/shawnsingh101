@@ -42,6 +42,9 @@ for (const d of defs) {
   if (!d.symbols.length) issues.push(`EQUATION no symbols: ${d.name}`);
 }
 for (const { f, d } of decks) {
+  // Edit a card opens the card's own line: every card must know it, and it must be a bullet.
+  const src = files.find(x => x[0] === f)![1].split('\n');
+  for (const { card: c } of d.cards) if (!c.line || !/^\s*[-*]\s/.test(src[c.line - 1] ?? '')) issues.push(`LINE ${f}: "${c.pre.slice(0, 50)}" points at line ${c.line}: "${(src[(c.line ?? 1) - 1] ?? '').slice(0, 50)}"`);
   // A lesson's flows are checked the same way; and a lesson needs cards to go with it.
   for (const m of (d.lesson ?? '').matchAll(/```flow\n([\s\S]*?)\n```/g)) checkFlow(m[1], `${f} (lesson)`);
   for (const m of (d.lesson ?? '').matchAll(/```graph\n([\s\S]*?)\n```/g)) checkGraph(m[1], `${f} (lesson)`);
