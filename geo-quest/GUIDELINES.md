@@ -62,8 +62,8 @@ page plus the guide for the subject you're touching, nothing more. A new rule go
   signs). A place's gallery keeps the wide strip.
 - **A picture is always of the card's own subject**: its free picture on Commons first (via Wikidata P18); when Commons
   can't have one (in-copyright building or painting, book cover), the English Wikipedia article's **lead image**,
-  hot-linked, never copied into the repo. Never borrow from an article's gallery. Science uses the textbook's own
-  figures (OpenStax, CC BY 4.0, credited).
+  hot-linked, never copied into the repo. Never borrow from an article's gallery. Science uses a source figure only
+  when its license permits this use, with attribution; otherwise use a suitably licensed Commons image or no picture.
 - **Every card gets its own picture of its own subject**: a picture line right after a card is that card's own; one
   under a heading is the topic default, only for a topic whose every card is about that one thing (a cocktail, a plant).
 - Give a card a picture when it shows what the card is about; skip it for dates, definitions and abstract ideas.
