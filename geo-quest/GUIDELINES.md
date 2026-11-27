@@ -1,347 +1,155 @@
 # Intelligence Quest: guidelines
 
-The rules this app is built by. They grew out of building it; writing them down keeps every new deck, map layer and
-feature consistent. When adding anything, check it against this page. When a new rule comes up, add it here.
+The rules every change follows. This page holds the rules that apply everywhere; rules for one subject live in
+`guides/<subject>.md` (books, life, programming, live-topics, cybersecurity, economics, government, music). Read this
+page plus the guide for the subject you're touching, nothing more. A new rule goes in the narrowest place it fits.
+
+## 0. Working efficiently (for Claude)
+
+- **Read only what the task needs.** This page, one guide, `decks/README.md` when writing decks, and the files you
+  change. Grep before opening a big file; read source and uploads in ranges. Never read `archive/`, `shots/`,
+  `public/data/`, `package-lock.json` or generated files unless the task is about them.
+- **One topic per session.** Before ending, update the topic's entry in ROADMAP.md *In progress* (what's done, what's
+  next, any decision made) so the next session starts from there instead of re-exploring.
+- **Ask instead of hunting.** If a web page, a file or a quick answer from the owner would save a long search, ask.
+- **Tests match the change** (see §9): content-only changes run the audit only; the browser sweep and screenshots are
+  for code changes.
 
 ## 1. What every card should do
 
-1. **Names in their own language.** Anything with a name shows it in its own language and script as well, after the
+1. **Names in their own language.** Anything with a name shows it in its own language and script too, after the
    answer, with a speaker button (a native recording from Wikidata when there is one, else the device voice).
-   - Countries, capitals, cities, regions, rivers, lakes, ranges, territories, sites, peaks, artworks: from Wikidata.
-   - Note decks: a `native: الكعبة (Arabic)` line under the heading.
-   - Use the language of where the thing *comes from*, not where it is now (the Mona Lisa is *La Gioconda*, not French).
-   - **The speaker says the answer in its own language and sits by the text it says**: beside the green answer when
-     the name is written the same way (Leonardo da Vinci, said in Italian), else beside the own-language name shown
-     under it (*La Gioconda*). It covers the person a card asks
-     for (Brunelleschi in Italian, 葛飾北斎, Фёдор Достоевский), the title (*La Gioconda*), the city (*Milano*), the term
-     (*Bauhaus*). Spelled the same as in English: no extra text, just the speaker. A person's name written our way is
-     read as the card shows it (not their full birth name). Not for concepts, dates or English names.
-   - People's own-language names come from Wikidata (P1559) for collections; in decks, a `native:` line right after the
-     card. A line with two blanks names its answer: `native: Milan = Milano (Italian); Italy = Italia (Italian)`.
-2. **Chinese gets characters and Hanyu Pinyin with tone marks**, everywhere (`scripts/lib/chinese.mjs`): words written
-   apart and capitalised as on maps (*Kūnlún Shānmài*), sound-spelled foreign names kept whole.
-   **Japanese gets romaji (Hepburn, with macrons)** the same way (`scripts/lib/japanese.mjs`): Wikidata's own
-   romanization (P2125) where it has one, else read from the kanji: 東京 *Tōkyō*, 神奈川沖浪裏 *Kanagawa Oki Nami Ura*.
-   In a deck, write the script then its romanization: `native: 夏朝 Xià Cháo (Chinese)`, `native: 富士山 Fujisan (Japanese)`;
-   any other non-Latin script can carry a transliteration the same way.
-3. **Plants and animals get their scientific name**, in italics after the answer: `species: Juniperus communis` in a
-   deck; Wikidata's taxon name (P225) in collections.
-4. **A blank says what kind of answer it wants** when "what?" could mislead: `{{Milan|what city?}}`,
-   `{{Italy|which country?}}`, `{{juniper berries|which berries?}}`. Built-in cards already say "which country?",
-   "which state?", "whom?".
-5. **A heading never gives the answer away.** The heading is shown with every card under it, so cards that ask *for* a
-   name sit under neutral headings ("Which period?", "Which spirit?", "Name it from the picture"); only cards that start
-   *from* the name sit under it.
-6. **Every card links to what it's connected to** (Related): the place on the map (country, state, city, museum), the
-   person, the region. The reverse shows on the place: "Also in your decks". A place the app teaches opens its sheet;
-   anything else opens Wikipedia.
-7. **Facts come with a little context** after the answer: dates, size, population, who made it, which division it's in.
-8. **Every fact can be asked both ways** when both ways are fair (capital ↔ country, plant ↔ spirit). Skip a direction
-   that gives itself away (Hiroshima Prefecture → Hiroshima) or has many answers (the euro → 20 countries).
-
-9. **Cloze first.** Write cards as a sentence with a blank (`The Shang ruled from {{c. 1600 BC|when?}}…`). Use
-   front :: back only when a sentence would be forced; never write a card whose back is a paragraph.
-10. **One fact per card.** A list is split: either a **grouped cloze** that hides about three items at a time and shows
-    the rest as clues (`{{c1::order}}, {{c1::sensitivity}}, {{c1::reproduction}}, {{c2::adaptation}}…`: one card per
-    group), or a **structure card** when the shape *is* the fact (time scale: `[strata: Mesozoic]` shows the era with
-    its three periods blank).
-11. **The local-language name goes with the card whose answer is that name** (the "which dynasty?" card, not the card
-    about oracle bones). Put `native:` right after that card. If a topic has no card whose answer is its name, add one
-    (under a neutral heading) rather than spreading the name over cards about other things.
-
-12. **People get their face and their own name.** A card whose answer is a person shows their portrait (from their
-    Wikipedia article), and when their name comes from another language, that name in its script with romanization and
-    the speaker button: Liu Bang → 刘邦 *Liú Bāng*, Confucius → 孔子 *Kǒngzǐ*. Places and things named in the answer get
-    the same (长安 *Cháng'ān*, 甲骨文 *jiǎgǔwén*).
-12b. **People get where they're really from, with the flag of the time.** "Born in Salzburg, Holy Roman Empire
-    (Prince-Archbishopric of Salzburg) · today Austria" under the imperial banner; Vivaldi under the Republic of Venice;
-    the flag in use in the birth year (the Russian Empire's changed in 1858). Today's country is always named too. Before
-    national flags (ancient figures), or with no flag known, today's flag. From Wikidata (the birthplace's country in
-    the birth year); hand fixes in `data/collection-fixes.json` `_origins`.
-    **Except Americans**: anyone born in what's now the United States gets today's US flag, whatever the year
-    (George Washington, Louis Armstrong): no colonial or early US flags. A member of a Native American nation gets that
-    nation's flag (set in `_origins`).
-13. **Dates are rarely the answer.** Keep the date in the sentence and blank the event, person or place: "In 1917 the
-    United States entered {{World War I}}", not "…entered World War I in {{1917}}". A date is the answer only when the
-    date itself is the landmark (July 4, 1776; the Constitution in 1787; the span of a dynasty or a war as one card;
-    a president's years when that's the question asked).
-14. **Cards teach facts about the world, not analogies.** "If Earth's history were one day, the dinosaurs die at 11:40 pm"
-    is a picture to look at (the chart's clock), not something to memorize.
-15. **The question never contains its answer.** When the answer is an acronym, its spelled-out name goes *in the
-    answer*, seen on the flip: `{{DNS (Domain Name System)|which system?}} turns names into addresses`, never
-    `{{DNS}} (Domain Name System) turns…`. Nor may the answer appear elsewhere on the card ("Rye whiskey is made from
-    {{rye}}"). A card that only asks for a mnemonic's letters (DORA) tests nothing; ask what the steps do instead.
-    `npm run audit` fails on both (owner's feedback, v1.35).
+   - Collections get it from Wikidata (people: P1559). Decks: a `native:` line right after the card; with two blanks,
+     `native: Milan = Milano (Italian); Italy = Italia (Italian)`.
+   - The language of where the thing *comes from*, not where it is now (the Mona Lisa is *La Gioconda*).
+   - The speaker sits by the text it says: beside the answer when spelled the same (Leonardo da Vinci, said in
+     Italian), else beside the own-language name under it. For people, titles, cities, terms; not for concepts,
+     dates or English names. A person's name is read as the card shows it.
+2. **Chinese gets characters and Hanyu Pinyin with tone marks** (`scripts/lib/chinese.mjs`), written apart and
+   capitalised as on maps (*Kūnlún Shānmài*). **Japanese gets Hepburn romaji with macrons** (`scripts/lib/japanese.mjs`;
+   Wikidata P2125 first). In a deck: `native: 夏朝 Xià Cháo (Chinese)`; any non-Latin script can carry a
+   transliteration the same way.
+3. **Plants and animals get their scientific name** in italics: `species: Juniperus communis` (collections: P225).
+4. **A blank says what kind of answer it wants** when "what?" could mislead: `{{Milan|what city?}}`.
+5. **A heading never gives the answer away.** Cards that ask *for* a name sit under neutral headings ("Which spirit?",
+   "Name it from the picture"); only cards that start *from* the name sit under it.
+6. **Every card links to what it's connected to** (`related:`): place, person, region. The reverse shows on the place
+   ("Also in your decks"). A place the app teaches opens its sheet; anything else opens Wikipedia.
+7. **Facts come with a little context** after the answer: dates, size, who made it, which division it's in.
+8. **Ask both ways when both are fair** (capital ↔ country). Skip a direction that gives itself away or has many answers.
+9. **Cloze first.** A sentence with a blank; front :: back only when a sentence would be forced; never a paragraph back.
+10. **One fact per card.** A list is a **grouped cloze** (about three blanks per card, the rest as clues:
+    `{{c1::order}}, {{c1::sensitivity}}, {{c2::adaptation}}`), a **structure card** when the shape is the fact
+    (`[strata: Mesozoic]`), or a **parts card** (§4i).
+11. **The local-language name goes with the card whose answer is that name.** If none exists, add one under a neutral
+    heading.
+12. **People get their face and their own name**: portrait from their Wikipedia article; a name from another language
+    in its script with romanization and speaker (Confucius → 孔子 *Kǒngzǐ*).
+    **And where they're really from, with the flag of the time** ("Born in Salzburg, Holy Roman Empire · today
+    Austria"); today's country always named; before national flags, today's flag. From Wikidata; fixes in
+    `data/collection-fixes.json` `_origins`. **Americans** get today's US flag whatever the year; a member of a Native
+    American nation gets that nation's flag.
+13. **Dates are rarely the answer.** Keep the date in the sentence and blank the event, person or place, unless the
+    date itself is the landmark (July 4, 1776).
+14. **Cards teach facts, not analogies.** An analogy is a picture to look at, not something to memorize.
+15. **The question never contains its answer.** An acronym's expansion goes *in the answer*
+    (`{{DNS (Domain Name System)|which system?}}`); the answer may not appear elsewhere on the card; a card asking only
+    for a mnemonic's letters tests nothing. `npm run audit` checks this.
 
 ## 2. Pictures
 
-- **The thing itself is shown whole, never cropped**: artworks (on a dark "gallery wall"), banknotes, plants, cocktails,
-  road signs, any single photo. A place's gallery of photos keeps the wide strip, which suits landscapes.
-- **A picture is always of the card's own subject.** Its free picture on Commons first. When Commons can't have one (a
-  building or painting still under copyright, a book cover), the English Wikipedia article's **lead image**, which
-  Wikipedia shows under fair use: hot-linked from Wikipedia, never copied into the repo (owner's decision, v1.32). Never
-  borrow from the article's gallery for a single thing: those are other works.
-- **Tap any picture to see it full screen.**
-- **No scrolling to see a card.** On a laptop a card without a map shows its picture framed beside it (up to ~400 px
-  wide), the two centered together; on a phone the picture stays above the text, at most a third of the screen tall.
-- **Never enlarge a picture past its own pixels** (no blur), on the card or full screen. Full screen fits the whole
-  picture on screen; nothing scrolls.
-- A picture can be the question (`- What is made from this? [picture] :: gin`); its caption stays hidden until the card
-  is flipped. A fair-use lead image may be the question too (owner's decision, v1.32).
-- **Give a card a picture when the picture shows what the card is about**: a person, a place, an object, an organism, a
-  structure, a map of an empire, a diagram of a process. Skip it for bare dates, definitions and abstract ideas.
-- **The picture belongs to the card, not just the topic**: a picture line right after a card is that card's own (the
-  **Every card gets its own picture of its own subject**: no topic picture repeated across all its cards (the oracle
-  bone belongs on the writing card, Liu Bang's portrait on the founder card, a map of the empire on the "which dynasty?"
-  card). A heading picture is only for a topic whose every card is about that one thing (a cocktail, a plant).
-  oracle bone on the card about Shang writing); a picture under the heading is the topic's default.
-- **Where pictures come from**: places, people, history and art from Wikimedia Commons (via Wikidata P18); **science
-  from the textbook's own figures** (OpenStax, CC BY 4.0, credited in the caption), which explain better than photos;
-  Interstate shields from P14 or `I-N.svg`.
-- **Recordings**: only free ones from Wikimedia Commons (the music is old, but each recording has its own rights). Play
-  the MP3 copy first (iPhones can't play Ogg). A clip is 30 seconds and starts at the moment people know (`@seconds`), not at the first bar; the reveal names the
-  piece and part and shows the whole work. Anyone can move a clip's start while it plays (Start here).
+- **The thing itself is shown whole, never cropped** (artworks on a dark "gallery wall", banknotes, plants, cocktails,
+  signs). A place's gallery keeps the wide strip.
+- **A picture is always of the card's own subject**: its free picture on Commons first (via Wikidata P18); when Commons
+  can't have one (in-copyright building or painting, book cover), the English Wikipedia article's **lead image**,
+  hot-linked, never copied into the repo. Never borrow from an article's gallery. Science uses the textbook's own
+  figures (OpenStax, CC BY 4.0, credited).
+- **Every card gets its own picture of its own subject**: a picture line right after a card is that card's own; one
+  under a heading is the topic default, only for a topic whose every card is about that one thing (a cocktail, a plant).
+- Give a card a picture when it shows what the card is about; skip it for dates, definitions and abstract ideas.
+- A picture can be the question (`- What is made from this? [picture] :: gin`); its caption stays hidden until flipped.
+- Tap to see full screen. No scrolling to see a card: on a laptop the picture sits beside the card (up to ~400 px), on a
+  phone above it (at most a third of the screen). Never enlarge past its own pixels.
 
 ## 3. Maps
 
-- **One level of regions at a time** (Punjab's districts *or* India's states, never both on top of each other), with a
-  bold outline of the country or state they belong to.
-- **Re-center on the place** when it's far from the middle of the map (past ~70°), so nothing is drawn tilted at the edge.
-- **Country and state names as a toggle** (the tag button by the zoom buttons) on cards where they can't give the
-  answer away: rivers, lakes, Interstates, ranges, peaks, World Heritage, seas. Never on cards that ask for a country or
-  state.
-- **Peek (the answer map)**: any map card can open a full map of every answer in its section (names, capitals pinned,
-  roads and rivers labelled). The session pauses while it's open: no answering until you go back.
-- **Map names sit inside their own place** and name only what the deck is about: US states on a US deck, countries
-  otherwise, never both.
-- "Reveal" cards start wider than the answer so the map doesn't give it away, then fly to it when flipped.
-- Line features (rivers, Interstates) are easy to tap: a wide invisible line under the visible one.
+- **One level of regions at a time**, with a bold outline of the country or state they belong to.
+- Re-center on the place when it's far from the middle (past ~70°).
+- Country and state names as a toggle only on cards where they can't give the answer away.
+- **Peek** opens a full map of every answer in the section; the session pauses while it's open.
+- Map names sit inside their own place and name only what the deck is about. "Reveal" cards start wider than the
+  answer, then fly to it. Line features get a wide invisible tap target.
 
 ## 4. Where things go (the hierarchy)
 
-- **Drill down, don't pile up.** A subject has sections; a section can hold sections: Americas › United States ›
-  New Jersey; Rivers › Rivers of the Americas › Rivers of the United States; Food & drink › Cocktails › Ingredients.
-  Set the parent (`SECTION_PARENT`, a deck's `path:`, a collection's folder).
-- **Section names are unique.** A folder named like an existing section ("Americas") gets its own name; prefer a clear
-  one ("Art of the Americas").
-- **Art**: the starter list, *By period* (Wikipedia's History of art chapters), *Where to see it* (made from the facts).
-- **Architecture** holds buildings themselves (a museum's building and history too); **Art** holds what's inside.
-  A *tour* (`decks/Architecture/2 Tours/`) is one deck per building, written as a walk: its story, then room by room,
-  pointing on to its works in Art. Government buildings' tours will also show under US government.
-- **Ids are unique across the app.** A collection entry that is already something else (a World Heritage site) gets
-  its own id automatically; never give two places the same id.
-- **Depth**: a list or deck with `depth: deep` holds the deep cuts; it unlocks once half of the core one beside it is
-  known. Start every topic with its core.
-- **Shelves come from tags** (`src/tags.ts`): a new label is added there once, not per item.
-- Something that belongs in two places is filed once and *also shown* in the other (`alsoInSections`, `alsoIn`), with one
-  set of progress.
-- **Lenses, not copies.** A thing is filed once, in its natural place (History of China › Prehistory), and tagged with
-  facets (`era: Prehistory`); the app builds the cross-cutting views from the tags (History › By era › All prehistory).
-  Tag every history deck with its world era. New facets (theme, region, Books' genre) work the same way.
-- **Every section can be studied whole** (Study), including everything nested in it.
-- **Search is a view, not a deck.** Anything can be found and studied from the Library search; pinned searches save
-  only the words. Make cards findable: put the real names (and native names) in the card or its facts.
-- **History can be studied by time or by place**: decks follow the period chapters of the source (Wikipedia's "History of
-  …" article), and a card tagged `also in: Philadelphia` also shows in the place's deck (History › … › By place).
-- **Textbooks follow the book**: subject › unit › chapter, the deck named after the chapter, with the source credited.
-- **Geography is split**: countries and their regions (continents, territories, World Heritage) vs **Physical
-  geography** (mountains, rivers, lakes, oceans & seas, deserts).
-- Big sets start with the essentials and unlock the rest (the 20 longest rivers, then each continent's; the main
-  Interstate corridors, then the others).
-- The **Library** tab always opens on the subject cards.
-- **Me** measures every subject the same two ways (covered, memory), so a new subject shows up there by itself.
-
-## 4b. Books you've read
-
-- **About 20 cards a book**: the author (from the *My reading* list), the big idea (2–3), and the facts that outlast the
-  book (10–15). Deep cuts only when asked, in a `depth: deep` deck beside it.
-- **No repeats across books**: search first; a fact another book already taught gets `also in:` the new book's lens,
-  not a second card.
-- **The summary page** is the deck's intro (thesis, structure, key terms, key people): read any time, never reviewed.
-- **Cards feed the subject's lenses** (`also in: History of AI`, `How AI works`, `The AI industry`, `AI debates`), so
-  every book on a topic builds one history, one picture of the technology, the industry and the debates.
-- The owner has read many AI books: later AI books should lean past the basics.
-- Read the PDF as text (`pdftotext`), never commit the book; cards are in our own words with very short quotes.
-
-## 4c. Life (animals and plants)
-
-- **The tree of life organizes; it isn't memorized** (`src/tree.ts`). The real tree has far more branches than a card can
-  hold, so there are no "name the branches" cards. It files Life's sections (Bacteria · Archaea · Eukaryotes › Animals ›
-  Mammals…), every group of species names its branch, and book decks about an animal feed it too.
-- **One question, a rich answer.** An animal's card is its photo → its name. The back shows the scientific name (Latin
-  speaker), its lineage as blocks from the domain down to genus and species (`Lineage`), where it lives with a range map.
-  Never ask what needs bones or teeth to see; look-alike tips belong on the answer ("not to be confused with…"), not in
-  a deck of their own.
-- **Dinosaurs are asked when, not which.** They're told apart by bones, so no photo → name cards (book decks can ask
-  more). Their card shows the life restoration and a fossil, gives the name and species, and asks the period, epoch and
-  age; the back draws the time-scale blocks (eon › era › period › epoch › age). **When it lived follows its Wikipedia
-  article** (the infobox's fossil range, read by the nightly sync), so a redating reaches the cards; the list line's range
-  (`| Late Cretaceous (Maastrichtian)`) is only the fallback, and `fossilRange` in `collection-fixes.json` overrides both.
-  They also show in Earth history (one deck, so its name never gives the period away).
-- Not a children's set: no cow-dog-tiger basics.
-
-## 4d. Programming
-
-- **Two decks, linked.** *Python* follows OpenStax *Introduction to Python Programming* chapter by chapter: universal
-  ideas, taught in Python. *Under the hood* teaches how this app works, from its real files. A card in one can be
-  `also in:` the matching deck of the other (one card, two places).
-- **Code on cards** goes in a fenced block, shown in a dark panel in every theme. Kinds of card: what does this print,
-  fill in the blank in the code, which error, and plain concept cards. Easy first; harder ones in a `depth: deep` deck
-  beside each chapter.
-- **Every "prints" answer is run in Python before it ships.** Never write an output from memory.
-- **Quoted code must be real.** An Under the hood card quoting the app names its file (`source: src/srs.ts`); the audit
-  fails when that code no longer matches, so the card is fixed when the code changes. Don't quote lines that change
-  every release (the version number).
-- Flashcards teach reading code; **practice cards** teach writing it: `[practice]` with starting code, test cases
-  (input lines → expected output), optional asserts and a model solution. Python runs in the browser (Pyodide, served
-  from the app's own `pyodide/` folder, never a CDN) in a worker, stopped after 5 seconds. The audit runs every solution
-  with the same runner (`public/practice-runner.py`) and fails if it doesn't pass, or if the starting code already does.
-- Practice problems use only what the chapter (and the ones before it) taught, two or more test cases where input is
-  read, so hard-coding an answer can't pass. They're worked in Study and kept out of timed quizzes.
-
-## 4e. Live topics (ongoing stories)
-
-- **A live topic is a deck that follows Wikipedia articles** (`follows: Title; Title` and `checked: YYYY-MM-DD` in its
-  front matter). It lives with its subject (the war in Ukraine in History, the AI race in Artificial intelligence) and
-  is also listed under **Live topics**. Followed now: the Russo-Ukrainian war and the AI race (owner's choice, v1.33).
-- **Two kinds of card.** Settled facts (the invasion began on 24 February 2022). And **"as of" cards**, true for now
-  (`as of: November 2026` after the card), shown with their date. When one stops being true, rewrite it (the new state,
-  or the old one as history: "In 2025, …"); never delete a card someone has learned.
-- **The weekly briefing, every Wednesday**, is a scheduled Claude session. It runs `node scripts/briefing.mjs`, which
-  shows what changed in the followed articles, counting only text that has stood for a week. Fresh edits on ongoing
-  events are often early reports, disputed claims or vandalism.
-  - It writes **at most two new cards a week across all live topics**, the most significant changes first, and nothing
-    on a quiet week. Updates to "as of" cards don't count toward the two.
-  - It sets `checked:` to the day it ran, runs the audit, and opens a **pull request**. Merging it is the owner's
-    approval: nothing reaches the app without it.
-- **Wikipedia is the source of truth**, in its words: attribute disputed claims ("Ukraine says…"); casualty and similar
-  figures as ranges with whose estimate they are; no opinions of our own. Headings stay neutral, as everywhere.
-
-## 4f. Cybersecurity
-
-- **Understanding first, exam practice second.** The owner practices Security+ (SY0-701) questions in a separate Study
-  Lab. Here, each deck opens with a **lesson**: a short textbook-style read (what it is, why it exists, how it works,
-  where it fits, what it's confused with), then cards on just that lesson. Acronyms are spelled out on first use in every
-  lesson and on every card.
-- **Three steps up in every part**: the lesson; its cards (the foundations); then a **"going further"** deck (`depth:
-  deep`, unlocking at half the basics) of applied, scenario-style cards: what a scan or log or symptom means, which tool
-  or setting, what an attack looks like. That's the bridge to the Study Lab's exam questions. Later parts are harder in
-  themselves, since they build on everything before.
-- **Pictures**: a Commons diagram in the lesson and on the matching card wherever a clean one exists (checked to exist
-  before use); where none does, draw one of our own (a stack or a flow), like the three states of data.
-- **Layered order, not the exam's**: each part uses only what came before. 1 How computers talk, 2 The core ideas,
-  3 Cryptography, 4 Identity, 5 Networks, 6 Attacks, 7 Defending systems, 8 Operations, 9 Governance.
-- **Tagged to the exam and the book**: `objectives:` (SY0-701, e.g. `1.4, 3.3`) and `chapter:` (Chapple and Seidl's
-  Study Guide, 9th ed.) in each deck's front matter, giving By exam objective and By book chapter lenses, and a pointer
-  back to the Study Lab at the end of each lesson. Titles live in `src/secplus.ts`.
-- **Flow diagrams** for anything that passes between systems (keys, certificates, tickets, handshakes): ```` ```flow ````
-  blocks, stepped through in lessons and blanked as cards. Every step must name an actor; the audit checks it.
-  Layers and chains (the OSI model, a certificate's chain of trust) are **stacks** (```` ```stack ````), drawn like the
-  time-scale and lineage blocks the owner likes. Look: soft pastel fills, no heavy outlines, thin arrows, small labels,
-  a short title (owner's feedback, v1.34).
-- Written in our own words from the official objectives and standard references; the study guide (copyrighted) is never
-  copied or committed. An analogy may help a lesson's intuition, but is never a card's answer (rule 14).
-
-## 4g. Economics
-
-- **One section per course**, following its syllabus lecture by lecture: Microeconomics for Public Policy,
-  Macroeconomics for Public Policy, International Trade, International Capital Markets, International Finance and
-  Monetary Theory, Theory of International Political Economy, Quantitative Analysis I and II. The owner's class notes
-  are the guide; lessons and cards are in our own words, in the course's notation. The notes are never committed (the
-  repo is public). Each lecture: a lesson, cards, and a "going further" deck built from the course's past exams.
-- **Not FSO preparation.** The owner is preparing for the Foreign Service (economic cone) separately and privately; the
-  economics here serves it, but stays a general course.
-- **The equation ladder**: for each important equation, cards in this order: its derivation (stepped through; one card
-  blanks a step, for understanding, never to memorize), the formula (blank a term), its inputs and outputs (what moves
-  it, which way), its graph (a shock: which curve shifts, which way; the flip animates it), and a policy scenario. Tag
-  each with `eq:` so the Equations section gathers them.
-- **Every equation is explained**: each `eq:` name has one definition in `equations/<Subject>.md`: the formula, what
-  every symbol means, and a worked example with real numbers, computed before it's written. The back of each equation
-  card shows them. A new equation in a deck means a new definition in the same change (the audit enforces it).
-- **Check derivations step by step**: each line must follow from the one before, and the "why" must describe that
-  step (not a different one); superscripts and subscripts must match the words (nominal vs. real, 1 vs. 2).
-- **Math is KaTeX**, bundled with the app; the audit renders every formula and fails on bad TeX. Numbers in "going
-  further" cards are checked by computing them.
-- **Next**: typed math answers (MathLive), checked by the app's Python (SymPy), for problem sets.
-
-## 4h. Government
-
-- **By country**: `decks/Government/<n> <Country>/…`. The United States first: Foundations (the Constitution's split
-  of powers), then each branch and department; the State Department is the first built out.
-- **History of government stays in History** (presidents, eras); **Law** will be its own subject (the Constitution
-  stays here, being the structure). A law that matters to both is filed once and shown in the other with `also in:`.
-- **Durable vs. current**: structure, law and treaties are ordinary cards. People in office, budgets in force and
-  stated priorities carry `as of:` and sit in a deck that `follows:` Wikipedia articles, so the weekly briefing keeps
-  them current. Never mix the two in one card.
-- **Neutral and attributed**: an administration's goals are given in its own words, with whose words they are ("The
-  2025 National Security Strategy says…").
-- **Not FSO preparation**, as with Economics: a general course on how the department works, which also serves it.
-- **Sources**: US government works are public domain (state.gov, the Foreign Affairs Manual, CRS reports), so they
-  can be followed closely; check current facts against state.gov's schedules and leadership pages and Wikipedia.
+- **Drill down, don't pile up.** A subject has sections; sections nest (Food & drink › Cocktails › Ingredients). Set
+  the parent with `SECTION_PARENT`, a deck's `path:`, or a collection's folder. **Section names and ids are unique.**
+- **Lenses, not copies.** A thing is filed once, in its natural place, and tagged with facets (`era:`, theme, region,
+  genre); the app builds cross-cutting views from the tags. Something that belongs in two places is *also shown*
+  in the other (`also in:`, `alsoInSections`, `alsoIn`) with one set of progress. Shelves come from `src/tags.ts`.
+- **Depth**: `depth: deep` decks unlock once half of the core beside them is known. Start every topic with its core;
+  big sets start with the essentials.
+- **Sources set the outline**: history follows the "History of …" article's chapters; textbooks follow the book
+  (subject › unit › chapter, source credited); courses follow the syllabus.
+- **Architecture** holds buildings (tours: one deck per building, written as a walk); **Art** holds what's inside.
+  **Geography** is split into countries/regions vs **Physical geography**.
+- Every section can be studied whole; search is a view, not a deck (make cards findable with real and native names).
+- **Me** measures every subject the same two ways (covered, memory), so a new subject shows up by itself.
 
 ## 4i. Parts cards
 
-- For a short list or process: 2 to 5 parts, about what working memory holds. A longer process is split into
-  stages, one card for the stages and one per stage (the audit refuses more than 5).
-- Give each part a cue that prompts it without giving it away; `# any order` for a set, none for a sequence.
+- For a short list or process: 2 to 5 parts. A longer process is split into stages (the audit refuses more than 5).
+- Each part gets a cue that prompts it without giving it away; `# any order` for a set, none for a sequence.
 
-## 5. Content files (how to add things)
+## 5. Content files
 
-| What | Where | Format |
-| --- | --- | --- |
-| Note decks (your own cards) | `decks/<Subject>/…/<Deck>.md` | see `decks/README.md` |
-| History, science, textbooks | `decks/History/…`, `decks/Science/<Subject>/<Unit>/<Chapter>.md` | number prefixes set the order; follow the source's own chapters (Wikipedia article, textbook) |
-| US presidents | `data/presidents.json` → `scripts/sync-presidents.mjs` | one line per presidency |
-| Collections (Wikipedia things: art…) | `collections/<Subject>/…/<List>.md` | see `collections/README.md` |
-| Regions inside a country | `data/subdivisions.json` | sources: Natural Earth, US Census, OpenStreetMap |
-| Hand fixes | `data/overrides.json`, `data/collection-fixes.json`, `data/interstates.json` | each has a `_readme` |
-| Built-in data with its own view | `src/*.ts` (e.g. `src/geotime.ts`) | the view and the cards read the same data |
+| What | Where |
+| --- | --- |
+| Note decks | `decks/<Subject>/…/<Deck>.md`, syntax in `decks/README.md` (number prefixes set the order) |
+| Collections (Wikipedia things) | `collections/<Subject>/…/<List>.md`, see `collections/README.md` |
+| Equation definitions | `equations/<Subject>.md` |
+| US presidents | `data/presidents.json` → `scripts/sync-presidents.mjs` |
+| Regions inside a country | `data/subdivisions.json` |
+| Hand fixes | `data/overrides.json`, `data/collection-fixes.json`, `data/interstates.json` (each has a `_readme`) |
+| Built-in data with its own view | `src/*.ts` (e.g. `src/geotime.ts`) |
 
-Deck syntax, quickly: `## Heading` · `- cloze with {{answer|hint}}` · `- front :: back` (`:::` both ways) ·
-`> note after the answer` · `related: A, B` · `native: name romanization (Language)` · `species: Genus species` · `also in: Deck title` ·
-`![caption](commons:File.jpg)` · `- question [picture] :: answer`.
+Never commit copyrighted sources or the owner's notes (the repo is public); write in our own words.
 
 ## 6. Data
 
-- **Everything is keyed by its Wikidata id** (Q183 = Germany), so names can change without losing progress.
-- **A card's fingerprint** is the facts it depends on: when Wikidata changes them, the card comes back for review with a note.
-- **A failing source never wipes data**: every sync keeps the last good copy (election results, companies, trade,
-  pictures, museum articles).
-- **Hand fixes are explicit and explained**, never silent: an override says why, and is ignored if Wikidata changes
-  the fact it was written for.
-- Where the truth is complicated, say so in a note (two capitals; a print with many copies has no single museum).
-- Prefer official sources: ICS for geologic time, the Census for US borders, UNESCO for World Heritage.
+- **Everything is keyed by its Wikidata id**, so names can change without losing progress.
+- A card's fingerprint is the facts it depends on; when they change, the card comes back with a note.
+- A failing source never wipes data: every sync keeps the last good copy.
+- Hand fixes are explicit and explained, and ignored if Wikidata changes the fact they were written for.
+- Where the truth is complicated, say so in a note. Prefer official sources (ICS, Census, UNESCO).
 
 ## 7. Sound
 
-- Only free-to-use sounds (CC0, e.g. Kenney), credited in `public/sfx/LICENSE.txt` and Settings.
-- **Separate switches** for sound effects and music; music is off until you turn it on.
-- UI clicks are soft and low (a gentle filter); card sounds feel like real cards.
-- Alternatives live in `public/sfx/lab/`, chosen in Settings → Sound lab, so the person using the app picks by ear.
-- The start-up chime and the music are synthesized in the browser (no files).
+- Only free sounds (CC0), credited in `public/sfx/LICENSE.txt` and Settings. Separate switches for effects and music
+  (music off by default). Soft UI clicks. Alternatives in `public/sfx/lab/` (Settings → Sound lab).
 
 ## 8. Look, feel and speed
 
-- **Phone first**: every screen is checked at phone and laptop sizes; nothing scrolls sideways.
-- Light and dark themes; respects reduced motion.
-- Pop-ups and sheets stay on screen (don't leave a transform on a parent of a fixed element).
-- **Lean**: map layers load only when needed; projected shapes are cached; coordinates rounded (~500 m for regions);
-  large extras (state borders, sound lab files) load on demand.
-- **Keep it small.** Two verbs for learning: **Study** and **Quiz**. Five tabs (Today, Library, Quiz, Map, Me); a new
-  screen goes inside one of them, not beside them. The top bar holds only what's toggled often (sound) and Settings;
-  set-once switches live in Settings. One row per deck; a folder with one or two small decks (under 30 cards) is listed in its parent and gets its own fold
-  back by itself as it grows. A subject's top level is its outline: all folds or all rows, never a mix. Ask "what can this replace?"
-  before adding a button.
-- Writing: plain English, short, no jargon in the app. **American spelling** (color, center, labor, flavor, modeled). Explain the *why* in code comments where it isn't obvious.
+- **Phone first**; nothing scrolls sideways. Light and dark themes; reduced motion respected.
+- Pop-ups stay on screen (no transform on a parent of a fixed element).
+- **Lean**: map layers load when needed, shapes cached, coordinates rounded, large extras on demand.
+- **Keep it small.** Two verbs: **Study** and **Quiz**. Five tabs (Today, Library, Quiz, Map, Me); new screens go inside
+  one. The top bar holds only sound and Settings. One row per deck; a folder with one or two small decks (under 30
+  cards) is listed in its parent. A subject's top level is all folds or all rows. Ask "what can this replace?" first.
+- **Diagram look** (stacks, flows, lineage, time scale): soft pastel fills, no heavy outlines, thin arrows, small labels.
+- Plain English, short, **American spelling**. Code comments explain the *why* where it isn't obvious.
 
 ## 9. How changes are made
 
-New topics start as a proposal and a place in the queue: see [ROADMAP.md](ROADMAP.md).
+New topics start as a proposal (ROADMAP.md).
 
-1. Work on the development branch; never push to `main` directly.
+1. Work on the development branch; never push to `main`.
 2. Bump the version in `package.json` and add a line at the top of `src/changelog.ts` (what the person will notice).
-3. Add a section to `README.md` for the version.
-4. Type-check and build; run `npm run audit` (decks) and `npm run sweep` (browser, with `npx vite preview` running);
-   test the screens touched at phone and laptop sizes.
-5. Commit, push, open a pull request with a clear description; the owner merges.
-6. After a big batch, do a review pass for mistakes and loose ends before calling it done.
+   That line is the release record; README.md gets no per-version section.
+3. **Check by kind of change:**
+   - **Content only** (decks, collections, equations, guides): `npm run audit`. No build, sweep or screenshots.
+   - **Code** (`src/`, `scripts/`, styles): type-check and build, `npm run audit`, `npm run sweep` (with
+     `npx vite preview` running), and look at only the screens touched, at phone and laptop sizes. Screenshots go in
+     the scratchpad, not the repo.
+4. Commit, push, open a pull request with a clear description; the owner merges.
+5. After a big batch, a review pass for mistakes and loose ends.

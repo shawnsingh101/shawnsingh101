@@ -22,8 +22,9 @@ Any idea ("I'd like to learn about Thanksgiving") goes through the same steps:
      before building. Not every card: those are cheap to fix after you've studied them.
    - **Links**: Related places and people, and decks it should also appear in.
 2. **Decision**: build it now, or put it in the queue below (at a position you choose).
-3. **Build** following GUIDELINES.md, including its release steps (version, changelog, README, tests, pull request).
-4. **Done**: it moves to the Done list with its version. A rule learned while building it goes into GUIDELINES.md.
+3. **Build** following GUIDELINES.md and the subject's guide, including the release steps.
+4. **Done**: its *In progress* entry is updated (or removed) and the changelog says what shipped. A rule learned while
+   building it goes into GUIDELINES.md or its subject guide.
 
 ## In progress
 
@@ -57,6 +58,13 @@ checks it (v1.32).
 …), from Musopen and Commons only. Then More (~340) and Deep cuts (~540). About a dozen pieces are still under
 copyright (Copland, Prokofiev, Barber, Orff, Khachaturian, Shostakovich) and can't be included.
 
+**Cocktails, revamped** (next): rebuild how a drink's ingredients are asked, from the owner's bartending study guide
+(measurements included; the guide itself is never committed). Idea: a "build the drink" parts card drawn as colored
+blocks (spirit, modifier, sweet, sour, garnish, glass, method), each block a measured ingredient to recall.
+
+**Books: The Changing World Order (Ray Dalio)** (next): a book deck from the owner's notes, cross-cutting into
+History, Economics and Government lenses (guides/books.md).
+
 ## Queue
 
 | # | What | Kind of work | Notes |
@@ -74,28 +82,4 @@ copyright (Copland, Prokofiev, Barber, Orff, Khachaturian, Shostakovich) and can
 Ideas for later, not yet in the queue: movies, political science, international relations, AI, languages (listening, typed answers),
 jazz recordings (as they become free: 1926 recordings on 1 January 2027), more music beyond classical and jazz, holidays & traditions (Thanksgiving first), put-in-order cards, wine regions and grapes.
 
-## Done
-
-| Version | What |
-| --- | --- |
-| 1.30 | Life: the tree of life, whales and dolphins, dinosaurs, how to tell them apart |
-| 1.31 | Life reorganized by the tree: domains as sections, photo → name with lineage blocks, dinosaurs by time |
-| 1.32 | Programming: Python chapters 1–3 and Under the hood (the repo, Git and GitHub); code cards; practice mode (write Python, run and checked); dinosaur times from Wikipedia; Wikipedia lead images where Commons has none |
-| 1.33 | Live topics: the Russo-Ukrainian war and the AI race, "as of" cards, a weekly briefing (Wednesdays) that suggests up to two cards a week as a pull request |
-| 1.34 | Cybersecurity: lessons before cards, flow diagrams, Security+ lenses; How computers talk and Cryptography |
-| 1.35 | Cybersecurity: no give-away cards (checked app-wide), "going further" decks, Wikipedia diagrams |
-| 1.36 | Economics by course (Macro lectures 1–3), KaTeX math, derivations, graphs, Equations section |
-| 1.38 | Government: the State Department (10 decks), parts cards with partial credit, bureau map cards |
-| 1.37 | Macro lectures 4–9; equation cards explain every symbol with a worked example; tables in lessons |
-| 1.29 | Where people are really from, with the flag of their time |
-| 1.28 | Classical clean-up (Musopen recordings, bad clips removed); no borrowed pictures |
-| 1.27 | Earth history: a picture of the life of each time |
-| 1.26 | The answer's pronunciation everywhere; Empire of AI and the Artificial intelligence subject |
-| 1.25 | Jazz musicians by scene (no audio yet); classical clips at the famous moment, more pieces, Start here |
-| 1.24 | Music: classical by ear, with the composer and the whole work on the reveal |
-| 1.23 | Books: essentials and deep cuts, shelved by literature and topic from shared tags |
-| 1.22 | Architecture: famous buildings, styles and architects, tours of the White House, the Capitol and the Met |
-| 1.21 | Search every card; study, quiz or pin a search |
-| 1.20 | Streamlined app: Study and Quiz, five tabs, one row per deck |
-| 1.19 | Study a whole section; History by era (the first tag lens) |
-| 1.18 | Me: progress across every subject |
+What shipped is recorded in `src/changelog.ts`; the old Done list is in `archive/ROADMAP_DONE.md`.
