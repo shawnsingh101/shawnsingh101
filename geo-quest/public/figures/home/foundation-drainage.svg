@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>Seven things that keep a basement dry, cut through the wall</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <defs><pattern id="gr" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#ece7dc"/><circle cx="3" cy="3" r="1.6" fill="#b9b1a2"/><circle cx="8" cy="7" r="1.3" fill="#c7bfb0"/></pattern></defs>
+  <rect width="720" height="520" rx="14" fill="#fbfaf6"/>
+  <text x="24" y="32" class="t">Keeping a basement dry</text>
+  <!-- native soil -->
+  <path d="M224 212 L440 238 V500 H224 Z" fill="#e3d2b6"/>
+  <!-- free-draining backfill -->
+  <path d="M224 230 L300 239 V410 H224 Z" fill="url(#gr)"/>
+  <!-- gravel around the drain, wrapped in fabric -->
+  <rect x="232" y="410" width="78" height="62" rx="6" fill="url(#gr)" stroke="#9a8f7c" stroke-dasharray="4 3"/>
+  <!-- clay cap sloped away -->
+  <path d="M224 212 L440 238 V256 L224 230 Z" fill="#bfa27e"/>
+  <path d="M224 212 L440 238" stroke="#7fae6a" stroke-width="3"/>
+  <!-- basement: wall, footing, slab -->
+  <rect x="40" y="420" width="160" height="16" fill="#d6d6d2"/>
+  <rect x="200" y="196" width="24" height="248" fill="#d6d6d2"/>
+  <rect x="176" y="444" width="72" height="26" fill="#cacac5"/>
+  <path d="M225 214 V444" stroke="#3a3a3a" stroke-width="3"/>
+  <text x="80" y="330" class="sm">basement</text>
+  <!-- wood floor and wall above -->
+  <rect x="40" y="176" width="184" height="20" fill="#e9d3b0"/>
+  <rect x="200" y="96" width="24" height="80" fill="#efe3cf"/>
+  <!-- roof and gutter -->
+  <path d="M40 60 L262 96" stroke="#9c8a78" stroke-width="8"/>
+  <path d="M252 92 h22 v14 q-11 6 -22 0 Z" fill="#c9ced3" stroke="#8d969f"/>
+  <!-- downspout and extension -->
+  <path d="M262 106 V206 Q262 216 274 217 L392 231" stroke="#a9b2ba" stroke-width="7" fill="none"/>
+  <!-- rain -->
+  <g stroke="#4a90d9" stroke-width="1.5"><path d="M110 40 l-6 14"/><path d="M150 44 l-6 14"/><path d="M190 52 l-6 14"/></g>
+  <!-- water leaving the extension -->
+  <path d="M396 232 q12 2 20 8" stroke="#4a90d9" stroke-width="2" fill="none"/>
+  <!-- water dropping through backfill -->
+  <g stroke="#4a90d9" stroke-width="1.5" fill="none"><path d="M262 260 v40 m-4 -6 l4 6 l4 -6"/><path d="M282 320 v40 m-4 -6 l4 6 l4 -6"/></g>
+  <!-- perforated drain pipe -->
+  <circle cx="271" cy="448" r="12" fill="#5aa469"/>
+  <g fill="#fbfaf6"><circle cx="265" cy="444" r="1.6"/><circle cx="276" cy="444" r="1.6"/><circle cx="271" cy="452" r="1.6"/></g>
+  <!-- labels -->
+  <text x="456" y="72" class="lbl">1 gutter</text><text x="456" y="88" class="sm">catches the roof's water</text>
+  <path class="lead" d="M452 70 L278 98"/>
+  <text x="456" y="146" class="lbl">2 downspout and extension</text><text x="456" y="162" class="sm">lets the water out 4 to 6 ft away</text>
+  <path class="lead" d="M452 152 L380 228"/>
+  <text x="456" y="220" class="lbl">3 clay cap, sloped away</text><text x="456" y="236" class="sm">6 in. of fall in the first 10 ft</text>
+  <path class="lead" d="M452 230 L436 244"/>
+  <text x="456" y="296" class="lbl">4 gravel backfill</text><text x="456" y="312" class="sm">lets water drop straight down</text>
+  <path class="lead" d="M452 300 L296 300"/>
+  <text x="456" y="362" class="lbl">5 damp-proofing</text><text x="456" y="378" class="sm">coats the outside of the wall</text>
+  <path class="lead" d="M452 366 L228 366"/>
+  <text x="456" y="424" class="lbl">6 gravel in filter fabric</text><text x="456" y="440" class="sm">fabric keeps silt out of the pipe</text>
+  <path class="lead" d="M452 428 L311 428"/>
+  <text x="456" y="482" class="lbl">7 perforated drain pipe</text><text x="456" y="498" class="sm">by the footing, to daylight or a sump</text>
+  <path class="lead" d="M452 486 L284 452"/>
+  <text x="150" y="490" class="sm">footing</text>
+  <path class="lead" d="M196 480 L204 470"/>
+</svg>

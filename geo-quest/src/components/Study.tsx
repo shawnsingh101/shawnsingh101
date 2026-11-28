@@ -6,6 +6,8 @@ import { RecallCard, recallGrade, RECALL_LABEL, type RecallGrade } from './Recal
 import { PracticeCard } from './Practice';
 import { Flow } from './Flow';
 import { Stack } from './Stack';
+import { Org } from './Org';
+import { MemberMap } from './MemberMap';
 import { Graph } from './Graph';
 import { Derive } from './Derive';
 import { LessonReader } from './Lesson';
@@ -359,15 +361,16 @@ export function Study({ ds, onExit: exit, quiz, goQuiz, nodes, cards }: { ds: Da
           {c.layer === 'road' && c.image && item.ref.kind !== 'roadShield' && (revealed || item.ref.kind === 'locate') && <img className="card-shield" src={commonsUrl(c.image, 160)} alt={`${c.short ?? c.name} sign`} />}
           {f.person && <Portrait photo={f.person.photo} wiki={c.wiki} show={f.person.when === 'before' || revealed} name={revealed ? c.name : undefined} party={c.party} />}
           {/* Code with the question: above the sentence ("This prints ___."), or holding the blank itself */}
-          {f.code && !f.code.text.includes('\u0000') && (f.code.lang === 'flow' ? <Flow text={f.code.text} /> : f.code.lang === 'stack' ? <Stack text={f.code.text} /> : f.code.lang === 'graph' ? <Graph text={f.code.text} revealed={revealed} /> : f.code.lang === 'derive' ? <Derive text={f.code.text} /> : <CodeBlock text={f.code.text} lang={f.code.lang} />)}
+          {f.code && !f.code.text.includes('\u0000') && (f.code.lang === 'flow' ? <Flow text={f.code.text} /> : f.code.lang === 'stack' ? <Stack text={f.code.text} /> : f.code.lang === 'org' ? <Org text={f.code.text} /> : f.code.lang === 'graph' ? <Graph text={f.code.text} revealed={revealed} /> : f.code.lang === 'derive' ? <Derive text={f.code.text} /> : <CodeBlock text={f.code.text} lang={f.code.lang} />)}
           {f.bureau && <BureauMap ds={ds} iso3={f.bureau} revealed={revealed} />}
+          {f.members && <MemberMap ds={ds} code={f.members.code} whose={f.members.whose} revealed={revealed} />}
           {f.recall ? <RecallCard key={item.ref.id + ':' + done} r={f.recall} prompt={f.pre} done={revealed} onDone={(got, n) => { setRecallG(recallGrade(got, n)); reveal(); }} />
           : f.practice ? <PracticeCard key={item.ref.id} p={f.practice} prompt={f.pre} revealed={revealed} onDone={reveal} />
           : f.code?.text.includes('\u0000') ? <>
             <p className="cloze front"><Rich before={f.pre} /></p>
             {f.code.lang === 'derive' ? <Derive text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} blankTeX={blankTex(revealed, f.answer, f.blank)} />
-            : f.code.lang === 'flow' || f.code.lang === 'stack'
-              ? (f.code.lang === 'flow' ? <Flow text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} /> : <Stack text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} />)
+            : f.code.lang === 'flow' || f.code.lang === 'stack' || f.code.lang === 'org'
+              ? (f.code.lang === 'flow' ? <Flow text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} /> : f.code.lang === 'org' ? <Org text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} /> : <Stack text={f.code.text} blank={revealed ? <span className="fill"><Rich before={f.answer} /></span> : <span className="blank">{f.blank}</span>} />)
               : <CodeBlock text={f.code.text} lang={f.code.lang} blank={revealed ? <span className="fill">{f.answer}</span> : <span className="blank">{f.blank}</span>} />}
           </> : f.strata ? <>
             <p className="cloze front">{f.pre}</p>

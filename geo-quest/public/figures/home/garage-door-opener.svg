@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>A garage door opener seen from the side, with the door closed</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="720" height="500" rx="14" fill="#fbfaf6"/>
+  <text x="24" y="32" class="t">A garage door opener, from the side</text>
+  <!-- ceiling, floor, front wall with header -->
+  <rect x="24" y="60" width="672" height="10" fill="#e9d3b0"/>
+  <rect x="24" y="440" width="672" height="14" fill="#d6d6d2"/>
+  <rect x="590" y="70" width="26" height="92" fill="#efe3cf"/>
+  <!-- horizontal and vertical door track -->
+  <path d="M250 150 H540 Q574 150 574 184 V440" stroke="#a9b2ba" stroke-width="5" fill="none"/>
+  <!-- door panels (closed) -->
+  <g fill="#cfe0ea" stroke="#8aa5b8"><rect x="578" y="168" width="10" height="68"/><rect x="578" y="236" width="10" height="68"/><rect x="578" y="304" width="10" height="68"/><rect x="578" y="372" width="10" height="68"/></g>
+  <!-- torsion spring on the header (end view) and cable -->
+  <circle cx="568" cy="86" r="12" fill="#f1c9a5" stroke="#c46a3a" stroke-width="2"/>
+  <path d="M568 98 V108 M568 122 V430 H578" stroke="#777" stroke-width="1.2" fill="none"/>
+  <!-- rail from motor to header -->
+  <rect x="140" y="112" width="450" height="8" fill="#c9ced3" stroke="#8d969f"/>
+  <!-- motor unit hung from ceiling -->
+  <path d="M110 70 V96 M190 70 V96" stroke="#8d969f" stroke-width="3"/>
+  <rect x="80" y="96" width="120" height="50" rx="8" fill="#b8c6d3" stroke="#6f8496"/>
+  <circle cx="186" cy="134" r="5" fill="#f7e08a"/>
+  <!-- trolley, arm and release cord -->
+  <rect x="520" y="106" width="34" height="18" rx="3" fill="#8aa5b8"/>
+  <path d="M546 124 L582 178" stroke="#6f8496" stroke-width="5"/>
+  <path d="M530 124 V214" stroke="#d64545" stroke-width="2"/>
+  <circle cx="530" cy="220" r="6" fill="#d64545"/>
+  <!-- photo eye and its beam -->
+  <rect x="560" y="410" width="12" height="16" rx="3" fill="#5aa469"/>
+  <!-- wall button -->
+  <rect x="34" y="250" width="16" height="24" rx="3" fill="#cfe0ea" stroke="#6f8496"/>
+  <path d="M50 262 Q80 200 90 146" stroke="#777" stroke-width="1" fill="none"/>
+  <!-- labels -->
+  <text x="90" y="186" class="lbl">motor unit</text><text x="90" y="202" class="sm">with the control board, light</text><text x="90" y="218" class="sm">and the force (sensitivity) setting</text>
+  <path class="lead" d="M120 172 L130 146"/>
+  <text x="250" y="96" class="lbl">rail</text><text x="282" y="96" class="sm">a chain, belt or screw inside drives the trolley</text>
+  <path class="lead" d="M262 100 L262 112"/>
+  <text x="300" y="186" class="lbl">door track</text><text x="300" y="202" class="sm">rollers on the door's edges run in it</text>
+  <path class="lead" d="M340 172 L340 152"/>
+  <text x="350" y="250" class="lbl">emergency release</text><text x="350" y="266" class="sm">pull to free the door from the trolley</text>
+  <path class="lead" d="M476 246 L524 222"/>
+  <text x="380" y="300" class="lbl">trolley and door arm</text>
+  <path class="lead" d="M516 296 L536 128"/>
+  <text x="300" y="380" class="lbl">photo eyes, about 6 in. up</text><text x="300" y="396" class="sm">one on each side; a broken beam</text><text x="300" y="412" class="sm">makes a closing door reverse</text>
+  <path class="lead" d="M500 384 L556 414"/>
+  <text x="400" y="46" class="lbl">torsion spring</text><text x="502" y="46" class="sm">holds up most of the door's weight</text>
+  <path class="lead" d="M450 52 L557 82"/>
+  <text x="62" y="300" class="lbl">wall button</text>
+  <text x="626" y="300" class="sm">door</text>
+</svg>

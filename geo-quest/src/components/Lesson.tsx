@@ -1,12 +1,13 @@
 // A lesson: the short read before a deck's cards, like a textbook section. What it is, why it exists, how it works, where
 // it fits, what it's confused with, with flow diagrams to step through. Written in a deck's `:::lesson … :::` block in
 // plain Markdown: ## and ### headings, paragraphs, - lists, > callouts, **bold**, `code`, pictures, | tables |,
-// ```flow, ```stack and code blocks.
+// ```flow, ```stack, ```org and code blocks.
 import { Fragment, useEffect, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { CodeBlock, Rich } from './Code';
 import { Flow } from './Flow';
 import { Stack } from './Stack';
+import { Org } from './Org';
 import { Picture } from './Picture';
 import { Graph } from './Graph';
 import { Derive } from './Derive';
@@ -30,12 +31,18 @@ export function LessonBody({ text }: { text: string }) {
       flush();
       const lang = l.slice(3).trim() || 'text', body: string[] = [];
       while (++i < lines.length && !lines[i].trim().startsWith('```')) body.push(lines[i]);
-      out.push(lang === 'flow' ? <Flow key={out.length} text={body.join('\n')} stepper /> : lang === 'stack' ? <Stack key={out.length} text={body.join('\n')} /> : lang === 'graph' ? <Graph key={out.length} text={body.join('\n')} interactive /> : lang === 'derive' ? <Derive key={out.length} text={body.join('\n')} stepper /> : <CodeBlock key={out.length} text={body.join('\n')} lang={lang} />);
+      out.push(lang === 'flow' ? <Flow key={out.length} text={body.join('\n')} stepper /> : lang === 'stack' ? <Stack key={out.length} text={body.join('\n')} /> : lang === 'org' ? <Org key={out.length} text={body.join('\n')} /> : lang === 'graph' ? <Graph key={out.length} text={body.join('\n')} interactive /> : lang === 'derive' ? <Derive key={out.length} text={body.join('\n')} stepper /> : <CodeBlock key={out.length} text={body.join('\n')} lang={lang} />);
       continue;
     }
-    // A picture: ![caption](commons:File.svg), shown whole (a diagram), tap to enlarge.
-    const img = /^!\[([^\]]*)\]\((?:commons:)?(.+)\)$/.exec(l);
-    if (img) { flush(); out.push(<div key={out.length} className="lesson-picture"><Picture file={img[2]} caption={img[1]} single /></div>); continue; }
+    // A picture: ![caption](commons:File.svg), shown whole (a diagram), tap to enlarge. A full https:// address or one of
+    // the app's own drawn figures (figures/…, in public/) is shown as it is.
+    const img = /^!\[([^\]]*)\]\((commons:)?(.+)\)$/.exec(l);
+    if (img) {
+      flush();
+      const own = !img[2] && /^(https?:\/\/|figures\/)/.test(img[3]);
+      out.push(<div key={out.length} className="lesson-picture"><Picture {...(own ? { url: img[3] } : { file: img[3] })} caption={img[1]} single /></div>);
+      continue;
+    }
     const h = /^(#{2,3})\s+(.*)$/.exec(l);
     if (h) { flush(); out.push(h[1] === '##' ? <h2 key={out.length}>{inline(h[2])}</h2> : <h3 key={out.length}>{inline(h[2])}</h3>); continue; }
     // A table: | a | b | rows, the first is the header, a |---| row under it is skipped.

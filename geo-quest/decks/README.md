@@ -100,6 +100,12 @@ related: Italy, Florence
   and *how is it served?*. Up to 5 lines each; an ingredient named in the drink's name is left out (the audit checks).
 - **A bureau map card**: `- [bureau: EGY] Which regional bureau covers Egypt?` (the country's ISO 3166 alpha-3 code;
   the answer comes from `src/bureaus.ts`).
+- **Membership maps**: `- [members: NATO] Picture NATO's members.` (the world waits blank; the flip lights the members)
+  and `- [whose: NATO] Whose members are lit up?` (lit from the start; the answer is the group). Groups, members and
+  their `asOf` date live in `src/memberships.ts`; a change there brings the cards back.
+- **An org chart**: an ```` ```org ```` block, one office per line, indented two spaces under the office it reports to,
+  `name | detail` for a title or note; a `# Title` line first is optional. A parent whose children are all leaves shows
+  them as tiles. With `{{blanks}}` it's a card of its own (one per blank), asked by the plain bullet above it.
 - **A stack**: a ```` ```stack ```` block draws layered blocks, like the time-scale cards: one row per line,
   `label | name | detail` (`4 | Transport | TCP, UDP, ports`). For layers (the OSI model) and chains (root CA ›
   intermediate › site). Like a flow, it can carry `{{blanks}}` and be a card. Flows and stacks can start with a

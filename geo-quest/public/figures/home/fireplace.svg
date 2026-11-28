@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>A masonry fireplace, cut through from the side</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="700" height="500" rx="14" fill="#fbfaf6"/>
+  <text x="30" y="30" class="t">A masonry fireplace, cut through</text>
+  <!-- masonry mass (back is left, room is right) -->
+  <path d="M150 470 V330 L190 250 L230 200 V60 H330 V200 L360 250 V300 H330 V470 Z" fill="#e8cfc0"/>
+  <!-- flue liner -->
+  <rect x="250" y="60" width="60" height="150" fill="#f3e9df" stroke="#c9a995"/>
+  <!-- cap -->
+  <path d="M220 54 H340 L330 44 H230 Z" fill="#c9ced3"/>
+  <rect x="246" y="52" width="4" height="8" fill="#999"/><rect x="310" y="52" width="4" height="8" fill="#999"/>
+  <!-- smoke chamber -->
+  <path d="M250 210 L200 270 H330 L310 210 Z" fill="#efe2d6"/>
+  <!-- smoke shelf -->
+  <path d="M200 270 H268 V282 H200 Z" fill="#cfae98"/>
+  <!-- damper -->
+  <path d="M270 276 L318 262" stroke="#555" stroke-width="5"/>
+  <!-- firebox -->
+  <path d="M190 470 V340 L210 290 H330 V470 Z" fill="#f6eee6" stroke="#cfae98"/>
+  <path d="M195 470 V342 L213 296" stroke="#d4836c" stroke-width="8" fill="none"/>
+  <!-- fire -->
+  <path d="M230 470 Q240 420 262 440 Q270 400 290 430 Q300 412 310 470 Z" fill="#f6b26b"/>
+  <path d="M245 470 Q258 440 268 452 Q280 430 295 470 Z" fill="#f9d77e"/>
+  <!-- hearth -->
+  <rect x="330" y="462" width="120" height="12" fill="#cfae98"/>
+  <!-- room smoke arrows -->
+  <path d="M280 410 Q290 330 300 250 Q290 180 280 120" stroke="#9a9a9a" stroke-width="2" fill="none" stroke-dasharray="5 4"/>
+  <!-- labels right -->
+  <text x="380" y="50" class="lbl">cap</text><text x="380" y="66" class="sm">keeps out rain and animals, stops sparks</text>
+  <path class="lead" d="M376 46 H342"/>
+  <text x="380" y="120" class="lbl">flue</text><text x="380" y="136" class="sm">clay or stainless liner, sized to the firebox</text>
+  <path class="lead" d="M376 116 H312"/>
+  <text x="380" y="222" class="lbl">smoke chamber</text>
+  <path class="lead" d="M376 218 H318"/>
+  <text x="400" y="262" class="lbl">damper</text><text x="400" y="278" class="sm">closed when there's no fire</text>
+  <path class="lead" d="M396 258 H322"/>
+  <text x="380" y="380" class="lbl">firebox</text><text x="380" y="396" class="sm">lined with firebrick</text>
+  <path class="lead" d="M376 376 H330"/>
+  <text x="470" y="472" class="lbl">hearth</text><text x="470" y="488" class="sm">fireproof floor out into the room</text>
+  <path class="lead" d="M466 468 H452"/>
+  <!-- labels left -->
+  <text x="30" y="250" class="lbl">smoke shelf</text><text x="30" y="266" class="sm">turns back</text><text x="30" y="282" class="sm">downdrafts</text>
+  <path class="lead" d="M112 260 L204 276"/>
+</svg>

@@ -6,6 +6,7 @@ import { GROUPS, claimSection } from './cards';
 import { epochDeck, geotimeDeck } from './geotime';
 import { chapterName, objectiveName } from './secplus';
 import { bureauOf, bureauAnswer } from './bureaus';
+import { membership } from './memberships';
 
 export interface NoteCard {
   pre: string; answer: string; post: string;  // cloze: "pre [answer] post"; front/back: pre = front, answer = back
@@ -20,6 +21,7 @@ export interface NoteCard {
   asOf?: string;                               // an "as of: November 2026" line: true for now, not for good (a live topic's current state)
   code?: { lang: string; text: string };       // a fenced code block: shown with the question. A \u0000 in it marks the card's blank
   bureau?: string;                             // "[bureau: EGY] Which bureau covers Egypt?": a map card (src/bureaus.ts), the country's ISO code
+  members?: { code: string; whose: boolean }; // "[members: NATO]" / "[whose: NATO]": a membership map card (src/memberships.ts)
   recall?: Recall;                             // a parts card: a ```parts block under a plain bullet, recalled one part at a time
   practice?: Practice;                         // a "[practice]" card: write a program; it's run and checked (src/python.ts)
   source?: string;                             // a "source: src/tree.ts" line: the file the code is quoted from (linked on GitHub)
@@ -75,7 +77,7 @@ export interface Deck { file: string; id: string; title: string; subject: string
   cards: { id: string; card: NoteCard }[] }
 
 // Language names a deck can use → codes for the device voice.
-const LANG_CODE: Record<string, string> = { maori: 'mi', 'māori': 'mi', catalan: 'ca', croatian: 'hr', czech: 'cs', danish: 'da', swedish: 'sv', arabic: 'ar', punjabi: 'pa', hebrew: 'he', italian: 'it', hindi: 'hi', greek: 'el', latin: 'it', sanskrit: 'hi', japanese: 'ja', chinese: 'zh', mandarin: 'zh', spanish: 'es', french: 'fr', german: 'de', persian: 'fa', portuguese: 'pt', russian: 'ru', korean: 'ko', turkish: 'tr', urdu: 'ur', polish: 'pl', hungarian: 'hu', vietnamese: 'vi', swahili: 'sw', amharic: 'am', armenian: 'hy', georgian: 'ka', tibetan: 'bo', thai: 'th', dutch: 'nl' };
+const LANG_CODE: Record<string, string> = { maori: 'mi', 'māori': 'mi', catalan: 'ca', croatian: 'hr', czech: 'cs', danish: 'da', swedish: 'sv', arabic: 'ar', punjabi: 'pa', hebrew: 'he', italian: 'it', hindi: 'hi', greek: 'el', latin: 'it', sanskrit: 'hi', japanese: 'ja', chinese: 'zh', mandarin: 'zh', spanish: 'es', french: 'fr', german: 'de', persian: 'fa', portuguese: 'pt', russian: 'ru', korean: 'ko', turkish: 'tr', urdu: 'ur', polish: 'pl', hungarian: 'hu', vietnamese: 'vi', swahili: 'sw', amharic: 'am', armenian: 'hy', georgian: 'ka', tibetan: 'bo', thai: 'th', dutch: 'nl', bulgarian: 'bg', finnish: 'fi', norwegian: 'nb', icelandic: 'is', ukrainian: 'uk', romanian: 'ro', indonesian: 'id', malay: 'ms' };
 
 /** Short, stable hash for card ids (FNV-1a, base 36). */
 function hash(s: string) { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); } return (h >>> 0).toString(36); }
@@ -248,6 +250,16 @@ export function parseDeck(file: string, text: string): Deck {
     // "[bureau: EGY] Which regional bureau covers Egypt?": a map card; the answer comes from src/bureaus.ts.
     const bu = /^\[bureau:\s*([A-Za-z]{3})\]\s*(.+)$/i.exec(t);
     if (bu) { const b = bureauOf(bu[1]); add({ pre: bu[2], answer: b ? bureauAnswer(b) : '', post: '', front: true, bureau: bu[1].toUpperCase() }, 'bureau:' + bu[1].toUpperCase()); continue; }
+    // "[members: NATO] Picture NATO's members" (the name → its members lit on the map) and "[whose: NATO] Whose members
+    // are these?" (the map → the name): membership map cards; the members come from src/memberships.ts, and a change in
+    // them changes the fingerprint, so the card comes back.
+    const mem = /^\[(members|whose):\s*([A-Za-z0-9]+)\]\s*(.+)$/i.exec(t);
+    if (mem) {
+      const m = membership(mem[2]), whose = mem[1].toLowerCase() === 'whose';
+      add({ pre: mem[3], answer: m ? (whose ? m.name : `${m.iso3.length} members`) : '', post: '', front: true, members: { code: mem[2].toUpperCase(), whose }, ...(m ? { asOf: m.asOf } : {}) }, mem[1].toLowerCase() + ':' + mem[2].toUpperCase());
+      if (m) cards[cards.length - 1].card.fp += '|' + m.iso3.join(' ');
+      continue;
+    }
     // "[picture]" in a cloze: the heading's picture is shown as the question.
     const picFirst = /\[picture\]/i.test(t) && /\{\{/.test(t);
     if (picFirst) t = t.replace(/\s*\[picture\]\s*/i, ' ').trim();

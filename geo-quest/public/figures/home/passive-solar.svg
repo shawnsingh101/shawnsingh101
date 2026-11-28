@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>Passive solar: an overhang lets in the low winter sun and shades out the high summer sun</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="720" height="460" rx="14" fill="#fbfaf6"/>
+  <text x="24" y="32" class="t">Sun through a south window, winter and summer</text>
+  <!-- ground -->
+  <rect x="24" y="380" width="672" height="60" fill="#dfe8d2"/>
+  <!-- house: north at left, south at right -->
+  <path d="M120 150 L300 96 L420 132" fill="none" stroke="#9c8a78" stroke-width="8"/>
+  <path d="M400 126 L470 147" stroke="#9c8a78" stroke-width="8"/>
+  <rect x="120" y="150" width="14" height="230" fill="#efe3cf"/>
+  <rect x="134" y="150" width="270" height="8" fill="#e9d3b0"/>
+  <!-- south wall with tall window -->
+  <rect x="404" y="150" width="14" height="40" fill="#efe3cf"/>
+  <rect x="404" y="190" width="14" height="150" fill="#cfe7f4" stroke="#8ab7d0"/>
+  <rect x="404" y="340" width="14" height="40" fill="#efe3cf"/>
+  <!-- dark mass floor -->
+  <rect x="134" y="360" width="270" height="20" fill="#b9826a"/>
+  <!-- winter sun, low -->
+  <circle cx="650" cy="266" r="20" fill="#f7c948"/>
+  <path d="M630 270 L404 300 L250 360" stroke="#f0a93b" stroke-width="2.5" fill="none"/>
+  <path d="M632 278 L404 336 L330 360" stroke="#f0a93b" stroke-width="2.5" fill="none"/>
+  <!-- summer sun, high: its rays stop on the overhang -->
+  <circle cx="630" cy="70" r="20" fill="#f7c948"/>
+  <path d="M612 80 L472 146" stroke="#f0a93b" stroke-width="2.5" fill="none"/>
+  <path d="M616 88 L458 142" stroke="#f0a93b" stroke-width="2.5" fill="none"/>
+  <!-- heat from the mass at night -->
+  <g stroke="#d9705a" stroke-width="1.6" fill="none"><path d="M170 352 q-6 -12 0 -24 q6 -12 0 -24"/><path d="M220 352 q-6 -12 0 -24 q6 -12 0 -24"/></g>
+  <text x="44" y="402" class="sm">north</text><text x="640" y="402" class="sm">south</text>
+  <!-- labels -->
+  <text x="440" y="56" class="lbl">summer sun, high</text><text x="440" y="72" class="sm">stopped by the overhang</text>
+  <text x="560" y="196" class="lbl">winter sun, low</text><text x="560" y="212" class="sm">reaches deep</text><text x="560" y="228" class="sm">into the room</text>
+  <text x="432" y="180" class="lbl">overhang</text>
+  <path class="lead" d="M452 166 L458 150"/>
+  <text x="440" y="320" class="lbl">south-facing glass</text>
+  <path class="lead" d="M438 316 L420 300"/>
+  <text x="150" y="252" class="lbl">thermal mass floor</text><text x="150" y="268" class="sm">soaks up the sun by day,</text><text x="150" y="284" class="sm">gives the heat back at night</text>
+  <text x="150" y="190" class="sm">little glass on the north,</text><text x="150" y="206" class="sm">east and west; well insulated</text>
+  <text x="40" y="430" class="sm">At 40°N the noon sun stands about 27° high in December and 73° in June.</text>
+</svg>
