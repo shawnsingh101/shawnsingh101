@@ -15,6 +15,13 @@ in `src/changelog.ts`; finished plans and their build notes are in `archive/ROAD
 
 ## In progress
 
+**People** (v1.50, new subject): one deck per life (lesson + 14–22 cards) under Composers, Painters, Philosophers,
+Scientists and mathematicians, Political leaders; listed in other subjects with `shelves:` (guides/people.md). Done:
+Mozart, Chopin, Mahler, Van Gogh, Kline, Kant, Nietzsche, von Neumann, Oppenheimer, Gödel, Hassabis, Mao, Havel; a
+Faces collection (`collections/People/0 Faces.md`) filled by the nightly sync. Next: check Faces after the first sync
+(origins: Kant → Prussia, today Russia; Gödel, von Neumann → Austria-Hungary); missing pictures (Kant's Critique,
+Zarathustra, Gödel with Einstein, Los Alamos, AlphaFold, the Mozart family); more people as the owner names them.
+
 **Government** (v1.38, v1.45). Done: United States › Foundations (Declaration, Constitution, Bill of Rights, amendments
 11–27, the three branches as org charts, who runs foreign policy), Department of State (11 decks, incl. the June 2026 org
 chart), Department of Defense (what it is, organization and combatant commands, who leads it now: live). International

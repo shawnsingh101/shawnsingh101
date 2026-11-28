@@ -71,6 +71,7 @@ export interface Deck { file: string; id: string; title: string; subject: string
   lesson: string | null;                     // a `:::lesson … :::` block: a short read that comes before the cards
   objectives: string[]; chapter: string | null; // Security+ tags (src/secplus.ts): exam objectives, study-guide chapter
   follows: string[]; checked: string | null; // a live topic: the Wikipedia articles the weekly briefing reads, and when it last did
+  shelves: string[];                         // `shelves: Music, Philosophy` (front matter): also listed in those subjects (People decks)
   icon?: string;                             // `icon: star` (front matter): the deck's icon in the Library (an IconName)
   device?: boolean;                          // made in the app and kept on this device only (Progress.myDecks)
   cards: { id: string; card: NoteCard }[] }
@@ -303,7 +304,7 @@ export function parseDeck(file: string, text: string): Deck {
   }
   // The intro keeps its lines (a book's summary page has paragraphs); `depth: deep` marks a deck of deep cuts.
   return { file, id, title, subject, path, intro: intro.join('\n') || null, eras, deep: meta.depth === 'deep', lesson,
-    objectives: (meta.objectives ?? '').split(',').map(s => s.trim()).filter(Boolean), chapter: meta.chapter || null, follows: (meta.follows ?? '').split(';').map(s => s.trim()).filter(Boolean), checked: meta.checked || null, ...(meta.icon ? { icon: meta.icon } : {}), cards };
+    objectives: (meta.objectives ?? '').split(',').map(s => s.trim()).filter(Boolean), chapter: meta.chapter || null, follows: (meta.follows ?? '').split(';').map(s => s.trim()).filter(Boolean), checked: meta.checked || null, shelves: (meta.shelves ?? '').split(',').map(s => s.trim()).filter(Boolean), ...(meta.icon ? { icon: meta.icon } : {}), cards };
 }
 
 // Every deck file under geo-quest/decks (bundled at build time; README files are documentation, not decks).
@@ -406,6 +407,12 @@ export function registerNotes(): Place[] {
   // beside every other ongoing story. The weekly briefing reads those articles and suggests cards (scripts/briefing.mjs).
   for (const d of DECKS.filter(x => x.follows.length)) {
     const g = GROUPS.find(x => x.id === 'n-' + d.id)!, sec = claimSection(LIVE, null);
+    if (!g.alsoInSections?.includes(sec)) g.alsoInSections = [...(g.alsoInSections ?? []), sec];
+  }
+  // Shelves: a deck tagged `shelves: Music` (a person's life, filed once under People) is also listed under
+  // Music › "Music: people", so a life that crosses subjects shows in each of them with one set of progress.
+  for (const d of DECKS) for (const shelf of d.shelves) {
+    const g = GROUPS.find(x => x.id === 'n-' + d.id)!, sec = claimSection(`${shelf}: people`, claimSection(shelf, null));
     if (!g.alsoInSections?.includes(sec)) g.alsoInSections = [...(g.alsoInSections ?? []), sec];
   }
   // Equations: one group per equation, filed under Equations › <the course it first appears in> (Macroeconomics for
