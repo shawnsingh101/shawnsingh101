@@ -50,3 +50,22 @@ Products of Vectors.
    Development
 8. **Ecology**: 44 Ecology and the Biosphere · 45 Population and Community Ecology · 46 Ecosystems · 47 Conservation
    Biology and Biodiversity
+
+## Astronomy: outline supplied by the owner
+
+Chapter order follows OpenStax *Astronomy 2e* (the owner's outline); cards are original, written from NASA/NOAA
+(public domain) and Wikipedia, with Commons pictures. Folders: `Astronomy/<n> <Chapter>/<section n> <Section>.md`.
+
+1. Science and the Universe: A Brief Tour · 2. Observing the Sky: The Birth of Astronomy · 3. Orbits and Gravity ·
+4. Earth, Moon, and Sky · 5. Radiation and Spectra · 6. Astronomical Instruments · 7. Other Worlds: An Introduction to
+the Solar System · 8. Earth as a Planet · 9. Cratered Worlds · 10. Earthlike Planets: Venus and Mars · 11. The Giant
+Planets · 12. Rings, Moons, and Pluto · 13. Comets and Asteroids · 14. Cosmic Samples and the Origin of the Solar
+System · 15. The Sun: A Garden-Variety Star · 16. The Sun: A Nuclear Powerhouse · 17. Analyzing Starlight · 18. The
+Stars: A Celestial Census · 19. Celestial Distances · 20. Between the Stars: Gas and Dust in Space · 21. The Birth of
+Stars and the Discovery of Planets outside the Solar System · 22. Stars from Adolescence to Old Age · 23. The Death of
+Stars · 24. Black Holes and Curved Spacetime · 25. The Milky Way Galaxy · 26. Galaxies · 27. Active Galaxies, Quasars,
+and Supermassive Black Holes · 28. The Evolution and Distribution of Galaxies · 29. The Big Bang · 30. Life in the
+Universe
+
+Chapter 4 sections: 4.1 Earth and Sky · 4.2 The Seasons · 4.3 Keeping Time · 4.4 The Calendar · 4.5 Phases and Motions
+of the Moon (done) · 4.6 Ocean Tides and the Moon (done) · 4.7 Eclipses of the Sun and Moon (done).

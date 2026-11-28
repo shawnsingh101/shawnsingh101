@@ -62,8 +62,11 @@ The **Logan Act** (1799) makes it a crime for a private citizen to negotiate wit
 
 ## Treaties
 - The Senate doesn't ratify a treaty: it gives {{advice and consent|what?}}.
+also in: How treaties work
 - A treaty needs the votes of {{two thirds|what share?}} of the senators present.
+also in: How treaties work
 - The Senate committee that handles treaties is the Senate {{Foreign Relations|which?}} Committee.
+also in: How treaties work
 - How a treaty takes effect
 ```parts
 Who negotiates and signs it? :: The President (through the State Department)
