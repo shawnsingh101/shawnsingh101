@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>How pool water is cleaned: skimmer, pump, filter and return</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="720" height="440" rx="14" fill="#fbfaf6"/>
+  <text x="24" y="32" class="t">A pool's water loop</text>
+  <!-- pool section -->
+  <path d="M24 120 H250 V330 Q250 360 220 360 H24 Z" fill="#cfe9f5"/>
+  <path d="M24 136 H250" stroke="#7fbfe0" stroke-width="2"/>
+  <rect x="250" y="110" width="10" height="250" fill="#d6d6d2"/>
+  <!-- skimmer -->
+  <rect x="236" y="126" width="24" height="26" fill="#eef3f6" stroke="#8aa5b8"/>
+  <!-- main drain -->
+  <rect x="120" y="354" width="30" height="6" fill="#8aa5b8"/>
+  <path d="M540 230 H690 V60 H280 V220 H252" stroke="#5aa469" stroke-width="6" fill="none"/>
+  <!-- suction pipes to pump -->
+  <path d="M260 140 H330 V300 H360" stroke="#3d7fd1" stroke-width="6" fill="none"/>
+  <path d="M135 360 V392 H330 V300" stroke="#3d7fd1" stroke-width="6" fill="none"/>
+  <!-- pump with strainer pot -->
+  <rect x="360" y="270" width="34" height="50" rx="8" fill="#e4e7ea" stroke="#8a9bab" stroke-width="2"/>
+  <rect x="394" y="280" width="60" height="34" rx="10" fill="#b8c6d3" stroke="#6f8496" stroke-width="2"/>
+  <!-- to filter -->
+  <path d="M454 296 H500 V250" stroke="#3d7fd1" stroke-width="6" fill="none"/>
+  <!-- filter tank -->
+  <rect x="470" y="140" width="70" height="140" rx="30" fill="#e4e7ea" stroke="#8a9bab" stroke-width="3"/>
+  <circle cx="505" cy="126" r="10" fill="#fff" stroke="#6f8496" stroke-width="2"/><path d="M505 126 l5 -5" stroke="#d64545" stroke-width="2"/>
+  <rect x="501" y="134" width="8" height="8" fill="#8a9bab"/>
+  <!-- return to pool -->
+  <g stroke="#5aa469" stroke-width="1.6" fill="none"><path d="M244 214 q-16 6 -30 0"/><path d="M244 226 q-16 6 -30 0"/></g>
+  <!-- labels -->
+  <text x="40" y="104" class="lbl">pool</text>
+  <text x="340" y="112" class="lbl">skimmer</text><text x="340" y="128" class="sm">its basket catches leaves</text>
+  <path class="lead" d="M338 116 L262 134"/>
+  <text x="40" y="384" class="sm">main drain</text>
+  <path class="lead" d="M106 380 L122 360"/>
+  <text x="420" y="350" class="lbl">pump</text><text x="420" y="366" class="sm">its strainer basket catches</text><text x="420" y="382" class="sm">hair and lint: empty it often</text>
+  <path class="lead" d="M418 346 L384 322"/>
+  <text x="556" y="196" class="lbl">filter</text><text x="556" y="212" class="sm">sand, cartridge or DE</text>
+  <text x="556" y="112" class="lbl">pressure gauge</text><text x="556" y="128" class="sm">8–10 psi above its</text><text x="556" y="144" class="sm">clean reading: clean</text><text x="556" y="160" class="sm">the filter</text>
+  <path class="lead" d="M552 116 L516 124"/>
+  <text x="300" y="52" class="lbl">return line, back to the pool's jets</text>
+</svg>

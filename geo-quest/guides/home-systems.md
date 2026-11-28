@@ -4,7 +4,9 @@ How a house works, system by system (`decks/Home systems/`). Read with GUIDELINE
 
 ## Layout
 - One numbered folder per system, in the owner's order: 1 Structure, 2 Envelope, 3 Plumbing, 4 Electrical, 5 HVAC,
-  6 Drainage and grading, 7 Safety and interior, 8 Tools. One deck per topic of the owner's outline inside each.
+  6 Drainage and grading, 7 Safety and interior, 8 Tools, then 9 Solar home and 10 Outdoor equipment (added with the
+  book's chapters 9 and 10). `8 Tools` holds Tools, A home tool bag (tools not in Tools), Batteries, Fasteners and
+  Adhesives (the book's appendices). One deck per topic of the owner's outline inside each.
 - Deep dives are `depth: deep` decks named "<core deck title> - going further" in the same folder, so each unlocks
   beside its own core deck (`src/notes.ts` matches the title prefix).
 - Deck titles may not contain commas: `also in:` splits on them ("Drains and vents", not "Drain, waste and vent").
@@ -45,6 +47,13 @@ How a house works, system by system (`decks/Home systems/`). Read with GUIDELINE
 - The owner's PDF of *How Your House Works* (Charlie Wing) sets the coverage and order of the deep dives only:
   never copy its text or figures, and never commit the PDF (the repo is public). Check its facts against Wikipedia (it dates AFCIs to 1992; the NEC first
   required them in the 1999 code).
+- Part 3's corrections: the EPA says a radon fan never goes in or below the living space (the book allows the
+  basement); CR coin cells are primary lithium, not lithium-ion; a #8 screw is 0.164 inch (the book's table repeats
+  #2's figure); the threads are Unified (not "United") National; balloon framing faded out and fireblocking became
+  required (it wasn't banned). We left out pouring old two-stroke fuel into a car and refrigerating alkalines.
+- Commons rate-limits its search API hard (HTTP 429): find pictures through English Wikipedia's API instead
+  (`prop=pageimages` for an article's free lead image, `prop=images` for all its images, `prop=imageinfo` for
+  thumbnails), and check that `imagerepository` is `shared` (on Commons), not `local`.
 - Part 2's corrections, for reference: a ton of cooling is 12,000 Btu/h, the heat that melts a ton of ice in a *day*
   (the book says an hour); ASHRAE 62.2 now asks 3 cfm per 100 sq ft plus 7.5 per person (the book has the old 1 cfm);
   NFPA says test smoke alarms monthly (the book says weekly); setback savings use the DOE figure (up to 10% a year for

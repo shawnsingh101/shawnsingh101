@@ -34,24 +34,16 @@ Commons pictures); the OpenStax PDF only sets coverage and order.
 dive (v1.45, Wikipedia + Spying on Whales cards shown in it). Next: more species deep dives, birds with calls, trees and
 plants, The Rise and Fall of the Dinosaurs (send the PDF).
 
-**Home systems** (v1.46–v1.48): `decks/Home systems/`, one folder per system in the owner's order (start prompt:
-`archive/HANDOFF_HOME_SYSTEMS.md`). Done: foundation decks for all seven systems with Commons photos, **Tools** (34
-tools, each `also in:` its systems), and the **Electrical deep dive** parts 1–3 (circuits to motion sensors).
-**Now following the book** *How Your House Works* (Charlie Wing, 4th ed.), uploaded by the owner in three PDF parts, one
-per session, all on one branch and merged together at the end (guides/home-systems.md › Following the book). **Part 1
-done (v1.47):** chapter 1 Plumbing as two new core decks (`4 Fixtures`, `5 Water treatment`) and four deep decks
-(`6 Water supply`, `7 Water heating`, `8 Drains and vents`, `9 Fixtures` "- going further"), each with a lesson, the
-book's "before calling a plumber" repairs as cards, and eight drawn SVG figures in `public/figures/home/` (lessons can
-now show `figures/…` and https images: `src/components/Lesson.tsx`). Chapter 2 up to motion sensors was already built.
-**Part 2 done (v1.48):** the rest of Wiring as `4 Electrical/7 Lights and alarms - going further` (smoke and CO cards
-`also in:` Life safety); in `5 HVAC` a new core deck `4 Air quality` and four deep decks (`5 Heating`, `6 Heating
-rooms`, `7 Cooling`, `8 Air quality` "- going further"); in `7 Safety and interior` two deep decks (`4 Appliances`, the
-kitchen, and `5 Appliances for laundry and cleaning`); six more drawn figures (smoke alarms, oil burner, heat pump,
-fireplace, dehumidifier, refrigerator). All on branch `claude/eloquent-maxwell-3lvcm5`, no pull request yet.
-**Next, part 3** (prompt: `archive/HANDOFF_HOW_YOUR_HOUSE_WORKS.md`, then open the one pull request for all three
-parts): Windows and doors, Foundation and frame, the solar home,
-outdoor equipment, and the appendices (batteries, fasteners, adhesives, a home tool bag). Then labelled diagrams
-(queue #1) to turn the drawn figures into tap-the-part cards.
+**Home systems** (v1.46–v1.49): `decks/Home systems/`, one folder per system in the owner's order. Done: foundation
+decks for all seven systems with Commons photos, **Tools**, and the whole of *How Your House Works* (Charlie Wing, 4th
+ed.) as deep dives, one chapter per system (guides/home-systems.md › Following the book): **v1.47** Plumbing (two new
+core decks, four deep decks); **v1.48** Lights and alarms, Heating, Heating rooms, Cooling, Air quality (new core
+deck), the kitchen and laundry appliances; **v1.49** Windows and doors, Foundation and Framing deep dives (drainage cards
+also in Drainage and grading, radon also in Air quality), two new systems with a core and deep decks, `9 Solar home`
+and `10 Outdoor equipment` (generator cards also in Distribution and Life safety), and in `8 Tools` A home tool bag,
+Batteries, Fasteners and Adhesives. 21 drawn SVG figures in `public/figures/home/`. Parts 1–3 went out as one pull
+request from `claude/eloquent-maxwell-3lvcm5`. **Next: labelled diagrams (queue #1)**, turning the drawn figures into
+tap-the-part cards. Small loose end: the Home systems blurb in `src/subjects.ts` still lists seven systems.
 
 **Physics and Calculus**: Done: Units and Measurement, Vectors, Limits/Derivatives/Integrals (v1.40). Next: Chapter 3
 Motion Along a Straight Line with calculus beside it. No OpenStax text, figures or assessments.
