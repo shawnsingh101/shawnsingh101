@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>Hardwired smoke alarms, interconnected</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="760" height="430" rx="14" fill="#fbfaf6"/>
+  <text x="30" y="40" class="t">Hardwired, interconnected smoke alarms</text>
+  <!-- ceiling -->
+  <rect x="160" y="96" width="570" height="14" fill="#e9e4da"/>
+  <text x="640" y="88" class="sm">ceiling</text>
+  <!-- panel -->
+  <rect x="34" y="150" width="86" height="150" rx="6" fill="#e3e8ee" stroke="#9aa"/>
+  <rect x="52" y="172" width="50" height="14" rx="3" fill="#c9d1da"/>
+  <rect x="52" y="194" width="50" height="14" rx="3" fill="#9fb3c8"/>
+  <rect x="52" y="216" width="50" height="14" rx="3" fill="#c9d1da"/>
+  <rect x="52" y="238" width="50" height="14" rx="3" fill="#c9d1da"/>
+  <text x="38" y="325" class="lbl">panel</text>
+  <text x="38" y="342" class="sm">a breaker,</text>
+  <text x="38" y="357" class="sm">no wall switch</text>
+  <!-- cable panel to first alarm: black + white (+ ground) -->
+  <path d="M102 198 H140 V124 H230" stroke="#222" stroke-width="3" fill="none"/>
+  <path d="M102 204 H146 V130 H230" stroke="#999" stroke-width="5" fill="none"/>
+  <path d="M102 204 H146 V130 H230" stroke="#fff" stroke-width="3" fill="none"/>
+  <path d="M102 210 H152 V136 H230" stroke="#c08a3e" stroke-width="2" fill="none"/>
+  <!-- alarms -->
+  <g>
+    <ellipse cx="270" cy="128" rx="48" ry="14" fill="#f1f1ef" stroke="#aaa"/>
+    <path d="M222 128 Q222 160 270 160 Q318 160 318 128" fill="#f6f6f4" stroke="#aaa"/>
+    <circle cx="270" cy="148" r="4" fill="#d9534f"/>
+  </g>
+  <g>
+    <ellipse cx="470" cy="128" rx="48" ry="14" fill="#f1f1ef" stroke="#aaa"/>
+    <path d="M422 128 Q422 160 470 160 Q518 160 518 128" fill="#f6f6f4" stroke="#aaa"/>
+    <circle cx="470" cy="148" r="4" fill="#d9534f"/>
+  </g>
+  <g>
+    <ellipse cx="670" cy="128" rx="48" ry="14" fill="#f1f1ef" stroke="#aaa"/>
+    <path d="M622 128 Q622 160 670 160 Q718 160 718 128" fill="#f6f6f4" stroke="#aaa"/>
+    <circle cx="670" cy="148" r="4" fill="#d9534f"/>
+  </g>
+  <!-- 3-wire cables between alarms (drawn above the ceiling) -->
+  <g fill="none">
+    <path d="M300 118 Q370 62 440 118" stroke="#222" stroke-width="3"/>
+    <path d="M304 120 Q370 70 436 120" stroke="#999" stroke-width="5"/>
+    <path d="M304 120 Q370 70 436 120" stroke="#fff" stroke-width="3"/>
+    <path d="M308 122 Q370 78 432 122" stroke="#d23b3b" stroke-width="3"/>
+    <path d="M500 118 Q570 62 640 118" stroke="#222" stroke-width="3"/>
+    <path d="M504 120 Q570 70 636 120" stroke="#999" stroke-width="5"/>
+    <path d="M504 120 Q570 70 636 120" stroke="#fff" stroke-width="3"/>
+    <path d="M508 122 Q570 78 632 122" stroke="#d23b3b" stroke-width="3"/>
+  </g>
+  <!-- labels -->
+  <text x="178" y="200" class="lbl">2-wire cable</text>
+  <text x="178" y="217" class="sm">(plus ground)</text><text x="178" y="233" class="sm">brings power</text>
+  <path class="lead" d="M176 196 L150 170"/>
+  <text x="360" y="205" class="lbl">3-wire cable onward</text>
+  <text x="360" y="222" class="sm">black and white for power,</text>
+  <text x="360" y="238" class="sm">red for the alarm signal</text>
+  <path class="lead" d="M420 190 L380 98"/>
+  <text x="600" y="205" class="lbl">battery inside each</text>
+  <text x="600" y="222" class="sm">keeps it working when</text>
+  <text x="600" y="238" class="sm">the power is out</text>
+  <path class="lead" d="M650 190 L664 160"/>
+  <!-- legend -->
+  <g transform="translate(160 300)">
+    <rect width="560" height="100" rx="10" fill="#f2efe7"/>
+    <line x1="20" y1="28" x2="60" y2="28" stroke="#222" stroke-width="3"/><text x="70" y="33" class="lbl">black: hot</text>
+    <line x1="20" y1="58" x2="60" y2="58" stroke="#999" stroke-width="5"/><line x1="20" y1="58" x2="60" y2="58" stroke="#fff" stroke-width="3"/><text x="70" y="63" class="lbl">white: neutral</text>
+    <line x1="230" y1="28" x2="270" y2="28" stroke="#d23b3b" stroke-width="3"/><text x="280" y="33" class="lbl">red: interconnect</text>
+    <line x1="230" y1="58" x2="270" y2="58" stroke="#c08a3e" stroke-width="2"/><text x="280" y="63" class="lbl">bare: ground</text>
+    <text x="20" y="88" class="sm">When any one alarm senses smoke, it sends a signal on the red wire and every alarm sounds.</text>
+  </g>
+</svg>

@@ -24,7 +24,8 @@ How a house works, system by system (`decks/Home systems/`). Read with GUIDELINE
 
 ## Following the book
 - The owner is working through *How Your House Works* (Charlie Wing, 4th ed., Wiley 2025), uploaded as PDFs in three parts
-  (part 1: chapter 1 Plumbing and chapter 2 Wiring to motion sensors). Each chapter becomes the deep dive for its system:
+  (part 1: chapter 1 Plumbing and chapter 2 Wiring to motion sensors; part 2: the rest of Wiring and chapters 3–6, Heating,
+  Cooling, Air quality and Appliances; part 3: chapters 7–10 and the appendices). Each chapter becomes the deep dive for its system:
   topic order from the book, a `:::lesson` per deck that explains how things work, and the book's "Before calling a
   plumber" tips as cards (the repairs an owner can do). Core decks get only what an educated homeowner should know.
 - The PDF's text extracts well with `pdftotext` (most "How it works" content is in the figures: look at a few pages
@@ -44,4 +45,10 @@ How a house works, system by system (`decks/Home systems/`). Read with GUIDELINE
 - The owner's PDF of *How Your House Works* (Charlie Wing) sets the coverage and order of the deep dives only:
   never copy its text or figures, and never commit the PDF (the repo is public). Check its facts against Wikipedia (it dates AFCIs to 1992; the NEC first
   required them in the 1999 code).
+- Part 2's corrections, for reference: a ton of cooling is 12,000 Btu/h, the heat that melts a ton of ice in a *day*
+  (the book says an hour); ASHRAE 62.2 now asks 3 cfm per 100 sq ft plus 7.5 per person (the book has the old 1 cfm);
+  NFPA says test smoke alarms monthly (the book says weekly); setback savings use the DOE figure (up to 10% a year for
+  7–10°F over 8 hours a day).
+- Deep decks whose title doesn't start with a core deck's title (Lights and alarms) unlock beside the folder's first
+  core deck; a title like "Heating rooms - going further" starts with "Heating", so it unlocks beside Heating.
 - esfi.org blocks automated reading (Cloudflare); ask the owner to save pages as PDF if they're wanted.

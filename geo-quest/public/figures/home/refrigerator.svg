@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>How a refrigerator moves heat out</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="720" height="500" rx="14" fill="#fbfaf6"/>
+  <text x="30" y="40" class="t">How a refrigerator moves heat out</text>
+  <!-- cabinet -->
+  <rect x="240" y="60" width="220" height="410" rx="12" fill="#f1f3f5" stroke="#bbc"/>
+  <line x1="240" y1="200" x2="460" y2="200" stroke="#bbc" stroke-width="3"/>
+  <text x="270" y="180" class="lbl">freezer</text>
+  <text x="290" y="240" class="lbl">refrigerator</text>
+  <!-- evaporator behind freezer back wall -->
+  <rect x="400" y="80" width="40" height="100" rx="4" fill="#e6f1fa" stroke="#9cb9d0"/>
+  <path d="M405 95 h30 M405 110 h30 M405 125 h30 M405 140 h30 M405 155 h30 M405 170 h30" stroke="#9cb9d0"/>
+  <circle cx="380" cy="130" r="14" fill="#e9eef2" stroke="#9aa"/>
+  <path d="M372 130 h16 M380 122 v16" stroke="#9aa"/>
+  <!-- cold air arrows -->
+  <path d="M366 130 H320 m10 -6 l-10 6 10 6" stroke="#7fb1d6" stroke-width="2" fill="none"/>
+  <path d="M380 146 V230 m-6 -10 l6 10 6 -10" stroke="#7fb1d6" stroke-width="2" fill="none"/>
+  <!-- compressor & condenser at bottom -->
+  <rect x="250" y="410" width="200" height="50" fill="#e9e4da"/>
+  <circle cx="290" cy="435" r="18" fill="#dfe6ec" stroke="#9aa"/>
+  <rect x="330" y="420" width="110" height="32" rx="4" fill="#fbe3e1" stroke="#d9a3a0"/>
+  <path d="M338 428 h94 M338 436 h94 M338 444 h94" stroke="#d9a3a0"/>
+  <!-- refrigerant lines -->
+  <path d="M440 100 H470 V425 H440" stroke="#7fb1d6" stroke-width="3" fill="none"/>
+  <path d="M308 435 H330" stroke="#d9534f" stroke-width="3"/>
+  <path d="M440 440 H480 V60 H436 V84" stroke="#e8a09d" stroke-width="2" stroke-dasharray="5 3" fill="none"/>
+  <!-- defrost drain pan -->
+  <rect x="380" y="470" width="70" height="10" fill="#cfe8f6"/>
+  <!-- labels left -->
+  <text x="30" y="110" class="lbl">evaporator coil</text><text x="30" y="126" class="sm">behind the freezer wall:</text><text x="30" y="142" class="sm">cold refrigerant boils,</text><text x="30" y="158" class="sm">soaking up the food's heat</text>
+  <path class="lead" d="M200 106 H398"/>
+  <text x="30" y="200" class="lbl">fan</text><text x="30" y="216" class="sm">blows the cold air into both</text><text x="30" y="232" class="sm">compartments</text>
+  <path class="lead" d="M62 196 Q240 180 366 136"/>
+  <text x="30" y="420" class="lbl">compressor</text><text x="30" y="436" class="sm">pumps the refrigerant;</text><text x="30" y="452" class="sm">it hums when running</text>
+  <path class="lead" d="M120 416 Q200 400 274 428"/>
+  <!-- labels right -->
+  <text x="500" y="300" class="lbl">condenser coil</text><text x="500" y="316" class="sm">gives the heat off into</text><text x="500" y="332" class="sm">the kitchen: dust it</text>
+  <path class="lead" d="M500 312 Q450 360 420 418"/>
+  <text x="500" y="110" class="lbl">thin capillary tube</text><text x="500" y="126" class="sm">drops the pressure, so</text><text x="500" y="142" class="sm">the refrigerant gets cold</text>
+  <path class="lead" d="M498 104 L482 90"/>
+  <text x="500" y="468" class="lbl">drain pan</text><text x="500" y="484" class="sm">defrost water evaporates</text>
+  <path class="lead" d="M496 464 H452"/>
+</svg>

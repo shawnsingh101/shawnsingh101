@@ -34,7 +34,7 @@ Commons pictures); the OpenStax PDF only sets coverage and order.
 dive (v1.45, Wikipedia + Spying on Whales cards shown in it). Next: more species deep dives, birds with calls, trees and
 plants, The Rise and Fall of the Dinosaurs (send the PDF).
 
-**Home systems** (v1.46–v1.47): `decks/Home systems/`, one folder per system in the owner's order (start prompt:
+**Home systems** (v1.46–v1.48): `decks/Home systems/`, one folder per system in the owner's order (start prompt:
 `archive/HANDOFF_HOME_SYSTEMS.md`). Done: foundation decks for all seven systems with Commons photos, **Tools** (34
 tools, each `also in:` its systems), and the **Electrical deep dive** parts 1–3 (circuits to motion sensors).
 **Now following the book** *How Your House Works* (Charlie Wing, 4th ed.), uploaded by the owner in three PDF parts, one
@@ -43,9 +43,13 @@ done (v1.47):** chapter 1 Plumbing as two new core decks (`4 Fixtures`, `5 Water
 (`6 Water supply`, `7 Water heating`, `8 Drains and vents`, `9 Fixtures` "- going further"), each with a lesson, the
 book's "before calling a plumber" repairs as cards, and eight drawn SVG figures in `public/figures/home/` (lessons can
 now show `figures/…` and https images: `src/components/Lesson.tsx`). Chapter 2 up to motion sensors was already built.
-**Next, part 2** (prompt: `archive/HANDOFF_HOW_YOUR_HOUSE_WORKS.md`): the rest of Wiring (light fixtures, lamps,
-fluorescent and LED, CO and smoke detectors, the smart home: Electrical deep dive part 4), Heating, Cooling, Air
-quality and Appliances, as far as the PDF goes. **Part 3**: Windows and doors, Foundation and frame, the solar home,
+**Part 2 done (v1.48):** the rest of Wiring as `4 Electrical/7 Lights and alarms - going further` (smoke and CO cards
+`also in:` Life safety); in `5 HVAC` a new core deck `4 Air quality` and four deep decks (`5 Heating`, `6 Heating
+rooms`, `7 Cooling`, `8 Air quality` "- going further"); in `7 Safety and interior` two deep decks (`4 Appliances`, the
+kitchen, and `5 Appliances for laundry and cleaning`); six more drawn figures (smoke alarms, oil burner, heat pump,
+fireplace, dehumidifier, refrigerator). All on branch `claude/eloquent-maxwell-3lvcm5`, no pull request yet.
+**Next, part 3** (prompt: `archive/HANDOFF_HOW_YOUR_HOUSE_WORKS.md`, then open the one pull request for all three
+parts): Windows and doors, Foundation and frame, the solar home,
 outdoor equipment, and the appendices (batteries, fasteners, adhesives, a home tool bag). Then labelled diagrams
 (queue #1) to turn the drawn figures into tap-the-part cards.
 
