@@ -34,9 +34,21 @@ Commons pictures); the OpenStax PDF only sets coverage and order.
 dive (v1.45, Wikipedia + Spying on Whales cards shown in it). Next: more species deep dives, birds with calls, trees and
 plants, The Rise and Fall of the Dinosaurs (send the PDF).
 
-**Home systems** (next session; owner's outline and the start prompt in `archive/HANDOFF_HOME_SYSTEMS.md`): a deck per system (structure, envelope, plumbing,
-electrical, HVAC, drainage, safety/interior), photos as anchors, then an electrical deep dive (esfi.org), and a
-cross-cutting **Tools** deck. Fits queue #2 (labelled diagrams) later.
+**Home systems** (new, v1.46): `decks/Home systems/`, one folder per system in the owner's order (outline and start
+prompt: `archive/HANDOFF_HOME_SYSTEMS.md`). Done: foundation decks for all seven systems (structure 2, envelope 4,
+plumbing 3, electrical 3, HVAC 3, drainage 1, safety and interior 3), each card in our own words from Wikipedia with a
+Commons photo of the part (picture → name under "Name it from the picture", name → what it does); stacks for the load
+path, water and power paths and the refrigerant loop; parts cards for short lists. **Tools** (`8 Tools/Tools.md`): 34
+tools, picture → name and name → what for, each `also in:` the system decks that use it. **Electrical deep dive**
+started as `depth: deep` "… - going further" decks beside each electrical deck: circuits and Ohm's law, 120/240,
+meters, grounding vs bonding, outage checklist; breakers (thermal/magnetic), fuses, panel layout, 80% rule, cable
+labels; plug shapes, how GFCI/AFCI trip and when the code required them, three- and four-way switches, dimmers,
+motion sensors. Order follows the owner's PDF (Charlie Wing, *How Your House Works*, ch. 2 Wiring: coverage and order
+only, nothing copied). esfi.org is behind Cloudflare and refuses automated reads (added to the environment's allowed
+hosts, still blocked): the owner said to use the PDF instead. Next: deep dive part 4, lights (fixtures, lamps,
+incandescent vs fluorescent vs LED, lumens and efficacy) and alarms (CO and smoke detector types, hard-wired
+interconnection, required locations), then the smart home; then deep dives for plumbing and HVAC. Later: labelled
+diagrams (queue #2): tap the part on a house cutaway.
 
 **Physics and Calculus**: Done: Units and Measurement, Vectors, Limits/Derivatives/Integrals (v1.40). Next: Chapter 3
 Motion Along a Straight Line with calculus beside it. No OpenStax text, figures or assessments.
@@ -59,13 +71,12 @@ the app, reorder or delete cards.
 
 | # | What | Notes |
 | --- | --- | --- |
-| 1 | **Home systems** and a **Tools** deck | Next session (see above) |
-| 2 | **Labelled diagrams**: house systems, car, bike | New card type: tap the part on a diagram |
-| 3 | **Practice mode, part 2**: math and statistics | Numbers that change each time, worked steps |
-| 4 | **Quotes** | Fill in the key words; quote ↔ who said it |
-| 5 | **Astronomy star chart** | Constellations on the map engine |
-| 6 | **Periodic table** | An interactive chart like the time scale |
-| 7 | **Finance** | Linked to coursework and the Dashboard |
+| 1 | **Labelled diagrams**: house systems, car, bike | New card type: tap the part on a diagram (Home systems first) |
+| 2 | **Practice mode, part 2**: math and statistics | Numbers that change each time, worked steps |
+| 3 | **Quotes** | Fill in the key words; quote ↔ who said it |
+| 4 | **Astronomy star chart** | Constellations on the map engine |
+| 5 | **Periodic table** | An interactive chart like the time scale |
+| 6 | **Finance** | Linked to coursework and the Dashboard |
 
 Ideas for later: movies, political science, international relations, AI, languages, jazz recordings (1926 recordings
 are free from 1 January 2027), holidays (Thanksgiving first), put-in-order cards, wine regions and grapes.
