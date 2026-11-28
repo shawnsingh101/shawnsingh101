@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>How an oil burner fires</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="760" height="440" rx="14" fill="#fbfaf6"/>
+  <text x="30" y="40" class="t">How an oil burner fires</text>
+  <!-- tank -->
+  <rect x="30" y="250" width="110" height="140" rx="12" fill="#efe6d2" stroke="#b9a984"/>
+  <rect x="30" y="320" width="110" height="70" rx="0" fill="#d9c08a"/>
+  <rect x="30" y="378" width="110" height="12" fill="#a9c7d8"/>
+  <text x="44" y="276" class="lbl">oil tank</text>
+  <text x="150" y="402" class="sm">water and sludge settle at the bottom</text>
+  <path class="lead" d="M148 398 L136 386"/>
+  <!-- oil line -->
+  <path d="M120 330 V220 H330" stroke="#b07d2b" stroke-width="5" fill="none"/>
+  <!-- filter -->
+  <rect x="168" y="196" width="40" height="48" rx="8" fill="#f3e7c7" stroke="#b9a984"/>
+  <text x="170" y="270" class="lbl">filter</text>
+  <!-- pump + motor -->
+  <circle cx="352" cy="220" r="24" fill="#dfe6ec" stroke="#9aa"/>
+  <rect x="380" y="242" width="90" height="56" rx="8" fill="#dfe6ec" stroke="#9aa"/>
+  <circle cx="520" cy="300" r="40" fill="#e9eef2" stroke="#9aa"/>
+  <path d="M500 300 h40 M520 280 v40" stroke="#9aa" stroke-width="2"/>
+  <text x="250" y="160" class="lbl">fuel pump</text>
+  <text x="250" y="176" class="sm">raises the oil to about 100 psi</text><path class="lead" d="M330 180 L345 197"/>
+  <text x="380" y="320" class="lbl">motor</text><text x="380" y="336" class="sm">turns pump and fan</text>
+  <text x="566" y="330" class="lbl">fan</text><text x="566" y="346" class="sm">pushes air in</text>
+  <!-- blast tube -->
+  <rect x="470" y="196" width="190" height="48" fill="#eef1f4" stroke="#9aa"/>
+  <path d="M376 220 H600" stroke="#b07d2b" stroke-width="3" fill="none"/>
+  <path d="M520 260 V244" stroke="#9fc3dd" stroke-width="10"/>
+  <path d="M480 230 l14 -6 m-14 18 l14 -6" stroke="#7fb1d6" stroke-width="2" fill="none"/>
+  <!-- nozzle and spray -->
+  <rect x="598" y="212" width="16" height="16" fill="#c9b27a"/>
+  <path d="M614 220 L720 186 Q735 220 720 254 Z" fill="#f6b26b" opacity="0.85"/>
+  <path d="M640 220 L712 200 Q720 220 712 240 Z" fill="#f9d77e"/>
+  <!-- electrodes -->
+  <path d="M560 204 H618 M560 236 H618" stroke="#777" stroke-width="2"/>
+  <path d="M621 204 l6 8 -5 2 6 8" stroke="#3a7bd5" stroke-width="1.6" fill="none"/>
+  <!-- transformer -->
+  <rect x="520" y="112" width="70" height="40" rx="6" fill="#e7e0f0" stroke="#a99bc0"/>
+  <path d="M555 152 V198" stroke="#777" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="600" y="128" class="lbl">transformer</text>
+  <text x="600" y="144" class="sm">makes the spark</text>
+  <!-- cad cell -->
+  <circle cx="640" cy="270" r="9" fill="#f0d36b" stroke="#b9a240"/>
+  <path class="lead" d="M640 279 V300"/>
+  <text x="620" y="316" class="lbl">cad cell</text>
+  <text x="620" y="332" class="sm">sees the flame</text>
+  <!-- primary control -->
+  <rect x="370" y="76" width="100" height="58" rx="6" fill="#e3e8ee" stroke="#9aa"/>
+  <circle cx="450" cy="104" r="9" fill="#d9534f"/>
+  <text x="200" y="88" class="lbl">primary control</text>
+  <text x="200" y="104" class="sm">no flame seen in a few</text>
+  <text x="200" y="120" class="sm">seconds: it shuts down</text>
+  <text x="480" y="74" class="sm">red reset button</text>
+  <path class="lead" d="M470 120 H520"/>
+  <path class="lead" d="M440 134 Q520 175 636 262"/>
+  <text x="652" y="176" class="lbl">nozzle</text><text x="652" y="192" class="sm">fine mist</text>
+  <path class="lead" d="M660 196 L612 212"/>
+</svg>

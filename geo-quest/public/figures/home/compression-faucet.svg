@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>Inside a compression faucet valve</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="640" height="460" rx="14" fill="#fbfaf6"/>
+  <text x="24" y="36" class="t">A compression valve (one per handle)</text>
+  <!-- body -->
+  <path d="M180 160 H360 V380 H180 Z" fill="#e7ecef" stroke="#9aa" stroke-width="2"/>
+  <!-- handle -->
+  <rect x="200" y="60" width="140" height="34" rx="12" fill="#d9d4c8" stroke="#8a8578"/>
+  <!-- stem with thread -->
+  <rect x="256" y="94" width="28" height="230" fill="#e0c27a" stroke="#a98d4c"/>
+  <g stroke="#a98d4c"><line x1="256" y1="200" x2="284" y2="192"/><line x1="256" y1="214" x2="284" y2="206"/><line x1="256" y1="228" x2="284" y2="220"/><line x1="256" y1="242" x2="284" y2="234"/></g>
+  <!-- packing nut -->
+  <rect x="232" y="120" width="76" height="34" rx="4" fill="#c9c4bb" stroke="#8a8578"/>
+  <!-- washer -->
+  <rect x="244" y="324" width="52" height="12" rx="3" fill="#333"/>
+  <!-- seat -->
+  <rect x="226" y="346" width="24" height="10" fill="#a98d4c"/><rect x="290" y="346" width="24" height="10" fill="#a98d4c"/>
+  <!-- water paths -->
+  <path d="M270 420 V344" stroke="#3d7fd1" stroke-width="8"/>
+  <path d="M270 344 H360 Q380 344 380 320 V300 H460" stroke="#3d7fd1" stroke-width="8" fill="none"/>
+  <text x="200" y="440" class="sm">water in, from below</text><text x="470" y="304" class="sm">to the spout</text>
+  <!-- labels -->
+  <text x="380" y="82" class="lbl">handle</text><path class="lead" d="M376 78 H342"/>
+  <text x="380" y="140" class="lbl">packing nut</text><text x="380" y="156" class="sm">packing inside stops leaks</text><text x="380" y="172" class="sm">around the stem</text><path class="lead" d="M376 136 H310"/>
+  <text x="40" y="214" class="lbl">threaded stem</text><text x="40" y="230" class="sm">turning the handle</text><text x="40" y="246" class="sm">screws it down</text><path class="lead" d="M150 210 H254"/>
+  <text x="40" y="334" class="lbl">washer</text><text x="40" y="350" class="sm">worn washer = drip</text><path class="lead" d="M96 330 H242"/>
+  <text x="380" y="370" class="lbl">valve seat</text><path class="lead" d="M376 366 L316 352"/>
+</svg>

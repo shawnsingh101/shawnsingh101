@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>A loaded beam bends: its top is squeezed and its bottom is stretched</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="720" height="440" rx="14" fill="#fbfaf6"/>
+  <text x="24" y="32" class="t">How a beam carries a load</text>
+  <!-- load arrows -->
+  <g stroke="#7a8794" stroke-width="2" fill="#7a8794"><path d="M170 70 V118"/><path d="M165 110 L170 120 L175 110 Z"/><path d="M270 70 V118"/><path d="M265 110 L270 120 L275 110 Z"/><path d="M370 70 V118"/><path d="M365 110 L370 120 L375 110 Z"/><path d="M470 70 V118"/><path d="M465 110 L470 120 L475 110 Z"/><path d="M570 70 V118"/><path d="M565 110 L570 120 L575 110 Z"/></g>
+  <text x="290" y="62" class="sm">the load: floor, people, furniture</text>
+  <!-- straight beam ghost -->
+  <rect x="90" y="130" width="540" height="56" fill="none" stroke="#c9c2b4" stroke-dasharray="5 4"/>
+  <!-- bent beam -->
+  <path d="M90 130 Q360 180 630 130 L630 186 Q360 236 90 186 Z" fill="#ead7b6"/>
+  <path d="M96 140 Q360 189 624 140" stroke="#5f9fd8" stroke-width="3" fill="none"/>
+  <path d="M96 176 Q360 225 624 176" stroke="#d9705a" stroke-width="3" fill="none"/>
+  <path d="M90 158 Q360 208 630 158" stroke="#a99d88" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+  <!-- supports -->
+  <path d="M100 186 L84 214 H116 Z" fill="#b5b5b0"/><path d="M620 186 L604 214 H636 Z" fill="#b5b5b0"/>
+  <!-- squeeze and stretch arrows -->
+  <g stroke="#5f9fd8" stroke-width="2" fill="none"><path d="M300 150 H340 M334 145 L340 150 L334 155"/><path d="M420 150 H380 M386 145 L380 150 L386 155"/></g>
+  <g stroke="#d9705a" stroke-width="2" fill="none"><path d="M340 200 H300 M306 195 L300 200 L306 205"/><path d="M380 200 H420 M414 195 L420 200 L414 205"/></g>
+  <!-- deflection D and span L -->
+  <path d="M660 186 V211" stroke="#555" stroke-width="1.2"/><path d="M654 186 H666 M654 211 H666" stroke="#555"/>
+  <text x="672" y="204" class="lbl">D</text>
+  <path d="M100 250 H620" stroke="#555" stroke-width="1.2"/><path d="M100 244 V256 M620 244 V256" stroke="#555"/>
+  <text x="300" y="272" class="lbl">span L, between supports</text>
+  <!-- labels -->
+  <text x="24" y="90" class="lbl">top: squeezed</text><text x="24" y="106" class="sm">(compression)</text>
+  <path class="lead" d="M80 110 L110 142"/>
+  <text x="40" y="236" class="lbl">bottom: stretched (tension)</text>
+  <path class="lead" d="M200 228 L200 196"/>
+  <text x="440" y="236" class="sm">middle: neutral, little stress</text>
+  <path class="lead" d="M500 224 L500 180"/>
+  <!-- rules -->
+  <text x="40" y="314" class="lbl">Sag D is judged against the span L. Code limits for most homes:</text>
+  <text x="56" y="338" class="sm">floor joists  L/360   (a 12 ft span may sag 0.4 in. under a full live load)</text>
+  <text x="56" y="358" class="sm">ceiling joists under drywall  L/240</text>
+  <text x="56" y="378" class="sm">rafters with no ceiling attached  L/180</text>
+  <text x="40" y="412" class="lbl">A notch or hole near the bottom edge cuts the fibers working hardest.</text>
+</svg>

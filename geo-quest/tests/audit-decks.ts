@@ -51,6 +51,8 @@ for (const { f, d } of decks) {
   for (const m of (d.lesson ?? '').matchAll(/```derive\n([\s\S]*?)\n```/g)) checkDerive(m[1], `${f} (lesson)`);
   checkMath((d.lesson ?? '').replace(/```[\s\S]*?```/g, ''), `${f} (lesson)`);
   if (d.lesson && !d.cards.length) issues.push(`LESSON without cards ${f}`);
+  // The app's own drawn figures (public/figures/…) must exist.
+  for (const m of (d.lesson ?? '').matchAll(/\]\((figures\/[^)]+)\)/g)) if (!require('fs').existsSync(join(process.cwd(), 'public', m[1]))) issues.push(`FIGURE missing ${f}: ${m[1]}`);
   // A lens deck (History of AI) has no cards of its own: other decks' cards are shown in it ("also in").
   if (!d.cards.length && !decks.some(x => x.d.cards.some(c => c.card.also?.some(t => t.toLowerCase() === d.title.toLowerCase())))) issues.push(`EMPTY deck: ${f}`);
   for (const { id, card: c } of d.cards) {
@@ -60,7 +62,8 @@ for (const { f, d } of decks) {
     if (!c.answer?.trim() && !c.strata) issues.push(`NO ANSWER ${f}: ${c.pre.slice(0, 60)}`);
     if ((/\{\{|::/.test(text) || (/\}\}/.test(text) && !text.includes('$'))) && !c.front) issues.push(`MARKUP LEFT ${f}: ${text.slice(0, 80)}`); // TeX may end in }}
     if (c.bureau && !c.answer) issues.push(`BUREAU ${f}: no regional bureau covers ${c.bureau} (src/bureaus.ts)`);
-    if (c.front && !c.strata && !c.pictureFirst && !c.recall && !c.bureau) issues.push(`FRONT/BACK ${f}: ${c.pre.slice(0, 70)}`);
+    if (c.members && !c.answer) issues.push(`MEMBERS ${f}: no group ${c.members.code} in src/memberships.ts`);
+    if (c.front && !c.strata && !c.pictureFirst && !c.recall && !c.bureau && !c.members) issues.push(`FRONT/BACK ${f}: ${c.pre.slice(0, 70)}`);
     // The question must not give the answer away: an acronym answer followed by its spelled-out name, "{{DNS}} (Domain
     // Name System)", or the answer written out elsewhere on the card. The expansion belongs in the answer, shown on the flip.
     if (!c.front && !c.practice && !c.parts) {
@@ -123,6 +126,7 @@ for (const { f, d } of decks) {
     checkMath(`${c.pre}\u0000${c.post}`, `${f}: ${c.pre.slice(0, 40)}`); checkMath(c.answer, `${f}: ${c.pre.slice(0, 40)}`); if (c.note) checkMath(c.note, `${f} note`);
     if (c.picture?.file) pics.add(c.picture.file);
     if (c.picture?.url) urls.add(c.picture.url);
+    if (c.picture?.url?.startsWith('figures/') && !require('fs').existsSync(join(process.cwd(), 'public', c.picture.url))) issues.push(`FIGURE missing ${f}: ${c.picture.url}`);
     for (const nn of c.native) if (!nn.code) issues.push(`NATIVE no lang code ${f}: ${nn.name} (${nn.lang})`);
     if (c.native.length && !c.front && ans && !c.native.some(() => true)) {}
   }

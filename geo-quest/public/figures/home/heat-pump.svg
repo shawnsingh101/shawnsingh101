@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>A heat pump heating a house</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="760" height="440" rx="14" fill="#fbfaf6"/>
+  <text x="30" y="40" class="t">A heat pump in winter: heat moved in from outdoors</text>
+  <!-- wall -->
+  <rect x="372" y="60" width="16" height="320" fill="#e9e4da"/>
+  <text x="70" y="76" class="lbl">outdoors</text>
+  <text x="560" y="76" class="lbl">indoors</text>
+  <!-- outdoor coil -->
+  <rect x="60" y="130" width="120" height="180" rx="8" fill="#e6f1fa" stroke="#9cb9d0"/>
+  <path d="M75 150 h90 M75 170 h90 M75 190 h90 M75 210 h90 M75 230 h90 M75 250 h90 M75 270 h90 M75 290 h90" stroke="#9cb9d0"/>
+  <text x="54" y="330" class="lbl">outdoor coil</text>
+  <text x="54" y="347" class="sm">cold refrigerant boils,</text>
+  <text x="54" y="362" class="sm">soaking up heat from the air</text>
+  <!-- indoor coil -->
+  <rect x="580" y="130" width="120" height="180" rx="8" fill="#fbe3e1" stroke="#d9a3a0"/>
+  <path d="M595 150 h90 M595 170 h90 M595 190 h90 M595 210 h90 M595 230 h90 M595 250 h90 M595 270 h90 M595 290 h90" stroke="#d9a3a0"/>
+  <text x="560" y="330" class="lbl">indoor coil</text>
+  <text x="560" y="347" class="sm">hot gas gives up its heat</text>
+  <text x="560" y="362" class="sm">and turns back to liquid</text>
+  <!-- loop: top hot, bottom cold -->
+  <path d="M180 150 H250" stroke="#7fb1d6" stroke-width="5" fill="none"/>
+  <path d="M310 150 H580" stroke="#d9534f" stroke-width="5" fill="none"/>
+  <path d="M580 290 H470" stroke="#e8a09d" stroke-width="5" fill="none"/>
+  <path d="M410 290 H180" stroke="#7fb1d6" stroke-width="5" fill="none"/>
+  <!-- compressor -->
+  <circle cx="280" cy="150" r="30" fill="#dfe6ec" stroke="#9aa"/>
+  <path d="M266 150 h28 m-8 -8 l8 8 -8 8" stroke="#666" stroke-width="2" fill="none"/>
+  <text x="226" y="92" class="lbl">compressor</text>
+  <text x="226" y="108" class="sm">squeezes the gas: hot</text>
+  <!-- expansion valve -->
+  <path d="M410 278 L470 302 V278 L410 302 Z" fill="#efe6d2" stroke="#b9a984"/>
+  <text x="380" y="330" class="lbl">expansion valve</text>
+  <text x="380" y="347" class="sm">pressure drops:</text>
+  <text x="380" y="362" class="sm">very cold</text>
+  <!-- arrows of flow -->
+  <path d="M440 150 l-10 -7 m10 7 l-10 7" stroke="#fff" stroke-width="2" fill="none"/>
+  <path d="M300 290 l10 -7 m-10 7 l10 7" stroke="#fff" stroke-width="2" fill="none"/>
+  <!-- heat arrows -->
+  <path d="M20 220 h30 m-8 -6 l8 6 -8 6" stroke="#e0a44a" stroke-width="2.5" fill="none"/>
+  <path d="M710 220 h34 m-8 -6 l8 6 -8 6" stroke="#e0a44a" stroke-width="2.5" fill="none"/>
+  <text x="420" y="138" class="sm">hot gas</text>
+  <text x="250" y="280" class="sm">cold liquid and gas</text>
+  <text x="60" y="404" class="sm">In summer a reversing valve sends the refrigerant the other way: the indoor coil gets cold and the heat goes outside.</text>
+</svg>

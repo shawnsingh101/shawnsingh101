@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>An active solar water heater with a closed antifreeze loop</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="720" height="500" rx="14" fill="#fbfaf6"/>
+  <text x="24" y="32" class="t">A solar water heater (closed loop)</text>
+  <!-- roof and collector -->
+  <path d="M40 210 L330 70" stroke="#9c8a78" stroke-width="8"/>
+  <path d="M110 160 L290 73 L300 92 L120 179 Z" fill="#40576b" stroke="#2f3f4e"/>
+  <g stroke="#7b93a8" stroke-width="1"><path d="M146 143 L156 162"/><path d="M182 126 L192 145"/><path d="M218 108 L228 127"/><path d="M254 91 L264 110"/></g>
+  <circle cx="356" cy="58" r="18" fill="#f7c948"/>
+  <!-- loop: hot out of collector top, down to coil; cool back from coil to collector bottom via pump -->
+  <path d="M296 84 H340 V420 H300" stroke="#d9534f" stroke-width="5" fill="none"/>
+  <path d="M300 456 H240 V380 Q240 360 220 360 H100 V196 L118 180" stroke="#3d7fd1" stroke-width="5" fill="none"/>
+  <!-- pump -->
+  <circle cx="240" cy="410" r="14" fill="#b8c6d3" stroke="#6f8496" stroke-width="2"/>
+  <!-- tank -->
+  <rect x="300" y="250" width="150" height="230" rx="22" fill="#e4e7ea" stroke="#8a9bab" stroke-width="3"/>
+  <path d="M310 420 q15 -10 30 0 t30 0 t30 0 t30 0 M310 438 q15 -10 30 0 t30 0 t30 0 t30 0 M310 456 q15 -10 30 0 t30 0 t30 0 t30 0" stroke="#c97a5a" stroke-width="3" fill="none"/>
+  <!-- backup element -->
+  <rect x="418" y="330" width="32" height="8" fill="#e08a5f"/>
+  <!-- cold in (dip tube) and hot out -->
+  <path d="M610 470 H476 V230 H410 V246" stroke="#3d7fd1" stroke-width="5" fill="none"/>
+  <path d="M410 246 V400" stroke="#3d7fd1" stroke-width="3" stroke-dasharray="6 4"/>
+  <path d="M340 250 V210 M340 210 H600" stroke="#d9534f" stroke-width="0" fill="none"/>
+  <path d="M370 250 V200 H600" stroke="#d9534f" stroke-width="5" fill="none"/>
+  <!-- controller -->
+  <rect x="160" y="250" width="56" height="40" rx="6" fill="#cfe0ea" stroke="#6f8496"/>
+  <path d="M216 270 H330" stroke="#777" stroke-width="1" stroke-dasharray="3 3"/>
+  <path d="M188 250 V140 H286 V100" stroke="#777" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+  <!-- labels -->
+  <text x="420" y="66" class="lbl">collector</text><text x="420" y="82" class="sm">a dark plate with tubes under glass;</text><text x="420" y="98" class="sm">the fluid in it heats in the sun</text>
+  <path class="lead" d="M416 70 L300 86"/>
+  <text x="450" y="150" class="lbl">antifreeze loop</text><text x="450" y="166" class="sm">water and propylene glycol,</text><text x="450" y="182" class="sm">sealed off from the drinking water</text>
+  <path class="lead" d="M446 154 L344 140"/>
+  <text x="610" y="204" class="lbl">hot out</text>
+  <text x="610" y="474" class="lbl">cold in</text>
+  <text x="120" y="306" class="lbl">controller</text><text x="120" y="322" class="sm">runs the pump when the collector</text><text x="120" y="338" class="sm">is hotter than the tank</text>
+  <text x="150" y="440" class="lbl">pump</text>
+  <path class="lead" d="M190 436 L226 416"/>
+  <text x="490" y="300" class="lbl">backup element</text><text x="490" y="316" class="sm">heats when the sun can't</text>
+  <path class="lead" d="M486 310 L452 330"/>
+  <text x="470" y="400" class="lbl">heat exchanger coil</text><text x="470" y="416" class="sm">passes the heat to the tank water</text>
+  <path class="lead" d="M466 404 L432 424"/>
+</svg>

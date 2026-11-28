@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>Inside a gas tank water heater</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="720" height="560" rx="14" fill="#fbfaf6"/>
+  <text x="24" y="36" class="t">Inside a gas water heater</text>
+  <!-- jacket and tank -->
+  <rect x="250" y="110" width="220" height="380" rx="24" fill="#f3e7b8" stroke="#9aa" stroke-width="2"/>
+  <rect x="268" y="126" width="184" height="320" rx="16" fill="url(#w)"/>
+  <defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3b3b3"/><stop offset="1" stop-color="#a9cdee"/></linearGradient></defs>
+  <!-- flue -->
+  <rect x="348" y="60" width="24" height="390" fill="#c9c4bb" stroke="#8a8578"/>
+  <path d="M340 60 h40 l-6 -14 h-28 z" fill="#c9c4bb" stroke="#8a8578"/>
+  <path d="M360 40 v-20 m-8 10 l8 -10 l8 10" stroke="#b9a9a9" stroke-width="3" fill="none"/>
+  <!-- dip tube cold -->
+  <path d="M300 70 V420" stroke="#3d7fd1" stroke-width="6"/>
+  <path d="M300 40 V70" stroke="#3d7fd1" stroke-width="8"/>
+  <!-- hot out -->
+  <path d="M420 40 V128" stroke="#d1495b" stroke-width="8"/>
+  <!-- anode -->
+  <path d="M400 110 V380" stroke="#8a8578" stroke-width="6"/>
+  <!-- T&P -->
+  <rect x="452" y="150" width="30" height="16" fill="#c9a24a"/>
+  <path d="M482 158 H500 V480" stroke="#c9a24a" stroke-width="6" fill="none"/>
+  <!-- burner -->
+  <rect x="270" y="450" width="180" height="40" fill="#e9e4da"/>
+  <g fill="#3d7fd1"><path d="M300 470 q6 -14 12 0 z"/><path d="M325 470 q6 -14 12 0 z"/><path d="M350 470 q6 -14 12 0 z"/><path d="M375 470 q6 -14 12 0 z"/><path d="M400 470 q6 -14 12 0 z"/></g>
+  <!-- gas valve -->
+  <rect x="198" y="380" width="52" height="40" rx="6" fill="#d9d4c8" stroke="#8a8578"/>
+  <path d="M150 400 H198" stroke="#d9a520" stroke-width="6"/>
+  <!-- drain valve -->
+  <rect x="228" y="460" width="22" height="12" fill="#c9a24a"/>
+  <!-- labels -->
+  <text x="270" y="30" class="sm">cold in</text><text x="430" y="62" class="sm">hot out</text>
+  <text x="380" y="18" class="sm">exhaust to the vent</text>
+  <text x="30" y="130" class="lbl">dip tube</text><text x="30" y="146" class="sm">sends cold water to the bottom</text><path class="lead" d="M232 142 L296 200"/>
+  <text x="30" y="250" class="lbl">flue</text><text x="30" y="266" class="sm">hot exhaust heats the water</text><text x="30" y="282" class="sm">on its way up</text><path class="lead" d="M70 246 L346 260"/>
+  <text x="30" y="380" class="lbl">gas control valve</text><text x="30" y="396" class="sm">thermostat; pilot and</text><text x="30" y="412" class="sm">thermocouple</text>
+  <text x="30" y="470" class="lbl">drain valve</text><path class="lead" d="M112 466 H226"/>
+  <text x="300" y="520" class="lbl">burner</text><path class="lead" d="M330 506 V488"/>
+  <text x="520" y="160" class="lbl">T&amp;P relief valve</text><path class="lead" d="M516 156 H486"/>
+  <text x="520" y="200" class="lbl">anode rod</text><text x="520" y="216" class="sm">corrodes so the tank doesn't</text><path class="lead" d="M516 196 L404 230"/>
+  <text x="520" y="300" class="lbl">insulation</text><path class="lead" d="M516 296 H462"/>
+  <text x="520" y="460" class="lbl">discharge pipe</text><text x="520" y="476" class="sm">ends near the floor,</text><text x="520" y="492" class="sm">never capped</text><path class="lead" d="M516 456 H504"/>
+</svg>

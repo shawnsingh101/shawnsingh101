@@ -343,6 +343,7 @@ export interface CardFace {
   promptPicture?: boolean; // show the picture as the question (World Heritage photo cards)
   parts?: (string | { answer: string; hint?: string })[]; // a sentence with several blanks hidden together
   bureau?: string;                       // a map card: which regional bureau covers this country (components/BureauMap.tsx)
+  members?: { code: string; whose: boolean }; // a membership map card (components/MemberMap.tsx)
   recall?: Recall;                       // a parts card: recalled part by part (components/Recall.tsx)
   practice?: Practice;                   // a practice card: write a program, run and check it (components/Practice.tsx)
   code?: { lang: string; text: string }; // a note card's code: shown with the question (a \u0000 in it is the blank)
@@ -397,7 +398,7 @@ function rawFace(ref: CardRef): CardFace {
     // Note decks: a cloze ("Equal parts {{gin}}, Campari…") or a front :: back card.
     const n = c.card;
     if (n.strata) return { mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, frontBack: true, strata: n.strata };
-    const code = { code: n.code, source: n.source, link: n.link, practice: n.practice, asOf: n.asOf, recall: n.recall, bureau: n.bureau };
+    const code = { code: n.code, source: n.source, link: n.link, practice: n.practice, asOf: n.asOf, recall: n.recall, bureau: n.bureau, members: n.members };
     return n.front
       ? { ...code, mode: 'reveal', pre: n.pre, blank: '', post: '', answer: n.answer, map: 'none', note: n.note, picture: n.picture ? { file: n.picture.file, url: n.picture.url, caption: n.picture.caption, single: n.pictureFirst } : undefined, frontBack: true, promptPicture: !!(n.pictureFirst && n.picture) }
       : { ...code, mode: 'reveal', pre: n.pre, blank: n.hint ?? 'what?', post: n.post, answer: n.answer, map: 'none', note: n.note, parts: n.parts,

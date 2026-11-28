@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>How a dehumidifier dries the air</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="720" height="420" rx="14" fill="#fbfaf6"/>
+  <text x="30" y="40" class="t">How a dehumidifier dries the air</text>
+  <!-- cabinet -->
+  <rect x="150" y="80" width="420" height="250" rx="16" fill="#f1f3f5" stroke="#bbc"/>
+  <!-- cold coil -->
+  <rect x="200" y="110" width="60" height="160" rx="6" fill="#e6f1fa" stroke="#9cb9d0"/>
+  <path d="M210 125 h40 M210 145 h40 M210 165 h40 M210 185 h40 M210 205 h40 M210 225 h40 M210 245 h40" stroke="#9cb9d0"/>
+  <!-- warm coil -->
+  <rect x="320" y="110" width="60" height="160" rx="6" fill="#fbe3e1" stroke="#d9a3a0"/>
+  <path d="M330 125 h40 M330 145 h40 M330 165 h40 M330 185 h40 M330 205 h40 M330 225 h40 M330 245 h40" stroke="#d9a3a0"/>
+  <!-- fan -->
+  <circle cx="460" cy="190" r="44" fill="#e9eef2" stroke="#9aa"/>
+  <path d="M460 190 l0 -36 a12 12 0 0 1 0 36 Z M460 190 l34 10 a12 12 0 0 1 -34 -10 Z M460 190 l-32 18 a12 12 0 0 1 32 -18 Z" fill="#c4ccd4"/>
+  <!-- compressor -->
+  <rect x="460" y="262" width="80" height="50" rx="10" fill="#dfe6ec" stroke="#9aa"/>
+  <!-- drips + bucket -->
+  <path d="M230 278 v8 M220 292 v6 M240 296 v6" stroke="#5aa3d8" stroke-width="3"/>
+  <rect x="190" y="300" width="110" height="26" rx="4" fill="#cfe8f6" stroke="#8bb7d3"/>
+  <!-- air arrows -->
+  <path d="M60 190 H190 m-12 -8 l12 8 -12 8" stroke="#7fb1d6" stroke-width="3" fill="none"/>
+  <path d="M520 190 H680 m-12 -8 l12 8 -12 8" stroke="#e0a44a" stroke-width="3" fill="none"/>
+  <!-- labels -->
+  <text x="30" y="160" class="lbl">damp room air</text>
+  <text x="200" y="100" class="lbl">cold coil</text>
+  <text x="320" y="100" class="lbl">warm coil</text>
+  <text x="590" y="160" class="lbl">drier air</text>
+  <text x="590" y="216" class="sm">a little warmer</text>
+  <text x="560" y="300" class="lbl">compressor</text>
+  <path class="lead" d="M556 296 H542"/>
+  <text x="30" y="352" class="lbl">bucket or drain hose</text>
+  <path class="lead" d="M150 348 Q175 340 190 322"/>
+  <text x="30" y="384" class="sm">The cold coil chills the air below its dew point, so water condenses and drips off; the warm coil</text>
+  <text x="30" y="400" class="sm">(the same refrigerant, after the compressor) warms the air back up. It works like an air conditioner that stays indoors.</text>
+</svg>

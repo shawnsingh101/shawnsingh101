@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>A septic system: tank, distribution box and drain field</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="820" height="400" rx="14" fill="#fbfaf6"/>
+  <text x="24" y="36" class="t">A septic system</text>
+  <rect x="0" y="110" width="820" height="290" fill="#e9dfcf"/>
+  <rect x="0" y="104" width="820" height="8" fill="#9cc98a"/>
+  <!-- house pipe -->
+  <path d="M0 150 H80" stroke="#3f9a4a" stroke-width="10"/>
+  <!-- tank -->
+  <rect x="80" y="130" width="260" height="140" rx="6" fill="#fff" stroke="#8a8578" stroke-width="3"/>
+  <rect x="84" y="160" width="252" height="74" fill="#cfe8f6"/>
+  <rect x="84" y="150" width="252" height="12" fill="#efe1b9"/>
+  <rect x="84" y="234" width="252" height="34" fill="#a08a6a"/>
+  <rect x="245" y="134" width="6" height="110" fill="#8a8578"/>
+  <rect x="96" y="140" width="5" height="50" fill="#8a8578"/>
+  <rect x="320" y="140" width="5" height="50" fill="#8a8578"/>
+  <path d="M340 150 H430" stroke="#3d7fd1" stroke-width="8"/>
+  <!-- d-box -->
+  <rect x="430" y="132" width="44" height="36" fill="#fff" stroke="#8a8578" stroke-width="2"/>
+  <!-- field -->
+  <g fill="#cdc6b8" stroke="#a39b8c">
+    <rect x="500" y="170" width="300" height="34"/><rect x="500" y="230" width="300" height="34"/><rect x="500" y="290" width="300" height="34"/>
+  </g>
+  <g stroke="#3d7fd1" stroke-width="5" stroke-dasharray="10 5">
+    <line x1="500" y1="187" x2="800" y2="187"/><line x1="500" y1="247" x2="800" y2="247"/><line x1="500" y1="307" x2="800" y2="307"/>
+  </g>
+  <path d="M474 150 H488 V307 H500 M488 187 H500 M488 247 H500" fill="none" stroke="#3d7fd1" stroke-width="4"/>
+  <g fill="#3d7fd1" opacity="0.5"><circle cx="560" cy="345" r="3"/><circle cx="640" cy="352" r="3"/><circle cx="720" cy="345" r="3"/><circle cx="600" cy="365" r="3"/><circle cx="690" cy="368" r="3"/></g>
+  <!-- labels -->
+  <text x="6" y="140" class="sm">house</text>
+  <text x="110" y="300" class="lbl">septic tank</text>
+  <text x="110" y="318" class="sm">two chambers; solids settle,</text><text x="110" y="334" class="sm">bacteria break them down</text>
+  <text x="110" y="160" class="sm" style="font-size:10px">scum (grease floats)</text>
+  <text x="140" y="206" class="lbl">effluent (liquid)</text>
+  <text x="140" y="257" class="sm" style="fill:#fff">sludge (settles)</text>
+  <text x="352" y="98" class="sm">baffle</text><path class="lead" d="M360 102 L324 140"/>
+  <text x="410" y="92" class="lbl">distribution box</text><path class="lead" d="M452 98 V130"/>
+  <text x="560" y="158" class="lbl">drain field (leach field)</text>
+  <text x="510" y="390" class="sm">perforated pipes in gravel; the soil filters the effluent</text>
+</svg>
