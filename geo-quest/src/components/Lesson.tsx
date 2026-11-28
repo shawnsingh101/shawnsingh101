@@ -34,9 +34,15 @@ export function LessonBody({ text }: { text: string }) {
       out.push(lang === 'flow' ? <Flow key={out.length} text={body.join('\n')} stepper /> : lang === 'stack' ? <Stack key={out.length} text={body.join('\n')} /> : lang === 'org' ? <Org key={out.length} text={body.join('\n')} /> : lang === 'graph' ? <Graph key={out.length} text={body.join('\n')} interactive /> : lang === 'derive' ? <Derive key={out.length} text={body.join('\n')} stepper /> : <CodeBlock key={out.length} text={body.join('\n')} lang={lang} />);
       continue;
     }
-    // A picture: ![caption](commons:File.svg), shown whole (a diagram), tap to enlarge.
-    const img = /^!\[([^\]]*)\]\((?:commons:)?(.+)\)$/.exec(l);
-    if (img) { flush(); out.push(<div key={out.length} className="lesson-picture"><Picture file={img[2]} caption={img[1]} single /></div>); continue; }
+    // A picture: ![caption](commons:File.svg), shown whole (a diagram), tap to enlarge. A full https:// address or one of
+    // the app's own drawn figures (figures/…, in public/) is shown as it is.
+    const img = /^!\[([^\]]*)\]\((commons:)?(.+)\)$/.exec(l);
+    if (img) {
+      flush();
+      const own = !img[2] && /^(https?:\/\/|figures\/)/.test(img[3]);
+      out.push(<div key={out.length} className="lesson-picture"><Picture {...(own ? { url: img[3] } : { file: img[3] })} caption={img[1]} single /></div>);
+      continue;
+    }
     const h = /^(#{2,3})\s+(.*)$/.exec(l);
     if (h) { flush(); out.push(h[1] === '##' ? <h2 key={out.length}>{inline(h[2])}</h2> : <h3 key={out.length}>{inline(h[2])}</h3>); continue; }
     // A table: | a | b | rows, the first is the header, a |---| row under it is skipped.

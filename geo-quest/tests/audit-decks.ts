@@ -51,6 +51,8 @@ for (const { f, d } of decks) {
   for (const m of (d.lesson ?? '').matchAll(/```derive\n([\s\S]*?)\n```/g)) checkDerive(m[1], `${f} (lesson)`);
   checkMath((d.lesson ?? '').replace(/```[\s\S]*?```/g, ''), `${f} (lesson)`);
   if (d.lesson && !d.cards.length) issues.push(`LESSON without cards ${f}`);
+  // The app's own drawn figures (public/figures/…) must exist.
+  for (const m of (d.lesson ?? '').matchAll(/\]\((figures\/[^)]+)\)/g)) if (!require('fs').existsSync(join(process.cwd(), 'public', m[1]))) issues.push(`FIGURE missing ${f}: ${m[1]}`);
   // A lens deck (History of AI) has no cards of its own: other decks' cards are shown in it ("also in").
   if (!d.cards.length && !decks.some(x => x.d.cards.some(c => c.card.also?.some(t => t.toLowerCase() === d.title.toLowerCase())))) issues.push(`EMPTY deck: ${f}`);
   for (const { id, card: c } of d.cards) {
@@ -124,6 +126,7 @@ for (const { f, d } of decks) {
     checkMath(`${c.pre}\u0000${c.post}`, `${f}: ${c.pre.slice(0, 40)}`); checkMath(c.answer, `${f}: ${c.pre.slice(0, 40)}`); if (c.note) checkMath(c.note, `${f} note`);
     if (c.picture?.file) pics.add(c.picture.file);
     if (c.picture?.url) urls.add(c.picture.url);
+    if (c.picture?.url?.startsWith('figures/') && !require('fs').existsSync(join(process.cwd(), 'public', c.picture.url))) issues.push(`FIGURE missing ${f}: ${c.picture.url}`);
     for (const nn of c.native) if (!nn.code) issues.push(`NATIVE no lang code ${f}: ${nn.name} (${nn.lang})`);
     if (c.native.length && !c.front && ans && !c.native.some(() => true)) {}
   }

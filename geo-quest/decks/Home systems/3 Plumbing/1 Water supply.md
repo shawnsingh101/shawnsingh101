@@ -4,6 +4,10 @@ title: Water supply
 How clean water gets into the house and out of the tap: from the city main or a well, through the meter and the main shutoff, along copper, PEX or CPVC pipe, to each fixture's own shutoff.
 
 :::lesson
+## Three systems of pipes
+A house holds three separate sets of pipes. **Supply** pipes bring clean water in under pressure, so they can be small and run any direction. **Drain** pipes carry used water out by gravity, so they are bigger and always slope downhill. **Vent** pipes carry only air: they open through the roof and let air into the drains so water flows smoothly and the traps keep their water.
+![A house's supply, drain and vent pipes (drawn for this app)](figures/home/three-systems.svg)
+
 ## From the street to the tap
 ```stack
 # City water, in order

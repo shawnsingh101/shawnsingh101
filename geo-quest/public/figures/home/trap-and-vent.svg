@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>A sink's P-trap, trap arm and vent</title><style>.lbl{fill:#333}.sm{font-size:12px;fill:#555}.lead{stroke:#888;stroke-width:1;fill:none}.t{font-size:17px;font-weight:600;fill:#444}</style>
+  <rect width="700" height="460" rx="14" fill="#fbfaf6"/>
+  <!-- sink -->
+  <path d="M60 70 H260 V80 Q250 150 160 150 Q70 150 60 80 Z" fill="#fff" stroke="#9aa" stroke-width="2"/>
+  <path d="M75 95 Q85 140 160 140 Q235 140 245 95 Z" fill="#cfe8f6"/>
+  <!-- tailpiece -->
+  <rect x="148" y="150" width="24" height="90" fill="#e7ecef" stroke="#9aa"/>
+  <!-- P-trap: U then arm -->
+  <path d="M148 240 V300 A42 42 0 0 0 232 300 V270 H470" fill="none" stroke="#9aa" stroke-width="26" stroke-linejoin="round"/>
+  <path d="M148 240 V300 A42 42 0 0 0 232 300 V270 H470" fill="none" stroke="#f4f6f7" stroke-width="22" stroke-linejoin="round"/>
+  <!-- water seal -->
+  <path d="M137 272 V300 A53 53 0 0 0 243 300 V272 H221 V300 A31 31 0 0 1 159 300 V272 Z" fill="#7fc0e6"/>
+  <!-- vent and drain -->
+  <rect x="470" y="40" width="34" height="400" fill="#e7ecef" stroke="#9aa"/>
+  <rect x="470" y="40" width="34" height="220" fill="#dfe5ea"/>
+  <path d="M487 60 v40 m-8 -30 l8 -10 l8 10" stroke="#8a9bab" stroke-width="3" fill="none"/>
+  <path d="M487 300 v90 m-8 -10 l8 10 l8 -10" stroke="#3f9a4a" stroke-width="3" fill="none"/>
+  <!-- labels -->
+  <text x="30" y="40" class="t">How a trap and vent work</text>
+  <text x="270" y="112" class="lbl">sink</text>
+  <text x="185" y="200" class="lbl">tailpiece</text>
+  <text x="40" y="360" class="lbl">trap</text><path class="lead" d="M75 355 H140"/>
+  <text x="250" y="355" class="lbl">water seal</text><text x="250" y="372" class="sm">blocks sewer gas</text><path class="lead" d="M246 350 H236"/>
+  <text x="290" y="250" class="lbl">trap arm</text><text x="290" y="300" class="sm">sloped ¼" per foot; its length is</text><text x="290" y="316" class="sm">limited so the trap can't siphon</text>
+  <text x="520" y="110" class="lbl">vent</text><text x="520" y="128" class="sm">air in, from the roof,</text><text x="520" y="144" class="sm">keeps the drain at</text><text x="520" y="160" class="sm">outdoor air pressure</text>
+  <text x="520" y="350" class="lbl">drain</text><text x="520" y="368" class="sm">to the stack and</text><text x="520" y="384" class="sm">house drain</text>
+</svg>

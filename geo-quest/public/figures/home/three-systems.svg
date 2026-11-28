@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 560" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14">
+  <title>A house's three plumbing systems: supply, drains and vents</title>
+  <style>
+    .lbl{fill:#333} .sm{font-size:12px;fill:#555}
+    .lead{stroke:#888;stroke-width:1;fill:none}
+    .cold{stroke:#3d7fd1;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .hot{stroke:#d1495b;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .drain{stroke:#3f9a4a;stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .vent{stroke:#8a9bab;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .fx{fill:#fff;stroke:#9aa;stroke-width:1.5}
+  </style>
+  <rect width="820" height="560" rx="14" fill="#fbfaf6"/>
+  <!-- ground and basement -->
+  <rect x="0" y="430" width="820" height="130" fill="#e9dfcf"/>
+  <rect x="140" y="400" width="500" height="125" fill="#f2efe8" stroke="#c9c2b4" stroke-width="2"/>
+  <!-- house -->
+  <rect x="140" y="110" width="500" height="290" fill="#fffdf7" stroke="#c9c2b4" stroke-width="2"/>
+  <polygon points="120,112 390,28 660,112" fill="#efe6dc" stroke="#c9c2b4" stroke-width="2"/>
+  <line x1="140" y1="255" x2="640" y2="255" stroke="#c9c2b4" stroke-width="5"/>
+  <line x1="140" y1="400" x2="640" y2="400" stroke="#c9c2b4" stroke-width="5"/>
+  <!-- vent stack (above the highest drain) -->
+  <path class="vent" d="M360 238 V16"/>
+  <path class="vent" d="M520 362 V300 H360"/>
+  <!-- drains -->
+  <path class="drain" d="M360 238 V505 H40"/>
+  <path class="drain" d="M232 246 V244 M232 250 V244 H360"/>
+  <path class="drain" d="M300 240 q0 12 12 12 q10 0 10 -10 V244 H360"/>
+  <path class="drain" d="M455 246 H360"/>
+  <path class="drain" d="M500 352 q0 14 12 14 q10 0 10 -10 V372 H360"/>
+  <path class="drain" d="M326 505 V486"/>
+  <!-- supply -->
+  <path class="cold" d="M20 470 H200 V418 H560 M300 418 V222 M245 418 V232 M470 418 V242 M540 418 V320"/>
+  <path class="cold" d="M200 470 H228 V492"/>
+  <path class="hot" d="M252 434 V426 H548 M312 426 V222 M478 426 V242 M548 426 V320"/>
+  <!-- meter and shutoff -->
+  <rect x="150" y="461" width="22" height="18" rx="3" fill="#fff" stroke="#3d7fd1" stroke-width="3"/>
+  <path d="M184 462 l8 8 l-8 8 z M200 462 l-8 8 l8 8 z" fill="#3d7fd1"/>
+  <!-- water heater -->
+  <rect x="220" y="434" width="40" height="58" rx="8" fill="#fff" stroke="#9aa" stroke-width="2"/>
+  <!-- fixtures upstairs: toilet, sink, tub -->
+  <rect x="205" y="200" width="30" height="34" rx="4" class="fx"/>
+  <path d="M210 234 h40 q4 12 -10 14 h-26 z" class="fx"/>
+  <path d="M282 228 h44 v6 q-4 10 -22 10 q-18 0 -22 -10 z" class="fx"/>
+  <rect x="440" y="222" width="140" height="28" rx="10" class="fx"/>
+  <!-- kitchen sink downstairs -->
+  <rect x="470" y="340" width="110" height="60" fill="#f3eee4" stroke="#c9c2b4"/>
+  <path d="M492 336 h40 v6 q-2 10 -20 10 q-18 0 -20 -10 z" class="fx"/>
+  <!-- cleanout -->
+  <rect x="319" y="478" width="14" height="8" fill="#3f9a4a"/>
+  <!-- labels -->
+  <text x="20" y="492" class="lbl">From the street</text>
+  <text x="161" y="496" class="sm" text-anchor="middle">meter</text>
+  <text x="300" y="548" class="sm">cleanout</text><path class="lead" d="M326 536 V500"/>
+  <text x="12" y="530" class="lbl">To the sewer or septic tank</text>
+  <text x="196" y="455" class="sm" text-anchor="end">main shutoff</text>
+  <text x="212" y="530" class="sm">water heater</text>
+  <text x="378" y="495" class="sm">house drain, sloping out</text>
+  <text x="372" y="160" class="lbl">vent stack</text>
+  <text x="372" y="178" class="sm">open through the roof</text>
+  <rect x="226" y="319" width="128" height="22" rx="6" fill="#fffdf7" opacity="0.95"/><text x="350" y="335" class="lbl" text-anchor="end" style="fill:#2f7a38">soil (waste) stack</text>
+  <text x="530" y="292" class="sm">revent</text>
+  <text x="590" y="216" class="sm">tub</text>
+  <text x="180" y="196" class="sm">toilet</text>
+  <text x="285" y="214" class="sm">sink</text>
+  <text x="590" y="352" class="sm">kitchen sink</text>
+  <text x="420" y="448" class="sm">trunk lines (cold and hot)</text>
+  <!-- legend -->
+  <g transform="translate(672,140)">
+    <rect x="-12" y="-24" width="146" height="132" rx="10" fill="#fff" stroke="#ddd"/>
+    <line x1="0" y1="0" x2="30" y2="0" class="cold"/><text x="40" y="5" class="lbl">cold supply</text>
+    <line x1="0" y1="26" x2="30" y2="26" class="hot"/><text x="40" y="31" class="lbl">hot supply</text>
+    <line x1="0" y1="52" x2="30" y2="52" class="drain"/><text x="40" y="57" class="lbl">drains</text>
+    <line x1="0" y1="78" x2="30" y2="78" class="vent"/><text x="40" y="83" class="lbl">vents</text>
+  </g>
+  <text x="672" y="300" class="sm">Supply: under pressure,</text>
+  <text x="672" y="316" class="sm">small pipes.</text>
+  <text x="672" y="340" class="sm">Drains: by gravity,</text>
+  <text x="672" y="356" class="sm">big pipes, sloped.</text>
+  <text x="672" y="380" class="sm">Vents: let air in so</text>
+  <text x="672" y="396" class="sm">traps don't siphon.</text>
+</svg>

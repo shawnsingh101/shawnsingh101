@@ -22,11 +22,26 @@ How a house works, system by system (`decks/Home systems/`). Read with GUIDELINE
   picture card whose question says what the tool does, and a "what it's for" cloze. Both carry `also in:` the
   system decks where the tool is used.
 
+## Following the book
+- The owner is working through *How Your House Works* (Charlie Wing, 4th ed., Wiley 2025), uploaded as PDFs in three parts
+  (part 1: chapter 1 Plumbing and chapter 2 Wiring to motion sensors). Each chapter becomes the deep dive for its system:
+  topic order from the book, a `:::lesson` per deck that explains how things work, and the book's "Before calling a
+  plumber" tips as cards (the repairs an owner can do). Core decks get only what an educated homeowner should know.
+- The PDF's text extracts well with `pdftotext` (most "How it works" content is in the figures: look at a few pages
+  as images, in small batches). Never copy its text or figures; check numbers against Wikipedia or the codes
+  (it says a pressure tank should be pre-charged to 20 psi with a 20–40 switch; common practice is 2 psi below
+  the turn-on pressure, usually 40/60).
+- **Drawn figures**: where Commons has no clear diagram, draw our own SVG in `public/figures/home/<name>.svg` and use
+  it as `![caption (drawn for this app)](figures/home/<name>.svg)` in lessons or after cards (the audit checks the file
+  exists). Style: 14 px labels, pastel fills, thin grey leader lines, blue cold, red hot, green drains, grey vents, a
+  light paper background (they show on light and dark themes alike). Keep labels away from pipes; render with
+  Playwright and look before committing. These are ready to become tap-the-part cards (queue #1).
+
 ## Sources
 - Wikipedia for facts and pictures, written in our own words. Code numbers (frost depth, egress size, GFCI
   locations) are the US International Residential Code and National Electrical Code; say "usually" where local codes
   differ.
-- The owner's PDF of *How Your House Works* (Charlie Wing) sets the coverage and order of the electrical deep dive
-  only: never copy its text or figures. Check its facts against Wikipedia (it dates AFCIs to 1992; the NEC first
+- The owner's PDF of *How Your House Works* (Charlie Wing) sets the coverage and order of the deep dives only:
+  never copy its text or figures, and never commit the PDF (the repo is public). Check its facts against Wikipedia (it dates AFCIs to 1992; the NEC first
   required them in the 1999 code).
 - esfi.org blocks automated reading (Cloudflare); ask the owner to save pages as PDF if they're wanted.

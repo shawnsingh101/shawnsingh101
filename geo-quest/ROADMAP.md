@@ -34,21 +34,20 @@ Commons pictures); the OpenStax PDF only sets coverage and order.
 dive (v1.45, Wikipedia + Spying on Whales cards shown in it). Next: more species deep dives, birds with calls, trees and
 plants, The Rise and Fall of the Dinosaurs (send the PDF).
 
-**Home systems** (new, v1.46): `decks/Home systems/`, one folder per system in the owner's order (outline and start
-prompt: `archive/HANDOFF_HOME_SYSTEMS.md`). Done: foundation decks for all seven systems (structure 2, envelope 4,
-plumbing 3, electrical 3, HVAC 3, drainage 1, safety and interior 3), each card in our own words from Wikipedia with a
-Commons photo of the part (picture → name under "Name it from the picture", name → what it does); stacks for the load
-path, water and power paths and the refrigerant loop; parts cards for short lists. **Tools** (`8 Tools/Tools.md`): 34
-tools, picture → name and name → what for, each `also in:` the system decks that use it. **Electrical deep dive**
-started as `depth: deep` "… - going further" decks beside each electrical deck: circuits and Ohm's law, 120/240,
-meters, grounding vs bonding, outage checklist; breakers (thermal/magnetic), fuses, panel layout, 80% rule, cable
-labels; plug shapes, how GFCI/AFCI trip and when the code required them, three- and four-way switches, dimmers,
-motion sensors. Order follows the owner's PDF (Charlie Wing, *How Your House Works*, ch. 2 Wiring: coverage and order
-only, nothing copied). esfi.org is behind Cloudflare and refuses automated reads (added to the environment's allowed
-hosts, still blocked): the owner said to use the PDF instead. Next: deep dive part 4, lights (fixtures, lamps,
-incandescent vs fluorescent vs LED, lumens and efficacy) and alarms (CO and smoke detector types, hard-wired
-interconnection, required locations), then the smart home; then deep dives for plumbing and HVAC. Later: labelled
-diagrams (queue #2): tap the part on a house cutaway.
+**Home systems** (v1.46–v1.47): `decks/Home systems/`, one folder per system in the owner's order (start prompt:
+`archive/HANDOFF_HOME_SYSTEMS.md`). Done: foundation decks for all seven systems with Commons photos, **Tools** (34
+tools, each `also in:` its systems), and the **Electrical deep dive** parts 1–3 (circuits to motion sensors).
+**Now following the book** *How Your House Works* (Charlie Wing, 4th ed.), uploaded by the owner in three PDF parts, one
+per session, all on one branch and merged together at the end (guides/home-systems.md › Following the book). **Part 1
+done (v1.47):** chapter 1 Plumbing as two new core decks (`4 Fixtures`, `5 Water treatment`) and four deep decks
+(`6 Water supply`, `7 Water heating`, `8 Drains and vents`, `9 Fixtures` "- going further"), each with a lesson, the
+book's "before calling a plumber" repairs as cards, and eight drawn SVG figures in `public/figures/home/` (lessons can
+now show `figures/…` and https images: `src/components/Lesson.tsx`). Chapter 2 up to motion sensors was already built.
+**Next, part 2** (prompt: `archive/HANDOFF_HOW_YOUR_HOUSE_WORKS.md`): the rest of Wiring (light fixtures, lamps,
+fluorescent and LED, CO and smoke detectors, the smart home: Electrical deep dive part 4), Heating, Cooling, Air
+quality and Appliances, as far as the PDF goes. **Part 3**: Windows and doors, Foundation and frame, the solar home,
+outdoor equipment, and the appendices (batteries, fasteners, adhesives, a home tool bag). Then labelled diagrams
+(queue #1) to turn the drawn figures into tap-the-part cards.
 
 **Physics and Calculus**: Done: Units and Measurement, Vectors, Limits/Derivatives/Integrals (v1.40). Next: Chapter 3
 Motion Along a Straight Line with calculus beside it. No OpenStax text, figures or assessments.
