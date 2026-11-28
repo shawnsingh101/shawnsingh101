@@ -60,7 +60,8 @@ for (const { f, d } of decks) {
     if (!c.answer?.trim() && !c.strata) issues.push(`NO ANSWER ${f}: ${c.pre.slice(0, 60)}`);
     if ((/\{\{|::/.test(text) || (/\}\}/.test(text) && !text.includes('$'))) && !c.front) issues.push(`MARKUP LEFT ${f}: ${text.slice(0, 80)}`); // TeX may end in }}
     if (c.bureau && !c.answer) issues.push(`BUREAU ${f}: no regional bureau covers ${c.bureau} (src/bureaus.ts)`);
-    if (c.front && !c.strata && !c.pictureFirst && !c.recall && !c.bureau) issues.push(`FRONT/BACK ${f}: ${c.pre.slice(0, 70)}`);
+    if (c.members && !c.answer) issues.push(`MEMBERS ${f}: no group ${c.members.code} in src/memberships.ts`);
+    if (c.front && !c.strata && !c.pictureFirst && !c.recall && !c.bureau && !c.members) issues.push(`FRONT/BACK ${f}: ${c.pre.slice(0, 70)}`);
     // The question must not give the answer away: an acronym answer followed by its spelled-out name, "{{DNS}} (Domain
     // Name System)", or the answer written out elsewhere on the card. The expansion belongs in the answer, shown on the flip.
     if (!c.front && !c.practice && !c.parts) {

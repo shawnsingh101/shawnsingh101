@@ -35,6 +35,7 @@ const P: Record<string, ReactNode> = {
   person: <><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" /></>,
   capitol: <path d="M3 21h18M5 21v-7h14v7M8 21v-7m4 7v-7m4 7v-7M4 14h16M7 14c0-3 2-5 5-5s5 2 5 5M12 9V4m0 0h2" />,
   coin: <><circle cx="12" cy="12" r="8.5" /><path d="M14.5 9.2c-.6-.8-1.5-1.2-2.6-1.2-1.6 0-2.7.8-2.7 2s1.1 1.7 2.7 2 2.8.9 2.8 2.1-1.2 2-2.8 2c-1.2 0-2.2-.5-2.8-1.3M12 6.5V8m0 8v1.5" /></>,
+  house: <path d="M3 11 12 4l9 7M5 9.5V20h14V9.5M10 20v-6h4v6" />,
   city: <path d="M3 21h18M5 21V10l5-3v14M10 21V4l6 3v14M16 21v-9l3 2v7M13 9h0M13 12h0M13 15h0M7 13h0M7 16h0" />,
   temple: <path d="M3 21h18M4 18h16M5 18V9.5m3.5 8.5V9.5m3.5 8.5V9.5m3.5 8.5V9.5M19 18V9.5M3 9.5h18L12 3z" />,
   mountain: <path d="M2 20h20L14.5 6l-3.5 6-2-3z M11.6 10.8l1.6 1.4 1.3-1.6" />,

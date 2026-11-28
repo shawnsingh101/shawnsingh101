@@ -1,146 +1,82 @@
 # Intelligence Quest: roadmap
 
-What's next, in order, and how a new idea becomes part of the app. The rules for *how* things are built are in
-[GUIDELINES.md](GUIDELINES.md); this page is *what* and *when*.
+What's next and how a new idea gets in. *How* things are built is in [GUIDELINES.md](GUIDELINES.md). What shipped is
+in `src/changelog.ts`; finished plans and their build notes are in `archive/ROADMAP_DONE.md` (read only if needed).
 
 ## How a new topic gets in
 
-Any idea ("I'd like to learn about Thanksgiving") goes through the same steps:
-
-1. **Proposal.** A short plan covering:
-   - **Home**: the one place it's filed (an existing subject and section, or a new one). Every thing has one home.
-   - **Tags and lenses**: which tags it carries (era, place, topic, type…) and so which other views it also shows in
-     (History › By era, a place's "Also in your decks", search). Shown in several places, never copied.
-   - **What the items are**: things that have a Wikipedia page (filed by Wikidata id, facts filled in by a sync: a
-     *collection*) or notes written from a source (a *deck*), or data with its own view (like the time scale).
-   - **Card types**: which fit (fill in the blank, picture → name, tap on a map or diagram, put in order, practice
-     problems, listening…), and anything new they'd need.
-   - **Sources**: the Wikipedia article's chapters, a textbook, Wikidata; where the pictures come from.
-   - **Size and depth**: a starter set first. Cards are **core** (what an educated person should know) or **deep**
-     (deep cuts); deep decks unlock once half the core is known (or turn locks off to get everything now).
-   - **Outline**: the sections, how many cards, and three sample cards, so the level and angle can be corrected
-     before building. Not every card: those are cheap to fix after you've studied them.
-   - **Links**: Related places and people, and decks it should also appear in.
-2. **Decision**: build it now, or put it in the queue below (at a position you choose).
-3. **Build** following GUIDELINES.md and the subject's guide, including the release steps.
-4. **Done**: its *In progress* entry is updated (or removed) and the changelog says what shipped. A rule learned while
-   building it goes into GUIDELINES.md or its subject guide.
+1. **Proposal**, short: **home** (one subject/section), **tags and lenses** (where else it shows, never copied), **items**
+   (Wikidata *collection*, written *deck*, or built data), **card types** (and anything new they need), **sources and
+   pictures**, **size** (a core starter set; deep decks later), **outline** with section sizes and three sample cards,
+   **links**.
+2. **Decision**: build now, or queue it.
+3. **Build** per GUIDELINES.md and the subject guide, with the release steps.
+4. **Done**: update its *In progress* entry; a rule learned goes into the guide.
 
 ## In progress
 
-**Physics and Calculus** (new): the Physics path uses Shawn's 17-chapter mechanics outline, with chapters 1–2 started
-from independently sourced material. Math › Calculus begins alongside it, so calculus concepts can be learned before
-they are needed in mechanics. Cards use KaTeX, equation definitions, and Commons images when useful; content sources
-and licenses are tracked per deck. Done: Units and Measurement, Vectors, and an initial Limits, Derivatives, and
-Integrals deck (v1.40). Next: review the pilot after study, then add Chapter 3 Motion Along a Straight Line with
-position, velocity, and acceleration linked to calculus; continue through the supplied chapter outline. No OpenStax
-chapter text, figures, or assessments are used.
+**Government** (v1.38, v1.45). Done: United States › Foundations (Declaration, Constitution, Bill of Rights, amendments
+11–27, the three branches as org charts, who runs foreign policy), Department of State (11 decks, incl. the June 2026 org
+chart), Department of Defense (what it is, organization and combatant commands, who leads it now: live). International
+organizations and treaties (how treaties work, membership map, UN family, landmark treaties, the US and the world now:
+live). New card types: ```` ```org ```` org charts, `[members:]`/`[whose:]` maps (`src/memberships.ts`). Next: Congress
+in depth (how a bill becomes law, committees, leadership), the presidency (EOP, NSC org chart, executive orders), the
+courts (landmark cases), other departments as org charts (Treasury, Justice, Homeland Security); more treaty maps
+(ICC, NPT parties, Commonwealth); then **Law** as its own subject. Unverified as of Nov 2026: the Army Chief of Staff and
+Chief of Space Operations (left out), the UN Secretary-General race (being decided).
 
-**Owner controls: edit and build inside the app** (done v1.41–v1.44; agreed with the owner, one session per step, in order). **Step 1 done
-(v1.41):** Settings is a list (`src/components/Settings.tsx`: switches, popups via `Popup`, a Backup dropdown); the top
-bar holds only Settings. Levels in `src/levels.ts` (gem tiers; level 1 costs 10,000 XP, each next ×1.2 rounded to 500;
-weekly target = average of the last four full weeks since the first study day, rounded to 500, 5,000 in a first week),
-drawn by `LevelProgress` (`src/components/Level.tsx`) at the end of sessions and quizzes and on Me. Days now record
-`xp`; older days get their share of the XP total by `dailyXp()`. The answer log is `Progress.log`
-(`[unixSeconds, cardId, grade 1–4, xp, 1 if quiz]`), saved under its own localStorage key `geoquest:log` and included in
-backups; quiz answers on unlearned cards are logged with 0 XP (the score bonus is a day total, not a log entry).
-Watch: about 3 MB a year at the owner's pace; if storage fills, move the log to IndexedDB. **Step 2 done (v1.42):**
-Me has Overview | Reports (`src/views/Report.tsx`). Periods: past 24 hours (by hour, from the log), week, month, 3
-months (by day), year to date, 1 year (by week), custom dates. Tiles (XP, answers, % right, new cards, days, time
-studying = gaps between logged answers capped at 2 min) compare with the period before; answers, XP and days come from
-`p.days` (all history), subjects, time and most-missed from the log (a note says when the log started). Save as PDF is
-`window.print()` with print CSS that shows only the report on white. **Step 3 done (v1.43):** after a hand-written card
-is flipped, Edit (top bar of the study screen) opens `EditCard` (`src/components/EditCard.tsx`): the card's lines from
-its deck file (`cardSource` / `cardBlock` in `src/notes.ts`; every card records its bullet's `line`, checked by the
-audit), a live note on whether the edit keeps progress (re-parses the deck and looks for the card's id), and Send for
-review. `src/github.ts` reads the file fresh from `main`, replaces the old lines (refuses if they changed), commits to a
-new `edit/<deck>-<time>` branch and opens a pull request, all from the browser with the owner's fine-grained token
-(this repo only; Contents + Pull requests read/write), kept in localStorage `geoquest:github`, never in progress or
-backups. Set up in the editor or Settings › Editing on GitHub (step-by-step, token checked before saving; lists edits
-sent). `.github/workflows/geo-quest-audit.yml` runs the audit on every PR touching `geo-quest/`. A note card whose
-fingerprint changed now keeps its FSRS state and is due at once (data facts still reset). Not yet: editing
-collection cards (they come from Wikidata: fixes go in `data/collection-fixes.json`) and the lesson text. **Step 4 done (v1.44)**, so all four
-steps are built: the Builder (`src/components/Builder.tsx`, pure helpers in `src/builder.ts`) opens from Library ›
-New cards or deck and a deck's sheet (Add cards). Card types: cloze (words to hide + hint, or typed `{{…}}`),
-question & answer (both ways), parts (2–5, cues, any order), recipe, picture; extras: picture, note, `native:`,
-`source: https://…` (new: `NoteCard.link`, shown on the back). Several cards per save. Add from Wikipedia: search API,
-then the page summary and Wikidata (P18 picture, P1705/P1559 native name, P225). New decks: subject (or new), section,
-name, `icon:` front matter (new), first heading; files keep existing numbered folders (`newDeckFile`). Saved with
-`proposeChange` (`github.ts`; creates files without `sha`, reads fresh from main, inserts at the end of the heading's
-part) or as a **device deck**: `Progress.myDecks` (`{file, text}`), parsed at start-up in `notes.ts` like any deck
-(the app restarts itself after saving: `reloadApp`), editable with Edit (saved locally), **Publish to GitHub** (a new
-file PR; once merged the repo copy has the same id and the device copy is dropped by `PUBLISHED_DEVICE`) or Delete.
-Ideas left: lessons and deck intros from the app, Wikidata collections from the app, reorder or delete cards.
-1. ~~**Settings and rewards.**~~ Settings becomes a clean list: buttons that open their own popup (Theme, New cards,
-   Backup, …) and sliding switches for on/off ones (sound effects, music, XP & Streaks); sound moves inside Settings.
-   Backup is a dropdown: *Download backup* / *Restore from a file*. The session-complete screen gets a sleeker XP line
-   with a flat gem icon. **Levels, not leagues** (owner's choice): named gem tiers (quartz, amethyst, sapphire,
-   emerald, ruby, diamond…), each needing a bit more XP than the last (the owner earned ~27,000 XP in two weeks: a new
-   level every week or two at first), a weekly target set from the owner's own recent weeks, and a progress bar to
-   the next level at the end of study sessions and quizzes and on Me. **Also start an answer log** (every answer with
-   its time, kept in progress and in backups) so step 2 has history.
-2. ~~**Reports**~~ under Me: past 24 hours, week, month, 3 months, year to date, 1 year or a custom range; a dashboard of
-   progress from the answer log (and daily XP totals before it); save as PDF with the browser's print-to-PDF.
-3. ~~**Edit a card.**~~ An Edit button on hand-written cards opens the card's source line; saving sends it to GitHub as a
-   **pull request** (owner's choice), where a GitHub Action runs `npm run audit`; the owner merges. The owner pastes a
-   fine-grained GitHub token (this repo only: contents and pull requests), stored only on the device; walk them
-   through creating it. Fixing an answer keeps progress; rewording the question makes a new card (say so in the editor).
-4. ~~**Builder.**~~ New cards by type (cloze, front/back, parts, recipe, picture) and new decks (subject, section, name,
-   icon), saved the same way. **Add from Wikipedia**: search a name, pull title, picture, description and native name
-   (Wikipedia/Wikidata allow browser requests), fill the card for the owner to adjust. A `source:` link per card,
-   shown on the back. **Device-only decks** (kept in progress and backups, private) for studying without Claude,
-   publishable later. Remind the owner the repo is public.
+**Astronomy** (new, v1.45): Science › Astronomy follows the owner's 30-chapter outline (`decks/Science/README.md`).
+Done: chapter 4 sections 5–7 (Moon phases, tides, eclipses). Next: 4.1–4.4 (sky coordinates, seasons, time, calendar),
+then chapters 1–3; later the star chart on the map engine (queue #5). Cards are original (NASA, NOAA, Wikipedia,
+Commons pictures); the OpenStax PDF only sets coverage and order.
 
-**Life** (started): the tree of life as the outline (Bacteria · Archaea · Eukaryotes › …), groups of species filed on it,
-book decks feeding its branches. Cards: photo → name with the lineage, Latin name, range map and habitat on the back;
-dinosaurs asked when they lived (period, epoch, age) with time-scale blocks; deep cuts from books. Done: whales and
-dolphins, dinosaurs (v1.30, reworked v1.31). Next: the book decks (Spying on Whales, The Rise and Fall of
-the Dinosaurs: send the PDFs), birds with calls, trees and plants, any animal a book is about.
+**Life** (started): the tree of life files the sections. Done: whales and dolphins, dinosaurs, the **blue whale** deep
+dive (v1.45, Wikipedia + Spying on Whales cards shown in it). Next: more species deep dives, birds with calls, trees and
+plants, The Rise and Fall of the Dinosaurs (send the PDF).
 
-**Economics** (started): rebuilt course by course from the owner's class notes (guides/economics.md), with KaTeX math,
-derivations, graphs and an Equations section. Done: Macroeconomics lectures 1–9 from the notes (v1.36–1.37), and 10–17
-(v1.39: taxes and government purchases, fiscal sustainability, money and inflation, IS-LM-FE, AD-AS, the Phillips
-curve, exchange rates, the open economy). **10–17 were written from the roadmap's topic list and standard
-intermediate macro, not the notes**: when the owner shares the notes for those lectures, check order, notation and
-emphasis against them. Next: International Trade, International Finance and Monetary Theory, Micro, Capital Markets,
-IPE, Econometrics. Later: typed math answers checked by Python.
+**Home systems** (new, v1.46): `decks/Home systems/`, one folder per system in the owner's order (outline and start
+prompt: `archive/HANDOFF_HOME_SYSTEMS.md`). Done: foundation decks for all seven systems (structure 2, envelope 4,
+plumbing 3, electrical 3, HVAC 3, drainage 1, safety and interior 3), each card in our own words from Wikipedia with a
+Commons photo of the part (picture → name under "Name it from the picture", name → what it does); stacks for the load
+path, water and power paths and the refrigerant loop; parts cards for short lists. **Tools** (`8 Tools/Tools.md`): 34
+tools, picture → name and name → what for, each `also in:` the system decks that use it. **Electrical deep dive**
+started as `depth: deep` "… - going further" decks beside each electrical deck: circuits and Ohm's law, 120/240,
+meters, grounding vs bonding, outage checklist; breakers (thermal/magnetic), fuses, panel layout, 80% rule, cable
+labels; plug shapes, how GFCI/AFCI trip and when the code required them, three- and four-way switches, dimmers,
+motion sensors. Order follows the owner's PDF (Charlie Wing, *How Your House Works*, ch. 2 Wiring: coverage and order
+only, nothing copied). esfi.org is behind Cloudflare and refuses automated reads (added to the environment's allowed
+hosts, still blocked): the owner said to use the PDF instead. Next: deep dive part 4, lights (fixtures, lamps,
+incandescent vs fluorescent vs LED, lumens and efficacy) and alarms (CO and smoke detector types, hard-wired
+interconnection, required locations), then the smart home; then deep dives for plumbing and HVAC. Later: labelled
+diagrams (queue #2): tap the part on a house cutaway.
 
-**Cybersecurity** (outline complete, v1.39): all nine parts have lessons, cards and "going further" decks; parts 1 and
-3 have three to five decks each, parts 2 and 4–9 two each. Next: deepen parts 2 and 4–9 toward the same size (e.g.
-cloud and virtualization, application security, physical security and resilience, digital forensics in more depth),
-add Commons diagrams where clean ones exist, and later a network-map card (tap where the firewall goes).
+**Physics and Calculus**: Done: Units and Measurement, Vectors, Limits/Derivatives/Integrals (v1.40). Next: Chapter 3
+Motion Along a Straight Line with calculus beside it. No OpenStax text, figures or assessments.
 
-**Programming** (started): two linked decks in Computer science. *Python* follows the OpenStax textbook chapter by
-chapter (done: 1–3; next: Decisions, Loops, Functions…). *Under the hood* teaches this app from its own files (done:
-The repo, Git and GitHub; next: Data and the sync, the basics in real code with Python beside it, Structures, the app,
-algorithms, testing). Practice decks beside each Python chapter: write the program, the app runs it in real Python and
-checks it (v1.32).
+**Economics**: Macro lectures 1–17 done (10–17 from the topic list, not the notes: check against the notes when shared).
+Next: International Trade, International Finance, Micro, Capital Markets, IPE, Econometrics.
 
-**Cocktails** (v1.39): rebuilt from the owner's bartending study guide with recipe cards (guides/food-and-drink.md).
-Next: wine (red, white, fortified, service) from the same guide's wine section, and spirits brands if wanted.
+**Cybersecurity**: all nine parts built (v1.39). Next: deepen parts 2 and 4–9, Commons diagrams, a network-map card.
 
-**Books**: The Changing World Order (Ray Dalio) added in v1.39. Not yet in *My reading* (needs its Wikidata id).
+**Programming**: Python chapters 1–3 and Under the hood (repo, Git). Next: Decisions, Loops, Functions; Data and the sync.
 
-**Classical music, Anki-guided** (Classical Music Themes, Parts I–II: 972 pieces). Essential (~170 themes): 39 works,
-63 clips so far; next: free recordings for the rest (Hallelujah Chorus, Bach's cello prelude, Swan Lake, the Nutcracker
-…), from Musopen and Commons only. Then More (~340) and Deep cuts (~540). About a dozen pieces are still under
-copyright (Copland, Prokofiev, Barber, Orff, Khachaturian, Shostakovich) and can't be included.
+**Cocktails** (v1.39). Next: wine from the same study guide. **Books**: The Changing World Order needs its Wikidata id.
+
+**Classical music**: Essential themes, 63 clips so far; next free recordings from Musopen and Commons only.
+
+**Owner controls** (v1.41–v1.44) are done. Ideas left: lessons and deck intros from the app, Wikidata collections from
+the app, reorder or delete cards.
 
 ## Queue
 
-| # | What | Kind of work | Notes |
-| --- | --- | --- | --- |
-| 1 | **Life**: the tree of life, animals and plants | built tree + collections + book decks | In progress (see above). Replaces "Birds and trees" |
-| 2 | **Labelled diagrams**: house systems, car, bike | new card type | Tap the part on a diagram, like tapping a country on the map |
-| 3 | **Practice mode, part 2**: math and statistics | builds on practice cards | Python practice is done (v1.32). Next: numbers that change each time, worked steps |
-| 4 | **Quotes** | deck + card types | Fill in the key words; quote ↔ who said it |
-| 5 | **Astronomy**: night sky, constellations, and more | built data + map engine | A star chart using the map engine |
-| 6 | **Periodic table** | built data + chart | An interactive chart like the geologic time scale |
-| 7 | **US government**, continued: the Constitution and amendments, Congress, the executive branch, the courts | decks + collection | Started in v1.38 with the State Department (see Done). Built to take other countries later; then **Law** as its own subject (sources of law, the US Code, civil and criminal, torts, major acts) |
-| 8 | **International organizations and treaties** | collection + map layers | Tap every member on the map (NATO, EU, BRICS…) |
-| 9 | **Finance** | decks | Linked to coursework and the Dashboard's live numbers |
+| # | What | Notes |
+| --- | --- | --- |
+| 1 | **Labelled diagrams**: house systems, car, bike | New card type: tap the part on a diagram (Home systems first) |
+| 2 | **Practice mode, part 2**: math and statistics | Numbers that change each time, worked steps |
+| 3 | **Quotes** | Fill in the key words; quote ↔ who said it |
+| 4 | **Astronomy star chart** | Constellations on the map engine |
+| 5 | **Periodic table** | An interactive chart like the time scale |
+| 6 | **Finance** | Linked to coursework and the Dashboard |
 
-Ideas for later, not yet in the queue: movies, political science, international relations, AI, languages (listening, typed answers),
-jazz recordings (as they become free: 1926 recordings on 1 January 2027), more music beyond classical and jazz, holidays & traditions (Thanksgiving first), put-in-order cards, wine regions and grapes.
-
-What shipped is recorded in `src/changelog.ts`; the old Done list is in `archive/ROADMAP_DONE.md`.
+Ideas for later: movies, political science, international relations, AI, languages, jazz recordings (1926 recordings
+are free from 1 January 2027), holidays (Thanksgiving first), put-in-order cards, wine regions and grapes.
