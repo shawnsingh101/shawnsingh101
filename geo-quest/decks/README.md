@@ -50,6 +50,8 @@ related: Italy, Florence
   Contemporary; two allowed). The deck also shows under History › By era, beside the same era from every country.
 - **`native: Milan = Milano (Italian); Italy = Italia (Italian)`** (after a card with two blanks): each name goes to its own
   card. A name spelled as in English still gets its line (`native: Filippo Brunelleschi (Italian)`): the speaker says it.
+- **`shelves: Music, Philosophy`** (front matter): the deck is also listed in those subjects, under "Music: people" (one set of
+  progress). Used by People, where each life is filed once but belongs to several subjects.
 - **`depth: deep`** (front matter): a deck of deep cuts; it unlocks once half of the deck beside it is known.
 - **Lines before the first heading** are the deck's intro; several lines make a summary page (books you've read).
 - **`also in: Philadelphia, New Jersey`** (right after a card): the card also shows in the decks with those titles (one

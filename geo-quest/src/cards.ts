@@ -376,7 +376,8 @@ const asName = (n?: NativeName) => (n ? { ...n, asWritten: true } : null);
 const bornIn = (c: Place) => { const p = c.person; if (!p?.birthplace) return null; const where = p.state ?? (p.countryName !== 'United States' ? p.countryName : null); return where && p.birthplace !== where && !p.birthplace.endsWith(`, ${where}`) && p.birthplace !== 'New York City' ? `${p.birthplace}, ${where}` : p.birthplace; }; // Kansas City, Kansas ≠ Kansas City, Missouri
 const plays = (xs: string[]) => (xs.length === 1 ? (/^(vocals|drums|keyboards)$/.test(xs[0]) ? xs[0] : `the ${xs[0]}`) : xs.map(x => (/^(vocals|drums|keyboards)$/.test(x) ? x : `the ${x}`)).join(' and '));
 /** Scenes named by a place read as "the New Orleans scene"; styles as they are ("bebop"). */
-const sceneName = (s: string) => (/^(New Orleans|Chicago|Harlem|Kansas City|Swing-era New York)$/.test(s) ? `the ${s} scene` : s.charAt(0).toLowerCase() + s.slice(1));
+// A movement named after a people or a style keeps its capital ("German philosophy", "Post-Impressionism"); others read lower case ("bebop").
+const sceneName = (s: string) => (/^(New Orleans|Chicago|Harlem|Kansas City|Swing-era New York)$/.test(s) ? `the ${s} scene` : /^(German|Czech|Chinese|Classical|Romantic|Post-|Abstract)/.test(s) ? s : s.charAt(0).toLowerCase() + s.slice(1));
 const personNote = (c: Place) => { const p = c.person!; return [p.born ? `${p.born}–${p.died ?? ''}` : null, bornIn(c) && !p.origin ? `born in ${bornIn(c)}` : null, p.instruments.join(', ') || null, p.scene].filter(Boolean).join(' · '); };
 /** "the humpback whale" (a species), "Tyrannosaurus" (a genus, as dinosaurs are named). */
 const theOf = (c: Place) => (c.taxon?.genusOnly ? c.name : (c.nameThe ?? c.name).replace(/^an? /, 'the '));

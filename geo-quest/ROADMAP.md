@@ -28,6 +28,16 @@ Any idea ("I'd like to learn about Thanksgiving") goes through the same steps:
 
 ## In progress
 
+**People** (v1.45, new subject): the lives of individuals, one deck per person with a lesson and 14–22 cards, filed
+under Composers, Painters, Philosophers, Scientists and mathematicians, Political leaders, and listed in their other
+subjects with `shelves:` (guides/people.md). Done: Mozart, Chopin, Mahler, Van Gogh, Kline, Kant, Nietzsche, von
+Neumann, Oppenheimer, Gödel, Hassabis, Mao, Havel, written from their Wikipedia biographies; a Faces collection
+(`collections/People/0 Faces.md`) that the nightly sync fills with portraits, birthplaces and native names. Next:
+check the Faces deck after the first sync (origins: Kant → Kingdom of Prussia, today Russia; Gödel and von Neumann →
+Austria-Hungary); add pictures that couldn't be found yet (Kant's Critique title page, Zarathustra, Gödel with Einstein,
+Los Alamos, AlphaFold, the Mozart family); more people as the owner names them; quotes cards (queue #4) and a life
+timeline (put-in-order cards) would suit these decks.
+
 **Physics and Calculus** (new): the Physics path uses Shawn's 17-chapter mechanics outline, with chapters 1–2 started
 from independently sourced material. Math › Calculus begins alongside it, so calculus concepts can be learned before
 they are needed in mechanics. Cards use KaTeX, equation definitions, and Commons images when useful; content sources

@@ -155,6 +155,7 @@ export function registerCollections(facts: Record<string, ArtFacts>, countryName
   for (const p of out.values()) {
     if (!p.person?.scene) continue;
     const subject = sectionChain(GROUPS.find(g => g.id === p.group)!.section)[0];
+    if (subject === 'People') continue; // each life has its own deck; a "By scene" of one-person groups would be clutter
     const s = claimSection('By scene', subject), gid = 'cp-' + slug(`${subject} ${p.person.scene}`);
     if (!GROUPS.some(g => g.id === gid)) GROUPS.push({ id: gid, section: s, name: p.person.scene, layer: 'art', nouns: 'people', topics: [{ id: 'art', name: 'People', icon: 'person' }] });
     p.alsoIn = [...(p.alsoIn ?? []), gid];
